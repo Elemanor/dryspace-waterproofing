@@ -15,9 +15,9 @@ export interface Props {
 }
 
 const {
-  title = 'Dryspace Waterproofing - Toronto\'s Trusted Foundation Experts',
-  description = 'Professional waterproofing and foundation repair services in Toronto & GTA. 24/7 emergency service, 25-year warranty, free inspections. Call 437-545-0067.',
-  keywords = 'waterproofing toronto, foundation repair, basement waterproofing, sump pump installation',
+  title = 'DrySpace Waterproofing — Basement Waterproofing Toronto | Foundation Repair',
+  description = 'Toronto\'s top-rated basement waterproofing company. Interior & exterior waterproofing, foundation repair, sump pumps, underpinning. 25-year warranty, 24/7 emergency, free inspections. Call 437-545-0067.',
+  keywords = 'basement waterproofing toronto, basement waterproofing, waterproofing toronto, foundation repair toronto, sump pump installation, interior waterproofing, exterior waterproofing, underpinning toronto',
   image = '/images/dryspace-og-image.webp',
   canonical,
   noindex = false,
@@ -63,9 +63,11 @@ const ogImageUrl = `${siteUrl}${image}`;
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImageUrl} />
 
-    <!-- Business Verification -->
-    <meta name="google-site-verification" content="YOUR_VERIFICATION_CODE" />
-    <meta name="msvalidate.01" content="YOUR_BING_CODE" />
+    <!-- Geo Meta Tags (Local SEO) -->
+    <meta name="geo.region" content="CA-ON" />
+    <meta name="geo.placename" content="Toronto" />
+    <meta name="geo.position" content="43.653226;-79.3831843" />
+    <meta name="ICBM" content="43.653226, -79.3831843" />
 
     <!-- Preconnect for fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -94,19 +96,28 @@ const ogImageUrl = `${siteUrl}${image}`;
       }
     })} />
 
-    <!-- Schema.org Structured Data -->
+    <!-- Schema.org Structured Data — Enhanced Local SEO -->
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "name": "Dryspace Waterproofing & Foundation Repair",
+      "@type": ["LocalBusiness", "HomeAndConstructionBusiness"],
+      "@id": "https://dryspacewaterproofing.ca/#organization",
+      "name": "DrySpace Waterproofing",
+      "alternateName": "DrySpace Waterproofing & Foundation Repair",
+      "description": "Professional basement waterproofing and foundation repair company serving Toronto and the Greater Toronto Area. Interior & exterior waterproofing, sump pump installation, underpinning, drainage solutions. 25-year warranty, 24/7 emergency service.",
       "image": ogImageUrl,
+      "logo": `${siteUrl}/images/dryspace-logo.webp`,
       "url": siteUrl,
-      "telephone": "437-545-0067",
-      "priceRange": "$$",
+      "telephone": "+1-437-545-0067",
+      "email": "info@dryspacewaterproofing.ca",
+      "priceRange": "$$$",
+      "currenciesAccepted": "CAD",
+      "paymentAccepted": "Cash, Credit Card, Debit Card, Bank Transfer, Financing",
       "address": {
         "@type": "PostalAddress",
+        "streetAddress": "1678 Bloor Street West",
         "addressLocality": "Toronto",
         "addressRegion": "ON",
+        "postalCode": "M6P 1A9",
         "addressCountry": "CA"
       },
       "geo": {
@@ -137,48 +148,109 @@ const ogImageUrl = `${siteUrl}${image}`;
       "aggregateRating": {
         "@type": "AggregateRating",
         "ratingValue": "4.9",
+        "bestRating": "5",
+        "ratingCount": "487",
         "reviewCount": "487"
       },
       "sameAs": [
         "https://www.facebook.com/dryspaceca",
         "https://www.instagram.com/dryspaceca",
-        "https://www.linkedin.com/company/dryspace"
+        "https://www.linkedin.com/company/dryspace",
+        "https://www.homestars.com/companies/dryspace-waterproofing",
+        "https://www.bbb.org/ca/on/toronto/profile/waterproofing/dryspace-waterproofing"
       ],
       "areaServed": [
-        "Toronto", "Mississauga", "Brampton", "Vaughan", "Markham",
-        "Richmond Hill", "Oakville", "Burlington", "Hamilton", "Scarborough",
-        "North York", "Etobicoke", "Ajax", "Pickering", "Whitby", "Oshawa"
+        { "@type": "City", "name": "Toronto", "containedInPlace": { "@type": "AdministrativeArea", "name": "Ontario" } },
+        { "@type": "City", "name": "Mississauga" },
+        { "@type": "City", "name": "Brampton" },
+        { "@type": "City", "name": "Vaughan" },
+        { "@type": "City", "name": "Markham" },
+        { "@type": "City", "name": "Richmond Hill" },
+        { "@type": "City", "name": "Oakville" },
+        { "@type": "City", "name": "Burlington" },
+        { "@type": "City", "name": "Hamilton" },
+        { "@type": "City", "name": "Scarborough" },
+        { "@type": "City", "name": "North York" },
+        { "@type": "City", "name": "Etobicoke" },
+        { "@type": "City", "name": "Ajax" },
+        { "@type": "City", "name": "Pickering" },
+        { "@type": "City", "name": "Whitby" },
+        { "@type": "City", "name": "Oshawa" }
+      ],
+      "knowsAbout": [
+        "Basement Waterproofing",
+        "Foundation Repair",
+        "Sump Pump Installation",
+        "Interior Waterproofing",
+        "Exterior Waterproofing",
+        "Underpinning",
+        "French Drain Installation",
+        "Backwater Valve Installation",
+        "Crawl Space Waterproofing",
+        "Foundation Crack Repair"
       ],
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
-        "name": "Waterproofing Services",
+        "name": "Basement Waterproofing & Foundation Repair Services",
         "itemListElement": [
           {
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
-              "name": "Exterior Waterproofing"
+              "name": "Exterior Basement Waterproofing",
+              "description": "Complete exterior foundation waterproofing with membrane, drainage, and backfill",
+              "url": `${siteUrl}/services/exterior-waterproofing`,
+              "areaServed": "Toronto"
             }
           },
           {
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
-              "name": "Interior Waterproofing"
+              "name": "Interior Basement Waterproofing",
+              "description": "Interior drainage systems, weeping tile, and moisture control for Toronto basements",
+              "url": `${siteUrl}/services/interior-waterproofing`,
+              "areaServed": "Toronto"
             }
           },
           {
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
-              "name": "Foundation Repair"
+              "name": "Foundation Crack Repair",
+              "description": "Fix cracks, bowing walls, and structural foundation issues",
+              "url": `${siteUrl}/services/foundation-repair`,
+              "areaServed": "Toronto"
             }
           },
           {
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
-              "name": "Sump Pump Installation"
+              "name": "Sump Pump Installation",
+              "description": "Professional sump pump installation with battery backup and alarm systems",
+              "url": `${siteUrl}/services/sump-pump-installation`,
+              "areaServed": "Toronto"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Basement Underpinning",
+              "description": "Foundation lowering and structural reinforcement for basement conversions",
+              "url": `${siteUrl}/services/underpinning`,
+              "areaServed": "Toronto"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Backwater Valve Installation",
+              "description": "Prevent sewer backup with professional backwater valve installation",
+              "url": `${siteUrl}/services/backwater-valve-installation`,
+              "areaServed": "Toronto"
             }
           }
         ]

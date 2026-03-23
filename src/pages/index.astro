@@ -6,8 +6,8 @@ import SectionHeader from '../components/sections/SectionHeader.astro';
 import ServiceProcess from '../components/sections/ServiceProcess.astro';
 import CTABand from '../components/sections/CTABand.astro';
 
-const pageTitle = "Basement Waterproofing Toronto | 24/7 | DrySpace";
-const pageDescription = "Emergency water protection services in the GTA. Same-day response, 25-year warranty, government rebates available. 487+ 5-star reviews. Call 437-545-0067.";
+const pageTitle = "Basement Waterproofing Toronto | Foundation Repair | DrySpace";
+const pageDescription = "Toronto's #1 basement waterproofing company. Interior & exterior waterproofing, foundation repair, sump pumps. 25-year warranty, $3,400 rebate. 487+ 5-star reviews. Call 437-545-0067.";
 
 const services = [
   { title: "Exterior Waterproofing", description: "Complete exterior foundation protection with membrane, drainage, and backfill.", href: "/services/exterior-waterproofing", price: "From $8,500" },
@@ -47,8 +47,8 @@ const areas = [
 >
   <!-- ═══════════════════════ 1. HERO ═══════════════════════ -->
   <Hero
-    title="GTA's Most Trusted Water Protection Experts"
-    subtitle="Protecting local homes from moisture damage since 1999. Under 60-minute emergency response, lifetime transferable warranty, and government rebates available."
+    title="Toronto's #1 Basement Waterproofing & Foundation Repair Experts"
+    subtitle="Professional basement waterproofing in Toronto & the GTA since 1999. Under 60-minute emergency response, 25-year transferable warranty, and up to $3,400 in government rebates."
     primaryCTA={{ text: "Get Free Inspection", href: "/free-inspection" }}
     secondaryCTA={{ text: "Emergency: 437-545-0067", href: "tel:437-545-0067" }}
     backgroundImage="/images/dryspace_hero_desktop.webp"
@@ -63,8 +63,8 @@ const areas = [
     <div class="container mx-auto px-4">
       <SectionHeader
         label="Our Services"
-        title="Complete Waterproofing & Foundation Solutions"
-        description="From emergency repairs to full foundation restoration — we handle every aspect of below-grade protection for GTA homes."
+        title="Basement Waterproofing & Foundation Repair Services in Toronto"
+        description="From emergency basement waterproofing to full foundation restoration — we handle every aspect of below-grade protection for Toronto & GTA homes."
       />
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -164,8 +164,8 @@ const areas = [
     <div class="container mx-auto px-4">
       <SectionHeader
         label="Service Areas"
-        title="Protecting Homes Across the GTA"
-        description="24/7 emergency water protection service covering the Greater Toronto Area."
+        title="Basement Waterproofing Across Toronto & the GTA"
+        description="24/7 emergency basement waterproofing covering Toronto, Mississauga, Brampton, Vaughan, and the entire Greater Toronto Area."
         dark
       />
 
@@ -277,33 +277,79 @@ const areas = [
     secondaryCTA={{ text: "Call 437-545-0067", href: "tel:437-545-0067" }}
   />
 
-  <!-- Schema Markup -->
+  <!-- Review Schema (individual reviews for rich snippets) -->
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
       "name": "DrySpace Waterproofing",
-      "description": "Professional foundation water protection services in the GTA with 24/7 emergency response",
+      "description": "Professional basement waterproofing and foundation repair in Toronto & the GTA. Interior & exterior waterproofing, sump pumps, underpinning, drainage. 25-year warranty.",
       "url": "https://dryspacewaterproofing.ca",
-      "telephone": "437-545-0067",
+      "telephone": "+1-437-545-0067",
       "priceRange": "$$$",
       "address": {
         "@type": "PostalAddress",
-        "addressLocality": "Greater Toronto Area",
+        "streetAddress": "1678 Bloor Street West",
+        "addressLocality": "Toronto",
         "addressRegion": "ON",
+        "postalCode": "M6P 1A9",
         "addressCountry": "CA"
       },
-      "openingHoursSpecification": {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-        "opens": "00:00",
-        "closes": "23:59"
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 43.653226,
+        "longitude": -79.3831843
       },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+          "opens": "07:00",
+          "closes": "20:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Saturday",
+          "opens": "08:00",
+          "closes": "18:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Sunday",
+          "opens": "09:00",
+          "closes": "17:00"
+        }
+      ],
       "aggregateRating": {
         "@type": "AggregateRating",
         "ratingValue": "4.9",
+        "bestRating": "5",
+        "ratingCount": "487",
         "reviewCount": "487"
-      }
+      },
+      "review": [
+        {
+          "@type": "Review",
+          "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+          "author": { "@type": "Person", "name": "Sarah M." },
+          "reviewBody": "DrySpace waterproofed our 80-year-old home. The crew was professional, on-time, and the results exceeded expectations. No more flooding after heavy rains.",
+          "datePublished": "2026-03-09"
+        },
+        {
+          "@type": "Review",
+          "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+          "author": { "@type": "Person", "name": "David K." },
+          "reviewBody": "Emergency response was incredible — they arrived within an hour when our basement flooded. Excellent work on the sump pump and drainage system.",
+          "datePublished": "2026-02-23"
+        },
+        {
+          "@type": "Review",
+          "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+          "author": { "@type": "Person", "name": "Jennifer L." },
+          "reviewBody": "We got multiple quotes and DrySpace offered the best value. They helped us apply for the $3,400 rebate too. Highly recommend their exterior waterproofing service.",
+          "datePublished": "2026-03-02"
+        }
+      ]
     }
   </script>
 </PageLayout>

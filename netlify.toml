@@ -2,45 +2,398 @@
   command = "npm run build"
   publish = "dist"
 
-# Keyword Cannibalization Fixes - Critical Redirects
-# Implemented: January 9, 2025
+# ============================================================
+# WWW → NON-WWW REDIRECT (consolidates 35K+ split impressions)
+# ============================================================
+[[redirects]]
+  from = "https://www.dryspacewaterproofing.ca/*"
+  to = "https://dryspacewaterproofing.ca/:splat"
+  status = 301
+  force = true
 
-# Fix Toronto cannibalization - Enhanced page was competing with homepage
+# ============================================================
+# OLD .HTML PAGES → NEW CLEAN URLs
+# These old pages are still indexed by Google with high impressions
+# ============================================================
+
+# Homepage variants (11,534 impressions on www + 94 on index.html)
+[[redirects]]
+  from = "/index.html"
+  to = "/"
+  status = 301
+  force = true
+
+# Location pages — old .html format (7,432 + 3,064 + 1,298 + 222 + 91 impressions)
+[[redirects]]
+  from = "/mississauga-waterproofing.html"
+  to = "/basement-waterproofing-mississauga"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/brampton-waterproofing.html"
+  to = "/basement-waterproofing-brampton"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/markham-waterproofing.html"
+  to = "/locations/markham"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/markham.html"
+  to = "/locations/markham"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/toronto.html"
+  to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/oakville-waterproofing.html"
+  to = "/locations/oakville"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/brampton.html"
+  to = "/basement-waterproofing-brampton"
+  status = 301
+  force = true
+
+# Service pages — old .html format (1,981 + 1,521 + 1,253 + 703 + 581 + 230 impressions)
+[[redirects]]
+  from = "/backwater-valve-installation.html"
+  to = "/services/backwater-valve-installation"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/foundation-crack-repair.html"
+  to = "/services/foundation-repair"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/foundation-cracks-repair.html"
+  to = "/services/foundation-repair"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/interior-waterproofing.html"
+  to = "/services/interior-waterproofing"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/exterior-waterproofing.html"
+  to = "/services/exterior-waterproofing"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/drainage-systems.html"
+  to = "/services/drainage-solutions"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/crack-repair.html"
+  to = "/services/foundation-repair"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/sump-pump-installation.html"
+  to = "/services/sump-pump-installation"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/window-well-installation.html"
+  to = "/services/window-door-waterproofing"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/crawl-space-encapsulation.html"
+  to = "/services/crawl-space-waterproofing"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/excavation-services.html"
+  to = "/services/excavation-services"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/demolition-services.html"
+  to = "/services/demolition-services"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/basement-underpinning.html"
+  to = "/services/underpinning"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/toronto-basement-underpinning.html"
+  to = "/services/underpinning"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/foundation-repair.html"
+  to = "/services/foundation-repair"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/emergency-services.html"
+  to = "/emergency"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/mold-remediation.html"
+  to = "/services/mold-remediation"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/concrete-services.html"
+  to = "/services/concrete-works"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/basement-renovation.html"
+  to = "/services/legal-basement-conversion"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/basement-flooding-solutions.html"
+  to = "/emergency"
+  status = 301
+  force = true
+
+# Core pages — old .html format (679 + 206 + 92 impressions)
+[[redirects]]
+  from = "/contact.html"
+  to = "/contact"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/faq.html"
+  to = "/faq"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/cost-calculator.html"
+  to = "/pricing"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/testimonials.html"
+  to = "/reviews"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/video-testimonials.html"
+  to = "/reviews"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/case-studies.html"
+  to = "/case-studies"
+  status = 301
+  force = true
+
+# Blog posts — old .html format (7,497 + 317 + others)
+[[redirects]]
+  from = "/blog/basement-waterproofing-cost-factors.html"
+  to = "/blog/basement-waterproofing-cost-toronto-2025"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/basement-waterproofing-costs-toronto.html"
+  to = "/blog/basement-waterproofing-cost-toronto-2025"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/sump-pump-maintenance-tips.html"
+  to = "/blog/sump-pump-types-comparison-guide"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/crawl-space-moisture-solutions.html"
+  to = "/services/crawl-space-waterproofing"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/foundation-drainage-basics.html"
+  to = "/blog/french-drain-vs-weeping-tile"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/spring-basement-flooding-prevention.html"
+  to = "/blog/spring-basement-flooding-prevention-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/winter-waterproofing-checklist.html"
+  to = "/blog/winter-underpinning-requirements-toronto"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/emergency-water-removal.html"
+  to = "/blog/emergency-basement-flooding-response-guide"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/exterior-grading-tips.html"
+  to = "/services/drainage-solutions"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/basement-underpinning-benefits.html"
+  to = "/blog/basement-underpinning-cost-toronto-2025"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/basement-renovation-waterproofing.html"
+  to = "/services/legal-basement-conversion"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/waterproofing-mistakes.html"
+  to = "/blog/diy-vs-professional-waterproofing"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/spring-thaw-survival-guide.html"
+  to = "/blog/spring-basement-flooding-prevention-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/basement-waterproofing-products.html"
+  to = "/blog/waterproofing-membranes-comparison-2026"
+  status = 301
+  force = true
+
+# Old rebates page → new
+[[redirects]]
+  from = "/waterproofing-rebates-2025"
+  to = "/blog/toronto-waterproofing-rebates-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/toronto-sump-pump-rebate"
+  to = "/blog/toronto-waterproofing-rebates-2026"
+  status = 301
+  force = true
+
+# Old URL variants still indexed
+[[redirects]]
+  from = "/basement-waterproofing"
+  to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/spring-basement-flooding.html"
+  to = "/blog/spring-basement-flooding-prevention-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/winter-basement-preparation.html"
+  to = "/blog/winter-underpinning-requirements-toronto"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/emergency-basement-flooding.html"
+  to = "/blog/emergency-basement-flooding-response-guide"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/wall-reinforcement"
+  to = "/services/bowing-basement-walls"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/leave-review.html"
+  to = "/reviews"
+  status = 301
+  force = true
+
+# ============================================================
+# KEYWORD CANNIBALIZATION FIXES
+# ============================================================
+
+# Fix Toronto cannibalization
 [[redirects]]
   from = "/enhanced"
   to = "/"
   status = 301
   force = true
 
-# Fix Mississauga duplication - Location page competing with dedicated service page
 [[redirects]]
   from = "/locations/mississauga"
   to = "/basement-waterproofing-mississauga"
   status = 301
   force = true
 
-# Fix Brampton duplication - Location page competing with dedicated service page
 [[redirects]]
   from = "/locations/brampton"
   to = "/basement-waterproofing-brampton"
   status = 301
   force = true
 
-# Fix calculator duplication - Tool page competing with main cost page
 [[redirects]]
   from = "/tools/waterproofing-cost-calculator"
   to = "/basement-waterproofing-cost-toronto"
   status = 301
   force = true
 
-# Fix Toronto location competing with homepage
 [[redirects]]
   from = "/locations/toronto"
   to = "/"
   status = 301
   force = true
 
-# Additional neighborhood consolidations to prevent cannibalization
 [[redirects]]
   from = "/toronto-basement-waterproofing"
   to = "/"

@@ -3,8 +3,8 @@ import PageLayout from '../layouts/PageLayout.astro';
 import Hero from '../components/sections/Hero.astro';
 import Stats from '../components/sections/Stats.astro';
 
-const pageTitle = "24/7 Emergency Waterproofing Toronto | Immediate Response";
-const pageDescription = "Emergency basement flooding help in Toronto. 30-minute response, water extraction, emergency pumping. Call now: 437-545-0067. Available 24/7/365.";
+const pageTitle = "24/7 Emergency Waterproofing Toronto | Under 60-Minute Response";
+const pageDescription = "Emergency waterproofing services Toronto with 30-minute average response. Water extraction, flooding repair, 24/7 availability. Call 437-545-0067 now.";
 
 const currentTime = new Date().toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
 
@@ -276,6 +276,47 @@ const emergencySituations = [
 
   <!-- Stats -->
   <Stats />
+
+  <!-- Related Emergency Resources -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-4xl font-bold text-slate-900 mb-12 text-center uppercase">Related Resources</h2>
+
+        <div class="grid md:grid-cols-2 gap-8">
+          <div class="card-base p-6 border-2 border-slate-200">
+            <h3 class="text-xl font-bold text-slate-900 mb-3 uppercase">Emergency Response Guide</h3>
+            <p class="text-slate-600 mb-4">
+              Critical steps to take immediately when your basement is flooding. Learn safety procedures, water removal methods, damage assessment, and insurance claims process.
+            </p>
+            <a href="/blog/emergency-basement-flooding-response-guide" class="text-cyan-600 hover:text-cyan-700 font-semibold text-sm">
+              Read Full Guide →
+            </a>
+          </div>
+
+          <div class="card-base p-6 border-2 border-amber-500 bg-amber-50">
+            <h3 class="text-xl font-bold text-slate-900 mb-3 uppercase">Spring Flood Prevention</h3>
+            <p class="text-slate-600 mb-4">
+              Prevent spring flooding before it happens. Learn expert preparation techniques, sump pump maintenance, grading improvements, and early warning signs.
+            </p>
+            <a href="/blog/spring-basement-flooding-prevention-2026" class="text-amber-600 hover:text-amber-700 font-semibold text-sm">
+              Prevention Checklist →
+            </a>
+          </div>
+        </div>
+
+        <div class="mt-8 p-6 bg-slate-50 border border-slate-200 rounded-lg">
+          <h3 class="text-lg font-bold text-slate-900 mb-3 uppercase">Free Inspection After Emergency</h3>
+          <p class="text-slate-600 mb-4">
+            After emergency response, schedule a comprehensive inspection to assess structural damage and prevent future flooding with permanent waterproofing solutions.
+          </p>
+          <a href="/free-inspection" class="inline-block bg-cyan-600 text-white px-6 py-3 font-bold uppercase hover:bg-cyan-700 transition-colors">
+            Schedule Free Assessment
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- Emergency Process -->
   <section class="py-16 bg-slate-50">

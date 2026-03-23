@@ -1,0 +1,221 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Deep Water — Navy/Cyan palette */
+    --background: 210 20% 99%;       /* near-white #fafbfc */
+    --foreground: 222 47% 11%;       /* navy-900 #0f172a */
+    --card: 0 0% 100%;               /* white */
+    --card-foreground: 222 47% 11%;  /* navy-900 */
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+    --primary: 187 96% 42%;          /* cyan-500 #06b6d4 */
+    --primary-foreground: 0 0% 100%; /* white on cyan */
+    --secondary: 210 40% 96%;        /* slate-100 */
+    --secondary-foreground: 222 47% 11%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%; /* slate-500 */
+    --accent: 38 92% 50%;            /* amber-500 #f59e0b */
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;        /* red-500 */
+    --destructive-foreground: 0 0% 100%;
+    --border: 214 32% 91%;           /* slate-200 */
+    --input: 214 32% 91%;
+    --ring: 187 96% 42%;             /* cyan-500 for focus rings */
+    --radius: 0.625rem;
+  }
+
+  .dark {
+    --background: 222 47% 11%;
+    --foreground: 210 40% 98%;
+    --card: 217 33% 17%;
+    --card-foreground: 210 40% 98%;
+    --popover: 217 33% 17%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 187 96% 42%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 217 33% 17%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 20% 65%;
+    --accent: 38 92% 50%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217 33% 17%;
+    --input: 217 33% 17%;
+    --ring: 187 96% 42%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    font-feature-settings: 'kern' 1, 'liga' 1;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+
+  /* Prevent CLS for images without explicit dimensions */
+  img:not([width]) {
+    aspect-ratio: 4 / 3;
+    height: auto;
+  }
+
+  /* Focus styles — cyan ring for accessibility */
+  :focus-visible {
+    @apply outline-none ring-2 ring-cyan-500 ring-offset-2 ring-offset-background;
+  }
+
+  /* Selection */
+  ::selection {
+    @apply bg-cyan-500/20 text-foreground;
+  }
+}
+
+@layer components {
+  /* Section label — uppercase cyan pill used above headings */
+  .section-label {
+    @apply inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.15em] text-cyan-500;
+  }
+
+  .section-label-pill {
+    @apply inline-flex items-center gap-2 rounded-full border border-cyan-500/20 bg-cyan-500/5 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.15em] text-cyan-500;
+  }
+
+  /* Typography helpers — use .heading-display / .heading-headline to combine
+     the Tailwind font-size utility with default slate-900 color. */
+  .heading-display {
+    @apply text-display text-slate-900;
+  }
+
+  .heading-headline {
+    @apply text-headline text-slate-900;
+  }
+
+  /* Section spacing */
+  .section-padding {
+    @apply py-20 lg:py-28;
+  }
+
+  .section-padding-sm {
+    @apply py-12 lg:py-16;
+  }
+
+  /* Card styles */
+  .card-base {
+    @apply rounded-xl border border-slate-200/60 bg-white shadow-card transition-all duration-300;
+  }
+
+  .card-hover {
+    @apply hover:shadow-card-hover hover:-translate-y-1;
+  }
+
+  .card-interactive {
+    @apply card-base card-hover;
+  }
+
+  /* Dark section */
+  .section-dark {
+    @apply bg-navy-900 text-white;
+  }
+
+  .section-dark .section-label,
+  .section-dark .section-label-pill {
+    @apply text-cyan-400;
+  }
+
+  .section-dark .section-label-pill {
+    @apply border-cyan-400/20 bg-cyan-400/10;
+  }
+
+  /* CTA Button styles */
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg bg-amber-500 px-6 py-3 text-base font-semibold text-navy-900 shadow-lg transition-all duration-200 hover:bg-amber-400 hover:shadow-xl hover:-translate-y-0.5 focus:ring-2 focus:ring-amber-500 focus:ring-offset-2;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg border-2 border-cyan-500 px-6 py-3 text-base font-semibold text-cyan-500 transition-all duration-200 hover:bg-cyan-500 hover:text-white focus:ring-2 focus:ring-cyan-500 focus:ring-offset-2;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg px-6 py-3 text-base font-semibold text-white transition-all duration-200 hover:bg-white/10;
+  }
+
+  /* Scroll reveal — used with Intersection Observer */
+  .reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+
+  .reveal.revealed {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
+  .reveal-delay-4 { transition-delay: 0.4s; }
+  .reveal-delay-5 { transition-delay: 0.5s; }
+
+  /* Prose overrides for blog/content pages */
+  .prose-dryspace {
+    @apply prose prose-lg prose-slate max-w-none;
+    @apply prose-headings:text-slate-900 prose-headings:font-bold;
+    @apply prose-a:text-cyan-600 prose-a:no-underline hover:prose-a:text-cyan-500;
+    @apply prose-strong:text-slate-900;
+    @apply prose-blockquote:border-l-cyan-500 prose-blockquote:bg-slate-50 prose-blockquote:py-1 prose-blockquote:px-4 prose-blockquote:rounded-r-lg;
+    @apply prose-code:text-cyan-600 prose-code:bg-slate-100 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded;
+    @apply prose-img:rounded-xl prose-img:shadow-card;
+  }
+}
+
+@layer utilities {
+  /* Gradient backgrounds */
+  .bg-gradient-hero {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #164e63 100%);
+  }
+
+  .bg-gradient-cta {
+    background: linear-gradient(135deg, #0f172a 0%, #0e7490 100%);
+  }
+
+  .bg-gradient-trust {
+    background: linear-gradient(180deg, #0f172a 0%, #1e293b 100%);
+  }
+
+  /* Glass effect */
+  .glass {
+    @apply bg-white/80 backdrop-blur-lg border border-white/20;
+  }
+
+  .glass-dark {
+    @apply bg-navy-900/80 backdrop-blur-lg border border-white/10;
+  }
+
+  /* Reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    .reveal {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+
+    html {
+      scroll-behavior: auto;
+    }
+  }
+}

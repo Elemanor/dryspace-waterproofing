@@ -1,0 +1,454 @@
+---
+const navItems = [
+  { label: 'Services', href: '/services' },
+  { label: 'Pricing', href: '/pricing' },
+  { label: 'About', href: '/about' },
+  { label: 'Emergency', href: '/emergency', highlight: true },
+];
+
+const dropdownItems = [
+  {
+    label: 'Waterproofing Services',
+    items: [
+      { label: 'Exterior Waterproofing', href: '/services/exterior-waterproofing', icon: '🏠', description: 'Full excavation & membrane' },
+      { label: 'Interior Waterproofing', href: '/services/interior-waterproofing', icon: '💧', description: 'Interior drainage systems' },
+      { label: 'French Drain Systems', href: '/services/french-drain', icon: '🌊', description: 'Perimeter drainage solutions' },
+      { label: 'Sump Pump Installation', href: '/services/sump-pump-installation', icon: '⚡', description: 'Backup systems & battery' },
+      { label: 'Foundation Repair', href: '/services/foundation-repair', icon: '🔧', description: 'Crack injection & stabilization' },
+      { label: 'Basement Underpinning', href: '/services/basement-underpinning', icon: '🏗️', description: 'Lower your basement floor' },
+      { label: 'Window Well Drainage', href: '/services/window-well-drainage', icon: '🪟', description: 'Prevent window flooding' },
+      { label: 'Backwater Valve', href: '/services/backwater-valve-installation', icon: '🚰', description: 'Prevent sewage backup' },
+      { label: 'Emergency Services', href: '/emergency', icon: '🚨', description: '24/7 flood response' },
+    ]
+  },
+  {
+    label: 'Service Areas',
+    items: [
+      { label: 'Toronto', href: '/locations/toronto', icon: '📍', description: 'All Toronto neighborhoods' },
+      { label: 'Mississauga', href: '/locations/mississauga', icon: '📍', description: 'Mississauga & Peel Region' },
+      { label: 'Brampton', href: '/locations/brampton', icon: '📍', description: 'Brampton & surrounding areas' },
+      { label: 'Vaughan', href: '/locations/vaughan', icon: '📍', description: 'Vaughan & York Region' },
+      { label: 'Markham', href: '/locations/markham', icon: '📍', description: 'Markham & East GTA' },
+      { label: 'All Service Areas', href: '/service-areas', icon: '🗺️', description: 'Complete GTA coverage' },
+    ]
+  },
+  {
+    label: 'Resources',
+    items: [
+      { label: 'Cost Calculator', href: '/tools/waterproofing-cost-calculator', icon: '💰', description: 'Get instant estimate' },
+      { label: 'Government Rebates', href: '/government-rebates', icon: '💵', description: 'Save up to $3,400' },
+      { label: 'Case Studies', href: '/case-studies', icon: '📋', description: 'Recent projects' },
+      { label: 'Free Inspection', href: '/free-inspection', icon: '🔍', description: 'Book assessment' },
+    ]
+  }
+];
+---
+
+<nav class="fixed top-0 w-full z-50 nav-container" aria-label="Main navigation">
+  <!-- Progress Bar -->
+  <div class="progress-bar"></div>
+  
+  <div class="nav-blur bg-construction-gray-950/95 backdrop-blur-xl border-b border-slate-600">
+    <div class="container mx-auto px-4">
+      <div class="flex items-center justify-between h-16">
+        <!-- Logo -->
+        <div class="flex items-center">
+          <a href="/" class="flex items-center space-x-3 group relative">
+            <div class="absolute inset-0 bg-amber-500/20 rounded-full blur-xl group-hover:bg-amber-500/30 transition-all duration-300"></div>
+            <div class="relative w-10 h-10 bg-gradient-to-br from-construction-orange to-construction-yellow rounded-xl flex items-center justify-center transform group-hover:rotate-12 group-hover:scale-110 transition-all duration-300 shadow-lg">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+              </svg>
+            </div>
+            <span class="text-xl font-bold text-slate-900">
+              DRYSPACE
+            </span>
+          </a>
+        </div>
+
+        <!-- Desktop Navigation -->
+        <div class="hidden lg:flex items-center space-x-1">
+          {navItems.map((item, index) => (
+            <a 
+              href={item.href} 
+              class="nav-link px-4 py-2 text-slate-300 hover:text-white rounded-lg transition-all duration-200 relative group"
+              data-nav-item={index}
+            >
+              <span class="relative z-10">{item.label}</span>
+              <div class="absolute inset-0 bg-gradient-to-r from-construction-orange/0 via-construction-orange/20 to-construction-orange/0 opacity-0 group-hover:opacity-100 rounded-lg transition-opacity duration-300"></div>
+            </a>
+          ))}
+          
+          <!-- Mega Menu Dropdowns -->
+          {dropdownItems.map((dropdown) => (
+            <div class="relative group/dropdown">
+              <button class="nav-link px-4 py-2 text-slate-300 hover:text-white rounded-lg transition-all duration-200 flex items-center space-x-1 relative">
+                <span class="relative z-10">{dropdown.label}</span>
+                <svg class="w-4 h-4 transform group-hover/dropdown:rotate-180 transition-transform duration-300 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+                <div class="absolute inset-0 bg-gradient-to-r from-construction-orange/0 via-construction-orange/20 to-construction-orange/0 opacity-0 group-hover/dropdown:opacity-100 rounded-lg transition-opacity duration-300"></div>
+              </button>
+              
+              <!-- Mega Menu Content -->
+              <div class="absolute top-full left-0 mt-2 w-96 opacity-0 invisible group-hover/dropdown:opacity-100 group-hover/dropdown:visible transition-all duration-300 transform group-hover/dropdown:translate-y-0 translate-y-2">
+                <div class="bg-construction-gray-900/95 backdrop-blur-xl rounded-xl shadow-2xl border border-slate-600 overflow-hidden">
+                  <div class="p-2">
+                    {dropdown.items.map((item) => (
+                      <a 
+                        href={item.href} 
+                        class="flex items-start space-x-3 px-3 py-3 text-slate-300 hover:text-white hover:bg-construction-gray-800 rounded-lg transition-all duration-200 group/item"
+                      >
+                        <div class="text-2xl mt-1">{item.icon}</div>
+                        <div class="flex-1">
+                          <div class="flex items-center justify-between">
+                            <span class="font-medium group-hover/item:text-white">{item.label}</span>
+                          </div>
+                          <p class="text-xs text-slate-400 mt-1 group-hover/item:text-slate-400">
+                            {item.description}
+                          </p>
+                        </div>
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <!-- Desktop Actions -->
+        <div class="hidden lg:flex items-center space-x-3">
+          <!-- Phone Number -->
+          <a href="tel:+14375450067" class="flex items-center px-4 py-2 text-cyan-400 hover:text-construction-yellow transition-colors duration-200">
+            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+            </svg>
+            <span class="font-semibold">(437) 545-0067</span>
+          </a>
+          
+          <div class="h-6 w-px bg-construction-gray-700"></div>
+          
+          <!-- CTA Button -->
+          <a href="/free-inspection" class="cta-button px-5 py-2 bg-gradient-to-r from-construction-orange to-construction-yellow text-white font-semibold rounded-lg relative overflow-hidden group shadow-xl">
+            <span class="relative z-10">Free Inspection</span>
+            <div class="absolute inset-0 bg-gradient-to-r from-construction-orange-dark to-construction-orange opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          </a>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button 
+          id="mobile-menu-button"
+          class="lg:hidden relative w-10 h-10 text-slate-300 hover:text-white hover:bg-construction-gray-800 rounded-lg transition-all duration-200 flex items-center justify-center"
+          aria-label="Toggle mobile menu"
+          aria-expanded="false"
+        >
+          <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </button>
+      </div>
+
+      <!-- Mobile Navigation -->
+      <div id="mobile-menu" class="lg:hidden mobile-menu-closed overflow-hidden transition-all duration-300">
+        <div class="py-4 space-y-2">
+          {navItems.map((item) => (
+            <a 
+              href={item.href} 
+              class="block px-4 py-2 text-slate-300 hover:text-white hover:bg-construction-gray-800 rounded-lg transition-all duration-200 mobile-nav-item"
+            >
+              {item.label}
+            </a>
+          ))}
+          
+          <!-- Mobile Dropdowns -->
+          {dropdownItems.map((dropdown, index) => (
+            <div class="mobile-dropdown">
+              <button 
+                class="w-full px-4 py-2 text-slate-300 hover:text-white hover:bg-construction-gray-800 rounded-lg transition-all duration-200 flex items-center justify-between"
+                data-dropdown={`dropdown-${index}`}
+              >
+                <span>{dropdown.label}</span>
+                <svg class="w-4 h-4 transform transition-transform duration-300 dropdown-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </button>
+              
+              <div id={`dropdown-${index}`} class="dropdown-content overflow-hidden transition-all duration-300 max-h-0">
+                <div class="pl-4 mt-2 space-y-2">
+                  {dropdown.items.map((item) => (
+                    <a 
+                      href={item.href} 
+                      class="flex items-center space-x-3 px-4 py-2 text-slate-400 hover:text-white hover:bg-construction-gray-800 rounded-lg transition-all duration-200"
+                    >
+                      <span class="text-lg">{item.icon}</span>
+                      <span>{item.label}</span>
+                    </a>
+                  ))}
+                </div>
+              </div>
+            </div>
+          ))}
+          
+          <!-- Mobile CTA -->
+          <div class="pt-4 space-y-2 border-t border-slate-600 px-4">
+            <a href="tel:+14375450067" class="w-full px-4 py-2 bg-construction-gray-800 text-cyan-400 hover:bg-construction-gray-700 rounded-lg transition-all duration-200 flex items-center justify-center">
+              <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+              </svg>
+              <span class="font-semibold">(437) 545-0067</span>
+            </a>
+            <a href="/free-inspection" class="w-full px-4 py-2 bg-gradient-to-r from-construction-orange to-construction-yellow text-white font-semibold rounded-lg hover:shadow-lg hover:shadow-construction-orange/25 transition-all duration-300 transform hover:scale-[1.02] block text-center">
+              Free Inspection
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- Spacer for fixed navbar -->
+<div class="h-16"></div>
+
+<script>
+  // Mobile menu toggle
+  const mobileMenuButton = document.getElementById('mobile-menu-button');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const hamburger = mobileMenuButton?.querySelector('.hamburger');
+
+  mobileMenuButton?.addEventListener('click', () => {
+    const isOpen = mobileMenu?.classList.contains('mobile-menu-open');
+    
+    if (isOpen) {
+      mobileMenu?.classList.remove('mobile-menu-open');
+      mobileMenu?.classList.add('mobile-menu-closed');
+      hamburger?.classList.remove('active');
+      mobileMenuButton.setAttribute('aria-expanded', 'false');
+    } else {
+      mobileMenu?.classList.remove('mobile-menu-closed');
+      mobileMenu?.classList.add('mobile-menu-open');
+      hamburger?.classList.add('active');
+      mobileMenuButton.setAttribute('aria-expanded', 'true');
+    }
+  });
+
+  // Mobile dropdown toggles
+  const dropdownButtons = document.querySelectorAll('[data-dropdown]');
+  
+  dropdownButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      const dropdownId = button.getAttribute('data-dropdown');
+      const dropdown = document.getElementById(dropdownId);
+      const arrow = button.querySelector('.dropdown-arrow');
+      
+      if (dropdown) {
+        const isOpen = dropdown.classList.contains('dropdown-open');
+        
+        // Close all other dropdowns
+        document.querySelectorAll('.dropdown-content').forEach(d => {
+          if (d !== dropdown) {
+            d.classList.remove('dropdown-open');
+            d.style.maxHeight = '0';
+          }
+        });
+        
+        document.querySelectorAll('.dropdown-arrow').forEach(a => {
+          if (a !== arrow) {
+            a.classList.remove('rotate-180');
+          }
+        });
+        
+        if (isOpen) {
+          dropdown.classList.remove('dropdown-open');
+          dropdown.style.maxHeight = '0';
+          arrow?.classList.remove('rotate-180');
+        } else {
+          dropdown.classList.add('dropdown-open');
+          dropdown.style.maxHeight = dropdown.scrollHeight + 'px';
+          arrow?.classList.add('rotate-180');
+        }
+      }
+    });
+  });
+
+  // Smooth scroll for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const targetId = this.getAttribute('href');
+      if (targetId === '#') return;
+      
+      const target = document.querySelector(targetId);
+      
+      if (target) {
+        const offset = 80;
+        const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - offset;
+        
+        window.scrollTo({
+          top: targetPosition,
+          behavior: 'smooth'
+        });
+        
+        // Close mobile menu if open
+        mobileMenu?.classList.remove('mobile-menu-open');
+        mobileMenu?.classList.add('mobile-menu-closed');
+        hamburger?.classList.remove('active');
+        mobileMenuButton?.setAttribute('aria-expanded', 'false');
+      }
+    });
+  });
+
+  // Scroll effects
+  let lastScrollY = window.scrollY;
+  const navbar = document.querySelector('.nav-container');
+  const progressBar = document.querySelector('.progress-bar');
+  
+  function updateNavbar() {
+    const scrollY = window.scrollY;
+    const scrollPercent = (scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+    
+    // Update progress bar
+    if (progressBar) {
+      progressBar.style.width = scrollPercent + '%';
+    }
+    
+    // Add shadow on scroll
+    if (scrollY > 50) {
+      navbar?.classList.add('scrolled');
+    } else {
+      navbar?.classList.remove('scrolled');
+    }
+    
+    // Hide/show navbar on scroll
+    if (scrollY > lastScrollY && scrollY > 100) {
+      navbar?.classList.add('nav-hidden');
+    } else {
+      navbar?.classList.remove('nav-hidden');
+    }
+    
+    lastScrollY = scrollY;
+  }
+  
+  window.addEventListener('scroll', updateNavbar);
+</script>
+
+<style>
+  .nav-container {
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .nav-container.nav-hidden {
+    transform: translateY(-100%);
+  }
+  
+  .nav-container.scrolled .nav-blur {
+    background: rgb(10 10 10 / 0.98);
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.8);
+  }
+  
+  /* Progress Bar */
+  .progress-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #FF6B35, #FFA726);
+    width: 0%;
+    transition: width 0.1s ease-out;
+    z-index: 100;
+  }
+  
+  /* Hamburger Animation */
+  .hamburger {
+    width: 24px;
+    height: 20px;
+    position: relative;
+    transform: rotate(0deg);
+    transition: 0.5s ease-in-out;
+    cursor: pointer;
+  }
+  
+  .hamburger span {
+    display: block;
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    background: currentColor;
+    border-radius: 2px;
+    opacity: 1;
+    left: 0;
+    transform: rotate(0deg);
+    transition: 0.25s ease-in-out;
+  }
+  
+  .hamburger span:nth-child(1) {
+    top: 0px;
+  }
+  
+  .hamburger span:nth-child(2) {
+    top: 8px;
+  }
+  
+  .hamburger span:nth-child(3) {
+    top: 16px;
+  }
+  
+  .hamburger.active span:nth-child(1) {
+    top: 8px;
+    transform: rotate(135deg);
+  }
+  
+  .hamburger.active span:nth-child(2) {
+    opacity: 0;
+    left: -60px;
+  }
+  
+  .hamburger.active span:nth-child(3) {
+    top: 8px;
+    transform: rotate(-135deg);
+  }
+  
+  /* Mobile Menu Animation */
+  .mobile-menu-closed {
+    max-height: 0;
+    opacity: 0;
+  }
+  
+  .mobile-menu-open {
+    max-height: 100vh;
+    opacity: 1;
+  }
+  
+  /* Dropdown Animation */
+  .dropdown-content {
+    transition: max-height 0.3s ease-out;
+  }
+  
+  /* Active Nav Item */
+  .nav-active {
+    background: linear-gradient(90deg, rgba(255, 107, 53, 0.1), rgba(255, 167, 38, 0.1));
+    color: white !important;
+  }
+  
+  /* CTA Button Glow */
+  .cta-button {
+    box-shadow: 0 0 20px rgba(255, 107, 53, 0.3);
+    transition: all 0.3s ease;
+  }
+  
+  .cta-button:hover {
+    box-shadow: 0 0 30px rgba(255, 107, 53, 0.5);
+    transform: translateY(-2px);
+  }
+  
+  /* Focus styles */
+  a:focus-visible,
+  button:focus-visible {
+    outline: 2px solid #FF6B35;
+    outline-offset: 2px;
+    border-radius: 0.5rem;
+  }
+</style>

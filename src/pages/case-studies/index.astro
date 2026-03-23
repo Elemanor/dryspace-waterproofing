@@ -1,0 +1,199 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import ContactForm from '../../components/ContactForm.astro';
+
+const caseStudies = [
+  {
+    id: 'block-foundation-north-york',
+    title: '1950s Block Foundation Complete Restoration',
+    location: 'North York, Toronto',
+    type: 'Cement Block Foundation',
+    cost: '$14,500',
+    duration: '5 days',
+    year: '2024',
+    challenge: 'Severe water infiltration through deteriorated mortar joints',
+    image: '/images/waterp on the floor.webp'
+  },
+  {
+    id: 'stone-foundation-cabbagetown',
+    title: '1920s Heritage Stone Foundation Waterproofing',
+    location: 'Cabbagetown, Toronto',
+    type: 'Stone/Rubble Foundation',
+    cost: '$22,000',
+    duration: '8 days',
+    year: '2024',
+    challenge: 'Heritage requirements with active water seepage',
+    image: '/images/structural foundation crack.webp'
+  },
+  {
+    id: 'new-construction-failure',
+    title: 'New Construction Waterproofing Failure Remediation',
+    location: 'Vaughan, Ontario',
+    type: 'Poured Concrete (2019)',
+    cost: '$28,000',
+    duration: '10 days',
+    year: '2024',
+    challenge: 'Builder warranty expired, improper initial installation',
+    image: '/images/crack.webp'
+  },
+  {
+    id: 'diy-disaster-recovery',
+    title: 'Failed DIY Waterproofing System Recovery',
+    location: 'Scarborough, Toronto',
+    type: 'Poured Concrete',
+    cost: '$19,000',
+    duration: '6 days',
+    year: '2024',
+    challenge: 'Improper DIY installation caused additional damage',
+    image: '/images/dryspace_excellence.webp'
+  }
+];
+---
+
+<PageLayout 
+  title="Waterproofing Case Studies Toronto | Real Projects & Results | Dryspace"
+  description="Real waterproofing case studies from Toronto homes. See actual costs, timelines, and solutions for foundation repairs, basement waterproofing, and flood prevention."
+>
+  <main class="flex-grow">
+    <section class="bg-slate-50 text-slate-900 py-20">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="max-w-3xl">
+          <h1 class="text-4xl md:text-5xl font-bold mb-6">
+            Real Waterproofing Case Studies from Toronto Homes
+          </h1>
+          <p class="text-xl mb-8 text-slate-300">
+            Detailed documentation of actual waterproofing projects, including challenges, solutions, costs, and results. 
+            Learn from real examples similar to your situation.
+          </p>
+          <div class="flex flex-wrap gap-4">
+            <div class="bg-white/10 backdrop-blur px-4 py-2 ">
+              <span class="font-bold">4 Detailed Cases</span>
+            </div>
+            <div class="bg-white/10 backdrop-blur px-4 py-2 ">
+              <span class="font-bold">$14,500 - $28,000 Projects</span>
+            </div>
+            <div class="bg-white/10 backdrop-blur px-4 py-2 ">
+              <span class="font-bold">All Foundation Types</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16">
+      <div class="max-w-7xl mx-auto px-4">
+        <h2 class="text-3xl font-bold mb-12 text-center">Browse Our Case Studies</h2>
+        
+        <div class="grid md:grid-cols-2 gap-8 mb-12">
+          {caseStudies.map(study => (
+            <div class="bg-white   overflow-hidden hover: transition-shadow">
+              <div class="relative h-48">
+                <img 
+                  src={study.image} 
+                  alt={study.title}
+                  class="w-full h-full object-cover" width="600" height="400" decoding="async"
+                / width="800" height="600" loading="lazy" decoding="async">
+                <div class="absolute top-4 left-4">
+                  <span class="bg-orange-500 text-slate-900 px-3 py-1  text-sm font-bold">
+                    {study.year}
+                  </span>
+                </div>
+                <div class="absolute top-4 right-4">
+                  <span class="bg-cyan-600 text-white px-3 py-1  text-sm font-bold">
+                    {study.cost}
+                  </span>
+                </div>
+              </div>
+              
+              <div class="p-6">
+                <h3 class="text-xl font-bold mb-2">{study.title}</h3>
+                
+                <div class="space-y-2 mb-4">
+                  <div class="flex items-center text-sm text-slate-500">
+                    <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
+                    </svg>
+                    {study.location}
+                  </div>
+                  <div class="flex items-center text-sm text-slate-500">
+                    <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"/>
+                    </svg>
+                    {study.type}
+                  </div>
+                  <div class="flex items-center text-sm text-slate-500">
+                    <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"/>
+                    </svg>
+                    Duration: {study.duration}
+                  </div>
+                </div>
+                
+                <p class="text-slate-600 mb-4">
+                  <strong>Challenge:</strong> {study.challenge}
+                </p>
+                
+                <a 
+                  href={`/case-studies/${study.id}`}
+                  class="inline-block bg-orange-500 text-white px-6 py-2  hover:bg-orange-600 transition duration-300"
+                >
+                  Read Full Case Study →
+                </a>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div class="bg-amber-500 border-2 border-cyan-200  p-8 text-center">
+          <h3 class="text-2xl font-bold mb-4">Have a Similar Problem?</h3>
+          <p class="text-slate-600 mb-6">
+            These case studies represent common waterproofing challenges in Toronto homes. 
+            If you're facing similar issues, we can help with a customized solution.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="/contact" class="bg-amber-500 text-slate-900 px-8 py-3  hover:bg-amber-500 transition duration-300">
+              Get Free Assessment
+            </a>
+            <a href="tel:437-545-0067" class="border-2 border-cyan-600 text-cyan-600 px-8 py-3  hover:bg-amber-500 transition duration-300">
+              Call: 437-545-0067
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 bg-slate-50">
+      <div class="max-w-7xl mx-auto px-4">
+        <h2 class="text-3xl font-bold mb-12 text-center">Key Insights from Our Case Studies</h2>
+        
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="bg-white p-6  shadow">
+            <div class="text-3xl font-bold text-orange-500 mb-4">65%</div>
+            <h3 class="text-xl font-bold mb-2">Cost Savings</h3>
+            <p class="text-slate-600">
+              Early intervention saved homeowners an average of 65% compared to waiting until severe damage occurred.
+            </p>
+          </div>
+          
+          <div class="bg-white p-6  shadow">
+            <div class="text-3xl font-bold text-orange-500 mb-4">5-7 Days</div>
+            <h3 class="text-xl font-bold mb-2">Average Timeline</h3>
+            <p class="text-slate-600">
+              Most residential waterproofing projects are completed within a week, minimizing disruption to your life.
+            </p>
+          </div>
+          
+          <div class="bg-white p-6  shadow">
+            <div class="text-3xl font-bold text-orange-500 mb-4">100%</div>
+            <h3 class="text-xl font-bold mb-2">Success Rate</h3>
+            <p class="text-slate-600">
+              All documented cases remain dry years later, backed by our transferable lifetime warranty.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <ContactForm />
+  </main>
+</PageLayout>

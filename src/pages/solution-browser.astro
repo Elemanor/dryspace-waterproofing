@@ -1,0 +1,712 @@
+---
+import Layout from '../layouts/Layout.astro';
+import TrustBadges from '../components/TrustBadges.astro';
+
+const title = "Waterproofing Solution Browser | Find Your Perfect Solution | Dryspace";
+const description = "Browse waterproofing solutions by problem type. Compare effectiveness, warranties, costs, and timelines to find the perfect solution for your needs.";
+---
+
+<Layout title={title} description={description}>
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-r from-blue-600 to-cyan-600 text-white py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center">
+        <h1 class="text-5xl font-bold mb-6">Find Your Perfect Waterproofing Solution</h1>
+        <p class="text-xl mb-8 max-w-3xl mx-auto">
+          Browse solutions by problem type, compare effectiveness and costs, then get matched with the right approach for your property.
+        </p>
+        <div class="flex justify-center">
+          <a href="#problem-navigator" class="bg-white text-cyan-600 px-8 py-4 rounded-lg font-bold text-lg hover:bg-slate-50 transition-colors">
+            Browse Solutions
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Problem Navigator -->
+  <section id="problem-navigator" class="py-16 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-slate-900 mb-4">What's Your Water Problem?</h2>
+        <p class="text-xl text-slate-500">Select your primary concern to see tailored solutions</p>
+      </div>
+      
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Basement Flooding -->
+        <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow cursor-pointer border-l-4 border-red-600">
+          <div class="flex items-center mb-4">
+            <div class="bg-red-100 p-3 rounded-full mr-4">
+              <svg class="w-8 h-8 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+              </svg>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold text-slate-900">Basement Flooding</h3>
+              <p class="text-sm text-red-600 font-semibold">EMERGENCY LEVEL</p>
+            </div>
+          </div>
+          <p class="text-slate-500 mb-4">Water actively entering basement, standing water, sewage backup</p>
+          <div class="space-y-2 mb-6">
+            <div class="flex items-center text-sm">
+              <span class="w-24 text-slate-400">Urgency:</span>
+              <div class="flex-1 bg-red-200 rounded-full h-2">
+                <div class="bg-red-600 h-2 rounded-full w-full"></div>
+              </div>
+              <span class="text-sm text-red-600 ml-2 font-bold">CRITICAL</span>
+            </div>
+            <div class="flex items-center text-sm">
+              <span class="w-24 text-slate-400">Cost Range:</span>
+              <span class="font-semibold">$2,500 - $15,000+</span>
+            </div>
+          </div>
+          <button class="w-full bg-red-600 text-white py-2 rounded-lg hover:bg-red-700 transition-colors" onclick="showSolutions('flooding')">
+            View Emergency Solutions
+          </button>
+        </div>
+
+        <!-- Foundation Cracks -->
+        <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow cursor-pointer border-l-4 border-orange-500">
+          <div class="flex items-center mb-4">
+            <div class="bg-orange-100 p-3 rounded-full mr-4">
+              <svg class="w-8 h-8 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L2.732 15.5c-.77.833.192 2.5 1.732 2.5z"/>
+              </svg>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold text-slate-900">Foundation Cracks</h3>
+              <p class="text-sm text-orange-600 font-semibold">URGENT REPAIR</p>
+            </div>
+          </div>
+          <p class="text-slate-500 mb-4">Visible cracks, water seepage, structural concerns</p>
+          <div class="space-y-2 mb-6">
+            <div class="flex items-center text-sm">
+              <span class="w-24 text-slate-400">Urgency:</span>
+              <div class="flex-1 bg-orange-200 rounded-full h-2">
+                <div class="bg-orange-500 h-2 rounded-full w-4/5"></div>
+              </div>
+              <span class="text-sm text-orange-600 ml-2 font-bold">HIGH</span>
+            </div>
+            <div class="flex items-center text-sm">
+              <span class="w-24 text-slate-400">Cost Range:</span>
+              <span class="font-semibold">$500 - $8,000</span>
+            </div>
+          </div>
+          <button class="w-full bg-orange-600 text-white py-2 rounded-lg hover:bg-orange-700 transition-colors" onclick="showSolutions('cracks')">
+            View Crack Solutions
+          </button>
+        </div>
+
+        <!-- Moisture & Mold -->
+        <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow cursor-pointer border-l-4 border-cyan-500">
+          <div class="flex items-center mb-4">
+            <div class="bg-amber-50 p-3 rounded-full mr-4">
+              <svg class="w-8 h-8 text-amber-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+              </svg>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold text-slate-900">Moisture & Mold</h3>
+              <p class="text-sm text-amber-500 font-semibold">HEALTH CONCERN</p>
+            </div>
+          </div>
+          <p class="text-slate-500 mb-4">High humidity, condensation, musty odors, mold growth</p>
+          <div class="space-y-2 mb-6">
+            <div class="flex items-center text-sm">
+              <span class="w-24 text-slate-400">Urgency:</span>
+              <div class="flex-1 bg-amber-200 rounded-full h-2">
+                <div class="bg-amber-500 h-2 rounded-full w-3/5"></div>
+              </div>
+              <span class="text-sm text-amber-500 ml-2 font-bold">MEDIUM</span>
+            </div>
+            <div class="flex items-center text-sm">
+              <span class="w-24 text-slate-400">Cost Range:</span>
+              <span class="font-semibold">$800 - $5,000</span>
+            </div>
+          </div>
+          <button class="w-full bg-amber-500 text-white py-2 rounded-lg hover:bg-amber-600 transition-colors" onclick="showSolutions('moisture')">
+            View Moisture Solutions
+          </button>
+        </div>
+
+        <!-- Preventive -->
+        <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow cursor-pointer border-l-4 border-cyan-600">
+          <div class="flex items-center mb-4">
+            <div class="bg-cyan-50 p-3 rounded-full mr-4">
+              <svg class="w-8 h-8 text-cyan-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+              </svg>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold text-slate-900">Preventive Care</h3>
+              <p class="text-sm text-cyan-600 font-semibold">SMART INVESTMENT</p>
+            </div>
+          </div>
+          <p class="text-slate-500 mb-4">No current issues, want to protect investment proactively</p>
+          <div class="space-y-2 mb-6">
+            <div class="flex items-center text-sm">
+              <span class="w-24 text-slate-400">Priority:</span>
+              <div class="flex-1 bg-cyan-100 rounded-full h-2">
+                <div class="bg-cyan-600 h-2 rounded-full w-2/5"></div>
+              </div>
+              <span class="text-sm text-cyan-600 ml-2 font-bold">PLANNED</span>
+            </div>
+            <div class="flex items-center text-sm">
+              <span class="w-24 text-slate-400">Cost Range:</span>
+              <span class="font-semibold">$1,500 - $12,000</span>
+            </div>
+          </div>
+          <button class="w-full bg-cyan-600 text-white py-2 rounded-lg hover:bg-cyan-700 transition-colors" onclick="showSolutions('preventive')">
+            View Prevention Solutions
+          </button>
+        </div>
+
+        <!-- Drainage Issues -->
+        <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow cursor-pointer border-l-4 border-cyan-600">
+          <div class="flex items-center mb-4">
+            <div class="bg-cyan-50 p-3 rounded-full mr-4">
+              <svg class="w-8 h-8 text-cyan-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16V4m0 0L3 8l4 4m0-8l4 4-4 4m6 0v12m0 0l4-4-4-4m0 8l-4-4 4-4"/>
+              </svg>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold text-slate-900">Poor Drainage</h3>
+              <p class="text-sm text-cyan-600 font-semibold">SYSTEM UPGRADE</p>
+            </div>
+          </div>
+          <p class="text-slate-500 mb-4">Water pooling, inadequate drainage, landscaping issues</p>
+          <div class="space-y-2 mb-6">
+            <div class="flex items-center text-sm">
+              <span class="w-24 text-slate-400">Priority:</span>
+              <div class="flex-1 bg-cyan-100 rounded-full h-2">
+                <div class="bg-cyan-600 h-2 rounded-full w-3/5"></div>
+              </div>
+              <span class="text-sm text-cyan-600 ml-2 font-bold">MEDIUM</span>
+            </div>
+            <div class="flex items-center text-sm">
+              <span class="w-24 text-slate-400">Cost Range:</span>
+              <span class="font-semibold">$1,200 - $8,000</span>
+            </div>
+          </div>
+          <button class="w-full bg-cyan-600 text-white py-2 rounded-lg hover:bg-cyan-700 transition-colors" onclick="showSolutions('drainage')">
+            View Drainage Solutions
+          </button>
+        </div>
+
+        <!-- Old System -->
+        <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow cursor-pointer border-l-4 border-purple-600">
+          <div class="flex items-center mb-4">
+            <div class="bg-purple-100 p-3 rounded-full mr-4">
+              <svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
+              </svg>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold text-slate-900">System Upgrade</h3>
+              <p class="text-sm text-purple-600 font-semibold">MODERNIZATION</p>
+            </div>
+          </div>
+          <p class="text-slate-500 mb-4">Old waterproofing failing, outdated sump pump, aging systems</p>
+          <div class="space-y-2 mb-6">
+            <div class="flex items-center text-sm">
+              <span class="w-24 text-slate-400">Priority:</span>
+              <div class="flex-1 bg-purple-200 rounded-full h-2">
+                <div class="bg-purple-600 h-2 rounded-full w-4/5"></div>
+              </div>
+              <span class="text-sm text-purple-600 ml-2 font-bold">HIGH</span>
+            </div>
+            <div class="flex items-center text-sm">
+              <span class="w-24 text-slate-400">Cost Range:</span>
+              <span class="font-semibold">$3,000 - $18,000</span>
+            </div>
+          </div>
+          <button class="w-full bg-purple-600 text-white py-2 rounded-lg hover:bg-purple-700 transition-colors" onclick="showSolutions('upgrade')">
+            View Upgrade Solutions
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Solutions Comparison -->
+  <section id="solutions-display" class="py-16 bg-white hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-slate-900 mb-4" id="solutions-title">Solutions for Your Problem</h2>
+        <p class="text-xl text-slate-500">Compare options to find the best approach for your situation</p>
+      </div>
+      
+      <!-- Solutions will be populated by JavaScript -->
+      <div id="solutions-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Dynamic content -->
+      </div>
+      
+      <!-- Comparison Table -->
+      <div class="mt-16">
+        <h3 class="text-2xl font-bold text-slate-900 mb-8 text-center">Detailed Comparison</h3>
+        <div class="overflow-x-auto">
+          <table class="w-full bg-white rounded-lg shadow-lg" id="comparison-table">
+            <thead class="bg-slate-50">
+              <tr>
+                <th class="px-6 py-3 text-left text-xs font-medium text-slate-400 uppercase tracking-wider">Solution</th>
+                <th class="px-6 py-3 text-left text-xs font-medium text-slate-400 uppercase tracking-wider">Effectiveness</th>
+                <th class="px-6 py-3 text-left text-xs font-medium text-slate-400 uppercase tracking-wider">Durability</th>
+                <th class="px-6 py-3 text-left text-xs font-medium text-slate-400 uppercase tracking-wider">Cost Range</th>
+                <th class="px-6 py-3 text-left text-xs font-medium text-slate-400 uppercase tracking-wider">Timeline</th>
+                <th class="px-6 py-3 text-left text-xs font-medium text-slate-400 uppercase tracking-wider">Warranty</th>
+              </tr>
+            </thead>
+            <tbody class="bg-white divide-y divide-gray-200" id="comparison-body">
+              <!-- Dynamic content -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+      
+      <!-- Action Buttons -->
+      <div class="mt-12 text-center space-x-4">
+        <button onclick="hideContent()" class="bg-slate-500 text-white px-6 py-3 rounded-lg hover:bg-slate-600 transition-colors">
+          Back to Problems
+        </button>
+        <a href="/contact" class="bg-cyan-600 text-white px-6 py-3 rounded-lg hover:bg-cyan-700 transition-colors inline-block">
+          Get Professional Assessment
+        </a>
+        <a href="tel:437-545-0067" class="bg-red-600 text-white px-6 py-3 rounded-lg hover:bg-red-700 transition-colors inline-block">
+          Call for Emergency
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Solution Benefits -->
+  <section class="py-16 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-slate-900 mb-4">Why Choose the Right Solution?</h2>
+        <p class="text-xl text-slate-500">The wrong approach can cost thousands more and fail to solve your problem</p>
+      </div>
+      
+      <div class="grid md:grid-cols-2 gap-12">
+        <div>
+          <h3 class="text-2xl font-bold text-red-600 mb-6">❌ Wrong Solution Consequences</h3>
+          <div class="space-y-4">
+            <div class="flex items-start">
+              <div class="bg-red-100 p-2 rounded-full mr-4 mt-1">
+                <svg class="w-5 h-5 text-red-600" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/>
+                </svg>
+              </div>
+              <div>
+                <h4 class="font-semibold text-slate-900">Recurring Problems</h4>
+                <p class="text-slate-500">Water finds new ways in, requiring multiple repairs</p>
+              </div>
+            </div>
+            <div class="flex items-start">
+              <div class="bg-red-100 p-2 rounded-full mr-4 mt-1">
+                <svg class="w-5 h-5 text-red-600" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/>
+                </svg>
+              </div>
+              <div>
+                <h4 class="font-semibold text-slate-900">Wasted Investment</h4>
+                <p class="text-slate-500">Paying twice or three times for the same problem</p>
+              </div>
+            </div>
+            <div class="flex items-start">
+              <div class="bg-red-100 p-2 rounded-full mr-4 mt-1">
+                <svg class="w-5 h-5 text-red-600" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/>
+                </svg>
+              </div>
+              <div>
+                <h4 class="font-semibold text-slate-900">Property Damage</h4>
+                <p class="text-slate-500">Continued water damage lowers home value</p>
+              </div>
+            </div>
+            <div class="flex items-start">
+              <div class="bg-red-100 p-2 rounded-full mr-4 mt-1">
+                <svg class="w-5 h-5 text-red-600" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/>
+                </svg>
+              </div>
+              <div>
+                <h4 class="font-semibold text-slate-900">Health Risks</h4>
+                <p class="text-slate-500">Mold, mildew, and air quality problems persist</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div>
+          <h3 class="text-2xl font-bold text-cyan-600 mb-6">✅ Right Solution Benefits</h3>
+          <div class="space-y-4">
+            <div class="flex items-start">
+              <div class="bg-cyan-50 p-2 rounded-full mr-4 mt-1">
+                <svg class="w-5 h-5 text-cyan-600" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                </svg>
+              </div>
+              <div>
+                <h4 class="font-semibold text-slate-900">Permanent Solution</h4>
+                <p class="text-slate-500">Addresses root cause, not just symptoms</p>
+              </div>
+            </div>
+            <div class="flex items-start">
+              <div class="bg-cyan-50 p-2 rounded-full mr-4 mt-1">
+                <svg class="w-5 h-5 text-cyan-600" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                </svg>
+              </div>
+              <div>
+                <h4 class="font-semibold text-slate-900">Cost Effective</h4>
+                <p class="text-slate-500">One proper fix vs. multiple band-aids</p>
+              </div>
+            </div>
+            <div class="flex items-start">
+              <div class="bg-cyan-50 p-2 rounded-full mr-4 mt-1">
+                <svg class="w-5 h-5 text-cyan-600" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                </svg>
+              </div>
+              <div>
+                <h4 class="font-semibold text-slate-900">Warranty Protection</h4>
+                <p class="text-slate-500">25-year transferable warranty coverage</p>
+              </div>
+            </div>
+            <div class="flex items-start">
+              <div class="bg-cyan-50 p-2 rounded-full mr-4 mt-1">
+                <svg class="w-5 h-5 text-cyan-600" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                </svg>
+              </div>
+              <div>
+                <h4 class="font-semibold text-slate-900">Increased Value</h4>
+                <p class="text-slate-500">Dry, healthy basement adds property value</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust & Security -->
+  <TrustBadges />
+
+  <!-- Get Started -->
+  <section class="py-16 bg-cyan-600 text-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl font-bold mb-4">Ready to Find Your Solution?</h2>
+      <p class="text-xl mb-8">Get a professional assessment to confirm the right approach for your property</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/free-inspection" class="bg-white text-cyan-600 px-8 py-4 rounded-lg font-bold text-lg hover:bg-slate-50 transition-colors">
+          Schedule Free Inspection
+        </a>
+        <a href="/emergency-marketplace" class="bg-red-600 text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-red-700 transition-colors">
+          Emergency Service
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<script>
+  // Solution data
+  const solutions = {
+    flooding: {
+      title: 'Emergency Flooding Solutions',
+      solutions: [
+        {
+          name: 'Emergency Water Extraction',
+          effectiveness: '95%',
+          durability: 'Temporary',
+          cost: '$500 - $2,000',
+          timeline: 'Same day',
+          warranty: 'Service guarantee',
+          description: 'Immediate water removal and drying to prevent further damage.',
+          priority: 'Critical'
+        },
+        {
+          name: 'Exterior Excavation & Waterproofing',
+          effectiveness: '98%',
+          durability: '25+ years',
+          cost: '$8,000 - $15,000',
+          timeline: '3-5 days',
+          warranty: '25-year transferable',
+          description: 'Complete exterior membrane system with drainage.',
+          priority: 'High'
+        },
+        {
+          name: 'Sump Pump System',
+          effectiveness: '90%',
+          durability: '15+ years',
+          cost: '$1,500 - $4,000',
+          timeline: '1-2 days',
+          warranty: '5-10 years',
+          description: 'Primary and backup pumps with battery system.',
+          priority: 'High'
+        }
+      ]
+    },
+    cracks: {
+      title: 'Foundation Crack Solutions',
+      solutions: [
+        {
+          name: 'Polyurethane Injection',
+          effectiveness: '90%',
+          durability: '10+ years',
+          cost: '$400 - $800',
+          timeline: '2-4 hours',
+          warranty: '10 years',
+          description: 'Flexible injection for active cracks with movement.',
+          priority: 'Medium'
+        },
+        {
+          name: 'Epoxy Injection',
+          effectiveness: '95%',
+          durability: '25+ years',
+          cost: '$300 - $600',
+          timeline: '2-4 hours',
+          warranty: '25 years',
+          description: 'Rigid repair for structural cracks in concrete.',
+          priority: 'High'
+        },
+        {
+          name: 'Exterior Crack Sealing',
+          effectiveness: '85%',
+          durability: '15+ years',
+          cost: '$800 - $2,500',
+          timeline: '1 day',
+          warranty: '15 years',
+          description: 'External repair with membrane application.',
+          priority: 'High'
+        }
+      ]
+    },
+    moisture: {
+      title: 'Moisture & Humidity Solutions',
+      solutions: [
+        {
+          name: 'Basement Dehumidification',
+          effectiveness: '80%',
+          durability: '10+ years',
+          cost: '$800 - $2,000',
+          timeline: '1 day',
+          warranty: '5 years',
+          description: 'Commercial-grade dehumidifier with drain system.',
+          priority: 'Low'
+        },
+        {
+          name: 'Vapor Barrier Installation',
+          effectiveness: '85%',
+          durability: '20+ years',
+          cost: '$1,200 - $3,000',
+          timeline: '1-2 days',
+          warranty: '10 years',
+          description: 'Complete basement encapsulation system.',
+          priority: 'Medium'
+        },
+        {
+          name: 'Interior French Drain',
+          effectiveness: '95%',
+          durability: '25+ years',
+          cost: '$3,000 - $8,000',
+          timeline: '2-3 days',
+          warranty: '25 years',
+          description: 'Perimeter drainage with sump pump system.',
+          priority: 'High'
+        }
+      ]
+    },
+    preventive: {
+      title: 'Preventive Waterproofing Solutions',
+      solutions: [
+        {
+          name: 'Exterior Waterproofing',
+          effectiveness: '98%',
+          durability: '25+ years',
+          cost: '$6,000 - $12,000',
+          timeline: '3-4 days',
+          warranty: '25 years transferable',
+          description: 'Complete exterior membrane with drainage system.',
+          priority: 'High'
+        },
+        {
+          name: 'Foundation Coating',
+          effectiveness: '75%',
+          durability: '10+ years',
+          cost: '$1,500 - $3,500',
+          timeline: '1-2 days',
+          warranty: '10 years',
+          description: 'Waterproof coating application to foundation walls.',
+          priority: 'Medium'
+        },
+        {
+          name: 'Drainage Improvement',
+          effectiveness: '85%',
+          durability: '20+ years',
+          cost: '$2,000 - $6,000',
+          timeline: '2-3 days',
+          warranty: '15 years',
+          description: 'Grading, gutters, and surface water management.',
+          priority: 'Medium'
+        }
+      ]
+    },
+    drainage: {
+      title: 'Drainage System Solutions',
+      solutions: [
+        {
+          name: 'French Drain System',
+          effectiveness: '95%',
+          durability: '25+ years',
+          cost: '$3,000 - $8,000',
+          timeline: '2-4 days',
+          warranty: '25 years',
+          description: 'Perimeter or yard drainage with gravel bed.',
+          priority: 'High'
+        },
+        {
+          name: 'Catch Basin Installation',
+          effectiveness: '80%',
+          durability: '20+ years',
+          cost: '$800 - $2,000',
+          timeline: '1 day',
+          warranty: '10 years',
+          description: 'Surface water collection and redirection.',
+          priority: 'Medium'
+        },
+        {
+          name: 'Sump Pump Upgrade',
+          effectiveness: '90%',
+          durability: '15+ years',
+          cost: '$1,200 - $3,500',
+          timeline: '1-2 days',
+          warranty: '10 years',
+          description: 'High-capacity pump with battery backup.',
+          priority: 'High'
+        }
+      ]
+    },
+    upgrade: {
+      title: 'System Upgrade Solutions',
+      solutions: [
+        {
+          name: 'Complete System Replacement',
+          effectiveness: '98%',
+          durability: '25+ years',
+          cost: '$8,000 - $18,000',
+          timeline: '5-7 days',
+          warranty: '25 years transferable',
+          description: 'Full exterior and interior waterproofing overhaul.',
+          priority: 'High'
+        },
+        {
+          name: 'Sump Pump Modernization',
+          effectiveness: '95%',
+          durability: '15+ years',
+          cost: '$2,000 - $5,000',
+          timeline: '1-2 days',
+          warranty: '10 years',
+          description: 'Smart pump system with monitoring and backup.',
+          priority: 'High'
+        },
+        {
+          name: 'Membrane Restoration',
+          effectiveness: '85%',
+          durability: '15+ years',
+          cost: '$4,000 - $10,000',
+          timeline: '3-4 days',
+          warranty: '15 years',
+          description: 'Selective repair and reinforcement of existing system.',
+          priority: 'Medium'
+        }
+      ]
+    }
+  };
+
+  function showSolutions(problemType) {
+    const solutionData = solutions[problemType];
+    const solutionsSection = document.getElementById('solutions-display');
+    const solutionsGrid = document.getElementById('solutions-grid');
+    const solutionsTitle = document.getElementById('solutions-title');
+    const comparisonBody = document.getElementById('comparison-body');
+
+    // Update title
+    solutionsTitle.textContent = solutionData.title;
+
+    // Clear previous content
+    solutionsGrid.innerHTML = '';
+    comparisonBody.innerHTML = '';
+
+    // Generate solution cards
+    solutionData.solutions.forEach(solution => {
+      const card = `
+        <div class="bg-white rounded-lg shadow-lg p-6 border-l-4 border-cyan-600">
+          <div class="flex items-center justify-between mb-4">
+            <h3 class="text-xl font-bold text-slate-900">${solution.name}</h3>
+            <span class="bg-${solution.priority.toLowerCase() === 'critical' ? 'red' : solution.priority.toLowerCase() === 'high' ? 'orange' : 'blue'}-100 text-${solution.priority.toLowerCase() === 'critical' ? 'red' : solution.priority.toLowerCase() === 'high' ? 'orange' : 'blue'}-800 text-xs px-2 py-1 rounded font-semibold">${solution.priority.toUpperCase()}</span>
+          </div>
+          <p class="text-slate-500 mb-4">${solution.description}</p>
+          <div class="space-y-2 mb-6">
+            <div class="flex justify-between">
+              <span class="text-sm text-slate-400">Effectiveness:</span>
+              <span class="font-semibold text-cyan-600">${solution.effectiveness}</span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-sm text-slate-400">Cost Range:</span>
+              <span class="font-semibold">${solution.cost}</span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-sm text-slate-400">Timeline:</span>
+              <span class="font-semibold">${solution.timeline}</span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-sm text-slate-400">Warranty:</span>
+              <span class="font-semibold text-cyan-600">${solution.warranty}</span>
+            </div>
+          </div>
+          <button class="w-full bg-cyan-600 text-white py-2 rounded-lg hover:bg-cyan-700 transition-colors">
+            Learn More
+          </button>
+        </div>
+      `;
+      solutionsGrid.innerHTML += card;
+
+      // Add to comparison table
+      const row = `
+        <tr>
+          <td class="px-6 py-4 whitespace-nowrap">
+            <div class="text-sm font-medium text-slate-900">${solution.name}</div>
+          </td>
+          <td class="px-6 py-4 whitespace-nowrap">
+            <div class="text-sm text-cyan-600 font-semibold">${solution.effectiveness}</div>
+          </td>
+          <td class="px-6 py-4 whitespace-nowrap">
+            <div class="text-sm text-slate-900">${solution.durability}</div>
+          </td>
+          <td class="px-6 py-4 whitespace-nowrap">
+            <div class="text-sm text-slate-900">${solution.cost}</div>
+          </td>
+          <td class="px-6 py-4 whitespace-nowrap">
+            <div class="text-sm text-slate-900">${solution.timeline}</div>
+          </td>
+          <td class="px-6 py-4 whitespace-nowrap">
+            <div class="text-sm text-cyan-600 font-semibold">${solution.warranty}</div>
+          </td>
+        </tr>
+      `;
+      comparisonBody.innerHTML += row;
+    });
+
+    // Show solutions section
+    solutionsSection.classList.remove('hidden');
+    solutionsSection.scrollIntoView({ behavior: 'smooth' });
+  }
+
+  function hideContent() {
+    const solutionsSection = document.getElementById('solutions-display');
+    solutionsSection.classList.add('hidden');
+    document.getElementById('problem-navigator').scrollIntoView({ behavior: 'smooth' });
+  }
+</script>

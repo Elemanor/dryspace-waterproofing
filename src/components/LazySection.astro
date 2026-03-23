@@ -1,0 +1,178 @@
+---
+// SuperClaude Lazy Loading Section Component
+// Progressive enhancement for better performance
+export interface Props {
+  class?: string;
+  threshold?: number;
+  rootMargin?: string;
+  priority?: 'high' | 'medium' | 'low';
+}
+
+const { 
+  class: className = '', 
+  threshold = 0.1,
+  rootMargin = '100px',
+  priority = 'medium'
+} = Astro.props;
+
+// Priority-based loading delays
+const loadingDelay = {
+  high: 0,
+  medium: 100,
+  low: 200
+};
+---
+
+<section 
+  class={`lazy-section ${className}`}
+  data-lazy-section
+  data-priority={priority}
+  data-threshold={threshold}
+  data-root-margin={rootMargin}
+>
+  <div class="lazy-section-content opacity-0 transform translate-y-8 transition-all duration-700">
+    <slot />
+  </div>
+</section>
+
+<script>
+  // SuperClaude Section Lazy Loading
+  // Using Strategy Pattern for different loading priorities
+  
+  class SectionLoader {
+    private sections: NodeListOf<Element>;
+    private observer: IntersectionObserver | null = null;
+    
+    constructor() {
+      this.sections = document.querySelectorAll('[data-lazy-section]');
+      this.init();
+    }
+    
+    init() {
+      if ('IntersectionObserver' in window) {
+        // Group sections by priority
+        const highPriority: Element[] = [];
+        const mediumPriority: Element[] = [];
+        const lowPriority: Element[] = [];
+        
+        this.sections.forEach(section => {
+          const priority = section.getAttribute('data-priority') || 'medium';
+          const content = section.querySelector('.lazy-section-content');
+          
+          if (priority === 'high') {
+            highPriority.push(section);
+            // Load high priority immediately
+            if (content) {
+              content.classList.remove('opacity-0', 'translate-y-8');
+              content.classList.add('opacity-100', 'translate-y-0');
+            }
+          } else if (priority === 'medium') {
+            mediumPriority.push(section);
+          } else {
+            lowPriority.push(section);
+          }
+        });
+        
+        // Create observer for medium and low priority sections
+        this.observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              const section = entry.target;
+              const priority = section.getAttribute('data-priority') || 'medium';
+              const delay = priority === 'medium' ? 100 : 200;
+              
+              setTimeout(() => {
+                const content = section.querySelector('.lazy-section-content');
+                if (content) {
+                  content.classList.remove('opacity-0', 'translate-y-8');
+                  content.classList.add('opacity-100', 'translate-y-0');
+                }
+                
+                // Trigger any lazy images within this section
+                const lazyImages = section.querySelectorAll('[data-lazy]');
+                lazyImages.forEach(img => {
+                  img.classList.add('load-now');
+                });
+              }, delay);
+              
+              this.observer?.unobserve(section);
+            }
+          });
+        }, {
+          rootMargin: '100px 0px',
+          threshold: 0.1
+        });
+        
+        // Observe medium and low priority sections
+        [...mediumPriority, ...lowPriority].forEach(section => {
+          this.observer?.observe(section);
+        });
+      } else {
+        // Fallback: show all sections immediately
+        this.sections.forEach(section => {
+          const content = section.querySelector('.lazy-section-content');
+          if (content) {
+            content.classList.remove('opacity-0', 'translate-y-8');
+            content.classList.add('opacity-100', 'translate-y-0');
+          }
+        });
+      }
+    }
+  }
+  
+  // Initialize on DOM ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => new SectionLoader());
+  } else {
+    new SectionLoader();
+  }
+</script>
+
+<style>
+  .lazy-section {
+    min-height: 100px;
+    position: relative;
+  }
+  
+  .lazy-section-content {
+    will-change: transform, opacity;
+  }
+  
+  /* Loading skeleton */
+  .lazy-section[data-priority="low"] .lazy-section-content:not(.opacity-100) {
+    position: relative;
+  }
+  
+  .lazy-section[data-priority="low"] .lazy-section-content:not(.opacity-100)::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 200px;
+    background: linear-gradient(
+      90deg,
+      #f3f4f6 25%,
+      #e5e7eb 50%,
+      #f3f4f6 75%
+    );
+    animation: loading-skeleton 1.5s infinite;
+  }
+  
+  @keyframes loading-skeleton {
+    0% {
+      background-position: -200px 0;
+    }
+    100% {
+      background-position: calc(200px + 100%) 0;
+    }
+  }
+  
+  /* Reduced motion support */
+  @media (prefers-reduced-motion: reduce) {
+    .lazy-section-content {
+      transition: none !important;
+      transform: none !important;
+    }
+  }
+</style>

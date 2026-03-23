@@ -1,0 +1,439 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import Hero from '../../components/sections/Hero.astro';
+import Features from '../../components/sections/Features.astro';
+import Process from '../../components/sections/Process.astro';
+import FAQ from '../../components/sections/FAQ.astro';
+import Testimonials from '../../components/sections/Testimonials.astro';
+import CTA from '../../components/sections/CTA.astro';
+import Stats from '../../components/sections/Stats.astro';
+import ServiceSchema from '../../components/ServiceSchema.astro';
+import InternalLinks from '../../components/InternalLinks.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+
+const pageTitle = "Green Infrastructure & LID Solutions Toronto | Rain Gardens & Bioswales";
+const pageDescription = "Professional green infrastructure and Low Impact Development solutions in Toronto. Rain gardens, bioswales, green roofs, constructed wetlands. Sustainable stormwater management with environmental benefits.";
+
+// Comprehensive green infrastructure features
+const serviceFeatures = [
+  {
+    icon: '🌺',
+    title: 'Rain Gardens & Bioretention Cells',
+    description: 'Engineered landscaped depressions that capture, treat, and infiltrate stormwater. Custom-designed for Toronto soil conditions with 80-90% runoff reduction and pollutant removal.',
+    highlight: true
+  },
+  {
+    icon: '🌿',
+    title: 'Bioswales & Vegetated Channels',
+    description: 'Linear green infrastructure systems providing conveyance, treatment, and infiltration. Integrated into landscape design with native plants adapted to seasonal water variations.',
+    highlight: true
+  },
+  {
+    icon: '🏠',
+    title: 'Green Roofs & Living Wall Systems',
+    description: 'Extensive and intensive green roof installations reducing runoff by 50-90%. Modular living wall systems for vertical stormwater management and building envelope protection.',
+    highlight: true
+  },
+  {
+    icon: '🦆',
+    title: 'Constructed Wetlands & Treatment Systems',
+    description: 'Engineered wetland ecosystems for advanced stormwater treatment. Multi-stage systems removing sediments, nutrients, and contaminants while providing habitat value.'
+  },
+  {
+    icon: '🌳',
+    title: 'Tree Box Filters & Urban Forestry',
+    description: 'Engineered tree planting systems with integrated stormwater management. Silva Cell systems and structural soils supporting large trees in urban environments.'
+  },
+  {
+    icon: '📋',
+    title: 'Toronto Green Standard Compliance',
+    description: 'Complete LID implementation meeting TGS Tier 1-4 requirements. LEED points eligibility, development charge reductions, and municipal incentive program participation.'
+  }
+];
+
+// Detailed LID implementation process
+const processSteps = [
+  {
+    number: '01',
+    title: 'Site Suitability Assessment',
+    description: 'Comprehensive evaluation including soil infiltration testing, groundwater assessment, space availability analysis, and regulatory compliance review for optimal LID placement.',
+    icon: '🔍',
+    duration: '1-2 weeks'
+  },
+  {
+    number: '02',
+    title: 'Integrated Design Development',
+    description: 'Multi-disciplinary design process incorporating hydrology, landscape architecture, ecology, and structural engineering. Performance modeling and aesthetic integration.',
+    icon: '📐',
+    duration: '2-4 weeks'
+  },
+  {
+    number: '03',
+    title: 'Professional Installation & Establishment',
+    description: 'Specialized construction techniques for green infrastructure. Proper soil preparation, plant installation, drainage systems, and irrigation establishment for optimal performance.',
+    icon: '🌱',
+    duration: '1-3 weeks'
+  },
+  {
+    number: '04',
+    title: 'Performance Monitoring & Maintenance',
+    description: 'Establishment period care, performance monitoring, adaptive management, and long-term maintenance planning. Includes plant health monitoring and system optimization.',
+    icon: '📊',
+    duration: 'Ongoing'
+  }
+];
+
+// Service-specific FAQs with cost, timeline, benefits, process information
+const serviceFAQs = [
+  {
+    question: "How much does green infrastructure cost in Toronto?",
+    answer: "Green infrastructure costs vary by system type: Rain gardens: $17-45/sq ft installed including plants and engineered soil, Bioswales: $27-55/sq ft for complete installation with native plantings, Green roofs: $20-50/sq ft depending on extensive vs intensive systems, Constructed wetlands: $37-85/sq ft for treatment area including liner and plants. Complete residential LID systems range $13,000-75,000, while commercial projects range $27,000-200,000+ depending on size and complexity. Most projects qualify for municipal rebates and development charge reductions."
+  },
+  {
+    question: "How long does green infrastructure installation take?",
+    answer: "Installation timelines depend on system complexity: Rain gardens: 1-2 weeks including excavation, soil preparation, planting, and establishment, Bioswales: 2-3 weeks for linear systems with grading and plantings, Green roofs: 3-6 weeks including structural assessment, membrane installation, and planting, Constructed wetlands: 4-8 weeks for complete ecosystem establishment. Planning and design phase takes 2-6 weeks. Best installation timing is spring (April-May) or fall (September-October) for optimal plant establishment. Winter installations possible with special establishment protocols."
+  },
+  {
+    question: "What are the main benefits of green infrastructure for Toronto properties?",
+    answer: "Green infrastructure provides multiple benefits: Stormwater management: 50-90% runoff reduction, foundation protection through improved drainage, Property value: 8-15% increase from sustainable landscaping and environmental features, Energy savings: Green roofs provide additional insulation reducing heating/cooling costs by 10-30%, Environmental: Carbon sequestration, air quality improvement, urban heat island reduction, Regulatory compliance: Meets Toronto Green Standard requirements for development approvals, Financial incentives: Development charge reductions, stormwater fee credits, potential insurance benefits, Biodiversity: Native habitat creation supporting pollinators and urban wildlife."
+  },
+  {
+    question: "When should I consider green infrastructure for my property?",
+    answer: "Green infrastructure is beneficial in several situations: New construction: Integrate LID systems during initial development to meet TGS requirements and maximize benefits, Drainage problems: Persistent water pooling, foundation moisture issues, or inadequate stormwater management, Property renovation: Major landscaping projects, addition construction, or site improvements, Regulatory requirements: Development applications requiring stormwater management or environmental performance targets, Sustainability goals: LEED certification pursuit, corporate environmental commitments, or personal environmental values. Properties with slopes, large roof areas, or paved surfaces see greatest benefits. Spring planning allows summer installation for fall establishment."
+  }
+];
+
+// Service offers with 3 pricing tiers
+const serviceOffers = [
+  {
+    name: "Rain Garden Starter",
+    price: "$4,900-$13,000",
+    description: "Single rain garden system (200-800 sq ft) with native plant installation, engineered soil media, and basic drainage. Perfect for residential properties with localized drainage issues."
+  },
+  {
+    name: "Comprehensive LID System",
+    price: "$16,000-$49,000",
+    description: "Multi-component green infrastructure including rain gardens, bioswales, and permeable landscaping. Complete site stormwater management with TGS compliance and municipal rebate assistance."
+  },
+  {
+    name: "Premium Green Infrastructure",
+    price: "$54,000-$162,000",
+    description: "Advanced systems including green roofs, constructed wetlands, tree box filters, and integrated smart monitoring. Commercial-grade installation with performance guarantees and long-term maintenance planning."
+  }
+];
+
+---
+
+<PageLayout 
+  title={pageTitle}
+  description={pageDescription}
+>
+  
+  <!-- Breadcrumbs -->
+  <div class="container mx-auto px-4 mt-4">
+    <Breadcrumbs 
+      items={[
+        { name: "Home", url: "/" },
+        { name: "Services", url: "/services" },
+        { name: "Green Infrastructure" }
+      ]}
+    />
+  </div>
+
+<ServiceSchema 
+    serviceName="Green Infrastructure & LID Solutions"
+    description="Professional green infrastructure and Low Impact Development solutions including rain gardens, bioswales, green roofs, constructed wetlands, and sustainable stormwater management systems in Toronto."
+    priceRange="$4,900-$162,000"
+    offers={serviceOffers}
+    faqs={serviceFAQs}
+  />
+  <!-- Hero Section -->
+  <Hero 
+    title="Green Infrastructure & LID Solutions"
+    subtitle="Sustainable stormwater management through nature-based solutions. Rain gardens, bioswales, green roofs, and constructed wetlands providing environmental and economic benefits."
+    primaryCTA={{ text: "Get Green Solution Design", href: "/free-inspection" }}
+    secondaryCTA={{ text: "Call: 437-545-0067", href: "tel:437-545-0067" }}
+    backgroundImage="/images/waterproofing diagram with basement sump pump weeping tile and exterior drainage.webp"
+    badge="Sustainable Infrastructure Solutions"
+  />
+
+  <!-- Stats -->
+  <Stats />
+
+  <!-- Comprehensive Content Section -->
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Introduction -->
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold text-slate-900 mb-6">
+          Nature-Based Solutions for Urban Stormwater Management
+        </h2>
+        <p class="text-xl text-slate-500 max-w-4xl mx-auto mb-8">
+          Green infrastructure represents the future of sustainable urban development, combining effective stormwater management with environmental restoration and community benefits. Our Low Impact Development (LID) solutions work with natural processes to manage water while creating beautiful, functional landscapes that support biodiversity and enhance property values.
+        </p>
+      </div>
+
+      <!-- Core Green Infrastructure Solutions -->
+      <div class="grid lg:grid-cols-2 gap-12 mb-16">
+        <div class="space-y-8">
+          <h3 class="text-3xl font-bold text-slate-900">Rain Gardens & Bioretention Cells</h3>
+          <p class="text-lg text-slate-600">
+            Engineered landscape depressions designed to capture, treat, and infiltrate urban runoff. Our rain garden systems remove 80-95% of sediments and 40-80% of nutrients while reducing runoff volumes by 50-90%. Each installation is custom-designed for Toronto's soil conditions and seasonal weather patterns.
+          </p>
+          <div class="bg-cyan-50 p-6 rounded-lg">
+            <h4 class="font-semibold text-cyan-900 mb-3">Rain Garden Specifications:</h4>
+            <ul class="space-y-2 text-cyan-800">
+              <li>• Size: Typically 20-30% of drainage area</li>
+              <li>• Depth: 6-18 inches depression with 18-48 inches engineered soil</li>
+              <li>• Infiltration rate: 0.5-8 inches/hour based on soil conditions</li>
+              <li>• Plant zones: Wet, middle, and dry areas with appropriate species</li>
+              <li>• Overflow systems for extreme rainfall events</li>
+              <li>• Pretreatment areas for sediment capture</li>
+              <li>• Underdrain systems where natural infiltration is limited</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="space-y-8">
+          <h3 class="text-3xl font-bold text-slate-900">Bioswales & Vegetated Channels</h3>
+          <p class="text-lg text-slate-600">
+            Linear green infrastructure systems providing stormwater conveyance, treatment, and infiltration. Our bioswales combine the functionality of traditional drainage with the environmental benefits of native plant communities, creating attractive landscape features that improve water quality.
+          </p>
+          <div class="bg-cyan-50 p-6 rounded-lg">
+            <h4 class="font-semibold text-cyan-800 mb-3">Bioswale Design Elements:</h4>
+            <ul class="space-y-2 text-cyan-700">
+              <li>• Longitudinal slope: 1-5% for optimal flow velocity</li>
+              <li>• Side slopes: 3:1 or flatter for stability and maintenance</li>
+              <li>• Check dams: Stone or wood structures for flow control</li>
+              <li>• Native plant communities adapted to flow variations</li>
+              <li>• Engineered soil media for enhanced infiltration</li>
+              <li>• Energy dissipation structures at inlets</li>
+              <li>• Maintenance access paths for long-term care</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Advanced Green Systems -->
+      <div class="grid lg:grid-cols-2 gap-12 mb-16">
+        <div class="space-y-8">
+          <h3 class="text-3xl font-bold text-slate-900">Green Roofs & Living Wall Systems</h3>
+          <p class="text-lg text-slate-600">
+            Building-integrated green infrastructure providing stormwater management, energy benefits, and habitat creation. Our systems include extensive green roofs (lightweight, low-maintenance) and intensive green roofs (garden-like with diverse plantings). Living walls provide vertical stormwater management opportunities.
+          </p>
+          <div class="bg-purple-50 p-6 rounded-lg">
+            <h4 class="font-semibold text-purple-900 mb-3">Green Roof Systems:</h4>
+            <ul class="space-y-2 text-purple-800">
+              <li>• Extensive systems: 4-6 inches growing medium, sedum and grasses</li>
+              <li>• Intensive systems: 6-24+ inches medium, diverse plant palette</li>
+              <li>• Stormwater retention: 50-90% annual runoff reduction</li>
+              <li>• Structural loading: 15-150 lbs/sq ft saturated weight</li>
+              <li>• Drainage layers with overflow drains and scuppers</li>
+              <li>• Insulation benefits: R-2 to R-10 additional insulation value</li>
+              <li>• Lifespan: 40-60 years with proper maintenance</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="space-y-8">
+          <h3 class="text-3xl font-bold text-slate-900">Constructed Wetlands & Treatment Systems</h3>
+          <p class="text-lg text-slate-600">
+            Engineered ecosystems that mimic natural wetland processes for advanced stormwater treatment. These systems provide exceptional pollutant removal while creating valuable habitat and educational opportunities. Ideal for larger properties and institutional applications.
+          </p>
+          <div class="bg-orange-50 p-6 rounded-lg">
+            <h4 class="font-semibold text-orange-900 mb-3">Wetland Treatment Components:</h4>
+            <ul class="space-y-2 text-orange-800">
+              <li>• Pretreatment cells for sediment removal</li>
+              <li>• Shallow marsh zones with emergent vegetation</li>
+              <li>• Deep water zones for extended detention</li>
+              <li>• Micropool areas for permanent water storage</li>
+              <li>• Native wetland plants: cattails, bulrushes, water lilies</li>
+              <li>• Wildlife habitat features: nesting boxes, basking areas</li>
+              <li>• Maintenance access for long-term management</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Urban Forest Integration -->
+      <div class="bg-slate-50 p-8 rounded-lg mb-16">
+        <h3 class="text-3xl font-bold text-slate-900 mb-6">Tree Box Filters & Urban Forest Stormwater Management</h3>
+        <div class="grid md:grid-cols-2 gap-8">
+          <div>
+            <h4 class="text-xl font-semibold text-slate-900 mb-4">Silva Cell & Structural Soil Systems</h4>
+            <ul class="space-y-3 text-slate-600">
+              <li class="flex items-start">
+                <span class="flex-shrink-0 w-2 h-2 bg-cyan-500 rounded-full mt-2 mr-3"></span>
+                <span>Underground tree root systems with integrated stormwater management</span>
+              </li>
+              <li class="flex items-start">
+                <span class="flex-shrink-0 w-2 h-2 bg-cyan-500 rounded-full mt-2 mr-3"></span>
+                <span>Suspended pavement systems allowing root growth under walkways</span>
+              </li>
+              <li class="flex items-start">
+                <span class="flex-shrink-0 w-2 h-2 bg-cyan-500 rounded-full mt-2 mr-3"></span>
+                <span>Structural soil mixes supporting both trees and pavement loads</span>
+              </li>
+              <li class="flex items-start">
+                <span class="flex-shrink-0 w-2 h-2 bg-cyan-500 rounded-full mt-2 mr-3"></span>
+                <span>Integrated drainage and irrigation systems</span>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="text-xl font-semibold text-slate-900 mb-4">Stormwater Benefits</h4>
+            <ul class="space-y-3 text-slate-600">
+              <li class="flex items-start">
+                <span class="flex-shrink-0 w-2 h-2 bg-cyan-500 rounded-full mt-2 mr-3"></span>
+                <span>Canopy interception: 20-30% rainfall captured by tree canopy</span>
+              </li>
+              <li class="flex items-start">
+                <span class="flex-shrink-0 w-2 h-2 bg-cyan-500 rounded-full mt-2 mr-3"></span>
+                <span>Root zone filtration: Enhanced infiltration and treatment</span>
+              </li>
+              <li class="flex items-start">
+                <span class="flex-shrink-0 w-2 h-2 bg-cyan-500 rounded-full mt-2 mr-3"></span>
+                <span>Evapotranspiration: Additional moisture removal from soil</span>
+              </li>
+              <li class="flex items-start">
+                <span class="flex-shrink-0 w-2 h-2 bg-cyan-500 rounded-full mt-2 mr-3"></span>
+                <span>Urban heat island reduction: Cooling effects reduce runoff temperatures</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Toronto Green Standard & LID Compliance -->
+      <div class="mb-16">
+        <h3 class="text-3xl font-bold text-slate-900 mb-8 text-center">Toronto Green Standard & LID Performance</h3>
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <h4 class="text-xl font-semibold text-slate-900 mb-4">TGS Stormwater Requirements</h4>
+            <ul class="space-y-2 text-slate-600">
+              <li>• Tier 1: 5mm rainfall retention on-site</li>
+              <li>• Tier 2: 10mm rainfall retention + quality treatment</li>
+              <li>• Tier 3: 15mm retention + enhanced treatment</li>
+              <li>• Tier 4: 25mm retention + maximum infiltration</li>
+              <li>• Annual runoff reduction targets: 25-80%</li>
+              <li>• Peak flow reduction requirements</li>
+            </ul>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <h4 class="text-xl font-semibold text-slate-900 mb-4">LEED Contribution Points</h4>
+            <ul class="space-y-2 text-slate-600">
+              <li>• Sustainable Sites: Site development (2 pts)</li>
+              <li>• Water Efficiency: Stormwater design (3 pts)</li>
+              <li>• Energy & Atmosphere: Green roof benefits (1 pt)</li>
+              <li>• Materials & Resources: Regional materials (1 pt)</li>
+              <li>• Indoor Environmental Quality: Views (1 pt)</li>
+              <li>• Innovation: Exceptional performance (1 pt)</li>
+            </ul>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <h4 class="text-xl font-semibold text-slate-900 mb-4">Municipal Incentives</h4>
+            <ul class="space-y-2 text-slate-600">
+              <li>• Development charge reductions up to 50%</li>
+              <li>• Stormwater fee reductions for private properties</li>
+              <li>• Green roof incentive programs</li>
+              <li>• Tree planting grants and rebates</li>
+              <li>• Fast-track permit processing for green projects</li>
+              <li>• Density bonuses for exceptional green infrastructure</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Performance & Environmental Benefits -->
+      <div class="bg-gradient-to-r from-green-50 to-blue-50 p-8 rounded-lg mb-16">
+        <h3 class="text-3xl font-bold text-slate-900 mb-6">Quantified Environmental Performance</h3>
+        <div class="grid md:grid-cols-2 gap-8">
+          <div>
+            <h4 class="text-xl font-semibold text-slate-900 mb-4">Water Quality Treatment</h4>
+            <ul class="space-y-3 text-slate-600">
+              <li class="flex items-center">
+                <span class="w-4 h-4 bg-cyan-500 rounded-full mr-3"></span>
+                <span><strong>Sediment removal:</strong> 80-95% through settling and filtration</span>
+              </li>
+              <li class="flex items-center">
+                <span class="w-4 h-4 bg-cyan-500 rounded-full mr-3"></span>
+                <span><strong>Nutrient removal:</strong> 40-80% nitrogen and phosphorus reduction</span>
+              </li>
+              <li class="flex items-center">
+                <span class="w-4 h-4 bg-purple-500 rounded-full mr-3"></span>
+                <span><strong>Heavy metals:</strong> 70-95% removal through plant uptake</span>
+              </li>
+              <li class="flex items-center">
+                <span class="w-4 h-4 bg-orange-500 rounded-full mr-3"></span>
+                <span><strong>Bacteria & pathogens:</strong> 90%+ removal through UV and filtration</span>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="text-xl font-semibold text-slate-900 mb-4">Additional Environmental Benefits</h4>
+            <ul class="space-y-3 text-slate-600">
+              <li class="flex items-center">
+                <span class="w-4 h-4 bg-red-500 rounded-full mr-3"></span>
+                <span><strong>Carbon sequestration:</strong> 2-10 tons CO2/acre/year</span>
+              </li>
+              <li class="flex items-center">
+                <span class="w-4 h-4 bg-amber-500 rounded-full mr-3"></span>
+                <span><strong>Air quality:</strong> Particulate matter filtration and oxygen production</span>
+              </li>
+              <li class="flex items-center">
+                <span class="w-4 h-4 bg-cyan-500 rounded-full mr-3"></span>
+                <span><strong>Biodiversity:</strong> Native pollinator and bird habitat creation</span>
+              </li>
+              <li class="flex items-center">
+                <span class="w-4 h-4 bg-pink-500 rounded-full mr-3"></span>
+                <span><strong>Temperature reduction:</strong> 2-8°F cooling compared to conventional surfaces</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <Features 
+    title="Why Choose Our Green Infrastructure Solutions"
+    subtitle="Sustainable engineering expertise creating environmental and economic value"
+    features={serviceFeatures}
+    columns={3}
+  />
+
+  <!-- Process -->
+  <Process 
+    title="Our Integrated Design & Implementation Process"
+    subtitle="Multi-disciplinary approach ensuring optimal performance and long-term success"
+    steps={processSteps}
+  />
+
+  <!-- Testimonials -->
+  <Testimonials />
+
+  <!-- FAQ -->
+  <FAQ 
+    title="Green Infrastructure Frequently Asked Questions"
+    subtitle="Expert guidance on sustainable stormwater solutions and Low Impact Development"
+    faqs={serviceFAQs}
+    columns={1}
+  />
+
+  <!-- Internal Links -->
+  <InternalLinks 
+    category="drainage"
+    currentPage="green-infrastructure"
+    limit={6}
+  />
+
+  <!-- CTA -->
+  <CTA 
+    title="Ready to Implement Sustainable Water Management?"
+    subtitle="Schedule your green infrastructure consultation and discover how nature-based solutions can transform your property while managing stormwater effectively."
+    primaryCTA={{ text: "Schedule Green Consultation", href: "/free-inspection" }}
+    secondaryCTA={{ text: "Call: 437-545-0067", href: "tel:437-545-0067" }}
+    background="gradient"
+  />
+</PageLayout>

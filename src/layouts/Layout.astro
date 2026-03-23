@@ -1,0 +1,215 @@
+---
+import { ViewTransitions } from 'astro:transitions';
+import Favicons from '../components/Favicons.astro';
+import GoogleAnalytics from '../components/GoogleAnalytics.astro';
+import '../styles/global.css';
+
+export interface Props {
+  title?: string;
+  description?: string;
+  keywords?: string;
+  image?: string;
+  canonical?: string;
+  noindex?: boolean;
+  nofollow?: boolean;
+}
+
+const {
+  title = 'Dryspace Waterproofing - Toronto\'s Trusted Foundation Experts',
+  description = 'Professional waterproofing and foundation repair services in Toronto & GTA. 24/7 emergency service, 25-year warranty, free inspections. Call 437-545-0067.',
+  keywords = 'waterproofing toronto, foundation repair, basement waterproofing, sump pump installation',
+  image = '/images/dryspace-og-image.webp',
+  canonical,
+  noindex = false,
+  nofollow = false,
+} = Astro.props;
+
+const currentPath = Astro.url.pathname;
+const siteUrl = 'https://dryspacewaterproofing.ca';
+const canonicalURL = canonical || `${siteUrl}${currentPath}`;
+const ogImageUrl = `${siteUrl}${image}`;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="theme-color" content="#0f172a" />
+
+    <!-- SEO Meta Tags -->
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="keywords" content={keywords} />
+    {(noindex || nofollow) && (
+      <meta name="robots" content={`${noindex ? 'noindex' : 'index'},${nofollow ? 'nofollow' : 'follow'}`} />
+    )}
+    <link rel="canonical" href={canonicalURL} />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImageUrl} />
+    <meta property="og:site_name" content="Dryspace Waterproofing" />
+    <meta property="og:locale" content="en_CA" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content={canonicalURL} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageUrl} />
+
+    <!-- Business Verification -->
+    <meta name="google-site-verification" content="YOUR_VERIFICATION_CODE" />
+    <meta name="msvalidate.01" content="YOUR_BING_CODE" />
+
+    <!-- Preconnect for fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+    <!-- Favicons -->
+    <Favicons />
+
+    <!-- View Transitions -->
+    <ViewTransitions />
+
+    <!-- WebSite Schema with SiteLinks Search -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "DrySpace Waterproofing",
+      "url": "https://dryspacewaterproofing.ca",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://dryspacewaterproofing.ca/services/{search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+      }
+    })} />
+
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Dryspace Waterproofing & Foundation Repair",
+      "image": ogImageUrl,
+      "url": siteUrl,
+      "telephone": "437-545-0067",
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Toronto",
+        "addressRegion": "ON",
+        "addressCountry": "CA"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 43.653226,
+        "longitude": -79.3831843
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "07:00",
+          "closes": "20:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Saturday",
+          "opens": "08:00",
+          "closes": "18:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Sunday",
+          "opens": "09:00",
+          "closes": "17:00"
+        }
+      ],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "487"
+      },
+      "sameAs": [
+        "https://www.facebook.com/dryspaceca",
+        "https://www.instagram.com/dryspaceca",
+        "https://www.linkedin.com/company/dryspace"
+      ],
+      "areaServed": [
+        "Toronto", "Mississauga", "Brampton", "Vaughan", "Markham",
+        "Richmond Hill", "Oakville", "Burlington", "Hamilton", "Scarborough",
+        "North York", "Etobicoke", "Ajax", "Pickering", "Whitby", "Oshawa"
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Waterproofing Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Exterior Waterproofing"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Interior Waterproofing"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Foundation Repair"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Sump Pump Installation"
+            }
+          }
+        ]
+      }
+    })} />
+  </head>
+  <body class="font-sans antialiased">
+    <slot />
+    <GoogleAnalytics />
+
+    <!-- Scroll Reveal Observer -->
+    <script>
+      if (typeof IntersectionObserver !== 'undefined') {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('revealed');
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
+        );
+        document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+
+        // Re-observe after Astro view transitions
+        document.addEventListener('astro:page-load', () => {
+          document.querySelectorAll('.reveal:not(.revealed)').forEach((el) => observer.observe(el));
+        });
+      }
+    </script>
+  </body>
+</html>

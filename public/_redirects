@@ -1,0 +1,55 @@
+# Redirect rules for consolidated pages to fix content cannibalization
+
+# Drainage consolidation redirects
+/services/exterior-drainage-solutions /services/drainage-solutions 301
+/services/french-drain /services/drainage-solutions 301
+/services/foundation-drainage /services/drainage-solutions 301
+/services/surface-drainage /services/drainage-solutions 301
+/services/drains-repair-installation /services/drainage-solutions 301
+
+# Mold remediation consolidation
+/services/mold-remediation-complete /services/mold-remediation 301
+
+# Weeping tile to drainage solutions
+/services/weeping-tile /services/drainage-solutions 301
+
+# Interior/Exterior drainage systems to main drainage page
+/services/interior-drainage-systems /services/drainage-solutions 301
+/services/exterior-drainage-systems /services/drainage-solutions 301
+
+# Waterproofing methods page to services
+/waterproofing-methods /services/exterior-waterproofing 301
+
+# Foundation repair consolidation
+/services/foundation-crack-repair /services/foundation-repair 301
+
+# Emergency services consolidation  
+/services/emergency-waterproofing /emergency 301
+
+# Surface drainage consolidation
+/services/downspout-extensions-surface-drainage /services/drainage-solutions 301
+/services/landscape-grading-drainage /services/drainage-solutions 301
+/services/window-well-drainage /services/drainage-solutions 301
+
+# Window well consolidation
+/services/window-well-installation /services/window-door-waterproofing 301
+
+# Excavation rename
+/services/basement-sewer-excavation /services/excavation-services 301
+
+# ====================================
+# Location Keyword Cannibalization Fixes
+# Consolidate duplicate city pages to strongest URL
+# ====================================
+
+# Brampton: /locations/brampton cannibalizes /basement-waterproofing-brampton
+/locations/brampton /basement-waterproofing-brampton 301
+
+# Mississauga: /locations/mississauga cannibalizes /basement-waterproofing-mississauga
+/locations/mississauga /basement-waterproofing-mississauga 301
+
+# Toronto cost page → canonical blog post
+/basement-waterproofing-cost-toronto /blog/basement-waterproofing-cost-toronto-2025 301
+
+# Neighborhood pages → add canonical to their parent location
+# (these are internal cross-links, not redirects — handled via <link rel="canonical">)

@@ -1,0 +1,268 @@
+---
+// Google Review Link Component with Schema
+const googlePlaceId = 'ChIJN1t_tDeuEmsRUsoyG83frY4'; // Replace with actual Place ID
+const reviewLink = `https://g.page/r/${googlePlaceId}/review`;
+const shortLink = 'https://dryspace.review'; // Setup this redirect to Google review page
+---
+
+<div class="review-widget">
+  <div class="review-prompt">
+    <h3>Love Our Service?</h3>
+    <p>Share your experience with others</p>
+    <div class="review-stats">
+      <div class="stars">⭐⭐⭐⭐⭐</div>
+      <span>4.9/5.0 (487 Reviews)</span>
+    </div>
+    <a href={reviewLink} target="_blank" rel="noopener" class="btn-review">
+      <img src="/images/google-icon.svg" alt="Google Reviews - Dryspace Waterproofing customer testimonials" / width="64" height="64" loading="lazy" decoding="async">
+      Write a Google Review
+    </a>
+    <div class="review-incentive">
+      <span class="badge">THANK YOU GIFT</span>
+      <p>Get $50 off your next service when you leave a review</p>
+    </div>
+  </div>
+  
+  <!-- Short Link for Easy Sharing -->
+  <div class="share-link">
+    <p>Quick Review Link:</p>
+    <div class="link-copy">
+      <input type="text" value={shortLink} readonly id="reviewLink" />
+      <button id="copyBtn">Copy</button>
+    </div>
+  </div>
+</div>
+
+<!-- Review Request Email Template -->
+<template id="reviewEmailTemplate">
+  <div class="email-template">
+    <h2>Thank You for Choosing Dryspace Waterproofing!</h2>
+    <p>We hope you're enjoying your dry, protected basement.</p>
+    <p>Would you mind taking 30 seconds to share your experience?</p>
+    <a href={reviewLink} class="btn-email-review">Leave a Review on Google</a>
+    <p class="incentive">As a thank you, you'll receive $50 off your next service!</p>
+  </div>
+</template>
+
+<style>
+  .review-widget {
+    background: linear-gradient(135deg, #fff, #f8f9fa);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    max-width: 500px;
+    margin: 40px auto;
+  }
+  
+  .review-prompt {
+    text-align: center;
+  }
+  
+  .review-prompt h3 {
+    font-size: 28px;
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  .review-prompt p {
+    color: #666;
+    margin-bottom: 20px;
+  }
+  
+  .review-stats {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 25px;
+  }
+  
+  .stars {
+    font-size: 24px;
+  }
+  
+  .review-stats span {
+    color: #666;
+    font-weight: 600;
+  }
+  
+  .btn-review {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 30px;
+    background: #4285f4;
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: all 0.3s;
+  }
+  
+  .btn-review:hover {
+    background: #357ae8;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(66, 133, 244, 0.3);
+  }
+  
+  .btn-review img {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .review-incentive {
+    margin-top: 25px;
+    padding: 20px;
+    background: linear-gradient(135deg, #fff3e0, #ffecb3);
+    border-radius: 10px;
+  }
+  
+  .badge {
+    display: inline-block;
+    background: #FF6B35;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+  
+  .review-incentive p {
+    margin: 0;
+    color: #333;
+    font-weight: 500;
+  }
+  
+  .share-link {
+    margin-top: 30px;
+    padding-top: 30px;
+    border-top: 2px solid #f0f0f0;
+  }
+  
+  .share-link p {
+    margin-bottom: 10px;
+    color: #666;
+    font-weight: 600;
+  }
+  
+  .link-copy {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .link-copy input {
+    flex: 1;
+    padding: 10px 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #333;
+  }
+  
+  .link-copy button {
+    padding: 10px 20px;
+    background: #0077BE;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s;
+  }
+  
+  .link-copy button:hover {
+    background: #0066a5;
+  }
+  
+  /* Email Template Styles */
+  .email-template {
+    text-align: center;
+    padding: 40px;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .email-template h2 {
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .email-template p {
+    color: #666;
+    margin-bottom: 15px;
+    line-height: 1.6;
+  }
+  
+  .btn-email-review {
+    display: inline-block;
+    padding: 15px 40px;
+    background: #4285f4;
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: 600;
+    margin: 20px 0;
+  }
+  
+  .incentive {
+    background: #fff3e0;
+    padding: 15px;
+    border-radius: 8px;
+    color: #FF6B35;
+    font-weight: 600;
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const copyBtn = document.getElementById('copyBtn');
+    const input = document.getElementById('reviewLink');
+    
+    copyBtn?.addEventListener('click', () => {
+      input.select();
+      document.execCommand('copy');
+      
+      const originalText = copyBtn.textContent;
+      copyBtn.textContent = 'Copied!';
+      copyBtn.style.background = '#4CAF50';
+      
+      setTimeout(() => {
+        copyBtn.textContent = originalText;
+        copyBtn.style.background = '#0077BE';
+      }, 2000);
+    });
+  });
+  
+  // Review Schema Markup
+  const reviewSchema = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Dryspace Waterproofing",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "487",
+      "bestRating": "5"
+    },
+    "review": [
+      {
+        "@type": "Review",
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "5"
+        },
+        "author": {
+          "@type": "Person",
+          "name": "Sarah M."
+        },
+        "reviewBody": "Excellent service! They fixed our basement flooding issue completely. Professional team and great warranty."
+      }
+    ]
+  };
+  
+  const script = document.createElement('script');
+  script.type = 'application/ld+json';
+  script.textContent = JSON.stringify(reviewSchema);
+  document.head.appendChild(script);
+</script>

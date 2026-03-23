@@ -1,0 +1,705 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import ServiceHero from '../../components/sections/ServiceHero.astro';
+import TrustBar from '../../components/sections/TrustBar.astro';
+import ServiceProcess from '../../components/sections/ServiceProcess.astro';
+import ServicePricing from '../../components/sections/ServicePricing.astro';
+import CTABand from '../../components/sections/CTABand.astro';
+import SectionHeader from '../../components/sections/SectionHeader.astro';
+import UnderpinningServiceEnhanced from '../../components/react/UnderpinningServiceEnhanced.tsx';
+import ServiceSchema from '../../components/ServiceSchema.astro';
+import InternalLinks from '../../components/InternalLinks.astro';
+
+const pageTitle = "Basement Lowering Toronto | 24/7 Emergency | $3,700 Rebate | DrySpace";
+const pageDescription = "⚡ Emergency basement lowering in Toronto & GTA. ✓ Same-day service ✓ 25-year warranty ✓ $3,700 rebates ✓ 487+ reviews. Licensed & insured. Call 437-545-0067 for FREE inspection.";
+
+// Service areas for local SEO
+const serviceAreas = ["Toronto", "Mississauga", "Brampton", "Vaughan", "Markham", "Richmond Hill", "Oakville", "Burlington"];
+
+// Service FAQs for schema
+const serviceFAQs = [
+  {
+    question: "How much does basement lowering cost in Toronto?",
+    answer: "Basement excavation costs $200-$450 per square foot, with most projects ranging from $86,500-$162,000. The investment adds $400-$550 per square foot in property value, providing excellent ROI of 150-200%."
+  },
+  {
+    question: "How long does basement lowering take to complete?",
+    answer: "Basement excavation projects typically take 4-8 weeks depending on basement size and complexity. This includes excavation (1-2 weeks), structural work (2-3 weeks), and finishing (2-3 weeks). Weather can affect timelines."
+  },
+  {
+    question: "What are the benefits of basement lowering?",
+    answer: "Basement excavation adds 800-1200 sq ft of living space, increases property value by $162,000-$324,500, enables legal basement apartments earning $27,000-$38,000 annually, and provides better ceiling height for modern living."
+  },
+  {
+    question: "Do I need permits for basement lowering?",
+    answer: "Yes, basement excavation requires building permits, structural engineering drawings, soil reports, and inspections. We handle all permit applications, provide P.Eng certified designs, and coordinate inspections throughout the project."
+  },
+  {
+    question: "Is basement lowering safe for my existing structure?",
+    answer: "When done by licensed professionals, basement excavation is completely safe. We use proven techniques, structural engineering oversight, proper shoring, and NBC-compliant methods to ensure your existing structure remains stable throughout the process."
+  }
+];
+
+// Service offers for schema
+const serviceOffers = [
+  {
+    name: "Traditional Underpinning",
+    price: "$300-$450 per sq ft",
+    description: "Complete basement lowering with maximum headroom, full excavation, new foundation walls, and structural engineering certification."
+  },
+  {
+    name: "Bench Footing Method",
+    price: "$200-$300 per sq ft",
+    description: "Cost-effective underpinning using bench footings, partial excavation, and stepped foundation design for moderate ceiling height increase."
+  },
+  {
+    name: "Turnkey Basement Conversion",
+    price: "$450-$550 per sq ft",
+    description: "Complete underpinning with legal basement apartment finishing, separate entrance, kitchen, bathroom, and rental-ready completion."
+  }
+];
+
+// Process steps
+const processSteps = [
+  {
+    number: 1,
+    title: "Site Assessment & Testing",
+    description: "P.Eng certified soil analysis, bearing capacity testing, structural review, and geotechnical report."
+  },
+  {
+    number: 2,
+    title: "Engineering Design",
+    description: "Structural drawings, NBC compliance verification, permit application, and shoring plan development."
+  },
+  {
+    number: 3,
+    title: "Sequential Excavation",
+    description: "Hand-dig 3-foot sections, install temporary shoring, pour concrete pins, and repeat systematically."
+  },
+  {
+    number: 4,
+    title: "Final Completion",
+    description: "New foundation walls, waterproofing membrane, drainage system, and 25-year warranty registration."
+  }
+];
+
+// Pricing tiers
+const pricingTiers = [
+  {
+    name: "Bench Footing Method",
+    price: "$200-$300/sq ft",
+    description: "Cost-effective partial excavation with stepped foundation",
+    features: [
+      "Partial basement floor lowering",
+      "Moderate ceiling height increase",
+      "Stepped foundation design",
+      "P.Eng structural certification",
+      "Waterproofing included",
+      "25-year warranty"
+    ]
+  },
+  {
+    name: "Traditional Underpinning",
+    price: "$300-$450/sq ft",
+    description: "Complete excavation with maximum headroom gain",
+    popular: true,
+    features: [
+      "Full basement floor excavation",
+      "Maximum ceiling height (8-9 ft)",
+      "New foundation walls & footings",
+      "NBC-compliant concrete specs",
+      "Exterior waterproofing system",
+      "Structural engineering oversight",
+      "25-year transferable warranty"
+    ]
+  },
+  {
+    name: "Turnkey Conversion",
+    price: "$450-$550/sq ft",
+    description: "Complete underpinning plus rental suite finishing",
+    features: [
+      "Full underpinning service",
+      "Legal basement apartment",
+      "Separate entrance installation",
+      "Kitchen & bathroom finishing",
+      "Electrical & plumbing rough-in",
+      "City permit coordination",
+      "Rental-ready completion"
+    ]
+  }
+];
+
+// Soil bearing data for table
+const soilTypes = [
+  {
+    category: 'Sound Rock',
+    description: 'Granite, limestone, sandstone',
+    bearingPressure: '600+ kPa',
+    testing: 'Geological assessment required',
+    settlement: 'Negligible',
+    risk: 'low'
+  },
+  {
+    category: 'Dense/Compact Gravel',
+    description: 'Well-graded, angular particles',
+    bearingPressure: '150 kPa',
+    testing: 'Picket test: <200mm penetration',
+    settlement: 'Very low',
+    risk: 'low'
+  },
+  {
+    category: 'Loose Gravel',
+    description: 'Poorly graded, rounded particles',
+    bearingPressure: '50 kPa',
+    testing: 'Picket test: >200mm penetration',
+    settlement: 'Moderate',
+    risk: 'moderate'
+  },
+  {
+    category: 'Dense/Compact Sand',
+    description: 'Well-graded, angular grains',
+    bearingPressure: '150 kPa',
+    testing: 'Picket test: <200mm penetration',
+    settlement: 'Low',
+    risk: 'low'
+  },
+  {
+    category: 'Loose Sand',
+    description: 'Uniform, rounded grains',
+    bearingPressure: '50 kPa',
+    testing: 'Picket test: >200mm penetration',
+    settlement: 'High',
+    risk: 'high'
+  },
+  {
+    category: 'Stiff Silt',
+    description: 'Difficult to indent',
+    bearingPressure: '100 kPa',
+    testing: 'Thumb pressure: difficult indent',
+    settlement: 'Low-moderate',
+    risk: 'low'
+  },
+  {
+    category: 'Firm Silt',
+    description: 'Moderate indentation',
+    bearingPressure: '75 kPa',
+    testing: 'Thumb pressure: moderate indent',
+    settlement: 'Moderate',
+    risk: 'moderate'
+  },
+  {
+    category: 'Stiff Clay',
+    description: 'Very cohesive, dry',
+    bearingPressure: '100 kPa',
+    testing: 'Thumb pressure: difficult indent',
+    settlement: 'Low',
+    risk: 'low'
+  },
+  {
+    category: 'Firm Clay',
+    description: 'Moderately cohesive',
+    bearingPressure: '75 kPa',
+    testing: 'Thumb pressure: moderate indent',
+    settlement: 'Moderate',
+    risk: 'moderate'
+  },
+  {
+    category: 'Soft Clay',
+    description: 'Easily deformed',
+    bearingPressure: '40 kPa',
+    testing: 'Thumb pressure: easy indent',
+    settlement: 'High - requires special design',
+    risk: 'high'
+  }
+];
+
+// Concrete requirements
+const concreteSpecs = [
+  { application: 'Pin Sections', strength: '15 MPa', ratio: '0.70', details: ['3-foot maximum width', '7-day moist cure', 'Sequential installation'] },
+  { application: 'Foundation Walls', strength: '20 MPa', ratio: '0.65', details: ['Reinforced per NBC Part 4', 'Waterproofing membrane', '28-day strength test'] },
+  { application: 'Interior Floors', strength: '20 MPa', ratio: '0.65', details: ['Vapor barrier required', 'Power trowel finish', 'Crack control joints'] }
+];
+---
+
+<PageLayout
+  title={pageTitle}
+  description={pageDescription}
+>
+
+  <!-- ServiceSchema Component -->
+  <ServiceSchema
+    serviceName="Basement Underpinning Toronto"
+    description={pageDescription}
+    priceRange="$86,500-$162,000"
+    areaServed={serviceAreas}
+    offers={serviceOffers}
+    faqs={serviceFAQs}
+  />
+
+  <!-- Hero Section -->
+  <ServiceHero
+    title="Basement Underpinning Toronto"
+    description="Transform your Toronto basement into valuable living space. Lower basement floor for additional headroom. Increase property value by 15-20% with professional underpinning."
+    priceRange="$200-$450/sq ft"
+    duration="4-8 weeks"
+    rebate="Up to $3,700 Rebate"
+    backgroundImage="/images/new foundation exterior waterproofing dimpled membrane.webp"
+    breadcrumbs={[
+      { label: "Services", href: "/services" },
+      { label: "Underpinning" }
+    ]}
+  />
+
+  <!-- Trust Bar -->
+  <TrustBar />
+
+  <!-- NBC Soil Bearing Requirements -->
+  <section class="section-padding bg-white">
+    <div class="container mx-auto px-4 max-w-6xl">
+      <SectionHeader
+        label="Engineering Standards"
+        title="Foundation Engineering & Soil Analysis"
+        description="Proper soil analysis is critical for underpinning success. Our engineers assess soil bearing capacity according to NBC Table 9.4.4.1 to ensure your new foundation can safely support the increased loads."
+      />
+
+      <!-- Soil Bearing Table -->
+      <div class="overflow-x-auto mb-8">
+        <div class="bg-slate-50 rounded-2xl p-6 shadow-card">
+          <h3 class="text-xl font-bold text-slate-900 mb-6 flex items-center gap-2">
+            <span class="material-symbols-outlined text-cyan-500">landscape</span>
+            NBC Table 9.4.4.1 - Soil Bearing Pressures
+          </h3>
+
+          <div class="overflow-x-auto">
+            <table class="w-full bg-white rounded-xl overflow-hidden shadow-sm">
+              <thead class="bg-gradient-to-r from-cyan-500 to-cyan-600 text-white">
+                <tr>
+                  <th class="px-4 py-4 text-left font-semibold">Soil/Rock Type</th>
+                  <th class="px-4 py-4 text-left font-semibold">Max Bearing Pressure</th>
+                  <th class="px-4 py-4 text-left font-semibold">Field Testing Method</th>
+                  <th class="px-4 py-4 text-left font-semibold">Settlement Risk</th>
+                </tr>
+              </thead>
+              <tbody>
+                {soilTypes.map((soil, index) => (
+                  <tr class={`border-b border-slate-100 ${index % 2 === 0 ? 'bg-slate-50/50' : 'bg-white'} hover:bg-cyan-50/30 transition-colors`}>
+                    <td class="px-4 py-4">
+                      <div>
+                        <div class="font-semibold text-slate-900">{soil.category}</div>
+                        <div class="text-sm text-slate-600">{soil.description}</div>
+                      </div>
+                    </td>
+                    <td class="px-4 py-4">
+                      <span class="font-bold text-lg text-cyan-600">{soil.bearingPressure}</span>
+                    </td>
+                    <td class="px-4 py-4 text-sm text-slate-600">{soil.testing}</td>
+                    <td class="px-4 py-4">
+                      <span class={`inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-semibold
+                        ${soil.risk === 'high' ? 'bg-red-100 text-red-700' :
+                          soil.risk === 'moderate' ? 'bg-amber-100 text-amber-700' :
+                          'bg-cyan-100 text-cyan-700'}`}>
+                        {soil.settlement}
+                      </span>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- Testing Methods Grid -->
+      <div class="grid md:grid-cols-2 gap-6 mb-8">
+        <div class="bg-cyan-50 rounded-2xl p-6 border border-cyan-100 shadow-card">
+          <h3 class="font-bold text-lg mb-4 text-slate-900 flex items-center gap-2">
+            <span class="material-symbols-outlined text-cyan-500">straighten</span>
+            Picket Test for Sand/Gravel
+          </h3>
+          <ol class="space-y-3 text-sm text-slate-700">
+            <li class="flex items-start gap-2">
+              <span class="font-bold text-cyan-600 flex-shrink-0">1.</span>
+              <span>Use 38×38mm (2"×2") wood picket</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="font-bold text-cyan-600 flex-shrink-0">2.</span>
+              <span>Cut 45° bevel on end</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="font-bold text-cyan-600 flex-shrink-0">3.</span>
+              <span>Person of average weight pushes down</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="font-bold text-cyan-600 flex-shrink-0">4.</span>
+              <span>Measure penetration depth:</span>
+            </li>
+            <li class="ml-6 text-xs space-y-1">
+              <div>• &lt;200mm = Dense/Compact (150 kPa)</div>
+              <div>• &gt;200mm = Loose (50 kPa)</div>
+            </li>
+          </ol>
+        </div>
+
+        <div class="bg-cyan-50 rounded-2xl p-6 border border-cyan-100 shadow-card">
+          <h3 class="font-bold text-lg mb-4 text-slate-900 flex items-center gap-2">
+            <span class="material-symbols-outlined text-cyan-500">back_hand</span>
+            Thumb Test for Clay/Silt
+          </h3>
+          <ol class="space-y-3 text-sm text-slate-700">
+            <li class="flex items-start gap-2">
+              <span class="font-bold text-cyan-600 flex-shrink-0">1.</span>
+              <span>Test on undisturbed sample</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="font-bold text-cyan-600 flex-shrink-0">2.</span>
+              <span>Use wall of test pit</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="font-bold text-cyan-600 flex-shrink-0">3.</span>
+              <span>Apply thumb pressure:</span>
+            </li>
+            <li class="ml-6 text-xs space-y-1">
+              <div>• Difficult indent = Stiff (100 kPa)</div>
+              <div>• Moderate indent = Firm (75 kPa)</div>
+              <div>• Easy indent = Soft (40 kPa)</div>
+            </li>
+          </ol>
+        </div>
+      </div>
+
+      <!-- Design Requirements -->
+      <div class="grid md:grid-cols-2 gap-6 mb-8">
+        <div class="bg-slate-50 rounded-2xl p-6 border border-slate-200 shadow-card">
+          <h3 class="font-bold text-lg mb-4 text-slate-900">Pre-Underpinning Soil Testing</h3>
+          <ul class="space-y-3 text-sm text-slate-700">
+            <li class="flex items-start gap-2">
+              <span class="material-symbols-outlined text-cyan-500 text-sm flex-shrink-0 mt-0.5">check_circle</span>
+              <span>Test pit excavation to 2× footing width depth</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="material-symbols-outlined text-cyan-500 text-sm flex-shrink-0 mt-0.5">check_circle</span>
+              <span>Soil classification using picket & thumb tests</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="material-symbols-outlined text-cyan-500 text-sm flex-shrink-0 mt-0.5">check_circle</span>
+              <span>Check for weaker layers below bearing surface</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="material-symbols-outlined text-cyan-500 text-sm flex-shrink-0 mt-0.5">check_circle</span>
+              <span>Bearing pressure calculations per NBC 9.4.4.2</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="material-symbols-outlined text-cyan-500 text-sm flex-shrink-0 mt-0.5">check_circle</span>
+              <span>P.Eng certified geotechnical report</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="bg-slate-50 rounded-2xl p-6 border border-slate-200 shadow-card">
+          <h3 class="font-bold text-lg mb-4 text-slate-900">Foundation Design Requirements</h3>
+          <ul class="space-y-3 text-sm text-slate-700">
+            <li class="flex items-start gap-2">
+              <span class="material-symbols-outlined text-cyan-500 text-sm flex-shrink-0 mt-0.5">check_circle</span>
+              <span>Footings sized per NBC Section 9.15</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="material-symbols-outlined text-cyan-500 text-sm flex-shrink-0 mt-0.5">check_circle</span>
+              <span>Special design if soil &lt; 75 kPa (soft clay/loose sand)</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="material-symbols-outlined text-cyan-500 text-sm flex-shrink-0 mt-0.5">check_circle</span>
+              <span>60° load distribution angle calculation</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="material-symbols-outlined text-cyan-500 text-sm flex-shrink-0 mt-0.5">check_circle</span>
+              <span>Eccentric loading analysis near property lines</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="material-symbols-outlined text-cyan-500 text-sm flex-shrink-0 mt-0.5">check_circle</span>
+              <span>Differential settlement prevention design</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Calculation Formulas -->
+      <div class="bg-slate-100 rounded-2xl p-6 border border-slate-200 shadow-card mb-8">
+        <h4 class="font-bold text-lg mb-4 text-slate-900">Weaker Soil Layer Calculations (NBC 9.4.4.2)</h4>
+
+        <div class="grid md:grid-cols-2 gap-6 mb-6">
+          <div class="bg-white rounded-xl p-4">
+            <h5 class="font-semibold text-cyan-600 mb-3">Strip Footing Formula:</h5>
+            <div class="bg-slate-50 rounded-lg p-4 font-mono text-sm border border-slate-200 mb-3">
+              P₁ = P × W / (W + 1.155h)
+            </div>
+            <ul class="text-sm text-slate-600 space-y-1">
+              <li>• P₁ = Pressure at depth h</li>
+              <li>• P = Footing bearing pressure</li>
+              <li>• W = Footing width</li>
+              <li>• h = Depth to weaker layer</li>
+            </ul>
+          </div>
+
+          <div class="bg-white rounded-xl p-4">
+            <h5 class="font-semibold text-cyan-600 mb-3">Square Footing Formula:</h5>
+            <div class="bg-slate-50 rounded-lg p-4 font-mono text-sm border border-slate-200 mb-3">
+              P₂ = P × W² / (W + 1.155h)²
+            </div>
+            <ul class="text-sm text-slate-600 space-y-1">
+              <li>• P₂ = Pressure at depth h</li>
+              <li>• P = Footing bearing pressure</li>
+              <li>• W = Footing width</li>
+              <li>• h = Depth to weaker layer</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="bg-amber-50 border-2 border-amber-200 rounded-xl p-4">
+          <h5 class="font-semibold mb-2 text-amber-900">Example Calculation:</h5>
+          <p class="text-sm text-slate-700 leading-relaxed">
+            Strip footing: 1.0m wide, 200 kPa bearing pressure, soft clay at 0.5m depth<br/>
+            P₁ = 200 × 1.0 / (1.0 + 1.155 × 0.5) = 200 / 1.578 = <strong class="text-red-600">127 kPa</strong><br/>
+            <span class="text-red-600 font-medium">⚠️ Exceeds 40 kPa limit for soft clay - redesign required!</span>
+          </p>
+        </div>
+      </div>
+
+      <!-- Critical Requirements -->
+      <div class="bg-red-50 border-2 border-red-200 rounded-2xl p-6 shadow-card">
+        <h4 class="font-bold text-lg mb-4 text-red-900 flex items-center gap-2">
+          <span class="material-symbols-outlined text-red-600">warning</span>
+          Critical Design Requirements
+        </h4>
+        <ul class="text-sm text-slate-700 space-y-2">
+          <li class="flex items-start gap-2">
+            <span class="text-red-600 font-bold flex-shrink-0">•</span>
+            <span>If soil &lt; 75 kPa, footings must be designed per NBC Section 9.4</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-red-600 font-bold flex-shrink-0">•</span>
+            <span>Check for weaker layers within 2× footing width depth</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-red-600 font-bold flex-shrink-0">•</span>
+            <span>If weaker layer exists at depth &lt; 2W, use lower bearing capacity</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-red-600 font-bold flex-shrink-0">•</span>
+            <span>Load spreads at 60° angle from horizontal (frustum distribution)</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-red-600 font-bold flex-shrink-0">•</span>
+            <span>Eccentric loading near property lines requires special design</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="mt-6 text-xs text-slate-500 border-t border-slate-200 pt-4">
+        <p class="font-semibold text-slate-700">Reference: NBC 2015 Part 9, Section 9.4.4 - Foundation Conditions</p>
+        <p>Professional geotechnical investigation recommended for all major foundation work.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- NBC Concrete Specifications -->
+  <section class="section-padding bg-slate-50">
+    <div class="container mx-auto px-4 max-w-6xl">
+      <SectionHeader
+        label="Concrete Standards"
+        title="Concrete Mix Design for Underpinning"
+        description="All underpinning concrete meets or exceeds NBC 9.3.1 specifications for structural integrity. Our mix designs are optimized for Toronto's climate and soil conditions."
+      />
+
+      <!-- Concrete Specs Grid -->
+      <div class="grid md:grid-cols-3 gap-6 mb-8">
+        {concreteSpecs.map((spec) => (
+          <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-card">
+            <h3 class="font-bold text-lg mb-4 text-slate-900">{spec.application}</h3>
+            <div class="space-y-3 mb-4">
+              <div>
+                <p class="text-sm text-slate-600 mb-1">Minimum Strength</p>
+                <p class="text-2xl font-bold text-cyan-600">{spec.strength}</p>
+              </div>
+              <div>
+                <p class="text-sm text-slate-600 mb-1">Max W/C Ratio</p>
+                <p class="text-2xl font-bold text-cyan-600">{spec.ratio}</p>
+              </div>
+            </div>
+            <ul class="space-y-2 text-sm text-slate-600">
+              {spec.details.map((detail) => (
+                <li class="flex items-start gap-2">
+                  <span class="material-symbols-outlined text-cyan-500 text-sm flex-shrink-0 mt-0.5">check_circle</span>
+                  <span>{detail}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+
+      <!-- Cold Weather Requirements -->
+      <div class="bg-amber-50 border-2 border-amber-200 rounded-2xl p-6 shadow-card mb-8">
+        <h4 class="font-bold text-lg mb-4 text-slate-900 flex items-center gap-2">
+          <span class="material-symbols-outlined text-amber-500">ac_unit</span>
+          Cold Weather Requirements (Air Temp &lt; 5°C)
+        </h4>
+        <div class="grid md:grid-cols-2 gap-6 text-sm text-slate-700">
+          <ul class="space-y-2">
+            <li class="flex items-start gap-2">
+              <span class="text-amber-600 font-bold flex-shrink-0">•</span>
+              <span>Concrete temp: 10-25°C during mixing</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-amber-600 font-bold flex-shrink-0">•</span>
+              <span>Maintain ≥10°C for 72 hours after placing</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-amber-600 font-bold flex-shrink-0">•</span>
+              <span>No frozen materials in mix</span>
+            </li>
+          </ul>
+          <ul class="space-y-2">
+            <li class="flex items-start gap-2">
+              <span class="text-amber-600 font-bold flex-shrink-0">•</span>
+              <span>Protected curing required</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-amber-600 font-bold flex-shrink-0">•</span>
+              <span>Garage floors: 5-8% air entrainment</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-amber-600 font-bold flex-shrink-0">•</span>
+              <span>Exterior steps: 5-8% air entrainment</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Quality Standards Grid -->
+      <div class="grid md:grid-cols-3 gap-6 mb-8">
+        <div class="bg-white rounded-xl p-4 border border-slate-200 shadow-card">
+          <h5 class="font-bold text-cyan-600 mb-3">Aggregate Specs</h5>
+          <ul class="text-sm text-slate-600 space-y-2">
+            <li class="flex items-start gap-2">
+              <span class="text-cyan-500 flex-shrink-0">•</span>
+              <span>Max: 1/5 form width</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-cyan-500 flex-shrink-0">•</span>
+              <span>Max: 1/3 slab thickness</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-cyan-500 flex-shrink-0">•</span>
+              <span>Well-graded, no organics</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="bg-white rounded-xl p-4 border border-slate-200 shadow-card">
+          <h5 class="font-bold text-cyan-600 mb-3">Curing Standards</h5>
+          <ul class="text-sm text-slate-600 space-y-2">
+            <li class="flex items-start gap-2">
+              <span class="text-cyan-500 flex-shrink-0">•</span>
+              <span>7 days minimum moist cure</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-cyan-500 flex-shrink-0">•</span>
+              <span>28-day strength testing</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-cyan-500 flex-shrink-0">•</span>
+              <span>No load before full cure</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="bg-white rounded-xl p-4 border border-slate-200 shadow-card">
+          <h5 class="font-bold text-cyan-600 mb-3">Quality Control</h5>
+          <ul class="text-sm text-slate-600 space-y-2">
+            <li class="flex items-start gap-2">
+              <span class="text-cyan-500 flex-shrink-0">•</span>
+              <span>Slump testing on-site</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-cyan-500 flex-shrink-0">•</span>
+              <span>CSA A23.1 compliance</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-cyan-500 flex-shrink-0">•</span>
+              <span>No site water addition</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Mix Design Info -->
+      <div class="bg-cyan-50 border border-cyan-200 rounded-2xl p-6 shadow-card">
+        <p class="text-sm text-slate-700 leading-relaxed">
+          <strong class="text-slate-900">Site-Batched Concrete Mix (NBC Table 9.3.1.7):</strong>
+          Standard mix ratio 1:2:3 (cement:sand:gravel) with controlled water content.
+          Ready-mix concrete must meet CSA A23.1 standards for materials and methods.
+        </p>
+      </div>
+
+      <div class="mt-6 text-xs text-slate-500 border-t border-slate-200 pt-4">
+        <p class="font-semibold text-slate-700">Reference: National Building Code of Canada 2015, Part 9, Section 9.3.1 - Concrete</p>
+        <p>All concrete work meets or exceeds NBC requirements for structural integrity and durability.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Service Process -->
+  <ServiceProcess
+    title="Our Underpinning Process"
+    label="Step-by-Step Excellence"
+    steps={processSteps}
+  />
+
+  <!-- Modern Underpinning Service Component (React) -->
+  <UnderpinningServiceEnhanced client:load />
+
+  <!-- Pricing -->
+  <ServicePricing
+    title="Transparent Underpinning Pricing"
+    tiers={pricingTiers}
+  />
+
+  <!-- FAQ Section -->
+  <section class="section-padding bg-white">
+    <div class="container mx-auto px-4 max-w-4xl">
+      <SectionHeader
+        label="Common Questions"
+        title="Frequently Asked Questions"
+        description="Get answers to the most common questions about basement underpinning in Toronto."
+      />
+
+      <div class="space-y-4">
+        {serviceFAQs.map((faq) => (
+          <details class="group bg-slate-50 rounded-2xl border border-slate-200 overflow-hidden shadow-card hover:shadow-card-hover transition-shadow">
+            <summary class="flex items-center justify-between cursor-pointer p-6 font-semibold text-slate-900 list-none">
+              <span class="text-lg pr-4">{faq.question}</span>
+              <span class="material-symbols-outlined text-cyan-500 transition-transform group-open:rotate-180">
+                expand_more
+              </span>
+            </summary>
+            <div class="px-6 pb-6 text-slate-600 leading-relaxed">
+              {faq.answer}
+            </div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Internal Links -->
+  <InternalLinks category="foundation" currentPage="underpinning" limit={5} />
+
+  <!-- CTA Band -->
+  <CTABand
+    title="Ready to Transform Your Basement?"
+    subtitle="Schedule your free inspection today and unlock your home's potential. Our certified experts will assess your property and provide a detailed report with transparent pricing."
+    primaryCTA={{ text: "Book Free Inspection", href: "/free-inspection" }}
+    secondaryCTA={{ text: "Call 437-545-0067", href: "tel:437-545-0067" }}
+  />
+
+</PageLayout>

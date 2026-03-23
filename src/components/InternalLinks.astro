@@ -1,0 +1,93 @@
+---
+export interface Props {
+  category?: 'drainage' | 'waterproofing' | 'foundation' | 'emergency' | 'location' | 'construction';
+  currentPage?: string;
+  limit?: number;
+}
+
+const { category = 'waterproofing', currentPage = '', limit = 5 } = Astro.props;
+
+// Define related links for each category
+const linkCategories = {
+  drainage: [
+    { href: '/services/drainage-solutions', text: 'Complete Drainage Solutions', anchor: 'French drains, weeping tile, foundation drainage' },
+    { href: '/services/sump-pump-installation', text: 'Sump Pump Installation', anchor: 'Professional sump pump systems' },
+    { href: '/services/backwater-valve-installation', text: 'Backwater Valve Installation', anchor: 'Prevent sewage backup' },
+    { href: '/blog/french-drain-vs-weeping-tile', text: 'French Drain vs Weeping Tile Guide', anchor: 'Learn the differences' },
+    { href: '/emergency', text: '24/7 Emergency Drainage', anchor: 'Emergency water removal' }
+  ],
+  waterproofing: [
+    { href: '/services/exterior-waterproofing', text: 'Exterior Waterproofing', anchor: 'Complete exterior protection' },
+    { href: '/services/interior-waterproofing', text: 'Interior Waterproofing', anchor: 'Interior drainage systems' },
+    { href: '/services/foundation-repair', text: 'Foundation Repair', anchor: 'Fix cracks and leaks' },
+    { href: '/products/delta-ms-membrane', text: 'DELTA-MS Membrane', anchor: 'Premium waterproofing membrane' },
+    { href: '/resources/waterproofing-guide', text: 'Waterproofing Guide', anchor: 'Complete educational resource' },
+    { href: '/blog/interior-vs-exterior-waterproofing', text: 'Interior vs Exterior Comparison', anchor: 'Which method is right for you' },
+    { href: '/services/crawl-space-waterproofing', text: 'Crawl Space Waterproofing', anchor: 'Protect crawl spaces' }
+  ],
+  foundation: [
+    { href: '/services/foundation-repair', text: 'Foundation Repair Services', anchor: 'Structural solutions' },
+    { href: '/services/underpinning', text: 'Foundation Underpinning', anchor: 'Basement lowering' },
+    { href: '/services/footings-foundations', text: 'Footings & Foundations', anchor: 'NBC compliant construction' },
+    { href: '/services/bowing-basement-walls', text: 'Bowing Wall Repair', anchor: 'Structural wall reinforcement' },
+    { href: '/blog/signs-your-foundation-needs-repair', text: 'Signs of Foundation Problems', anchor: 'Early warning signs' },
+    { href: '/services/excavation-services', text: 'Excavation Services', anchor: 'Foundation excavation' }
+  ],
+  emergency: [
+    { href: '/emergency', text: '24/7 Emergency Service', anchor: 'Immediate water removal' },
+    { href: '/services/sump-pump-installation', text: 'Emergency Sump Pump', anchor: 'Rapid installation available' },
+    { href: '/services/mold-remediation', text: 'Mold Remediation', anchor: 'Post-flood mold removal' },
+    { href: '/blog/why-is-my-basement-leaking', text: 'Why Basements Leak', anchor: 'Common causes and solutions' },
+    { href: '/contact', text: 'Contact Us Now', anchor: 'Get immediate help' }
+  ],
+  location: [
+    { href: '/', text: 'Toronto Waterproofing', anchor: 'Downtown & GTA service' },
+    { href: '/basement-waterproofing-mississauga', text: 'Mississauga Services', anchor: 'Western GTA coverage' },
+    { href: '/locations/north-york', text: 'North York', anchor: 'Northern Toronto service' },
+    { href: '/locations/scarborough', text: 'Scarborough', anchor: 'Eastern service area' },
+    { href: '/service-areas', text: 'All Service Areas', anchor: 'Complete GTA coverage' },
+    { href: '/contact', text: 'Get Local Quote', anchor: 'Free estimates' }
+  ],
+  construction: [
+    { href: '/services/demolition-services', text: 'Demolition Services', anchor: 'Complete & selective demolition, asbestos removal' },
+    { href: '/services/excavation-services', text: 'Excavation Services', anchor: 'Foundation & utility excavation' },
+    { href: '/services/general-contracting', text: 'General Contracting', anchor: 'Complete construction management' },
+    { href: '/services/design-build', text: 'Design-Build Services', anchor: 'Integrated design and construction' },
+    { href: '/services/permit-drawings-services', text: 'Permit Drawings', anchor: 'City-approved architectural plans' },
+    { href: '/services/design-rendering-services', text: 'Design & Rendering', anchor: '3D visualization & architectural design' },
+    { href: '/services/basement-walkout-door-cutting', text: 'Walkout Door Installation', anchor: 'Basement access door cutting' },
+    { href: '/services/estimation-quantity-takeoff', text: 'Cost Estimation', anchor: 'Accurate project cost analysis' },
+    { href: '/contact', text: 'Get Construction Quote', anchor: 'Free estimates for all construction services' }
+  ]
+};
+
+// Filter out current page and limit results
+const categoryLinks = linkCategories[category] || linkCategories['waterproofing'];
+const links = categoryLinks
+  .filter(link => !link.href.includes(currentPage))
+  .slice(0, limit);
+---
+
+<div class="internal-links bg-slate-50 rounded-lg p-6 my-8">
+  <h3 class="text-xl font-bold mb-4">Related Services & Resources</h3>
+  <ul class="space-y-3">
+    {links.map(link => (
+      <li class="flex items-start">
+        <span class="text-cyan-600 mr-2">→</span>
+        <a 
+          href={link.href} 
+          class="text-cyan-600 hover:text-cyan-700 underline"
+          title={link.anchor}
+        >
+          <strong>{link.text}:</strong> <span class="text-slate-500">{link.anchor}</span>
+        </a>
+      </li>
+    ))}
+  </ul>
+</div>
+
+<style>
+  .internal-links {
+    border-left: 4px solid #3b82f6;
+  }
+</style>

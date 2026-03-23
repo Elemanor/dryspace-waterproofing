@@ -1,0 +1,835 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ContactCTA from '../../components/sections/CTA.astro';
+import NBCConcreteSpecs from '../../components/NBCConcreteSpecs.astro';
+import ServiceSchema from '../../components/ServiceSchema.astro';
+import InternalLinks from '../../components/InternalLinks.astro';
+
+const title = "Foundation Footings Installation | NBC 9.15.3 Compliant | Toronto";
+const description = "Professional foundation footings in Toronto. NBC 9.15.3 compliant sizing, step footings, column pads, reinforcement. Prevent settlement & structural damage.";
+
+// Service areas for local SEO
+const serviceAreas = [
+  "Toronto", "North York", "Scarborough", "Etobicoke", 
+  "Mississauga", "Brampton", "Vaughan", "Richmond Hill",
+  "Markham", "Oakville", "Burlington", "Hamilton"
+];
+
+// Service FAQs for schema
+const serviceFAQs = [
+  {
+    question: "How much do foundation footings cost in Toronto?",
+    answer: "Foundation footing costs vary by type: strip footings $150-250/linear meter, column pad footings $850-1,500 each, step footings $200-350/linear meter, reinforced footings $250-400/linear meter. Costs include excavation, materials, and installation per NBC 9.15.3 requirements."
+  },
+  {
+    question: "How long do foundation footing installations take?",
+    answer: "Foundation footing installation typically takes 3-7 days depending on scope: excavation 1-2 days, form work 1-2 days, concrete placement and curing 2-3 days. Weather conditions and soil type can affect timeline. Step footings on slopes require additional time."
+  },
+  {
+    question: "What are NBC 9.15.3 footing size requirements?",
+    answer: "NBC 9.15.3 requires minimum widths: 1 storey - 250mm exterior/200mm interior walls, 2 storeys - 350mm both, 3 storeys - 450mm exterior/500mm interior. Additional width needed for masonry: +65mm per storey brick veneer, +130mm solid masonry. Column footings 0.40-1.00 m² by height."
+  },
+  {
+    question: "How deep should foundation footings be in Toronto?",
+    answer: "Foundation footings must extend minimum 1.2m below grade for frost protection in Toronto area. Greater depths required for poor soil conditions or high water table. Footings must rest on undisturbed soil, rock, or 95% compacted granular fill per NBC requirements."
+  }
+];
+
+// Service offers for schema
+const serviceOffers = [
+  {
+    name: "Strip Footings Installation",
+    price: "$150-250/linear meter",
+    description: "NBC compliant sizing, excavation, form work, concrete placement, keyway installation"
+  },
+  {
+    name: "Column Pad Footings",
+    price: "$850-1,500 each",
+    description: "Load calculations, proper sizing, excavation, reinforcement, pedestal installation"
+  },
+  {
+    name: "Footing Underpinning",
+    price: "$550-800/linear meter",
+    description: "Deepen existing footings, staged excavation, temporary support, load transfer systems"
+  }
+];
+---
+
+<Layout title={title} description={description}>
+  <!-- Add Service Schema -->
+  <ServiceSchema
+    serviceName="Foundation Footings & Support Systems"
+    description="Professional foundation footings installation including strip footings, column pads, step footings, and underpinning services. NBC 9.15.3 compliant construction in Toronto and GTA"
+    priceRange="$150-1,500"
+    offers={serviceOffers}
+    faqs={serviceFAQs}
+    areaServed={serviceAreas}
+  />
+  <main>
+    <!-- Hero Section -->
+    <section class="relative py-20 bg-gradient-to-b from-blue-50 to-white">
+      <div class="container mx-auto px-6">
+        <div class="max-w-4xl mx-auto text-center">
+          <h1 class="text-4xl md:text-5xl font-bold mb-6">
+            Foundation Footings & Support Systems
+          </h1>
+          <p class="text-xl text-slate-500 mb-8">
+            NBC 9.15.3 Compliant Foundation Support Solutions
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="/contact" class="bg-cyan-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-cyan-700 transition">
+              Get Foundation Assessment
+            </a>
+            <a href="tel:437-545-0067" class="border-2 border-cyan-600 text-cyan-600 px-8 py-3 rounded-lg font-semibold hover:bg-cyan-50 transition">
+              📞 437-545-0067
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- NBC Requirements Overview -->
+    <section class="py-16 bg-slate-50">
+      <div class="container mx-auto px-6">
+        <div class="max-w-6xl mx-auto">
+          <div class="bg-white rounded-lg shadow-lg p-8 border-l-4 border-cyan-500">
+            <h2 class="text-2xl font-bold mb-6">NBC 9.15.3 Foundation Footing Requirements</h2>
+            
+            <div class="mb-6">
+              <p class="text-slate-600 mb-4">
+                Footings provide a firm level base for walls, columns, and chimneys while spreading high loads to wider areas, 
+                reducing potential settlement. They must rest on undisturbed soil, rock, or compacted granular fill without 
+                pyritic material that could cause damage.
+              </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+              <div>
+                <h3 class="font-bold mb-4 text-cyan-700">Critical Functions:</h3>
+                <ul class="space-y-2">
+                  <li class="flex items-start">
+                    <span class="text-cyan-500 mr-2">🏗️</span>
+                    <span>Spread concentrated loads over wider area</span>
+                  </li>
+                  <li class="flex items-start">
+                    <span class="text-cyan-500 mr-2">⚖️</span>
+                    <span>Reduce bearing pressure on soil</span>
+                  </li>
+                  <li class="flex items-start">
+                    <span class="text-cyan-500 mr-2">📐</span>
+                    <span>Provide level base for construction</span>
+                  </li>
+                  <li class="flex items-start">
+                    <span class="text-cyan-500 mr-2">🛡️</span>
+                    <span>Prevent differential settlement</span>
+                  </li>
+                </ul>
+              </div>
+              
+              <div>
+                <h3 class="font-bold mb-4 text-cyan-700">NBC Compliance Areas:</h3>
+                <div class="space-y-3">
+                  <div class="p-3 bg-cyan-50 rounded">
+                    <strong>9.15.3.1:</strong> Footings required locations
+                  </div>
+                  <div class="p-3 bg-cyan-50 rounded">
+                    <strong>9.15.3.4:</strong> Basic footing widths and areas
+                  </div>
+                  <div class="p-3 bg-cyan-50 rounded">
+                    <strong>9.15.3.8:</strong> Footing thickness requirements
+                  </div>
+                  <div class="p-3 bg-cyan-50 rounded">
+                    <strong>9.15.3.9:</strong> Step footing specifications
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footing Sizes Table -->
+    <section class="py-16">
+      <div class="container mx-auto px-6">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-3xl font-bold mb-12 text-center">NBC Table 9.15.3.4 - Minimum Footing Sizes</h2>
+          
+          <div class="bg-cyan-50 rounded-lg p-8">
+            <h3 class="text-xl font-bold mb-6 text-center">Strip Footings - Minimum Width (mm)</h3>
+            
+            <div class="overflow-x-auto">
+              <table class="w-full bg-white rounded-lg overflow-hidden">
+                <thead class="bg-cyan-600 text-white">
+                  <tr>
+                    <th class="px-4 py-3 text-left">Number of Floors</th>
+                    <th class="px-4 py-3 text-center">Exterior Walls</th>
+                    <th class="px-4 py-3 text-center">Interior Walls</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="border-b">
+                    <td class="px-4 py-3">1 Storey</td>
+                    <td class="px-4 py-3 text-center font-bold">250mm</td>
+                    <td class="px-4 py-3 text-center font-bold">200mm</td>
+                  </tr>
+                  <tr class="border-b bg-slate-50">
+                    <td class="px-4 py-3">2 Storeys</td>
+                    <td class="px-4 py-3 text-center font-bold">350mm</td>
+                    <td class="px-4 py-3 text-center font-bold">350mm</td>
+                  </tr>
+                  <tr class="border-b">
+                    <td class="px-4 py-3">3 Storeys</td>
+                    <td class="px-4 py-3 text-center font-bold">450mm</td>
+                    <td class="px-4 py-3 text-center font-bold">500mm</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="mt-8 grid md:grid-cols-2 gap-6">
+              <div class="bg-white rounded-lg p-4">
+                <h4 class="font-bold mb-3 text-cyan-700">Width Adjustments Required:</h4>
+                <ul class="text-sm space-y-2">
+                  <li>• Add 65mm per storey of masonry veneer</li>
+                  <li>• Add 130mm per storey of masonry construction</li>
+                  <li>• Add 100mm per storey of interior masonry</li>
+                  <li>• Double width if water table < footing width</li>
+                </ul>
+              </div>
+              
+              <div class="bg-white rounded-lg p-4">
+                <h4 class="font-bold mb-3 text-cyan-700">Column Footing Areas:</h4>
+                <ul class="text-sm space-y-2">
+                  <li>• 1 Storey: 0.40 m² (640×640mm)</li>
+                  <li>• 2 Storeys: 0.75 m² (870×870mm)</li>
+                  <li>• 3 Storeys: 1.00 m² (1000×1000mm)</li>
+                  <li>• Based on 3m maximum spacing</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="mt-6 p-4 bg-amber-50 rounded">
+              <p class="text-sm text-center">
+                <strong>Note:</strong> Sizes based on maximum 4.9m (16 ft) supported joist span and 2.4 kPa design load. 
+                Larger spans require proportional increases per NBC 9.15.3.3.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footing Requirements -->
+    <section class="py-16 bg-slate-50">
+      <div class="container mx-auto px-6">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-3xl font-bold mb-12 text-center">Critical Footing Requirements</h2>
+          
+          <div class="grid md:grid-cols-2 gap-8">
+            <!-- Footing Thickness -->
+            <div class="bg-white rounded-lg shadow-lg p-6">
+              <h3 class="text-xl font-bold mb-4 text-cyan-600">Footing Thickness (NBC 9.15.3.8)</h3>
+              <div class="mb-4">
+                <p class="text-slate-600 text-sm mb-3">
+                  Thickness must provide flexural strength for cantilevered portions beyond walls.
+                </p>
+              </div>
+              <h4 class="font-semibold mb-2">Requirements:</h4>
+              <ul class="space-y-2 text-sm">
+                <li>• Minimum 100mm (4") thickness</li>
+                <li>• Thickness ≥ projection beyond wall</li>
+                <li>• Unreinforced: T ≥ P (projection)</li>
+                <li>• 45° shear line from wall face</li>
+                <li>• Reinforcement allows reduced thickness</li>
+              </ul>
+              <div class="mt-4 p-3 bg-cyan-50 rounded">
+                <p class="text-xs"><strong>Example:</strong> 200mm wall on 600mm footing = 200mm projection = 200mm min thickness</p>
+              </div>
+            </div>
+
+            <!-- Step Footings -->
+            <div class="bg-white rounded-lg shadow-lg p-6">
+              <h3 class="text-xl font-bold mb-4 text-cyan-600">Step Footings (NBC 9.15.3.9)</h3>
+              <div class="mb-4">
+                <p class="text-slate-600 text-sm mb-3">
+                  Required on sloping sites to maintain horizontal bearing and prevent sliding.
+                </p>
+              </div>
+              <h4 class="font-semibold mb-2">Specifications:</h4>
+              <ul class="space-y-2 text-sm">
+                <li>• Maximum rise: 600mm (24")</li>
+                <li>• Minimum run: 600mm (24")</li>
+                <li>• Prevents shear failure in soil</li>
+                <li>• Maintains horizontal top surface</li>
+                <li>• Reduces excavation depth</li>
+              </ul>
+              <div class="mt-4 p-3 bg-cyan-50 rounded">
+                <p class="text-xs"><strong>Note:</strong> Steps higher than 600mm impractical due to soil instability</p>
+              </div>
+            </div>
+
+            <!-- High Water Table -->
+            <div class="bg-white rounded-lg shadow-lg p-6">
+              <h3 class="text-xl font-bold mb-4 text-cyan-600">High Water Table Conditions</h3>
+              <div class="mb-4">
+                <p class="text-slate-600 text-sm mb-3">
+                  Water table near footings weakens soil bearing capacity in granular soils.
+                </p>
+              </div>
+              <h4 class="font-semibold mb-2">When Water Table < Footing Width:</h4>
+              <ul class="space-y-2 text-sm">
+                <li>• Double footing width required</li>
+                <li>• Applies to sand, gravel, silt</li>
+                <li>• Not required for clay soils</li>
+                <li>• Can raise footing with compacted fill</li>
+                <li>• Consider dewatering during construction</li>
+              </ul>
+              <div class="mt-4 p-3 bg-red-50 rounded">
+                <p class="text-xs"><strong>Critical:</strong> 50% bearing capacity reduction with high water table</p>
+              </div>
+            </div>
+
+            <!-- Support Requirements -->
+            <div class="bg-white rounded-lg shadow-lg p-6">
+              <h3 class="text-xl font-bold mb-4 text-cyan-600">Footing Support (NBC 9.15.3.2)</h3>
+              <div class="mb-4">
+                <p class="text-slate-600 text-sm mb-3">
+                  Footings must rest on suitable material to prevent excessive settlement.
+                </p>
+              </div>
+              <h4 class="font-semibold mb-2">Acceptable Support:</h4>
+              <ul class="space-y-2 text-sm">
+                <li>• Undisturbed natural soil</li>
+                <li>• Sound bedrock</li>
+                <li>• Compacted granular fill (95% SPD)</li>
+                <li>• No organic material</li>
+                <li>• No pyritic shale content</li>
+              </ul>
+              <div class="mt-4 p-3 bg-cyan-50 rounded">
+                <p class="text-xs"><strong>Testing:</strong> Soil bearing capacity per NBC Table 9.4.4.1</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="py-16">
+      <div class="container mx-auto px-6">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-3xl font-bold mb-12 text-center">Our Foundation Footing Services</h2>
+          
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="bg-white rounded-lg shadow-lg p-6">
+              <h3 class="text-xl font-bold mb-3 text-cyan-600">Strip Footings</h3>
+              <ul class="space-y-2 mb-4">
+                <li>• NBC compliant sizing</li>
+                <li>• Excavation to bearing soil</li>
+                <li>• Form work & reinforcement</li>
+                <li>• Concrete placement & finishing</li>
+                <li>• Keyway for wall connection</li>
+              </ul>
+              <p class="text-sm text-slate-500">$150-250 per linear meter</p>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-lg p-6">
+              <h3 class="text-xl font-bold mb-3 text-cyan-600">Column Pad Footings</h3>
+              <ul class="space-y-2 mb-4">
+                <li>• Load calculations</li>
+                <li>• NBC Table 9.15.3.4 sizing</li>
+                <li>• Excavation & base prep</li>
+                <li>• Reinforcement placement</li>
+                <li>• Pedestal installation</li>
+              </ul>
+              <p class="text-sm text-slate-500">$850-1,500 per pad</p>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-lg p-6">
+              <h3 class="text-xl font-bold mb-3 text-cyan-600">Step Footings</h3>
+              <ul class="space-y-2 mb-4">
+                <li>• Slope site analysis</li>
+                <li>• 600mm max rise/run</li>
+                <li>• Stepped excavation</li>
+                <li>• Reinforced connections</li>
+                <li>• Level bearing surfaces</li>
+              </ul>
+              <p class="text-sm text-slate-500">$200-350 per linear meter</p>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-lg p-6">
+              <h3 class="text-xl font-bold mb-3 text-cyan-600">Footing Underpinning</h3>
+              <ul class="space-y-2 mb-4">
+                <li>• Deepen existing footings</li>
+                <li>• Staged excavation</li>
+                <li>• Temporary support</li>
+                <li>• New concrete placement</li>
+                <li>• Load transfer system</li>
+              </ul>
+              <p class="text-sm text-slate-500">$550-800 per linear meter</p>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-lg p-6">
+              <h3 class="text-xl font-bold mb-3 text-cyan-600">Reinforced Footings</h3>
+              <ul class="space-y-2 mb-4">
+                <li>• Engineering design</li>
+                <li>• Rebar placement</li>
+                <li>• Reduced thickness possible</li>
+                <li>• Heavy load capacity</li>
+                <li>• Special conditions</li>
+              </ul>
+              <p class="text-sm text-slate-500">$250-400 per linear meter</p>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-lg p-6">
+              <h3 class="text-xl font-bold mb-3 text-cyan-600">Footing Repairs</h3>
+              <ul class="space-y-2 mb-4">
+                <li>• Settlement correction</li>
+                <li>• Crack injection</li>
+                <li>• Undermining repairs</li>
+                <li>• Drainage improvements</li>
+                <li>• Stabilization work</li>
+              </ul>
+              <p class="text-sm text-slate-500">$300-600 per linear meter</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Special Calculations -->
+    <section class="py-16 bg-slate-50">
+      <div class="container mx-auto px-6">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-3xl font-bold mb-12 text-center">Footing Size Calculations</h2>
+          
+          <div class="grid md:grid-cols-2 gap-8">
+            <!-- Spans > 4.9m -->
+            <div class="bg-amber-50 border-2 border-amber-400 rounded-lg p-6">
+              <h3 class="text-xl font-bold mb-4">Spans Greater Than 4.9m (16 ft)</h3>
+              <p class="text-sm mb-4">
+                For joist spans exceeding 4.9m, footing sizes must be increased proportionally:
+              </p>
+              <div class="bg-white rounded p-4">
+                <h4 class="font-semibold mb-2">Calculation Method:</h4>
+                <ol class="text-sm space-y-2">
+                  <li><strong>1.</strong> Sum supported joist lengths</li>
+                  <li><strong>2.</strong> Multiply storeys × 4.9m</li>
+                  <li><strong>3.</strong> Calculate ratio: Sum1/Sum2</li>
+                  <li><strong>4.</strong> Multiply table size by ratio</li>
+                </ol>
+                <div class="mt-4 p-3 bg-amber-50 rounded">
+                  <p class="text-xs"><strong>Example:</strong> 6m span, 2 storeys:<br/>
+                  Ratio = 12m/9.8m = 1.22<br/>
+                  350mm × 1.22 = 427mm required</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Column Spacing -->
+            <div class="bg-cyan-50 border-2 border-cyan-400 rounded-lg p-6">
+              <h3 class="text-xl font-bold mb-4">Column Spacing Adjustments</h3>
+              <p class="text-sm mb-4">
+                NBC Table 9.15.3.4 assumes 3m maximum column spacing. Adjustments required:
+              </p>
+              <div class="bg-white rounded p-4">
+                <h4 class="font-semibold mb-2">Area Increase Formula:</h4>
+                <div class="text-sm space-y-2">
+                  <p><strong>If spacing > 3m:</strong></p>
+                  <p>New Area = Table Area × (Actual Spacing ÷ 3m)</p>
+                </div>
+                <div class="mt-4 p-3 bg-cyan-100 rounded">
+                  <p class="text-xs"><strong>Example:</strong> 4m spacing, 2 storeys:<br/>
+                  0.75 m² × (4m/3m) = 1.0 m²<br/>
+                  = 1000×1000mm pad required</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Masonry Additions -->
+            <div class="bg-cyan-50 border-2 border-green-400 rounded-lg p-6">
+              <h3 class="text-xl font-bold mb-4">Masonry Load Adjustments</h3>
+              <p class="text-sm mb-4">
+                Additional width required for masonry construction:
+              </p>
+              <div class="bg-white rounded p-4">
+                <table class="w-full text-sm">
+                  <thead>
+                    <tr class="border-b">
+                      <th class="text-left py-2">Type</th>
+                      <th class="text-right py-2">Add Per Storey</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="border-b">
+                      <td class="py-2">Brick Veneer</td>
+                      <td class="text-right font-bold">+65mm</td>
+                    </tr>
+                    <tr class="border-b">
+                      <td class="py-2">Solid Masonry</td>
+                      <td class="text-right font-bold">+130mm</td>
+                    </tr>
+                    <tr>
+                      <td class="py-2">Interior Masonry</td>
+                      <td class="text-right font-bold">+100mm</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <!-- Pier Footings -->
+            <div class="bg-purple-50 border-2 border-purple-400 rounded-lg p-6">
+              <h3 class="text-xl font-bold mb-4">Pier Foundation Sizing</h3>
+              <p class="text-sm mb-4">
+                For manufactured homes and pier foundations:
+              </p>
+              <div class="bg-white rounded p-4">
+                <h4 class="font-semibold mb-2">Area Formula:</h4>
+                <div class="text-sm">
+                  <p><strong>A = 1.5 × d ÷ p</strong></p>
+                  <ul class="mt-2 space-y-1">
+                    <li>• A = footing area (m²)</li>
+                    <li>• d = pier spacing (m)</li>
+                    <li>• p = soil bearing (kPa)</li>
+                  </ul>
+                </div>
+                <div class="mt-4 p-3 bg-purple-100 rounded">
+                  <p class="text-xs"><strong>Example:</strong> 3m spacing, 75 kPa soil:<br/>
+                  A = 1.5 × 3 ÷ 75 = 0.06 m²</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Installation Process -->
+    <section class="py-16">
+      <div class="container mx-auto px-6">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-3xl font-bold mb-12 text-center">Professional Installation Process</h2>
+          
+          <div class="space-y-6">
+            <div class="flex items-start">
+              <div class="bg-cyan-600 text-white rounded-full w-10 h-10 flex items-center justify-center mr-4 flex-shrink-0">
+                1
+              </div>
+              <div>
+                <h3 class="font-bold mb-2">Soil Investigation</h3>
+                <p class="text-slate-500">Test soil bearing capacity per NBC Table 9.4.4.1. Check for water table, organic material, pyritic shale. Determine footing depth below frost line.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start">
+              <div class="bg-cyan-600 text-white rounded-full w-10 h-10 flex items-center justify-center mr-4 flex-shrink-0">
+                2
+              </div>
+              <div>
+                <h3 class="font-bold mb-2">Load Calculations</h3>
+                <p class="text-slate-500">Calculate building loads including dead, live, and snow loads. Determine required footing sizes per NBC 9.15.3.4. Account for masonry and special conditions.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start">
+              <div class="bg-cyan-600 text-white rounded-full w-10 h-10 flex items-center justify-center mr-4 flex-shrink-0">
+                3
+              </div>
+              <div>
+                <h3 class="font-bold mb-2">Excavation</h3>
+                <p class="text-slate-500">Excavate to required depth (min 1.2m frost protection). Ensure undisturbed soil at bearing level. Compact any fill to 95% SPD. Check elevations.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start">
+              <div class="bg-cyan-600 text-white rounded-full w-10 h-10 flex items-center justify-center mr-4 flex-shrink-0">
+                4
+              </div>
+              <div>
+                <h3 class="font-bold mb-2">Form Work</h3>
+                <p class="text-slate-500">Install forms to exact dimensions. Ensure level bearing surface. Add keyways for wall connection. Install reinforcement if required.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start">
+              <div class="bg-cyan-600 text-white rounded-full w-10 h-10 flex items-center justify-center mr-4 flex-shrink-0">
+                5
+              </div>
+              <div>
+                <h3 class="font-bold mb-2">Concrete Placement</h3>
+                <p class="text-slate-500">Place concrete meeting NBC 9.3.1 specifications. Vibrate for consolidation. Finish top surface level. Protect from freezing if required.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start">
+              <div class="bg-cyan-600 text-white rounded-full w-10 h-10 flex items-center justify-center mr-4 flex-shrink-0">
+                6
+              </div>
+              <div>
+                <h3 class="font-bold mb-2">Curing & Protection</h3>
+                <p class="text-slate-500">Maintain moisture for proper curing (7 days minimum). Strip forms after 24-48 hours. Install drainage before backfilling. Document for inspections.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Parging and Finishing Section -->
+    <section class="py-16 bg-slate-50">
+      <div class="container mx-auto px-6">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-3xl font-bold mb-12 text-center">NBC 9.15.6 Parging & Finishing Requirements</h2>
+          
+          <div class="bg-white rounded-lg shadow-lg p-8 border-l-4 border-orange-500">
+            <p class="text-slate-600 mb-6">
+              Parging and finishing are critical for moisture control through foundations. Concrete block walls require 
+              parging to provide an even, continuous base for dampproofing or waterproofing application.
+            </p>
+
+            <div class="grid md:grid-cols-2 gap-8">
+              <!-- Below Ground Requirements -->
+              <div class="bg-cyan-50 rounded-lg p-6">
+                <h3 class="text-xl font-bold mb-4 text-cyan-700">9.15.6.1 Below Ground</h3>
+                <h4 class="font-semibold mb-3">Concrete Block Walls:</h4>
+                <ul class="space-y-2 text-sm">
+                  <li class="flex items-start">
+                    <span class="text-cyan-600 mr-2">✓</span>
+                    <span>Minimum 6mm (1/4") parging thickness</span>
+                  </li>
+                  <li class="flex items-start">
+                    <span class="text-cyan-600 mr-2">✓</span>
+                    <span>Even and continuous coverage</span>
+                  </li>
+                  <li class="flex items-start">
+                    <span class="text-cyan-600 mr-2">✓</span>
+                    <span>Coved over footing junction</span>
+                  </li>
+                  <li class="flex items-start">
+                    <span class="text-cyan-600 mr-2">✓</span>
+                    <span>Substrate for dampproofing/waterproofing</span>
+                  </li>
+                </ul>
+                
+                <h4 class="font-semibold mb-3 mt-4">Poured Concrete Walls:</h4>
+                <ul class="space-y-2 text-sm">
+                  <li class="flex items-start">
+                    <span class="text-cyan-600 mr-2">✓</span>
+                    <span>Form ties removed flush minimum</span>
+                  </li>
+                  <li class="flex items-start">
+                    <span class="text-cyan-600 mr-2">✓</span>
+                    <span>Tie holes sealed with mortar</span>
+                  </li>
+                  <li class="flex items-start">
+                    <span class="text-cyan-600 mr-2">✓</span>
+                    <span>Smooth surface for coatings</span>
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Above Ground Requirements -->
+              <div class="bg-cyan-50 rounded-lg p-6">
+                <h3 class="text-xl font-bold mb-4 text-cyan-700">9.15.6.2 Above Ground</h3>
+                <h4 class="font-semibold mb-3">Masonry Walls:</h4>
+                <ul class="space-y-2 text-sm">
+                  <li class="flex items-start">
+                    <span class="text-cyan-600 mr-2">✓</span>
+                    <span>Tooled mortar joints preferred</span>
+                  </li>
+                  <li class="flex items-start">
+                    <span class="text-cyan-600 mr-2">✓</span>
+                    <span>OR parging application</span>
+                  </li>
+                  <li class="flex items-start">
+                    <span class="text-cyan-600 mr-2">✓</span>
+                    <span>OR other suitable finish</span>
+                  </li>
+                  <li class="flex items-start">
+                    <span class="text-cyan-600 mr-2">✓</span>
+                    <span>Prevent rainwater leakage</span>
+                  </li>
+                </ul>
+
+                <h4 class="font-semibold mb-3 mt-4">Purpose:</h4>
+                <ul class="space-y-2 text-sm">
+                  <li class="flex items-start">
+                    <span class="text-cyan-600 mr-2">✓</span>
+                    <span>Resist rainwater entry</span>
+                  </li>
+                  <li class="flex items-start">
+                    <span class="text-cyan-600 mr-2">✓</span>
+                    <span>Improve mortar-block contact</span>
+                  </li>
+                  <li class="flex items-start">
+                    <span class="text-cyan-600 mr-2">✓</span>
+                    <span>Enhance appearance</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Form Tie Requirements -->
+            <div class="mt-8 bg-amber-50 border-2 border-amber-400 rounded-lg p-6">
+              <h3 class="text-xl font-bold mb-4">9.15.6.3 Form Tie Requirements</h3>
+              
+              <div class="grid md:grid-cols-3 gap-4">
+                <div class="bg-white p-4 rounded">
+                  <h4 class="font-semibold mb-2 text-sm">Removal</h4>
+                  <ul class="text-xs space-y-1">
+                    <li>• Cut flush minimum</li>
+                    <li>• Both sides of wall</li>
+                    <li>• Below & above grade</li>
+                    <li>• Safety requirement</li>
+                  </ul>
+                </div>
+                
+                <div class="bg-white p-4 rounded">
+                  <h4 class="font-semibold mb-2 text-sm">Sealing</h4>
+                  <ul class="text-xs space-y-1">
+                    <li>• Fill with mortar</li>
+                    <li>• Or dampproofing material</li>
+                    <li>• Smooth surface required</li>
+                    <li>• All holes & recesses</li>
+                  </ul>
+                </div>
+                
+                <div class="bg-white p-4 rounded">
+                  <h4 class="font-semibold mb-2 text-sm">Purpose</h4>
+                  <ul class="text-xs space-y-1">
+                    <li>• Substrate preparation</li>
+                    <li>• Prevent water entry</li>
+                    <li>• Injury prevention</li>
+                    <li>• Coating adhesion</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- Best Practices -->
+            <div class="mt-6 p-4 bg-orange-100 rounded">
+              <h4 class="font-bold mb-2">Parging Best Practices:</h4>
+              <ul class="text-sm space-y-1">
+                <li>• Apply in two coats for durability</li>
+                <li>• First coat scratched for adhesion</li>
+                <li>• Cure properly before waterproofing</li>
+                <li>• Protect from freezing during cure</li>
+                <li>• Use proper mix design (1:3 cement:sand typical)</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- NBC Concrete Specs -->
+    <section class="py-16">
+      <div class="container mx-auto px-6">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-3xl font-bold mb-8 text-center">NBC Concrete Requirements for Footings</h2>
+          <NBCConcreteSpecs showFootings={true} showColdWeather={true} />
+        </div>
+      </div>
+    </section>
+
+    <!-- Common Issues -->
+    <section class="py-16">
+      <div class="container mx-auto px-6">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-3xl font-bold mb-12 text-center">Common Footing Problems & Solutions</h2>
+          
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="bg-red-50 rounded-lg p-6">
+              <h3 class="font-bold mb-3 text-red-700">Undersized Footings</h3>
+              <p class="text-sm mb-3">Excessive settlement and cracking</p>
+              <p class="text-xs"><strong>Solution:</strong> Underpinning or footing enlargement</p>
+            </div>
+
+            <div class="bg-orange-50 rounded-lg p-6">
+              <h3 class="font-bold mb-3 text-orange-700">Frost Damage</h3>
+              <p class="text-sm mb-3">Heaving and movement from freezing</p>
+              <p class="text-xs"><strong>Solution:</strong> Extend below frost line (1.2m min)</p>
+            </div>
+
+            <div class="bg-amber-50 rounded-lg p-6">
+              <h3 class="font-bold mb-3 text-amber-600">Water Table Issues</h3>
+              <p class="text-sm mb-3">Reduced bearing capacity</p>
+              <p class="text-xs"><strong>Solution:</strong> Double footing width or dewater</p>
+            </div>
+
+            <div class="bg-purple-50 rounded-lg p-6">
+              <h3 class="font-bold mb-3 text-purple-700">Differential Settlement</h3>
+              <p class="text-sm mb-3">Uneven support causing cracks</p>
+              <p class="text-xs"><strong>Solution:</strong> Soil stabilization or piers</p>
+            </div>
+
+            <div class="bg-cyan-50 rounded-lg p-6">
+              <h3 class="font-bold mb-3 text-cyan-700">Inadequate Thickness</h3>
+              <p class="text-sm mb-3">Shear failure at projections</p>
+              <p class="text-xs"><strong>Solution:</strong> Reinforce or increase thickness</p>
+            </div>
+
+            <div class="bg-cyan-50 rounded-lg p-6">
+              <h3 class="font-bold mb-3 text-cyan-700">Poor Soil Conditions</h3>
+              <p class="text-sm mb-3">Organic material or fill settling</p>
+              <p class="text-xs"><strong>Solution:</strong> Remove and replace with engineered fill</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-16 bg-slate-50">
+      <div class="container mx-auto px-6">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-3xl font-bold mb-12 text-center">Foundation Footing FAQs</h2>
+          
+          <div class="space-y-6">
+            <div class="bg-white rounded-lg shadow p-6">
+              <h3 class="font-bold mb-3">Why must footing thickness equal or exceed projection?</h3>
+              <p class="text-slate-500">Unreinforced concrete tends to fail along 45° shear lines from the wall face. The thickness must equal projection to keep loads within this shear cone, preventing failure.</p>
+            </div>
+
+            <div class="bg-white rounded-lg shadow p-6">
+              <h3 class="font-bold mb-3">When are step footings required?</h3>
+              <p class="text-slate-500">On sloping sites to maintain horizontal bearing surfaces and prevent sliding. Maximum 600mm rise and minimum 600mm run prevents soil instability and shear failure.</p>
+            </div>
+
+            <div class="bg-white rounded-lg shadow p-6">
+              <h3 class="font-bold mb-3">How deep should footings be in Toronto?</h3>
+              <p class="text-slate-500">Minimum 1.2m (4 feet) below grade for frost protection in Toronto area. Greater depths may be required based on local conditions or building officials.</p>
+            </div>
+
+            <div class="bg-white rounded-lg shadow p-6">
+              <h3 class="font-bold mb-3">Can I use existing footings for an addition?</h3>
+              <p class="text-slate-500">Existing footings must be verified for size, depth, and condition. Often require underpinning or enlargement to meet current NBC requirements for increased loads.</p>
+            </div>
+
+            <div class="bg-white rounded-lg shadow p-6">
+              <h3 class="font-bold mb-3">What soil bearing capacity is assumed in NBC tables?</h3>
+              <p class="text-slate-500">NBC Table 9.15.3.4 assumes minimum 75 kPa bearing capacity. Lower capacity soils require proportionally larger footings. Site-specific testing recommended.</p>
+            </div>
+
+            <div class="bg-white rounded-lg shadow p-6">
+              <h3 class="font-bold mb-3">Do footings require reinforcement?</h3>
+              <p class="text-slate-500">Not typically for residential footings meeting NBC 9.15.3 requirements. Reinforcement allows reduced thickness or handles special conditions like poor soils.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Related Services and Resources -->
+    <section class="py-8">
+      <div class="container mx-auto px-4">
+        <InternalLinks category="foundation" currentPage="footings-foundations" limit={6} />
+      </div>
+    </section>
+
+    <ContactCTA />
+    <!-- ServiceAreas removed -->
+  </main>
+</Layout>

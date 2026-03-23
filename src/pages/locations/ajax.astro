@@ -1,0 +1,422 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import Hero from '../../components/sections/Hero.astro';
+import Services from '../../components/sections/Services.astro';
+import Process from '../../components/sections/Process.astro';
+import Testimonials from '../../components/sections/Testimonials.astro';
+import Stats from '../../components/sections/Stats.astro';
+import LocationImageShowcase from '../../components/LocationImageShowcase.astro';
+import InternalLinks from '../../components/InternalLinks.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import BreadcrumbSchema from '../../components/BreadcrumbSchema.astro';
+
+const pageTitle = "Waterproofing Ajax | Durham Region Foundation Experts";
+const pageDescription = "Ajax lakefront moisture protection specialists. Storm surge protection, newer development experts, Lake Ontario proximity solutions.";
+
+// Local area information
+const localInfo = {
+  cityName: "Ajax",
+  population: "126,000",
+  waterTable: "High near lakefront",
+  soilType: "Lake sediment clay",
+  avgHomesAge: "25-35 years",
+  floodRisk: "Moderate - storm surge",
+  avgRainfall: "820mm + lakeshore effect"
+};
+
+// Location-specific features
+const locationFeatures = [
+  {
+    title: 'LOCAL AJAX EXPERTS',
+    description: 'Serving Ajax for over 25 years with deep knowledge of local conditions.',
+    highlight: true
+  },
+  {
+    title: 'FAST RESPONSE TIME',
+    description: '2-hour emergency response anywhere in Ajax. Available 24/7.',
+    highlight: true
+  },
+  {
+    title: 'ALL NEIGHBORHOODS',
+    description: 'Serving Downtown Ajax, Riverside, Applecroft and all Ajax areas.',
+    highlight: true
+  },
+  {
+    title: 'LAKEFRONT EXPERTISE',
+    description: 'Specialized in Lake Ontario storm surge, lakeshore effect snow melt, elevated groundwater tables.'
+  },
+  {
+    title: 'HOME AGE EXPERTISE',
+    description: 'Specialized in 25-35 years homes common in Ajax.'
+  },
+  {
+    title: 'STORM SURGE PROTECTION',
+    description: 'Advanced systems for Ajax waterfront storm surge and seasonal level changes.'
+  }
+];
+
+// Location-specific FAQs
+const locationFAQs = [
+  {
+    question: "How does Lake Ontario proximity affect Ajax lower levels?",
+    answer: "Lake Ontario creates unique challenges including elevated groundwater, storm surge impacts, and seasonal level fluctuations. Our lakefront protection systems account for these specific conditions with enhanced drainage and surge protection."
+  },
+  {
+    question: "What moisture protection issues affect Ajax's newer developments?",
+    answer: "Newer Ajax developments face rapid settling, inadequate initial drainage, and modern construction vulnerabilities. We specialize in post-construction moisture protection upgrades and warranty-compliant solutions for homes built in the last 25-35 years."
+  },
+  {
+    question: "How do you handle storm surge flooding in Ajax?",
+    answer: "Our storm surge protection includes advanced sump pump systems, lake-level monitoring integration, and emergency backup power. We've developed specific protocols for Ajax's lakefront areas during severe weather events."
+  },
+  {
+    question: "What makes Ajax soil conditions unique for moisture protection?",
+    answer: "Ajax's lake sediment clay expands significantly when wet and creates pressure against foundations. Combined with the high groundwater table near the lake, this requires specialized membrane systems and enhanced drainage solutions."
+  },
+  {
+    question: "Do you offer emergency response during lake storms?",
+    answer: "Yes! Our Ajax emergency team monitors Environment Canada lake level warnings and provides priority response during storm surge events. We maintain emergency equipment specifically for lakefront flood situations."
+  },
+  {
+    question: "How do you protect Ajax homes near the waterfront?",
+    answer: "Waterfront Ajax homes require specialized systems including marine-grade membranes, enhanced sump capacity, and storm surge barriers. We factor in wave action, ice damage, and seasonal water level changes in our designs."
+  }
+];
+
+// Schema markup for local business
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": ["LocalBusiness", "HomeAndConstructionBusiness", "WaterproofingService"],
+  "name": "Dryspace Waterproofing",
+  "description": "Professional waterproofing services in Ajax. Expert basement waterproofing, foundation repair, and drainage solutions. Serving all Ajax neighborhoods with 25-year warranty protection.",
+  "telephone": "437-545-0067",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Ajax Service Area",
+    "addressLocality": "Ajax",
+    "addressRegion": "ON",
+    "postalCode": "L1S",
+    "addressCountry": "CA"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "43.8509",
+    "longitude": "-79.0204"
+  },
+  "areaServed": [
+    {
+      "@type": "City",
+      "name": "Ajax",
+      "sameAs": "https://en.wikipedia.org/wiki/Ajax,_Ontario"
+    },
+    {
+      "@type": "Place",
+      "name": "Durham Region"
+    }
+  ],
+  "serviceArea": {
+    "@type": "GeoCircle",
+    "geoMidpoint": {
+      "@type": "GeoCoordinates", 
+      "latitude": "43.8509",
+      "longitude": "-79.0204"
+    },
+    "geoRadius": "25000"
+  },
+  "openingHours": [
+    "Mo-Fr 07:00-19:00",
+    "Sa 08:00-17:00", 
+    "Su 09:00-17:00"
+  ],
+  "availableLanguage": ["English"],
+  "currenciesAccepted": "CAD",
+  "paymentAccepted": ["Cash", "Credit Card", "Debit Card", "Bank Transfer"],
+  "priceRange": "$$",
+  "url": "https://dryspacewaterproofing.com/locations/ajax",
+  "logo": "https://dryspacewaterproofing.com/images/dryspace-logo.webp",
+  "image": "https://dryspacewaterproofing.com/images/dryspace_hero_desktop.webp",
+  "sameAs": [
+    "https://www.facebook.com/dryspacewaterproofing",
+    "https://www.linkedin.com/company/dryspace-waterproofing"
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Waterproofing Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Basement Waterproofing",
+          "description": "Complete basement waterproofing solutions"
+        }
+      },
+      {
+        "@type": "Offer", 
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Foundation Repair",
+          "description": "Foundation crack repair and structural solutions"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service", 
+          "name": "Drainage Solutions",
+          "description": "French drains, sump pumps, and drainage systems"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Emergency Water Removal",
+          "description": "24/7 emergency flooding and water damage response"
+        }
+      }
+    ]
+  },
+  "review": {
+    "@type": "Review",
+    "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": "4.9",
+      "bestRating": "5"
+    },
+    "author": {
+      "@type": "Organization",
+      "name": "Dryspace Waterproofing Customers"
+    }
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "reviewCount": "150",
+    "bestRating": "5"
+  }
+};
+---
+
+<PageLayout 
+  title={pageTitle}
+  description={pageDescription}
+>
+  
+  <!-- Breadcrumbs -->
+  <div class="container mx-auto px-4 mt-4">
+    <Breadcrumbs 
+      items={[
+        { name: "Home", url: "/" },
+        { name: "Service Areas", url: "/service-areas" },
+        { name: "Ajax" }
+      ]}
+    />
+  </div>
+
+<!-- Location Hero -->
+  <Hero 
+    title="Waterproofing Ajax"
+    subtitle="Professional basement waterproofing and foundation repair serving all Ajax neighborhoods. 25-year warranty, free inspection."
+    primaryCTA={{ text: "Get Free Ajax Quote", href: "/free-inspection" }}
+    secondaryCTA={{ text: "Call: 437-545-0067", href: "tel:437-545-0067" }}
+    backgroundImage="/images/dryspace_hero_desktop.webp"
+    badge="Serving Ajax"
+  />
+
+  <!-- Internal Links -->
+  <section class="py-8 bg-white">
+    <div class="container mx-auto px-4">
+      <InternalLinks category="location" currentPage="ajax" />
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <Stats />
+
+  <!-- Local Information Section -->
+  <section class="py-16 bg-slate-50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-4xl font-bold text-slate-900 mb-4 uppercase">WATERPROOFING SERVICES IN AJAX</h2>
+        
+        <div class="prose prose-lg  max-w-none">
+          <p class="text-lg text-slate-600 mb-6">
+            Ajax homeowners face unique lakefront waterproofing challenges. Located directly on Lake Ontario, Ajax experiences storm surge flooding, elevated groundwater, and lake effect precipitation. With newer developments (25-35 years old) and lake sediment clay soil, specialized waterproofing is essential.
+          </p>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
+            <div class="bg-white border-2 border-slate-200  p-6">
+              <h3 class="text-xl font-bold text-slate-900 mb-6 uppercase">AJAX QUICK FACTS</h3>
+              <ul class="space-y-2 text-slate-600 ">
+                <li class="flex justify-between items-center pb-2 border-b border-slate-100">
+                <span class="text-sm font-semibold text-slate-600 uppercase">Population</span>
+                <span class="text-sm font-bold text-slate-900">126,000</span>
+              </li>
+                <li class="flex justify-between items-center pb-2 border-b border-slate-100">
+                <span class="text-sm font-semibold text-slate-600 uppercase">Average Home Age</span>
+                <span class="text-sm font-bold text-slate-900">25-35 YEARS</span>
+              </li>
+                <li class="flex justify-between items-center pb-2 border-b border-slate-100">
+                <span class="text-sm font-semibold text-slate-600 uppercase">Annual Rainfall</span>
+                <span class="text-sm font-bold text-slate-900">820MM + LAKE EFFECT</span>
+              </li>
+                <li class="flex justify-between items-center pb-2 border-b border-slate-100">
+                <span class="text-sm font-semibold text-slate-600 uppercase">Frost Line</span>
+                <span class="text-sm font-bold text-slate-900">1.2 METERS</span>
+              </li>
+                <li class="flex justify-between items-center pb-2 border-b border-slate-100">
+                <span class="text-sm font-semibold text-slate-600 uppercase">Flood Risk</span>
+                <span class="text-sm font-bold text-slate-900">MODERATE - STORM SURGE</span>
+              </li>
+              </ul>
+            </div>
+            
+            <div class="bg-navy-900 border-2 border-slate-200  p-6">
+              <h3 class="text-xl font-bold text-slate-900 mb-6 uppercase">WHY AJAX NEEDS WATERPROOFING</h3>
+              <ul class="space-y-2 text-slate-300">
+                <li class="text-sm text-slate-300 flex items-start">
+                <span class="mr-2 text-cyan-400">•</span>
+                <span>Lake sediment clay creates high foundation pressure</span>
+              </li>
+                <li class="text-sm text-slate-300 flex items-start">
+                <span class="mr-2 text-cyan-400">•</span>
+                <span>High water table from Lake Ontario proximity</span>
+              </li>
+                <li class="text-sm text-slate-300 flex items-start">
+                <span class="mr-2 text-cyan-400">•</span>
+                <span>Lake effect snow increases spring water volume</span>
+              </li>
+                <li class="text-sm text-slate-300 flex items-start">
+                <span class="mr-2 text-cyan-400">•</span>
+                <span>Freeze-thaw cycles damage foundations</span>
+              </li>
+                <li class="text-sm text-slate-300 flex items-start">
+                <span class="mr-2 text-cyan-400">•</span>
+                <span>Storm surge and lake level fluctuation risks</span>
+              </li>
+              </ul>
+            </div>
+          </div>
+
+          <h3 class="text-2xl font-bold mt-8 mb-4">Neighborhoods We Serve</h3>
+          <p class="mb-4">
+            Our Ajax waterproofing team serves all neighborhoods including:
+          </p>
+          <div class="flex flex-wrap gap-2">
+            {["Waterfront","Pickering Beach","Rossland","Audley","Applecroft","Williamsburg"].map((neighborhood) => (
+              <span class="border-2 border-slate-200 px-4 py-2 text-sm">
+                {neighborhood}
+              </span>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <Services />
+
+  <!-- Location Features -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl font-bold text-slate-900 mb-4 uppercase">WHY CHOOSE DRYSPACE IN AJAX</h2>
+        <p class="text-lg text-slate-600 max-w-3xl mx-auto">
+          Local expertise combined with industry-leading warranties and service
+        </p>
+      </div>
+      
+      <!-- Highlighted Features -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+        {locationFeatures.filter(f => f.highlight).map((feature) => (
+          <div class="bg-amber-500 border-2 border-slate-700 p-6">
+            <h3 class="text-lg font-bold text-slate-900 mb-3 uppercase">{feature.title}</h3>
+            <p class="text-sm text-slate-900">{feature.description}</p>
+          </div>
+        ))}
+      </div>
+      
+      <!-- Regular Features -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {locationFeatures.filter(f => !f.highlight).map((feature) => (
+          <div class="bg-white border-2 border-slate-200 p-6 hover:border-slate-300 transition-colors">
+            <h3 class="text-lg font-bold text-slate-900 mb-3 uppercase">{feature.title}</h3>
+            <p class="text-sm text-slate-600">{feature.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Process -->
+  <Process />
+
+
+  <!-- Location Image Showcase -->
+  <LocationImageShowcase city="Ajax" />
+
+  <!-- Testimonials -->
+  <Testimonials />
+
+  <!-- FAQ Section -->
+  <section class="py-16 bg-slate-50">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl font-bold text-slate-900 mb-4 uppercase">AJAX WATERPROOFING FAQS</h2>
+        <p class="text-lg text-slate-600">Common questions from Ajax homeowners</p>
+      </div>
+      
+      <div class="max-w-4xl mx-auto">
+        {locationFAQs.map((faq, index) => (
+          <details class="mb-4 border-2 border-slate-200 bg-white">
+            <summary class="cursor-pointer p-6 hover:bg-slate-50 transition-colors">
+              <div class="flex items-center justify-between">
+                <h3 class="text-lg font-bold text-slate-900 uppercase pr-4">{faq.question}</h3>
+                <span class="text-slate-400 flex-shrink-0 text-2xl">+</span>
+              </div>
+            </summary>
+            <div class="px-6 pb-6 pt-0">
+              <p class="text-slate-600">{faq.answer}</p>
+            </div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-16 bg-navy-900">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-4xl font-bold text-slate-900 mb-4 uppercase">PROTECT YOUR LAKEFRONT PROPERTY</h2>
+        <p class="text-lg text-slate-300 mb-8">
+          Specialized storm surge protection and moisture control for local lakefront homes
+        </p>
+        
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a 
+            href="/free-inspection"
+            class="bg-amber-500 text-black px-8 py-4 text-lg font-bold hover:bg-amber-400 transition-colors uppercase"
+          >
+            Get Lake Proximity Assessment
+          </a>
+          <a 
+            href="tel:437-545-0067"
+            class="border-2 border-white text-slate-900 px-8 py-4 text-lg font-bold hover:bg-white hover:text-black transition-colors uppercase"
+          >
+            Call: 437-545-0067
+          </a>
+        </div>
+        
+        <div class="mt-8 inline-flex items-center text-cyan-400">
+          <span class="text-sm font-bold uppercase">24/7 Emergency Service Available</span>
+        </div>
+      </div>
+    </div>
+  </section>
+</PageLayout>
+
+<script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)}>
+<BreadcrumbSchema items={[{name: 'Home', url: '/'}, {name: 'Locations', url: '/locations'}, {name: 'Ajax'}]} />

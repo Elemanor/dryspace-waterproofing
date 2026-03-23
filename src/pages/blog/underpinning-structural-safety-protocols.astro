@@ -1,0 +1,621 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import HeroSection from '../../components/widgets/Hero.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+
+const meta = {
+  title: "Underpinning Structural Safety Protocols | House Integrity During Foundation Work",
+  description: "Critical safety protocols for maintaining structural integrity during underpinning. Learn about 3-foot sections, 6-foot clearance rules, and sequence planning for safe foundation lowering.",
+  keywords: "underpinning safety, structural integrity, foundation safety, section excavation, underpinning sequence, house stability, foundation protocols",
+  canonical: "https://dryspacegroup.com/blog/underpinning-structural-safety-protocols"
+};
+---
+
+<PageLayout {...meta}>
+  
+  <!-- Breadcrumbs -->
+  <div class="container mx-auto px-4 mt-4">
+    <Breadcrumbs 
+      items={[
+        { name: "Home", url: "/" },
+        { name: "Blog", url: "/blog" },
+        { name: "Underpinning Structural Safety Protocols" }
+      ]}
+    />
+  </div>
+
+<HeroSection
+    title="Underpinning Structural Safety Protocols"
+    subtitle="Maintaining House Integrity During Foundation Work"
+    backgroundImage="/images/underpinning-safety.webp"
+    ctaText="Get Safety Assessment"
+    ctaLink="/free-inspection"
+  />
+
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4 max-w-4xl">
+      <!-- Critical Warning -->
+      <div class="bg-red-50 border-2 border-red-600 rounded-lg p-6 mb-12">
+        <div class="flex items-start gap-4">
+          <div class="bg-red-600 text-white rounded-full p-3">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
+            </svg>
+          </div>
+          <div>
+            <h2 class="text-2xl font-bold text-red-900 mb-2">CRITICAL SAFETY WARNING</h2>
+            <p class="text-red-800 font-semibold">
+              Improper underpinning sequence can cause catastrophic structural failure. Never attempt underpinning without professional engineering and strict adherence to safety protocols.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Introduction -->
+      <div class="prose prose-lg max-w-none mb-12">
+        <p class="text-xl text-slate-600 leading-relaxed mb-8">
+          Structural integrity is the paramount concern during any underpinning project. A single mistake in excavation sequence or section spacing can compromise the entire structure, leading to settlement, cracking, or even collapse. This guide outlines the critical safety protocols that protect your home during foundation lowering.
+        </p>
+      </div>
+
+      <!-- The Golden Rule of Underpinning -->
+      <section class="mb-16">
+        <h2 class="text-3xl font-bold mb-8 text-slate-900">The Golden Rule: 3-6-3 Protocol</h2>
+        
+        <div class="bg-cyan-50 border-2 border-cyan-600 rounded-lg p-8 mb-8">
+          <h3 class="text-2xl font-bold mb-6 text-cyan-800">3-Foot Sections, 6-Foot Clearance</h3>
+          
+          <div class="grid md:grid-cols-3 gap-6 mb-6">
+            <div class="text-center">
+              <div class="text-4xl font-bold text-cyan-600 mb-2">3 ft</div>
+              <p class="font-semibold">Maximum Section Width</p>
+              <p class="text-sm text-slate-500">Never exceed 3-foot excavation sections</p>
+            </div>
+            <div class="text-center">
+              <div class="text-4xl font-bold text-red-600 mb-2">6 ft</div>
+              <p class="font-semibold">Minimum Clearance</p>
+              <p class="text-sm text-slate-500">Always maintain 6 feet between active sections</p>
+            </div>
+            <div class="text-center">
+              <div class="text-4xl font-bold text-cyan-600 mb-2">3 ft</div>
+              <p class="font-semibold">Supported Wall</p>
+              <p class="text-sm text-slate-500">Minimum 3 feet of undisturbed support</p>
+            </div>
+          </div>
+          
+          <div class="bg-white rounded-lg p-4 border border-cyan-200">
+            <p class="font-semibold text-cyan-800">
+              ⚠️ NEVER excavate two adjacent sections simultaneously. This is the #1 cause of structural failure during underpinning.
+            </p>
+          </div>
+        </div>
+
+        <!-- Visual Diagram -->
+        <div class="bg-slate-50 rounded-lg p-8 mb-8">
+          <h4 class="text-xl font-bold mb-4 text-center">Safe Excavation Sequence Pattern</h4>
+          
+          <div class="max-w-2xl mx-auto">
+            <div class="bg-white rounded-lg p-6 border-2 border-slate-200">
+              <div class="grid grid-cols-7 gap-2 mb-4">
+                <div class="bg-cyan-500 text-white text-center py-4 rounded font-bold">1</div>
+                <div class="bg-slate-300 text-slate-500 text-center py-4 rounded">Wall</div>
+                <div class="bg-slate-300 text-slate-500 text-center py-4 rounded">Wall</div>
+                <div class="bg-amber-500 text-white text-center py-4 rounded font-bold">2</div>
+                <div class="bg-slate-300 text-slate-500 text-center py-4 rounded">Wall</div>
+                <div class="bg-slate-300 text-slate-500 text-center py-4 rounded">Wall</div>
+                <div class="bg-orange-500 text-white text-center py-4 rounded font-bold">3</div>
+              </div>
+              
+              <div class="text-sm space-y-1">
+                <p><span class="inline-block w-4 h-4 bg-cyan-500 rounded mr-2"></span>Phase 1: Excavate and pour</p>
+                <p><span class="inline-block w-4 h-4 bg-amber-500 rounded mr-2"></span>Phase 2: After Phase 1 cures (7 days)</p>
+                <p><span class="inline-block w-4 h-4 bg-orange-500 rounded mr-2"></span>Phase 3: After Phase 2 cures (7 days)</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Load Distribution During Underpinning -->
+      <section class="mb-16">
+        <h2 class="text-3xl font-bold mb-8 text-slate-900">Understanding Load Distribution</h2>
+        
+        <div class="grid md:grid-cols-2 gap-8 mb-8">
+          <div class="bg-white border rounded-lg p-6">
+            <h3 class="text-xl font-bold mb-4">When Foundation is Exposed</h3>
+            <div class="space-y-3">
+              <div class="flex items-start">
+                <span class="text-red-600 mr-2">→</span>
+                <div>
+                  <p class="font-semibold">Load Redistribution</p>
+                  <p class="text-sm text-slate-500">Adjacent sections carry 150-200% normal load</p>
+                </div>
+              </div>
+              <div class="flex items-start">
+                <span class="text-red-600 mr-2">→</span>
+                <div>
+                  <p class="font-semibold">Stress Concentration</p>
+                  <p class="text-sm text-slate-500">Corners and edges experience maximum stress</p>
+                </div>
+              </div>
+              <div class="flex items-start">
+                <span class="text-red-600 mr-2">→</span>
+                <div>
+                  <p class="font-semibold">Settlement Risk</p>
+                  <p class="text-sm text-slate-500">Unsupported spans may settle 5-15mm</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="bg-white border rounded-lg p-6">
+            <h3 class="text-xl font-bold mb-4">Safety Factors</h3>
+            <div class="space-y-3">
+              <div class="flex items-start">
+                <span class="text-cyan-600 mr-2">✓</span>
+                <div>
+                  <p class="font-semibold">2:1 Support Ratio</p>
+                  <p class="text-sm text-slate-500">2 feet supported for every 1 foot exposed</p>
+                </div>
+              </div>
+              <div class="flex items-start">
+                <span class="text-cyan-600 mr-2">✓</span>
+                <div>
+                  <p class="font-semibold">Engineered Sequence</p>
+                  <p class="text-sm text-slate-500">Follow engineer's approved excavation plan</p>
+                </div>
+              </div>
+              <div class="flex items-start">
+                <span class="text-cyan-600 mr-2">✓</span>
+                <div>
+                  <p class="font-semibold">Daily Monitoring</p>
+                  <p class="text-sm text-slate-500">Check for movement, cracks, settlement</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section Sequencing Strategy -->
+      <section class="mb-16">
+        <h2 class="text-3xl font-bold mb-8 text-slate-900">Professional Section Sequencing</h2>
+        
+        <div class="bg-slate-50 rounded-lg p-8">
+          <h3 class="text-2xl font-bold mb-6">Typical 40-Foot Wall Sequence</h3>
+          
+          <div class="overflow-x-auto">
+            <table class="w-full bg-white rounded-lg overflow-hidden">
+              <thead class="bg-cyan-600 text-white">
+                <tr>
+                  <th class="px-4 py-3 text-left">Phase</th>
+                  <th class="px-4 py-3 text-left">Sections</th>
+                  <th class="px-4 py-3 text-left">Location (ft)</th>
+                  <th class="px-4 py-3 text-left">Wait Time</th>
+                  <th class="px-4 py-3 text-left">Notes</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y">
+                <tr>
+                  <td class="px-4 py-3 font-semibold">Phase 1</td>
+                  <td class="px-4 py-3">1, 3, 5</td>
+                  <td class="px-4 py-3">0-3, 12-15, 24-27</td>
+                  <td class="px-4 py-3">Start</td>
+                  <td class="px-4 py-3 text-sm">Corner sections first</td>
+                </tr>
+                <tr class="bg-slate-50">
+                  <td class="px-4 py-3 font-semibold">Phase 2</td>
+                  <td class="px-4 py-3">7, 9</td>
+                  <td class="px-4 py-3">36-39, 48-51</td>
+                  <td class="px-4 py-3">Day 3</td>
+                  <td class="px-4 py-3 text-sm">After Phase 1 initial set</td>
+                </tr>
+                <tr>
+                  <td class="px-4 py-3 font-semibold">Phase 3</td>
+                  <td class="px-4 py-3">2, 4</td>
+                  <td class="px-4 py-3">6-9, 18-21</td>
+                  <td class="px-4 py-3">Day 7</td>
+                  <td class="px-4 py-3 text-sm">Phase 1 at 50% strength</td>
+                </tr>
+                <tr class="bg-slate-50">
+                  <td class="px-4 py-3 font-semibold">Phase 4</td>
+                  <td class="px-4 py-3">6, 8</td>
+                  <td class="px-4 py-3">30-33, 42-45</td>
+                  <td class="px-4 py-3">Day 10</td>
+                  <td class="px-4 py-3 text-sm">Phase 2 at 50% strength</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          
+          <div class="mt-6 p-4 bg-amber-50 border-l-4 border-yellow-600">
+            <p class="text-sm">
+              <strong>Note:</strong> This is a simplified example. Actual sequencing depends on structural analysis, soil conditions, and building configuration.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Critical Safety Checkpoints -->
+      <section class="mb-16">
+        <h2 class="text-3xl font-bold mb-8 text-slate-900">Critical Safety Checkpoints</h2>
+        
+        <div class="space-y-6">
+          <!-- Before Excavation -->
+          <div class="bg-white border-2 border-orange-500 rounded-lg overflow-hidden">
+            <div class="bg-orange-500 text-white px-6 py-3">
+              <h3 class="text-xl font-bold">Before Any Excavation</h3>
+            </div>
+            <div class="p-6">
+              <ul class="space-y-3">
+                <li class="flex items-start">
+                  <input type="checkbox" class="mt-1 mr-3">
+                  <div>
+                    <strong>Structural Engineer Approval</strong>
+                    <p class="text-sm text-slate-500">Stamped drawings with section sequence</p>
+                  </div>
+                </li>
+                <li class="flex items-start">
+                  <input type="checkbox" class="mt-1 mr-3">
+                  <div>
+                    <strong>Building Condition Survey</strong>
+                    <p class="text-sm text-slate-500">Document existing cracks, settlement, defects</p>
+                  </div>
+                </li>
+                <li class="flex items-start">
+                  <input type="checkbox" class="mt-1 mr-3">
+                  <div>
+                    <strong>Install Monitoring Points</strong>
+                    <p class="text-sm text-slate-500">Crack monitors, level benchmarks, plumb lines</p>
+                  </div>
+                </li>
+                <li class="flex items-start">
+                  <input type="checkbox" class="mt-1 mr-3">
+                  <div>
+                    <strong>Verify Section Markings</strong>
+                    <p class="text-sm text-slate-500">Clearly mark 3-foot sections with 6-foot gaps</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- During Excavation -->
+          <div class="bg-white border-2 border-red-500 rounded-lg overflow-hidden">
+            <div class="bg-red-500 text-white px-6 py-3">
+              <h3 class="text-xl font-bold">During Each Excavation</h3>
+            </div>
+            <div class="p-6">
+              <ul class="space-y-3">
+                <li class="flex items-start">
+                  <input type="checkbox" class="mt-1 mr-3">
+                  <div>
+                    <strong>Measure Section Width</strong>
+                    <p class="text-sm text-slate-500">Never exceed 3 feet (36 inches) per section</p>
+                  </div>
+                </li>
+                <li class="flex items-start">
+                  <input type="checkbox" class="mt-1 mr-3">
+                  <div>
+                    <strong>Verify Adjacent Sections</strong>
+                    <p class="text-sm text-slate-500">Confirm 6+ feet to nearest open excavation</p>
+                  </div>
+                </li>
+                <li class="flex items-start">
+                  <input type="checkbox" class="mt-1 mr-3">
+                  <div>
+                    <strong>Shore If Required</strong>
+                    <p class="text-sm text-slate-500">Install temporary supports for spans over 3 feet</p>
+                  </div>
+                </li>
+                <li class="flex items-start">
+                  <input type="checkbox" class="mt-1 mr-3">
+                  <div>
+                    <strong>Monitor for Movement</strong>
+                    <p class="text-sm text-slate-500">Check every 2 hours during excavation</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- After Concrete Pour -->
+          <div class="bg-white border-2 border-cyan-500 rounded-lg overflow-hidden">
+            <div class="bg-cyan-500 text-white px-6 py-3">
+              <h3 class="text-xl font-bold">After Concrete Pour</h3>
+            </div>
+            <div class="p-6">
+              <ul class="space-y-3">
+                <li class="flex items-start">
+                  <input type="checkbox" class="mt-1 mr-3">
+                  <div>
+                    <strong>Wait for Initial Set</strong>
+                    <p class="text-sm text-slate-500">Minimum 48 hours before adjacent work</p>
+                  </div>
+                </li>
+                <li class="flex items-start">
+                  <input type="checkbox" class="mt-1 mr-3">
+                  <div>
+                    <strong>Verify Concrete Strength</strong>
+                    <p class="text-sm text-slate-500">50% strength (7 days) before loading</p>
+                  </div>
+                </li>
+                <li class="flex items-start">
+                  <input type="checkbox" class="mt-1 mr-3">
+                  <div>
+                    <strong>Document Completion</strong>
+                    <p class="text-sm text-slate-500">Photo, date, and mark completed sections</p>
+                  </div>
+                </li>
+                <li class="flex items-start">
+                  <input type="checkbox" class="mt-1 mr-3">
+                  <div>
+                    <strong>Update Sequence Plan</strong>
+                    <p class="text-sm text-slate-500">Mark next allowable excavation areas</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Warning Signs of Structural Distress -->
+      <section class="mb-16">
+        <h2 class="text-3xl font-bold mb-8 text-slate-900">Warning Signs - STOP WORK IMMEDIATELY</h2>
+        
+        <div class="bg-red-50 border-2 border-red-600 rounded-lg p-8">
+          <div class="grid md:grid-cols-2 gap-6">
+            <div>
+              <h3 class="text-xl font-bold mb-4 text-red-900">Visual Signs</h3>
+              <ul class="space-y-2">
+                <li class="flex items-start">
+                  <span class="text-red-600 mr-2">🚨</span>
+                  <span>New cracks appearing in walls/ceilings</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-red-600 mr-2">🚨</span>
+                  <span>Existing cracks widening (>2mm)</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-red-600 mr-2">🚨</span>
+                  <span>Doors/windows suddenly sticking</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-red-600 mr-2">🚨</span>
+                  <span>Visible foundation movement</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-red-600 mr-2">🚨</span>
+                  <span>Floor slope changes</span>
+                </li>
+              </ul>
+            </div>
+            
+            <div>
+              <h3 class="text-xl font-bold mb-4 text-red-900">Audible Signs</h3>
+              <ul class="space-y-2">
+                <li class="flex items-start">
+                  <span class="text-red-600 mr-2">🚨</span>
+                  <span>Creaking or popping sounds</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-red-600 mr-2">🚨</span>
+                  <span>Grinding noises from structure</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-red-600 mr-2">🚨</span>
+                  <span>Sudden loud crack or snap</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-red-600 mr-2">🚨</span>
+                  <span>Continuous settling sounds</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-red-600 mr-2">🚨</span>
+                  <span>Debris falling from ceiling</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+          
+          <div class="mt-6 p-4 bg-red-100 rounded-lg">
+            <p class="font-bold text-red-900">
+              If ANY of these signs occur: EVACUATE the work area immediately, secure the site, and contact the structural engineer before proceeding.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Special Conditions -->
+      <section class="mb-16">
+        <h2 class="text-3xl font-bold mb-8 text-slate-900">Special Structural Conditions</h2>
+        
+        <div class="space-y-6">
+          <div class="bg-white border rounded-lg p-6">
+            <h3 class="text-xl font-bold mb-3">Load-Bearing Walls</h3>
+            <p class="text-slate-600 mb-3">
+              Load-bearing walls require modified sequencing:
+            </p>
+            <ul class="space-y-2 text-slate-600">
+              <li>• Reduce section width to 2 feet maximum</li>
+              <li>• Increase clearance to 8-10 feet between sections</li>
+              <li>• Install temporary steel needles for support</li>
+              <li>• Engineer must approve each section individually</li>
+            </ul>
+          </div>
+          
+          <div class="bg-white border rounded-lg p-6">
+            <h3 class="text-xl font-bold mb-3">Corner Sections</h3>
+            <p class="text-slate-600 mb-3">
+              Corners concentrate loads and require special attention:
+            </p>
+            <ul class="space-y-2 text-slate-600">
+              <li>• Never excavate both sides of a corner simultaneously</li>
+              <li>• Maintain 45-degree support angle at corners</li>
+              <li>• Use L-shaped sections, not straight cuts</li>
+              <li>• Allow 14 days cure time before adjacent work</li>
+            </ul>
+          </div>
+          
+          <div class="bg-white border rounded-lg p-6">
+            <h3 class="text-xl font-bold mb-3">Multi-Story Buildings</h3>
+            <p class="text-slate-600 mb-3">
+              Additional protocols for buildings over 2 stories:
+            </p>
+            <ul class="space-y-2 text-slate-600">
+              <li>• Install floor-by-floor monitoring systems</li>
+              <li>• Reduce section widths by 25% per additional floor</li>
+              <li>• Continuous vibration monitoring required</li>
+              <li>• Daily surveyor measurements mandatory</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Documentation Requirements -->
+      <section class="mb-16">
+        <h2 class="text-3xl font-bold mb-8 text-slate-900">Mandatory Documentation</h2>
+        
+        <div class="bg-slate-50 rounded-lg p-8">
+          <h3 class="text-xl font-bold mb-6">Daily Safety Log Requirements</h3>
+          
+          <div class="grid md:grid-cols-2 gap-6">
+            <div>
+              <h4 class="font-bold mb-3">Pre-Work Documentation</h4>
+              <ul class="space-y-2 text-sm">
+                <li>✓ Weather conditions and forecast</li>
+                <li>✓ Section numbers to be excavated</li>
+                <li>✓ Verification of clearances</li>
+                <li>✓ Equipment inspection checklist</li>
+                <li>✓ Worker safety briefing attendance</li>
+                <li>✓ Emergency contact verification</li>
+              </ul>
+            </div>
+            
+            <div>
+              <h4 class="font-bold mb-3">During-Work Documentation</h4>
+              <ul class="space-y-2 text-sm">
+                <li>✓ Hourly monitoring readings</li>
+                <li>✓ Photos of each excavation stage</li>
+                <li>✓ Actual dimensions vs. planned</li>
+                <li>✓ Any deviations from plan</li>
+                <li>✓ Concrete pour details and time</li>
+                <li>✓ Engineer inspection notes</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Emergency Procedures -->
+      <section class="mb-16">
+        <h2 class="text-3xl font-bold mb-8 text-slate-900">Emergency Response Procedures</h2>
+        
+        <div class="bg-orange-50 border-2 border-orange-600 rounded-lg p-8">
+          <h3 class="text-2xl font-bold mb-6 text-orange-900">If Structural Movement Detected</h3>
+          
+          <div class="space-y-4">
+            <div class="flex items-start">
+              <span class="bg-orange-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-4 flex-shrink-0">1</span>
+              <div>
+                <h4 class="font-semibold mb-1">STOP ALL WORK</h4>
+                <p class="text-slate-600">Cease all excavation and construction activities immediately</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start">
+              <span class="bg-orange-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-4 flex-shrink-0">2</span>
+              <div>
+                <h4 class="font-semibold mb-1">EVACUATE IF NECESSARY</h4>
+                <p class="text-slate-600">Clear the area if movement is progressive or severe</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start">
+              <span class="bg-orange-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-4 flex-shrink-0">3</span>
+              <div>
+                <h4 class="font-semibold mb-1">INSTALL EMERGENCY SHORING</h4>
+                <p class="text-slate-600">Deploy pre-positioned emergency supports and props</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start">
+              <span class="bg-orange-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-4 flex-shrink-0">4</span>
+              <div>
+                <h4 class="font-semibold mb-1">CONTACT ENGINEER</h4>
+                <p class="text-slate-600">Call structural engineer immediately for assessment</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start">
+              <span class="bg-orange-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-4 flex-shrink-0">5</span>
+              <div>
+                <h4 class="font-semibold mb-1">DOCUMENT EVERYTHING</h4>
+                <p class="text-slate-600">Photo and measure all visible changes or damage</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="mt-6 p-4 bg-white rounded-lg border border-orange-300">
+            <p class="font-semibold text-orange-900">
+              Emergency Contacts Must Be Posted On-Site:
+            </p>
+            <ul class="mt-2 space-y-1 text-sm">
+              <li>• Structural Engineer: [Name & 24hr number]</li>
+              <li>• Project Manager: [Name & 24hr number]</li>
+              <li>• Emergency Services: 911</li>
+              <li>• Building Inspector: [Name & number]</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Professional Standards -->
+      <section class="mb-16">
+        <h2 class="text-3xl font-bold mb-8 text-slate-900">Industry Standards & Codes</h2>
+        
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="bg-white border rounded-lg p-6">
+            <h3 class="text-xl font-bold mb-4">Building Codes</h3>
+            <ul class="space-y-2 text-slate-600">
+              <li>• Ontario Building Code (OBC) Section 4.2</li>
+              <li>• National Building Code Section 4.2.4</li>
+              <li>• CSA S448 Repair of Buildings</li>
+              <li>• City of Toronto Guidelines SS-1</li>
+            </ul>
+          </div>
+          
+          <div class="bg-white border rounded-lg p-6">
+            <h3 class="text-xl font-bold mb-4">Required Professionals</h3>
+            <ul class="space-y-2 text-slate-600">
+              <li>• P.Eng Structural Engineer</li>
+              <li>• Licensed General Contractor</li>
+              <li>• Certified Underpinning Specialist</li>
+              <li>• Professional Surveyor (as needed)</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA Section -->
+      <section class="py-12 bg-gradient-to-r from-blue-600 to-blue-800 rounded-lg text-white">
+        <div class="text-center px-8">
+          <h2 class="text-3xl font-bold mb-4">Ensure Safe Underpinning Execution</h2>
+          <p class="text-xl mb-8 opacity-95">
+            Our certified teams follow strict safety protocols with engineering oversight on every project
+          </p>
+          
+          <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <a href="/free-inspection" class="bg-white text-cyan-600 px-8 py-4 rounded-lg font-bold hover:bg-slate-50 transition-colors">
+              Get Safety Assessment
+            </a>
+            <a href="tel:437-545-0067" class="bg-red-600 text-white px-8 py-4 rounded-lg font-bold hover:bg-red-700 transition-colors">
+              Emergency Consultation
+            </a>
+          </div>
+        </div>
+      </section>
+    </div>
+  </section>
+</PageLayout>

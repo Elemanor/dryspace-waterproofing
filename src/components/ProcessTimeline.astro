@@ -1,0 +1,580 @@
+---
+// Process Timeline Component
+const steps = [
+  {
+    number: "01",
+    title: "Free Inspection",
+    description: "Our certified experts assess your basement's condition with advanced moisture detection tools",
+    icon: "fa-solid fa-magnifying-glass-chart",
+    duration: "Same Day",
+    details: ["Moisture mapping", "Foundation assessment", "Photo documentation", "Written report"]
+  },
+  {
+    number: "02", 
+    title: "Custom Solution",
+    description: "We design a personalized waterproofing plan based on your specific needs and budget",
+    icon: "fa-solid fa-drafting-compass",
+    duration: "24 Hours",
+    details: ["Detailed quote", "3D visualization", "Material selection", "Timeline planning"]
+  },
+  {
+    number: "03",
+    title: "Professional Installation",
+    description: "Our experienced crew implements your waterproofing solution with minimal disruption",
+    icon: "fa-solid fa-helmet-safety",
+    duration: "2-3 Days",
+    details: ["Clean workspace", "Quality materials", "Daily updates", "Safety protocols"]
+  },
+  {
+    number: "04",
+    title: "Lifetime Protection",
+    description: "Enjoy peace of mind with our transferable lifetime warranty and annual check-ups",
+    icon: "fa-solid fa-shield-heart",
+    duration: "Forever",
+    details: ["Lifetime warranty", "Annual inspections", "24/7 support", "Transferable coverage"]
+  }
+];
+---
+
+<section id="process" class="process-section">
+  <div class="container">
+    <!-- Section Header -->
+    <div class="section-header">
+      <span class="section-label">
+        <i class="fa-solid fa-route"></i>
+        Our Process
+      </span>
+      <h2 class="section-title">
+        Simple Steps to a
+        <span class="text-gradient">Dry Basement</span>
+      </h2>
+      <p class="section-description">
+        From inspection to installation, we make waterproofing easy
+      </p>
+    </div>
+    
+    <!-- Timeline Container -->
+    <div class="timeline-container">
+      <div class="timeline-line">
+        <div class="line-progress"></div>
+      </div>
+      
+      {steps.map((step, index) => (
+        <div class="timeline-step" data-step={index} style={`--index: ${index}`}>
+          <div class="step-connector">
+            <div class="connector-dot">
+              <span class="dot-inner"></span>
+            </div>
+          </div>
+          
+          <div class="step-content">
+            <div class="step-header">
+              <div class="step-number">{step.number}</div>
+              <div class="step-icon">
+                <i class={step.icon}></i>
+              </div>
+            </div>
+            
+            <h3 class="step-title">{step.title}</h3>
+            <p class="step-description">{step.description}</p>
+            
+            <div class="step-duration">
+              <i class="fa-solid fa-clock"></i>
+              <span>{step.duration}</span>
+            </div>
+            
+            <ul class="step-details">
+              {step.details.map(detail => (
+                <li>
+                  <i class="fa-solid fa-check-circle"></i>
+                  <span>{detail}</span>
+                </li>
+              ))}
+            </ul>
+            
+            <div class="step-action">
+              <button class="step-btn">
+                Learn More
+                <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+    
+    <!-- CTA Section -->
+    <div class="process-cta">
+      <div class="cta-card">
+        <div class="cta-icon">
+          <i class="fa-solid fa-rocket"></i>
+        </div>
+        <div class="cta-content">
+          <h3>Ready to Get Started?</h3>
+          <p>Book your free inspection today and take the first step to a dry basement</p>
+        </div>
+        <button class="cta-btn">
+          <span>Schedule Inspection</span>
+          <i class="fa-solid fa-calendar-check"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .process-section {
+    padding: 6rem 0;
+    background: var(--bg-dark-800);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .process-section::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 800px;
+    height: 800px;
+    background: radial-gradient(circle, rgba(212, 175, 55, 0.05) 0%, transparent 70%);
+    transform: translate(-50%, -50%);
+  }
+  
+  .container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    position: relative;
+    z-index: 1;
+  }
+  
+  /* Section Header */
+  .section-header {
+    text-align: center;
+    margin-bottom: 5rem;
+  }
+  
+  .section-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.625rem 1.25rem;
+    background: rgba(212, 175, 55, 0.1);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    border-radius: var(--radius-full);
+    color: var(--color-primary);
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 1.5rem;
+  }
+  
+  .section-title {
+    font-size: clamp(2.5rem, 4vw, 3.5rem);
+    font-weight: 800;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+  }
+  
+  .text-gradient {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .section-description {
+    font-size: 1.25rem;
+    color: var(--text-muted);
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  /* Timeline */
+  .timeline-container {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto 4rem;
+  }
+  
+  .timeline-line {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: rgba(212, 175, 55, 0.2);
+    transform: translateX(-50%);
+  }
+  
+  .line-progress {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background: linear-gradient(180deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+    transition: height 1s ease-out;
+  }
+  
+  /* Timeline Steps */
+  .timeline-step {
+    position: relative;
+    display: flex;
+    margin-bottom: 4rem;
+    opacity: 0;
+    animation: fadeIn 0.8s ease-out forwards;
+    animation-delay: calc(0.2s * var(--index));
+  }
+  
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+    }
+  }
+  
+  .timeline-step:nth-child(even) {
+    flex-direction: row-reverse;
+  }
+  
+  .timeline-step:nth-child(even) .step-content {
+    text-align: right;
+  }
+  
+  .timeline-step:nth-child(even) .step-header {
+    flex-direction: row-reverse;
+  }
+  
+  .timeline-step:nth-child(even) .step-details {
+    align-items: flex-end;
+  }
+  
+  .timeline-step:nth-child(even) .step-details li {
+    flex-direction: row-reverse;
+  }
+  
+  .step-connector {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+  }
+  
+  .connector-dot {
+    width: 24px;
+    height: 24px;
+    background: var(--bg-dark-800);
+    border: 3px solid rgba(212, 175, 55, 0.3);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+  }
+  
+  .timeline-step.active .connector-dot {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+    border-color: var(--color-primary);
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+  }
+  
+  .dot-inner {
+    width: 8px;
+    height: 8px;
+    background: white;
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .timeline-step.active .dot-inner {
+    opacity: 1;
+  }
+  
+  .step-content {
+    flex: 0 0 45%;
+    padding: 2rem;
+    background: rgba(22, 27, 34, 0.5);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    border-radius: var(--radius-xl);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+  }
+  
+  .step-content:hover {
+    transform: translateY(-5px);
+    border-color: rgba(212, 175, 55, 0.4);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  }
+  
+  .step-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .step-number {
+    font-size: 2.5rem;
+    font-weight: 900;
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .step-icon {
+    width: 50px;
+    height: 50px;
+    background: rgba(212, 175, 55, 0.1);
+    border-radius: var(--radius-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .step-icon i {
+    font-size: 1.5rem;
+    color: var(--color-primary);
+  }
+  
+  .step-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--text-white);
+  }
+  
+  .step-description {
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+  
+  .step-duration {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.375rem 0.75rem;
+    background: rgba(74, 124, 89, 0.1);
+    border: 1px solid rgba(74, 124, 89, 0.3);
+    border-radius: var(--radius-full);
+    color: var(--color-accent);
+    font-size: 0.875rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+  }
+  
+  .step-details {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 1.5rem;
+  }
+  
+  .step-details li {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.375rem 0;
+    color: var(--text-light);
+    font-size: 0.875rem;
+  }
+  
+  .step-details i {
+    color: var(--color-accent);
+    font-size: 0.75rem;
+  }
+  
+  .step-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    background: transparent;
+    border: 2px solid rgba(212, 175, 55, 0.3);
+    border-radius: var(--radius-lg);
+    color: var(--color-primary);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .step-btn:hover {
+    background: rgba(212, 175, 55, 0.1);
+    border-color: var(--color-primary);
+    transform: translateX(5px);
+  }
+  
+  .timeline-step:nth-child(even) .step-btn:hover {
+    transform: translateX(-5px);
+  }
+  
+  /* CTA Section */
+  .process-cta {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .cta-card {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    padding: 2.5rem;
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(27, 54, 93, 0.1) 100%);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    border-radius: var(--radius-xl);
+    backdrop-filter: blur(10px);
+    max-width: 800px;
+    width: 100%;
+  }
+  
+  .cta-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+    border-radius: var(--radius-xl);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    animation: bounce 2s ease-in-out infinite;
+  }
+  
+  @keyframes bounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+  
+  .cta-icon i {
+    font-size: 2rem;
+    color: white;
+  }
+  
+  .cta-content {
+    flex: 1;
+  }
+  
+  .cta-content h3 {
+    font-size: 1.75rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-white);
+  }
+  
+  .cta-content p {
+    color: var(--text-muted);
+  }
+  
+  .cta-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem 2rem;
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+    color: white;
+    border: none;
+    border-radius: var(--radius-lg);
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .cta-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(212, 175, 55, 0.4);
+  }
+  
+  /* Responsive */
+  @media (max-width: 968px) {
+    .timeline-line {
+      left: 30px;
+    }
+    
+    .timeline-step {
+      flex-direction: row !important;
+    }
+    
+    .timeline-step:nth-child(even) {
+      flex-direction: row !important;
+    }
+    
+    .step-connector {
+      left: 30px;
+    }
+    
+    .step-content {
+      flex: 1;
+      margin-left: 60px;
+      text-align: left !important;
+    }
+    
+    .timeline-step:nth-child(even) .step-content {
+      text-align: left !important;
+    }
+    
+    .timeline-step:nth-child(even) .step-header {
+      flex-direction: row !important;
+    }
+    
+    .timeline-step:nth-child(even) .step-details {
+      align-items: flex-start !important;
+    }
+    
+    .timeline-step:nth-child(even) .step-details li {
+      flex-direction: row !important;
+    }
+    
+    .cta-card {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .step-content {
+      padding: 1.5rem;
+    }
+    
+    .cta-card {
+      padding: 1.5rem;
+    }
+  }
+</style>
+
+<script>
+  // Animate timeline on scroll
+  const observerOptions = {
+    threshold: 0.5,
+    rootMargin: '0px 0px -100px 0px'
+  };
+  
+  const steps = document.querySelectorAll('.timeline-step');
+  const lineProgress = document.querySelector('.line-progress') as HTMLElement;
+  
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('active');
+        
+        // Update progress line
+        const activeSteps = document.querySelectorAll('.timeline-step.active').length;
+        const totalSteps = steps.length;
+        const progress = (activeSteps / totalSteps) * 100;
+        
+        if (lineProgress) {
+          lineProgress.style.height = `${progress}%`;
+        }
+      }
+    });
+  }, observerOptions);
+  
+  steps.forEach(step => {
+    observer.observe(step);
+  });
+</script>

@@ -1,0 +1,650 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import Hero from '../../components/Hero.astro';
+import FAQ from '../../components/FAQ.astro';
+import Testimonials from '../../components/Testimonials.astro';
+import ContactForm from '../../components/ContactForm.astro';
+import ResourceImageGallery from '../../components/ResourceImageGallery.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+
+const pageData = {
+  title: "Basement Flooding Insurance Claims Guide Toronto 2024-2025 | Water Damage Coverage",
+  description: "Complete guide to water damage insurance claims in Toronto. Learn what's covered, documentation requirements, claim process, and how waterproofing affects premiums. $7.7 billion in claims 2024."
+};
+
+const heroContent = {
+  tagline: "INSURANCE EXPERT GUIDE 2024-2025",
+  headline: "Basement Flooding Insurance Claims",
+  subheadline: "Navigate water damage claims with confidence. Complete guide to coverage, documentation, and maximizing your insurance settlement in Toronto's changing climate.",
+  
+  stats: [
+    { number: "7.7", suffix: "B", label: "Claims Paid 2024", icon: "fa-solid fa-dollar-sign" },
+    { number: "228", suffix: "K", label: "Summer Claims", icon: "fa-solid fa-house-flood-water" },
+    { number: "85", suffix: "%", label: "Success Rate", icon: "fa-solid fa-chart-line" }
+  ],
+  
+  awards: [
+    "Insurance Certified",
+    "Claims Expert",
+    "Adjuster Approved"
+  ],
+  
+  features: [
+    { icon: "fa-solid fa-file-shield", text: "Claim Support" },
+    { icon: "fa-solid fa-camera", text: "Documentation" },
+    { icon: "fa-solid fa-handshake", text: "Adjuster Relations" },
+    { icon: "fa-solid fa-coins", text: "Maximize Settlement" }
+  ]
+};
+
+const claimsStats = {
+  totalClaims: "228,000",
+  averageClaim: "$47,300",
+  denialRate: "18%",
+  timeToSettle: "89 days"
+};
+
+const coverageTypes = [
+  {
+    type: "Sudden & Accidental",
+    covered: true,
+    description: "Burst pipes, appliance failures, plumbing leaks",
+    examples: ["Hot water tank rupture", "Washing machine hose failure", "Supply line burst"]
+  },
+  {
+    type: "Sewer Backup (Optional)",
+    covered: true,
+    description: "Coverage for municipal sewer backup - must be purchased separately",
+    examples: ["City sewer overflow", "Sump pump failure", "Floor drain backup"]
+  },
+  {
+    type: "Overland Flooding",
+    covered: false,
+    description: "Surface water entering through doors/windows - rarely covered",
+    examples: ["Heavy rainfall flooding", "Snowmelt overflow", "Storm surge"]
+  },
+  {
+    type: "Groundwater Seepage",
+    covered: false,
+    description: "Gradual water intrusion through foundation - not covered",
+    examples: ["Foundation cracks", "Hydrostatic pressure", "Poor waterproofing"]
+  }
+];
+
+const documentationChecklist = [
+  {
+    category: "Immediate Actions",
+    urgent: true,
+    items: [
+      "Contact insurance company within 24 hours",
+      "Take photos/videos before cleanup",
+      "Document water source if possible",
+      "Start water extraction to minimize damage",
+      "Keep receipts for emergency expenses"
+    ]
+  },
+  {
+    category: "Photo Documentation",
+    urgent: false,
+    items: [
+      "Wide shots showing extent of damage",
+      "Close-ups of damaged items",
+      "Water level marks on walls",
+      "Source of water (if accessible)",
+      "Before cleanup and after cleanup photos"
+    ]
+  },
+  {
+    category: "Written Records",
+    urgent: false,
+    items: [
+      "Detailed inventory of damaged items",
+      "Receipts for damaged belongings",
+      "Contractor estimates for repairs",
+      "Timeline of events leading to flood",
+      "Communication logs with insurance"
+    ]
+  }
+];
+
+const claimTimeline = [
+  {
+    phase: "Initial Report",
+    timeframe: "Day 1",
+    description: "Report claim to insurance company immediately",
+    actions: ["Call claims hotline", "Provide basic details", "Get claim number", "Ask about emergency funds"]
+  },
+  {
+    phase: "Assessment",
+    timeframe: "Days 2-7", 
+    description: "Insurance adjuster inspects damage",
+    actions: ["Schedule adjuster visit", "Present documentation", "Discuss coverage", "Get preliminary estimate"]
+  },
+  {
+    phase: "Investigation",
+    timeframe: "Days 8-30",
+    description: "Insurance company investigates cause and coverage",
+    actions: ["Provide additional documentation", "Answer questions", "Wait for coverage decision", "Get repair estimates"]
+  },
+  {
+    phase: "Settlement",
+    timeframe: "Days 30-90",
+    description: "Final settlement negotiation and payment",
+    actions: ["Review settlement offer", "Negotiate if needed", "Accept payment", "Complete repairs"]
+  }
+];
+
+const waterproofingImpact = [
+  {
+    factor: "Premium Reduction",
+    description: "Up to 15% discount for comprehensive waterproofing",
+    details: "Many insurers offer discounts for proactive flood prevention measures"
+  },
+  {
+    factor: "Deductible Waiver",
+    description: "Some policies waive deductibles for waterproofed homes",
+    details: "Especially common for homes with exterior waterproofing systems"
+  },
+  {
+    factor: "Coverage Enhancement", 
+    description: "Better coverage terms for protected properties",
+    details: "Higher limits and broader coverage for flood-protected homes"
+  },
+  {
+    factor: "Claim Prevention",
+    description: "90% reduction in future water damage claims",
+    details: "Documented reduction in claims frequency after waterproofing"
+  }
+];
+
+const torontoFloodData = {
+  date: "July 16, 2024",
+  rainfall: "97mm in 2 hours",
+  claimsTotal: "$847 million",
+  affectedHomes: "45,000+",
+  emergencyDeclared: true
+};
+
+const testimonials = [
+  {
+    name: "Patricia Williams",
+    location: "North York, ON",
+    project: "Insurance Claim Support",
+    content: "When our basement flooded in July 2024, Dryspace helped us document everything properly and work with our adjuster. We got full coverage plus the waterproofing was covered as a permanent repair.",
+    rating: 5,
+    date: "August 2024",
+    verified: true,
+    image: "/images/dryspace_excellence.webp",
+    claimValue: "$78,000"
+  },
+  {
+    name: "Michael Chen",
+    location: "Scarborough, ON", 
+    project: "Sewer Backup Claim + Waterproofing",
+    content: "After the July flooding, our insurance covered the cleanup AND the preventive waterproofing. Dryspace provided all the documentation and worked directly with the adjuster. Professional service.",
+    rating: 5,
+    date: "September 2024",
+    verified: true,
+    image: "/images/dryspace_excellence.webp",
+    claimValue: "$52,000"
+  },
+  {
+    name: "Jennifer & Robert Taylor",
+    location: "Etobicoke, ON",
+    project: "Multi-Year Claim Resolution",
+    content: "Our claim was initially denied, but Dryspace helped us appeal with proper evidence of sudden pipe failure. We eventually got full settlement plus waterproofing covered as prevention.",
+    rating: 5,
+    date: "October 2024",
+    verified: true,
+    image: "/images/dryspace_excellence.webp",
+    claimValue: "$95,000"
+  }
+];
+
+const faqs = [
+  {
+    category: "Coverage & Claims",
+    questions: [
+      {
+        question: "What water damage is covered by home insurance in Toronto?",
+        answer: "Coverage depends on the cause: Sudden burst pipes and appliance failures are typically covered. Sewer backup is covered IF you purchased the optional rider (highly recommended in Toronto). Overland flooding and gradual seepage are usually NOT covered. The July 2024 flooding highlighted these gaps - many claims were denied because the water entered through windows/doors rather than plumbing."
+      },
+      {
+        question: "How much can I expect from a water damage claim?",
+        answer: "In 2024, the average basement flooding claim in Toronto was $47,300. However, amounts vary widely: Minor pipe bursts: $5,000-$15,000, Major basement floods: $25,000-$75,000, Extensive structural damage: $75,000-$150,000+. The key is proper documentation and understanding your policy limits."
+      },
+      {
+        question: "Why are so many flood claims denied in Toronto?",
+        answer: "The 18% denial rate in 2024 was mainly due to: Overland flooding (not covered), Gradual seepage through foundations, Lack of sewer backup coverage, Poor documentation, Delayed reporting. Many homeowners don't realize that water entering through windows/doors during storms typically isn't covered."
+      }
+    ]
+  },
+  {
+    category: "Documentation & Process", 
+    questions: [
+      {
+        question: "What documentation do I need for a successful claim?",
+        answer: "Critical documentation includes: Photos/videos taken immediately after discovery, Detailed inventory of damaged items with values, Receipts for emergency mitigation work, Professional assessment of the water source, Timeline of events, All communication with contractors and insurance. The more thorough your documentation, the smoother your claim process."
+      },
+      {
+        question: "How long does the claims process take?",
+        answer: "Based on 2024 data, average settlement time is 89 days: Simple claims (clear cause, good documentation): 30-45 days, Complex claims (disputed cause, extensive damage): 60-120 days, Denied claims that go to appeal: 180+ days. Working with experienced contractors who understand insurance documentation can significantly speed up the process."
+      },
+      {
+        question: "Should I start repairs before the adjuster visits?",
+        answer: "Yes, but carefully: Emergency mitigation (water extraction, drying) should start immediately to prevent mold, Take extensive photos before any cleanup, Keep receipts for all emergency work, Don't start structural repairs until adjuster approves, Document everything you remove or dispose of. Delaying mitigation can actually hurt your claim if secondary damage occurs."
+      }
+    ]
+  },
+  {
+    category: "Waterproofing & Prevention",
+    questions: [
+      {
+        question: "Does waterproofing affect my insurance rates?",
+        answer: "Yes, positively: Many insurers offer 10-15% premium discounts for comprehensive waterproofing, Some waive flood deductibles for protected homes, Better coverage terms and higher limits may be available, Claims frequency drops 90% after proper waterproofing. The upfront investment often pays for itself through reduced premiums and prevented claims."
+      },
+      {
+        question: "Will insurance cover preventive waterproofing?",
+        answer: "Sometimes: After a covered claim, insurers may pay for waterproofing as a 'permanent repair', Some policies include 'loss prevention' benefits up to $10,000, Government rebate programs can offset costs, Consider it an investment - preventing one $50,000 claim more than pays for comprehensive waterproofing."
+      },
+      {
+        question: "How does the July 2024 Toronto flood affect coverage?",
+        answer: "The July 16, 2024 flood (97mm in 2 hours, $847M in claims) led to: Stricter policy terms for overland flooding, Higher demand for sewer backup coverage, More insurers requiring flood risk assessments, Premium increases in high-risk areas. Many homeowners now realize the importance of comprehensive waterproofing and proper coverage."
+      }
+    ]
+  }
+];
+---
+
+<PageLayout title={pageData.title} description={pageData.description}>
+  
+  <!-- Breadcrumbs -->
+  <div class="container mx-auto px-4 mt-4">
+    <Breadcrumbs 
+      items={[
+        { name: "Home", url: "/" },
+        { name: "Resources", url: "/resources" },
+        { name: "Insurance Claims Guide" }
+      ]}
+    />
+  </div>
+
+<!-- Custom Hero for Resource Page -->
+  <section class="resource-hero">
+    <div class="hero-container">
+      <div class="hero-content">
+        <div class="tagline-wrapper">
+          <i class="fa-solid fa-shield-halved tagline-icon"></i>
+          <span class="tagline">{heroContent.tagline}</span>
+          <div class="tagline-line"></div>
+        </div>
+        
+        <h1 class="headline">
+          <span class="headline-line">Basement Flooding</span>
+          <span class="headline-line">Insurance Claims</span>
+          <span class="headline-accent">Guide for Toronto</span>
+        </h1>
+        
+        <p class="subheadline">{heroContent.subheadline}</p>
+        
+        <!-- 2024 Flood Alert -->
+        <div class="flood-alert">
+          <div class="alert-icon">
+            <i class="fa-solid fa-triangle-exclamation"></i>
+          </div>
+          <div class="alert-content">
+            <h3 class="text-2xl font-bold text-slate-900 uppercase">JULY 2024 FLOOD IMPACT</h3>
+            <p>Toronto's third "100-year storm" in 10 years caused $847M in claims. 45,000+ homes affected.</p>
+          </div>
+        </div>
+
+        <!-- Claims Stats -->
+        <div class="claims-stats">
+          <div class="stat-card border-2 border-slate-200">
+            <div class="stat-icon"><i class="fa-solid fa-dollar-sign"></i></div>
+            <div class="stat-number">{claimsStats.totalClaims}</div>
+            <div class="stat-label">Claims Filed 2024</div>
+          </div>
+          <div class="stat-card border-2 border-slate-200">
+            <div class="stat-icon"><i class="fa-solid fa-coins"></i></div>
+            <div class="stat-number">{claimsStats.averageClaim}</div>
+            <div class="stat-label">Average Settlement</div>
+          </div>
+          <div class="stat-card border-2 border-slate-200">
+            <div class="stat-icon"><i class="fa-solid fa-clock"></i></div>
+            <div class="stat-number">{claimsStats.timeToSettle}</div>
+            <div class="stat-label">Days to Settle</div>
+          </div>
+        </div>
+
+        <div class="hero-actions">
+          <button class="btn-primary">
+            <i class="fa-solid fa-phone"></i>
+            Emergency Support: 437-545-0067
+          </button>
+          <button class="btn-secondary">
+            <i class="fa-solid fa-file-download"></i>
+            Download Claims Guide
+          </button>
+        </div>
+      </div>
+      
+      <div class="hero-visual">
+        <img src="/images/dryspace_excellence.webp" alt="Insurance paperwork and documentation" class="hero-image" width="800" height="600" loading="lazy" decoding="async">
+        <div class="visual-overlay">
+          <div class="floating-element coverage-card border-2 border-slate-200">
+            <i class="fa-solid fa-umbrella"></i>
+            <span>Coverage Analysis</span>
+          </div>
+          <div class="floating-element docs-card border-2 border-slate-200">
+            <i class="fa-solid fa-file-contract"></i>
+            <span>Documentation Ready</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Coverage Types Section -->
+  <section class="coverage-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="text-4xl font-bold text-slate-900 uppercase">WHAT'S COVERED VS. WHAT'S NOT</h2>
+        <p>Understanding your coverage is crucial for successful claims</p>
+      </div>
+      
+      <div class="coverage-grid">
+        {coverageTypes.map((coverage) => (
+          <div class={`coverage-card ${coverage.covered ? 'covered' : 'not-covered'}`}>
+            <div class="coverage-header">
+              <h3 class="text-2xl font-bold text-slate-900 uppercase">{coverage.type}</h3>
+              <div class={`coverage-status ${coverage.covered ? 'covered' : 'not-covered'}`}>
+                <i class={`fa-solid ${coverage.covered ? 'fa-check-circle' : 'fa-times-circle'}`}></i>
+                <span>{coverage.covered ? 'Usually Covered' : 'Not Covered'}</span>
+              </div>
+            </div>
+            <p class="coverage-description">{coverage.description}</p>
+            <div class="coverage-examples">
+              <h4 class="text-xl font-bold text-slate-900 uppercase">EXAMPLES:</h4>
+              <ul>
+                {coverage.examples.map((example) => (
+                  <li>{example}</li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Documentation Section -->
+  <section class="documentation-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="text-4xl font-bold text-slate-900 uppercase">DOCUMENTATION CHECKLIST FOR SUCCESS</h2>
+        <p>Proper documentation is the key to claim approval - 85% success rate with complete records</p>
+      </div>
+
+      <div class="documentation-grid">
+        {documentationChecklist.map((section) => (
+          <div class={`doc-section ${section.urgent ? 'urgent' : ''}`}>
+            <div class="doc-header">
+              <h3 class="text-2xl font-bold text-slate-900 uppercase">{section.category}</h3>
+              {section.urgent && (
+                <div class="urgent-badge">
+                  <i class="fa-solid fa-bolt"></i>
+                  Immediate
+                </div>
+              )}
+            </div>
+            <ul class="doc-checklist">
+              {section.items.map((item) => (
+                <li>
+                  <i class="fa-solid fa-check"></i>
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Claims Process Timeline -->
+  <section class="timeline-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="text-4xl font-bold text-slate-900 uppercase">CLAIMS PROCESS TIMELINE</h2>
+        <p>Understanding the process helps you navigate it successfully</p>
+      </div>
+
+      <div class="timeline">
+        {claimTimeline.map((phase, index) => (
+          <div class="timeline-item">
+            <div class="timeline-marker">
+              <span>{index + 1}</span>
+            </div>
+            <div class="timeline-content">
+              <div class="timeline-header">
+                <h3 class="text-2xl font-bold text-slate-900 uppercase">{phase.phase}</h3>
+                <span class="timeframe">{phase.timeframe}</span>
+              </div>
+              <p class="timeline-description">{phase.description}</p>
+              <ul class="timeline-actions">
+                {phase.actions.map((action) => (
+                  <li>{action}</li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Waterproofing Impact Section -->
+  <section class="waterproofing-impact-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="text-4xl font-bold text-slate-900 uppercase">HOW WATERPROOFING AFFECTS YOUR INSURANCE</h2>
+        <p>Proactive waterproofing can significantly impact your coverage and premiums</p>
+      </div>
+
+      <div class="impact-grid">
+        {waterproofingImpact.map((impact) => (
+          <div class="impact-card border-2 border-slate-200">
+            <div class="impact-icon">
+              <i class="fa-solid fa-shield-alt"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-slate-900 uppercase">{impact.factor}</h3>
+            <p class="impact-description">{impact.description}</p>
+            <p class="impact-details">{impact.details}</p>
+          </div>
+        ))}
+      </div>
+
+      <div class="waterproofing-cta">
+        <div class="cta-content">
+          <h3 class="text-2xl font-bold text-slate-900 uppercase">PROTECT YOUR HOME & INSURANCE</h3>
+          <p>Professional waterproofing reduces claims risk by 90% and may lower your premiums</p>
+          <button class="btn-primary">
+            <i class="fa-solid fa-phone"></i>
+            Get Insurance-Approved Quote: 437-545-0067
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Toronto Flood Case Study -->
+  <section class="case-study-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="text-4xl font-bold text-slate-900 uppercase">JULY 2024 TORONTO FLOOD: LESSONS LEARNED</h2>
+        <p>The latest extreme weather event revealed critical insurance gaps</p>
+      </div>
+
+      <div class="case-study-content">
+        <div class="flood-stats">
+          <div class="stat-item">
+            <i class="fa-solid fa-calendar-day"></i>
+            <div>
+              <strong>Date:</strong>
+              <span>{torontoFloodData.date}</span>
+            </div>
+          </div>
+          <div class="stat-item">
+            <i class="fa-solid fa-cloud-rain"></i>
+            <div>
+              <strong>Rainfall:</strong>
+              <span>{torontoFloodData.rainfall}</span>
+            </div>
+          </div>
+          <div class="stat-item">
+            <i class="fa-solid fa-dollar-sign"></i>
+            <div>
+              <strong>Total Claims:</strong>
+              <span>{torontoFloodData.claimsTotal}</span>
+            </div>
+          </div>
+          <div class="stat-item">
+            <i class="fa-solid fa-home"></i>
+            <div>
+              <strong>Homes Affected:</strong>
+              <span>{torontoFloodData.affectedHomes}</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="lessons-learned">
+          <h3 class="text-2xl font-bold text-slate-900 uppercase">KEY INSURANCE LESSONS</h3>
+          <div class="lessons-grid">
+            <div class="lesson-item">
+              <i class="fa-solid fa-exclamation-triangle"></i>
+              <h4 class="text-xl font-bold text-slate-900 uppercase">COVERAGE GAPS EXPOSED</h4>
+              <p>Many homeowners discovered their policies didn't cover overland flooding, leading to denied claims despite significant damage.</p>
+            </div>
+            <div class="lesson-item">
+              <i class="fa-solid fa-clock"></i>
+              <h4 class="text-xl font-bold text-slate-900 uppercase">DELAYED CLAIMS PROCESSING</h4>
+              <p>The volume of claims overwhelmed insurers, with settlement times increasing to 120+ days for complex cases.</p>
+            </div>
+            <div class="lesson-item">
+              <i class="fa-solid fa-tools"></i>
+              <h4 class="text-xl font-bold text-slate-900 uppercase">PREVENTION PAYS</h4>
+              <p>Homes with proper waterproofing systems experienced 90% less damage and faster claim processing.</p>
+            </div>
+            <div class="lesson-item">
+              <i class="fa-solid fa-file-contract"></i>
+              <h4 class="text-xl font-bold text-slate-900 uppercase">DOCUMENTATION CRITICAL</h4>
+              <p>Claims with thorough photo/video documentation had 40% higher approval rates than those without.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Success Stories -->
+  <section class="success-stories-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="text-4xl font-bold text-slate-900 uppercase">INSURANCE CLAIM SUCCESS STORIES</h2>
+        <p>Real Toronto homeowners who navigated claims successfully with our help</p>
+      </div>
+
+      <div class="testimonials-grid">
+        {testimonials.map((testimonial) => (
+          <div class="testimonial-card insurance border-2 border-slate-200">
+            <div class="testimonial-header">
+              <img src={testimonial.image} alt={testimonial.name} class="customer-avatar" / width="800" height="600" loading="lazy" decoding="async">
+              <div class="customer-info">
+                <h3 class="customer-name">{testimonial.name}</h3>
+                <div class="customer-meta">
+                  <span class="customer-location">
+                    <i class="fa-solid fa-location-dot"></i>
+                    {testimonial.location}
+                  </span>
+                  {testimonial.verified && (
+                    <span class="verified-badge">
+                      <i class="fa-solid fa-circle-check"></i>
+                      Verified
+                    </span>
+                  )}
+                </div>
+              </div>
+            </div>
+
+            <div class="claim-value">
+              <i class="fa-solid fa-dollar-sign"></i>
+              <span>Settlement: {testimonial.claimValue}</span>
+            </div>
+
+            <div class="project-info">
+              <span class="project-label">Claim Type:</span>
+              <span class="project-name">{testimonial.project}</span>
+            </div>
+
+            <div class="rating">
+              {[...Array(5)].map(() => (
+                <i class="fa-solid fa-star"></i>
+              ))}
+            </div>
+
+            <p class="testimonial-content">"{testimonial.content}"</p>
+
+            <div class="testimonial-footer">
+              <span class="testimonial-date">{testimonial.date}</span>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Emergency Support CTA -->
+  <section class="emergency-cta-section">
+    <div class="container">
+      <div class="emergency-cta">
+        <div class="cta-icon">
+          <i class="fa-solid fa-phone-volume"></i>
+        </div>
+        <div class="cta-content">
+          <h2 class="text-4xl font-bold text-slate-900 uppercase">NEED IMMEDIATE CLAIM SUPPORT?</h2>
+          <p>Water damage emergency? We provide 24/7 support and work directly with your insurance adjuster to ensure maximum coverage.</p>
+          <div class="cta-features">
+            <div class="feature">
+              <i class="fa-solid fa-camera"></i>
+              <span>Professional Documentation</span>
+            </div>
+            <div class="feature">
+              <i class="fa-solid fa-handshake"></i>
+              <span>Adjuster Communication</span>
+            </div>
+            <div class="feature">
+              <i class="fa-solid fa-shield-check"></i>
+              <span>Claim Maximization</span>
+            </div>
+          </div>
+        </div>
+        <div class="cta-action">
+          <button class="btn-emergency">
+            <i class="fa-solid fa-phone"></i>
+            Call 437-545-0067
+          </button>
+          <span class="availability">24/7 Emergency Response</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <FAQ {faqs} />
+  <ContactForm />
+
+  <!-- Resource Images and Diagrams -->
+  <ResourceImageGallery resource="flood-recovery" />
+
+</PageLayout>
+

@@ -1,0 +1,749 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import Hero from '../components/sections/Hero.astro';
+import Stats from '../components/sections/Stats.astro';
+import Process from '../components/sections/Process.astro';
+import ContactForm from '../components/ContactForm.astro';
+import FAQ from '../components/FAQ.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import StructuredData from '../components/StructuredData.astro';
+import SchemaMarkup from '../components/SchemaMarkup.astro';
+import BeforeAfterGallery from '../components/BeforeAfterGallery.astro';
+import CostCalculator from '../components/react/CostCalculator.tsx';
+import { StatsBar } from '../components/react/StatsBar.tsx';
+
+const pageTitle = "Basement Waterproofing Brampton | Same-Day | $3,400 Rebate";
+const pageDescription = "⚡ Emergency foundation protection locally. ✓ Same-day service ✓ New home warranty issues fixed ✓ $3,400 rebates ✓ 400+ area homes protected. Licensed & insured. 24/7 emergency response.";
+
+// Brampton-specific data
+const bramptonStats = {
+  projectsCompleted: "400+",
+  avgResponseTime: "35 minutes",
+  yearsInArea: "12+",
+  emergencyCalls: "24/7"
+};
+
+const bramptonNeighborhoods = [
+  { name: "Bramalea", projects: "68", commonIssues: "1970s-80s foundation settling, clay soil" },
+  { name: "Heart Lake", projects: "72", commonIssues: "New homes (2000s), builder warranty claims" },
+  { name: "Springdale", projects: "54", commonIssues: "Rapid development, inadequate drainage" },
+  { name: "Fletcher's Creek", projects: "61", commonIssues: "Creek proximity, seasonal flooding" },
+  { name: "Mount Pleasant", projects: "47", commonIssues: "Mixed development eras, soil variation" },
+  { name: "Sandalwood Park", projects: "39", commonIssues: "New construction defects, poor grading" },
+  { name: "Bram East", projects: "43", commonIssues: "Industrial transition area, contaminated fill" },
+  { name: "Castlemore", projects: "52", commonIssues: "Rural-urban transition, septic to sewer" }
+];
+
+const faqs = [
+  {
+    question: "How much does basement moisture protection cost locally?",
+    answer: "Foundation moisture control in the region typically costs $145-275 per linear foot, or $14,000-28,000 for an average home. Newer area homes (70% built after 1990) often require builder warranty repairs first. Costs vary by neighborhood age and soil conditions. Government rebates up to $3,400 are available for residents."
+  },
+  {
+    question: "Do I need a permit for moisture protection locally?",
+    answer: "Yes, the area municipality requires building permits for exterior moisture protection involving excavation over 4 feet. DrySpace handles all permit applications, architectural drawings, and inspections. We're fully familiar with regional building codes and expedited permitting processes for emergency repairs."
+  },
+  {
+    question: "What causes basement flooding in the area's newer homes?",
+    answer: "The area's rapid development (70% homes built after 1990) created unique challenges: poor lot grading on converted farmland, inadequate builder moisture protection, Etobicoke Creek watershed flooding, and settlement on imported fill. Many issues are covered under new home warranties - we help with warranty claims."
+  },
+  {
+    question: "How quickly can you respond to local emergencies?",
+    answer: "We guarantee emergency response under 35 minutes to all neighborhoods including Bramalea, Heart Lake, Springdale, and Fletcher's Creek. Our dedicated regional teams operate 24/7, 365 days a year with specialized equipment for new home construction issues."
+  },
+  {
+    question: "Are there rebates for local homeowners?",
+    answer: "Yes! Area residents can access up to $3,400 through the Basement Flooding Protection Subsidy Program. Additional Region of Peel rebates available for backwater valves and sump pumps. For newer homes, we also coordinate with builder warranty programs. We handle all applications at no charge."
+  },
+  {
+    question: "Can you help with new home warranty moisture protection claims locally?",
+    answer: "Absolutely! We specialize in the region's new home warranty issues. 70% of area homes are under 30 years old with potential builder defects. We document problems, work with warranty providers (Tarion, NHCB), and ensure proper repairs. Our reports help accelerate warranty claim approvals."
+  },
+  {
+    question: "What moisture protection method works best for the area's soil conditions?",
+    answer: "The region's diverse soil conditions require customized solutions. Converted farmland areas need proper drainage systems, newer subdivisions may need grading corrections, and areas near Etobicoke Creek require flood-resistant exterior systems. We assess each property based on construction era and soil type."
+  },
+  {
+    question: "How long does waterproofing take in Brampton?",
+    answer: "Most area homes require 2-4 days for exterior moisture protection, depending on access and soil conditions. Interior systems can be installed in 1-2 days. We work year-round and adjust methods for the region's climate. Emergency repairs are completed same-day when possible."
+  },
+  {
+    question: "Do you service all areas locally?",
+    answer: "Yes, we service every neighborhood from Bramalea to Castlemore, including Heart Lake, Springdale, Fletcher's Creek, Mount Pleasant, Sandalwood Park, and Bram East. Same-day service available region-wide with specialized teams for different development eras."
+  },
+  {
+    question: "What warranty do you offer locally?",
+    answer: "We provide a 25-year transferable warranty on all moisture protection work locally. This warranty is especially valuable for newer homes as it extends beyond builder warranties and transfers to new owners, protecting your investment in the area's dynamic real estate market."
+  },
+  {
+    question: "Can you protect finished basements in new area homes?",
+    answer: "Yes, we specialize in waterproofing finished basements with minimal disruption to newer homes. Our interior systems preserve builder finishes where possible. We coordinate with homeowners' warranty requirements and work with local renovation contractors for any necessary restoration."
+  },
+  {
+    question: "How do Etobicoke Creek flooding risks affect area foundation protection?",
+    answer: "Properties near Etobicoke Creek and its tributaries face increased flood risks during spring thaw and heavy rainfall. We install flood-resistant exterior systems, proper drainage, and emergency backup systems. Our solutions comply with regional floodplain regulations and TRCA requirements."
+  }
+];
+---
+
+<PageLayout 
+  title={pageTitle}
+  description={pageDescription}
+  showAnnouncement={true}
+>
+  <!-- Structured Data -->
+  <StructuredData 
+    type="Service" 
+    data={{
+      name: "Basement Waterproofing Brampton",
+      description: "Professional foundation protection services locally. Same-day emergency response, new home warranty assistance, 25-year warranty, government rebates available.",
+      areaServed: { name: "Brampton", geo: { latitude: 43.7315, longitude: -79.7624 }},
+      rating: { value: 4.9, count: 400 }
+    }}
+  />
+  
+  <!-- Breadcrumbs -->
+  <div class="container mx-auto px-4 mt-4">
+    <Breadcrumbs 
+      items={[
+        { name: "Home", url: "/" },
+        { name: "Locations", url: "/service-areas" },
+        { name: "Brampton", url: "/locations/brampton" },
+        { name: "Foundation Protection Services" }
+      ]}
+    />
+  </div>
+
+  <!-- Hero Section -->
+  <Hero 
+    title="FOUNDATION PROTECTION SERVICES BRAMPTON"
+    subtitle="The region's new home moisture control specialists. 400+ projects completed. Expert warranty claim assistance. Same-day emergency response under 35 minutes."
+    primaryCTA={{ text: "Get Emergency Service NOW", href: "/emergency" }}
+    secondaryCTA={{ text: "View Local Projects", href: "#gallery" }}
+    backgroundImage="/images/brampton-waterproofing-hero.webp"
+    badge="$3,400 REBATE + WARRANTY HELP"
+  />
+
+  <!-- Emergency Alert Bar -->
+  <div class="bg-red-600 text-white py-3">
+    <div class="container mx-auto px-4 text-center">
+      <p class="font-semibold">
+        🚨 Foundation Flooding Emergency? Call Now: 
+        <a href="/emergency" class="underline font-bold">emergency service page</a> 
+        - Average response time: 35 minutes to all area neighborhoods
+      </p>
+    </div>
+  </div>
+
+  <!-- Stats Bar -->
+  <section class="py-8 bg-slate-50">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+        <div>
+          <div class="text-3xl font-bold text-cyan-600">400+</div>
+          <div class="text-sm text-slate-500">Local Homes Protected</div>
+        </div>
+        <div>
+          <div class="text-3xl font-bold text-cyan-600">35 min</div>
+          <div class="text-sm text-slate-500">Emergency Response</div>
+        </div>
+        <div>
+          <div class="text-3xl font-bold text-cyan-600">$3,400</div>
+          <div class="text-sm text-slate-500">Rebates Available</div>
+        </div>
+        <div>
+          <div class="text-3xl font-bold text-cyan-600">25 Year</div>
+          <div class="text-sm text-slate-500">Transferable Warranty</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <section class="py-16">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl font-bold mb-6">The Region's New Home Moisture Control Specialists</h2>
+        
+        <p class="text-lg mb-6">
+          As the region's premier moisture control contractor specializing in newer homes, DrySpace has protected over 400 homes 
+          across all neighborhoods from Bramalea to Castlemore. We understand the area's unique challenges: rapid development 
+          on converted farmland (70% of homes built after 1990), builder warranty issues, Etobicoke Creek flooding risks, 
+          and settlement problems on imported fill that plague newer subdivisions throughout the region.
+        </p>
+
+        <div class="bg-red-50 border-l-4 border-red-400 p-4 mb-8">
+          <p class="font-bold text-red-800">New Home Warning for Local Residents:</p>
+          <p class="text-red-700">
+            If your home was built after 1990, you may have builder warranty coverage for moisture protection issues. 
+            Don't pay out of pocket without checking first! We help document problems and expedite warranty claims 
+            with Tarion, NHCB, and other providers.
+          </p>
+        </div>
+
+        <h3 class="text-2xl font-bold mt-8 mb-4">Why Rapid Development Creates Foundation Protection Challenges</h3>
+        
+        <div class="bg-cyan-50 p-6 rounded-lg mb-6">
+          <h4 class="font-bold mb-3">The Region's Unique Construction Challenges:</h4>
+          <ul class="space-y-2">
+            <li>• <strong>Rapid Development:</strong> 70% of homes built after 1990 on former agricultural land</li>
+            <li>• <strong>Imported Fill:</strong> Builders used various soil types, creating inconsistent drainage</li>
+            <li>• <strong>Poor Initial Grading:</strong> Many lots improperly graded during mass development</li>
+            <li>• <strong>Builder Shortcuts:</strong> Inadequate moisture barriers in rush to complete subdivisions</li>
+            <li>• <strong>Etobicoke Creek Watershed:</strong> Increased flooding risk during heavy rainfall</li>
+            <li>• <strong>Settlement Issues:</strong> Newer foundations settling on compacted fill</li>
+            <li>• <strong>Warranty Gaps:</strong> Many issues emerge just after warranty periods expire</li>
+          </ul>
+        </div>
+
+        <h3 class="text-2xl font-bold mt-8 mb-4">Specialized Local Services</h3>
+        
+        <div class="grid md:grid-cols-2 gap-6 mb-8">
+          <div class="border p-4 rounded-lg">
+            <h4 class="font-bold mb-2">New Home Warranty Assistance</h4>
+            <p>Expert documentation and repair coordination for homes with active builder warranties.</p>
+            <ul class="text-sm mt-2 space-y-1">
+              <li>✓ Warranty claim documentation</li>
+              <li>✓ Tarion/NHCB coordination</li>
+              <li>✓ Builder defect identification</li>
+              <li>✓ Emergency repairs while claim processes</li>
+            </ul>
+          </div>
+          
+          <div class="border p-4 rounded-lg">
+            <h4 class="font-bold mb-2">Exterior Water Protection</h4>
+            <p>Complete systems designed for area soil conditions and newer construction methods.</p>
+            <ul class="text-sm mt-2 space-y-1">
+              <li>✓ Excavation to footing level</li>
+              <li>✓ Modern membrane systems</li>
+              <li>✓ Proper drainage installation</li>
+              <li>✓ Lot re-grading services</li>
+            </ul>
+          </div>
+          
+          <div class="border p-4 rounded-lg">
+            <h4 class="font-bold mb-2">Interior Drainage Solutions</h4>
+            <p>Minimally invasive systems perfect for finished lower levels in newer area homes.</p>
+            <ul class="text-sm mt-2 space-y-1">
+              <li>✓ Interior drainage systems</li>
+              <li>✓ Sump pump installation/upgrade</li>
+              <li>✓ Vapor barrier installation</li>
+              <li>✓ Crack injection services</li>
+            </ul>
+          </div>
+          
+          <div class="border p-4 rounded-lg">
+            <h4 class="font-bold mb-2">Emergency Flood Response</h4>
+            <p>Rapid response for Etobicoke Creek flooding and storm-related basement flooding.</p>
+            <ul class="text-sm mt-2 space-y-1">
+              <li>✓ Same-day emergency pumping</li>
+              <li>✓ Temporary flood barriers</li>
+              <li>✓ Insurance claim assistance</li>
+              <li>✓ Mold prevention protocols</li>
+            </ul>
+          </div>
+        </div>
+
+        <h3 class="text-2xl font-bold mt-8 mb-4">Local Neighborhoods We Serve</h3>
+        
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
+          {bramptonNeighborhoods.map(neighborhood => (
+            <div class="bg-slate-50 p-4 rounded">
+              <h4 class="font-bold">{neighborhood.name}</h4>
+              <p class="text-sm text-slate-500">{neighborhood.projects} projects completed</p>
+              <p class="text-xs mt-1">Common issues: {neighborhood.commonIssues}</p>
+            </div>
+          ))}
+        </div>
+
+        <h3 class="text-2xl font-bold mt-8 mb-4">Understanding Local Construction Eras</h3>
+        
+        <div class="space-y-4 mb-8">
+          <div class="border p-4 rounded">
+            <h4 class="font-bold text-cyan-600">1990s-2000s Development</h4>
+            <p class="text-sm mb-2">Major subdivision development on former farmland</p>
+            <ul class="text-sm space-y-1">
+              <li>• Heart Lake, Springdale, parts of Bramalea</li>
+              <li>• Common issues: settlement, poor drainage design, warranty expiration</li>
+              <li>• Solutions: exterior systems, lot re-grading, upgraded drainage</li>
+            </ul>
+          </div>
+          
+          <div class="border p-4 rounded">
+            <h4 class="font-bold text-cyan-600">2000s-2010s Boom</h4>
+            <p class="text-sm mb-2">Rapid expansion, highest construction volume</p>
+            <ul class="text-sm space-y-1">
+              <li>• Mount Pleasant, Fletcher's Creek, Sandalwood Park</li>
+              <li>• Common issues: builder shortcuts, inadequate waterproofing, warranty claims</li>
+              <li>• Solutions: warranty coordination, proper system installation, emergency repairs</li>
+            </ul>
+          </div>
+          
+          <div class="border p-4 rounded">
+            <h4 class="font-bold text-purple-600">2010s-Present</h4>
+            <p class="text-sm mb-2">Higher density, improved standards but still issues</p>
+            <ul class="text-sm space-y-1">
+              <li>• Bram East, Castlemore, newer Sandalwood areas</li>
+              <li>• Common issues: active warranties, grading problems, flooding near creeks</li>
+              <li>• Solutions: warranty assistance, preventive measures, flood protection</li>
+            </ul>
+          </div>
+        </div>
+
+        <h3 class="text-2xl font-bold mt-8 mb-4">Municipal Building Codes & New Home Warranties</h3>
+        
+        <p class="mb-4">
+          DrySpace is fully licensed to work locally and specializes in navigating both municipal 
+          requirements and new home warranty processes. We handle:
+        </p>
+        
+        <div class="grid md:grid-cols-2 gap-6 mb-6">
+          <div>
+            <h4 class="font-bold mb-2">Municipal Requirements</h4>
+            <ul class="text-sm space-y-1">
+              <li>✓ Municipal building permits</li>
+              <li>✓ Plumbing permits for sump systems</li>
+              <li>✓ Site alteration permits</li>
+              <li>✓ TRCA floodplain compliance</li>
+              <li>✓ Region of Peel backwater valve permits</li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-bold mb-2">Warranty Coordination</h4>
+            <ul class="text-sm space-y-1">
+              <li>✓ Tarion warranty claims</li>
+              <li>✓ NHCB documentation</li>
+              <li>✓ Builder warranty negotiations</li>
+              <li>✓ Emergency repair authorizations</li>
+              <li>✓ Post-warranty solution planning</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="bg-amber-50 border-l-4 border-amber-400 p-4 mb-8">
+          <p class="font-bold">Important for New Local Homeowners:</p>
+          <p>Don't assume flooding is your responsibility! Many area homes built after 1990 have warranty 
+          coverage for moisture protection defects. We provide free warranty assessments and handle all claim documentation. 
+          Even if warranty has expired, you may still have recourse for construction defects.</p>
+        </div>
+
+        <h3 class="text-2xl font-bold mt-8 mb-4">Available Rebates & Financing Options</h3>
+        
+        <div class="bg-cyan-50 p-6 rounded-lg mb-8">
+          <h4 class="font-bold mb-3">Available Financial Assistance for Local Residents:</h4>
+          <ul class="space-y-3">
+            <li>
+              <strong>Basement Flooding Protection Subsidy:</strong> Up to $3,400 for eligible foundation protection work
+            </li>
+            <li>
+              <strong>Region of Peel Flood Prevention:</strong> Additional funding for backwater valves and sump pumps
+            </li>
+            <li>
+              <strong>New Home Warranty Claims:</strong> Potential full coverage for builder defects (we handle claims)
+            </li>
+            <li>
+              <strong>Insurance Premium Discounts:</strong> Up to 20% savings with certified flood protection
+            </li>
+            <li>
+              <strong>Energy Rebates:</strong> Utility rebates available for basement insulation improvements
+            </li>
+          </ul>
+          <p class="mt-4 font-semibold text-cyan-700">
+            Our warranty specialists handle all applications, claims, and paperwork at no additional charge!
+          </p>
+        </div>
+
+        <h3 class="text-2xl font-bold mt-8 mb-4">The Area Foundation Protection Process</h3>
+        
+        <ol class="space-y-4 mb-8">
+          <li class="flex">
+            <span class="font-bold text-cyan-600 mr-3">1.</span>
+            <div>
+              <strong>Free Inspection & Warranty Assessment:</strong> Our local specialists inspect your property 
+              and review warranty documentation to identify potential coverage.
+            </div>
+          </li>
+          <li class="flex">
+            <span class="font-bold text-cyan-600 mr-3">2.</span>
+            <div>
+              <strong>Warranty Claim Filing:</strong> If applicable, we document issues and file warranty claims 
+              with Tarion, builders, or insurance providers.
+            </div>
+          </li>
+          <li class="flex">
+            <span class="font-bold text-cyan-600 mr-3">3.</span>
+            <div>
+              <strong>Custom Solution Design:</strong> We create a protection plan specific to your home's 
+              construction era and local soil conditions.
+            </div>
+          </li>
+          <li class="flex">
+            <span class="font-bold text-cyan-600 mr-3">4.</span>
+            <div>
+              <strong>Permit & Authorization:</strong> We handle municipal permits and coordinate with 
+              warranty providers for repair authorizations.
+            </div>
+          </li>
+          <li class="flex">
+            <span class="font-bold text-cyan-600 mr-3">5.</span>
+            <div>
+              <strong>Professional Installation:</strong> Our certified teams complete work, typically within 
+              2-4 days for most local homes.
+            </div>
+          </li>
+          <li class="flex">
+            <span class="font-bold text-cyan-600 mr-3">6.</span>
+            <div>
+              <strong>Inspection & Documentation:</strong> Final inspections with the city and comprehensive 
+              documentation for warranty and rebate purposes.
+            </div>
+          </li>
+          <li class="flex">
+            <span class="font-bold text-cyan-600 mr-3">7.</span>
+            <div>
+              <strong>25-Year Warranty & Rebate Processing:</strong> Protection warranty registration and rebate claim 
+              submission for maximum financial recovery.
+            </div>
+          </li>
+        </ol>
+
+        <h3 class="text-2xl font-bold mt-8 mb-4">Creek Area Flooding Solutions</h3>
+        
+        <div class="bg-cyan-50 p-6 rounded-lg mb-8">
+          <h4 class="font-bold mb-3">Special Considerations for Creek-Adjacent Properties:</h4>
+          <p class="mb-3">
+            Homes near Etobicoke Creek and its tributaries face unique flooding challenges during spring thaw 
+            and storm events. Our specialized solutions include:
+          </p>
+          <ul class="space-y-2">
+            <li>• <strong>Flood-Resistant Exterior Systems:</strong> Designed to handle hydrostatic pressure from creek overflow</li>
+            <li>• <strong>Enhanced Drainage Networks:</strong> Connect to municipal storm systems where possible</li>
+            <li>• <strong>Emergency Backup Systems:</strong> Battery backup pumps and alarm systems</li>
+            <li>• <strong>TRCA Compliance:</strong> All work meets Toronto Region Conservation Authority requirements</li>
+            <li>• <strong>Flood Barrier Installation:</strong> Temporary and permanent flood protection options</li>
+          </ul>
+        </div>
+
+        <h3 class="text-2xl font-bold mt-8 mb-4">Why Choose DrySpace for Area Foundation Protection?</h3>
+        
+        <div class="grid md:grid-cols-2 gap-6 mb-8">
+          <div>
+            <h4 class="font-bold mb-2">New Home Specialists</h4>
+            <ul class="space-y-2 text-sm">
+              <li>✓ 12+ years serving the area</li>
+              <li>✓ 400+ newer homes protected</li>
+              <li>✓ Warranty claim success rate: 87%</li>
+              <li>✓ Builder defect documentation experts</li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-bold mb-2">Fastest Response Times</h4>
+            <ul class="space-y-2 text-sm">
+              <li>✓ 35-minute emergency response</li>
+              <li>✓ Dedicated local teams</li>
+              <li>✓ Same-day service available</li>
+              <li>✓ 24/7/365 availability</li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-bold mb-2">Complete Service Package</h4>
+            <ul class="space-y-2 text-sm">
+              <li>✓ All permits handled</li>
+              <li>✓ Warranty claim assistance</li>
+              <li>✓ Rebate application support</li>
+              <li>✓ Insurance coordination</li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-bold mb-2">Guaranteed Quality</h4>
+            <ul class="space-y-2 text-sm">
+              <li>✓ 25-year transferable warranty</li>
+              <li>✓ Licensed and fully insured</li>
+              <li>✓ A+ Better Business Bureau rating</li>
+              <li>✓ 400+ verified five-star reviews</li>
+            </ul>
+          </div>
+        </div>
+
+        <h3 class="text-2xl font-bold mt-8 mb-4">Common New Home Issues We Fix in the Area</h3>
+        
+        <div class="space-y-4 mb-8">
+          <div class="border p-4 rounded">
+            <h4 class="font-bold text-red-600">Foundation Settlement Cracks</h4>
+            <p class="text-sm">Common in homes built on imported fill. Often covered under structural warranties.</p>
+          </div>
+          <div class="border p-4 rounded">
+            <h4 class="font-bold text-cyan-600">Poor Lot Grading</h4>
+            <p class="text-sm">Water pools against foundation due to incorrect grading during construction.</p>
+          </div>
+          <div class="border p-4 rounded">
+            <h4 class="font-bold text-cyan-600">Inadequate Moisture Barriers</h4>
+            <p class="text-sm">Builders often use minimal protection systems that fail within 5-10 years.</p>
+          </div>
+          <div class="border p-4 rounded">
+            <h4 class="font-bold text-purple-600">Window Well Failures</h4>
+            <p class="text-sm">Improperly installed or undersized window wells allow water infiltration.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cost Calculator -->
+  <section class="py-16 bg-slate-50">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-8">
+        Calculate Your Area Foundation Protection Cost
+      </h2>
+      <div class="max-w-4xl mx-auto">
+        <CostCalculator client:load />
+        <p class="text-center mt-4 text-sm text-slate-500">
+          *Estimates include local factors and potential warranty coverage
+        </p>
+        <p class="text-center mt-2 text-sm text-cyan-600 font-semibold">
+          New home (built after 1990)? We'll check warranty coverage first - you may owe nothing!
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Before/After Gallery -->
+  <section id="gallery" class="py-16">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-8">
+        Recent Local Projects
+      </h2>
+      <BeforeAfterGallery />
+      <div class="grid md:grid-cols-3 gap-6 mt-8 max-w-4xl mx-auto">
+        <div class="text-center">
+          <img src="/images/heart-lake-project.webp" alt="Heart Lake new home foundation protection" class="rounded-lg mb-2" width="400" height="300" loading="lazy" decoding="async" />
+          <p class="font-semibold">Heart Lake New Home</p>
+          <p class="text-sm text-slate-500">Warranty claim + permanent fix</p>
+        </div>
+        <div class="text-center">
+          <img src="/images/bramalea-project.webp" alt="Bramalea foundation repair" class="rounded-lg mb-2" width="400" height="300" loading="lazy" decoding="async" />
+          <p class="font-semibold">Bramalea Settlement Repair</p>
+          <p class="text-sm text-slate-500">Foundation stabilization & protection system</p>
+        </div>
+        <div class="text-center">
+          <img src="/images/fletchers-creek-project.webp" alt="Fletcher's Creek flooding solution" class="rounded-lg mb-2" width="400" height="300" loading="lazy" decoding="async" />
+          <p class="font-semibold">Fletcher's Creek Flood Solution</p>
+          <p class="text-sm text-slate-500">Emergency response & permanent protection</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="py-16 bg-slate-50">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-8">
+        What Local Homeowners Say
+      </h2>
+      
+      <div class="max-w-4xl mx-auto mt-8 grid md:grid-cols-2 gap-6">
+        <div class="bg-white p-6 rounded-lg shadow">
+          <div class="flex mb-2">
+            {[...Array(5)].map(() => <span class="text-amber-400">★</span>)}
+          </div>
+          <p class="mb-2">
+            "Our 2005 Heart Lake home started leaking just after the Tarion warranty expired. DrySpace found 
+            documentation proving builder defect and got full coverage! Amazing service and saved us $18,000."
+          </p>
+          <p class="font-semibold">- Jennifer T., Heart Lake</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow">
+          <div class="flex mb-2">
+            {[...Array(5)].map(() => <span class="text-amber-400">★</span>)}
+          </div>
+          <p class="mb-2">
+            "Fletcher's Creek flooded our basement twice in one year. DrySpace responded within 30 minutes both times 
+            and installed a permanent solution. No more flooding worries!"
+          </p>
+          <p class="font-semibold">- Mike S., Fletcher's Creek</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow">
+          <div class="flex mb-2">
+            {[...Array(5)].map(() => <span class="text-amber-400">★</span>)}
+          </div>
+          <p class="mb-2">
+            "New home in Springdale with poor grading. Water was pooling against foundation. DrySpace fixed the 
+            grading, installed proper drainage, and helped us get the $3,400 rebate. Professional and thorough!"
+          </p>
+          <p class="font-semibold">- David & Lisa K., Springdale</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow">
+          <div class="flex mb-2">
+            {[...Array(5)].map(() => <span class="text-amber-400">★</span>)}
+          </div>
+          <p class="mb-2">
+            "Bramalea townhouse built in 1998 with settlement cracks. DrySpace documented everything, helped with 
+            the warranty claim, and when that failed, did amazing repair work. Highly recommend!"
+          </p>
+          <p class="font-semibold">- Angela M., Bramalea</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="py-16">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-8">
+        Area Foundation Protection FAQs
+      </h2>
+      <div class="max-w-4xl mx-auto">
+        <FAQ faqs={faqs} />
+      </div>
+    </div>
+  </section>
+
+  <!-- Service Areas -->
+  <section class="py-16 bg-cyan-50">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-8">
+        Serving All Local Communities
+      </h2>
+      <div class="max-w-4xl mx-auto">
+        <p class="text-center mb-6">
+          With specialized teams throughout the area, we guarantee rapid response to every neighborhood:
+        </p>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+          <div>
+            <h4 class="font-bold">Central Area</h4>
+            <ul class="text-sm space-y-1">
+              <li>Bramalea</li>
+              <li>Downtown Core</li>
+              <li>Peel Village</li>
+              <li>City Centre</li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-bold">North Region</h4>
+            <ul class="text-sm space-y-1">
+              <li>Heart Lake</li>
+              <li>Springdale</li>
+              <li>Sandalwood Park</li>
+              <li>Northwood Park</li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-bold">East Region</h4>
+            <ul class="text-sm space-y-1">
+              <li>Fletcher's Creek</li>
+              <li>Bram East</li>
+              <li>Mount Pleasant</li>
+              <li>Professor's Lake</li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-bold">West Region</h4>
+            <ul class="text-sm space-y-1">
+              <li>Castlemore</li>
+              <li>Countryside Village</li>
+              <li>Claireville</li>
+              <li>Heritage Heights</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="mt-8 text-center">
+          <h4 class="font-bold mb-3">Special Focus Areas:</h4>
+          <div class="grid md:grid-cols-3 gap-4">
+            <div class="bg-white p-4 rounded">
+              <h5 class="font-semibold text-cyan-600">New Developments (2000+)</h5>
+              <p class="text-sm">Warranty assistance & builder defect repairs</p>
+            </div>
+            <div class="bg-white p-4 rounded">
+              <h5 class="font-semibold text-cyan-600">Creek-Adjacent Areas</h5>
+              <p class="text-sm">Flood protection & emergency response</p>
+            </div>
+            <div class="bg-white p-4 rounded">
+              <h5 class="font-semibold text-purple-600">Established Areas (1970s-90s)</h5>
+              <p class="text-sm">Foundation repair & system upgrades</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Emergency Services Highlight -->
+  <section class="py-12 bg-red-600 text-white">
+    <div class="container mx-auto px-4 text-center">
+      <h3 class="text-2xl font-bold mb-4">Area Emergency Foundation Protection Services</h3>
+      <p class="text-lg mb-6">
+        Basement flooding emergency? Don't wait - every minute counts to prevent structural damage and mold growth.
+      </p>
+      <div class="grid md:grid-cols-3 gap-6 mb-6">
+        <div>
+          <div class="text-3xl mb-2">⚡</div>
+          <h4 class="font-bold">35 Minute Response</h4>
+          <p class="text-sm">Fastest guaranteed response time locally</p>
+        </div>
+        <div>
+          <div class="text-3xl mb-2">🚛</div>
+          <h4 class="font-bold">Mobile Emergency Units</h4>
+          <p class="text-sm">Fully equipped trucks stationed across the area</p>
+        </div>
+        <div>
+          <div class="text-3xl mb-2">📞</div>
+          <h4 class="font-bold">24/7 Hotline</h4>
+          <p class="text-sm">Real technicians answer, not answering services</p>
+        </div>
+      </div>
+      <a href="/emergency" 
+         class="bg-white text-red-600 px-8 py-4 rounded-lg font-bold text-xl hover:bg-slate-50 transition inline-block">
+        🚨 GET EMERGENCY HELP
+      </a>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-16 bg-cyan-600 text-white">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-3xl font-bold mb-4">
+        Protect Your Property Today
+      </h2>
+      <p class="text-xl mb-4">
+        New home? Check warranty coverage first - you may owe nothing!
+      </p>
+      <p class="text-lg mb-8">
+        Free inspection includes warranty assessment and rebate qualification. Up to $3,400 available.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/free-inspection" 
+           class="bg-white text-cyan-600 px-8 py-4 rounded-lg font-bold text-lg hover:bg-slate-50 transition">
+          📋 Book Free Inspection
+        </a>
+        <a href="/free-inspection" 
+           class="bg-amber-400 text-slate-900 px-8 py-4 rounded-lg font-bold text-lg hover:bg-amber-300 transition">
+          FREE Warranty Check + Inspection
+        </a>
+      </div>
+      <p class="mt-6 text-sm">
+        Emergency flooding? 35-minute response to all area neighborhoods, 24/7
+      </p>
+      <p class="mt-2 text-xs">
+        Serving Bramalea • Heart Lake • Springdale • Fletcher's Creek • Mount Pleasant • Sandalwood Park • Bram East • Castlemore
+      </p>
+    </div>
+  </section>
+
+  <!-- Contact Form -->
+  <ContactForm />
+
+  <!-- Schema Markup -->
+  <SchemaMarkup 
+    type="local"
+    data={{
+      location: "Brampton",
+      description: "Professional foundation protection services in the area with same-day emergency response, specializing in new home warranty issues and structural repairs",
+      geo: {
+        "@type": "GeoCoordinates",
+        "latitude": 43.7315479,
+        "longitude": -79.7624177
+      }
+    }}
+  />
+</PageLayout>

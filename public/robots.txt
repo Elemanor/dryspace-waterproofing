@@ -1,0 +1,44 @@
+# Robots.txt for DrySpace Waterproofing
+# Updated: 2026-03-23
+
+# Allow all crawlers
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /admin/
+Disallow: /_astro/
+Disallow: /thank-you
+Disallow: /404
+
+# Specific crawler rules
+User-agent: Googlebot
+Crawl-delay: 0
+Allow: /
+
+User-agent: Bingbot
+Crawl-delay: 0
+Allow: /
+
+User-agent: Slurp
+Crawl-delay: 0
+Allow: /
+
+User-agent: DuckDuckBot
+Crawl-delay: 0
+Allow: /
+
+# Block bad bots
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Crawl-delay: 10
+
+# Sitemaps
+Sitemap: https://dryspacewaterproofing.ca/sitemap-index.xml
+
+# Host preference (for Yandex)
+Host: https://dryspacewaterproofing.ca

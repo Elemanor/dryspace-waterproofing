@@ -1,0 +1,2087 @@
+---
+// Award-winning hero content
+const heroContent = {
+  tagline: "EST. 1994",
+  headline: "Where Precision Meets Protection",
+  subheadline: "Transforming vulnerable basements into fortified foundations through cutting-edge waterproofing technology.",
+  
+  stats: [
+    { number: "99.7", suffix: "%", label: "Success Rate", icon: "fa-solid fa-chart-line" },
+    { number: "25", suffix: "M+", label: "Sq Ft Protected", icon: "fa-solid fa-house-flood-water" },
+    { number: "48", suffix: "hr", label: "Guarantee", icon: "fa-solid fa-clock" }
+  ],
+  
+  awards: [
+    "HomeStars 2024",
+    "BBB Excellence",
+    "Industry Leader"
+  ],
+  
+  features: [
+    { icon: "fa-solid fa-droplet-slash", text: "100% Waterproof" },
+    { icon: "fa-solid fa-shield-virus", text: "Mold Prevention" },
+    { icon: "fa-solid fa-house-chimney-crack", text: "Foundation Repair" },
+    { icon: "fa-solid fa-hand-holding-dollar", text: "Lifetime Value" }
+  ]
+};
+
+const services = [
+  { id: "01", title: "Diagnosis", description: "Advanced moisture detection", icon: "fa-solid fa-magnifying-glass-chart" },
+  { id: "02", title: "Solution", description: "Custom waterproofing plan", icon: "fa-solid fa-shield-halved" },
+  { id: "03", title: "Protection", description: "Lifetime warranty coverage", icon: "fa-solid fa-certificate" }
+];
+---
+
+<section class="hero-wrapper">
+  <!-- Noise Texture Overlay -->
+  <div class="noise-overlay"></div>
+  
+  <!-- Main Hero Container -->
+  <div class="hero-container">
+    
+    <!-- Left Panel - Content -->
+    <div class="content-panel">
+      <div class="content-inner">
+        
+        <!-- Tagline -->
+        <div class="tagline-wrapper">
+          <i class="fa-solid fa-certificate tagline-icon"></i>
+          <span class="tagline">{heroContent.tagline}</span>
+          <div class="tagline-line"></div>
+        </div>
+        
+        <!-- Main Headline -->
+        <h1 class="headline">
+          <span class="headline-line">
+            <span class="headline-word">Where</span>
+            <span class="headline-word accent">Precision</span>
+          </span>
+          <span class="headline-line">
+            <span class="headline-word">Meets</span>
+            <span class="headline-word">Protection</span>
+          </span>
+        </h1>
+        
+        <!-- Subheadline -->
+        <p class="subheadline">
+          {heroContent.subheadline}
+        </p>
+        
+        <!-- CTA Group -->
+        <div class="cta-group">
+          <button class="cta-primary">
+            <span class="cta-text">Start Your Project</span>
+            <div class="cta-icon">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <path d="M4 10H16M16 10L11 5M16 10L11 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div class="cta-bg"></div>
+          </button>
+          
+          <button class="cta-secondary">
+            <span class="cta-ring"></span>
+            <i class="fa-solid fa-phone-volume"></i>
+            <span>Emergency Line</span>
+          </button>
+        </div>
+
+        <!-- React-inspired Tabs Component -->
+        <div class="tabs-container">
+          <div class="tabs-header">
+            <button class="tab-button active" data-tab="warranty">
+              <i class="fa-solid fa-shield-halved"></i> Warranty
+            </button>
+            <button class="tab-button" data-tab="process">
+              <i class="fa-solid fa-clipboard-check"></i> Process
+            </button>
+            <button class="tab-button" data-tab="pricing">
+              <i class="fa-solid fa-dollar-sign"></i> Pricing
+            </button>
+          </div>
+          <div class="tabs-content">
+            <div class="tab-pane active" id="warranty">
+              <p>Lifetime transferable warranty on all waterproofing installations</p>
+            </div>
+            <div class="tab-pane" id="process">
+              <p>24-hour inspection, 48-hour installation guarantee</p>
+            </div>
+            <div class="tab-pane" id="pricing">
+              <p>Transparent pricing with flexible financing options available</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- React-inspired Accordion Component -->
+        <div class="accordion-container">
+          <div class="accordion-item">
+            <button class="accordion-header">
+              <span><i class="fa-solid fa-droplet"></i> Why Waterproofing?</span>
+              <i class="fa-solid fa-chevron-down accordion-icon"></i>
+            </button>
+            <div class="accordion-content">
+              <p>Protect your home's foundation, prevent mold growth, and increase property value with professional waterproofing.</p>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-header">
+              <span><i class="fa-solid fa-clock"></i> How Long Does It Take?</span>
+              <i class="fa-solid fa-chevron-down accordion-icon"></i>
+            </button>
+            <div class="accordion-content">
+              <p>Most residential waterproofing projects are completed within 2-3 days, with minimal disruption to your daily routine.</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Service Steps -->
+        <div class="service-steps">
+          {services.map((service, index) => (
+            <div class="service-step" style={`--delay: ${index * 0.1}s`}>
+              <div class="step-icon">
+                <i class={service.icon}></i>
+              </div>
+              <span class="step-number">{service.id}</span>
+              <div class="step-content">
+                <h3 class="step-title">{service.title}</h3>
+                <p class="step-description">{service.description}</p>
+              </div>
+              {index < services.length - 1 && <div class="step-connector"></div>}
+            </div>
+          ))}
+        </div>
+        
+        
+        <!-- Feature Icons -->
+        <div class="feature-icons">
+          {heroContent.features.map((feature, index) => (
+            <div class="feature-item" style={`--delay: ${index * 0.1}s`}>
+              <i class={feature.icon}></i>
+              <span>{feature.text}</span>
+            </div>
+          ))}
+        </div>
+        
+        <!-- Code Terminal Preview -->
+        <div class="terminal-preview">
+          <div class="terminal-header">
+            <span class="terminal-dot red"></span>
+            <span class="terminal-dot yellow"></span>
+            <span class="terminal-dot green"></span>
+            <span class="terminal-title">waterproofing-status.sh</span>
+          </div>
+          <div class="terminal-body">
+            <span class="terminal-prompt">$</span> <span class="terminal-command">check_basement --moisture</span>
+            <br/>
+            <span class="terminal-output">✓ Moisture Level: <span class="terminal-success">0.0%</span></span>
+            <br/>
+            <span class="terminal-output">✓ Foundation: <span class="terminal-success">Protected</span></span>
+            <br/>
+            <span class="terminal-output">✓ Warranty: <span class="terminal-success">Active</span></span>
+            <br/>
+            <span class="terminal-cursor">▊</span>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+    
+    <!-- Right Panel - Visual -->
+    <div class="visual-panel">
+      <div class="visual-inner">
+        
+        <!-- Stats Overlay -->
+        <div class="stats-overlay">
+          {heroContent.stats.map((stat, index) => (
+            <div class="stat-card" style={`--delay: ${index * 0.15}s`}>
+              <div class="stat-icon">
+                <i class={stat.icon}></i>
+              </div>
+              <div class="stat-number">
+                <span data-value={stat.number}>{stat.number}</span>
+                <span class="stat-suffix">{stat.suffix}</span>
+              </div>
+              <div class="stat-label">{stat.label}</div>
+            </div>
+          ))}
+        </div>
+        
+        <!-- Animated Background -->
+        <div class="visual-bg">
+          <div class="gradient-orb orb-1"></div>
+          <div class="gradient-orb orb-2"></div>
+          <div class="gradient-orb orb-3"></div>
+        </div>
+        
+        <!-- Main Visual -->
+        <div class="main-visual">
+          <div class="visual-frame">
+            <img 
+              src="/images/dryspace_exterior_waterproofing_warranty.webp"
+              alt="Premium waterproofing"
+              class="visual-image"
+            / width="800" height="600" loading="lazy" decoding="async">
+            <div class="visual-overlay"></div>
+          </div>
+          
+          <!-- Floating Elements -->
+          <div class="floating-badge badge-1">
+            <div class="badge-inner">
+              <i class="fa-solid fa-trophy"></i>
+              <span>Award Winner 2024</span>
+            </div>
+          </div>
+          
+          <div class="floating-badge badge-2">
+            <div class="badge-inner">
+              <i class="fa-solid fa-award"></i>
+              <span>Certified Expert</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Awards Bar -->
+        <div class="awards-bar">
+          {heroContent.awards.map((award) => (
+            <div class="award-item">
+              <i class="fa-solid fa-star"></i>
+              <span>{award}</span>
+            </div>
+          ))}
+        </div>
+        
+      </div>
+    </div>
+    
+  </div>
+  
+  <!-- Bottom Navigation Hint -->
+  <div class="nav-hint">
+    <div class="mouse-scroll">
+      <div class="mouse">
+        <div class="wheel"></div>
+      </div>
+    </div>
+    <span class="scroll-text">Discover Our Process</span>
+  </div>
+  
+  <!-- React-inspired Toast Notification -->
+  <div class="toast-notification" id="waterproofingToast">
+    <i class="fa-solid fa-check-circle toast-icon"></i>
+    <div class="toast-content">
+      <strong>Limited Time Offer!</strong>
+      <p>20% off winter waterproofing services</p>
+    </div>
+    <button class="toast-close">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+  </div>
+
+  <!-- React-inspired Progress Indicator -->
+  <div class="scroll-progress-indicator">
+    <div class="scroll-progress-bar"></div>
+  </div>
+
+  <!-- Skeleton Loader Overlay (shows during loading) -->
+  <div class="skeleton-overlay" id="heroSkeleton">
+    <div class="skeleton-content">
+      <div class="skeleton-line skeleton-line-short"></div>
+      <div class="skeleton-line skeleton-line-long"></div>
+      <div class="skeleton-line skeleton-line-medium"></div>
+      <div class="skeleton-box"></div>
+    </div>
+  </div>
+
+  <!-- React-inspired Modal -->
+  <div class="modal-overlay" id="waterproofingModal">
+    <div class="modal-container">
+      <div class="modal-header">
+        <h3><i class="fa-solid fa-shield-halved"></i> Get Your Free Inspection</h3>
+        <button class="modal-close">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Schedule your comprehensive basement inspection today. Our certified experts will:</p>
+        <ul class="modal-list">
+          <li><i class="fa-solid fa-check"></i> Identify moisture sources</li>
+          <li><i class="fa-solid fa-check"></i> Assess foundation integrity</li>
+          <li><i class="fa-solid fa-check"></i> Provide custom solutions</li>
+          <li><i class="fa-solid fa-check"></i> Give transparent pricing</li>
+        </ul>
+        <div class="modal-form">
+          <input type="text" placeholder="Your Name" class="modal-input" />
+          <input type="tel" placeholder="Phone Number" class="modal-input" />
+          <input type="email" placeholder="Email Address" class="modal-input" />
+          <button class="modal-submit">
+            <i class="fa-solid fa-paper-plane"></i> Schedule Now
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- React-inspired Drawer -->
+  <div class="drawer-container" id="servicesDrawer">
+    <div class="drawer-backdrop"></div>
+    <div class="drawer-content">
+      <div class="drawer-header">
+        <h3><i class="fa-solid fa-toolbox"></i> Our Services</h3>
+        <button class="drawer-close">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+      </div>
+      <div class="drawer-body">
+        <div class="drawer-service">
+          <i class="fa-solid fa-tint"></i>
+          <div>
+            <h4>Interior Waterproofing</h4>
+            <p>Complete internal drainage systems</p>
+          </div>
+        </div>
+        <div class="drawer-service">
+          <i class="fa-solid fa-house-flood-water"></i>
+          <div>
+            <h4>Exterior Waterproofing</h4>
+            <p>Foundation membrane installation</p>
+          </div>
+        </div>
+        <div class="drawer-service">
+          <i class="fa-solid fa-hammer"></i>
+          <div>
+            <h4>Crack Repair</h4>
+            <p>Professional foundation crack sealing</p>
+          </div>
+        </div>
+        <div class="drawer-service">
+          <i class="fa-solid fa-pump"></i>
+          <div>
+            <h4>Sump Pump Installation</h4>
+            <p>High-capacity drainage solutions</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+</section>
+
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  .hero-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background: #0a0a0a;
+  }
+  
+  /* Noise Texture */
+  .noise-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.03;
+    z-index: 1;
+    pointer-events: none;
+  }
+  
+  .noise-overlay::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' /%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' /%3E%3C/svg%3E");
+  }
+  
+  /* Main Container */
+  .hero-container {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 100vh;
+  }
+  
+  /* Content Panel */
+  .content-panel {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 0 5vw;
+    background: linear-gradient(135deg, #0a0a0a 0%, #111111 100%);
+  }
+  
+  .content-inner {
+    max-width: 600px;
+    width: 100%;
+  }
+  
+  /* Tagline */
+  .tagline-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    opacity: 0;
+    animation: fadeInUp 0.8s ease forwards;
+  }
+  
+  .tagline-icon {
+    font-size: 0.875rem;
+    color: #4F9EFF;
+    margin-right: 0.5rem;
+  }
+  
+  .tagline {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    color: #888;
+    text-transform: uppercase;
+  }
+  
+  .tagline-line {
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, #333 0%, transparent 100%);
+  }
+  
+  /* Headline */
+  .headline {
+    font-size: clamp(3rem, 8vw, 5rem);
+    font-weight: 800;
+    line-height: 0.9;
+    margin-bottom: 1.5rem;
+    color: #fff;
+  }
+  
+  .headline-line {
+    display: block;
+    overflow: hidden;
+  }
+  
+  .headline-word {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(100%);
+    animation: revealWord 0.8s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+  }
+  
+  .headline-word:nth-child(1) { animation-delay: 0.1s; }
+  .headline-word:nth-child(2) { animation-delay: 0.2s; }
+  
+  .headline-word.accent {
+    background: linear-gradient(135deg, #4F9EFF 0%, #1E6FCC 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  /* Subheadline */
+  .subheadline {
+    font-size: 1.125rem;
+    line-height: 1.7;
+    color: #999;
+    margin-bottom: 2.5rem;
+    opacity: 0;
+    animation: fadeInUp 0.8s ease 0.4s forwards;
+  }
+  
+  /* CTA Group */
+  .cta-group {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 4rem;
+    opacity: 0;
+    animation: fadeInUp 0.8s ease 0.5s forwards;
+  }
+  
+  .cta-primary {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem 2rem;
+    background: #fff;
+    color: #000;
+    border: none;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+  
+  .cta-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(79, 158, 255, 0.3);
+  }
+  
+  /* Material Ripple Effect */
+  .cta-primary::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+  }
+  
+  .cta-primary:active::after {
+    width: 300px;
+    height: 300px;
+  }
+  
+  .cta-primary:hover .cta-icon {
+    transform: translateX(4px);
+  }
+  
+  .cta-bg {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, #4F9EFF 0%, #1E6FCC 100%);
+    transition: left 0.3s ease;
+    z-index: -1;
+  }
+  
+  .cta-primary:hover .cta-bg {
+    left: 0;
+  }
+  
+  .cta-primary:hover {
+    color: #fff;
+  }
+  
+  .cta-icon {
+    display: flex;
+    transition: transform 0.3s ease;
+  }
+  
+  .cta-secondary {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem 2rem;
+    background: transparent;
+    color: #fff;
+    border: 1px solid #333;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+  }
+  
+  .cta-secondary i {
+    font-size: 1.125rem;
+    animation: phone-ring 2s ease-in-out infinite;
+  }
+  
+  @keyframes phone-ring {
+    0%, 100% { transform: rotate(0deg); }
+    10%, 30% { transform: rotate(-10deg); }
+    20%, 40% { transform: rotate(10deg); }
+  }
+  
+  .cta-ring {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    width: 8px;
+    height: 8px;
+    background: #4F9EFF;
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+  }
+  
+  .cta-secondary {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0.0, 0.2, 1);
+  }
+  
+  .cta-secondary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(79, 158, 255, 0.2), transparent);
+    transition: left 0.5s;
+  }
+  
+  .cta-secondary:hover {
+    border-color: #4F9EFF;
+    background: rgba(79, 158, 255, 0.1);
+    transform: scale(1.05);
+  }
+  
+  .cta-secondary:hover::before {
+    left: 100%;
+  }
+  
+  /* Service Steps */
+  .service-steps {
+    display: flex;
+    gap: 2rem;
+  }
+  
+  .service-step {
+    position: relative;
+    opacity: 0;
+    animation: fadeInUp 0.8s ease forwards;
+    animation-delay: calc(0.6s + var(--delay));
+  }
+  
+  .step-icon {
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(135deg, rgba(79, 158, 255, 0.1) 0%, rgba(30, 111, 204, 0.1) 100%);
+    border: 1px solid rgba(79, 158, 255, 0.3);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .step-icon::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(79, 158, 255, 0.3), transparent);
+    transition: left 0.5s ease;
+  }
+  
+  .service-step:hover .step-icon::before {
+    left: 100%;
+  }
+  
+  .step-icon i {
+    font-size: 1.25rem;
+    color: #4F9EFF;
+    z-index: 1;
+  }
+  
+  .step-number {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #4F9EFF;
+    margin-bottom: 0.5rem;
+  }
+  
+  .step-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 0.25rem;
+  }
+  
+  .step-description {
+    font-size: 0.875rem;
+    color: #666;
+  }
+  
+  .step-connector {
+    position: absolute;
+    top: 24px;
+    right: -1rem;
+    width: 1rem;
+    height: 1px;
+    background: linear-gradient(90deg, #333 0%, #4F9EFF 50%, #333 100%);
+    animation: pulse-line 2s ease-in-out infinite;
+  }
+  
+  @keyframes pulse-line {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 1; }
+  }
+  
+  /* Visual Panel */
+  .visual-panel {
+    position: relative;
+    background: #0f0f0f;
+    overflow: hidden;
+  }
+  
+  .visual-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  
+  /* Visual Background */
+  .visual-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .gradient-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(100px);
+    opacity: 0.3;
+    animation: liquid 8s ease-in-out infinite;
+  }
+  
+  @keyframes liquid {
+    0%, 100% {
+      border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    }
+    50% {
+      border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+    }
+  }
+  
+  .orb-1 {
+    width: 600px;
+    height: 600px;
+    top: -20%;
+    right: -20%;
+    background: radial-gradient(circle, #4F9EFF 0%, transparent 70%);
+    animation: float1 20s ease-in-out infinite;
+  }
+  
+  .orb-2 {
+    width: 400px;
+    height: 400px;
+    bottom: -10%;
+    left: -10%;
+    background: radial-gradient(circle, #1E6FCC 0%, transparent 70%);
+    animation: float2 15s ease-in-out infinite;
+  }
+  
+  .orb-3 {
+    width: 300px;
+    height: 300px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(circle, #6BA3F5 0%, transparent 70%);
+    animation: float3 25s ease-in-out infinite;
+  }
+  
+  /* Main Visual */
+  .main-visual {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 70%;
+  }
+  
+  .visual-frame {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 8px;
+  }
+  
+  .visual-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    animation: fadeIn 1.2s ease 0.8s forwards;
+  }
+  
+  .visual-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(10, 10, 10, 0) 0%, rgba(10, 10, 10, 0.8) 100%);
+    pointer-events: none;
+  }
+  
+  /* Stats Overlay */
+  .stats-overlay {
+    position: absolute;
+    top: 3rem;
+    left: 3rem;
+    right: 3rem;
+    display: flex;
+    justify-content: space-between;
+    z-index: 10;
+  }
+  
+  .stat-card {
+    background: rgba(15, 15, 15, 0.8);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 1.5rem;
+    border-radius: 8px;
+    opacity: 0;
+    animation: slideDown 0.8s ease forwards;
+    animation-delay: calc(0.8s + var(--delay));
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .stat-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(79, 158, 255, 0.1), transparent);
+    transition: left 0.6s ease;
+  }
+  
+  .stat-card:hover::before {
+    left: 100%;
+  }
+  
+  .stat-icon {
+    font-size: 1.5rem;
+    color: #4F9EFF;
+    margin-bottom: 0.75rem;
+    opacity: 0.7;
+  }
+  
+  .stat-number {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #fff;
+    display: flex;
+    align-items: baseline;
+  }
+  
+  .stat-suffix {
+    font-size: 1.25rem;
+    margin-left: 0.25rem;
+    color: #4F9EFF;
+  }
+  
+  .stat-label {
+    font-size: 0.75rem;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-top: 0.5rem;
+  }
+  
+  /* Floating Badges */
+  .floating-badge {
+    position: absolute;
+    z-index: 15;
+  }
+  
+  .badge-1 {
+    bottom: 8rem;
+    left: -2rem;
+    animation: floatBadge1 6s ease-in-out infinite;
+  }
+  
+  .badge-2 {
+    top: 40%;
+    right: -2rem;
+    animation: floatBadge2 8s ease-in-out infinite;
+  }
+  
+  .badge-inner {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem 1.5rem;
+    background: rgba(15, 15, 15, 0.9);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(79, 158, 255, 0.3);
+    border-radius: 100px;
+    color: #fff;
+    font-size: 0.875rem;
+    font-weight: 500;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+  }
+  
+  .badge-inner i {
+    font-size: 1.25rem;
+    color: #4F9EFF;
+    animation: icon-glow 2s ease-in-out infinite;
+    transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  
+  .floating-badge:hover .badge-inner i {
+    transform: rotate(360deg) scale(1.2);
+  }
+  
+  @keyframes icon-glow {
+    0%, 100% { 
+      filter: drop-shadow(0 0 3px rgba(79, 158, 255, 0.5));
+    }
+    50% { 
+      filter: drop-shadow(0 0 8px rgba(79, 158, 255, 0.8));
+    }
+  }
+  
+  /* Awards Bar */
+  .awards-bar {
+    position: absolute;
+    bottom: 3rem;
+    left: 3rem;
+    right: 3rem;
+    display: flex;
+    gap: 2rem;
+    z-index: 10;
+  }
+  
+  .award-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.25rem;
+    background: rgba(15, 15, 15, 0.8);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 100px;
+    color: #999;
+    font-size: 0.875rem;
+    opacity: 0;
+    animation: fadeInUp 0.8s ease 1.2s forwards;
+  }
+  
+  .award-item i {
+    font-size: 1rem;
+    color: #FFD700;
+    animation: star-pulse 1.5s ease-in-out infinite;
+  }
+  
+  @keyframes star-pulse {
+    0%, 100% { transform: scale(1) rotate(0deg); }
+    50% { transform: scale(1.2) rotate(5deg); }
+  }
+  
+  /* Feature Icons */
+  .feature-icons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 3rem;
+  }
+  
+  .feature-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: rgba(79, 158, 255, 0.05);
+    border: 1px solid rgba(79, 158, 255, 0.2);
+    border-radius: 100px;
+    font-size: 0.875rem;
+    color: #999;
+    opacity: 0;
+    animation: fadeInUp 0.8s ease forwards;
+    animation-delay: calc(0.8s + var(--delay));
+    transition: all 0.3s ease;
+  }
+  
+  .feature-item {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+  }
+  
+  .feature-item:hover {
+    background: rgba(79, 158, 255, 0.1);
+    border-color: rgba(79, 158, 255, 0.4);
+    color: #fff;
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 8px 16px rgba(79, 158, 255, 0.2);
+  }
+  
+  /* Flutter Wave Effect */
+  .feature-item::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(79, 158, 255, 0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.5s, height 0.5s;
+  }
+  
+  .feature-item:hover::before {
+    width: 100%;
+    height: 100%;
+    border-radius: 1rem;
+  }
+  
+  .feature-item i {
+    font-size: 1rem;
+    color: #4F9EFF;
+  }
+  
+  /* Terminal Preview */
+  .terminal-preview {
+    margin-top: 2rem;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(79, 158, 255, 0.2);
+    border-radius: 8px;
+    overflow: hidden;
+    opacity: 0;
+    animation: fadeInUp 0.8s ease 1s forwards;
+    font-size: 0.875rem;
+    max-width: 500px;
+  }
+  
+  .terminal-header {
+    background: rgba(30, 30, 30, 0.8);
+    padding: 0.75rem 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .terminal-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+  }
+  
+  .terminal-dot.red {
+    background: #ff5f56;
+  }
+  
+  .terminal-dot.yellow {
+    background: #ffbd2e;
+  }
+  
+  .terminal-dot.green {
+    background: #27c93f;
+  }
+  
+  .terminal-title {
+    margin-left: auto;
+    color: #666;
+    font-size: 0.75rem;
+  }
+  
+  .terminal-body {
+    padding: 1rem;
+    color: #999;
+    line-height: 1.6;
+  }
+  
+  .terminal-prompt {
+    color: #4F9EFF;
+    font-weight: 600;
+  }
+  
+  .terminal-command {
+    color: #fff;
+  }
+  
+  .terminal-output {
+    color: #999;
+    display: inline-block;
+    margin-left: 1rem;
+  }
+  
+  .terminal-success {
+    color: #27c93f;
+    font-weight: 600;
+  }
+  
+  .terminal-cursor {
+    display: inline-block;
+    animation: blink 1s infinite;
+    color: #4F9EFF;
+  }
+  
+  @keyframes blink {
+    0%, 49% { opacity: 1; }
+    50%, 100% { opacity: 0; }
+  }
+  
+  /* Navigation Hint */
+  .nav-hint {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    z-index: 20;
+    opacity: 0;
+    animation: fadeIn 1s ease 1.5s forwards;
+  }
+  
+  .mouse-scroll {
+    width: 26px;
+    height: 42px;
+    border: 2px solid #333;
+    border-radius: 20px;
+    position: relative;
+  }
+  
+  .wheel {
+    width: 4px;
+    height: 8px;
+    background: #666;
+    border-radius: 2px;
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: scroll 2s ease-in-out infinite;
+  }
+  
+  .scroll-text {
+    font-size: 0.75rem;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+  
+  /* Animations */
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+  }
+  
+  /* Flutter-style Hero Animation */
+  @keyframes heroScale {
+    0% {
+      transform: scale(0.8);
+      opacity: 0;
+    }
+    50% {
+      transform: scale(1.05);
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
+  /* Material Design Elevation */
+  .elevation-1 {
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  }
+  
+  .elevation-2 {
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  }
+  
+  .elevation-3 {
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+  }
+  
+  .elevation-4 {
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  }
+  
+  .elevation-5 {
+    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+  }
+  
+  @keyframes fadeIn {
+    to { opacity: 1; }
+  }
+  
+  @keyframes slideDown {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+  }
+  
+  @keyframes revealWord {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+  }
+  
+  @keyframes float1 {
+    0%, 100% { transform: translate(0, 0); }
+    33% { transform: translate(-50px, 50px); }
+    66% { transform: translate(50px, -30px); }
+  }
+  
+  @keyframes float2 {
+    0%, 100% { transform: translate(0, 0); }
+    33% { transform: translate(30px, -40px); }
+    66% { transform: translate(-40px, 30px); }
+  }
+  
+  @keyframes float3 {
+    0%, 100% { transform: translate(-50%, -50%); }
+    33% { transform: translate(calc(-50% + 20px), calc(-50% - 20px)); }
+    66% { transform: translate(calc(-50% - 20px), calc(-50% + 20px)); }
+  }
+  
+  @keyframes floatBadge1 {
+    0%, 100% { transform: translateY(0) rotate(-5deg); }
+    50% { transform: translateY(-10px) rotate(-5deg); }
+  }
+  
+  @keyframes floatBadge2 {
+    0%, 100% { transform: translateY(0) rotate(5deg); }
+    50% { transform: translateY(-15px) rotate(5deg); }
+  }
+  
+  @keyframes scroll {
+    0% { opacity: 1; transform: translateX(-50%) translateY(0); }
+    100% { opacity: 0; transform: translateX(-50%) translateY(20px); }
+  }
+  
+  /* Responsive */
+  @media (max-width: 1024px) {
+    .hero-container {
+      grid-template-columns: 1fr;
+    }
+    
+    .visual-panel {
+      display: none;
+    }
+    
+    .content-panel {
+      padding: 2rem;
+    }
+    
+    .headline {
+      font-size: clamp(2.5rem, 10vw, 4rem);
+    }
+    
+    .service-steps {
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    
+    .step-connector {
+      display: none;
+    }
+    
+    .cta-group {
+      flex-direction: column;
+    }
+  }
+
+  /* React-inspired Toast Notification */
+  .toast-notification {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
+    color: white;
+    padding: 1rem 1.5rem;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    min-width: 320px;
+    box-shadow: 0 10px 40px rgba(30, 58, 138, 0.5);
+    z-index: 9999;
+    animation: slideInRight 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .toast-notification.toast-hidden {
+    animation: slideOutRight 0.5s ease-out forwards;
+  }
+
+  .toast-icon {
+    font-size: 1.5rem;
+    color: #10b981;
+  }
+
+  .toast-content strong {
+    display: block;
+    margin-bottom: 0.25rem;
+  }
+
+  .toast-content p {
+    font-size: 0.875rem;
+    opacity: 0.9;
+  }
+
+  .toast-close {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 0.5rem;
+    margin-left: auto;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+  }
+
+  .toast-close:hover {
+    opacity: 1;
+  }
+
+  @keyframes slideInRight {
+    from {
+      transform: translateX(calc(100% + 2rem));
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideOutRight {
+    to {
+      transform: translateX(calc(100% + 2rem));
+      opacity: 0;
+    }
+  }
+
+  /* Scroll Progress Indicator */
+  .scroll-progress-indicator {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: rgba(30, 58, 138, 0.1);
+    z-index: 9998;
+  }
+
+  .scroll-progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, #3b82f6 0%, #06b6d4 100%);
+    width: 0%;
+    transition: width 0.1s ease-out;
+    box-shadow: 0 2px 8px rgba(59, 130, 246, 0.5);
+  }
+
+  /* Skeleton Loader */
+  .skeleton-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #0f172a;
+    z-index: 9997;
+    display: none;
+    padding: 4rem;
+  }
+
+  .skeleton-overlay.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .skeleton-content {
+    width: 100%;
+    max-width: 600px;
+  }
+
+  .skeleton-line {
+    height: 20px;
+    margin-bottom: 1rem;
+    background: linear-gradient(90deg, #1e293b 25%, #334155 50%, #1e293b 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+    border-radius: 4px;
+  }
+
+  .skeleton-line-short {
+    width: 30%;
+  }
+
+  .skeleton-line-long {
+    width: 100%;
+  }
+
+  .skeleton-line-medium {
+    width: 70%;
+  }
+
+  .skeleton-box {
+    width: 100%;
+    height: 200px;
+    background: linear-gradient(90deg, #1e293b 25%, #334155 50%, #1e293b 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+    border-radius: 8px;
+    margin-top: 2rem;
+  }
+
+  @keyframes shimmer {
+    0% {
+      background-position: 200% 0;
+    }
+    100% {
+      background-position: -200% 0;
+    }
+  }
+
+  /* React-inspired Modal */
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+
+  .modal-overlay.active {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  .modal-container {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    border-radius: 16px;
+    width: 90%;
+    max-width: 500px;
+    transform: scale(0.9) translateY(20px);
+    transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    border: 1px solid rgba(59, 130, 246, 0.3);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  }
+
+  .modal-overlay.active .modal-container {
+    transform: scale(1) translateY(0);
+  }
+
+  .modal-header {
+    padding: 1.5rem;
+    border-bottom: 1px solid rgba(59, 130, 246, 0.2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .modal-header h3 {
+    font-size: 1.25rem;
+    color: #3b82f6;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .modal-close {
+    background: none;
+    border: none;
+    color: #94a3b8;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    transition: color 0.2s;
+  }
+
+  .modal-close:hover {
+    color: #f87171;
+  }
+
+  .modal-body {
+    padding: 1.5rem;
+  }
+
+  .modal-body p {
+    color: #cbd5e1;
+    margin-bottom: 1rem;
+  }
+
+  .modal-list {
+    list-style: none;
+    margin-bottom: 1.5rem;
+  }
+
+  .modal-list li {
+    color: #e2e8f0;
+    padding: 0.5rem 0;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .modal-list i {
+    color: #10b981;
+  }
+
+  .modal-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .modal-input {
+    background: rgba(30, 41, 59, 0.5);
+    border: 1px solid rgba(59, 130, 246, 0.3);
+    color: white;
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    transition: all 0.3s;
+  }
+
+  .modal-input:focus {
+    outline: none;
+    border-color: #3b82f6;
+    background: rgba(30, 41, 59, 0.8);
+  }
+
+  .modal-submit {
+    background: linear-gradient(135deg, #3b82f6 0%, #06b6d4 100%);
+    color: white;
+    border: none;
+    padding: 0.875rem;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  .modal-submit:hover {
+    transform: translateY(-2px);
+  }
+
+  /* React-inspired Drawer */
+  .drawer-container {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10000;
+    pointer-events: none;
+  }
+
+  .drawer-container.active {
+    pointer-events: all;
+  }
+
+  .drawer-backdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  .drawer-container.active .drawer-backdrop {
+    opacity: 1;
+  }
+
+  .drawer-content {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 320px;
+    background: linear-gradient(180deg, #0f172a 0%, #1e293b 100%);
+    transform: translateX(100%);
+    transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    box-shadow: -10px 0 40px rgba(0, 0, 0, 0.5);
+    border-left: 1px solid rgba(59, 130, 246, 0.3);
+  }
+
+  .drawer-container.active .drawer-content {
+    transform: translateX(0);
+  }
+
+  .drawer-header {
+    padding: 1.5rem;
+    border-bottom: 1px solid rgba(59, 130, 246, 0.2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .drawer-header h3 {
+    color: #3b82f6;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .drawer-close {
+    background: none;
+    border: none;
+    color: #94a3b8;
+    font-size: 1.25rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    transition: color 0.2s;
+  }
+
+  .drawer-close:hover {
+    color: white;
+  }
+
+  .drawer-body {
+    padding: 1.5rem;
+  }
+
+  .drawer-service {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    background: rgba(30, 41, 59, 0.3);
+    border-radius: 8px;
+    border: 1px solid rgba(59, 130, 246, 0.1);
+    transition: all 0.3s;
+    cursor: pointer;
+  }
+
+  .drawer-service:hover {
+    background: rgba(59, 130, 246, 0.1);
+    border-color: rgba(59, 130, 246, 0.3);
+    transform: translateX(-5px);
+  }
+
+  .drawer-service i {
+    font-size: 1.5rem;
+    color: #06b6d4;
+  }
+
+  .drawer-service h4 {
+    color: white;
+    margin-bottom: 0.25rem;
+  }
+
+  .drawer-service p {
+    color: #94a3b8;
+    font-size: 0.875rem;
+  }
+
+  /* React-inspired Tabs Component */
+  .tabs-container {
+    margin: 2rem 0;
+    background: rgba(15, 23, 42, 0.5);
+    border-radius: 12px;
+    border: 1px solid rgba(59, 130, 246, 0.2);
+    overflow: hidden;
+  }
+
+  .tabs-header {
+    display: flex;
+    background: rgba(30, 41, 59, 0.5);
+    border-bottom: 1px solid rgba(59, 130, 246, 0.2);
+  }
+
+  .tab-button {
+    flex: 1;
+    padding: 1rem;
+    background: none;
+    border: none;
+    color: #94a3b8;
+    cursor: pointer;
+    transition: all 0.3s;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+  }
+
+  .tab-button:hover {
+    color: #3b82f6;
+    background: rgba(59, 130, 246, 0.05);
+  }
+
+  .tab-button.active {
+    color: #3b82f6;
+    background: rgba(59, 130, 246, 0.1);
+  }
+
+  .tab-button.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #3b82f6 0%, #06b6d4 100%);
+  }
+
+  .tabs-content {
+    padding: 1.5rem;
+  }
+
+  .tab-pane {
+    display: none;
+    animation: fadeIn 0.3s ease;
+  }
+
+  .tab-pane.active {
+    display: block;
+  }
+
+  .tab-pane p {
+    color: #cbd5e1;
+    line-height: 1.6;
+  }
+
+  /* React-inspired Accordion Component */
+  .accordion-container {
+    margin: 2rem 0;
+  }
+
+  .accordion-item {
+    background: rgba(15, 23, 42, 0.5);
+    border: 1px solid rgba(59, 130, 246, 0.2);
+    border-radius: 8px;
+    margin-bottom: 0.75rem;
+    overflow: hidden;
+    transition: all 0.3s;
+  }
+
+  .accordion-item:hover {
+    border-color: rgba(59, 130, 246, 0.4);
+  }
+
+  .accordion-item.active {
+    background: rgba(30, 41, 59, 0.5);
+    border-color: #3b82f6;
+  }
+
+  .accordion-header {
+    width: 100%;
+    padding: 1rem 1.5rem;
+    background: none;
+    border: none;
+    color: #e2e8f0;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s;
+    font-size: 0.95rem;
+    font-weight: 500;
+  }
+
+  .accordion-header:hover {
+    color: #3b82f6;
+  }
+
+  .accordion-header span {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .accordion-icon {
+    transition: transform 0.3s;
+  }
+
+  .accordion-item.active .accordion-icon {
+    transform: rotate(180deg);
+  }
+
+  .accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+
+  .accordion-item.active .accordion-content {
+    max-height: 200px;
+    padding: 0 1.5rem 1rem;
+  }
+
+  .accordion-content p {
+    color: #94a3b8;
+    line-height: 1.6;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>
+
+<script>
+  // Number Counter Animation
+  document.addEventListener('DOMContentLoaded', () => {
+    const observerOptions = {
+      threshold: 0.5,
+      rootMargin: '0px'
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const numbers = entry.target.querySelectorAll('[data-value]');
+          numbers.forEach(number => {
+            const target = parseFloat(number.getAttribute('data-value'));
+            const duration = 2000;
+            const start = performance.now();
+            
+            const updateNumber = (currentTime) => {
+              const elapsed = currentTime - start;
+              const progress = Math.min(elapsed / duration, 1);
+              const easeProgress = 1 - Math.pow(1 - progress, 3);
+              const current = easeProgress * target;
+              
+              number.textContent = current.toFixed(target % 1 !== 0 ? 1 : 0);
+              
+              if (progress < 1) {
+                requestAnimationFrame(updateNumber);
+              }
+            };
+            
+            requestAnimationFrame(updateNumber);
+          });
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+    
+    const statsSection = document.querySelector('.stats-overlay');
+    if (statsSection) {
+      observer.observe(statsSection);
+    }
+  });
+  
+  // Parallax Effect on Mouse Move
+  document.addEventListener('mousemove', (e) => {
+    const { clientX, clientY } = e;
+    const centerX = window.innerWidth / 2;
+    const centerY = window.innerHeight / 2;
+    
+    const moveX = (clientX - centerX) / centerX;
+    const moveY = (clientY - centerY) / centerY;
+    
+    const orbs = document.querySelectorAll('.gradient-orb');
+    orbs.forEach((orb, index) => {
+      const speed = (index + 1) * 10;
+      orb.style.transform = `translate(${moveX * speed}px, ${moveY * speed}px)`;
+    });
+    
+    const badges = document.querySelectorAll('.floating-badge');
+    badges.forEach((badge, index) => {
+      const speed = (index + 1) * 5;
+      badge.style.transform = `translateY(${moveY * speed}px)`;
+    });
+  });
+
+  // React-inspired components functionality
+  
+  // Scroll Progress Bar
+  window.addEventListener('scroll', () => {
+    const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const scrolled = (winScroll / height) * 100;
+    const progressBar = document.querySelector('.scroll-progress-bar');
+    if (progressBar) {
+      progressBar.style.width = scrolled + '%';
+    }
+  });
+
+  // Toast Notification Auto-show
+  setTimeout(() => {
+    const toast = document.getElementById('waterproofingToast');
+    if (toast && !toast.classList.contains('toast-hidden')) {
+      // Auto-hide after 10 seconds
+      setTimeout(() => {
+        toast.classList.add('toast-hidden');
+      }, 10000);
+    }
+  }, 3000); // Show after 3 seconds
+
+  // Skeleton Loader
+  const skeleton = document.getElementById('heroSkeleton');
+  if (skeleton) {
+    // Show skeleton on initial load
+    skeleton.classList.add('active');
+    
+    // Hide after content loads
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        skeleton.classList.remove('active');
+      }, 500);
+    });
+  }
+
+  // Add tooltips to award badges
+  document.querySelectorAll('.award-badge').forEach(badge => {
+    badge.setAttribute('data-tooltip', 'Verified Excellence');
+  });
+
+  // Infinite scroll indicator (for demonstration)
+  let scrolling = false;
+  window.addEventListener('scroll', () => {
+    if (!scrolling) {
+      scrolling = true;
+      requestAnimationFrame(() => {
+        const scrollIndicator = document.querySelector('.scroll-indicator');
+        if (scrollIndicator && window.scrollY > 100) {
+          scrollIndicator.style.opacity = '0';
+        } else if (scrollIndicator) {
+          scrollIndicator.style.opacity = '1';
+        }
+        scrolling = false;
+      });
+    }
+  });
+
+  // Modal and Drawer functionality
+  function openModal() {
+    const modal = document.getElementById('waterproofingModal');
+    if (modal) {
+      modal.classList.add('active');
+    }
+  }
+
+  function openDrawer() {
+    const drawer = document.getElementById('servicesDrawer');
+    if (drawer) {
+      drawer.classList.add('active');
+    }
+  }
+
+  // Attach modal to primary CTA
+  document.querySelectorAll('.cta-primary').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      openModal();
+    });
+  });
+
+  // Attach drawer to secondary CTA
+  document.querySelectorAll('.cta-secondary').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      openDrawer();
+    });
+  });
+
+  // Close modal on ESC key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      document.getElementById('waterproofingModal')?.classList.remove('active');
+      document.getElementById('servicesDrawer')?.classList.remove('active');
+    }
+  });
+
+  // Tabs functionality
+  document.querySelectorAll('.tab-button').forEach(button => {
+    button.addEventListener('click', () => {
+      const tabId = button.getAttribute('data-tab');
+      
+      // Remove active class from all buttons and panes
+      document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
+      document.querySelectorAll('.tab-pane').forEach(pane => pane.classList.remove('active'));
+      
+      // Add active class to clicked button and corresponding pane
+      button.classList.add('active');
+      document.getElementById(tabId)?.classList.add('active');
+    });
+  });
+
+  // Enhanced accordion with smooth animation
+  document.querySelectorAll('.accordion-header').forEach(header => {
+    header.addEventListener('click', (e) => {
+      e.preventDefault();
+      const item = header.parentElement;
+      const wasActive = item.classList.contains('active');
+      
+      // Close all accordion items
+      document.querySelectorAll('.accordion-item').forEach(accItem => {
+        accItem.classList.remove('active');
+      });
+      
+      // Toggle current item
+      if (!wasActive) {
+        item.classList.add('active');
+      }
+    });
+  });
+  
+  // Modal close button
+  document.querySelector('.modal-close')?.addEventListener('click', () => {
+    document.getElementById('waterproofingModal')?.classList.remove('active');
+  });
+  
+  // Drawer close button
+  document.querySelector('.drawer-close')?.addEventListener('click', () => {
+    document.getElementById('servicesDrawer')?.classList.remove('active');
+  });
+  
+  // Drawer backdrop click
+  document.querySelector('.drawer-backdrop')?.addEventListener('click', () => {
+    document.getElementById('servicesDrawer')?.classList.remove('active');
+  });
+  
+  // Toast close button
+  document.querySelector('.toast-close')?.addEventListener('click', () => {
+    document.querySelector('.toast-notification')?.classList.add('toast-hidden');
+  });
+</script>

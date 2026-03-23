@@ -1,0 +1,17 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Project Dashboard - Dryspace Waterproofing" description="Track your waterproofing project progress, documents, and communications in one secure location.">
+  <div id="project-dashboard-root"></div>
+
+  <script>
+    import { createRoot } from 'react-dom/client';
+    import React from 'react';
+    import ProjectDashboard from '../components/react/ProjectDashboard.tsx';
+
+    const container = document.getElementById('project-dashboard-root');
+    const root = createRoot(container);
+    root.render(React.createElement(ProjectDashboard));
+  </script>
+</BaseLayout>

@@ -1,0 +1,556 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import Hero from '../components/sections/Hero.astro';
+import Stats from '../components/sections/Stats.astro';
+import Process from '../components/sections/Process.astro';
+import ContactForm from '../components/ContactForm.astro';
+import FAQ from '../components/FAQ.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import StructuredData from '../components/StructuredData.astro';
+import SchemaMarkup from '../components/SchemaMarkup.astro';
+import BeforeAfterGallery from '../components/BeforeAfterGallery.astro';
+import CostCalculator from '../components/react/CostCalculator.tsx';
+import { StatsBar } from '../components/react/StatsBar.tsx';
+
+const pageTitle = "Basement Waterproofing Mississauga | 24/7 | $3,400 Rebate";
+const pageDescription = "⚡ Emergency moisture control services locally. ✓ <45min response to Meadowvale, Port Credit, Streetsville ✓ 25-year warranty ✓ $3,400 rebates ✓ 500+ area homes protected. Licensed experts since 2009.";
+
+// Local area data
+const mississaugaStats = {
+  projectsCompleted: "500+",
+  avgResponseTime: "45 minutes",
+  yearsInArea: "15+",
+  emergencyCalls: "24/7"
+};
+
+const mississaugaNeighborhoods = [
+  { name: "Port Credit", projects: "87", commonIssues: "Lake Ontario moisture, older homes" },
+  { name: "Streetsville", projects: "92", commonIssues: "Credit River flooding, heritage homes" },
+  { name: "Meadowvale", projects: "118", commonIssues: "Clay soil expansion, 1970s foundations" },
+  { name: "Cooksville", projects: "76", commonIssues: "High water table, mixed-use buildings" },
+  { name: "Clarkson", projects: "65", commonIssues: "Lake proximity, sandy soil" },
+  { name: "Erin Mills", projects: "84", commonIssues: "New development settling" },
+  { name: "Lakeview", projects: "58", commonIssues: "Waterfront homes, erosion" },
+  { name: "Malton", projects: "45", commonIssues: "Airport area drainage" }
+];
+
+const faqs = [
+  {
+    question: "How much does basement moisture protection cost locally?",
+    answer: "Foundation moisture control in the region typically costs $150-300 per linear foot, or $15,000-30,000 for an average home. Factors include the area's clay soil conditions, proximity to Credit River or Lake Ontario, and specific neighborhood requirements. Government rebates up to $3,400 are available for residents."
+  },
+  {
+    question: "Do I need a permit for moisture protection locally?",
+    answer: "Yes, most exterior moisture protection projects in the area require a building permit due to excavation exceeding 4 feet. DrySpace handles all municipal permit applications, drawings, and inspections as part of our service, ensuring compliance with bylaws."
+  },
+  {
+    question: "What causes basement flooding locally?",
+    answer: "The area's unique challenges include Credit Valley clay soil (30-70% clay content), rapid suburban development on former farmland, variable water table (1-4m depth), and proximity to Lake Ontario and Credit River. Spring thaw and summer storms frequently overwhelm older drainage systems."
+  },
+  {
+    question: "How quickly can you respond to local emergencies?",
+    answer: "We guarantee response times under 45 minutes to all neighborhoods including Port Credit, Streetsville, Meadowvale, and Cooksville. Our emergency teams are stationed strategically across the area with 24/7 availability, 365 days a year."
+  },
+  {
+    question: "Are there rebates for local homeowners?",
+    answer: "Yes! Residents can access up to $3,400 through the Basement Flooding Protection Subsidy Program. Additional rebates may be available through Region of Peel programs. We handle all paperwork and applications for you."
+  },
+  {
+    question: "What moisture protection method works best for local homes?",
+    answer: "Due to the area's clay soil and variable water table, we typically recommend exterior moisture protection with proper drainage for homes built before 2000. Newer developments may benefit from interior systems. Each home requires a custom assessment based on location and soil conditions."
+  },
+  {
+    question: "How long does moisture protection take locally?",
+    answer: "Most local homes require 3-5 days for complete exterior moisture protection, weather permitting. Interior systems can be installed in 1-2 days. We work year-round and adjust our methods for the area's climate conditions."
+  },
+  {
+    question: "Do you service all areas locally?",
+    answer: "Yes, we service all neighborhoods from Port Credit to Malton, including Streetsville, Meadowvale, Cooksville, Clarkson, Erin Mills, Lakeview, Churchill Meadows, Lisgar, and Central Erin Mills. Same-day service available."
+  },
+  {
+    question: "What warranty do you offer locally?",
+    answer: "We provide a 25-year transferable warranty on all moisture protection work locally. This warranty is registered with your property and transfers to new owners, protecting your home's value in the area's competitive real estate market."
+  },
+  {
+    question: "Can you protect finished basements locally?",
+    answer: "Yes, we specialize in protecting finished basements with minimal disruption. Our interior drainage systems can often be installed without removing all finishes. We work with many local renovation contractors to coordinate repairs."
+  }
+];
+---
+
+<PageLayout 
+  title={pageTitle}
+  description={pageDescription}
+  showAnnouncement={true}
+>
+  <!-- Structured Data -->
+  <StructuredData 
+    type="Service" 
+    data={{
+      name: "Basement Waterproofing Mississauga",
+      description: "Professional foundation protection services locally. 24/7 emergency response, 25-year warranty, government rebates available.",
+      areaServed: { name: "Mississauga", geo: { latitude: 43.5890, longitude: -79.6441 }},
+      rating: { value: 4.9, count: 500 }
+    }}
+  />
+  
+  <!-- Breadcrumbs -->
+  <div class="container mx-auto px-4 mt-4">
+    <Breadcrumbs 
+      items={[
+        { name: "Home", url: "/" },
+        { name: "Locations", url: "/service-areas" },
+        { name: "Mississauga", url: "/locations/mississauga" },
+        { name: "Foundation Protection Services" }
+      ]}
+    />
+  </div>
+
+  <!-- Hero Section -->
+  <Hero 
+    title="FOUNDATION WATER PROTECTION MISSISSAUGA"
+    subtitle="Protecting local properties from Credit Valley clay soil and lake moisture since 2009. 500+ projects completed. 24/7 emergency response under 45 minutes."
+    primaryCTA={{ text: "Get Free Inspection", href: "/free-inspection" }}
+    secondaryCTA={{ text: "View Local Projects", href: "#gallery" }}
+    backgroundImage="/images/mississauga-waterproofing-hero.webp"
+    badge="$3,400 REBATE AVAILABLE"
+  />
+
+  <!-- Emergency Alert Bar -->
+  <div class="bg-red-600 text-white py-3">
+    <div class="container mx-auto px-4 text-center">
+      <p class="font-semibold">
+        🚨 Foundation Flooding Emergency? 
+        <a href="/emergency" class="underline font-bold">Get Emergency Help</a> 
+        - Average response time: 45 minutes to all local neighborhoods
+      </p>
+    </div>
+  </div>
+
+  <!-- Stats Bar -->
+  <section class="py-8 bg-slate-50">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+        <div>
+          <div class="text-3xl font-bold text-cyan-600">500+</div>
+          <div class="text-sm text-slate-500">Local Homes Protected</div>
+        </div>
+        <div>
+          <div class="text-3xl font-bold text-cyan-600">45 min</div>
+          <div class="text-sm text-slate-500">Emergency Response</div>
+        </div>
+        <div>
+          <div class="text-3xl font-bold text-cyan-600">$3,400</div>
+          <div class="text-sm text-slate-500">Rebates Available</div>
+        </div>
+        <div>
+          <div class="text-3xl font-bold text-cyan-600">25 Year</div>
+          <div class="text-sm text-slate-500">Transferable Warranty</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <section class="py-16">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl font-bold mb-6">The Area's Trusted Foundation Water Protection Experts</h2>
+        
+        <p class="text-lg mb-6">
+          As the region's premier moisture control contractor, DrySpace has protected over 500 homes across all 
+          neighborhoods from Port Credit to Malton. We understand the region's unique challenges: Credit Valley 
+          clay soil that expands up to 70%, variable water tables from Lake Ontario and Credit River influences, 
+          and the rapid suburban development that has created diverse structural challenges across different eras 
+          of construction.
+        </p>
+
+        <h3 class="text-2xl font-bold mt-8 mb-4">Why Local Properties Need Specialized Water Management</h3>
+        
+        <div class="bg-cyan-50 p-6 rounded-lg mb-6">
+          <h4 class="font-bold mb-3">The Region's Unique Geological Challenges:</h4>
+          <ul class="space-y-2">
+            <li>• <strong>Credit Valley Clay:</strong> 30-70% clay content causes extreme expansion/contraction</li>
+            <li>• <strong>Variable Water Table:</strong> 1-4m depth fluctuates seasonally, highest near water bodies</li>
+            <li>• <strong>Engineered Fill:</strong> Many subdivisions built on former farmland with imported soil</li>
+            <li>• <strong>Lake Effect:</strong> Increased moisture and freeze-thaw cycles near Lake Ontario</li>
+            <li>• <strong>Urban Heat Island:</strong> Rapid snow melt creates sudden water infiltration</li>
+            <li>• <strong>Stormwater Management:</strong> Older neighborhoods lack modern drainage infrastructure</li>
+          </ul>
+        </div>
+
+        <h3 class="text-2xl font-bold mt-8 mb-4">Our Local Services</h3>
+        
+        <div class="grid md:grid-cols-2 gap-6 mb-8">
+          <div class="border p-4 rounded-lg">
+            <h4 class="font-bold mb-2">Exterior Water Protection</h4>
+            <p>Complete excavation to footing, membrane installation, and drainage systems. Ideal for local clay soil conditions.</p>
+            <ul class="text-sm mt-2 space-y-1">
+              <li>✓ Excavation to footing level</li>
+              <li>✓ Advanced membrane application</li>
+              <li>✓ Drainage tile installation</li>
+              <li>✓ Window well replacement</li>
+            </ul>
+          </div>
+          
+          <div class="border p-4 rounded-lg">
+            <h4 class="font-bold mb-2">Interior Drainage Systems</h4>
+            <p>Interior drainage systems for finished basements and quick solutions without excavation.</p>
+            <ul class="text-sm mt-2 space-y-1">
+              <li>✓ Interior weeping tile</li>
+              <li>✓ Sump pump installation</li>
+              <li>✓ Vapor barriers</li>
+              <li>✓ Crack injection</li>
+            </ul>
+          </div>
+          
+          <div class="border p-4 rounded-lg">
+            <h4 class="font-bold mb-2">Foundation Repair</h4>
+            <p>Structural repairs for settlement and clay soil movement issues in the area.</p>
+            <ul class="text-sm mt-2 space-y-1">
+              <li>✓ Crack repair</li>
+              <li>✓ Bowing wall correction</li>
+              <li>✓ Underpinning</li>
+              <li>✓ Concrete restoration</li>
+            </ul>
+          </div>
+          
+          <div class="border p-4 rounded-lg">
+            <h4 class="font-bold mb-2">Emergency Services</h4>
+            <p>24/7 emergency response to all local neighborhoods within 45 minutes.</p>
+            <ul class="text-sm mt-2 space-y-1">
+              <li>✓ Emergency pumping</li>
+              <li>✓ Temporary moisture barriers</li>
+              <li>✓ Flood cleanup</li>
+              <li>✓ Insurance claims assistance</li>
+            </ul>
+          </div>
+        </div>
+
+        <h3 class="text-2xl font-bold mt-8 mb-4">Local Neighborhoods We Serve</h3>
+        
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
+          {mississaugaNeighborhoods.map(neighborhood => (
+            <div class="bg-slate-50 p-4 rounded">
+              <h4 class="font-bold">{neighborhood.name}</h4>
+              <p class="text-sm text-slate-500">{neighborhood.projects} projects completed</p>
+              <p class="text-xs mt-1">Common issues: {neighborhood.commonIssues}</p>
+            </div>
+          ))}
+        </div>
+
+        <h3 class="text-2xl font-bold mt-8 mb-4">Local Building Codes & Permits</h3>
+        
+        <p class="mb-4">
+          DrySpace is fully licensed and insured to work locally. We handle all permit applications with 
+          the municipal Building Department, including:
+        </p>
+        
+        <ul class="list-disc pl-6 mb-6 space-y-2">
+          <li>Building permits for exterior excavation exceeding 4 feet</li>
+          <li>Plumbing permits for sump pump and drainage installations</li>
+          <li>Site alteration permits for grading changes</li>
+          <li>Heritage permits for properties in Streetsville and Port Credit heritage districts</li>
+          <li>Region of Peel backwater valve installation permits</li>
+        </ul>
+
+        <div class="bg-amber-50 border-l-4 border-amber-400 p-4 mb-8">
+          <p class="font-bold">Important for Local Homeowners:</p>
+          <p>The municipality requires permits for most moisture protection work. Unpermitted work can result in 
+          fines and may not be covered by insurance. We handle all permits and inspections, ensuring your project 
+          meets all local codes and remains eligible for the $3,400 subsidy program.</p>
+        </div>
+
+        <h3 class="text-2xl font-bold mt-8 mb-4">Available Rebates & Financing</h3>
+        
+        <div class="bg-cyan-50 p-6 rounded-lg mb-8">
+          <h4 class="font-bold mb-3">Available Rebates for Local Residents:</h4>
+          <ul class="space-y-3">
+            <li>
+              <strong>Basement Flooding Protection Subsidy:</strong> Up to $3,400 for eligible foundation protection work
+            </li>
+            <li>
+              <strong>Region of Peel Programs:</strong> Additional funding for backwater valves and sump pumps
+            </li>
+            <li>
+              <strong>Insurance Premium Reductions:</strong> Up to 15% savings with certified waterproofing
+            </li>
+            <li>
+              <strong>Property Tax Credits:</strong> Available for heritage properties in Streetsville and Port Credit
+            </li>
+          </ul>
+          <p class="mt-4 font-semibold">
+            Our team handles all rebate applications and paperwork at no additional charge!
+          </p>
+        </div>
+
+        <h3 class="text-2xl font-bold mt-8 mb-4">The Local Moisture Control Process</h3>
+        
+        <ol class="space-y-4 mb-8">
+          <li class="flex">
+            <span class="font-bold text-cyan-600 mr-3">1.</span>
+            <div>
+              <strong>Free Inspection:</strong> Our locally-based inspector assesses your property, 
+              identifying specific issues related to local soil and water conditions.
+            </div>
+          </li>
+          <li class="flex">
+            <span class="font-bold text-cyan-600 mr-3">2.</span>
+            <div>
+              <strong>Custom Solution:</strong> We design a protection plan specific to your neighborhood's 
+              challenges and your home's construction era.
+            </div>
+          </li>
+          <li class="flex">
+            <span class="font-bold text-cyan-600 mr-3">3.</span>
+            <div>
+              <strong>Permit Application:</strong> We handle all municipal permit applications and 
+              drawings, ensuring code compliance.
+            </div>
+          </li>
+          <li class="flex">
+            <span class="font-bold text-cyan-600 mr-3">4.</span>
+            <div>
+              <strong>Professional Installation:</strong> Our certified crew completes the work, typically 
+              within 3-5 days for exterior projects.
+            </div>
+          </li>
+          <li class="flex">
+            <span class="font-bold text-cyan-600 mr-3">5.</span>
+            <div>
+              <strong>Inspection & Warranty:</strong> City inspection approval and 25-year transferable 
+              warranty registration.
+            </div>
+          </li>
+          <li class="flex">
+            <span class="font-bold text-cyan-600 mr-3">6.</span>
+            <div>
+              <strong>Rebate Processing:</strong> We submit all documentation for your $3,400 subsidy claim.
+            </div>
+          </li>
+        </ol>
+
+        <h3 class="text-2xl font-bold mt-8 mb-4">Why Choose DrySpace for Local Foundation Protection?</h3>
+        
+        <div class="grid md:grid-cols-2 gap-6 mb-8">
+          <div>
+            <h4 class="font-bold mb-2">Local Expertise</h4>
+            <ul class="space-y-2 text-sm">
+              <li>✓ 15+ years serving the area</li>
+              <li>✓ 500+ local projects completed</li>
+              <li>✓ Deep understanding of Credit Valley geology</li>
+              <li>✓ Familiar with all neighborhood challenges</li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-bold mb-2">Rapid Response</h4>
+            <ul class="space-y-2 text-sm">
+              <li>✓ 45-minute emergency response</li>
+              <li>✓ Teams stationed across the region</li>
+              <li>✓ 24/7/365 availability</li>
+              <li>✓ Same-day estimates</li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-bold mb-2">Complete Service</h4>
+            <ul class="space-y-2 text-sm">
+              <li>✓ All permits handled</li>
+              <li>✓ Rebate application assistance</li>
+              <li>✓ Insurance claim support</li>
+              <li>✓ Post-service monitoring</li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-bold mb-2">Guaranteed Results</h4>
+            <ul class="space-y-2 text-sm">
+              <li>✓ 25-year transferable warranty</li>
+              <li>✓ Licensed and insured</li>
+              <li>✓ A+ BBB rating</li>
+              <li>✓ 500+ five-star reviews</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cost Calculator -->
+  <section class="py-16 bg-slate-50">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-8">
+        Calculate Your Local Foundation Protection Cost
+      </h2>
+      <div class="max-w-4xl mx-auto">
+        <CostCalculator client:load />
+        <p class="text-center mt-4 text-sm text-slate-500">
+          *Estimates include area-specific factors like clay soil conditions and local permit fees
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Before/After Gallery -->
+  <section id="gallery" class="py-16">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-8">
+        Recent Local Projects
+      </h2>
+      <BeforeAfterGallery />
+      <div class="grid md:grid-cols-3 gap-6 mt-8 max-w-4xl mx-auto">
+        <div class="text-center">
+          <img src="/images/port-credit-project.webp" alt="Port Credit foundation protection" class="rounded-lg mb-2" width="400" height="300" loading="lazy" decoding="async" />
+          <p class="font-semibold">Port Credit Heritage Home</p>
+          <p class="text-sm text-slate-500">Complete exterior protection system</p>
+        </div>
+        <div class="text-center">
+          <img src="/images/meadowvale-project.webp" alt="Meadowvale foundation repair" class="rounded-lg mb-2" width="400" height="300" loading="lazy" decoding="async" />
+          <p class="font-semibold">Meadowvale Clay Soil Solution</p>
+          <p class="text-sm text-slate-500">Foundation stabilization & drainage</p>
+        </div>
+        <div class="text-center">
+          <img src="/images/streetsville-project.webp" alt="Streetsville basement" class="rounded-lg mb-2" width="400" height="300" loading="lazy" decoding="async" />
+          <p class="font-semibold">Streetsville Flood Recovery</p>
+          <p class="text-sm text-slate-500">Emergency response & permanent fix</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="py-16 bg-slate-50">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-8">
+        What Local Homeowners Say
+      </h2>
+      
+      <div class="max-w-4xl mx-auto mt-8 grid md:grid-cols-2 gap-6">
+        <div class="bg-white p-6 rounded-lg shadow">
+          <div class="flex mb-2">
+            {[...Array(5)].map(() => <span class="text-amber-400">★</span>)}
+          </div>
+          <p class="mb-2">
+            "After the Credit River flooding last spring, DrySpace was here within an hour. They handled 
+            everything from emergency pumping to permanent waterproofing. Excellent service!"
+          </p>
+          <p class="font-semibold">- Sarah M., Streetsville</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow">
+          <div class="flex mb-2">
+            {[...Array(5)].map(() => <span class="text-amber-400">★</span>)}
+          </div>
+          <p class="mb-2">
+            "Living near Lake Ontario, we always had moisture issues. DrySpace's exterior protection system 
+            completely solved our problem. They even helped us get the $3,400 rebate!"
+          </p>
+          <p class="font-semibold">- Robert K., Port Credit</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="py-16">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-8">
+        Local Lower Level Moisture Protection FAQs
+      </h2>
+      <div class="max-w-4xl mx-auto">
+        <FAQ faqs={faqs} />
+      </div>
+    </div>
+  </section>
+
+  <!-- Service Areas -->
+  <section class="py-16 bg-cyan-50">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-8">
+        Serving All Local Neighborhoods
+      </h2>
+      <div class="max-w-4xl mx-auto">
+        <p class="text-center mb-6">
+          With teams stationed throughout the area, we guarantee fast response times to every neighborhood:
+        </p>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+          <div>
+            <h4 class="font-bold">Central</h4>
+            <ul class="text-sm space-y-1">
+              <li>City Centre</li>
+              <li>Cooksville</li>
+              <li>Fairview</li>
+              <li>Rathwood</li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-bold">South</h4>
+            <ul class="text-sm space-y-1">
+              <li>Port Credit</li>
+              <li>Lakeview</li>
+              <li>Clarkson</li>
+              <li>Lorne Park</li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-bold">West</h4>
+            <ul class="text-sm space-y-1">
+              <li>Streetsville</li>
+              <li>Meadowvale</li>
+              <li>Lisgar</li>
+              <li>Churchill Meadows</li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-bold">East</h4>
+            <ul class="text-sm space-y-1">
+              <li>Erin Mills</li>
+              <li>Central Erin Mills</li>
+              <li>Sheridan</li>
+              <li>Malton</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-16 bg-cyan-600 text-white">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-3xl font-bold mb-4">
+        Protect Your Property Today
+      </h2>
+      <p class="text-xl mb-8">
+        Don't wait for the next storm. Get your free inspection and access up to $3,400 in rebates.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/free-inspection" 
+           class="bg-white text-cyan-600 px-8 py-4 rounded-lg font-bold text-lg hover:bg-slate-50 transition">
+          📋 Schedule Local Inspection
+        </a>
+        <a href="/free-inspection" 
+           class="bg-amber-400 text-slate-900 px-8 py-4 rounded-lg font-bold text-lg hover:bg-amber-300 transition">
+          Get Free Inspection
+        </a>
+      </div>
+      <p class="mt-6 text-sm">
+        Emergency? We respond to all local neighborhoods within 45 minutes, 24/7
+      </p>
+    </div>
+  </section>
+
+  <!-- Contact Form -->
+  <ContactForm />
+
+  <!-- Schema Markup -->
+  <SchemaMarkup 
+    type="local"
+    data={{
+      location: "Mississauga",
+      description: "Professional foundation protection services locally with 24/7 emergency response, serving Port Credit, Streetsville, Meadowvale and all local neighborhoods",
+      geo: {
+        "@type": "GeoCoordinates",
+        "latitude": 43.5890452,
+        "longitude": -79.6441198
+      }
+    }}
+  />
+</PageLayout>

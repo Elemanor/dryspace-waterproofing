@@ -1,0 +1,221 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import Hero from '../../components/sections/Hero.astro';
+import Features from '../../components/sections/Features.astro';
+import Process from '../../components/sections/Process.astro';
+import Gallery from '../../components/sections/Gallery.astro';
+import FAQ from '../../components/sections/FAQ.astro';
+import Testimonials from '../../components/sections/Testimonials.astro';
+import CTA from '../../components/sections/CTA.astro';
+import Stats from '../../components/sections/Stats.astro';
+import ServiceSchema from '../../components/ServiceSchema.astro';
+import InternalLinks from '../../components/InternalLinks.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+
+const pageTitle = "Waterproof Coatings Toronto | Sealers & Membranes";
+const pageDescription = "Professional waterproof coatings and sealers. Crystalline, elastomeric, cementitious coatings. Interior and exterior.";
+
+// Service-specific features
+const serviceFeatures = [
+  {
+    icon: '',
+    title: 'Surface Protection',
+    description: 'Industry-leading solution with proven results and long-term protection.',
+    highlight: true
+  },
+  {
+    icon: '',
+    title: 'Competitive Pricing',
+    description: 'Fair, transparent pricing. $3-8/sq ft. Financing available.',
+    highlight: true
+  },
+  {
+    icon: '',
+    title: '25-Year Warranty',
+    description: 'Transferable warranty that adds value to your home.',
+    highlight: true
+  },
+  {
+    icon: '',
+    title: 'Fast Service',
+    description: 'Quick response times with professional installation.'
+  },
+  {
+    icon: '‍',
+    title: 'Licensed & Insured',
+    description: 'Fully licensed, bonded, and insured for your protection.'
+  },
+  {
+    icon: '',
+    title: '24/7 Support',
+    description: 'Emergency service and ongoing support whenever you need it.'
+  }
+];
+
+// Service process steps
+const processSteps = [
+  {
+    number: '01',
+    title: 'Free Inspection',
+    description: 'Comprehensive assessment of your specific needs.',
+    icon: '',
+    duration: 'Same day'
+  },
+  {
+    number: '02',
+    title: 'Custom Solution',
+    description: 'Tailored approach for your unique situation.',
+    icon: '',
+    duration: '24 hours'
+  },
+  {
+    number: '03',
+    title: 'Professional Work',
+    description: 'Expert installation by certified technicians.',
+    icon: '',
+    duration: 'On schedule'
+  },
+  {
+    number: '04',
+    title: 'Quality Assurance',
+    description: 'Testing, inspection, and warranty documentation.',
+    icon: '',
+    duration: 'Before leaving'
+  }
+];
+
+// Service FAQs
+const serviceFAQs = [
+  {
+    question: "How much do waterproof coatings cost in Toronto?",
+    answer: "Waterproof coatings in Toronto cost $4-$12 per square foot depending on coating type and surface conditions. Basic crystalline coatings cost $4-$6/sq ft, while premium elastomeric systems range from $8-$12/sq ft. Typical basement costs $2,200-$6,500."
+  },
+  {
+    question: "How long do waterproof coatings take to apply?",
+    answer: "Most waterproof coating applications take 2-4 days to complete. Surface preparation takes 1-2 days, coating application requires 1-2 days, with additional curing time. Timeline depends on surface area, coating type, and weather conditions."
+  },
+  {
+    question: "What are the benefits of waterproof coatings?",
+    answer: "Waterproof coatings provide seamless protection, prevent water infiltration, resist hydrostatic pressure, protect against freeze-thaw damage, improve air quality by preventing moisture, and offer cost-effective waterproofing compared to membrane systems."
+  },
+  {
+    question: "When should I apply waterproof coatings?",
+    answer: "Apply waterproof coatings when you notice minor water seepage, humidity issues, or want preventive protection. Best for concrete surfaces without major structural cracks. Ideal for interior basement walls, foundations, and areas with moderate moisture exposure."
+  }
+];
+
+// Service Offers
+const serviceOffers = [
+  {
+    name: "Crystalline Waterproofing",
+    price: "$4-$6 per sq ft",
+    description: "Penetrating crystalline coating that seals concrete pores and small cracks. Self-healing properties and permanent protection. Ideal for interior foundation walls."
+  },
+  {
+    name: "Elastomeric Membrane Coating",
+    price: "$6-$9 per sq ft",
+    description: "Flexible rubber-like coating that bridges cracks and provides durable waterproofing. UV resistant for exterior applications. Excellent for walls with minor movement."
+  },
+  {
+    name: "Premium Multi-Layer System",
+    price: "$9-$12 per sq ft",
+    description: "Multi-coat system with primer, base coat, and topcoat. Maximum protection for challenging conditions. Includes crack bridging fabric and extended warranty."
+  }
+];
+
+// Service Schema Data
+const schemaFAQs = [
+  {
+    question: "How much do waterproof coatings cost in Toronto?",
+    answer: "Waterproof coatings in Toronto cost $4-$12 per square foot depending on coating type and surface conditions. Basic crystalline coatings cost $4-$6/sq ft, while premium elastomeric systems range from $8-$12/sq ft. Typical basement costs $2,200-$6,500."
+  },
+  {
+    question: "How long do waterproof coatings take to apply?",
+    answer: "Most waterproof coating applications take 2-4 days to complete. Surface preparation takes 1-2 days, coating application requires 1-2 days, with additional curing time. Timeline depends on surface area, coating type, and weather conditions."
+  },
+  {
+    question: "What are the benefits of waterproof coatings?",
+    answer: "Waterproof coatings provide seamless protection, prevent water infiltration, resist hydrostatic pressure, protect against freeze-thaw damage, improve air quality by preventing moisture, and offer cost-effective waterproofing compared to membrane systems."
+  },
+  {
+    question: "When should I apply waterproof coatings?",
+    answer: "Apply waterproof coatings when you notice minor water seepage, humidity issues, or want preventive protection. Best for concrete surfaces without major structural cracks. Ideal for interior basement walls, foundations, and areas with moderate moisture exposure."
+  }
+];
+
+---
+
+<PageLayout 
+  title={pageTitle}
+  description={pageDescription}
+>
+  
+  <!-- Breadcrumbs -->
+  <div class="container mx-auto px-4 mt-4">
+    <Breadcrumbs 
+      items={[
+        { name: "Home", url: "/" },
+        { name: "Services", url: "/services" },
+        { name: "Waterproof Coatings" }
+      ]}
+    />
+  </div>
+
+<ServiceSchema 
+    serviceName="Waterproof Coatings & Sealers"
+    description="Professional waterproof coatings in Toronto. Crystalline, elastomeric, and cementitious coatings for interior and exterior waterproofing applications."
+    priceRange="$4-$12 per sq ft"
+    offers={serviceOffers}
+    faqs={schemaFAQs}
+  />
+  <!-- Hero Section -->
+  <Hero 
+    title="Waterproof Coatings"
+    subtitle="Professional-grade sealers and membranes. Long-lasting protection for walls and floors."
+    primaryCTA={{ text: "Get Free Inspection", href: "/free-inspection" }}
+    secondaryCTA={{ text: "Call: 437-545-0067", href: "tel:437-545-0067" }}
+    backgroundImage="/images/waterproofing membrane dumpproofing aqua block.webp"
+    badge="10-Year Protection"
+  />
+
+  <!-- Stats -->
+  <Stats />
+
+  <!-- Features -->
+  <Features 
+    title="Why Choose Our Service"
+    subtitle="Professional solutions backed by experience and warranty"
+    features={serviceFeatures}
+    columns={3}
+  />
+
+  <!-- Process -->
+  <Process />
+
+  <!-- Testimonials -->
+  <Testimonials />
+
+  <!-- FAQ -->
+  <FAQ 
+    title="Common Questions"
+    subtitle="Everything you need to know about our service"
+    faqs={serviceFAQs}
+    columns={1}
+  />
+
+  <!-- Internal Links -->
+  <InternalLinks 
+    category="waterproofing"
+    currentPage="waterproof-coatings"
+    limit={5}
+  />
+
+  <!-- CTA -->
+  <CTA 
+    title="Ready to Get Started?"
+    subtitle="Schedule your free inspection today and protect your home."
+    primaryCTA={{ text: "Schedule Free Inspection", href: "/free-inspection" }}
+    secondaryCTA={{ text: "Call: 437-545-0067", href: "tel:437-545-0067" }}
+    background="gradient"
+  />
+</PageLayout>

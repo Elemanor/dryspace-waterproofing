@@ -1,0 +1,488 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ContactCTA from '../../components/sections/CTA.astro';
+import NBCConcreteSpecs from '../../components/NBCConcreteSpecs.astro';
+import ServiceSchema from '../../components/ServiceSchema.astro';
+import InternalLinks from '../../components/InternalLinks.astro';
+
+const title = "Radon Mitigation & Soil Gas Control | Toronto | Dryspace Waterproofing";
+const description = "Professional radon mitigation systems in Toronto. NBC 9.13.4 compliant soil gas control, sub-slab depressurization, testing & monitoring. Health Canada certified solutions.";
+
+// Service areas for local SEO
+const serviceAreas = [
+  "Toronto", "North York", "Scarborough", "Etobicoke", 
+  "Mississauga", "Brampton", "Vaughan", "Richmond Hill",
+  "Markham", "Oakville", "Burlington", "Hamilton"
+];
+
+// Service FAQs for schema
+const serviceFAQs = [
+  {
+    question: "How much does radon mitigation cost in Toronto?",
+    answer: "Radon mitigation costs vary by system type: testing $150-299, active mitigation systems $2,700-4,500, passive rough-in systems $850-1,500, sealing and barriers $550-2,000. Cost depends on home construction, radon levels, and system complexity. C-NRPP certified installation included."
+  },
+  {
+    question: "How long does radon mitigation take to complete?",
+    answer: "Radon mitigation installation takes 1-2 days for most residential systems. Testing phase requires 2-7 days for short-term or 3+ months for long-term testing. Complex systems with multiple suction points may require additional installation time. Post-mitigation testing takes another 2-7 days."
+  },
+  {
+    question: "What radon levels require mitigation in Canada?",
+    answer: "Health Canada recommends mitigation if radon exceeds 200 Bq/m³. Action levels: >600 Bq/m³ remediate within 1 year, 200-600 Bq/m³ remediate within 2 years, <200 Bq/m³ no action required. We guarantee systems reduce levels below 200 Bq/m³ or money back."
+  },
+  {
+    question: "Are radon mitigation systems effective long-term?",
+    answer: "Professional radon systems are highly effective, typically reducing levels by 80-99%. Systems require minimal maintenance with fans lasting 10-15 years. Annual inspections recommended. Operating costs $50-100/year in electricity. NBC 9.13.4 compliant systems provide reliable long-term protection."
+  }
+];
+
+// Service offers for schema
+const serviceOffers = [
+  {
+    name: "Radon Testing & Assessment",
+    price: "$150-299",
+    description: "Professional radon testing with Health Canada approved methods, detailed reporting"
+  },
+  {
+    name: "Active Mitigation System",
+    price: "$2,700-4,500",
+    description: "Sub-slab depressurization with inline fan, monitoring gauges, post-mitigation testing"
+  },
+  {
+    name: "Passive System Rough-in",
+    price: "$850-1,500",
+    description: "New construction passive system with vent pipe, granular layer, vapor barrier"
+  }
+];
+---
+
+<Layout title={title} description={description}>
+  <!-- Add Service Schema -->
+  <ServiceSchema
+    serviceName="Radon Mitigation & Soil Gas Control"
+    description="Professional radon mitigation systems including testing, sub-slab depressurization, and NBC 9.13.4 compliant soil gas control in Toronto and GTA"
+    priceRange="$150-$4,900"
+    offers={serviceOffers}
+    faqs={serviceFAQs}
+    areaServed={serviceAreas}
+  />
+  <main>
+    <!-- Hero Section -->
+    <section class="relative py-20 bg-gradient-to-b from-blue-50 to-white">
+      <div class="container mx-auto px-6">
+        <div class="max-w-4xl mx-auto text-center">
+          <h1 class="text-4xl md:text-5xl font-bold mb-6">
+            Radon Mitigation & Soil Gas Control
+          </h1>
+          <p class="text-xl text-slate-500 mb-8">
+            NBC 9.13.4 Compliant Radon Reduction Systems
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="/contact" class="bg-cyan-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-cyan-700 transition">
+              Get Radon Testing
+            </a>
+            <a href="tel:437-545-0067" class="border-2 border-cyan-600 text-cyan-600 px-8 py-3 rounded-lg font-semibold hover:bg-cyan-50 transition">
+              📞 437-545-0067
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Radon Warning Section -->
+    <section class="py-16 bg-red-50">
+      <div class="container mx-auto px-6">
+        <div class="max-w-4xl mx-auto">
+          <div class="bg-white rounded-lg shadow-lg p-8 border-l-4 border-red-500">
+            <h2 class="text-2xl font-bold mb-4 text-red-700">⚠️ Health Canada Radon Warning</h2>
+            <div class="grid md:grid-cols-2 gap-6">
+              <div>
+                <h3 class="font-bold mb-3">Radon Facts</h3>
+                <ul class="space-y-2">
+                  <li class="flex items-start">
+                    <span class="text-red-500 mr-2">•</span>
+                    <span>#2 cause of lung cancer after smoking</span>
+                  </li>
+                  <li class="flex items-start">
+                    <span class="text-red-500 mr-2">•</span>
+                    <span>16% of lung cancer deaths from radon</span>
+                  </li>
+                  <li class="flex items-start">
+                    <span class="text-red-500 mr-2">•</span>
+                    <span>7% of Canadian homes exceed 200 Bq/m³</span>
+                  </li>
+                  <li class="flex items-start">
+                    <span class="text-red-500 mr-2">•</span>
+                    <span>Cannot be detected without testing</span>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <h3 class="font-bold mb-3">Action Levels</h3>
+                <div class="space-y-3">
+                  <div class="p-3 bg-red-100 rounded">
+                    <strong>&gt;600 Bq/m³:</strong> Remediate within 1 year
+                  </div>
+                  <div class="p-3 bg-amber-50 rounded">
+                    <strong>200-600 Bq/m³:</strong> Remediate within 2 years
+                  </div>
+                  <div class="p-3 bg-cyan-100 rounded">
+                    <strong>&lt;200 Bq/m³:</strong> No action required
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- NBC Requirements Section -->
+    <section class="py-16">
+      <div class="container mx-auto px-6">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-3xl font-bold mb-8 text-center">NBC 9.13.4 Soil Gas Control Requirements</h2>
+          
+          <div class="grid md:grid-cols-2 gap-8 mb-12">
+            <div class="bg-cyan-50 rounded-lg p-6">
+              <h3 class="text-xl font-bold mb-4 text-cyan-700">Article 9.13.4.2 - Air Barrier Systems</h3>
+              <ul class="space-y-2 text-slate-600">
+                <li class="flex items-start">
+                  <span class="text-cyan-500 mr-2">✓</span>
+                  <span>6 mil polyethylene below slab</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-cyan-500 mr-2">✓</span>
+                  <span>Sealed at all penetrations</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-cyan-500 mr-2">✓</span>
+                  <span>150mm overlap at joints</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-cyan-500 mr-2">✓</span>
+                  <span>Sealed to foundation walls</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-cyan-500 mr-2">✓</span>
+                  <span>Protect during construction</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="bg-cyan-50 rounded-lg p-6">
+              <h3 class="text-xl font-bold mb-4 text-cyan-700">Article 9.13.4.3 - Sub-Slab Depressurization</h3>
+              <ul class="space-y-2 text-slate-600">
+                <li class="flex items-start">
+                  <span class="text-cyan-500 mr-2">✓</span>
+                  <span>100mm granular layer required</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-cyan-500 mr-2">✓</span>
+                  <span>3" PVC extraction pipe</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-cyan-500 mr-2">✓</span>
+                  <span>Rough-in to roof level</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-cyan-500 mr-2">✓</span>
+                  <span>Future fan capability</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-cyan-500 mr-2">✓</span>
+                  <span>Electrical outlet provision</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Depressurization System Diagram -->
+          <div class="bg-slate-50 rounded-lg p-8">
+            <h3 class="text-xl font-bold mb-6 text-center">Sub-Slab Depressurization System Components</h3>
+            <div class="grid md:grid-cols-3 gap-6">
+              <div class="text-center">
+                <div class="bg-cyan-100 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-3">
+                  <span class="text-2xl">1</span>
+                </div>
+                <h4 class="font-bold mb-2">Collection</h4>
+                <p class="text-sm">Perforated pipe in granular layer collects soil gas</p>
+              </div>
+              <div class="text-center">
+                <div class="bg-cyan-100 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-3">
+                  <span class="text-2xl">2</span>
+                </div>
+                <h4 class="font-bold mb-2">Extraction</h4>
+                <p class="text-sm">Inline fan creates negative pressure under slab</p>
+              </div>
+              <div class="text-center">
+                <div class="bg-cyan-100 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-3">
+                  <span class="text-2xl">3</span>
+                </div>
+                <h4 class="font-bold mb-2">Discharge</h4>
+                <p class="text-sm">Vent pipe exhausts gas above roof line</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="py-16 bg-slate-50">
+      <div class="container mx-auto px-6">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-3xl font-bold mb-12 text-center">Complete Radon Mitigation Services</h2>
+          
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="bg-white rounded-lg shadow-lg p-6">
+              <h3 class="text-xl font-bold mb-3 text-cyan-600">Radon Testing</h3>
+              <ul class="space-y-2 mb-4">
+                <li>• Long-term (3+ month) testing</li>
+                <li>• Short-term (2-7 day) testing</li>
+                <li>• Digital continuous monitors</li>
+                <li>• Health Canada approved methods</li>
+                <li>• Detailed report & recommendations</li>
+              </ul>
+              <p class="text-sm text-slate-500">Starting at $150</p>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-lg p-6">
+              <h3 class="text-xl font-bold mb-3 text-cyan-600">Active Mitigation</h3>
+              <ul class="space-y-2 mb-4">
+                <li>• Sub-slab depressurization</li>
+                <li>• Inline radon fan installation</li>
+                <li>• Pressure field extension</li>
+                <li>• System monitoring gauges</li>
+                <li>• Post-mitigation testing</li>
+              </ul>
+              <p class="text-sm text-slate-500">$2,700 - $4,900</p>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-lg p-6">
+              <h3 class="text-xl font-bold mb-3 text-cyan-600">Passive Systems</h3>
+              <ul class="space-y-2 mb-4">
+                <li>• New construction rough-in</li>
+                <li>• Vent pipe installation</li>
+                <li>• Granular gas permeable layer</li>
+                <li>• Vapor barrier installation</li>
+                <li>• Future activation ready</li>
+              </ul>
+              <p class="text-sm text-slate-500">$850 - $1,600</p>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-lg p-6">
+              <h3 class="text-xl font-bold mb-3 text-cyan-600">Sealing & Barriers</h3>
+              <ul class="space-y-2 mb-4">
+                <li>• Foundation crack sealing</li>
+                <li>• Sump pit covers</li>
+                <li>• Floor drain traps</li>
+                <li>• Penetration sealing</li>
+                <li>• Vapor barrier repairs</li>
+              </ul>
+              <p class="text-sm text-slate-500">$550 - $2,200</p>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-lg p-6">
+              <h3 class="text-xl font-bold mb-3 text-cyan-600">Crawlspace Solutions</h3>
+              <ul class="space-y-2 mb-4">
+                <li>• Membrane depressurization</li>
+                <li>• Encapsulation systems</li>
+                <li>• Ventilation improvements</li>
+                <li>• Vapor barrier installation</li>
+                <li>• Access hatch sealing</li>
+              </ul>
+              <p class="text-sm text-slate-500">$2,200 - $5,400</p>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-lg p-6">
+              <h3 class="text-xl font-bold mb-3 text-cyan-600">Monitoring & Maintenance</h3>
+              <ul class="space-y-2 mb-4">
+                <li>• Annual system inspections</li>
+                <li>• Fan performance testing</li>
+                <li>• Continuous monitoring setup</li>
+                <li>• Filter replacements</li>
+                <li>• System optimization</li>
+              </ul>
+              <p class="text-sm text-slate-500">$200 - $550/year</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Installation Process -->
+    <section class="py-16">
+      <div class="container mx-auto px-6">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-3xl font-bold mb-12 text-center">Professional Installation Process</h2>
+          
+          <div class="space-y-6">
+            <div class="flex items-start">
+              <div class="bg-cyan-600 text-white rounded-full w-10 h-10 flex items-center justify-center mr-4 flex-shrink-0">
+                1
+              </div>
+              <div>
+                <h3 class="font-bold mb-2">Initial Testing & Assessment</h3>
+                <p class="text-slate-500">Comprehensive radon testing to determine levels and identify entry points. Building assessment for optimal system design.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start">
+              <div class="bg-cyan-600 text-white rounded-full w-10 h-10 flex items-center justify-center mr-4 flex-shrink-0">
+                2
+              </div>
+              <div>
+                <h3 class="font-bold mb-2">System Design</h3>
+                <p class="text-slate-500">Custom mitigation plan based on home construction, foundation type, and radon levels. NBC 9.13.4 compliance verification.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start">
+              <div class="bg-cyan-600 text-white rounded-full w-10 h-10 flex items-center justify-center mr-4 flex-shrink-0">
+                3
+              </div>
+              <div>
+                <h3 class="font-bold mb-2">Core Drilling & Excavation</h3>
+                <p class="text-slate-500">Precision core drilling through slab. Excavate collection pit below slab. Install perforated collection pipe.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start">
+              <div class="bg-cyan-600 text-white rounded-full w-10 h-10 flex items-center justify-center mr-4 flex-shrink-0">
+                4
+              </div>
+              <div>
+                <h3 class="font-bold mb-2">Piping Installation</h3>
+                <p class="text-slate-500">Install 3" PVC vent pipe from collection point to exterior. Route through interior walls or exterior mounted.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start">
+              <div class="bg-cyan-600 text-white rounded-full w-10 h-10 flex items-center justify-center mr-4 flex-shrink-0">
+                5
+              </div>
+              <div>
+                <h3 class="font-bold mb-2">Fan & Electrical</h3>
+                <p class="text-slate-500">Install inline radon fan in attic or exterior. Connect dedicated electrical circuit. Install system monitor and alarms.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start">
+              <div class="bg-cyan-600 text-white rounded-full w-10 h-10 flex items-center justify-center mr-4 flex-shrink-0">
+                6
+              </div>
+              <div>
+                <h3 class="font-bold mb-2">Sealing & Testing</h3>
+                <p class="text-slate-500">Seal all cracks and openings. Install sump covers and drain traps. Post-mitigation testing to verify effectiveness.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- NBC Concrete Specs -->
+    <section class="py-16 bg-slate-50">
+      <div class="container mx-auto px-6">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-3xl font-bold mb-8 text-center">NBC Concrete Requirements for Radon Control</h2>
+          <NBCConcreteSpecs showColdWeather={true} showAirContent={true} />
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="py-16">
+      <div class="container mx-auto px-6">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-3xl font-bold mb-12 text-center">Why Choose Dryspace for Radon Mitigation</h2>
+          
+          <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="text-center">
+              <div class="bg-cyan-100 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
+                <span class="text-3xl">🏆</span>
+              </div>
+              <h3 class="font-bold mb-2">C-NRPP Certified</h3>
+              <p class="text-slate-500">Canadian National Radon Proficiency Program certified professionals</p>
+            </div>
+
+            <div class="text-center">
+              <div class="bg-cyan-100 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
+                <span class="text-3xl">📊</span>
+              </div>
+              <h3 class="font-bold mb-2">Guaranteed Results</h3>
+              <p class="text-slate-500">We guarantee radon levels below 200 Bq/m³ or your money back</p>
+            </div>
+
+            <div class="text-center">
+              <div class="bg-cyan-100 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
+                <span class="text-3xl">🔧</span>
+              </div>
+              <h3 class="font-bold mb-2">Complete Solutions</h3>
+              <p class="text-slate-500">From testing to mitigation to ongoing monitoring</p>
+            </div>
+
+            <div class="text-center">
+              <div class="bg-cyan-100 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
+                <span class="text-3xl">📋</span>
+              </div>
+              <h3 class="font-bold mb-2">NBC Compliant</h3>
+              <p class="text-slate-500">Full compliance with NBC 9.13.4 soil gas control requirements</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-16 bg-slate-50">
+      <div class="container mx-auto px-6">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-3xl font-bold mb-12 text-center">Radon Mitigation FAQs</h2>
+          
+          <div class="space-y-6">
+            <div class="bg-white rounded-lg p-6">
+              <h3 class="font-bold mb-3">How long does radon mitigation installation take?</h3>
+              <p class="text-slate-500">Most residential systems are installed in 1-2 days. Complex systems or multiple suction points may require additional time.</p>
+            </div>
+
+            <div class="bg-white rounded-lg p-6">
+              <h3 class="font-bold mb-3">Will the system be noisy?</h3>
+              <p class="text-slate-500">Modern radon fans operate at 50-60 decibels (similar to a bathroom fan). We install fans in optimal locations to minimize noise.</p>
+            </div>
+
+            <div class="bg-white rounded-lg p-6">
+              <h3 class="font-bold mb-3">What are the operating costs?</h3>
+              <p class="text-slate-500">Typical systems use 50-90 watts, costing $50-100 per year in electricity. Fans typically last 10-15 years.</p>
+            </div>
+
+            <div class="bg-white rounded-lg p-6">
+              <h3 class="font-bold mb-3">Can I install a system during construction?</h3>
+              <p class="text-slate-500">Yes! Passive rough-in systems cost $850-1,500 during construction vs $2,700-4,500 for retrofit active systems.</p>
+            </div>
+
+            <div class="bg-white rounded-lg p-6">
+              <h3 class="font-bold mb-3">Is radon only in basements?</h3>
+              <p class="text-slate-500">Radon is typically highest in basements but can affect all levels. Upper floors usually have 40-50% of basement concentrations.</p>
+            </div>
+
+            <div class="bg-white rounded-lg p-6">
+              <h3 class="font-bold mb-3">Do all homes need testing?</h3>
+              <p class="text-slate-500">Health Canada recommends all homes be tested. Radon levels vary significantly even between adjacent homes.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Related Services and Resources -->
+    <section class="py-8">
+      <div class="container mx-auto px-4">
+        <InternalLinks category="waterproofing" currentPage="radon-mitigation" limit={6} />
+      </div>
+    </section>
+
+    <ContactCTA />
+    <!-- ServiceAreas removed -->
+  </main>
+</Layout>

@@ -1,0 +1,622 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { Card, CardContent, CardHeader, CardTitle } from '../components/ui/card';
+---
+
+<BaseLayout 
+  title="Toronto Waterproofing Permits Guide - Requirements & Process | Dryspace"
+  description="Complete guide to Toronto waterproofing permits. Learn when permits are required, application process, costs, and timelines for foundation work."
+>
+  <div class="min-h-screen bg-gradient-to-b from-gray-50 to-white">
+    <!-- Hero Section -->
+    <section class="py-16 bg-gradient-to-r from-blue-600 to-indigo-600 text-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto text-center">
+          <h1 class="text-4xl md:text-5xl font-bold mb-6">
+            Toronto Waterproofing Permits Guide
+          </h1>
+          <p class="text-xl md:text-2xl text-cyan-100 mb-8">
+            Everything you need to know about permits for foundation and waterproofing work in Toronto
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="#permit-checker" class="bg-white text-cyan-600 px-8 py-3 rounded-lg font-semibold hover:bg-cyan-50 transition-colors">
+              Check if You Need a Permit
+            </a>
+            <a href="tel:437-545-0067" class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-cyan-600 transition-colors">
+              Call for Permit Help
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Permit Documentation Image -->
+    <section class="py-8 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <div class="bg-slate-50 rounded-lg overflow-hidden shadow-lg">
+            <img 
+              src="/images/building-permit.webp" 
+              alt="Toronto building permit for waterproofing" 
+              class="w-full h-auto"
+              loading="eager"
+            />
+            <div class="p-4 bg-navy-900 text-white">
+              <p class="text-sm">Official Toronto Building Permit - Required for major foundation and waterproofing work</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quick Overview -->
+    <section class="py-12">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <div class="bg-amber-50 border-l-4 border-amber-500 p-6 rounded-lg mb-8">
+            <div class="flex items-start">
+              <svg class="w-6 h-6 text-amber-500 mt-1 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L4.082 16.5c-.77.833.192 2.5 1.732 2.5z"></path>
+              </svg>
+              <div>
+                <h3 class="text-lg font-semibold text-amber-800 mb-2">
+                  Important: Always Check Before Starting Work
+                </h3>
+                <p class="text-amber-700">
+                  Some waterproofing work requires permits in Toronto. Starting work without proper permits can result in fines and project delays. 
+                  Dryspace handles all permit applications for our clients at no additional charge.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Permit Requirements -->
+    <section class="py-12">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-3xl font-bold text-slate-900 text-center mb-12">
+            When Do You Need a Permit?
+          </h2>
+          
+          <div class="grid md:grid-cols-2 gap-8">
+            <!-- Requires Permits -->
+            <div class="bg-red-50 border border-red-200 rounded-xl p-6">
+              <div class="flex items-center mb-4">
+                <svg class="w-6 h-6 text-red-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L4.082 16.5c-.77.833.192 2.5 1.732 2.5z"></path>
+                </svg>
+                <h3 class="text-xl font-bold text-red-800">Permit Required</h3>
+              </div>
+              <ul class="space-y-3 text-red-700">
+                <li class="flex items-start">
+                  <span class="w-2 h-2 bg-red-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                  <div>
+                    <strong>Exterior Excavation:</strong> Any excavation deeper than 0.6m (2 feet) adjacent to foundation
+                  </div>
+                </li>
+                <li class="flex items-start">
+                  <span class="w-2 h-2 bg-red-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                  <div>
+                    <strong>Underpinning:</strong> All foundation lowering or underpinning work
+                  </div>
+                </li>
+                <li class="flex items-start">
+                  <span class="w-2 h-2 bg-red-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                  <div>
+                    <strong>Structural Changes:</strong> Any modifications to foundation structure
+                  </div>
+                </li>
+                <li class="flex items-start">
+                  <span class="w-2 h-2 bg-red-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                  <div>
+                    <strong>Weeping Tile Replacement:</strong> Complete perimeter drainage system replacement
+                  </div>
+                </li>
+                <li class="flex items-start">
+                  <span class="w-2 h-2 bg-red-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                  <div>
+                    <strong>Window Wells:</strong> New or enlarged basement window wells
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <!-- No Permits Required -->
+            <div class="bg-cyan-50 border border-cyan-200 rounded-xl p-6">
+              <div class="flex items-center mb-4">
+                <svg class="w-6 h-6 text-cyan-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <h3 class="text-xl font-bold text-cyan-700">No Permit Required</h3>
+              </div>
+              <ul class="space-y-3 text-cyan-700">
+                <li class="flex items-start">
+                  <span class="w-2 h-2 bg-cyan-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                  <div>
+                    <strong>Interior Waterproofing:</strong> Drainage systems, sump pumps, interior membranes
+                  </div>
+                </li>
+                <li class="flex items-start">
+                  <span class="w-2 h-2 bg-cyan-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                  <div>
+                    <strong>Crack Injection:</strong> Sealing foundation cracks from inside
+                  </div>
+                </li>
+                <li class="flex items-start">
+                  <span class="w-2 h-2 bg-cyan-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                  <div>
+                    <strong>Minor Repairs:</strong> Small patches, caulking, minor fixes
+                  </div>
+                </li>
+                <li class="flex items-start">
+                  <span class="w-2 h-2 bg-cyan-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                  <div>
+                    <strong>Shallow Excavation:</strong> Less than 0.6m (2 feet) deep
+                  </div>
+                </li>
+                <li class="flex items-start">
+                  <span class="w-2 h-2 bg-cyan-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                  <div>
+                    <strong>Preventive Coatings:</strong> Exterior sealers and coatings
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Permit Checker Tool -->
+    <section id="permit-checker" class="py-16 bg-slate-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-3xl font-bold text-slate-900 text-center mb-8">
+            Do You Need a Permit? Quick Check
+          </h2>
+          
+          <div class="bg-white rounded-xl shadow-lg p-8">
+            <div class="space-y-6">
+              <div>
+                <label class="block text-sm font-medium text-slate-600 mb-2">
+                  What type of work are you planning?
+                </label>
+                <select class="w-full px-4 py-2 border border-slate-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-cyan-500">
+                  <option value="">Select work type...</option>
+                  <option value="exterior">Exterior Foundation Waterproofing</option>
+                  <option value="interior">Interior Waterproofing System</option>
+                  <option value="underpinning">Underpinning/Foundation Lowering</option>
+                  <option value="cracks">Foundation Crack Repair</option>
+                  <option value="drainage">Drainage System Work</option>
+                  <option value="sump">Sump Pump Installation</option>
+                </select>
+              </div>
+
+              <div>
+                <label class="block text-sm font-medium text-slate-600 mb-2">
+                  How deep will you be excavating?
+                </label>
+                <div class="space-y-2">
+                  <label class="flex items-center">
+                    <input type="radio" name="depth" value="none" class="mr-2">
+                    <span>No excavation (interior work only)</span>
+                  </label>
+                  <label class="flex items-center">
+                    <input type="radio" name="depth" value="shallow" class="mr-2">
+                    <span>Less than 2 feet (0.6m) deep</span>
+                  </label>
+                  <label class="flex items-center">
+                    <input type="radio" name="depth" value="deep" class="mr-2">
+                    <span>More than 2 feet (0.6m) deep</span>
+                  </label>
+                  <label class="flex items-center">
+                    <input type="radio" name="depth" value="unsure" class="mr-2">
+                    <span>Not sure/need assessment</span>
+                  </label>
+                </div>
+              </div>
+
+              <div>
+                <label class="block text-sm font-medium text-slate-600 mb-2">
+                  Are you making structural changes to the foundation?
+                </label>
+                <div class="space-y-2">
+                  <label class="flex items-center">
+                    <input type="radio" name="structural" value="no" class="mr-2">
+                    <span>No structural changes</span>
+                  </label>
+                  <label class="flex items-center">
+                    <input type="radio" name="structural" value="yes" class="mr-2">
+                    <span>Yes, modifying foundation structure</span>
+                  </label>
+                </div>
+              </div>
+
+              <button class="w-full bg-cyan-600 text-white py-3 px-6 rounded-lg font-semibold hover:bg-cyan-700 transition-colors">
+                Check Permit Requirements
+              </button>
+
+              <div class="bg-cyan-50 border border-cyan-200 rounded-lg p-4 text-center">
+                <p class="text-cyan-700">
+                  <strong>Dryspace handles all permit applications for you!</strong><br>
+                  No additional fees - we take care of the paperwork and follow-up.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Permit Process -->
+    <section class="py-16">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-3xl font-bold text-slate-900 text-center mb-12">
+            Toronto Permit Application Process
+          </h2>
+
+          <div class="grid lg:grid-cols-2 gap-8 mb-12">
+            <!-- Process Steps -->
+            <div class="space-y-6">
+              <div class="flex items-start">
+                <div class="bg-cyan-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-4 flex-shrink-0">
+                  1
+                </div>
+                <div>
+                  <h3 class="text-lg font-semibold text-slate-900 mb-2">Pre-Application</h3>
+                  <p class="text-slate-500">
+                    Site survey and engineering assessment. We determine exact permit requirements and prepare documentation.
+                  </p>
+                </div>
+              </div>
+
+              <div class="flex items-start">
+                <div class="bg-cyan-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-4 flex-shrink-0">
+                  2
+                </div>
+                <div>
+                  <h3 class="text-lg font-semibold text-slate-900 mb-2">Document Preparation</h3>
+                  <p class="text-slate-500">
+                    Prepare drawings, engineering reports, and application forms. Includes structural drawings if required.
+                  </p>
+                </div>
+              </div>
+
+              <div class="flex items-start">
+                <div class="bg-cyan-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-4 flex-shrink-0">
+                  3
+                </div>
+                <div>
+                  <h3 class="text-lg font-semibold text-slate-900 mb-2">Application Submission</h3>
+                  <p class="text-slate-500">
+                    Submit application to City of Toronto. Pay permit fees and await initial review.
+                  </p>
+                </div>
+              </div>
+
+              <div class="flex items-start">
+                <div class="bg-cyan-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-4 flex-shrink-0">
+                  4
+                </div>
+                <div>
+                  <h3 class="text-lg font-semibold text-slate-900 mb-2">City Review</h3>
+                  <p class="text-slate-500">
+                    City reviews application. May request revisions or additional information. We handle all correspondence.
+                  </p>
+                </div>
+              </div>
+
+              <div class="flex items-start">
+                <div class="bg-cyan-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-4 flex-shrink-0">
+                  5
+                </div>
+                <div>
+                  <h3 class="text-lg font-semibold text-slate-900 mb-2">Permit Issued</h3>
+                  <p class="text-slate-500">
+                    Once approved, permit is issued and work can begin. We schedule inspections as required.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Timeline & Costs -->
+            <div class="space-y-6">
+              <div class="bg-cyan-50 border border-cyan-200 rounded-xl p-6">
+                <h3 class="text-xl font-bold text-cyan-700 mb-4 flex items-center">
+                  <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                  </svg>
+                  Typical Timeline
+                </h3>
+                <div class="space-y-3">
+                  <div class="flex justify-between">
+                    <span class="text-cyan-700">Simple Foundation Work:</span>
+                    <span class="font-medium">2-4 weeks</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span class="text-cyan-700">Underpinning Projects:</span>
+                    <span class="font-medium">4-6 weeks</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span class="text-cyan-700">Complex/Heritage Properties:</span>
+                    <span class="font-medium">6-10 weeks</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="bg-cyan-50 border border-cyan-200 rounded-xl p-6">
+                <h3 class="text-xl font-bold text-cyan-700 mb-4 flex items-center">
+                  <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"></path>
+                  </svg>
+                  Permit Costs
+                </h3>
+                <div class="space-y-3">
+                  <div class="flex justify-between">
+                    <span class="text-cyan-700">Foundation Permit:</span>
+                    <span class="font-medium">$150-$300</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span class="text-cyan-700">Underpinning Permit:</span>
+                    <span class="font-medium">$300-$600</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span class="text-cyan-700">Engineering Review:</span>
+                    <span class="font-medium">$200-$400</span>
+                  </div>
+                  <div class="border-t border-cyan-200 pt-2 mt-2">
+                    <div class="flex justify-between font-bold">
+                      <span class="text-cyan-700">Dryspace Service Fee:</span>
+                      <span class="text-cyan-600">$0 (FREE)</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="bg-amber-50 border border-amber-200 rounded-xl p-6">
+                <h3 class="text-xl font-bold text-amber-800 mb-2">Inspection Requirements</h3>
+                <ul class="text-amber-700 space-y-1">
+                  <li>• Pre-excavation inspection</li>
+                  <li>• Foundation work inspection</li>
+                  <li>• Final completion inspection</li>
+                  <li>• Additional inspections for structural work</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Required Documents -->
+    <section class="py-16 bg-slate-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-3xl font-bold text-slate-900 text-center mb-12">
+            Required Documentation
+          </h2>
+
+          <div class="grid md:grid-cols-2 gap-8">
+            <div class="bg-white rounded-xl shadow-lg p-6">
+              <h3 class="text-xl font-bold text-slate-900 mb-4 flex items-center">
+                <svg class="w-5 h-5 text-cyan-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                </svg>
+                Standard Requirements
+              </h3>
+              <ul class="space-y-2 text-slate-600">
+                <li class="flex items-start">
+                  <svg class="w-4 h-4 text-cyan-600 mr-2 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  Completed application form
+                </li>
+                <li class="flex items-start">
+                  <svg class="w-4 h-4 text-cyan-600 mr-2 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  Site plan drawing
+                </li>
+                <li class="flex items-start">
+                  <svg class="w-4 h-4 text-cyan-600 mr-2 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  Foundation plan and details
+                </li>
+                <li class="flex items-start">
+                  <svg class="w-4 h-4 text-cyan-600 mr-2 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  Cross-section drawings
+                </li>
+                <li class="flex items-start">
+                  <svg class="w-4 h-4 text-cyan-600 mr-2 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  Specification documents
+                </li>
+                <li class="flex items-start">
+                  <svg class="w-4 h-4 text-cyan-600 mr-2 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  Permit application fee
+                </li>
+              </ul>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-lg p-6">
+              <h3 class="text-xl font-bold text-slate-900 mb-4 flex items-center">
+                <svg class="w-5 h-5 text-orange-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                </svg>
+                Additional (if required)
+              </h3>
+              <ul class="space-y-2 text-slate-600">
+                <li class="flex items-start">
+                  <svg class="w-4 h-4 text-orange-600 mr-2 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L4.082 16.5c-.77.833.192 2.5 1.732 2.5z"></path>
+                  </svg>
+                  Structural engineering report
+                </li>
+                <li class="flex items-start">
+                  <svg class="w-4 h-4 text-orange-600 mr-2 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L4.082 16.5c-.77.833.192 2.5 1.732 2.5z"></path>
+                  </svg>
+                  Geotechnical assessment
+                </li>
+                <li class="flex items-start">
+                  <svg class="w-4 h-4 text-orange-600 mr-2 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L4.082 16.5c-.77.833.192 2.5 1.732 2.5z"></path>
+                  </svg>
+                  Heritage impact assessment
+                </li>
+                <li class="flex items-start">
+                  <svg class="w-4 h-4 text-orange-600 mr-2 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L4.082 16.5c-.77.833.192 2.5 1.732 2.5z"></path>
+                  </svg>
+                  Adjacent property agreements
+                </li>
+                <li class="flex items-start">
+                  <svg class="w-4 h-4 text-orange-600 mr-2 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L4.082 16.5c-.77.833.192 2.5 1.732 2.5z"></path>
+                  </svg>
+                  Environmental assessments
+                </li>
+                <li class="flex items-start">
+                  <svg class="w-4 h-4 text-orange-600 mr-2 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13-732 4c-.77-.833-1.964-.833-2.732 0L4.082 16.5c-.77.833.192 2.5 1.732 2.5z"></path>
+                  </svg>
+                  Utility clearance letters
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Common Issues & Solutions -->
+    <section class="py-16">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-3xl font-bold text-slate-900 text-center mb-12">
+            Common Permit Issues & How We Solve Them
+          </h2>
+
+          <div class="grid md:grid-cols-3 gap-8">
+            <div class="bg-white rounded-xl shadow-lg p-6 border-t-4 border-red-500">
+              <div class="text-red-600 mb-4">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L4.082 16.5c-.77.833.192 2.5 1.732 2.5z"></path>
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold text-slate-900 mb-3">Application Delays</h3>
+              <p class="text-slate-500 mb-4">
+                Missing documentation or incomplete applications can delay approval by weeks.
+              </p>
+              <div class="bg-cyan-50 border border-cyan-200 rounded-lg p-3">
+                <p class="text-cyan-700 font-medium">Our Solution:</p>
+                <p class="text-cyan-700 text-sm">
+                  We prepare complete applications from day one and maintain relationships with city planners for fast-track review.
+                </p>
+              </div>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-lg p-6 border-t-4 border-cyan-500">
+              <div class="text-amber-500 mb-4">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"></path>
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold text-slate-900 mb-3">Unexpected Costs</h3>
+              <p class="text-slate-500 mb-4">
+                Additional requirements discovered during review can add unexpected permit fees.
+              </p>
+              <div class="bg-cyan-50 border border-cyan-200 rounded-lg p-3">
+                <p class="text-cyan-700 font-medium">Our Solution:</p>
+                <p class="text-cyan-700 text-sm">
+                  Thorough pre-application assessment identifies all requirements upfront. We provide accurate cost estimates.
+                </p>
+              </div>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-lg p-6 border-t-4 border-cyan-500">
+              <div class="text-cyan-600 mb-4">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold text-slate-900 mb-3">Revision Requests</h3>
+              <p class="text-slate-500 mb-4">
+                City may request changes to plans or additional engineering, causing further delays.
+              </p>
+              <div class="bg-cyan-50 border border-cyan-200 rounded-lg p-3">
+                <p class="text-cyan-700 font-medium">Our Solution:</p>
+                <p class="text-cyan-700 text-sm">
+                  Our in-house engineering team handles revisions quickly. We understand city requirements and design accordingly.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-gradient-to-r from-blue-600 to-indigo-600 text-white">
+      <div class="container mx-auto px-4 text-center">
+        <div class="max-w-3xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-bold mb-6">
+            Let Dryspace Handle Your Permits
+          </h2>
+          <p class="text-xl text-cyan-100 mb-8">
+            Don't let permit complexity delay your waterproofing project. We handle everything from application to final inspection - at no extra cost to you.
+          </p>
+          
+          <div class="grid md:grid-cols-3 gap-6 mb-8">
+            <div class="text-center">
+              <div class="bg-white/20 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                </svg>
+              </div>
+              <h3 class="text-lg font-bold mb-2">Complete Applications</h3>
+              <p class="text-cyan-100">All documents prepared correctly the first time</p>
+            </div>
+            <div class="text-center">
+              <div class="bg-white/20 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+              </div>
+              <h3 class="text-lg font-bold mb-2">Faster Approval</h3>
+              <p class="text-cyan-100">Industry relationships speed up the review process</p>
+            </div>
+            <div class="text-center">
+              <div class="bg-white/20 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"></path>
+                </svg>
+              </div>
+              <h3 class="text-lg font-bold mb-2">No Extra Fees</h3>
+              <p class="text-cyan-100">Permit handling included in all project quotes</p>
+            </div>
+          </div>
+
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="tel:437-545-0067" class="bg-white text-cyan-600 px-8 py-3 rounded-lg font-semibold hover:bg-cyan-50 transition-colors">
+              Call: (437) 545-0067
+            </a>
+            <a href="#contact" class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-cyan-600 transition-colors">
+              Get Free Consultation
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</BaseLayout>

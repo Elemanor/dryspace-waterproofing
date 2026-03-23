@@ -1,0 +1,60 @@
+---
+export interface Props {
+  title?: string;
+  subtitle?: string;
+  primaryCTA?: { text: string; href: string };
+  secondaryCTA?: { text: string; href: string };
+}
+
+const {
+  title = "Ready to Protect Your Home?",
+  subtitle = "Get a free inspection and quote from Toronto's most trusted waterproofing experts.",
+  primaryCTA = { text: "Schedule Free Inspection", href: "/free-inspection" },
+  secondaryCTA = { text: "Call: 437-545-0067", href: "tel:437-545-0067" },
+} = Astro.props;
+---
+
+<section class="bg-gradient-cta section-padding relative overflow-hidden">
+  <!-- Subtle pattern overlay -->
+  <div class="absolute inset-0 opacity-5">
+    <div class="absolute inset-0" style="background-image: radial-gradient(circle at 25% 50%, rgba(6,182,212,0.3) 0%, transparent 50%), radial-gradient(circle at 75% 50%, rgba(245,158,11,0.2) 0%, transparent 50%)"></div>
+  </div>
+
+  <div class="relative container mx-auto px-4">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="text-headline text-white mb-4">{title}</h2>
+      <p class="text-lg text-slate-300 mb-8">{subtitle}</p>
+
+      <div class="flex flex-wrap justify-center gap-4 mb-8">
+        {['No Obligation', 'Free Inspection', 'Same Day Booking'].map((item) => (
+          <div class="flex items-center gap-2">
+            <svg class="w-4 h-4 text-cyan-400" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+            </svg>
+            <span class="text-sm text-white/80">{item}</span>
+          </div>
+        ))}
+      </div>
+
+      <div class="flex flex-col sm:flex-row gap-4 justify-center mb-6">
+        <a href={primaryCTA.href} class="btn-primary !px-8 !py-4 !text-lg">
+          {primaryCTA.text}
+        </a>
+        <a href={secondaryCTA.href} class="btn-ghost border-2 border-white/20 !px-8 !py-4 !text-lg hover:!bg-white/10">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
+          </svg>
+          {secondaryCTA.text}
+        </a>
+      </div>
+
+      <div class="inline-flex items-center gap-2 rounded-full bg-amber-500/15 border border-amber-500/30 px-4 py-2">
+        <span class="relative flex h-2 w-2">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-2 w-2 bg-amber-500"></span>
+        </span>
+        <span class="text-amber-400 text-sm font-medium">24/7 Emergency Service Available</span>
+      </div>
+    </div>
+  </div>
+</section>

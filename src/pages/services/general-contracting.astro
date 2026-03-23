@@ -1,0 +1,576 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ContactCTA from '../../components/sections/CTA.astro';
+import ServiceSchema from '../../components/ServiceSchema.astro';
+import InternalLinks from '../../components/InternalLinks.astro';
+
+const title = "General Contracting & Project Management | Toronto | Dryspace";
+const description = "Full-service general contracting in Toronto. Complete project management, multi-trade coordination, turnkey solutions for waterproofing, foundations, and renovations.";
+
+// Service-specific FAQs for ServiceSchema
+const contractingFAQs = [
+  {
+    question: "How much does general contracting cost in Toronto?",
+    answer: "General contracting costs vary by project scope: Basement renovations $54,000-150,000, foundation projects $27,000-75,000, structural work $22,000-60,000, complete home additions $108,000-300,000. Costs include project management (10-15%), permits, inspections, all trades coordination, materials, and warranties. We provide fixed-price contracts with no hidden fees."
+  },
+  {
+    question: "How long do general contracting projects take?",
+    answer: "Timeline depends on project complexity: Basement renovations 4-8 weeks, foundation repairs 2-4 weeks, structural modifications 3-6 weeks, home additions 3-6 months. Includes planning, permits, construction, inspections, and completion. Weather, permit approval, and change orders can affect timeline. We provide detailed schedules with milestone tracking."
+  },
+  {
+    question: "What are the benefits of hiring a general contractor?",
+    answer: "General contractors provide single point of contact, trade coordination, permit management, code compliance, quality control, insurance coverage, warranty protection, schedule management, and cost control. Our licensed professionals ensure projects are completed safely, on time, and on budget with comprehensive documentation and support."
+  },
+  {
+    question: "When do I need a general contractor?",
+    answer: "General contractors are essential for: multi-trade projects, structural work, basement renovations, home additions, foundation repairs, projects requiring permits, commercial construction, and complex renovations. Required when coordinating multiple trades, managing budgets, ensuring code compliance, and providing warranty protection."
+  }
+];
+
+// Service offers (pricing tiers)
+const contractingOffers = [
+  {
+    name: "Project Management Services",
+    price: "10-15% of project cost",
+    description: "Complete project coordination including trade scheduling, permit management, quality control, progress reporting, and client communication. Single point of contact for all project aspects."
+  },
+  {
+    name: "Design-Build Services",
+    price: "Custom Quote",
+    description: "Integrated design and construction services with architect coordination, engineering, permits, construction, and project management. Streamlined process from concept to completion with fixed-price contracts."
+  },
+  {
+    name: "Turnkey Construction",
+    price: "$54,000-300,000+",
+    description: "Complete construction solutions including planning, permits, all trades, materials, inspections, and warranties. Comprehensive project delivery with 20+ years experience and $5M liability coverage."
+  }
+];
+---
+
+<Layout title={title} description={description}>
+  <ServiceSchema 
+    serviceName="General Contracting & Project Management"
+    description="Full-service general contracting in Toronto with complete project management, multi-trade coordination, and turnkey construction solutions. Licensed, insured, and experienced with residential, commercial, and institutional projects."
+    priceRange="$22,000-300,000+"
+    areaServed={['Toronto', 'Mississauga', 'Brampton', 'Vaughan', 'Markham', 'Richmond Hill', 'North York', 'Scarborough']}
+    offers={contractingOffers}
+    faqs={contractingFAQs}
+  />
+  <main>
+    <!-- Hero Section -->
+    <section class="relative py-20 bg-gradient-to-b from-blue-50 to-white">
+      <div class="container mx-auto px-6">
+        <div class="max-w-4xl mx-auto text-center">
+          <h1 class="text-4xl md:text-5xl font-bold mb-6">
+            General Contracting & Project Management
+          </h1>
+          <p class="text-xl text-slate-500 mb-8">
+            Complete Turnkey Solutions from Foundation to Finish
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="/contact" class="bg-cyan-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-cyan-700 transition">
+              Start Your Project
+            </a>
+            <a href="tel:437-545-0067" class="border-2 border-cyan-600 text-cyan-600 px-8 py-3 rounded-lg font-semibold hover:bg-cyan-50 transition">
+              📞 437-545-0067
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Overview Section -->
+    <section class="py-16 bg-slate-50">
+      <div class="container mx-auto px-6">
+        <div class="max-w-6xl mx-auto">
+          <div class="bg-white rounded-lg shadow-lg p-8 border-l-4 border-cyan-500">
+            <h2 class="text-2xl font-bold mb-6">Complete Project Solutions</h2>
+            
+            <p class="text-slate-600 mb-6">
+              As a full-service general contractor, Dryspace Waterproofing manages every aspect of your project from 
+              initial consultation to final inspection. Our experienced project managers coordinate all trades, ensure 
+              code compliance, and deliver projects on time and budget.
+            </p>
+
+            <div class="grid md:grid-cols-3 gap-6">
+              <div class="text-center">
+                <div class="bg-cyan-100 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
+                  <span class="text-3xl">📋</span>
+                </div>
+                <h3 class="font-bold mb-2">Single Point of Contact</h3>
+                <p class="text-sm text-slate-500">One project manager for all trades and coordination</p>
+              </div>
+
+              <div class="text-center">
+                <div class="bg-cyan-100 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
+                  <span class="text-3xl">🏗️</span>
+                </div>
+                <h3 class="font-bold mb-2">Licensed & Insured</h3>
+                <p class="text-sm text-slate-500">$5M liability, WSIB coverage, licensed trades</p>
+              </div>
+
+              <div class="text-center">
+                <div class="bg-cyan-100 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
+                  <span class="text-3xl">✅</span>
+                </div>
+                <h3 class="font-bold mb-2">Quality Guarantee</h3>
+                <p class="text-sm text-slate-500">Comprehensive warranties on all work performed</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="py-16">
+      <div class="container mx-auto px-6">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-3xl font-bold mb-12 text-center">General Contracting Services</h2>
+          
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="bg-white rounded-lg shadow-lg p-6">
+              <h3 class="text-xl font-bold mb-3 text-cyan-600">Foundation Projects</h3>
+              <ul class="space-y-2 mb-4">
+                <li>• Complete foundation systems</li>
+                <li>• Waterproofing & drainage</li>
+                <li>• Underpinning & reinforcement</li>
+                <li>• Excavation & backfill</li>
+                <li>• Concrete work & repairs</li>
+              </ul>
+              <p class="text-sm text-slate-500">Turnkey foundation solutions</p>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-lg p-6">
+              <h3 class="text-xl font-bold mb-3 text-cyan-600">Basement Renovations</h3>
+              <ul class="space-y-2 mb-4">
+                <li>• Complete basement finishing</li>
+                <li>• Legal basement conversions</li>
+                <li>• Separate entrances</li>
+                <li>• Plumbing & electrical</li>
+                <li>• Permits & inspections</li>
+              </ul>
+              <p class="text-sm text-slate-500">Full basement transformations</p>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-lg p-6">
+              <h3 class="text-xl font-bold mb-3 text-cyan-600">Structural Work</h3>
+              <ul class="space-y-2 mb-4">
+                <li>• Load bearing wall removal</li>
+                <li>• Beam & column installation</li>
+                <li>• Foundation repair</li>
+                <li>• Structural reinforcement</li>
+                <li>• Engineering coordination</li>
+              </ul>
+              <p class="text-sm text-slate-500">Complete structural solutions</p>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-lg p-6">
+              <h3 class="text-xl font-bold mb-3 text-cyan-600">Site Development</h3>
+              <ul class="space-y-2 mb-4">
+                <li>• Excavation & grading</li>
+                <li>• Utility connections</li>
+                <li>• Drainage systems</li>
+                <li>• Retaining walls</li>
+                <li>• Landscaping & hardscaping</li>
+              </ul>
+              <p class="text-sm text-slate-500">Complete site preparation</p>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-lg p-6">
+              <h3 class="text-xl font-bold mb-3 text-cyan-600">Water Management</h3>
+              <ul class="space-y-2 mb-4">
+                <li>• Complete drainage solutions</li>
+                <li>• Sump pump systems</li>
+                <li>• French drains</li>
+                <li>• Grading & swales</li>
+                <li>• Waterproofing systems</li>
+              </ul>
+              <p class="text-sm text-slate-500">Comprehensive water control</p>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-lg p-6">
+              <h3 class="text-xl font-bold mb-3 text-cyan-600">Emergency Services</h3>
+              <ul class="space-y-2 mb-4">
+                <li>• 24/7 emergency response</li>
+                <li>• Flood remediation</li>
+                <li>• Structural stabilization</li>
+                <li>• Temporary shoring</li>
+                <li>• Insurance coordination</li>
+              </ul>
+              <p class="text-sm text-slate-500">Rapid response team</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Project Management Section -->
+    <section class="py-16 bg-slate-50">
+      <div class="container mx-auto px-6">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-3xl font-bold mb-12 text-center">Professional Project Management</h2>
+          
+          <div class="grid md:grid-cols-2 gap-8">
+            <div class="bg-white rounded-lg shadow-lg p-6">
+              <h3 class="text-xl font-bold mb-4 text-cyan-600">Pre-Construction Services</h3>
+              <ul class="space-y-3">
+                <li class="flex items-start">
+                  <span class="text-cyan-500 mr-2">✓</span>
+                  <div>
+                    <strong>Feasibility Studies:</strong> Site analysis, cost estimates, timeline development
+                  </div>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-cyan-500 mr-2">✓</span>
+                  <div>
+                    <strong>Design Coordination:</strong> Architect & engineer collaboration
+                  </div>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-cyan-500 mr-2">✓</span>
+                  <div>
+                    <strong>Permit Management:</strong> Application, drawings, approvals
+                  </div>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-cyan-500 mr-2">✓</span>
+                  <div>
+                    <strong>Budget Development:</strong> Detailed cost breakdowns
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-lg p-6">
+              <h3 class="text-xl font-bold mb-4 text-cyan-600">Construction Management</h3>
+              <ul class="space-y-3">
+                <li class="flex items-start">
+                  <span class="text-cyan-500 mr-2">✓</span>
+                  <div>
+                    <strong>Schedule Control:</strong> Timeline management, milestone tracking
+                  </div>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-cyan-500 mr-2">✓</span>
+                  <div>
+                    <strong>Trade Coordination:</strong> Subcontractor scheduling & supervision
+                  </div>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-cyan-500 mr-2">✓</span>
+                  <div>
+                    <strong>Quality Control:</strong> Daily inspections, standards compliance
+                  </div>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-cyan-500 mr-2">✓</span>
+                  <div>
+                    <strong>Safety Management:</strong> WSIB compliance, site safety
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-lg p-6">
+              <h3 class="text-xl font-bold mb-4 text-purple-600">Communication & Reporting</h3>
+              <ul class="space-y-3">
+                <li class="flex items-start">
+                  <span class="text-purple-500 mr-2">✓</span>
+                  <div>
+                    <strong>Weekly Updates:</strong> Progress reports, photos, schedules
+                  </div>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-purple-500 mr-2">✓</span>
+                  <div>
+                    <strong>Budget Tracking:</strong> Cost reports, change order management
+                  </div>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-purple-500 mr-2">✓</span>
+                  <div>
+                    <strong>Issue Resolution:</strong> Rapid problem solving, alternatives
+                  </div>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-purple-500 mr-2">✓</span>
+                  <div>
+                    <strong>Documentation:</strong> Daily logs, inspection reports
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-lg p-6">
+              <h3 class="text-xl font-bold mb-4 text-orange-600">Post-Construction</h3>
+              <ul class="space-y-3">
+                <li class="flex items-start">
+                  <span class="text-orange-500 mr-2">✓</span>
+                  <div>
+                    <strong>Final Inspections:</strong> Municipal & quality checks
+                  </div>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-orange-500 mr-2">✓</span>
+                  <div>
+                    <strong>Deficiency Resolution:</strong> Punch list completion
+                  </div>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-orange-500 mr-2">✓</span>
+                  <div>
+                    <strong>Warranty Support:</strong> 2-year workmanship warranty
+                  </div>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-orange-500 mr-2">✓</span>
+                  <div>
+                    <strong>Documentation:</strong> As-built drawings, warranties, manuals
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="py-16">
+      <div class="container mx-auto px-6">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-3xl font-bold mb-12 text-center">Our Project Process</h2>
+          
+          <div class="space-y-6">
+            <div class="flex items-start">
+              <div class="bg-cyan-600 text-white rounded-full w-10 h-10 flex items-center justify-center mr-4 flex-shrink-0">
+                1
+              </div>
+              <div>
+                <h3 class="font-bold mb-2">Initial Consultation</h3>
+                <p class="text-slate-500">Site visit, scope definition, preliminary budget, timeline discussion. Free consultation and estimate.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start">
+              <div class="bg-cyan-600 text-white rounded-full w-10 h-10 flex items-center justify-center mr-4 flex-shrink-0">
+                2
+              </div>
+              <div>
+                <h3 class="font-bold mb-2">Planning & Design</h3>
+                <p class="text-slate-500">Detailed drawings, specifications, permits, final budget. Coordinate with engineers and architects.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start">
+              <div class="bg-cyan-600 text-white rounded-full w-10 h-10 flex items-center justify-center mr-4 flex-shrink-0">
+                3
+              </div>
+              <div>
+                <h3 class="font-bold mb-2">Contract & Mobilization</h3>
+                <p class="text-slate-500">Fixed price contract, payment schedule, mobilize equipment and crew, establish site logistics.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start">
+              <div class="bg-cyan-600 text-white rounded-full w-10 h-10 flex items-center justify-center mr-4 flex-shrink-0">
+                4
+              </div>
+              <div>
+                <h3 class="font-bold mb-2">Construction Phase</h3>
+                <p class="text-slate-500">Execute work plan, coordinate trades, daily quality control, weekly progress meetings.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start">
+              <div class="bg-cyan-600 text-white rounded-full w-10 h-10 flex items-center justify-center mr-4 flex-shrink-0">
+                5
+              </div>
+              <div>
+                <h3 class="font-bold mb-2">Quality Control</h3>
+                <p class="text-slate-500">Stage inspections, code compliance verification, deficiency correction, client walkthrough.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start">
+              <div class="bg-cyan-600 text-white rounded-full w-10 h-10 flex items-center justify-center mr-4 flex-shrink-0">
+                6
+              </div>
+              <div>
+                <h3 class="font-bold mb-2">Project Completion</h3>
+                <p class="text-slate-500">Final inspection, certificate of completion, warranty documentation, maintenance instructions.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="py-16 bg-slate-50">
+      <div class="container mx-auto px-6">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-3xl font-bold mb-12 text-center">Why Choose Dryspace as Your General Contractor</h2>
+          
+          <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="text-center">
+              <div class="bg-cyan-100 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
+                <span class="text-3xl">🏆</span>
+              </div>
+              <h3 class="font-bold mb-2">20+ Years Experience</h3>
+              <p class="text-slate-500 text-sm">Proven track record with thousands of successful projects</p>
+            </div>
+
+            <div class="text-center">
+              <div class="bg-cyan-100 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
+                <span class="text-3xl">👷</span>
+              </div>
+              <h3 class="font-bold mb-2">Licensed Trades</h3>
+              <p class="text-slate-500 text-sm">All work performed by licensed, insured professionals</p>
+            </div>
+
+            <div class="text-center">
+              <div class="bg-cyan-100 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
+                <span class="text-3xl">💰</span>
+              </div>
+              <h3 class="font-bold mb-2">Fixed Price Contracts</h3>
+              <p class="text-slate-500 text-sm">No surprises - detailed quotes with locked-in pricing</p>
+            </div>
+
+            <div class="text-center">
+              <div class="bg-cyan-100 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
+                <span class="text-3xl">📅</span>
+              </div>
+              <h3 class="font-bold mb-2">On-Time Delivery</h3>
+              <p class="text-slate-500 text-sm">Project scheduling that respects your timeline</p>
+            </div>
+          </div>
+
+          <div class="mt-12 bg-cyan-50 rounded-lg p-8">
+            <h3 class="text-xl font-bold mb-4 text-center">Our Credentials</h3>
+            <div class="grid md:grid-cols-3 gap-6 text-center">
+              <div>
+                <h4 class="font-semibold mb-2">Insurance</h4>
+                <ul class="text-sm space-y-1">
+                  <li>• $5M General Liability</li>
+                  <li>• WSIB Coverage</li>
+                  <li>• Bonding Available</li>
+                </ul>
+              </div>
+              <div>
+                <h4 class="font-semibold mb-2">Certifications</h4>
+                <ul class="text-sm space-y-1">
+                  <li>• Licensed General Contractor</li>
+                  <li>• NBC Code Compliance</li>
+                  <li>• Safety Certified</li>
+                </ul>
+              </div>
+              <div>
+                <h4 class="font-semibold mb-2">Associations</h4>
+                <ul class="text-sm space-y-1">
+                  <li>• Ontario Construction</li>
+                  <li>• Better Business Bureau</li>
+                  <li>• Local Trade Groups</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Related Construction Services -->
+    <section class="py-16 bg-cyan-50">
+      <div class="container mx-auto px-4 max-w-6xl">
+        <InternalLinks category="construction" currentPage="general-contracting" limit={6} />
+      </div>
+    </section>
+
+    <!-- Project Types -->
+    <section class="py-16">
+      <div class="container mx-auto px-6">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-3xl font-bold mb-12 text-center">Project Types We Handle</h2>
+          
+          <div class="grid md:grid-cols-2 gap-8">
+            <div class="bg-white rounded-lg shadow-lg p-6">
+              <h3 class="text-xl font-bold mb-4 text-cyan-600">Residential Projects</h3>
+              <ul class="space-y-2 text-sm">
+                <li>• Complete basement renovations</li>
+                <li>• Foundation repairs & waterproofing</li>
+                <li>• Home additions & extensions</li>
+                <li>• Structural modifications</li>
+                <li>• Legal basement conversions</li>
+                <li>• Drainage & landscaping</li>
+                <li>• Emergency repairs</li>
+              </ul>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-lg p-6">
+              <h3 class="text-xl font-bold mb-4 text-cyan-600">Commercial Projects</h3>
+              <ul class="space-y-2 text-sm">
+                <li>• Office buildouts</li>
+                <li>• Retail renovations</li>
+                <li>• Restaurant construction</li>
+                <li>• Warehouse improvements</li>
+                <li>• Parking garage waterproofing</li>
+                <li>• Building envelope repairs</li>
+                <li>• Tenant improvements</li>
+              </ul>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-lg p-6">
+              <h3 class="text-xl font-bold mb-4 text-purple-600">Multi-Unit Residential</h3>
+              <ul class="space-y-2 text-sm">
+                <li>• Condo garage waterproofing</li>
+                <li>• Balcony restoration</li>
+                <li>• Foundation repairs</li>
+                <li>• Common area renovations</li>
+                <li>• Building envelope upgrades</li>
+                <li>• Parking deck coatings</li>
+                <li>• Structural repairs</li>
+              </ul>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-lg p-6">
+              <h3 class="text-xl font-bold mb-4 text-orange-600">Institutional</h3>
+              <ul class="space-y-2 text-sm">
+                <li>• School renovations</li>
+                <li>• Hospital improvements</li>
+                <li>• Government facilities</li>
+                <li>• Church restorations</li>
+                <li>• Community centers</li>
+                <li>• Heritage buildings</li>
+                <li>• Accessibility upgrades</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-cyan-600 text-white">
+      <div class="container mx-auto px-6">
+        <div class="max-w-4xl mx-auto text-center">
+          <h2 class="text-3xl font-bold mb-6">Ready to Start Your Project?</h2>
+          <p class="text-xl mb-8">
+            From planning to completion, we manage every detail of your construction project.
+            Get a free consultation and detailed project estimate today.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="/contact" class="bg-white text-cyan-600 px-8 py-3 rounded-lg font-semibold hover:bg-slate-50 transition">
+              Get Free Estimate
+            </a>
+            <a href="/free-inspection" class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-cyan-700 transition">
+              Schedule Consultation
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ServiceAreas removed -->
+  </main>
+</Layout>

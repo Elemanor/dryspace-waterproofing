@@ -1,0 +1,206 @@
+---
+export interface Props {
+  showPyrite?: boolean;
+  application?: 'foundation' | 'retaining' | 'all';
+}
+
+const { showPyrite = false, application = 'all' } = Astro.props;
+---
+
+<div class="nbc-water-soil bg-cyan-50 rounded-lg p-6 my-8">
+  <h3 class="text-xl font-bold mb-4 flex items-center">
+    <span class="text-cyan-600 mr-2">💧</span>
+    NBC 9.4.4.3-4 Water Table & Soil Movement Requirements
+  </h3>
+
+  <!-- High Water Table Section -->
+  <div class="bg-white rounded-lg p-6 mb-6">
+    <h4 class="font-bold text-lg mb-4 text-red-600">⚠️ High Water Table Conditions</h4>
+    
+    <div class="grid md:grid-cols-2 gap-6">
+      <div>
+        <h5 class="font-semibold mb-3">Bearing Pressure Reduction</h5>
+        <div class="bg-red-50 border border-red-300 rounded p-4">
+          <p class="font-bold text-red-700 mb-2">50% Reduction Required When:</p>
+          <ul class="text-sm space-y-1">
+            <li>• Granular soil (gravel, sand, silt)</li>
+            <li>• Water table within footing width depth</li>
+            <li>• Free water reduces particle friction</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div>
+        <h5 class="font-semibold mb-3">Adjusted Bearing Capacities</h5>
+        <table class="w-full text-sm">
+          <thead class="bg-slate-50">
+            <tr>
+              <th class="px-3 py-2 text-left">Soil Type</th>
+              <th class="px-3 py-2">Normal</th>
+              <th class="px-3 py-2">High Water</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-b">
+              <td class="px-3 py-2">Dense Gravel</td>
+              <td class="px-3 py-2 text-center">150 kPa</td>
+              <td class="px-3 py-2 text-center font-bold text-red-600">75 kPa</td>
+            </tr>
+            <tr class="border-b">
+              <td class="px-3 py-2">Dense Sand</td>
+              <td class="px-3 py-2 text-center">150 kPa</td>
+              <td class="px-3 py-2 text-center font-bold text-red-600">75 kPa</td>
+            </tr>
+            <tr class="border-b">
+              <td class="px-3 py-2">Stiff Silt</td>
+              <td class="px-3 py-2 text-center">100 kPa</td>
+              <td class="px-3 py-2 text-center font-bold text-red-600">50 kPa</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="mt-4 p-3 bg-amber-50 rounded">
+      <p class="text-sm">
+        <strong>Design Note:</strong> Water table assessment required during wet season. 
+        Consider drainage systems to lower water table below footing width depth.
+      </p>
+    </div>
+  </div>
+
+  <!-- Soil Movement Section -->
+  <div class="bg-white rounded-lg p-6">
+    <h4 class="font-bold text-lg mb-4 text-amber-600">🏔️ Soil Movement Hazards</h4>
+    
+    <div class="grid md:grid-cols-3 gap-4 mb-6">
+      <!-- Moisture Movement -->
+      <div class="border-2 border-amber-200 rounded-lg p-4">
+        <h5 class="font-semibold mb-2 text-amber-700">Moisture Changes</h5>
+        <div class="text-sm space-y-2">
+          <p class="font-semibold">Clay Soil Risks:</p>
+          <ul class="space-y-1">
+            <li>• Swelling when wet</li>
+            <li>• Shrinking when dry</li>
+            <li>• Differential settlement</li>
+          </ul>
+          <p class="mt-2 text-xs bg-amber-50 p-2 rounded">
+            <strong>NBC Required:</strong> Min. 1.2m (4 ft) depth for clay foundations
+          </p>
+        </div>
+      </div>
+
+      <!-- Frost Protection -->
+      <div class="border-2 border-cyan-200 rounded-lg p-4">
+        <h5 class="font-semibold mb-2 text-cyan-700">Frost Protection</h5>
+        <div class="text-sm space-y-2">
+          <p class="font-semibold">Frost Heave Prevention:</p>
+          <ul class="space-y-1">
+            <li>• Below frost line depth</li>
+            <li>• Free-draining backfill</li>
+            <li>• Insulation barriers</li>
+          </ul>
+          <p class="mt-2 text-xs bg-cyan-50 p-2 rounded">
+            <strong>Ice Lensing:</strong> Use exterior insulation to prevent adfreezing
+          </p>
+        </div>
+      </div>
+
+      <!-- Tree Impact -->
+      <div class="border-2 border-cyan-200 rounded-lg p-4">
+        <h5 class="font-semibold mb-2 text-cyan-700">Tree Root Impact</h5>
+        <div class="text-sm space-y-2">
+          <p class="font-semibold">Safe Distances:</p>
+          <ul class="space-y-1">
+            <li>• Poplar: 1× tree height</li>
+            <li>• Willow: 1× tree height</li>
+            <li>• Oak/Maple: 0.7× height</li>
+          </ul>
+          <p class="mt-2 text-xs bg-cyan-50 p-2 rounded">
+            <strong>Risk:</strong> Roots extract moisture causing settlement
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Special Clay Types -->
+    <div class="bg-slate-50 rounded-lg p-4 mb-4">
+      <h5 class="font-semibold mb-3">Sensitive Clay Soils</h5>
+      <div class="grid md:grid-cols-2 gap-4 text-sm">
+        <div>
+          <p class="font-semibold text-red-600">Leda Clay (Ottawa/St. Lawrence)</p>
+          <ul class="space-y-1 mt-1">
+            <li>• Extreme moisture sensitivity</li>
+            <li>• Non-reversible shrinkage</li>
+            <li>• Requires special foundation design</li>
+          </ul>
+        </div>
+        <div>
+          <p class="font-semibold text-red-600">Prairie Clays (Western Canada)</p>
+          <ul class="space-y-1 mt-1">
+            <li>• High expansion potential</li>
+            <li>• Seasonal movement up to 100mm</li>
+            <li>• Deep pile foundations recommended</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    {showPyrite && (
+      <div class="bg-red-50 border-2 border-red-300 rounded-lg p-4">
+        <h5 class="font-semibold mb-3 text-red-700">⚠️ Pyrite Contamination</h5>
+        <div class="text-sm space-y-2">
+          <p>
+            Pyritic shale undergoes chemical-microbiological oxidation causing severe foundation heaving.
+          </p>
+          <div class="grid md:grid-cols-2 gap-4 mt-3">
+            <div>
+              <p class="font-semibold">Risk Indicators:</p>
+              <ul class="space-y-1">
+                <li>• Concentrations > 0.1% by weight</li>
+                <li>• Common in shale/coal deposits</li>
+                <li>• Weathering starts with air exposure</li>
+              </ul>
+            </div>
+            <div>
+              <p class="font-semibold">Required Actions:</p>
+              <ul class="space-y-1">
+                <li>• Test all backfill material</li>
+                <li>• Remove or seal pyritic material</li>
+                <li>• Never use for foundation support</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    )}
+  </div>
+
+  {(application === 'retaining' || application === 'all') && (
+    <div class="mt-6 bg-amber-50 border-2 border-amber-400 rounded-lg p-4">
+      <h4 class="font-bold mb-3 flex items-center">
+        <span class="text-xl mr-2">🧱</span>
+        Retaining Wall Special Considerations
+      </h4>
+      <div class="grid md:grid-cols-2 gap-4 text-sm">
+        <ul class="space-y-1">
+          <li>• Hydrostatic pressure relief required</li>
+          <li>• Weep holes at 8' centers minimum</li>
+          <li>• Free-draining granular backfill</li>
+          <li>• Geotextile filter fabric protection</li>
+        </ul>
+        <ul class="space-y-1">
+          <li>• Frost protection to 1.2m depth</li>
+          <li>• Drainage tile at footing level</li>
+          <li>• Waterproofing membrane required</li>
+          <li>• Engineering for walls > 4' height</li>
+        </ul>
+      </div>
+    </div>
+  )}
+
+  <div class="mt-4 text-xs text-slate-500 border-t pt-3">
+    <p><strong>Reference:</strong> NBC 2015 Part 9, Section 9.4.4.3-4 - Foundation Conditions</p>
+    <p>Professional geotechnical assessment required for sites with high water tables or expansive soils.</p>
+  </div>
+</div>

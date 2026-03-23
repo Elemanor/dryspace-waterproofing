@@ -1,0 +1,484 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import Footer from '../../components/Footer.astro';
+import ResourceImageGallery from '../../components/ResourceImageGallery.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+
+const glossaryTerms = [
+  {
+    letter: 'A',
+    terms: [
+      { 
+        term: 'Air Barrier', 
+        definition: 'A material or system that prevents air leakage through the building envelope, essential for controlling moisture and maintaining energy efficiency.' 
+      },
+      {
+        term: 'Aggregate',
+        definition: 'Granular material such as sand, gravel, or crushed stone used in concrete mixtures and drainage systems around foundations.'
+      }
+    ]
+  },
+  {
+    letter: 'B',
+    terms: [
+      {
+        term: 'Backfill',
+        definition: 'Material used to refill an excavated area around a foundation after waterproofing is complete. Should be free-draining material to prevent water accumulation.'
+      },
+      {
+        term: 'Basement Envelope',
+        definition: 'The complete system of walls, floor, and interfaces that separate the basement interior from the ground and exterior environment.'
+      },
+      {
+        term: 'Bituminous Coating',
+        definition: 'An asphalt-based waterproofing material applied to foundation walls to prevent moisture penetration.'
+      }
+    ]
+  },
+  {
+    letter: 'C',
+    terms: [
+      {
+        term: 'Capillary Action',
+        definition: 'The movement of water through porous materials against gravity, a key concern in foundation waterproofing that must be addressed with proper barriers.'
+      },
+      {
+        term: 'Cast-in-Place Concrete',
+        definition: 'Concrete poured into forms at the construction site, commonly used for foundation walls and requiring specific waterproofing treatments.'
+      },
+      {
+        term: 'Cold Joint',
+        definition: 'A joint or discontinuity formed when concrete placement is delayed, creating a potential water infiltration point that requires special sealing.'
+      },
+      {
+        term: 'Condensation',
+        definition: 'Water vapor that changes to liquid when warm air meets a cold surface, can cause moisture problems in basements if not properly managed.'
+      }
+    ]
+  },
+  {
+    letter: 'D',
+    terms: [
+      {
+        term: 'Dampproofing',
+        definition: 'Treatment of a surface or structure to resist the passage of water in the absence of hydrostatic pressure. Less comprehensive than waterproofing.'
+      },
+      {
+        term: 'Drainage Tile',
+        definition: 'Perforated pipe placed around foundation footings to collect and redirect groundwater away from the foundation.'
+      },
+      {
+        term: 'Dew Point',
+        definition: 'The temperature at which water vapor in air condenses into liquid water, critical for understanding basement moisture problems.'
+      }
+    ]
+  },
+  {
+    letter: 'E',
+    terms: [
+      {
+        term: 'Efflorescence',
+        definition: 'White, powdery deposits of water-soluble salts on concrete or masonry surfaces, indicating moisture movement through the material.'
+      },
+      {
+        term: 'Excavation',
+        definition: 'The process of removing soil to expose foundation walls for exterior waterproofing application.'
+      },
+      {
+        term: 'Exterior Insulation',
+        definition: 'Insulation placed on the outside of foundation walls, helping to prevent condensation and improve waterproofing effectiveness.'
+      }
+    ]
+  },
+  {
+    letter: 'F',
+    terms: [
+      {
+        term: 'Filter Fabric',
+        definition: 'Geotextile material placed around drainage systems to prevent fine soil particles from clogging drainage tile while allowing water to pass through.'
+      },
+      {
+        term: 'Foundation',
+        definition: 'The structural base of a building that transfers loads to the ground, requiring comprehensive waterproofing to prevent water damage.'
+      },
+      {
+        term: 'French Drain',
+        definition: 'A trench filled with gravel or rock containing a perforated pipe that redirects surface water and groundwater away from an area.'
+      },
+      {
+        term: 'Frost Line',
+        definition: 'The depth to which ground freezes in winter; foundations must extend below this line to prevent frost damage.'
+      }
+    ]
+  },
+  {
+    letter: 'G',
+    terms: [
+      {
+        term: 'Grade',
+        definition: 'The ground level around a building; proper grading slopes away from foundation to prevent water accumulation.'
+      },
+      {
+        term: 'Granular Backfill',
+        definition: 'Clean, free-draining material used to backfill around foundations to facilitate drainage and reduce hydrostatic pressure.'
+      },
+      {
+        term: 'Groundwater',
+        definition: 'Water present beneath the ground surface in soil pore spaces and fractures of rock formations.'
+      }
+    ]
+  },
+  {
+    letter: 'H',
+    terms: [
+      {
+        term: 'Hydrostatic Pressure',
+        definition: 'Force exerted by standing water against foundation walls and floors. Primary cause of basement water problems requiring professional waterproofing.'
+      },
+      {
+        term: 'Humidity',
+        definition: 'Amount of water vapor in the air; excessive basement humidity indicates moisture problems requiring remediation.'
+      },
+      {
+        term: 'Hydraulic Cement',
+        definition: 'Quick-setting cement that can set underwater, used for sealing active water leaks in foundations.'
+      }
+    ]
+  },
+  {
+    letter: 'I',
+    terms: [
+      {
+        term: 'Interior Drainage System',
+        definition: 'Drainage installed inside the basement perimeter to collect water and direct it to a sump pump.'
+      },
+      {
+        term: 'Insulation',
+        definition: 'Material used to reduce heat transfer; in basements, proper insulation helps prevent condensation and moisture problems.'
+      },
+      {
+        term: 'Injection',
+        definition: 'Process of forcing waterproofing materials (epoxy or polyurethane) into foundation cracks under pressure to seal them.'
+      }
+    ]
+  },
+  {
+    letter: 'M',
+    terms: [
+      {
+        term: 'Membrane',
+        definition: 'Continuous waterproof barrier applied to foundation walls, available in sheet or liquid-applied forms.'
+      },
+      {
+        term: 'Moisture Barrier',
+        definition: 'Material that prevents moisture transmission through walls or floors, essential for basement waterproofing.'
+      },
+      {
+        term: 'Mortar Joint',
+        definition: 'The filled gap between masonry units, a common point of water infiltration requiring proper sealing.'
+      }
+    ]
+  },
+  {
+    letter: 'P',
+    terms: [
+      {
+        term: 'Parging',
+        definition: 'Thin coat of mortar applied to masonry walls to create a smooth surface for waterproofing application.'
+      },
+      {
+        term: 'Perimeter Drain',
+        definition: 'Drainage system installed around foundation footings to collect and redirect groundwater.'
+      },
+      {
+        term: 'Polyurethane',
+        definition: 'Flexible waterproofing material injected into cracks that expands to seal against water infiltration.'
+      },
+      {
+        term: 'Positive Side Waterproofing',
+        definition: 'Waterproofing applied to the side of a surface facing the water source (exterior foundation waterproofing).'
+      }
+    ]
+  },
+  {
+    letter: 'R',
+    terms: [
+      {
+        term: 'Radon',
+        definition: 'Radioactive gas that can enter basements through foundation cracks; waterproofing helps reduce radon infiltration.'
+      },
+      {
+        term: 'Relative Humidity',
+        definition: 'The amount of moisture in air expressed as a percentage of maximum moisture air can hold at that temperature.'
+      },
+      {
+        term: 'Retaining Wall',
+        definition: 'Wall designed to resist lateral soil pressure; requires specialized waterproofing due to constant earth contact.'
+      }
+    ]
+  },
+  {
+    letter: 'S',
+    terms: [
+      {
+        term: 'Sealant',
+        definition: 'Flexible material used to seal joints and cracks against water infiltration.'
+      },
+      {
+        term: 'Soil Gas Barrier',
+        definition: 'Continuous membrane installed to prevent soil gases including radon from entering the building.'
+      },
+      {
+        term: 'Sump Pump',
+        definition: 'Pump installed in a sump pit to remove water collected by drainage systems from the basement.'
+      },
+      {
+        term: 'Subsurface Water',
+        definition: 'Water below ground level that can create hydrostatic pressure against foundations.'
+      }
+    ]
+  },
+  {
+    letter: 'V',
+    terms: [
+      {
+        term: 'Vapor Barrier',
+        definition: 'Material that resists diffusion of water vapor through walls, ceilings, and floors.'
+      },
+      {
+        term: 'Vapor Diffusion',
+        definition: 'Movement of water vapor through materials from areas of high to low vapor pressure.'
+      },
+      {
+        term: 'Ventilation',
+        definition: 'Controlled air exchange to remove excess moisture and maintain healthy indoor air quality.'
+      }
+    ]
+  },
+  {
+    letter: 'W',
+    terms: [
+      {
+        term: 'Water Table',
+        definition: 'Upper boundary of groundwater; basements below the water table require specialized waterproofing systems.'
+      },
+      {
+        term: 'Waterproofing',
+        definition: 'Treatment to prevent water penetration even under hydrostatic pressure, more comprehensive than dampproofing.'
+      },
+      {
+        term: 'Weeping Tile',
+        definition: 'Traditional term for perforated drainage pipe installed around foundation footings.'
+      },
+      {
+        term: 'Window Well',
+        definition: 'Excavated area around basement windows that requires proper drainage and waterproofing to prevent water entry.'
+      }
+    ]
+  }
+];
+---
+
+<PageLayout 
+  title="Waterproofing Terms Glossary | Professional Definitions & Guide" 
+  description="Comprehensive glossary of waterproofing, foundation, and basement terminology. Professional definitions to help understand waterproofing processes and materials."
+>
+  
+  <!-- Breadcrumbs -->
+  <div class="container mx-auto px-4 mt-4">
+    <Breadcrumbs 
+      items={[
+        { name: "Home", url: "/" },
+        { name: "Resources", url: "/resources" },
+        { name: "Waterproofing Glossary" }
+      ]}
+    />
+  </div>
+
+<!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-container">
+      <h1 class="hero-title">
+        Waterproofing Terms & Definitions
+        <span class="subtitle">Professional Glossary of Foundation & Basement Terminology</span>
+      </h1>
+      
+      <p class="hero-description">
+        Understanding waterproofing terminology helps you make informed decisions about your home's protection. 
+        Browse our comprehensive glossary of professional terms and definitions.
+      </p>
+
+      <div class="search-container">
+        <input 
+          type="text" 
+          id="glossarySearch" 
+          placeholder="Search for a term..." 
+          class="search-input"
+        />
+        <i class="fa-solid fa-search search-icon"></i>
+      </div>
+
+      <div class="quick-links">
+        <span class="quick-label">Quick Jump:</span>
+        <div class="letter-links">
+          {['A','B','C','D','E','F','G','H','I','M','P','R','S','V','W'].map(letter => (
+            <a href={`#letter-${letter}`} class="letter-link">{letter}</a>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reference Images -->
+  <section class="reference-section">
+    <div class="container">
+      <h2 class="text-4xl font-bold text-slate-900 uppercase">TECHNICAL REFERENCE DIAGRAMS</h2>
+      <div class="reference-grid">
+        <div class="reference-card border-2 border-slate-200">
+          <img 
+            src="/waterproofing manual/content/photo_2025-08-25_20-49-17.jpg" 
+            alt="Basement wall construction and dampproofing system"
+          / width="800" height="600" loading="lazy" decoding="async">
+          <p class="caption">Complete basement waterproofing system showing drainage, dampproofing, and backfill</p>
+        </div>
+        <div class="reference-card border-2 border-slate-200">
+          <img 
+            src="/waterproofing manual/content/photo_2025-08-25_20-49-15.jpg" 
+            alt="Proper drainage pipe installation"
+          / width="800" height="600" loading="lazy" decoding="async">
+          <p class="caption">Proper drainage tile installation with bedding and backfill specifications</p>
+        </div>
+        <div class="reference-card border-2 border-slate-200">
+          <img 
+            src="/waterproofing manual/content/photo_2025-08-25_20-49-13.jpg" 
+            alt="Foundation membrane and flashing details"
+          / width="800" height="600" loading="lazy" decoding="async">
+          <p class="caption">Membrane waterproofing and step flashing installation details</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Glossary Terms -->
+  <section class="glossary-section">
+    <div class="container">
+      {glossaryTerms.map(section => (
+        <div class="letter-section" id={`letter-${section.letter}`}>
+          <h2 class="letter-header">{section.letter}</h2>
+          <div class="terms-grid">
+            {section.terms.map(item => (
+              <div class="term-card border-2 border-slate-200" data-term={item.term.toLowerCase()}>
+                <h3 class="term-title">{item.term}</h3>
+                <p class="term-definition">{item.definition}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Additional Resources -->
+  <section class="resources-section">
+    <div class="container">
+      <h2 class="text-4xl font-bold text-slate-900 uppercase">ADDITIONAL TECHNICAL RESOURCES</h2>
+      <div class="resource-grid">
+        <div class="resource-card border-2 border-slate-200">
+          <img 
+            src="/waterproofing manual/content/photo_2025-08-25_20-49-12.jpg" 
+            alt="Foundation dampproofing specifications"
+          / width="800" height="600" loading="lazy" decoding="async">
+          <h3 class="text-2xl font-bold text-slate-900 uppercase">DAMPPROOFING STANDARDS</h3>
+          <p>Technical specifications for moisture barriers and foundation dampproofing per building codes</p>
+          <a href="/resources/foundation-waterproofing-guide" class="resource-link">View Guide →</a>
+        </div>
+        <div class="resource-card border-2 border-slate-200">
+          <img 
+            src="/waterproofing manual/content/photo_2025-08-25_20-49-14.jpg" 
+            alt="Basement system fundamentals"
+          / width="800" height="600" loading="lazy" decoding="async">
+          <h3 class="text-2xl font-bold text-slate-900 uppercase">BASEMENT FUNDAMENTALS</h3>
+          <p>Canadian Home Builders' Association standards for basement envelope systems</p>
+          <a href="/services/basement-waterproofing" class="resource-link">Learn More →</a>
+        </div>
+        <div class="resource-card border-2 border-slate-200">
+          <img 
+            src="/waterproofing manual/content/photo_2025-08-25_20-49-16.jpg" 
+            alt="Window well waterproofing"
+          / width="800" height="600" loading="lazy" decoding="async">
+          <h3 class="text-2xl font-bold text-slate-900 uppercase">WINDOW WELL PROTECTION</h3>
+          <p>Proper waterproofing techniques for basement windows and emergency egress</p>
+          <a href="/services/window-well-installation" class="resource-link">View Service →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+  <!-- Resource Images and Diagrams -->
+  <ResourceImageGallery resource="technical-specs" />
+
+<!-- CTA Section -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-content">
+        <h2 class="text-4xl font-bold text-slate-900 uppercase">NEED PROFESSIONAL WATERPROOFING HELP?</h2>
+        <p>Our certified experts can assess your waterproofing needs and provide solutions</p>
+        <div class="cta-actions">
+          <a href="/contact" class="btn-primary">Get Free Assessment</a>
+          <a href="tel:437-545-0067" class="btn-secondary">
+            <i class="fa-solid fa-phone"></i>
+            Call: 437-545-0067
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</PageLayout>
+
+
+
+<script>
+  // Search functionality
+  document.addEventListener('DOMContentLoaded', () => {
+    const searchInput = document.getElementById('glossarySearch');
+    const termCards = document.querySelectorAll('.term-card');
+    
+    searchInput?.addEventListener('input', (e) => {
+      const searchTerm = e.target.value.toLowerCase();
+      
+      termCards.forEach(card => {
+        const term = card.getAttribute('data-term') || '';
+        const definition = card.querySelector('.term-definition')?.textContent?.toLowerCase() || '';
+        
+        if (term.includes(searchTerm) || definition.includes(searchTerm)) {
+          card.style.display = 'block';
+          if (searchTerm.length > 0) {
+            card.classList.add('highlight');
+          } else {
+            card.classList.remove('highlight');
+          }
+        } else {
+          card.style.display = 'none';
+        }
+      });
+      
+      // Show/hide letter sections based on visible terms
+      document.querySelectorAll('.letter-section').forEach(section => {
+        const visibleTerms = section.querySelectorAll('.term-card[style="display: block"], .term-card:not([style])');
+        section.style.display = visibleTerms.length > 0 ? 'block' : 'none';
+      });
+    });
+    
+    // Smooth scroll for letter links
+    document.querySelectorAll('.letter-link').forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const target = document.querySelector(link.getAttribute('href'));
+        target?.scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+  });
+</script>

@@ -1,0 +1,292 @@
+---
+// Media Coverage Component - Shows press mentions and media appearances
+---
+
+<section class="section-secondary py-16">
+  <div class="container">
+    <div class="text-center mb-12">
+      <h2 class="h2 mb-4">As Featured In</h2>
+      <p class="lead">Trusted by Toronto's Leading Media Outlets</p>
+    </div>
+
+    <div class="media-logos">
+      <!-- CTV News -->
+      <div class="media-logo-item">
+        <div class="logo-wrapper">
+          <svg viewBox="0 0 120 40" xmlns="http://www.w3.org/2000/svg">
+            <text x="10" y="28" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#FF0000">CTV</text>
+            <text x="65" y="28" font-family="Arial, sans-serif" font-size="18" fill="#333">News</text>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Toronto Star -->
+      <div class="media-logo-item">
+        <div class="logo-wrapper">
+          <svg viewBox="0 0 140 40" xmlns="http://www.w3.org/2000/svg">
+            <text x="10" y="25" font-family="Georgia, serif" font-size="18" fill="#000">Toronto</text>
+            <text x="70" y="25" font-family="Georgia, serif" font-size="22" font-weight="bold" fill="#000">STAR</text>
+          </svg>
+        </div>
+      </div>
+
+      <!-- CP24 -->
+      <div class="media-logo-item">
+        <div class="logo-wrapper">
+          <svg viewBox="0 0 100 40" xmlns="http://www.w3.org/2000/svg">
+            <rect x="10" y="8" width="80" height="24" rx="4" fill="#FF0000"/>
+            <text x="50" y="25" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="white" text-anchor="middle">CP24</text>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Global News -->
+      <div class="media-logo-item">
+        <div class="logo-wrapper">
+          <svg viewBox="0 0 130 40" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="20" cy="20" r="10" fill="#E31E24"/>
+            <text x="40" y="25" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#333">GLOBAL</text>
+          </svg>
+        </div>
+      </div>
+
+      <!-- CBC -->
+      <div class="media-logo-item">
+        <div class="logo-wrapper">
+          <svg viewBox="0 0 100 40" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="30" cy="20" r="15" fill="#E60505"/>
+            <text x="30" y="26" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white" text-anchor="middle">CBC</text>
+            <text x="65" y="25" font-family="Arial, sans-serif" font-size="14" fill="#333">Toronto</text>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Mike Holmes -->
+      <div class="media-logo-item">
+        <div class="logo-wrapper">
+          <svg viewBox="0 0 140 40" xmlns="http://www.w3.org/2000/svg">
+            <text x="10" y="18" font-family="Arial, sans-serif" font-size="12" fill="#666">Endorsed by</text>
+            <text x="10" y="32" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#1a5490">MIKE HOLMES</text>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <!-- Featured Articles -->
+    <div class="featured-articles">
+      <h3 class="articles-title">Recent Coverage</h3>
+      <div class="articles-grid">
+        <article class="article-card">
+          <div class="article-date">Nov 2024</div>
+          <h4 class="article-title">Best Waterproofing Practices for Toronto Homes</h4>
+          <p class="article-source">CTV Morning Live</p>
+        </article>
+        <article class="article-card">
+          <div class="article-date">Oct 2024</div>
+          <h4 class="article-title">Protecting Your Basement from Fall Flooding</h4>
+          <p class="article-source">Toronto Star Home & Garden</p>
+        </article>
+        <article class="article-card">
+          <div class="article-date">Sep 2024</div>
+          <h4 class="article-title">Expert Tips: Foundation Repair Solutions</h4>
+          <p class="article-source">Global News Toronto</p>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .media-coverage-section {
+    padding: 5rem 0;
+    background: #ffffff;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .media-coverage-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #e0e0e0, transparent);
+  }
+
+  .media-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(135deg, #246191, #3a81b9);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .section-subtitle {
+    font-size: 1.125rem;
+    color: #666;
+  }
+
+  .media-logos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
+    padding: 2rem;
+    background: #f8f9fa;
+    border-radius: 16px;
+  }
+
+  .media-logo-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 60px;
+  }
+
+  .logo-wrapper {
+    filter: grayscale(100%);
+    opacity: 0.6;
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+
+  .logo-wrapper:hover {
+    filter: grayscale(0%);
+    opacity: 1;
+    transform: scale(1.05);
+  }
+
+  .logo-wrapper svg {
+    width: 100%;
+    height: auto;
+    max-width: 140px;
+  }
+
+  /* Featured Articles */
+  .featured-articles {
+    margin-top: 3rem;
+  }
+
+  .articles-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+
+  .articles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+
+  .article-card {
+    padding: 1.5rem;
+    background: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .article-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(180deg, #246191, #3a81b9);
+    transform: scaleY(0);
+    transition: transform 0.3s ease;
+  }
+
+  .article-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+  }
+
+  .article-card:hover::before {
+    transform: scaleY(1);
+  }
+
+  .article-date {
+    font-size: 0.875rem;
+    color: #999;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+  }
+
+  .article-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 0.5rem;
+    line-height: 1.4;
+  }
+
+  .article-source {
+    font-size: 0.875rem;
+    color: #246191;
+    font-weight: 500;
+  }
+
+  /* Mobile Responsive */
+  @media (max-width: 768px) {
+    .section-title {
+      font-size: 2rem;
+    }
+
+    .media-logos {
+      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+      gap: 1rem;
+      padding: 1rem;
+    }
+
+    .articles-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  /* Animations */
+  @keyframes slideInFromLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  .media-logo-item {
+    animation: slideInFromLeft 0.6s ease forwards;
+    opacity: 0;
+  }
+
+  .media-logo-item:nth-child(1) { animation-delay: 0.1s; }
+  .media-logo-item:nth-child(2) { animation-delay: 0.2s; }
+  .media-logo-item:nth-child(3) { animation-delay: 0.3s; }
+  .media-logo-item:nth-child(4) { animation-delay: 0.4s; }
+  .media-logo-item:nth-child(5) { animation-delay: 0.5s; }
+  .media-logo-item:nth-child(6) { animation-delay: 0.6s; }
+</style>

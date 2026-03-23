@@ -1,0 +1,193 @@
+---
+export interface Props {
+  showBelowGround?: boolean;
+  showAboveGround?: boolean;
+  showFormTies?: boolean;
+}
+
+const { 
+  showBelowGround = true, 
+  showAboveGround = true,
+  showFormTies = true
+} = Astro.props;
+---
+
+<div class="nbc-parging-specs bg-orange-50 rounded-lg p-6 my-8">
+  <h3 class="text-xl font-bold mb-4 flex items-center">
+    <span class="text-orange-600 mr-2">🧱</span>
+    NBC 9.15.6 Parging & Finishing Requirements
+  </h3>
+
+  <div class="bg-amber-50 border-l-4 border-cyan-500 p-4 mb-6">
+    <p class="text-sm">
+      <strong>Purpose:</strong> Parging provides an even, continuous base for dampproofing/waterproofing 
+      application and is a critical line of defense for moisture control through foundations.
+    </p>
+  </div>
+
+  {showBelowGround && (
+    <div class="bg-white rounded-lg p-6 mb-6">
+      <h4 class="font-bold mb-4 text-cyan-700">9.15.6.1 Foundation Walls Below Ground</h4>
+      
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <h5 class="font-semibold mb-3">Concrete Block Walls</h5>
+          <ul class="text-sm space-y-2">
+            <li class="flex items-start">
+              <span class="text-cyan-600 mr-2">✓</span>
+              <span>6mm (1/4") minimum thickness</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-cyan-600 mr-2">✓</span>
+              <span>Even and continuous surface</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-cyan-600 mr-2">✓</span>
+              <span>Coved over footing junction</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-cyan-600 mr-2">✓</span>
+              <span>Base for waterproofing</span>
+            </li>
+          </ul>
+        </div>
+        
+        <div>
+          <h5 class="font-semibold mb-3">Application Method</h5>
+          <ul class="text-sm space-y-2">
+            <li class="flex items-start">
+              <span class="text-cyan-600 mr-2">1.</span>
+              <span>Dampen block surface</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-cyan-600 mr-2">2.</span>
+              <span>Apply scratch coat</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-cyan-600 mr-2">3.</span>
+              <span>Finish coat when tacky</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-cyan-600 mr-2">4.</span>
+              <span>Cure before coating</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  )}
+
+  {showAboveGround && (
+    <div class="bg-cyan-50 rounded-lg p-6 mb-6">
+      <h4 class="font-bold mb-4 text-cyan-700">9.15.6.2 Foundation Walls Above Ground</h4>
+      
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <h5 class="font-semibold mb-3">Acceptable Finishes</h5>
+          <ul class="text-sm space-y-2">
+            <li class="flex items-start">
+              <span class="text-cyan-600 mr-2">✓</span>
+              <span>Tooled mortar joints</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-cyan-600 mr-2">✓</span>
+              <span>Parging application</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-cyan-600 mr-2">✓</span>
+              <span>Other suitable finish</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-cyan-600 mr-2">✓</span>
+              <span>Must prevent rain entry</span>
+            </li>
+          </ul>
+        </div>
+        
+        <div>
+          <h5 class="font-semibold mb-3">Joint Tooling Benefits</h5>
+          <ul class="text-sm space-y-2">
+            <li>• Compresses mortar</li>
+            <li>• Improves block contact</li>
+            <li>• Reduces water penetration</li>
+            <li>• Enhances appearance</li>
+            <li>• No additional material needed</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  )}
+
+  {showFormTies && (
+    <div class="bg-amber-50 rounded-lg p-6 mb-6">
+      <h4 class="font-bold mb-4 text-amber-600">9.15.6.3 Form Ties</h4>
+      
+      <div class="grid md:grid-cols-3 gap-4">
+        <div class="bg-white p-3 rounded">
+          <h5 class="font-semibold text-sm mb-2">Removal</h5>
+          <ul class="text-xs space-y-1">
+            <li>• Cut flush minimum</li>
+            <li>• Both wall faces</li>
+            <li>• Above & below grade</li>
+            <li>• Safety requirement</li>
+          </ul>
+        </div>
+        
+        <div class="bg-white p-3 rounded">
+          <h5 class="font-semibold text-sm mb-2">Sealing</h5>
+          <ul class="text-xs space-y-1">
+            <li>• Fill all holes</li>
+            <li>• Use mortar or sealant</li>
+            <li>• Smooth surface</li>
+            <li>• Waterproof compatible</li>
+          </ul>
+        </div>
+        
+        <div class="bg-white p-3 rounded">
+          <h5 class="font-semibold text-sm mb-2">Purpose</h5>
+          <ul class="text-xs space-y-1">
+            <li>• Substrate prep</li>
+            <li>• Water resistance</li>
+            <li>• Injury prevention</li>
+            <li>• Coating adhesion</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  )}
+
+  <!-- Mix Design -->
+  <div class="bg-purple-50 rounded-lg p-6">
+    <h4 class="font-bold mb-4 text-purple-700">Parging Mix Design & Application</h4>
+    
+    <div class="grid md:grid-cols-2 gap-6">
+      <div>
+        <h5 class="font-semibold mb-2 text-sm">Standard Mix Ratio</h5>
+        <div class="bg-white p-3 rounded">
+          <ul class="text-xs space-y-1">
+            <li><strong>Type S Mortar:</strong> 1:3 (cement:sand)</li>
+            <li><strong>Masonry Cement:</strong> 1:2.5-3</li>
+            <li><strong>Plasticizer:</strong> Optional for workability</li>
+            <li><strong>Fibers:</strong> Reduce cracking</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div>
+        <h5 class="font-semibold mb-2 text-sm">Application Tips</h5>
+        <ul class="text-xs space-y-1">
+          <li>• Dampen substrate first</li>
+          <li>• Apply in 2 coats</li>
+          <li>• Scratch first coat</li>
+          <li>• Moist cure 3-7 days</li>
+          <li>• Protect from freezing</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="mt-6 text-xs text-slate-500 border-t pt-3">
+    <p><strong>Reference:</strong> NBC 2015 Part 9, Section 9.15.6 - Parging and Finishing</p>
+    <p>Proper parging is essential for effective dampproofing and waterproofing systems.</p>
+  </div>
+</div>

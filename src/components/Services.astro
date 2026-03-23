@@ -1,0 +1,282 @@
+---
+const services = [
+  {
+    icon: '🏠',
+    title: 'Home Renovation',
+    description: 'Complete home transformation from top to bottom. We handle everything from structural changes to finishing touches.',
+    features: ['Custom Design', 'Structural Work', 'Interior & Exterior', 'Project Management'],
+    price: 'From $50K',
+    popular: false
+  },
+  {
+    icon: '🍳',
+    title: 'Kitchen Remodeling',
+    description: 'Create your dream kitchen with modern designs, premium materials, and expert craftsmanship.',
+    features: ['Cabinet Installation', 'Countertops', 'Plumbing & Electrical', 'Custom Islands'],
+    price: 'From $25K',
+    popular: true
+  },
+  {
+    icon: '🚿',
+    title: 'Bathroom Renovation',
+    description: 'Transform your bathroom into a luxury spa experience with high-end fixtures and finishes.',
+    features: ['Walk-in Showers', 'Custom Vanities', 'Tile Work', 'Heated Floors'],
+    price: 'From $15K',
+    popular: false
+  },
+  {
+    icon: '🏗️',
+    title: 'Basement Finishing',
+    description: 'Convert your basement into functional living space - perfect for entertainment, office, or rental income.',
+    features: ['Waterproofing', 'Framing & Drywall', 'Flooring', 'Egress Windows'],
+    price: 'From $30K',
+    popular: false
+  },
+  {
+    icon: '🔨',
+    title: 'Additions & Extensions',
+    description: 'Expand your living space with seamless home additions that match your existing architecture.',
+    features: ['Room Additions', 'Second Stories', 'Sunrooms', 'Garage Conversions'],
+    price: 'From $75K',
+    popular: false
+  },
+  {
+    icon: '🏛️',
+    title: 'Foundation Repair',
+    description: '24/7 emergency foundation repair services to protect your most valuable investment.',
+    features: ['Crack Repair', 'Waterproofing', 'Underpinning', 'Drainage Solutions'],
+    price: 'Quote Required',
+    popular: false
+  }
+];
+
+const processSteps = [
+  { number: '01', title: 'Consultation', description: 'Free in-home consultation to discuss your vision' },
+  { number: '02', title: 'Design & Quote', description: 'Detailed plans and transparent pricing' },
+  { number: '03', title: 'Construction', description: 'Expert execution with regular updates' },
+  { number: '04', title: 'Final Walkthrough', description: 'Quality inspection and warranty coverage' }
+];
+---
+
+<section id="services" class="py-24 bg-gradient-to-b from-construction-gray-950 to-black relative overflow-hidden">
+  <!-- Background Pattern -->
+  <div class="absolute inset-0 opacity-5">
+    <div class="absolute inset-0" style="background-image: url('data:image/svg+xml,%3Csvg width=\"40\" height=\"40\" viewBox=\"0 0 40 40\" xmlns=\"http://www.w3.org/2000/svg\"%3E%3Cg fill=\"%23FF6B35\" fill-opacity=\"0.5\"%3E%3Cpath d=\"M0 40L40 0H20L0 20M40 40V20L20 40\"/%3E%3C/g%3E%3C/svg%3E');"></div>
+  </div>
+
+  <div class="container mx-auto px-4 relative z-10">
+    <!-- Section Header -->
+    <div class="text-center mb-16">
+      <span class="inline-block px-4 py-2 bg-amber-500/20 border border-construction-orange/50 rounded-full text-white font-bold text-sm uppercase tracking-wider mb-4">
+        Our Services
+      </span>
+      <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+        <span class="text-white">Professional Construction</span>
+        <span class="block mt-2 bg-gradient-to-r from-construction-yellow to-construction-orange bg-clip-text text-transparent">
+          & Renovation Services
+        </span>
+      </h2>
+      <p class="text-xl text-slate-300 max-w-3xl mx-auto">
+        From small repairs to complete home transformations, we deliver exceptional craftsmanship and outstanding results on every project.
+      </p>
+    </div>
+
+    <!-- Services Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
+      {services.map((service, index) => (
+        <div 
+          class={`
+            service-card group relative bg-construction-gray-900/50 backdrop-blur-sm 
+            border border-slate-600 rounded-2xl p-8 
+            hover:border-construction-orange/50 transition-all duration-300
+            hover:transform hover:-translate-y-2 hover:shadow-2xl hover:shadow-construction-orange/10
+            ${service.popular ? 'border-construction-orange/50 shadow-xl shadow-construction-orange/10' : ''}
+          `}
+          data-delay={index * 100}
+        >
+          {service.popular && (
+            <div class="absolute -top-3 left-1/2 transform -translate-x-1/2">
+              <span class="px-4 py-1 bg-gradient-to-r from-construction-orange to-construction-yellow text-white text-xs font-bold rounded-full uppercase">
+                Most Popular
+              </span>
+            </div>
+          )}
+          
+          <!-- Icon -->
+          <div class="text-5xl mb-6 transform group-hover:scale-110 transition-transform duration-300">
+            {service.icon}
+          </div>
+          
+          <!-- Title -->
+          <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-cyan-400 transition-colors">
+            {service.title}
+          </h3>
+          
+          <!-- Description -->
+          <p class="text-slate-400 mb-6 line-clamp-3">
+            {service.description}
+          </p>
+          
+          <!-- Features -->
+          <ul class="space-y-2 mb-6">
+            {service.features.map((feature) => (
+              <li class="flex items-center text-sm text-slate-300">
+                <svg class="w-4 h-4 text-construction-yellow mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+                {feature}
+              </li>
+            ))}
+          </ul>
+          
+          <!-- Price & CTA -->
+          <div class="flex items-center justify-between pt-6 border-t border-slate-600">
+            <div>
+              <span class="text-2xl font-bold text-white">{service.price}</span>
+            </div>
+            <button class="px-4 py-2 bg-construction-gray-800 hover:bg-amber-500 text-white rounded-lg transition-all duration-300 font-semibold text-sm">
+              Get Quote
+            </button>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Process Section -->
+    <div class="bg-gradient-to-br from-construction-gray-900 to-construction-gray-800 rounded-3xl p-12 mb-16">
+      <h3 class="text-3xl font-bold text-white text-center mb-12">Our Process</h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {processSteps.map((step, index) => (
+          <div class="text-center group">
+            <div class="relative mb-6">
+              <div class="w-20 h-20 mx-auto bg-amber-500/10 rounded-full flex items-center justify-center group-hover:bg-amber-500/20 transition-colors duration-300">
+                <span class="text-3xl font-bold bg-gradient-to-r from-construction-yellow to-construction-orange bg-clip-text text-transparent">
+                  {step.number}
+                </span>
+              </div>
+              {index < processSteps.length - 1 && (
+                <div class="hidden lg:block absolute top-10 left-full w-full h-[2px] bg-gradient-to-r from-construction-orange/50 to-transparent"></div>
+              )}
+            </div>
+            <h4 class="text-xl font-bold text-white mb-2">{step.title}</h4>
+            <p class="text-slate-400 text-sm">{step.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- CTA Section -->
+    <div class="text-center bg-gradient-to-r from-construction-orange to-construction-yellow rounded-3xl p-12 relative overflow-hidden">
+      <div class="absolute inset-0 bg-black/20"></div>
+      <div class="relative z-10">
+        <h3 class="text-3xl md:text-4xl font-bold text-white mb-4">
+          Ready to Transform Your Space?
+        </h3>
+        <p class="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
+          Get a free consultation and quote for your construction project today
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="/contact" class="px-8 py-4 bg-white text-cyan-400 font-bold rounded-lg hover:bg-slate-50 transition-colors duration-300 shadow-xl">
+            Schedule Consultation
+          </a>
+          <a href="tel:+18007723377" class="px-8 py-4 bg-black/30 backdrop-blur-sm text-white font-bold rounded-lg hover:bg-black/40 transition-colors duration-300 border border-white/30">
+            <svg class="w-5 h-5 inline-block mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+            </svg>
+            Call 437-545-0067
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Trust Badges -->
+    <div class="flex flex-wrap items-center justify-center gap-8 mt-16 opacity-70">
+      <div class="flex items-center gap-2">
+        <svg class="w-6 h-6 text-construction-yellow" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+        </svg>
+        <span class="text-slate-300 font-medium">Licensed & Insured</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <span class="text-slate-300 font-medium">✓ Free Estimates</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <span class="text-slate-300 font-medium">✓ 2-Year Warranty</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <span class="text-slate-300 font-medium">✓ 24/7 Emergency Service</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Service cards will be animated via JavaScript */
+  .service-card {
+    will-change: opacity, transform;
+  }
+  
+  .animate-slide-up {
+    animation: slideUp 0.6s ease-out;
+  }
+  
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  
+  /* Hover effects */
+  .service-card:hover {
+    background: linear-gradient(135deg, rgba(255, 107, 53, 0.05), transparent);
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .service-card {
+      padding: 1.5rem;
+    }
+  }
+</style>
+
+<script>
+  // Intersection Observer for scroll animations
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  };
+  
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+        observer.unobserve(entry.target); // Stop observing once animated
+      }
+    });
+  }, observerOptions);
+  
+  // Observe all service cards
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.service-card').forEach((card, index) => {
+      // Set initial state
+      card.style.opacity = '0';
+      card.style.transform = 'translateY(30px)';
+      const delay = card.getAttribute('data-delay') || (index * 100);
+      card.style.transition = `opacity 0.6s ease-out ${delay}ms, transform 0.6s ease-out ${delay}ms`;
+      observer.observe(card);
+    });
+  });
+</script>

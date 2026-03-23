@@ -1,0 +1,940 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import ContactForm from '../../components/ContactForm.astro';
+import ResourceImageGallery from '../../components/ResourceImageGallery.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+---
+
+<PageLayout 
+  title="Foundation Problems Diagnosis Guide Toronto | Soil Movement, Settlement, Cracks | Dryspace"
+  description="Professional guide to diagnosing foundation problems in Toronto homes: soil movement, frost heaving, settlement, hydrostatic pressure, tree damage. Expert diagnostic tools and techniques."
+  keywords="foundation problems Toronto, soil movement foundation, frost heaving Toronto, foundation settlement, hydrostatic pressure, tree root foundation damage, foundation diagnosis tools"
+>
+  
+  <!-- Breadcrumbs -->
+  <div class="container mx-auto px-4 mt-4">
+    <Breadcrumbs 
+      items={[
+        { name: "Home", url: "/" },
+        { name: "Resources", url: "/resources" },
+        { name: "Foundation Problems Diagnosis" }
+      ]}
+    />
+  </div>
+
+<main class="flex-grow">
+    <!-- Hero Section -->
+    <section class="bg-red-900 text-white py-20">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="max-w-4xl">
+          <h1 class="text-4xl md:text-5xl font-bold mb-6">
+            Foundation Problems Diagnosis: Complete Toronto Guide
+          </h1>
+          <p class="text-xl mb-8 text-red-100">
+            Toronto's unique geological conditions - expansive clay soil, extreme temperature variations, and high water tables - create specific foundation challenges. Early diagnosis prevents minor issues from becoming major structural problems.
+          </p>
+          
+          <!-- Warning Signs Alert -->
+          <div class="bg-red-700 border border-red-500 p-6 rounded-lg mb-8">
+            <h3 class="text-xl font-bold mb-4 flex items-center">
+              <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.732 16.5c-.77.833.192 2.5 1.732 2.5z"></path>
+              </svg>
+              Emergency Foundation Warning Signs
+            </h3>
+            <div class="grid md:grid-cols-3 gap-4">
+              <div>
+                <h4 class="font-semibold mb-2">Immediate Danger:</h4>
+                <ul class="text-sm space-y-1">
+                  <li>• Walls bulging inward</li>
+                  <li>• Large horizontal cracks</li>
+                  <li>• Foundation settling >1"</li>
+                  <li>• Active water intrusion</li>
+                </ul>
+              </div>
+              <div>
+                <h4 class="font-semibold mb-2">Urgent Repair:</h4>
+                <ul class="text-sm space-y-1">
+                  <li>• Doors/windows sticking</li>
+                  <li>• Stair-step cracks</li>
+                  <li>• Floor sagging/bouncing</li>
+                  <li>• Basement musty odors</li>
+                </ul>
+              </div>
+              <div>
+                <h4 class="font-semibold mb-2">Monitor Closely:</h4>
+                <ul class="text-sm space-y-1">
+                  <li>• Small hairline cracks</li>
+                  <li>• Minor settlement</li>
+                  <li>• Seasonal moisture</li>
+                  <li>• Efflorescence deposits</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex flex-col md:flex-row gap-4">
+            <a href="tel:437-545-0067" class="bg-red-600 hover:bg-red-700 text-white font-bold py-4 px-8 rounded-lg text-lg transition-colors flex items-center justify-center">
+              <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+              </svg>
+              Emergency: 437-545-0067
+            </a>
+            <a href="/free-inspection" class="bg-white hover:bg-slate-50 text-red-900 font-bold py-4 px-8 rounded-lg text-lg transition-colors">
+              Free Foundation Assessment
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Primary Causes Overview -->
+    <section class="py-16 bg-white">
+      <div class="max-w-7xl mx-auto px-4">
+        <h2 class="text-3xl font-bold mb-12 text-center">Primary Causes of Foundation Problems in Toronto</h2>
+        
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+          <div class="bg-cyan-50 p-6 rounded-lg border-l-4 border-cyan-500">
+            <div class="flex items-center mb-4">
+              <div class="bg-cyan-500 p-2 rounded">
+                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path>
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold ml-3">Soil Movement</h3>
+            </div>
+            <p class="text-slate-600 mb-3">Toronto's clay soil expands up to 40% when wet, shrinks when dry. This cycle creates immense pressure on foundations.</p>
+            <div class="text-sm text-slate-500">
+              <strong>Peak Risk:</strong> Spring thaw, heavy summer rains
+            </div>
+          </div>
+
+          <div class="bg-purple-50 p-6 rounded-lg border-l-4 border-purple-500">
+            <div class="flex items-center mb-4">
+              <div class="bg-purple-500 p-2 rounded">
+                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold ml-3">Frost Heaving</h3>
+            </div>
+            <p class="text-slate-600 mb-3">Toronto temperatures can drop to -30°C, causing soil water to freeze and expand, lifting foundations.</p>
+            <div class="text-sm text-slate-500">
+              <strong>Peak Risk:</strong> January-March freeze-thaw cycles
+            </div>
+          </div>
+
+          <div class="bg-cyan-50 p-6 rounded-lg border-l-4 border-cyan-500">
+            <div class="flex items-center mb-4">
+              <div class="bg-cyan-500 p-2 rounded">
+                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path>
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold ml-3">Settlement Issues</h3>
+            </div>
+            <p class="text-slate-600 mb-3">Inadequate footings, poor compaction, or changing soil conditions cause foundations to sink unevenly.</p>
+            <div class="text-sm text-slate-500">
+              <strong>Peak Risk:</strong> First 5 years, heavy construction nearby
+            </div>
+          </div>
+
+          <div class="bg-red-50 p-6 rounded-lg border-l-4 border-red-500">
+            <div class="flex items-center mb-4">
+              <div class="bg-red-500 p-2 rounded">
+                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path>
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold ml-3">Hydrostatic Pressure</h3>
+            </div>
+            <p class="text-slate-600 mb-3">Toronto's high water table and clay soil create water pressure against foundation walls, causing cracks and leaks.</p>
+            <div class="text-sm text-slate-500">
+              <strong>Peak Risk:</strong> Spring snowmelt, heavy rainfall periods
+            </div>
+          </div>
+
+          <div class="bg-amber-50 p-6 rounded-lg border-l-4 border-cyan-500">
+            <div class="flex items-center mb-4">
+              <div class="bg-amber-500 p-2 rounded">
+                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold ml-3">Tree Root Damage</h3>
+            </div>
+            <p class="text-slate-600 mb-3">Toronto's mature trees (especially silver maples, willows) have aggressive root systems seeking water sources.</p>
+            <div class="text-sm text-slate-500">
+              <strong>Peak Risk:</strong> Drought periods, trees within 30 feet
+            </div>
+          </div>
+
+          <div class="bg-orange-50 p-6 rounded-lg border-l-4 border-orange-500">
+            <div class="flex items-center mb-4">
+              <div class="bg-orange-500 p-2 rounded">
+                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4"></path>
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold ml-3">Construction Issues</h3>
+            </div>
+            <p class="text-slate-600 mb-3">Poor workmanship, inadequate reinforcement, or substandard materials lead to premature foundation failure.</p>
+            <div class="text-sm text-slate-500">
+              <strong>Peak Risk:</strong> Boom construction periods, cut-rate contractors
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Detailed Diagnosis by Problem Type -->
+    <section class="py-16 bg-slate-50">
+      <div class="max-w-7xl mx-auto px-4">
+        <h2 class="text-3xl font-bold mb-12 text-center">Detailed Foundation Problem Diagnosis</h2>
+        
+        <div class="space-y-12">
+          
+          <!-- Soil Movement Analysis -->
+          <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+            <div class="bg-cyan-800 text-white p-6">
+              <h3 class="text-2xl font-bold mb-2">Soil Movement (Clay Expansion/Contraction)</h3>
+              <p class="text-cyan-100">Most common foundation issue in Toronto - affects 70% of homes built on clay soil</p>
+            </div>
+            <div class="p-6">
+              <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                  <h4 class="text-xl font-semibold mb-4">Visible Symptoms</h4>
+                  <div class="space-y-3">
+                    <div class="border-l-4 border-cyan-500 pl-3">
+                      <h5 class="font-semibold">Exterior Signs:</h5>
+                      <ul class="text-sm text-slate-500 mt-1 space-y-1">
+                        <li>• Foundation walls bowing inward/outward</li>
+                        <li>• Stair-step cracks in brick/block</li>
+                        <li>• Horizontal cracks mid-wall</li>
+                        <li>• Separation at wall-footing joint</li>
+                        <li>• Driveway/walkway upheaval</li>
+                      </ul>
+                    </div>
+                    <div class="border-l-4 border-cyan-500 pl-3">
+                      <h5 class="font-semibold">Interior Signs:</h5>
+                      <ul class="text-sm text-slate-500 mt-1 space-y-1">
+                        <li>• Doors/windows sticking</li>
+                        <li>• Cracks around openings</li>
+                        <li>• Basement wall cracks</li>
+                        <li>• Uneven floors</li>
+                        <li>• Nail pops in drywall</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                
+                <div>
+                  <h4 class="text-xl font-semibold mb-4">Diagnostic Techniques</h4>
+                  <div class="space-y-3">
+                    <div class="bg-slate-50 p-3 rounded">
+                      <h5 class="font-semibold mb-2">Soil Testing</h5>
+                      <ul class="text-sm space-y-1">
+                        <li><strong>Plasticity Index:</strong> Measures clay expansion potential</li>
+                        <li><strong>Moisture Content:</strong> Current vs. optimal levels</li>
+                        <li><strong>Density Test:</strong> Compaction adequacy</li>
+                        <li><strong>Chemical Analysis:</strong> Sulfate/chloride content</li>
+                      </ul>
+                    </div>
+                    <div class="bg-slate-50 p-3 rounded">
+                      <h5 class="font-semibold mb-2">Foundation Monitoring</h5>
+                      <ul class="text-sm space-y-1">
+                        <li><strong>Crack Gauges:</strong> Track movement over time</li>
+                        <li><strong>Level Surveys:</strong> Measure settlement patterns</li>
+                        <li><strong>Inclinometers:</strong> Detect wall tilting</li>
+                        <li><strong>Moisture Meters:</strong> Soil saturation levels</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                
+                <div>
+                  <h4 class="text-xl font-semibold mb-4">Risk Assessment</h4>
+                  <div class="space-y-3">
+                    <div class="bg-red-100 border border-red-300 p-3 rounded">
+                      <h5 class="font-semibold text-red-800">High Risk Indicators:</h5>
+                      <ul class="text-sm text-red-700 mt-1 space-y-1">
+                        <li>• Wall displacement >1/4 inch</li>
+                        <li>• Active crack growth</li>
+                        <li>• Multiple wall sections affected</li>
+                        <li>• Structural elements compromised</li>
+                      </ul>
+                    </div>
+                    <div class="bg-amber-50 border border-yellow-300 p-3 rounded">
+                      <h5 class="font-semibold text-amber-700">Medium Risk:</h5>
+                      <ul class="text-sm text-amber-600 mt-1 space-y-1">
+                        <li>• Hairline cracks <1/8 inch</li>
+                        <li>• Seasonal movement patterns</li>
+                        <li>• Minor door/window issues</li>
+                        <li>• Isolated problem areas</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mt-8 bg-cyan-50 p-6 rounded">
+                <h4 class="font-semibold mb-3">Toronto Clay Soil Characteristics</h4>
+                <div class="grid md:grid-cols-2 gap-6">
+                  <div>
+                    <h5 class="font-medium mb-2">Geological Properties:</h5>
+                    <ul class="text-sm space-y-1">
+                      <li><strong>Formation:</strong> Glacial Lake Iroquois deposits</li>
+                      <li><strong>Composition:</strong> 40-60% clay content</li>
+                      <li><strong>Plasticity Index:</strong> 15-35 (high expansion)</li>
+                      <li><strong>Depth:</strong> 15-50 feet in most areas</li>
+                      <li><strong>Drainage:</strong> Very poor permeability</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h5 class="font-medium mb-2">Seasonal Behavior:</h5>
+                    <ul class="text-sm space-y-1">
+                      <li><strong>Spring:</strong> Maximum expansion from snowmelt</li>
+                      <li><strong>Summer:</strong> Gradual shrinkage, cracking</li>
+                      <li><strong>Fall:</strong> Continued drying, maximum shrinkage</li>
+                      <li><strong>Winter:</strong> Frost heaving near surface</li>
+                      <li><strong>Cycle Impact:</strong> 2-4 inches of movement possible</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Frost Heaving Analysis -->
+          <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+            <div class="bg-purple-800 text-white p-6">
+              <h3 class="text-2xl font-bold mb-2">Frost Heaving</h3>
+              <p class="text-purple-100">Affects foundations with inadequate frost protection - common in pre-1960s homes</p>
+            </div>
+            <div class="p-6">
+              <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                  <h4 class="text-xl font-semibold mb-4">Identification Signs</h4>
+                  <div class="space-y-3">
+                    <div class="border-l-4 border-purple-500 pl-3">
+                      <h5 class="font-semibold">Seasonal Patterns:</h5>
+                      <ul class="text-sm text-slate-500 mt-1 space-y-1">
+                        <li>• Problems worsen in winter</li>
+                        <li>• Improve in spring/summer</li>
+                        <li>• Doors stick in cold weather</li>
+                        <li>• Cracks open/close seasonally</li>
+                      </ul>
+                    </div>
+                    <div class="border-l-4 border-purple-500 pl-3">
+                      <h5 class="font-semibold">Physical Evidence:</h5>
+                      <ul class="text-sm text-slate-500 mt-1 space-y-1">
+                        <li>• Foundation lifted above grade</li>
+                        <li>• Utility line damage from heaving</li>
+                        <li>• Cracked basement floors</li>
+                        <li>• Separated foundation sections</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                
+                <div>
+                  <h4 class="text-xl font-semibold mb-4">Diagnostic Methods</h4>
+                  <div class="space-y-3">
+                    <div class="bg-slate-50 p-3 rounded">
+                      <h5 class="font-semibold mb-2">Frost Line Analysis</h5>
+                      <ul class="text-sm space-y-1">
+                        <li><strong>Toronto Frost Line:</strong> 6 feet below grade</li>
+                        <li><strong>Foundation Depth:</strong> Measure actual vs. required</li>
+                        <li><strong>Soil Temperature:</strong> Monitor ground freezing</li>
+                        <li><strong>Insulation Assessment:</strong> Thermal protection levels</li>
+                      </ul>
+                    </div>
+                    <div class="bg-slate-50 p-3 rounded">
+                      <h5 class="font-semibold mb-2">Movement Tracking</h5>
+                      <ul class="text-sm space-y-1">
+                        <li><strong>Elevation Surveys:</strong> Measure seasonal lift</li>
+                        <li><strong>Crack Monitoring:</strong> Width changes over winter</li>
+                        <li><strong>Door/Window Function:</strong> Seasonal operation tests</li>
+                        <li><strong>Utility Connections:</strong> Service line integrity</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                
+                <div>
+                  <h4 class="text-xl font-semibold mb-4">Solution Strategies</h4>
+                  <div class="space-y-3">
+                    <div class="bg-cyan-50 border border-green-300 p-3 rounded">
+                      <h5 class="font-semibold text-cyan-700">Prevention:</h5>
+                      <ul class="text-sm text-cyan-700 mt-1 space-y-1">
+                        <li>• Foundation insulation</li>
+                        <li>• Proper drainage to prevent saturation</li>
+                        <li>• Snow management around foundation</li>
+                        <li>• Heat trace for vulnerable areas</li>
+                      </ul>
+                    </div>
+                    <div class="bg-cyan-50 border border-blue-300 p-3 rounded">
+                      <h5 class="font-semibold text-cyan-700">Repair:</h5>
+                      <ul class="text-sm text-cyan-700 mt-1 space-y-1">
+                        <li>• Foundation underpinning</li>
+                        <li>• Frost-protected footings</li>
+                        <li>• Structural reinforcement</li>
+                        <li>• Thermal barriers</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Settlement Issues Analysis -->
+          <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+            <div class="bg-cyan-800 text-white p-6">
+              <h3 class="text-2xl font-bold mb-2">Foundation Settlement Issues</h3>
+              <p class="text-cyan-100">Uneven sinking causes structural damage - requires immediate professional assessment</p>
+            </div>
+            <div class="p-6">
+              <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                  <h4 class="text-xl font-semibold mb-4">Settlement Types & Causes</h4>
+                  <div class="space-y-4">
+                    <div class="border border-slate-100 p-4 rounded">
+                      <h5 class="font-semibold mb-2 text-cyan-700">Immediate Settlement</h5>
+                      <p class="text-sm text-slate-500 mb-2">Occurs during construction due to soil compression</p>
+                      <ul class="text-sm text-slate-500 space-y-1">
+                        <li>• Poor soil compaction</li>
+                        <li>• Inadequate bearing capacity</li>
+                        <li>• Construction loads exceeding design</li>
+                        <li>• Weak or organic soil layers</li>
+                      </ul>
+                    </div>
+                    <div class="border border-slate-100 p-4 rounded">
+                      <h5 class="font-semibold mb-2 text-cyan-700">Consolidation Settlement</h5>
+                      <p class="text-sm text-slate-500 mb-2">Gradual compression of clay soils over years</p>
+                      <ul class="text-sm text-slate-500 space-y-1">
+                        <li>• Toronto clay slow drainage</li>
+                        <li>• Long-term compression</li>
+                        <li>• Can continue for decades</li>
+                        <li>• Usually uniform if soil is consistent</li>
+                      </ul>
+                    </div>
+                    <div class="border border-slate-100 p-4 rounded">
+                      <h5 class="font-semibold mb-2 text-cyan-700">Differential Settlement</h5>
+                      <p class="text-sm text-slate-500 mb-2">Uneven sinking causes structural damage</p>
+                      <ul class="text-sm text-slate-500 space-y-1">
+                        <li>• Varying soil conditions</li>
+                        <li>• Different foundation depths</li>
+                        <li>• Excavation disturbance</li>
+                        <li>• Tree root desiccation</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                
+                <div>
+                  <h4 class="text-xl font-semibold mb-4">Diagnostic Procedures</h4>
+                  <div class="space-y-4">
+                    <div class="bg-slate-50 p-4 rounded">
+                      <h5 class="font-semibold mb-2">Elevation Survey</h5>
+                      <ul class="text-sm space-y-1">
+                        <li><strong>Laser Level:</strong> Precise measurement of foundation elevation</li>
+                        <li><strong>Corner Monitoring:</strong> Track differential movement</li>
+                        <li><strong>Floor Flatness:</strong> Document interior slope</li>
+                        <li><strong>Datum Points:</strong> Establish reference for monitoring</li>
+                      </ul>
+                    </div>
+                    <div class="bg-slate-50 p-4 rounded">
+                      <h5 class="font-semibold mb-2">Structural Assessment</h5>
+                      <ul class="text-sm space-y-1">
+                        <li><strong>Load Path Analysis:</strong> How forces transfer through structure</li>
+                        <li><strong>Beam Deflection:</strong> Measure sagging or distortion</li>
+                        <li><strong>Connection Integrity:</strong> Check fastener and joint condition</li>
+                        <li><strong>Material Condition:</strong> Assess structural element health</li>
+                      </ul>
+                    </div>
+                    <div class="bg-slate-50 p-4 rounded">
+                      <h5 class="font-semibold mb-2">Geotechnical Investigation</h5>
+                      <ul class="text-sm space-y-1">
+                        <li><strong>Soil Boring:</strong> Subsurface conditions</li>
+                        <li><strong>Bearing Capacity:</strong> Soil strength testing</li>
+                        <li><strong>Consolidation Testing:</strong> Predict future settlement</li>
+                        <li><strong>Groundwater Level:</strong> Impact on soil stability</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mt-8 bg-red-50 p-6 rounded border border-red-200">
+                <h4 class="font-semibold mb-3 text-red-800">Settlement Tolerance Guidelines</h4>
+                <div class="grid md:grid-cols-3 gap-4">
+                  <div>
+                    <h5 class="font-medium mb-2">Acceptable:</h5>
+                    <ul class="text-sm space-y-1">
+                      <li>• Total settlement: <1 inch</li>
+                      <li>• Differential: <1/2 inch</li>
+                      <li>• Angular distortion: <1/300</li>
+                      <li>• No structural damage visible</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h5 class="font-medium mb-2">Concerning:</h5>
+                    <ul class="text-sm space-y-1">
+                      <li>• Total settlement: 1-2 inches</li>
+                      <li>• Differential: 1/2-1 inch</li>
+                      <li>• Angular distortion: 1/300-1/150</li>
+                      <li>• Cosmetic damage appearing</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h5 class="font-medium mb-2">Critical:</h5>
+                    <ul class="text-sm space-y-1">
+                      <li>• Total settlement: >2 inches</li>
+                      <li>• Differential: >1 inch</li>
+                      <li>• Angular distortion: >1/150</li>
+                      <li>• Structural damage evident</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hydrostatic Pressure Analysis -->
+          <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+            <div class="bg-red-800 text-white p-6">
+              <h3 class="text-2xl font-bold mb-2">Hydrostatic Pressure</h3>
+              <p class="text-red-100">Water pressure against foundation walls - major cause of basement flooding in Toronto</p>
+            </div>
+            <div class="p-6">
+              <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                  <h4 class="text-xl font-semibold mb-4">Pressure Sources & Impacts</h4>
+                  <div class="space-y-4">
+                    <div class="bg-cyan-50 border-l-4 border-cyan-500 p-4">
+                      <h5 class="font-semibold mb-2">High Water Table</h5>
+                      <p class="text-sm text-slate-500 mb-2">Toronto areas near Lake Ontario, rivers, and ravines</p>
+                      <ul class="text-sm text-slate-500 space-y-1">
+                        <li>• Seasonal water table fluctuation</li>
+                        <li>• Continuous upward pressure</li>
+                        <li>• Soil saturation effects</li>
+                        <li>• Basement floor heaving</li>
+                      </ul>
+                    </div>
+                    <div class="bg-cyan-50 border-l-4 border-cyan-500 p-4">
+                      <h5 class="font-semibold mb-2">Surface Water Accumulation</h5>
+                      <p class="text-sm text-slate-500 mb-2">Poor drainage allows water to collect against foundation</p>
+                      <ul class="text-sm text-slate-500 space-y-1">
+                        <li>• Inadequate grading</li>
+                        <li>• Clogged drainage systems</li>
+                        <li>• Roof water concentration</li>
+                        <li>• Landscaping barriers</li>
+                      </ul>
+                    </div>
+                    <div class="bg-purple-50 border-l-4 border-purple-500 p-4">
+                      <h5 class="font-semibold mb-2">Clay Soil Water Retention</h5>
+                      <p class="text-sm text-slate-500 mb-2">Toronto clay holds water, creating prolonged pressure</p>
+                      <ul class="text-sm text-slate-500 space-y-1">
+                        <li>• Very low permeability</li>
+                        <li>• Slow drainage after rain</li>
+                        <li>• Saturated soil expansion</li>
+                        <li>• Freeze-thaw pressure cycles</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                
+                <div>
+                  <h4 class="text-xl font-semibold mb-4">Diagnostic Tools & Methods</h4>
+                  <div class="space-y-4">
+                    <div class="bg-slate-50 p-4 rounded">
+                      <h5 class="font-semibold mb-2">Water Level Monitoring</h5>
+                      <ul class="text-sm space-y-1">
+                        <li><strong>Observation Wells:</strong> Track groundwater elevation</li>
+                        <li><strong>Seasonal Patterns:</strong> High/low water periods</li>
+                        <li><strong>Weather Correlation:</strong> Rainfall impact assessment</li>
+                        <li><strong>Lake Ontario Levels:</strong> Regional water table influence</li>
+                      </ul>
+                    </div>
+                    <div class="bg-slate-50 p-4 rounded">
+                      <h5 class="font-semibold mb-2">Pressure Measurement</h5>
+                      <ul class="text-sm space-y-1">
+                        <li><strong>Piezometers:</strong> Direct pressure measurement</li>
+                        <li><strong>Load Cells:</strong> Foundation wall stress</li>
+                        <li><strong>Crack Monitors:</strong> Movement from pressure cycles</li>
+                        <li><strong>Moisture Meters:</strong> Wall saturation levels</li>
+                      </ul>
+                    </div>
+                    <div class="bg-slate-50 p-4 rounded">
+                      <h5 class="font-semibold mb-2">Drainage Assessment</h5>
+                      <ul class="text-sm space-y-1">
+                        <li><strong>Percolation Tests:</strong> Soil drainage rate</li>
+                        <li><strong>Camera Inspection:</strong> Drain tile condition</li>
+                        <li><strong>Flow Testing:</strong> System capacity</li>
+                        <li><strong>Grade Survey:</strong> Surface water flow patterns</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mt-8 bg-amber-50 p-6 rounded border border-yellow-300">
+                <h4 class="font-semibold mb-3 text-amber-700">Toronto High-Risk Areas for Hydrostatic Pressure</h4>
+                <div class="grid md:grid-cols-2 gap-6">
+                  <div>
+                    <h5 class="font-medium mb-2">Geographic Risk Zones:</h5>
+                    <ul class="text-sm space-y-1">
+                      <li><strong>Lakeshore Areas:</strong> High water table, 2-4 feet below grade</li>
+                      <li><strong>Ravine Properties:</strong> Springs, seepage, seasonal flooding</li>
+                      <li><strong>Former Creeks:</strong> Buried waterways still flow underground</li>
+                      <li><strong>Low-lying Areas:</strong> Water collection zones</li>
+                      <li><strong>Fill Areas:</strong> Inconsistent drainage, settlement issues</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h5 class="font-medium mb-2">Specific Neighborhoods:</h5>
+                    <ul class="text-sm space-y-1">
+                      <li>• The Beaches, Woodbine area</li>
+                      <li>• Port lands, Distillery District</li>
+                      <li>• Etobicoke Creek valley</li>
+                      <li>• Don Valley, Taylor Creek areas</li>
+                      <li>• Humber River corridor</li>
+                      <li>• Any property near water features</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tree Root Damage Analysis -->
+          <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+            <div class="bg-amber-700 text-white p-6">
+              <h3 class="text-2xl font-bold mb-2">Tree Root Foundation Damage</h3>
+              <p class="text-amber-100">Toronto's mature urban forest creates unique foundation challenges</p>
+            </div>
+            <div class="p-6">
+              <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                  <h4 class="text-xl font-semibold mb-4">High-Risk Tree Species in Toronto</h4>
+                  <div class="space-y-3">
+                    <div class="border border-red-300 bg-red-50 p-3 rounded">
+                      <h5 class="font-semibold text-red-700 mb-2">Extremely Aggressive Roots:</h5>
+                      <ul class="text-sm text-red-600 space-y-1">
+                        <li><strong>Silver Maple:</strong> 2x tree height root spread, water-seeking</li>
+                        <li><strong>Weeping Willow:</strong> 3x tree height, extremely aggressive</li>
+                        <li><strong>Poplar Species:</strong> Fast growth, extensive shallow roots</li>
+                        <li><strong>American Elm:</strong> Large surface roots, foundation lifting</li>
+                      </ul>
+                    </div>
+                    <div class="border border-orange-300 bg-orange-50 p-3 rounded">
+                      <h5 class="font-semibold text-orange-700 mb-2">Moderate Risk:</h5>
+                      <ul class="text-sm text-orange-600 space-y-1">
+                        <li><strong>Norway Maple:</strong> Dense root mat, moisture competition</li>
+                        <li><strong>Oak Species:</strong> Deep tap roots, less lateral spread</li>
+                        <li><strong>Ash Trees:</strong> Moderate spread, drought-sensitive</li>
+                        <li><strong>Linden:</strong> Predictable growth pattern</li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  <h4 class="text-xl font-semibold mb-4 mt-6">Damage Mechanisms</h4>
+                  <div class="space-y-2">
+                    <div class="flex items-start space-x-2">
+                      <div class="w-2 h-2 bg-red-500 rounded-full mt-2"></div>
+                      <div>
+                        <h6 class="font-semibold">Physical Displacement</h6>
+                        <p class="text-sm text-slate-500">Roots grow under foundation, lifting and cracking</p>
+                      </div>
+                    </div>
+                    <div class="flex items-start space-x-2">
+                      <div class="w-2 h-2 bg-red-500 rounded-full mt-2"></div>
+                      <div>
+                        <h6 class="font-semibold">Soil Desiccation</h6>
+                        <p class="text-sm text-slate-500">Root water uptake causes clay shrinkage</p>
+                      </div>
+                    </div>
+                    <div class="flex items-start space-x-2">
+                      <div class="w-2 h-2 bg-red-500 rounded-full mt-2"></div>
+                      <div>
+                        <h6 class="font-semibold">Utility Line Penetration</h6>
+                        <p class="text-sm text-slate-500">Roots enter water/sewer lines, causing blockages</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <div>
+                  <h4 class="text-xl font-semibold mb-4">Assessment & Management</h4>
+                  <div class="space-y-4">
+                    <div class="bg-slate-50 p-4 rounded">
+                      <h5 class="font-semibold mb-2">Risk Assessment Factors</h5>
+                      <ul class="text-sm space-y-1">
+                        <li><strong>Distance Formula:</strong> Tree height = minimum safe distance</li>
+                        <li><strong>Species Factor:</strong> Multiply by 1.5-3x for aggressive species</li>
+                        <li><strong>Soil Type:</strong> Clay soil increases risk due to shrink-swell</li>
+                        <li><strong>Tree Age:</strong> Mature trees (>20 years) highest risk</li>
+                        <li><strong>Irrigation:</strong> Well-watered trees less likely to seek foundation moisture</li>
+                      </ul>
+                    </div>
+                    <div class="bg-slate-50 p-4 rounded">
+                      <h5 class="font-semibold mb-2">Investigation Methods</h5>
+                      <ul class="text-sm space-y-1">
+                        <li><strong>Air Spade:</strong> Non-destructive root location</li>
+                        <li><strong>Ground Penetrating Radar:</strong> Map root systems</li>
+                        <li><strong>Soil Auger:</strong> Check for root presence near foundation</li>
+                        <li><strong>Crack Pattern Analysis:</strong> Root damage has distinctive patterns</li>
+                      </ul>
+                    </div>
+                    <div class="bg-slate-50 p-4 rounded">
+                      <h5 class="font-semibold mb-2">Management Strategies</h5>
+                      <ul class="text-sm space-y-1">
+                        <li><strong>Root Barriers:</strong> Install 3-4 feet deep barriers</li>
+                        <li><strong>Selective Pruning:</strong> Remove problematic roots</li>
+                        <li><strong>Tree Removal:</strong> Last resort for severe damage</li>
+                        <li><strong>Irrigation Systems:</strong> Redirect water-seeking behavior</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Professional Diagnostic Tools -->
+    <section class="py-16 bg-white">
+      <div class="max-w-7xl mx-auto px-4">
+        <h2 class="text-3xl font-bold mb-12 text-center">Professional Foundation Diagnostic Tools</h2>
+        
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div class="bg-slate-50 p-6 rounded-lg">
+            <div class="flex items-center mb-4">
+              <div class="bg-cyan-500 p-2 rounded">
+                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold ml-3">Laser Level Survey</h3>
+            </div>
+            <p class="text-slate-600 mb-4">Precision measurement of foundation settlement and movement patterns.</p>
+            <div class="text-sm space-y-1">
+              <div><strong>Accuracy:</strong> ±1/16 inch</div>
+              <div><strong>Use:</strong> Settlement mapping, monitoring</div>
+              <div><strong>Cost:</strong> $800-1,500</div>
+            </div>
+          </div>
+
+          <div class="bg-slate-50 p-6 rounded-lg">
+            <div class="flex items-center mb-4">
+              <div class="bg-cyan-500 p-2 rounded">
+                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"></path>
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold ml-3">Crack Monitoring Gauges</h3>
+            </div>
+            <p class="text-slate-600 mb-4">Track crack movement over time to determine if damage is active or stable.</p>
+            <div class="text-sm space-y-1">
+              <div><strong>Sensitivity:</strong> 0.01mm movement</div>
+              <div><strong>Use:</strong> Active vs. stable cracks</div>
+              <div><strong>Cost:</strong> $50-150 per gauge</div>
+            </div>
+          </div>
+
+          <div class="bg-slate-50 p-6 rounded-lg">
+            <div class="flex items-center mb-4">
+              <div class="bg-purple-500 p-2 rounded">
+                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold ml-3">Ground Penetrating Radar</h3>
+            </div>
+            <p class="text-slate-600 mb-4">Non-destructive subsurface investigation for utilities, voids, and root systems.</p>
+            <div class="text-sm space-y-1">
+              <div><strong>Depth:</strong> Up to 10 feet</div>
+              <div><strong>Use:</strong> Utility location, void detection</div>
+              <div><strong>Cost:</strong> $2,000-4,000</div>
+            </div>
+          </div>
+
+          <div class="bg-slate-50 p-6 rounded-lg">
+            <div class="flex items-center mb-4">
+              <div class="bg-red-500 p-2 rounded">
+                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"></path>
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold ml-3">Thermal Imaging</h3>
+            </div>
+            <p class="text-slate-600 mb-4">Detect moisture intrusion, insulation gaps, and thermal bridges in foundation walls.</p>
+            <div class="text-sm space-y-1">
+              <div><strong>Resolution:</strong> 0.1°C temperature difference</div>
+              <div><strong>Use:</strong> Moisture detection, energy loss</div>
+              <div><strong>Cost:</strong> $1,200-2,500</div>
+            </div>
+          </div>
+
+          <div class="bg-slate-50 p-6 rounded-lg">
+            <div class="flex items-center mb-4">
+              <div class="bg-orange-500 p-2 rounded">
+                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"></path>
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold ml-3">Soil Penetrometer</h3>
+            </div>
+            <p class="text-slate-600 mb-4">Test soil bearing capacity and compaction levels around foundation.</p>
+            <div class="text-sm space-y-1">
+              <div><strong>Depth:</strong> Up to 6 feet</div>
+              <div><strong>Use:</strong> Bearing capacity testing</div>
+              <div><strong>Cost:</strong> $800-1,500 per test</div>
+            </div>
+          </div>
+
+          <div class="bg-slate-50 p-6 rounded-lg">
+            <div class="flex items-center mb-4">
+              <div class="bg-teal-500 p-2 rounded">
+                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122"></path>
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold ml-3">Video Inspection</h3>
+            </div>
+            <p class="text-slate-600 mb-4">Camera inspection of drain tiles, utility penetrations, and foundation condition.</p>
+            <div class="text-sm space-y-1">
+              <div><strong>Resolution:</strong> 1080p color video</div>
+              <div><strong>Use:</strong> Drain tile assessment, leak location</div>
+              <div><strong>Cost:</strong> $500-1,200</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- When to Call Professionals -->
+    <section class="py-16 bg-red-50">
+      <div class="max-w-7xl mx-auto px-4">
+        <h2 class="text-3xl font-bold mb-12 text-center">When to Call Foundation Professionals</h2>
+        
+        <div class="grid md:grid-cols-2 gap-8">
+          <div class="bg-white p-6 rounded-lg shadow">
+            <h3 class="text-xl font-bold mb-4 text-red-700">Emergency Situations</h3>
+            <p class="mb-4 text-slate-600">Call immediately - do not wait:</p>
+            <ul class="space-y-2 text-slate-600">
+              <li class="flex items-start">
+                <div class="w-2 h-2 bg-red-500 rounded-full mt-2 mr-3"></div>
+                <div><strong>Foundation walls bulging inward</strong> - structural failure risk</div>
+              </li>
+              <li class="flex items-start">
+                <div class="w-2 h-2 bg-red-500 rounded-full mt-2 mr-3"></div>
+                <div><strong>Large horizontal cracks</strong> - immediate danger of wall failure</div>
+              </li>
+              <li class="flex items-start">
+                <div class="w-2 h-2 bg-red-500 rounded-full mt-2 mr-3"></div>
+                <div><strong>Foundation settling >1 inch</strong> - major structural issue</div>
+              </li>
+              <li class="flex items-start">
+                <div class="w-2 h-2 bg-red-500 rounded-full mt-2 mr-3"></div>
+                <div><strong>Active water intrusion</strong> - flooding basement</div>
+              </li>
+              <li class="flex items-start">
+                <div class="w-2 h-2 bg-red-500 rounded-full mt-2 mr-3"></div>
+                <div><strong>Doors/windows won't open</strong> - severe structural movement</div>
+              </li>
+            </ul>
+            <div class="mt-6 bg-red-600 text-white p-4 rounded">
+              <div class="flex items-center">
+                <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                </svg>
+                <strong>Emergency: 437-545-0067</strong>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white p-6 rounded-lg shadow">
+            <h3 class="text-xl font-bold mb-4 text-orange-700">Schedule Assessment</h3>
+            <p class="mb-4 text-slate-600">Professional evaluation recommended:</p>
+            <ul class="space-y-2 text-slate-600">
+              <li class="flex items-start">
+                <div class="w-2 h-2 bg-orange-500 rounded-full mt-2 mr-3"></div>
+                <div><strong>New cracks appearing</strong> - determine if active or stable</div>
+              </li>
+              <li class="flex items-start">
+                <div class="w-2 h-2 bg-orange-500 rounded-full mt-2 mr-3"></div>
+                <div><strong>Basement moisture issues</strong> - identify source and solution</div>
+              </li>
+              <li class="flex items-start">
+                <div class="w-2 h-2 bg-orange-500 rounded-full mt-2 mr-3"></div>
+                <div><strong>Before major renovations</strong> - ensure structural integrity</div>
+              </li>
+              <li class="flex items-start">
+                <div class="w-2 h-2 bg-orange-500 rounded-full mt-2 mr-3"></div>
+                <div><strong>Buying/selling home</strong> - thorough foundation evaluation</div>
+              </li>
+              <li class="flex items-start">
+                <div class="w-2 h-2 bg-orange-500 rounded-full mt-2 mr-3"></div>
+                <div><strong>Annual inspection</strong> - preventive maintenance program</div>
+              </li>
+            </ul>
+            <div class="mt-6 bg-cyan-600 text-white p-4 rounded">
+              <div class="flex items-center">
+                <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3a2 2 0 012-2h4a2 2 0 012 2v4h3a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9a2 2 0 012-2h3z"></path>
+                </svg>
+                <strong>Free Foundation Assessment</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Expert Assessment CTA -->
+    
+  <!-- Resource Images and Diagrams -->
+  <ResourceImageGallery resource="foundation-cracks" />
+
+<section class="py-16 bg-navy-900 text-white">
+      <div class="max-w-4xl mx-auto px-4 text-center">
+        <h2 class="text-3xl font-bold mb-6">Get Professional Foundation Diagnosis</h2>
+        <p class="text-xl mb-8 text-slate-300">
+          Our P.Eng licensed structural engineers use advanced diagnostic equipment to identify foundation problems early, saving you thousands in repair costs. Over 25 years diagnosing Toronto foundation issues.
+        </p>
+        <div class="grid md:grid-cols-3 gap-6 mb-8">
+          <div class="bg-white/10 p-4 rounded">
+            <div class="text-2xl font-bold text-orange-400 mb-2">P.Eng</div>
+            <div class="text-sm">Licensed Professional Engineers</div>
+          </div>
+          <div class="bg-white/10 p-4 rounded">
+            <div class="text-2xl font-bold text-orange-400 mb-2">3,000+</div>
+            <div class="text-sm">Foundations Diagnosed</div>
+          </div>
+          <div class="bg-white/10 p-4 rounded">
+            <div class="text-2xl font-bold text-orange-400 mb-2">25+</div>
+            <div class="text-sm">Years Experience</div>
+          </div>
+        </div>
+        <div class="flex flex-col md:flex-row gap-4 justify-center">
+          <a href="tel:437-545-0067" class="bg-red-600 hover:bg-red-700 text-white font-bold py-4 px-8 rounded-lg text-lg transition-colors">
+            Emergency Diagnosis: 437-545-0067
+          </a>
+          <a href="/free-inspection" class="bg-cyan-600 hover:bg-cyan-700 text-white font-bold py-4 px-8 rounded-lg text-lg transition-colors">
+            Schedule Free Assessment
+          </a>
+        </div>
+        <p class="mt-4 text-slate-400">
+          Comprehensive written report • 25-year warranty • Licensed & insured
+        </p>
+      </div>
+    </section>
+
+    <!-- Contact Form -->
+    <ContactForm />
+  </main>
+</PageLayout>

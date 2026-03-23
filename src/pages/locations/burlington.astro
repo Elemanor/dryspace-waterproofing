@@ -1,0 +1,452 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import Hero from '../../components/sections/Hero.astro';
+import Services from '../../components/sections/Services.astro';
+import Process from '../../components/sections/Process.astro';
+import Testimonials from '../../components/sections/Testimonials.astro';
+import Stats from '../../components/sections/Stats.astro';
+import LocationImageShowcase from '../../components/LocationImageShowcase.astro';
+import InternalLinks from '../../components/InternalLinks.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import BreadcrumbSchema from '../../components/BreadcrumbSchema.astro';
+
+const pageTitle = "Waterproofing Burlington | Lakefront & Escarpment Service";
+const pageDescription = "Expert waterproofing in Burlington. Handling unique lakefront and escarpment challenges. Free consultation.";
+
+// Local area information
+const localInfo = {
+  cityName: "Local Area",
+  population: "186,000",
+  waterTable: "Variable - escarpment vs lakefront",
+  soilType: "Glacial deposits - sand over clay",
+  avgHomesAge: "35-45 years",
+  floodRisk: "Moderate - Lake Ontario influence",
+  avgRainfall: "805mm annually",
+  elevation: "75-250m above Lake Ontario",
+  geology: "Niagara Escarpment limestone bedrock"
+};
+
+// Location-specific features
+const locationFeatures = [
+  {
+    title: 'ESCARPMENT DRAINAGE SPECIALISTS',
+    description: 'Expert management of Niagara Escarpment water runoff and complex slope drainage systems.',
+    highlight: true
+  },
+  {
+    title: 'LAKEFRONT PROPERTY EXPERTS',
+    description: 'Specialized solutions for Lake Ontario moisture challenges and fluctuating water table conditions.',
+    highlight: true
+  },
+  {
+    title: 'GEOLOGICAL EXPERTISE',
+    description: 'Deep understanding of glacial deposit soil transitions from escarpment to lakeshore.',
+    highlight: true
+  },
+  {
+    title: 'ELEVATION-SPECIFIC SOLUTIONS',
+    description: 'Tailored approaches for properties from lake level to 250m escarpment heights.'
+  },
+  {
+    title: 'MATURE HOME RESTORATION',
+    description: 'Specialized techniques for 1980s-1990s construction common in Burlington.'
+  },
+  {
+    title: 'WATERSHED PROTECTION',
+    description: 'Environmental compliance for Sixteen Mile Creek and Spencer Creek watersheds.'
+  }
+];
+
+// Location-specific FAQs
+const locationFAQs = [
+  {
+    question: "How do you handle escarpment drainage issues unique to Burlington?",
+    answer: "We specialize in Niagara Escarpment drainage challenges including steep slope runoff, limestone bedrock water channeling, and elevation changes from lake level to 250m. Our solutions include specialized french drain systems and slope stabilization techniques."
+  },
+  {
+    question: "What makes lakefront properties in Burlington different for waterproofing?",
+    answer: "Burlington's Lake Ontario properties face unique challenges: fluctuating lake levels affecting groundwater, constant moisture from lake effect weather, and sandy soils that shift with water table changes. We use marine-grade waterproofing materials and specialized drainage designed for these conditions."
+  },
+  {
+    question: "How do soil conditions vary across Burlington's elevation changes?",
+    answer: "Burlington's glacial history created distinct soil zones: sandy deposits near the lake transition to clay deposits mid-elevation, with limestone bedrock exposure on the escarpment. Each zone requires different waterproofing approaches based on drainage characteristics and foundation bearing conditions."
+  },
+  {
+    question: "Do you work with Burlington's watershed protection requirements?",
+    answer: "Yes, we're fully certified for work within Sixteen Mile Creek and Spencer Creek watershed areas. We ensure all drainage solutions comply with Conservation Halton requirements and use environmentally approved materials and methods."
+  },
+  {
+    question: "What about Burlington's mature neighborhood foundation challenges?",
+    answer: "Burlington's 1980s-1990s boom created many homes now reaching the 30-40 year mark when foundation issues typically emerge. We specialize in retrofitting these homes with modern waterproofing while preserving original architectural features and working within established neighborhoods."
+  }
+];
+
+// Schema markup for local business
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": ["LocalBusiness", "HomeAndConstructionBusiness", "WaterproofingService"],
+  "name": "Dryspace Waterproofing",
+  "description": "Professional waterproofing services in Burlington. Expert basement waterproofing, foundation repair, and drainage solutions. Serving all Burlington neighborhoods with 25-year warranty protection.",
+  "telephone": "437-545-0067",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Burlington Service Area",
+    "addressLocality": "Burlington",
+    "addressRegion": "ON",
+    "postalCode": "L7L",
+    "addressCountry": "CA"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "43.3255",
+    "longitude": "-79.7990"
+  },
+  "areaServed": [
+    {
+      "@type": "City",
+      "name": "Burlington",
+      "sameAs": "https://en.wikipedia.org/wiki/Burlington,_Ontario"
+    },
+    {
+      "@type": "Place",
+      "name": "Halton Region"
+    }
+  ],
+  "serviceArea": {
+    "@type": "GeoCircle",
+    "geoMidpoint": {
+      "@type": "GeoCoordinates", 
+      "latitude": "43.3255",
+      "longitude": "-79.7990"
+    },
+    "geoRadius": "25000"
+  },
+  "openingHours": [
+    "Mo-Fr 07:00-19:00",
+    "Sa 08:00-17:00", 
+    "Su 09:00-17:00"
+  ],
+  "availableLanguage": ["English"],
+  "currenciesAccepted": "CAD",
+  "paymentAccepted": ["Cash", "Credit Card", "Debit Card", "Bank Transfer"],
+  "priceRange": "$$",
+  "url": "https://dryspacewaterproofing.com/locations/burlington",
+  "logo": "https://dryspacewaterproofing.com/images/dryspace-logo.webp",
+  "image": "https://dryspacewaterproofing.com/images/dryspace_hero_desktop.webp",
+  "sameAs": [
+    "https://www.facebook.com/dryspacewaterproofing",
+    "https://www.linkedin.com/company/dryspace-waterproofing"
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Waterproofing Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Basement Waterproofing",
+          "description": "Complete basement waterproofing solutions"
+        }
+      },
+      {
+        "@type": "Offer", 
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Foundation Repair",
+          "description": "Foundation crack repair and structural solutions"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service", 
+          "name": "Drainage Solutions",
+          "description": "French drains, sump pumps, and drainage systems"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Emergency Water Removal",
+          "description": "24/7 emergency flooding and water damage response"
+        }
+      }
+    ]
+  },
+  "review": {
+    "@type": "Review",
+    "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": "4.9",
+      "bestRating": "5"
+    },
+    "author": {
+      "@type": "Organization",
+      "name": "Dryspace Waterproofing Customers"
+    }
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "reviewCount": "150",
+    "bestRating": "5"
+  }
+};
+---
+
+<PageLayout 
+  title={pageTitle}
+  description={pageDescription}
+>
+  
+  <!-- Breadcrumbs -->
+  <div class="container mx-auto px-4 mt-4">
+    <Breadcrumbs 
+      items={[
+        { name: "Home", url: "/" },
+        { name: "Service Areas", url: "/service-areas" },
+        { name: "Burlington" }
+      ]}
+    />
+  </div>
+
+<!-- Location Hero -->
+  <Hero 
+    title="Waterproofing Burlington"
+    subtitle="Professional basement waterproofing and foundation repair serving all Burlington neighborhoods. 25-year warranty, free inspection."
+    primaryCTA={{ text: "Get Free Burlington Quote", href: "/free-inspection" }}
+    secondaryCTA={{ text: "Call: 437-545-0067", href: "tel:437-545-0067" }}
+    backgroundImage="/images/dryspace_hero_desktop.webp"
+    badge="Serving Burlington"
+  />
+
+  <!-- Internal Links -->
+  <section class="py-8 bg-white">
+    <div class="container mx-auto px-4">
+      <InternalLinks category="location" currentPage="burlington" />
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <Stats />
+
+  <!-- Local Information Section -->
+  <section class="py-16 bg-slate-50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-4xl font-bold text-slate-900 mb-4 uppercase">WATERPROOFING SERVICES IN BURLINGTON</h2>
+        
+        <div class="prose prose-lg  max-w-none">
+          <p class="text-lg text-slate-600 mb-6">
+            Burlington's location between Lake Ontario and the Niagara Escarpment creates extraordinary waterproofing challenges. From lakefront properties dealing with fluctuating water tables to escarpment homes managing steep slope drainage, our team understands the complex geology of glacial deposits transitioning from sandy lakeshore to limestone bedrock. With 186,000 residents and homes averaging 35-45 years old, foundation protection requires specialized expertise.
+          </p>
+          
+          <div class="bg-cyan-50 border-l-4 border-cyan-500 p-6 mb-8">
+            <h3 class="text-lg font-bold text-navy-900 mb-2">Burlington's Unique Geography</h3>
+            <p class="text-cyan-700 text-sm">
+              The dramatic elevation change from Lake Ontario (75m) to the Niagara Escarpment (250m) creates complex water flow patterns. 
+              Escarpment springs, seasonal runoff, and lake-effect precipitation combine with varying soil conditions to challenge traditional waterproofing approaches.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
+            <div class="bg-white border-2 border-slate-200  p-6">
+              <h3 class="text-xl font-bold text-slate-900 mb-6 uppercase">BURLINGTON QUICK FACTS</h3>
+              <ul class="space-y-2 text-slate-600 ">
+                <li class="flex justify-between items-center pb-2 border-b border-slate-100">
+                <span class="text-sm font-semibold text-slate-600 uppercase">Population</span>
+                <span class="text-sm font-bold text-slate-900">186,000</span>
+              </li>
+                <li class="flex justify-between items-center pb-2 border-b border-slate-100">
+                <span class="text-sm font-semibold text-slate-600 uppercase">Average Home Age</span>
+                <span class="text-sm font-bold text-slate-900">35-45 YEARS</span>
+              </li>
+                <li class="flex justify-between items-center pb-2 border-b border-slate-100">
+                <span class="text-sm font-semibold text-slate-600 uppercase">Annual Rainfall</span>
+                <span class="text-sm font-bold text-slate-900">805MM ANNUALLY</span>
+              </li>
+                <li class="flex justify-between items-center pb-2 border-b border-slate-100">
+                <span class="text-sm font-semibold text-slate-600 uppercase">Frost Line</span>
+                <span class="text-sm font-bold text-slate-900">1.0 METERS</span>
+              </li>
+                <li class="flex justify-between items-center pb-2 border-b border-slate-100">
+                <span class="text-sm font-semibold text-slate-600 uppercase">Flood Risk</span>
+                <span class="text-sm font-bold text-slate-900">MODERATE</span>
+              </li>
+              </ul>
+            </div>
+            
+            <div class="bg-navy-900 border-2 border-slate-200  p-6">
+              <h3 class="text-xl font-bold text-slate-900 mb-6 uppercase">BURLINGTON'S WATERPROOFING CHALLENGES</h3>
+              <ul class="space-y-2 text-slate-300">
+                <li class="text-sm text-slate-300 flex items-start">
+                <span class="mr-2 text-cyan-400">•</span>
+                <span>Niagara Escarpment limestone creates natural water channels</span>
+              </li>
+                <li class="text-sm text-slate-300 flex items-start">
+                <span class="mr-2 text-cyan-400">•</span>
+                <span>Lake Ontario influence creates fluctuating groundwater</span>
+              </li>
+                <li class="text-sm text-slate-300 flex items-start">
+                <span class="mr-2 text-cyan-400">•</span>
+                <span>Glacial soil deposits shift with seasonal moisture</span>
+              </li>
+                <li class="text-sm text-slate-300 flex items-start">
+                <span class="mr-2 text-cyan-400">•</span>
+                <span>Steep slopes concentrate spring runoff</span>
+              </li>
+                <li class="text-sm text-slate-300 flex items-start">
+                <span class="mr-2 text-cyan-400">•</span>
+                <span>Lake-effect snow creates heavy spring melts</span>
+              </li>
+                <li class="text-sm text-slate-300 flex items-start">
+                <span class="mr-2 text-cyan-400">•</span>
+                <span>Mature trees near foundations create root infiltration</span>
+              </li>
+              </ul>
+            </div>
+          </div>
+
+          <h3 class="text-2xl font-bold mt-8 mb-4">Burlington Neighborhoods & Their Unique Challenges</h3>
+          <p class="mb-6">
+            Each Burlington neighborhood faces distinct waterproofing challenges based on elevation, soil type, and proximity to water features:
+          </p>
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+            <div class="bg-white p-4 border border-slate-100 rounded">
+              <h4 class="font-bold text-slate-900 mb-2">ALDERSHOT (Lakefront)</h4>
+              <p class="text-sm text-slate-500">Sandy soils, fluctuating water table, Lake Ontario influence</p>
+            </div>
+            <div class="bg-white p-4 border border-slate-100 rounded">
+              <h4 class="font-bold text-slate-900 mb-2">BRANT HILLS (Mid-Escarpment)</h4>
+              <p class="text-sm text-slate-500">Clay deposits, spring water seepage, slope drainage issues</p>
+            </div>
+            <div class="bg-white p-4 border border-slate-100 rounded">
+              <h4 class="font-bold text-slate-900 mb-2">TYANDAGA (Upper Escarpment)</h4>
+              <p class="text-sm text-slate-500">Limestone bedrock, natural springs, steep slope runoff</p>
+            </div>
+            <div class="bg-white p-4 border border-slate-100 rounded">
+              <h4 class="font-bold text-slate-900 mb-2">MILLCROFT (Creek Valley)</h4>
+              <p class="text-sm text-slate-500">Sixteen Mile Creek proximity, seasonal flooding risk</p>
+            </div>
+          </div>
+          
+          <div class="flex flex-wrap gap-2">
+            {["Aldershot","Roseland","Brant Hills","Tyandaga","Millcroft","Palmer","Orchard","Headon Forest"].map((neighborhood) => (
+              <span class="border-2 border-slate-200 px-3 py-1 text-sm">
+                {neighborhood}
+              </span>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <Services />
+
+  <!-- Location Features -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl font-bold text-slate-900 mb-4 uppercase">WHY CHOOSE DRYSPACE IN BURLINGTON</h2>
+        <p class="text-lg text-slate-600 max-w-3xl mx-auto">
+          Local expertise combined with industry-leading warranties and service
+        </p>
+      </div>
+      
+      <!-- Highlighted Features -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+        {locationFeatures.filter(f => f.highlight).map((feature) => (
+          <div class="bg-amber-500 border-2 border-slate-700 p-6">
+            <h3 class="text-lg font-bold text-slate-900 mb-3 uppercase">{feature.title}</h3>
+            <p class="text-sm text-slate-900">{feature.description}</p>
+          </div>
+        ))}
+      </div>
+      
+      <!-- Regular Features -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {locationFeatures.filter(f => !f.highlight).map((feature) => (
+          <div class="bg-white border-2 border-slate-200 p-6 hover:border-slate-300 transition-colors">
+            <h3 class="text-lg font-bold text-slate-900 mb-3 uppercase">{feature.title}</h3>
+            <p class="text-sm text-slate-600">{feature.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Process -->
+  <Process />
+
+
+  <!-- Location Image Showcase -->
+  <LocationImageShowcase city="Burlington" />
+
+  <!-- Testimonials -->
+  <Testimonials />
+
+  <!-- FAQ Section -->
+  <section class="py-16 bg-slate-50">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl font-bold text-slate-900 mb-4 uppercase">BURLINGTON WATERPROOFING FAQS</h2>
+        <p class="text-lg text-slate-600">Common questions from Burlington homeowners</p>
+      </div>
+      
+      <div class="max-w-4xl mx-auto">
+        {locationFAQs.map((faq, index) => (
+          <details class="mb-4 border-2 border-slate-200 bg-white">
+            <summary class="cursor-pointer p-6 hover:bg-slate-50 transition-colors">
+              <div class="flex items-center justify-between">
+                <h3 class="text-lg font-bold text-slate-900 uppercase pr-4">{faq.question}</h3>
+                <span class="text-slate-400 flex-shrink-0 text-2xl">+</span>
+              </div>
+            </summary>
+            <div class="px-6 pb-6 pt-0">
+              <p class="text-slate-600">{faq.answer}</p>
+            </div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-16 bg-navy-900">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-4xl font-bold text-slate-900 mb-4 uppercase">PROTECT YOUR BURLINGTON PROPERTY</h2>
+        <p class="text-lg text-slate-300 mb-8">
+          Whether your home sits along Lake Ontario's shore or high on the Niagara Escarpment, we have the specialized expertise to protect your investment from Burlington's unique water challenges.
+        </p>
+        
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a 
+            href="/free-inspection"
+            class="bg-amber-500 text-black px-8 py-4 text-lg font-bold hover:bg-amber-400 transition-colors uppercase"
+          >
+            Get Escarpment-Specialized Assessment
+          </a>
+          <a 
+            href="/contact"
+            class="border-2 border-white text-slate-900 px-8 py-4 text-lg font-bold hover:bg-white hover:text-black transition-colors uppercase"
+          >
+            Request Quote
+          </a>
+        </div>
+        
+        <div class="mt-8 inline-flex items-center text-cyan-400">
+          <span class="text-sm font-bold uppercase">24/7 Emergency Service Available</span>
+        </div>
+      </div>
+    </div>
+  </section>
+</PageLayout>
+
+<script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)}>
+<BreadcrumbSchema items={[{name: 'Home', url: '/'}, {name: 'Locations', url: '/locations'}, {name: 'Burlington'}]} />

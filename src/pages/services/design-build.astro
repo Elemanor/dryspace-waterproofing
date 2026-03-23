@@ -1,0 +1,669 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ContactCTA from '../../components/sections/CTA.astro';
+import ServiceSchema from '../../components/ServiceSchema.astro';
+import InternalLinks from '../../components/InternalLinks.astro';
+
+const title = "Turnkey Design-Build Solutions | Office Fit-Out | Toronto";
+const description = "Complete turnkey design-build services in Toronto. Office fit-outs, commercial renovations, basement conversions. From concept to completion - one contract, one team.";
+
+// Service-specific FAQs for ServiceSchema
+const designBuildFAQs = [
+  {
+    question: "How much do design-build services cost in Toronto?",
+    answer: "Design-build costs vary by project type: Office fit-outs $85-150/sq ft, retail renovations $100-200/sq ft, restaurant buildouts $150-300/sq ft, basement conversions $54,000-150,000, and residential additions $200-400/sq ft. Costs include design, permits, construction, project management, and warranties. Fixed-price contracts eliminate change order surprises."
+  },
+  {
+    question: "How long does a design-build project take?",
+    answer: "Design-build timeline depends on scope: Office fit-outs 6-12 weeks, retail renovations 8-16 weeks, restaurant construction 12-20 weeks, basement conversions 6-12 weeks. Design-build process saves 20-30% time compared to traditional design-bid-build by overlapping design and construction phases. Timeline includes permits and approvals."
+  },
+  {
+    question: "What are the benefits of design-build services?",
+    answer: "Design-build offers single point accountability, faster project delivery (20-30% time savings), cost certainty with fixed pricing, streamlined communication, integrated team collaboration, reduced change orders, quality assurance, and comprehensive warranties. One contract covers entire project from concept to completion."
+  },
+  {
+    question: "When should I choose design-build services?",
+    answer: "Design-build is ideal for: complex projects requiring coordination, fast-track schedules, projects with fixed budgets, commercial renovations, office fit-outs, retail buildouts, restaurant construction, and when you want single-source accountability. Perfect when design and construction expertise must work together from day one."
+  }
+];
+
+// Service offers (pricing tiers)
+const designBuildOffers = [
+  {
+    name: "Office Fit-Out Solutions",
+    price: "$85-150/sq ft",
+    description: "Complete office transformation including space planning, partition walls, MEP systems, flooring, ceiling, custom millwork, technology integration, and after-hours scheduling to minimize business disruption."
+  },
+  {
+    name: "Commercial Renovation",
+    price: "$100-300/sq ft",
+    description: "Full commercial buildouts including retail spaces, restaurants, medical offices, and specialty facilities. Design, permits, construction, MEP systems, finishes, and compliance with accessibility and fire codes."
+  },
+  {
+    name: "Turnkey Project Management",
+    price: "Custom Quote",
+    description: "End-to-end project delivery with integrated design team, construction management, permit coordination, trade scheduling, quality control, and single-source warranty. Fixed-price contracts with guaranteed timelines."
+  }
+];
+---
+
+<Layout title={title} description={description}>
+  <ServiceSchema 
+    serviceName="Turnkey Design-Build Solutions"
+    description="Complete turnkey design-build services in Toronto including office fit-outs, commercial renovations, and basement conversions. Integrated design and construction teams deliver faster, more cost-effective solutions with single-source accountability."
+    priceRange="$85-400/sq ft"
+    areaServed={['Toronto', 'Mississauga', 'Brampton', 'Vaughan', 'Markham', 'Richmond Hill', 'North York', 'Scarborough']}
+    offers={designBuildOffers}
+    faqs={designBuildFAQs}
+  />
+  <main>
+    <!-- Hero Section -->
+    <section class="relative py-20 bg-gradient-to-b from-purple-50 to-white">
+      <div class="container mx-auto px-6">
+        <div class="max-w-4xl mx-auto text-center">
+          <h1 class="text-4xl md:text-5xl font-bold mb-6">
+            Turnkey Design-Build Solutions
+          </h1>
+          <p class="text-xl text-slate-500 mb-8">
+            From Concept to Completion - One Team, One Contract, One Vision
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="/contact" class="bg-purple-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-purple-700 transition">
+              Start Your Project
+            </a>
+            <a href="tel:437-545-0067" class="border-2 border-purple-600 text-purple-600 px-8 py-3 rounded-lg font-semibold hover:bg-purple-50 transition">
+              📞 437-545-0067
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Design-Build Advantage -->
+    <section class="py-16 bg-slate-50">
+      <div class="container mx-auto px-6">
+        <div class="max-w-6xl mx-auto">
+          <div class="bg-white rounded-lg shadow-lg p-8 border-l-4 border-purple-500">
+            <h2 class="text-2xl font-bold mb-6">The Design-Build Advantage</h2>
+            
+            <p class="text-slate-600 mb-6">
+              Our turnkey design-build approach streamlines your project from initial concept through final completion. 
+              With integrated design and construction teams, we deliver faster, more cost-effective solutions while 
+              maintaining single-source accountability for your entire project.
+            </p>
+
+            <div class="grid md:grid-cols-4 gap-6">
+              <div class="text-center">
+                <div class="bg-purple-100 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
+                  <span class="text-3xl">🎯</span>
+                </div>
+                <h3 class="font-bold mb-2">Single Point Accountability</h3>
+                <p class="text-sm text-slate-500">One contract, one team responsible for everything</p>
+              </div>
+
+              <div class="text-center">
+                <div class="bg-purple-100 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
+                  <span class="text-3xl">⚡</span>
+                </div>
+                <h3 class="font-bold mb-2">Faster Delivery</h3>
+                <p class="text-sm text-slate-500">Design and construction overlap saves 20-30% time</p>
+              </div>
+
+              <div class="text-center">
+                <div class="bg-purple-100 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
+                  <span class="text-3xl">💰</span>
+                </div>
+                <h3 class="font-bold mb-2">Cost Certainty</h3>
+                <p class="text-sm text-slate-500">Fixed price from day one, no change order surprises</p>
+              </div>
+
+              <div class="text-center">
+                <div class="bg-purple-100 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
+                  <span class="text-3xl">🏆</span>
+                </div>
+                <h3 class="font-bold mb-2">Quality Assurance</h3>
+                <p class="text-sm text-slate-500">Integrated team ensures design intent is achieved</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Office Fit-Out Section -->
+    <section class="py-16">
+      <div class="container mx-auto px-6">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-3xl font-bold mb-12 text-center">Commercial Office Fit-Out Services</h2>
+          
+          <div class="bg-gradient-to-r from-blue-50 to-purple-50 rounded-lg p-8 mb-12">
+            <div class="grid md:grid-cols-2 gap-8">
+              <div>
+                <h3 class="text-xl font-bold mb-4">Complete Office Solutions</h3>
+                <p class="text-slate-600 mb-4">
+                  Transform your workspace with our comprehensive office fit-out services. From open-plan designs to 
+                  executive suites, we create productive environments that reflect your brand and culture.
+                </p>
+                <ul class="space-y-2">
+                  <li class="flex items-start">
+                    <span class="text-purple-600 mr-2">✓</span>
+                    <span>Space planning & optimization</span>
+                  </li>
+                  <li class="flex items-start">
+                    <span class="text-purple-600 mr-2">✓</span>
+                    <span>3D visualization & virtual walkthroughs</span>
+                  </li>
+                  <li class="flex items-start">
+                    <span class="text-purple-600 mr-2">✓</span>
+                    <span>Minimal business disruption</span>
+                  </li>
+                  <li class="flex items-start">
+                    <span class="text-purple-600 mr-2">✓</span>
+                    <span>After-hours & weekend work available</span>
+                  </li>
+                </ul>
+              </div>
+              
+              <div>
+                <h3 class="text-xl font-bold mb-4">Office Fit-Out Components</h3>
+                <div class="grid grid-cols-2 gap-3">
+                  <div class="bg-white rounded p-3">
+                    <h4 class="font-semibold text-sm mb-2">Interior Construction</h4>
+                    <ul class="text-xs space-y-1">
+                      <li>• Partition walls</li>
+                      <li>• Glass offices</li>
+                      <li>• Meeting rooms</li>
+                      <li>• Reception areas</li>
+                    </ul>
+                  </div>
+                  <div class="bg-white rounded p-3">
+                    <h4 class="font-semibold text-sm mb-2">MEP Systems</h4>
+                    <ul class="text-xs space-y-1">
+                      <li>• HVAC upgrades</li>
+                      <li>• Electrical & data</li>
+                      <li>• Plumbing fixtures</li>
+                      <li>• Fire protection</li>
+                    </ul>
+                  </div>
+                  <div class="bg-white rounded p-3">
+                    <h4 class="font-semibold text-sm mb-2">Finishes</h4>
+                    <ul class="text-xs space-y-1">
+                      <li>• Flooring systems</li>
+                      <li>• Ceiling grids</li>
+                      <li>• Wall finishes</li>
+                      <li>• Custom millwork</li>
+                    </ul>
+                  </div>
+                  <div class="bg-white rounded p-3">
+                    <h4 class="font-semibold text-sm mb-2">Technology</h4>
+                    <ul class="text-xs space-y-1">
+                      <li>• AV systems</li>
+                      <li>• Access control</li>
+                      <li>• Network infrastructure</li>
+                      <li>• Smart building tech</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Office Types -->
+          <div class="grid md:grid-cols-3 gap-6">
+            <div class="bg-white rounded-lg shadow-lg p-6">
+              <h3 class="text-lg font-bold mb-3 text-cyan-600">Corporate Offices</h3>
+              <ul class="text-sm space-y-2">
+                <li>• Executive suites</li>
+                <li>• Open plan workspaces</li>
+                <li>• Boardrooms & conference</li>
+                <li>• Employee amenities</li>
+                <li>• Reception & lobbies</li>
+              </ul>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-lg p-6">
+              <h3 class="text-lg font-bold mb-3 text-cyan-600">Medical & Dental</h3>
+              <ul class="text-sm space-y-2">
+                <li>• Exam rooms</li>
+                <li>• Procedure rooms</li>
+                <li>• Reception & waiting</li>
+                <li>• Specialized ventilation</li>
+                <li>• Compliance standards</li>
+              </ul>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-lg p-6">
+              <h3 class="text-lg font-bold mb-3 text-purple-600">Tech & Creative</h3>
+              <ul class="text-sm space-y-2">
+                <li>• Collaborative spaces</li>
+                <li>• Server rooms</li>
+                <li>• Creative studios</li>
+                <li>• Flexible workstations</li>
+                <li>• Recreational areas</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Turnkey Services -->
+    <section class="py-16 bg-slate-50">
+      <div class="container mx-auto px-6">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-3xl font-bold mb-12 text-center">Complete Turnkey Services</h2>
+          
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="bg-white rounded-lg shadow-lg p-6">
+              <div class="text-3xl mb-4">🎨</div>
+              <h3 class="text-xl font-bold mb-3 text-purple-600">Design Services</h3>
+              <ul class="space-y-2 text-sm">
+                <li>• Conceptual design</li>
+                <li>• Space planning</li>
+                <li>• 3D rendering & visualization</li>
+                <li>• Interior design</li>
+                <li>• Material selection</li>
+                <li>• Furniture planning</li>
+              </ul>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-lg p-6">
+              <div class="text-3xl mb-4">📐</div>
+              <h3 class="text-xl font-bold mb-3 text-cyan-600">Engineering</h3>
+              <ul class="space-y-2 text-sm">
+                <li>• Structural engineering</li>
+                <li>• MEP design</li>
+                <li>• Load calculations</li>
+                <li>• HVAC systems</li>
+                <li>• Electrical & lighting</li>
+                <li>• Plumbing design</li>
+              </ul>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-lg p-6">
+              <div class="text-3xl mb-4">📋</div>
+              <h3 class="text-xl font-bold mb-3 text-cyan-600">Permitting</h3>
+              <ul class="space-y-2 text-sm">
+                <li>• Building permits</li>
+                <li>• Zoning compliance</li>
+                <li>• Code review</li>
+                <li>• Drawing preparation</li>
+                <li>• Municipal liaison</li>
+                <li>• Inspection coordination</li>
+              </ul>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-lg p-6">
+              <div class="text-3xl mb-4">🏗️</div>
+              <h3 class="text-xl font-bold mb-3 text-orange-600">Construction</h3>
+              <ul class="space-y-2 text-sm">
+                <li>• Complete buildout</li>
+                <li>• All trades included</li>
+                <li>• Quality control</li>
+                <li>• Safety management</li>
+                <li>• Schedule control</li>
+                <li>• Site supervision</li>
+              </ul>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-lg p-6">
+              <div class="text-3xl mb-4">🪑</div>
+              <h3 class="text-xl font-bold mb-3 text-red-600">FF&E Services</h3>
+              <ul class="space-y-2 text-sm">
+                <li>• Furniture procurement</li>
+                <li>• Equipment installation</li>
+                <li>• Fixture selection</li>
+                <li>• Delivery coordination</li>
+                <li>• Assembly & placement</li>
+                <li>• Asset management</li>
+              </ul>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-lg p-6">
+              <div class="text-3xl mb-4">🔄</div>
+              <h3 class="text-xl font-bold mb-3 text-cyan-600">Move Management</h3>
+              <ul class="space-y-2 text-sm">
+                <li>• Relocation planning</li>
+                <li>• Phased occupancy</li>
+                <li>• IT/Telecom coordination</li>
+                <li>• Minimal downtime</li>
+                <li>• Weekend moves</li>
+                <li>• Post-move support</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Project Types -->
+    <section class="py-16">
+      <div class="container mx-auto px-6">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-3xl font-bold mb-12 text-center">Turnkey Project Specialties</h2>
+          
+          <div class="grid md:grid-cols-2 gap-8">
+            <!-- Basement Conversions -->
+            <div class="bg-gradient-to-br from-blue-50 to-white rounded-lg shadow-lg p-8">
+              <h3 class="text-2xl font-bold mb-4 text-cyan-600">Legal Basement Conversions</h3>
+              <p class="text-slate-600 mb-4">
+                Complete basement transformations from concept to occupancy permit. We handle everything including 
+                design, permits, construction, and final inspections.
+              </p>
+              <div class="grid grid-cols-2 gap-4">
+                <div>
+                  <h4 class="font-semibold mb-2">Design & Planning</h4>
+                  <ul class="text-sm space-y-1">
+                    <li>• Layout optimization</li>
+                    <li>• Egress compliance</li>
+                    <li>• Separate entrances</li>
+                    <li>• Fire separation</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 class="font-semibold mb-2">Construction</h4>
+                  <ul class="text-sm space-y-1">
+                    <li>• Underpinning</li>
+                    <li>• Waterproofing</li>
+                    <li>• All finishes</li>
+                    <li>• Kitchen & bath</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="mt-4 p-3 bg-cyan-100 rounded">
+                <p class="text-sm"><strong>Complete Package:</strong> $81,000 - $162,000</p>
+              </div>
+            </div>
+
+            <!-- Retail Spaces -->
+            <div class="bg-gradient-to-br from-green-50 to-white rounded-lg shadow-lg p-8">
+              <h3 class="text-2xl font-bold mb-4 text-cyan-600">Retail & Restaurant</h3>
+              <p class="text-slate-600 mb-4">
+                Transform raw space into thriving retail or dining establishments. From storefront to kitchen, 
+                we deliver ready-to-open venues.
+              </p>
+              <div class="grid grid-cols-2 gap-4">
+                <div>
+                  <h4 class="font-semibold mb-2">Front of House</h4>
+                  <ul class="text-sm space-y-1">
+                    <li>• Custom storefronts</li>
+                    <li>• Display systems</li>
+                    <li>• Lighting design</li>
+                    <li>• POS integration</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 class="font-semibold mb-2">Back of House</h4>
+                  <ul class="text-sm space-y-1">
+                    <li>• Commercial kitchens</li>
+                    <li>• Storage systems</li>
+                    <li>• Staff areas</li>
+                    <li>• Service corridors</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="mt-4 p-3 bg-cyan-100 rounded">
+                <p class="text-sm"><strong>Typical Timeline:</strong> 8-12 weeks from permit</p>
+              </div>
+            </div>
+
+            <!-- Industrial -->
+            <div class="bg-gradient-to-br from-orange-50 to-white rounded-lg shadow-lg p-8">
+              <h3 class="text-2xl font-bold mb-4 text-orange-600">Industrial & Warehouse</h3>
+              <p class="text-slate-600 mb-4">
+                Optimize your industrial space for maximum efficiency. Complete design-build solutions for 
+                manufacturing, warehousing, and distribution facilities.
+              </p>
+              <div class="grid grid-cols-2 gap-4">
+                <div>
+                  <h4 class="font-semibold mb-2">Facility Design</h4>
+                  <ul class="text-sm space-y-1">
+                    <li>• Workflow optimization</li>
+                    <li>• Equipment layout</li>
+                    <li>• Safety systems</li>
+                    <li>• Utility planning</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 class="font-semibold mb-2">Infrastructure</h4>
+                  <ul class="text-sm space-y-1">
+                    <li>• Heavy power</li>
+                    <li>• Compressed air</li>
+                    <li>• Process piping</li>
+                    <li>• Loading docks</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="mt-4 p-3 bg-orange-100 rounded">
+                <p class="text-sm"><strong>Capacity:</strong> Up to 50,000 sq ft projects</p>
+              </div>
+            </div>
+
+            <!-- Residential -->
+            <div class="bg-gradient-to-br from-purple-50 to-white rounded-lg shadow-lg p-8">
+              <h3 class="text-2xl font-bold mb-4 text-purple-600">Residential Renovations</h3>
+              <p class="text-slate-600 mb-4">
+                Complete home transformations with integrated design and construction. From kitchen renovations 
+                to whole-house remodels, delivered turnkey.
+              </p>
+              <div class="grid grid-cols-2 gap-4">
+                <div>
+                  <h4 class="font-semibold mb-2">Interior Spaces</h4>
+                  <ul class="text-sm space-y-1">
+                    <li>• Kitchen design-build</li>
+                    <li>• Bathroom suites</li>
+                    <li>• Living spaces</li>
+                    <li>• Home offices</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 class="font-semibold mb-2">Structural</h4>
+                  <ul class="text-sm space-y-1">
+                    <li>• Additions</li>
+                    <li>• Open concepts</li>
+                    <li>• Second stories</li>
+                    <li>• Garage builds</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="mt-4 p-3 bg-purple-100 rounded">
+                <p class="text-sm"><strong>Average Project:</strong> $54,000 - $270,500</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="py-16 bg-slate-50">
+      <div class="container mx-auto px-6">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-3xl font-bold mb-12 text-center">Our Design-Build Process</h2>
+          
+          <div class="space-y-6">
+            <div class="flex items-start">
+              <div class="bg-purple-600 text-white rounded-full w-10 h-10 flex items-center justify-center mr-4 flex-shrink-0">
+                1
+              </div>
+              <div>
+                <h3 class="font-bold mb-2">Discovery & Programming</h3>
+                <p class="text-slate-500">Understand your needs, goals, budget, and timeline. Site analysis and feasibility study. Initial concept development.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start">
+              <div class="bg-purple-600 text-white rounded-full w-10 h-10 flex items-center justify-center mr-4 flex-shrink-0">
+                2
+              </div>
+              <div>
+                <h3 class="font-bold mb-2">Concept Design</h3>
+                <p class="text-slate-500">Space planning, preliminary designs, 3D visualizations. Budget confirmation and value engineering.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start">
+              <div class="bg-purple-600 text-white rounded-full w-10 h-10 flex items-center justify-center mr-4 flex-shrink-0">
+                3
+              </div>
+              <div>
+                <h3 class="font-bold mb-2">Design Development</h3>
+                <p class="text-slate-500">Detailed drawings, material selections, MEP coordination. Permit applications and approvals.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start">
+              <div class="bg-purple-600 text-white rounded-full w-10 h-10 flex items-center justify-center mr-4 flex-shrink-0">
+                4
+              </div>
+              <div>
+                <h3 class="font-bold mb-2">Pre-Construction</h3>
+                <p class="text-slate-500">Final pricing, schedule development, trade procurement. Contract execution and mobilization planning.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start">
+              <div class="bg-purple-600 text-white rounded-full w-10 h-10 flex items-center justify-center mr-4 flex-shrink-0">
+                5
+              </div>
+              <div>
+                <h3 class="font-bold mb-2">Construction</h3>
+                <p class="text-slate-500">Execute build-out with integrated team. Continuous quality control and client communication.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start">
+              <div class="bg-purple-600 text-white rounded-full w-10 h-10 flex items-center justify-center mr-4 flex-shrink-0">
+                6
+              </div>
+              <div>
+                <h3 class="font-bold mb-2">Commissioning & Handover</h3>
+                <p class="text-slate-500">Systems testing, final inspections, training. Warranty documentation and post-occupancy support.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Design-Build -->
+    <section class="py-16">
+      <div class="container mx-auto px-6">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-3xl font-bold mb-12 text-center">Why Choose Design-Build?</h2>
+          
+          <div class="grid md:grid-cols-2 gap-8">
+            <div class="bg-white rounded-lg shadow-lg p-8">
+              <h3 class="text-xl font-bold mb-4 text-cyan-600">Traditional Method Challenges</h3>
+              <ul class="space-y-3">
+                <li class="flex items-start">
+                  <span class="text-red-500 mr-2">✗</span>
+                  <span>Separate design and construction contracts</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-red-500 mr-2">✗</span>
+                  <span>Finger-pointing between designer and builder</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-red-500 mr-2">✗</span>
+                  <span>Change orders and cost overruns</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-red-500 mr-2">✗</span>
+                  <span>Longer project timelines</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-red-500 mr-2">✗</span>
+                  <span>Design may not match budget</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-lg p-8">
+              <h3 class="text-xl font-bold mb-4 text-purple-600">Design-Build Advantages</h3>
+              <ul class="space-y-3">
+                <li class="flex items-start">
+                  <span class="text-cyan-500 mr-2">✓</span>
+                  <span>Single contract for complete project</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-cyan-500 mr-2">✓</span>
+                  <span>Unified team working together</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-cyan-500 mr-2">✓</span>
+                  <span>Fixed price with no surprises</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-cyan-500 mr-2">✓</span>
+                  <span>20-30% faster completion</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-cyan-500 mr-2">✓</span>
+                  <span>Design guaranteed to meet budget</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Statistics -->
+          <div class="mt-12 bg-purple-50 rounded-lg p-8">
+            <h3 class="text-xl font-bold mb-6 text-center">Design-Build by the Numbers</h3>
+            <div class="grid md:grid-cols-4 gap-6 text-center">
+              <div>
+                <div class="text-3xl font-bold text-purple-600">33%</div>
+                <p class="text-sm">Faster project delivery</p>
+              </div>
+              <div>
+                <div class="text-3xl font-bold text-purple-600">6%</div>
+                <p class="text-sm">Lower total cost</p>
+              </div>
+              <div>
+                <div class="text-3xl font-bold text-purple-600">3.8%</div>
+                <p class="text-sm">Schedule growth vs 11.4% traditional</p>
+              </div>
+              <div>
+                <div class="text-3xl font-bold text-purple-600">2.2%</div>
+                <p class="text-sm">Cost growth vs 5.2% traditional</p>
+              </div>
+            </div>
+            <p class="text-xs text-center mt-4 text-slate-500">Source: Design-Build Institute of America</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Related Construction Services -->
+    <section class="py-16 bg-cyan-50">
+      <div class="container mx-auto px-4 max-w-6xl">
+        <InternalLinks category="construction" currentPage="design-build" limit={6} />
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-gradient-to-r from-purple-600 to-blue-600 text-white">
+      <div class="container mx-auto px-6">
+        <div class="max-w-4xl mx-auto text-center">
+          <h2 class="text-3xl font-bold mb-6">Ready for a Turnkey Solution?</h2>
+          <p class="text-xl mb-8">
+            Let us handle your entire project from concept to completion. 
+            One team, one contract, one exceptional result.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="/contact" class="bg-white text-purple-600 px-8 py-3 rounded-lg font-semibold hover:bg-slate-50 transition">
+              Start Your Project
+            </a>
+            <a href="/free-inspection" class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white/10 transition">
+              Schedule Consultation
+            </a>
+          </div>
+          <p class="mt-8 text-sm">
+            Free consultation • Fixed pricing • Guaranteed timeline
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ServiceAreas component removed -->
+  </main>
+</Layout>

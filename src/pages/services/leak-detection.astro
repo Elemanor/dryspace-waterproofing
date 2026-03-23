@@ -1,0 +1,221 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import Hero from '../../components/sections/Hero.astro';
+import Features from '../../components/sections/Features.astro';
+import Process from '../../components/sections/Process.astro';
+import Gallery from '../../components/sections/Gallery.astro';
+import FAQ from '../../components/sections/FAQ.astro';
+import Testimonials from '../../components/sections/Testimonials.astro';
+import CTA from '../../components/sections/CTA.astro';
+import Stats from '../../components/sections/Stats.astro';
+import ServiceSchema from '../../components/ServiceSchema.astro';
+import InternalLinks from '../../components/InternalLinks.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+
+const pageTitle = "Leak Detection Toronto | Find Hidden Water Leaks";
+const pageDescription = "Advanced leak detection for hidden water problems. Thermal imaging, moisture meters, non-invasive testing.";
+
+// Service-specific features
+const serviceFeatures = [
+  {
+    icon: '',
+    title: 'Find Hidden Leaks',
+    description: 'Industry-leading solution with proven results and long-term protection.',
+    highlight: true
+  },
+  {
+    icon: '',
+    title: 'Competitive Pricing',
+    description: 'Fair, transparent pricing. $300-800. Financing available.',
+    highlight: true
+  },
+  {
+    icon: '',
+    title: '25-Year Warranty',
+    description: 'Transferable warranty that adds value to your home.',
+    highlight: true
+  },
+  {
+    icon: '',
+    title: 'Fast Service',
+    description: 'Quick response times with professional installation.'
+  },
+  {
+    icon: '‍',
+    title: 'Licensed & Insured',
+    description: 'Fully licensed, bonded, and insured for your protection.'
+  },
+  {
+    icon: '',
+    title: '24/7 Support',
+    description: 'Emergency service and ongoing support whenever you need it.'
+  }
+];
+
+// Service process steps
+const processSteps = [
+  {
+    number: '01',
+    title: 'Free Inspection',
+    description: 'Comprehensive assessment of your specific needs.',
+    icon: '',
+    duration: 'Same day'
+  },
+  {
+    number: '02',
+    title: 'Custom Solution',
+    description: 'Tailored approach for your unique situation.',
+    icon: '',
+    duration: '24 hours'
+  },
+  {
+    number: '03',
+    title: 'Professional Work',
+    description: 'Expert installation by certified technicians.',
+    icon: '',
+    duration: 'On schedule'
+  },
+  {
+    number: '04',
+    title: 'Quality Assurance',
+    description: 'Testing, inspection, and warranty documentation.',
+    icon: '',
+    duration: 'Before leaving'
+  }
+];
+
+// Service FAQs
+const serviceFAQs = [
+  {
+    question: "How much does leak detection cost in Toronto?",
+    answer: "Professional leak detection in Toronto typically costs $450-$1,300 depending on property size and complexity. Basic moisture scanning costs $450-$650, while comprehensive thermal imaging and electronic detection ranges from $850-$1,300. Free initial consultation included."
+  },
+  {
+    question: "How long does leak detection take to complete?",
+    answer: "Most leak detection services are completed within 2-4 hours for residential properties. Basic scans take 1-2 hours, while comprehensive multi-technology assessments may require 3-4 hours. Results and recommendations provided same day."
+  },
+  {
+    question: "What are the benefits of professional leak detection?",
+    answer: "Professional detection finds hidden leaks before major damage occurs, prevents mold growth, reduces water bills, preserves structural integrity, and provides precise repair locations. Our non-invasive methods avoid unnecessary demolition."
+  },
+  {
+    question: "When should I get leak detection services?",
+    answer: "Get leak detection when you notice unexplained water damage, musty odors, high water bills, damp spots, or before purchasing a home. Early detection prevents costly repairs and health hazards from mold and structural damage."
+  }
+];
+
+// Service Offers
+const serviceOffers = [
+  {
+    name: "Basic Leak Scan",
+    price: "$450-$550",
+    description: "Visual inspection with moisture meters and basic thermal scanning. Identifies obvious leaks and moisture sources. Includes written report with findings."
+  },
+  {
+    name: "Advanced Detection",
+    price: "$650-$950",
+    description: "Comprehensive thermal imaging, electronic leak detection, and moisture mapping. Pinpoints hidden leaks behind walls and under floors. Detailed analysis report."
+  },
+  {
+    name: "Complete Assessment",
+    price: "$950-$1,300",
+    description: "Full property leak audit with multiple technologies, infrared imaging, acoustic detection, and moisture analysis. Priority for large properties or complex leak issues."
+  }
+];
+
+// Service Schema Data
+const schemaFAQs = [
+  {
+    question: "How much does leak detection cost in Toronto?",
+    answer: "Professional leak detection in Toronto typically costs $450-$1,300 depending on property size and complexity. Basic moisture scanning costs $450-$650, while comprehensive thermal imaging and electronic detection ranges from $850-$1,300. Free initial consultation included."
+  },
+  {
+    question: "How long does leak detection take to complete?",
+    answer: "Most leak detection services are completed within 2-4 hours for residential properties. Basic scans take 1-2 hours, while comprehensive multi-technology assessments may require 3-4 hours. Results and recommendations provided same day."
+  },
+  {
+    question: "What are the benefits of professional leak detection?",
+    answer: "Professional detection finds hidden leaks before major damage occurs, prevents mold growth, reduces water bills, preserves structural integrity, and provides precise repair locations. Our non-invasive methods avoid unnecessary demolition."
+  },
+  {
+    question: "When should I get leak detection services?",
+    answer: "Get leak detection when you notice unexplained water damage, musty odors, high water bills, damp spots, or before purchasing a home. Early detection prevents costly repairs and health hazards from mold and structural damage."
+  }
+];
+
+---
+
+<PageLayout 
+  title={pageTitle}
+  description={pageDescription}
+>
+  
+  <!-- Breadcrumbs -->
+  <div class="container mx-auto px-4 mt-4">
+    <Breadcrumbs 
+      items={[
+        { name: "Home", url: "/" },
+        { name: "Services", url: "/services" },
+        { name: "Leak Detection" }
+      ]}
+    />
+  </div>
+
+<ServiceSchema 
+    serviceName="Professional Leak Detection Services"
+    description="Advanced leak detection in Toronto using thermal imaging, moisture meters, and electronic detection. Find hidden water leaks before they cause major damage."
+    priceRange="$450-$1,300"
+    offers={serviceOffers}
+    faqs={schemaFAQs}
+  />
+  <!-- Hero Section -->
+  <Hero 
+    title="Professional Leak Detection"
+    subtitle="Find hidden leaks with advanced technology. Thermal imaging and moisture detection."
+    primaryCTA={{ text: "Get Free Inspection", href: "/free-inspection" }}
+    secondaryCTA={{ text: "Call: 437-545-0067", href: "tel:437-545-0067" }}
+    backgroundImage="/images/basement-water-leak-inspection.webp"
+    badge="Non-Invasive Testing"
+  />
+
+  <!-- Stats -->
+  <Stats />
+
+  <!-- Features -->
+  <Features 
+    title="Why Choose Our Service"
+    subtitle="Professional solutions backed by experience and warranty"
+    features={serviceFeatures}
+    columns={3}
+  />
+
+  <!-- Process -->
+  <Process />
+
+  <!-- Testimonials -->
+  <Testimonials />
+
+  <!-- FAQ -->
+  <FAQ 
+    title="Common Questions"
+    subtitle="Everything you need to know about our service"
+    faqs={serviceFAQs}
+    columns={1}
+  />
+
+  <!-- Internal Links -->
+  <InternalLinks 
+    category="waterproofing"
+    currentPage="leak-detection"
+    limit={5}
+  />
+
+  <!-- CTA -->
+  <CTA 
+    title="Ready to Get Started?"
+    subtitle="Schedule your free inspection today and protect your home."
+    primaryCTA={{ text: "Schedule Free Inspection", href: "/free-inspection" }}
+    secondaryCTA={{ text: "Call: 437-545-0067", href: "tel:437-545-0067" }}
+    background="gradient"
+  />
+</PageLayout>

@@ -1,0 +1,487 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import Hero from '../../components/sections/Hero.astro';
+import Features from '../../components/sections/Features.astro';
+import Process from '../../components/sections/Process.astro';
+import FAQ from '../../components/sections/FAQ.astro';
+import Testimonials from '../../components/sections/Testimonials.astro';
+import CTA from '../../components/sections/CTA.astro';
+import Stats from '../../components/sections/Stats.astro';
+import ServiceSchema from '../../components/ServiceSchema.astro';
+import InternalLinks from '../../components/InternalLinks.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+
+const pageTitle = "Stormwater Management Systems Toronto | Underground Storage & Treatment";
+const pageDescription = "Professional stormwater management systems in Toronto. On-site detention, infiltration galleries, underground storage, oil/grit separators. Complete municipal compliance and peak flow reduction.";
+
+// Comprehensive stormwater management features
+const serviceFeatures = [
+  {
+    icon: '🏗️',
+    title: 'On-Site Stormwater Detention Systems',
+    description: 'Engineered underground and surface storage systems managing peak flows and providing flood protection. Custom-sized for specific site conditions with automated controls and monitoring.',
+    highlight: true
+  },
+  {
+    icon: '💧',
+    title: 'Infiltration Galleries & Chambers',
+    description: 'High-capacity underground infiltration systems using modular chamber technology. Manages large volumes while maintaining surface use with excellent long-term performance.',
+    highlight: true
+  },
+  {
+    icon: '⚡',
+    title: 'Underground Storage & Cisterns',
+    description: 'Large-scale underground storage systems for stormwater reuse and detention. Concrete and plastic tank systems with integrated pumping, filtration, and distribution systems.',
+    highlight: true
+  },
+  {
+    icon: '🛢️',
+    title: 'Oil/Grit Separators & Treatment',
+    description: 'Advanced water quality treatment systems removing hydrocarbons, sediments, and pollutants. Hydrodynamic separators and manufactured treatment devices for regulatory compliance.'
+  },
+  {
+    icon: '📊',
+    title: 'Peak Flow Reduction & Control',
+    description: 'Engineered flow control systems with orifice plates, weirs, and automated gates. Real-time monitoring and control systems optimizing performance for various storm events.'
+  },
+  {
+    icon: '🏛️',
+    title: 'Municipal Compliance & Integration',
+    description: 'Complete regulatory compliance including Toronto Water requirements, environmental permits, and ongoing monitoring. Professional integration with municipal infrastructure.'
+  }
+];
+
+// Detailed stormwater system implementation process
+const processSteps = [
+  {
+    number: '01',
+    title: 'Hydrological Assessment & Modeling',
+    description: 'Comprehensive watershed analysis, peak flow calculations, storage requirements modeling, and regulatory compliance review. Includes climate change projections and extreme event planning.',
+    icon: '📊',
+    duration: '2-4 weeks'
+  },
+  {
+    number: '02',
+    title: 'Integrated System Design & Engineering',
+    description: 'Multi-disciplinary design process incorporating civil, structural, mechanical, and electrical engineering. Includes automation systems, monitoring equipment, and maintenance access.',
+    icon: '⚙️',
+    duration: '4-8 weeks'
+  },
+  {
+    number: '03',
+    title: 'Specialized Construction & Installation',
+    description: 'Professional installation using specialized equipment and techniques. Includes deep excavation, structural work, mechanical systems, and electrical integration with quality assurance testing.',
+    icon: '🚧',
+    duration: '2-8 weeks'
+  },
+  {
+    number: '04',
+    title: 'Commissioning & Performance Optimization',
+    description: 'System commissioning, performance testing, staff training, and long-term monitoring setup. Includes municipal inspections, documentation, and maintenance planning.',
+    icon: '✅',
+    duration: '1-2 weeks'
+  }
+];
+
+// Service-specific FAQs with cost, timeline, benefits, process information
+const serviceFAQs = [
+  {
+    question: "How much do stormwater management systems cost in Toronto?",
+    answer: "Stormwater management system costs vary significantly by complexity: Underground detention systems: $81,000-$378,500 including tanks, pumps, controls, and installation, Infiltration galleries: $49,000-$194,500 for modular chamber systems with site preparation, Treatment systems (oil/grit separators): $16,000-$70,000 per unit plus installation, Comprehensive integrated systems: $162,000-$811,000+ for commercial/institutional properties, Green infrastructure components: $27-$95/sq ft for bioretention, constructed wetlands. Costs include engineering, permits, construction, and commissioning. Many projects qualify for municipal development charge reductions of 25-50%."
+  },
+  {
+    question: "How long does stormwater system installation take?",
+    answer: "Installation timelines vary by system complexity: Assessment and design: 4-8 weeks including hydrological modeling and regulatory approvals, Permit acquisition: 6-12 weeks for municipal and environmental permits, Construction phase: 6-16 weeks depending on system size and site conditions, System commissioning: 2-4 weeks for testing, calibration, and performance verification. Total project timeline typically 6-12 months from initial assessment to full operation. Weather conditions may extend construction timelines, with optimal installation during dry seasons (late spring through early fall)."
+  },
+  {
+    question: "What are the benefits of professional stormwater management systems?",
+    answer: "Comprehensive benefits include: Flood protection: Prevents basement flooding and property damage during extreme weather events, Regulatory compliance: Meets Toronto's stringent stormwater quantity and quality requirements, Environmental protection: Reduces urban runoff pollution, protects streams and groundwater quality, Infrastructure cost savings: Development charge reductions, reduced municipal infrastructure requirements, Property value enhancement: Demonstrates environmental stewardship and reduces long-term risk, Insurance benefits: Potential premium reductions for properties with flood protection systems, Community resilience: Contributes to city-wide climate adaptation and sustainability goals."
+  },
+  {
+    question: "When should I consider stormwater management systems for my property?",
+    answer: "Stormwater systems are essential in several scenarios: New development: Municipal requirements for developments over certain thresholds (typically 0.5+ hectares), Redevelopment projects: Intensification triggering updated stormwater management requirements, Flood-prone properties: Areas with history of basement flooding, surface ponding, or drainage problems, Environmental compliance: Properties near sensitive water bodies requiring enhanced protection, Commercial/industrial sites: Parking lots, rooftops generating significant runoff requiring treatment, Insurance requirements: Properties in flood risk areas may require enhanced drainage for coverage. Early planning during design phase allows optimal integration and cost efficiency."
+  }
+];
+
+// Service offers with 3 pricing tiers
+const serviceOffers = [
+  {
+    name: "Underground Detention System",
+    price: "$81,000-$216,500",
+    description: "Complete underground stormwater detention system with concrete tanks, pump stations, automated controls, and monitoring. Ideal for commercial properties requiring peak flow control and municipal compliance."
+  },
+  {
+    name: "Integrated Treatment System",
+    price: "$162,000-$432,500",
+    description: "Comprehensive stormwater management with detention, infiltration, and quality treatment components. Includes oil/grit separators, bioretention areas, automated controls, and performance monitoring systems."
+  },
+  {
+    name: "Enterprise Stormwater Solutions",
+    price: "$432,500-$1,000,000+",
+    description: "Large-scale stormwater infrastructure for institutional and industrial properties. Custom-engineered systems with advanced treatment, real-time controls, SCADA integration, and comprehensive maintenance programs."
+  }
+];
+
+---
+
+<PageLayout 
+  title={pageTitle}
+  description={pageDescription}
+>
+  
+  <!-- Breadcrumbs -->
+  <div class="container mx-auto px-4 mt-4">
+    <Breadcrumbs 
+      items={[
+        { name: "Home", url: "/" },
+        { name: "Services", url: "/services" },
+        { name: "Stormwater Management" }
+      ]}
+    />
+  </div>
+
+<ServiceSchema 
+    serviceName="Stormwater Management Systems Toronto"
+    description={pageDescription}
+    priceRange="$81,000-$1,000,000+"
+    offers={serviceOffers}
+    faqs={serviceFAQs}
+  />
+  <!-- Hero Section -->
+  <Hero 
+    title="Stormwater Management Systems"
+    subtitle="Advanced stormwater management infrastructure for Toronto properties. Underground storage, treatment systems, peak flow control, and complete municipal compliance."
+    primaryCTA={{ text: "Get System Design", href: "/free-inspection" }}
+    secondaryCTA={{ text: "Call: 437-545-0067", href: "tel:437-545-0067" }}
+    backgroundImage="/images/waterproofing diagram with basement sump pump weeping tile and exterior drainage.webp"
+    badge="Advanced Infrastructure Solutions"
+  />
+
+  <!-- Stats -->
+  <Stats />
+
+  <!-- Comprehensive Content Section -->
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Introduction -->
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold text-slate-900 mb-6">
+          Advanced Stormwater Infrastructure for Urban Resilience
+        </h2>
+        <p class="text-xl text-slate-500 max-w-4xl mx-auto mb-8">
+          Toronto's intensifying rainfall patterns and urban development require sophisticated stormwater management systems that go beyond traditional drainage. Our engineered solutions combine underground storage, advanced treatment, intelligent controls, and municipal integration to protect properties while meeting increasingly stringent environmental regulations.
+        </p>
+      </div>
+
+      <!-- Core Stormwater Management Systems -->
+      <div class="grid lg:grid-cols-2 gap-12 mb-16">
+        <div class="space-y-8">
+          <h3 class="text-3xl font-bold text-slate-900">Underground Detention & Storage Systems</h3>
+          <p class="text-lg text-slate-600">
+            High-capacity underground systems providing flood protection and peak flow control. Our detention systems use modular concrete tanks, plastic chambers, or custom-designed concrete structures with automated controls. Each system is sized using detailed hydrological modeling for Toronto's specific rainfall patterns and future climate projections.
+          </p>
+          <div class="bg-cyan-50 p-6 rounded-lg">
+            <h4 class="font-semibold text-cyan-900 mb-3">Detention System Specifications:</h4>
+            <ul class="space-y-2 text-cyan-800">
+              <li>• Storage volumes: 1,000-50,000+ cubic feet capacity</li>
+              <li>• Materials: Precast concrete, plastic chambers, cast-in-place concrete</li>
+              <li>• Flow control: Orifice plates, weirs, automated gates with SCADA</li>
+              <li>• Access systems: Manholes, inspection chambers, maintenance access</li>
+              <li>• Depth range: 8-30 feet below grade depending on space constraints</li>
+              <li>• Pumping systems: Redundant pumps with backup power and telemetry</li>
+              <li>• Monitoring: Water level, flow rates, pump status, alarm systems</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="space-y-8">
+          <h3 class="text-3xl font-bold text-slate-900">Infiltration Galleries & Groundwater Recharge</h3>
+          <p class="text-lg text-slate-600">
+            Advanced infiltration systems using modular chamber technology to maximize groundwater recharge while managing surface runoff. These systems work in suitable soil conditions to provide both storage and treatment benefits while maintaining surface use and accessibility.
+          </p>
+          <div class="bg-cyan-50 p-6 rounded-lg">
+            <h4 class="font-semibold text-cyan-800 mb-3">Infiltration System Components:</h4>
+            <ul class="space-y-2 text-cyan-700">
+              <li>• Modular chambers: High-density polyethylene with 95% void space</li>
+              <li>• Aggregate bedding: Clean stone providing additional storage and filtration</li>
+              <li>• Geotextile separation: Prevents soil migration and maintains performance</li>
+              <li>• Pretreatment systems: Sediment traps and oil/grit separators</li>
+              <li>• Observation wells: Monitoring groundwater mounding and system performance</li>
+              <li>• Overflow systems: Emergency overflow preventing system failure</li>
+              <li>• Maintenance access: Inspection ports and flushing connections</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Treatment & Quality Control Systems -->
+      <div class="grid lg:grid-cols-2 gap-12 mb-16">
+        <div class="space-y-8">
+          <h3 class="text-3xl font-bold text-slate-900">Advanced Water Quality Treatment</h3>
+          <p class="text-lg text-slate-600">
+            Comprehensive treatment systems addressing Toronto's water quality requirements including sediment removal, hydrocarbon treatment, and nutrient reduction. Our systems use proven technologies including hydrodynamic separators, constructed wetlands, and manufactured treatment devices.
+          </p>
+          <div class="bg-purple-50 p-6 rounded-lg">
+            <h4 class="font-semibold text-purple-900 mb-3">Treatment Technologies:</h4>
+            <ul class="space-y-2 text-purple-800">
+              <li>• Hydrodynamic separators: 80%+ TSS removal, oil/grit separation</li>
+              <li>• Bioretention systems: Enhanced soil filtration with plant uptake</li>
+              <li>• Constructed wetlands: Biological treatment with habitat benefits</li>
+              <li>• Sand filtration: High-rate sand filters for polishing treatment</li>
+              <li>• UV disinfection: Pathogen removal for reuse applications</li>
+              <li>• Chemical treatment: Coagulation/flocculation for enhanced removal</li>
+              <li>• Membrane filtration: Advanced treatment for highest quality standards</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="space-y-8">
+          <h3 class="text-3xl font-bold text-slate-900">Intelligent Flow Control & Automation</h3>
+          <p class="text-lg text-slate-600">
+            Advanced control systems optimizing stormwater management performance through real-time monitoring and automated responses. Our systems integrate weather forecasting, flow measurement, and predictive controls to maximize storage utilization and treatment effectiveness.
+          </p>
+          <div class="bg-orange-50 p-6 rounded-lg">
+            <h4 class="font-semibold text-orange-900 mb-3">Control System Features:</h4>
+            <ul class="space-y-2 text-orange-800">
+              <li>• SCADA systems: Supervisory control and data acquisition</li>
+              <li>• Weather integration: Real-time precipitation and forecasting</li>
+              <li>• Flow measurement: Electromagnetic and ultrasonic flow meters</li>
+              <li>• Water level monitoring: Pressure transducers and ultrasonic sensors</li>
+              <li>• Automated gates and valves: Motorized control with position feedback</li>
+              <li>• Pump control: Variable frequency drives with intelligent sequencing</li>
+              <li>• Remote monitoring: Web-based interfaces and mobile applications</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Municipal Integration & Compliance -->
+      <div class="bg-slate-50 p-8 rounded-lg mb-16">
+        <h3 class="text-3xl font-bold text-slate-900 mb-6">Toronto Municipal Requirements & Regulatory Compliance</h3>
+        <div class="grid md:grid-cols-2 gap-8">
+          <div>
+            <h4 class="text-xl font-semibold text-slate-900 mb-4">Water Quantity Control Requirements</h4>
+            <ul class="space-y-3 text-slate-600">
+              <li class="flex items-start">
+                <span class="flex-shrink-0 w-2 h-2 bg-cyan-500 rounded-full mt-2 mr-3"></span>
+                <span>Post-development peak flows cannot exceed pre-development rates</span>
+              </li>
+              <li class="flex items-start">
+                <span class="flex-shrink-0 w-2 h-2 bg-cyan-500 rounded-full mt-2 mr-3"></span>
+                <span>Control required for 2, 5, 10, 25, 100-year storm events</span>
+              </li>
+              <li class="flex items-start">
+                <span class="flex-shrink-0 w-2 h-2 bg-cyan-500 rounded-full mt-2 mr-3"></span>
+                <span>Water balance requirements maintaining groundwater recharge</span>
+              </li>
+              <li class="flex items-start">
+                <span class="flex-shrink-0 w-2 h-2 bg-cyan-500 rounded-full mt-2 mr-3"></span>
+                <span>Stream erosion protection through energy dissipation</span>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="text-xl font-semibold text-slate-900 mb-4">Water Quality Treatment Standards</h4>
+            <ul class="space-y-3 text-slate-600">
+              <li class="flex items-start">
+                <span class="flex-shrink-0 w-2 h-2 bg-cyan-500 rounded-full mt-2 mr-3"></span>
+                <span>Enhanced treatment for first 25mm of rainfall</span>
+              </li>
+              <li class="flex items-start">
+                <span class="flex-shrink-0 w-2 h-2 bg-cyan-500 rounded-full mt-2 mr-3"></span>
+                <span>80% Total Suspended Solids (TSS) removal minimum</span>
+              </li>
+              <li class="flex items-start">
+                <span class="flex-shrink-0 w-2 h-2 bg-cyan-500 rounded-full mt-2 mr-3"></span>
+                <span>Oil and grease removal for parking and roadway areas</span>
+              </li>
+              <li class="flex items-start">
+                <span class="flex-shrink-0 w-2 h-2 bg-cyan-500 rounded-full mt-2 mr-3"></span>
+                <span>Temperature control preventing thermal impacts</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- System Performance & Monitoring -->
+      <div class="mb-16">
+        <h3 class="text-3xl font-bold text-slate-900 mb-8 text-center">Performance Monitoring & Optimization</h3>
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <h4 class="text-xl font-semibold text-slate-900 mb-4">Real-Time Monitoring</h4>
+            <ul class="space-y-2 text-slate-600">
+              <li>• Water level monitoring in all storage components</li>
+              <li>• Flow rate measurement at key system points</li>
+              <li>• Water quality sensors for turbidity and temperature</li>
+              <li>• Pump performance and energy consumption tracking</li>
+              <li>• Weather station integration for precipitation data</li>
+              <li>• Automated alarm systems for emergency conditions</li>
+            </ul>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <h4 class="text-xl font-semibold text-slate-900 mb-4">Performance Analytics</h4>
+            <ul class="space-y-2 text-slate-600">
+              <li>• Storage utilization analysis and optimization</li>
+              <li>• Treatment efficiency monitoring and trending</li>
+              <li>• Energy consumption analysis and cost tracking</li>
+              <li>• Regulatory compliance reporting and documentation</li>
+              <li>• System capacity evaluation and upgrade planning</li>
+              <li>• Maintenance scheduling based on performance data</li>
+            </ul>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <h4 class="text-xl font-semibold text-slate-900 mb-4">Predictive Management</h4>
+            <ul class="space-y-2 text-slate-600">
+              <li>• Weather forecasting integration for storm preparation</li>
+              <li>• Predictive maintenance using equipment condition monitoring</li>
+              <li>• Capacity planning for changing precipitation patterns</li>
+              <li>• System optimization using machine learning algorithms</li>
+              <li>• Risk assessment and emergency response planning</li>
+              <li>• Long-term performance trending and system upgrades</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Investment Analysis & Economics -->
+      <div class="mb-16">
+        <h3 class="text-3xl font-bold text-slate-900 mb-8 text-center">System Economics & Return on Investment</h3>
+        <div class="overflow-x-auto">
+          <table class="w-full border-collapse border border-slate-200">
+            <thead>
+              <tr class="bg-slate-50">
+                <th class="border border-slate-200 px-4 py-3 text-left font-semibold">System Type</th>
+                <th class="border border-slate-200 px-4 py-3 text-center font-semibold">Typical Cost Range</th>
+                <th class="border border-slate-200 px-4 py-3 text-center font-semibold">Capacity Range</th>
+                <th class="border border-slate-200 px-4 py-3 text-center font-semibold">Primary Benefits</th>
+                <th class="border border-slate-200 px-4 py-3 text-center font-semibold">Payback Period</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="border border-slate-200 px-4 py-3 font-medium">Underground Detention</td>
+                <td class="border border-slate-200 px-4 py-3 text-center">$17-50/cu ft</td>
+                <td class="border border-slate-200 px-4 py-3 text-center">1K-50K cu ft</td>
+                <td class="border border-slate-200 px-4 py-3 text-center">Flood control, peak reduction</td>
+                <td class="border border-slate-200 px-4 py-3 text-center">10-18 years</td>
+              </tr>
+              <tr class="bg-slate-50">
+                <td class="border border-slate-200 px-4 py-3 font-medium">Infiltration Galleries</td>
+                <td class="border border-slate-200 px-4 py-3 text-center">$8-25/cu ft</td>
+                <td class="border border-slate-200 px-4 py-3 text-center">500-20K cu ft</td>
+                <td class="border border-slate-200 px-4 py-3 text-center">Groundwater recharge, storage</td>
+                <td class="border border-slate-200 px-4 py-3 text-center">8-15 years</td>
+              </tr>
+              <tr>
+                <td class="border border-slate-200 px-4 py-3 font-medium">Treatment Systems</td>
+                <td class="border border-slate-200 px-4 py-3 text-center">$8K-35K/unit</td>
+                <td class="border border-slate-200 px-4 py-3 text-center">Variable GPM</td>
+                <td class="border border-slate-200 px-4 py-3 text-center">Water quality, compliance</td>
+                <td class="border border-slate-200 px-4 py-3 text-center">12-20 years</td>
+              </tr>
+              <tr class="bg-slate-50">
+                <td class="border border-slate-200 px-4 py-3 font-medium">Integrated Systems</td>
+                <td class="border border-slate-200 px-4 py-3 text-center">$50K-500K+</td>
+                <td class="border border-slate-200 px-4 py-3 text-center">Site-specific</td>
+                <td class="border border-slate-200 px-4 py-3 text-center">Comprehensive management</td>
+                <td class="border border-slate-200 px-4 py-3 text-center">8-15 years</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Innovation & Future Technologies -->
+      <div class="bg-gradient-to-r from-blue-50 to-green-50 p-8 rounded-lg mb-16">
+        <h3 class="text-3xl font-bold text-slate-900 mb-6">Innovation in Stormwater Management</h3>
+        <div class="grid md:grid-cols-2 gap-8">
+          <div>
+            <h4 class="text-xl font-semibold text-slate-900 mb-4">Emerging Technologies</h4>
+            <ul class="space-y-3 text-slate-600">
+              <li class="flex items-start">
+                <span class="flex-shrink-0 w-2 h-2 bg-cyan-500 rounded-full mt-2 mr-3"></span>
+                <span>AI-powered predictive controls optimizing system performance</span>
+              </li>
+              <li class="flex items-start">
+                <span class="flex-shrink-0 w-2 h-2 bg-cyan-500 rounded-full mt-2 mr-3"></span>
+                <span>Smart sensors with wireless communication and self-diagnostics</span>
+              </li>
+              <li class="flex items-start">
+                <span class="flex-shrink-0 w-2 h-2 bg-purple-500 rounded-full mt-2 mr-3"></span>
+                <span>Advanced materials with enhanced treatment capabilities</span>
+              </li>
+              <li class="flex items-start">
+                <span class="flex-shrink-0 w-2 h-2 bg-orange-500 rounded-full mt-2 mr-3"></span>
+                <span>Modular systems allowing easy expansion and reconfiguration</span>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="text-xl font-semibold text-slate-900 mb-4">Climate Adaptation</h4>
+            <ul class="space-y-3 text-slate-600">
+              <li class="flex items-start">
+                <span class="flex-shrink-0 w-2 h-2 bg-red-500 rounded-full mt-2 mr-3"></span>
+                <span>Resilient design for intensifying precipitation patterns</span>
+              </li>
+              <li class="flex items-start">
+                <span class="flex-shrink-0 w-2 h-2 bg-amber-500 rounded-full mt-2 mr-3"></span>
+                <span>Adaptive capacity allowing system upgrades for changing conditions</span>
+              </li>
+              <li class="flex items-start">
+                <span class="flex-shrink-0 w-2 h-2 bg-cyan-500 rounded-full mt-2 mr-3"></span>
+                <span>Multi-benefit systems providing cooling, habitat, and amenity value</span>
+              </li>
+              <li class="flex items-start">
+                <span class="flex-shrink-0 w-2 h-2 bg-pink-500 rounded-full mt-2 mr-3"></span>
+                <span>Integration with district energy and water systems</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <Features 
+    title="Why Choose Our Stormwater Management Solutions"
+    subtitle="Advanced engineering and proven technology delivering reliable performance"
+    features={serviceFeatures}
+    columns={3}
+  />
+
+  <!-- Process -->
+  <Process 
+    title="Our Professional Engineering & Implementation Process"
+    subtitle="Comprehensive approach ensuring optimal performance and regulatory compliance"
+    steps={processSteps}
+  />
+
+  <!-- Testimonials -->
+  <Testimonials />
+
+  <!-- FAQ -->
+  <FAQ 
+    title="Stormwater Management Frequently Asked Questions"
+    subtitle="Expert guidance on advanced stormwater infrastructure and municipal compliance"
+    faqs={serviceFAQs}
+    columns={1}
+  />
+
+  <!-- Internal Links -->
+  <InternalLinks 
+    category="drainage"
+    currentPage="stormwater-management"
+    limit={6}
+  />
+
+  <!-- CTA -->
+  <CTA 
+    title="Ready for Advanced Stormwater Management?"
+    subtitle="Schedule your professional consultation and receive comprehensive system design with performance modeling and regulatory compliance support."
+    primaryCTA={{ text: "Schedule System Consultation", href: "/free-inspection" }}
+    secondaryCTA={{ text: "Call: 437-545-0067", href: "tel:437-545-0067" }}
+    background="gradient"
+  />
+</PageLayout>

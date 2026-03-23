@@ -1,0 +1,1159 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import BlogImageGallery from '../../components/BlogImageGallery.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+
+const publishDate = new Date('2026-03-16');
+const author = 'Dryspace Waterproofing Team';
+const readingTime = '10 min read';
+---
+
+<PageLayout 
+  title="How to Choose Between Interior vs Exterior Waterproofing: Homeowner's Guide 2026"
+  description="Educational guide helping Toronto homeowners understand interior vs exterior waterproofing methods. Learn the differences, when each is used, and how to make informed decisions."
+>
+  
+  
+  <!-- Breadcrumbs -->
+  <div class="container mx-auto px-4 mt-4">
+    <Breadcrumbs 
+      items={[
+        { name: "Home", url: "/" },
+        { name: "Blog", url: "/blog" },
+        { name: "Interior Vs Exterior Waterproofing" }
+      ]}
+    />
+  </div>
+
+<main class="min-h-screen bg-slate-50">
+    <!-- Blog Article Header -->
+    <article class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <header class="mb-10">
+        <!-- Category Badge -->
+        <div class="flex flex-wrap gap-2 mb-6">
+          <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-cyan-50 text-cyan-700">
+            Educational Guide
+          </span>
+          <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-slate-100 text-slate-700">
+            How To Choose
+          </span>
+        </div>
+        
+        <!-- Title -->
+        <h1 class="text-4xl md:text-5xl font-bold text-slate-900 mb-6 leading-tight">
+          How to Choose Between Interior vs Exterior Waterproofing: Homeowner's Guide
+        </h1>
+        
+        <!-- Meta Information -->
+        <div class="flex flex-wrap items-center gap-4 text-sm text-slate-500 mb-6">
+          <span class="flex items-center gap-1">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+            </svg>
+            {publishDate.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
+          </span>
+          <span class="flex items-center gap-1">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+            {readingTime}
+          </span>
+          <span class="flex items-center gap-1">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+            </svg>
+            {author}
+          </span>
+        </div>
+        
+        <!-- Lead Paragraph -->
+        <p class="text-xl text-slate-600 leading-relaxed">
+          Learn how to evaluate interior vs exterior waterproofing approaches for your Toronto basement. This educational guide explains the technical differences, application scenarios, and decision factors to help you understand your options.
+        </p>
+      </header>
+      
+      <!-- Table of Contents -->
+      <nav class="mb-12 p-6 bg-white rounded-lg shadow-sm">
+        <h2 class="text-lg font-semibold text-slate-900 mb-4">Table of Contents</h2>
+        <ol class="space-y-2 text-slate-500">
+          <li><a href="#comparison-tool" class="hover:text-cyan-600 transition-colors">1. Quick Decision Tool</a></li>
+          <li><a href="#side-by-side" class="hover:text-cyan-600 transition-colors">2. Side-by-Side Comparison</a></li>
+          <li><a href="#interior-deep-dive" class="hover:text-cyan-600 transition-colors">3. Interior Waterproofing Deep Dive</a></li>
+          <li><a href="#exterior-deep-dive" class="hover:text-cyan-600 transition-colors">4. Exterior Waterproofing Deep Dive</a></li>
+          <li><a href="#cost-analysis" class="hover:text-cyan-600 transition-colors">5. Cost Analysis</a></li>
+          <li><a href="#effectiveness" class="hover:text-cyan-600 transition-colors">6. Effectiveness Ratings</a></li>
+          <li><a href="#recommendation" class="hover:text-cyan-600 transition-colors">7. Expert Recommendations</a></li>
+        </ol>
+      </nav>
+
+    <!-- Quick Comparison Tool -->
+    <section id="comparison-tool" class="py-16 bg-slate-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <div class="text-center mb-12">
+            <h2 class="uppercase text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+              Which System Is Right for You?
+            </h2>
+            <p class="text-slate-600 text-lg">
+              Answer a few questions to get personalized recommendations
+            </p>
+          </div>
+
+          <div class="bg-white  p-8 shadow-2xl">
+            <div class="grid md:grid-cols-2 gap-8">
+              <!-- Assessment Questions -->
+              <div>
+                <h3 class="text-xl font-bold text-cyan-400 mb-6">Your Situation Assessment</h3>
+                <div class="space-y-6">
+                  <div>
+                    <label class="block text-slate-900 font-medium mb-3">What's your primary concern?</label>
+                    <div class="space-y-2">
+                      <label class="flex items-center cursor-pointer">
+                        <input type="radio" name="concern" value="active-flooding" class="mr-3 text-cyan-400">
+                        <span class="text-slate-600">Active water flooding/pooling</span>
+                      </label>
+                      <label class="flex items-center cursor-pointer">
+                        <input type="radio" name="concern" value="dampness" class="mr-3 text-cyan-400">
+                        <span class="text-slate-600">Dampness and high humidity</span>
+                      </label>
+                      <label class="flex items-center cursor-pointer">
+                        <input type="radio" name="concern" value="cracks" class="mr-3 text-cyan-400">
+                        <span class="text-slate-600">Visible foundation cracks</span>
+                      </label>
+                      <label class="flex items-center cursor-pointer">
+                        <input type="radio" name="concern" value="prevention" class="mr-3 text-cyan-400">
+                        <span class="text-slate-600">Prevention before problems start</span>
+                      </label>
+                    </div>
+                  </div>
+                  
+                  <div>
+                    <label class="block text-slate-900 font-medium mb-3">What's your budget range?</label>
+                    <select id="budget" class="w-full px-4 py-3 bg-slate-50 text-slate-900  border-2 border-slate-300 focus:border-cyan-500 focus:outline-none">
+                      <option value="under-10k">Under $10,000</option>
+                      <option value="10-20k">$10,000 - $20,000</option>
+                      <option value="20-30k">$20,000 - $30,000</option>
+                      <option value="over-30k">Over $30,000</option>
+                    </select>
+                  </div>
+                  
+                  <div>
+                    <label class="block text-slate-900 font-medium mb-3">How urgent is this project?</label>
+                    <select id="urgency" class="w-full px-4 py-3 bg-slate-50 text-slate-900  border-2 border-slate-300 focus:border-cyan-500 focus:outline-none">
+                      <option value="emergency">Emergency - Immediate flooding</option>
+                      <option value="urgent">Urgent - Active water problems</option>
+                      <option value="planning">Planning - Future protection</option>
+                      <option value="renovation">Part of major renovation</option>
+                    </select>
+                  </div>
+
+                  <div>
+                    <label class="block text-slate-900 font-medium mb-3">Property considerations</label>
+                    <div class="space-y-2">
+                      <label class="flex items-center">
+                        <input type="checkbox" id="landscaping" class="mr-3 text-cyan-400">
+                        <span class="text-slate-600">Recently landscaped yard</span>
+                      </label>
+                      <label class="flex items-center">
+                        <input type="checkbox" id="utilities" class="mr-3 text-cyan-400">
+                        <span class="text-slate-600">Many exterior utilities/obstacles</span>
+                      </label>
+                      <label class="flex items-center">
+                        <input type="checkbox" id="basement-finished" class="mr-3 text-cyan-400">
+                        <span class="text-slate-600">Finished basement</span>
+                      </label>
+                    </div>
+                  </div>
+                  
+                  <button id="generateRecommendationBtn" class="w-full px-6 py-3 bg-slate-50 text-slate-900 font-semibold  hover:shadow-lg transition-all duration-200">
+                    Get Recommendation
+                  </button>
+                </div>
+              </div>
+
+              <!-- Recommendation Results -->
+              <div>
+                <h3 class="text-xl font-bold text-slate-900 mb-6">Your Personalized Recommendation</h3>
+                <div id="recommendationResults" class="space-y-4">
+                  <div class="bg-slate-50  p-6 text-center">
+                    <p class="text-slate-500">Complete the assessment to get personalized recommendations</p>
+                  </div>
+                </div>
+
+                <!-- Quick Reference -->
+                <div class="mt-6 p-4 bg-navy-900 border-2 border-slate-700/30 ">
+                  <h4 class="font-semibold text-slate-900 mb-2">Quick Reference</h4>
+                  <div class="text-sm text-slate-600 space-y-1">
+                    <p><strong>Interior:</strong> Best for active water problems, year-round installation</p>
+                    <p><strong>Exterior:</strong> Best for prevention, new construction, major renovations</p>
+                    <p><strong>Both:</strong> Maximum protection, comprehensive solution</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="py-16">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          
+          <!-- Article Content -->
+          <article class="prose prose-lg  max-w-none">
+            
+            <h2 class="uppercase text-3xl font-bold text-slate-900 mb-6">Understanding the Two Approaches</h2>
+            
+            <p class="text-slate-600 text-lg leading-relaxed mb-6">
+              Toronto homeowners facing basement water problems have two primary waterproofing approaches: interior and exterior systems. Each method addresses water intrusion differently, with distinct advantages, limitations, and cost considerations. Understanding both approaches helps you make an informed decision that matches your specific situation, budget, and long-term goals.
+            </p>
+
+            <div class="bg-amber-500 border-l-4 border-cyan-500 p-6  mb-8">
+              <h3 class="text-cyan-400 font-semibold mb-2">Key Insight for Toronto Homeowners</h3>
+              <p class="text-slate-600 mb-0">
+                Due to Toronto's clay soil and high water table, interior drainage systems have become the preferred solution for 70% of basement waterproofing projects. They work with hydrostatic pressure rather than fighting it, making them highly effective in our unique geological conditions.
+              </p>
+            </div>
+
+            <h2 class="uppercase text-3xl font-bold text-slate-900 mb-8">Detailed System Comparison</h2>
+            
+            <!-- Side-by-Side Comparison Table -->
+            <div class="overflow-x-auto mb-8">
+              <table class="w-full text-sm text-slate-600 border-2 border-slate-300">
+                <thead class="bg-white">
+                  <tr>
+                    <th class="px-6 py-4 text-left text-slate-900 font-semibold">Comparison Factor</th>
+                    <th class="px-6 py-4 text-center text-slate-900 font-semibold">Interior Systems</th>
+                    <th class="px-6 py-4 text-center text-cyan-400 font-semibold">Exterior Systems</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-construction-gray-600">
+                  <tr class="bg-slate-50">
+                    <td class="px-6 py-4 font-medium">Typical Cost Range</td>
+                    <td class="px-6 py-4 text-center text-slate-900">$8,000 - $18,000</td>
+                    <td class="px-6 py-4 text-center text-cyan-400">$20,000 - $35,000</td>
+                  </tr>
+                  <tr>
+                    <td class="px-6 py-4 font-medium">Installation Time</td>
+                    <td class="px-6 py-4 text-center">3-5 days</td>
+                    <td class="px-6 py-4 text-center">7-14 days</td>
+                  </tr>
+                  <tr class="bg-slate-50">
+                    <td class="px-6 py-4 font-medium">Weather Dependency</td>
+                    <td class="px-6 py-4 text-center text-cyan-600">Year-round installation</td>
+                    <td class="px-6 py-4 text-center text-red-600">Weather dependent</td>
+                  </tr>
+                  <tr>
+                    <td class="px-6 py-4 font-medium">Landscaping Impact</td>
+                    <td class="px-6 py-4 text-center text-cyan-600">No impact</td>
+                    <td class="px-6 py-4 text-center text-red-600">Significant disruption</td>
+                  </tr>
+                  <tr class="bg-slate-50">
+                    <td class="px-6 py-4 font-medium">Effectiveness Rating</td>
+                    <td class="px-6 py-4 text-center">95% success rate</td>
+                    <td class="px-6 py-4 text-center">98% success rate</td>
+                  </tr>
+                  <tr>
+                    <td class="px-6 py-4 font-medium">Warranty Period</td>
+                    <td class="px-6 py-4 text-center">15-25 years</td>
+                    <td class="px-6 py-4 text-center">20-30 years</td>
+                  </tr>
+                  <tr class="bg-slate-50">
+                    <td class="px-6 py-4 font-medium">Maintenance Required</td>
+                    <td class="px-6 py-4 text-center text-cyan-400">Annual pump check</td>
+                    <td class="px-6 py-4 text-center text-cyan-600">Minimal</td>
+                  </tr>
+                  <tr>
+                    <td class="px-6 py-4 font-medium">Foundation Protection</td>
+                    <td class="px-6 py-4 text-center">Manages water entry</td>
+                    <td class="px-6 py-4 text-center text-cyan-600">Prevents water contact</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <h2 class="uppercase text-3xl font-bold text-slate-900 mb-8">Interior Waterproofing Systems</h2>
+
+            <div class="my-8">
+              <img src="/assets/waterproofing/interior-waterproofing.webp" 
+                   alt="Interior waterproofing system showing drainage channels and sump pump installation" 
+                   loading="lazy" 
+                   class=" shadow-lg w-full max-w-2xl mx-auto" />
+            </div>
+            
+            <!-- Interior Systems Deep Dive -->
+            <div class="bg-white  p-8 mb-8 border-2 border-slate-600">
+              <div class="flex items-start space-x-4 mb-6">
+                <div class="flex-shrink-0 w-12 h-12 bg-cyan-600  flex items-center justify-center">
+                  <svg class="w-6 h-6 text-slate-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2H5a2 2 0 00-2 2v6.586a1 1 0 00.293.707l1.414 1.414a1 1 0 01.293.707V17a1 1 0 01-1 1H4a1 1 0 01-1-1v-1.586a1 1 0 01.293-.707l1.414-1.414A1 1 0 015 13V7a1 1 0 011-1h12a1 1 0 011 1z"></path>
+                  </svg>
+                </div>
+                <div class="flex-1">
+                  <h3 class="text-2xl font-bold text-slate-900 mb-4">How Interior Systems Work</h3>
+                  <p class="text-slate-600 mb-4">
+                    Interior waterproofing manages water after it has already entered the foundation structure. Rather than trying to keep water out completely, these systems collect and redirect it safely away from your basement.
+                  </p>
+                </div>
+              </div>
+
+              <!-- System Components -->
+              <div class="grid md:grid-cols-2 gap-6 mb-6">
+                <div>
+                  <h4 class="font-semibold text-slate-900 mb-3">Primary Components</h4>
+                  <ul class="space-y-2 text-slate-600 text-sm">
+                    <li class="flex items-start space-x-2">
+                      <div class="w-2 h-2 bg-cyan-600  mt-2"></div>
+                      <span><strong>Perimeter drainage channel:</strong> Concrete-free trench around basement perimeter</span>
+                    </li>
+                    <li class="flex items-start space-x-2">
+                      <div class="w-2 h-2 bg-cyan-600  mt-2"></div>
+                      <span><strong>Collection pipes:</strong> Perforated drainage pipes in gravel bed</span>
+                    </li>
+                    <li class="flex items-start space-x-2">
+                      <div class="w-2 h-2 bg-cyan-600  mt-2"></div>
+                      <span><strong>Sump basin and pump:</strong> Collects water and pumps it outside</span>
+                    </li>
+                    <li class="flex items-start space-x-2">
+                      <div class="w-2 h-2 bg-cyan-600  mt-2"></div>
+                      <span><strong>Vapor barrier system:</strong> Directs wall moisture to drainage system</span>
+                    </li>
+                  </ul>
+                </div>
+
+                <div>
+                  <h4 class="font-semibold text-cyan-600 mb-3">Key Advantages</h4>
+                  <ul class="space-y-2 text-slate-600 text-sm">
+                    <li class="flex items-start space-x-2">
+                      <svg class="w-4 h-4 text-cyan-600 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path>
+                      </svg>
+                      <span>No exterior excavation required</span>
+                    </li>
+                    <li class="flex items-start space-x-2">
+                      <svg class="w-4 h-4 text-cyan-600 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path>
+                      </svg>
+                      <span>Works in all weather conditions</span>
+                    </li>
+                    <li class="flex items-start space-x-2">
+                      <svg class="w-4 h-4 text-cyan-600 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path>
+                      </svg>
+                      <span>Highly effective against hydrostatic pressure</span>
+                    </li>
+                    <li class="flex items-start space-x-2">
+                      <svg class="w-4 h-4 text-cyan-600 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path>
+                      </svg>
+                      <span>Lower cost than exterior options</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- Limitations -->
+              <div class="bg-amber-500 border-2 border-cyan-500/30  p-6">
+                <h4 class="font-semibold text-cyan-400 mb-3">Limitations to Consider</h4>
+                <div class="grid md:grid-cols-2 gap-4">
+                  <ul class="text-slate-600 text-sm space-y-2">
+                    <li class="flex items-start space-x-2">
+                      <div class="w-2 h-2 bg-construction-yellow  mt-2"></div>
+                      <span>Requires sump pump maintenance</span>
+                    </li>
+                    <li class="flex items-start space-x-2">
+                      <div class="w-2 h-2 bg-construction-yellow  mt-2"></div>
+                      <span>Power dependency for pump operation</span>
+                    </li>
+                  </ul>
+                  <ul class="text-slate-600 text-sm space-y-2">
+                    <li class="flex items-start space-x-2">
+                      <div class="w-2 h-2 bg-construction-yellow  mt-2"></div>
+                      <span>Water still enters foundation structure</span>
+                    </li>
+                    <li class="flex items-start space-x-2">
+                      <div class="w-2 h-2 bg-construction-yellow  mt-2"></div>
+                      <span>May require finished basement restoration</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- Best Applications for Interior -->
+            <div class="bg-navy-900 border-2 border-slate-700/30  p-8 mb-8">
+              <h3 class="text-2xl font-bold text-slate-900 mb-6">Best Applications for Interior Systems</h3>
+              
+              <div class="grid md:grid-cols-2 gap-6">
+                <div>
+                  <h4 class="font-semibold text-slate-900 mb-3">Ideal Situations</h4>
+                  <ul class="space-y-2 text-slate-600 text-sm">
+                    <li>• Active water problems requiring immediate solution</li>
+                    <li>• High hydrostatic pressure conditions</li>
+                    <li>• Budget constraints (cost-effective solution)</li>
+                    <li>• Recently landscaped properties</li>
+                    <li>• Limited exterior access or space</li>
+                    <li>• Winter or emergency installations</li>
+                    <li>• Clay soil conditions (Toronto typical)</li>
+                  </ul>
+                </div>
+
+                <div>
+                  <h4 class="font-semibold text-slate-900 mb-3">Toronto-Specific Advantages</h4>
+                  <ul class="space-y-2 text-slate-600 text-sm">
+                    <li>• Works effectively with Toronto's clay soil</li>
+                    <li>• Handles seasonal water table fluctuations</li>
+                    <li>• No permit requirements in most cases</li>
+                    <li>• Minimal neighborhood disruption</li>
+                    <li>• Compatible with existing drainage systems</li>
+                    <li>• Can be installed during basement renovations</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <h2 class="uppercase text-3xl font-bold text-slate-900 mb-8">Exterior Waterproofing Systems</h2>
+
+            <div class="my-8">
+              <img src="/assets/waterproofing/exterior-waterproofing-membrane.webp" 
+                   alt="Exterior waterproofing membrane installation on foundation wall" 
+                   loading="lazy" 
+                   class=" shadow-lg w-full max-w-2xl mx-auto" />
+            </div>
+            
+            <!-- Exterior Systems Deep Dive -->
+            <div class="bg-white  p-8 mb-8 border-2 border-slate-600">
+              <div class="flex items-start space-x-4 mb-6">
+                <div class="flex-shrink-0 w-12 h-12 bg-amber-500  flex items-center justify-center">
+                  <svg class="w-6 h-6 text-slate-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                  </svg>
+                </div>
+                <div class="flex-1">
+                  <h3 class="text-2xl font-bold text-cyan-400 mb-4">How Exterior Systems Work</h3>
+                  <p class="text-slate-600 mb-4">
+                    Exterior waterproofing creates a barrier between your foundation and the surrounding soil. It prevents water from ever reaching the foundation walls, addressing the problem at its source.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Installation Process -->
+              <div class="grid md:grid-cols-2 gap-6 mb-6">
+                <div>
+                  <h4 class="font-semibold text-cyan-400 mb-3">Installation Process</h4>
+                  <ol class="space-y-2 text-slate-600 text-sm">
+                    <li class="flex items-start space-x-2">
+                      <span class="flex-shrink-0 w-5 h-5 bg-amber-500  flex items-center justify-center text-slate-900 text-xs font-bold">1</span>
+                      <span>Excavate foundation to footing level</span>
+                    </li>
+                    <li class="flex items-start space-x-2">
+                      <span class="flex-shrink-0 w-5 h-5 bg-amber-500  flex items-center justify-center text-slate-900 text-xs font-bold">2</span>
+                      <span>Clean and prepare foundation walls</span>
+                    </li>
+                    <li class="flex items-start space-x-2">
+                      <span class="flex-shrink-0 w-5 h-5 bg-amber-500  flex items-center justify-center text-slate-900 text-xs font-bold">3</span>
+                      <span>Apply waterproof membrane system</span>
+                    </li>
+                    <li class="flex items-start space-x-2">
+                      <span class="flex-shrink-0 w-5 h-5 bg-amber-500  flex items-center justify-center text-slate-900 text-xs font-bold">4</span>
+                      <span>Install drainage system (weeping tiles)</span>
+                    </li>
+                    <li class="flex items-start space-x-2">
+                      <span class="flex-shrink-0 w-5 h-5 bg-amber-500  flex items-center justify-center text-slate-900 text-xs font-bold">5</span>
+                      <span>Backfill with proper grading</span>
+                    </li>
+                  </ol>
+                </div>
+
+                <div>
+                  <h4 class="font-semibold text-cyan-600 mb-3">System Components</h4>
+                  <ul class="space-y-2 text-slate-600 text-sm">
+                    <li class="flex items-start space-x-2">
+                      <div class="w-2 h-2 bg-cyan-600  mt-2"></div>
+                      <span><strong>Waterproof membrane:</strong> Rubberized or polymer coating</span>
+                    </li>
+                    <li class="flex items-start space-x-2">
+                      <div class="w-2 h-2 bg-cyan-600  mt-2"></div>
+                      <span><strong>Drainage board:</strong> Protects membrane and aids drainage</span>
+                    </li>
+                    <li class="flex items-start space-x-2">
+                      <div class="w-2 h-2 bg-cyan-600  mt-2"></div>
+                      <span><strong>Weeping tile system:</strong> Perforated pipes at footing level</span>
+                    </li>
+                    <li class="flex items-start space-x-2">
+                      <div class="w-2 h-2 bg-cyan-600  mt-2"></div>
+                      <span><strong>Gravel bed:</strong> Drainage medium around pipes</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- Advantages and Challenges -->
+              <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-cyan-600 border-2 border-cyan-600/30  p-4">
+                  <h4 class="font-semibold text-cyan-600 mb-3">Major Advantages</h4>
+                  <ul class="text-slate-600 text-sm space-y-1">
+                    <li>• Prevents water from reaching foundation</li>
+                    <li>• Maximum foundation protection</li>
+                    <li>• Longest-lasting solution (25-30+ years)</li>
+                    <li>• No ongoing maintenance required</li>
+                    <li>• No power dependency</li>
+                    <li>• Can address structural foundation issues</li>
+                  </ul>
+                </div>
+
+                <div class="bg-red-600 border-2 border-red-600/30  p-4">
+                  <h4 class="font-semibold text-red-600 mb-3">Significant Challenges</h4>
+                  <ul class="text-slate-600 text-sm space-y-1">
+                    <li>• High cost (2-3x interior systems)</li>
+                    <li>• Weather and seasonal limitations</li>
+                    <li>• Extensive landscaping disruption</li>
+                    <li>• Potential utility line conflicts</li>
+                    <li>• Requires permits in many areas</li>
+                    <li>• Limited access may increase costs</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- Best Applications for Exterior -->
+            <div class="bg-amber-500 border-2 border-cyan-500/30  p-8 mb-8">
+              <h3 class="text-2xl font-bold text-cyan-400 mb-6">Best Applications for Exterior Systems</h3>
+              
+              <div class="grid md:grid-cols-2 gap-6">
+                <div>
+                  <h4 class="font-semibold text-cyan-400 mb-3">Ideal Scenarios</h4>
+                  <ul class="space-y-2 text-slate-600 text-sm">
+                    <li>• New construction or major renovations</li>
+                    <li>• Prevention-focused approach</li>
+                    <li>• Structural foundation repairs needed</li>
+                    <li>• Upcoming landscaping projects</li>
+                    <li>• High-value property protection</li>
+                    <li>• Long-term ownership plans</li>
+                    <li>• Comprehensive waterproofing goals</li>
+                  </ul>
+                </div>
+
+                <div>
+                  <h4 class="font-semibold text-cyan-400 mb-3">When It's Worth the Investment</h4>
+                  <ul class="space-y-2 text-slate-600 text-sm">
+                    <li>• Planning to finish/upgrade basement</li>
+                    <li>• Current system has completely failed</li>
+                    <li>• Preparing home for sale (premium market)</li>
+                    <li>• Combining with foundation repairs</li>
+                    <li>• Insurance requirements or claims</li>
+                    <li>• Maximum protection desired</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <h2 class="uppercase text-3xl font-bold text-slate-900 mb-8">Cost-Benefit Analysis</h2>
+            
+            <!-- Detailed Cost Analysis -->
+            <div class="grid md:grid-cols-2 gap-8 mb-8">
+              <div class="bg-white  p-6 border-2 border-slate-600">
+                <h3 class="text-xl font-bold text-slate-900 mb-4">Interior System Economics</h3>
+                
+                <!-- Cost Breakdown -->
+                <div class="mb-4">
+                  <h4 class="font-semibold text-slate-900 mb-2">Typical Costs (1000 sq ft basement)</h4>
+                  <div class="space-y-2 text-sm">
+                    <div class="flex justify-between">
+                      <span class="text-slate-600">Materials & labor:</span>
+                      <span class="text-slate-900">$12,000 - $16,000</span>
+                    </div>
+                    <div class="flex justify-between">
+                      <span class="text-slate-600">Sump pump system:</span>
+                      <span class="text-slate-900">$2,500 - $4,000</span>
+                    </div>
+                    <div class="flex justify-between">
+                      <span class="text-slate-600">Floor restoration:</span>
+                      <span class="text-slate-900">$1,500 - $3,000</span>
+                    </div>
+                    <div class="flex justify-between border-t border-slate-300 pt-2">
+                      <span class="text-slate-900 font-medium">Total range:</span>
+                      <span class="text-slate-900 font-bold">$16,000 - $23,000</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- ROI Factors -->
+                <div class="bg-navy-900 border-2 border-slate-700/30  p-4">
+                  <h4 class="font-semibold text-slate-900 mb-2">10-Year ROI</h4>
+                  <ul class="text-slate-600 text-xs space-y-1">
+                    <li>• Home value increase: $10,000-$15,000</li>
+                    <li>• Prevented damage: $20,000-$50,000</li>
+                    <li>• Maintenance costs: $500-$1,000</li>
+                    <li>• <strong class="text-slate-900">Net benefit: $29,500-$64,000</strong></li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="bg-white  p-6 border-2 border-slate-600">
+                <h3 class="text-xl font-bold text-cyan-400 mb-4">Exterior System Economics</h3>
+                
+                <!-- Cost Breakdown -->
+                <div class="mb-4">
+                  <h4 class="font-semibold text-cyan-400 mb-2">Typical Costs (full perimeter)</h4>
+                  <div class="space-y-2 text-sm">
+                    <div class="flex justify-between">
+                      <span class="text-slate-600">Excavation & prep:</span>
+                      <span class="text-slate-900">$8,000 - $12,000</span>
+                    </div>
+                    <div class="flex justify-between">
+                      <span class="text-slate-600">Waterproofing materials:</span>
+                      <span class="text-slate-900">$6,000 - $10,000</span>
+                    </div>
+                    <div class="flex justify-between">
+                      <span class="text-slate-600">Drainage & backfill:</span>
+                      <span class="text-slate-900">$8,000 - $13,000</span>
+                    </div>
+                    <div class="flex justify-between border-t border-slate-300 pt-2">
+                      <span class="text-slate-900 font-medium">Total range:</span>
+                      <span class="text-cyan-400 font-bold">$22,000 - $35,000</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- ROI Factors -->
+                <div class="bg-amber-500 border-2 border-cyan-500/30  p-4">
+                  <h4 class="font-semibold text-cyan-400 mb-2">10-Year ROI</h4>
+                  <ul class="text-slate-600 text-xs space-y-1">
+                    <li>• Home value increase: $15,000-$20,000</li>
+                    <li>• Prevented damage: $25,000-$60,000</li>
+                    <li>• Maintenance costs: $200-$500</li>
+                    <li>• <strong class="text-cyan-400">Net benefit: $40,200-$79,500</strong></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <h2 class="uppercase text-3xl font-bold text-slate-900 mb-8">Decision Matrix</h2>
+            
+            <!-- Decision Framework -->
+            <div class="bg-white  p-8 mb-8 border-2 border-slate-600">
+              <h3 class="text-xl font-bold text-cyan-600 mb-6">Choose Interior Systems When:</h3>
+              
+              <div class="grid md:grid-cols-2 gap-6 mb-8">
+                <div class="bg-cyan-600 border-2 border-cyan-600/30  p-4">
+                  <h4 class="font-semibold text-cyan-600 mb-3">Problem Factors</h4>
+                  <ul class="space-y-2 text-slate-600 text-sm">
+                    <li class="flex items-center space-x-2">
+                      <svg class="w-4 h-4 text-cyan-600" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path>
+                      </svg>
+                      <span>Active water infiltration</span>
+                    </li>
+                    <li class="flex items-center space-x-2">
+                      <svg class="w-4 h-4 text-cyan-600" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path>
+                      </svg>
+                      <span>High hydrostatic pressure</span>
+                    </li>
+                    <li class="flex items-center space-x-2">
+                      <svg class="w-4 h-4 text-cyan-600" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path>
+                      </svg>
+                      <span>Floor/cove joint leaks</span>
+                    </li>
+                    <li class="flex items-center space-x-2">
+                      <svg class="w-4 h-4 text-cyan-600" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path>
+                      </svg>
+                      <span>Emergency situation</span>
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="bg-cyan-600 border-2 border-cyan-600/30  p-4">
+                  <h4 class="font-semibold text-cyan-600 mb-3">Practical Factors</h4>
+                  <ul class="space-y-2 text-slate-600 text-sm">
+                    <li class="flex items-center space-x-2">
+                      <svg class="w-4 h-4 text-cyan-600" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path>
+                      </svg>
+                      <span>Budget under $20,000</span>
+                    </li>
+                    <li class="flex items-center space-x-2">
+                      <svg class="w-4 h-4 text-cyan-600" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path>
+                      </svg>
+                      <span>Need quick solution</span>
+                    </li>
+                    <li class="flex items-center space-x-2">
+                      <svg class="w-4 h-4 text-cyan-600" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path>
+                      </svg>
+                      <span>Recently landscaped</span>
+                    </li>
+                    <li class="flex items-center space-x-2">
+                      <svg class="w-4 h-4 text-cyan-600" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path>
+                      </svg>
+                      <span>Winter installation needed</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <h3 class="text-xl font-bold text-cyan-400 mb-6">Choose Exterior Systems When:</h3>
+              
+              <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-amber-500 border-2 border-cyan-500/30  p-4">
+                  <h4 class="font-semibold text-cyan-400 mb-3">Optimal Conditions</h4>
+                  <ul class="space-y-2 text-slate-600 text-sm">
+                    <li class="flex items-center space-x-2">
+                      <svg class="w-4 h-4 text-cyan-400" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path>
+                      </svg>
+                      <span>New construction phase</span>
+                    </li>
+                    <li class="flex items-center space-x-2">
+                      <svg class="w-4 h-4 text-cyan-400" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path>
+                      </svg>
+                      <span>Major home renovation</span>
+                    </li>
+                    <li class="flex items-center space-x-2">
+                      <svg class="w-4 h-4 text-cyan-400" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path>
+                      </svg>
+                      <span>Foundation repairs needed</span>
+                    </li>
+                    <li class="flex items-center space-x-2">
+                      <svg class="w-4 h-4 text-cyan-400" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path>
+                      </svg>
+                      <span>Prevention-focused approach</span>
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="bg-amber-500 border-2 border-cyan-500/30  p-4">
+                  <h4 class="font-semibold text-cyan-400 mb-3">Investment Justification</h4>
+                  <ul class="space-y-2 text-slate-600 text-sm">
+                    <li class="flex items-center space-x-2">
+                      <svg class="w-4 h-4 text-cyan-400" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path>
+                      </svg>
+                      <span>Budget over $25,000</span>
+                    </li>
+                    <li class="flex items-center space-x-2">
+                      <svg class="w-4 h-4 text-cyan-400" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7-293a1 1 0 011.414 0z"></path>
+                      </svg>
+                      <span>Long-term home ownership</span>
+                    </li>
+                    <li class="flex items-center space-x-2">
+                      <svg class="w-4 h-4 text-cyan-400" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7-293a1 1 0 011.414 0z"></path>
+                      </svg>
+                      <span>High-value property</span>
+                    </li>
+                    <li class="flex items-center space-x-2">
+                      <svg class="w-4 h-4 text-cyan-400" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7-293a1 1 0 011.414 0z"></path>
+                      </svg>
+                      <span>Maximum protection desired</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <h2 class="uppercase text-3xl font-bold text-slate-900 mb-6">Combined Approach: When Both Systems Make Sense</h2>
+            
+            <div class="bg-construction-purple/10 border-2 border-construction-purple/30  p-8 mb-8">
+              <h3 class="text-xl font-bold text-construction-purple mb-6">Comprehensive Waterproofing Strategy</h3>
+              
+              <p class="text-slate-600 mb-6">
+                Some situations benefit from combining both interior and exterior systems for maximum protection. While expensive, this comprehensive approach provides the highest level of security against water intrusion.
+              </p>
+
+              <div class="grid md:grid-cols-2 gap-6">
+                <div>
+                  <h4 class="font-semibold text-construction-purple mb-3">When Combined Systems Are Justified</h4>
+                  <ul class="space-y-2 text-slate-600 text-sm">
+                    <li>• Severe, persistent water problems</li>
+                    <li>• High-value finished basements</li>
+                    <li>• Commercial or rental properties</li>
+                    <li>• Extreme weather exposure locations</li>
+                    <li>• Previous system failures</li>
+                    <li>• Insurance or lender requirements</li>
+                    <li>• Critical basement uses (home office, server room)</li>
+                  </ul>
+                </div>
+
+                <div>
+                  <h4 class="font-semibold text-construction-purple mb-3">Combined System Benefits</h4>
+                  <ul class="space-y-2 text-slate-600 text-sm">
+                    <li>• 99%+ effectiveness rate</li>
+                    <li>• Multiple layers of protection</li>
+                    <li>• Redundancy in case of partial failure</li>
+                    <li>• Maximum home value protection</li>
+                    <li>• Ultimate peace of mind</li>
+                    <li>• Comprehensive warranties available</li>
+                    <li>• Suitable for any climate condition</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+          </article>
+        </div>
+      </div>
+    </section>
+
+    
+      <!-- Related Images Gallery -->
+      <BlogImageGallery topic="waterproofing-cost" />
+
+<!-- FAQ Section -->
+    <section class="py-16 bg-slate-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="uppercase text-3xl font-bold text-slate-900 mb-8 text-center">Interior vs Exterior FAQ</h2>
+          
+          <div class="space-y-4">
+            <div class="bg-white  overflow-hidden border-2 border-slate-600">
+              <button class="w-full text-left p-6 focus:outline-none focus:ring-2 focus:ring-yellow-500" data-faq-toggle>
+                <div class="flex justify-between items-center">
+                  <h3 class="text-lg font-semibold text-slate-900">Which system lasts longer - interior or exterior?</h3>
+                  <svg class="w-5 h-5 text-cyan-400 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                  </svg>
+                </div>
+              </button>
+              <div class="hidden px-6 pb-6">
+                <p class="text-slate-600">
+                  Exterior systems typically last 25-30+ years with minimal maintenance, while interior systems last 15-25 years but require periodic sump pump maintenance. However, interior systems are easier and less expensive to upgrade or repair when needed, and modern pumps are very reliable with proper maintenance.
+                </p>
+              </div>
+            </div>
+
+            <div class="bg-white  overflow-hidden border-2 border-slate-600">
+              <button class="w-full text-left p-6 focus:outline-none focus:ring-2 focus:ring-yellow-500" data-faq-toggle>
+                <div class="flex justify-between items-center">
+                  <h3 class="text-lg font-semibold text-slate-900">Can I install an interior system if I have finished basement?</h3>
+                  <svg class="w-5 h-5 text-cyan-400 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                  </svg>
+                </div>
+              </button>
+              <div class="hidden px-6 pb-6">
+                <p class="text-slate-600">
+                  Yes, interior systems can be installed in finished basements, but it requires removing flooring along the perimeter and potentially some wall sections. Professional installers can minimize disruption and restore finishes, though this adds to the project cost. Many homeowners use this as an opportunity to upgrade their basement finishes.
+                </p>
+              </div>
+            </div>
+
+            <div class="bg-white  overflow-hidden border-2 border-slate-600">
+              <button class="w-full text-left p-6 focus:outline-none focus:ring-2 focus:ring-yellow-500" data-faq-toggle>
+                <div class="flex justify-between items-center">
+                  <h3 class="text-lg font-semibold text-slate-900">Which system works better in Toronto's clay soil?</h3>
+                  <svg class="w-5 h-5 text-cyan-400 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                  </svg>
+                </div>
+              </button>
+              <div class="hidden px-6 pb-6">
+                <p class="text-slate-600">
+                  Interior systems often work better in Toronto's clay soil because they manage hydrostatic pressure rather than fighting it. Clay soil's poor drainage creates high pressure that can overwhelm exterior membranes over time. Interior systems capture and redirect this pressure effectively, which is why they're the preferred solution for most Toronto contractors.
+                </p>
+              </div>
+            </div>
+
+            <div class="bg-white  overflow-hidden border-2 border-slate-600">
+              <button class="w-full text-left p-6 focus:outline-none focus:ring-2 focus:ring-yellow-500" data-faq-toggle>
+                <div class="flex justify-between items-center">
+                  <h3 class="text-lg font-semibold text-slate-900">Should I get both interior and exterior systems?</h3>
+                  <svg class="w-5 h-5 text-cyan-400 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                  </svg>
+                </div>
+              </button>
+              <div class="hidden px-6 pb-6">
+                <p class="text-slate-600">
+                  Combined systems offer maximum protection but are expensive ($35,000-$50,000+). They're justified for high-value properties, severe problems, or critical basement uses. For most Toronto homes, a properly installed interior system provides excellent protection at much lower cost. Consider exterior systems when doing major renovations or if interior solutions haven't been effective.
+                </p>
+              </div>
+            </div>
+
+            <div class="bg-white  overflow-hidden border-2 border-slate-600">
+              <button class="w-full text-left p-6 focus:outline-none focus:ring-2 focus:ring-yellow-500" data-faq-toggle>
+                <div class="flex justify-between items-center">
+                  <h3 class="text-lg font-semibold text-slate-900">What happens if my sump pump fails?</h3>
+                  <svg class="w-5 h-5 text-cyan-400 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                  </svg>
+                </div>
+              </button>
+              <div class="hidden px-6 pb-6">
+                <p class="text-slate-600">
+                  Modern interior systems include battery backup pumps that activate during power failures or primary pump problems. Quality systems also include alarms and monitoring that alert you to issues. With proper maintenance (annual checks), sump pump failures are rare. Most systems can handle 8-24+ hours of operation on battery backup, covering most emergency situations.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-slate-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto text-center">
+          <h2 class="uppercase text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+            Ready to Learn About Your Options?
+          </h2>
+          <p class="text-slate-900 text-lg mb-8">
+            Now that you understand the differences, explore our detailed service pages to learn about professional installation and get specific pricing for your Toronto basement.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="/services/interior-waterproofing" class="inline-flex items-center justify-center px-8 py-3 bg-white text-cyan-600 font-semibold hover:bg-slate-50 transition-all duration-200 shadow-lg">
+              <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2H5a2 2 0 00-2 2z"></path>
+              </svg>
+              Interior Waterproofing Services
+            </a>
+            <a href="/services/exterior-waterproofing" class="inline-flex items-center justify-center px-8 py-3 bg-slate-50 text-cyan-400 font-semibold hover:bg-white transition-all duration-200 shadow-lg border-2 border-white/20">
+              <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16"></path>
+              </svg>
+              Exterior Waterproofing Services
+            </a>
+          </div>
+          <div class="mt-6 text-slate-600">
+            <p class="text-sm"> Free System Analysis   Honest Recommendations   Multiple Solution Options</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Related Services & Resources -->
+  <section class="py-12 bg-slate-50">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="uppercase text-2xl font-bold mb-6 text-slate-900">Solutions & Resources</h2>
+      
+      <div class="grid md:grid-cols-3 gap-6 mb-8">
+        <!-- Interior Waterproofing -->
+        <div class="bg-white p-6  shadow-md border-2 border-slate-100">
+          <div class="flex items-center mb-4">
+            <div class="w-12 h-12 bg-cyan-600  flex items-center justify-center mr-4">
+              <svg class="w-6 h-6 text-slate-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2H5a2 2 0 00-2 2z"></path>
+              </svg>
+            </div>
+            <h3 class="text-lg font-bold text-slate-900">Interior Waterproofing</h3>
+          </div>
+          <p class="text-slate-500 mb-4 text-sm">Complete interior drainage systems to manage water from inside your basement.</p>
+          <a href="/services/interior-waterproofing" class="text-slate-900 hover:text-slate-900/80 font-medium text-sm">Learn More →</a>
+        </div>
+
+        <!-- Exterior Waterproofing -->
+        <div class="bg-white p-6  shadow-md border-2 border-slate-100">
+          <div class="flex items-center mb-4">
+            <div class="w-12 h-12 bg-amber-500  flex items-center justify-center mr-4">
+              <svg class="w-6 h-6 text-slate-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16"></path>
+              </svg>
+            </div>
+            <h3 class="text-lg font-bold text-slate-900">Exterior Waterproofing</h3>
+          </div>
+          <p class="text-slate-500 mb-4 text-sm">Comprehensive foundation protection from the outside to prevent water entry.</p>
+          <a href="/services/exterior-waterproofing" class="text-cyan-400 hover:text-cyan-400/80 font-medium text-sm">Learn More →</a>
+        </div>
+
+        <!-- Foundation Repair -->
+        <div class="bg-white p-6  shadow-md border-2 border-slate-100">
+          <div class="flex items-center mb-4">
+            <div class="w-12 h-12 bg-red-600  flex items-center justify-center mr-4">
+              <svg class="w-6 h-6 text-slate-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547A8.014 8.014 0 004 20v2h16v-2a8.014 8.014 0 00-.244-3.572z"></path>
+              </svg>
+            </div>
+            <h3 class="text-lg font-bold text-slate-900">Foundation Repair</h3>
+          </div>
+          <p class="text-slate-500 mb-4 text-sm">Structural repairs to complement your waterproofing system for complete protection.</p>
+          <a href="/services/foundation-repair" class="text-red-600 hover:text-red-600/80 font-medium text-sm">Learn More →</a>
+        </div>
+      </div>
+      
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="p-6 bg-cyan-50 ">
+          <h3 class="font-bold mb-3 text-slate-900">Helpful Tools</h3>
+          <ul class="space-y-2">
+            <li> <a href="/tools/detailed-cost-estimator" class="text-cyan-600 hover:underline">Calculate Repair Cost</a></li>
+            <li> <a href="/free-inspection" class="text-cyan-600 hover:underline">Get Free Assessment</a></li>
+          </ul>
+        </div>
+        <div class="p-6 bg-orange-50 ">
+          <h3 class="font-bold mb-3 text-slate-900">Related Articles</h3>
+          <ul class="space-y-2">
+            <li> <a href="/blog/basement-waterproofing-cost-toronto-2026" class="text-orange-600 hover:underline">Basement Waterproofing Costs</a></li>
+            <li> <a href="/blog/french-drain-vs-weeping-tile" class="text-orange-600 hover:underline">French Drain vs Weeping Tile</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  
+</PageLayout>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // FAQ toggle functionality
+    const faqButtons = document.querySelectorAll('[data-faq-toggle]');
+    faqButtons.forEach(button => {
+      button.addEventListener('click', function() {
+        const content = button.nextElementSibling;
+        const arrow = button.querySelector('svg');
+        
+        if (content.classList.contains('hidden')) {
+          content.classList.remove('hidden');
+          arrow.classList.add('rotate-180');
+        } else {
+          content.classList.add('hidden');
+          arrow.classList.remove('rotate-180');
+        }
+      });
+    });
+
+    // Recommendation Generator
+    const recommendBtn = document.getElementById('generateRecommendationBtn');
+    if (recommendBtn) {
+      recommendBtn.addEventListener('click', function() {
+    const concern = document.querySelector('input[name="concern"]:checked')?.value;
+    const budget = document.getElementById('budget').value;
+    const urgency = document.getElementById('urgency').value;
+    const landscaping = document.getElementById('landscaping').checked;
+    const utilities = document.getElementById('utilities').checked;
+    const basementFinished = document.getElementById('basement-finished').checked;
+    
+    if (!concern) {
+      alert('Please select your primary concern to get a recommendation.');
+      return;
+    }
+    
+    let recommendation = '';
+    let system = '';
+    let reasoning = [];
+    let considerations = [];
+    
+    // Decision logic
+    if (concern === 'active-flooding' || urgency === 'emergency') {
+      system = 'Interior Drainage System';
+      recommendation = 'interior';
+      reasoning = [
+        'Immediate solution for active water problems',
+        'Works year-round regardless of weather',
+        'Most effective for stopping flooding quickly',
+        'Lower cost allows for immediate action'
+      ];
+      if (basementFinished) considerations.push('Will require some restoration work');
+    } else if (concern === 'prevention' && budget === 'over-30k' && !landscaping) {
+      system = 'Exterior Waterproofing';
+      recommendation = 'exterior';
+      reasoning = [
+        'Best prevention strategy available',
+        'Maximum long-term protection',
+        'No ongoing maintenance requirements',
+        'Budget supports comprehensive approach'
+      ];
+      if (urgency !== 'planning') considerations.push('Weather-dependent installation timing');
+    } else if (budget === 'over-30k' && (concern === 'cracks' || urgency === 'renovation')) {
+      system = 'Combined Interior + Exterior';
+      recommendation = 'combined';
+      reasoning = [
+        'Maximum protection for high-value investment',
+        'Addresses both current and future concerns',
+        'Redundant systems provide ultimate security',
+        'Budget supports comprehensive solution'
+      ];
+    } else {
+      system = 'Interior Drainage System';
+      recommendation = 'interior';
+      reasoning = [
+        'Most cost-effective solution for your situation',
+        'Proven effectiveness in Toronto conditions',
+        'Quick installation with minimal disruption',
+        'Works well with existing constraints'
+      ];
+      if (landscaping) reasoning.push('Preserves your recent landscaping investment');
+      if (utilities) reasoning.push('Avoids complex utility relocations');
+    }
+    
+    // Add specific considerations
+    if (landscaping && recommendation === 'exterior') {
+      considerations.push('Recent landscaping will be disrupted');
+    }
+    if (utilities && recommendation === 'exterior') {
+      considerations.push('Utility lines may complicate installation');
+    }
+    
+    // Display results
+    const resultsDiv = document.getElementById('recommendationResults');
+    const systemColor = recommendation === 'interior' ? 'construction-blue' : 
+                       recommendation === 'exterior' ? 'construction-orange' : 'construction-purple';
+    
+    resultsDiv.innerHTML = `
+      <div class="bg-${systemColor}/10 border-2 border-${systemColor}/30  p-6">
+        <h4 class="text-xl font-bold text-${systemColor} mb-3">Recommended: ${system}</h4>
+        
+        <div class="mb-4">
+          <h5 class="font-semibold text-white mb-2">Why This System Is Right for You:</h5>
+          <ul class="space-y-1 text-slate-600 text-sm">
+            ${reasoning.map(reason => `
+              <li class="flex items-start space-x-2">
+                <svg class="w-4 h-4 text-${systemColor} mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path>
+                </svg>
+                <span>${reason}</span>
+              </li>
+            `).join('')}
+          </ul>
+        </div>
+        
+        ${considerations.length > 0 ? `
+          <div class="mb-4">
+            <h5 class="font-semibold text-cyan-400 mb-2">Additional Considerations:</h5>
+            <ul class="space-y-1 text-slate-600 text-sm">
+              ${considerations.map(consideration => `
+                <li class="flex items-start space-x-2">
+                  <div class="w-2 h-2 bg-construction-yellow  mt-2"></div>
+                  <span>${consideration}</span>
+                </li>
+              `).join('')}
+            </ul>
+          </div>
+        ` : ''}
+        
+        <div class="bg-${systemColor}/20  p-3">
+          <p class="text-${systemColor} text-sm font-medium">
+            <strong>Next Step:</strong> Schedule a free assessment to confirm this recommendation and get detailed pricing.
+          </p>
+        </div>
+      </div>
+    `;
+      });
+    }
+
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        target.scrollIntoView({
+          behavior: 'smooth'
+        });
+      }
+    });
+  });
+  });
+</script>

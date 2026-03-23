@@ -1,0 +1,402 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import Hero from '../../components/sections/Hero.astro';
+import Services from '../../components/sections/Services.astro';
+import Process from '../../components/sections/Process.astro';
+import Testimonials from '../../components/sections/Testimonials.astro';
+import Stats from '../../components/sections/Stats.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import BreadcrumbSchema from '../../components/BreadcrumbSchema.astro';
+
+const pageTitle = "The Beaches Water Protection | Basement & Foundation Solutions";
+const pageDescription = "Expert water protection for local homes facing lake moisture, high water table, sandy soil. Storm surge protection specialists. 24/7 emergency response.";
+
+// Local area information
+const localInfo = {
+  neighborhoodName: "The Beaches",
+  cityName: "Toronto",
+  avgHomeAge: "80-100 years",
+  foundationType: "Brick & Block",
+  soilType: "Sandy",
+  waterTable: "High (Lake proximity)",
+  floodRisk: "High",
+  avgProjectCost: "$7,000-$14,000",
+  responseTime: "20-25 minutes"
+};
+
+// Neighborhood-specific features
+const neighborhoodFeatures = [
+  {
+    title: 'LAKE PROXIMITY EXPERTS',
+    description: 'Specialized solutions for homes near Lake Ontario with high water tables.',
+    highlight: true
+  },
+  {
+    title: 'STORM SURGE PROTECTION',
+    description: '24/7 emergency response for lake-related flooding and storm surges.',
+    highlight: true
+  },
+  {
+    title: 'SANDY SOIL SPECIALISTS',
+    description: 'Expert drainage systems designed for rapid water movement in sandy conditions.',
+    highlight: true
+  },
+  {
+    title: 'HERITAGE HOME EXPERTS',
+    description: 'Preserve character of 80-100 year old Beaches homes.',
+  },
+  {
+    title: 'RAPID RESPONSE',
+    description: 'Under 25 minutes emergency response throughout this area.',
+  },
+  {
+    title: 'BOARDWALK AREA PROS',
+    description: 'Protect properties along the waterfront and boardwalk.',
+  }
+];
+
+// Local challenges specific to neighborhood
+const localChallenges = [
+  {
+    problem: "LAKE ONTARIO STORM SURGES",
+    description: "Properties south of Queen Street face elevated water tables during storms",
+    solution: "Heavy-duty sump systems with redundant pumps and battery backups"
+  },
+  {
+    problem: "SANDY SOIL DRAINAGE",
+    description: "Water moves quickly through sandy soil requiring specialized approaches",
+    solution: "Extended French drain systems with larger diameter pipes"
+  },
+  {
+    problem: "COMBINED SEWER OVERFLOWS",
+    description: "Aging sewer system along Queen and Kingston Road backs up during storms",
+    solution: "Backwater valve installation with mainline sewer protection"
+  }
+];
+
+// Recent flooding events
+const recentFlooding = [
+  "August 2024: 92mm rainfall + high lake levels flooded 50+ basements on Lee Avenue",
+  "July 2024: Storm surge affected all properties south of Kingston Road",
+  "May 2024: Spring lake levels reached 75.9m, highest since 2019",
+  "April 2024: Ashbridge's Bay overflow impacted Woodbine Beach area homes"
+];
+
+// Neighborhood-specific FAQs
+const neighborhoodFAQs = [
+  {
+    question: "How does Lake Ontario affect my basement?",
+    answer: "Lake Ontario directly impacts groundwater levels in The Beaches. High lake levels raise the water table, increasing hydrostatic pressure on foundations. Storm surges can overwhelm drainage systems, causing rapid flooding."
+  },
+  {
+    question: "What are common water issues in Beaches homes?",
+    answer: "This area's 80-100 year old homes with brick and block building bases face unique challenges from sandy soil, high water tables, and lake proximity. Combined sewer backups during storms are also common."
+  },
+  {
+    question: "How quickly can you respond to storm flooding locally?",
+    answer: "We guarantee 20-25 minute emergency response anywhere in this community. During storm events, we prioritize waterfront properties and known flood zones."
+  },
+  {
+    question: "Do you handle storm surge flooding?",
+    answer: "Yes, we specialize in lake-related flooding. Our team has extensive experience with storm surge mitigation, including emergency pumping, barrier installation, and rapid water extraction."
+  }
+];
+
+// Schema markup for local business
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Dryspace Water Protection Beaches",
+  "description": "Expert water protection for local homes facing lake moisture and storm surges.",
+  "telephone": "437-545-0067",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "The Beaches",
+    "addressRegion": "Toronto",
+    "addressCountry": "CA"
+  },
+  "areaServed": {
+    "@type": "Place",
+    "name": "The Beaches, Toronto"
+  }
+};
+---
+
+<PageLayout 
+  title={pageTitle}
+  description={pageDescription}
+>
+  
+  <!-- Breadcrumbs -->
+  <div class="container mx-auto px-4 mt-4">
+    <Breadcrumbs 
+      items={[
+        { name: "Home", url: "/" },
+        { name: "Toronto", url: "/locations/toronto" },
+        { name: "Neighborhoods", url: "/locations/toronto#neighborhoods" },
+        { name: "The Beaches" }
+      ]}
+    />
+  </div>
+
+<!-- Neighborhood Hero -->
+  <Hero 
+    title="Waterproofing The Beaches"
+    subtitle="Lake Ontario flooding experts protecting Beaches homes since 1999. Storm surge specialists, sandy soil drainage, 24/7 emergency response."
+    primaryCTA={{ text: "Get Free Beaches Inspection", href: "/free-inspection" }}
+    secondaryCTA={{ text: "Call: 437-545-0067", href: "tel:437-545-0067" }}
+    backgroundImage="/images/dryspace_hero_desktop.webp"
+    badge="Serving The Beaches"
+  />
+
+  <!-- Stats -->
+  <Stats />
+
+  <!-- Local Information Section -->
+  <section class="py-16 bg-slate-50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-4xl font-bold text-slate-900 mb-4 uppercase">WATERPROOFING SERVICES IN THE BEACHES</h2>
+        
+        <div class="prose prose-lg max-w-none">
+          <p class="text-lg text-slate-600 mb-6">
+            The Beaches faces unique waterproofing challenges with Lake Ontario at its doorstep. Homes averaging {localInfo.avgHomeAge} old 
+            with {localInfo.foundationType} foundations must contend with {localInfo.soilType.toLowerCase()} soil and a {localInfo.waterTable.toLowerCase()}. 
+            Our specialized team understands these lakeside challenges.
+          </p>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
+            <div class="bg-white border-2 border-slate-200 p-6">
+              <h3 class="text-xl font-bold text-slate-900 mb-6 uppercase">THE BEACHES QUICK FACTS</h3>
+              <ul class="space-y-2 text-slate-600">
+                <li class="flex justify-between items-center pb-2 border-b border-slate-100">
+                  <span class="text-sm font-semibold text-slate-600 uppercase">Average Home Age</span>
+                  <span class="text-sm font-bold text-slate-900">{localInfo.avgHomeAge.toUpperCase()}</span>
+                </li>
+                <li class="flex justify-between items-center pb-2 border-b border-slate-100">
+                  <span class="text-sm font-semibold text-slate-600 uppercase">Foundation Type</span>
+                  <span class="text-sm font-bold text-slate-900">{localInfo.foundationType.toUpperCase()}</span>
+                </li>
+                <li class="flex justify-between items-center pb-2 border-b border-slate-100">
+                  <span class="text-sm font-semibold text-slate-600 uppercase">Soil Type</span>
+                  <span class="text-sm font-bold text-slate-900">{localInfo.soilType.toUpperCase()}</span>
+                </li>
+                <li class="flex justify-between items-center pb-2 border-b border-slate-100">
+                  <span class="text-sm font-semibold text-slate-600 uppercase">Water Table</span>
+                  <span class="text-sm font-bold text-slate-900">HIGH (LAKE)</span>
+                </li>
+                <li class="flex justify-between items-center pb-2 border-b border-slate-100">
+                  <span class="text-sm font-semibold text-slate-600 uppercase">Average Cost</span>
+                  <span class="text-sm font-bold text-slate-900">{localInfo.avgProjectCost}</span>
+                </li>
+              </ul>
+            </div>
+            
+            <div class="bg-navy-900 border-2 border-slate-200 p-6">
+              <h3 class="text-xl font-bold text-slate-900 mb-6 uppercase">BEACHES WATER RISKS</h3>
+              <ul class="space-y-2 text-slate-300">
+                <li class="text-sm text-slate-300 flex items-start">
+                  <span class="mr-2 text-cyan-400">•</span>
+                  <span>Lake Ontario storm surges and flooding</span>
+                </li>
+                <li class="text-sm text-slate-300 flex items-start">
+                  <span class="mr-2 text-cyan-400">•</span>
+                  <span>High water table from lake proximity</span>
+                </li>
+                <li class="text-sm text-slate-300 flex items-start">
+                  <span class="mr-2 text-cyan-400">•</span>
+                  <span>Sandy soil rapid water movement</span>
+                </li>
+                <li class="text-sm text-slate-300 flex items-start">
+                  <span class="mr-2 text-cyan-400">•</span>
+                  <span>Combined sewer overflow risks</span>
+                </li>
+                <li class="text-sm text-slate-300 flex items-start">
+                  <span class="mr-2 text-cyan-400">•</span>
+                  <span>Spring lake level fluctuations</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <h3 class="text-2xl font-bold mt-8 mb-4 uppercase">RECENT FLOODING IN THE BEACHES</h3>
+          <div class="bg-red-50 border-2 border-red-600 p-6 mb-6">
+            <h4 class="text-lg font-bold text-red-900 mb-4 uppercase">2024 FLOOD EVENTS</h4>
+            <ul class="space-y-2">
+              {recentFlooding.map((event) => (
+                <li class="text-sm text-slate-600 flex items-start">
+                  <span class="mr-2 text-red-600">•</span>
+                  <span>{event}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <h3 class="text-2xl font-bold mt-8 mb-4 uppercase">STREETS WE SERVE IN THE BEACHES</h3>
+          <p class="mb-4">
+            Our team provides rapid response throughout The Beaches:
+          </p>
+          <div class="flex flex-wrap gap-2">
+            {["Queen Street East", "Kingston Road", "Woodbine Avenue", "Lee Avenue", "Wineva Avenue", "Silverbirch Avenue", "Kippendavie Avenue", "Munro Park Avenue"].map((street) => (
+              <span class="border-2 border-slate-200 px-4 py-2 text-sm uppercase">
+                {street}
+              </span>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <Services />
+
+  <!-- Neighborhood Features -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl font-bold text-slate-900 mb-4 uppercase">WHY CHOOSE DRYSPACE IN THE BEACHES</h2>
+        <p class="text-lg text-slate-600 max-w-3xl mx-auto">
+          Lake Ontario flooding experts with specialized equipment and rapid response
+        </p>
+      </div>
+      
+      <!-- Highlighted Features -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+        {neighborhoodFeatures.filter(f => f.highlight).map((feature) => (
+          <div class="bg-amber-500 border-2 border-slate-700 p-6">
+            <h3 class="text-lg font-bold text-slate-900 mb-3 uppercase">{feature.title}</h3>
+            <p class="text-sm text-slate-900">{feature.description}</p>
+          </div>
+        ))}
+      </div>
+      
+      <!-- Regular Features -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {neighborhoodFeatures.filter(f => !f.highlight).map((feature) => (
+          <div class="bg-white border-2 border-slate-200 p-6 hover:border-slate-300 transition-colors">
+            <h3 class="text-lg font-bold text-slate-900 mb-3 uppercase">{feature.title}</h3>
+            <p class="text-sm text-slate-600">{feature.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Local Challenges Section -->
+  <section class="py-16 bg-slate-50">
+    <div class="container mx-auto px-4">
+      <h2 class="text-4xl font-bold text-slate-900 mb-12 text-center uppercase">THE BEACHES WATER CHALLENGES</h2>
+      
+      <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        {localChallenges.map((challenge) => (
+          <div class="bg-white border-2 border-slate-200 p-6">
+            <h3 class="text-lg font-bold text-slate-900 mb-3 uppercase">{challenge.problem}</h3>
+            <p class="text-sm text-slate-600 mb-4">{challenge.description}</p>
+            <div class="pt-4 border-t border-slate-100">
+              <p class="text-sm font-semibold text-slate-900 uppercase mb-1">OUR SOLUTION:</p>
+              <p class="text-sm text-slate-600">{challenge.solution}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Lake Level Alert -->
+  <section class="py-16 bg-navy-900">
+    <div class="container mx-auto px-4">
+      <div class="bg-white border-2 border-cyan-500 p-8 max-w-4xl mx-auto">
+        <h3 class="text-2xl font-bold text-slate-900 mb-4 uppercase text-center">CURRENT LAKE ONTARIO LEVEL ALERT</h3>
+        <div class="grid grid-cols-3 gap-4 mb-6">
+          <div class="text-center">
+            <p class="text-sm text-slate-500 uppercase">Current Level</p>
+            <p class="text-xl font-bold text-slate-900">75.2M</p>
+          </div>
+          <div class="text-center">
+            <p class="text-sm text-slate-500 uppercase">Flood Stage</p>
+            <p class="text-xl font-bold text-red-600">75.5M</p>
+          </div>
+          <div class="text-center">
+            <p class="text-sm text-slate-500 uppercase">Status</p>
+            <p class="text-xl font-bold text-amber-500">WATCH</p>
+          </div>
+        </div>
+        <p class="text-slate-600 text-center mb-6">
+          Lake levels are approaching flood stage. Beaches residents should inspect basements and ensure sump pumps are operational.
+        </p>
+        <div class="text-center">
+          <a href="/emergency" class="inline-block bg-amber-500 text-black px-8 py-4 text-lg font-bold hover:bg-amber-400 transition-colors uppercase">
+            Prepare Your Home
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process -->
+  <Process />
+
+  <!-- Testimonials -->
+  <Testimonials />
+
+  <!-- FAQ Section -->
+  <section class="py-16 bg-slate-50">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl font-bold text-slate-900 mb-4 uppercase">THE BEACHES WATERPROOFING FAQS</h2>
+        <p class="text-lg text-slate-600">Common questions from lakeside homeowners</p>
+      </div>
+      
+      <div class="max-w-4xl mx-auto">
+        {neighborhoodFAQs.map((faq, index) => (
+          <details class="mb-4 border-2 border-slate-200 bg-white">
+            <summary class="cursor-pointer p-6 hover:bg-slate-50 transition-colors">
+              <div class="flex items-center justify-between">
+                <h3 class="text-lg font-bold text-slate-900 uppercase pr-4">{faq.question}</h3>
+                <span class="text-slate-400 flex-shrink-0 text-2xl">+</span>
+              </div>
+            </summary>
+            <div class="px-6 pb-6 pt-0">
+              <p class="text-slate-600">{faq.answer}</p>
+            </div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-16 bg-navy-900">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-4xl font-bold text-slate-900 mb-4 uppercase">PROTECT YOUR BEACHES HOME FROM LAKE FLOODING</h2>
+        <p class="text-lg text-slate-300 mb-8">
+          Expert waterproofing for lakeside homes facing storm surges and high water tables
+        </p>
+        
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a 
+            href="/free-inspection"
+            class="bg-amber-500 text-black px-8 py-4 text-lg font-bold hover:bg-amber-400 transition-colors uppercase"
+          >
+            Schedule Beaches Inspection
+          </a>
+          <a 
+            href="tel:437-545-0067"
+            class="border-2 border-white text-slate-900 px-8 py-4 text-lg font-bold hover:bg-white hover:text-black transition-colors uppercase"
+          >
+            Emergency: 437-545-0067
+          </a>
+        </div>
+        
+        <div class="mt-8 inline-flex items-center text-cyan-400">
+          <span class="text-sm font-bold uppercase">24/7 Storm Response Available</span>
+        </div>
+      </div>
+    </div>
+  </section>
+<BreadcrumbSchema items={[{name: 'Home', url: '/'}, {name: 'Neighborhoods'}, {name: 'The Beaches'}]} />
+</PageLayout>
+
+<script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)}></script>

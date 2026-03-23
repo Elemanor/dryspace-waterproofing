@@ -1,0 +1,61 @@
+---
+import StructuredData from './StructuredData.astro';
+
+export interface BreadcrumbItem {
+  name: string;
+  url?: string;
+}
+
+export interface Props {
+  items: BreadcrumbItem[];
+  className?: string;
+}
+
+const { items, className = '' } = Astro.props;
+
+// Generate full URLs for structured data
+const structuredItems = items.map(item => ({
+  name: item.name,
+  url: item.url ? `https://dryspacewaterproofing.ca${item.url}` : undefined
+}));
+---
+
+<nav aria-label="Breadcrumb" class={`breadcrumbs ${className}`}>
+  <ol class="flex items-center space-x-2 text-sm">
+    {items.map((item, index) => (
+      <li class="flex items-center">
+        {index > 0 && (
+          <svg 
+            class="w-4 h-4 mx-2 text-slate-400" 
+            fill="none" 
+            stroke="currentColor" 
+            viewBox="0 0 24 24"
+          >
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        )}
+        {item.url && index < items.length - 1 ? (
+          <a 
+            href={item.url} 
+            class="text-cyan-600 hover:text-cyan-700 hover:underline"
+          >
+            {item.name}
+          </a>
+        ) : (
+          <span class={index === items.length - 1 ? 'text-slate-600 font-medium' : 'text-slate-500'}>
+            {item.name}
+          </span>
+        )}
+      </li>
+    ))}
+  </ol>
+</nav>
+
+<!-- Add structured data for breadcrumbs -->
+<StructuredData type="BreadcrumbList" data={structuredItems} />
+
+<style>
+  .breadcrumbs {
+    @apply py-3 px-4 bg-slate-50 rounded-lg mb-6;
+  }
+</style>

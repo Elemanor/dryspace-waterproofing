@@ -1,0 +1,180 @@
+---
+export interface Props {
+  type: 'service' | 'article' | 'faq' | 'local' | 'product' | 'howto';
+  data?: any;
+}
+
+const { type, data = {} } = Astro.props;
+
+let schema = {};
+
+// Base organization data
+const organization = {
+  "@type": "Organization",
+  "name": "DrySpace Waterproofing",
+  "url": "https://dryspacewaterproofing.ca",
+  "logo": "https://dryspacewaterproofing.ca/images/logo.webp",
+  "telephone": "437-545-0067",
+  "email": "info@dryspacewaterproofing.ca",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Toronto",
+    "addressRegion": "ON",
+    "addressCountry": "CA"
+  },
+  "sameAs": [
+    "https://www.facebook.com/dryspacewaterproofing",
+    "https://www.instagram.com/dryspacewaterproofing",
+    "https://www.youtube.com/@dryspacewaterproofing"
+  ]
+};
+
+// Generate schema based on type
+switch(type) {
+  case 'service':
+    schema = {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "serviceType": data.name || "Basement Waterproofing",
+      "provider": organization,
+      "areaServed": {
+        "@type": "GeoCircle",
+        "geoMidpoint": {
+          "@type": "GeoCoordinates",
+          "latitude": 43.653226,
+          "longitude": -79.3831843
+        },
+        "geoRadius": "50000"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": data.name || "Waterproofing Services",
+        "itemListElement": data.services?.map((service: any) => ({
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": service.name,
+            "description": service.description
+          }
+        })) || []
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "487"
+      }
+    };
+    break;
+    
+  case 'article':
+    schema = {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": data.title,
+      "description": data.description,
+      "author": organization,
+      "publisher": organization,
+      "datePublished": data.publishDate || new Date().toISOString(),
+      "dateModified": data.modifiedDate || new Date().toISOString(),
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": data.url || Astro.url.href
+      }
+    };
+    break;
+    
+  case 'faq':
+    schema = {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": data.questions?.map((q: any) => ({
+        "@type": "Question",
+        "name": q.question,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": q.answer
+        }
+      })) || []
+    };
+    break;
+    
+  case 'local':
+    schema = {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": `DrySpace Waterproofing - ${data.location || 'Toronto'}`,
+      "description": data.description || "Professional basement waterproofing services",
+      "url": data.url || Astro.url.href,
+      "telephone": "437-545-0067",
+      "priceRange": "$$$",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": data.location || "Toronto",
+        "addressRegion": "ON",
+        "addressCountry": "CA"
+      },
+      "geo": data.geo || {
+        "@type": "GeoCoordinates",
+        "latitude": 43.653226,
+        "longitude": -79.3831843
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+        "opens": "00:00",
+        "closes": "23:59"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "487"
+      }
+    };
+    break;
+    
+  case 'product':
+    schema = {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": data.name,
+      "description": data.description,
+      "brand": {
+        "@type": "Brand",
+        "name": data.brand || "DrySpace"
+      },
+      "offers": {
+        "@type": "Offer",
+        "url": data.url || Astro.url.href,
+        "priceCurrency": "CAD",
+        "price": data.price,
+        "priceValidUntil": "2026-12-31",
+        "availability": "https://schema.org/InStock",
+        "seller": organization
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "487"
+      }
+    };
+    break;
+    
+  case 'howto':
+    schema = {
+      "@context": "https://schema.org",
+      "@type": "HowTo",
+      "name": data.title,
+      "description": data.description,
+      "step": data.steps?.map((step: any, index: number) => ({
+        "@type": "HowToStep",
+        "name": step.name,
+        "text": step.text,
+        "position": index + 1
+      })) || [],
+      "totalTime": data.totalTime || "PT1H"
+    };
+    break;
+}
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(schema, null, 2)} />

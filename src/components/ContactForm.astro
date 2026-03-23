@@ -1,0 +1,282 @@
+---
+const services = [
+  'Interior Waterproofing',
+  'Exterior Waterproofing', 
+  'Crack Repair',
+  'Sump Pump Installation',
+  'Drainage System',
+  'Emergency Service'
+];
+---
+
+<section class="py-16 bg-navy-900">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-12">
+      <h2 class="text-4xl font-bold text-slate-900 mb-4 uppercase">
+        Get Your Free Inspection
+      </h2>
+      <p class="text-lg text-slate-300 max-w-3xl mx-auto">
+        Schedule your comprehensive basement inspection today. Our certified experts will assess your needs and provide a detailed solution.
+      </p>
+    </div>
+
+    <div class="max-w-6xl mx-auto">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <!-- Contact Information -->
+        <div class="space-y-6">
+          <!-- Quick Response Info -->
+          <div class="bg-navy-900 border-2 border-slate-600 p-6">
+            <div class="grid grid-cols-3 gap-4 text-center">
+              <div>
+                <p class="text-cyan-400 font-bold text-sm uppercase mb-2">Quick Response</p>
+                <p class="text-white text-sm">Same-day inspections available</p>
+              </div>
+              <div>
+                <p class="text-cyan-400 font-bold text-sm uppercase mb-2">No Obligation</p>
+                <p class="text-white text-sm">Free inspection & quote</p>
+              </div>
+              <div>
+                <p class="text-cyan-400 font-bold text-sm uppercase mb-2">Expert Analysis</p>
+                <p class="text-white text-sm">25+ years of experience</p>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Direct Contact -->
+          <div class="bg-navy-900 border-2 border-slate-600 p-6">
+            <h3 class="text-xl font-bold text-slate-900 mb-4 uppercase">Direct Contact</h3>
+            <div class="space-y-3">
+              <a href="tel:437-545-0067" class="block text-white hover:text-cyan-400 transition-colors">
+                <span class="font-bold">PHONE:</span> 437-545-0067
+              </a>
+              <a href="mailto:p.vysotckii@gmail.com" class="block text-white hover:text-cyan-400 transition-colors">
+                <span class="font-bold">EMAIL:</span> p.vysotckii@gmail.com
+              </a>
+              <div class="text-white">
+                <span class="font-bold">SERVICE AREA:</span> Toronto, ON & GTA
+              </div>
+            </div>
+          </div>
+          
+          <!-- Business Hours -->
+          <div class="bg-navy-900 border-2 border-slate-600 p-6">
+            <h3 class="text-xl font-bold text-slate-900 mb-4 uppercase">Business Hours</h3>
+            <div class="space-y-2 text-white">
+              <div class="flex justify-between">
+                <span>Monday - Friday</span>
+                <span class="font-bold">7:00 AM - 8:00 PM</span>
+              </div>
+              <div class="flex justify-between">
+                <span>Saturday</span>
+                <span class="font-bold">8:00 AM - 6:00 PM</span>
+              </div>
+              <div class="flex justify-between">
+                <span>Sunday</span>
+                <span class="font-bold text-cyan-400">Emergency Only</span>
+              </div>
+            </div>
+            <div class="mt-4 pt-4 border-t border-slate-600">
+              <p class="text-cyan-400 font-bold text-center uppercase">
+                24/7 Emergency Service Available
+              </p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Contact Form -->
+        <div class="bg-white border-2 border-slate-200 p-8">
+          <form id="contactForm">
+            <div class="space-y-4">
+              <!-- Name Field -->
+              <div>
+                <label for="name" class="block text-sm font-bold text-slate-900 uppercase mb-2">
+                  Name *
+                </label>
+                <input 
+                  type="text" 
+                  id="name" 
+                  name="name" 
+                  required
+                  class="w-full px-4 py-3 border-2 border-slate-200 focus:border-cyan-500 focus:outline-none"
+                  placeholder="Your full name"
+                />
+                <span class="text-red-600 text-xs hidden">Name is required</span>
+              </div>
+              
+              <!-- Phone Field -->
+              <div>
+                <label for="phone" class="block text-sm font-bold text-slate-900 uppercase mb-2">
+                  Phone *
+                </label>
+                <input 
+                  type="tel" 
+                  id="phone" 
+                  name="phone" 
+                  required
+                  class="w-full px-4 py-3 border-2 border-slate-200 focus:border-cyan-500 focus:outline-none"
+                  placeholder="(437) 545-0067"
+                />
+                <span class="text-red-600 text-xs hidden">Phone is required</span>
+              </div>
+              
+              <!-- Email Field -->
+              <div>
+                <label for="email" class="block text-sm font-bold text-slate-900 uppercase mb-2">
+                  Email
+                </label>
+                <input 
+                  type="email" 
+                  id="email" 
+                  name="email"
+                  class="w-full px-4 py-3 border-2 border-slate-200 focus:border-cyan-500 focus:outline-none"
+                  placeholder="your@email.com (optional)"
+                />
+              </div>
+              
+              <!-- Service Needed -->
+              <div>
+                <label for="service" class="block text-sm font-bold text-slate-900 uppercase mb-2">
+                  Service Needed *
+                </label>
+                <select 
+                  id="service" 
+                  name="service" 
+                  required
+                  class="w-full px-4 py-3 border-2 border-slate-200 focus:border-cyan-500 focus:outline-none bg-white"
+                >
+                  <option value="">Select a service...</option>
+                  {services.map(service => (
+                    <option value={service}>{service}</option>
+                  ))}
+                </select>
+                <span class="text-red-600 text-xs hidden">Please select a service</span>
+              </div>
+              
+              <!-- Message Field -->
+              <div>
+                <label for="message" class="block text-sm font-bold text-slate-900 uppercase mb-2">
+                  Describe Your Issue
+                </label>
+                <textarea 
+                  id="message" 
+                  name="message"
+                  rows="4"
+                  class="w-full px-4 py-3 border-2 border-slate-200 focus:border-cyan-500 focus:outline-none"
+                  placeholder="Tell us about your water problem..."
+                ></textarea>
+              </div>
+              
+              <!-- Consent Checkbox -->
+              <div class="flex items-start">
+                <input 
+                  type="checkbox" 
+                  id="consent" 
+                  name="consent" 
+                  required
+                  class="mt-1 w-4 h-4 border-2 border-slate-300 text-cyan-400 focus:ring-yellow-500"
+                />
+                <label for="consent" class="ml-3 text-sm text-slate-600">
+                  I agree to receive communications about my inspection and waterproofing services
+                </label>
+              </div>
+              
+              <!-- Submit Button -->
+              <button 
+                type="submit"
+                class="w-full bg-amber-500 text-black py-4 px-6 font-bold text-lg hover:bg-amber-400 transition-colors uppercase"
+              >
+                Schedule Free Inspection
+              </button>
+              
+              <!-- Success Message -->
+              <div id="successMessage" class="hidden bg-cyan-50 border-2 border-green-300 p-4 text-center">
+                <p class="text-cyan-700 font-bold">Thank you! We'll contact you within 24 hours to schedule your inspection.</p>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('contactForm') as HTMLFormElement;
+    const successMessage = document.getElementById('successMessage');
+    
+    // Form validation
+    const validateField = (field: HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement) => {
+      const errorSpan = field.parentElement?.querySelector('span');
+      
+      if (field.hasAttribute('required') && !field.value.trim()) {
+        field.classList.add('border-red-600');
+        field.classList.remove('border-slate-200');
+        if (errorSpan) errorSpan.classList.remove('hidden');
+        return false;
+      }
+      
+      if (field.type === 'email' && field.value) {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(field.value)) {
+          field.classList.add('border-red-600');
+          field.classList.remove('border-slate-200');
+          return false;
+        }
+      }
+      
+      field.classList.remove('border-red-600');
+      field.classList.add('border-slate-200');
+      if (errorSpan) errorSpan.classList.add('hidden');
+      return true;
+    };
+    
+    // Real-time validation
+    form.querySelectorAll('input, select, textarea').forEach(field => {
+      field.addEventListener('blur', () => {
+        validateField(field as HTMLInputElement);
+      });
+      
+      field.addEventListener('input', () => {
+        if (field.classList.contains('border-red-600')) {
+          validateField(field as HTMLInputElement);
+        }
+      });
+    });
+    
+    // Form submission
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      
+      // Validate all fields
+      let isValid = true;
+      form.querySelectorAll('input[required], select[required]').forEach(field => {
+        if (!validateField(field as HTMLInputElement)) {
+          isValid = false;
+        }
+      });
+      
+      if (!isValid) return;
+      
+      // Animate submit button
+      const submitBtn = form.querySelector('button[type="submit"]') as HTMLButtonElement;
+      const originalText = submitBtn.textContent;
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'SENDING...';
+      
+      // Simulate form submission
+      await new Promise(resolve => setTimeout(resolve, 2000));
+      
+      // Show success message
+      form.reset();
+      successMessage?.classList.remove('hidden');
+      submitBtn.disabled = false;
+      submitBtn.textContent = originalText;
+      
+      // Hide success message after 5 seconds
+      setTimeout(() => {
+        successMessage?.classList.add('hidden');
+      }, 5000);
+    });
+  });
+</script>

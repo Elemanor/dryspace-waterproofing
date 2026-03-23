@@ -1,0 +1,74 @@
+---
+export interface Props {
+  city: string;
+  description: string;
+  population?: string;
+  stats?: Array<{ label: string; value: string }>;
+  backgroundImage?: string;
+}
+
+const {
+  city,
+  description,
+  population,
+  stats = [],
+  backgroundImage,
+} = Astro.props;
+---
+
+<section class="relative bg-gradient-hero py-20 lg:py-28 overflow-hidden">
+  {backgroundImage && (
+    <div class="absolute inset-0 z-0">
+      <img src={backgroundImage} alt={`Waterproofing in ${city}`} class="w-full h-full object-cover opacity-15" loading="eager" />
+      <div class="absolute inset-0 bg-gradient-to-b from-navy-900/80 to-navy-900/90"></div>
+    </div>
+  )}
+
+  <div class="relative z-10 container mx-auto px-4">
+    {/* Breadcrumbs */}
+    <nav class="mb-8" aria-label="Breadcrumb">
+      <ol class="flex items-center gap-2 text-sm text-slate-400">
+        <li><a href="/" class="hover:text-cyan-400 transition-colors">Home</a></li>
+        <li class="flex items-center gap-2">
+          <svg class="h-3 w-3 text-slate-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg>
+          <a href="/service-areas" class="hover:text-cyan-400 transition-colors">Service Areas</a>
+        </li>
+        <li class="flex items-center gap-2">
+          <svg class="h-3 w-3 text-slate-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg>
+          <span class="text-white">{city}</span>
+        </li>
+      </ol>
+    </nav>
+
+    <div class="max-w-3xl">
+      <p class="section-label-pill border-cyan-400/20 bg-cyan-400/10 text-cyan-400 mb-6">
+        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" /></svg>
+        Serving {city}
+      </p>
+      <h1 class="text-display text-white mb-6">Waterproofing & Foundation Repair in {city}</h1>
+      <p class="text-xl text-slate-300 leading-relaxed mb-8">{description}</p>
+
+      {/* Quick stats */}
+      {stats.length > 0 && (
+        <div class="flex flex-wrap gap-6 mb-10">
+          {stats.map((stat) => (
+            <div class="rounded-lg bg-white/10 backdrop-blur px-5 py-3">
+              <p class="text-2xl font-bold text-white">{stat.value}</p>
+              <p class="text-xs text-slate-400 uppercase tracking-wider">{stat.label}</p>
+            </div>
+          ))}
+        </div>
+      )}
+
+      <div class="flex flex-col sm:flex-row gap-4">
+        <a href="/free-inspection" class="btn-primary !px-8 !py-4 !text-lg">
+          Free Inspection in {city}
+        </a>
+        <a href="tel:437-545-0067" class="btn-ghost border-2 border-white/20 !px-8 !py-4 !text-lg">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" /></svg>
+          Call 437-545-0067
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

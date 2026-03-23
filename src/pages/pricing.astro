@@ -1,0 +1,553 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import SectionHeader from '../components/sections/SectionHeader.astro';
+import CTABand from '../components/sections/CTABand.astro';
+import TrustBar from '../components/sections/TrustBar.astro';
+
+const pricingData = [
+  {
+    service: 'Interior Waterproofing',
+    icon: '',
+    priceRange: '$3,100 - $7,300',
+    perUnit: '$50 - $100 per linear foot',
+    avgHome: '$4,700',
+    description: 'Complete interior drainage system with vapor barrier and sump pump',
+    includes: [
+      'Interior drainage system',
+      'Vapor barrier installation',
+      'Sump pump & pit',
+      'Concrete restoration',
+      'Lifetime warranty'
+    ],
+    factors: ['Basement size', 'Foundation depth', 'Existing drainage', 'Concrete thickness']
+  },
+  {
+    service: 'Exterior Waterproofing',
+    icon: '',
+    priceRange: '$8,300 - $15,500',
+    perUnit: '$100 - $300 per linear foot',
+    avgHome: '$12,500',
+    description: 'The gold standard - complete exterior membrane and drainage system',
+    includes: [
+      'Full excavation',
+      'Membrane application',
+      'Drainage tile system',
+      'Backfill with gravel',
+      'Lifetime warranty'
+    ],
+    factors: ['Excavation depth', 'Landscaping restoration', 'Access difficulty', 'Soil conditions'],
+    recommended: true
+  },
+  {
+    service: 'Foundation Crack Repair',
+    icon: '',
+    priceRange: '$525 - $1,550',
+    perUnit: '$300 - $525 per crack',
+    avgHome: '$825',
+    description: 'Professional injection repair for foundation cracks',
+    includes: [
+      'Crack assessment',
+      'Polyurethane/epoxy injection',
+      'Surface sealing',
+      'Monitoring',
+      '25-year warranty'
+    ],
+    factors: ['Crack size', 'Number of cracks', 'Structural vs non-structural', 'Accessibility']
+  },
+  {
+    service: 'Sump Pump Installation',
+    icon: '',
+    priceRange: '$1,550 - $3,650',
+    perUnit: 'Complete system',
+    avgHome: '$2,300',
+    description: 'New sump pump system with battery backup',
+    includes: [
+      'Sump pit excavation',
+      'Primary pump',
+      'Battery backup system',
+      'Discharge line',
+      '5-year warranty'
+    ],
+    factors: ['Pump capacity', 'Battery backup type', 'Discharge distance', 'Electrical work']
+  },
+  {
+    service: 'French Drain System',
+    icon: '',
+    priceRange: '$4,150 - $8,300',
+    perUnit: '$42 - $60 per linear foot',
+    avgHome: '$5,700',
+    description: 'Interior or exterior French drain for water management',
+    includes: [
+      'Trench excavation',
+      'Perforated pipe',
+      'Gravel backfill',
+      'Connection to sump',
+      'Lifetime warranty'
+    ],
+    factors: ['Interior vs exterior', 'Length needed', 'Depth required', 'Obstacles']
+  },
+  {
+    service: 'Basement Lowering',
+    icon: '',
+    priceRange: '$375 - $475',
+    perUnit: 'per square foot',
+    avgHome: '$36,500',
+    description: 'Increase ceiling height through underpinning or bench footing',
+    includes: [
+      'Engineering plans',
+      'Permits',
+      'Excavation',
+      'New foundation',
+      '10-year structural warranty'
+    ],
+    factors: ['Method chosen', 'Basement size', 'Soil conditions', 'Permit requirements']
+  }
+];
+
+const financingOptions = [
+  {
+    plan: '0% for 12 Months',
+    description: 'No interest if paid within 12 months',
+    minAmount: '$2,600',
+    requirements: 'Subject to credit approval'
+  },
+  {
+    plan: '3.99% for 36 Months',
+    description: 'Low fixed rate for 3 years',
+    minAmount: '$5,200',
+    requirements: 'Subject to credit approval'
+  },
+  {
+    plan: '5.99% for 60 Months',
+    description: 'Extended terms for larger projects',
+    minAmount: '$10,500',
+    requirements: 'Subject to credit approval'
+  },
+  {
+    plan: 'Deferred Payment',
+    description: 'No payments for 6 months',
+    minAmount: '$7,800',
+    requirements: 'Interest accrues from purchase date'
+  }
+];
+
+const rebates = [
+  {
+    program: 'City of Toronto Basement Flooding Protection Subsidy',
+    amount: 'Up to $3,550',
+    covers: 'Backwater valve, sump pump, pipe severance',
+    icon: ''
+  },
+  {
+    program: 'Ontario Renovates Program',
+    amount: 'Up to $26,000',
+    covers: 'Foundation repairs for eligible homeowners',
+    icon: ''
+  },
+  {
+    program: 'Insurance Claims Assistance',
+    amount: 'Varies',
+    covers: 'We help navigate insurance claims for water damage',
+    icon: ''
+  }
+];
+
+const savingsTips = [
+  'Bundle multiple services for 10% discount',
+  'Senior citizens receive 10% off all services',
+  'Refer a neighbor and both save $525',
+  'Off-season (winter) pricing saves 15%',
+  'Full basement waterproofing includes free sump pump upgrade'
+];
+
+const comparisonData = [
+  {
+    factor: 'Average Cost',
+    dryspace: '$8,300 - $15,500',
+    competitors: '$12,500 - $21,000',
+    advantage: true
+  },
+  {
+    factor: 'Warranty',
+    dryspace: 'Lifetime Transferable',
+    competitors: '10-25 years',
+    advantage: true
+  },
+  {
+    factor: 'Response Time',
+    dryspace: '24-48 hours',
+    competitors: '1-2 weeks',
+    advantage: true
+  },
+  {
+    factor: 'Licensed & Insured',
+    dryspace: 'Fully certified',
+    competitors: 'Varies',
+    advantage: true
+  },
+  {
+    factor: 'Free Inspection',
+    dryspace: 'Always included',
+    competitors: 'Usually $200-500',
+    advantage: true
+  },
+  {
+    factor: 'Financing Options',
+    dryspace: '0% available',
+    competitors: 'Limited options',
+    advantage: true
+  }
+];
+---
+
+<PageLayout title="Waterproofing Cost & Pricing Guide Toronto 2025 | Free Calculator | Dryspace">
+  <!-- Hero Section -->
+  <section class="relative bg-gradient-to-br from-navy-900 via-navy-800 to-navy-900 overflow-hidden">
+    <div class="absolute inset-0 bg-[url('/patterns/grid.svg')] opacity-10"></div>
+    <div class="container mx-auto px-4 py-20 md:py-28 relative z-10">
+      <div class="max-w-4xl mx-auto text-center">
+        <span class="section-label-pill">Transparent Pricing</span>
+        <h1 class="text-headline text-white mt-6 mb-6">
+          Transparent Waterproofing Pricing
+        </h1>
+        <p class="text-xl md:text-2xl text-cyan-100 mb-8 max-w-2xl mx-auto">
+          No hidden fees — honest pricing since 1999
+        </p>
+        <div class="flex flex-wrap justify-center gap-4 md:gap-6 text-white/90 text-sm md:text-base">
+          <div class="flex items-center gap-2">
+            <svg class="w-5 h-5 text-cyan-500" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+            </svg>
+            <span>Price Match Guarantee</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <svg class="w-5 h-5 text-cyan-500" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+            </svg>
+            <span>Free Estimates</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <svg class="w-5 h-5 text-cyan-500" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+            </svg>
+            <span>Lifetime Warranty</span>
+          </div>
+        </div>
+        <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="/contact" class="btn-primary">
+            Get Free Quote
+          </a>
+          <a href="tel:437-545-0067" class="btn-secondary">
+            Call: 437-545-0067
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Last Updated Notice -->
+  <div class="bg-cyan-50 border-y border-cyan-200 py-3">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-wrap items-center justify-center gap-3 md:gap-6 text-sm text-slate-600">
+        <div class="flex items-center gap-2">
+          <svg class="w-4 h-4 text-cyan-600" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/>
+          </svg>
+          <strong>Last Updated:</strong> December 26, 2025
+        </div>
+        <span class="hidden md:block text-slate-400">•</span>
+        <span>All prices include materials and labor</span>
+        <span class="hidden md:block text-slate-400">•</span>
+        <span>Subject to on-site assessment</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pricing Cards -->
+  <section class="section-padding bg-slate-50">
+    <div class="container mx-auto px-4">
+      <SectionHeader
+        label="Service Pricing"
+        title="Detailed Service Pricing"
+        subtitle="All prices include labor, materials, and warranty"
+      />
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mt-12">
+        {pricingData.map(service => (
+          <div class={`card-base reveal relative ${service.recommended ? 'border-2 border-cyan-500 shadow-float-hover' : ''}`}>
+            {service.recommended && (
+              <div class="absolute -top-4 left-1/2 -translate-x-1/2">
+                <span class="bg-cyan-500 text-white px-4 py-1 rounded-full text-sm font-semibold shadow-lg">
+                  Most Popular
+                </span>
+              </div>
+            )}
+
+            <div class="mb-6">
+              <h3 class="text-2xl font-bold text-navy-900 mb-2">{service.service}</h3>
+              <p class="text-slate-500 text-sm leading-relaxed">{service.description}</p>
+            </div>
+
+            <div class="mb-6 pb-6 border-b border-slate-100">
+              <div class="text-3xl font-bold text-cyan-600 mb-1">{service.priceRange}</div>
+              <div class="text-sm text-slate-500">{service.perUnit}</div>
+              <div class="text-sm text-slate-400 mt-2">Average home: <span class="font-semibold text-slate-600">{service.avgHome}</span></div>
+            </div>
+
+            <div class="mb-6">
+              <h4 class="text-sm font-bold text-navy-900 uppercase tracking-wide mb-3">What's Included:</h4>
+              <ul class="space-y-2">
+                {service.includes.map(item => (
+                  <li class="flex items-start gap-2 text-sm text-slate-600">
+                    <svg class="w-5 h-5 text-cyan-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                    </svg>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div class="mb-6">
+              <h4 class="text-sm font-bold text-navy-900 uppercase tracking-wide mb-3">Price Factors:</h4>
+              <div class="flex flex-wrap gap-2">
+                {service.factors.map(factor => (
+                  <span class="text-xs bg-slate-50 text-slate-600 px-3 py-1 rounded-full">
+                    {factor}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            <a href="/contact" class="block w-full text-center bg-navy-900 hover:bg-cyan-600 text-white font-semibold py-3 rounded-lg transition-all duration-300">
+              Get Your Quote
+            </a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Comparison Table -->
+  <section class="section-padding bg-white">
+    <div class="container mx-auto px-4">
+      <SectionHeader
+        label="Why Choose Us"
+        title="DrySpace vs Competitors"
+        subtitle="See why Toronto homeowners choose us for their waterproofing needs"
+      />
+
+      <div class="mt-12 overflow-x-auto reveal">
+        <table class="w-full max-w-4xl mx-auto bg-white shadow-float rounded-lg overflow-hidden">
+          <thead class="bg-navy-900 text-white">
+            <tr>
+              <th class="px-6 py-4 text-left text-sm font-bold uppercase tracking-wide">Feature</th>
+              <th class="px-6 py-4 text-left text-sm font-bold uppercase tracking-wide bg-cyan-600">DrySpace</th>
+              <th class="px-6 py-4 text-left text-sm font-bold uppercase tracking-wide">Competitors</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-200">
+            {comparisonData.map(row => (
+              <tr class="hover:bg-slate-50 transition-colors">
+                <td class="px-6 py-4 font-semibold text-slate-900">{row.factor}</td>
+                <td class="px-6 py-4 bg-cyan-50 text-cyan-900 font-semibold">
+                  <div class="flex items-center gap-2">
+                    <svg class="w-5 h-5 text-cyan-600" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                    </svg>
+                    {row.dryspace}
+                  </div>
+                </td>
+                <td class="px-6 py-4 text-slate-500">{row.competitors}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Government Rebates -->
+  <section class="section-padding bg-gradient-to-br from-amber-500 to-amber-600">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto text-center text-white">
+        <div class="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full mb-6">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M8.433 7.418c.155-.103.346-.196.567-.267v1.698a2.305 2.305 0 01-.567-.267C8.07 8.34 8 8.114 8 8c0-.114.07-.34.433-.582zM11 12.849v-1.698c.22.071.412.164.567.267.364.243.433.468.433.582 0 .114-.07.34-.433.582a2.305 2.305 0 01-.567.267z"/>
+            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-13a1 1 0 10-2 0v.092a4.535 4.535 0 00-1.676.662C6.602 6.234 6 7.009 6 8c0 .99.602 1.765 1.324 2.246.48.32 1.054.545 1.676.662v1.941c-.391-.127-.68-.317-.843-.504a1 1 0 10-1.51 1.31c.562.649 1.413 1.076 2.353 1.253V15a1 1 0 102 0v-.092a4.535 4.535 0 001.676-.662C13.398 13.766 14 12.991 14 12c0-.99-.602-1.765-1.324-2.246A4.535 4.535 0 0011 9.092V7.151c.391.127.68.317.843.504a1 1 0 101.511-1.31c-.563-.649-1.413-1.076-2.354-1.253V5z" clip-rule="evenodd"/>
+          </svg>
+          <span class="font-semibold">Government Support Available</span>
+        </div>
+
+        <h2 class="text-4xl md:text-5xl font-bold mb-6">
+          Save Up to $3,550 in Rebates
+        </h2>
+        <p class="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
+          The City of Toronto offers basement flooding protection subsidies. We help you navigate the application process.
+        </p>
+
+        <div class="grid md:grid-cols-3 gap-6 mt-12">
+          {rebates.map(rebate => (
+            <div class="bg-white/10 backdrop-blur-sm rounded-lg p-6 text-left border border-white/20">
+              <div class="text-2xl font-bold mb-2">{rebate.amount}</div>
+              <h3 class="font-bold text-lg mb-3">{rebate.program}</h3>
+              <p class="text-white/80 text-sm">{rebate.covers}</p>
+            </div>
+          ))}
+        </div>
+
+        <div class="mt-10">
+          <a href="/contact" class="inline-block bg-white text-amber-600 font-bold px-8 py-4 rounded-lg hover:bg-slate-50 transition-all duration-300 shadow-lg hover:shadow-xl">
+            Check Your Eligibility
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Financing Options -->
+  <section class="section-padding bg-navy-900 text-white">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <span class="section-label-pill bg-cyan-500/20 text-cyan-400">Flexible Payment</span>
+        <h2 class="text-4xl md:text-5xl font-bold mt-6 mb-4">
+          0% Financing Available
+        </h2>
+        <p class="text-xl text-slate-300 max-w-2xl mx-auto">
+          Don't let cost prevent protecting your home. We offer flexible financing options to fit any budget.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
+        {financingOptions.map(option => (
+          <div class="card-base bg-navy-800 border-navy-700 hover:border-cyan-500 reveal">
+            <h3 class="text-2xl font-bold text-cyan-400 mb-3">{option.plan}</h3>
+            <p class="text-slate-300 mb-4">{option.description}</p>
+            <div class="space-y-2 text-sm text-slate-400">
+              <div class="flex items-center gap-2">
+                <svg class="w-4 h-4 text-cyan-500" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                </svg>
+                <span>Min: {option.minAmount}</span>
+              </div>
+              <div class="text-xs">{option.requirements}</div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div class="mt-10 text-center">
+        <a href="/financing" class="inline-block bg-cyan-500 hover:bg-cyan-600 text-white font-bold px-8 py-4 rounded-lg transition-all duration-300">
+          View Full Financing Details
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Savings Tips -->
+  <section class="section-padding bg-slate-50">
+    <div class="container mx-auto px-4">
+      <SectionHeader
+        label="Save More"
+        title="Ways to Save on Waterproofing"
+        subtitle="Take advantage of these money-saving opportunities"
+      />
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
+        {savingsTips.map((tip, index) => (
+          <div class="card-interactive reveal">
+            <div class="flex items-start gap-4">
+              <div class="flex-shrink-0 w-12 h-12 bg-cyan-500 text-white rounded-full flex items-center justify-center font-bold text-lg">
+                {(index + 1).toString().padStart(2, '0')}
+              </div>
+              <p class="text-slate-600 leading-relaxed pt-2">{tip}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="section-padding bg-white">
+    <div class="container mx-auto px-4">
+      <SectionHeader
+        label="FAQ"
+        title="Pricing FAQs"
+        subtitle="Common questions about our waterproofing costs"
+      />
+
+      <div class="grid md:grid-cols-2 gap-6 mt-12 max-w-6xl mx-auto">
+        <div class="card-base reveal">
+          <h3 class="text-xl font-bold text-navy-900 mb-3">Why such a wide price range?</h3>
+          <p class="text-slate-500 leading-relaxed">
+            Every home is unique. Factors like basement size, foundation depth, soil conditions, and accessibility all affect the final cost. That's why we offer free inspections for accurate quotes.
+          </p>
+        </div>
+
+        <div class="card-base reveal">
+          <h3 class="text-xl font-bold text-navy-900 mb-3">Do you price match?</h3>
+          <p class="text-slate-500 leading-relaxed">
+            Yes! We'll match or beat any written quote from a licensed, insured competitor for the same scope of work.
+          </p>
+        </div>
+
+        <div class="card-base reveal">
+          <h3 class="text-xl font-bold text-navy-900 mb-3">Are there hidden fees?</h3>
+          <p class="text-slate-500 leading-relaxed">
+            Never. Our quotes include all labor, materials, permits, and warranty. The only additional costs would be for unexpected issues discovered during work, which we discuss before proceeding.
+          </p>
+        </div>
+
+        <div class="card-base reveal">
+          <h3 class="text-xl font-bold text-navy-900 mb-3">When do I pay?</h3>
+          <p class="text-slate-500 leading-relaxed">
+            We require a 30% deposit to schedule work, 40% at project midpoint, and final 30% upon completion and your satisfaction.
+          </p>
+        </div>
+
+        <div class="card-base reveal">
+          <h3 class="text-xl font-bold text-navy-900 mb-3">Is waterproofing worth the cost?</h3>
+          <p class="text-slate-500 leading-relaxed">
+            Absolutely. Water damage can cost $21,000+ to repair, mold remediation averages $5,200, and foundation failure can exceed $52,000. Prevention is always cheaper than repair.
+          </p>
+        </div>
+
+        <div class="card-base reveal">
+          <h3 class="text-xl font-bold text-navy-900 mb-3">Does insurance cover waterproofing?</h3>
+          <p class="text-slate-500 leading-relaxed">
+            Preventive waterproofing typically isn't covered, but we help with claims for existing water damage. Many insurers offer premium discounts for homes with proper waterproofing.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust Bar -->
+  <TrustBar />
+
+  <!-- CTA Band -->
+  <CTABand />
+</PageLayout>
+
+<script>
+  // Scroll reveal animation
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('opacity-100', 'translate-y-0');
+        entry.target.classList.remove('opacity-0', 'translate-y-8');
+      }
+    });
+  }, observerOptions);
+
+  document.querySelectorAll('.reveal').forEach((el) => {
+    el.classList.add('opacity-0', 'translate-y-8', 'transition-all', 'duration-700');
+    observer.observe(el);
+  });
+</script>

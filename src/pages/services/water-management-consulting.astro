@@ -1,0 +1,425 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import Hero from '../../components/sections/Hero.astro';
+import Features from '../../components/sections/Features.astro';
+import Process from '../../components/sections/Process.astro';
+import FAQ from '../../components/sections/FAQ.astro';
+import Testimonials from '../../components/sections/Testimonials.astro';
+import CTA from '../../components/sections/CTA.astro';
+import Stats from '../../components/sections/Stats.astro';
+import ServiceSchema from '../../components/ServiceSchema.astro';
+import InternalLinks from '../../components/InternalLinks.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+
+const pageTitle = "Property Water Management Consulting Toronto | Site Analysis & Drainage Planning";
+const pageDescription = "Professional water management consulting services in Toronto. Site assessment, drainage master planning, flood risk analysis, water flow modeling. Expert consultation for complex water issues.";
+
+// Comprehensive consulting service features
+const serviceFeatures = [
+  {
+    icon: '📊',
+    title: 'Comprehensive Site Water Assessment',
+    description: 'Detailed analysis including topographic surveys, soil testing, groundwater monitoring, and seasonal flow patterns. Professional engineering reports with actionable recommendations.',
+    highlight: true
+  },
+  {
+    icon: '🗺️',
+    title: 'Drainage Master Planning',
+    description: 'Long-term strategic planning for property water management. Phased implementation strategies, cost-benefit analysis, and integration with future development plans.',
+    highlight: true
+  },
+  {
+    icon: '⚠️',
+    title: 'Flood Risk Assessment & Mitigation',
+    description: 'Climate change resilience planning, 100-year flood modeling, risk quantification, and comprehensive mitigation strategies for current and future conditions.',
+    highlight: true
+  },
+  {
+    icon: '💧',
+    title: 'Advanced Water Flow Modeling',
+    description: 'Computer-aided hydraulic modeling using industry-standard software. Peak flow calculations, storage requirements, and system optimization for maximum efficiency.'
+  },
+  {
+    icon: '🔧',
+    title: 'Custom Drainage Solutions Design',
+    description: 'Innovative problem-solving for complex water management challenges. Integration of multiple technologies, cost optimization, and performance guarantees.'
+  },
+  {
+    icon: '📋',
+    title: 'Regulatory Compliance Support',
+    description: 'Expert navigation of municipal requirements, environmental assessments, permit applications, and ongoing compliance monitoring and reporting.'
+  }
+];
+
+// Detailed consulting process
+const processSteps = [
+  {
+    number: '01',
+    title: 'Initial Consultation & Problem Definition',
+    description: 'Comprehensive discussion of water management challenges, objectives, budget considerations, and timeline requirements. Site visit and preliminary assessment.',
+    icon: '🤝',
+    duration: '1-2 days'
+  },
+  {
+    number: '02',
+    title: 'Detailed Site Investigation',
+    description: 'Topographic survey, geotechnical investigation, utility mapping, environmental assessment, and stakeholder consultation. Data collection and analysis phase.',
+    icon: '🔍',
+    duration: '1-3 weeks'
+  },
+  {
+    number: '03',
+    title: 'Analysis & Solution Development',
+    description: 'Computer modeling, hydraulic calculations, risk assessment, solution comparison, and detailed design development with multiple alternatives.',
+    icon: '💻',
+    duration: '2-4 weeks'
+  },
+  {
+    number: '04',
+    title: 'Report Delivery & Implementation Support',
+    description: 'Comprehensive report with executive summary, detailed findings, recommendations, implementation timeline, and ongoing support for project execution.',
+    icon: '📊',
+    duration: '1 week'
+  }
+];
+
+// Service-specific FAQs with cost, timeline, benefits, process information
+const serviceFAQs = [
+  {
+    question: "How much do water management consulting services cost in Toronto?",
+    answer: "Water management consulting fees vary by project scope: Initial consultation and site visit: $550-$1,300 (often credited toward larger engagements), Residential site assessment: $3,800-$9,200 including topographic survey, soil testing, and report, Commercial/institutional assessment: $9,200-$27,000 for comprehensive analysis and master planning, Flood risk assessment: $5,400-$19,000 including hydraulic modeling and mitigation strategies, Detailed engineering design: $8,650-$38,000 for construction-ready plans and specifications, Ongoing support: $200-$400/hour for implementation oversight and regulatory compliance. Most projects show 3-8x ROI through optimized solutions and avoided problems."
+  },
+  {
+    question: "How long does the consulting process take?",
+    answer: "Consulting timelines depend on project complexity: Initial consultation and assessment: 1-2 weeks including site visits and preliminary analysis, Detailed site investigation: 2-4 weeks for surveying, testing, and stakeholder coordination, Analysis and modeling: 3-6 weeks for hydraulic calculations, solution development, and alternatives evaluation, Report preparation: 1-2 weeks for comprehensive documentation and presentation, Implementation support: Ongoing throughout construction phase (3-12 months typically). Rush projects available with expedited timelines for urgent situations. Weather conditions may affect site investigation scheduling."
+  },
+  {
+    question: "What are the benefits of professional water management consulting?",
+    answer: "Professional consulting provides significant value: Cost optimization: Avoid over-engineering and identify most cost-effective solutions, reducing project costs by 15-35%, Risk mitigation: Identify potential problems before they become expensive failures, Technical expertise: Access to advanced modeling software and 25+ years of Toronto-specific experience, Regulatory navigation: Ensure compliance and expedite permit approvals, avoiding delays and violations, Implementation efficiency: Proper planning reduces construction time and change orders, Long-term protection: Solutions designed for current and future conditions, including climate change impacts, Insurance benefits: Professional engineering documentation supports claims and may reduce premiums."
+  },
+  {
+    question: "When should I hire water management consulting services?",
+    answer: "Professional consulting is valuable in many scenarios: Complex drainage problems: Multiple water sources, challenging topography, or failed previous solutions, New development: Any construction requiring municipal approvals or stormwater management compliance, Post-flood recovery: After water damage when you need comprehensive solutions to prevent recurrence, Property acquisition: Due diligence for commercial properties or high-value residential purchases, Multi-property issues: Coordination required between neighbors or shared infrastructure, Regulatory requirements: When municipal or conservation authority approvals are needed, Insurance claims: Professional documentation supporting damage claims or risk mitigation, Budget planning: Major projects requiring accurate cost estimates and phased implementation strategies."
+  }
+];
+
+// Service offers with 3 pricing tiers
+const serviceOffers = [
+  {
+    name: "Site Assessment & Analysis",
+    price: "$3,800-$9,200",
+    description: "Comprehensive property assessment including topographic survey, soil testing, drainage evaluation, and detailed recommendations report. Perfect for understanding water management challenges and solution options."
+  },
+  {
+    name: "Master Planning & Design",
+    price: "$13,000-$38,000",
+    description: "Complete water management master plan with hydraulic modeling, phased implementation strategy, cost estimates, and construction-ready designs. Includes regulatory compliance support and contractor selection assistance."
+  },
+  {
+    name: "Enterprise Consulting Services",
+    price: "$27,000-$108,000+",
+    description: "Comprehensive consulting for large commercial, institutional, or multi-property projects. Includes environmental assessments, municipal coordination, ongoing implementation support, and performance monitoring systems."
+  }
+];
+
+---
+
+<PageLayout 
+  title={pageTitle}
+  description={pageDescription}
+>
+  
+  <!-- Breadcrumbs -->
+  <div class="container mx-auto px-4 mt-4">
+    <Breadcrumbs 
+      items={[
+        { name: "Home", url: "/" },
+        { name: "Services", url: "/services" },
+        { name: "Water Management Consulting" }
+      ]}
+    />
+  </div>
+
+<ServiceSchema 
+    serviceName="Property Water Management Consulting Toronto"
+    description={pageDescription}
+    priceRange="$3,800-$108,000+"
+    offers={serviceOffers}
+    faqs={serviceFAQs}
+  />
+  <!-- Hero Section -->
+  <Hero 
+    title="Property Water Management Consulting"
+    subtitle="Expert engineering consultation for complex water management challenges. Site assessment, master planning, flood risk analysis, and regulatory compliance support."
+    primaryCTA={{ text: "Schedule Consultation", href: "/free-inspection" }}
+    secondaryCTA={{ text: "Call: 437-545-0067", href: "tel:437-545-0067" }}
+    backgroundImage="/images/waterproofing diagram with basement sump pump weeping tile and exterior drainage.webp"
+    badge="Professional Engineering Services"
+  />
+
+  <!-- Stats -->
+  <Stats />
+
+  <!-- Comprehensive Content Section -->
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Introduction -->
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold text-slate-900 mb-6">
+          Professional Water Management Engineering Consultation
+        </h2>
+        <p class="text-xl text-slate-500 max-w-4xl mx-auto mb-8">
+          Complex water management challenges require expert engineering analysis and strategic planning. Our consulting services provide comprehensive site assessment, advanced modeling, regulatory navigation, and implementation support. With 25+ years of experience in Toronto's unique conditions, we deliver actionable solutions that protect your investment.
+        </p>
+      </div>
+
+      <!-- Consulting Services Grid -->
+      <div class="grid lg:grid-cols-2 gap-12 mb-16">
+        <div class="space-y-8">
+          <h3 class="text-3xl font-bold text-slate-900">Comprehensive Site Water Assessment</h3>
+          <p class="text-lg text-slate-600">
+            Our detailed site assessments go far beyond surface observations. We conduct comprehensive investigations including topographic surveys with 1-foot contour mapping, geotechnical analysis with soil percolation testing, seasonal groundwater monitoring, and detailed utility mapping. Every assessment includes climate analysis, regulatory review, and risk evaluation.
+          </p>
+          <div class="bg-cyan-50 p-6 rounded-lg">
+            <h4 class="font-semibold text-cyan-900 mb-3">Assessment Components:</h4>
+            <ul class="space-y-2 text-cyan-800">
+              <li>• Topographic survey with laser-level accuracy</li>
+              <li>• Soil percolation testing and classification</li>
+              <li>• Seasonal groundwater monitoring and mapping</li>
+              <li>• Existing infrastructure evaluation and capacity analysis</li>
+              <li>• Climate data analysis and extreme weather modeling</li>
+              <li>• Regulatory compliance review and gap analysis</li>
+              <li>• Stakeholder consultation and coordination</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="space-y-8">
+          <h3 class="text-3xl font-bold text-slate-900">Drainage Master Planning</h3>
+          <p class="text-lg text-slate-600">
+            Strategic long-term planning for comprehensive water management. Our master plans consider current challenges, future development, climate change impacts, and budget constraints. We develop phased implementation strategies that maximize value while providing immediate protection for critical areas.
+          </p>
+          <div class="bg-cyan-50 p-6 rounded-lg">
+            <h4 class="font-semibent text-cyan-800 mb-3">Master Plan Elements:</h4>
+            <ul class="space-y-2 text-cyan-700">
+              <li>• Current condition assessment and problem prioritization</li>
+              <li>• Future development impact analysis</li>
+              <li>• Climate change resilience planning</li>
+              <li>• Phased implementation strategy with cost optimization</li>
+              <li>• Integration with municipal infrastructure plans</li>
+              <li>• Return on investment analysis for all alternatives</li>
+              <li>• Long-term maintenance and operation planning</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Advanced Analysis Services -->
+      <div class="grid lg:grid-cols-2 gap-12 mb-16">
+        <div class="space-y-8">
+          <h3 class="text-3xl font-bold text-slate-900">Flood Risk Assessment & Mitigation</h3>
+          <p class="text-lg text-slate-600">
+            Comprehensive flood risk analysis considering current conditions and future climate change scenarios. We model various storm events from 2-year to 100-year frequencies, analyze historical flood data, and develop risk mitigation strategies that provide measurable protection and insurance benefits.
+          </p>
+          <div class="bg-red-50 p-6 rounded-lg">
+            <h4 class="font-semibold text-red-900 mb-3">Risk Assessment Process:</h4>
+            <ul class="space-y-2 text-red-800">
+              <li>• Historical flood frequency analysis for Toronto region</li>
+              <li>• Climate change projections and extreme weather modeling</li>
+              <li>• Hydraulic modeling for multiple storm scenarios</li>
+              <li>• Risk quantification with probability and damage estimates</li>
+              <li>• Infrastructure resilience evaluation</li>
+              <li>• Mitigation strategy development and cost-benefit analysis</li>
+              <li>• Insurance implications and premium reduction strategies</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="space-y-8">
+          <h3 class="text-3xl font-bold text-slate-900">Advanced Water Flow Modeling</h3>
+          <p class="text-lg text-slate-600">
+            State-of-the-art computer modeling using professional software including HEC-RAS, SWMM, and HydroCAD. Our modeling capabilities include complex watershed analysis, peak flow calculations, storage system sizing, and optimization of drainage networks for maximum performance and cost-effectiveness.
+          </p>
+          <div class="bg-purple-50 p-6 rounded-lg">
+            <h4 class="font-semibold text-purple-900 mb-3">Modeling Capabilities:</h4>
+            <ul class="space-y-2 text-purple-800">
+              <li>• HEC-RAS hydraulic modeling and floodplain analysis</li>
+              <li>• SWMM urban drainage system modeling</li>
+              <li>• HydroCAD stormwater system design and analysis</li>
+              <li>• Peak flow calculations for various return periods</li>
+              <li>• Storage system sizing and optimization</li>
+              <li>• Network analysis and bottleneck identification</li>
+              <li>• Performance optimization and sensitivity analysis</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Consulting Process Flow -->
+      <div class="bg-slate-50 p-8 rounded-lg mb-16">
+        <h3 class="text-3xl font-bold text-slate-900 mb-6">Our Structured Consulting Approach</h3>
+        <div class="grid md:grid-cols-4 gap-6">
+          <div class="text-center">
+            <div class="bg-cyan-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+              <span class="text-2xl font-bold text-cyan-600">1</span>
+            </div>
+            <h4 class="text-lg font-semibold text-slate-900 mb-2">Problem Definition</h4>
+            <p class="text-sm text-slate-500">Initial consultation, site visit, objectives clarification, and scope definition</p>
+          </div>
+          <div class="text-center">
+            <div class="bg-cyan-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+              <span class="text-2xl font-bold text-cyan-600">2</span>
+            </div>
+            <h4 class="text-lg font-semibold text-slate-900 mb-2">Data Collection</h4>
+            <p class="text-sm text-slate-500">Comprehensive site investigation, testing, mapping, and stakeholder consultation</p>
+          </div>
+          <div class="text-center">
+            <div class="bg-amber-50 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+              <span class="text-2xl font-bold text-amber-500">3</span>
+            </div>
+            <h4 class="text-lg font-semibold text-slate-900 mb-2">Analysis & Design</h4>
+            <p class="text-sm text-slate-500">Computer modeling, solution development, cost analysis, and alternative evaluation</p>
+          </div>
+          <div class="text-center">
+            <div class="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+              <span class="text-2xl font-bold text-purple-600">4</span>
+            </div>
+            <h4 class="text-lg font-semibold text-slate-900 mb-2">Implementation Support</h4>
+            <p class="text-sm text-slate-500">Report delivery, contractor selection, construction oversight, and performance monitoring</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Regulatory Compliance Support -->
+      <div class="mb-16">
+        <h3 class="text-3xl font-bold text-slate-900 mb-8 text-center">Regulatory Compliance & Municipal Navigation</h3>
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <h4 class="text-xl font-semibold text-slate-900 mb-4">Permit Applications</h4>
+            <ul class="space-y-2 text-slate-600">
+              <li>• Building permit applications and submissions</li>
+              <li>• Toronto Water storm sewer connection permits</li>
+              <li>• Conservation Authority approvals</li>
+              <li>• Environmental Assessment coordination</li>
+              <li>• Site plan approval applications</li>
+              <li>• Zoning variance applications when required</li>
+            </ul>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <h4 class="text-xl font-semibold text-slate-900 mb-4">Code Compliance</h4>
+            <ul class="space-y-2 text-slate-600">
+              <li>• Ontario Building Code interpretation</li>
+              <li>• Toronto Green Standard compliance</li>
+              <li>• Municipal drainage by-law requirements</li>
+              <li>• Accessibility standards integration</li>
+              <li>• Fire safety and emergency access requirements</li>
+              <li>• Heritage district compliance when applicable</li>
+            </ul>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <h4 class="text-xl font-semibold text-slate-900 mb-4">Ongoing Support</h4>
+            <ul class="space-y-2 text-slate-600">
+              <li>• Municipal inspection coordination</li>
+              <li>• Post-construction compliance verification</li>
+              <li>• Annual reporting and documentation</li>
+              <li>• System performance monitoring</li>
+              <li>• Violation resolution and corrective action</li>
+              <li>• Upgrade requirement notifications</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Deliverables & Reports -->
+      <div class="bg-gradient-to-r from-blue-50 to-green-50 p-8 rounded-lg mb-16">
+        <h3 class="text-3xl font-bold text-slate-900 mb-6">Comprehensive Deliverables</h3>
+        <div class="grid md:grid-cols-2 gap-8">
+          <div>
+            <h4 class="text-xl font-semibold text-slate-900 mb-4">Technical Documentation</h4>
+            <ul class="space-y-3 text-slate-600">
+              <li class="flex items-start">
+                <span class="flex-shrink-0 w-2 h-2 bg-cyan-500 rounded-full mt-2 mr-3"></span>
+                <span>Executive summary with key findings and prioritized recommendations</span>
+              </li>
+              <li class="flex items-start">
+                <span class="flex-shrink-0 w-2 h-2 bg-cyan-500 rounded-full mt-2 mr-3"></span>
+                <span>Detailed site analysis with topographic maps and technical data</span>
+              </li>
+              <li class="flex items-start">
+                <span class="flex-shrink-0 w-2 h-2 bg-cyan-500 rounded-full mt-2 mr-3"></span>
+                <span>Hydraulic modeling results with flow calculations</span>
+              </li>
+              <li class="flex items-start">
+                <span class="flex-shrink-0 w-2 h-2 bg-cyan-500 rounded-full mt-2 mr-3"></span>
+                <span>CAD drawings and technical specifications</span>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="text-xl font-semibold text-slate-900 mb-4">Implementation Support</h4>
+            <ul class="space-y-3 text-slate-600">
+              <li class="flex items-start">
+                <span class="flex-shrink-0 w-2 h-2 bg-cyan-500 rounded-full mt-2 mr-3"></span>
+                <span>Solution alternatives with cost estimates and timelines</span>
+              </li>
+              <li class="flex items-start">
+                <span class="flex-shrink-0 w-2 h-2 bg-cyan-500 rounded-full mt-2 mr-3"></span>
+                <span>Risk assessment and mitigation strategies</span>
+              </li>
+              <li class="flex items-start">
+                <span class="flex-shrink-0 w-2 h-2 bg-cyan-500 rounded-full mt-2 mr-3"></span>
+                <span>Regulatory compliance roadmap with permit requirements</span>
+              </li>
+              <li class="flex items-start">
+                <span class="flex-shrink-0 w-2 h-2 bg-cyan-500 rounded-full mt-2 mr-3"></span>
+                <span>Contractor selection criteria and construction oversight support</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <Features 
+    title="Why Choose Our Consulting Services"
+    subtitle="Professional engineering expertise with hands-on implementation experience"
+    features={serviceFeatures}
+    columns={3}
+  />
+
+  <!-- Process -->
+  <Process 
+    title="Our Professional Consulting Process"
+    subtitle="Structured approach ensuring comprehensive analysis and actionable recommendations"
+    steps={processSteps}
+  />
+
+  <!-- Testimonials -->
+  <Testimonials />
+
+  <!-- FAQ -->
+  <FAQ 
+    title="Water Management Consulting Frequently Asked Questions"
+    subtitle="Expert guidance on professional water management consultation and planning"
+    faqs={serviceFAQs}
+    columns={1}
+  />
+
+  <!-- Internal Links -->
+  <InternalLinks 
+    category="waterproofing"
+    currentPage="water-management-consulting"
+    limit={6}
+  />
+
+  <!-- CTA -->
+  <CTA 
+    title="Ready for Professional Water Management Consultation?"
+    subtitle="Schedule your initial consultation and receive expert guidance on your water management challenges with actionable recommendations."
+    primaryCTA={{ text: "Schedule Consultation", href: "/free-inspection" }}
+    secondaryCTA={{ text: "Call: 437-545-0067", href: "tel:437-545-0067" }}
+    background="gradient"
+  />
+</PageLayout>

@@ -1,0 +1,73 @@
+site:
+  name: 'Dryspace Waterproofing'
+  site: 'https://dryspacewaterproofing.ca'
+  base: '/'
+  trailingSlash: false
+
+  googleSiteVerificationId: false # Add your verification ID here
+
+# Default SEO metadata
+metadata:
+  title:
+    default: 'Dryspace Waterproofing | Toronto Foundation Repair & Basement Waterproofing'
+    template: '%s — Dryspace Waterproofing'
+  description: "Toronto's trusted waterproofing experts. 24/7 emergency service, 25-year warranty, government rebates available. Foundation repair, sump pumps, French drains. Call 437-545-0067."
+  robots:
+    index: true
+    follow: true
+  openGraph:
+    site_name: 'Dryspace Waterproofing'
+    images:
+      - url: '~/assets/images/dryspace-og-image.webp'
+        width: 1200
+        height: 628
+    type: website
+  twitter:
+    handle: '@dryspaceca'
+    site: '@dryspaceca'
+    cardType: summary_large_image
+
+i18n:
+  language: en
+  textDirection: ltr
+
+apps:
+  blog:
+    isEnabled: true
+    postsPerPage: 9
+
+    post:
+      isEnabled: true
+      permalink: '/guides/%slug%' # Waterproofing guides and tips
+      robots:
+        index: true
+
+    list:
+      isEnabled: true
+      pathname: 'guides' # Changed from blog to guides
+      robots:
+        index: true
+
+    category:
+      isEnabled: true
+      pathname: 'category'
+      robots:
+        index: true
+
+    tag:
+      isEnabled: true
+      pathname: 'tag'
+      robots:
+        index: true
+
+    isRelatedPostsEnabled: true
+    relatedPostsCount: 4
+
+analytics:
+  vendors:
+    googleAnalytics:
+      id: null # Add your GA4 ID here
+
+ui:
+  theme: 'light'
+  themeColor: '#0f172a'

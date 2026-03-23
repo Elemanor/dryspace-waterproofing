@@ -1,0 +1,526 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Navbar from "../../components/Navbar.astro";
+import Hero from "../../components/Hero.astro";
+import Footer from "../../components/Footer.astro";
+import CTASection from '../../components/sections/CTA.astro';
+---
+
+<Layout
+  title="Liberty 230-Series Sump Pump | Model 2312 | DrySpace"
+  description="Liberty Pumps 1/3 HP submersible sump pump. 37 GPM flow rate, automatic operation, 3-year warranty. Professional installation available in Toronto GTA."
+>
+  <Navbar />
+  <Hero
+    title="Liberty 230-Series Professional Sump Pump"
+    subtitle="Model 2312 - Reliable Basement Protection with 3-Year Warranty"
+    backgroundImage="/images/sump pump with back up.webp"
+  />
+
+  <main class="container mx-auto px-6 py-12">
+    <!-- Product Overview -->
+    <section class="mb-16">
+      <div class="grid md:grid-cols-2 gap-12">
+        <!-- Product Image and Key Features -->
+        <div>
+          <div class="bg-slate-50 rounded-lg p-8 mb-6">
+            <img src="/images/sump pump with back up.webp" alt="Liberty 230-Series Sump Pump" class="w-full h-auto" width="800" height="600" loading="lazy" decoding="async">
+          </div>
+          
+          <div class="bg-cyan-50 rounded-lg p-6">
+            <h3 class="font-bold text-xl mb-4">Key Benefits</h3>
+            <ul class="space-y-3">
+              <li class="flex items-start">
+                <span class="text-cyan-600 mr-2">✓</span>
+                <span><strong>Automatic Operation:</strong> Tether float switch for hands-free protection</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-cyan-600 mr-2">✓</span>
+                <span><strong>Continuous Duty:</strong> Designed for 24/7 operation</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-cyan-600 mr-2">✓</span>
+                <span><strong>Thermal Protection:</strong> Prevents motor burnout</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-cyan-600 mr-2">✓</span>
+                <span><strong>3-Year Warranty:</strong> Manufacturer's peace of mind</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Product Details -->
+        <div>
+          <h2 class="text-3xl font-bold mb-6">Professional-Grade Basement Protection</h2>
+          <p class="text-lg text-slate-600 mb-6">
+            The Liberty 230-Series Model 2312 is a residential-grade submersible sump pump engineered for reliable basement water management. With its 1/3 HP motor and vortex impeller design, it efficiently handles clear water drainage while passing 3/8" solids without clogging.
+          </p>
+
+          <div class="bg-orange-50 border-l-4 border-orange-500 p-6 mb-6">
+            <h3 class="font-bold text-xl mb-3">Professional Installation Package</h3>
+            <div class="space-y-2">
+              <div class="flex justify-between">
+                <span>Liberty 2312 Pump Unit</span>
+                <span class="font-semibold">$710</span>
+              </div>
+              <div class="flex justify-between">
+                <span>Professional Installation</span>
+                <span class="font-semibold">$500-800</span>
+              </div>
+              <div class="flex justify-between">
+                <span>Battery Backup System</span>
+                <span class="font-semibold">$800-1,200</span>
+              </div>
+              <div class="flex justify-between">
+                <span>Sump Basin & Check Valve</span>
+                <span class="font-semibold">$200-300</span>
+              </div>
+              <div class="border-t pt-2 mt-2">
+                <div class="flex justify-between text-lg font-bold">
+                  <span>Complete System Installed</span>
+                  <span class="text-orange-600">$2,200-3,000</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-2 gap-4">
+            <div class="bg-slate-50 rounded-lg p-4 text-center">
+              <div class="text-2xl font-bold text-cyan-600">37 GPM</div>
+              <div class="text-sm text-slate-500">Flow at 10' Head</div>
+            </div>
+            <div class="bg-slate-50 rounded-lg p-4 text-center">
+              <div class="text-2xl font-bold text-cyan-600">21 FT</div>
+              <div class="text-sm text-slate-500">Maximum Head</div>
+            </div>
+            <div class="bg-slate-50 rounded-lg p-4 text-center">
+              <div class="text-2xl font-bold text-orange-600">1/3 HP</div>
+              <div class="text-sm text-slate-500">Motor Power</div>
+            </div>
+            <div class="bg-slate-50 rounded-lg p-4 text-center">
+              <div class="text-2xl font-bold text-purple-600">3 Years</div>
+              <div class="text-sm text-slate-500">Warranty</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Technical Specifications -->
+    <section class="mb-16">
+      <h2 class="text-3xl font-bold mb-8 text-center">Complete Technical Specifications</h2>
+      
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Performance Specs -->
+        <div class="bg-white rounded-lg shadow-lg p-6">
+          <h3 class="font-bold text-xl mb-4 text-cyan-600">Performance Data</h3>
+          <table class="w-full text-sm">
+            <tbody class="divide-y divide-gray-200">
+              <tr>
+                <td class="py-2 font-medium">Horsepower:</td>
+                <td class="py-2">1/3 HP</td>
+              </tr>
+              <tr>
+                <td class="py-2 font-medium">Flow @ 10':</td>
+                <td class="py-2">37 GPM</td>
+              </tr>
+              <tr>
+                <td class="py-2 font-medium">Flow @ 30':</td>
+                <td class="py-2">0 GPM</td>
+              </tr>
+              <tr>
+                <td class="py-2 font-medium">Max Head:</td>
+                <td class="py-2">21 feet</td>
+              </tr>
+              <tr>
+                <td class="py-2 font-medium">RPM:</td>
+                <td class="py-2">3,450</td>
+              </tr>
+              <tr>
+                <td class="py-2 font-medium">Solids Handling:</td>
+                <td class="py-2">3/8 inch</td>
+              </tr>
+              <tr>
+                <td class="py-2 font-medium">Max Temp:</td>
+                <td class="py-2">104°F</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Electrical Specs -->
+        <div class="bg-white rounded-lg shadow-lg p-6">
+          <h3 class="font-bold text-xl mb-4 text-cyan-600">Electrical Specifications</h3>
+          <table class="w-full text-sm">
+            <tbody class="divide-y divide-gray-200">
+              <tr>
+                <td class="py-2 font-medium">Voltage:</td>
+                <td class="py-2">115V AC</td>
+              </tr>
+              <tr>
+                <td class="py-2 font-medium">Current:</td>
+                <td class="py-2">5.2 Amps</td>
+              </tr>
+              <tr>
+                <td class="py-2 font-medium">Phase:</td>
+                <td class="py-2">Single</td>
+              </tr>
+              <tr>
+                <td class="py-2 font-medium">Frequency:</td>
+                <td class="py-2">60 Hz</td>
+              </tr>
+              <tr>
+                <td class="py-2 font-medium">Cord Type:</td>
+                <td class="py-2">SJTW 16/3</td>
+              </tr>
+              <tr>
+                <td class="py-2 font-medium">Cord Length:</td>
+                <td class="py-2">25 feet</td>
+              </tr>
+              <tr>
+                <td class="py-2 font-medium">Thermal Protection:</td>
+                <td class="py-2">Yes</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Physical Specs -->
+        <div class="bg-white rounded-lg shadow-lg p-6">
+          <h3 class="font-bold text-xl mb-4 text-orange-600">Physical Specifications</h3>
+          <table class="w-full text-sm">
+            <tbody class="divide-y divide-gray-200">
+              <tr>
+                <td class="py-2 font-medium">Overall Height:</td>
+                <td class="py-2">10.5 inches</td>
+              </tr>
+              <tr>
+                <td class="py-2 font-medium">Body Diameter:</td>
+                <td class="py-2">9 5/8 inches</td>
+              </tr>
+              <tr>
+                <td class="py-2 font-medium">Weight:</td>
+                <td class="py-2">12.75 lbs</td>
+              </tr>
+              <tr>
+                <td class="py-2 font-medium">Discharge:</td>
+                <td class="py-2">1.5" FNPT</td>
+              </tr>
+              <tr>
+                <td class="py-2 font-medium">Min Pit Diameter:</td>
+                <td class="py-2">14 inches</td>
+              </tr>
+              <tr>
+                <td class="py-2 font-medium">On Point:</td>
+                <td class="py-2">10 inches</td>
+              </tr>
+              <tr>
+                <td class="py-2 font-medium">Off Point:</td>
+                <td class="py-2">4 inches</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Materials -->
+      <div class="mt-8 bg-slate-50 rounded-lg p-8">
+        <h3 class="font-bold text-xl mb-6 text-center">Construction Materials</h3>
+        <div class="grid md:grid-cols-4 gap-6 text-center">
+          <div>
+            <h4 class="font-semibold mb-2">Motor Housing</h4>
+            <p class="text-slate-500">Aluminum</p>
+          </div>
+          <div>
+            <h4 class="font-semibold mb-2">Base</h4>
+            <p class="text-slate-500">Polypropylene</p>
+          </div>
+          <div>
+            <h4 class="font-semibold mb-2">Impeller</h4>
+            <p class="text-slate-500">Engineered Polymer</p>
+          </div>
+          <div>
+            <h4 class="font-semibold mb-2">Design</h4>
+            <p class="text-slate-500">Vortex Impeller</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Performance Chart -->
+    <section class="mb-16">
+      <h2 class="text-3xl font-bold mb-8 text-center">Pump Performance Curve</h2>
+      
+      <div class="bg-white rounded-lg shadow-lg p-8">
+        <div class="overflow-x-auto">
+          <table class="min-w-full">
+            <thead class="bg-cyan-600 text-white">
+              <tr>
+                <th class="px-6 py-3">Total Head (Feet)</th>
+                <th class="px-6 py-3">Flow Rate (GPM)</th>
+                <th class="px-6 py-3">Typical Application</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-200">
+              <tr>
+                <td class="px-6 py-4 text-center">5'</td>
+                <td class="px-6 py-4 text-center font-semibold">48 GPM</td>
+                <td class="px-6 py-4">Shallow basement, minimal lift</td>
+              </tr>
+              <tr class="bg-slate-50">
+                <td class="px-6 py-4 text-center">10'</td>
+                <td class="px-6 py-4 text-center font-semibold text-cyan-600">37 GPM</td>
+                <td class="px-6 py-4">Standard basement installation</td>
+              </tr>
+              <tr>
+                <td class="px-6 py-4 text-center">15'</td>
+                <td class="px-6 py-4 text-center font-semibold">24 GPM</td>
+                <td class="px-6 py-4">Deep basement or long discharge</td>
+              </tr>
+              <tr class="bg-slate-50">
+                <td class="px-6 py-4 text-center">20'</td>
+                <td class="px-6 py-4 text-center font-semibold">8 GPM</td>
+                <td class="px-6 py-4">Maximum practical application</td>
+              </tr>
+              <tr>
+                <td class="px-6 py-4 text-center">21'</td>
+                <td class="px-6 py-4 text-center font-semibold">0 GPM</td>
+                <td class="px-6 py-4">Shutoff head</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        
+        <div class="mt-6 p-4 bg-cyan-50 rounded-lg">
+          <p class="text-sm text-cyan-700"><strong>Note:</strong> Actual performance may vary based on installation conditions, pipe diameter, and system configuration. Professional sizing recommended.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Installation Requirements -->
+    <section class="mb-16">
+      <h2 class="text-3xl font-bold mb-8 text-center">Installation Requirements & Best Practices</h2>
+      
+      <div class="grid md:grid-cols-2 gap-8">
+        <!-- Basin Requirements -->
+        <div class="bg-cyan-50 rounded-lg p-6">
+          <h3 class="font-bold text-xl mb-4">Sump Basin Requirements</h3>
+          <ul class="space-y-3">
+            <li class="flex items-start">
+              <span class="text-cyan-600 mr-2">•</span>
+              <span><strong>Minimum diameter:</strong> 14 inches (18-24" recommended)</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-cyan-600 mr-2">•</span>
+              <span><strong>Minimum depth:</strong> 24 inches for proper cycling</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-cyan-600 mr-2">•</span>
+              <span><strong>Basin type:</strong> Perforated for groundwater, solid for surface water</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-cyan-600 mr-2">•</span>
+              <span><strong>Cover:</strong> Sealed lid recommended for radon mitigation</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Discharge Requirements -->
+        <div class="bg-cyan-50 rounded-lg p-6">
+          <h3 class="font-bold text-xl mb-4">Discharge System Components</h3>
+          <ul class="space-y-3">
+            <li class="flex items-start">
+              <span class="text-cyan-600 mr-2">•</span>
+              <span><strong>Check valve:</strong> Required to prevent backflow</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-cyan-600 mr-2">•</span>
+              <span><strong>Discharge pipe:</strong> 1.5" minimum, rigid PVC recommended</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-cyan-600 mr-2">•</span>
+              <span><strong>Exterior discharge:</strong> 6+ feet from foundation</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-cyan-600 mr-2">•</span>
+              <span><strong>Freeze protection:</strong> Slope and insulation in cold climates</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Warning Box -->
+      <div class="mt-8 bg-red-50 border border-red-200 rounded-lg p-6">
+        <h3 class="font-bold text-lg mb-3 text-red-800">Important Installation Notes</h3>
+        <ul class="space-y-2 text-red-700">
+          <li>• Must be installed by qualified personnel in accordance with local codes</li>
+          <li>• Dedicated 15A circuit with GFCI protection required</li>
+          <li>• Never discharge into sanitary sewer systems</li>
+          <li>• Regular testing and maintenance essential for reliability</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Complete System Options -->
+    <section class="mb-16">
+      <h2 class="text-3xl font-bold mb-8 text-center">Complete Protection Systems</h2>
+      
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Basic System -->
+        <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+          <div class="bg-slate-600 text-white p-4 text-center">
+            <h3 class="text-xl font-bold">Basic System</h3>
+          </div>
+          <div class="p-6">
+            <ul class="space-y-3 mb-6">
+              <li class="flex items-start">
+                <span class="text-cyan-600 mr-2">✓</span>
+                <span>Liberty 2312 pump</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-cyan-600 mr-2">✓</span>
+                <span>18" basin with lid</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-cyan-600 mr-2">✓</span>
+                <span>Check valve</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-cyan-600 mr-2">✓</span>
+                <span>Basic discharge pipe</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-cyan-600 mr-2">✓</span>
+                <span>Professional installation</span>
+              </li>
+            </ul>
+            <div class="text-center">
+              <div class="text-2xl font-bold text-slate-500">$1,500-1,800</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Premium System -->
+        <div class="bg-white rounded-lg shadow-lg overflow-hidden border-2 border-orange-500">
+          <div class="bg-orange-500 text-white p-4 text-center">
+            <h3 class="text-xl font-bold">Premium System</h3>
+            <div class="text-sm">RECOMMENDED</div>
+          </div>
+          <div class="p-6">
+            <ul class="space-y-3 mb-6">
+              <li class="flex items-start">
+                <span class="text-cyan-600 mr-2">✓</span>
+                <span>Liberty 2312 pump</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-cyan-600 mr-2">✓</span>
+                <span>24" perforated basin</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-cyan-600 mr-2">✓</span>
+                <span>Battery backup pump</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-cyan-600 mr-2">✓</span>
+                <span>High water alarm</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-cyan-600 mr-2">✓</span>
+                <span>Sealed radon lid</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-cyan-600 mr-2">✓</span>
+                <span>Freeze-resistant discharge</span>
+              </li>
+            </ul>
+            <div class="text-center">
+              <div class="text-2xl font-bold text-orange-600">$2,500-3,000</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Ultimate System -->
+        <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+          <div class="bg-cyan-600 text-white p-4 text-center">
+            <h3 class="text-xl font-bold">Ultimate System</h3>
+          </div>
+          <div class="p-6">
+            <ul class="space-y-3 mb-6">
+              <li class="flex items-start">
+                <span class="text-cyan-600 mr-2">✓</span>
+                <span>Dual Liberty pumps</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-cyan-600 mr-2">✓</span>
+                <span>30" commercial basin</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-cyan-600 mr-2">✓</span>
+                <span>AC/DC backup system</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-cyan-600 mr-2">✓</span>
+                <span>WiFi monitoring</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-cyan-600 mr-2">✓</span>
+                <span>Maintenance contract</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-cyan-600 mr-2">✓</span>
+                <span>10-year warranty</span>
+              </li>
+            </ul>
+            <div class="text-center">
+              <div class="text-2xl font-bold text-cyan-600">$4,000-5,000</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Certifications -->
+    <section class="mb-16">
+      <div class="bg-gradient-to-r from-gray-100 to-gray-200 rounded-lg p-8">
+        <h2 class="text-2xl font-bold mb-6 text-center">Certifications & Compliance</h2>
+        
+        <div class="grid md:grid-cols-2 gap-8">
+          <div class="text-center">
+            <h3 class="font-bold text-lg mb-3">CSA Certified</h3>
+            <p class="text-slate-500">Meets Canadian Standards Association requirements for electrical safety</p>
+          </div>
+          <div class="text-center">
+            <h3 class="font-bold text-lg mb-3">SSPMA Member</h3>
+            <p class="text-slate-500">Sump & Sewage Pump Manufacturers Association certified quality</p>
+          </div>
+        </div>
+        
+        <div class="mt-6 text-center text-sm text-slate-400">
+          Model #2312 | Made in USA | 3-Year Manufacturer's Warranty
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="text-center">
+      <div class="bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-lg p-12">
+        <h2 class="text-3xl font-bold mb-4">Professional Sump Pump Installation</h2>
+        <p class="text-xl mb-8 max-w-3xl mx-auto">
+          Don't risk basement flooding with DIY installation. Our certified technicians ensure proper sizing, installation, and testing for reliable protection.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="/contact" class="bg-orange-500 text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-orange-600 transition">
+            Get Installation Quote
+          </a>
+          <a href="tel:437-545-0067" class="bg-white text-cyan-600 px-8 py-4 rounded-lg font-bold text-lg hover:bg-slate-50 transition">
+            📞 437-545-0067
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <CTASection />
+  <Footer />
+</Layout>

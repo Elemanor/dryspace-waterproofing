@@ -1,0 +1,110 @@
+---
+export interface Props {
+  city: string;
+}
+
+const { city } = Astro.props;
+
+const showcaseImages = [
+  {
+    category: "Foundation Problems We Fix",
+    images: [
+      { src: "/images/crack on foundation wall due winter freeze .webp", alt: `Foundation crack from winter freeze in ${city}`, caption: "Winter freeze damage - common in GTA" },
+      { src: "/images/structural foundation crack.webp", alt: `Structural foundation crack repair in ${city}`, caption: "Major structural repairs" },
+      { src: "/images/wet walls.webp", alt: `Wet basement walls in ${city} home`, caption: "Water infiltration issues" },
+      { src: "/images/cove leak.webp", alt: `Cove joint leak in ${city} basement`, caption: "Cove joint water seepage" }
+    ]
+  },
+  {
+    category: "Our Professional Solutions",
+    images: [
+      { src: "/images/exterior-waterproofing-toronto in process (1).webp", alt: `Exterior waterproofing project in ${city}`, caption: "Full exterior excavation and waterproofing" },
+      { src: "/images/new foundation exterior waterproofing dimpled membrane.webp", alt: `Dimpled membrane installation in ${city}`, caption: "Advanced drainage membrane system" },
+      { src: "/images/sump-pump.webp", alt: `Sump pump installation in ${city}`, caption: "Professional sump pump system" },
+      { src: "/images/interior-waterproofing.webp", alt: `Interior waterproofing in ${city}`, caption: "Interior drainage solution" }
+    ]
+  },
+  {
+    category: `Recent Projects in ${city}`,
+    images: [
+      { src: "/images/dryspace_excellence.webp", alt: `Completed waterproofing project in ${city}`, caption: "Quality workmanship guaranteed" },
+      { src: "/images/dryspace_exterior_waterproofing_warranty.webp", alt: `25-year warranty waterproofing in ${city}`, caption: "Backed by 25-year transferable warranty" },
+      { src: "/images/basement_wall_insulation.webp", alt: `Basement insulation and waterproofing in ${city}`, caption: "Combined waterproofing and insulation" },
+      { src: "/images/backwatervalve.webp", alt: `Backwater valve installation in ${city}`, caption: "Flood prevention systems" }
+    ]
+  }
+];
+---
+
+<section class="section-padding bg-slate-50">
+  <div class="container mx-auto px-4">
+    <div class="text-center max-w-3xl mx-auto mb-12 lg:mb-16">
+      <p class="section-label-pill mb-4">Our Work</p>
+      <h2 class="text-headline text-slate-900">Our Work in {city}</h2>
+      <p class="mt-4 text-lg text-slate-600">
+        Real examples of foundation problems we've solved and waterproofing solutions we've installed for homeowners in {city} and surrounding areas.
+      </p>
+    </div>
+
+    {showcaseImages.map((category) => (
+      <div class="mb-14">
+        <h3 class="text-lg font-semibold text-slate-900 mb-6 text-center">
+          {category.category}
+        </h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 max-w-6xl mx-auto">
+          {category.images.map((image) => (
+            <div class="group relative overflow-hidden rounded-xl bg-white shadow-card hover:shadow-card-hover transition-all duration-300">
+              <div class="relative aspect-[4/3] bg-slate-100">
+                <img
+                  src={image.src}
+                  alt={image.alt}
+                  loading="lazy"
+                  class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+              <div class="absolute inset-0 bg-gradient-to-t from-navy-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div class="absolute bottom-0 left-0 right-0 p-4 text-white transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                  <p class="text-sm font-medium">{image.caption}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    ))}
+
+    <!-- CTA -->
+    <div class="mt-8 rounded-2xl bg-gradient-to-r from-cyan-600 to-cyan-700 p-8 text-center max-w-4xl mx-auto">
+      <h3 class="text-xl font-bold text-white mb-3">
+        Need Waterproofing in {city}?
+      </h3>
+      <p class="text-cyan-100 mb-6">
+        Join hundreds of satisfied homeowners in {city} who trust Dryspace
+      </p>
+      <div class="flex flex-col sm:flex-row gap-3 justify-center">
+        <a href="/free-inspection" class="btn-primary">Get Free Inspection</a>
+        <a href="tel:437-545-0067" class="btn-ghost border-2 border-white/20 hover:!bg-white/10">Call: 437-545-0067</a>
+      </div>
+    </div>
+
+    <!-- Trust Indicators -->
+    <div class="mt-12 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto">
+      <div class="text-center">
+        <div class="text-2xl font-bold text-cyan-600">500+</div>
+        <div class="text-xs text-slate-500">Homes in {city}</div>
+      </div>
+      <div class="text-center">
+        <div class="text-2xl font-bold text-cyan-600">25yr</div>
+        <div class="text-xs text-slate-500">Warranty</div>
+      </div>
+      <div class="text-center">
+        <div class="text-2xl font-bold text-cyan-600">24/7</div>
+        <div class="text-xs text-slate-500">Emergency</div>
+      </div>
+      <div class="text-center">
+        <div class="text-2xl font-bold text-cyan-600">4.9/5</div>
+        <div class="text-xs text-slate-500">Google Rating</div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,229 @@
+---
+export interface Props {
+  showWaterIngress?: boolean;
+  showHydrostatic?: boolean;
+  showFloorDrains?: boolean;
+}
+
+const { 
+  showWaterIngress = true, 
+  showHydrostatic = true,
+  showFloorDrains = true
+} = Astro.props;
+---
+
+<div class="nbc-floor-drainage bg-cyan-50 rounded-lg p-6 my-8">
+  <h3 class="text-xl font-bold mb-4 flex items-center">
+    <span class="text-cyan-600 mr-2">🌊</span>
+    NBC 9.16.3 Floor-on-Ground Drainage Requirements
+  </h3>
+
+  <div class="bg-cyan-50 border-l-4 border-cyan-500 p-4 mb-6">
+    <p class="text-sm">
+      <strong>Critical:</strong> Unless proven unnecessary, grading or drainage is required to prevent water ingress. 
+      Where groundwater causes hydrostatic pressure beneath floors, structural concrete slabs designed to resist 
+      these pressures are mandatory.
+    </p>
+  </div>
+
+  {showWaterIngress && (
+    <div class="bg-white rounded-lg p-6 mb-6">
+      <h4 class="font-bold mb-4 text-cyan-700">9.16.3.1 Control of Water Ingress</h4>
+      
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <h5 class="font-semibold mb-3">Requirements</h5>
+          <ul class="text-sm space-y-2">
+            <li class="flex items-start">
+              <span class="text-cyan-600 mr-2">✓</span>
+              <span>Grading to direct water away</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-cyan-600 mr-2">✓</span>
+              <span>Drainage to intercept groundwater</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-cyan-600 mr-2">✓</span>
+              <span>Remove water before slab contact</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-cyan-600 mr-2">✓</span>
+              <span>Prevent moisture migration</span>
+            </li>
+          </ul>
+        </div>
+        
+        <div>
+          <h5 class="font-semibold mb-3">Problems Prevented</h5>
+          <ul class="text-sm space-y-2">
+            <li class="flex items-start">
+              <span class="text-red-600 mr-2">⚠️</span>
+              <span>Window condensation</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-red-600 mr-2">⚠️</span>
+              <span>Mold and mildew growth</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-red-600 mr-2">⚠️</span>
+              <span>Flooring damage</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-red-600 mr-2">⚠️</span>
+              <span>Structural deterioration</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mt-4 p-3 bg-cyan-50 rounded">
+        <p class="text-xs">
+          <strong>Methods:</strong> Perimeter drains, underslab drainage, granular layers, 
+          sump pits, proper site grading
+        </p>
+      </div>
+    </div>
+  )}
+
+  {showHydrostatic && (
+    <div class="bg-red-50 rounded-lg p-6 mb-6">
+      <h4 class="font-bold mb-4 text-red-700">9.16.3.2 Hydrostatic Pressure</h4>
+      
+      <div class="mb-4">
+        <p class="text-sm text-slate-600">
+          When groundwater rises above floor level, upward hydrostatic pressure can cause slabs to heave, 
+          crack, or wooden floors to float. Structural design per NBC Part 4 required.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <h5 class="font-semibold mb-3">Design Requirements</h5>
+          <ul class="text-sm space-y-2">
+            <li class="flex items-start">
+              <span class="text-red-600 mr-2">!</span>
+              <span>NBC Part 4 structural design</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-red-600 mr-2">!</span>
+              <span>Calculate uplift forces</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-red-600 mr-2">!</span>
+              <span>Reinforced concrete slab</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-red-600 mr-2">!</span>
+              <span>Engineer certification required</span>
+            </li>
+          </ul>
+        </div>
+        
+        <div class="bg-white p-4 rounded">
+          <h5 class="font-semibold mb-2 text-sm">Pressure Calculation</h5>
+          <div class="text-xs space-y-1">
+            <p><strong>Formula:</strong> P = ρ × g × h</p>
+            <p>• P = Pressure (kPa)</p>
+            <p>• ρ = 1000 kg/m³ (water)</p>
+            <p>• g = 9.81 m/s²</p>
+            <p>• h = Height above floor (m)</p>
+            <div class="mt-2 pt-2 border-t">
+              <p><strong>Example:</strong> 0.5m water = 4.9 kPa uplift</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-4 p-3 bg-red-100 rounded">
+        <p class="text-xs">
+          <strong>Critical:</strong> If water table >200mm above slab, upward pressure exceeds typical 
+          slab weight. Special design required.
+        </p>
+      </div>
+    </div>
+  )}
+
+  {showFloorDrains && (
+    <div class="bg-cyan-50 rounded-lg p-6 mb-6">
+      <h4 class="font-bold mb-4 text-cyan-700">9.16.3.3 Floor Drains</h4>
+      
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <h5 class="font-semibold mb-3">Requirements</h5>
+          <ul class="text-sm space-y-2">
+            <li class="flex items-start">
+              <span class="text-cyan-600 mr-2">✓</span>
+              <span>Slope floors to drains</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-cyan-600 mr-2">✓</span>
+              <span>Minimum 1% slope (10mm/m)</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-cyan-600 mr-2">✓</span>
+              <span>No water accumulation</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-cyan-600 mr-2">✓</span>
+              <span>Connect to approved disposal</span>
+            </li>
+          </ul>
+        </div>
+        
+        <div>
+          <h5 class="font-semibold mb-3">Installation Details</h5>
+          <ul class="text-sm space-y-2">
+            <li>• Located at low points</li>
+            <li>• P-trap for sewer gases</li>
+            <li>• Backwater valve if needed</li>
+            <li>• Regular maintenance access</li>
+            <li>• NBC 9.31.4.3 compliance</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  )}
+
+  <!-- Solutions Summary -->
+  <div class="bg-amber-50 rounded-lg p-6">
+    <h4 class="font-bold mb-4">Comprehensive Floor Drainage Solutions</h4>
+    
+    <div class="grid md:grid-cols-3 gap-3 text-center">
+      <div class="bg-white p-3 rounded">
+        <div class="text-2xl mb-1">📐</div>
+        <div class="text-xs font-semibold">Site Grading</div>
+        <div class="text-xs">5% slope away</div>
+      </div>
+      <div class="bg-white p-3 rounded">
+        <div class="text-2xl mb-1">💧</div>
+        <div class="text-xs font-semibold">Underslab Drainage</div>
+        <div class="text-xs">Granular layer</div>
+      </div>
+      <div class="bg-white p-3 rounded">
+        <div class="text-2xl mb-1">🔧</div>
+        <div class="text-xs font-semibold">Perimeter Drains</div>
+        <div class="text-xs">Weeping tile</div>
+      </div>
+      <div class="bg-white p-3 rounded">
+        <div class="text-2xl mb-1">⚡</div>
+        <div class="text-xs font-semibold">Sump System</div>
+        <div class="text-xs">Active pumping</div>
+      </div>
+      <div class="bg-white p-3 rounded">
+        <div class="text-2xl mb-1">🛡️</div>
+        <div class="text-xs font-semibold">Vapor Barrier</div>
+        <div class="text-xs">6 mil poly min</div>
+      </div>
+      <div class="bg-white p-3 rounded">
+        <div class="text-2xl mb-1">🏗️</div>
+        <div class="text-xs font-semibold">Structural Slab</div>
+        <div class="text-xs">If hydrostatic</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="mt-6 text-xs text-slate-500 border-t pt-3">
+    <p><strong>Reference:</strong> NBC 2015 Part 9, Section 9.16.3 - Drainage</p>
+    <p>Proper floor drainage prevents moisture problems and structural damage from hydrostatic pressure.</p>
+  </div>
+</div>

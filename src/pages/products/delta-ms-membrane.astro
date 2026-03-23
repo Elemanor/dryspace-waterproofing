@@ -1,0 +1,428 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Navbar from "../../components/Navbar.astro";
+import Hero from "../../components/Hero.astro";
+import Footer from "../../components/Footer.astro";
+import CTASection from '../../components/sections/CTA.astro';
+---
+
+<Layout
+  title="DELTA-MS Dimpled Membrane | Foundation Protection | DrySpace"
+  description="Advanced air-gap dimpled membrane technology for superior foundation waterproofing. ICC-ESR-2303 approved, 65-year lifespan, bridges foundation cracks."
+>
+  <Navbar />
+  <Hero
+    title="DELTA-MS Foundation Protection System"
+    subtitle="Air-Gap Technology That Keeps Basements Dry for Decades"
+    backgroundImage="/images/dimpled membrane on base of footing.webp"
+  />
+
+  <main class="container mx-auto px-6 py-12">
+    <!-- Product Introduction -->
+    <section class="mb-16">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-3xl font-bold mb-6">The Gold Standard in Foundation Protection</h2>
+        <p class="text-lg text-slate-600 mb-8">
+          Modern basements are valuable living spaces that deserve better than minimum code compliance. DELTA-MS dimpled membrane technology provides the superior moisture protection needed to keep foundations dry, comfortable, and healthy for generations.
+        </p>
+        
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="bg-cyan-50 rounded-lg p-6">
+            <div class="text-3xl mb-3">🛡️</div>
+            <h3 class="font-bold mb-2">65+ Year Lifespan</h3>
+            <p class="text-sm text-slate-500">Proven durability that outlasts traditional methods</p>
+          </div>
+          <div class="bg-cyan-50 rounded-lg p-6">
+            <div class="text-3xl mb-3">💧</div>
+            <h3 class="font-bold mb-2">Air-Gap Drainage</h3>
+            <p class="text-sm text-slate-500">Eliminates hydrostatic pressure completely</p>
+          </div>
+          <div class="bg-orange-50 rounded-lg p-6">
+            <div class="text-3xl mb-3">🏗️</div>
+            <h3 class="font-bold mb-2">Code Compliant</h3>
+            <p class="text-sm text-slate-500">ICC-ESR-2303 & NBC approved</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Key Features Section -->
+    <section class="mb-16">
+      <h2 class="text-3xl font-bold mb-8 text-center">Why DELTA-MS Outperforms Traditional Methods</h2>
+      
+      <div class="grid md:grid-cols-2 gap-8">
+        <!-- Left Column - Features -->
+        <div class="space-y-6">
+          <div class="bg-white rounded-lg shadow-md p-6">
+            <h3 class="font-bold text-xl mb-3 text-cyan-600">Capillary Break Technology</h3>
+            <p class="text-slate-600 mb-3">The dimpled design creates a physical air gap between soil moisture and your foundation wall, completely breaking capillary action that draws water into concrete.</p>
+            <div class="bg-cyan-50 rounded p-3">
+              <p class="text-sm font-semibold">Result: No moisture wicking = dry basement walls</p>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-lg shadow-md p-6">
+            <h3 class="font-bold text-xl mb-3 text-cyan-600">Crack-Bridging Performance</h3>
+            <p class="text-slate-600 mb-3">Unlike spray-on coatings that crack when foundations settle, DELTA-MS flexibly spans cracks up to 10mm wide, maintaining protection as your foundation naturally moves.</p>
+            <div class="bg-cyan-50 rounded p-3">
+              <p class="text-sm font-semibold">Result: Permanent protection despite settlement</p>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-lg shadow-md p-6">
+            <h3 class="font-bold text-xl mb-3 text-orange-600">Free-Flowing Drainage</h3>
+            <p class="text-slate-600 mb-3">Any incidental moisture that gets behind the membrane flows freely down the dimples to your footing drain, never building pressure against the wall.</p>
+            <div class="bg-orange-50 rounded p-3">
+              <p class="text-sm font-semibold">Result: Zero hydrostatic pressure on foundation</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column - Comparison -->
+        <div class="bg-gradient-to-br from-gray-50 to-gray-100 rounded-lg p-8">
+          <h3 class="font-bold text-xl mb-6 text-center">DELTA-MS vs. Spray Dampproofing</h3>
+          
+          <div class="space-y-4">
+            <!-- Comparison Item -->
+            <div class="bg-white rounded-lg p-4">
+              <h4 class="font-semibold mb-2">Installation Conditions</h4>
+              <div class="grid grid-cols-2 gap-4 text-sm">
+                <div>
+                  <span class="text-red-500 font-bold">Spray:</span> Requires warm, dry weather
+                </div>
+                <div>
+                  <span class="text-cyan-600 font-bold">DELTA-MS:</span> Installs down to -24°F
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-white rounded-lg p-4">
+              <h4 class="font-semibold mb-2">Foundation Cracks</h4>
+              <div class="grid grid-cols-2 gap-4 text-sm">
+                <div>
+                  <span class="text-red-500 font-bold">Spray:</span> Cracks when foundation settles
+                </div>
+                <div>
+                  <span class="text-cyan-600 font-bold">DELTA-MS:</span> Bridges cracks reliably
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-white rounded-lg p-4">
+              <h4 class="font-semibold mb-2">Backfill Damage</h4>
+              <div class="grid grid-cols-2 gap-4 text-sm">
+                <div>
+                  <span class="text-red-500 font-bold">Spray:</span> Easily damaged during backfill
+                </div>
+                <div>
+                  <span class="text-cyan-600 font-bold">DELTA-MS:</span> 5,200 psf compressive strength
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-white rounded-lg p-4">
+              <h4 class="font-semibold mb-2">Long-Term Performance</h4>
+              <div class="grid grid-cols-2 gap-4 text-sm">
+                <div>
+                  <span class="text-red-500 font-bold">Spray:</span> Degrades in 3-5 years
+                </div>
+                <div>
+                  <span class="text-cyan-600 font-bold">DELTA-MS:</span> 65+ year lifespan
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-white rounded-lg p-4">
+              <h4 class="font-semibold mb-2">Installation Time</h4>
+              <div class="grid grid-cols-2 gap-4 text-sm">
+                <div>
+                  <span class="text-red-500 font-bold">Spray:</span> Wait for curing/fumes
+                </div>
+                <div>
+                  <span class="text-cyan-600 font-bold">DELTA-MS:</span> Immediate backfill possible
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Technical Specifications -->
+    <section class="mb-16">
+      <h2 class="text-3xl font-bold mb-8 text-center">Technical Specifications</h2>
+      
+      <div class="bg-slate-50 rounded-lg p-8">
+        <div class="grid md:grid-cols-3 gap-8">
+          <!-- Material Properties -->
+          <div class="bg-white rounded-lg p-6">
+            <h3 class="font-bold text-lg mb-4 text-cyan-600">Material Properties</h3>
+            <ul class="space-y-2 text-sm">
+              <li><strong>Material:</strong> Virgin HDPE co-extrusion</li>
+              <li><strong>Recycled Content:</strong> 60% post-consumer</li>
+              <li><strong>Color:</strong> Black (UV stabilized)</li>
+              <li><strong>Thickness:</strong> 24 mil nominal</li>
+              <li><strong>Roll Sizes:</strong> 5', 6', 7', 8', 9' heights</li>
+              <li><strong>Roll Length:</strong> 65.6 ft (20m)</li>
+            </ul>
+          </div>
+
+          <!-- Performance Data -->
+          <div class="bg-white rounded-lg p-6">
+            <h3 class="font-bold text-lg mb-4 text-cyan-600">Performance Data</h3>
+            <ul class="space-y-2 text-sm">
+              <li><strong>Dimple Height:</strong> 5/16" (8mm)</li>
+              <li><strong>Air Gap Volume:</strong> 0.21 gal/sq ft</li>
+              <li><strong>Compressive Strength:</strong> 5,200 psf</li>
+              <li><strong>Puncture Resistance:</strong> 440 lbs</li>
+              <li><strong>Tensile Strength:</strong> 350 N/5cm</li>
+              <li><strong>Flow Rate:</strong> 15 gpm/ft</li>
+            </ul>
+          </div>
+
+          <!-- Compliance -->
+          <div class="bg-white rounded-lg p-6">
+            <h3 class="font-bold text-lg mb-4 text-orange-600">Code Compliance</h3>
+            <ul class="space-y-2 text-sm">
+              <li><strong>ICC-ES:</strong> ESR-2303</li>
+              <li><strong>CCMC:</strong> 12788-R (Drainage)</li>
+              <li><strong>CCMC:</strong> 12658-R (Dampproofing)</li>
+              <li><strong>IRC:</strong> Section R406 compliant</li>
+              <li><strong>NBC:</strong> Section 9.13 & 9.14</li>
+              <li><strong>ASTM:</strong> D6364-06 tested</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Case Study Section -->
+    <section class="mb-16">
+      <div class="bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-lg p-12">
+        <h2 class="text-3xl font-bold mb-8 text-center">Proven Performance in the Field</h2>
+        
+        <div class="max-w-4xl mx-auto">
+          <div class="bg-white/10 backdrop-blur rounded-lg p-8 mb-8">
+            <h3 class="text-2xl font-bold mb-4">Major National Homebuilder Success Story</h3>
+            <p class="text-lg mb-6">
+              One of North America's most respected homebuilders switched to DELTA-MS after determining that traditional crack repair methods were costly, ineffective, and caused customer dissatisfaction.
+            </p>
+            
+            <div class="grid md:grid-cols-2 gap-6 text-white">
+              <div class="bg-white/10 rounded-lg p-4">
+                <h4 class="font-bold mb-2">Challenge:</h4>
+                <p>Settlement cracks in new foundations leading to moisture issues and callbacks</p>
+              </div>
+              <div class="bg-white/10 rounded-lg p-4">
+                <h4 class="font-bold mb-2">Solution:</h4>
+                <p>DELTA-MS installation on all new homes starting in 2010</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="text-center">
+            <p class="text-2xl font-semibold mb-4">Results After 10+ Years:</p>
+            <div class="grid md:grid-cols-3 gap-6">
+              <div>
+                <div class="text-4xl font-bold">95%</div>
+                <p>Reduction in moisture-related callbacks</p>
+              </div>
+              <div>
+                <div class="text-4xl font-bold">Zero</div>
+                <p>Foundation leak warranty claims</p>
+              </div>
+              <div>
+                <div class="text-4xl font-bold">100%</div>
+                <p>Customer satisfaction on basement dryness</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- System Components -->
+    <section class="mb-16">
+      <h2 class="text-3xl font-bold mb-8 text-center">Complete System Components</h2>
+      
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- DELTA-FAST'ner -->
+        <div class="bg-white rounded-lg shadow-md p-6 text-center">
+          <div class="bg-cyan-50 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
+            <span class="text-3xl">🔩</span>
+          </div>
+          <h3 class="font-bold mb-2">Multi-Stud Fasteners</h3>
+          <p class="text-sm text-slate-500">Specialized fasteners distribute load across 5 dimples for maximum holding power</p>
+        </div>
+
+        <!-- DELTA-FLASH -->
+        <div class="bg-white rounded-lg shadow-md p-6 text-center">
+          <div class="bg-cyan-50 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
+            <span class="text-3xl">📐</span>
+          </div>
+          <h3 class="font-bold mb-2">Termination Flashing</h3>
+          <p class="text-sm text-slate-500">Angled flashing for proper termination at grade level and openings</p>
+        </div>
+
+        <!-- DELTA-SEALANT -->
+        <div class="bg-white rounded-lg shadow-md p-6 text-center">
+          <div class="bg-orange-100 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
+            <span class="text-3xl">🔧</span>
+          </div>
+          <h3 class="font-bold mb-2">Elastic Sealant</h3>
+          <p class="text-sm text-slate-500">Professional-grade sealant for overlaps, penetrations, and details</p>
+        </div>
+
+        <!-- DELTA-MOLD STRIP -->
+        <div class="bg-white rounded-lg shadow-md p-6 text-center">
+          <div class="bg-purple-100 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
+            <span class="text-3xl">📏</span>
+          </div>
+          <h3 class="font-bold mb-2">Molding Strip</h3>
+          <p class="text-sm text-slate-500">Finishing molding for window cutouts and grade-level transitions</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Installation Excellence -->
+    <section class="mb-16">
+      <h2 class="text-3xl font-bold mb-8 text-center">Professional Installation Program</h2>
+      
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="bg-cyan-50 rounded-lg p-8">
+          <h3 class="font-bold text-xl mb-4">Certified Installer Network</h3>
+          <p class="text-slate-600 mb-4">Our extensive certified installer program ensures proper application and maximum performance:</p>
+          <ul class="space-y-2">
+            <li class="flex items-start">
+              <span class="text-cyan-600 mr-2">✓</span>
+              <span>Comprehensive training on best practices</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-cyan-600 mr-2">✓</span>
+              <span>Quality assurance inspections</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-cyan-600 mr-2">✓</span>
+              <span>Technical support hotline</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-cyan-600 mr-2">✓</span>
+              <span>Installation verification documentation</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="bg-orange-50 rounded-lg p-8">
+          <h3 class="font-bold text-xl mb-4">Industry-Leading Warranties</h3>
+          <p class="text-slate-600 mb-4">When installed by certified professionals, DELTA-MS includes:</p>
+          <ul class="space-y-2">
+            <li class="flex items-start">
+              <span class="text-orange-600 mr-2">✓</span>
+              <span><strong>5-Year Leak-Free Warranty:</strong> Complete protection against water intrusion</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-orange-600 mr-2">✓</span>
+              <span><strong>10-Year Material Warranty:</strong> Coverage for product defects</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-orange-600 mr-2">✓</span>
+              <span><strong>Transferable Coverage:</strong> Adds value for home resale</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Environmental Benefits -->
+    <section class="mb-16">
+      <div class="bg-gradient-to-br from-green-50 to-green-100 rounded-lg p-12">
+        <h2 class="text-3xl font-bold mb-8 text-center text-cyan-700">Environmental Leadership</h2>
+        
+        <div class="grid md:grid-cols-3 gap-8 text-center">
+          <div>
+            <div class="text-4xl mb-3">♻️</div>
+            <h3 class="font-bold text-lg mb-2">60% Recycled</h3>
+            <p class="text-sm">Made from post-consumer recycled materials from household blue boxes</p>
+          </div>
+          <div>
+            <div class="text-4xl mb-3">🏗️</div>
+            <h3 class="font-bold text-lg mb-2">100% Recyclable</h3>
+            <p class="text-sm">Fully recyclable at end of service life</p>
+          </div>
+          <div>
+            <div class="text-4xl mb-3">🌱</div>
+            <h3 class="font-bold text-lg mb-2">Non-Toxic</h3>
+            <p class="text-sm">No VOCs, safe for installers and occupants</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ROI Calculator -->
+    <section class="mb-16">
+      <h2 class="text-3xl font-bold mb-8 text-center">Investment That Pays for Itself</h2>
+      
+      <div class="max-w-3xl mx-auto bg-white rounded-lg shadow-lg p-8">
+        <h3 class="font-bold text-xl mb-6 text-center">Cost-Benefit Analysis</h3>
+        
+        <div class="space-y-4">
+          <div class="flex justify-between items-center pb-3 border-b">
+            <span>DELTA-MS Installation (2,000 sq ft)</span>
+            <span class="font-bold text-cyan-600">$8,000-12,000</span>
+          </div>
+          
+          <div class="text-center my-6 text-slate-400">
+            <p class="font-semibold">Costs Avoided:</p>
+          </div>
+          
+          <div class="flex justify-between items-center pb-3 border-b">
+            <span>Foundation crack repairs (typical 5 cracks)</span>
+            <span class="text-red-600">-$2,500</span>
+          </div>
+          <div class="flex justify-between items-center pb-3 border-b">
+            <span>Mold remediation (if moisture enters)</span>
+            <span class="text-red-600">-$15,000</span>
+          </div>
+          <div class="flex justify-between items-center pb-3 border-b">
+            <span>Interior drainage retrofit</span>
+            <span class="text-red-600">-$8,000</span>
+          </div>
+          <div class="flex justify-between items-center pb-3 border-b">
+            <span>Lost property value from water damage</span>
+            <span class="text-red-600">-$20,000</span>
+          </div>
+          
+          <div class="flex justify-between items-center pt-4 text-xl font-bold">
+            <span>Total Potential Savings:</span>
+            <span class="text-cyan-600">$45,500</span>
+          </div>
+        </div>
+        
+        <div class="mt-6 p-4 bg-cyan-50 rounded-lg text-center">
+          <p class="text-cyan-700 font-semibold">ROI: 379% | Payback: Immediate with first prevented leak</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="text-center">
+      <div class="bg-gradient-to-r from-orange-500 to-orange-600 text-white rounded-lg p-12">
+        <h2 class="text-3xl font-bold mb-4">Protect Your Foundation with DELTA-MS</h2>
+        <p class="text-xl mb-8 max-w-3xl mx-auto">
+          Join thousands of builders and homeowners who trust DELTA-MS for permanent foundation protection. Available through our certified installer network.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="/contact" class="bg-white text-orange-500 px-8 py-4 rounded-lg font-bold text-lg hover:bg-slate-50 transition">
+            Get Installation Quote
+          </a>
+          <a href="/resources/waterproofing-guide" class="bg-orange-700 text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-orange-800 transition">
+            Download Technical Guide
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <CTASection />
+  <Footer />
+</Layout>

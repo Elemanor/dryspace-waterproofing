@@ -1,0 +1,374 @@
+---
+const steps = [
+  {
+    number: "01",
+    title: "Free Inspection",
+    description: "Comprehensive assessment of your basement's condition",
+    icon: "fa-magnifying-glass",
+    duration: "Same Day"
+  },
+  {
+    number: "02", 
+    title: "Custom Solution",
+    description: "Tailored waterproofing plan for your specific needs",
+    icon: "fa-clipboard-check",
+    duration: "24 Hours"
+  },
+  {
+    number: "03",
+    title: "Professional Installation",
+    description: "Expert installation with minimal disruption",
+    icon: "fa-hammer",
+    duration: "2-3 Days"
+  },
+  {
+    number: "04",
+    title: "Lifetime Protection",
+    description: "Transferable warranty and ongoing support",
+    icon: "fa-shield-halved",
+    duration: "Forever"
+  }
+];
+---
+
+<section class="process-section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">Our Process</span>
+      <h2 class="section-title">How We Protect Your Home</h2>
+      <p class="section-description">
+        A proven 4-step process that has protected over 10,000 Toronto homes
+      </p>
+    </div>
+    
+    <div class="process-timeline">
+      <div class="timeline-line"></div>
+      
+      {steps.map((step, index) => (
+        <div class="process-step" data-step={index}>
+          <div class="step-connector"></div>
+          <div class="step-content">
+            <div class="step-number">{step.number}</div>
+            <div class="step-icon">
+              <i class={`fa-solid ${step.icon}`}></i>
+            </div>
+            <h3 class="step-title">{step.title}</h3>
+            <p class="step-description">{step.description}</p>
+            <span class="step-duration">
+              <i class="fa-solid fa-clock"></i>
+              {step.duration}
+            </span>
+          </div>
+        </div>
+      ))}
+    </div>
+    
+    <div class="process-cta">
+      <button class="btn-primary">
+        Start Your Free Inspection
+        <i class="fa-solid fa-arrow-right"></i>
+      </button>
+    </div>
+  </div>
+</section>
+
+<style>
+  .process-section {
+    padding: 5rem 0;
+    background: linear-gradient(180deg, #0f172a 0%, #1e293b 100%);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .process-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, 
+      transparent 0%, 
+      rgba(59, 130, 246, 0.5) 50%, 
+      transparent 100%);
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+  
+  .section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+  
+  .section-label {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: rgba(59, 130, 246, 0.1);
+    border: 1px solid rgba(59, 130, 246, 0.3);
+    border-radius: 20px;
+    color: #60a5fa;
+    font-size: 0.875rem;
+    margin-bottom: 1rem;
+  }
+  
+  .section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 1rem;
+  }
+  
+  .section-description {
+    font-size: 1.125rem;
+    color: #94a3b8;
+  }
+  
+  .process-timeline {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    margin-bottom: 3rem;
+  }
+  
+  .timeline-line {
+    position: absolute;
+    top: 60px;
+    left: 10%;
+    right: 10%;
+    height: 2px;
+    background: linear-gradient(90deg, 
+      #3b82f6 0%, 
+      #06b6d4 50%, 
+      #3b82f6 100%);
+    opacity: 0;
+    animation: lineGrow 1s ease-out 0.5s forwards;
+  }
+  
+  @keyframes lineGrow {
+    from {
+      opacity: 0;
+      transform: scaleX(0);
+    }
+    to {
+      opacity: 1;
+      transform: scaleX(1);
+    }
+  }
+  
+  .process-step {
+    position: relative;
+    opacity: 0;
+    animation: stepFadeIn 0.6s ease-out forwards;
+    animation-delay: calc(0.2s * var(--step));
+  }
+  
+  @keyframes stepFadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .step-connector {
+    position: absolute;
+    top: 60px;
+    left: 50%;
+    width: 12px;
+    height: 12px;
+    background: #3b82f6;
+    border-radius: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.2);
+    animation: pulseConnector 2s ease-in-out infinite;
+    animation-delay: calc(0.5s * var(--step));
+  }
+  
+  @keyframes pulseConnector {
+    0%, 100% {
+      box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.2);
+    }
+    50% {
+      box-shadow: 0 0 0 8px rgba(59, 130, 246, 0);
+    }
+  }
+  
+  .step-content {
+    background: rgba(30, 41, 59, 0.5);
+    border: 1px solid rgba(59, 130, 246, 0.2);
+    border-radius: 16px;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .step-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #3b82f6 0%, #06b6d4 100%);
+    transform: translateX(-100%);
+    transition: transform 0.3s;
+  }
+  
+  .step-content:hover::before {
+    transform: translateX(0);
+  }
+  
+  .step-content:hover {
+    transform: translateY(-5px);
+    background: rgba(59, 130, 246, 0.1);
+    border-color: rgba(59, 130, 246, 0.4);
+  }
+  
+  .step-number {
+    position: absolute;
+    top: -15px;
+    right: 20px;
+    font-size: 3rem;
+    font-weight: 800;
+    color: rgba(59, 130, 246, 0.2);
+  }
+  
+  .step-icon {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #3b82f6 0%, #06b6d4 100%);
+    border-radius: 50%;
+    font-size: 1.5rem;
+    color: white;
+  }
+  
+  .step-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 0.5rem;
+  }
+  
+  .step-description {
+    color: #94a3b8;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+  }
+  
+  .step-duration {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.25rem 0.75rem;
+    background: rgba(16, 185, 129, 0.1);
+    border: 1px solid rgba(16, 185, 129, 0.3);
+    border-radius: 12px;
+    color: #10b981;
+    font-size: 0.875rem;
+  }
+  
+  .process-cta {
+    text-align: center;
+  }
+  
+  .btn-primary {
+    background: linear-gradient(135deg, #3b82f6 0%, #06b6d4 100%);
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-size: 1.125rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .btn-primary::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+  }
+  
+  .btn-primary:hover::after {
+    width: 300px;
+    height: 300px;
+  }
+  
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(59, 130, 246, 0.4);
+  }
+  
+  @media (max-width: 968px) {
+    .process-timeline {
+      grid-template-columns: 1fr;
+    }
+    
+    .timeline-line {
+      top: 0;
+      left: 60px;
+      right: auto;
+      width: 2px;
+      height: 100%;
+      background: linear-gradient(180deg, 
+        #3b82f6 0%, 
+        #06b6d4 50%, 
+        #3b82f6 100%);
+    }
+    
+    .step-connector {
+      left: 60px;
+    }
+  }
+</style>
+
+<script>
+  // Intersection Observer for animations
+  const observerOptions = {
+    threshold: 0.2,
+    rootMargin: '0px'
+  };
+  
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const steps = entry.target.querySelectorAll('.process-step');
+        steps.forEach((step, index) => {
+          step.style.setProperty('--step', index.toString());
+        });
+      }
+    });
+  }, observerOptions);
+  
+  const timeline = document.querySelector('.process-timeline');
+  if (timeline) {
+    observer.observe(timeline);
+  }
+</script>

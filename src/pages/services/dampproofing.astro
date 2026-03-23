@@ -1,0 +1,554 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Hero from "../../components/Hero.astro";
+import CTASection from '../../components/sections/CTA.astro';
+import FAQ from "../../components/FAQ.astro";
+import ServiceSchema from '../../components/ServiceSchema.astro';
+import InternalLinks from '../../components/InternalLinks.astro';
+
+// Service areas for local SEO
+const serviceAreas = [
+  "Toronto", "North York", "Scarborough", "Etobicoke", 
+  "Mississauga", "Brampton", "Vaughan", "Richmond Hill",
+  "Markham", "Oakville", "Burlington", "Hamilton"
+];
+
+// Service FAQs for schema
+const serviceFAQs = [
+  {
+    question: "How much does foundation dampproofing cost in Toronto?",
+    answer: "Foundation dampproofing in Toronto costs $8-15 per sq ft depending on material type and surface preparation required. Basic emulsified asphalt costs $8-10/sq ft, cut-back asphalt $9-11/sq ft, and premium systems $12-15/sq ft. Average homes require $2,700-6,000 total investment including preparation work."
+  },
+  {
+    question: "How long does dampproofing installation take?",
+    answer: "Moisture control installation takes 2-4 days depending on foundation size and surface preparation needed. Day 1: Surface assessment and preparation. Day 2: Parging and crack repair. Day 3: Primer and first coat application. Day 4: Second coat and protection layer installation."
+  },
+  {
+    question: "What's the difference between dampproofing and waterproofing?",
+    answer: "Moisture control prevents vapor and capillary action but cannot resist hydrostatic pressure. It costs 40-50% less than full water protection and is required by NBC 9.13.2. Complete moisture barriers prevent liquid under pressure and are needed where groundwater creates foundation pressure or severe infiltration occurs."
+  },
+  {
+    question: "How long does foundation dampproofing last?",
+    answer: "Properly applied dampproofing lasts 10-15 years with quality systems lasting 20+ years. Lifespan depends on surface preparation quality, runoff effectiveness, soil conditions, and freeze-thaw cycles. Regular maintenance and proper grading extend system life significantly."
+  }
+];
+
+// Service offers for schema
+const serviceOffers = [
+  {
+    name: "Basic Foundation Moisture Control",
+    price: "$2,700-4,000",
+    description: "Two-coat asphalt application, basic preparation, crack sealing, 5-year warranty"
+  },
+  {
+    name: "Complete Moisture Control System",
+    price: "$4,300-6,000",
+    description: "Premium materials, full parging, protection board, floor vapor barrier, 10-year warranty"
+  },
+  {
+    name: "Retrofit Moisture Control Package",
+    price: "$6,500-8,000",
+    description: "Excavation, old coating removal, foundation repairs, new system, landscaping, 15-year warranty"
+  }
+];
+
+const features = [
+  {
+    title: "Foundation Wall Treatment",
+    description: "Two-coat asphalt application from grade to footing with proper surface coverage",
+    icon: "🏗️"
+  },
+  {
+    title: "Surface Preparation",
+    description: "Parging, crack sealing, and surface cleaning for optimal adhesion",
+    icon: "🔧"
+  },
+  {
+    title: "Floor Moisture Control",
+    description: "Polyethylene vapor barriers and granular moisture breaks",
+    icon: "🛡️"
+  },
+  {
+    title: "Material Selection",
+    description: "Emulsified or cut-back asphalt based on conditions",
+    icon: "🧪"
+  },
+  {
+    title: "Code Compliance",
+    description: "NBC 9.13.2 compliant materials and installation methods",
+    icon: "✅"
+  },
+  {
+    title: "Quality Assurance",
+    description: "Coverage testing and humidity meter verification",
+    icon: "📊"
+  }
+];
+
+const process = [
+  {
+    step: 1,
+    title: "Surface Assessment",
+    description: "Evaluate foundation condition and humidity sources"
+  },
+  {
+    step: 2,
+    title: "Surface Preparation",
+    description: "Clean, parge masonry, seal cracks and holes"
+  },
+  {
+    step: 3,
+    title: "Prime Coat",
+    description: "Apply primer for proper adhesion"
+  },
+  {
+    step: 4,
+    title: "Moisture Control Application",
+    description: "Apply minimum 1 L/m² coverage in two coats"
+  },
+  {
+    step: 5,
+    title: "Protection Layer",
+    description: "Install drainage board or protection membrane"
+  },
+  {
+    step: 6,
+    title: "Quality Check",
+    description: "Verify coverage and seal all penetrations"
+  }
+];
+
+const comparisonData = {
+  headers: ["Service", "Moisture Control", "Water Protection", "Best For"],
+  rows: [
+    {
+      feature: "Purpose",
+      cols: ["Control moisture vapor & capillary action", "Prevent water under pressure", "See conditions →"]
+    },
+    {
+      feature: "Cost",
+      cols: ["$8-12 per sq ft", "$17-25 per sq ft", "Budget vs. severity"]
+    },
+    {
+      feature: "Materials",
+      cols: ["Asphalt emulsion, tar", "Rubber membrane, bentonite", "NBC requirements"]
+    },
+    {
+      feature: "Thickness",
+      cols: ["1-2mm coating", "3-6mm membrane", "Protection level"]
+    },
+    {
+      feature: "When Required",
+      cols: ["No hydrostatic pressure", "High water table", "Site conditions"]
+    },
+    {
+      feature: "Durability",
+      cols: ["10-15 years", "25-50 years", "Long-term value"]
+    }
+  ]
+};
+
+const pricingPlans = [
+  {
+    name: "Basic Moisture Control",
+    price: "$2,700",
+    period: "average home",
+    description: "Standard foundation dampproofing",
+    features: [
+      "Two-coat asphalt application",
+      "Basic surface preparation",
+      "Crack sealing included",
+      "Grade to footing coverage",
+      "5-year warranty",
+      "Moisture testing"
+    ],
+    highlighted: false
+  },
+  {
+    name: "Complete System",
+    price: "$4,900",
+    period: "average home",
+    description: "Moisture control with water removal",
+    features: [
+      "Premium dampproofing materials",
+      "Full parging if needed",
+      "Protection board installation",
+      "Floor vapor barrier",
+      "Granular drainage layer",
+      "Window well treatment",
+      "10-year warranty",
+      "Annual inspections"
+    ],
+    highlighted: true
+  },
+  {
+    name: "Retrofit Package",
+    price: "$6,500+",
+    period: "full retrofit",
+    description: "Existing home dampproofing",
+    features: [
+      "Interior & exterior options",
+      "Excavation if required",
+      "Old coating removal",
+      "Foundation repairs",
+      "New drainage system",
+      "Backfill & landscaping",
+      "15-year warranty",
+      "Moisture monitoring"
+    ],
+    highlighted: false
+  }
+];
+
+const faqItems = [
+  {
+    question: "What's the difference between dampproofing and waterproofing?",
+    answer: "Moisture control prevents vapor and capillary water migration through foundation walls but cannot withstand hydrostatic pressure. It's required by NBC 9.13.2 for all below-grade walls without water pressure. Water protection creates a barrier against water under pressure and is required where the water table is above the foundation floor. Moisture control costs 40-50% less than full water protection and is sufficient for most Toronto homes with proper drainage."
+  },
+  {
+    question: "When is dampproofing required by code?",
+    answer: "NBC 9.13.2.1 requires dampproofing for: all exterior foundation walls below grade where the ground level is higher than interior floor level, all floors-on-ground except in garages or over 100mm of coarse granular fill (max 10% passing 4mm sieve), and any concrete or masonry in contact with earth that encloses habitable or non-habitable space. Waterproofing supersedes dampproofing requirements where hydrostatic pressure exists."
+  },
+  {
+    question: "What materials are used for dampproofing?",
+    answer: "NBC-approved dampproofing materials include: emulsified asphalt (water-based, applied above 0°C), cut-back asphalt (solvent-based, applied to -10°C), coal tar pitch, or proprietary systems meeting CAN/CGSB standards. Application requires minimum 1 L/m² coverage in two coats. For floors: 0.15mm (6 mil) polyethylene, Type S roll roofing, or rigid polystyrene insulation. All materials must be compatible with foundation type."
+  },
+  {
+    question: "How is the surface prepared for dampproofing?",
+    answer: "NBC 9.13.2.3 requires: masonry walls must be parged with 6mm mortar below grade, concrete holes and honeycombing sealed with compatible mortar/mastic, surfaces must be clean, dry, and free of ice, frost, dust, oil, or debris, and coving at wall-footing junction for drainage. Proper preparation is critical - dampproofing cannot bridge gaps or major imperfections. Surface must be kept dry during application and curing."
+  },
+  {
+    question: "Can dampproofing be applied in cold weather?",
+    answer: "Emulsified asphalt systems are water-based and must be stored and applied above freezing (0°C). Cut-back asphalt systems can be applied down to -10°C (14°F) as they're thinned with mineral spirits. Both require dry surfaces free of ice and frost. Cold weather extends curing time. Winter application may require temporary heating or scheduling delays. Premium cold-weather formulations are available at higher cost."
+  },
+  {
+    question: "How long does dampproofing last?",
+    answer: "Properly applied dampproofing typically lasts 10-15 years, though we've seen systems last 20+ years with good drainage. Lifespan depends on: quality of surface preparation, material type and coverage, drainage system effectiveness, soil conditions and ground movement, and freeze-thaw cycles. Signs of failure include efflorescence, musty odors, visible moisture, or peeling paint on interior walls."
+  },
+  {
+    question: "Is dampproofing enough for Toronto basements?",
+    answer: "For most Toronto homes with proper grading and drainage, dampproofing is sufficient. However, waterproofing is needed if: property is near ravines or water bodies, high water table exists (common near Lake Ontario), basement has history of water infiltration, or hydrostatic pressure is present. Many homes built before 1980 only have dampproofing and may need upgrading. Site assessment determines appropriate protection level."
+  },
+  {
+    question: "Can dampproofing be applied from the interior?",
+    answer: "While NBC specifies exterior application, interior dampproofing is possible for retrofits using crystalline waterproofing, cementitious coatings, or vapor barriers with studded drainage membranes. However, interior systems don't protect the foundation structure itself from moisture damage. Exterior dampproofing is always preferred when accessible. Interior-only solutions are typically 30-40% less expensive but less effective long-term."
+  }
+];
+---
+
+<Layout title="Moisture Control Services Toronto | Foundation Protection | NBC Compliant">
+  <!-- Add Service Schema -->
+  <ServiceSchema
+    serviceName="Foundation Moisture Control"
+    description="Professional NBC-compliant foundation moisture control services to manage vapor, prevent capillary action, and protect against structural deterioration in Toronto and GTA"
+    priceRange="$2,700-$8,650"
+    offers={serviceOffers}
+    faqs={serviceFAQs}
+    areaServed={serviceAreas}
+  />
+  <Hero
+    title="Professional Moisture Control Services"
+    subtitle="NBC-Compliant Foundation Moisture Control to Manage Vapor and Soil Gas"
+    backgroundImage="/images/dampproofing-hero.webp"
+    ctaText="Get Free Assessment"
+    ctaLink="/contact"
+  />
+
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-4xl font-bold mb-6">Foundation Moisture Control Services</h2>
+        <p class="text-lg text-slate-600 mb-8">
+          Protect your foundation from moisture vapor and capillary water with professional moisture control. 
+          Required by NBC 9.13.2 for all below-grade construction, moisture control is your first line of defense 
+          against moisture infiltration, mold growth, and structural deterioration.
+        </p>
+
+        <!-- NBC Requirements -->
+        <div class="bg-cyan-50 border-2 border-cyan-400 rounded-lg p-8 mb-12">
+          <h3 class="text-2xl font-bold mb-6 text-cyan-900">NBC 9.13.2 Moisture Control Requirements</h3>
+          
+          <div class="grid md:grid-cols-2 gap-6">
+            <div>
+              <h4 class="font-bold mb-3 text-lg">Where Required</h4>
+              <ul class="space-y-2 text-sm">
+                <li class="flex items-start">
+                  <span class="text-cyan-600 mr-2">•</span>
+                  <span>All exterior foundation walls below grade</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-cyan-600 mr-2">•</span>
+                  <span>Floors-on-ground (except garages)</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-cyan-600 mr-2">•</span>
+                  <span>Concrete/masonry contacting earth</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-cyan-600 mr-2">•</span>
+                  <span>Not required if waterproofed</span>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 class="font-bold mb-3 text-lg">Application Standards</h4>
+              <ul class="space-y-2 text-sm">
+                <li class="flex items-start">
+                  <span class="text-cyan-600 mr-2">•</span>
+                  <span>Grade level to top of footing</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-cyan-600 mr-2">•</span>
+                  <span>Minimum 1 L/m² coverage</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-cyan-600 mr-2">•</span>
+                  <span>Two-coat application</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-cyan-600 mr-2">•</span>
+                  <span>6mm parging on masonry</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="mt-6 p-4 bg-cyan-100 rounded">
+            <p class="text-sm">
+              <strong>Note:</strong> Dampproofing controls moisture vapor and capillary action but does NOT resist hydrostatic pressure. 
+              Waterproofing required where water table creates pressure against foundation.
+            </p>
+          </div>
+        </div>
+
+        <!-- Moisture Sources -->
+        <div class="bg-slate-50 rounded-lg p-8 mb-12">
+          <h3 class="text-2xl font-bold mb-6">Four Sources of Foundation Moisture</h3>
+          
+          <div class="grid md:grid-cols-2 gap-6">
+            <div class="bg-white rounded-lg p-6">
+              <h4 class="font-bold mb-3 text-lg text-cyan-600">1. Surface Water</h4>
+              <p class="text-sm mb-3">Rain and snowmelt flowing toward foundation</p>
+              <p class="text-sm"><strong>Control:</strong> Grading, eavestroughs, downspouts</p>
+            </div>
+            
+            <div class="bg-white rounded-lg p-6">
+              <h4 class="font-bold mb-3 text-lg text-cyan-600">2. Soil Moisture</h4>
+              <p class="text-sm mb-3">Water vapor and capillary action through soil</p>
+              <p class="text-sm"><strong>Control:</strong> Dampproofing, drainage layers</p>
+            </div>
+            
+            <div class="bg-white rounded-lg p-6">
+              <h4 class="font-bold mb-3 text-lg text-purple-600">3. Groundwater</h4>
+              <p class="text-sm mb-3">High water table creating hydrostatic pressure</p>
+              <p class="text-sm"><strong>Control:</strong> Waterproofing, sump pumps</p>
+            </div>
+            
+            <div class="bg-white rounded-lg p-6">
+              <h4 class="font-bold mb-3 text-lg text-orange-600">4. Construction Moisture</h4>
+              <p class="text-sm mb-3">Water in fresh concrete and materials</p>
+              <p class="text-sm"><strong>Control:</strong> Proper curing and drying time</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Material Options -->
+        <div class="mb-12">
+          <h3 class="text-2xl font-bold mb-6">Dampproofing Material Options</h3>
+          
+          <div class="grid md:grid-cols-3 gap-6">
+            <div class="bg-white border-2 border-slate-100 rounded-lg p-6">
+              <h4 class="font-bold text-lg mb-3 text-cyan-600">Emulsified Asphalt</h4>
+              <ul class="text-sm space-y-2">
+                <li>• Water-based system</li>
+                <li>• Applied above 0°C</li>
+                <li>• Low odor, safer</li>
+                <li>• 24-48 hour cure</li>
+                <li>• Most common choice</li>
+              </ul>
+              <p class="mt-4 text-lg font-bold">$8-10/sq ft</p>
+            </div>
+
+            <div class="bg-white border-2 border-slate-100 rounded-lg p-6">
+              <h4 class="font-bold text-lg mb-3 text-cyan-600">Cut-back Asphalt</h4>
+              <ul class="text-sm space-y-2">
+                <li>• Solvent-based system</li>
+                <li>• Applied to -10°C</li>
+                <li>• Strong odor, ventilation needed</li>
+                <li>• 12-24 hour cure</li>
+                <li>• Winter application</li>
+              </ul>
+              <p class="mt-4 text-lg font-bold">$9-11/sq ft</p>
+            </div>
+
+            <div class="bg-white border-2 border-slate-100 rounded-lg p-6">
+              <h4 class="font-bold text-lg mb-3 text-purple-600">Premium Systems</h4>
+              <ul class="text-sm space-y-2">
+                <li>• Rubberized asphalt</li>
+                <li>• Polymer-modified</li>
+                <li>• Self-healing properties</li>
+                <li>• 20+ year lifespan</li>
+                <li>• Enhanced coverage</li>
+              </ul>
+              <p class="mt-4 text-lg font-bold">$12-15/sq ft</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Surface Preparation -->
+        <div class="bg-amber-50 border-2 border-amber-400 rounded-lg p-8 mb-12">
+          <h3 class="text-2xl font-bold mb-6 flex items-center">
+            <span class="text-3xl mr-3">🔧</span>
+            Critical Surface Preparation (NBC 9.13.2.3)
+          </h3>
+          
+          <div class="grid md:grid-cols-2 gap-6">
+            <div>
+              <h4 class="font-bold mb-3">Masonry Walls</h4>
+              <ul class="space-y-2 text-sm">
+                <li class="flex items-start">
+                  <span class="text-amber-500 mr-2">1.</span>
+                  <span>Apply 6mm parging coat below grade</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-amber-500 mr-2">2.</span>
+                  <span>Cove parging at footing junction</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-amber-500 mr-2">3.</span>
+                  <span>Fill all mortar joints flush</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-amber-500 mr-2">4.</span>
+                  <span>Allow parging to cure 7 days</span>
+                </li>
+              </ul>
+            </div>
+            
+            <div>
+              <h4 class="font-bold mb-3">Concrete Walls</h4>
+              <ul class="space-y-2 text-sm">
+                <li class="flex items-start">
+                  <span class="text-amber-500 mr-2">1.</span>
+                  <span>Seal form tie holes with mortar</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-amber-500 mr-2">2.</span>
+                  <span>Repair honeycombing</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-amber-500 mr-2">3.</span>
+                  <span>Grind smooth projections</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-amber-500 mr-2">4.</span>
+                  <span>Clean oil, dust, debris</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="mt-6 p-4 bg-amber-50 rounded">
+            <p class="text-sm">
+              <strong>Critical:</strong> Dampproofing cannot bridge gaps or pores. 
+              Proper surface preparation determines system effectiveness and longevity.
+            </p>
+          </div>
+        </div>
+
+        <!-- Floor Dampproofing -->
+        <div class="bg-cyan-50 rounded-lg p-8 mb-12">
+          <h3 class="text-2xl font-bold mb-6">Floor-on-Ground Dampproofing</h3>
+          
+          <div class="grid md:grid-cols-2 gap-6">
+            <div>
+              <h4 class="font-bold mb-3">Under Slab Method</h4>
+              <ul class="text-sm space-y-2">
+                <li>• 0.15mm (6 mil) polyethylene vapor barrier</li>
+                <li>• Overlap seams 100mm, seal with tape</li>
+                <li>• 100mm coarse granular base (capillary break)</li>
+                <li>• Max 10% passing 4mm sieve</li>
+                <li>• Protects during concrete pour</li>
+              </ul>
+            </div>
+            
+            <div>
+              <h4 class="font-bold mb-3">Above Slab Method</h4>
+              <ul class="text-sm space-y-2">
+                <li>• Applied between slab and finish floor</li>
+                <li>• Rigid polystyrene insulation option</li>
+                <li>• Type S roll roofing alternative</li>
+                <li>• Easier retrofit application</li>
+                <li>• Combined thermal/moisture barrier</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="mt-6 p-4 bg-cyan-100 rounded">
+            <p class="text-sm">
+              <strong>Exception:</strong> No dampproofing required for garage floors or if installed over 
+              100mm+ of coarse clean granular fill (max 10% passing 4mm sieve).
+            </p>
+          </div>
+        </div>
+
+        <!-- Comparison -->
+        <div class="bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg p-8 mb-12">
+          <h3 class="text-2xl font-bold mb-6">When to Choose Dampproofing vs Waterproofing</h3>
+          
+          <div class="grid md:grid-cols-2 gap-8">
+            <div>
+              <h4 class="font-bold mb-4">Choose Dampproofing When:</h4>
+              <ul class="space-y-2 text-sm">
+                <li>✓ No hydrostatic pressure present</li>
+                <li>✓ Good surface drainage exists</li>
+                <li>✓ Water table well below foundation</li>
+                <li>✓ Soil drains well (sand/gravel)</li>
+                <li>✓ Budget is a primary concern</li>
+                <li>✓ NBC minimum compliance needed</li>
+              </ul>
+            </div>
+            
+            <div>
+              <h4 class="font-bold mb-4">Upgrade to Waterproofing When:</h4>
+              <ul class="space-y-2 text-sm">
+                <li>✓ High water table exists</li>
+                <li>✓ Clay soil with poor drainage</li>
+                <li>✓ Near water bodies or ravines</li>
+                <li>✓ History of water problems</li>
+                <li>✓ Finished basement planned</li>
+                <li>✓ Maximum protection desired</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ServiceFeatures removed -->
+  
+  
+  
+
+  <FAQ items={faqItems} />
+  
+  <!-- Related Services and Resources -->
+  <section class="py-8">
+    <div class="container mx-auto px-4">
+      <InternalLinks category="waterproofing" currentPage="dampproofing" limit={6} />
+    </div>
+  </section>
+  
+  <CTASection
+    title="Need Foundation Dampproofing?"
+    description="Get a free assessment to determine the right moisture protection for your foundation."
+    primaryButtonText="Schedule Free Assessment"
+    primaryButtonLink="/contact"
+    secondaryButtonText="Call 437-545-0067"
+    secondaryButtonLink="tel:437-545-0067"
+  />
+
+  <!-- ServiceAreas removed -->
+</Layout>

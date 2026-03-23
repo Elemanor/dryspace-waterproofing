@@ -1,0 +1,234 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import Hero from '../../components/sections/Hero.astro';
+import Features from '../../components/sections/Features.astro';
+import Process from '../../components/sections/Process.astro';
+import Gallery from '../../components/sections/Gallery.astro';
+import FAQ from '../../components/sections/FAQ.astro';
+import Testimonials from '../../components/sections/Testimonials.astro';
+import CTA from '../../components/sections/CTA.astro';
+import Stats from '../../components/sections/Stats.astro';
+import ServiceSchema from '../../components/ServiceSchema.astro';
+import InternalLinks from '../../components/InternalLinks.astro';
+import ContactForm from '../../components/ContactForm.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+
+const pageTitle = "Crawl Space Waterproofing Toronto | Encapsulation";
+const pageDescription = "Professional crawl space moisture control and encapsulation in Toronto & GTA. Vapor barriers, drainage systems, dehumidification. Prevent mold, moisture, and structural damage. 25-year warranty."
+
+// Service areas for local SEO
+const serviceAreas = [
+  "Toronto", "North York", "Scarborough", "Etobicoke", 
+  "Mississauga", "Brampton", "Vaughan", "Richmond Hill",
+  "Markham", "Oakville", "Burlington", "Hamilton"
+];
+
+// Service FAQs for schema
+const crawlSpaceFAQs = [
+  {
+    question: "How much does crawl space moisture control cost in Toronto?",
+    answer: "Crawl space moisture control in Toronto costs $3,200-$8,650 depending on size and scope. Basic vapor barrier installation starts at $3,200, complete encapsulation with drainage $5,400-$7,000, and premium systems with dehumidification $7,000-$8,650. Price includes materials, labor, and warranty."
+  },
+  {
+    question: "How long does crawl space encapsulation take?",
+    answer: "Crawl space moisture control takes 2-4 days depending on size and complexity. Day 1: Preparation and moisture remediation. Day 2-3: Vapor barrier installation and sealing. Day 4: Drainage connections, dehumidifier installation, and final inspection. Most homes completed within 3 days."
+  },
+  {
+    question: "What are the benefits of crawl space moisture control?",
+    answer: "Crawl space moisture control prevents mold growth, reduces humidity by 50-70%, eliminates musty odors, improves indoor air quality, reduces energy costs by 15-20%, prevents structural damage, and increases home value. Essential in Toronto's humid climate with clay soil conditions."
+  },
+  {
+    question: "Do I need a dehumidifier in my crawl space?",
+    answer: "Yes, a dehumidifier is recommended in Toronto crawl spaces to maintain humidity below 60%. Combined with vapor barriers, it prevents condensation, mold growth, and wood rot. Energy-efficient units cost $850-$1,600 installed and reduce energy bills long-term."
+  }
+];
+
+// Service offers for schema
+const serviceOffers = [
+  {
+    name: "Basic Vapor Barrier System",
+    price: "$3,200-$4,300",
+    description: "6-mil vapor barrier, sealed seams, basic moisture control"
+  },
+  {
+    name: "Complete Encapsulation",
+    price: "$5,400-$7,000",
+    description: "Premium vapor barrier, wall coverage, drainage system, sealed vents"
+  },
+  {
+    name: "Premium Climate Control",
+    price: "$7,000-$8,650",
+    description: "Complete encapsulation plus dehumidifier, air filtration, smart monitoring"
+  }
+];
+
+// Service-specific features
+const serviceFeatures = [
+  {
+    icon: '',
+    title: 'Complete Encapsulation',
+    description: 'Industry-leading solution with proven results and long-term protection.',
+    highlight: true
+  },
+  {
+    icon: '',
+    title: 'Competitive Pricing',
+    description: 'Fair, transparent pricing. $3,200-8,000. Financing available.',
+    highlight: true
+  },
+  {
+    icon: '',
+    title: '25-Year Warranty',
+    description: 'Transferable warranty that adds value to your home.',
+    highlight: true
+  },
+  {
+    icon: '',
+    title: 'Fast Service',
+    description: 'Quick response times with professional installation.'
+  },
+  {
+    icon: '‍',
+    title: 'Licensed & Insured',
+    description: 'Fully licensed, bonded, and insured for your protection.'
+  },
+  {
+    icon: '',
+    title: '24/7 Support',
+    description: 'Emergency service and ongoing support whenever you need it.'
+  }
+];
+
+// Service process steps
+const processSteps = [
+  {
+    number: '01',
+    title: 'Free Inspection',
+    description: 'Comprehensive assessment of your specific needs.',
+    icon: '',
+    duration: 'Same day'
+  },
+  {
+    number: '02',
+    title: 'Custom Solution',
+    description: 'Tailored approach for your unique situation.',
+    icon: '',
+    duration: '24 hours'
+  },
+  {
+    number: '03',
+    title: 'Professional Work',
+    description: 'Expert installation by certified technicians.',
+    icon: '',
+    duration: 'On schedule'
+  },
+  {
+    number: '04',
+    title: 'Quality Assurance',
+    description: 'Testing, inspection, and warranty documentation.',
+    icon: '',
+    duration: 'Before leaving'
+  }
+];
+
+// Service FAQs
+const serviceFAQs = [
+  {
+    question: "How much does this service cost?",
+    answer: "Our crawl space waterproofing service typically costs $3,200-8,000. Final pricing depends on your specific needs, which we'll assess during our free inspection."
+  },
+  {
+    question: "How long does the work take?",
+    answer: "Most projects are completed within 1-5 days depending on scope. We'll provide a detailed timeline during your consultation."
+  },
+  {
+    question: "Do you offer warranties?",
+    answer: "Yes! We provide comprehensive warranties on all work, including our 25-year transferable warranty on major waterproofing projects."
+  },
+  {
+    question: "Are you licensed and insured?",
+    answer: "Absolutely. We're fully licensed by the City of Toronto, carry $5 million liability insurance, and are WSIB compliant."
+  }
+];
+
+---
+
+<PageLayout 
+  title={pageTitle}
+  description={pageDescription}
+>
+  
+  <!-- Breadcrumbs -->
+  <div class="container mx-auto px-4 mt-4">
+    <Breadcrumbs 
+      items={[
+        { name: "Home", url: "/" },
+        { name: "Services", url: "/services" },
+        { name: "Crawl Space Waterproofing" }
+      ]}
+    />
+  </div>
+
+<!-- Add Service Schema -->
+  <ServiceSchema
+    serviceName="Crawl Space Moisture Control"
+    description="Professional crawl space encapsulation and moisture control to prevent mold, improve air quality, and protect your home's foundation in Toronto and GTA"
+    priceRange="$3,200-$8,650"
+    offers={serviceOffers}
+    faqs={crawlSpaceFAQs}
+    areaServed={serviceAreas}
+  />
+  <!-- Hero Section -->
+  <Hero 
+    title="Crawl Space Moisture Control"
+    subtitle="Complete encapsulation and moisture control for crawl spaces. Prevent mold and structural damage."
+    primaryCTA={{ text: "Get Free Inspection", href: "/free-inspection" }}
+    secondaryCTA={{ text: "Call: 437-545-0067", href: "tel:437-545-0067" }}
+    backgroundImage="/images/cove leak.webp"
+    badge="Mold Prevention"
+  />
+
+  <!-- Stats -->
+  <Stats />
+
+  <!-- Features -->
+  <Features 
+    title="Why Choose Our Service"
+    subtitle="Professional solutions backed by experience and warranty"
+    features={serviceFeatures}
+    columns={3}
+  />
+
+  <!-- Process -->
+  <Process />
+
+  <!-- Testimonials -->
+  <Testimonials />
+
+  <!-- FAQ -->
+  <FAQ 
+    title="Common Questions"
+    subtitle="Everything you need to know about our service"
+    faqs={serviceFAQs}
+    columns={1}
+  />
+
+  <!-- Related Services and Resources -->
+  <section class="py-8">
+    <div class="container mx-auto px-4">
+      <InternalLinks category="moisture-control" currentPage="crawl-space-waterproofing" limit={6} />
+    </div>
+  </section>
+
+  <!-- Contact Form -->
+  <ContactForm />
+
+  <!-- CTA -->
+  <CTA 
+    title="Ready to Get Started?"
+    subtitle="Schedule your free inspection today and protect your home."
+    primaryCTA={{ text: "Schedule Free Inspection", href: "/free-inspection" }}
+    secondaryCTA={{ text: "Call: 437-545-0067", href: "tel:437-545-0067" }}
+    background="gradient"
+  />
+</PageLayout>

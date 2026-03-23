@@ -1,0 +1,469 @@
+---
+// Enhanced Cost Calculator with Site Access Modifiers and Detailed Compliance Info
+// Inheriting best features from Dry Main
+import CostCalculator from './react/CostCalculator.tsx';
+---
+
+<!-- React Calculator with shadcn/ui components -->
+<CostCalculator client:load />
+
+<!-- Static fallback for SEO and no-JS -->
+<noscript>
+<div class="bg-white border-2 border-slate-200 p-8" id="enhanced-cost-calculator">
+  <div class="border-b-4 border-cyan-500 pb-4 mb-6">
+    <h2 class="text-2xl font-bold text-slate-900 uppercase">Advanced Project Cost Calculator</h2>
+    <p class="text-slate-600 mt-2">Instant estimates with Toronto subsidy eligibility (up to $3,400) and site-specific pricing</p>
+  </div>
+  
+  <form class="space-y-6" id="enhanced-estimator-form">
+    <div class="grid md:grid-cols-2 gap-6">
+      <div>
+        <label class="block text-sm font-bold text-slate-900 uppercase mb-2" for="linear-feet">
+          Interior Drain Length
+        </label>
+        <div class="relative">
+          <input 
+            class="w-full px-4 py-3 border-2 border-slate-200 focus:border-cyan-500 focus:outline-none" 
+            id="linear-feet" 
+            min="0" 
+            name="linearFeet" 
+            placeholder="Enter linear feet (e.g., 120)" 
+            type="number"
+          />
+          <span class="absolute right-4 top-3 text-slate-400">ft</span>
+        </div>
+        <p class="text-xs text-slate-500 mt-1">Average home: 100-140 ft</p>
+      </div>
+      
+      <div>
+        <label class="block text-sm font-bold text-slate-900 uppercase mb-2" for="exterior-length">
+          Exterior Waterproofing Length
+        </label>
+        <div class="relative">
+          <input 
+            class="w-full px-4 py-3 border-2 border-slate-200 focus:border-cyan-500 focus:outline-none" 
+            id="exterior-length" 
+            min="0" 
+            name="exteriorLength" 
+            placeholder="Enter linear feet (e.g., 60)" 
+            type="number"
+          />
+          <span class="absolute right-4 top-3 text-slate-400">ft</span>
+        </div>
+        <p class="text-xs text-slate-500 mt-1">Typically partial walls or problem areas</p>
+      </div>
+    </div>
+    
+    <!-- Site Access Modifier - NEW from Dry Main -->
+    <div class="bg-cyan-50 p-6 border-2 border-cyan-200">
+      <label class="block text-sm font-bold text-slate-900 uppercase mb-3" for="access">
+        Site Access Conditions
+      </label>
+      <select 
+        class="w-full px-4 py-3 border-2 border-slate-200 focus:border-cyan-500 focus:outline-none bg-white" 
+        id="access" 
+        name="access"
+      >
+        <option value="good">Good Access - Standard Pricing (wide side yards, easy equipment access)</option>
+        <option value="limited">Limited Access - Premium Pricing (+20-30% for tight spaces, manual work)</option>
+        <option value="difficult">Difficult Access - Special Pricing (+40-50% for very restricted sites)</option>
+      </select>
+      <p class="text-xs text-slate-500 mt-2">
+        Limited access includes: narrow passages, stairs, fences to remove, downtown Toronto properties
+      </p>
+    </div>
+    
+    <div class="bg-slate-50 p-6 border-2 border-slate-100">
+      <h3 class="text-sm font-bold text-slate-900 uppercase mb-4">Waterproofing Systems & Subsidy Items</h3>
+      <div class="grid md:grid-cols-2 gap-4">
+        <label class="flex items-start cursor-pointer bg-white p-3 border border-slate-100 hover:border-cyan-500 transition-colors">
+          <input 
+            class="mt-1 w-4 h-4 border-2 border-slate-300 text-cyan-400 focus:ring-yellow-500" 
+            id="sumpPump" 
+            name="sumpPump" 
+            type="checkbox"
+          />
+          <div class="ml-3">
+            <span class="block font-semibold text-slate-900">Primary Sump Pump</span>
+            <span class="text-xs text-slate-500">Professional grade system</span>
+            <span class="text-xs text-cyan-600 font-semibold">Subsidy: up to $1,750</span>
+          </div>
+        </label>
+        
+        <label class="flex items-start cursor-pointer bg-white p-3 border border-slate-100 hover:border-cyan-500 transition-colors">
+          <input 
+            class="mt-1 w-4 h-4 border-2 border-slate-300 text-cyan-400 focus:ring-yellow-500" 
+            id="batteryBackup" 
+            name="batteryBackup" 
+            type="checkbox"
+          />
+          <div class="ml-3">
+            <span class="block font-semibold text-slate-900">Battery Backup System</span>
+            <span class="text-xs text-slate-500">Power outage protection</span>
+            <span class="text-xs text-slate-400">Included in sump pump subsidy</span>
+          </div>
+        </label>
+        
+        <label class="flex items-start cursor-pointer bg-white p-3 border border-slate-100 hover:border-cyan-500 transition-colors">
+          <input 
+            class="mt-1 w-4 h-4 border-2 border-slate-300 text-cyan-400 focus:ring-yellow-500" 
+            id="backwaterValve" 
+            name="backwaterValve" 
+            type="checkbox"
+          />
+          <div class="ml-3">
+            <span class="block font-semibold text-slate-900">Backwater Valve</span>
+            <span class="text-xs text-slate-500">Stand-alone drain permit required</span>
+            <span class="text-xs text-cyan-600 font-semibold">Subsidy: up to $1,250</span>
+          </div>
+        </label>
+        
+        <label class="flex items-start cursor-pointer bg-white p-3 border border-slate-100 hover:border-cyan-500 transition-colors">
+          <input 
+            class="mt-1 w-4 h-4 border-2 border-slate-300 text-cyan-400 focus:ring-yellow-500" 
+            id="drainSeverCap" 
+            name="drainSeverCap" 
+            type="checkbox"
+          />
+          <div class="ml-3">
+            <span class="block font-semibold text-slate-900">Foundation Drain Severance</span>
+            <span class="text-xs text-slate-500">Disconnect & cap</span>
+            <span class="text-xs text-cyan-600 font-semibold">Subsidy: up to $400</span>
+          </div>
+        </label>
+      </div>
+      
+      <div class="mt-4 p-3 bg-amber-50 border border-yellow-300 rounded">
+        <p class="text-xs text-slate-600">
+          <strong>Note:</strong> Maximum combined City of Toronto subsidy is $3,400. Subject to inspection and approval.
+        </p>
+      </div>
+    </div>
+    
+    <button 
+      class="w-full bg-amber-500 text-black py-4 px-6 font-bold text-lg hover:bg-amber-400 transition-colors uppercase" 
+      type="submit"
+    >
+      Calculate Project Cost with Subsidies
+    </button>
+  </form>
+  
+  <div class="hidden mt-8 space-y-6" id="enhanced-estimate-results">
+    <!-- Subsidy Calculation -->
+    <div class="bg-cyan-50 border-2 border-green-300 p-6">
+      <h3 class="text-lg font-bold text-slate-900 uppercase mb-3">City of Toronto Subsidy Eligibility</h3>
+      <div class="text-sm text-slate-600 space-y-2" id="subsidy-details"></div>
+      <p class="text-xs text-slate-500 mt-3 pt-3 border-t border-cyan-200">
+        * Subject to City approval and inspection requirements
+      </p>
+    </div>
+    
+    <!-- Cost Breakdown -->
+    <div class="bg-slate-50 border-2 border-slate-200 p-6">
+      <h3 class="text-lg font-bold text-slate-900 uppercase mb-3">Detailed Project Cost Estimate</h3>
+      <div class="text-sm text-slate-600 space-y-2" id="cost-details"></div>
+      <div class="mt-4 pt-4 border-t-2 border-slate-200" id="cost-summary"></div>
+      <p class="text-xs text-slate-500 mt-3">
+        * Market reference pricing - final quote after site inspection
+      </p>
+    </div>
+    
+    <!-- Permit & Compliance Requirements - Enhanced from Dry Main -->
+    <div class="bg-amber-50 border-2 border-yellow-300 p-6">
+      <h3 class="text-lg font-bold text-slate-900 uppercase mb-3">Permit & Compliance Requirements</h3>
+      <div class="text-sm text-slate-600 space-y-2" id="permit-details"></div>
+      
+      <div class="mt-4 p-3 bg-white border border-yellow-200 rounded">
+        <h4 class="font-bold text-sm text-slate-900 mb-2">Timeline Expectations:</h4>
+        <ul class="text-xs text-slate-600 space-y-1">
+          <li>• Permit approval: ~10 business days</li>
+          <li>• Ontario One Call locates: 5 business days (FREE)</li>
+          <li>• Inspections: Within 2 business days of request</li>
+          <li>• Final inspection: Required for permit closure</li>
+        </ul>
+      </div>
+    </div>
+    
+    <!-- Documentation Promise - New from Dry Main -->
+    <div class="bg-cyan-50 border-2 border-blue-300 p-6">
+      <h3 class="text-lg font-bold text-slate-900 uppercase mb-3">Documentation You'll Receive</h3>
+      <div class="grid grid-cols-2 gap-3 text-sm">
+        <div class="flex items-center">
+          <svg class="w-4 h-4 text-cyan-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+          </svg>
+          <span>Photo documentation</span>
+        </div>
+        <div class="flex items-center">
+          <svg class="w-4 h-4 text-cyan-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+          </svg>
+          <span>WSIB clearance certificate</span>
+        </div>
+        <div class="flex items-center">
+          <svg class="w-4 h-4 text-cyan-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+          </svg>
+          <span>Permit closure docs</span>
+        </div>
+        <div class="flex items-center">
+          <svg class="w-4 h-4 text-cyan-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+          </svg>
+          <span>Warranty registration</span>
+        </div>
+      </div>
+    </div>
+    
+    <button 
+      class="w-full bg-navy-900 text-white py-4 px-6 font-bold text-lg hover:bg-navy-900 transition-colors uppercase"
+      id="get-accurate-quote-btn"
+    >
+      Get Accurate Quote - Schedule Free Inspection
+    </button>
+  </div>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById("enhanced-estimator-form");
+  const results = document.getElementById("enhanced-estimate-results");
+  const subsidyDetails = document.getElementById("subsidy-details");
+  const costDetails = document.getElementById("cost-details");
+  const costSummary = document.getElementById("cost-summary");
+  const permitDetails = document.getElementById("permit-details");
+  const getQuoteBtn = document.getElementById("get-accurate-quote-btn");
+  
+  form?.addEventListener("submit", (e) => {
+    e.preventDefault();
+    
+    const formData = new FormData(form);
+    const linearFeet = parseInt(formData.get("linearFeet")) || 0;
+    const exteriorLength = parseInt(formData.get("exteriorLength")) || 0;
+    const sumpPump = formData.get("sumpPump") === "on";
+    const batteryBackup = formData.get("batteryBackup") === "on";
+    const backwaterValve = formData.get("backwaterValve") === "on";
+    const drainSeverCap = formData.get("drainSeverCap") === "on";
+    const access = formData.get("access");
+    
+    // Access modifiers (enhanced from Dry Main)
+    const accessMultipliers = {
+      good: { min: 1.0, max: 1.0, label: "Standard Pricing" },
+      limited: { min: 1.2, max: 1.3, label: "Limited Access Premium (+20-30%)" },
+      difficult: { min: 1.4, max: 1.5, label: "Difficult Access Premium (+40-50%)" }
+    };
+    
+    const accessMod = accessMultipliers[access];
+    
+    // Calculate subsidy (matching Dry Main's detailed breakdown)
+    let subsidyAmount = 0;
+    let subsidyItems = [];
+    
+    if (backwaterValve) {
+      const amount = 1250; // City max for backwater valve
+      subsidyAmount += amount;
+      subsidyItems.push(`<div class="flex justify-between items-center py-2 border-b border-cyan-200">
+        <div>
+          <span class="font-semibold">Backwater Valve Subsidy</span>
+          <span class="block text-xs text-slate-500">80% of costs up to maximum</span>
+        </div>
+        <span class="font-bold text-cyan-600">$${amount.toLocaleString()}</span>
+      </div>`);
+    }
+    
+    if (sumpPump) {
+      const amount = 1750; // City max for sump pump
+      subsidyAmount += amount;
+      subsidyItems.push(`<div class="flex justify-between items-center py-2 border-b border-cyan-200">
+        <div>
+          <span class="font-semibold">Sump Pump Subsidy</span>
+          <span class="block text-xs text-slate-500">Includes pump and installation</span>
+        </div>
+        <span class="font-bold text-cyan-600">$${amount.toLocaleString()}</span>
+      </div>`);
+    }
+    
+    if (drainSeverCap) {
+      const amount = 400; // City max for severance
+      subsidyAmount += amount;
+      subsidyItems.push(`<div class="flex justify-between items-center py-2 border-b border-cyan-200">
+        <div>
+          <span class="font-semibold">Foundation Drain Severance</span>
+          <span class="block text-xs text-slate-500">Disconnect from sewer system</span>
+        </div>
+        <span class="font-bold text-cyan-600">$${amount.toLocaleString()}</span>
+      </div>`);
+    }
+    
+    // Cap at maximum subsidy
+    subsidyAmount = Math.min(subsidyAmount, 3400);
+    
+    if (subsidyDetails) {
+      if (subsidyItems.length > 0) {
+        subsidyDetails.innerHTML = subsidyItems.join("") + 
+          `<div class="mt-3 pt-3 border-t-2 border-green-300">
+            <div class="flex justify-between items-center text-lg">
+              <span class="font-bold uppercase">Total Subsidy Available:</span>
+              <span class="font-bold text-cyan-700 text-xl">$${subsidyAmount.toLocaleString()}</span>
+            </div>
+            <p class="text-xs text-slate-500 mt-2">Maximum combined subsidy: $3,400</p>
+          </div>`;
+      } else {
+        subsidyDetails.innerHTML = "<p class='text-slate-500'>No subsidy-eligible items selected. Select sump pump, backwater valve, or drain severance to see available subsidies.</p>";
+      }
+    }
+    
+    // Calculate costs with access modifiers
+    let costItems = [];
+    let minCost = 0;
+    let maxCost = 0;
+    
+    if (linearFeet > 0) {
+      const baseMinRate = 75;
+      const baseMaxRate = 120;
+      const min = Math.round(linearFeet * baseMinRate * accessMod.min);
+      const max = Math.round(linearFeet * baseMaxRate * accessMod.max);
+      minCost += min;
+      maxCost += max;
+      costItems.push(`<div class="py-2 border-b border-slate-100">
+        <div class="flex justify-between">
+          <span>Interior Drainage System (${linearFeet} ft)</span>
+          <span class="font-semibold">$${min.toLocaleString()} - $${max.toLocaleString()}</span>
+        </div>
+        <span class="text-xs text-slate-500">${accessMod.label}</span>
+      </div>`);
+    }
+    
+    if (exteriorLength > 0) {
+      const baseMinRate = 120;
+      const baseMaxRate = 200;
+      const min = Math.round(exteriorLength * baseMinRate * accessMod.min);
+      const max = Math.round(exteriorLength * baseMaxRate * accessMod.max);
+      minCost += min;
+      maxCost += max;
+      costItems.push(`<div class="py-2 border-b border-slate-100">
+        <div class="flex justify-between">
+          <span>Exterior Waterproofing (${exteriorLength} ft)</span>
+          <span class="font-semibold">$${min.toLocaleString()} - $${max.toLocaleString()}</span>
+        </div>
+        <span class="text-xs text-slate-500">${accessMod.label}</span>
+      </div>`);
+    }
+    
+    if (sumpPump) {
+      const baseMin = batteryBackup ? 2800 : 1800;
+      const baseMax = batteryBackup ? 4500 : 3500;
+      const min = Math.round(baseMin * accessMod.min);
+      const max = Math.round(baseMax * accessMod.max);
+      minCost += min;
+      maxCost += max;
+      costItems.push(`<div class="py-2 border-b border-slate-100">
+        <div class="flex justify-between">
+          <span>Sump Pump System${batteryBackup ? " + Battery Backup" : ""}</span>
+          <span class="font-semibold">$${min.toLocaleString()} - $${max.toLocaleString()}</span>
+        </div>
+        <span class="text-xs text-slate-500">Professional installation included</span>
+      </div>`);
+    }
+    
+    if (backwaterValve) {
+      const min = Math.round(800 * accessMod.min);
+      const max = Math.round(1500 * accessMod.max);
+      minCost += min;
+      maxCost += max;
+      costItems.push(`<div class="py-2 border-b border-slate-100">
+        <div class="flex justify-between">
+          <span>Backwater Valve Installation</span>
+          <span class="font-semibold">$${min.toLocaleString()} - $${max.toLocaleString()}</span>
+        </div>
+        <span class="text-xs text-slate-500">Includes permit and inspection</span>
+      </div>`);
+    }
+    
+    if (costDetails) {
+      if (costItems.length > 0) {
+        costDetails.innerHTML = costItems.join("");
+        
+        costSummary.innerHTML = `
+          <div class="space-y-3">
+            <div class="flex justify-between items-center text-lg">
+              <span class="font-bold uppercase">Total Project Cost:</span>
+              <span class="font-bold">$${minCost.toLocaleString()} - $${maxCost.toLocaleString()}</span>
+            </div>
+            ${subsidyAmount > 0 ? `
+            <div class="p-4 bg-cyan-50 border-2 border-green-300 rounded">
+              <div class="flex justify-between items-center text-lg">
+                <span class="font-bold uppercase">Your Cost After Subsidy:</span>
+                <span class="font-bold text-cyan-700 text-xl">$${Math.max(0, minCost - subsidyAmount).toLocaleString()} - $${Math.max(0, maxCost - subsidyAmount).toLocaleString()}</span>
+              </div>
+              <p class="text-xs text-cyan-700 mt-2">Savings of up to $${subsidyAmount.toLocaleString()} with City of Toronto subsidy</p>
+            </div>` : ''}
+          </div>`;
+      } else {
+        costDetails.innerHTML = "<p class='text-slate-500'>Enter project specifications above for cost estimate</p>";
+        costSummary.innerHTML = "";
+      }
+    }
+    
+    // Enhanced permit details (from Dry Main)
+    let permitItems = [];
+    
+    if (backwaterValve) {
+      permitItems.push(`<div class="py-2 border-b border-yellow-200">
+        <span class="font-semibold text-red-600">BACKWATER VALVE REQUIREMENTS:</span>
+        <ul class="mt-1 ml-4 text-xs space-y-1">
+          <li>• Stand-alone drain permit required</li>
+          <li>• Full-port (normally open) valve only per City requirements</li>
+          <li>• Professional certification required</li>
+        </ul>
+      </div>`);
+    }
+    
+    if (sumpPump) {
+      permitItems.push(`<div class="py-2 border-b border-yellow-200">
+        <span class="font-semibold text-cyan-600">SUMP PUMP DISCHARGE (By-law 681):</span>
+        <ul class="mt-1 ml-4 text-xs space-y-1">
+          <li>• Must discharge to permeable surface minimum 2m from foundation</li>
+          <li>• Cannot discharge to sanitary or combined sewer</li>
+          <li>• Proper grading required to prevent backflow</li>
+        </ul>
+      </div>`);
+    }
+    
+    if (exteriorLength > 0) {
+      permitItems.push(`<div class="py-2 border-b border-yellow-200">
+        <span class="font-semibold text-cyan-600">EXTERIOR EXCAVATION:</span>
+        <ul class="mt-1 ml-4 text-xs space-y-1">
+          <li>• Ontario One Call locates required (FREE - 5 business days)</li>
+          <li>• OHSA trench safety requirements apply</li>
+          <li>• Restoration to original grade included</li>
+        </ul>
+      </div>`);
+    }
+    
+    permitItems.push(`<div class="py-2">
+      <span class="font-semibold">GENERAL REQUIREMENTS:</span>
+      <ul class="mt-1 ml-4 text-xs space-y-1">
+        <li>• All work to Ontario Building Code 2024 standards</li>
+        <li>• WSIB-cleared crews with safety certification</li>
+        <li>• $5 million liability insurance coverage</li>
+        <li>• Final inspection required for permit closure</li>
+      </ul>
+    </div>`);
+    
+    if (permitDetails) {
+      permitDetails.innerHTML = permitItems.join("");
+    }
+    
+    results?.classList.remove("hidden");
+    results?.scrollIntoView({ behavior: "smooth", block: "nearest" });
+  });
+  
+  // Add event listener for the get quote button
+  getQuoteBtn?.addEventListener("click", () => {
+    // Navigate to contact page
+    window.location.href = '/contact';
+  });
+});
+</script>
+</noscript>

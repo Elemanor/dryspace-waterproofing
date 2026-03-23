@@ -1,0 +1,451 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import Hero from '../../components/sections/Hero.astro';
+import Services from '../../components/sections/Services.astro';
+import Process from '../../components/sections/Process.astro';
+import Testimonials from '../../components/sections/Testimonials.astro';
+import Stats from '../../components/sections/Stats.astro';
+import LocationImageShowcase from '../../components/LocationImageShowcase.astro';
+import InternalLinks from '../../components/InternalLinks.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import BreadcrumbSchema from '../../components/BreadcrumbSchema.astro';
+
+const pageTitle = "Moisture Control Vaughan | Premium Foundation Protection";
+const pageDescription = "Professional moisture control in Vaughan. Luxury home specialists, complete solutions, warranty protection.";
+
+// Local area information
+const localInfo = {
+  cityName: "Vaughan",
+  population: "323,000",
+  waterTable: "Variable across rapid development zones",
+  soilType: "Mixed glacial till and clay - highly variable",
+  avgHomesAge: "20-30 years (boom development era)",
+  floodRisk: "Variable by development - poor initial drainage planning",
+  avgRainfall: "810mm annually",
+  developmentChallenge: "Fastest growing GTA municipality",
+  mixedUse: "Commercial, industrial, and luxury residential integration"
+};
+
+// Location-specific features
+const locationFeatures = [
+  {
+    title: 'RAPID DEVELOPMENT SPECIALISTS',
+    description: 'Expert solutions for Vaughan\'s unprecedented growth challenges and varying soil conditions across development phases.',
+    highlight: true
+  },
+  {
+    title: 'LUXURY HOME PROTECTION',
+    description: 'Premium waterproofing solutions for Vaughan\'s high-value properties with finished basements and luxury features.',
+    highlight: true
+  },
+  {
+    title: 'COMMERCIAL-RESIDENTIAL EXPERTISE',
+    description: 'Specialized approaches for mixed-use developments and properties adjacent to commercial/industrial zones.',
+    highlight: true
+  },
+  {
+    title: 'VARIABLE SOIL MANAGEMENT',
+    description: 'Advanced techniques for Vaughan\'s highly variable glacial till and clay soil conditions.'
+  },
+  {
+    title: 'BOOM-ERA CONSTRUCTION',
+    description: 'Targeted solutions for 2000s-2010s construction methods and their emerging long-term issues.'
+  },
+  {
+    title: 'MULTI-ZONE COVERAGE',
+    description: 'Comprehensive service across Vaughan\'s diverse communities from rural Kleinburg to urban Thornhill.'
+  }
+];
+
+// Location-specific FAQs
+const locationFAQs = [
+  {
+    question: "Why do Vaughan's newer luxury homes have waterproofing issues?",
+    answer: "Vaughan's rapid development (2000s-2010s) often prioritized speed over optimal foundation engineering. Large homes with finished basements were built quickly across varying soil conditions, and many builders underestimated the long-term drainage challenges. High property values make proper waterproofing critical for investment protection."
+  },
+  {
+    question: "How do you handle Vaughan's highly variable soil conditions?",
+    answer: "Vaughan's glacial history created a patchwork of clay, till, and mixed soils that can vary dramatically even within a single property. We perform detailed soil analysis and customize drainage solutions for each specific soil type, often using hybrid systems that adapt to changing ground conditions."
+  },
+  {
+    question: "What about waterproofing in Vaughan's mixed commercial-residential areas?",
+    answer: "Vaughan's unique development pattern places residential properties adjacent to commercial and industrial zones, creating complex drainage interdependencies. We assess broader area drainage impacts and install systems that account for altered runoff patterns from nearby commercial developments and parking areas."
+  },
+  {
+    question: "Can you protect luxury finished basements and high-end features?",
+    answer: "Absolutely. Vaughan's luxury homes often feature expensive finished basements, wine cellars, and entertainment areas that require premium protection. We use high-grade waterproofing systems with redundant protection layers and climate control considerations to safeguard these valuable spaces."
+  },
+  {
+    question: "How do you work with Vaughan's rapid development and construction activity?",
+    answer: "Ongoing construction in Vaughan can affect neighboring properties' drainage patterns. We coordinate with developers, monitor construction impacts on existing homes, and install adaptable systems that can accommodate changing neighbourhood drainage conditions as development continues."
+  }
+];
+
+// Schema markup for local business
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": ["LocalBusiness", "HomeAndConstructionBusiness", "WaterproofingService"],
+  "name": "Dryspace Waterproofing",
+  "description": "Professional waterproofing services in Vaughan. Expert basement waterproofing, foundation repair, and drainage solutions. Serving all Vaughan neighborhoods with 25-year warranty protection.",
+  "telephone": "437-545-0067",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Vaughan Service Area",
+    "addressLocality": "Vaughan",
+    "addressRegion": "ON",
+    "postalCode": "L4J",
+    "addressCountry": "CA"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "43.8361",
+    "longitude": "-79.4985"
+  },
+  "areaServed": [
+    {
+      "@type": "City",
+      "name": "Vaughan",
+      "sameAs": "https://en.wikipedia.org/wiki/Vaughan"
+    },
+    {
+      "@type": "Place",
+      "name": "York Region"
+    }
+  ],
+  "serviceArea": {
+    "@type": "GeoCircle",
+    "geoMidpoint": {
+      "@type": "GeoCoordinates", 
+      "latitude": "43.8361",
+      "longitude": "-79.4985"
+    },
+    "geoRadius": "25000"
+  },
+  "openingHours": [
+    "Mo-Fr 07:00-19:00",
+    "Sa 08:00-17:00", 
+    "Su 09:00-17:00"
+  ],
+  "availableLanguage": ["English"],
+  "currenciesAccepted": "CAD",
+  "paymentAccepted": ["Cash", "Credit Card", "Debit Card", "Bank Transfer"],
+  "priceRange": "$$",
+  "url": "https://dryspacewaterproofing.com/locations/vaughan",
+  "logo": "https://dryspacewaterproofing.com/images/dryspace-logo.webp",
+  "image": "https://dryspacewaterproofing.com/images/dryspace_hero_desktop.webp",
+  "sameAs": [
+    "https://www.facebook.com/dryspacewaterproofing",
+    "https://www.linkedin.com/company/dryspace-waterproofing"
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Waterproofing Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Basement Waterproofing",
+          "description": "Complete basement waterproofing solutions"
+        }
+      },
+      {
+        "@type": "Offer", 
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Foundation Repair",
+          "description": "Foundation crack repair and structural solutions"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service", 
+          "name": "Drainage Solutions",
+          "description": "French drains, sump pumps, and drainage systems"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Emergency Water Removal",
+          "description": "24/7 emergency flooding and water damage response"
+        }
+      }
+    ]
+  },
+  "review": {
+    "@type": "Review",
+    "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": "4.9",
+      "bestRating": "5"
+    },
+    "author": {
+      "@type": "Organization",
+      "name": "Dryspace Waterproofing Customers"
+    }
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "reviewCount": "150",
+    "bestRating": "5"
+  }
+};
+---
+
+<PageLayout 
+  title={pageTitle}
+  description={pageDescription}
+>
+  
+  <!-- Breadcrumbs -->
+  <div class="container mx-auto px-4 mt-4">
+    <Breadcrumbs 
+      items={[
+        { name: "Home", url: "/" },
+        { name: "Service Areas", url: "/service-areas" },
+        { name: "Vaughan" }
+      ]}
+    />
+  </div>
+
+<!-- Location Hero -->
+  <Hero 
+    title="Waterproofing Vaughan"
+    subtitle="Professional basement waterproofing and foundation repair serving all Vaughan neighborhoods. 25-year warranty, free inspection."
+    primaryCTA={{ text: "Get Free Vaughan Quote", href: "/free-inspection" }}
+    secondaryCTA={{ text: "Call: 437-545-0067", href: "tel:437-545-0067" }}
+    backgroundImage="/images/dryspace_hero_desktop.webp"
+    badge="Serving Vaughan"
+  />
+
+  <!-- Internal Links -->
+  <section class="py-8 bg-white">
+    <div class="container mx-auto px-4">
+      <InternalLinks category="location" currentPage="vaughan" />
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <Stats />
+
+  <!-- Local Information Section -->
+  <section class="py-16 bg-slate-50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-4xl font-bold text-slate-900 mb-4 uppercase">WATERPROOFING SERVICES IN VAUGHAN</h2>
+        
+        <div class="prose prose-lg  max-w-none">
+          <p class="text-lg text-slate-600 mb-6">
+            Vaughan's explosive growth from rural township to major GTA municipality created unprecedented waterproofing challenges. As Ontario's fastest-growing city, rapid development often prioritized speed over optimal drainage planning. Many luxury homes built in the 2000s-2010s boom are now experiencing foundation issues as varying soil conditions and hasty construction methods reveal their limitations. Our team specializes in both protecting high-value investments and managing the complex drainage challenges of mixed commercial-residential development.
+          </p>
+          
+          <div class="bg-cyan-50 border-l-4 border-cyan-500 p-6 mb-8">
+            <h3 class="text-lg font-bold text-cyan-900 mb-2">Vaughan's Growth Challenge</h3>
+            <p class="text-cyan-700 text-sm">
+              Transforming from rural farmland to dense urban development in just 30 years created unique challenges. Rapid construction across variable glacial soils, combined with luxury home expectations for finished basements, means many properties need specialized waterproofing solutions.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
+            <div class="bg-white border-2 border-slate-200  p-6">
+              <h3 class="text-xl font-bold text-slate-900 mb-6 uppercase">VAUGHAN QUICK FACTS</h3>
+              <ul class="space-y-2 text-slate-600 ">
+                <li class="flex justify-between items-center pb-2 border-b border-slate-100">
+                <span class="text-sm font-semibold text-slate-600 uppercase">Population</span>
+                <span class="text-sm font-bold text-slate-900">323,000</span>
+              </li>
+                <li class="flex justify-between items-center pb-2 border-b border-slate-100">
+                <span class="text-sm font-semibold text-slate-600 uppercase">Average Home Age</span>
+                <span class="text-sm font-bold text-slate-900">20-30 YEARS</span>
+              </li>
+                <li class="flex justify-between items-center pb-2 border-b border-slate-100">
+                <span class="text-sm font-semibold text-slate-600 uppercase">Annual Rainfall</span>
+                <span class="text-sm font-bold text-slate-900">810MM ANNUALLY</span>
+              </li>
+                <li class="flex justify-between items-center pb-2 border-b border-slate-100">
+                <span class="text-sm font-semibold text-slate-600 uppercase">Frost Line</span>
+                <span class="text-sm font-bold text-slate-900">1.2 METERS</span>
+              </li>
+                <li class="flex justify-between items-center pb-2 border-b border-slate-100">
+                <span class="text-sm font-semibold text-slate-600 uppercase">Flood Risk</span>
+                <span class="text-sm font-bold text-slate-900">LOW TO MODERATE</span>
+              </li>
+              </ul>
+            </div>
+            
+            <div class="bg-navy-900 border-2 border-slate-200  p-6">
+              <h3 class="text-xl font-bold text-slate-900 mb-6 uppercase">VAUGHAN'S DEVELOPMENT CHALLENGES</h3>
+              <ul class="space-y-2 text-slate-300">
+                <li class="text-sm text-slate-300 flex items-start">
+                <span class="mr-2 text-cyan-400">•</span>
+                <span>Highly variable glacial soils across rapid development zones</span>
+              </li>
+                <li class="text-sm text-slate-300 flex items-start">
+                <span class="mr-2 text-cyan-400">•</span>
+                <span>Luxury homes with vulnerable finished basements</span>
+              </li>
+                <li class="text-sm text-slate-300 flex items-start">
+                <span class="mr-2 text-cyan-400">•</span>
+                <span>Mixed commercial-residential drainage conflicts</span>
+              </li>
+                <li class="text-sm text-slate-300 flex items-start">
+                <span class="mr-2 text-cyan-400">•</span>
+                <span>Rapid construction methods showing long-term issues</span>
+              </li>
+                <li class="text-sm text-slate-300 flex items-start">
+                <span class="mr-2 text-cyan-400">•</span>
+                <span>Ongoing development affecting existing home drainage</span>
+              </li>
+                <li class="text-sm text-slate-300 flex items-start">
+                <span class="mr-2 text-cyan-400">•</span>
+                <span>High property values requiring premium protection</span>
+              </li>
+              </ul>
+            </div>
+          </div>
+
+          <h3 class="text-2xl font-bold mt-8 mb-4">Vaughan Communities & Their Unique Characteristics</h3>
+          <p class="mb-6">
+            Vaughan's diverse communities each present distinct waterproofing challenges based on development era and land use:
+          </p>
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+            <div class="bg-white p-4 border border-slate-100 rounded">
+              <h4 class="font-bold text-slate-900 mb-2">WOODBRIDGE (Established Core)</h4>
+              <p class="text-sm text-slate-500">Mixed-age development, Humber River influence, established infrastructure</p>
+            </div>
+            <div class="bg-white p-4 border border-slate-100 rounded">
+              <h4 class="font-bold text-slate-900 mb-2">THORNHILL (Luxury Corridor)</h4>
+              <p class="text-sm text-slate-500">High-end homes, finished basements, premium protection requirements</p>
+            </div>
+            <div class="bg-white p-4 border border-slate-100 rounded">
+              <h4 class="font-bold text-slate-900 mb-2">MAPLE & CONCORD (Rapid Growth)</h4>
+              <p class="text-sm text-slate-500">New subdivisions, variable soils, boom-era construction methods</p>
+            </div>
+            <div class="bg-white p-4 border border-slate-100 rounded">
+              <h4 class="font-bold text-slate-900 mb-2">KLEINBURG (Rural-Urban Mix)</h4>
+              <p class="text-sm text-slate-500">Rural heritage, newer luxury development, conservation area considerations</p>
+            </div>
+          </div>
+          
+          <div class="flex flex-wrap gap-2">
+            {["Woodbridge","Thornhill","Maple","Kleinburg","Concord","Vellore","Sonoma Heights","Carrville","Patterson"].map((neighborhood) => (
+              <span class="border-2 border-slate-200 px-3 py-1 text-sm">
+                {neighborhood}
+              </span>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <Services />
+
+  <!-- Location Features -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl font-bold text-slate-900 mb-4 uppercase">WHY CHOOSE DRYSPACE IN VAUGHAN</h2>
+        <p class="text-lg text-slate-600 max-w-3xl mx-auto">
+          Local expertise combined with industry-leading warranties and service
+        </p>
+      </div>
+      
+      <!-- Highlighted Features -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+        {locationFeatures.filter(f => f.highlight).map((feature) => (
+          <div class="bg-amber-500 border-2 border-slate-700 p-6">
+            <h3 class="text-lg font-bold text-slate-900 mb-3 uppercase">{feature.title}</h3>
+            <p class="text-sm text-slate-900">{feature.description}</p>
+          </div>
+        ))}
+      </div>
+      
+      <!-- Regular Features -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {locationFeatures.filter(f => !f.highlight).map((feature) => (
+          <div class="bg-white border-2 border-slate-200 p-6 hover:border-slate-300 transition-colors">
+            <h3 class="text-lg font-bold text-slate-900 mb-3 uppercase">{feature.title}</h3>
+            <p class="text-sm text-slate-600">{feature.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Process -->
+  <Process />
+
+
+  <!-- Location Image Showcase -->
+  <LocationImageShowcase city="Vaughan" />
+
+  <!-- Testimonials -->
+  <Testimonials />
+
+  <!-- FAQ Section -->
+  <section class="py-16 bg-slate-50">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl font-bold text-slate-900 mb-4 uppercase">VAUGHAN WATERPROOFING FAQS</h2>
+        <p class="text-lg text-slate-600">Common questions from Vaughan homeowners</p>
+      </div>
+      
+      <div class="max-w-4xl mx-auto">
+        {locationFAQs.map((faq, index) => (
+          <details class="mb-4 border-2 border-slate-200 bg-white">
+            <summary class="cursor-pointer p-6 hover:bg-slate-50 transition-colors">
+              <div class="flex items-center justify-between">
+                <h3 class="text-lg font-bold text-slate-900 uppercase pr-4">{faq.question}</h3>
+                <span class="text-slate-400 flex-shrink-0 text-2xl">+</span>
+              </div>
+            </summary>
+            <div class="px-6 pb-6 pt-0">
+              <p class="text-slate-600">{faq.answer}</p>
+            </div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-16 bg-navy-900">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-4xl font-bold text-slate-900 mb-4 uppercase">SAFEGUARD YOUR VAUGHAN INVESTMENT</h2>
+        <p class="text-lg text-slate-300 mb-8">
+          Whether your property is a luxury Thornhill estate or a new Maple subdivision home, our Vaughan specialists provide premium waterproofing solutions that match your investment level and adapt to the city's ongoing development challenges.
+        </p>
+        
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a 
+            href="/free-inspection"
+            class="bg-amber-500 text-black px-8 py-4 text-lg font-bold hover:bg-amber-400 transition-colors uppercase"
+          >
+            Get Premium Property Assessment
+          </a>
+          <a 
+            href="/contact"
+            class="border-2 border-white text-slate-900 px-8 py-4 text-lg font-bold hover:bg-white hover:text-black transition-colors uppercase"
+          >
+            Luxury Home Consultation
+          </a>
+        </div>
+        
+        <div class="mt-8 inline-flex items-center text-cyan-400">
+          <span class="text-sm font-bold uppercase">24/7 Emergency Service Available</span>
+        </div>
+      </div>
+    </div>
+  </section>
+</PageLayout>
+
+<script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)}>
+<BreadcrumbSchema items={[{name: 'Home', url: '/'}, {name: 'Locations', url: '/locations'}, {name: 'Vaughan'}]} />

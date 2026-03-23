@@ -1,0 +1,422 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import Hero from '../../components/sections/Hero.astro';
+import Services from '../../components/sections/Services.astro';
+import Process from '../../components/sections/Process.astro';
+import Testimonials from '../../components/sections/Testimonials.astro';
+import Stats from '../../components/sections/Stats.astro';
+import LocationImageShowcase from '../../components/LocationImageShowcase.astro';
+import InternalLinks from '../../components/InternalLinks.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import BreadcrumbSchema from '../../components/BreadcrumbSchema.astro';
+
+const pageTitle = "Moisture Protection North York | Central Toronto Experts";
+const pageDescription = "North York high-rise moisture protection. Don River watershed specialists, aging infrastructure, condominium solutions.";
+
+// Local area information
+const localInfo = {
+  cityName: "North York",
+  population: "670,000",
+  waterTable: "Don River influenced",
+  soilType: "Glacial till/clay",
+  avgHomesAge: "40-60 years mixed",
+  floodRisk: "Don watershed variable",
+  avgRainfall: "850mm + urban effect"
+};
+
+// Location-specific features
+const locationFeatures = [
+  {
+    title: 'LOCAL EXPERTS',
+    description: 'Serving the area for over 25 years with deep knowledge of local conditions.',
+    highlight: true
+  },
+  {
+    title: 'FAST RESPONSE TIME',
+    description: '2-hour emergency response anywhere in the area. Available 24/7.',
+    highlight: true
+  },
+  {
+    title: 'ALL NEIGHBORHOODS',
+    description: 'Serving Willowdale, York Mills, Don Mills and all local areas.',
+    highlight: true
+  },
+  {
+    title: 'HIGH-RISE SPECIALISTS',
+    description: 'Specialized moisture protection for local condominium towers and underground parking.',
+  },
+  {
+    title: 'AGING INFRASTRUCTURE',
+    description: 'Expert solutions for local aging municipal systems and infrastructure challenges.',
+  },
+  {
+    title: 'DON WATERSHED EXPERTS',
+    description: 'Advanced protection for Don River watershed properties and ravine system drainage.'
+  }
+];
+
+// Location-specific FAQs
+const locationFAQs = [
+  {
+    question: "How do you protect local high-rise buildings?",
+    answer: "Local numerous condominium towers require specialized moisture protection for underground parking, mechanical rooms, and below-grade amenities. Our high-rise expertise includes structural protection, parking garage solutions, and coordination with condominium boards and property management."
+  },
+  {
+    question: "What challenges does the Don River watershed create?",
+    answer: "The Don River watershed significantly influences local drainage patterns, creating variable water table conditions and seasonal flooding risks in ravine areas. Our watershed expertise includes specialized drainage systems and flood mitigation for properties near the extensive ravine system."
+  },
+  {
+    question: "How do you handle local aging infrastructure problems?",
+    answer: "Local older municipal infrastructure often can't handle modern drainage demands, leading to basement flooding during heavy rainfall. We design private protection solutions that don't rely on aging storm systems, including enhanced sump capacity and independent drainage networks."
+  },
+  {
+    question: "What makes moisture protection different for local mixed housing?",
+    answer: "The area features everything from 1960s split-levels to modern condominiums, each requiring different approaches. We adapt our techniques for post-war bungalows, 1970s-80s high-rises, and contemporary developments, ensuring appropriate solutions for each building type."
+  },
+  {
+    question: "How do you work with local condominium corporations?",
+    answer: "We maintain relationships with numerous local condominium corporations and understand the complex approval processes, reserve fund considerations, and coordination required for multi-unit protection projects."
+  },
+  {
+    question: "What are the unique Don Mills area waterproofing challenges?",
+    answer: "Don Mills, as a planned community from the 1950s, has unique drainage patterns and aging infrastructure. The area's proximity to the Don River creates specific challenges including ravine drainage, mature tree root systems, and original construction methods requiring specialized approaches."
+  }
+];
+
+// Schema markup for local business
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": ["LocalBusiness", "HomeAndConstructionBusiness", "ProtectionService"],
+  "name": "Dryspace Protection",
+  "description": "Professional basement protection services in North York. Expert foundation repair, and drainage solutions. Serving all local neighborhoods with 25-year warranty protection.",
+  "telephone": "437-545-0067",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Service Area",
+    "addressLocality": "North York",
+    "addressRegion": "ON",
+    "postalCode": "M2M",
+    "addressCountry": "CA"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "43.7615",
+    "longitude": "-79.4111"
+  },
+  "areaServed": [
+    {
+      "@type": "City",
+      "name": "North York",
+      "sameAs": "https://en.wikipedia.org/wiki/North_York"
+    },
+    {
+      "@type": "Place",
+      "name": "City of Toronto"
+    }
+  ],
+  "serviceArea": {
+    "@type": "GeoCircle",
+    "geoMidpoint": {
+      "@type": "GeoCoordinates", 
+      "latitude": "43.7615",
+      "longitude": "-79.4111"
+    },
+    "geoRadius": "25000"
+  },
+  "openingHours": [
+    "Mo-Fr 07:00-19:00",
+    "Sa 08:00-17:00", 
+    "Su 09:00-17:00"
+  ],
+  "availableLanguage": ["English"],
+  "currenciesAccepted": "CAD",
+  "paymentAccepted": ["Cash", "Credit Card", "Debit Card", "Bank Transfer"],
+  "priceRange": "$$",
+  "url": "https://dryspacewaterproofing.com/locations/north-york",
+  "logo": "https://dryspacewaterproofing.com/images/dryspace-logo.webp",
+  "image": "https://dryspacewaterproofing.com/images/dryspace_hero_desktop.webp",
+  "sameAs": [
+    "https://www.facebook.com/dryspacewaterproofing",
+    "https://www.linkedin.com/company/dryspace-waterproofing"
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Protection Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Basement Waterproofing",
+          "description": "Complete basement protection solutions"
+        }
+      },
+      {
+        "@type": "Offer", 
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Foundation Repair",
+          "description": "Foundation crack repair and structural solutions"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service", 
+          "name": "Drainage Solutions",
+          "description": "French drains, sump pumps, and drainage systems"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Emergency Water Removal",
+          "description": "24/7 emergency flooding and moisture damage response"
+        }
+      }
+    ]
+  },
+  "review": {
+    "@type": "Review",
+    "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": "4.9",
+      "bestRating": "5"
+    },
+    "author": {
+      "@type": "Organization",
+      "name": "Dryspace Protection Customers"
+    }
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "reviewCount": "150",
+    "bestRating": "5"
+  }
+};
+---
+
+<PageLayout 
+  title={pageTitle}
+  description={pageDescription}
+>
+  
+  <!-- Breadcrumbs -->
+  <div class="container mx-auto px-4 mt-4">
+    <Breadcrumbs 
+      items={[
+        { name: "Home", url: "/" },
+        { name: "Service Areas", url: "/service-areas" },
+        { name: "North York" }
+      ]}
+    />
+  </div>
+
+<!-- Location Hero -->
+  <Hero 
+    title="Moisture Protection North York"
+    subtitle="Professional basement protection and foundation repair serving all local neighborhoods. 25-year warranty, free inspection."
+    primaryCTA={{ text: "Get Free Quote", href: "/free-inspection" }}
+    secondaryCTA={{ text: "Call: 437-545-0067", href: "tel:437-545-0067" }}
+    backgroundImage="/images/dryspace_hero_desktop.webp"
+    badge="Serving the Area"
+  />
+
+  <!-- Internal Links -->
+  <section class="py-8 bg-white">
+    <div class="container mx-auto px-4">
+      <InternalLinks category="location" currentPage="north-york" />
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <Stats />
+
+  <!-- Local Information Section -->
+  <section class="py-16 bg-slate-50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-4xl font-bold text-slate-900 mb-4 uppercase">MOISTURE PROTECTION SERVICES IN NORTH YORK</h2>
+        
+        <div class="prose prose-lg  max-w-none">
+          <p class="text-lg text-slate-600 mb-6">
+            The area presents complex moisture challenges as Toronto's most densely populated area with diverse housing types from 1950s planned communities to modern high-rises. The Don River watershed influences local drainage while aging municipal infrastructure struggles with modern demands, requiring specialized expertise for both residential and condominium protection.
+          </p>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
+            <div class="bg-white border-2 border-slate-200  p-6">
+              <h3 class="text-xl font-bold text-slate-900 mb-6 uppercase">LOCAL QUICK FACTS</h3>
+              <ul class="space-y-2 text-slate-600 ">
+                <li class="flex justify-between items-center pb-2 border-b border-slate-100">
+                <span class="text-sm font-semibold text-slate-600 uppercase">Population</span>
+                <span class="text-sm font-bold text-slate-900">670,000</span>
+              </li>
+                <li class="flex justify-between items-center pb-2 border-b border-slate-100">
+                <span class="text-sm font-semibold text-slate-600 uppercase">Average Home Age</span>
+                <span class="text-sm font-bold text-slate-900">40-60 YEARS MIXED</span>
+              </li>
+                <li class="flex justify-between items-center pb-2 border-b border-slate-100">
+                <span class="text-sm font-semibold text-slate-600 uppercase">Annual Rainfall</span>
+                <span class="text-sm font-bold text-slate-900">850MM + URBAN EFFECT</span>
+              </li>
+                <li class="flex justify-between items-center pb-2 border-b border-slate-100">
+                <span class="text-sm font-semibold text-slate-600 uppercase">Frost Line</span>
+                <span class="text-sm font-bold text-slate-900">1.2 METERS</span>
+              </li>
+                <li class="flex justify-between items-center pb-2 border-b border-slate-100">
+                <span class="text-sm font-semibold text-slate-600 uppercase">Flood Risk</span>
+                <span class="text-sm font-bold text-slate-900">DON WATERSHED VARIABLE</span>
+              </li>
+              </ul>
+            </div>
+            
+            <div class="bg-navy-900 border-2 border-slate-200  p-6">
+              <h3 class="text-xl font-bold text-slate-900 mb-6 uppercase">WHY THE AREA NEEDS MOISTURE PROTECTION</h3>
+              <ul class="space-y-2 text-slate-300">
+                <li class="text-sm text-slate-300 flex items-start">
+                <span class="mr-2 text-cyan-400">•</span>
+                <span>Glacial till creates complex drainage patterns</span>
+              </li>
+                <li class="text-sm text-slate-300 flex items-start">
+                <span class="mr-2 text-cyan-400">•</span>
+                <span>Don River watershed influences groundwater</span>
+              </li>
+                <li class="text-sm text-slate-300 flex items-start">
+                <span class="mr-2 text-cyan-400">•</span>
+                <span>Urban heat island increases precipitation</span>
+              </li>
+                <li class="text-sm text-slate-300 flex items-start">
+                <span class="mr-2 text-cyan-400">•</span>
+                <span>Freeze-thaw cycles damage foundations</span>
+              </li>
+                <li class="text-sm text-slate-300 flex items-start">
+                <span class="mr-2 text-cyan-400">•</span>
+                <span>Don River ravine system flooding</span>
+              </li>
+              </ul>
+            </div>
+          </div>
+
+          <h3 class="text-2xl font-bold mt-8 mb-4">Neighborhoods We Serve</h3>
+          <p class="mb-4">
+            Our local moisture protection team serves all neighborhoods including:
+          </p>
+          <div class="flex flex-wrap gap-2">
+            {["Willowdale","York Mills","Don Mills","Bayview Village","Lawrence Park","Lansing","Newtonbrook"].map((neighborhood) => (
+              <span class="border-2 border-slate-200 px-4 py-2 text-sm">
+                {neighborhood}
+              </span>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <Services />
+
+  <!-- Location Features -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl font-bold text-slate-900 mb-4 uppercase">WHY CHOOSE DRYSPACE LOCALLY</h2>
+        <p class="text-lg text-slate-600 max-w-3xl mx-auto">
+          Local expertise combined with industry-leading warranties and service
+        </p>
+      </div>
+      
+      <!-- Highlighted Features -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+        {locationFeatures.filter(f => f.highlight).map((feature) => (
+          <div class="bg-amber-500 border-2 border-slate-700 p-6">
+            <h3 class="text-lg font-bold text-slate-900 mb-3 uppercase">{feature.title}</h3>
+            <p class="text-sm text-slate-900">{feature.description}</p>
+          </div>
+        ))}
+      </div>
+      
+      <!-- Regular Features -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {locationFeatures.filter(f => !f.highlight).map((feature) => (
+          <div class="bg-white border-2 border-slate-200 p-6 hover:border-slate-300 transition-colors">
+            <h3 class="text-lg font-bold text-slate-900 mb-3 uppercase">{feature.title}</h3>
+            <p class="text-sm text-slate-600">{feature.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Process -->
+  <Process />
+
+
+  <!-- Location Image Showcase -->
+  <LocationImageShowcase city="North York" />
+
+  <!-- Testimonials -->
+  <Testimonials />
+
+  <!-- FAQ Section -->
+  <section class="py-16 bg-slate-50">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl font-bold text-slate-900 mb-4 uppercase">LOCAL MOISTURE PROTECTION FAQS</h2>
+        <p class="text-lg text-slate-600">Common questions from local homeowners</p>
+      </div>
+      
+      <div class="max-w-4xl mx-auto">
+        {locationFAQs.map((faq, index) => (
+          <details class="mb-4 border-2 border-slate-200 bg-white">
+            <summary class="cursor-pointer p-6 hover:bg-slate-50 transition-colors">
+              <div class="flex items-center justify-between">
+                <h3 class="text-lg font-bold text-slate-900 uppercase pr-4">{faq.question}</h3>
+                <span class="text-slate-400 flex-shrink-0 text-2xl">+</span>
+              </div>
+            </summary>
+            <div class="px-6 pb-6 pt-0">
+              <p class="text-slate-600">{faq.answer}</p>
+            </div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-16 bg-navy-900">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-4xl font-bold text-slate-900 mb-4 uppercase">PROTECT YOUR HIGH-DENSITY COMMUNITY</h2>
+        <p class="text-lg text-slate-300 mb-8">
+          Specialized moisture protection for the area's diverse housing and aging infrastructure challenges
+        </p>
+        
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a 
+            href="/free-inspection"
+            class="bg-amber-500 text-black px-8 py-4 text-lg font-bold hover:bg-amber-400 transition-colors uppercase"
+          >
+            Get Urban Infrastructure Assessment
+          </a>
+          <a 
+            href="tel:437-545-0067"
+            class="border-2 border-white text-slate-900 px-8 py-4 text-lg font-bold hover:bg-white hover:text-black transition-colors uppercase"
+          >
+            Call: 437-545-0067
+          </a>
+        </div>
+        
+        <div class="mt-8 inline-flex items-center text-cyan-400">
+          <span class="text-sm font-bold uppercase">24/7 Emergency Service Available</span>
+        </div>
+      </div>
+    </div>
+  </section>
+</PageLayout>
+
+<script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)}>
+<BreadcrumbSchema items={[{name: 'Home', url: '/'}, {name: 'Locations', url: '/locations'}, {name: 'North York'}]} />

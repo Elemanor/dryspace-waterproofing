@@ -1,0 +1,610 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Hero from "../../components/Hero.astro";
+import CTASection from '../../components/sections/CTA.astro';
+import FAQ from "../../components/FAQ.astro";
+import ServiceSchema from "../../components/ServiceSchema.astro";
+import InternalLinks from "../../components/InternalLinks.astro";
+
+const features = [
+  {
+    title: "Precision Excavation",
+    description: "Careful excavation to undisturbed soil with proper shoring and safety",
+    icon: "🚜"
+  },
+  {
+    title: "Frost Protection",
+    description: "Excavation below frost line (1.2-1.5m) to prevent heaving",
+    icon: "❄️"
+  },
+  {
+    title: "Water Management",
+    description: "Dewatering pumps and drainage to keep excavations dry",
+    icon: "💧"
+  },
+  {
+    title: "Soil Analysis",
+    description: "Testing for bearing capacity, contamination, and pyrite",
+    icon: "🔬"
+  },
+  {
+    title: "Shoring Systems",
+    description: "Engineered shoring for deep excavations and adjacent structures",
+    icon: "🏗️"
+  },
+  {
+    title: "Backfill & Grading",
+    description: "Proper compaction and grading for drainage away from foundation",
+    icon: "📐"
+  }
+];
+
+const process = [
+  {
+    step: 1,
+    title: "Site Assessment",
+    description: "Utility locates, soil testing, and excavation planning"
+  },
+  {
+    step: 2,
+    title: "Safety Setup",
+    description: "Install barriers, shoring, and erosion control measures"
+  },
+  {
+    step: 3,
+    title: "Excavation",
+    description: "Careful removal to proper depth with slope protection"
+  },
+  {
+    step: 4,
+    title: "Foundation Work",
+    description: "Waterproofing, drainage, or sewer installation"
+  },
+  {
+    step: 5,
+    title: "Inspection",
+    description: "City inspection before backfilling"
+  },
+  {
+    step: 6,
+    title: "Backfill & Restoration",
+    description: "Proper compaction, grading, and site restoration"
+  }
+];
+
+const comparisonData = {
+  headers: ["Excavation Type", "Depth", "Timeline", "Price Range", "Includes"],
+  rows: [
+    {
+      feature: "Window Well",
+      cols: ["3-4 ft", "1 day", "$850-1,500", "Small excavation, gravel, drainage"]
+    },
+    {
+      feature: "Foundation Repair",
+      cols: ["6-8 ft", "2-3 days", "$3,200-5,000", "Full wall exposure, shoring"]
+    },
+    {
+      feature: "Full Basement",
+      cols: ["8-10 ft", "1 week", "$8,650-15,000", "Complete perimeter, disposal"]
+    },
+    {
+      feature: "Sewer Line",
+      cols: ["4-12 ft", "2-4 days", "$4,300-8,000", "Trench, bedding, backfill"]
+    },
+    {
+      feature: "Underpinning",
+      cols: ["8-12 ft", "2-3 weeks", "$16,000-25,000", "Staged excavation, engineering"]
+    }
+  ]
+};
+
+const pricingPlans = [
+  {
+    name: "Small Excavation",
+    price: "$150/yd³",
+    period: "minimum $850",
+    description: "Window wells, small repairs",
+    features: [
+      "Up to 5 cubic yards",
+      "Hand or mini excavator",
+      "Basic shoring",
+      "Disposal included",
+      "Same-day backfill",
+      "Site restoration"
+    ],
+    highlighted: false
+  },
+  {
+    name: "Foundation Excavation",
+    price: "$100/yd³",
+    period: "typical $8,650-15,000",
+    description: "Full basement or foundation work",
+    features: [
+      "Complete perimeter access",
+      "Engineered shoring system",
+      "Dewatering if needed",
+      "Utility protection",
+      "Permit coordination",
+      "Staged excavation available",
+      "Professional backfill",
+      "Landscape restoration"
+    ],
+    highlighted: true
+  },
+  {
+    name: "Complex Projects",
+    price: "Custom Quote",
+    period: "engineered solutions",
+    description: "Underpinning, deep sewers, adjacent buildings",
+    features: [
+      "P.Eng excavation plan",
+      "Soldier pile shoring",
+      "Vibration monitoring",
+      "24/7 dewatering",
+      "Contaminated soil handling",
+      "Rock breaking if needed",
+      "Full project management",
+      "Insurance & bonding"
+    ],
+    highlighted: false
+  }
+];
+
+// Service-specific FAQs for ServiceSchema
+const excavationFAQs = [
+  {
+    question: "How much does excavation cost in Toronto?",
+    answer: "Excavation costs depend on depth and complexity: Window wells $850-1,500, foundation repair excavation $3,200-5,000, full basement excavation $8,650-15,000, sewer line excavation $4,300-8,000, and underpinning excavation $16,000-25,000. Additional costs for rock breaking (+$200-500/yd³), contaminated soil (+$150-300/yd³), winter work (+20-30%), and tight access (+15-25%)."
+  },
+  {
+    question: "How long does excavation take?",
+    answer: "Timeline varies by project scope: Window wells 1 day, foundation repair excavation 2-3 days, full basement excavation 1 week, sewer line excavation 2-4 days, and underpinning excavation 2-3 weeks. Weather, soil conditions, and permit requirements can affect timeline. We provide detailed schedules with each project."
+  },
+  {
+    question: "What are the benefits of professional excavation services?",
+    answer: "Professional excavation ensures NBC code compliance, proper depth and bearing capacity, utility protection, adjacent structure safety, engineered shoring systems, proper dewatering, contaminated soil handling, and comprehensive insurance. Our experienced operators prevent costly damage and ensure project success."
+  },
+  {
+    question: "When do I need professional excavation services?",
+    answer: "Professional excavation is required for: foundation waterproofing, underpinning projects, sewer line replacement, basement lowering, structural repairs, deep utility work, adjacent building projects, contaminated soil sites, and when shoring is needed. DIY excavation often violates codes and creates safety hazards."
+  }
+];
+
+// Service offers (pricing tiers)
+const excavationOffers = [
+  {
+    name: "Small Excavation Projects",
+    price: "$150/yd³",
+    description: "Window wells and small repairs up to 5 cubic yards. Hand or mini excavator, basic shoring, disposal included, same-day backfill, and site restoration. Minimum $850."
+  },
+  {
+    name: "Foundation Excavation",
+    price: "$100/yd³",
+    description: "Complete perimeter access with engineered shoring system, dewatering if needed, utility protection, permit coordination, staged excavation available, professional backfill, and landscape restoration. Typical $8,650-15,000."
+  },
+  {
+    name: "Complex Engineering Projects",
+    price: "Custom Quote",
+    description: "P.Eng excavation plans, soldier pile shoring, vibration monitoring, 24/7 dewatering, contaminated soil handling, rock breaking if needed, full project management, and comprehensive insurance and bonding."
+  }
+];
+
+const faqItems = [
+  {
+    question: "What are NBC requirements for excavation depth?",
+    answer: "NBC 9.12.2 requires excavations to extend to undisturbed soil for proper bearing capacity. Minimum foundation depths: heated basements in clay - 1.2m (4 ft), heated basements in other soils - below frost line, unheated spaces - 1.4-1.8m depending on location. All excavations must be kept free of water, organic material, and protected from freezing during construction."
+  },
+  {
+    question: "How do you protect adjacent structures during excavation?",
+    answer: "We use engineered shoring systems including soldier piles, lagging, and bracing for deep excavations. Vibration monitoring ensures no damage to neighboring foundations. We maintain safe slope angles (1.5:1 for Type C soil, 1:1 for Type B) or use shoring when space is limited. Pre-construction surveys document existing conditions. Insurance covers any unlikely damage."
+  },
+  {
+    question: "What about organic material and topsoil removal?",
+    answer: "NBC 9.12.1.1 requires removal of all topsoil and organic matter from unexcavated areas under buildings to prevent pest infestations and odors. In termite-prone areas, all stumps, roots, and wood debris must be removed to minimum 300mm (12\") depth. We separate and dispose of organic material properly, never using it for backfill."
+  },
+  {
+    question: "How do you handle water in excavations?",
+    answer: "NBC 9.12.1.2 requires excavations be kept free of standing water to maintain soil bearing capacity. We use sump pumps for minor water, wellpoint systems for high water tables, and proper drainage channels. Water is directed away from excavation and neighboring properties. Dewatering continues until waterproofing and backfilling are complete."
+  },
+  {
+    question: "What are the backfill requirements?",
+    answer: "NBC 9.12.3 specifies backfill must be placed to maintain structural integrity, compacted in 300mm lifts, graded to slope away from foundation (5% for first 1.5m), and be free of organic material, debris, and boulders >250mm within 600mm of foundation. We use granular material near foundations for drainage and ensure proper compaction to prevent settlement."
+  },
+  {
+    question: "How do you prevent frost damage during winter excavation?",
+    answer: "NBC 9.12.1.3 requires protecting excavation bottoms from freezing to prevent frost heave. We use insulated blankets, heated enclosures for critical work, and calcium chloride when pouring concrete. We never place footings on frozen soil. Winter excavations are immediately protected after exposure. Costs increase 20-30% for winter work due to protection measures."
+  },
+  {
+    question: "What about excavation near property lines?",
+    answer: "Excavations near property lines require special consideration. We obtain agreements from neighbors when needed, use minimal-width shoring systems, and monitor adjacent structures for movement. The 45-degree rule applies - excavation shouldn't undermine neighbor's foundation. Party wall agreements may be required. We handle all coordination and documentation."
+  },
+  {
+    question: "How much does basement excavation cost?",
+    answer: "Costs vary by depth, soil type, and access: Simple foundation excavation: $8,650-15,000. With shoring: add $5,400-10,000. Rock breaking: add $200-500/yd³. Contaminated soil disposal: add $150-300/yd³. Winter work: add 20-30%. Tight access: add 15-25%. We provide detailed quotes after site assessment. Price includes excavation, disposal, and basic backfill."
+  }
+];
+---
+
+<Layout title="Basement & Sewer Excavation Toronto | Professional Excavation Services">
+  <ServiceSchema 
+    serviceName="Basement & Sewer Excavation Services"
+    description="Professional excavation for foundations, waterproofing, sewers, and underpinning. NBC compliant excavation with engineered shoring systems and comprehensive insurance for Toronto projects."
+    priceRange="$850-25,000"
+    areaServed={['Toronto', 'Mississauga', 'Brampton', 'Vaughan', 'Markham', 'Richmond Hill', 'North York', 'Scarborough']}
+    offers={excavationOffers}
+    faqs={excavationFAQs}
+  />
+  <Hero
+    title="Basement & Sewer Excavation Services"
+    subtitle="Professional Excavation for Foundations, Waterproofing, Sewers, and Underpinning. NBC Compliant."
+    backgroundImage="/images/excavation-hero.webp"
+    ctaText="Get Free Quote"
+    ctaLink="/contact"
+  />
+
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-4xl font-bold mb-6">Professional Excavation Services in Toronto</h2>
+        <p class="text-lg text-slate-600 mb-8">
+          Expert excavation for all basement and sewer projects. From foundation repairs to complete underpinning, 
+          we provide safe, precise excavation that meets all NBC requirements and protects your property.
+        </p>
+
+        <!-- NBC Excavation Requirements -->
+        <div class="bg-cyan-50 border-2 border-cyan-400 rounded-lg p-8 mb-12">
+          <h3 class="text-2xl font-bold mb-6 text-cyan-900">NBC 9.12 Excavation Requirements</h3>
+          
+          <div class="grid md:grid-cols-2 gap-6">
+            <div>
+              <h4 class="font-bold mb-3 text-lg">Depth Requirements</h4>
+              <ul class="space-y-2 text-sm">
+                <li class="flex items-start">
+                  <span class="text-cyan-600 mr-2">•</span>
+                  <span><strong>Heated basement:</strong> Min 1.2m in clay soils</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-cyan-600 mr-2">•</span>
+                  <span><strong>Unheated space:</strong> Below frost line (1.4-1.8m)</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-cyan-600 mr-2">•</span>
+                  <span><strong>All excavations:</strong> To undisturbed soil</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-cyan-600 mr-2">•</span>
+                  <span><strong>Concrete steps:</strong> Below frost if >2 risers</span>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 class="font-bold mb-3 text-lg">Site Preparation</h4>
+              <ul class="space-y-2 text-sm">
+                <li class="flex items-start">
+                  <span class="text-cyan-600 mr-2">•</span>
+                  <span><strong>Remove:</strong> All topsoil & organic matter</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-cyan-600 mr-2">•</span>
+                  <span><strong>Termite areas:</strong> Remove roots to 300mm depth</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-cyan-600 mr-2">•</span>
+                  <span><strong>Keep dry:</strong> No standing water permitted</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-cyan-600 mr-2">•</span>
+                  <span><strong>Winter:</strong> Protect from freezing</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="mt-6 p-4 bg-cyan-100 rounded">
+            <p class="text-sm">
+              <strong>Critical:</strong> Standing water reduces soil bearing capacity and causes frost heave. 
+              Frozen excavation bottoms lead to differential settlement and foundation damage.
+            </p>
+          </div>
+        </div>
+
+        <!-- Excavation Types Grid -->
+        <div class="mb-12">
+          <h3 class="text-2xl font-bold mb-6">Our Excavation Services</h3>
+          
+          <div class="grid md:grid-cols-3 gap-6">
+            <div class="bg-white border-2 border-slate-100 rounded-lg p-6">
+              <div class="text-3xl mb-3">🏠</div>
+              <h4 class="font-bold text-lg mb-2">Foundation Excavation</h4>
+              <ul class="text-sm space-y-1 text-slate-600">
+                <li>• Waterproofing access</li>
+                <li>• Foundation repairs</li>
+                <li>• Weeping tile replacement</li>
+                <li>• Full perimeter exposure</li>
+                <li>• 6-10 ft typical depth</li>
+              </ul>
+            </div>
+
+            <div class="bg-white border-2 border-slate-100 rounded-lg p-6">
+              <div class="text-3xl mb-3">🚇</div>
+              <h4 class="font-bold text-lg mb-2">Underpinning Excavation</h4>
+              <ul class="text-sm space-y-1 text-slate-600">
+                <li>• Staged 3-foot sections</li>
+                <li>• Pin excavation method</li>
+                <li>• Bench footing prep</li>
+                <li>• 8-14 ft depths</li>
+                <li>• Engineered sequence</li>
+              </ul>
+            </div>
+
+            <div class="bg-white border-2 border-slate-100 rounded-lg p-6">
+              <div class="text-3xl mb-3">🚰</div>
+              <h4 class="font-bold text-lg mb-2">Sewer & Drainage</h4>
+              <ul class="text-sm space-y-1 text-slate-600">
+                <li>• Main sewer lines</li>
+                <li>• Storm connections</li>
+                <li>• French drains</li>
+                <li>• Catch basins</li>
+                <li>• 4-15 ft depths</li>
+              </ul>
+            </div>
+
+            <div class="bg-white border-2 border-slate-100 rounded-lg p-6">
+              <div class="text-3xl mb-3">🪟</div>
+              <h4 class="font-bold text-lg mb-2">Window Wells</h4>
+              <ul class="text-sm space-y-1 text-slate-600">
+                <li>• Egress window wells</li>
+                <li>• Proper drainage base</li>
+                <li>• Code-compliant sizing</li>
+                <li>• Ladder installation</li>
+                <li>• 3-5 ft typical</li>
+              </ul>
+            </div>
+
+            <div class="bg-white border-2 border-slate-100 rounded-lg p-6">
+              <div class="text-3xl mb-3">🏗️</div>
+              <h4 class="font-bold text-lg mb-2">Shoring & Support</h4>
+              <ul class="text-sm space-y-1 text-slate-600">
+                <li>• Soldier pile walls</li>
+                <li>• Hydraulic bracing</li>
+                <li>• Lagging systems</li>
+                <li>• Adjacent building protection</li>
+                <li>• Engineered solutions</li>
+              </ul>
+            </div>
+
+            <div class="bg-white border-2 border-slate-100 rounded-lg p-6">
+              <div class="text-3xl mb-3">🌊</div>
+              <h4 class="font-bold text-lg mb-2">Dewatering</h4>
+              <ul class="text-sm space-y-1 text-slate-600">
+                <li>• Sump pump systems</li>
+                <li>• Wellpoint dewatering</li>
+                <li>• 24/7 monitoring</li>
+                <li>• High water table solutions</li>
+                <li>• Discharge management</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Backfill Requirements -->
+        <div class="bg-cyan-50 border-2 border-green-400 rounded-lg p-8 mb-12">
+          <h3 class="text-2xl font-bold mb-6 text-cyan-800">NBC 9.12.3 Backfill Requirements</h3>
+          
+          <div class="grid md:grid-cols-2 gap-6">
+            <div>
+              <h4 class="font-bold mb-3">Material Requirements</h4>
+              <ul class="space-y-2 text-sm">
+                <li class="flex items-start">
+                  <span class="text-cyan-600 mr-2">✓</span>
+                  <span>Free-draining granular near foundation</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-cyan-600 mr-2">✓</span>
+                  <span>No organic material or debris</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-cyan-600 mr-2">✓</span>
+                  <span>No boulders >250mm within 600mm</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-cyan-600 mr-2">✓</span>
+                  <span>No pyritic shale (causes heaving)</span>
+                </li>
+              </ul>
+            </div>
+            
+            <div>
+              <h4 class="font-bold mb-3">Placement & Grading</h4>
+              <ul class="space-y-2 text-sm">
+                <li class="flex items-start">
+                  <span class="text-cyan-600 mr-2">✓</span>
+                  <span>Compact in 300mm (12") lifts</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-cyan-600 mr-2">✓</span>
+                  <span>5% slope away for first 1.5m</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-cyan-600 mr-2">✓</span>
+                  <span>Account for 50-100mm settlement</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-cyan-600 mr-2">✓</span>
+                  <span>Protect drainage & waterproofing</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="mt-6 p-4 bg-cyan-100 rounded">
+            <p class="text-sm">
+              <strong>Note:</strong> Foundation walls must be laterally supported before backfilling. 
+              Temporary bracing required if floor system not yet installed.
+            </p>
+          </div>
+        </div>
+
+        <!-- Frost Protection -->
+        <div class="bg-cyan-100 rounded-lg p-8 mb-12">
+          <h3 class="text-2xl font-bold mb-6">Frost Protection & Depth Requirements</h3>
+          
+          <div class="grid md:grid-cols-3 gap-6">
+            <div class="text-center">
+              <div class="text-4xl font-bold text-cyan-600 mb-2">1.2m</div>
+              <p class="font-semibold">Clay Soils</p>
+              <p class="text-sm text-slate-500">Minimum for moisture stability</p>
+            </div>
+            <div class="text-center">
+              <div class="text-4xl font-bold text-purple-600 mb-2">1.5m</div>
+              <p class="font-semibold">Toronto Frost Line</p>
+              <p class="text-sm text-slate-500">Typical depth for GTA</p>
+            </div>
+            <div class="text-center">
+              <div class="text-4xl font-bold text-red-600 mb-2">1.8m</div>
+              <p class="font-semibold">Unheated Spaces</p>
+              <p class="text-sm text-slate-500">Garages, porches, piers</p>
+            </div>
+          </div>
+
+          <div class="mt-6">
+            <h4 class="font-bold mb-3">Freezing Index by Region (Celsius degree-days):</h4>
+            <div class="grid md:grid-cols-2 gap-4 text-sm">
+              <div>
+                <p><strong>Toronto:</strong> 600-800 (1.5m frost depth)</p>
+                <p><strong>Ottawa:</strong> 1,500-1,750 (2.0m frost depth)</p>
+              </div>
+              <div>
+                <p><strong>Thunder Bay:</strong> 2,000-2,250 (2.3m frost depth)</p>
+                <p><strong>Windsor:</strong> 400-500 (1.2m frost depth)</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Safety Measures -->
+        <div class="bg-amber-50 border-2 border-amber-400 rounded-lg p-8 mb-12">
+          <h3 class="text-2xl font-bold mb-6 flex items-center">
+            <span class="text-3xl mr-3">⚠️</span>
+            Excavation Safety & Soil Stability
+          </h3>
+          
+          <div class="grid md:grid-cols-2 gap-6">
+            <div>
+              <h4 class="font-bold mb-3">Slope Requirements (Angle of Repose)</h4>
+              <table class="w-full text-sm">
+                <thead class="bg-amber-50">
+                  <tr>
+                    <th class="px-3 py-2 text-left">Soil Type</th>
+                    <th class="px-3 py-2">Slope Ratio</th>
+                    <th class="px-3 py-2">Angle</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="border-b">
+                    <td class="px-3 py-2">Type A (Clay)</td>
+                    <td class="px-3 py-2 text-center">3/4:1</td>
+                    <td class="px-3 py-2 text-center">53°</td>
+                  </tr>
+                  <tr class="border-b">
+                    <td class="px-3 py-2">Type B (Silt)</td>
+                    <td class="px-3 py-2 text-center">1:1</td>
+                    <td class="px-3 py-2 text-center">45°</td>
+                  </tr>
+                  <tr>
+                    <td class="px-3 py-2">Type C (Sand)</td>
+                    <td class="px-3 py-2 text-center">1.5:1</td>
+                    <td class="px-3 py-2 text-center">34°</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            
+            <div>
+              <h4 class="font-bold mb-3">Safety Measures</h4>
+              <ul class="space-y-2 text-sm">
+                <li class="flex items-start">
+                  <span class="text-amber-500 mr-2">•</span>
+                  <span>Daily excavation inspections</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-amber-500 mr-2">•</span>
+                  <span>Barriers 1m from edge</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-amber-500 mr-2">•</span>
+                  <span>Ladder access every 7.5m</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-amber-500 mr-2">•</span>
+                  <span>Spoil pile 1m from edge</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-amber-500 mr-2">•</span>
+                  <span>Gas monitoring in confined spaces</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Cost Factors -->
+        <div class="bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg p-8 mb-12">
+          <h3 class="text-2xl font-bold mb-6">Excavation Cost Factors</h3>
+          
+          <div class="grid md:grid-cols-2 gap-8">
+            <div>
+              <h4 class="font-bold mb-4">Standard Conditions</h4>
+              <ul class="space-y-2">
+                <li>✓ Good access to site</li>
+                <li>✓ Normal soil (no rock)</li>
+                <li>✓ Dry conditions</li>
+                <li>✓ Summer work</li>
+                <li>✓ Standard disposal</li>
+              </ul>
+              <p class="mt-4 text-xl font-bold">$90-120/cubic yard</p>
+            </div>
+            
+            <div>
+              <h4 class="font-bold mb-4">Additional Costs</h4>
+              <ul class="space-y-2 text-sm">
+                <li>• Rock breaking: +$200-500/yd³</li>
+                <li>• Contaminated soil: +$150-300/yd³</li>
+                <li>• Winter work: +20-30%</li>
+                <li>• Tight access: +15-25%</li>
+                <li>• Shoring required: +$5,400-15,000</li>
+                <li>• Dewatering: +$2,200-5,000</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Related Construction Services -->
+  <section class="py-16 bg-cyan-50">
+    <div class="container mx-auto px-4 max-w-6xl">
+      <InternalLinks category="construction" currentPage="excavation-services" limit={6} />
+    </div>
+  </section>
+
+  <!-- ServiceFeatures removed -->
+  
+  
+  
+
+  <FAQ items={faqItems} />
+  
+  <CTASection
+    title="Need Professional Excavation Services?"
+    description="Get a free quote for your basement or sewer excavation project. Safe, precise, NBC compliant."
+    primaryButtonText="Get Free Quote"
+    primaryButtonLink="/contact"
+    secondaryButtonText="Call 437-545-0067"
+    secondaryButtonLink="tel:437-545-0067"
+  />
+
+  <!-- ServiceAreas removed -->
+</Layout>

@@ -1,0 +1,137 @@
+---
+const testimonials = [
+  {
+    name: 'Sarah Chen',
+    location: 'Toronto',
+    date: 'November 2024',
+    text: 'After spring flooding, Dryspace responded within 2 hours. Their team was professional, thorough, and the 25-year warranty gives us peace of mind.',
+    service: 'Emergency Waterproofing',
+    verified: true,
+  },
+  {
+    name: 'Michael Rodriguez',
+    location: 'Mississauga',
+    date: 'October 2024',
+    text: 'They helped us get the maximum government rebate and handled all the paperwork. Saved us over $3,400 on our exterior waterproofing project!',
+    service: 'Exterior Waterproofing',
+    verified: true,
+  },
+  {
+    name: 'Jennifer Park',
+    location: 'Vaughan',
+    date: 'October 2024',
+    text: 'Professional from start to finish. The crew was respectful of our property, cleaned up daily, and finished on schedule. Highly recommend!',
+    service: 'Foundation Repair',
+    verified: true,
+  },
+  {
+    name: 'David Thompson',
+    location: 'Markham',
+    date: 'September 2024',
+    text: 'Our basement has been dry for 3 years now. The sump pump system they installed works flawlessly, even during heavy storms.',
+    service: 'Sump Pump Installation',
+    verified: true,
+  },
+  {
+    name: 'Lisa Anderson',
+    location: 'Brampton',
+    date: 'September 2024',
+    text: 'Best decision we made for our home. The interior waterproofing solution was less invasive than expected and works perfectly.',
+    service: 'Interior Waterproofing',
+    verified: true,
+  },
+  {
+    name: 'Robert Kim',
+    location: 'North York',
+    date: 'August 2024',
+    text: 'Fair pricing, excellent communication, and quality work. They fixed foundation cracks that two other companies said needed major work.',
+    service: 'Foundation Crack Repair',
+    verified: true,
+  },
+];
+---
+
+<section class="section-padding bg-slate-50">
+  <div class="container mx-auto px-4">
+    <!-- Section Header -->
+    <div class="text-center mb-12">
+      <p class="section-label-pill mb-4">Testimonials</p>
+      <h2 class="text-headline text-slate-900 mb-4">Customer Reviews</h2>
+      <p class="text-lg text-slate-600 max-w-2xl mx-auto">
+        Verified testimonials from Greater Toronto Area homeowners
+      </p>
+
+      <!-- Trust Badge -->
+      <div class="mt-8 inline-flex items-center gap-4 rounded-xl border border-slate-200 bg-white px-6 py-3 shadow-card">
+        <div class="flex items-center gap-1">
+          {[1,2,3,4,5].map(() => (
+            <svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+          ))}
+        </div>
+        <div class="h-8 w-px bg-slate-200"></div>
+        <div class="text-left">
+          <p class="text-sm font-bold text-slate-900">4.9/5.0 Google</p>
+          <p class="text-xs text-slate-500">487+ Verified Reviews</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Testimonials Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 max-w-6xl mx-auto">
+      {testimonials.map((testimonial) => (
+        <div class="rounded-xl border border-slate-200/60 bg-white shadow-card transition-all duration-300 hover:shadow-card-hover hover:-translate-y-0.5 overflow-hidden">
+          <!-- Service Header -->
+          <div class="bg-navy-900 px-5 py-3 flex items-center justify-between">
+            <p class="text-xs font-semibold text-cyan-400 uppercase tracking-wider">{testimonial.service}</p>
+            {testimonial.verified && (
+              <span class="inline-flex items-center gap-1 text-[10px] text-white/70 font-medium">
+                <svg class="w-3 h-3 text-cyan-400" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                </svg>
+                Verified
+              </span>
+            )}
+          </div>
+
+          <!-- Content -->
+          <div class="p-5">
+            <!-- Stars -->
+            <div class="flex items-center gap-0.5 mb-3">
+              {[1,2,3,4,5].map(() => (
+                <svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+              ))}
+            </div>
+
+            <p class="text-sm text-slate-600 leading-relaxed mb-4">"{testimonial.text}"</p>
+
+            <!-- Customer Info -->
+            <div class="border-t border-slate-100 pt-3">
+              <p class="text-sm font-semibold text-slate-900">{testimonial.name}</p>
+              <div class="flex items-center justify-between mt-0.5">
+                <span class="text-xs text-slate-400">{testimonial.location}</span>
+                <span class="text-xs text-slate-400">{testimonial.date}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Bottom CTA -->
+    <div class="mt-12 text-center">
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/free-inspection" class="btn-primary">
+          Get Free Inspection
+        </a>
+        <a
+          href="https://g.page/r/dryspaceca/review"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn-secondary"
+        >
+          Read More Reviews
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

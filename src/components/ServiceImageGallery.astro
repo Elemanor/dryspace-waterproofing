@@ -1,0 +1,250 @@
+---
+export interface Props {
+  service: string;
+  images?: Array<{
+    src: string;
+    alt: string;
+    caption?: string;
+  }>;
+}
+
+const { service, images } = Astro.props;
+
+// Define image mappings for each service
+const serviceImages = {
+  'exterior-waterproofing': [
+    {
+      src: '/images/exterior-waterproofing-membrane.webp',
+      alt: 'Exterior waterproofing membrane installation',
+      caption: 'Professional membrane application for complete protection'
+    },
+    {
+      src: '/images/new foundation exterior waterproofing dimpled membrane.webp',
+      alt: 'Dimpled membrane installation on foundation',
+      caption: 'Advanced dimpled membrane system for drainage'
+    },
+    {
+      src: '/images/exterior-waterproofing-toronto in process (1).webp',
+      alt: 'Exterior waterproofing process in Toronto',
+      caption: 'Our team excavating to install waterproofing'
+    },
+    {
+      src: '/images/dimpled membrane on base of footing.webp',
+      alt: 'Dimpled membrane at foundation footing',
+      caption: 'Proper installation at the footing level'
+    }
+  ],
+  'interior-waterproofing': [
+    {
+      src: '/images/interior-waterproofing.webp',
+      alt: 'Interior waterproofing system installation',
+      caption: 'Interior drainage system with vapor barrier'
+    },
+    {
+      src: '/images/waterproofing diagram with basement sump pump weeping tile and exterior drainage.webp',
+      alt: 'Complete waterproofing system diagram',
+      caption: 'Comprehensive drainage and pump system'
+    },
+    {
+      src: '/images/cove leak.webp',
+      alt: 'Cove joint leak repair',
+      caption: 'Common cove joint water infiltration'
+    }
+  ],
+  'foundation-repair': [
+    {
+      src: '/images/crack.webp',
+      alt: 'Foundation crack requiring repair',
+      caption: 'Typical foundation crack before repair'
+    },
+    {
+      src: '/images/crack_repair.webp',
+      alt: 'Professional crack repair process',
+      caption: 'Injection repair method for permanent seal'
+    },
+    {
+      src: '/images/structural foundation crack.webp',
+      alt: 'Structural foundation crack',
+      caption: 'Major structural crack requiring immediate attention'
+    },
+    {
+      src: '/images/step crack.webp',
+      alt: 'Step crack in foundation wall',
+      caption: 'Step cracking pattern in block foundation'
+    }
+  ],
+  'sump-pump': [
+    {
+      src: '/images/sump-pump.webp',
+      alt: 'Sump pump installation',
+      caption: 'High-capacity sump pump system'
+    },
+    {
+      src: '/images/sump pump with back up.webp',
+      alt: 'Sump pump with battery backup',
+      caption: 'Battery backup system for power outages'
+    },
+    {
+      src: '/images/sump pump with water.webp',
+      alt: 'Active sump pump removing water',
+      caption: 'Sump pump actively removing groundwater'
+    },
+    {
+      src: '/images/placing new sump pump.webp',
+      alt: 'Installing new sump pump',
+      caption: 'Professional sump pump installation'
+    }
+  ],
+  'french-drain': [
+    {
+      src: '/images/drains.webp',
+      alt: 'French drain system installation',
+      caption: 'Perimeter drainage system'
+    },
+    {
+      src: '/images/perforated drain.webp',
+      alt: 'Perforated drain pipe',
+      caption: 'High-quality perforated drainage pipe'
+    },
+    {
+      src: '/images/waterproofing diagram with basement sump pump weeping tile and exterior drainage.webp',
+      alt: 'Complete drainage system diagram',
+      caption: 'Integrated drainage solution'
+    }
+  ],
+  'underpinning': [
+    {
+      src: '/assets/waterproofing/underpinning_process.JPG',
+      alt: 'Underpinning process in progress',
+      caption: 'Systematic underpinning excavation'
+    },
+    {
+      src: '/assets/waterproofing/excavated_underpinning.JPG',
+      alt: 'Excavated underpinning section',
+      caption: 'Proper excavation for underpinning'
+    },
+    {
+      src: '/assets/waterproofing/finished underpinning.JPG',
+      alt: 'Completed underpinning project',
+      caption: 'Finished underpinning with increased ceiling height'
+    },
+    {
+      src: '/assets/waterproofing/underpinning_section.JPG',
+      alt: 'Underpinning section detail',
+      caption: 'Cross-section of underpinning work'
+    }
+  ],
+  'mold-remediation': [
+    {
+      src: '/images/mold.webp',
+      alt: 'Mold growth in basement',
+      caption: 'Dangerous mold requiring professional removal'
+    },
+    {
+      src: '/images/toronto-mold-mitigation.webp',
+      alt: 'Mold mitigation process in Toronto',
+      caption: 'Professional mold remediation service'
+    },
+    {
+      src: '/images/Efflorescence.webp',
+      alt: 'Efflorescence on basement walls',
+      caption: 'White mineral deposits indicating moisture'
+    }
+  ],
+  'emergency': [
+    {
+      src: '/images/wet walls.webp',
+      alt: 'Emergency water damage on walls',
+      caption: 'Severe water infiltration requiring immediate attention'
+    },
+    {
+      src: '/images/waterp on the floor.webp',
+      alt: 'Water pooling on basement floor',
+      caption: 'Emergency flooding situation'
+    },
+    {
+      src: '/images/basement-water-leak-inspection.webp',
+      alt: 'Emergency leak inspection',
+      caption: '24/7 emergency response team'
+    }
+  ],
+  'backwater-valve': [
+    {
+      src: '/images/backwatervalve.webp',
+      alt: 'Backwater valve installation',
+      caption: 'Backwater valve prevents sewage backup'
+    }
+  ],
+  'insulation': [
+    {
+      src: '/images/basement_wall_insulation.webp',
+      alt: 'Basement wall insulation',
+      caption: 'Proper insulation prevents condensation'
+    },
+    {
+      src: '/images/waterproofing + insuulation of foundation walls styrofoam.webp',
+      alt: 'Waterproofing with insulation',
+      caption: 'Combined waterproofing and insulation system'
+    }
+  ]
+};
+
+// Get images for the current service or use provided images
+const galleryImages = images || serviceImages[service] || [];
+---
+
+{galleryImages.length > 0 && (
+  <section class="py-12 bg-slate-50">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-12 uppercase">
+        Project Gallery & Process Photos
+      </h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        {galleryImages.map((image) => (
+          <div class="group relative overflow-hidden bg-white shadow-lg hover:shadow-xl transition-shadow">
+            <div class="aspect-w-4 aspect-h-3 bg-slate-100">
+              <img 
+                src={image.src} 
+                alt={image.alt}
+                loading="lazy"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+              />
+            </div>
+            {image.caption && (
+              <div class="p-4">
+                <p class="text-sm text-slate-600">{image.caption}</p>
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
+      
+      <div class="mt-8 text-center">
+        <p class="text-slate-500 mb-4">
+          See more of our professional work and successful projects
+        </p>
+        <a href="/gallery" class="inline-block bg-amber-500 text-black font-bold py-3 px-8 hover:bg-amber-400 transition-colors">
+          View Full Gallery
+        </a>
+      </div>
+    </div>
+  </section>
+)}
+
+<style>
+  .aspect-w-4 {
+    position: relative;
+    padding-bottom: 75%; /* 4:3 Aspect Ratio */
+  }
+  
+  .aspect-w-4 > img {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+</style>

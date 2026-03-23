@@ -1,0 +1,91 @@
+---
+export interface Props {
+  title: string;
+  description: string;
+  priceRange?: string;
+  duration?: string;
+  rebate?: string;
+  backgroundImage?: string;
+  breadcrumbs?: Array<{ label: string; href?: string }>;
+}
+
+const {
+  title,
+  description,
+  priceRange,
+  duration,
+  rebate,
+  backgroundImage,
+  breadcrumbs = [],
+} = Astro.props;
+---
+
+<section class="relative bg-gradient-hero py-20 lg:py-28 overflow-hidden">
+  {/* Background image if provided */}
+  {backgroundImage && (
+    <div class="absolute inset-0 z-0">
+      <img src={backgroundImage} alt="" class="w-full h-full object-cover opacity-20" loading="eager" />
+      <div class="absolute inset-0 bg-gradient-to-b from-navy-900/80 via-navy-900/60 to-navy-900/90"></div>
+    </div>
+  )}
+
+  <div class="relative z-10 container mx-auto px-4">
+    {/* Breadcrumbs */}
+    {breadcrumbs.length > 0 && (
+      <nav class="mb-8" aria-label="Breadcrumb">
+        <ol class="flex items-center gap-2 text-sm text-slate-400">
+          <li><a href="/" class="hover:text-cyan-400 transition-colors">Home</a></li>
+          {breadcrumbs.map((crumb, i) => (
+            <li class="flex items-center gap-2">
+              <svg class="h-3 w-3 text-slate-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg>
+              {crumb.href ? (
+                <a href={crumb.href} class="hover:text-cyan-400 transition-colors">{crumb.label}</a>
+              ) : (
+                <span class="text-white">{crumb.label}</span>
+              )}
+            </li>
+          ))}
+        </ol>
+      </nav>
+    )}
+
+    <div class="max-w-3xl">
+      <p class="section-label-pill border-cyan-400/20 bg-cyan-400/10 text-cyan-400 mb-6">Professional Service</p>
+      <h1 class="text-display text-white mb-6">{title}</h1>
+      <p class="text-xl text-slate-300 leading-relaxed mb-8">{description}</p>
+
+      {/* Info badges */}
+      <div class="flex flex-wrap gap-3 mb-10">
+        {priceRange && (
+          <span class="inline-flex items-center gap-2 rounded-lg bg-white/10 backdrop-blur px-4 py-2 text-sm font-medium text-white">
+            <svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M8.433 7.418c.155-.103.346-.196.567-.267v1.698a2.305 2.305 0 01-.567-.267C8.07 8.34 8 8.114 8 8c0-.114.07-.34.433-.582zM11 12.849v-1.698c.22.071.412.164.567.267.364.243.433.468.433.582 0 .114-.07.34-.433.582a2.305 2.305 0 01-.567.267z" /><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-13a1 1 0 10-2 0v.092a4.535 4.535 0 00-1.676.662C6.602 6.234 6 7.009 6 8c0 .99.602 1.765 1.324 2.246.48.32 1.054.545 1.676.662v1.941c-.391-.127-.68-.317-.843-.504a1 1 0 10-1.51 1.31c.562.649 1.413 1.076 2.353 1.253V15a1 1 0 102 0v-.092a4.535 4.535 0 001.676-.662C13.398 13.766 14 12.991 14 12c0-.99-.602-1.765-1.324-2.246A4.535 4.535 0 0011 9.092V7.151c.391.127.68.317.843.504a1 1 0 101.511-1.31c-.563-.649-1.413-1.076-2.354-1.253V5z" clip-rule="evenodd" /></svg>
+            {priceRange}
+          </span>
+        )}
+        {duration && (
+          <span class="inline-flex items-center gap-2 rounded-lg bg-white/10 backdrop-blur px-4 py-2 text-sm font-medium text-white">
+            <svg class="w-4 h-4 text-cyan-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd" /></svg>
+            {duration}
+          </span>
+        )}
+        {rebate && (
+          <span class="inline-flex items-center gap-2 rounded-lg bg-amber-500/20 backdrop-blur px-4 py-2 text-sm font-semibold text-amber-400">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5 2a2 2 0 00-2 2v14l3.5-2 3.5 2 3.5-2 3.5 2V4a2 2 0 00-2-2H5zm4.707 3.707a1 1 0 00-1.414-1.414l-3 3a1 1 0 000 1.414l3 3a1 1 0 001.414-1.414L8.414 9H10a3 3 0 013 3v1a1 1 0 102 0v-1a5 5 0 00-5-5H8.414l1.293-1.293z" clip-rule="evenodd" /></svg>
+            {rebate}
+          </span>
+        )}
+      </div>
+
+      {/* CTA buttons */}
+      <div class="flex flex-col sm:flex-row gap-4">
+        <a href="/free-inspection" class="btn-primary !px-8 !py-4 !text-lg">
+          Get Free Inspection
+        </a>
+        <a href="tel:437-545-0067" class="btn-ghost border-2 border-white/20 !px-8 !py-4 !text-lg">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" /></svg>
+          Emergency: 437-545-0067
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,36 @@
+---
+const lastUpdated = new Date().toLocaleDateString('en-CA', {
+  year: 'numeric',
+  month: 'long', 
+  day: 'numeric'
+});
+---
+
+<div class="last-updated">
+  <span class="update-icon">📅</span>
+  <span>Last Updated: <time datetime={new Date().toISOString()}>{lastUpdated}</time></span>
+</div>
+
+<style>
+  .last-updated {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    background: rgba(0, 119, 190, 0.05);
+    border-left: 3px solid #0077BE;
+    border-radius: 5px;
+    font-size: 14px;
+    color: #666;
+    margin: 20px 0;
+  }
+  
+  .update-icon {
+    font-size: 18px;
+  }
+  
+  .last-updated time {
+    font-weight: 600;
+    color: #333;
+  }
+</style>

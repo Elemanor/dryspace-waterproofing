@@ -1,0 +1,579 @@
+---
+// Sticky Book Now Button & Live Chat Widget
+---
+
+<!-- Sticky Book Now Button -->
+<div class="sticky-booking">
+  <a href="/free-inspection" class="book-now-btn">
+    <span class="btn-text">Book Free Inspection</span>
+    <span class="btn-icon">→</span>
+  </a>
+  <div class="emergency-strip">
+    <span>24/7 Emergency</span>
+    <a href="tel:4375450067">(437) 545-0067</a>
+  </div>
+</div>
+
+<!-- Live Chat Widget (Tidio) -->
+<div class="live-chat-widget">
+  <button class="chat-launcher" id="chatLauncher">
+    <span class="chat-icon">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+        <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z" fill="currentColor"/>
+      </svg>
+    </span>
+    <span class="chat-text">Need Help?</span>
+    <span class="chat-badge">1</span>
+  </button>
+  
+  <div class="chat-popup" id="chatPopup">
+    <div class="chat-header">
+      <div class="chat-status">
+        <span class="status-dot"></span>
+        <span>We're Online!</span>
+      </div>
+      <button class="chat-close" id="chatClose">×</button>
+    </div>
+    
+    <div class="chat-body">
+      <div class="chat-message bot">
+        <p>👋 Hi! How can we help protect your basement today?</p>
+      </div>
+      
+      <div class="quick-responses">
+        <button data-response="emergency">🚨 Emergency Flooding</button>
+        <button data-response="quote">💰 Get a Quote</button>
+        <button data-response="inspection">🔍 Book Inspection</button>
+        <button data-response="question">❓ Ask a Question</button>
+      </div>
+    </div>
+    
+    <div class="chat-input">
+      <input type="text" placeholder="Type your message..." id="chatInput" />
+      <button id="chatSend">Send</button>
+    </div>
+  </div>
+</div>
+
+<!-- Exit Intent Popup -->
+<div class="exit-popup" id="exitPopup">
+  <div class="popup-content">
+    <button class="popup-close" id="popupClose">×</button>
+    <h2>Wait! Don't Let Water Damage Your Home</h2>
+    <p>Get <strong>$500 OFF</strong> your waterproofing project</p>
+    <div class="popup-offer">
+      <span class="offer-badge">LIMITED TIME</span>
+      <span class="offer-text">Plus FREE Inspection ($299 Value)</span>
+    </div>
+    <form class="popup-form" id="exitForm">
+      <input type="email" placeholder="Enter your email" required />
+      <button type="submit">Claim My $500 OFF</button>
+    </form>
+    <p class="popup-disclaimer">No spam. Offer expires in 48 hours.</p>
+  </div>
+</div>
+
+<style>
+  /* Sticky Booking Button */
+  .sticky-booking {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 998;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    animation: slideInUp 0.5s ease;
+  }
+  
+  @keyframes slideInUp {
+    from {
+      transform: translateY(100px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  .book-now-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 25px;
+    background: linear-gradient(135deg, #FF6B35, #ff5722);
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    box-shadow: 0 4px 20px rgba(255, 107, 53, 0.3);
+    transition: all 0.3s;
+    animation: pulse 2s infinite;
+  }
+  
+  @keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+  }
+  
+  .book-now-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 30px rgba(255, 107, 53, 0.4);
+  }
+  
+  .btn-icon {
+    font-size: 20px;
+    transition: transform 0.3s;
+  }
+  
+  .book-now-btn:hover .btn-icon {
+    transform: translateX(5px);
+  }
+  
+  .emergency-strip {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 15px;
+    background: rgba(211, 47, 47, 0.9);
+    color: white;
+    border-radius: 25px;
+    font-size: 14px;
+    justify-content: center;
+  }
+  
+  .emergency-strip a {
+    color: white;
+    font-weight: 600;
+    text-decoration: none;
+  }
+  
+  /* Live Chat Widget */
+  .live-chat-widget {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    z-index: 997;
+  }
+  
+  .chat-launcher {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 20px;
+    background: #0077BE;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: 500;
+    box-shadow: 0 4px 15px rgba(0, 119, 190, 0.3);
+    transition: all 0.3s;
+    position: relative;
+  }
+  
+  .chat-launcher:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 119, 190, 0.4);
+  }
+  
+  .chat-badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: #FF6B35;
+    color: white;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 600;
+    animation: bounce 2s infinite;
+  }
+  
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+  }
+  
+  .chat-popup {
+    position: absolute;
+    bottom: 70px;
+    left: 0;
+    width: 350px;
+    height: 450px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    display: none;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  
+  .chat-popup.active {
+    display: flex;
+    animation: slideIn 0.3s ease;
+  }
+  
+  @keyframes slideIn {
+    from {
+      transform: translateY(20px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  .chat-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background: linear-gradient(135deg, #0077BE, #0066a5);
+    color: white;
+  }
+  
+  .chat-status {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .status-dot {
+    width: 8px;
+    height: 8px;
+    background: #4CAF50;
+    border-radius: 50%;
+    animation: blink 2s infinite;
+  }
+  
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+  }
+  
+  .chat-close {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 28px;
+    cursor: pointer;
+    line-height: 1;
+  }
+  
+  .chat-body {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    background: #f8f9fa;
+  }
+  
+  .chat-message {
+    margin-bottom: 15px;
+  }
+  
+  .chat-message.bot {
+    background: white;
+    padding: 12px 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  }
+  
+  .chat-message p {
+    margin: 0;
+    color: #333;
+  }
+  
+  .quick-responses {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 20px;
+  }
+  
+  .quick-responses button {
+    padding: 10px;
+    background: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-size: 14px;
+  }
+  
+  .quick-responses button:hover {
+    background: #0077BE;
+    color: white;
+    border-color: #0077BE;
+  }
+  
+  .chat-input {
+    display: flex;
+    padding: 15px;
+    border-top: 1px solid #e0e0e0;
+    background: white;
+  }
+  
+  .chat-input input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #e0e0e0;
+    border-radius: 25px;
+    outline: none;
+    margin-right: 10px;
+  }
+  
+  #chatSend {
+    padding: 10px 20px;
+    background: #0077BE;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 500;
+  }
+  
+  /* Exit Intent Popup */
+  .exit-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+  }
+  
+  .exit-popup.active {
+    display: flex;
+  }
+  
+  .popup-content {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    max-width: 500px;
+    width: 90%;
+    text-align: center;
+    position: relative;
+    animation: popIn 0.3s ease;
+  }
+  
+  @keyframes popIn {
+    from {
+      transform: scale(0.8);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
+  .popup-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+    color: #999;
+  }
+  
+  .popup-content h2 {
+    color: #333;
+    margin-bottom: 15px;
+  }
+  
+  .popup-content p {
+    color: #666;
+    margin-bottom: 20px;
+    font-size: 18px;
+  }
+  
+  .popup-offer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 25px;
+  }
+  
+  .offer-badge {
+    background: #FF6B35;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-weight: 600;
+    animation: flash 1s infinite;
+  }
+  
+  @keyframes flash {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.8; }
+  }
+  
+  .popup-form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+  }
+  
+  .popup-form input {
+    flex: 1;
+    padding: 12px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    outline: none;
+  }
+  
+  .popup-form button {
+    padding: 12px 25px;
+    background: linear-gradient(135deg, #FF6B35, #ff5722);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  
+  .popup-disclaimer {
+    font-size: 12px;
+    color: #999;
+    margin: 0;
+  }
+  
+  /* Mobile Responsive */
+  @media (max-width: 768px) {
+    .sticky-booking {
+      bottom: 10px;
+      right: 10px;
+    }
+    
+    .live-chat-widget {
+      bottom: 10px;
+      left: 10px;
+    }
+    
+    .chat-popup {
+      width: calc(100vw - 20px);
+      max-width: 350px;
+    }
+    
+    .popup-content {
+      padding: 30px 20px;
+    }
+    
+    .popup-form {
+      flex-direction: column;
+    }
+  }
+</style>
+
+<script>
+  // Chat Widget Functionality
+  const chatLauncher = document.getElementById('chatLauncher');
+  const chatPopup = document.getElementById('chatPopup');
+  const chatClose = document.getElementById('chatClose');
+  const chatInput = document.getElementById('chatInput');
+  const chatSend = document.getElementById('chatSend');
+  
+  chatLauncher?.addEventListener('click', () => {
+    chatPopup?.classList.add('active');
+  });
+  
+  chatClose?.addEventListener('click', () => {
+    chatPopup?.classList.remove('active');
+  });
+  
+  // Quick Response Handlers
+  document.querySelectorAll('.quick-responses button').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      const response = e.target.getAttribute('data-response');
+      handleQuickResponse(response);
+    });
+  });
+  
+  function handleQuickResponse(type) {
+    switch(type) {
+      case 'emergency':
+        window.location.href = 'tel:4375450067';
+        break;
+      case 'quote':
+        window.location.href = '/free-inspection';
+        break;
+      case 'inspection':
+        window.location.href = '/free-inspection';
+        break;
+      case 'question':
+        chatInput?.focus();
+        break;
+    }
+  }
+  
+  // Exit Intent Popup
+  const exitPopup = document.getElementById('exitPopup');
+  const popupClose = document.getElementById('popupClose');
+  const exitForm = document.getElementById('exitForm');
+  let exitIntentShown = false;
+  
+  // Detect exit intent
+  document.addEventListener('mouseleave', (e) => {
+    if (e.clientY <= 0 && !exitIntentShown && !localStorage.getItem('exitPopupShown')) {
+      exitPopup?.classList.add('active');
+      exitIntentShown = true;
+      localStorage.setItem('exitPopupShown', 'true');
+      
+      // Remove flag after 24 hours
+      setTimeout(() => {
+        localStorage.removeItem('exitPopupShown');
+      }, 86400000);
+    }
+  });
+  
+  popupClose?.addEventListener('click', () => {
+    exitPopup?.classList.remove('active');
+  });
+  
+  exitForm?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const email = e.target.querySelector('input[type="email"]').value;
+    
+    // Send to your backend
+    console.log('Email collected:', email);
+    
+    // Show success message
+    const formContainer = exitForm.parentElement;
+    formContainer.innerHTML = `
+      <div style="padding: 20px;">
+        <h3 style="color: #4CAF50;">✓ Success!</h3>
+        <p>Check your email for your $500 OFF coupon code.</p>
+      </div>
+    `;
+    
+    setTimeout(() => {
+      exitPopup?.classList.remove('active');
+    }, 3000);
+  });
+  
+  // Tidio Integration (when you have the account)
+  // Uncomment when you have Tidio account
+  /*
+  (function() {
+    var tidioScript = document.createElement('script');
+    tidioScript.src = '//code.tidio.co/YOUR_TIDIO_KEY.js';
+    tidioScript.async = true;
+    document.body.appendChild(tidioScript);
+  })();
+  */
+</script>

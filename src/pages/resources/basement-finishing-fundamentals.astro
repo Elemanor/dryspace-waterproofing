@@ -1,0 +1,1405 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import ContactForm from '../../components/ContactForm.astro';
+import ResourceImageGallery from '../../components/ResourceImageGallery.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+
+const title = "Basement Finishing Fundamentals Toronto | Water Management & Insulation Guide";
+const description = "Complete guide to basement finishing in Toronto. Water management systems, vapor barriers, insulation R-values, standoff walls, and Toronto Building Code compliance.";
+---
+
+<PageLayout title={title} description={description}>
+  
+  <!-- Breadcrumbs -->
+  <div class="container mx-auto px-4 mt-4">
+    <Breadcrumbs 
+      items={[
+        { name: "Home", url: "/" },
+        { name: "Resources", url: "/resources" },
+        { name: "Basement Finishing Fundamentals" }
+      ]}
+    />
+  </div>
+
+<div class="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-blue-900 via-blue-800 to-slate-800 text-white py-20">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto text-center">
+          <h1 class="text-5xl md:text-6xl font-bold mb-6 leading-tight">
+            Basement Finishing Fundamentals
+          </h1>
+          <p class="text-xl md:text-2xl mb-8 text-cyan-100">
+            Complete Technical Guide to Professional Basement Finishing in Toronto
+          </p>
+          <div class="grid md:grid-cols-3 gap-6 mt-12">
+            <div class="bg-white/10 backdrop-blur-sm rounded-lg p-6">
+              <h3 class="text-lg font-semibold mb-2">Water Management</h3>
+              <p class="text-sm text-cyan-100">Comprehensive moisture control systems</p>
+            </div>
+            <div class="bg-white/10 backdrop-blur-sm rounded-lg p-6">
+              <h3 class="text-lg font-semibold mb-2">Smart Insulation</h3>
+              <p class="text-sm text-cyan-100">R-value optimization for Toronto climate</p>
+            </div>
+            <div class="bg-white/10 backdrop-blur-sm rounded-lg p-6">
+              <h3 class="text-lg font-semibold mb-2">Code Compliance</h3>
+              <p class="text-sm text-cyan-100">Toronto Building Code requirements</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Introduction -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-4xl font-bold text-slate-900 mb-8">Professional Basement Finishing: The Foundation of Success</h2>
+          
+          <div class="prose prose-lg max-w-none">
+            <p class="text-xl text-slate-600 mb-6">
+              Basement finishing in Toronto presents unique challenges due to our climate extremes, soil conditions, and moisture management requirements. This comprehensive guide covers the fundamental systems and techniques required for successful basement finishing projects that meet Toronto Building Code requirements and provide long-term performance.
+            </p>
+            
+            <div class="bg-amber-50 border-l-4 border-amber-400 p-6 my-8">
+              <div class="flex">
+                <div class="flex-shrink-0">
+                  <svg class="h-5 w-5 text-amber-400" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd" />
+                  </svg>
+                </div>
+                <div class="ml-3">
+                  <h3 class="text-sm font-medium text-amber-800">Critical Success Factors</h3>
+                  <p class="mt-2 text-sm text-amber-700">
+                    Proper moisture management is the foundation of all successful basement finishing projects. Toronto's clay soils, freeze-thaw cycles, and high water table create challenging conditions that require specialized approaches to insulation, vapor barriers, and water management systems.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Water Management Systems -->
+    <section class="py-16 bg-slate-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-4xl font-bold text-slate-900 mb-12 text-center">Water Management Systems</h2>
+          
+          <div class="grid lg:grid-cols-2 gap-12">
+            <div>
+              <h3 class="text-2xl font-semibold text-slate-800 mb-6">Comprehensive Moisture Control Strategy</h3>
+              
+              <div class="space-y-8">
+                <div class="bg-white rounded-lg p-6 shadow-md">
+                  <h4 class="text-xl font-semibold text-cyan-600 mb-4">1. Primary Water Management</h4>
+                  <div class="space-y-4">
+                    <div>
+                      <h5 class="font-medium text-slate-800 mb-2">Exterior Waterproofing Integration</h5>
+                      <ul class="text-slate-500 space-y-1">
+                        <li>• Coordinate with existing exterior waterproofing systems</li>
+                        <li>• Verify weeping tile functionality and drainage</li>
+                        <li>• Assess foundation wall condition and previous repairs</li>
+                        <li>• Document moisture intrusion points before finishing</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <h5 class="font-medium text-slate-800 mb-2">Interior Drainage Systems</h5>
+                      <ul class="text-slate-500 space-y-1">
+                        <li>• Sub-slab drainage integration with sump pump systems</li>
+                        <li>• Perimeter drainage channels behind finished walls</li>
+                        <li>• Vapor collection systems in cavity walls</li>
+                        <li>• Emergency overflow routing and backup systems</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="bg-white rounded-lg p-6 shadow-md">
+                  <h4 class="text-xl font-semibold text-cyan-600 mb-4">2. Humidity and Condensation Control</h4>
+                  <div class="space-y-4">
+                    <div>
+                      <h5 class="font-medium text-slate-800 mb-2">Mechanical Ventilation Requirements</h5>
+                      <ul class="text-slate-500 space-y-1">
+                        <li>• Minimum 0.3 ACH (Air Changes per Hour) continuous ventilation</li>
+                        <li>• Dedicated dehumidification systems for finished spaces</li>
+                        <li>• Heat recovery ventilation (HRV) integration</li>
+                        <li>• Exhaust ventilation for bathrooms and utility areas</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <h5 class="font-medium text-slate-800 mb-2">Temperature Control Strategies</h5>
+                      <ul class="text-slate-500 space-y-1">
+                        <li>• Thermal bridging elimination through wall systems</li>
+                        <li>• Radiant floor heating for consistent temperatures</li>
+                        <li>• Zone control for efficient heating and cooling</li>
+                        <li>• Condensation prevention through dewpoint management</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <h3 class="text-2xl font-semibold text-slate-800 mb-6">Advanced Water Management Technologies</h3>
+              
+              <div class="space-y-8">
+                <div class="bg-white rounded-lg p-6 shadow-md">
+                  <h4 class="text-xl font-semibold text-cyan-600 mb-4">Smart Moisture Monitoring</h4>
+                  <div class="space-y-4">
+                    <div>
+                      <h5 class="font-medium text-slate-800 mb-2">Integrated Sensor Networks</h5>
+                      <ul class="text-slate-500 space-y-1">
+                        <li>• Wireless moisture sensors in wall cavities</li>
+                        <li>• Real-time humidity and temperature monitoring</li>
+                        <li>• Water intrusion detection systems</li>
+                        <li>• Mobile app integration for remote monitoring</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <h5 class="font-medium text-slate-800 mb-2">Predictive Maintenance Systems</h5>
+                      <ul class="text-slate-500 space-y-1">
+                        <li>• Automated alerts for moisture threshold breaches</li>
+                        <li>• Seasonal humidity adjustment recommendations</li>
+                        <li>• Equipment maintenance scheduling based on usage</li>
+                        <li>• Historical data analysis for pattern recognition</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="bg-white rounded-lg p-6 shadow-md">
+                  <h4 class="text-xl font-semibold text-cyan-600 mb-4">Cost-Benefit Analysis</h4>
+                  <div class="overflow-x-auto">
+                    <table class="w-full text-sm">
+                      <thead>
+                        <tr class="bg-slate-50">
+                          <th class="px-4 py-2 text-left">System Component</th>
+                          <th class="px-4 py-2 text-left">Cost Range</th>
+                          <th class="px-4 py-2 text-left">ROI Timeline</th>
+                        </tr>
+                      </thead>
+                      <tbody class="text-slate-500">
+                        <tr>
+                          <td class="px-4 py-2">Basic drainage integration</td>
+                          <td class="px-4 py-2">$2,500-4,500</td>
+                          <td class="px-4 py-2">Immediate</td>
+                        </tr>
+                        <tr class="bg-slate-50">
+                          <td class="px-4 py-2">HRV system integration</td>
+                          <td class="px-4 py-2">$3,500-6,000</td>
+                          <td class="px-4 py-2">2-3 years</td>
+                        </tr>
+                        <tr>
+                          <td class="px-4 py-2">Smart monitoring systems</td>
+                          <td class="px-4 py-2">$1,500-3,000</td>
+                          <td class="px-4 py-2">3-5 years</td>
+                        </tr>
+                        <tr class="bg-slate-50">
+                          <td class="px-4 py-2">Radiant floor heating</td>
+                          <td class="px-4 py-2">$8-15/sq ft</td>
+                          <td class="px-4 py-2">5-7 years</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Smart Vapor Barriers -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-4xl font-bold text-slate-900 mb-12 text-center">Smart Vapor Barrier Systems</h2>
+          
+          <div class="grid lg:grid-cols-3 gap-8 mb-12">
+            <div class="bg-cyan-50 rounded-lg p-8">
+              <h3 class="text-2xl font-semibold text-cyan-700 mb-6">Variable Permeance Barriers</h3>
+              <div class="space-y-4">
+                <div>
+                  <h4 class="font-medium text-slate-800 mb-2">Adaptive Moisture Management</h4>
+                  <p class="text-slate-500 text-sm mb-3">
+                    Smart vapor barriers adjust permeability based on humidity conditions, allowing moisture to escape when needed while preventing intrusion during high-moisture periods.
+                  </p>
+                  <ul class="text-sm text-slate-500 space-y-1">
+                    <li>• CertainTeed MemBrain: 1-20 perms variable</li>
+                    <li>• Polyethylene alternatives for climate zones</li>
+                    <li>• Kraft-faced insulation integration</li>
+                    <li>• Permeable paint systems for concrete walls</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-cyan-50 rounded-lg p-8">
+              <h3 class="text-2xl font-semibold text-cyan-700 mb-6">Placement Strategies</h3>
+              <div class="space-y-4">
+                <div>
+                  <h4 class="font-medium text-slate-800 mb-2">Climate Zone 6A Requirements</h4>
+                  <p class="text-slate-500 text-sm mb-3">
+                    Toronto's climate requires specific vapor barrier placement to prevent condensation within wall assemblies while managing seasonal moisture variations.
+                  </p>
+                  <ul class="text-sm text-slate-500 space-y-1">
+                    <li>• Interior side of insulation (warm side)</li>
+                    <li>• Continuous air barrier integration</li>
+                    <li>• Thermal bridging elimination details</li>
+                    <li>• Penetration sealing requirements</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-purple-50 rounded-lg p-8">
+              <h3 class="text-2xl font-semibold text-purple-800 mb-6">Installation Details</h3>
+              <div class="space-y-4">
+                <div>
+                  <h4 class="font-medium text-slate-800 mb-2">Professional Installation Standards</h4>
+                  <p class="text-slate-500 text-sm mb-3">
+                    Proper installation techniques ensure long-term performance and code compliance for basement finishing projects.
+                  </p>
+                  <ul class="text-sm text-slate-500 space-y-1">
+                    <li>• 6-inch overlap minimum at seams</li>
+                    <li>• Acoustic sealant for all penetrations</li>
+                    <li>• Mechanical fastening specifications</li>
+                    <li>• Quality control inspection protocols</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-slate-50 rounded-lg p-8">
+            <h3 class="text-2xl font-semibold text-slate-800 mb-6">Vapor Barrier Performance Comparison</h3>
+            <div class="overflow-x-auto">
+              <table class="w-full text-sm">
+                <thead>
+                  <tr class="bg-slate-100">
+                    <th class="px-4 py-3 text-left">Material Type</th>
+                    <th class="px-4 py-3 text-left">Permeance (perms)</th>
+                    <th class="px-4 py-3 text-left">Temperature Range</th>
+                    <th class="px-4 py-3 text-left">Cost per sq ft</th>
+                    <th class="px-4 py-3 text-left">Best Application</th>
+                  </tr>
+                </thead>
+                <tbody class="text-slate-500">
+                  <tr class="bg-white">
+                    <td class="px-4 py-3 font-medium">6-mil Polyethylene</td>
+                    <td class="px-4 py-3">0.06</td>
+                    <td class="px-4 py-3">-40°F to 140°F</td>
+                    <td class="px-4 py-3">$0.15-0.25</td>
+                    <td class="px-4 py-3">Basic applications, budget projects</td>
+                  </tr>
+                  <tr>
+                    <td class="px-4 py-3 font-medium">Variable Perm Barrier</td>
+                    <td class="px-4 py-3">1.0-20.0</td>
+                    <td class="px-4 py-3">-20°F to 160°F</td>
+                    <td class="px-4 py-3">$0.45-0.75</td>
+                    <td class="px-4 py-3">Premium installations, climate adaptability</td>
+                  </tr>
+                  <tr class="bg-white">
+                    <td class="px-4 py-3 font-medium">Kraft-Faced Batts</td>
+                    <td class="px-4 py-3">1.0</td>
+                    <td class="px-4 py-3">-20°F to 150°F</td>
+                    <td class="px-4 py-3">$0.35-0.55</td>
+                    <td class="px-4 py-3">Integrated insulation systems</td>
+                  </tr>
+                  <tr>
+                    <td class="px-4 py-3 font-medium">Foil-Faced Polyiso</td>
+                    <td class="px-4 py-3">0.05</td>
+                    <td class="px-4 py-3">-100°F to 250°F</td>
+                    <td class="px-4 py-3">$1.25-2.00</td>
+                    <td class="px-4 py-3">High-performance, radiant barrier</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Rigid Foam Insulation -->
+    <section class="py-16 bg-slate-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-4xl font-bold text-slate-900 mb-12 text-center">Rigid Foam Insulation Systems</h2>
+          
+          <div class="grid lg:grid-cols-2 gap-12">
+            <div>
+              <h3 class="text-2xl font-semibold text-slate-800 mb-6">R-Value Optimization for Toronto Climate</h3>
+              
+              <div class="space-y-8">
+                <div class="bg-white rounded-lg p-6 shadow-md">
+                  <h4 class="text-xl font-semibold text-cyan-600 mb-4">Code Requirements and Recommendations</h4>
+                  <div class="space-y-4">
+                    <div>
+                      <h5 class="font-medium text-slate-800 mb-2">Toronto Building Code Minimums</h5>
+                      <ul class="text-slate-500 space-y-2">
+                        <li>• <strong>Basement walls:</strong> R-12 minimum (recommended R-20)</li>
+                        <li>• <strong>Above-grade portions:</strong> R-20 minimum</li>
+                        <li>• <strong>Slab-on-grade:</strong> R-10 under entire slab</li>
+                        <li>• <strong>Walkout walls:</strong> R-24 for exposed areas</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <h5 class="font-medium text-slate-800 mb-2">Performance Optimization</h5>
+                      <ul class="text-slate-500 space-y-2">
+                        <li>• <strong>Continuous insulation:</strong> Eliminates thermal bridging</li>
+                        <li>• <strong>Moisture resistance:</strong> Closed-cell foam preferred</li>
+                        <li>• <strong>Installation efficiency:</strong> Minimal labor requirements</li>
+                        <li>• <strong>Space conservation:</strong> Maximum R-value per inch</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="bg-white rounded-lg p-6 shadow-md">
+                  <h4 class="text-xl font-semibold text-cyan-600 mb-4">Installation Techniques</h4>
+                  <div class="space-y-4">
+                    <div>
+                      <h5 class="font-medium text-slate-800 mb-2">Foundation Wall Applications</h5>
+                      <ul class="text-slate-500 space-y-2">
+                        <li>• Direct adhesion to clean, dry concrete surfaces</li>
+                        <li>• Mechanical fastening with concrete screws and washers</li>
+                        <li>• Seam sealing with compatible foam or tape</li>
+                        <li>• Termite inspection gap maintenance (where required)</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <h5 class="font-medium text-slate-800 mb-2">Quality Control Measures</h5>
+                      <ul class="text-slate-500 space-y-2">
+                        <li>• Thermal imaging inspection to verify continuity</li>
+                        <li>• Air leakage testing before finishing</li>
+                        <li>• Moisture content verification of substrates</li>
+                        <li>• Installation documentation for warranty purposes</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <h3 class="text-2xl font-semibold text-slate-800 mb-6">Material Selection and Performance</h3>
+              
+              <div class="space-y-8">
+                <div class="bg-white rounded-lg p-6 shadow-md">
+                  <h4 class="text-xl font-semibold text-cyan-600 mb-4">Foam Insulation Comparison</h4>
+                  <div class="overflow-x-auto">
+                    <table class="w-full text-sm">
+                      <thead>
+                        <tr class="bg-slate-50">
+                          <th class="px-3 py-2 text-left">Type</th>
+                          <th class="px-3 py-2 text-left">R-Value</th>
+                          <th class="px-3 py-2 text-left">Moisture</th>
+                          <th class="px-3 py-2 text-left">Cost/sq ft</th>
+                        </tr>
+                      </thead>
+                      <tbody class="text-slate-500">
+                        <tr>
+                          <td class="px-3 py-2 font-medium">XPS (2")</td>
+                          <td class="px-3 py-2">R-10</td>
+                          <td class="px-3 py-2">Excellent</td>
+                          <td class="px-3 py-2">$1.25-1.75</td>
+                        </tr>
+                        <tr class="bg-slate-50">
+                          <td class="px-3 py-2 font-medium">Polyiso (2")</td>
+                          <td class="px-3 py-2">R-12-14</td>
+                          <td class="px-3 py-2">Good</td>
+                          <td class="px-3 py-2">$1.00-1.50</td>
+                        </tr>
+                        <tr>
+                          <td class="px-3 py-2 font-medium">EPS (2")</td>
+                          <td class="px-3 py-2">R-8</td>
+                          <td class="px-3 py-2">Fair</td>
+                          <td class="px-3 py-2">$0.75-1.25</td>
+                        </tr>
+                        <tr class="bg-slate-50">
+                          <td class="px-3 py-2 font-medium">Spray Foam</td>
+                          <td class="px-3 py-2">R-6-7/inch</td>
+                          <td class="px-3 py-2">Excellent</td>
+                          <td class="px-3 py-2">$2.50-4.00</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+
+                <div class="bg-white rounded-lg p-6 shadow-md">
+                  <h4 class="text-xl font-semibold text-cyan-600 mb-4">Climate-Specific Considerations</h4>
+                  <div class="space-y-4">
+                    <div>
+                      <h5 class="font-medium text-slate-800 mb-2">Toronto's Unique Challenges</h5>
+                      <ul class="text-slate-500 space-y-2">
+                        <li>• <strong>Freeze-thaw cycles:</strong> Require dimensionally stable materials</li>
+                        <li>• <strong>High humidity summers:</strong> Moisture-resistant properties essential</li>
+                        <li>• <strong>Clay soil movement:</strong> Flexible attachment systems needed</li>
+                        <li>• <strong>Energy costs:</strong> Payback period calculations for upgrades</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <h5 class="font-medium text-slate-800 mb-2">Performance Monitoring</h5>
+                      <ul class="text-slate-500 space-y-2">
+                        <li>• Annual thermal imaging inspections</li>
+                        <li>• Energy usage tracking and analysis</li>
+                        <li>• Indoor air quality monitoring</li>
+                        <li>• Seasonal humidity level documentation</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Standoff Wall Construction -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-4xl font-bold text-slate-900 mb-12 text-center">Standoff Wall Construction Systems</h2>
+          
+          <div class="grid lg:grid-cols-2 gap-12 mb-12">
+            <div>
+              <h3 class="text-2xl font-semibold text-slate-800 mb-6">Advanced Framing Techniques</h3>
+              
+              <div class="space-y-8">
+                <div class="bg-cyan-50 rounded-lg p-6">
+                  <h4 class="text-xl font-semibold text-cyan-700 mb-4">2x4 vs 2x6 Standoff Systems</h4>
+                  <div class="space-y-4">
+                    <div>
+                      <h5 class="font-medium text-slate-800 mb-2">2x4 Steel Track Systems</h5>
+                      <ul class="text-slate-500 text-sm space-y-1">
+                        <li>• 25-gauge steel track and studs for moisture resistance</li>
+                        <li>• 1-inch standoff from foundation wall minimum</li>
+                        <li>• Integrated electrical and plumbing chases</li>
+                        <li>• Thermal bridging elimination with insulating shims</li>
+                        <li>• Cost range: $3.50-5.00 per linear foot</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <h5 class="font-medium text-slate-800 mb-2">2x6 Wood Frame Systems</h5>
+                      <ul class="text-slate-500 text-sm space-y-1">
+                        <li>• Pressure-treated lumber for ground contact applications</li>
+                        <li>• Enhanced insulation cavity for R-19-21 batts</li>
+                        <li>• Easier electrical integration and modifications</li>
+                        <li>• Traditional construction methods and materials</li>
+                        <li>• Cost range: $4.50-7.00 per linear foot</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="bg-cyan-50 rounded-lg p-6">
+                  <h4 class="text-xl font-semibold text-cyan-700 mb-4">Moisture Management Integration</h4>
+                  <div class="space-y-4">
+                    <div>
+                      <h5 class="font-medium text-slate-800 mb-2">Cavity Ventilation Systems</h5>
+                      <ul class="text-slate-500 text-sm space-y-1">
+                        <li>• Top and bottom cavity ventilation channels</li>
+                        <li>• Condensation drainage to interior drain systems</li>
+                        <li>• Humidity monitoring ports in wall cavities</li>
+                        <li>• Emergency moisture evacuation pathways</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <h5 class="font-medium text-slate-800 mb-2">Integrated Drainage Solutions</h5>
+                      <ul class="text-slate-500 text-sm space-y-1">
+                        <li>• Perimeter drainage integration at floor level</li>
+                        <li>• Wall-mounted collection systems for minor seepage</li>
+                        <li>• Automatic pump integration for collected moisture</li>
+                        <li>• Redundant drainage pathways for system reliability</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <h3 class="text-2xl font-semibold text-slate-800 mb-6">Structural and Code Compliance</h3>
+              
+              <div class="space-y-8">
+                <div class="bg-purple-50 rounded-lg p-6">
+                  <h4 class="text-xl font-semibold text-purple-800 mb-4">Load-Bearing Considerations</h4>
+                  <div class="space-y-4">
+                    <div>
+                      <h5 class="font-medium text-slate-800 mb-2">Structural Integration</h5>
+                      <ul class="text-slate-500 text-sm space-y-1">
+                        <li>• Foundation attachment specifications for seismic loads</li>
+                        <li>• Beam pocket integration and support requirements</li>
+                        <li>• Lateral bracing for non-load-bearing partitions</li>
+                        <li>• Engineering requirements for modified foundations</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <h5 class="font-medium text-slate-800 mb-2">Code Compliance Checkpoints</h5>
+                      <ul class="text-slate-500 text-sm space-y-1">
+                        <li>• Fire separation requirements between units</li>
+                        <li>• Sound transmission class (STC) ratings</li>
+                        <li>• Emergency egress window requirements</li>
+                        <li>• Ceiling height compliance (minimum 6'6" finished)</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="bg-amber-50 rounded-lg p-6">
+                  <h4 class="text-xl font-semibold text-amber-800 mb-4">Installation Best Practices</h4>
+                  <div class="space-y-4">
+                    <div>
+                      <h5 class="font-medium text-slate-800 mb-2">Quality Control Standards</h5>
+                      <ul class="text-slate-500 text-sm space-y-1">
+                        <li>• Laser level establishment for consistent standoff distances</li>
+                        <li>• Plumb and square verification at 4-foot intervals</li>
+                        <li>• Moisture barrier continuity inspection protocols</li>
+                        <li>• Thermal bridging elimination verification</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <h5 class="font-medium text-slate-800 mb-2">Common Installation Errors</h5>
+                      <ul class="text-slate-500 text-sm space-y-1">
+                        <li>• Insufficient standoff distance allowing wall contact</li>
+                        <li>• Vapor barrier punctures during electrical installation</li>
+                        <li>• Inadequate drainage at base of wall system</li>
+                        <li>• Thermal bridging through metal connectors</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-slate-50 rounded-lg p-8">
+            <h3 class="text-2xl font-semibold text-slate-800 mb-6">Cost Analysis: Standoff Wall Systems</h3>
+            <div class="grid md:grid-cols-3 gap-6">
+              <div class="bg-white rounded-lg p-6">
+                <h4 class="text-lg font-semibold text-cyan-600 mb-4">Basic Steel Frame</h4>
+                <div class="space-y-2 text-sm">
+                  <div class="flex justify-between">
+                    <span>Materials per sq ft:</span>
+                    <span class="font-medium">$4.50-6.00</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span>Labor per sq ft:</span>
+                    <span class="font-medium">$8.00-12.00</span>
+                  </div>
+                  <div class="flex justify-between border-t pt-2">
+                    <span class="font-medium">Total per sq ft:</span>
+                    <span class="font-bold text-cyan-600">$12.50-18.00</span>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="bg-white rounded-lg p-6">
+                <h4 class="text-lg font-semibold text-cyan-600 mb-4">Premium Wood Frame</h4>
+                <div class="space-y-2 text-sm">
+                  <div class="flex justify-between">
+                    <span>Materials per sq ft:</span>
+                    <span class="font-medium">$6.00-8.50</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span>Labor per sq ft:</span>
+                    <span class="font-medium">$10.00-15.00</span>
+                  </div>
+                  <div class="flex justify-between border-t pt-2">
+                    <span class="font-medium">Total per sq ft:</span>
+                    <span class="font-bold text-cyan-600">$16.00-23.50</span>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="bg-white rounded-lg p-6">
+                <h4 class="text-lg font-semibold text-purple-600 mb-4">Engineered System</h4>
+                <div class="space-y-2 text-sm">
+                  <div class="flex justify-between">
+                    <span>Materials per sq ft:</span>
+                    <span class="font-medium">$8.50-12.00</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span>Labor per sq ft:</span>
+                    <span class="font-medium">$12.00-18.00</span>
+                  </div>
+                  <div class="flex justify-between border-t pt-2">
+                    <span class="font-medium">Total per sq ft:</span>
+                    <span class="font-bold text-purple-600">$20.50-30.00</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Batt Insulation Integration -->
+    <section class="py-16 bg-slate-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-4xl font-bold text-slate-900 mb-12 text-center">Batt Insulation Integration</h2>
+          
+          <div class="grid lg:grid-cols-2 gap-12">
+            <div>
+              <h3 class="text-2xl font-semibold text-slate-800 mb-6">Hybrid Insulation Systems</h3>
+              
+              <div class="space-y-8">
+                <div class="bg-white rounded-lg p-6 shadow-md">
+                  <h4 class="text-xl font-semibold text-cyan-600 mb-4">Continuous + Cavity Insulation</h4>
+                  <div class="space-y-4">
+                    <div>
+                      <h5 class="font-medium text-slate-800 mb-2">System Design Principles</h5>
+                      <p class="text-slate-500 text-sm mb-3">
+                        Combining rigid foam continuous insulation with cavity batts maximizes thermal performance while managing moisture and air infiltration in Toronto's challenging climate.
+                      </p>
+                      <ul class="text-slate-500 text-sm space-y-1">
+                        <li>• Rigid foam exterior (R-10-15) + Batt cavity (R-12-21)</li>
+                        <li>• Total system R-value: R-22 to R-36</li>
+                        <li>• Thermal bridging reduction up to 85%</li>
+                        <li>• Vapor drive management through assembly</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <h5 class="font-medium text-slate-800 mb-2">Installation Sequencing</h5>
+                      <ul class="text-slate-500 text-sm space-y-1">
+                        <li>• Foundation preparation and moisture assessment</li>
+                        <li>• Rigid foam installation and air sealing</li>
+                        <li>• Standoff wall framing and electrical rough-in</li>
+                        <li>• Batt insulation installation and vapor barrier</li>
+                        <li>• Quality control inspection before drywall</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="bg-white rounded-lg p-6 shadow-md">
+                  <h4 class="text-xl font-semibold text-cyan-600 mb-4">Material Selection Criteria</h4>
+                  <div class="space-y-4">
+                    <div>
+                      <h5 class="font-medium text-slate-800 mb-2">Fiberglass vs Mineral Wool</h5>
+                      <div class="overflow-x-auto">
+                        <table class="w-full text-sm">
+                          <thead>
+                            <tr class="bg-slate-50">
+                              <th class="px-3 py-2 text-left">Property</th>
+                              <th class="px-3 py-2 text-left">Fiberglass</th>
+                              <th class="px-3 py-2 text-left">Mineral Wool</th>
+                            </tr>
+                          </thead>
+                          <tbody class="text-slate-500">
+                            <tr>
+                              <td class="px-3 py-2">R-Value per inch</td>
+                              <td class="px-3 py-2">R-3.2-3.8</td>
+                              <td class="px-3 py-2">R-3.3-3.7</td>
+                            </tr>
+                            <tr class="bg-slate-50">
+                              <td class="px-3 py-2">Moisture resistance</td>
+                              <td class="px-3 py-2">Good</td>
+                              <td class="px-3 py-2">Excellent</td>
+                            </tr>
+                            <tr>
+                              <td class="px-3 py-2">Fire resistance</td>
+                              <td class="px-3 py-2">Good</td>
+                              <td class="px-3 py-2">Superior</td>
+                            </tr>
+                            <tr class="bg-slate-50">
+                              <td class="px-3 py-2">Sound dampening</td>
+                              <td class="px-3 py-2">Good</td>
+                              <td class="px-3 py-2">Excellent</td>
+                            </tr>
+                            <tr>
+                              <td class="px-3 py-2">Cost per sq ft</td>
+                              <td class="px-3 py-2">$0.65-0.95</td>
+                              <td class="px-3 py-2">$1.15-1.65</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <h3 class="text-2xl font-semibold text-slate-800 mb-6">Installation Excellence</h3>
+              
+              <div class="space-y-8">
+                <div class="bg-white rounded-lg p-6 shadow-md">
+                  <h4 class="text-xl font-semibold text-cyan-600 mb-4">Professional Installation Techniques</h4>
+                  <div class="space-y-4">
+                    <div>
+                      <h5 class="font-medium text-slate-800 mb-2">Cavity Fill Optimization</h5>
+                      <ul class="text-slate-500 text-sm space-y-1">
+                        <li>• Proper compression: 85-90% of cavity depth</li>
+                        <li>• Split batts for electrical penetrations</li>
+                        <li>• Friction fit without gaps or compression</li>
+                        <li>• Continuous coverage behind electrical boxes</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <h5 class="font-medium text-slate-800 mb-2">Quality Control Checkpoints</h5>
+                      <ul class="text-slate-500 text-sm space-y-1">
+                        <li>• Thermal imaging inspection before vapor barrier</li>
+                        <li>• Air leakage testing at cavity completion</li>
+                        <li>• Moisture content verification of materials</li>
+                        <li>• Installation photography for documentation</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="bg-white rounded-lg p-6 shadow-md">
+                  <h4 class="text-xl font-semibold text-cyan-600 mb-4">Performance Optimization</h4>
+                  <div class="space-y-4">
+                    <div>
+                      <h5 class="font-medium text-slate-800 mb-2">Climate-Specific Considerations</h5>
+                      <ul class="text-slate-500 text-sm space-y-1">
+                        <li>• Toronto's humid summers require vapor barrier attention</li>
+                        <li>• Winter condensation prevention through proper vapor drive</li>
+                        <li>• Seasonal humidity cycling accommodation</li>
+                        <li>• Long-term performance monitoring systems</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <h5 class="font-medium text-slate-800 mb-2">Energy Performance Metrics</h5>
+                      <ul class="text-slate-500 text-sm space-y-1">
+                        <li>• Target overall assembly R-value: R-25-35</li>
+                        <li>• Air leakage rate: <2.5 ACH50 for finished spaces</li>
+                        <li>• Thermal bridging coefficient: <0.15 for hybrid systems</li>
+                        <li>• Annual energy savings: 25-40% over code minimum</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Soil Conditions Impact -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-4xl font-bold text-slate-900 mb-12 text-center">Toronto Soil Conditions Impact</h2>
+          
+          <div class="grid lg:grid-cols-3 gap-8 mb-12">
+            <div class="bg-amber-50 rounded-lg p-8">
+              <h3 class="text-2xl font-semibold text-amber-800 mb-6">Clay Soil Challenges</h3>
+              <div class="space-y-4">
+                <div>
+                  <h4 class="font-medium text-slate-800 mb-2">Seasonal Movement Patterns</h4>
+                  <p class="text-slate-500 text-sm mb-3">
+                    Toronto's predominantly clay soils exhibit significant expansion and contraction cycles that directly impact basement finishing systems.
+                  </p>
+                  <ul class="text-sm text-slate-500 space-y-1">
+                    <li>• Spring expansion: Up to 3-5% volume increase</li>
+                    <li>• Summer drying: Foundation wall pressure relief</li>
+                    <li>• Fall saturation: Renewed hydrostatic pressure</li>
+                    <li>• Winter freezing: Frost heaving and soil displacement</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-cyan-50 rounded-lg p-8">
+              <h3 class="text-2xl font-semibold text-cyan-700 mb-6">Drainage Implications</h3>
+              <div class="space-y-4">
+                <div>
+                  <h4 class="font-medium text-slate-800 mb-2">Water Management Requirements</h4>
+                  <p class="text-slate-500 text-sm mb-3">
+                    Clay's low permeability creates unique drainage challenges requiring specialized finishing approaches.
+                  </p>
+                  <ul class="text-sm text-slate-500 space-y-1">
+                    <li>• Permeability: 10⁻⁶ to 10⁻⁹ cm/sec</li>
+                    <li>• Surface runoff concentration</li>
+                    <li>• Prolonged saturation periods</li>
+                    <li>• Capillary action moisture rise</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-cyan-50 rounded-lg p-8">
+              <h3 class="text-2xl font-semibold text-cyan-700 mb-6">Foundation Interaction</h3>
+              <div class="space-y-4">
+                <div>
+                  <h4 class="font-medium text-slate-800 mb-2">Structural Considerations</h4>
+                  <p class="text-slate-500 text-sm mb-3">
+                    Clay soil movement patterns require flexible finishing systems that accommodate foundation movement.
+                  </p>
+                  <ul class="text-sm text-slate-500 space-y-1">
+                    <li>• Differential settlement accommodation</li>
+                    <li>• Lateral pressure management</li>
+                    <li>• Crack movement allowances</li>
+                    <li>• Expansion joint integration</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-slate-50 rounded-lg p-8">
+            <h3 class="text-2xl font-semibold text-slate-800 mb-6">Design Adaptations for Clay Soils</h3>
+            <div class="grid lg:grid-cols-2 gap-8">
+              <div>
+                <h4 class="text-xl font-semibold text-cyan-600 mb-4">Flexible Connection Systems</h4>
+                <div class="space-y-4">
+                  <div>
+                    <h5 class="font-medium text-slate-800 mb-2">Foundation Wall Attachments</h5>
+                    <ul class="text-slate-500 text-sm space-y-1">
+                      <li>• Sliding track connections for vertical movement</li>
+                      <li>• Flexible sealants at all penetrations</li>
+                      <li>• Expansion joints at 16-foot intervals</li>
+                      <li>• Breakaway connections for emergency movement</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h5 class="font-medium text-slate-800 mb-2">Moisture Accommodation</h5>
+                    <ul class="text-slate-500 text-sm space-y-1">
+                      <li>• Vapor-permeable systems for seasonal moisture</li>
+                      <li>• Drainage channels integrated into wall base</li>
+                      <li>• Emergency moisture evacuation pathways</li>
+                      <li>• Monitoring systems for soil moisture changes</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              
+              <div>
+                <h4 class="text-xl font-semibold text-cyan-600 mb-4">Long-Term Performance</h4>
+                <div class="space-y-4">
+                  <div>
+                    <h5 class="font-medium text-slate-800 mb-2">Maintenance Requirements</h5>
+                    <ul class="text-slate-500 text-sm space-y-1">
+                      <li>• Annual sealant inspection and renewal</li>
+                      <li>• Seasonal drainage system cleaning</li>
+                      <li>• Foundation movement monitoring</li>
+                      <li>• Insulation system integrity verification</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h5 class="font-medium text-slate-800 mb-2">Expected Service Life</h5>
+                    <ul class="text-slate-500 text-sm space-y-1">
+                      <li>• Rigid systems: 15-20 years in clay soils</li>
+                      <li>• Flexible systems: 25-30 years</li>
+                      <li>• Premium systems: 35+ years with maintenance</li>
+                      <li>• Warranty implications for different approaches</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Thermal Bridging Prevention -->
+    <section class="py-16 bg-slate-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-4xl font-bold text-slate-900 mb-12 text-center">Thermal Bridging Prevention</h2>
+          
+          <div class="grid lg:grid-cols-2 gap-12 mb-12">
+            <div>
+              <h3 class="text-2xl font-semibold text-slate-800 mb-6">Understanding Thermal Bridges</h3>
+              
+              <div class="space-y-8">
+                <div class="bg-white rounded-lg p-6 shadow-md">
+                  <h4 class="text-xl font-semibold text-red-600 mb-4">Common Thermal Bridge Locations</h4>
+                  <div class="space-y-4">
+                    <div>
+                      <h5 class="font-medium text-slate-800 mb-2">Structural Elements</h5>
+                      <ul class="text-slate-500 text-sm space-y-1">
+                        <li>• Steel columns and beams passing through insulation</li>
+                        <li>• Concrete foundation wall continuity</li>
+                        <li>• Metal stud framing in standoff walls</li>
+                        <li>• Rim joists and sill plate connections</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <h5 class="font-medium text-slate-800 mb-2">Penetration Points</h5>
+                      <ul class="text-slate-500 text-sm space-y-1">
+                        <li>• Electrical boxes and conduit runs</li>
+                        <li>• Plumbing penetrations and vents</li>
+                        <li>• HVAC ductwork and mechanical systems</li>
+                        <li>• Window and door frame installations</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="bg-white rounded-lg p-6 shadow-md">
+                  <h4 class="text-xl font-semibold text-red-600 mb-4">Impact Assessment</h4>
+                  <div class="space-y-4">
+                    <div>
+                      <h5 class="font-medium text-slate-800 mb-2">Energy Loss Calculations</h5>
+                      <p class="text-slate-500 text-sm mb-3">
+                        Thermal bridges can reduce overall wall assembly performance by 20-50%, significantly impacting energy efficiency and comfort.
+                      </p>
+                      <ul class="text-slate-500 text-sm space-y-1">
+                        <li>• Metal studs: 50-70% thermal performance reduction</li>
+                        <li>• Uninsulated rim joists: 25-35% loss</li>
+                        <li>• Electrical penetrations: 5-15% per box</li>
+                        <li>• Concrete continuity: 30-45% local loss</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <h3 class="text-2xl font-semibold text-slate-800 mb-6">Prevention Strategies</h3>
+              
+              <div class="space-y-8">
+                <div class="bg-white rounded-lg p-6 shadow-md">
+                  <h4 class="text-xl font-semibold text-cyan-600 mb-4">Continuous Insulation Solutions</h4>
+                  <div class="space-y-4">
+                    <div>
+                      <h5 class="font-medium text-slate-800 mb-2">Exterior Continuous Systems</h5>
+                      <ul class="text-slate-500 text-sm space-y-1">
+                        <li>• 2-4 inch rigid foam over entire foundation wall</li>
+                        <li>• Thermal bridging reduction: 75-90%</li>
+                        <li>• Condensation risk elimination</li>
+                        <li>• Integration with above-grade wall systems</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <h5 class="font-medium text-slate-800 mb-2">Interior Thermal Breaks</h5>
+                      <ul class="text-slate-500 text-sm space-y-1">
+                        <li>• Insulating shims for metal stud connections</li>
+                        <li>• Thermal spacer strips at foundation interface</li>
+                        <li>• Insulated electrical boxes and penetration seals</li>
+                        <li>• Spray foam application for complex geometries</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="bg-white rounded-lg p-6 shadow-md">
+                  <h4 class="text-xl font-semibold text-cyan-600 mb-4">Advanced Techniques</h4>
+                  <div class="space-y-4">
+                    <div>
+                      <h5 class="font-medium text-slate-800 mb-2">Thermal Modeling and Analysis</h5>
+                      <ul class="text-slate-500 text-sm space-y-1">
+                        <li>• THERM modeling for complex details</li>
+                        <li>• Thermal imaging verification of installed systems</li>
+                        <li>• Linear thermal transmittance calculations</li>
+                        <li>• Performance validation through monitoring</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <h5 class="font-medium text-slate-800 mb-2">Cost-Benefit Optimization</h5>
+                      <ul class="text-slate-500 text-sm space-y-1">
+                        <li>• Prioritization matrix for bridge elimination</li>
+                        <li>• Payback period analysis for upgrades</li>
+                        <li>• Comfort improvement quantification</li>
+                        <li>• Long-term energy savings projections</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-cyan-50 rounded-lg p-8">
+            <h3 class="text-2xl font-semibold text-cyan-700 mb-6">Thermal Bridge Elimination ROI Analysis</h3>
+            <div class="overflow-x-auto">
+              <table class="w-full text-sm">
+                <thead>
+                  <tr class="bg-cyan-50">
+                    <th class="px-4 py-3 text-left">Thermal Bridge Type</th>
+                    <th class="px-4 py-3 text-left">Upgrade Cost</th>
+                    <th class="px-4 py-3 text-left">Annual Savings</th>
+                    <th class="px-4 py-3 text-left">Payback Period</th>
+                    <th class="px-4 py-3 text-left">Comfort Impact</th>
+                  </tr>
+                </thead>
+                <tbody class="text-slate-600">
+                  <tr class="bg-white">
+                    <td class="px-4 py-3">Rim joist insulation</td>
+                    <td class="px-4 py-3">$8-12/linear foot</td>
+                    <td class="px-4 py-3">$150-250</td>
+                    <td class="px-4 py-3">3-5 years</td>
+                    <td class="px-4 py-3">High</td>
+                  </tr>
+                  <tr>
+                    <td class="px-4 py-3">Metal stud thermal breaks</td>
+                    <td class="px-4 py-3">$2-4/sq ft</td>
+                    <td class="px-4 py-3">$200-350</td>
+                    <td class="px-4 py-3">4-7 years</td>
+                    <td class="px-4 py-3">Medium</td>
+                  </tr>
+                  <tr class="bg-white">
+                    <td class="px-4 py-3">Continuous exterior foam</td>
+                    <td class="px-4 py-3">$3-6/sq ft</td>
+                    <td class="px-4 py-3">$400-650</td>
+                    <td class="px-4 py-3">5-8 years</td>
+                    <td class="px-4 py-3">Very High</td>
+                  </tr>
+                  <tr>
+                    <td class="px-4 py-3">Penetration sealing</td>
+                    <td class="px-4 py-3">$5-15/penetration</td>
+                    <td class="px-4 py-3">$75-125</td>
+                    <td class="px-4 py-3">1-3 years</td>
+                    <td class="px-4 py-3">Medium</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Toronto Building Code Compliance -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-4xl font-bold text-slate-900 mb-12 text-center">Toronto Building Code Compliance</h2>
+          
+          <div class="grid lg:grid-cols-2 gap-12">
+            <div>
+              <h3 class="text-2xl font-semibold text-slate-800 mb-6">Code Requirements Summary</h3>
+              
+              <div class="space-y-8">
+                <div class="bg-cyan-50 rounded-lg p-6">
+                  <h4 class="text-xl font-semibold text-cyan-700 mb-4">Insulation and Energy Performance</h4>
+                  <div class="space-y-4">
+                    <div>
+                      <h5 class="font-medium text-slate-800 mb-2">Minimum R-Values (Ontario Building Code)</h5>
+                      <ul class="text-slate-500 text-sm space-y-1">
+                        <li>• <strong>Basement walls:</strong> R-12 minimum (Zone 6)</li>
+                        <li>• <strong>Above-grade portions:</strong> R-20 minimum</li>
+                        <li>• <strong>Floors:</strong> R-31 minimum</li>
+                        <li>• <strong>Exposed floors:</strong> R-31 (heated space below)</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <h5 class="font-medium text-slate-800 mb-2">Air Barrier Requirements</h5>
+                      <ul class="text-slate-500 text-sm space-y-1">
+                        <li>• Continuous air barrier system required</li>
+                        <li>• Maximum 2.5 L/(s·m²) @ 75 Pa leakage</li>
+                        <li>• Sealed penetrations for all services</li>
+                        <li>• Vapor barrier as air barrier where applicable</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="bg-cyan-50 rounded-lg p-6">
+                  <h4 class="text-xl font-semibold text-cyan-700 mb-4">Health and Safety Requirements</h4>
+                  <div class="space-y-4">
+                    <div>
+                      <h5 class="font-medium text-slate-800 mb-2">Indoor Air Quality</h5>
+                      <ul class="text-slate-500 text-sm space-y-1">
+                        <li>• Minimum 0.3 ACH continuous ventilation</li>
+                        <li>• Exhaust ventilation for moisture sources</li>
+                        <li>• Radon mitigation where required</li>
+                        <li>• VOC emission limits for materials</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <h5 class="font-medium text-slate-800 mb-2">Moisture Control</h5>
+                      <ul class="text-slate-500 text-sm space-y-1">
+                        <li>• Vapor barrier installation requirements</li>
+                        <li>• Drainage system integration</li>
+                        <li>• Mold prevention strategies</li>
+                        <li>• Humidity control specifications</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <h3 class="text-2xl font-semibold text-slate-800 mb-6">Permit and Inspection Process</h3>
+              
+              <div class="space-y-8">
+                <div class="bg-amber-50 rounded-lg p-6">
+                  <h4 class="text-xl font-semibold text-amber-800 mb-4">Permitting Requirements</h4>
+                  <div class="space-y-4">
+                    <div>
+                      <h5 class="font-medium text-slate-800 mb-2">When Permits Are Required</h5>
+                      <ul class="text-slate-500 text-sm space-y-1">
+                        <li>• Basement finishing with new electrical/plumbing</li>
+                        <li>• Structural modifications or additions</li>
+                        <li>• HVAC system modifications</li>
+                        <li>• Creation of new bedrooms (egress requirements)</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <h5 class="font-medium text-slate-800 mb-2">Permit Process Timeline</h5>
+                      <ul class="text-slate-500 text-sm space-y-1">
+                        <li>• Application submission: 1-2 days</li>
+                        <li>• Plan review period: 10-15 business days</li>
+                        <li>• Permit issuance: 1-3 business days</li>
+                        <li>• Total process time: 2-4 weeks typical</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="bg-purple-50 rounded-lg p-6">
+                  <h4 class="text-xl font-semibold text-purple-800 mb-4">Inspection Schedule</h4>
+                  <div class="space-y-4">
+                    <div>
+                      <h5 class="font-medium text-slate-800 mb-2">Required Inspection Points</h5>
+                      <ul class="text-slate-500 text-sm space-y-1">
+                        <li>• <strong>Framing inspection:</strong> Before insulation</li>
+                        <li>• <strong>Rough-in inspection:</strong> Electrical, plumbing, HVAC</li>
+                        <li>• <strong>Insulation inspection:</strong> Before vapor barrier</li>
+                        <li>• <strong>Final inspection:</strong> Completed work</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <h5 class="font-medium text-slate-800 mb-2">Common Inspection Issues</h5>
+                      <ul class="text-slate-500 text-sm space-y-1">
+                        <li>• Inadequate vapor barrier installation</li>
+                        <li>• Insufficient insulation coverage</li>
+                        <li>• Missing or improper air sealing</li>
+                        <li>• Electrical box vapor barrier penetrations</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-slate-50 rounded-lg p-8 mt-12">
+            <h3 class="text-2xl font-semibold text-slate-800 mb-6">Code Compliance Cost Analysis</h3>
+            <div class="grid md:grid-cols-2 gap-8">
+              <div>
+                <h4 class="text-lg font-semibold text-cyan-600 mb-4">Code Minimum vs Best Practice</h4>
+                <div class="space-y-3">
+                  <div class="flex justify-between items-center bg-white p-3 rounded">
+                    <span class="font-medium">Code minimum insulation</span>
+                    <span class="text-cyan-600 font-bold">$8-12/sq ft</span>
+                  </div>
+                  <div class="flex justify-between items-center bg-white p-3 rounded">
+                    <span class="font-medium">Best practice upgrade</span>
+                    <span class="text-cyan-600 font-bold">$12-18/sq ft</span>
+                  </div>
+                  <div class="flex justify-between items-center bg-white p-3 rounded">
+                    <span class="font-medium">Premium performance</span>
+                    <span class="text-purple-600 font-bold">$18-25/sq ft</span>
+                  </div>
+                </div>
+              </div>
+              
+              <div>
+                <h4 class="text-lg font-semibold text-cyan-600 mb-4">Long-Term Value Comparison</h4>
+                <div class="space-y-3 text-sm">
+                  <div class="bg-white p-3 rounded">
+                    <div class="font-medium mb-1">Energy Savings (Annual)</div>
+                    <div class="text-slate-500">Code: $300-450 | Best: $500-750 | Premium: $750-1200</div>
+                  </div>
+                  <div class="bg-white p-3 rounded">
+                    <div class="font-medium mb-1">Comfort Improvement</div>
+                    <div class="text-slate-500">Code: Basic | Best: Good | Premium: Excellent</div>
+                  </div>
+                  <div class="bg-white p-3 rounded">
+                    <div class="font-medium mb-1">System Lifespan</div>
+                    <div class="text-slate-500">Code: 20-25 years | Best: 25-35 years | Premium: 35+ years</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Professional Installation and Costs -->
+    <section class="py-16 bg-slate-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-4xl font-bold text-slate-900 mb-12 text-center">Professional Installation and Cost Factors</h2>
+          
+          <div class="grid lg:grid-cols-2 gap-12 mb-12">
+            <div>
+              <h3 class="text-2xl font-semibold text-slate-800 mb-6">Complete Project Cost Breakdown</h3>
+              
+              <div class="space-y-6">
+                <div class="bg-white rounded-lg p-6 shadow-md">
+                  <h4 class="text-xl font-semibold text-cyan-600 mb-4">Basic Finishing System (1000 sq ft)</h4>
+                  <div class="space-y-3">
+                    <div class="flex justify-between">
+                      <span>Standoff wall framing</span>
+                      <span class="font-medium">$12,000-18,000</span>
+                    </div>
+                    <div class="flex justify-between">
+                      <span>Insulation (R-12 minimum)</span>
+                      <span class="font-medium">$3,500-5,500</span>
+                    </div>
+                    <div class="flex justify-between">
+                      <span>Vapor barrier installation</span>
+                      <span class="font-medium">$1,500-2,500</span>
+                    </div>
+                    <div class="flex justify-between">
+                      <span>Electrical rough-in</span>
+                      <span class="font-medium">$4,000-7,000</span>
+                    </div>
+                    <div class="flex justify-between">
+                      <span>Drywall and finishing</span>
+                      <span class="font-medium">$6,000-9,000</span>
+                    </div>
+                    <div class="flex justify-between border-t pt-3">
+                      <span class="font-bold">Total Basic System:</span>
+                      <span class="font-bold text-cyan-600">$27,000-42,000</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="bg-white rounded-lg p-6 shadow-md">
+                  <h4 class="text-xl font-semibold text-cyan-600 mb-4">Premium System (1000 sq ft)</h4>
+                  <div class="space-y-3">
+                    <div class="flex justify-between">
+                      <span>Engineered standoff system</span>
+                      <span class="font-medium">$18,000-25,000</span>
+                    </div>
+                    <div class="flex justify-between">
+                      <span>Hybrid insulation (R-25+)</span>
+                      <span class="font-medium">$6,500-9,500</span>
+                    </div>
+                    <div class="flex justify-between">
+                      <span>Smart vapor barrier system</span>
+                      <span class="font-medium">$2,500-4,000</span>
+                    </div>
+                    <div class="flex justify-between">
+                      <span>Advanced electrical/controls</span>
+                      <span class="font-medium">$6,000-10,000</span>
+                    </div>
+                    <div class="flex justify-between">
+                      <span>Premium finishes</span>
+                      <span class="font-medium">$8,000-12,000</span>
+                    </div>
+                    <div class="flex justify-between border-t pt-3">
+                      <span class="font-bold">Total Premium System:</span>
+                      <span class="font-bold text-cyan-600">$41,000-60,500</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <h3 class="text-2xl font-semibold text-slate-800 mb-6">Project Management and Timeline</h3>
+              
+              <div class="space-y-6">
+                <div class="bg-white rounded-lg p-6 shadow-md">
+                  <h4 class="text-xl font-semibold text-purple-600 mb-4">Typical Project Timeline</h4>
+                  <div class="space-y-4">
+                    <div>
+                      <h5 class="font-medium text-slate-800 mb-2">Design and Permitting Phase</h5>
+                      <ul class="text-slate-500 text-sm space-y-1">
+                        <li>• Initial assessment and design: 1-2 weeks</li>
+                        <li>• Permit application and approval: 3-4 weeks</li>
+                        <li>• Material ordering and scheduling: 1-2 weeks</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <h5 class="font-medium text-slate-800 mb-2">Construction Phase</h5>
+                      <ul class="text-slate-500 text-sm space-y-1">
+                        <li>• Framing and rough-in: 2-3 weeks</li>
+                        <li>• Insulation and vapor barrier: 1-2 weeks</li>
+                        <li>• Drywall and finishing: 3-4 weeks</li>
+                        <li>• Final inspections and cleanup: 1 week</li>
+                      </ul>
+                    </div>
+                    <div class="bg-cyan-50 p-3 rounded">
+                      <p class="font-medium text-cyan-700">Total project duration: 12-18 weeks</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="bg-white rounded-lg p-6 shadow-md">
+                  <h4 class="text-xl font-semibold text-purple-600 mb-4">Quality Assurance Program</h4>
+                  <div class="space-y-4">
+                    <div>
+                      <h5 class="font-medium text-slate-800 mb-2">Milestone Inspections</h5>
+                      <ul class="text-slate-500 text-sm space-y-1">
+                        <li>• Pre-construction moisture assessment</li>
+                        <li>• Framing inspection and approval</li>
+                        <li>• Insulation installation verification</li>
+                        <li>• Air barrier continuity testing</li>
+                        <li>• Final thermal imaging inspection</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <h5 class="font-medium text-slate-800 mb-2">Performance Verification</h5>
+                      <ul class="text-slate-500 text-sm space-y-1">
+                        <li>• Blower door testing for air leakage</li>
+                        <li>• Thermal imaging for bridge detection</li>
+                        <li>• Moisture monitoring system setup</li>
+                        <li>• Energy performance baseline establishment</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-cyan-50 rounded-lg p-8">
+            <h3 class="text-2xl font-semibold text-cyan-700 mb-6 text-center">Why Choose Professional Installation?</h3>
+            <div class="grid md:grid-cols-3 gap-6">
+              <div class="text-center">
+                <div class="bg-white rounded-lg p-6">
+                  <svg class="w-12 h-12 text-cyan-600 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                  </svg>
+                  <h4 class="font-semibold text-slate-800 mb-2">Code Compliance Guarantee</h4>
+                  <p class="text-sm text-slate-500">Professional installation ensures all work meets Toronto Building Code requirements and passes inspection.</p>
+                </div>
+              </div>
+              
+              <div class="text-center">
+                <div class="bg-white rounded-lg p-6">
+                  <svg class="w-12 h-12 text-cyan-600 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"></path>
+                  </svg>
+                  <h4 class="font-semibold text-slate-800 mb-2">Long-Term Value</h4>
+                  <p class="text-sm text-slate-500">Professional systems provide 25-35 year service life with comprehensive warranties and maintenance support.</p>
+                </div>
+              </div>
+              
+              <div class="text-center">
+                <div class="bg-white rounded-lg p-6">
+                  <svg class="w-12 h-12 text-purple-600 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                  </svg>
+                  <h4 class="font-semibold text-slate-800 mb-2">Performance Optimization</h4>
+                  <p class="text-sm text-slate-500">Expert installation maximizes energy efficiency, comfort, and moisture management for Toronto's challenging climate.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <ContactForm />
+  </div>
+
+  <!-- Resource Images and Diagrams -->
+  <ResourceImageGallery resource="waterproofing-methods" />
+
+</PageLayout>

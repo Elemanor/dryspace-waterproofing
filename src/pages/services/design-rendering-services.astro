@@ -1,0 +1,461 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Hero from "../../components/Hero.astro";
+import CTASection from '../../components/sections/CTA.astro';
+import FAQ from "../../components/FAQ.astro";
+import ServiceSchema from "../../components/ServiceSchema.astro";
+import InternalLinks from "../../components/InternalLinks.astro";
+
+const features = [
+  {
+    title: "3D Architectural Visualization",
+    description: "Photorealistic renderings of your construction project before breaking ground",
+    icon: "🏗️"
+  },
+  {
+    title: "CAD Drawings",
+    description: "Detailed technical drawings for permits, construction, and engineering",
+    icon: "📐"
+  },
+  {
+    title: "Interior Design",
+    description: "Complete interior layouts with materials, lighting, and furniture placement",
+    icon: "🏠"
+  },
+  {
+    title: "Virtual Walkthroughs",
+    description: "Interactive 3D tours and VR experiences of your future space",
+    icon: "🥽"
+  },
+  {
+    title: "Landscape Design",
+    description: "Exterior visualization including grading, drainage, and landscaping",
+    icon: "🌳"
+  },
+  {
+    title: "Construction Documentation",
+    description: "Complete drawing packages for contractors and building departments",
+    icon: "📋"
+  }
+];
+
+const process = [
+  {
+    step: 1,
+    title: "Initial Consultation",
+    description: "Discuss project scope, requirements, and vision"
+  },
+  {
+    step: 2,
+    title: "Concept Development",
+    description: "Create initial sketches and 3D models"
+  },
+  {
+    step: 3,
+    title: "Design Refinement",
+    description: "Iterate based on feedback and requirements"
+  },
+  {
+    step: 4,
+    title: "Final Rendering",
+    description: "Produce high-quality visuals and documentation"
+  }
+];
+
+const comparisonData = {
+  headers: ["Service Type", "Deliverables", "Timeline", "Starting Price"],
+  rows: [
+    {
+      feature: "Basic 3D Rendering",
+      cols: ["4-6 exterior/interior views", "3-5 days", "$850"]
+    },
+    {
+      feature: "Full Design Package",
+      cols: ["3D renders + CAD drawings + specs", "2-3 weeks", "$3,800"]
+    },
+    {
+      feature: "Virtual Walkthrough",
+      cols: ["Interactive 3D tour + VR ready", "1-2 weeks", "$2,700"]
+    },
+    {
+      feature: "Construction Drawings",
+      cols: ["Complete technical documentation", "2-4 weeks", "$4,900"]
+    }
+  ]
+};
+
+const pricingPlans = [
+  {
+    name: "Visualization",
+    price: "$850",
+    period: "per project",
+    description: "3D rendering and basic visualization",
+    features: [
+      "4-6 high-quality renders",
+      "2 rounds of revisions",
+      "Basic materials library",
+      "HD resolution output",
+      "3-5 day turnaround"
+    ],
+    highlighted: false
+  },
+  {
+    name: "Design Package",
+    price: "$3,800",
+    period: "per project",
+    description: "Complete design and documentation",
+    features: [
+      "Unlimited 3D renders",
+      "Full CAD drawing set",
+      "Material specifications",
+      "Lighting calculations",
+      "Permit-ready drawings",
+      "Virtual walkthrough",
+      "4 rounds of revisions"
+    ],
+    highlighted: true
+  },
+  {
+    name: "Enterprise",
+    price: "Custom",
+    period: "per project",
+    description: "Large-scale commercial projects",
+    features: [
+      "Multi-building complexes",
+      "BIM coordination",
+      "Construction phasing",
+      "4D scheduling visualization",
+      "VR presentations",
+      "On-site support",
+      "Priority turnaround"
+    ],
+    highlighted: false
+  }
+];
+
+const faqItems = [
+  {
+    question: "What software do you use for design and rendering?",
+    answer: "We use industry-leading software including AutoCAD for technical drawings, Revit for BIM modeling, 3ds Max and V-Ray for photorealistic rendering, SketchUp for quick conceptual work, and Lumion for real-time visualization. This ensures compatibility with all construction and engineering teams."
+  },
+  {
+    question: "Can you work from existing blueprints or sketches?",
+    answer: "Yes! We can work from existing architectural drawings, hand sketches, or even rough ideas. Our team will digitize and enhance your existing documentation, creating accurate 3D models and professional renderings that bring your vision to life."
+  },
+  {
+    question: "How long does a typical rendering project take?",
+    answer: "Basic rendering projects (4-6 views) typically take 3-5 business days. Complete design packages with CAD drawings take 2-3 weeks. Virtual walkthroughs require 1-2 weeks. Rush service is available for time-sensitive projects with 24-48 hour turnaround."
+  },
+  {
+    question: "Do you provide revisions?",
+    answer: "Yes, all packages include revisions. Basic visualization includes 2 rounds, design packages include 4 rounds, and enterprise projects have unlimited revisions. We work closely with you to ensure the final product matches your vision perfectly."
+  },
+  {
+    question: "Can renderings be used for permits and approvals?",
+    answer: "Absolutely. Our renderings and drawings are prepared to meet municipal requirements for permits and approvals. We ensure all documentation follows local building codes and standards, with proper scales, dimensions, and technical details required by building departments."
+  },
+  {
+    question: "Do you offer animation and virtual reality?",
+    answer: "Yes! We create animated walkthroughs, flyovers, and fully interactive VR experiences. These are perfect for client presentations, marketing materials, and stakeholder approvals. VR experiences can be viewed on phones, tablets, or VR headsets."
+  }
+];
+
+// Service-specific FAQs for ServiceSchema
+const designFAQs = [
+  {
+    question: "How much do design and rendering services cost in Toronto?",
+    answer: "Design and rendering costs vary by project scope: Basic 3D visualization $850-1,200, full design packages $3,800-5,000, virtual walkthroughs $2,700-3,500, and construction drawings $4,900-7,000. Enterprise projects are custom quoted. Factors include complexity, number of views, revisions, and timeline requirements."
+  },
+  {
+    question: "How long does a design and rendering project take?",
+    answer: "Timeline depends on project complexity: Basic rendering (4-6 views) takes 3-5 days, complete design packages require 2-3 weeks, virtual walkthroughs need 1-2 weeks, and construction drawings take 2-4 weeks. Rush service available with 24-48 hour turnaround for urgent projects."
+  },
+  {
+    question: "What are the benefits of professional design and rendering services?",
+    answer: "Professional visualization saves money by identifying design issues early, speeds permit approvals with clear visuals, improves communication between stakeholders, enables better material selection, reduces construction errors, and provides marketing materials. Our photorealistic renderings help make informed decisions before construction begins."
+  },
+  {
+    question: "When do I need professional design and rendering services?",
+    answer: "Professional design services are essential for: major renovations, new construction projects, permit applications, stakeholder presentations, marketing materials, design decision making, and complex visualizations. Early involvement prevents costly changes and ensures project success from concept to completion."
+  }
+];
+
+// Service offers (pricing tiers)
+const designOffers = [
+  {
+    name: "Basic Visualization Package",
+    price: "$850-1,200",
+    description: "4-6 high-quality 3D renders, 2 rounds of revisions, basic materials library, HD resolution output, and 3-5 day turnaround. Perfect for simple visualization needs."
+  },
+  {
+    name: "Complete Design Package",
+    price: "$3,800-5,000",
+    description: "Unlimited 3D renders, full CAD drawing set, material specifications, lighting calculations, permit-ready drawings, virtual walkthrough, and 4 rounds of revisions. Comprehensive design solution."
+  },
+  {
+    name: "Enterprise Custom Solutions",
+    price: "Custom Quote",
+    description: "Multi-building complexes, BIM coordination, construction phasing, 4D scheduling visualization, VR presentations, on-site support, and priority turnaround. For large-scale commercial projects."
+  }
+];
+---
+
+<Layout title="Design & Rendering Services - 3D Visualization Toronto | Dryspace Waterproofing">
+  <ServiceSchema 
+    serviceName="Design & Rendering Services"
+    description="Professional 3D architectural visualization, CAD drawings, and complete design documentation for residential and commercial construction projects. Photorealistic renderings, virtual tours, and technical drawings with industry-leading software."
+    priceRange="$850-7,000"
+    areaServed={['Toronto', 'Mississauga', 'Brampton', 'Vaughan', 'Markham', 'Richmond Hill', 'North York', 'Scarborough']}
+    offers={designOffers}
+    faqs={designFAQs}
+  />
+  <Hero
+    title="Design & Rendering Services"
+    subtitle="Transform Your Vision into Reality with Professional 3D Visualization"
+    backgroundImage="/images/design-rendering-hero.webp"
+    ctaText="Get Free Consultation"
+    ctaLink="/contact"
+  />
+
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-4xl font-bold mb-6">Professional Architectural Visualization & Design</h2>
+        <p class="text-lg text-slate-600 mb-8">
+          Bring your construction project to life before breaking ground. Our design and rendering services provide photorealistic 3D visualizations, detailed CAD drawings, and complete documentation packages for residential and commercial projects across the GTA.
+        </p>
+
+        <div class="grid md:grid-cols-2 gap-8 mb-12">
+          <div>
+            <h3 class="text-2xl font-bold mb-4">Visualization Services</h3>
+            <ul class="space-y-3">
+              <li class="flex items-start">
+                <span class="text-cyan-600 mr-3">✓</span>
+                <div>
+                  <strong>3D Exterior Rendering</strong>
+                  <p class="text-slate-500">Photorealistic views of buildings, landscapes, and streetscapes</p>
+                </div>
+              </li>
+              <li class="flex items-start">
+                <span class="text-cyan-600 mr-3">✓</span>
+                <div>
+                  <strong>3D Interior Rendering</strong>
+                  <p class="text-slate-500">Detailed room layouts with furniture, materials, and lighting</p>
+                </div>
+              </li>
+              <li class="flex items-start">
+                <span class="text-cyan-600 mr-3">✓</span>
+                <div>
+                  <strong>Virtual Tours</strong>
+                  <p class="text-slate-500">360° panoramas and interactive walkthroughs</p>
+                </div>
+              </li>
+              <li class="flex items-start">
+                <span class="text-cyan-600 mr-3">✓</span>
+                <div>
+                  <strong>Animation & Flyovers</strong>
+                  <p class="text-slate-500">Dynamic video presentations of your project</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="text-2xl font-bold mb-4">Technical Drawing Services</h3>
+            <ul class="space-y-3">
+              <li class="flex items-start">
+                <span class="text-cyan-600 mr-3">✓</span>
+                <div>
+                  <strong>CAD Floor Plans</strong>
+                  <p class="text-slate-500">Detailed 2D layouts with dimensions and annotations</p>
+                </div>
+              </li>
+              <li class="flex items-start">
+                <span class="text-cyan-600 mr-3">✓</span>
+                <div>
+                  <strong>Elevation Drawings</strong>
+                  <p class="text-slate-500">Front, side, and rear views with material callouts</p>
+                </div>
+              </li>
+              <li class="flex items-start">
+                <span class="text-cyan-600 mr-3">✓</span>
+                <div>
+                  <strong>Section Drawings</strong>
+                  <p class="text-slate-500">Cross-sections showing structural details</p>
+                </div>
+              </li>
+              <li class="flex items-start">
+                <span class="text-cyan-600 mr-3">✓</span>
+                <div>
+                  <strong>Construction Details</strong>
+                  <p class="text-slate-500">Specific assemblies and connection points</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="bg-cyan-50 border-l-4 border-cyan-600 p-6 mb-8">
+          <h3 class="text-xl font-bold mb-3">Specialized Services</h3>
+          <div class="grid md:grid-cols-2 gap-6">
+            <div>
+              <h4 class="font-bold mb-2">Basement & Foundation Design</h4>
+              <ul class="text-sm space-y-1">
+                <li>• Underpinning visualization</li>
+                <li>• Waterproofing system layouts</li>
+                <li>• Drainage design renders</li>
+                <li>• Finished basement concepts</li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="font-bold mb-2">Renovation Planning</h4>
+              <ul class="text-sm space-y-1">
+                <li>• Before/after comparisons</li>
+                <li>• Phasing visualizations</li>
+                <li>• Material options showcase</li>
+                <li>• Budget optimization layouts</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-slate-50 rounded-lg p-8 mb-8">
+          <h3 class="text-2xl font-bold mb-4">Why Choose Professional Rendering?</h3>
+          <div class="grid md:grid-cols-3 gap-6">
+            <div class="text-center">
+              <div class="text-4xl mb-3">💰</div>
+              <h4 class="font-bold mb-2">Save Money</h4>
+              <p class="text-sm">Identify design issues before construction begins</p>
+            </div>
+            <div class="text-center">
+              <div class="text-4xl mb-3">⚡</div>
+              <h4 class="font-bold mb-2">Faster Approvals</h4>
+              <p class="text-sm">Clear visuals speed up permit and stakeholder approvals</p>
+            </div>
+            <div class="text-center">
+              <div class="text-4xl mb-3">🎯</div>
+              <h4 class="font-bold mb-2">Better Communication</h4>
+              <p class="text-sm">Ensure everyone understands the project vision</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-amber-50 border border-amber-400 rounded-lg p-6 mb-8">
+          <h3 class="text-xl font-bold mb-3 flex items-center">
+            <span class="text-amber-500 mr-2">⚠️</span>
+            Project Types We Specialize In
+          </h3>
+          <div class="grid md:grid-cols-2 gap-4 text-sm">
+            <ul class="space-y-2">
+              <li><strong>Residential:</strong> Homes, additions, renovations</li>
+              <li><strong>Commercial:</strong> Offices, retail, restaurants</li>
+              <li><strong>Industrial:</strong> Warehouses, factories, facilities</li>
+              <li><strong>Landscaping:</strong> Gardens, pools, outdoor spaces</li>
+            </ul>
+            <ul class="space-y-2">
+              <li><strong>Basements:</strong> Finishing, underpinning, waterproofing</li>
+              <li><strong>Multi-unit:</strong> Apartments, condos, townhouses</li>
+              <li><strong>Institutional:</strong> Schools, churches, community centers</li>
+              <li><strong>Infrastructure:</strong> Drainage, utilities, site works</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="prose max-w-none">
+          <h3 class="text-2xl font-bold mb-4">Advanced Technology & Software</h3>
+          <p class="mb-4">
+            We utilize cutting-edge design software and rendering technology to deliver exceptional results:
+          </p>
+          <ul class="space-y-2 mb-6">
+            <li><strong>BIM Integration:</strong> Building Information Modeling for complex projects</li>
+            <li><strong>Real-time Rendering:</strong> Instant visualization of design changes</li>
+            <li><strong>Cloud Collaboration:</strong> Access your project files anywhere, anytime</li>
+            <li><strong>VR/AR Ready:</strong> Immersive experiences on modern devices</li>
+            <li><strong>Photogrammetry:</strong> 3D scanning of existing structures</li>
+          </ul>
+
+          <h3 class="text-2xl font-bold mb-4">File Formats & Deliverables</h3>
+          <div class="grid md:grid-cols-3 gap-4 mb-8">
+            <div>
+              <h4 class="font-bold mb-2">Images</h4>
+              <ul class="text-sm space-y-1">
+                <li>• JPG/PNG (web & print)</li>
+                <li>• TIFF (professional printing)</li>
+                <li>• PDF (documentation)</li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="font-bold mb-2">CAD Files</h4>
+              <ul class="text-sm space-y-1">
+                <li>• DWG (AutoCAD)</li>
+                <li>• RVT (Revit)</li>
+                <li>• SKP (SketchUp)</li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="font-bold mb-2">3D Models</h4>
+              <ul class="text-sm space-y-1">
+                <li>• FBX/OBJ (universal)</li>
+                <li>• IFC (BIM standard)</li>
+                <li>• 3DS (3ds Max)</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ServiceFeatures removed -->
+  
+  
+  
+
+  <!-- Related Construction Services -->
+  <section class="py-16 bg-cyan-50">
+    <div class="container mx-auto px-4 max-w-6xl">
+      <InternalLinks category="construction" currentPage="design-rendering-services" limit={6} />
+    </div>
+  </section>
+
+  <section class="py-16 bg-slate-50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl font-bold mb-8 text-center">Portfolio Highlights</h2>
+        <div class="grid md:grid-cols-2 gap-8">
+          <div class="bg-white rounded-lg shadow-lg p-6">
+            <h3 class="text-xl font-bold mb-3">Residential Projects</h3>
+            <ul class="space-y-2 text-slate-600">
+              <li>• 500+ home renovations visualized</li>
+              <li>• 200+ basement finishing designs</li>
+              <li>• 150+ additions and extensions</li>
+              <li>• 100+ landscape designs</li>
+            </ul>
+          </div>
+          <div class="bg-white rounded-lg shadow-lg p-6">
+            <h3 class="text-xl font-bold mb-3">Commercial Projects</h3>
+            <ul class="space-y-2 text-slate-600">
+              <li>• 50+ retail space designs</li>
+              <li>• 30+ office renovations</li>
+              <li>• 25+ restaurant concepts</li>
+              <li>• 20+ industrial facilities</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <FAQ items={faqItems} />
+  
+  <CTASection
+    title="Ready to Visualize Your Project?"
+    description="Get professional 3D renderings and technical drawings that bring your vision to life. Free consultation available."
+    primaryButtonText="Start Your Design Project"
+    primaryButtonLink="/contact"
+    secondaryButtonText="View Portfolio"
+    secondaryButtonLink="/projects"
+  />
+
+  <!-- ServiceAreas removed -->
+</Layout>

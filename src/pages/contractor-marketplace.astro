@@ -1,0 +1,466 @@
+---
+import Layout from '../layouts/Layout.astro';
+import TrustBadges from '../components/TrustBadges.astro';
+import EmergencyAlert from '../components/react/EmergencyAlert.tsx';
+import Card from '../components/ui/card.tsx';
+import { Button } from '../components/ui/button.tsx';
+
+const title = "Waterproofing Contractor Network | Verified Professionals | Dryspace";
+const description = "Connect with verified waterproofing contractors in Toronto. Compare quotes, view portfolios, and book trusted professionals for your project.";
+---
+
+<Layout title={title} description={description}>
+  
+  
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-r from-blue-600 to-blue-700 text-white py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center">
+        <div class="flex items-center justify-center mb-4">
+          <svg class="w-16 h-16 mr-4" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z"/>
+          </svg>
+          <span class="text-2xl font-bold">CONTRACTOR NETWORK</span>
+        </div>
+        <h1 class="text-5xl font-bold mb-6">Verified Waterproofing Contractors</h1>
+        <p class="text-xl mb-8 max-w-3xl mx-auto">
+          Connect with Toronto's trusted waterproofing professionals. Compare quotes, view portfolios, and choose the right contractor for your project.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="#emergency-options" class="bg-white text-red-600 px-8 py-4 rounded-lg font-bold text-lg hover:bg-slate-50 transition-colors">
+            Start Emergency Request
+          </a>
+          <a href="tel:437-545-0067" class="bg-red-800 text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-red-900 transition-colors">
+            Call Now: 437-545-0067
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Emergency Options -->
+  <section id="emergency-options" class="py-16 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-slate-900 mb-4">Choose Your Emergency Path</h2>
+        <p class="text-xl text-slate-500">Select the option that best describes your situation</p>
+      </div>
+      
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Critical Emergency -->
+        <div class="bg-white rounded-lg shadow-lg p-8 border-l-4 border-red-600 transform hover:scale-105 transition-transform">
+          <div class="flex items-center mb-4">
+            <div class="bg-red-100 p-3 rounded-full mr-4">
+              <svg class="w-8 h-8 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L2.732 15.5c-.77.833.192 2.5 1.732 2.5z"/>
+              </svg>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold text-red-600">Critical Emergency</h3>
+              <p class="text-sm text-slate-500">Active flooding, burst pipes, foundation failure</p>
+            </div>
+          </div>
+          <div class="mb-6">
+            <p class="text-slate-600 mb-4">When you have:</p>
+            <ul class="text-sm text-slate-500 space-y-2">
+              <li>• Active water flooding</li>
+              <li>• Structural damage visible</li>
+              <li>• Electrical hazards present</li>
+              <li>• Property actively deteriorating</li>
+            </ul>
+          </div>
+          <div class="bg-red-50 p-4 rounded-lg mb-6">
+            <div class="flex items-center text-red-800">
+              <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"/>
+              </svg>
+              <span class="font-semibold">Response: &lt; 2 hours</span>
+            </div>
+            <p class="text-sm text-red-700 mt-1">Emergency crew dispatched immediately</p>
+          </div>
+          <a href="#critical-form" class="block w-full bg-red-600 text-white text-center py-3 rounded-lg font-semibold hover:bg-red-700 transition-colors">
+            Get Emergency Help Now
+          </a>
+        </div>
+
+        <!-- Urgent Issue -->
+        <div class="bg-white rounded-lg shadow-lg p-8 border-l-4 border-orange-500 transform hover:scale-105 transition-transform">
+          <div class="flex items-center mb-4">
+            <div class="bg-orange-100 p-3 rounded-full mr-4">
+              <svg class="w-8 h-8 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"/>
+              </svg>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold text-orange-600">Urgent Repair</h3>
+              <p class="text-sm text-slate-500">Visible damage, but contained</p>
+            </div>
+          </div>
+          <div class="mb-6">
+            <p class="text-slate-600 mb-4">When you have:</p>
+            <ul class="text-sm text-slate-500 space-y-2">
+              <li>• Visible cracks or leaks</li>
+              <li>• Water stains appearing</li>
+              <li>• Musty odors developing</li>
+              <li>• Minor seepage issues</li>
+            </ul>
+          </div>
+          <div class="bg-orange-50 p-4 rounded-lg mb-6">
+            <div class="flex items-center text-orange-800">
+              <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"/>
+              </svg>
+              <span class="font-semibold">Response: Same day</span>
+            </div>
+            <p class="text-sm text-orange-700 mt-1">Assessment within 24 hours</p>
+          </div>
+          <a href="#urgent-form" class="block w-full bg-orange-600 text-white text-center py-3 rounded-lg font-semibold hover:bg-orange-700 transition-colors">
+            Schedule Urgent Assessment
+          </a>
+        </div>
+
+        <!-- Planned Service -->
+        <div class="bg-white rounded-lg shadow-lg p-8 border-l-4 border-cyan-600 transform hover:scale-105 transition-transform">
+          <div class="flex items-center mb-4">
+            <div class="bg-cyan-50 p-3 rounded-full mr-4">
+              <svg class="w-8 h-8 text-cyan-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/>
+              </svg>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold text-cyan-600">Planned Service</h3>
+              <p class="text-sm text-slate-500">Prevention, maintenance, upgrades</p>
+            </div>
+          </div>
+          <div class="mb-6">
+            <p class="text-slate-600 mb-4">When you need:</p>
+            <ul class="text-sm text-slate-500 space-y-2">
+              <li>• Preventive waterproofing</li>
+              <li>• System upgrades</li>
+              <li>• Routine maintenance</li>
+              <li>• Property improvements</li>
+            </ul>
+          </div>
+          <div class="bg-cyan-50 p-4 rounded-lg mb-6">
+            <div class="flex items-center text-cyan-700">
+              <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"/>
+              </svg>
+              <span class="font-semibold">Response: 2-3 days</span>
+            </div>
+            <p class="text-sm text-cyan-700 mt-1">Thorough assessment and quote</p>
+          </div>
+          <a href="#planned-form" class="block w-full bg-cyan-600 text-white text-center py-3 rounded-lg font-semibold hover:bg-cyan-700 transition-colors">
+            Get Free Inspection
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Photo Upload Section -->
+  <section class="py-16 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-slate-900 mb-4">Upload Photos for Instant Assessment</h2>
+        <p class="text-xl text-slate-500">Get a preliminary diagnosis and cost estimate within minutes</p>
+      </div>
+      
+      <div class="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg p-8 mb-8">
+        <div class="grid md:grid-cols-2 gap-8">
+          <div>
+            <h3 class="text-xl font-bold text-slate-900 mb-4">Photo Upload Benefits</h3>
+            <ul class="space-y-3">
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-cyan-600 mr-3 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+                <span class="text-slate-600">Instant damage assessment</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-cyan-600 mr-3 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+                <span class="text-slate-600">Preliminary cost estimate</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-cyan-600 mr-3 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+                <span class="text-slate-600">Priority matching to specialists</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-cyan-600 mr-3 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+                <span class="text-slate-600">Faster response time</span>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <div class="bg-white rounded-lg p-6 shadow-md">
+              <h4 class="font-bold text-slate-900 mb-4">Upload Your Photos</h4>
+              <div class="border-2 border-dashed border-slate-200 rounded-lg p-6 text-center hover:border-cyan-500 transition-colors cursor-pointer">
+                <svg class="w-12 h-12 text-slate-400 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"/>
+                </svg>
+                <p class="text-slate-500 mb-2">Drop photos here or click to upload</p>
+                <p class="text-sm text-slate-400">PNG, JPG up to 10MB each</p>
+              </div>
+              <p class="text-sm text-slate-500 mt-2">
+                <strong>Best photos:</strong> Show the problem area, any water damage, cracks, or affected areas clearly.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contractor Network Preview -->
+  <section class="py-16 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-slate-900 mb-4">Verified Waterproofing Experts</h2>
+        <p class="text-xl text-slate-500">Our network of licensed, insured, and certified professionals</p>
+      </div>
+      
+      <div class="grid md:grid-cols-3 gap-8 mb-12">
+        <!-- Dryspace (Primary) -->
+        <div class="bg-white rounded-lg shadow-lg p-6 border-2 border-cyan-600">
+          <div class="flex items-center mb-4">
+            <div class="w-12 h-12 bg-cyan-600 rounded-full flex items-center justify-center mr-4">
+              <span class="text-white font-bold">S</span>
+            </div>
+            <div>
+              <h3 class="text-lg font-bold text-slate-900">Dryspace Waterproofing</h3>
+              <div class="flex items-center">
+                <div class="flex text-amber-400">
+                  <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                  </svg>
+                  <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                  </svg>
+                  <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                  </svg>
+                  <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                  </svg>
+                  <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                  </svg>
+                </div>
+                <span class="text-sm text-slate-500 ml-2">4.9 (287 reviews)</span>
+              </div>
+            </div>
+          </div>
+          <div class="space-y-2 mb-4">
+            <div class="flex items-center text-sm text-slate-500">
+              <svg class="w-4 h-4 mr-2 text-cyan-600" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+              </svg>
+              <span>25+ years experience</span>
+            </div>
+            <div class="flex items-center text-sm text-slate-500">
+              <svg class="w-4 h-4 mr-2 text-cyan-600" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+              </svg>
+              <span>Licensed & Insured</span>
+            </div>
+            <div class="flex items-center text-sm text-slate-500">
+              <svg class="w-4 h-4 mr-2 text-cyan-600" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+              </svg>
+              <span>25-year warranty</span>
+            </div>
+            <div class="flex items-center text-sm text-red-600">
+              <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"/>
+              </svg>
+              <span><strong>Emergency: &lt; 2 hours</strong></span>
+            </div>
+          </div>
+          <div class="border-t pt-4">
+            <p class="text-sm text-slate-500 mb-3">Specialties:</p>
+            <div class="flex flex-wrap gap-2">
+              <span class="bg-cyan-50 text-cyan-700 text-xs px-2 py-1 rounded">Foundation Repair</span>
+              <span class="bg-cyan-50 text-cyan-700 text-xs px-2 py-1 rounded">Exterior Waterproofing</span>
+              <span class="bg-red-100 text-red-800 text-xs px-2 py-1 rounded">Emergency Response</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Partner Network -->
+        <div class="bg-white rounded-lg shadow-lg p-6">
+          <div class="flex items-center mb-4">
+            <div class="w-12 h-12 bg-slate-500 rounded-full flex items-center justify-center mr-4">
+              <span class="text-white font-bold">P</span>
+            </div>
+            <div>
+              <h3 class="text-lg font-bold text-slate-900">Partner Network</h3>
+              <div class="flex items-center">
+                <div class="flex text-amber-400">
+                  <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                  </svg>
+                  <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                  </svg>
+                  <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                  </svg>
+                  <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                  </svg>
+                  <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                  </svg>
+                </div>
+                <span class="text-sm text-slate-500 ml-2">4.6 (Average)</span>
+              </div>
+            </div>
+          </div>
+          <div class="space-y-2 mb-4">
+            <div class="flex items-center text-sm text-slate-500">
+              <svg class="w-4 h-4 mr-2 text-cyan-600" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+              </svg>
+              <span>12 verified contractors</span>
+            </div>
+            <div class="flex items-center text-sm text-slate-500">
+              <svg class="w-4 h-4 mr-2 text-cyan-600" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+              </svg>
+              <span>All licensed & insured</span>
+            </div>
+            <div class="flex items-center text-sm text-slate-500">
+              <svg class="w-4 h-4 mr-2 text-cyan-600" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+              </svg>
+              <span>Background checked</span>
+            </div>
+            <div class="flex items-center text-sm text-orange-600">
+              <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"/>
+              </svg>
+              <span><strong>Response: 4-6 hours</strong></span>
+            </div>
+          </div>
+          <div class="border-t pt-4">
+            <p class="text-sm text-slate-500 mb-3">Coverage:</p>
+            <div class="flex flex-wrap gap-2">
+              <span class="bg-slate-50 text-slate-800 text-xs px-2 py-1 rounded">GTA Wide</span>
+              <span class="bg-slate-50 text-slate-800 text-xs px-2 py-1 rounded">24/7 Available</span>
+              <span class="bg-slate-50 text-slate-800 text-xs px-2 py-1 rounded">Multi-Trade</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Instant Quote -->
+        <div class="bg-white rounded-lg shadow-lg p-6 border-2 border-cyan-600">
+          <div class="text-center">
+            <div class="w-16 h-16 bg-cyan-600 rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"/>
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 mb-2">Instant AI Quote</h3>
+            <p class="text-sm text-slate-500 mb-4">Get a preliminary estimate in under 60 seconds</p>
+            
+            <div class="bg-cyan-50 p-4 rounded-lg mb-4">
+              <div class="flex items-center justify-center text-cyan-700 mb-2">
+                <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                </svg>
+                <span class="font-semibold">No obligations</span>
+              </div>
+              <ul class="text-sm text-cyan-700 space-y-1">
+                <li>• Upload 2-3 photos</li>
+                <li>• Answer 5 quick questions</li>
+                <li>• Get instant cost range</li>
+                <li>• Schedule if interested</li>
+              </ul>
+            </div>
+            
+            <button class="w-full bg-cyan-600 text-white py-3 rounded-lg font-semibold hover:bg-cyan-700 transition-colors">
+              Get Instant Quote
+            </button>
+            
+            <p class="text-xs text-slate-400 mt-3">
+              Powered by AI damage assessment technology
+            </p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="text-center">
+        <a href="/contractor-network" class="inline-flex items-center text-cyan-600 hover:text-cyan-700 font-semibold">
+          View Full Contractor Network
+          <svg class="w-5 h-5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick Stats -->
+  <section class="py-16 bg-cyan-600 text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-4 gap-8 text-center">
+        <div>
+          <div class="text-4xl font-bold mb-2">24/7</div>
+          <div class="text-xl">Emergency Response</div>
+        </div>
+        <div>
+          <div class="text-4xl font-bold mb-2">&lt;2hr</div>
+          <div class="text-xl">Average Response Time</div>
+        </div>
+        <div>
+          <div class="text-4xl font-bold mb-2">10,000+</div>
+          <div class="text-xl">Properties Protected</div>
+        </div>
+        <div>
+          <div class="text-4xl font-bold mb-2">25yr</div>
+          <div class="text-xl">Warranty Coverage</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust & Security -->
+  <TrustBadges />
+  
+  <!-- Emergency CTA -->
+  <section class="py-16 bg-red-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl font-bold text-red-600 mb-4">Don't Wait - Water Damage Gets Worse Every Hour</h2>
+      <p class="text-xl text-slate-600 mb-8">Emergency situations require immediate action. The longer you wait, the more extensive and expensive the damage becomes.</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="tel:437-545-0067" class="bg-red-600 text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-red-700 transition-colors">
+          Call Emergency Line: 437-545-0067
+        </a>
+        <a href="#emergency-options" class="bg-white text-red-600 px-8 py-4 rounded-lg font-bold text-lg border-2 border-red-600 hover:bg-red-50 transition-colors">
+          Start Online Request
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .animate-pulse-emergency {
+    animation: pulse-red 2s infinite;
+  }
+
+  @keyframes pulse-red {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.7;
+    }
+  }
+</style>

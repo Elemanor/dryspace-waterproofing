@@ -1,0 +1,878 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import Hero from '../components/sections/Hero.astro';
+import Stats from '../components/sections/Stats.astro';
+import ContactForm from '../components/ContactForm.astro';
+
+const pageTitle = "Foundation Problem Diagnostic Tools | Self-Assessment | Toronto";
+const pageDescription = "Free diagnostic tools to assess foundation and waterproofing problems. Interactive problem identifier, severity assessment, and solution recommendations. Expert guidance for homeowners.";
+
+// Diagnostic categories and symptoms
+const diagnosticCategories = [
+  {
+    category: "WATER INFILTRATION PROBLEMS",
+    icon: "💧",
+    description: "Signs of water entering your basement or foundation",
+    symptoms: [
+      {
+        symptom: "Water puddles on basement floor",
+        severity: "HIGH",
+        urgency: "Immediate attention needed",
+        causes: ["Foundation cracks", "Poor drainage", "Hydrostatic pressure", "Sump pump failure"],
+        solutions: ["Interior waterproofing", "Exterior excavation", "Sump pump installation", "French drain system"],
+        diyCheck: "Look for: Water stains, mineral deposits, actual standing water, musty odors",
+        professionalNeeded: true
+      },
+      {
+        symptom: "Damp or wet basement walls",
+        severity: "MEDIUM-HIGH", 
+        urgency: "Address within 2 weeks",
+        causes: ["Condensation", "Minor foundation cracks", "Poor ventilation", "Exterior moisture"],
+        solutions: ["Dehumidification", "Crack injection", "Exterior waterproofing", "Ventilation improvement"],
+        diyCheck: "Touch walls - feel for dampness, look for water stains or efflorescence",
+        professionalNeeded: true
+      },
+      {
+        symptom: "Musty basement smell",
+        severity: "MEDIUM",
+        urgency: "Address within 1 month", 
+        causes: ["Mold growth", "Poor ventilation", "Hidden moisture", "Organic material decay"],
+        solutions: ["Mold remediation", "Moisture control", "Ventilation upgrade", "Source elimination"],
+        diyCheck: "Smell test - musty, earthy, or moldy odors indicate moisture problems",
+        professionalNeeded: false
+      },
+      {
+        symptom: "White chalky residue on walls (efflorescence)",
+        severity: "MEDIUM",
+        urgency: "Monitor and address root cause",
+        causes: ["Mineral deposits from water", "Concrete curing salts", "Ongoing moisture migration"],
+        solutions: ["Moisture source elimination", "Surface cleaning", "Sealant application", "Drainage improvement"],
+        diyCheck: "Look for white, chalky, or crystalline deposits on concrete or masonry",
+        professionalNeeded: false
+      }
+    ]
+  },
+  {
+    category: "STRUCTURAL FOUNDATION ISSUES",
+    icon: "🏗️",
+    description: "Signs of foundation movement, settling, or structural problems",
+    symptoms: [
+      {
+        symptom: "Cracks in foundation walls",
+        severity: "VARIES",
+        urgency: "Depends on crack size and type",
+        causes: ["Settlement", "Hydrostatic pressure", "Freeze-thaw cycles", "Poor construction"],
+        solutions: ["Crack injection", "Foundation repair", "Drainage improvement", "Structural reinforcement"],
+        diyCheck: "Measure crack width: <1/4\" = monitor, >1/4\" = professional assessment needed",
+        professionalNeeded: true
+      },
+      {
+        symptom: "Bowing or leaning basement walls", 
+        severity: "HIGH",
+        urgency: "Immediate professional assessment",
+        causes: ["Soil pressure", "Poor drainage", "Foundation failure", "Structural overload"],
+        solutions: ["Wall anchors", "Carbon fiber reinforcement", "Foundation replacement", "Soil pressure relief"],
+        diyCheck: "Use level or string line to check if walls are plumb and straight",
+        professionalNeeded: true
+      },
+      {
+        symptom: "Doors and windows sticking or not closing properly",
+        severity: "MEDIUM",
+        urgency: "Monitor for worsening",
+        causes: ["Foundation settlement", "Structural movement", "Moisture swelling", "Normal settling"],
+        solutions: ["Foundation leveling", "Structural repair", "Moisture control", "Adjustment"],
+        diyCheck: "Test all doors and windows - note which ones stick and in what weather",
+        professionalNeeded: false
+      },
+      {
+        symptom: "Cracks in drywall or plaster (especially near corners)",
+        severity: "LOW-MEDIUM",
+        urgency: "Monitor for changes",
+        causes: ["Foundation settling", "Structural movement", "Temperature changes", "Normal building movement"],
+        solutions: ["Foundation stabilization", "Crack repair", "Monitoring", "Cosmetic repair"],
+        diyCheck: "Mark crack ends with pencil and date - monitor for growth over 3-6 months",
+        professionalNeeded: false
+      }
+    ]
+  },
+  {
+    category: "DRAINAGE & SUMP PUMP PROBLEMS",
+    icon: "⚡",
+    description: "Issues with water management and drainage systems",
+    symptoms: [
+      {
+        symptom: "Sump pump runs constantly",
+        severity: "HIGH",
+        urgency: "Immediate attention - system failure risk",
+        causes: ["Pump too small", "Check valve failure", "High water table", "Discharge line problems"],
+        solutions: ["Pump upgrade", "Check valve replacement", "Discharge line repair", "System redesign"],
+        diyCheck: "Listen to pump cycles - should run intermittently, not continuously",
+        professionalNeeded: true
+      },
+      {
+        symptom: "Sump pump doesn't run when it should",
+        severity: "HIGH", 
+        urgency: "Immediate testing needed",
+        causes: ["Power failure", "Float switch stuck", "Pump failure", "Circuit breaker tripped"],
+        solutions: ["Power restoration", "Float adjustment", "Pump replacement", "Electrical repair"],
+        diyCheck: "Pour water into sump pit - pump should activate when float rises",
+        professionalNeeded: false
+      },
+      {
+        symptom: "Water backing up from floor drains",
+        severity: "HIGH",
+        urgency: "Immediate attention",
+        causes: ["Sewer backup", "Blockage in line", "Missing backwater valve", "Municipal system overload"],
+        solutions: ["Drain cleaning", "Backwater valve installation", "Line repair", "Emergency service"],
+        diyCheck: "Check if water backing up is clean or contaminated (sewage)",
+        professionalNeeded: true
+      },
+      {
+        symptom: "Gutters overflowing or not draining properly",
+        severity: "MEDIUM",
+        urgency: "Address before next storm season",
+        causes: ["Debris blockage", "Incorrect slope", "Inadequate capacity", "Downspout problems"],
+        solutions: ["Gutter cleaning", "Slope adjustment", "Gutter upgrade", "Downspout extension"],
+        diyCheck: "During rain, observe water flow and overflow points",
+        professionalNeeded: false
+      }
+    ]
+  },
+  {
+    category: "EXTERIOR DRAINAGE ISSUES",
+    icon: "🌊",
+    description: "Problems with water management around your foundation",
+    symptoms: [
+      {
+        symptom: "Water pooling near foundation",
+        severity: "HIGH",
+        urgency: "Address immediately",
+        causes: ["Poor grading", "Blocked drainage", "Inadequate slope", "Hardscaping issues"],
+        solutions: ["Regrading", "Drain installation", "Landscaping changes", "Hardscaping modification"],
+        diyCheck: "After rain, check for standing water within 6 feet of foundation",
+        professionalNeeded: false
+      },
+      {
+        symptom: "Soil erosion around foundation",
+        severity: "MEDIUM-HIGH",
+        urgency: "Address before next major rain",
+        causes: ["Water runoff", "Poor drainage", "Inadequate landscaping", "Downspout issues"],
+        solutions: ["Proper grading", "Landscaping", "Drainage systems", "Runoff control"],
+        diyCheck: "Look for exposed foundation, washed away soil, or channels in landscaping",
+        professionalNeeded: false
+      },
+      {
+        symptom: "Ice dams forming on roof or gutters",
+        severity: "MEDIUM",
+        urgency: "Address before winter",
+        causes: ["Poor insulation", "Air leaks", "Inadequate ventilation", "Gutter problems"],
+        solutions: ["Insulation improvement", "Air sealing", "Ventilation upgrade", "Gutter heating"],
+        diyCheck: "During winter, observe ice formation patterns on roof and gutters",
+        professionalNeeded: false
+      }
+    ]
+  }
+];
+
+// Assessment questionnaire
+const assessmentQuestions = [
+  {
+    category: "IMMEDIATE SAFETY",
+    questions: [
+      {
+        question: "Is there standing water in your basement?",
+        weight: 10,
+        answers: [
+          { answer: "Yes, more than 1 inch deep", points: 10, urgency: "EMERGENCY" },
+          { answer: "Yes, less than 1 inch", points: 8, urgency: "HIGH" },
+          { answer: "No, but floor is damp", points: 5, urgency: "MEDIUM" },
+          { answer: "No standing water", points: 0, urgency: "LOW" }
+        ]
+      },
+      {
+        question: "Are there any electrical hazards in wet areas?",
+        weight: 10,
+        answers: [
+          { answer: "Yes, electrical equipment in water", points: 10, urgency: "EMERGENCY" },
+          { answer: "Yes, outlets near wet areas", points: 8, urgency: "HIGH" },
+          { answer: "Possibly, not sure", points: 5, urgency: "MEDIUM" },
+          { answer: "No electrical hazards", points: 0, urgency: "LOW" }
+        ]
+      }
+    ]
+  },
+  {
+    category: "WATER INFILTRATION",
+    questions: [
+      {
+        question: "How often do you see water in your basement?",
+        weight: 8,
+        answers: [
+          { answer: "Every time it rains", points: 10, urgency: "HIGH" },
+          { answer: "During heavy rains only", points: 7, urgency: "MEDIUM-HIGH" },
+          { answer: "Occasionally", points: 4, urgency: "MEDIUM" },
+          { answer: "Never", points: 0, urgency: "LOW" }
+        ]
+      },
+      {
+        question: "Where does water enter your basement?",
+        weight: 7,
+        answers: [
+          { answer: "Through walls", points: 8, urgency: "HIGH" },
+          { answer: "Through floor", points: 9, urgency: "HIGH" },
+          { answer: "Through windows", points: 6, urgency: "MEDIUM" },
+          { answer: "No water entry", points: 0, urgency: "LOW" }
+        ]
+      }
+    ]
+  },
+  {
+    category: "FOUNDATION CONDITION",
+    questions: [
+      {
+        question: "Are there cracks in your foundation walls?",
+        weight: 6,
+        answers: [
+          { answer: "Yes, wider than 1/4 inch", points: 9, urgency: "HIGH" },
+          { answer: "Yes, hairline cracks", points: 5, urgency: "MEDIUM" },
+          { answer: "Not sure", points: 3, urgency: "MEDIUM" },
+          { answer: "No visible cracks", points: 0, urgency: "LOW" }
+        ]
+      },
+      {
+        question: "Do your basement walls bow or lean inward?",
+        weight: 9,
+        answers: [
+          { answer: "Yes, noticeably", points: 10, urgency: "EMERGENCY" },
+          { answer: "Slightly", points: 7, urgency: "HIGH" },
+          { answer: "Not sure", points: 4, urgency: "MEDIUM" },
+          { answer: "Walls are straight", points: 0, urgency: "LOW" }
+        ]
+      }
+    ]
+  },
+  {
+    category: "DRAINAGE SYSTEMS",
+    questions: [
+      {
+        question: "Does your sump pump work properly?",
+        weight: 8,
+        answers: [
+          { answer: "Doesn't work", points: 10, urgency: "EMERGENCY" },
+          { answer: "Runs constantly", points: 9, urgency: "HIGH" },
+          { answer: "Works but concerns", points: 5, urgency: "MEDIUM" },
+          { answer: "Works perfectly", points: 0, urgency: "LOW" }
+        ]
+      },
+      {
+        question: "How is the grading around your foundation?",
+        weight: 5,
+        answers: [
+          { answer: "Slopes toward house", points: 8, urgency: "HIGH" },
+          { answer: "Flat", points: 6, urgency: "MEDIUM" },
+          { answer: "Slopes away slightly", points: 3, urgency: "LOW" },
+          { answer: "Good slope away", points: 0, urgency: "LOW" }
+        ]
+      }
+    ]
+  }
+];
+
+// Risk assessment scoring
+const riskLevels = [
+  {
+    range: "80-100",
+    level: "CRITICAL RISK",
+    color: "red",
+    action: "Emergency professional service needed immediately",
+    timeline: "Call now - same day service required",
+    services: ["Emergency water removal", "Structural assessment", "Immediate repairs"]
+  },
+  {
+    range: "60-79", 
+    level: "HIGH RISK",
+    color: "orange",
+    action: "Professional assessment needed within 1 week",
+    timeline: "Schedule professional inspection immediately", 
+    services: ["Comprehensive inspection", "System evaluation", "Repair planning"]
+  },
+  {
+    range: "40-59",
+    level: "MODERATE RISK",
+    color: "yellow",
+    action: "Professional consultation recommended within 1 month",
+    timeline: "Monitor closely and schedule non-emergency assessment",
+    services: ["Inspection", "Preventive maintenance", "System upgrade planning"]
+  },
+  {
+    range: "20-39",
+    level: "LOW RISK",
+    color: "green",
+    action: "Continue monitoring, consider preventive maintenance",
+    timeline: "Annual professional inspection recommended",
+    services: ["Annual maintenance", "System check-up", "Preventive measures"]
+  },
+  {
+    range: "0-19",
+    level: "MINIMAL RISK", 
+    color: "blue",
+    action: "Good foundation health, maintain current care",
+    timeline: "Routine maintenance and seasonal checks",
+    services: ["Seasonal maintenance", "System optimization", "Upgrades"]
+  }
+];
+
+// DIY inspection checklist
+const diyInspection = [
+  {
+    area: "BASEMENT INTERIOR",
+    tools: ["Flashlight", "Measuring tape", "Camera/phone"],
+    checklist: [
+      "Check all walls for cracks, stains, or dampness",
+      "Look for white chalky deposits (efflorescence)",
+      "Test walls with hand for dampness",
+      "Check floor for water stains or mineral deposits",
+      "Inspect corners and joints carefully",
+      "Document findings with photos and measurements"
+    ],
+    safetyNotes: ["Avoid electrical hazards in wet areas", "Use proper lighting", "Watch for overhead obstacles"]
+  },
+  {
+    area: "EXTERIOR FOUNDATION",
+    tools: ["Measuring tape", "Level", "Camera/phone", "Probe stick"],
+    checklist: [
+      "Walk around foundation looking for cracks",
+      "Check grading - should slope away 6\" in 6 feet",
+      "Look for pooling water or erosion",
+      "Inspect basement windows and window wells",
+      "Check condition of foundation coating if visible",
+      "Note any vegetation growing against foundation"
+    ],
+    safetyNotes: ["Watch for unstable soil", "Be careful near excavated areas", "Avoid overreaching"]
+  },
+  {
+    area: "DRAINAGE SYSTEMS",
+    tools: ["Garden hose", "Flashlight", "Ladder (if safe)"],
+    checklist: [
+      "Test sump pump with water",
+      "Check gutters and downspouts for clogs",
+      "Verify downspouts extend away from foundation",
+      "Look for standing water around property",
+      "Check catch basins and drains",
+      "Inspect visible drainage pipes"
+    ],
+    safetyNotes: ["Use ladder safely with spotter", "Don't work with electrical pumps in water", "Be careful around slippery areas"]
+  },
+  {
+    area: "INTERIOR SIGNS",
+    tools: ["Hygrometer", "Flashlight", "Level"],
+    checklist: [
+      "Check humidity levels (should be <60%)",
+      "Test doors and windows for sticking",
+      "Look for cracks in drywall near corners",
+      "Check for musty odors",
+      "Inspect floors for unevenness or bouncing",
+      "Note any recent changes in building"
+    ],
+    safetyNotes: ["Don't ignore gas odors - call utility company", "Be careful with mold - don't disturb", "Document don't repair major issues"]
+  }
+];
+
+// Schema markup for diagnostic tools
+const diagnosticSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Foundation Problem Diagnostic Tool",
+  "description": pageDescription,
+  "applicationCategory": "UtilityApplication",
+  "provider": {
+    "@type": "Organization",
+    "name": "Dryspace Waterproofing",
+    "telephone": "437-545-0067"
+  },
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "CAD"
+  }
+};
+---
+
+<PageLayout 
+  title={pageTitle}
+  description={pageDescription}
+  showAnnouncement={true}
+>
+  <!-- Hero Section -->
+  <Hero 
+    title="FOUNDATION PROBLEM DIAGNOSTIC TOOLS"
+    subtitle="Free self-assessment tools to identify foundation and waterproofing problems. Get expert guidance on severity, urgency, and next steps. Interactive problem identifier with professional recommendations."
+    primaryCTA={{ text: "Start Diagnostic Assessment", href: "#assessment-tool" }}
+    secondaryCTA={{ text: "Emergency Assessment: 437-545-0067", href: "tel:437-545-0067" }}
+    backgroundImage="/images/diagnostic-hero.webp"
+    badge="FREE ASSESSMENT TOOLS"
+  />
+
+  <!-- Stats Section -->
+  <Stats />
+
+  <!-- Diagnostic Overview -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-4xl font-bold text-slate-900 mb-4 uppercase">
+            IDENTIFY FOUNDATION PROBLEMS EARLY
+          </h2>
+          <p class="text-lg text-slate-600 max-w-3xl mx-auto">
+            Early detection saves thousands in repair costs. Use our professional diagnostic tools to assess your foundation's condition 
+            and get expert recommendations for next steps. Know when to act and when to monitor.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-4 gap-6 mb-12">
+          <div class="bg-cyan-50 p-6 text-center border-4 border-cyan-500">
+            <div class="text-4xl font-bold text-cyan-600 mb-2">90%</div>
+            <h3 class="text-lg font-bold mb-1 uppercase">Problems Preventable</h3>
+            <p class="text-sm text-slate-600">With early detection</p>
+          </div>
+          
+          <div class="bg-red-50 p-6 text-center border-4 border-red-500">
+            <div class="text-4xl font-bold text-red-600 mb-2">$15K</div>
+            <h3 class="text-lg font-bold mb-1 uppercase">Average Flood Cost</h3>
+            <p class="text-sm text-slate-600">When problems ignored</p>
+          </div>
+          
+          <div class="bg-cyan-50 p-6 text-center border-4 border-cyan-500">
+            <div class="text-4xl font-bold text-cyan-600 mb-2">48HR</div>
+            <h3 class="text-lg font-bold mb-1 uppercase">Critical Window</h3>
+            <p class="text-sm text-slate-600">For emergency repairs</p>
+          </div>
+
+          <div class="bg-amber-50 p-6 text-center border-4 border-cyan-500">
+            <div class="text-4xl font-bold text-amber-500 mb-2">FREE</div>
+            <h3 class="text-lg font-bold mb-1 uppercase">Assessment Tools</h3>
+            <p class="text-sm text-slate-600">Professional guidance</p>
+          </div>
+        </div>
+
+        <div class="bg-amber-50 p-8 border-l-4 border-cyan-500">
+          <h3 class="text-2xl font-bold text-slate-900 mb-4 uppercase">
+            WHEN TO USE THESE TOOLS
+          </h3>
+          <div class="grid md:grid-cols-2 gap-6">
+            <div>
+              <h4 class="font-bold text-slate-900 mb-2">Use for Early Detection:</h4>
+              <ul class="space-y-1">
+                <li class="flex items-center text-slate-600"><span class="text-cyan-500 mr-2">✓</span>Seasonal home inspections</li>
+                <li class="flex items-center text-slate-600"><span class="text-cyan-500 mr-2">✓</span>Before buying or selling home</li>
+                <li class="flex items-center text-slate-600"><span class="text-cyan-500 mr-2">✓</span>After major storms or floods</li>
+                <li class="flex items-center text-slate-600"><span class="text-cyan-500 mr-2">✓</span>When you notice changes</li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="font-bold text-slate-900 mb-2">Call Professional for:</h4>
+              <ul class="space-y-1">
+                <li class="flex items-center text-slate-600"><span class="text-red-500 mr-2">!</span>Standing water in basement</li>
+                <li class="flex items-center text-slate-600"><span class="text-red-500 mr-2">!</span>Electrical hazards near water</li>
+                <li class="flex items-center text-slate-600"><span class="text-red-500 mr-2">!</span>Structural cracks >1/4 inch</li>
+                <li class="flex items-center text-slate-600"><span class="text-red-500 mr-2">!</span>Bowing or leaning walls</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Symptom Categories -->
+  <section class="py-16 bg-slate-50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-4xl font-bold text-slate-900 mb-4 uppercase">
+            PROBLEM IDENTIFICATION GUIDE
+          </h2>
+          <p class="text-lg text-slate-600">
+            Common foundation problems, their severity levels, and recommended actions
+          </p>
+        </div>
+
+        {diagnosticCategories.map((category, index) => (
+          <div class="mb-16">
+            <!-- Category Header -->
+            <div class="text-center mb-8">
+              <div class="text-6xl mb-4">{category.icon}</div>
+              <h3 class="text-2xl font-bold text-slate-900 mb-2 uppercase">
+                {category.category}
+              </h3>
+              <p class="text-slate-600">{category.description}</p>
+            </div>
+
+            <!-- Symptoms Grid -->
+            <div class="grid lg:grid-cols-2 gap-6">
+              {category.symptoms.map(symptom => (
+                <div class={`bg-white border-4 ${
+                  symptom.severity === 'HIGH' || symptom.severity === 'CRITICAL' ? 'border-red-500' :
+                  symptom.severity.includes('MEDIUM') ? 'border-cyan-500' :
+                  'border-cyan-500'
+                } p-6`}>
+                  <!-- Symptom Header -->
+                  <div class="mb-4">
+                    <h4 class="text-xl font-bold text-slate-900 uppercase mb-2">
+                      {symptom.symptom}
+                    </h4>
+                    <div class="flex gap-4">
+                      <span class={`px-3 py-1 text-sm font-bold uppercase ${
+                        symptom.severity === 'HIGH' || symptom.severity === 'CRITICAL' ? 'bg-red-100 text-red-800' :
+                        symptom.severity.includes('MEDIUM') ? 'bg-amber-50 text-amber-700' :
+                        'bg-cyan-50 text-cyan-700'
+                      }`}>
+                        {symptom.severity}
+                      </span>
+                      {symptom.professionalNeeded && (
+                        <span class="px-3 py-1 text-sm font-bold uppercase bg-cyan-50 text-cyan-700">
+                          PROFESSIONAL NEEDED
+                        </span>
+                      )}
+                    </div>
+                    <p class="text-slate-600 mt-2 font-semibold">{symptom.urgency}</p>
+                  </div>
+
+                  <!-- DIY Check -->
+                  <div class="mb-4 p-4 bg-slate-50 border-l-4 border-cyan-500">
+                    <h5 class="font-bold text-slate-900 mb-2">DIY INSPECTION:</h5>
+                    <p class="text-sm text-slate-600">{symptom.diyCheck}</p>
+                  </div>
+
+                  <!-- Details Grid -->
+                  <div class="grid md:grid-cols-2 gap-4 text-sm">
+                    <div>
+                      <h5 class="font-bold text-slate-900 mb-2">Likely Causes:</h5>
+                      <ul class="space-y-1">
+                        {symptom.causes.map(cause => (
+                          <li class="text-slate-600">• {cause}</li>
+                        ))}
+                      </ul>
+                    </div>
+                    <div>
+                      <h5 class="font-bold text-slate-900 mb-2">Possible Solutions:</h5>
+                      <ul class="space-y-1">
+                        {symptom.solutions.map(solution => (
+                          <li class="text-slate-600">• {solution}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Assessment Tool -->
+  <section id="assessment-tool" class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-4xl font-bold text-slate-900 mb-4 uppercase">
+            INTERACTIVE RISK ASSESSMENT
+          </h2>
+          <p class="text-lg text-slate-600">
+            Answer these questions to get a professional risk assessment and recommended actions
+          </p>
+        </div>
+
+        <!-- Assessment Form -->
+        <div class="bg-slate-50 p-8 border-4 border-slate-200">
+          <div class="space-y-8">
+            {assessmentQuestions.map((category, catIndex) => (
+              <div>
+                <h3 class="text-xl font-bold text-slate-900 mb-4 uppercase">
+                  {category.category}
+                </h3>
+                
+                {category.questions.map((question, qIndex) => (
+                  <div class="mb-6 p-4 bg-white border-2 border-slate-100">
+                    <h4 class="font-bold text-slate-900 mb-3">
+                      {question.question}
+                    </h4>
+                    
+                    <div class="space-y-2">
+                      {question.answers.map((answer, aIndex) => (
+                        <label class="flex items-start space-x-3 cursor-pointer hover:bg-slate-50 p-2 rounded">
+                          <input 
+                            type="radio" 
+                            name={`q${catIndex}-${qIndex}`}
+                            value={answer.points}
+                            class="mt-1"
+                          />
+                          <div class="flex-1">
+                            <span class="text-slate-900">{answer.answer}</span>
+                            {answer.urgency !== 'LOW' && (
+                              <span class={`ml-2 px-2 py-1 text-xs font-bold uppercase ${
+                                answer.urgency === 'EMERGENCY' ? 'bg-red-100 text-red-800' :
+                                answer.urgency === 'HIGH' ? 'bg-red-100 text-red-800' :
+                                answer.urgency.includes('MEDIUM') ? 'bg-amber-50 text-amber-700' :
+                                'bg-cyan-50 text-cyan-700'
+                              }`}>
+                                {answer.urgency}
+                              </span>
+                            )}
+                          </div>
+                        </label>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            ))}
+          </div>
+          
+          <!-- Assessment Button -->
+          <div class="text-center mt-8">
+            <button 
+              onclick="calculateRisk()"
+              class="bg-amber-500 hover:bg-amber-500 text-black px-8 py-4 font-bold uppercase transition-colors"
+            >
+              GET RISK ASSESSMENT
+            </button>
+          </div>
+        </div>
+
+        <!-- Results Display (Hidden by default) -->
+        <div id="assessment-results" class="mt-8 p-8 border-4 border-cyan-500 bg-amber-50 hidden">
+          <div class="text-center">
+            <h3 class="text-2xl font-bold mb-4 uppercase" id="risk-level">RISK ASSESSMENT RESULTS</h3>
+            <div class="text-6xl font-bold mb-4" id="risk-score">--</div>
+            <div class="text-xl font-semibold mb-6" id="risk-description">Complete assessment to see results</div>
+            <div class="mb-6" id="risk-action">Click "Get Risk Assessment" button above</div>
+            
+            <div class="grid md:grid-cols-2 gap-6 mt-8">
+              <div>
+                <h4 class="font-bold text-slate-900 mb-2">RECOMMENDED ACTIONS:</h4>
+                <ul id="recommended-actions" class="text-left space-y-1">
+                  <li>Complete the assessment first</li>
+                </ul>
+              </div>
+              <div>
+                <h4 class="font-bold text-slate-900 mb-2">TIMELINE:</h4>
+                <p id="action-timeline" class="text-left">Assessment needed</p>
+              </div>
+            </div>
+            
+            <div class="mt-8 pt-8 border-t border-yellow-300">
+              <h4 class="font-bold text-slate-900 mb-4">GET PROFESSIONAL HELP:</h4>
+              <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="/free-inspection" class="bg-black text-white px-6 py-3 font-bold uppercase hover:bg-navy-900 transition-colors">
+                  SCHEDULE INSPECTION
+                </a>
+                <a href="tel:437-545-0067" class="bg-red-600 text-white px-6 py-3 font-bold uppercase hover:bg-red-700 transition-colors">
+                  EMERGENCY: 437-545-0067
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DIY Inspection Guide -->
+  <section class="py-16 bg-slate-50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-4xl font-bold text-slate-900 mb-4 uppercase">
+            DIY INSPECTION CHECKLIST
+          </h2>
+          <p class="text-lg text-slate-600">
+            Systematic approach to inspecting your foundation and drainage systems
+          </p>
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-8">
+          {diyInspection.map(area => (
+            <div class="bg-white border-4 border-cyan-500 p-6">
+              <h3 class="text-xl font-bold text-cyan-600 uppercase mb-4">
+                {area.area}
+              </h3>
+              
+              <div class="mb-4">
+                <h4 class="font-bold text-slate-900 mb-2">Tools Needed:</h4>
+                <div class="flex flex-wrap gap-2">
+                  {area.tools.map(tool => (
+                    <span class="bg-cyan-50 text-cyan-700 px-2 py-1 text-sm font-semibold">
+                      {tool}
+                    </span>
+                  ))}
+                </div>
+              </div>
+              
+              <div class="mb-4">
+                <h4 class="font-bold text-slate-900 mb-2">Inspection Checklist:</h4>
+                <ul class="space-y-2">
+                  {area.checklist.map(item => (
+                    <li class="flex items-start">
+                      <input type="checkbox" class="mt-1 mr-3 flex-shrink-0" />
+                      <span class="text-slate-600 text-sm">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              
+              <div class="bg-red-50 p-4 border-l-4 border-red-500">
+                <h4 class="font-bold text-red-600 mb-2">SAFETY NOTES:</h4>
+                <ul class="space-y-1">
+                  {area.safetyNotes.map(note => (
+                    <li class="text-sm text-red-700">⚠️ {note}</li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div class="mt-12 bg-amber-50 p-8 border-l-4 border-cyan-500">
+          <h3 class="text-2xl font-bold text-slate-900 mb-4 uppercase">
+            IMPORTANT REMINDERS
+          </h3>
+          <div class="grid md:grid-cols-2 gap-6">
+            <div>
+              <h4 class="font-bold text-slate-900 mb-2">Document Everything:</h4>
+              <ul class="space-y-1 text-slate-600">
+                <li>• Take photos with date stamps</li>
+                <li>• Measure crack sizes and note locations</li>
+                <li>• Keep a inspection log</li>
+                <li>• Note weather conditions during inspection</li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="font-bold text-slate-900 mb-2">Know Your Limits:</h4>
+              <ul class="space-y-1 text-slate-600">
+                <li>• Don't work with electricity near water</li>
+                <li>• Don't disturb suspected mold</li>
+                <li>• Don't enter unsafe areas</li>
+                <li>• Call professionals for safety concerns</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Form -->
+  <ContactForm />
+
+  <!-- Bottom CTA -->
+  <section class="py-16 bg-amber-500">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-4xl font-bold text-black mb-4 uppercase">
+          NEED PROFESSIONAL ASSESSMENT?
+        </h2>
+        <p class="text-xl text-black mb-8">
+          Our diagnostic tools identified problems? Get a professional inspection and detailed repair plan.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="/free-inspection" class="bg-black text-white px-8 py-4 font-bold uppercase hover:bg-navy-900 transition-colors">
+            SCHEDULE PROFESSIONAL INSPECTION
+          </a>
+          <a href="tel:437-545-0067" class="bg-white text-black px-8 py-4 font-bold uppercase hover:bg-slate-50 transition-colors">
+            EMERGENCY SERVICE: 437-545-0067
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</PageLayout>
+
+<script type="application/ld+json" set:html={JSON.stringify(diagnosticSchema)}></script>
+
+<!-- Assessment Calculator Script -->
+<script>
+const riskLevels = [
+  {
+    range: [80, 100],
+    level: "CRITICAL RISK",
+    color: "red",
+    action: "Emergency professional service needed immediately",
+    timeline: "Call now - same day service required"
+  },
+  {
+    range: [60, 79], 
+    level: "HIGH RISK",
+    color: "orange",
+    action: "Professional assessment needed within 1 week",
+    timeline: "Schedule professional inspection immediately"
+  },
+  {
+    range: [40, 59],
+    level: "MODERATE RISK", 
+    color: "yellow",
+    action: "Professional consultation recommended within 1 month",
+    timeline: "Monitor closely and schedule non-emergency assessment"
+  },
+  {
+    range: [20, 39],
+    level: "LOW RISK",
+    color: "green", 
+    action: "Continue monitoring, consider preventive maintenance",
+    timeline: "Annual professional inspection recommended"
+  },
+  {
+    range: [0, 19],
+    level: "MINIMAL RISK",
+    color: "blue",
+    action: "Good foundation health, maintain current care", 
+    timeline: "Routine maintenance and seasonal checks"
+  }
+];
+
+function calculateRisk() {
+  let totalScore = 0;
+  let answeredQuestions = 0;
+  const formElements = document.querySelectorAll('input[type="radio"]:checked');
+  
+  if (formElements.length === 0) {
+    alert('Please answer at least one question to get an assessment.');
+    return;
+  }
+  
+  formElements.forEach(element => {
+    totalScore += parseInt(element.value);
+    answeredQuestions++;
+  });
+  
+  // Calculate percentage score
+  const maxPossibleScore = answeredQuestions * 10;
+  const riskScore = Math.round((totalScore / maxPossibleScore) * 100);
+  
+  // Find appropriate risk level
+  const riskLevel = riskLevels.find(level => 
+    riskScore >= level.range[0] && riskScore <= level.range[1]
+  );
+  
+  // Display results
+  const resultsDiv = document.getElementById('assessment-results');
+  const scoreElement = document.getElementById('risk-score');
+  const levelElement = document.getElementById('risk-level'); 
+  const descriptionElement = document.getElementById('risk-description');
+  const actionElement = document.getElementById('risk-action');
+  const timelineElement = document.getElementById('action-timeline');
+  
+  scoreElement.textContent = riskScore + '%';
+  levelElement.textContent = riskLevel.level;
+  levelElement.className = `text-2xl font-bold mb-4 uppercase text-${riskLevel.color}-600`;
+  descriptionElement.textContent = riskLevel.action;
+  actionElement.textContent = riskLevel.timeline;
+  timelineElement.textContent = riskLevel.timeline;
+  
+  resultsDiv.classList.remove('hidden');
+  resultsDiv.scrollIntoView({ behavior: 'smooth' });
+}
+</script>

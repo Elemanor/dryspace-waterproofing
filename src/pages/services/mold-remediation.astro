@@ -1,0 +1,542 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import Hero from '../../components/sections/Hero.astro';
+import Features from '../../components/sections/Features.astro';
+import Process from '../../components/sections/Process.astro';
+import Gallery from '../../components/sections/Gallery.astro';
+import FAQ from '../../components/sections/FAQ.astro';
+import Testimonials from '../../components/sections/Testimonials.astro';
+import CTA from '../../components/sections/CTA.astro';
+import Stats from '../../components/sections/Stats.astro';
+import ServiceImageGallery from '../../components/ServiceImageGallery.astro';
+import ServiceSchema from '../../components/ServiceSchema.astro';
+import InternalLinks from '../../components/InternalLinks.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+
+const pageTitle = "Mold Remediation Toronto | Basement Mold Removal";
+const pageDescription = "Professional mold removal and remediation in Toronto basements. Safe removal, prevention, air quality testing.";
+
+// Service-specific features
+const serviceFeatures = [
+  {
+    icon: '',
+    title: 'Healthy Home Environment',
+    description: 'Industry-leading solution with proven results and long-term protection.',
+    highlight: true
+  },
+  {
+    icon: '',
+    title: 'Competitive Pricing',
+    description: 'Fair, transparent pricing. $1,600-5,000. Financing available.',
+    highlight: true
+  },
+  {
+    icon: '',
+    title: '25-Year Warranty',
+    description: 'Transferable warranty that adds value to your home.',
+    highlight: true
+  },
+  {
+    icon: '',
+    title: 'Fast Service',
+    description: 'Quick response times with professional installation.'
+  },
+  {
+    icon: '‍',
+    title: 'Licensed & Insured',
+    description: 'Fully licensed, bonded, and insured for your protection.'
+  },
+  {
+    icon: '',
+    title: '24/7 Support',
+    description: 'Emergency service and ongoing support whenever you need it.'
+  }
+];
+
+// Service process steps
+const processSteps = [
+  {
+    number: '01',
+    title: 'Free Inspection',
+    description: 'Comprehensive assessment of your specific needs.',
+    icon: '',
+    duration: 'Same day'
+  },
+  {
+    number: '02',
+    title: 'Custom Solution',
+    description: 'Tailored approach for your unique situation.',
+    icon: '',
+    duration: '24 hours'
+  },
+  {
+    number: '03',
+    title: 'Professional Work',
+    description: 'Expert installation by certified technicians.',
+    icon: '',
+    duration: 'On schedule'
+  },
+  {
+    number: '04',
+    title: 'Quality Assurance',
+    description: 'Testing, inspection, and warranty documentation.',
+    icon: '',
+    duration: 'Before leaving'
+  }
+];
+
+// Service areas for local SEO
+const serviceAreas = ["Toronto", "Mississauga", "Brampton", "Vaughan", "Markham", "Richmond Hill", "Oakville", "Burlington"];
+
+// Service FAQs for schema
+const serviceFAQs = [
+  {
+    question: "How much does mold remediation cost in Toronto?",
+    answer: "Mold remediation costs $1,600-$5,400 depending on affected area size and contamination severity. Small areas (under 100 sq ft) cost $1,600-$3,200, while larger areas or severe infestations can reach $5,400. Free assessment determines exact scope."
+  },
+  {
+    question: "How long does mold remediation take?",
+    answer: "Most mold remediation projects take 1-5 days. Small areas can be completed in 1-2 days, medium areas take 2-3 days, and extensive remediation may require 4-5 days. Timeline includes containment, removal, cleaning, and verification testing."
+  },
+  {
+    question: "Is mold remediation safe for my family?",
+    answer: "Yes! We use industry-standard containment procedures, HEPA filtration, and certified technicians wearing proper PPE. We establish negative air pressure to prevent spore spread and conduct air quality testing before declaring areas safe for reoccupation."
+  },
+  {
+    question: "Do you test air quality after mold removal?",
+    answer: "Absolutely! Post-remediation air quality testing is included with every project. We use independent certified labs to verify spore counts meet healthy standards before removing containment barriers and completing the project."
+  },
+  {
+    question: "What warranty do you provide on mold remediation?",
+    answer: "We provide a comprehensive warranty on mold remediation work, including guarantee against mold regrowth in treated areas when moisture issues are properly addressed. Our warranty covers workmanship and effectiveness of removal procedures."
+  }
+];
+
+// Service offers for schema
+const serviceOffers = [
+  {
+    name: "Small Area Mold Removal",
+    price: "$1,600-$3,200",
+    description: "Professional mold remediation for areas under 100 sq ft, including containment, removal, HEPA cleaning, and air quality testing."
+  },
+  {
+    name: "Medium Scale Remediation", 
+    price: "$3,200-$4,300",
+    description: "Comprehensive mold remediation for 100-500 sq ft areas with advanced containment, structural drying, and antimicrobial treatment."
+  },
+  {
+    name: "Extensive Mold Remediation",
+    price: "$4,300-$5,400",
+    description: "Complete remediation for large areas over 500 sq ft, including structural repairs, moisture control, and long-term prevention strategies."
+  }
+];
+---
+
+<PageLayout 
+  title={pageTitle}
+  description={pageDescription}
+>
+  
+  <!-- Breadcrumbs -->
+  <div class="container mx-auto px-4 mt-4">
+    <Breadcrumbs 
+      items={[
+        { name: "Home", url: "/" },
+        { name: "Services", url: "/services" },
+        { name: "Mold Remediation" }
+      ]}
+    />
+  </div>
+
+<!-- ServiceSchema Component -->
+  <ServiceSchema 
+    serviceName="Mold Remediation Toronto"
+    description={pageDescription}
+    priceRange="$1,600-$5,400"
+    areaServed={serviceAreas}
+    offers={serviceOffers}
+    faqs={serviceFAQs}
+  />
+  <!-- Hero Section -->
+  <Hero 
+    title="Mold Remediation Services"
+    subtitle="Safe mold removal and prevention. Certified technicians, air quality testing, permanent solutions."
+    primaryCTA={{ text: "Get Free Inspection", href: "/free-inspection" }}
+    secondaryCTA={{ text: "Call: 437-545-0067", href: "tel:437-545-0067" }}
+    backgroundImage="/images/toronto-mold-mitigation.webp"
+    badge="Certified Safe Removal"
+  />
+
+  <!-- Stats -->
+  <Stats />
+
+  <!-- Features -->
+  <Features 
+    title="Why Choose Our Service"
+    subtitle="Professional solutions backed by experience and warranty"
+    features={serviceFeatures}
+    columns={3}
+  />
+
+  <!-- Detailed Content Section -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        
+        <!-- Main Content -->
+        <div class="prose prose-lg max-w-none mb-16">
+          <h2 class="text-3xl font-bold text-slate-900 mb-6">Professional Mold Remediation Services in Toronto</h2>
+          
+          <p class="text-lg text-slate-600 mb-6">
+            Mold growth in your basement or home can pose serious health risks and structural damage if not properly addressed. At DrySpace Waterproofing, we provide comprehensive mold remediation services throughout Toronto and the GTA, using industry-leading techniques and certified professionals to safely eliminate mold contamination and prevent future growth.
+          </p>
+          
+          <h3 class="text-2xl font-bold text-slate-900 mt-8 mb-4">Understanding Mold in Toronto Homes</h3>
+          
+          <p class="text-slate-600 mb-4">
+            Toronto's climate, with its humid summers and freeze-thaw cycles, creates ideal conditions for mold growth. Basements are particularly vulnerable due to:
+          </p>
+          
+          <ul class="list-disc pl-6 text-slate-600 mb-6">
+            <li><strong>High humidity levels:</strong> Poorly ventilated basements trap moisture</li>
+            <li><strong>Water infiltration:</strong> Foundation cracks and poor drainage allow water entry</li>
+            <li><strong>Temperature variations:</strong> Condensation forms on cool surfaces</li>
+            <li><strong>Organic materials:</strong> Drywall, wood, and paper provide food sources for mold</li>
+            <li><strong>Poor air circulation:</strong> Stagnant air allows spores to settle and multiply</li>
+          </ul>
+          
+          <h3 class="text-2xl font-bold text-slate-900 mt-8 mb-4">Health Risks of Mold Exposure</h3>
+          
+          <p class="text-slate-600 mb-4">
+            Mold exposure can cause various health issues, particularly for sensitive individuals:
+          </p>
+          
+          <div class="grid md:grid-cols-2 gap-6 mb-8">
+            <div>
+              <h4 class="text-xl font-semibold text-slate-900 mb-3">Immediate Symptoms</h4>
+              <ul class="list-disc pl-6 text-slate-600">
+                <li>Respiratory irritation and coughing</li>
+                <li>Sneezing and runny nose</li>
+                <li>Eye irritation and watering</li>
+                <li>Skin rashes and irritation</li>
+                <li>Throat irritation</li>
+                <li>Headaches and fatigue</li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="text-xl font-semibold text-slate-900 mb-3">Long-term Health Effects</h4>
+              <ul class="list-disc pl-6 text-slate-600">
+                <li>Asthma development or worsening</li>
+                <li>Allergic reactions and sensitivities</li>
+                <li>Chronic respiratory conditions</li>
+                <li>Weakened immune system</li>
+                <li>Neurological symptoms</li>
+                <li>Chronic fatigue syndrome</li>
+              </ul>
+            </div>
+          </div>
+          
+          <h3 class="text-2xl font-bold text-slate-900 mt-8 mb-4">Common Types of Mold in Toronto Basements</h3>
+          
+          <div class="grid md:grid-cols-3 gap-6 mb-8">
+            <div class="bg-slate-50 p-6 rounded-lg">
+              <h4 class="text-lg font-semibold text-slate-900 mb-3">Black Mold (Stachybotrys)</h4>
+              <p class="text-slate-600 text-sm">
+                The most dangerous type, producing mycotoxins that can cause severe health issues. Appears as dark green or black patches on wet surfaces.
+              </p>
+            </div>
+            <div class="bg-slate-50 p-6 rounded-lg">
+              <h4 class="text-lg font-semibold text-slate-900 mb-3">Aspergillus</h4>
+              <p class="text-slate-600 text-sm">
+                Common in damp basements, appears in various colors. Can cause respiratory issues and allergic reactions in sensitive individuals.
+              </p>
+            </div>
+            <div class="bg-slate-50 p-6 rounded-lg">
+              <h4 class="text-lg font-semibold text-slate-900 mb-3">Penicillium</h4>
+              <p class="text-slate-600 text-sm">
+                Blue-green mold that spreads quickly. Often found on water-damaged materials and can trigger asthma attacks.
+              </p>
+            </div>
+          </div>
+          
+          <h3 class="text-2xl font-bold text-slate-900 mt-8 mb-4">Signs You Need Professional Mold Remediation</h3>
+          
+          <div class="bg-amber-50 border-l-4 border-amber-400 p-6 mb-8">
+            <h4 class="text-lg font-semibold text-slate-900 mb-3">Don't ignore these warning signs:</h4>
+            <div class="grid md:grid-cols-2 gap-4">
+              <ul class="list-disc pl-6 text-slate-600">
+                <li>Visible mold growth on walls, ceilings, or floors</li>
+                <li>Musty, earthy odors that persist</li>
+                <li>Water stains or discoloration</li>
+                <li>Peeling or bubbling paint or wallpaper</li>
+                <li>Increased allergy symptoms at home</li>
+              </ul>
+              <ul class="list-disc pl-6 text-slate-600">
+                <li>Condensation on windows or pipes</li>
+                <li>Recent flooding or water damage</li>
+                <li>High humidity levels (over 60%)</li>
+                <li>Warped or damaged building materials</li>
+                <li>White or colored fuzzy growth</li>
+              </ul>
+            </div>
+          </div>
+          
+          <h3 class="text-2xl font-bold text-slate-900 mt-8 mb-4">Our Professional Mold Remediation Process</h3>
+          
+          <div class="space-y-8 mb-12">
+            <div class="border-l-4 border-cyan-500 pl-6">
+              <h4 class="text-xl font-semibold text-slate-900 mb-3">1. Comprehensive Inspection & Assessment</h4>
+              <p class="text-slate-600 mb-3">
+                Our certified mold inspectors conduct thorough visual and instrumental inspections to identify all affected areas, including hidden mold behind walls and under flooring. We use moisture meters, thermal imaging, and air sampling to determine the full extent of contamination.
+              </p>
+              <ul class="list-disc pl-6 text-slate-500 text-sm">
+                <li>Visual inspection of all accessible areas</li>
+                <li>Moisture mapping with professional equipment</li>
+                <li>Air quality testing and surface sampling</li>
+                <li>Documentation with photos and measurements</li>
+                <li>Detailed remediation plan development</li>
+              </ul>
+            </div>
+            
+            <div class="border-l-4 border-cyan-500 pl-6">
+              <h4 class="text-xl font-semibold text-slate-900 mb-3">2. Containment & Safety Setup</h4>
+              <p class="text-slate-600 mb-3">
+                Before beginning removal, we establish proper containment to prevent spore spread throughout your home. Our team uses industry-standard protocols to protect unaffected areas and ensure occupant safety.
+              </p>
+              <ul class="list-disc pl-6 text-slate-500 text-sm">
+                <li>Plastic sheeting barriers with sealed edges</li>
+                <li>Negative air pressure systems with HEPA filtration</li>
+                <li>Proper personal protective equipment (PPE)</li>
+                <li>Isolation of HVAC systems</li>
+                <li>Safe entry/exit procedures</li>
+              </ul>
+            </div>
+            
+            <div class="border-l-4 border-cyan-500 pl-6">
+              <h4 class="text-xl font-semibold text-slate-900 mb-3">3. Safe Mold Removal & Cleaning</h4>
+              <p class="text-slate-600 mb-3">
+                Our certified technicians remove mold-contaminated materials and clean affected surfaces using approved methods and EPA-registered antimicrobial solutions. We follow strict disposal procedures for contaminated materials.
+              </p>
+              <ul class="list-disc pl-6 text-slate-500 text-sm">
+                <li>HEPA vacuuming of all surfaces</li>
+                <li>Removal of porous contaminated materials</li>
+                <li>Cleaning with antimicrobial solutions</li>
+                <li>Wire brushing and sanding when necessary</li>
+                <li>Proper disposal in sealed containers</li>
+              </ul>
+            </div>
+            
+            <div class="border-l-4 border-cyan-500 pl-6">
+              <h4 class="text-xl font-semibold text-slate-900 mb-3">4. Moisture Control & Prevention</h4>
+              <p class="text-slate-600 mb-3">
+                Addressing the root cause is essential for preventing recurrence. We identify and resolve moisture sources, improve ventilation, and implement humidity control measures to create an environment hostile to mold growth.
+              </p>
+              <ul class="list-disc pl-6 text-slate-500 text-sm">
+                <li>Foundation crack sealing and waterproofing</li>
+                <li>Improved ventilation and dehumidification</li>
+                <li>Drainage corrections and grading improvements</li>
+                <li>Vapor barrier installation</li>
+                <li>HVAC system cleaning and maintenance</li>
+              </ul>
+            </div>
+            
+            <div class="border-l-4 border-cyan-500 pl-6">
+              <h4 class="text-xl font-semibold text-slate-900 mb-3">5. Restoration & Verification</h4>
+              <p class="text-slate-600 mb-3">
+                After remediation, we restore affected areas with mold-resistant materials and conduct final verification testing to ensure the work meets industry standards and your home is safe for reoccupation.
+              </p>
+              <ul class="list-disc pl-6 text-slate-500 text-sm">
+                <li>Installation of mold-resistant drywall and materials</li>
+                <li>Primer and paint with antimicrobial properties</li>
+                <li>Post-remediation air quality testing</li>
+                <li>Independent laboratory verification</li>
+                <li>Final walkthrough and documentation</li>
+              </ul>
+            </div>
+          </div>
+          
+          <h3 class="text-2xl font-bold text-slate-900 mt-8 mb-4">Advanced Equipment & Techniques</h3>
+          
+          <p class="text-slate-600 mb-6">
+            We use state-of-the-art equipment and proven techniques to ensure thorough and safe mold remediation:
+          </p>
+          
+          <div class="grid md:grid-cols-2 gap-8 mb-8">
+            <div>
+              <h4 class="text-lg font-semibold text-slate-900 mb-4">Professional Equipment</h4>
+              <ul class="space-y-2 text-slate-600">
+                <li class="flex items-start"><span class="text-cyan-600 mr-2">✓</span> HEPA air scrubbers and negative air machines</li>
+                <li class="flex items-start"><span class="text-cyan-600 mr-2">✓</span> Industrial dehumidifiers and moisture meters</li>
+                <li class="flex items-start"><span class="text-cyan-600 mr-2">✓</span> Thermal imaging cameras for hidden moisture</li>
+                <li class="flex items-start"><span class="text-cyan-600 mr-2">✓</span> Professional containment materials and barriers</li>
+                <li class="flex items-start"><span class="text-cyan-600 mr-2">✓</span> Antimicrobial foggers and application equipment</li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="text-lg font-semibold text-slate-900 mb-4">Safety Protocols</h4>
+              <ul class="space-y-2 text-slate-600">
+                <li class="flex items-start"><span class="text-cyan-600 mr-2">✓</span> Full respiratory protection for all technicians</li>
+                <li class="flex items-start"><span class="text-cyan-600 mr-2">✓</span> Disposable protective suits and equipment</li>
+                <li class="flex items-start"><span class="text-cyan-600 mr-2">✓</span> Strict decontamination procedures</li>
+                <li class="flex items-start"><span class="text-cyan-600 mr-2">✓</span> Proper waste disposal and transportation</li>
+                <li class="flex items-start"><span class="text-cyan-600 mr-2">✓</span> Independent air quality verification testing</li>
+              </ul>
+            </div>
+          </div>
+          
+          <h3 class="text-2xl font-bold text-slate-900 mt-8 mb-4">Prevention Strategies for Toronto Homeowners</h3>
+          
+          <p class="text-slate-600 mb-6">
+            Preventing mold growth is more cost-effective than remediation. Here are key strategies for Toronto's climate:
+          </p>
+          
+          <div class="grid md:grid-cols-3 gap-6 mb-8">
+            <div class="bg-cyan-50 p-6 rounded-lg">
+              <h4 class="text-lg font-semibold text-slate-900 mb-3">Humidity Control</h4>
+              <ul class="text-sm text-slate-600 space-y-1">
+                <li>• Maintain humidity below 50%</li>
+                <li>• Use dehumidifiers in basements</li>
+                <li>• Ensure proper ventilation</li>
+                <li>• Monitor with hygrometers</li>
+              </ul>
+            </div>
+            <div class="bg-cyan-50 p-6 rounded-lg">
+              <h4 class="text-lg font-semibold text-slate-900 mb-3">Water Management</h4>
+              <ul class="text-sm text-slate-600 space-y-1">
+                <li>• Fix leaks immediately</li>
+                <li>• Improve basement waterproofing</li>
+                <li>• Maintain gutters and downspouts</li>
+                <li>• Grade soil away from foundation</li>
+              </ul>
+            </div>
+            <div class="bg-cyan-50 p-6 rounded-lg">
+              <h4 class="text-lg font-semibold text-slate-900 mb-3">Regular Maintenance</h4>
+              <ul class="text-sm text-slate-600 space-y-1">
+                <li>• Clean HVAC systems regularly</li>
+                <li>• Inspect basements monthly</li>
+                <li>• Use mold-resistant materials</li>
+                <li>• Address moisture sources quickly</li>
+              </ul>
+            </div>
+          </div>
+          
+          <h3 class="text-2xl font-bold text-slate-900 mt-8 mb-4">Why Choose DrySpace for Mold Remediation</h3>
+          
+          <div class="bg-gradient-to-r from-blue-50 to-blue-100 p-8 rounded-xl mb-8">
+            <div class="grid md:grid-cols-2 gap-8">
+              <div>
+                <h4 class="text-xl font-semibold text-slate-900 mb-4">Certified Expertise</h4>
+                <ul class="space-y-2 text-slate-600">
+                  <li class="flex items-start"><span class="text-cyan-600 mr-2">✓</span> IICRC certified mold remediation specialists</li>
+                  <li class="flex items-start"><span class="text-cyan-600 mr-2">✓</span> 25+ years of experience in Toronto</li>
+                  <li class="flex items-start"><span class="text-cyan-600 mr-2">✓</span> Licensed and insured professionals</li>
+                  <li class="flex items-start"><span class="text-cyan-600 mr-2">✓</span> Ongoing training on latest techniques</li>
+                </ul>
+              </div>
+              <div>
+                <h4 class="text-xl font-semibold text-slate-900 mb-4">Comprehensive Service</h4>
+                <ul class="space-y-2 text-slate-600">
+                  <li class="flex items-start"><span class="text-cyan-600 mr-2">✓</span> Free initial consultations and inspections</li>
+                  <li class="flex items-start"><span class="text-cyan-600 mr-2">✓</span> Complete remediation and restoration</li>
+                  <li class="flex items-start"><span class="text-cyan-600 mr-2">✓</span> Moisture control and prevention services</li>
+                  <li class="flex items-start"><span class="text-cyan-600 mr-2">✓</span> Emergency response available 24/7</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          
+          <h3 class="text-2xl font-bold text-slate-900 mt-8 mb-4">Service Areas Throughout Toronto & GTA</h3>
+          
+          <p class="text-slate-600 mb-4">
+            We provide professional mold remediation services throughout Toronto and surrounding areas:
+          </p>
+          
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+            <div class="text-slate-600">
+              <strong>Toronto:</strong>
+              <ul class="text-sm mt-1">
+                <li>• Downtown Toronto</li>
+                <li>• North York</li>
+                <li>• Scarborough</li>
+                <li>• Etobicoke</li>
+                <li>• East York</li>
+              </ul>
+            </div>
+            <div class="text-slate-600">
+              <strong>Peel Region:</strong>
+              <ul class="text-sm mt-1">
+                <li>• Mississauga</li>
+                <li>• Brampton</li>
+                <li>• Caledon</li>
+              </ul>
+            </div>
+            <div class="text-slate-600">
+              <strong>York Region:</strong>
+              <ul class="text-sm mt-1">
+                <li>• Markham</li>
+                <li>• Vaughan</li>
+                <li>• Richmond Hill</li>
+                <li>• Aurora</li>
+              </ul>
+            </div>
+            <div class="text-slate-600">
+              <strong>Halton Region:</strong>
+              <ul class="text-sm mt-1">
+                <li>• Oakville</li>
+                <li>• Burlington</li>
+                <li>• Milton</li>
+                <li>• Georgetown</li>
+              </ul>
+            </div>
+          </div>
+          
+          <div class="bg-red-50 border-l-4 border-red-400 p-6 mb-8">
+            <h4 class="text-lg font-semibold text-slate-900 mb-3">Emergency Mold Situation?</h4>
+            <p class="text-slate-600 mb-3">
+              If you suspect extensive mold growth or have family members experiencing health symptoms, don't wait. Contact us immediately for emergency assessment and rapid response services.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4">
+              <a href="tel:437-545-0067" class="inline-flex items-center px-6 py-3 bg-red-600 text-white font-semibold rounded-lg hover:bg-red-700 transition duration-300">
+                📞 Emergency: 437-545-0067
+              </a>
+              <a href="/free-inspection" class="inline-flex items-center px-6 py-3 bg-cyan-600 text-white font-semibold rounded-lg hover:bg-cyan-700 transition duration-300">
+                📋 Schedule Free Inspection
+              </a>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process -->
+  <Process />
+
+
+  <!-- Service Image Gallery -->
+  <ServiceImageGallery service="mold-remediation" />
+
+  <!-- Testimonials -->
+  <Testimonials />
+
+  <!-- Internal Links Component -->
+  <InternalLinks category="waterproofing" currentPage="mold-remediation" limit={5} />
+
+  <!-- FAQ -->
+  <FAQ 
+    title="Common Questions"
+    subtitle="Everything you need to know about our service"
+    faqs={serviceFAQs}
+    columns={1}
+  />
+
+  <!-- CTA -->
+  <CTA 
+    title="Ready to Get Started?"
+    subtitle="Schedule your free inspection today and protect your home."
+    primaryCTA={{ text: "Schedule Free Inspection", href: "/free-inspection" }}
+    secondaryCTA={{ text: "Call: 437-545-0067", href: "tel:437-545-0067" }}
+    background="gradient"
+  />
+</PageLayout>

@@ -1,0 +1,521 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import Hero from '../components/sections/Hero.astro';
+import Stats from '../components/sections/Stats.astro';
+import ContactForm from '../components/ContactForm.astro';
+
+const pageTitle = "Waterproofing Materials & Products | Professional-Grade Systems | Toronto";
+const pageDescription = "Professional waterproofing materials and products used by Dryspace. Premium membranes, drainage systems, sump pumps, and sealants. 25-year warranty materials only.";
+
+// Material categories with specifications
+const materialCategories = [
+  {
+    category: "EXTERIOR WATERPROOFING SYSTEMS",
+    materials: [
+      {
+        name: "LIQUID APPLIED MEMBRANES",
+        brand: "Tremco Watchdog HD",
+        specification: "Self-adhering, modified asphalt membrane",
+        thickness: "160 mils minimum",
+        warranty: "25 years",
+        applications: ["Foundation walls", "Below-grade structures", "Podium decks"],
+        benefits: ["Seamless protection", "Self-healing properties", "Extreme weather resistance"],
+        certifications: ["CSA Certified", "Building Code Approved"]
+      },
+      {
+        name: "SHEET MEMBRANE SYSTEMS",
+        brand: "Soprema Alsan",
+        specification: "PMMA-based liquid waterproofing",
+        thickness: "2-3mm application",
+        warranty: "30 years",
+        applications: ["Concrete foundations", "ICF walls", "Retaining walls"],
+        benefits: ["UV stable", "Crack bridging", "Chemical resistant"],
+        certifications: ["ICC-ES Listed", "ASTM Compliant"]
+      },
+      {
+        name: "CRYSTALLINE WATERPROOFING",
+        brand: "Xypex Concentrate",
+        specification: "Integral crystalline admixture",
+        coverage: "0.8-1.0 kg/m²",
+        warranty: "Lifetime",
+        applications: ["Concrete structures", "Swimming pools", "Water tanks"],
+        benefits: ["Self-sealing cracks", "Permanent protection", "Increases concrete strength"],
+        certifications: ["NSF Certified", "Green Building Compatible"]
+      }
+    ]
+  },
+  {
+    category: "INTERIOR DRAINAGE SYSTEMS",
+    materials: [
+      {
+        name: "PERFORATED DRAINAGE TILE",
+        brand: "ADS N-12 Dual Wall",
+        specification: "HDPE corrugated pipe with sock",
+        diameter: "4\" and 6\" options",
+        warranty: "50 years",
+        applications: ["Foundation perimeter", "Sub-slab drainage", "Curtain drains"],
+        benefits: ["High flow capacity", "Flexible joints", "Chemical resistant"],
+        certifications: ["AASHTO M294", "ASTM F667"]
+      },
+      {
+        name: "SUMP PUMP SYSTEMS",
+        brand: "Zoeller M98 Mighty-Mate",
+        specification: "1/2 HP submersible cast iron",
+        capacity: "3,960 GPH at 10' head",
+        warranty: "3 years",
+        applications: ["Basement drainage", "Crawl space", "Emergency backup"],
+        benefits: ["Automatic operation", "Thermal protection", "Corrosion resistant"],
+        certifications: ["UL Listed", "Energy Star Rated"]
+      },
+      {
+        name: "FRENCH DRAIN AGGREGATE",
+        brand: "Premium Washed Stone",
+        specification: "3/4\" clear stone, angular",
+        gradation: "OPSS 1003 compliant",
+        warranty: "N/A - Natural material",
+        applications: ["Drain trenches", "Foundation drainage", "Surface drains"],
+        benefits: ["High porosity", "No fines migration", "Compaction resistant"],
+        certifications: ["MTO Approved", "CSA Standards"]
+      }
+    ]
+  },
+  {
+    category: "FOUNDATION REPAIR PRODUCTS",
+    materials: [
+      {
+        name: "POLYURETHANE INJECTION",
+        brand: "Sika InjectoCem U400",
+        specification: "Two-component hydrophilic PU",
+        expansion: "Up to 20x volume",
+        warranty: "25 years",
+        applications: ["Active leaks", "Moving cracks", "Joint sealing"],
+        benefits: ["Flexible seal", "Chemical expansion", "Permanent repair"],
+        certifications: ["NSF 61 Certified", "VOC Compliant"]
+      },
+      {
+        name: "EPOXY CRACK INJECTION",
+        brand: "Simpson Strong-Tie SET-3G",
+        specification: "100% solids structural epoxy",
+        strength: "4,200 PSI bond strength",
+        warranty: "Lifetime structural",
+        applications: ["Structural cracks", "Concrete repair", "Reinforcement"],
+        benefits: ["Structural bonding", "Low viscosity", "Chemical resistance"],
+        certifications: ["ICC-ES ESR-1898", "ACI 503.5"]
+      },
+      {
+        name: "UNDERPINNING MATERIALS",
+        brand: "High-Strength Concrete Mix",
+        specification: "40 MPa minimum compressive strength",
+        additive: "Accelerating admixture",
+        warranty: "25 years structural",
+        applications: ["Foundation lowering", "Bearing improvement", "Structural repair"],
+        benefits: ["Fast strength gain", "Shrinkage compensated", "High durability"],
+        certifications: ["CSA A3000", "Engineering Approved"]
+      }
+    ]
+  },
+  {
+    category: "SPECIALTY PRODUCTS",
+    materials: [
+      {
+        name: "BACKWATER VALVES",
+        brand: "Mainline 4\" BWV Full-Port",
+        specification: "City of Toronto approved model",
+        material: "PVC with stainless steel gate",
+        warranty: "10 years mechanical",
+        applications: ["Sewer backup prevention", "Flood protection", "Code compliance"],
+        benefits: ["Manual override", "Clear inspection port", "Easy maintenance"],
+        certifications: ["CSA B182.1", "City Approved List"]
+      },
+      {
+        name: "VAPOR BARRIERS",
+        brand: "Stego Wrap 15-mil",
+        specification: "Multi-layer polyethylene film",
+        permeance: "0.01 perms",
+        warranty: "20 years",
+        applications: ["Crawl space encapsulation", "Slab protection", "Moisture control"],
+        benefits: ["Puncture resistant", "UV stabilized", "Antimicrobial treated"],
+        certifications: ["ASTM E1745", "ICC-ES ESR-1748"]
+      },
+      {
+        name: "WINDOW WELL LINERS",
+        brand: "Bilco ScapeWel",
+        specification: "Composite resin construction",
+        finish: "Stone texture, multiple colors",
+        warranty: "25 years fade/crack",
+        applications: ["Basement windows", "Egress wells", "Decorative protection"],
+        benefits: ["Maintenance free", "Insect barrier", "Easy installation"],
+        certifications: ["Building Code Compliant", "Fire Rated"]
+      }
+    ]
+  }
+];
+
+// Quality standards and testing
+const qualityStandards = [
+  {
+    standard: "CSA WATERPROOFING STANDARDS",
+    codes: ["CSA A23.1", "CSA A3000", "CSA S37"],
+    description: "Canadian Standards Association requirements for waterproofing materials and installation"
+  },
+  {
+    standard: "ASTM TESTING PROTOCOLS", 
+    codes: ["ASTM C836", "ASTM D6140", "ASTM E96"],
+    description: "American Society for Testing Materials standards for membrane performance"
+  },
+  {
+    standard: "ONTARIO BUILDING CODE",
+    codes: ["OBC 9.13", "OBC 9.14", "OBC 9.20"],
+    description: "Provincial requirements for foundation waterproofing and drainage systems"
+  },
+  {
+    standard: "CITY OF TORONTO BY-LAWS",
+    codes: ["By-law 681", "By-law 732", "Permit Requirements"],
+    description: "Municipal standards for backwater valves, sump pumps, and excavation permits"
+  }
+];
+
+// Schema markup for products
+const productSchema = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Professional Waterproofing Materials",
+  "description": pageDescription,
+  "itemListElement": materialCategories.flatMap((category, catIndex) => 
+    category.materials.map((material, matIndex) => ({
+      "@type": "Product", 
+      "position": catIndex * 10 + matIndex + 1,
+      "name": material.name,
+      "brand": material.brand,
+      "description": material.specification,
+      "offers": {
+        "@type": "Offer",
+        "availability": "InStock",
+        "seller": {
+          "@type": "Organization",
+          "name": "Dryspace Waterproofing"
+        }
+      }
+    }))
+  )
+};
+---
+
+<PageLayout 
+  title={pageTitle}
+  description={pageDescription}
+  showAnnouncement={true}
+>
+  <!-- Hero Section -->
+  <Hero 
+    title="PROFESSIONAL WATERPROOFING MATERIALS & PRODUCTS"
+    subtitle="Premium-grade materials with 25+ year warranties. Only the highest quality products for permanent waterproofing solutions. CSA certified and Building Code approved."
+    primaryCTA={{ text: "Get Material Specifications", href: "/free-inspection" }}
+    secondaryCTA={{ text: "Call: 437-545-0067", href: "tel:437-545-0067" }}
+    backgroundImage="/images/materials-hero.webp"
+    badge="PREMIUM GRADE ONLY"
+  />
+
+  <!-- Stats Section -->
+  <Stats />
+
+  <!-- Materials Overview -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-4xl font-bold text-slate-900 mb-4 uppercase">
+            WHY MATERIALS MATTER
+          </h2>
+          <p class="text-lg text-slate-600 max-w-3xl mx-auto">
+            The difference between a 5-year repair and a 25-year solution is in the materials. 
+            We use only premium, certified waterproofing systems with proven long-term performance.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8 mb-12">
+          <div class="bg-slate-50 p-6 text-center">
+            <div class="text-4xl font-bold text-amber-500 mb-4">25+</div>
+            <h3 class="text-xl font-bold mb-2">YEAR WARRANTIES</h3>
+            <p class="text-slate-600">All materials backed by manufacturer warranties of 25 years or more</p>
+          </div>
+          
+          <div class="bg-slate-50 p-6 text-center">
+            <div class="text-4xl font-bold text-amber-500 mb-4">100%</div>
+            <h3 class="text-xl font-bold mb-2">CODE COMPLIANT</h3>
+            <p class="text-slate-600">Every product meets or exceeds Ontario Building Code requirements</p>
+          </div>
+          
+          <div class="bg-slate-50 p-6 text-center">
+            <div class="text-4xl font-bold text-amber-500 mb-4">0</div>
+            <h3 class="text-xl font-bold mb-2">CALLBACKS</h3>
+            <p class="text-slate-600">Premium materials eliminate the need for re-work and repairs</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Material Categories -->
+  {materialCategories.map(category => (
+    <section class="py-16 bg-slate-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-7xl mx-auto">
+          <!-- Category Header -->
+          <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4 uppercase">
+              {category.category}
+            </h2>
+            <div class="w-24 h-1 bg-amber-500 mx-auto"></div>
+          </div>
+
+          <!-- Materials Grid -->
+          <div class="grid lg:grid-cols-3 gap-8">
+            {category.materials.map(material => (
+              <div class="bg-white border-4 border-slate-200 hover:border-cyan-500 transition-colors">
+                <div class="p-6">
+                  <h3 class="text-xl font-bold text-slate-900 uppercase mb-2">
+                    {material.name}
+                  </h3>
+                  
+                  <div class="text-sm text-slate-500 mb-4">
+                    <span class="font-semibold">Brand:</span> {material.brand}
+                  </div>
+                  
+                  <p class="text-slate-600 mb-4">
+                    {material.specification}
+                  </p>
+                  
+                  <!-- Technical Specs -->
+                  <div class="space-y-2 text-sm mb-6">
+                    {material.thickness && (
+                      <div class="flex justify-between">
+                        <span class="font-semibold text-slate-500">Thickness:</span>
+                        <span>{material.thickness}</span>
+                      </div>
+                    )}
+                    {material.diameter && (
+                      <div class="flex justify-between">
+                        <span class="font-semibold text-slate-500">Diameter:</span>
+                        <span>{material.diameter}</span>
+                      </div>
+                    )}
+                    {material.capacity && (
+                      <div class="flex justify-between">
+                        <span class="font-semibold text-slate-500">Capacity:</span>
+                        <span>{material.capacity}</span>
+                      </div>
+                    )}
+                    {material.strength && (
+                      <div class="flex justify-between">
+                        <span class="font-semibold text-slate-500">Strength:</span>
+                        <span>{material.strength}</span>
+                      </div>
+                    )}
+                    <div class="flex justify-between items-center border-t pt-2">
+                      <span class="font-bold text-slate-500">Warranty:</span>
+                      <span class="font-bold text-cyan-600">{material.warranty}</span>
+                    </div>
+                  </div>
+                  
+                  <!-- Applications -->
+                  <div class="mb-4">
+                    <h4 class="font-bold text-slate-900 mb-2">Applications:</h4>
+                    <ul class="text-sm text-slate-600 space-y-1">
+                      {material.applications.map(app => (
+                        <li class="flex items-center">
+                          <span class="w-2 h-2 bg-amber-500 mr-2"></span>
+                          {app}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  
+                  <!-- Benefits -->
+                  <div class="mb-6">
+                    <h4 class="font-bold text-slate-900 mb-2">Key Benefits:</h4>
+                    <ul class="text-sm text-slate-600 space-y-1">
+                      {material.benefits.map(benefit => (
+                        <li class="flex items-center">
+                          <span class="text-cyan-500 mr-2">✓</span>
+                          {benefit}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  
+                  <!-- Certifications -->
+                  <div class="border-t pt-4">
+                    <h4 class="font-bold text-slate-900 mb-2">Certifications:</h4>
+                    <div class="flex flex-wrap gap-2">
+                      {material.certifications.map(cert => (
+                        <span class="bg-cyan-50 text-cyan-700 text-xs px-2 py-1 uppercase font-semibold">
+                          {cert}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  ))}
+
+  <!-- Quality Standards -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-4xl font-bold text-slate-900 mb-4 uppercase">
+            QUALITY STANDARDS & CERTIFICATIONS
+          </h2>
+          <p class="text-lg text-slate-600">
+            Every material meets or exceeds industry standards and building codes
+          </p>
+        </div>
+        
+        <div class="grid md:grid-cols-2 gap-8">
+          {qualityStandards.map(standard => (
+            <div class="bg-slate-50 p-6 border-l-4 border-cyan-500">
+              <h3 class="text-xl font-bold text-slate-900 mb-2 uppercase">
+                {standard.standard}
+              </h3>
+              <div class="flex flex-wrap gap-2 mb-4">
+                {standard.codes.map(code => (
+                  <span class="bg-amber-50 text-amber-700 text-xs px-2 py-1 font-mono">
+                    {code}
+                  </span>
+                ))}
+              </div>
+              <p class="text-slate-600">{standard.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Material Selection Process -->
+  <section class="py-16 bg-navy-900 text-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-4xl font-bold mb-4 uppercase">
+            OUR MATERIAL SELECTION PROCESS
+          </h2>
+          <p class="text-lg text-slate-300">
+            How we choose the right materials for your specific waterproofing needs
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-4 gap-6">
+          <div class="text-center">
+            <div class="bg-amber-500 text-black text-3xl font-bold w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+              1
+            </div>
+            <h3 class="text-xl font-bold mb-2 uppercase">SITE ANALYSIS</h3>
+            <p class="text-slate-300">Soil conditions, water table, foundation type assessment</p>
+          </div>
+          
+          <div class="text-center">
+            <div class="bg-amber-500 text-black text-3xl font-bold w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+              2
+            </div>
+            <h3 class="text-xl font-bold mb-2 uppercase">PROBLEM DIAGNOSIS</h3>
+            <p class="text-slate-300">Identify water sources, pressure levels, structural concerns</p>
+          </div>
+          
+          <div class="text-center">
+            <div class="bg-amber-500 text-black text-3xl font-bold w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+              3
+            </div>
+            <h3 class="text-xl font-bold mb-2 uppercase">MATERIAL MATCHING</h3>
+            <p class="text-slate-300">Select optimal products based on conditions and performance needs</p>
+          </div>
+          
+          <div class="text-center">
+            <div class="bg-amber-500 text-black text-3xl font-bold w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+              4
+            </div>
+            <h3 class="text-xl font-bold mb-2 uppercase">WARRANTY COVERAGE</h3>
+            <p class="text-slate-300">Ensure all materials qualify for maximum warranty protection</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Premium Materials -->
+  <section class="py-16 bg-red-50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-4xl font-bold text-slate-900 mb-6 uppercase">
+          THE COST OF CHEAP MATERIALS
+        </h2>
+        
+        <div class="grid md:grid-cols-2 gap-8 mb-8">
+          <div class="bg-white p-6 border-4 border-red-600">
+            <h3 class="text-xl font-bold text-red-600 mb-4 uppercase">BUDGET MATERIALS</h3>
+            <ul class="text-left space-y-2 text-slate-600">
+              <li class="flex items-center"><span class="text-red-500 mr-2">✗</span>5-10 year lifespan</li>
+              <li class="flex items-center"><span class="text-red-500 mr-2">✗</span>Limited warranties</li>
+              <li class="flex items-center"><span class="text-red-500 mr-2">✗</span>Frequent repairs needed</li>
+              <li class="flex items-center"><span class="text-red-500 mr-2">✗</span>Poor weather resistance</li>
+              <li class="flex items-center"><span class="text-red-500 mr-2">✗</span>Higher total cost</li>
+            </ul>
+          </div>
+          
+          <div class="bg-white p-6 border-4 border-cyan-600">
+            <h3 class="text-xl font-bold text-cyan-600 mb-4 uppercase">PREMIUM MATERIALS</h3>
+            <ul class="text-left space-y-2 text-slate-600">
+              <li class="flex items-center"><span class="text-cyan-500 mr-2">✓</span>25+ year lifespan</li>
+              <li class="flex items-center"><span class="text-cyan-500 mr-2">✓</span>Comprehensive warranties</li>
+              <li class="flex items-center"><span class="text-cyan-500 mr-2">✓</span>No maintenance required</li>
+              <li class="flex items-center"><span class="text-cyan-500 mr-2">✓</span>Extreme weather protection</li>
+              <li class="flex items-center"><span class="text-cyan-500 mr-2">✓</span>Lower lifetime cost</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="bg-amber-50 p-6 border-l-4 border-cyan-500">
+          <p class="text-xl font-bold text-slate-900">
+            "The bitterness of poor quality remains long after the sweetness of low price is forgotten."
+          </p>
+          <p class="text-slate-600 mt-2">
+            Premium materials cost 20-30% more upfront but save 200-300% in lifetime costs.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Form -->
+  <ContactForm />
+
+  <!-- Bottom CTA -->
+  <section class="py-16 bg-amber-500">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-4xl font-bold text-black mb-4 uppercase">
+          GET DETAILED MATERIAL SPECIFICATIONS
+        </h2>
+        <p class="text-xl text-black mb-8">
+          Receive comprehensive material specs and warranties for your project. No obligation consultation.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="/free-inspection" class="bg-black text-white px-8 py-4 font-bold uppercase hover:bg-navy-900 transition-colors">
+            GET MATERIAL SPECS
+          </a>
+          <a href="tel:437-545-0067" class="bg-white text-black px-8 py-4 font-bold uppercase hover:bg-slate-50 transition-colors">
+            CALL: 437-545-0067
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</PageLayout>
+
+<script type="application/ld+json" set:html={JSON.stringify(productSchema)}></script>

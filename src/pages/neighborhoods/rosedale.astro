@@ -1,0 +1,350 @@
+---
+import Hero from '../../components/sections/Hero.astro';
+import Stats from '../../components/sections/Stats.astro';
+import Testimonials from '../../components/sections/Testimonials.astro';
+import Process from '../../components/sections/Process.astro';
+import Services from '../../components/sections/Services.astro';
+import Stats from '../../components/sections/Stats.astro';
+import PageLayout from '../../layouts/PageLayout.astro';
+import TrustBadges from '../../components/TrustBadges.astro';
+import StickyBooking from '../../components/StickyBooking.astro';
+import ValuePropositions from '../../components/ValuePropositions.astro';
+import LastUpdated from '../../components/LastUpdated.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import BreadcrumbSchema from '../../components/BreadcrumbSchema.astro';
+
+const neighborhoodData = {
+  name: 'Rosedale',
+  avgHomeAge: '90-120 years',
+  commonFoundation: 'Stone, Brick & Historic',
+  floodRisk: 'High (Valley location)',
+  avgProjectCost: '$20,000-$45,000',
+  responseTime: '12-18 minutes'
+};
+---
+
+<PageLayout 
+  title="Waterproofing Rosedale Toronto | Heritage Home & Ravine Experts" 
+  description="Specialized waterproofing for Rosedale's heritage estates. Valley flooding experts, historic preservation, ravine management. Discrete luxury service. (437) 545-0067."
+>
+  
+  <!-- Breadcrumbs -->
+  <div class="container mx-auto px-4 mt-4">
+    <Breadcrumbs 
+      items={[
+        { name: "Home", url: "/" },
+        { name: "Toronto", url: "/locations/toronto" },
+        { name: "Neighborhoods", url: "/locations/toronto#neighborhoods" },
+        { name: "Rosedale" }
+      ]}
+    />
+  </div>
+
+<section class="py-16 bg-navy-900">
+    <div class="container mx-auto px-4">
+      <div class="container mx-auto px-4 text-center">
+        <h1 class="text-5xl font-bold text-white mb-6 uppercase">HERITAGE WATERPROOFING IN ROSEDALE</h1>
+        <p class="text-xl text-slate-300 mb-8">Preserving Toronto's Most Historic & Prestigious Estates Since 1999</p>
+        
+        <div class="grid grid-cols-3 gap-4 mb-8">
+          <div class="bg-white border-2 border-slate-200 p-4">
+            <span class="text-2xl font-bold text-slate-900">150+</span>
+            <span class="text-sm text-slate-600 uppercase">Heritage Homes Protected</span>
+          </div>
+          <div class="bg-white border-2 border-slate-200 p-4">
+            <span class="text-2xl font-bold text-slate-900">100%</span>
+            <span class="text-sm text-slate-600 uppercase">Preservation Success</span>
+          </div>
+          <div class="bg-white border-2 border-slate-200 p-4">
+            <span class="text-2xl font-bold text-slate-900">12 min</span>
+            <span class="text-sm text-slate-600 uppercase">Emergency Response</span>
+          </div>
+        </div>
+        
+        <div class="flex gap-4 justify-center">
+          <a href="/free-inspection" class="bg-amber-500 text-black px-8 py-4 text-lg font-bold hover:bg-amber-400 transition-colors uppercase">Heritage Home Assessment</a>
+          <a href="tel:4375450067" class="border-2 border-white text-slate-900 px-8 py-4 text-lg font-bold hover:bg-white hover:text-black transition-colors uppercase">
+            Priority Service: (437) 545-0067
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-slate-50">
+    <div class="container mx-auto px-4">
+      <h2 class="text-4xl font-bold text-slate-900 mb-4 uppercase">ROSEDALE'S COMPLEX WATER CHALLENGES</h2>
+      
+      <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div class="challenge-card heritage">
+          <div class="hidden"</div>
+          <h3 class="text-xl font-bold text-slate-900 mb-3 uppercase">CENTURY-OLD STONE FOUNDATIONS</h3>
+          <p class="text-slate-600">Rosedale's 1880s-1920s estates feature rubble stone and early brick foundations requiring specialized preservation techniques that allow walls to "breathe."</p>
+          <div class="mt-4 pt-4 border-t border-slate-100">
+            <strong>Our Solution:</strong> Heritage-approved lime mortar repointing with breathable waterproofing membranes preserving historic integrity.
+          </div>
+        </div>
+        
+        <div class="challenge-card heritage">
+          <div class="hidden"</div>
+          <h3 class="text-xl font-bold text-slate-900 mb-3 uppercase">RAVINE VALLEY FLOODING</h3>
+          <p class="text-slate-600">Located in Toronto's ravine system, Rosedale faces severe flooding risk from Moore Park, Vale of Avoca, and Rosedale Valley ravines.</p>
+          <div class="mt-4 pt-4 border-t border-slate-100">
+            <strong>Our Solution:</strong> Engineered drainage systems with oversized French drains and multiple sump stations handling ravine overflow.
+          </div>
+        </div>
+        
+        <div class="challenge-card heritage">
+          <div class="hidden"</div>
+          <h3 class="text-xl font-bold text-slate-900 mb-3 uppercase">CARRIAGE HOUSES & HISTORIC STRUCTURES</h3>
+          <p class="text-slate-600">Many properties feature coach houses, servants' quarters, and underground passages requiring coordinated waterproofing strategies.</p>
+          <div class="mt-4 pt-4 border-t border-slate-100">
+            <strong>Our Solution:</strong> Integrated multi-structure protection plans maintaining architectural harmony while ensuring complete water management.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <h2 class="text-4xl font-bold text-slate-900 mb-4 uppercase">ROSEDALE VALLEY WATER DYNAMICS</h2>
+      
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="bg-white border-2 border-slate-200 p-6">
+          <h3 class="text-xl font-bold text-slate-900 mb-3 uppercase">VALLEY CONVERGENCE</h3>
+          <div class="risk-level extreme">EXTREME RISK</div>
+          <p class="text-slate-600">Three ravines converge in Rosedale, creating Toronto's highest flood risk zone during major storms</p>
+        </div>
+        
+        <div class="bg-white border-2 border-slate-200 p-6">
+          <h3 class="text-xl font-bold text-slate-900 mb-3 uppercase">HISTORIC FLOOD PLAIN</h3>
+          <div class="inline-block px-3 py-1 bg-cyan-500 text-slate-900 font-bold uppercase text-xs mb-2">HIGH RISK</div>
+          <p class="text-slate-600">Built on former Castle Frank Brook, underground streams still flow beneath many properties</p>
+        </div>
+        
+        <div class="bg-white border-2 border-slate-200 p-6">
+          <h3 class="text-xl font-bold text-slate-900 mb-3 uppercase">CLAY BOWL EFFECT</h3>
+          <div class="inline-block px-3 py-1 bg-cyan-500 text-slate-900 font-bold uppercase text-xs mb-2">HIGH RISK</div>
+          <p class="text-slate-600">Rosedale's clay soil and valley location create a "bowl" that holds water during rain events</p>
+        </div>
+      </div>
+      
+      <div class="mt-8 bg-navy-900 border-2 border-slate-200 p-6">
+        <h3 class="text-xl font-bold text-slate-900 mb-3 uppercase">MAJOR ROSEDALE FLOODING EVENTS</h3>
+        <ul class="space-y-2">
+          <li class="text-slate-600 mb-2" class="text-slate-600"><span class="font-bold text-slate-900">July 8, 2024:</span> Record 126mm rainfall - 40+ estates flooded in South Rosedale</li>
+          <li class="text-slate-600 mb-2" class="text-slate-600"><span class="font-bold text-slate-900">May 2024:</span> Ravine overflow affected all properties along Park Road</li>
+          <li class="text-slate-600 mb-2" class="text-slate-600"><span class="font-bold text-slate-900">August 2023:</span> Historic flooding on Cluny Drive - $2M+ in damages</li>
+          <li class="text-slate-600 mb-2" class="text-slate-600"><span class="font-bold text-slate-900">July 2013:</span> Reference storm - still used for all drainage calculations</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-slate-50">
+    <div class="container mx-auto px-4">
+      <h2 class="text-4xl font-bold text-slate-900 mb-4 uppercase">RECENT ROSEDALE HERITAGE PROJECTS</h2>
+      
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-white border-2 border-slate-200 p-6">
+          
+          <div class="">
+            <h3 class="text-xl font-bold text-slate-900 mb-3 uppercase">CLUNY DRIVE GEORGIAN MANOR</h3>
+            <p class="text-sm font-semibold text-slate-600 uppercase mb-2">Historic Foundation Restoration</p>
+            <ul class="space-y-2">
+              <li class="text-slate-600 mb-2">1895 rubble stone foundation</li>
+              <li class="text-slate-600 mb-2">Lime mortar restoration</li>
+              <li class="text-slate-600 mb-2">Breathable membrane system</li>
+              <li class="text-slate-600 mb-2">Heritage permit approved</li>
+            </ul>
+            <div class="mt-4 pt-4 border-t border-slate-100 font-bold text-slate-900">Investment: $78,000</div>
+          </div>
+        </div>
+        
+        <div class="bg-white border-2 border-slate-200 p-6">
+          
+          <div class="">
+            <h3 class="text-xl font-bold text-slate-900 mb-3 uppercase">PARK ROAD VALLEY ESTATE</h3>
+            <p class="text-sm font-semibold text-slate-600 uppercase mb-2">Ravine Flood Management</p>
+            <ul class="space-y-2">
+              <li class="text-slate-600 mb-2">Triple pump system</li>
+              <li class="text-slate-600 mb-2">2000 ft French drains</li>
+              <li class="text-slate-600 mb-2">Slope stabilization</li>
+              <li class="text-slate-600 mb-2">Emergency backup power</li>
+            </ul>
+            <div class="mt-4 pt-4 border-t border-slate-100 font-bold text-slate-900">Investment: $92,000</div>
+          </div>
+        </div>
+        
+        <div class="bg-white border-2 border-slate-200 p-6">
+          
+          <div class="">
+            <h3 class="text-xl font-bold text-slate-900 mb-3 uppercase">ROSEDALE ROAD TUDOR REVIVAL</h3>
+            <p class="text-sm font-semibold text-slate-600 uppercase mb-2">Complete Estate System</p>
+            <ul class="space-y-2">
+              <li class="text-slate-600 mb-2">Main house + coach house</li>
+              <li class="text-slate-600 mb-2">Underground tunnel sealed</li>
+              <li class="text-slate-600 mb-2">Period-appropriate finishes</li>
+              <li class="text-slate-600 mb-2">10-year monitoring included</li>
+            </ul>
+            <div class="mt-4 pt-4 border-t border-slate-100 font-bold text-slate-900">Investment: $125,000</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <h2 class="text-4xl font-bold text-slate-900 mb-4 uppercase">TRUSTED BY ROSEDALE'S DISTINGUISHED FAMILIES</h2>
+      
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="testimonial prestige">
+          <div class="stars"></div>
+          <p class="text-slate-600">"They understood our 1890s home's unique requirements. Not only did they solve our water issues, but they also preserved every architectural detail. True craftsmen who respect heritage."</p>
+          <div class="mt-4 pt-4 border-t border-slate-100">
+            <strong>Heritage Homeowner</strong>
+            <span>South Rosedale</span>
+          </div>
+        </div>
+        
+        <div class="testimonial prestige">
+          <div class="stars"></div>
+          <p class="text-slate-600">"During the July floods, we were the only house on our street that stayed dry. The investment in proper drainage saved us hundreds of thousands in damages."</p>
+          <div class="mt-4 pt-4 border-t border-slate-100">
+            <strong>Estate Owner</strong>
+            <span>Cluny Drive</span>
+          </div>
+        </div>
+        
+        <div class="testimonial prestige">
+          <div class="stars"></div>
+          <p class="text-slate-600">"Five generations in this home, and Dryspace ensured it will last five more. They worked with our heritage consultant to maintain historical accuracy. Exceptional."</p>
+          <div class="mt-4 pt-4 border-t border-slate-100">
+            <strong>Family Trust</strong>
+            <span>Rosedale Road</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="heritage-expertise">
+    <div class="container mx-auto px-4">
+      <h2 class="text-4xl font-bold text-slate-900 mb-4 uppercase">HERITAGE PRESERVATION EXPERTISE</h2>
+      
+      <div class="expertise-grid">
+        <div class="expertise-item">
+          <h3 class="text-xl font-bold text-slate-900 mb-3 uppercase">TORONTO HERITAGE PERMIT NAVIGATION</h3>
+          <p class="text-slate-600">Complete handling of Heritage Conservation District approvals and Toronto Heritage Planning coordination</p>
+        </div>
+        <div class="expertise-item">
+          <h3 class="text-xl font-bold text-slate-900 mb-3 uppercase">PERIOD-APPROPRIATE MATERIALS</h3>
+          <p class="text-slate-600">Natural hydraulic lime mortars, traditional pointing techniques, and historically accurate waterproofing methods</p>
+        </div>
+        <div class="expertise-item">
+          <h3 class="text-xl font-bold text-slate-900 mb-3 uppercase">STRUCTURAL ARCHAEOLOGY</h3>
+          <p class="text-slate-600">Understanding of 19th-century building techniques essential for proper water management in heritage homes</p>
+        </div>
+        <div class="expertise-item">
+          <h3 class="text-xl font-bold text-slate-900 mb-3 uppercase">CONSERVATION STANDARDS</h3>
+          <p class="text-slate-600">All work meets Parks Canada Standards and Guidelines for the Conservation of Historic Places</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-slate-50">
+    <div class="container mx-auto px-4">
+      <h2 class="text-4xl font-bold text-slate-900 mb-4 uppercase">PROTECTING ROSEDALE'S LANDMARK PROPERTIES</h2>
+      
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="bg-white border-2 border-slate-200 p-6">
+          <h3 class="text-xl font-bold text-slate-900 mb-3 uppercase">CHORLEY PARK AREA</h3>
+          <p class="text-slate-600">Former Government House grounds create unique drainage patterns. Specialized solutions for properties near this historic site.</p>
+        </div>
+        
+        <div class="bg-white border-2 border-slate-200 p-6">
+          <h3 class="text-xl font-bold text-slate-900 mb-3 uppercase">ROSEDALE VALLEY BRIDGE</h3>
+          <p class="text-slate-600">Properties near the bridge face vibration and water table impacts. Custom dampening and drainage systems required.</p>
+        </div>
+        
+        <div class="bg-white border-2 border-slate-200 p-6">
+          <h3 class="text-xl font-bold text-slate-900 mb-3 uppercase">MOORE PARK RAVINE</h3>
+          <p class="text-slate-600">Eastern Rosedale properties backing onto Moore Park Ravine need extensive slope protection and drainage.</p>
+        </div>
+        
+        <div class="bg-white border-2 border-slate-200 p-6">
+          <h3 class="text-xl font-bold text-slate-900 mb-3 uppercase">BRANKSOME HALL VICINITY</h3>
+          <p class="text-slate-600">Historic estates near the school require coordination for discrete service during academic terms.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="emergency-protocol">
+    <div class="container mx-auto px-4">
+      <div class="protocol-content">
+        <h2 class="text-4xl font-bold text-slate-900 mb-4 uppercase"> ROSEDALE FLOOD EMERGENCY PROTOCOL</h2>
+        <div class="protocol-steps">
+          <div class="protocol-step">
+            <span class="step-number">1</span>
+            <p><strong>Monitor Ravine Levels:</strong> When ravines rise, flooding can occur within 30 minutes</p>
+          </div>
+          <div class="protocol-step">
+            <span class="step-number">2</span>
+            <p><strong>Emergency Line:</strong> Call (437) 545-0067 for immediate response</p>
+          </div>
+          <div class="protocol-step">
+            <span class="step-number">3</span>
+            <p><strong>Priority Response:</strong> Rosedale receives priority during valley flooding events</p>
+          </div>
+        </div>
+        <a href="/emergency" class="btn-emergency">Access Emergency Services</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <h2 class="text-4xl font-bold text-slate-900 mb-4 uppercase">ROSEDALE SERVICE COVERAGE</h2>
+      
+      <div class="bg-slate-50 border-2 border-slate-200 p-8">
+        <h3 class="text-xl font-bold text-slate-900 mb-3 uppercase">HERITAGE SERVICE ZONE:</h3>
+        <ul class="space-y-2">
+          <li class="text-slate-600 mb-2" class="text-slate-600"><span class="font-bold text-slate-900">North:</span> CPR Tracks/Summerhill</li>
+          <li class="text-slate-600 mb-2" class="text-slate-600"><span class="font-bold text-slate-900">South:</span> Bloor Street East</li>
+          <li class="text-slate-600 mb-2" class="text-slate-600"><span class="font-bold text-slate-900">East:</span> Bayview Avenue</li>
+          <li class="text-slate-600 mb-2" class="text-slate-600"><span class="font-bold text-slate-900">West:</span> Yonge Street</li>
+        </ul>
+        
+        <div class="mt-8">
+          <h4 class="text-lg font-bold text-slate-900 mb-2 uppercase">HISTORIC STREETS SERVED:</h4>
+          <div class="grid grid-cols-3 md:grid-cols-4 gap-2 mt-4">
+            <span>Rosedale Road</span>
+            <span>Cluny Drive</span>
+            <span>Park Road</span>
+            <span>Glen Road</span>
+            <span>Elm Avenue</span>
+            <span>Crescent Road</span>
+            <span>South Drive</span>
+            <span>Highland Avenue</span>
+            <span>Binscarth Road</span>
+            <span>Chestnut Park</span>
+            <span>Whitney Avenue</span>
+            <span>Roxborough Drive</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <ValuePropositions />
+  <TrustBadges />
+  <LastUpdated />
+  <StickyBooking />
+
+  
+<BreadcrumbSchema items={[{name: 'Home', url: '/'}, {name: 'Neighborhoods'}, {name: 'Rosedale'}]} />
+</PageLayout>

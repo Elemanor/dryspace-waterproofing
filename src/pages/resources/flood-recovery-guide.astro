@@ -1,0 +1,504 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import ContactForm from '../../components/ContactForm.astro';
+import Footer from '../../components/Footer.astro';
+import ResourceImageGallery from '../../components/ResourceImageGallery.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+
+const floodRecoverySteps = [
+  {
+    phase: 'Immediate Safety',
+    timeframe: '0-24 hours',
+    actions: [
+      'Ensure electrical safety - turn off power at main breaker',
+      'Check structural integrity before entering',
+      'Document damage with photos/video for insurance',
+      'Contact insurance company immediately',
+      'Remove standing water if safe to do so'
+    ]
+  },
+  {
+    phase: 'Damage Assessment',
+    timeframe: '24-48 hours',
+    actions: [
+      'Professional structural evaluation',
+      'Categorize water damage (clean, grey, or black water)',
+      'Assess hydrostatic pressure impacts',
+      'Check foundation for cracks or movement',
+      'Evaluate mechanical systems damage'
+    ]
+  },
+  {
+    phase: 'Water Extraction',
+    timeframe: '48-72 hours',
+    actions: [
+      'Professional water extraction services',
+      'Remove damaged materials within 48 hours',
+      'Set up industrial dehumidifiers',
+      'Install air movers for circulation',
+      'Monitor moisture levels continuously'
+    ]
+  },
+  {
+    phase: 'Restoration',
+    timeframe: '1-4 weeks',
+    actions: [
+      'Mold prevention and remediation',
+      'Structural repairs and reinforcement',
+      'Replace damaged insulation and drywall',
+      'Restore electrical and plumbing systems',
+      'Apply antimicrobial treatments'
+    ]
+  }
+];
+
+const preventionStrategies = [
+  {
+    category: 'Exterior Grading',
+    measures: [
+      'Maintain 2% slope away from foundation (minimum 6 inches in 10 feet)',
+      'Extend downspouts 6 feet from foundation',
+      'Install French drains in problem areas',
+      'Create swales to direct water flow'
+    ]
+  },
+  {
+    category: 'Foundation Drainage',
+    measures: [
+      'Install perimeter drain tile system',
+      'Apply waterproof membrane to exterior walls',
+      'Ensure proper drainage to storm sewer or daylight',
+      'Maintain clear window wells with drainage'
+    ]
+  },
+  {
+    category: 'Sump Pump Systems',
+    measures: [
+      'Install primary sump pump with adequate capacity',
+      'Add battery backup system for power outages',
+      'Test monthly and maintain annually',
+      'Install water alarm for early warning'
+    ]
+  },
+  {
+    category: 'Backwater Prevention',
+    measures: [
+      'Install backwater valve on main sewer line',
+      'Regular inspection and maintenance',
+      'Proper venting to prevent siphoning',
+      'Consider sewage ejector pump for below-grade fixtures'
+    ]
+  }
+];
+
+const insuranceConsiderations = [
+  {
+    type: 'Coverage Types',
+    details: [
+      'Standard homeowner policies typically exclude flood damage',
+      'Overland flooding requires separate coverage',
+      'Sewer backup coverage must be added as endorsement',
+      'Review policy limits and deductibles annually'
+    ]
+  },
+  {
+    type: 'Documentation Required',
+    details: [
+      'Pre-loss photos of property condition',
+      'Receipts for all valuable items',
+      'Professional assessment reports',
+      'Detailed inventory of damaged items',
+      'Contractor estimates for repairs'
+    ]
+  },
+  {
+    type: 'Claim Process',
+    details: [
+      'Report damage immediately (within 24-48 hours)',
+      'Do not dispose of damaged items until documented',
+      'Keep all receipts for emergency repairs',
+      'Work with adjuster to assess damage',
+      'Get multiple repair estimates'
+    ]
+  }
+];
+
+const hydrostaticPressures = [
+  { depth: '1 foot', pressure: '62.4 lbs/sq ft', force: '500 lbs on door' },
+  { depth: '2 feet', pressure: '124.8 lbs/sq ft', force: '1,000 lbs on door' },
+  { depth: '3 feet', pressure: '187.2 lbs/sq ft', force: '1,500 lbs on door' },
+  { depth: '4 feet', pressure: '249.6 lbs/sq ft', force: '2,000 lbs on door' }
+];
+---
+
+<PageLayout 
+  title="Flood Recovery & Prevention Guide | Emergency Water Damage Response" 
+  description="Comprehensive flood recovery guide covering emergency response, damage assessment, insurance claims, and prevention strategies for Toronto homeowners."
+>
+  
+  <!-- Breadcrumbs -->
+  <div class="container mx-auto px-4 mt-4">
+    <Breadcrumbs 
+      items={[
+        { name: "Home", url: "/" },
+        { name: "Resources", url: "/resources" },
+        { name: "Flood Recovery Guide" }
+      ]}
+    />
+  </div>
+
+<!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-container">
+      <div class="emergency-banner">
+        <i class="fa-solid fa-triangle-exclamation"></i>
+        <span>24/7 Emergency Flood Response Available</span>
+        <a href="tel:437-545-0067" class="emergency-call">Call Now</a>
+      </div>
+      
+      <h1 class="hero-title">
+        Flood Recovery & Prevention Guide
+        <span class="subtitle">Professional Emergency Response & Long-term Protection</span>
+      </h1>
+      
+      <p class="hero-description">
+        Complete resource for flood damage recovery, insurance claims, and prevention strategies. 
+        Based on Canadian building standards and insurance industry best practices.
+      </p>
+
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-number">24hr</span>
+          <span class="stat-label">Critical Window</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number">48hr</span>
+          <span class="stat-label">Mold Prevention</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number">$25K</span>
+          <span class="stat-label">Avg. Flood Damage</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number">80%</span>
+          <span class="stat-label">Preventable Cases</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Recovery Timeline -->
+  <section class="timeline-section">
+    <div class="container">
+      <h2 class="text-4xl font-bold text-slate-900 uppercase">FLOOD RECOVERY TIMELINE</h2>
+      <p class="section-intro">Critical steps and timeframes for effective flood recovery</p>
+      
+      <div class="timeline">
+        {floodRecoverySteps.map((step, index) => (
+          <div class="timeline-item">
+            <div class="timeline-marker">
+              <span class="phase-number">{index + 1}</span>
+            </div>
+            <div class="timeline-content">
+              <h3 class="text-2xl font-bold text-slate-900 uppercase">{step.phase}</h3>
+              <span class="timeframe">{step.timeframe}</span>
+              <ul>
+                {step.actions.map(action => (
+                  <li>{action}</li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Technical Images -->
+  <section class="technical-section">
+    <div class="container">
+      <h2 class="text-4xl font-bold text-slate-900 uppercase">UNDERSTANDING FLOOD DAMAGE</h2>
+      
+      <div class="technical-grid">
+        <div class="technical-card border-2 border-slate-200">
+          <img src="/waterproofing manual/content/photo_2025-08-25_20-49-49.jpg" 
+               alt="Flood recovery procedures" / width="800" height="600" loading="lazy" decoding="async">
+          <h3 class="text-2xl font-bold text-slate-900 uppercase">POST-FLOOD ASSESSMENT PROTOCOL</h3>
+          <p>Professional damage assessment and cleanup procedures following basement flooding</p>
+        </div>
+        
+        <div class="technical-card border-2 border-slate-200">
+          <img src="/waterproofing manual/content/photo_2025-08-25_20-49-50.jpg" 
+               alt="Flood prevention measures" / width="800" height="600" loading="lazy" decoding="async">
+          <h3 class="text-2xl font-bold text-slate-900 uppercase">PREVENTION STRATEGIES</h3>
+          <p>Grading, drainage, and sump pump systems to prevent water infiltration</p>
+        </div>
+        
+        <div class="technical-card border-2 border-slate-200">
+          <img src="/waterproofing manual/content/photo_2025-08-25_20-49-51.jpg" 
+               alt="Hydrostatic pressure effects" / width="800" height="600" loading="lazy" decoding="async">
+          <h3 class="text-2xl font-bold text-slate-900 uppercase">HYDROSTATIC FORCES</h3>
+          <p>Understanding water pressure impacts on foundation structures</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Hydrostatic Pressure -->
+  <section class="pressure-section">
+    <div class="container">
+      <h2 class="text-4xl font-bold text-slate-900 uppercase">UNDERSTANDING HYDROSTATIC PRESSURE</h2>
+      <p class="section-intro">Water exerts tremendous force on your foundation</p>
+      
+      <div class="pressure-content">
+        <div class="pressure-table">
+          <h3 class="text-2xl font-bold text-slate-900 uppercase">FORCE OF WATER AT VARIOUS DEPTHS</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Water Depth</th>
+                <th>Pressure (PSF)</th>
+                <th>Force on Standard Door</th>
+              </tr>
+            </thead>
+            <tbody>
+              {hydrostaticPressures.map(item => (
+                <tr>
+                  <td>{item.depth}</td>
+                  <td>{item.pressure}</td>
+                  <td class="force">{item.force}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+          
+          <div class="pressure-note">
+            <i class="fa-solid fa-info-circle"></i>
+            <p>Just 2 feet of water can exert enough force to collapse basement walls or float a concrete slab</p>
+          </div>
+        </div>
+        
+        <div class="pressure-diagram">
+          <img src="/waterproofing manual/content/photo_2025-08-25_20-49-52.jpg" 
+               alt="Force analysis on structures during flooding" / width="800" height="600" loading="lazy" decoding="async">
+          <p class="caption">Structural forces and failure modes during flood events</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Prevention Strategies -->
+  <section class="prevention-section">
+    <div class="container">
+      <h2 class="text-4xl font-bold text-slate-900 uppercase">FLOOD PREVENTION STRATEGIES</h2>
+      <p class="section-intro">Comprehensive approach to protecting your home from water damage</p>
+      
+      <div class="prevention-grid">
+        {preventionStrategies.map(strategy => (
+          <div class="prevention-card border-2 border-slate-200">
+            <div class="card-header border-2 border-slate-200">
+              <i class="fa-solid fa-shield-halved"></i>
+              <h3 class="text-2xl font-bold text-slate-900 uppercase">{strategy.category}</h3>
+            </div>
+            <ul>
+              {strategy.measures.map(measure => (
+                <li>{measure}</li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+
+      <!-- Additional Technical References -->
+      <div class="technical-references">
+        <h3 class="text-2xl font-bold text-slate-900 uppercase">BUILDING SCIENCE PRINCIPLES</h3>
+        <div class="reference-grid">
+          <div class="reference-item">
+            <img src="/waterproofing manual/content/photo_2025-08-25_20-49-47.jpg" 
+                 alt="Moisture control principles" / width="800" height="600" loading="lazy" decoding="async">
+            <h4 class="text-xl font-bold text-slate-900 uppercase">MOISTURE CONTROL FUNDAMENTALS</h4>
+            <p>Understanding bulk water, vapor transport, and capillary action</p>
+          </div>
+          <div class="reference-item">
+            <img src="/waterproofing manual/content/photo_2025-08-25_20-49-48.jpg" 
+                 alt="Drainage requirements" / width="800" height="600" loading="lazy" decoding="async">
+            <h4 class="text-xl font-bold text-slate-900 uppercase">DRAINAGE SYSTEM DESIGN</h4>
+            <p>Perimeter drains, under-slab systems, and proper discharge methods</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Insurance Section -->
+  <section class="insurance-section">
+    <div class="container">
+      <h2 class="text-4xl font-bold text-slate-900 uppercase">INSURANCE & FINANCIAL PROTECTION</h2>
+      <p class="section-intro">Understanding coverage and claim procedures</p>
+      
+      <div class="insurance-grid">
+        {insuranceConsiderations.map(item => (
+          <div class="insurance-card border-2 border-slate-200">
+            <h3 class="text-2xl font-bold text-slate-900 uppercase">{item.type}</h3>
+            <ul>
+              {item.details.map(detail => (
+                <li>{detail}</li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+
+      <div class="insurance-tips">
+        <div class="tip-box warning">
+          <i class="fa-solid fa-exclamation-triangle"></i>
+          <div>
+            <h4 class="text-xl font-bold text-slate-900 uppercase">IMPORTANT: ACT QUICKLY</h4>
+            <p>Most insurance policies require notification within 24-48 hours of damage discovery. Delayed reporting can result in claim denial.</p>
+          </div>
+        </div>
+        
+        <div class="tip-box info">
+          <i class="fa-solid fa-info-circle"></i>
+          <div>
+            <h4 class="text-xl font-bold text-slate-900 uppercase">DOCUMENT EVERYTHING</h4>
+            <p>Take photos before cleanup, keep all receipts, and maintain detailed records of all communications with insurance company.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Basement Retrofit Solutions -->
+  <section class="retrofit-section">
+    <div class="container">
+      <h2 class="text-4xl font-bold text-slate-900 uppercase">BASEMENT RETROFIT SOLUTIONS</h2>
+      <p class="section-intro">Modern waterproofing upgrades for existing homes</p>
+      
+      <div class="retrofit-content">
+        <div class="retrofit-info">
+          <h3 class="text-2xl font-bold text-slate-900 uppercase">INTERIOR RETROFIT OPTIONS</h3>
+          <img src="/waterproofing manual/content/photo_2025-08-25_20-49-43.jpg" 
+               alt="Basement retrofit insulation" / width="800" height="600" loading="lazy" decoding="async">
+          <ul>
+            <li>Rigid foam insulation with moisture barriers</li>
+            <li>Interior drainage systems with sump pumps</li>
+            <li>Vapor barriers and sealants</li>
+            <li>Crack injection and structural repairs</li>
+          </ul>
+        </div>
+        
+        <div class="retrofit-info">
+          <h3 class="text-2xl font-bold text-slate-900 uppercase">MOISTURE MANAGEMENT SYSTEMS</h3>
+          <img src="/waterproofing manual/content/photo_2025-08-25_20-49-44.jpg" 
+               alt="Wall drying mechanisms" / width="800" height="600" loading="lazy" decoding="async">
+          <ul>
+            <li>Controlled ventilation for moisture removal</li>
+            <li>Dehumidification systems</li>
+            <li>Smart moisture monitoring</li>
+            <li>Air gap membranes for wall protection</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Emergency CTA -->
+  <section class="emergency-cta">
+    <div class="container">
+      <div class="emergency-content">
+        <div class="emergency-icon">
+          <i class="fa-solid fa-house-flood-water"></i>
+        </div>
+        
+        <div class="emergency-text">
+          <h2 class="text-4xl font-bold text-slate-900 uppercase">EXPERIENCING FLOODING NOW?</h2>
+          <p>Our emergency response team is available 24/7 for immediate assistance</p>
+          
+          <div class="response-features">
+            <div class="feature">
+              <i class="fa-solid fa-clock"></i>
+              <span>30-min response</span>
+            </div>
+            <div class="feature">
+              <i class="fa-solid fa-truck"></i>
+              <span>Fully equipped</span>
+            </div>
+            <div class="feature">
+              <i class="fa-solid fa-shield"></i>
+              <span>Insurance approved</span>
+            </div>
+            <div class="feature">
+              <i class="fa-solid fa-certificate"></i>
+              <span>Certified team</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="emergency-actions">
+          <a href="tel:437-545-0067" class="btn-emergency">
+            <i class="fa-solid fa-phone"></i>
+            Emergency Line: 437-545-0067
+          </a>
+          <a href="/contact" class="btn-schedule">
+            Schedule Assessment
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Download Resources -->
+  <section class="resources-section">
+    <div class="container">
+      <h2 class="text-4xl font-bold text-slate-900 uppercase">FREE RESOURCES</h2>
+      <p class="section-intro">Download our comprehensive guides and checklists</p>
+      
+      <div class="resource-cards">
+        <div class="resource-card border-2 border-slate-200">
+          <i class="fa-solid fa-file-pdf"></i>
+          <h3 class="text-2xl font-bold text-slate-900 uppercase">FLOOD RECOVERY CHECKLIST</h3>
+          <p>Step-by-step guide for the first 72 hours after flooding</p>
+          <button class="btn-download">Download PDF</button>
+        </div>
+        
+        <div class="resource-card border-2 border-slate-200">
+          <i class="fa-solid fa-file-pdf"></i>
+          <h3 class="text-2xl font-bold text-slate-900 uppercase">INSURANCE CLAIM GUIDE</h3>
+          <p>Complete guide to documenting and filing flood damage claims</p>
+          <button class="btn-download">Download PDF</button>
+        </div>
+        
+        <div class="resource-card border-2 border-slate-200">
+          <i class="fa-solid fa-file-pdf"></i>
+          <h3 class="text-2xl font-bold text-slate-900 uppercase">PREVENTION CHECKLIST</h3>
+          <p>Annual maintenance checklist to prevent basement flooding</p>
+          <button class="btn-download">Download PDF</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <ContactForm />
+  <Footer />
+
+  <!-- Resource Images and Diagrams -->
+  <ResourceImageGallery resource="flood-recovery" />
+
+</PageLayout>
+
+
+
+<script>
+  // Download functionality
+  document.addEventListener('DOMContentLoaded', () => {
+    const downloadButtons = document.querySelectorAll('.btn-download');
+    
+    downloadButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        alert('PDF download will be available soon. Please contact us for a copy of this resource.');
+        window.location.href = '/contact';
+      });
+    });
+  });
+</script>

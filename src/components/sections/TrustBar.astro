@@ -1,0 +1,37 @@
+---
+export interface Props {
+  dark?: boolean;
+}
+
+const { dark = false } = Astro.props;
+
+const badges = [
+  { label: "25-Year Warranty", value: "25yr" },
+  { label: "4.9/5 Google", value: "4.9" },
+  { label: "BBB A+ Rated", value: "A+" },
+  { label: "$5M Insurance", value: "$5M" },
+  { label: "WSIB Compliant", value: "" },
+  { label: "HomeStars Verified", value: "" },
+];
+---
+
+<section class:list={[
+  "py-6 border-y",
+  dark ? "bg-navy-900/50 border-white/5" : "bg-slate-50 border-slate-100"
+]}>
+  <div class="container mx-auto px-4">
+    <div class="flex flex-wrap items-center justify-center gap-6 lg:gap-10">
+      {badges.map((badge) => (
+        <div class:list={[
+          "flex items-center gap-2 text-sm font-medium transition-opacity hover:opacity-100",
+          dark ? "text-white/70" : "text-slate-500 opacity-70"
+        ]}>
+          <svg class:list={["h-4 w-4", dark ? "text-cyan-400" : "text-cyan-500"]} fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+          </svg>
+          {badge.label}
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,422 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import Hero from '../../components/sections/Hero.astro';
+import Services from '../../components/sections/Services.astro';
+import Process from '../../components/sections/Process.astro';
+import Testimonials from '../../components/sections/Testimonials.astro';
+import Stats from '../../components/sections/Stats.astro';
+import LocationImageShowcase from '../../components/LocationImageShowcase.astro';
+import InternalLinks from '../../components/InternalLinks.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import BreadcrumbSchema from '../../components/BreadcrumbSchema.astro';
+
+const pageTitle = "Moisture Control Whitby | Durham's Trusted Contractors";
+const pageDescription = "Whitby historic downtown moisture protection. Lake effect weather specialists, heritage preservation, mixed development solutions.";
+
+// Local area information
+const localInfo = {
+  cityName: "Whitby",
+  population: "138,000",
+  waterTable: "Lake influenced",
+  soilType: "Glacial lake till",
+  avgHomesAge: "Historic to modern mix",
+  floodRisk: "Lake effect storms",
+  avgRainfall: "880mm + lake effect"
+};
+
+// Location-specific features
+const locationFeatures = [
+  {
+    title: 'LOCAL WHITBY EXPERTS',
+    description: 'Serving Whitby for over 25 years with deep knowledge of local conditions.',
+    highlight: true
+  },
+  {
+    title: 'FAST RESPONSE TIME',
+    description: '2-hour emergency response anywhere in Whitby. Available 24/7.',
+    highlight: true
+  },
+  {
+    title: 'ALL NEIGHBORHOODS',
+    description: 'Serving Brooklin, Port Whitby, Downtown and all Whitby areas.',
+    highlight: true
+  },
+  {
+    title: 'HISTORIC PRESERVATION',
+    description: 'Specialized in heritage downtown buildings and century home waterproofing techniques.'
+  },
+  {
+    title: 'LAKE EFFECT SPECIALISTS',
+    description: 'Expert solutions for Lake Ontario weather patterns and increased precipitation challenges.'
+  },
+  {
+    title: 'MIXED DEVELOPMENT EXPERTS',
+    description: 'Solutions for Whitby heritage core and modern suburban expansion areas.'
+  }
+];
+
+// Location-specific FAQs
+const locationFAQs = [
+  {
+    question: "How does lake effect weather impact Whitby waterproofing?",
+    answer: "Whitby's proximity to Lake Ontario creates increased precipitation, rapid weather changes, and intense storm systems. Our lake effect expertise includes enhanced drainage capacity, storm surge protection, and weatherproofing systems designed for the volatile weather patterns common in lakefront communities."
+  },
+  {
+    question: "What makes historic downtown Whitby waterproofing unique?",
+    answer: "Whitby's historic downtown features century-old buildings requiring heritage-sensitive waterproofing approaches. We use period-appropriate materials, reversible techniques, and work within heritage committee guidelines to preserve architectural integrity while providing modern protection."
+  },
+  {
+    question: "How do you handle Whitby's mixed development patterns?",
+    answer: "Whitby uniquely combines historic downtown heritage buildings with modern suburban developments. Each area requires different approaches - from heritage restoration techniques to contemporary subdivision drainage management and everything in between."
+  },
+  {
+    question: "What challenges does Port Whitby waterfront create?",
+    answer: "Port Whitby's waterfront location creates unique challenges including marina proximity, elevated groundwater, and direct lake exposure. Our waterfront solutions include marine-grade protection systems and specialized drainage for properties with water access."
+  },
+  {
+    question: "How do you waterproof Whitby's rapid expansion areas?",
+    answer: "Whitby's growing suburbs like Brooklin face new construction settling, overwhelmed drainage systems, and developer-grade initial waterproofing. We provide post-construction upgrades and enhanced systems that exceed original builder specifications."
+  },
+  {
+    question: "Do you work with Whitby heritage designation requirements?",
+    answer: "Yes! We maintain expertise in heritage building conservation and understand Whitby's heritage designation processes. Our heritage-compliant solutions meet both waterproofing needs and preservation standards for designated historic properties."
+  }
+];
+
+// Schema markup for local business
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": ["LocalBusiness", "HomeAndConstructionBusiness", "WaterproofingService"],
+  "name": "Dryspace Waterproofing",
+  "description": "Professional waterproofing services in Whitby. Expert basement waterproofing, foundation repair, and drainage solutions. Serving all Whitby neighborhoods with 25-year warranty protection.",
+  "telephone": "437-545-0067",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Whitby Service Area",
+    "addressLocality": "Whitby",
+    "addressRegion": "ON",
+    "postalCode": "L1N",
+    "addressCountry": "CA"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "43.8975",
+    "longitude": "-78.9429"
+  },
+  "areaServed": [
+    {
+      "@type": "City",
+      "name": "Whitby",
+      "sameAs": "https://en.wikipedia.org/wiki/Whitby,_Ontario"
+    },
+    {
+      "@type": "Place",
+      "name": "Durham Region"
+    }
+  ],
+  "serviceArea": {
+    "@type": "GeoCircle",
+    "geoMidpoint": {
+      "@type": "GeoCoordinates", 
+      "latitude": "43.8975",
+      "longitude": "-78.9429"
+    },
+    "geoRadius": "25000"
+  },
+  "openingHours": [
+    "Mo-Fr 07:00-19:00",
+    "Sa 08:00-17:00", 
+    "Su 09:00-17:00"
+  ],
+  "availableLanguage": ["English"],
+  "currenciesAccepted": "CAD",
+  "paymentAccepted": ["Cash", "Credit Card", "Debit Card", "Bank Transfer"],
+  "priceRange": "$$",
+  "url": "https://dryspacewaterproofing.com/locations/whitby",
+  "logo": "https://dryspacewaterproofing.com/images/dryspace-logo.webp",
+  "image": "https://dryspacewaterproofing.com/images/dryspace_hero_desktop.webp",
+  "sameAs": [
+    "https://www.facebook.com/dryspacewaterproofing",
+    "https://www.linkedin.com/company/dryspace-waterproofing"
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Waterproofing Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Basement Waterproofing",
+          "description": "Complete basement waterproofing solutions"
+        }
+      },
+      {
+        "@type": "Offer", 
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Foundation Repair",
+          "description": "Foundation crack repair and structural solutions"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service", 
+          "name": "Drainage Solutions",
+          "description": "French drains, sump pumps, and drainage systems"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Emergency Water Removal",
+          "description": "24/7 emergency flooding and water damage response"
+        }
+      }
+    ]
+  },
+  "review": {
+    "@type": "Review",
+    "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": "4.9",
+      "bestRating": "5"
+    },
+    "author": {
+      "@type": "Organization",
+      "name": "Dryspace Waterproofing Customers"
+    }
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "reviewCount": "150",
+    "bestRating": "5"
+  }
+};
+---
+
+<PageLayout 
+  title={pageTitle}
+  description={pageDescription}
+>
+  
+  <!-- Breadcrumbs -->
+  <div class="container mx-auto px-4 mt-4">
+    <Breadcrumbs 
+      items={[
+        { name: "Home", url: "/" },
+        { name: "Service Areas", url: "/service-areas" },
+        { name: "Whitby" }
+      ]}
+    />
+  </div>
+
+<!-- Location Hero -->
+  <Hero 
+    title="Waterproofing Whitby"
+    subtitle="Professional basement waterproofing and foundation repair serving all Whitby neighborhoods. 25-year warranty, free inspection."
+    primaryCTA={{ text: "Get Free Whitby Quote", href: "/free-inspection" }}
+    secondaryCTA={{ text: "Call: 437-545-0067", href: "tel:437-545-0067" }}
+    backgroundImage="/images/dryspace_hero_desktop.webp"
+    badge="Serving Whitby"
+  />
+
+  <!-- Internal Links -->
+  <section class="py-8 bg-white">
+    <div class="container mx-auto px-4">
+      <InternalLinks category="location" currentPage="whitby" />
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <Stats />
+
+  <!-- Local Information Section -->
+  <section class="py-16 bg-slate-50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-4xl font-bold text-slate-900 mb-4 uppercase">WATERPROOFING SERVICES IN WHITBY</h2>
+        
+        <div class="prose prose-lg  max-w-none">
+          <p class="text-lg text-slate-600 mb-6">
+            Whitby presents unique waterproofing challenges combining historic downtown heritage preservation with modern lakefront community needs. Lake Ontario's weather influence creates intense precipitation patterns while the community's blend of century homes and new developments requires diverse expertise from heritage conservation to contemporary solutions.
+          </p>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
+            <div class="bg-white border-2 border-slate-200  p-6">
+              <h3 class="text-xl font-bold text-slate-900 mb-6 uppercase">WHITBY QUICK FACTS</h3>
+              <ul class="space-y-2 text-slate-600 ">
+                <li class="flex justify-between items-center pb-2 border-b border-slate-100">
+                <span class="text-sm font-semibold text-slate-600 uppercase">Population</span>
+                <span class="text-sm font-bold text-slate-900">138,000</span>
+              </li>
+                <li class="flex justify-between items-center pb-2 border-b border-slate-100">
+                <span class="text-sm font-semibold text-slate-600 uppercase">Average Home Age</span>
+                <span class="text-sm font-bold text-slate-900">HISTORIC TO MODERN MIX</span>
+              </li>
+                <li class="flex justify-between items-center pb-2 border-b border-slate-100">
+                <span class="text-sm font-semibold text-slate-600 uppercase">Annual Rainfall</span>
+                <span class="text-sm font-bold text-slate-900">880MM + LAKE EFFECT</span>
+              </li>
+                <li class="flex justify-between items-center pb-2 border-b border-slate-100">
+                <span class="text-sm font-semibold text-slate-600 uppercase">Frost Line</span>
+                <span class="text-sm font-bold text-slate-900">1.2 METERS</span>
+              </li>
+                <li class="flex justify-between items-center pb-2 border-b border-slate-100">
+                <span class="text-sm font-semibold text-slate-600 uppercase">Flood Risk</span>
+                <span class="text-sm font-bold text-slate-900">LAKE EFFECT STORMS</span>
+              </li>
+              </ul>
+            </div>
+            
+            <div class="bg-navy-900 border-2 border-slate-200  p-6">
+              <h3 class="text-xl font-bold text-slate-900 mb-6 uppercase">WHY WHITBY NEEDS WATERPROOFING</h3>
+              <ul class="space-y-2 text-slate-300">
+                <li class="text-sm text-slate-300 flex items-start">
+                <span class="mr-2 text-cyan-400">•</span>
+                <span>Glacial lake till creates drainage challenges</span>
+              </li>
+                <li class="text-sm text-slate-300 flex items-start">
+                <span class="mr-2 text-cyan-400">•</span>
+                <span>Lake Ontario proximity elevates groundwater</span>
+              </li>
+                <li class="text-sm text-slate-300 flex items-start">
+                <span class="mr-2 text-cyan-400">•</span>
+                <span>Lake effect dramatically increases precipitation</span>
+              </li>
+                <li class="text-sm text-slate-300 flex items-start">
+                <span class="mr-2 text-cyan-400">•</span>
+                <span>Freeze-thaw cycles damage foundations</span>
+              </li>
+                <li class="text-sm text-slate-300 flex items-start">
+                <span class="mr-2 text-cyan-400">•</span>
+                <span>Intense lake effect storm systems</span>
+              </li>
+              </ul>
+            </div>
+          </div>
+
+          <h3 class="text-2xl font-bold mt-8 mb-4">Neighborhoods We Serve</h3>
+          <p class="mb-4">
+            Our Whitby waterproofing team serves all neighborhoods including:
+          </p>
+          <div class="flex flex-wrap gap-2">
+            {["Historic Downtown","Port Whitby","Brooklin","Pringle Creek","Taunton","Lynde Creek"].map((neighborhood) => (
+              <span class="border-2 border-slate-200 px-4 py-2 text-sm">
+                {neighborhood}
+              </span>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <Services />
+
+  <!-- Location Features -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl font-bold text-slate-900 mb-4 uppercase">WHY CHOOSE DRYSPACE IN WHITBY</h2>
+        <p class="text-lg text-slate-600 max-w-3xl mx-auto">
+          Local expertise combined with industry-leading warranties and service
+        </p>
+      </div>
+      
+      <!-- Highlighted Features -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+        {locationFeatures.filter(f => f.highlight).map((feature) => (
+          <div class="bg-amber-500 border-2 border-slate-700 p-6">
+            <h3 class="text-lg font-bold text-slate-900 mb-3 uppercase">{feature.title}</h3>
+            <p class="text-sm text-slate-900">{feature.description}</p>
+          </div>
+        ))}
+      </div>
+      
+      <!-- Regular Features -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {locationFeatures.filter(f => !f.highlight).map((feature) => (
+          <div class="bg-white border-2 border-slate-200 p-6 hover:border-slate-300 transition-colors">
+            <h3 class="text-lg font-bold text-slate-900 mb-3 uppercase">{feature.title}</h3>
+            <p class="text-sm text-slate-600">{feature.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Process -->
+  <Process />
+
+
+  <!-- Location Image Showcase -->
+  <LocationImageShowcase city="Whitby" />
+
+  <!-- Testimonials -->
+  <Testimonials />
+
+  <!-- FAQ Section -->
+  <section class="py-16 bg-slate-50">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl font-bold text-slate-900 mb-4 uppercase">WHITBY WATERPROOFING FAQS</h2>
+        <p class="text-lg text-slate-600">Common questions from Whitby homeowners</p>
+      </div>
+      
+      <div class="max-w-4xl mx-auto">
+        {locationFAQs.map((faq, index) => (
+          <details class="mb-4 border-2 border-slate-200 bg-white">
+            <summary class="cursor-pointer p-6 hover:bg-slate-50 transition-colors">
+              <div class="flex items-center justify-between">
+                <h3 class="text-lg font-bold text-slate-900 uppercase pr-4">{faq.question}</h3>
+                <span class="text-slate-400 flex-shrink-0 text-2xl">+</span>
+              </div>
+            </summary>
+            <div class="px-6 pb-6 pt-0">
+              <p class="text-slate-600">{faq.answer}</p>
+            </div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-16 bg-navy-900">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-4xl font-bold text-slate-900 mb-4 uppercase">PRESERVE WHITBY'S HERITAGE AND LAKEFRONT CHARACTER</h2>
+        <p class="text-lg text-slate-300 mb-8">
+          Heritage-sensitive waterproofing and lake effect weather protection for Whitby's unique community
+        </p>
+        
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a 
+            href="/free-inspection"
+            class="bg-amber-500 text-black px-8 py-4 text-lg font-bold hover:bg-amber-400 transition-colors uppercase"
+          >
+            Get Heritage & Lakefront Assessment
+          </a>
+          <a 
+            href="tel:437-545-0067"
+            class="border-2 border-white text-slate-900 px-8 py-4 text-lg font-bold hover:bg-white hover:text-black transition-colors uppercase"
+          >
+            Call: 437-545-0067
+          </a>
+        </div>
+        
+        <div class="mt-8 inline-flex items-center text-cyan-400">
+          <span class="text-sm font-bold uppercase">24/7 Emergency Service Available</span>
+        </div>
+      </div>
+    </div>
+  </section>
+</PageLayout>
+
+<script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)}>
+<BreadcrumbSchema items={[{name: 'Home', url: '/'}, {name: 'Locations', url: '/locations'}, {name: 'Whitby'}]} />

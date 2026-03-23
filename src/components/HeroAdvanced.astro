@@ -1,0 +1,569 @@
+---
+const heroData = {
+  headline: "Protect Your Home's Foundation",
+  subheadline: "Toronto's Most Trusted Basement Waterproofing Experts Since 1994",
+  features: [
+    { icon: "fa-shield-halved", text: "Lifetime Warranty", value: "100%" },
+    { icon: "fa-clock", text: "24hr Emergency", value: "24/7" },
+    { icon: "fa-award", text: "Certified Experts", value: "25+" },
+    { icon: "fa-house-flood-water", text: "Homes Protected", value: "10K+" }
+  ]
+};
+---
+
+<section class="hero-advanced">
+  <!-- Background Effects -->
+  <div class="water-effect"></div>
+  <canvas id="rainCanvas"></canvas>
+  
+  <!-- Main Content -->
+  <div class="hero-container">
+    <div class="hero-content">
+      <div class="badge-container">
+        <span class="badge">
+          <i class="fa-solid fa-certificate"></i>
+          BBB A+ Rated
+        </span>
+        <span class="badge">
+          <i class="fa-solid fa-trophy"></i>
+          HomeStars Winner 2024
+        </span>
+      </div>
+      
+      <h1 class="hero-headline" data-text={heroData.headline}>
+        {heroData.headline}
+      </h1>
+      
+      <p class="hero-subheadline">
+        {heroData.subheadline}
+      </p>
+      
+      <div class="features-grid">
+        {heroData.features.map((feature, index) => (
+          <div class="feature-card" style={`--delay: ${index * 0.1}s`}>
+            <i class={`fa-solid ${feature.icon}`}></i>
+            <div class="feature-value" data-value={feature.value}>{feature.value}</div>
+            <div class="feature-text">{feature.text}</div>
+          </div>
+        ))}
+      </div>
+      
+      <div class="cta-container">
+        <button class="cta-primary" id="getQuote">
+          <span>Get Free Inspection</span>
+          <i class="fa-solid fa-arrow-right"></i>
+        </button>
+        <button class="cta-secondary" id="callNow">
+          <i class="fa-solid fa-phone"></i>
+          <span>(437) 545-0067</span>
+        </button>
+      </div>
+      
+      <div class="trust-indicators">
+        <img src="/images/dryspace_excellence.webp" alt="BBB Accredited" class="trust-logo" width="100" height="40" loading="lazy" decoding="async">
+        <img src="/images/dryspace_exterior_waterproofing_warranty.webp" alt="HomeStars Verified" class="trust-logo" width="100" height="40" loading="lazy" decoding="async">
+        <img src="/images/building-permit.webp" alt="Licensed & Insured" class="trust-logo" width="100" height="40" loading="lazy" decoding="async">
+        <img src="/images/basement_wall_insulation.webp" alt="OWWA Certified" class="trust-logo" width="100" height="40" loading="lazy" decoding="async">
+      </div>
+    </div>
+    
+    <div class="hero-visual">
+      <div class="basement-3d">
+        <div class="water-drops"></div>
+        <div class="protection-shield"></div>
+        <div class="foundation-lines"></div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Scroll Indicator -->
+  <div class="scroll-indicator">
+    <span>Explore Solutions</span>
+    <i class="fa-solid fa-chevron-down"></i>
+  </div>
+</section>
+
+<style>
+  .hero-advanced {
+    position: relative;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Rain Canvas */
+  #rainCanvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.3;
+    pointer-events: none;
+  }
+  
+  /* Water Effect Background */
+  .water-effect {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 30%;
+    background: linear-gradient(0deg, 
+      rgba(6, 182, 212, 0.1) 0%, 
+      transparent 100%);
+    animation: waterRise 20s ease-in-out infinite;
+  }
+  
+  @keyframes waterRise {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+  }
+  
+  /* Hero Container */
+  .hero-container {
+    position: relative;
+    z-index: 10;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+  
+  /* Badges */
+  .badge-container {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: rgba(59, 130, 246, 0.1);
+    border: 1px solid rgba(59, 130, 246, 0.3);
+    border-radius: 20px;
+    color: #60a5fa;
+    font-size: 0.875rem;
+    animation: slideDown 0.6s ease-out;
+  }
+  
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Headlines */
+  .hero-headline {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: white;
+    margin-bottom: 1rem;
+    line-height: 1.1;
+    position: relative;
+    animation: glitchText 0.8s ease-out;
+  }
+  
+  @keyframes glitchText {
+    0% {
+      text-shadow: 2px 2px 0 #06b6d4, -2px -2px 0 #3b82f6;
+      transform: translate(2px, 2px);
+    }
+    25% {
+      text-shadow: -2px 2px 0 #06b6d4, 2px -2px 0 #3b82f6;
+      transform: translate(-2px, 2px);
+    }
+    50% {
+      text-shadow: 2px -2px 0 #06b6d4, -2px 2px 0 #3b82f6;
+      transform: translate(2px, -2px);
+    }
+    100% {
+      text-shadow: none;
+      transform: translate(0);
+    }
+  }
+  
+  .hero-subheadline {
+    font-size: 1.25rem;
+    color: #94a3b8;
+    margin-bottom: 3rem;
+    animation: fadeInUp 0.8s ease-out 0.2s both;
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Features Grid */
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+  }
+  
+  .feature-card {
+    background: rgba(30, 41, 59, 0.5);
+    border: 1px solid rgba(59, 130, 246, 0.2);
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-align: center;
+    animation: cardFloat 0.8s ease-out var(--delay) both;
+    transition: all 0.3s;
+  }
+  
+  .feature-card:hover {
+    transform: translateY(-5px);
+    background: rgba(59, 130, 246, 0.1);
+    border-color: rgba(59, 130, 246, 0.4);
+  }
+  
+  @keyframes cardFloat {
+    from {
+      opacity: 0;
+      transform: translateY(30px) scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+  
+  .feature-card i {
+    font-size: 2rem;
+    color: #06b6d4;
+    margin-bottom: 0.5rem;
+  }
+  
+  .feature-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 0.25rem;
+  }
+  
+  .feature-text {
+    font-size: 0.875rem;
+    color: #94a3b8;
+  }
+  
+  /* CTA Buttons */
+  .cta-container {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+  }
+  
+  .cta-primary {
+    background: linear-gradient(135deg, #3b82f6 0%, #06b6d4 100%);
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-size: 1.125rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .cta-primary::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+  }
+  
+  .cta-primary:hover::before {
+    width: 300px;
+    height: 300px;
+  }
+  
+  .cta-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(59, 130, 246, 0.4);
+  }
+  
+  .cta-secondary {
+    background: transparent;
+    color: white;
+    border: 2px solid rgba(59, 130, 246, 0.5);
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-size: 1.125rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    transition: all 0.3s;
+  }
+  
+  .cta-secondary:hover {
+    background: rgba(59, 130, 246, 0.1);
+    border-color: #3b82f6;
+    transform: translateY(-2px);
+  }
+  
+  /* Trust Indicators */
+  .trust-indicators {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    opacity: 0.7;
+  }
+  
+  .trust-logo {
+    height: 40px;
+    filter: grayscale(100%) brightness(200%);
+    transition: filter 0.3s;
+  }
+  
+  .trust-logo:hover {
+    filter: grayscale(0%) brightness(100%);
+  }
+  
+  /* 3D Visual */
+  .hero-visual {
+    position: relative;
+    height: 500px;
+  }
+  
+  .basement-3d {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    animation: rotate3d 20s linear infinite;
+  }
+  
+  @keyframes rotate3d {
+    from { transform: rotateY(0deg); }
+    to { transform: rotateY(360deg); }
+  }
+  
+  .water-drops {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='3' fill='%2306b6d4' opacity='0.5'/%3E%3C/svg%3E");
+    background-size: 20px 20px;
+    animation: dropsFall 3s linear infinite;
+  }
+  
+  @keyframes dropsFall {
+    from { transform: translateY(-100%); }
+    to { transform: translateY(100%); }
+  }
+  
+  .protection-shield {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200px;
+    height: 200px;
+    transform: translate(-50%, -50%);
+    border: 3px solid #3b82f6;
+    border-radius: 50%;
+    animation: shieldPulse 2s ease-in-out infinite;
+  }
+  
+  @keyframes shieldPulse {
+    0%, 100% { 
+      transform: translate(-50%, -50%) scale(1);
+      opacity: 1;
+    }
+    50% { 
+      transform: translate(-50%, -50%) scale(1.1);
+      opacity: 0.7;
+    }
+  }
+  
+  /* Scroll Indicator */
+  .scroll-indicator {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    color: #94a3b8;
+    animation: bounce 2s ease-in-out infinite;
+  }
+  
+  @keyframes bounce {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(10px); }
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .hero-container {
+      grid-template-columns: 1fr;
+    }
+    
+    .hero-headline {
+      font-size: 2.5rem;
+    }
+    
+    .features-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .hero-visual {
+      display: none;
+    }
+  }
+</style>
+
+<script>
+  // Web Animations API Implementation
+  document.addEventListener('DOMContentLoaded', () => {
+    // Rain Effect
+    const canvas = document.getElementById('rainCanvas') as HTMLCanvasElement;
+    const ctx = canvas.getContext('2d');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    
+    class Raindrop {
+      x: number;
+      y: number;
+      speed: number;
+      length: number;
+      
+      constructor() {
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height - canvas.height;
+        this.speed = Math.random() * 3 + 2;
+        this.length = Math.random() * 15 + 10;
+      }
+      
+      fall() {
+        this.y += this.speed;
+        if (this.y > canvas.height) {
+          this.y = -this.length;
+          this.x = Math.random() * canvas.width;
+        }
+      }
+      
+      draw() {
+        ctx.strokeStyle = 'rgba(6, 182, 212, 0.3)';
+        ctx.lineWidth = 1;
+        ctx.beginPath();
+        ctx.moveTo(this.x, this.y);
+        ctx.lineTo(this.x, this.y + this.length);
+        ctx.stroke();
+      }
+    }
+    
+    const raindrops = Array.from({ length: 100 }, () => new Raindrop());
+    
+    function animateRain() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      raindrops.forEach(drop => {
+        drop.fall();
+        drop.draw();
+      });
+      requestAnimationFrame(animateRain);
+    }
+    
+    animateRain();
+    
+    // Feature Cards Animation using Web Animations API
+    const featureCards = document.querySelectorAll('.feature-card');
+    featureCards.forEach((card, index) => {
+      card.animate([
+        { transform: 'translateY(30px) scale(0.9)', opacity: 0 },
+        { transform: 'translateY(0) scale(1)', opacity: 1 }
+      ], {
+        duration: 800,
+        delay: index * 100,
+        easing: 'cubic-bezier(0.68, -0.55, 0.265, 1.55)',
+        fill: 'both'
+      });
+    });
+    
+    // Parallax Effect
+    window.addEventListener('scroll', () => {
+      const scrollY = window.scrollY;
+      const waterEffect = document.querySelector('.water-effect') as HTMLElement;
+      if (waterEffect) {
+        waterEffect.style.transform = `translateY(${scrollY * 0.5}px)`;
+      }
+    });
+    
+    // CTA Button Ripple Effect
+    document.querySelectorAll('.cta-primary, .cta-secondary').forEach(button => {
+      button.addEventListener('click', function(e) {
+        const ripple = document.createElement('span');
+        ripple.classList.add('ripple');
+        this.appendChild(ripple);
+        
+        const rect = this.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        
+        ripple.style.left = x + 'px';
+        ripple.style.top = y + 'px';
+        
+        ripple.animate([
+          { transform: 'scale(0)', opacity: 1 },
+          { transform: 'scale(4)', opacity: 0 }
+        ], {
+          duration: 600,
+          easing: 'ease-out'
+        }).onfinish = () => ripple.remove();
+      });
+    });
+  });
+  
+  // Intersection Observer for scroll animations
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -100px 0px'
+  };
+  
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, observerOptions);
+  
+  document.querySelectorAll('.feature-card, .badge, .cta-container').forEach(el => {
+    observer.observe(el);
+  });
+</script>

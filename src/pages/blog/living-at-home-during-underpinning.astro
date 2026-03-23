@@ -1,0 +1,542 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import FAQAccordion from '~/components/react/FAQAccordion';
+import Hero from '~/components/widgets/Hero.astro';
+import { Button } from '~/components/ui/button';
+import Content from '~/components/widgets/Content.astro';
+import { Icon } from 'astro-icon/components';
+
+const metadata = {
+  title: 'Can You Live at Home During Underpinning? Your Questions Answered | DrySpace',
+  description: 'Wondering if you can stay home during basement underpinning? Yes, but with considerations. Learn about noise levels, dust control, bathroom access, work hours, and what to expect during your underpinning project.',
+  canonical: 'https://dryspacewaterproofing.ca/blog/living-at-home-during-underpinning'
+};
+
+const livingDuringUnderpinningFAQs = [
+  {
+    question: "Can I live in my house during underpinning?",
+    answer: "Yes, you can live in your home during underpinning work. However, expect noise disruption for 3-4 hours daily during active excavation and concrete work. Most families find it manageable with proper planning and our dust control measures."
+  },
+  {
+    question: "How loud is underpinning work?",
+    answer: "Underpinning involves significant noise during excavation and jackhammering, typically reaching 85-95 decibels. The loudest work usually lasts 3-4 hours per day. We recommend planning to be out during peak noise periods if you work from home."
+  },
+  {
+    question: "What are the typical work hours?",
+    answer: "Our crews typically work from 8:00 AM to 2:00 PM Monday through Friday. We start early to complete the noisiest work before afternoon, allowing you to enjoy quieter evenings and weekends without construction disruption."
+  },
+  {
+    question: "Can I use my bathroom and kitchen during underpinning?",
+    answer: "Absolutely! All your home facilities remain fully functional during underpinning. Water, electricity, and plumbing continue working normally. We ensure safe access to all areas of your home throughout the project."
+  },
+  {
+    question: "How dusty does it get during underpinning?",
+    answer: "While underpinning creates dust, we use protective plastic films, dust barriers, and air filtration systems to contain it to the work area. We seal off the basement and protect your belongings. Daily cleanup keeps dust manageable."
+  },
+  {
+    question: "How long does underpinning take?",
+    answer: "A typical underpinning project takes 3-6 weeks depending on the foundation size and depth required. We work in sections, so only one area is actively under construction at a time, minimizing disruption to your daily life."
+  },
+  {
+    question: "Is it safe to stay home during underpinning?",
+    answer: "Yes, it's completely safe. Underpinning is done in controlled sections with temporary supports ensuring structural integrity. Our certified engineers monitor the process. We've completed hundreds of projects with families living comfortably at home."
+  },
+  {
+    question: "What about pets during underpinning?",
+    answer: "Pets can stay home but should be kept away from work areas for safety. The noise may stress some animals, so consider daycare or a quiet room upstairs during active work hours. We always secure the work area to prevent pet access."
+  },
+  {
+    question: "Will underpinning affect my neighbors?",
+    answer: "Neighbors may hear some noise during work hours, but it's comparable to typical renovation sounds. We notify adjacent properties before starting and maintain good relationships. Most work is contained within your property boundaries."
+  },
+  {
+    question: "Do I need to move furniture?",
+    answer: "You'll need to clear the basement area being underpinned, typically moving items 6-8 feet from walls. We can help relocate items to other basement areas or provide temporary storage solutions. Upstairs furniture doesn't need to be moved."
+  }
+];
+
+const dailySchedule = [
+  { time: "7:30 AM", activity: "Crew arrival and setup", noise: "Low", disruption: "Minimal" },
+  { time: "8:00 AM", activity: "Active excavation begins", noise: "High", disruption: "Maximum" },
+  { time: "10:00 AM", activity: "Break and inspection", noise: "None", disruption: "None" },
+  { time: "10:15 AM", activity: "Concrete work/excavation continues", noise: "High", disruption: "Maximum" },
+  { time: "12:00 PM", activity: "Lunch break", noise: "None", disruption: "None" },
+  { time: "12:30 PM", activity: "Finishing work and cleanup", noise: "Low-Medium", disruption: "Minimal" },
+  { time: "2:00 PM", activity: "Site secured and crew departure", noise: "None", disruption: "None" }
+];
+---
+
+<Layout metadata={metadata}>
+  <Hero>
+    <Fragment slot="title">
+      Living at Home During <span class="text-accent">Underpinning:</span> What to Really Expect
+    </Fragment>
+    <Fragment slot="subtitle">
+      Honest answers about noise, dust, and daily life during your basement underpinning project
+    </Fragment>
+  </Hero>
+
+  <section class="py-12 bg-white">
+    <div class="max-w-4xl mx-auto px-4">
+      <div class="prose prose-lg max-w-none">
+        <p class="text-xl font-semibold text-slate-800 mb-6">
+          The short answer? <strong>Yes, you can live at home during underpinning</strong> – but understanding what to expect makes all the difference in your comfort level.
+        </p>
+
+        <h2 class="text-3xl font-bold text-slate-900 mt-8 mb-4">The Reality of Living Through Underpinning</h2>
+        
+        <p>
+          After completing over 500 underpinning projects in Toronto, we know families worry about disruption. Let's address your concerns honestly: underpinning is noisy and dusty work, but it's absolutely manageable with proper preparation and realistic expectations.
+        </p>
+
+        <div class="bg-cyan-50 border-l-4 border-cyan-500 p-6 my-8">
+          <h3 class="text-xl font-bold text-cyan-800 mb-3">
+            <Icon name="tabler:clock" class="w-6 h-6 inline mr-2" />
+            Key Takeaway: Limited Daily Disruption
+          </h3>
+          <p class="text-cyan-700">
+            The most disruptive work (jackhammering and excavation) typically lasts only <strong>3-4 hours per day</strong>. 
+            Our crews work from 8:00 AM to 2:00 PM, leaving your afternoons and evenings peaceful.
+          </p>
+        </div>
+
+        <h2 class="text-3xl font-bold text-slate-900 mt-12 mb-6">Typical Daily Schedule During Underpinning</h2>
+        
+        <div class="overflow-x-auto my-8">
+          <table class="min-w-full bg-white border border-slate-100">
+            <thead class="bg-slate-50">
+              <tr>
+                <th class="px-6 py-3 text-left text-xs font-medium text-slate-400 uppercase tracking-wider">Time</th>
+                <th class="px-6 py-3 text-left text-xs font-medium text-slate-400 uppercase tracking-wider">Activity</th>
+                <th class="px-6 py-3 text-left text-xs font-medium text-slate-400 uppercase tracking-wider">Noise Level</th>
+                <th class="px-6 py-3 text-left text-xs font-medium text-slate-400 uppercase tracking-wider">Disruption</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-200">
+              {dailySchedule.map((item) => (
+                <tr>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-slate-900">{item.time}</td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-slate-500">{item.activity}</td>
+                  <td class="px-6 py-4 whitespace-nowrap">
+                    <span class={`px-2 py-1 text-xs font-semibold rounded-full ${
+                      item.noise === 'High' ? 'bg-amber-50 text-amber-700' :
+                      item.noise === 'Low-Medium' ? 'bg-cyan-50 text-cyan-700' :
+                      item.noise === 'Low' ? 'bg-slate-100 text-slate-700' :
+                      'bg-slate-50 text-slate-800'
+                    }`}>
+                      {item.noise}
+                    </span>
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-slate-500">{item.disruption}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        <h2 class="text-3xl font-bold text-slate-900 mt-12 mb-6">Managing Daily Life During Underpinning</h2>
+
+        <h3 class="text-2xl font-bold text-slate-800 mt-8 mb-4">Noise Management</h3>
+        <p>
+          The reality: Underpinning is loud during active excavation. Jackhammering concrete reaches 85-95 decibels – similar to a lawn mower. However:
+        </p>
+        <ul class="list-disc pl-6 space-y-2 mt-4">
+          <li>Loudest work concentrated in 3-4 hour blocks</li>
+          <li>No work on weekends or holidays</li>
+          <li>Breaks every 2 hours reduce continuous noise</li>
+          <li>Upper floors experience significantly less noise</li>
+        </ul>
+
+        <div class="bg-cyan-50 border border-cyan-200 rounded-lg p-6 my-8">
+          <h4 class="text-lg font-bold text-cyan-800 mb-3">
+            <Icon name="tabler:bulb" class="w-5 h-5 inline mr-2" />
+            Pro Tips for Noise Management
+          </h4>
+          <ul class="list-disc pl-6 space-y-2 text-cyan-700">
+            <li>Schedule important calls after 2 PM</li>
+            <li>Use noise-canceling headphones during work hours</li>
+            <li>Consider working from a coffee shop during peak excavation</li>
+            <li>Set up a quiet workspace on upper floors</li>
+          </ul>
+        </div>
+
+        <h3 class="text-2xl font-bold text-slate-800 mt-8 mb-4">Dust Control Measures</h3>
+        <p>
+          Yes, underpinning creates dust, but we implement comprehensive control measures:
+        </p>
+        
+        <div class="grid md:grid-cols-2 gap-6 my-8">
+          <div class="bg-slate-50 rounded-lg p-6">
+            <h4 class="font-bold text-lg mb-3 text-slate-900">We Provide:</h4>
+            <ul class="space-y-2">
+              <li class="flex items-start">
+                <Icon name="tabler:check" class="w-5 h-5 text-cyan-500 mr-2 mt-0.5" />
+                <span>Heavy-duty plastic film barriers</span>
+              </li>
+              <li class="flex items-start">
+                <Icon name="tabler:check" class="w-5 h-5 text-cyan-500 mr-2 mt-0.5" />
+                <span>HEPA air filtration systems</span>
+              </li>
+              <li class="flex items-start">
+                <Icon name="tabler:check" class="w-5 h-5 text-cyan-500 mr-2 mt-0.5" />
+                <span>Daily vacuum and cleanup</span>
+              </li>
+              <li class="flex items-start">
+                <Icon name="tabler:check" class="w-5 h-5 text-cyan-500 mr-2 mt-0.5" />
+                <span>Sealed doorways to living areas</span>
+              </li>
+              <li class="flex items-start">
+                <Icon name="tabler:check" class="w-5 h-5 text-cyan-500 mr-2 mt-0.5" />
+                <span>Floor protection throughout paths</span>
+              </li>
+            </ul>
+          </div>
+          
+          <div class="bg-slate-50 rounded-lg p-6">
+            <h4 class="font-bold text-lg mb-3 text-slate-900">You Should:</h4>
+            <ul class="space-y-2">
+              <li class="flex items-start">
+                <Icon name="tabler:arrow-right" class="w-5 h-5 text-cyan-600 mr-2 mt-0.5" />
+                <span>Close bedroom doors during work</span>
+              </li>
+              <li class="flex items-start">
+                <Icon name="tabler:arrow-right" class="w-5 h-5 text-cyan-600 mr-2 mt-0.5" />
+                <span>Run air purifiers if sensitive</span>
+              </li>
+              <li class="flex items-start">
+                <Icon name="tabler:arrow-right" class="w-5 h-5 text-cyan-600 mr-2 mt-0.5" />
+                <span>Cover sensitive electronics</span>
+              </li>
+              <li class="flex items-start">
+                <Icon name="tabler:arrow-right" class="w-5 h-5 text-cyan-600 mr-2 mt-0.5" />
+                <span>Seal HVAC vents in basement</span>
+              </li>
+              <li class="flex items-start">
+                <Icon name="tabler:arrow-right" class="w-5 h-5 text-cyan-600 mr-2 mt-0.5" />
+                <span>Store valuables in sealed containers</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <h3 class="text-2xl font-bold text-slate-800 mt-8 mb-4">Access to Home Facilities</h3>
+        
+        <div class="bg-cyan-50 rounded-lg p-6 my-8">
+          <p class="text-lg font-semibold text-cyan-800 mb-4">
+            <Icon name="tabler:home" class="w-6 h-6 inline mr-2" />
+            Good News: Everything Stays Functional!
+          </p>
+          <div class="grid md:grid-cols-2 gap-4 text-cyan-700">
+            <div>
+              <strong>✓ Bathrooms:</strong> Fully accessible and functional
+            </div>
+            <div>
+              <strong>✓ Kitchen:</strong> Normal use throughout project
+            </div>
+            <div>
+              <strong>✓ Bedrooms:</strong> Unaffected by work
+            </div>
+            <div>
+              <strong>✓ Laundry:</strong> May need scheduling if in basement
+            </div>
+            <div>
+              <strong>✓ Internet/Cable:</strong> No interruption
+            </div>
+            <div>
+              <strong>✓ Utilities:</strong> All remain connected
+            </div>
+          </div>
+        </div>
+
+        <h2 class="text-3xl font-bold text-slate-900 mt-12 mb-6">Week-by-Week Expectations</h2>
+        
+        <div class="space-y-6">
+          <div class="border-l-4 border-cyan-500 pl-6">
+            <h4 class="font-bold text-lg text-slate-900">Week 1: Initial Excavation</h4>
+            <p class="text-slate-500 mt-2">
+              Most disruptive phase with jackhammering and soil removal. Expect maximum noise 3-4 hours daily. 
+              Dust control systems installed. You'll quickly adapt to the routine.
+            </p>
+          </div>
+          
+          <div class="border-l-4 border-cyan-500 pl-6">
+            <h4 class="font-bold text-lg text-slate-900">Week 2-3: Systematic Progress</h4>
+            <p class="text-slate-500 mt-2">
+              Work moves section by section. Noise becomes predictable and routine. Concrete pouring days are quieter. 
+              You'll find your rhythm for managing daily activities.
+            </p>
+          </div>
+          
+          <div class="border-l-4 border-purple-500 pl-6">
+            <h4 class="font-bold text-lg text-slate-900">Week 4-5: Concrete Work</h4>
+            <p class="text-slate-500 mt-2">
+              Less excavation, more concrete pouring and forming. Significantly quieter phase. Some vibration during concrete consolidation. 
+              The end is in sight!
+            </p>
+          </div>
+          
+          <div class="border-l-4 border-orange-500 pl-6">
+            <h4 class="font-bold text-lg text-slate-900">Final Week: Finishing Touches</h4>
+            <p class="text-slate-500 mt-2">
+              Waterproofing application, backfilling, and cleanup. Minimal noise and disruption. 
+              Final inspections and restoration of your basement space.
+            </p>
+          </div>
+        </div>
+
+        <h2 class="text-3xl font-bold text-slate-900 mt-12 mb-6">Special Considerations</h2>
+
+        <h3 class="text-2xl font-bold text-slate-800 mt-8 mb-4">Working From Home</h3>
+        <p>
+          If you work from home, consider these strategies:
+        </p>
+        <ul class="list-disc pl-6 space-y-2 mt-4">
+          <li><strong>Schedule flexibility:</strong> Plan important calls and focus work for afternoons</li>
+          <li><strong>Alternate workspace:</strong> Set up temporary office on upper floor</li>
+          <li><strong>Communication:</strong> Inform colleagues about potential background noise</li>
+          <li><strong>Backup plan:</strong> Identify nearby coffee shops or co-working spaces for critical meetings</li>
+        </ul>
+
+        <h3 class="text-2xl font-bold text-slate-800 mt-8 mb-4">Families with Young Children</h3>
+        <p>
+          Parents successfully manage underpinning with these approaches:
+        </p>
+        <ul class="list-disc pl-6 space-y-2 mt-4">
+          <li><strong>Nap schedules:</strong> Most babies adapt to consistent noise patterns</li>
+          <li><strong>Morning outings:</strong> Plan park visits or activities during work hours</li>
+          <li><strong>White noise:</strong> Helps mask construction sounds for sensitive sleepers</li>
+          <li><strong>Weekend relief:</strong> No construction on weekends provides recovery time</li>
+        </ul>
+
+        <h3 class="text-2xl font-bold text-slate-800 mt-8 mb-4">Elderly or Health-Sensitive Residents</h3>
+        <p>
+          Special accommodations for health concerns:
+        </p>
+        <ul class="list-disc pl-6 space-y-2 mt-4">
+          <li>Enhanced dust control with additional air filtration</li>
+          <li>Scheduling flexibility for medical appointments</li>
+          <li>Clear pathways maintained for mobility aids</li>
+          <li>Option to pause work during health episodes</li>
+        </ul>
+
+        <div class="bg-amber-50 border border-yellow-200 rounded-lg p-6 my-8">
+          <h3 class="text-lg font-bold text-amber-800 mb-3">
+            <Icon name="tabler:alert-triangle" class="w-5 h-5 inline mr-2" />
+            When Temporary Relocation Might Be Better
+          </h3>
+          <p class="text-amber-700 mb-4">
+            While most families successfully stay home, consider temporary relocation if:
+          </p>
+          <ul class="list-disc pl-6 space-y-2 text-amber-700">
+            <li>You have severe respiratory conditions requiring absolute dust control</li>
+            <li>Family members have extreme noise sensitivity or anxiety disorders</li>
+            <li>You operate noise-sensitive business from home (recording studio, therapy practice)</li>
+            <li>You have newborn requiring strict sleep schedules</li>
+          </ul>
+        </div>
+
+        <h2 class="text-3xl font-bold text-slate-900 mt-12 mb-6">Making Your Decision: Honest Assessment</h2>
+        
+        <div class="bg-slate-50 rounded-lg p-8 my-8">
+          <h3 class="text-2xl font-bold text-slate-900 mb-6">Can You Handle:</h3>
+          
+          <div class="space-y-4">
+            <div class="flex items-start">
+              <div class="flex-shrink-0">
+                <Icon name="tabler:volume" class="w-6 h-6 text-orange-500 mt-1" />
+              </div>
+              <div class="ml-4">
+                <p class="font-semibold text-slate-900">3-4 hours of construction noise daily?</p>
+                <p class="text-slate-500 text-sm mt-1">Similar to having renovation work done, but confined to mornings</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start">
+              <div class="flex-shrink-0">
+                <Icon name="tabler:air-conditioning" class="w-6 h-6 text-cyan-600 mt-1" />
+              </div>
+              <div class="ml-4">
+                <p class="font-semibold text-slate-900">Some dust despite our control measures?</p>
+                <p class="text-slate-500 text-sm mt-1">We minimize it significantly, but can't eliminate 100%</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start">
+              <div class="flex-shrink-0">
+                <Icon name="tabler:calendar" class="w-6 h-6 text-cyan-500 mt-1" />
+              </div>
+              <div class="ml-4">
+                <p class="font-semibold text-slate-900">3-6 weeks of adjusted routine?</p>
+                <p class="text-slate-500 text-sm mt-1">Most families find their rhythm within the first week</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start">
+              <div class="flex-shrink-0">
+                <Icon name="tabler:users" class="w-6 h-6 text-purple-500 mt-1" />
+              </div>
+              <div class="ml-4">
+                <p class="font-semibold text-slate-900">Construction crew presence?</p>
+                <p class="text-slate-500 text-sm mt-1">Professional team working in your basement area only</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="mt-8 p-4 bg-cyan-50 rounded-lg">
+            <p class="text-cyan-800 font-semibold">
+              If you answered yes to these questions, you can comfortably live at home during underpinning!
+            </p>
+          </div>
+        </div>
+
+        <h2 class="text-3xl font-bold text-slate-900 mt-12 mb-6">Tips from Families Who've Been Through It</h2>
+        
+        <div class="space-y-6">
+          <blockquote class="border-l-4 border-cyan-500 pl-6 italic text-slate-600">
+            "The first three days were adjustment period, but then it became routine. We planned morning outings with kids and enjoyed peaceful afternoons. Totally manageable!"
+            <footer class="text-sm text-slate-400 mt-2">— Sarah M., Leslieville</footer>
+          </blockquote>
+          
+          <blockquote class="border-l-4 border-cyan-500 pl-6 italic text-slate-600">
+            "I work from home and was worried. I set up office upstairs, used noise-canceling headphones, and scheduled calls for afternoons. Honestly easier than expected."
+            <footer class="text-sm text-slate-400 mt-2">— David L., High Park</footer>
+          </blockquote>
+          
+          <blockquote class="border-l-4 border-purple-500 pl-6 italic text-slate-600">
+            "The dust control was impressive. They sealed everything off so well, I barely noticed any dust upstairs. Daily cleanup made huge difference."
+            <footer class="text-sm text-slate-400 mt-2">— Jennifer K., Beaches</footer>
+          </blockquote>
+        </div>
+
+        <h2 class="text-3xl font-bold text-slate-900 mt-12 mb-6">Our Commitment to Minimizing Disruption</h2>
+        
+        <div class="bg-cyan-50 rounded-lg p-8 my-8">
+          <h3 class="text-2xl font-bold text-cyan-800 mb-4">DrySpace Standards for Occupied Homes</h3>
+          
+          <div class="grid md:grid-cols-2 gap-6">
+            <div>
+              <h4 class="font-bold text-lg text-cyan-700 mb-3">We Always:</h4>
+              <ul class="space-y-2">
+                <li class="flex items-start">
+                  <Icon name="tabler:shield-check" class="w-5 h-5 text-cyan-600 mr-2 mt-0.5" />
+                  <span>Install comprehensive dust barriers</span>
+                </li>
+                <li class="flex items-start">
+                  <Icon name="tabler:shield-check" class="w-5 h-5 text-cyan-600 mr-2 mt-0.5" />
+                  <span>Maintain safe access paths</span>
+                </li>
+                <li class="flex items-start">
+                  <Icon name="tabler:shield-check" class="w-5 h-5 text-cyan-600 mr-2 mt-0.5" />
+                  <span>Clean work area daily</span>
+                </li>
+                <li class="flex items-start">
+                  <Icon name="tabler:shield-check" class="w-5 h-5 text-cyan-600 mr-2 mt-0.5" />
+                  <span>Respect your privacy and space</span>
+                </li>
+                <li class="flex items-start">
+                  <Icon name="tabler:shield-check" class="w-5 h-5 text-cyan-600 mr-2 mt-0.5" />
+                  <span>Communicate daily progress</span>
+                </li>
+              </ul>
+            </div>
+            
+            <div>
+              <h4 class="font-bold text-lg text-cyan-700 mb-3">We Never:</h4>
+              <ul class="space-y-2">
+                <li class="flex items-start">
+                  <Icon name="tabler:x" class="w-5 h-5 text-red-600 mr-2 mt-0.5" />
+                  <span>Work outside agreed hours</span>
+                </li>
+                <li class="flex items-start">
+                  <Icon name="tabler:x" class="w-5 h-5 text-red-600 mr-2 mt-0.5" />
+                  <span>Leave site unsecured</span>
+                </li>
+                <li class="flex items-start">
+                  <Icon name="tabler:x" class="w-5 h-5 text-red-600 mr-2 mt-0.5" />
+                  <span>Block essential access</span>
+                </li>
+                <li class="flex items-start">
+                  <Icon name="tabler:x" class="w-5 h-5 text-red-600 mr-2 mt-0.5" />
+                  <span>Work weekends without permission</span>
+                </li>
+                <li class="flex items-start">
+                  <Icon name="tabler:x" class="w-5 h-5 text-red-600 mr-2 mt-0.5" />
+                  <span>Disconnect utilities without notice</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <h2 class="text-3xl font-bold text-slate-900 mt-12 mb-6">Preparation Checklist</h2>
+        
+        <div class="bg-slate-50 rounded-lg p-6 my-8">
+          <h3 class="text-xl font-bold text-slate-900 mb-4">One Week Before Start:</h3>
+          <ul class="space-y-3">
+            <li class="flex items-start">
+              <input type="checkbox" class="mt-1 mr-3" />
+              <span>Clear basement area (6-8 feet from walls)</span>
+            </li>
+            <li class="flex items-start">
+              <input type="checkbox" class="mt-1 mr-3" />
+              <span>Cover or remove sensitive electronics</span>
+            </li>
+            <li class="flex items-start">
+              <input type="checkbox" class="mt-1 mr-3" />
+              <span>Seal HVAC vents in basement</span>
+            </li>
+            <li class="flex items-start">
+              <input type="checkbox" class="mt-1 mr-3" />
+              <span>Plan alternative work arrangements if needed</span>
+            </li>
+            <li class="flex items-start">
+              <input type="checkbox" class="mt-1 mr-3" />
+              <span>Stock up on air filters</span>
+            </li>
+            <li class="flex items-start">
+              <input type="checkbox" class="mt-1 mr-3" />
+              <span>Notify neighbors about upcoming work</span>
+            </li>
+            <li class="flex items-start">
+              <input type="checkbox" class="mt-1 mr-3" />
+              <span>Arrange pet care if needed</span>
+            </li>
+            <li class="flex items-start">
+              <input type="checkbox" class="mt-1 mr-3" />
+              <span>Plan first week's morning activities</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12 bg-slate-50">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-8">Common Questions About Living at Home During Underpinning</h2>
+      <FAQAccordion faqs={livingDuringUnderpinningFAQs} client:load />
+    </div>
+  </section>
+
+  <section class="py-12 bg-navy-900 text-white">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h2 class="text-3xl font-bold mb-4">Ready to Start Your Underpinning Project?</h2>
+      <p class="text-xl mb-8">
+        We'll create a detailed plan that minimizes disruption to your daily life
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/free-inspection" class="inline-flex items-center justify-center px-6 py-3 bg-white text-cyan-800 font-bold rounded-lg hover:bg-slate-50 transition">
+          Schedule Free Consultation
+          <Icon name="tabler:arrow-right" class="w-5 h-5 ml-2" />
+        </a>
+        <a href="tel:416-831-6907" class="inline-flex items-center justify-center px-6 py-3 bg-cyan-800 text-white font-bold rounded-lg hover:bg-cyan-700 transition">
+          <Icon name="tabler:phone" class="w-5 h-5 mr-2" />
+          Call: 416-831-6907
+        </a>
+      </div>
+      <p class="mt-6 text-cyan-200">
+        Over 500 families have successfully lived through our underpinning projects
+      </p>
+    </div>
+  </section>
+</Layout>

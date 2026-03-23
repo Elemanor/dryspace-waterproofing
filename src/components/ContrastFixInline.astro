@@ -1,0 +1,211 @@
+---
+// SuperClaude Inline Contrast Fix Component
+// Injects critical contrast fixes directly into HTML
+---
+
+<style is:inline>
+  /* CRITICAL CONTRAST FIXES - INLINE FOR IMMEDIATE APPLICATION */
+  
+  /* Force all text to have proper contrast */
+  * { opacity: 1 !important; }
+  
+  /* Fix all gray text */
+  .text-slate-300,
+  [class*="text-slate-300"] { 
+    color: #4b5563 !important; /* gray-600 */
+  }
+  
+  .text-slate-400,
+  [class*="text-slate-400"] { 
+    color: #4b5563 !important; /* gray-600 */
+  }
+  
+  .text-slate-400,
+  [class*="text-slate-400"] { 
+    color: #374151 !important; /* gray-700 */
+  }
+  
+  .text-slate-500,
+  [class*="text-slate-500"] { 
+    color: #1f2937 !important; /* gray-800 */
+  }
+  
+  .text-slate-600,
+  [class*="text-slate-600"] { 
+    color: #111827 !important; /* gray-900 */
+  }
+  
+  /* On dark backgrounds, force white text */
+  .bg-slate-700,
+  .bg-navy-900,
+  .bg-navy-900,
+  .bg-slate-700,
+  .bg-slate-800,
+  .bg-slate-900,
+  .bg-navy-900,
+  [class*="from-gray-900"],
+  [class*="from-blue-900"] {
+    color: #ffffff !important;
+  }
+  
+  .bg-slate-700 *,
+  .bg-navy-900 *,
+  .bg-navy-900 *,
+  .bg-slate-700 *,
+  .bg-slate-800 *,
+  .bg-slate-900 *,
+  .bg-navy-900 *,
+  [class*="from-gray-900"] *,
+  [class*="from-blue-900"] * {
+    color: #ffffff !important;
+  }
+  
+  /* Fix light backgrounds */
+  .bg-slate-50 { background-color: #ffffff !important; }
+  .bg-slate-50 { background-color: #ffffff !important; }
+  
+  /* Ensure dark backgrounds are dark enough */
+  .bg-slate-700 { background-color: #111827 !important; }
+  .bg-navy-900 { background-color: #030712 !important; }
+  
+  /* Navigation specific */
+  nav .text-slate-300,
+  nav .text-slate-400,
+  nav .text-slate-400,
+  nav .text-slate-500,
+  nav .text-slate-600 {
+    color: #111827 !important;
+  }
+  
+  .dark nav *,
+  nav.dark * {
+    color: #ffffff !important;
+  }
+  
+  /* Buttons must contrast */
+  button,
+  .btn,
+  [role="button"] {
+    opacity: 1 !important;
+  }
+  
+  .btn-primary {
+    background-color: #1d4ed8 !important;
+    color: #ffffff !important;
+  }
+  
+  .btn-secondary {
+    background-color: #dc2626 !important;
+    color: #ffffff !important;
+  }
+  
+  /* Form inputs */
+  input:not([type="submit"]):not([type="button"]),
+  select,
+  textarea {
+    background-color: #ffffff !important;
+    color: #111827 !important;
+    border-color: #374151 !important;
+  }
+  
+  input::placeholder,
+  textarea::placeholder {
+    color: #6b7280 !important;
+    opacity: 1 !important;
+  }
+  
+  /* Links on dark backgrounds */
+  .bg-navy-900 a,
+  .bg-navy-900 a,
+  .bg-slate-800 a,
+  .bg-slate-900 a {
+    color: #60a5fa !important;
+    text-decoration: underline !important;
+  }
+  
+  /* Headings */
+  h1, h2, h3, h4, h5, h6 {
+    opacity: 1 !important;
+    color: inherit !important;
+  }
+  
+  /* Remove transparency */
+  [class*="text-gray-"][class*="/"] {
+    opacity: 1 !important;
+  }
+  
+  .text-white\/90,
+  .text-white\/80,
+  .text-white\/70 {
+    color: #ffffff !important;
+    opacity: 1 !important;
+  }
+  
+  /* Footer specific */
+  footer {
+    background-color: #030712 !important;
+    color: #ffffff !important;
+  }
+  
+  footer * {
+    color: #ffffff !important;
+  }
+  
+  footer a {
+    color: #60a5fa !important;
+    text-decoration: underline !important;
+  }
+  
+  /* Cards on gray backgrounds */
+  .bg-slate-50 .card,
+  .bg-slate-50 .card {
+    background-color: #ffffff !important;
+  }
+  
+  .card {
+    background-color: #ffffff !important;
+  }
+  
+  .card * {
+    color: #111827 !important;
+  }
+  
+  /* Hero sections */
+  .hero,
+  .hero-section,
+  [class*="hero"] {
+    color: #ffffff !important;
+  }
+  
+  .hero *,
+  .hero-section *,
+  [class*="hero"] * {
+    color: inherit !important;
+  }
+  
+  /* Stats section with gradient background */
+  .section-gradient,
+  section[style*="gradient"] {
+    background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%) !important;
+    color: #ffffff !important;
+  }
+  
+  .section-gradient *:not(button):not(.btn),
+  section[style*="gradient"] *:not(button):not(.btn) {
+    color: #ffffff !important;
+    opacity: 1 !important;
+  }
+  
+  /* Ensure stats numbers are visible */
+  [data-counter] {
+    color: #ffffff !important;
+    opacity: 1 !important;
+  }
+  
+  /* Focus states */
+  *:focus,
+  *:focus-visible {
+    outline: 3px solid #2563eb !important;
+    outline-offset: 2px !important;
+  }
+</style>

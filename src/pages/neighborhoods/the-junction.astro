@@ -1,0 +1,342 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import Hero from '../../components/sections/Hero.astro';
+import Services from '../../components/sections/Services.astro';
+import Process from '../../components/sections/Process.astro';
+import Testimonials from '../../components/sections/Testimonials.astro';
+import Stats from '../../components/sections/Stats.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import BreadcrumbSchema from '../../components/BreadcrumbSchema.astro';
+
+const pageTitle = "The Junction Water Protection | Lower-Level & Structure Solutions";
+const pageDescription = "Expert moisture control services in this Toronto community. brick & block structure specialists, 24/7 emergency response.";
+
+// Local area information
+const localInfo = {
+  neighborhoodName: "The Junction",
+  cityName: "Toronto",
+  avgHomeAge: "80-100 years",
+  foundationType: "Brick & Block",
+  soilType: "Clay",
+  waterTable: "Moderate",
+  floodRisk: "Low",
+  avgProjectCost: "$7,000-$13,000",
+  responseTime: "25-30 minutes"
+};
+
+// Neighborhood-specific features
+const neighborhoodFeatures = [
+  {
+    title: "INDUSTRIAL HERITAGE",
+    description: "Experience with converted industrial buildings.",
+    highlight: true
+  },
+  {
+    title: "ARTIST LOFT EXPERTS",
+    description: "Protect creative spaces properly.",
+    highlight: true
+  },
+  {
+    title: "TRENDY AREA PROS",
+    description: "Modern solutions for hip neighborhood.",
+    highlight: true
+  },
+  {
+    title: "MIXED USE BUILDINGS",
+    description: "Residential and commercial expertise."
+  },
+  {
+    title: "RAILWAY KNOWLEDGE",
+    description: "Handle vibration-related issues."
+  },
+  {
+    title: "CREATIVE SOLUTIONS",
+    description: "Work with unique conversions."
+  }
+];
+
+// Local challenges specific to neighborhood
+const localChallenges = [
+  {
+    problem: "RAILWAY VIBRATIONS",
+    description: "Train traffic causes structure cracks",
+    solution: "Flexible water protection and crack monitoring"
+  },
+  {
+    problem: "INDUSTRIAL CONVERSIONS",
+    description: "Old factories have unique structure issues",
+    solution: "Custom solutions for industrial structures"
+  },
+  {
+    problem: "MIXED DEVELOPMENT",
+    description: "New condos affecting area drainage",
+    solution: "Adaptive drainage for changing conditions"
+  }
+];
+
+// Neighborhood-specific FAQs
+const neighborhoodFAQs = [
+  {
+    question: "Do you service all of this area?",
+    answer: "Yes! We provide comprehensive water protection services throughout this community, with 25-30 minutes emergency response times. Our team knows every street and the unique challenges of local homes."
+  },
+  {
+    question: "What are common water issues in this neighborhood?",
+    answer: "Local homes, typically 80-100 years old with brick & block building bases, face challenges from clay soil and moderate water table levels. The area has a low flood risk."
+  },
+  {
+    question: "How much does water protection cost locally?",
+    answer: "Typical moisture control projects in this area range from $7,000-$13,000, depending on the extent of work needed. We provide free inspections and detailed quotes."
+  },
+  {
+    question: "How quickly can you respond to emergencies in this area?",
+    answer: "We guarantee 25-30 minutes emergency response anywhere in this community. Our team is available 24/7 for flooding emergencies."
+  }
+];
+
+// Schema markup for local business
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Dryspace Water Protection Junction",
+  "description": "Expert waterproofing services in The Junction Toronto. Brick & Block foundation specialists.",
+  "telephone": "437-545-0067",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "The Junction",
+    "addressRegion": "Toronto",
+    "addressCountry": "CA"
+  },
+  "areaServed": {
+    "@type": "Place",
+    "name": "The Junction, Toronto"
+  }
+};
+---
+
+<PageLayout 
+  title={pageTitle}
+  description={pageDescription}
+>
+  
+  <!-- Breadcrumbs -->
+  <div class="container mx-auto px-4 mt-4">
+    <Breadcrumbs 
+      items={[
+        { name: "Home", url: "/" },
+        { name: "Toronto", url: "/locations/toronto" },
+        { name: "Neighborhoods", url: "/locations/toronto#neighborhoods" },
+        { name: "The Junction" }
+      ]}
+    />
+  </div>
+
+<!-- Neighborhood Hero -->
+  <Hero 
+    title="Waterproofing The Junction"
+    subtitle="Expert basement waterproofing and foundation repair for The Junction homes. 80-100 years home specialists, 24/7 emergency service."
+    primaryCTA={{ text: "Get Free The Junction Inspection", href: "/free-inspection" }}
+    secondaryCTA={{ text: "Call: 437-545-0067", href: "tel:437-545-0067" }}
+    backgroundImage="/images/dryspace_hero_desktop.webp"
+    badge="Serving The Junction"
+  />
+
+  <!-- Stats -->
+  <Stats />
+
+  <!-- Local Information Section -->
+  <section class="py-16 bg-slate-50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-4xl font-bold text-slate-900 mb-4 uppercase">WATERPROOFING SERVICES IN THE JUNCTION</h2>
+        
+        <div class="prose prose-lg max-w-none">
+          <p class="text-lg text-slate-600 mb-6">
+            The Junction's homes, typically {localInfo.avgHomeAge} old with {localInfo.foundationType} foundations, 
+            require specialized waterproofing expertise. Our team understands the unique challenges of {localInfo.soilType} soil 
+            and {localInfo.waterTable} water table conditions in this West Toronto neighborhood.
+          </p>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
+            <div class="bg-white border-2 border-slate-200 p-6">
+              <h3 class="text-xl font-bold text-slate-900 mb-6 uppercase">THE JUNCTION QUICK FACTS</h3>
+              <ul class="space-y-2 text-slate-600">
+                <li class="flex justify-between items-center pb-2 border-b border-slate-100">
+                  <span class="text-sm font-semibold text-slate-600 uppercase">Average Home Age</span>
+                  <span class="text-sm font-bold text-slate-900">{localInfo.avgHomeAge.toUpperCase()}</span>
+                </li>
+                <li class="flex justify-between items-center pb-2 border-b border-slate-100">
+                  <span class="text-sm font-semibold text-slate-600 uppercase">Foundation Type</span>
+                  <span class="text-sm font-bold text-slate-900">{localInfo.foundationType.toUpperCase()}</span>
+                </li>
+                <li class="flex justify-between items-center pb-2 border-b border-slate-100">
+                  <span class="text-sm font-semibold text-slate-600 uppercase">Soil Type</span>
+                  <span class="text-sm font-bold text-slate-900">{localInfo.soilType.toUpperCase()}</span>
+                </li>
+                <li class="flex justify-between items-center pb-2 border-b border-slate-100">
+                  <span class="text-sm font-semibold text-slate-600 uppercase">Response Time</span>
+                  <span class="text-sm font-bold text-slate-900">{localInfo.responseTime.toUpperCase()}</span>
+                </li>
+                <li class="flex justify-between items-center pb-2 border-b border-slate-100">
+                  <span class="text-sm font-semibold text-slate-600 uppercase">Average Cost</span>
+                  <span class="text-sm font-bold text-slate-900">{localInfo.avgProjectCost}</span>
+                </li>
+              </ul>
+            </div>
+            
+            <div class="bg-navy-900 border-2 border-slate-200 p-6">
+              <h3 class="text-xl font-bold text-slate-900 mb-6 uppercase">THE JUNCTION CHALLENGES</h3>
+              <ul class="space-y-2 text-slate-300">
+                <li class="text-sm text-slate-300 flex items-start">
+                  <span class="mr-2 text-cyan-400">•</span>
+                  <span>Train traffic causes foundation cracks</span>
+                </li>
+                <li class="text-sm text-slate-300 flex items-start">
+                  <span class="mr-2 text-cyan-400">•</span>
+                  <span>Old factories have unique foundation issues</span>
+                </li>
+                <li class="text-sm text-slate-300 flex items-start">
+                  <span class="mr-2 text-cyan-400">•</span>
+                  <span>New condos affecting area drainage</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <h3 class="text-2xl font-bold mt-8 mb-4 uppercase">STREETS WE SERVE IN THE JUNCTION</h3>
+          <p class="mb-4">
+            Our team provides rapid response throughout The Junction:
+          </p>
+          <div class="flex flex-wrap gap-2">
+            {["Dundas Street West","Keele Street","Annette Street","Pacific Avenue","Indian Grove","High Park Avenue","Quebec Avenue"].map((street) => (
+              <span class="border-2 border-slate-200 px-4 py-2 text-sm uppercase">
+                {street}
+              </span>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <Services />
+
+  <!-- Neighborhood Features -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl font-bold text-slate-900 mb-4 uppercase">WHY CHOOSE DRYSPACE IN THE JUNCTION</h2>
+        <p class="text-lg text-slate-600 max-w-3xl mx-auto">
+          Specialized expertise for The Junction homes and properties
+        </p>
+      </div>
+      
+      <!-- Highlighted Features -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+        {neighborhoodFeatures.filter(f => f.highlight).map((feature) => (
+          <div class="bg-amber-500 border-2 border-slate-700 p-6">
+            <h3 class="text-lg font-bold text-slate-900 mb-3 uppercase">{feature.title}</h3>
+            <p class="text-sm text-slate-900">{feature.description}</p>
+          </div>
+        ))}
+      </div>
+      
+      <!-- Regular Features -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {neighborhoodFeatures.filter(f => !f.highlight).map((feature) => (
+          <div class="bg-white border-2 border-slate-200 p-6 hover:border-slate-300 transition-colors">
+            <h3 class="text-lg font-bold text-slate-900 mb-3 uppercase">{feature.title}</h3>
+            <p class="text-sm text-slate-600">{feature.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Local Challenges Section -->
+  <section class="py-16 bg-slate-50">
+    <div class="container mx-auto px-4">
+      <h2 class="text-4xl font-bold text-slate-900 mb-12 text-center uppercase">THE JUNCTION WATER CHALLENGES</h2>
+      
+      <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        {localChallenges.map((challenge) => (
+          <div class="bg-white border-2 border-slate-200 p-6">
+            <h3 class="text-lg font-bold text-slate-900 mb-3 uppercase">{challenge.problem}</h3>
+            <p class="text-sm text-slate-600 mb-4">{challenge.description}</p>
+            <div class="pt-4 border-t border-slate-100">
+              <p class="text-sm font-semibold text-slate-900 uppercase mb-1">OUR SOLUTION:</p>
+              <p class="text-sm text-slate-600">{challenge.solution}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Process -->
+  <Process />
+
+  <!-- Testimonials -->
+  <Testimonials />
+
+  <!-- FAQ Section -->
+  <section class="py-16 bg-slate-50">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl font-bold text-slate-900 mb-4 uppercase">THE JUNCTION WATERPROOFING FAQS</h2>
+        <p class="text-lg text-slate-600">Common questions from The Junction homeowners</p>
+      </div>
+      
+      <div class="max-w-4xl mx-auto">
+        {neighborhoodFAQs.map((faq, index) => (
+          <details class="mb-4 border-2 border-slate-200 bg-white">
+            <summary class="cursor-pointer p-6 hover:bg-slate-50 transition-colors">
+              <div class="flex items-center justify-between">
+                <h3 class="text-lg font-bold text-slate-900 uppercase pr-4">{faq.question}</h3>
+                <span class="text-slate-400 flex-shrink-0 text-2xl">+</span>
+              </div>
+            </summary>
+            <div class="px-6 pb-6 pt-0">
+              <p class="text-slate-600">{faq.answer}</p>
+            </div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-16 bg-navy-900">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-4xl font-bold text-slate-900 mb-4 uppercase">PROTECT YOUR THE JUNCTION HOME TODAY</h2>
+        <p class="text-lg text-slate-300 mb-8">
+          Expert waterproofing for 80-100 years homes in The Junction
+        </p>
+        
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a 
+            href="/free-inspection"
+            class="bg-amber-500 text-black px-8 py-4 text-lg font-bold hover:bg-amber-400 transition-colors uppercase"
+          >
+            Schedule The Junction Inspection
+          </a>
+          <a 
+            href="tel:437-545-0067"
+            class="border-2 border-white text-slate-900 px-8 py-4 text-lg font-bold hover:bg-white hover:text-black transition-colors uppercase"
+          >
+            Call: 437-545-0067
+          </a>
+        </div>
+        
+        <div class="mt-8 inline-flex items-center text-cyan-400">
+          <span class="text-sm font-bold uppercase">24/7 Emergency Service Available</span>
+        </div>
+      </div>
+    </div>
+  </section>
+<BreadcrumbSchema items={[{name: 'Home', url: '/'}, {name: 'Neighborhoods'}, {name: 'The Junction'}]} />
+</PageLayout>
+
+<script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)}></script>

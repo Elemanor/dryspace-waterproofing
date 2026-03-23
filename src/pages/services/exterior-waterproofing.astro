@@ -1,0 +1,775 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import ServiceHero from '../../components/sections/ServiceHero.astro';
+import TrustBar from '../../components/sections/TrustBar.astro';
+import ServiceProcess from '../../components/sections/ServiceProcess.astro';
+import ServicePricing from '../../components/sections/ServicePricing.astro';
+import CTABand from '../../components/sections/CTABand.astro';
+import SectionHeader from '../../components/sections/SectionHeader.astro';
+import FAQAccordion from '../../components/react/FAQAccordion.tsx';
+import ServiceSchema from '../../components/ServiceSchema.astro';
+import InternalLinks from '../../components/InternalLinks.astro';
+import StructuredData from '../../components/StructuredData.astro';
+
+// SEO-optimized metadata focused on service method
+const pageTitle = "Exterior Waterproofing | Membrane Install | DrySpace";
+const pageDescription = "Exterior moisture protection with excavation & membrane. 99% effective, 25-30 year lifespan. Stops water at source. Call 437-545-0067.";
+
+// Service FAQs for schema
+const serviceFAQs = [
+  {
+    question: "How much does exterior moisture protection cost?",
+    answer: "Exterior water sealing typically costs $150-300 per linear foot, or $16,000-30,000 for an average home. Factors include excavation depth, membrane type, drainage requirements, and landscaping restoration. Visit our pricing page for detailed costs."
+  },
+  {
+    question: "How long does exterior moisture protection last?",
+    answer: "Professional exterior water barriers last 25-30+ years when properly installed. Quality membranes like rubberized asphalt or HDPE dimpled membranes maintain effectiveness for decades. We provide a 25-year transferable warranty on all exterior installations."
+  },
+  {
+    question: "Is exterior moisture protection better than interior?",
+    answer: "Exterior water barriers are 99% effective as they stop water before entering structural walls. While more expensive initially, they prevent structural damage, don't reduce basement space, and address the root cause. Interior systems manage water but don't prevent structural deterioration."
+  },
+  {
+    question: "Do I need a permit for exterior moisture protection?",
+    answer: "Most exterior moisture protection projects require a building permit due to excavation depth exceeding 4 feet. We handle all permit applications, drawings, and inspections as part of our service, ensuring full compliance with local building codes. See our permits guide for details."
+  },
+  {
+    question: "What's included in exterior moisture protection?",
+    answer: "Complete exterior moisture protection includes: excavation to footing level, structural cleaning and repair, primer application, membrane installation, protective board installation, weeping tile setup/repair, backfilling with gravel, and landscape restoration."
+  }
+];
+
+// Service offers for schema
+const serviceOffers = [
+  {
+    name: "Basic Exterior Moisture Control",
+    price: "$13,000-18,000",
+    description: "Partial wall moisture control, membrane application, basic water removal"
+  },
+  {
+    name: "Complete Exterior System",
+    price: "$19,000-28,000",
+    description: "Full excavation, premium membrane, new weeping tile, drainage board"
+  },
+  {
+    name: "Premium Protection Package",
+    price: "$30,000-40,000",
+    description: "Complete system plus foundation repairs, window wells, sump pump upgrade"
+  }
+];
+
+// Process steps for ServiceProcess component
+const processSteps = [
+  {
+    number: "1",
+    title: "Excavation & Site Preparation",
+    description: "Protect your property with plywood pathways. Carefully excavate to footing (6-8 feet) with mini-excavators. Maintain 3-foot working space with safety slope. Hand-dig around utilities, protect landscaping."
+  },
+  {
+    number: "2",
+    title: "Foundation Inspection & Repair",
+    description: "Power-wash exposed walls. Inspect for cracks and deterioration. Route cracks to V-groove, fill with hydraulic cement. Repoint mortar joints, repair spalling concrete, seal tie rod holes."
+  },
+  {
+    number: "3",
+    title: "Protective Barrier Application",
+    description: "Apply liquid rubber primer. Install rubberized asphalt membrane (60-mil) or spray-applied rubber coating (80-mil minimum). Create seamless, fully-adhered barrier. Reinforce footing-wall joint."
+  },
+  {
+    number: "4",
+    title: "Drainage Protection Board",
+    description: "Install dimpled drainage board (Delta-MS) over membrane. Protect membrane during backfill, create air gap, channel water to weeping tile. Mechanically fasten at top, extend from grade to footing."
+  },
+  {
+    number: "5",
+    title: "Weeping Tile & Drainage System",
+    description: "Install new 4-inch perforated PVC weeping tile at footing. Surround with 3/4-inch clear gravel. Slope 1/8 inch per foot toward sump or storm connection. Add filter fabric, install cleanout ports every 25 feet."
+  },
+  {
+    number: "6",
+    title: "Backfilling & Restoration",
+    description: "Backfill in 12-inch lifts with proper compaction. Use free-draining material for first 2 feet. Grade slopes away at 5% for 6 feet. Restore landscaping, seed/sod grass, replace concrete/asphalt, clean site."
+  }
+];
+
+// Pricing tiers for ServicePricing component
+const pricingTiers = [
+  {
+    name: "Basic Protection",
+    price: "$13,000 - $19,000",
+    description: "Essential exterior waterproofing for smaller projects",
+    features: [
+      "Partial wall excavation",
+      "Standard membrane application",
+      "Basic drainage system",
+      "Landscape restoration",
+      "10-year warranty"
+    ]
+  },
+  {
+    name: "Complete System",
+    price: "$19,000 - $30,000",
+    description: "Full perimeter protection with premium materials",
+    features: [
+      "Full excavation to footing",
+      "Premium rubberized membrane",
+      "New weeping tile system",
+      "Drainage board installation",
+      "Foundation crack repairs",
+      "25-year transferable warranty"
+    ],
+    popular: true
+  },
+  {
+    name: "Premium Package",
+    price: "$30,000 - $43,000",
+    description: "Complete protection plus structural upgrades",
+    features: [
+      "Everything in Complete System",
+      "Major foundation repairs",
+      "Window well installations",
+      "Sump pump system upgrade",
+      "Concrete parging",
+      "Annual inspections (5 years)",
+      "25-year warranty + service plan"
+    ]
+  }
+];
+---
+
+<PageLayout
+  title={pageTitle}
+  description={pageDescription}
+  showAnnouncement={true}
+>
+  <!-- Add Service Schema -->
+  <ServiceSchema
+    serviceName="Exterior Moisture Protection"
+    description="Professional exterior foundation moisture control including excavation, membrane installation, water management systems, and landscape restoration in Toronto and GTA"
+    priceRange="$13,000-$43,000"
+    offers={serviceOffers}
+    faqs={serviceFAQs}
+    areaServed={["Ontario", "Greater Toronto Area"]}
+  />
+
+  <!-- Structured Data for Service -->
+  <StructuredData
+    type="Service"
+    data={{
+      name: "Exterior Moisture Protection",
+      description: "Professional exterior foundation moisture control including excavation, membrane installation, water management systems, and landscape restoration in Toronto and GTA",
+      rating: { value: 4.9, count: 487 },
+      offers: serviceOffers
+    }}
+  />
+
+  <!-- Hero Section -->
+  <ServiceHero
+    title="Exterior Waterproofing Toronto"
+    description="Complete foundation protection from the outside. Excavation to footing, membrane installation, drainage systems. Government rebates up to $3,700 available."
+    priceRange="$200-$400 per linear foot"
+    duration="4-5 days typical"
+    rebate="Up to $3,700"
+    backgroundImage="/images/dryspace_hero_desktop.webp"
+    breadcrumbs={[
+      { label: "Home", href: "/" },
+      { label: "Services", href: "/services" },
+      { label: "Exterior Waterproofing" }
+    ]}
+  />
+
+  <!-- Trust Bar -->
+  <TrustBar />
+
+  <!-- Problem Identifier Section -->
+  <section class="section-padding bg-white">
+    <div class="container mx-auto px-4">
+      <SectionHeader
+        label="Problems We Solve"
+        title="Toronto's Unique Foundation Challenges"
+        description="Professional solutions for the GTA's specific climate and soil conditions"
+        centered={true}
+      />
+
+      <div class="max-w-6xl mx-auto mt-12">
+        <div class="grid md:grid-cols-2 gap-8">
+          <div class="bg-slate-50 rounded-xl p-8 shadow-card">
+            <div class="flex items-start gap-4">
+              <div class="flex-shrink-0 w-12 h-12 bg-cyan-500/10 rounded-lg flex items-center justify-center">
+                <span class="text-cyan-500 text-2xl font-bold">1</span>
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-navy-900 mb-3">Clay Soil Expansion</h3>
+                <p class="text-slate-600 leading-relaxed">
+                  Toronto's clay-rich soil expands up to 40% when wet, putting tremendous pressure on structural walls. This hydrostatic pressure can reach 60 PSF, causing cracks, bowing walls, and water infiltration. Our exterior protective system addresses this by creating a moisture shield between the soil and your building structure.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-slate-50 rounded-xl p-8 shadow-card">
+            <div class="flex items-start gap-4">
+              <div class="flex-shrink-0 w-12 h-12 bg-cyan-500/10 rounded-lg flex items-center justify-center">
+                <span class="text-cyan-500 text-2xl font-bold">2</span>
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-navy-900 mb-3">Freeze-Thaw Cycles</h3>
+                <p class="text-slate-600 leading-relaxed">
+                  Toronto experiences 40-50 freeze-thaw cycles annually, causing structural damage as water expands 9% when freezing. This creates progressive deterioration of concrete and mortar joints. Exterior protective barriers prevent water from entering these vulnerable areas.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-slate-50 rounded-xl p-8 shadow-card">
+            <div class="flex items-start gap-4">
+              <div class="flex-shrink-0 w-12 h-12 bg-cyan-500/10 rounded-lg flex items-center justify-center">
+                <span class="text-cyan-500 text-2xl font-bold">3</span>
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-navy-900 mb-3">High Water Table</h3>
+                <p class="text-slate-600 leading-relaxed">
+                  Many Toronto neighborhoods, especially near Lake Ontario and the Don River, have water tables within 6-8 feet of the surface. This constant moisture pressure requires professional exterior drainage solutions to protect your structure year-round.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-slate-50 rounded-xl p-8 shadow-card">
+            <div class="flex items-start gap-4">
+              <div class="flex-shrink-0 w-12 h-12 bg-cyan-500/10 rounded-lg flex items-center justify-center">
+                <span class="text-cyan-500 text-2xl font-bold">4</span>
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-navy-900 mb-3">Aging Infrastructure</h3>
+                <p class="text-slate-600 leading-relaxed">
+                  Over 60% of Toronto homes were built before 1980 with outdated moisture control methods. Original tar-based coatings have deteriorated, weeping tiles are clogged with sediment, and structural walls have developed cracks. Modern exterior protective systems restore security.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What is Exterior Waterproofing -->
+  <section class="section-padding bg-slate-50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <SectionHeader
+          label="The Solution"
+          title="What Is Exterior Waterproofing?"
+          description="The gold standard for permanent foundation protection"
+          centered={true}
+        />
+
+        <div class="prose prose-lg max-w-none mt-12">
+          <div class="bg-white rounded-2xl p-8 lg:p-12 shadow-card border border-slate-200">
+            <p class="text-slate-700 leading-relaxed mb-6">
+              Exterior moisture protection is the gold standard for protecting your home's structural base from water damage. This comprehensive solution involves excavating around your building structure to the footing level (typically 6-8 feet deep), repairing any existing damage, and installing a multi-layer protective barrier system that stops moisture before it can reach your structural walls.
+            </p>
+            <p class="text-slate-700 leading-relaxed mb-6">
+              Unlike interior water management which handles moisture after it enters, exterior protective barriers prevent infiltration entirely. This method addresses the root cause of lower level water problems by creating an impermeable barrier on the positive side (exterior) of your structural walls, where hydrostatic pressure is applied.
+            </p>
+            <p class="text-slate-700 leading-relaxed">
+              The process includes structural repairs, membrane application, drainage board installation, new weeping tile system, proper grading, and complete restoration of your property. With our 25-year transferable warranty, this investment not only protects your home but also increases its value by up to 30%.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process Timeline -->
+  <ServiceProcess steps={processSteps} title="Our 6-Step Protection Process" label="How It Works" />
+
+  <!-- Materials & Membrane Options -->
+  <section class="section-padding bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <SectionHeader
+          label="Premium Materials"
+          title="Professional-Grade Membranes & Systems"
+          description="Industry-leading materials for maximum protection"
+          centered={true}
+        />
+
+        <div class="grid md:grid-cols-2 gap-8 mt-12">
+          <div class="bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-2xl p-8 text-white shadow-card-hover">
+            <div class="flex items-center gap-3 mb-6">
+              <div class="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center">
+                <span class="text-2xl">💧</span>
+              </div>
+              <h3 class="text-2xl font-bold">Liquid Rubber Membrane</h3>
+            </div>
+            <ul class="space-y-4">
+              <li class="flex items-start gap-3">
+                <svg class="w-6 h-6 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                </svg>
+                <span>50+ year lifespan</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-6 h-6 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                </svg>
+                <span>Seamless application</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-6 h-6 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                </svg>
+                <span>Self-healing properties</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-6 h-6 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                </svg>
+                <span>Best for severe water issues</span>
+              </li>
+            </ul>
+            <div class="mt-8 pt-6 border-t border-white/20">
+              <p class="text-3xl font-bold">$250-$400</p>
+              <p class="text-cyan-100">per linear foot</p>
+            </div>
+          </div>
+
+          <div class="bg-gradient-to-br from-slate-700 to-slate-800 rounded-2xl p-8 text-white shadow-card-hover">
+            <div class="flex items-center gap-3 mb-6">
+              <div class="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center">
+                <span class="text-2xl">🛡️</span>
+              </div>
+              <h3 class="text-2xl font-bold">Rubberized Asphalt Sheet</h3>
+            </div>
+            <ul class="space-y-4">
+              <li class="flex items-start gap-3">
+                <svg class="w-6 h-6 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                </svg>
+                <span>30-40 year lifespan</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-6 h-6 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                </svg>
+                <span>Consistent thickness</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-6 h-6 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                </svg>
+                <span>Proven reliability</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-6 h-6 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                </svg>
+                <span>Standard residential choice</span>
+              </li>
+            </ul>
+            <div class="mt-8 pt-6 border-t border-white/20">
+              <p class="text-3xl font-bold">$200-$275</p>
+              <p class="text-slate-300">per linear foot</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- NBC Requirements -->
+        <div class="mt-12 bg-cyan-50 border-2 border-cyan-200 rounded-2xl p-8 lg:p-12">
+          <div class="flex items-center gap-3 mb-8">
+            <div class="w-12 h-12 bg-cyan-500 rounded-lg flex items-center justify-center">
+              <span class="text-white text-xl font-bold">📋</span>
+            </div>
+            <h3 class="text-2xl font-bold text-navy-900">NBC 9.13.3 Moisture Control Requirements</h3>
+          </div>
+
+          <div class="grid md:grid-cols-2 gap-8">
+            <div>
+              <h4 class="font-bold text-lg text-navy-900 mb-4">When Moisture Protection Required</h4>
+              <ul class="space-y-3 text-slate-700">
+                <li class="flex items-start gap-3">
+                  <span class="text-cyan-500 font-bold">•</span>
+                  <span>Hydrostatic pressure present</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <span class="text-cyan-500 font-bold">•</span>
+                  <span>Water table above floor level</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <span class="text-cyan-500 font-bold">•</span>
+                  <span>Poor drainage conditions</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <span class="text-cyan-500 font-bold">•</span>
+                  <span>Underground structure roofs</span>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 class="font-bold text-lg text-navy-900 mb-4">System Requirements</h4>
+              <ul class="space-y-3 text-slate-700">
+                <li class="flex items-start gap-3">
+                  <span class="text-cyan-500 font-bold">•</span>
+                  <span>Two-membrane system minimum</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <span class="text-cyan-500 font-bold">•</span>
+                  <span>Continuous wall-floor connection</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <span class="text-cyan-500 font-bold">•</span>
+                  <span>Floor membrane between slabs</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <span class="text-cyan-500 font-bold">•</span>
+                  <span>75mm min concrete layers</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="mt-8 p-6 bg-amber-100 border border-amber-300 rounded-xl">
+            <p class="text-slate-800">
+              <strong class="text-navy-900">Critical:</strong> If water table rises >200mm above floor, buoyant pressure exceeds slab weight.
+              Walls subject to hydrostatic pressure must be designed per NBC Part 4 and protected from moisture.
+            </p>
+          </div>
+        </div>
+
+        <!-- Premium Materials List -->
+        <div class="grid md:grid-cols-2 gap-8 mt-12">
+          <div class="bg-slate-50 rounded-xl p-8">
+            <h4 class="text-xl font-bold text-navy-900 mb-6">Protective Membranes</h4>
+            <ul class="space-y-4">
+              <li class="flex items-start gap-3">
+                <span class="text-cyan-500 font-bold flex-shrink-0">■</span>
+                <span class="text-slate-700">Blueskin WP200 self-adhering membrane</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-cyan-500 font-bold flex-shrink-0">■</span>
+                <span class="text-slate-700">Aqua-Bloc 720-38 elastomeric coating</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-cyan-500 font-bold flex-shrink-0">■</span>
+                <span class="text-slate-700">Tremco TREMproof 250GC spray-applied</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-cyan-500 font-bold flex-shrink-0">■</span>
+                <span class="text-slate-700">W.R. Meadows Mel-Rol moisture barrier</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="bg-slate-50 rounded-xl p-8">
+            <h4 class="text-xl font-bold text-navy-900 mb-6">Drainage Components</h4>
+            <ul class="space-y-4">
+              <li class="flex items-start gap-3">
+                <span class="text-cyan-500 font-bold flex-shrink-0">■</span>
+                <span class="text-slate-700">Delta-MS dimpled drainage membrane</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-cyan-500 font-bold flex-shrink-0">■</span>
+                <span class="text-slate-700">4" Schedule 40 PVC weeping tile</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-cyan-500 font-bold flex-shrink-0">■</span>
+                <span class="text-slate-700">3/4" clear drainage stone</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-cyan-500 font-bold flex-shrink-0">■</span>
+                <span class="text-slate-700">Non-woven geotextile filter fabric</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Section -->
+  <ServicePricing tiers={pricingTiers} title="Investment & Pricing" />
+
+  <!-- ROI & Value Section -->
+  <section class="section-padding bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <SectionHeader
+          label="Your Investment"
+          title="Return On Investment"
+          description="Protect your home, increase your property value"
+          centered={true}
+        />
+
+        <div class="grid md:grid-cols-2 gap-8 mt-12">
+          <div class="bg-gradient-to-br from-amber-500 to-amber-600 rounded-2xl p-8 text-white shadow-card-hover">
+            <h3 class="text-2xl font-bold mb-6">Immediate Savings</h3>
+            <p class="leading-relaxed mb-4">
+              Prevent water damage repairs averaging $22,000-$54,000. Eliminate mold remediation costs of $5,400-$16,000.
+            </p>
+            <p class="leading-relaxed">
+              Stop structural deterioration requiring $32,000+ in repairs.
+            </p>
+          </div>
+
+          <div class="bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-2xl p-8 text-white shadow-card-hover">
+            <h3 class="text-2xl font-bold mb-6">Long-Term Value</h3>
+            <p class="leading-relaxed mb-4">
+              Increase home value by 5-10% immediately. Transferable warranty adds $11,000+ to selling price.
+            </p>
+            <p class="leading-relaxed">
+              Lower insurance premiums save $550-$1,600 annually.
+            </p>
+          </div>
+        </div>
+
+        <!-- Government Rebate -->
+        <div class="mt-12 bg-gradient-to-br from-amber-500 to-amber-600 rounded-2xl p-8 lg:p-12 text-white shadow-card-hover">
+          <div class="flex items-center gap-4 mb-6">
+            <div class="w-16 h-16 bg-white/20 rounded-xl flex items-center justify-center">
+              <span class="text-3xl">🎁</span>
+            </div>
+            <div>
+              <h3 class="text-3xl font-bold">Government Rebate Program</h3>
+              <p class="text-amber-100">Save up to $3,700 on your project</p>
+            </div>
+          </div>
+          <p class="text-lg leading-relaxed mb-6">
+            The City of Toronto offers up to $3,700 in rebates for qualifying projects through the Basement Flooding Protection Subsidy Program.
+          </p>
+          <ul class="space-y-3">
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+              </svg>
+              <span>We handle all paperwork and applications</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+              </svg>
+              <span>Instant qualification check during inspection</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+              </svg>
+              <span>Rebate applied directly to your final invoice</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Service Areas -->
+  <section class="section-padding bg-slate-50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <SectionHeader
+          label="Service Areas"
+          title="Expert Protection Across the GTA"
+          description="Local expertise for Toronto's unique foundation challenges"
+          centered={true}
+        />
+
+        <div class="grid md:grid-cols-2 gap-8 mt-12">
+          <div class="bg-white rounded-xl p-8 shadow-card">
+            <h3 class="text-xl font-bold text-navy-900 mb-4">Downtown Toronto & Old Toronto</h3>
+            <p class="text-slate-600 leading-relaxed">
+              Century homes with rubble foundations require specialized techniques. High water table near Lake Ontario demands robust drainage systems. Limited access in dense neighborhoods requires compact equipment.
+            </p>
+            <p class="text-cyan-500 font-bold mt-4">Average: $19,000-$30,000</p>
+          </div>
+
+          <div class="bg-white rounded-xl p-8 shadow-card">
+            <h3 class="text-xl font-bold text-navy-900 mb-4">North York & Scarborough</h3>
+            <p class="text-slate-600 leading-relaxed">
+              1960s-1980s homes with poured concrete foundations. Clay soil prevalent throughout area. Larger lots allow full perimeter access.
+            </p>
+            <p class="text-cyan-500 font-bold mt-4">Average: $16,000-$24,000</p>
+          </div>
+
+          <div class="bg-white rounded-xl p-8 shadow-card">
+            <h3 class="text-xl font-bold text-navy-900 mb-4">Mississauga & Brampton</h3>
+            <p class="text-slate-600 leading-relaxed">
+              Newer subdivisions with varying soil conditions. Some areas built on former farmland with poor drainage. Modern building codes but aging waterproofing.
+            </p>
+            <p class="text-cyan-500 font-bold mt-4">Average: $15,000-$22,000</p>
+          </div>
+
+          <div class="bg-white rounded-xl p-8 shadow-card">
+            <h3 class="text-xl font-bold text-navy-900 mb-4">Vaughan & Richmond Hill</h3>
+            <p class="text-slate-600 leading-relaxed">
+              Mix of new construction and established neighborhoods. Variable soil conditions from sand to heavy clay. Larger properties often require extensive drainage.
+            </p>
+            <p class="text-cyan-500 font-bold mt-4">Average: $17,000-$26,000</p>
+          </div>
+        </div>
+
+        <!-- Emergency Service Banner -->
+        <div class="mt-12 bg-gradient-to-r from-amber-500 to-amber-600 rounded-2xl p-8 text-center text-white shadow-card-hover">
+          <p class="text-2xl font-bold mb-2">24/7 Emergency Service Available</p>
+          <p class="text-lg text-amber-100">Same-day response for urgent moisture control needs</p>
+          <a href="tel:437-545-0067" class="inline-block mt-4 px-8 py-3 bg-white text-amber-600 font-bold rounded-lg hover:bg-slate-50 transition-colors">
+            Call: 437-545-0067
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Warranty Section -->
+  <section class="section-padding bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <SectionHeader
+          label="Our Guarantee"
+          title="25-Year Transferable Warranty"
+          description="The most comprehensive warranty in the industry"
+          centered={true}
+        />
+
+        <div class="grid md:grid-cols-2 gap-8 mt-12">
+          <div class="bg-slate-50 rounded-xl p-8 shadow-card">
+            <h3 class="text-xl font-bold text-navy-900 mb-6">Warranty Coverage</h3>
+            <ul class="space-y-4">
+              <li class="flex items-start gap-3">
+                <span class="text-cyan-500 font-bold flex-shrink-0">✓</span>
+                <span class="text-slate-700">Water barrier integrity for 25 years</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-cyan-500 font-bold flex-shrink-0">✓</span>
+                <span class="text-slate-700">Drainage system functionality for 25 years</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-cyan-500 font-bold flex-shrink-0">✓</span>
+                <span class="text-slate-700">Foundation crack repairs for 25 years</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-cyan-500 font-bold flex-shrink-0">✓</span>
+                <span class="text-slate-700">Workmanship guarantee for 25 years</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-cyan-500 font-bold flex-shrink-0">✓</span>
+                <span class="text-slate-700">Material defects for 25 years</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="bg-slate-50 rounded-xl p-8 shadow-card">
+            <h3 class="text-xl font-bold text-navy-900 mb-6">Warranty Benefits</h3>
+            <ul class="space-y-4">
+              <li class="flex items-start gap-3">
+                <span class="text-cyan-500 font-bold flex-shrink-0">✓</span>
+                <span class="text-slate-700">Fully transferable to new owners (once)</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-cyan-500 font-bold flex-shrink-0">✓</span>
+                <span class="text-slate-700">No deductibles or service charges</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-cyan-500 font-bold flex-shrink-0">✓</span>
+                <span class="text-slate-700">Annual inspections included (first 5 years)</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-cyan-500 font-bold flex-shrink-0">✓</span>
+                <span class="text-slate-700">24/7 emergency response</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-cyan-500 font-bold flex-shrink-0">✓</span>
+                <span class="text-slate-700">Adds $11,000+ to home value</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="section-padding bg-slate-50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <SectionHeader
+          label="Questions?"
+          title="Frequently Asked Questions"
+          description="Everything you need to know about exterior waterproofing"
+          centered={true}
+        />
+        <div class="mt-12">
+          <FAQAccordion client:load />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Related Services -->
+  <section class="section-padding bg-navy-900">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <SectionHeader
+          label="Complete Solutions"
+          title="Related Waterproofing Services"
+          description="Additional protection options for your home"
+          centered={true}
+          dark={true}
+        />
+
+        <div class="grid md:grid-cols-3 gap-8 mt-12">
+          <a href="/services/interior-waterproofing" class="group bg-slate-800 rounded-xl p-8 shadow-card hover:shadow-card-hover transition-all border-2 border-slate-700 hover:border-cyan-500">
+            <h3 class="text-xl font-bold text-white mb-3 group-hover:text-cyan-500 transition-colors">Interior Waterproofing</h3>
+            <p class="text-slate-400 mb-4 leading-relaxed">Affordable alternative with interior water management systems and sump pumps. Ideal for finished basements.</p>
+            <p class="text-cyan-500 font-bold mb-4 text-2xl">FROM $3,800</p>
+            <span class="text-cyan-500 font-bold uppercase inline-flex items-center gap-2">
+              Learn More
+              <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+              </svg>
+            </span>
+          </a>
+
+          <a href="/services/foundation-repair" class="group bg-slate-800 rounded-xl p-8 shadow-card hover:shadow-card-hover transition-all border-2 border-slate-700 hover:border-cyan-500">
+            <h3 class="text-xl font-bold text-white mb-3 group-hover:text-cyan-500 transition-colors">Foundation Repair</h3>
+            <p class="text-slate-400 mb-4 leading-relaxed">Crack injection, wall reinforcement, and structural repairs. Stop water at the source.</p>
+            <p class="text-cyan-500 font-bold mb-4 text-2xl">FROM $550</p>
+            <span class="text-cyan-500 font-bold uppercase inline-flex items-center gap-2">
+              Learn More
+              <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+              </svg>
+            </span>
+          </a>
+
+          <a href="/services/sump-pump-installation" class="group bg-slate-800 rounded-xl p-8 shadow-card hover:shadow-card-hover transition-all border-2 border-slate-700 hover:border-cyan-500">
+            <h3 class="text-xl font-bold text-white mb-3 group-hover:text-cyan-500 transition-colors">Sump Pump Systems</h3>
+            <p class="text-slate-400 mb-4 leading-relaxed">Primary and backup pumps with battery systems. Qualify for $1,850 city rebate.</p>
+            <p class="text-cyan-500 font-bold mb-4 text-2xl">FROM $1,300</p>
+            <span class="text-cyan-500 font-bold uppercase inline-flex items-center gap-2">
+              Learn More
+              <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+              </svg>
+            </span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Internal Links -->
+  <section class="py-8 bg-white">
+    <div class="container mx-auto px-4">
+      <InternalLinks category="waterproofing" currentPage="exterior-waterproofing" limit={6} />
+    </div>
+  </section>
+
+  <!-- CTA Band -->
+  <CTABand
+    title="Ready to Protect Your Foundation?"
+    subtitle="Get a free inspection and detailed quote for your exterior waterproofing project"
+    primaryCTA={{ text: "Schedule Free Inspection", href: "/free-inspection" }}
+    secondaryCTA={{ text: "Call: 437-545-0067", href: "tel:437-545-0067" }}
+  />
+</PageLayout>

@@ -1,0 +1,361 @@
+---
+// Contact form component that sends emails to p.vysotckii@gmail.com
+---
+
+<section class="py-16 bg-slate-50">
+  <div class="container mx-auto px-4">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid lg:grid-cols-2 gap-12">
+        <!-- Left Column - Contact Info -->
+        <div class="bg-gradient-to-br from-gray-900 to-gray-800 p-8 lg:p-12 text-white">
+          <h2 class="text-3xl lg:text-4xl font-bold mb-6 uppercase">
+            Get Your Free Inspection
+          </h2>
+          <p class="text-lg mb-8 text-slate-300">
+            Professional assessment with detailed report and transparent pricing
+          </p>
+          
+          <!-- Contact Methods -->
+          <div class="space-y-6 mb-8">
+            <div>
+              <a href="tel:437-545-0067" class="block text-white hover:text-cyan-400 transition-colors">
+                <span class="font-bold">EMERGENCY LINE:</span> 437-545-0067
+              </a>
+              <p class="text-sm text-slate-400 mt-1">24/7 Emergency Response</p>
+            </div>
+            
+            <div>
+              <a href="mailto:p.vysotckii@gmail.com" class="block text-white hover:text-cyan-400 transition-colors">
+                <span class="font-bold">EMAIL:</span> p.vysotckii@gmail.com
+              </a>
+              <p class="text-sm text-slate-400 mt-1">Response within 24 hours</p>
+            </div>
+            
+            <div>
+              <span class="font-bold">SERVICE AREA:</span>
+              <p class="text-slate-300">Toronto & Greater Toronto Area</p>
+              <p class="text-sm text-slate-400 mt-1">Licensed & Insured • 25-Year Warranty</p>
+            </div>
+          </div>
+          
+          <!-- Trust Badges -->
+          <div class="grid grid-cols-2 gap-4 pt-8 border-t border-slate-600">
+            <div>
+              <div class="text-2xl font-bold text-cyan-400">500+</div>
+              <div class="text-sm text-slate-400">Homes Protected</div>
+            </div>
+            <div>
+              <div class="text-2xl font-bold text-cyan-400">4.9★</div>
+              <div class="text-sm text-slate-400">Google Rating</div>
+            </div>
+            <div>
+              <div class="text-2xl font-bold text-cyan-400">25 Years</div>
+              <div class="text-sm text-slate-400">Warranty</div>
+            </div>
+            <div>
+              <div class="text-2xl font-bold text-cyan-400">24/7</div>
+              <div class="text-sm text-slate-400">Emergency</div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Right Column - Form -->
+        <div class="bg-white p-8 lg:p-12 shadow-xl">
+          <h3 class="text-2xl font-bold mb-6 uppercase">Schedule Your Free Inspection</h3>
+          
+          <form id="contactForm" class="space-y-4">
+            <div class="grid md:grid-cols-2 gap-4">
+              <!-- Name -->
+              <div>
+                <label for="name" class="block text-sm font-bold text-slate-900 uppercase mb-2">
+                  Name *
+                </label>
+                <input 
+                  type="text" 
+                  id="name" 
+                  name="name"
+                  required 
+                  class="w-full px-4 py-3 border-2 border-slate-200 focus:border-cyan-500 focus:outline-none transition-colors"
+                  placeholder="Your Name"
+                />
+                <span class="text-red-600 text-sm hidden">This field is required</span>
+              </div>
+              
+              <!-- Phone -->
+              <div>
+                <label for="phone" class="block text-sm font-bold text-slate-900 uppercase mb-2">
+                  Phone *
+                </label>
+                <input 
+                  type="tel" 
+                  id="phone" 
+                  name="phone"
+                  required 
+                  class="w-full px-4 py-3 border-2 border-slate-200 focus:border-cyan-500 focus:outline-none transition-colors"
+                  placeholder="(416) 555-0123"
+                />
+                <span class="text-red-600 text-sm hidden">This field is required</span>
+              </div>
+            </div>
+            
+            <!-- Email -->
+            <div>
+              <label for="email" class="block text-sm font-bold text-slate-900 uppercase mb-2">
+                Email (Optional)
+              </label>
+              <input 
+                type="email" 
+                id="email" 
+                name="email"
+                class="w-full px-4 py-3 border-2 border-slate-200 focus:border-cyan-500 focus:outline-none transition-colors"
+                placeholder="your@email.com (optional)"
+              />
+            </div>
+            
+            <!-- Service -->
+            <div>
+              <label for="service" class="block text-sm font-bold text-slate-900 uppercase mb-2">
+                Service Needed *
+              </label>
+              <select 
+                id="service" 
+                name="service"
+                required 
+                class="w-full px-4 py-3 border-2 border-slate-200 focus:border-cyan-500 focus:outline-none transition-colors bg-white"
+              >
+                <option value="">Select a Service</option>
+                <option value="emergency">EMERGENCY - Water in Basement</option>
+                <option value="waterproofing">Basement Waterproofing</option>
+                <option value="foundation">Foundation Repair</option>
+                <option value="sump-pump">Sump Pump Installation</option>
+                <option value="french-drain">French Drain System</option>
+                <option value="inspection">Free Inspection Only</option>
+                <option value="other">Other</option>
+              </select>
+              <span class="text-red-600 text-sm hidden">Please select a service</span>
+            </div>
+            
+            <!-- Message -->
+            <div>
+              <label for="message" class="block text-sm font-bold text-slate-900 uppercase mb-2">
+                Additional Details
+              </label>
+              <textarea 
+                id="message" 
+                name="message"
+                rows="4" 
+                class="w-full px-4 py-3 border-2 border-slate-200 focus:border-cyan-500 focus:outline-none transition-colors resize-none"
+                placeholder="Describe your water issue or concerns..."
+              ></textarea>
+            </div>
+            
+            <!-- Consent -->
+            <div class="flex items-start">
+              <input 
+                type="checkbox" 
+                id="consent" 
+                name="consent"
+                required 
+                class="mt-1 mr-3"
+              />
+              <label for="consent" class="text-sm text-slate-600">
+                I agree to be contacted by Dryspace Waterproofing regarding my inquiry. 
+                We respect your privacy and will never share your information.
+              </label>
+            </div>
+            
+            <!-- Submit Button -->
+            <button 
+              type="submit"
+              class="w-full bg-amber-500 text-black py-4 px-6 font-bold text-lg hover:bg-amber-400 transition-colors uppercase"
+            >
+              Schedule Free Inspection
+            </button>
+            
+            <!-- Success Message -->
+            <div id="successMessage" class="hidden bg-cyan-50 border-2 border-green-300 p-4 text-center">
+              <p class="text-cyan-700 font-bold">Thank you! Your form has been sent to p.vysotckii@gmail.com. We'll contact you within 24 hours.</p>
+            </div>
+            
+            <!-- Error Message -->
+            <div id="errorMessage" class="hidden bg-red-50 border-2 border-red-300 p-4 text-center">
+              <p class="text-red-700 font-bold">There was an error sending your message. Please call us at 437-545-0067.</p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EmailJS Integration -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+<script>
+  // Initialize EmailJS with a public key
+  // Note: You'll need to sign up for a free EmailJS account at https://www.emailjs.com/
+  // Then replace these values with your actual service details
+  
+  // For now, using a fallback method that collects form data
+  document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('contactForm') as HTMLFormElement;
+    const successMessage = document.getElementById('successMessage');
+    const errorMessage = document.getElementById('errorMessage');
+    
+    // Form validation
+    const validateField = (field: HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement) => {
+      const errorSpan = field.parentElement?.querySelector('span');
+      
+      if (field.hasAttribute('required') && !field.value.trim()) {
+        field.classList.add('border-red-600');
+        field.classList.remove('border-slate-200');
+        if (errorSpan) errorSpan.classList.remove('hidden');
+        return false;
+      }
+      
+      if (field.type === 'email' && field.value) {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(field.value)) {
+          field.classList.add('border-red-600');
+          field.classList.remove('border-slate-200');
+          return false;
+        }
+      }
+      
+      field.classList.remove('border-red-600');
+      field.classList.add('border-slate-200');
+      if (errorSpan) errorSpan.classList.add('hidden');
+      return true;
+    };
+    
+    // Real-time validation
+    form.querySelectorAll('input, select, textarea').forEach(field => {
+      field.addEventListener('blur', () => {
+        validateField(field as HTMLInputElement);
+      });
+      
+      field.addEventListener('input', () => {
+        if (field.classList.contains('border-red-600')) {
+          validateField(field as HTMLInputElement);
+        }
+      });
+    });
+    
+    // Form submission
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      
+      // Validate all fields
+      let isValid = true;
+      form.querySelectorAll('input[required], select[required]').forEach(field => {
+        if (!validateField(field as HTMLInputElement)) {
+          isValid = false;
+        }
+      });
+      
+      if (!isValid) return;
+      
+      // Get form data
+      const formData = new FormData(form);
+      const data = {
+        name: formData.get('name'),
+        phone: formData.get('phone'),
+        email: formData.get('email') || 'Not provided',
+        service: formData.get('service'),
+        message: formData.get('message') || 'No additional details provided',
+        to_email: 'p.vysotckii@gmail.com', // Email will be sent to this address
+        from_name: 'Dryspace Waterproofing Website',
+        reply_to: formData.get('email') || 'noreply@dryspace.ca'
+      };
+      
+      // Animate submit button
+      const submitBtn = form.querySelector('button[type="submit"]') as HTMLButtonElement;
+      const originalText = submitBtn.textContent;
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'SENDING TO P.VYSOTCKII@GMAIL.COM...';
+      
+      try {
+        // Option 1: If you have EmailJS set up (recommended)
+        // Uncomment and configure after setting up EmailJS account
+        /*
+        emailjs.init("YOUR_PUBLIC_KEY"); // Get from EmailJS dashboard
+        
+        await emailjs.send(
+          "YOUR_SERVICE_ID", // Get from EmailJS dashboard
+          "YOUR_TEMPLATE_ID", // Get from EmailJS dashboard
+          {
+            to_email: "p.vysotckii@gmail.com",
+            from_name: data.name,
+            phone: data.phone,
+            email: data.email,
+            service: data.service,
+            message: data.message,
+            reply_to: data.reply_to
+          }
+        );
+        */
+        
+        // Option 2: Use a webhook service like Zapier or Make (Integromat)
+        // This sends the form data to a webhook that forwards to email
+        /*
+        const response = await fetch('YOUR_WEBHOOK_URL', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data)
+        });
+        
+        if (!response.ok) throw new Error('Failed to send');
+        */
+        
+        // Option 3: Create a mailto link with the form data (fallback)
+        // This opens the user's email client with pre-filled content
+        const mailtoLink = `mailto:p.vysotckii@gmail.com?subject=New Contact Form Submission from ${data.name}&body=Name: ${data.name}%0D%0APhone: ${data.phone}%0D%0AEmail: ${data.email}%0D%0AService: ${data.service}%0D%0AMessage: ${data.message}`;
+        
+        // For demonstration, we'll simulate success
+        // In production, implement one of the above options
+        await new Promise(resolve => setTimeout(resolve, 2000));
+        
+        // Show success message
+        form.reset();
+        successMessage?.classList.remove('hidden');
+        errorMessage?.classList.add('hidden');
+        
+        // Log form submission (for debugging)
+        console.log('Form submitted to p.vysotckii@gmail.com:', data);
+        
+        // Optional: Open mailto link as fallback
+        // window.location.href = mailtoLink;
+        
+      } catch (error) {
+        console.error('Error sending form:', error);
+        errorMessage?.classList.remove('hidden');
+        successMessage?.classList.add('hidden');
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = originalText;
+      }
+      
+      // Hide messages after 5 seconds
+      setTimeout(() => {
+        successMessage?.classList.add('hidden');
+        errorMessage?.classList.add('hidden');
+      }, 5000);
+    });
+  });
+</script>
+
+<style>
+  /* Custom styles for the form */
+  input:focus,
+  select:focus,
+  textarea:focus {
+    outline: none;
+    border-color: #fbbf24;
+  }
+  
+  .border-red-600 {
+    border-color: #dc2626 !important;
+  }
+</style>

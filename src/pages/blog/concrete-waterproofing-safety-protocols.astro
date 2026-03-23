@@ -1,0 +1,754 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import HeroSection from '../../components/widgets/Hero.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+
+const meta = {
+  title: "Concrete & Waterproofing Safety Protocols | PPE, Excavation & Chemical Safety",
+  description: "Essential safety guide for concrete work and waterproofing excavation. Learn about concrete burns, PPE requirements, angle of repose, utility locates, and wet weather protocols.",
+  keywords: "concrete safety, waterproofing safety, concrete burns, excavation safety, angle of repose, PPE requirements, utility locates, chemical safety",
+  canonical: "https://dryspacegroup.com/blog/concrete-waterproofing-safety-protocols"
+};
+---
+
+<PageLayout {...meta}>
+  
+  <!-- Breadcrumbs -->
+  <div class="container mx-auto px-4 mt-4">
+    <Breadcrumbs 
+      items={[
+        { name: "Home", url: "/" },
+        { name: "Blog", url: "/blog" },
+        { name: "Concrete Waterproofing Safety Protocols" }
+      ]}
+    />
+  </div>
+
+<HeroSection
+    title="Concrete & Waterproofing Safety Protocols"
+    subtitle="Essential PPE and Excavation Safety Guidelines"
+    backgroundImage="/images/concrete-safety.webp"
+    ctaText="Get Safety Training"
+    ctaLink="/free-inspection"
+  />
+
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4 max-w-4xl">
+      <!-- Critical Warning -->
+      <div class="bg-red-50 border-2 border-red-600 rounded-lg p-6 mb-12">
+        <div class="flex items-start gap-4">
+          <div class="bg-red-600 text-white rounded-full p-3">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
+            </svg>
+          </div>
+          <div>
+            <h2 class="text-2xl font-bold text-red-900 mb-2">HEALTH & SAFETY WARNING</h2>
+            <p class="text-red-800 font-semibold">
+              Wet concrete can cause severe chemical burns within minutes. Excavation collapse can be fatal in seconds. Never work without proper PPE and safety protocols.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Introduction -->
+      <div class="prose prose-lg max-w-none mb-12">
+        <p class="text-xl text-slate-600 leading-relaxed mb-8">
+          Concrete work and waterproofing excavation present unique safety hazards that require strict protocols and proper protective equipment. This comprehensive guide covers critical safety procedures from chemical burn prevention to excavation collapse avoidance, ensuring worker safety on every project.
+        </p>
+      </div>
+
+      <!-- Part 1: Concrete Safety -->
+      <section class="mb-16">
+        <h2 class="text-3xl font-bold mb-8 text-slate-900 border-b-4 border-cyan-600 pb-4">
+          Part 1: Concrete Work Safety
+        </h2>
+
+        <!-- Concrete Chemical Hazards -->
+        <div class="bg-orange-50 border-2 border-orange-600 rounded-lg p-8 mb-8">
+          <h3 class="text-2xl font-bold mb-6 text-orange-900">Understanding Concrete Chemical Hazards</h3>
+          
+          <div class="grid md:grid-cols-2 gap-6 mb-6">
+            <div class="bg-white rounded-lg p-6">
+              <h4 class="font-bold mb-3">Why Concrete Burns Skin</h4>
+              <ul class="space-y-2 text-sm">
+                <li>• pH level of 12-13 (highly alkaline)</li>
+                <li>• Contains calcium hydroxide (caustic)</li>
+                <li>• Burns develop over hours</li>
+                <li>• Damage continues even after washing</li>
+                <li>• Can cause third-degree burns</li>
+                <li>• Permanent scarring possible</li>
+              </ul>
+            </div>
+            
+            <div class="bg-white rounded-lg p-6">
+              <h4 class="font-bold mb-3">Burn Progression</h4>
+              <div class="space-y-3 text-sm">
+                <div>
+                  <strong class="text-orange-600">0-2 hours:</strong>
+                  <p>No visible symptoms, damage occurring</p>
+                </div>
+                <div>
+                  <strong class="text-orange-700">2-12 hours:</strong>
+                  <p>Redness, itching, pain develops</p>
+                </div>
+                <div>
+                  <strong class="text-red-600">12-48 hours:</strong>
+                  <p>Blisters, severe burns, tissue damage</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="bg-red-100 rounded-lg p-4">
+            <p class="font-bold text-red-900">
+              ⚠️ CRITICAL: Concrete burns often don't hurt immediately. By the time you feel pain, severe damage has occurred.
+            </p>
+          </div>
+        </div>
+
+        <!-- PPE Requirements for Concrete -->
+        <div class="bg-cyan-50 rounded-lg p-8 mb-8">
+          <h3 class="text-2xl font-bold mb-6">Required PPE for Concrete Work</h3>
+          
+          <div class="grid md:grid-cols-3 gap-6">
+            <div class="bg-white rounded-lg p-6">
+              <h4 class="font-bold mb-3 text-cyan-700">Hand Protection</h4>
+              <div class="space-y-3">
+                <div class="border-l-4 border-cyan-600 pl-3">
+                  <strong>Two-Glove System:</strong>
+                  <ul class="text-sm mt-1 space-y-1">
+                    <li>• Inner: Nitrile/rubber gloves</li>
+                    <li>• Outer: Work gloves</li>
+                    <li>• Change when wet</li>
+                  </ul>
+                </div>
+                <p class="text-sm text-slate-500">
+                  Replace immediately if torn. Never work barehanded.
+                </p>
+              </div>
+            </div>
+            
+            <div class="bg-white rounded-lg p-6">
+              <h4 class="font-bold mb-3 text-cyan-700">Eye Protection</h4>
+              <div class="space-y-3">
+                <div class="border-l-4 border-cyan-600 pl-3">
+                  <strong>Safety Requirements:</strong>
+                  <ul class="text-sm mt-1 space-y-1">
+                    <li>• Safety glasses minimum</li>
+                    <li>• Face shield for pouring</li>
+                    <li>• Side protection required</li>
+                  </ul>
+                </div>
+                <p class="text-sm text-slate-500">
+                  Keep 2 pairs on site. Have eyewash station ready.
+                </p>
+              </div>
+            </div>
+            
+            <div class="bg-white rounded-lg p-6">
+              <h4 class="font-bold mb-3 text-cyan-700">Skin Protection</h4>
+              <div class="space-y-3">
+                <div class="border-l-4 border-cyan-600 pl-3">
+                  <strong>Full Coverage:</strong>
+                  <ul class="text-sm mt-1 space-y-1">
+                    <li>• Long sleeves/pants</li>
+                    <li>• Rubber boots</li>
+                    <li>• Tuck pants into boots</li>
+                  </ul>
+                </div>
+                <p class="text-sm text-slate-500">
+                  No exposed skin. Change contaminated clothing immediately.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Emergency Response for Concrete Burns -->
+        <div class="bg-red-50 border-2 border-red-500 rounded-lg p-8 mb-8">
+          <h3 class="text-xl font-bold mb-6 text-red-900">Emergency Response: Concrete Contact</h3>
+          
+          <div class="space-y-4">
+            <div class="flex items-start">
+              <span class="bg-red-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-4 flex-shrink-0">1</span>
+              <div>
+                <h4 class="font-semibold mb-1">IMMEDIATE ACTION</h4>
+                <p class="text-slate-600">Remove contaminated clothing and rinse affected area with cool water for 20 minutes minimum</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start">
+              <span class="bg-red-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-4 flex-shrink-0">2</span>
+              <div>
+                <h4 class="font-semibold mb-1">NEUTRALIZE pH</h4>
+                <p class="text-slate-600">Apply vinegar or citrus juice to neutralize alkalinity (keep on site)</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start">
+              <span class="bg-red-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-4 flex-shrink-0">3</span>
+              <div>
+                <h4 class="font-semibold mb-1">CONTINUE FLUSHING</h4>
+                <p class="text-slate-600">Rinse again with water for additional 20 minutes</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start">
+              <span class="bg-red-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-4 flex-shrink-0">4</span>
+              <div>
+                <h4 class="font-semibold mb-1">SEEK MEDICAL ATTENTION</h4>
+                <p class="text-slate-600">For any burns, blisters, or persistent pain - see doctor immediately</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Eyewash Station Requirements -->
+        <div class="bg-amber-50 border-2 border-yellow-600 rounded-lg p-8 mb-8">
+          <h3 class="text-xl font-bold mb-6">Eyewash Station Requirements</h3>
+          
+          <div class="grid md:grid-cols-2 gap-6">
+            <div>
+              <h4 class="font-bold mb-3">Mandatory Equipment</h4>
+              <ul class="space-y-2 text-sm">
+                <li class="flex items-start">
+                  <span class="text-cyan-600 mr-2">✓</span>
+                  <span>Portable eyewash station (minimum 15 minutes flow)</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-cyan-600 mr-2">✓</span>
+                  <span>Located within 10 seconds walk</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-cyan-600 mr-2">✓</span>
+                  <span>Clearly marked with signs</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-cyan-600 mr-2">✓</span>
+                  <span>Weekly inspection and testing</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-cyan-600 mr-2">✓</span>
+                  <span>Temperature controlled (60-100°F)</span>
+                </li>
+              </ul>
+            </div>
+            
+            <div>
+              <h4 class="font-bold mb-3">Eye Flush Procedure</h4>
+              <ol class="space-y-2 text-sm">
+                <li>1. Guide victim to eyewash immediately</li>
+                <li>2. Hold eyelids open with fingers</li>
+                <li>3. Flush for full 15 minutes minimum</li>
+                <li>4. Roll eyes to flush all areas</li>
+                <li>5. Remove contact lenses if present</li>
+                <li>6. Seek medical attention after flushing</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Part 2: Waterproofing Excavation Safety -->
+      <section class="mb-16">
+        <h2 class="text-3xl font-bold mb-8 text-slate-900 border-b-4 border-cyan-600 pb-4">
+          Part 2: Waterproofing Excavation Safety
+        </h2>
+
+        <!-- Angle of Repose -->
+        <div class="bg-cyan-50 rounded-lg p-8 mb-8">
+          <h3 class="text-2xl font-bold mb-6">Critical: Angle of Repose by Soil Type</h3>
+          
+          <div class="overflow-x-auto mb-6">
+            <table class="w-full bg-white rounded-lg overflow-hidden">
+              <thead class="bg-cyan-600 text-white">
+                <tr>
+                  <th class="px-4 py-3 text-left">Soil Type</th>
+                  <th class="px-4 py-3 text-left">Angle of Repose</th>
+                  <th class="px-4 py-3 text-left">Slope Ratio</th>
+                  <th class="px-4 py-3 text-left">For 8 ft Deep</th>
+                  <th class="px-4 py-3 text-left">Stability</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y">
+                <tr>
+                  <td class="px-4 py-3 font-semibold">Type A (Clay)</td>
+                  <td class="px-4 py-3">53°</td>
+                  <td class="px-4 py-3">3/4:1</td>
+                  <td class="px-4 py-3">6 ft back</td>
+                  <td class="px-4 py-3 text-cyan-600">Most stable</td>
+                </tr>
+                <tr class="bg-slate-50">
+                  <td class="px-4 py-3 font-semibold">Type B (Silt/Sandy Clay)</td>
+                  <td class="px-4 py-3">45°</td>
+                  <td class="px-4 py-3">1:1</td>
+                  <td class="px-4 py-3">8 ft back</td>
+                  <td class="px-4 py-3 text-amber-600">Moderate</td>
+                </tr>
+                <tr>
+                  <td class="px-4 py-3 font-semibold">Type C (Sand/Gravel)</td>
+                  <td class="px-4 py-3">34°</td>
+                  <td class="px-4 py-3">1.5:1</td>
+                  <td class="px-4 py-3">12 ft back</td>
+                  <td class="px-4 py-3 text-orange-600">Unstable</td>
+                </tr>
+                <tr class="bg-slate-50">
+                  <td class="px-4 py-3 font-semibold">Wet/Saturated</td>
+                  <td class="px-4 py-3">26°</td>
+                  <td class="px-4 py-3">2:1</td>
+                  <td class="px-4 py-3">16 ft back</td>
+                  <td class="px-4 py-3 text-red-600">Very unstable</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          
+          <div class="bg-amber-50 border-l-4 border-yellow-600 p-4">
+            <p class="font-semibold">
+              ⚠️ IMPORTANT: Always assume Type C (worst case) unless soil testing proves otherwise. Wet conditions automatically downgrade any soil type.
+            </p>
+          </div>
+        </div>
+
+        <!-- Excavation Safety Rules -->
+        <div class="bg-cyan-50 border-2 border-cyan-600 rounded-lg p-8 mb-8">
+          <h3 class="text-2xl font-bold mb-6 text-cyan-800">Excavation Safety Protocols</h3>
+          
+          <div class="grid md:grid-cols-2 gap-6">
+            <div>
+              <h4 class="font-bold mb-3">NEVER Excavate When:</h4>
+              <ul class="space-y-2">
+                <li class="flex items-start">
+                  <span class="text-red-600 text-xl mr-3">✗</span>
+                  <span>During active rainfall</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-red-600 text-xl mr-3">✗</span>
+                  <span>Rain forecast within 24 hours</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-red-600 text-xl mr-3">✗</span>
+                  <span>Soil is saturated/muddy</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-red-600 text-xl mr-3">✗</span>
+                  <span>Standing water present</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-red-600 text-xl mr-3">✗</span>
+                  <span>Freezing conditions</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-red-600 text-xl mr-3">✗</span>
+                  <span>Without utility locates</span>
+                </li>
+              </ul>
+            </div>
+            
+            <div>
+              <h4 class="font-bold mb-3">ALWAYS Do This:</h4>
+              <ul class="space-y-2">
+                <li class="flex items-start">
+                  <span class="text-cyan-600 text-xl mr-3">✓</span>
+                  <span>Inspect excavation every shift</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-cyan-600 text-xl mr-3">✓</span>
+                  <span>Check after any rainfall</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-cyan-600 text-xl mr-3">✓</span>
+                  <span>Keep spoil pile 2+ ft from edge</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-cyan-600 text-xl mr-3">✓</span>
+                  <span>Install ladder every 25 ft</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-cyan-600 text-xl mr-3">✓</span>
+                  <span>Use trench box if vertical</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-cyan-600 text-xl mr-3">✓</span>
+                  <span>Have rescue plan ready</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Shoring Requirements -->
+        <div class="bg-slate-50 rounded-lg p-8 mb-8">
+          <h3 class="text-xl font-bold mb-6">When Reshoring is Required</h3>
+          
+          <div class="grid md:grid-cols-3 gap-6">
+            <div class="bg-white rounded-lg p-4 border-2 border-orange-500">
+              <h4 class="font-bold mb-2 text-orange-700">Depth > 5 feet</h4>
+              <p class="text-sm text-slate-500">
+                Any excavation deeper than 5 feet requires engineered shoring or proper sloping
+              </p>
+            </div>
+            
+            <div class="bg-white rounded-lg p-4 border-2 border-orange-500">
+              <h4 class="font-bold mb-2 text-orange-700">Near Foundations</h4>
+              <p class="text-sm text-slate-500">
+                Within 3 feet of existing foundations requires shoring regardless of depth
+              </p>
+            </div>
+            
+            <div class="bg-white rounded-lg p-4 border-2 border-orange-500">
+              <h4 class="font-bold mb-2 text-orange-700">Unstable Soil</h4>
+              <p class="text-sm text-slate-500">
+                Type C soil or wet conditions require shoring at any depth over 3 feet
+              </p>
+            </div>
+          </div>
+          
+          <div class="mt-6 bg-white rounded-lg p-6">
+            <h4 class="font-bold mb-3">Shoring Options:</h4>
+            <ul class="space-y-2 text-sm">
+              <li>• Hydraulic shores - Quick installation, adjustable</li>
+              <li>• Trench boxes - Move with excavation progress</li>
+              <li>• Sheet piling - For deep or wet excavations</li>
+              <li>• Soldier piles - Permanent installations</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Call Before You Dig -->
+        <div class="bg-red-50 border-2 border-red-600 rounded-lg p-8 mb-8">
+          <h3 class="text-2xl font-bold mb-6 text-red-900">CRITICAL: Utility Location Requirements</h3>
+          
+          <div class="bg-white rounded-lg p-6 mb-6">
+            <h4 class="font-bold mb-4 text-xl">Call Before You Dig: 1-800-400-2255</h4>
+            
+            <div class="grid md:grid-cols-2 gap-6">
+              <div>
+                <h5 class="font-semibold mb-2">Required Timeline:</h5>
+                <ul class="space-y-2 text-sm">
+                  <li>• Call minimum 5 business days before</li>
+                  <li>• Valid for 30 days from marking</li>
+                  <li>• Re-locate if marks fade/removed</li>
+                  <li>• Document locate ticket number</li>
+                </ul>
+              </div>
+              
+              <div>
+                <h5 class="font-semibold mb-2">Utility Color Codes:</h5>
+                <ul class="space-y-1 text-sm">
+                  <li><span class="inline-block w-4 h-4 bg-red-600 mr-2"></span>Electric power lines</li>
+                  <li><span class="inline-block w-4 h-4 bg-amber-400 mr-2"></span>Gas, oil, petroleum</li>
+                  <li><span class="inline-block w-4 h-4 bg-orange-500 mr-2"></span>Communications, cable</li>
+                  <li><span class="inline-block w-4 h-4 bg-cyan-600 mr-2"></span>Water lines</li>
+                  <li><span class="inline-block w-4 h-4 bg-cyan-600 mr-2"></span>Sewer, storm drains</li>
+                  <li><span class="inline-block w-4 h-4 bg-purple-600 mr-2"></span>Reclaimed water</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          
+          <div class="bg-red-100 rounded-lg p-4">
+            <p class="font-bold text-red-900">
+              ⚠️ PENALTIES: Failure to call = fines up to $50,000 + full liability for damages
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Part 3: Chemical Safety -->
+      <section class="mb-16">
+        <h2 class="text-3xl font-bold mb-8 text-slate-900 border-b-4 border-purple-600 pb-4">
+          Part 3: Waterproofing Chemical Safety
+        </h2>
+
+        <div class="bg-purple-50 rounded-lg p-8 mb-8">
+          <h3 class="text-2xl font-bold mb-6">Hazardous Materials in Waterproofing</h3>
+          
+          <div class="grid md:grid-cols-2 gap-6">
+            <div class="bg-white rounded-lg p-6">
+              <h4 class="font-bold mb-3">Membrane/Coating Hazards</h4>
+              <ul class="space-y-2 text-sm">
+                <li class="flex items-start">
+                  <span class="text-purple-600 mr-2">•</span>
+                  <div>
+                    <strong>Solvent-based products:</strong>
+                    <p>Flammable, toxic vapors, skin irritant</p>
+                  </div>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-purple-600 mr-2">•</span>
+                  <div>
+                    <strong>Tar/Asphalt products:</strong>
+                    <p>Burn hazard (heated to 400°F), toxic fumes</p>
+                  </div>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-purple-600 mr-2">•</span>
+                  <div>
+                    <strong>Polyurethane coatings:</strong>
+                    <p>Isocyanate exposure, respiratory hazard</p>
+                  </div>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-purple-600 mr-2">•</span>
+                  <div>
+                    <strong>Epoxy systems:</strong>
+                    <p>Skin sensitizer, allergic reactions</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            
+            <div class="bg-white rounded-lg p-6">
+              <h4 class="font-bold mb-3">Required PPE</h4>
+              <ul class="space-y-2 text-sm">
+                <li class="flex items-start">
+                  <span class="text-cyan-600 mr-2">✓</span>
+                  <span>Chemical-resistant gloves (specific to product)</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-cyan-600 mr-2">✓</span>
+                  <span>Safety glasses with side shields</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-cyan-600 mr-2">✓</span>
+                  <span>Respirator (if vapors present)</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-cyan-600 mr-2">✓</span>
+                  <span>Chemical-resistant clothing</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-cyan-600 mr-2">✓</span>
+                  <span>Rubber boots (no leather)</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-cyan-600 mr-2">✓</span>
+                  <span>Face shield for spray application</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Safety Equipment Checklist -->
+      <section class="mb-16">
+        <h2 class="text-3xl font-bold mb-8 text-slate-900">Job Site Safety Equipment Checklist</h2>
+        
+        <div class="bg-slate-50 rounded-lg p-8">
+          <div class="grid md:grid-cols-2 gap-8">
+            <div>
+              <h3 class="font-bold mb-4 text-lg">Concrete Work</h3>
+              <ul class="space-y-2">
+                <li class="flex items-start">
+                  <input type="checkbox" class="mt-1 mr-3">
+                  <span>Eyewash station (15-minute capacity)</span>
+                </li>
+                <li class="flex items-start">
+                  <input type="checkbox" class="mt-1 mr-3">
+                  <span>Safety glasses (2 pairs minimum)</span>
+                </li>
+                <li class="flex items-start">
+                  <input type="checkbox" class="mt-1 mr-3">
+                  <span>Rubber gloves (multiple sizes)</span>
+                </li>
+                <li class="flex items-start">
+                  <input type="checkbox" class="mt-1 mr-3">
+                  <span>Work gloves (outer layer)</span>
+                </li>
+                <li class="flex items-start">
+                  <input type="checkbox" class="mt-1 mr-3">
+                  <span>Rubber boots</span>
+                </li>
+                <li class="flex items-start">
+                  <input type="checkbox" class="mt-1 mr-3">
+                  <span>Vinegar/citrus (pH neutralizer)</span>
+                </li>
+                <li class="flex items-start">
+                  <input type="checkbox" class="mt-1 mr-3">
+                  <span>First aid kit with burn gel</span>
+                </li>
+                <li class="flex items-start">
+                  <input type="checkbox" class="mt-1 mr-3">
+                  <span>Clean water source</span>
+                </li>
+              </ul>
+            </div>
+            
+            <div>
+              <h3 class="font-bold mb-4 text-lg">Excavation Work</h3>
+              <ul class="space-y-2">
+                <li class="flex items-start">
+                  <input type="checkbox" class="mt-1 mr-3">
+                  <span>Utility locate confirmation</span>
+                </li>
+                <li class="flex items-start">
+                  <input type="checkbox" class="mt-1 mr-3">
+                  <span>Trench box/shoring equipment</span>
+                </li>
+                <li class="flex items-start">
+                  <input type="checkbox" class="mt-1 mr-3">
+                  <span>Ladders (every 25 feet)</span>
+                </li>
+                <li class="flex items-start">
+                  <input type="checkbox" class="mt-1 mr-3">
+                  <span>Barricades and warning tape</span>
+                </li>
+                <li class="flex items-start">
+                  <input type="checkbox" class="mt-1 mr-3">
+                  <span>Emergency rescue equipment</span>
+                </li>
+                <li class="flex items-start">
+                  <input type="checkbox" class="mt-1 mr-3">
+                  <span>Atmospheric monitor (confined space)</span>
+                </li>
+                <li class="flex items-start">
+                  <input type="checkbox" class="mt-1 mr-3">
+                  <span>Water pump (dewatering)</span>
+                </li>
+                <li class="flex items-start">
+                  <input type="checkbox" class="mt-1 mr-3">
+                  <span>Slope measuring tool</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Daily Safety Briefing -->
+      <section class="mb-16">
+        <h2 class="text-3xl font-bold mb-8 text-slate-900">Daily Safety Briefing Requirements</h2>
+        
+        <div class="bg-cyan-50 border-2 border-cyan-600 rounded-lg p-8">
+          <h3 class="text-xl font-bold mb-6">Mandatory Daily Topics</h3>
+          
+          <div class="grid md:grid-cols-2 gap-6">
+            <div>
+              <h4 class="font-bold mb-3">Morning Briefing</h4>
+              <ul class="space-y-2 text-sm">
+                <li>✓ Weather conditions and forecast</li>
+                <li>✓ Specific hazards for today's work</li>
+                <li>✓ PPE requirements reminder</li>
+                <li>✓ Emergency procedures review</li>
+                <li>✓ Location of safety equipment</li>
+                <li>✓ Any injuries or near-misses</li>
+              </ul>
+            </div>
+            
+            <div>
+              <h4 class="font-bold mb-3">Documentation</h4>
+              <ul class="space-y-2 text-sm">
+                <li>✓ Date, time, and weather</li>
+                <li>✓ Topics covered</li>
+                <li>✓ Attendee signatures</li>
+                <li>✓ Hazards identified</li>
+                <li>✓ PPE inspection results</li>
+                <li>✓ Action items assigned</li>
+              </ul>
+            </div>
+          </div>
+          
+          <div class="mt-6 p-4 bg-white rounded-lg">
+            <p class="font-semibold">
+              Remember: Every worker has the right and responsibility to stop unsafe work immediately.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Emergency Procedures -->
+      <section class="mb-16">
+        <h2 class="text-3xl font-bold mb-8 text-slate-900">Emergency Response Procedures</h2>
+        
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="bg-red-50 border-2 border-red-500 rounded-lg p-6">
+            <h3 class="text-xl font-bold mb-4 text-red-900">Cave-In Emergency</h3>
+            <ol class="space-y-2 text-sm">
+              <li>1. DO NOT enter excavation</li>
+              <li>2. Call 911 immediately</li>
+              <li>3. Remove other workers from area</li>
+              <li>4. Prevent further collapse</li>
+              <li>5. Do not attempt rescue without proper equipment</li>
+              <li>6. Keep victim talking if conscious</li>
+              <li>7. Document everything</li>
+            </ol>
+          </div>
+          
+          <div class="bg-orange-50 border-2 border-orange-500 rounded-lg p-6">
+            <h3 class="text-xl font-bold mb-4 text-orange-900">Chemical Exposure</h3>
+            <ol class="space-y-2 text-sm">
+              <li>1. Remove from exposure immediately</li>
+              <li>2. Flush affected area with water</li>
+              <li>3. Remove contaminated clothing</li>
+              <li>4. Check SDS for specific treatment</li>
+              <li>5. Call Poison Control: 1-800-222-1222</li>
+              <li>6. Transport to medical facility</li>
+              <li>7. Bring SDS sheet with victim</li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      <!-- Training Requirements -->
+      <section class="mb-16">
+        <h2 class="text-3xl font-bold mb-8 text-slate-900">Training & Certification Requirements</h2>
+        
+        <div class="bg-slate-50 rounded-lg p-8">
+          <div class="grid md:grid-cols-3 gap-6">
+            <div class="bg-white rounded-lg p-4">
+              <h4 class="font-bold mb-3">All Workers</h4>
+              <ul class="text-sm space-y-1">
+                <li>• WHMIS 2015</li>
+                <li>• Working at Heights</li>
+                <li>• First Aid/CPR</li>
+                <li>• PPE usage</li>
+              </ul>
+            </div>
+            
+            <div class="bg-white rounded-lg p-4">
+              <h4 class="font-bold mb-3">Excavation Workers</h4>
+              <ul class="text-sm space-y-1">
+                <li>• Trenching & Shoring</li>
+                <li>• Soil Classification</li>
+                <li>• Confined Space Entry</li>
+                <li>• Locate Training</li>
+              </ul>
+            </div>
+            
+            <div class="bg-white rounded-lg p-4">
+              <h4 class="font-bold mb-3">Supervisors</h4>
+              <ul class="text-sm space-y-1">
+                <li>• Competent Person</li>
+                <li>• JHSC Certification</li>
+                <li>• Incident Investigation</li>
+                <li>• MOL Regulations</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA Section -->
+      <section class="py-12 bg-gradient-to-r from-blue-600 to-blue-800 rounded-lg text-white">
+        <div class="text-center px-8">
+          <h2 class="text-3xl font-bold mb-4">Committed to Zero Incidents</h2>
+          <p class="text-xl mb-8 opacity-95">
+            Our teams follow strict safety protocols with daily briefings and continuous monitoring
+          </p>
+          
+          <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <a href="/free-inspection" class="bg-white text-cyan-600 px-8 py-4 rounded-lg font-bold hover:bg-slate-50 transition-colors">
+              Schedule Safe Work Assessment
+            </a>
+            <a href="tel:437-545-0067" class="bg-red-600 text-white px-8 py-4 rounded-lg font-bold hover:bg-red-700 transition-colors">
+              24/7 Emergency: 437-545-0067
+            </a>
+          </div>
+        </div>
+      </section>
+    </div>
+  </section>
+</PageLayout>

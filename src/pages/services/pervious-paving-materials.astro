@@ -1,0 +1,425 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import Hero from '../../components/sections/Hero.astro';
+import Features from '../../components/sections/Features.astro';
+import Process from '../../components/sections/Process.astro';
+import FAQ from '../../components/sections/FAQ.astro';
+import Testimonials from '../../components/sections/Testimonials.astro';
+import CTA from '../../components/sections/CTA.astro';
+import Stats from '../../components/sections/Stats.astro';
+import ServiceSchema from '../../components/ServiceSchema.astro';
+import InternalLinks from '../../components/InternalLinks.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+
+const pageTitle = "Pervious Paving Materials Toronto | Permeable Surfaces & Green Solutions";
+const pageDescription = "Professional pervious paving installation in Toronto. PICP, porous concrete, grass pavers, resin-bound surfaces. LEED certified, sustainable drainage solutions for foundations.";
+
+// Comprehensive service features
+const serviceFeatures = [
+  {
+    icon: '🌱',
+    title: 'Permeable Interlocking Concrete Pavers (PICP)',
+    description: 'Industry-leading PICP systems with 95%+ permeability rates. Reduce surface runoff by 80-90% while protecting foundations from water infiltration.',
+    highlight: true
+  },
+  {
+    icon: '💧',
+    title: 'Porous Asphalt & Concrete Systems',
+    description: 'High-performance porous surfaces with 15-25% void space. Infiltration rates 120-600 inches/hour. Ideal for driveways and walkways.',
+    highlight: true
+  },
+  {
+    icon: '🏠',
+    title: 'Grass Pavers & Turf Stone',
+    description: 'Load-bearing grass paver systems. 70-95% grass coverage with structural integrity. Perfect for fire lanes and overflow parking.',
+    highlight: true
+  },
+  {
+    icon: '⚡',
+    title: 'Resin-Bound Permeable Surfaces',
+    description: 'Decorative resin-bound aggregates with excellent permeability. 20+ color options, slip-resistant, low maintenance.'
+  },
+  {
+    icon: '🎯',
+    title: 'Toronto Green Standard Compliance',
+    description: 'All installations meet TGS Tier 1-4 requirements. LEED points eligible. Municipal stormwater management compliance.'
+  },
+  {
+    icon: '🛡️',
+    title: '25-Year Performance Warranty',
+    description: 'Transferable warranty covers permeability performance, structural integrity, and foundation protection.'
+  }
+];
+
+// Detailed installation process
+const processSteps = [
+  {
+    number: '01',
+    title: 'Site Assessment & Soil Analysis',
+    description: 'Comprehensive geotechnical evaluation including percolation testing, soil composition analysis, and drainage capacity assessment.',
+    icon: '🔍',
+    duration: '1-2 days'
+  },
+  {
+    number: '02',
+    title: 'Custom Design & Engineering',
+    description: 'Site-specific design considering load requirements, infiltration rates, underdrain systems, and municipal regulations.',
+    icon: '📐',
+    duration: '3-5 days'
+  },
+  {
+    number: '03',
+    title: 'Excavation & Base Preparation',
+    description: 'Precise excavation to design depths. Installation of granular base layers, geotextile separation, and underdrain systems.',
+    icon: '🚜',
+    duration: '2-4 days'
+  },
+  {
+    number: '04',
+    title: 'Material Installation & Testing',
+    description: 'Professional installation of chosen pervious system. Infiltration rate testing and quality assurance verification.',
+    icon: '🔧',
+    duration: '1-3 days'
+  }
+];
+
+// Service-specific FAQs with cost, timeline, benefits, process information
+const serviceFAQs = [
+  {
+    question: "How much does pervious paving cost in Toronto?",
+    answer: "Pervious paving costs vary by material and complexity: PICP systems: $12-20/sq ft including base preparation and installation, Porous concrete: $8-15/sq ft for complete installation, Porous asphalt: $6-12/sq ft installed, Grass pavers: $5-10/sq ft with soil and seeding, Resin-bound surfaces: $17-25/sq ft for premium finishes. Complete residential driveway projects typically range $8,650-$38,000. Commercial projects vary $16,000-$81,000+ depending on size and load requirements. Initial cost is 25-40% higher than conventional paving but provides long-term value through reduced drainage infrastructure and environmental benefits."
+  },
+  {
+    question: "How long does pervious paving installation take?",
+    answer: "Installation timelines depend on project scope: Site assessment and soil testing: 1-2 days including percolation tests and engineering evaluation, Design and permitting: 1-2 weeks for drawings, specifications, and municipal approvals, Excavation and base preparation: 2-4 days depending on area size and depth requirements, Material installation: 2-5 days for complete system installation and testing, Curing and final inspection: 3-7 days before full use. Total project timeline is typically 2-4 weeks from start to completion. Weather conditions may extend timelines, with best installation windows being late spring through early fall (May-October)."
+  },
+  {
+    question: "What are the benefits of pervious paving for Toronto properties?",
+    answer: "Pervious paving provides numerous advantages: Foundation protection: 80-90% reduction in surface runoff eliminates water pooling against foundations, Environmental compliance: Meets Toronto Green Standard requirements and qualifies for development charge reductions, LEED points: Contributes to multiple sustainability credits for certified buildings, Winter performance: Superior drainage prevents ice formation and reduces freeze-thaw damage, Property value: 5-12% increase from sustainable infrastructure and reduced maintenance needs, Regulatory benefits: Municipal stormwater fee reductions and fast-track permitting for green infrastructure, Aesthetic options: Wide variety of colors, textures, and patterns available, especially with PICP and resin-bound systems."
+  },
+  {
+    question: "When should I consider pervious paving for my property?",
+    answer: "Pervious paving is beneficial in several scenarios: Drainage issues: Properties with standing water, foundation moisture problems, or inadequate stormwater management, New construction: Integrate pervious paving during initial development to meet TGS requirements and maximize benefits, Driveway/patio replacement: When existing surfaces need renewal, upgrade to pervious materials for long-term benefits, Environmental goals: Properties pursuing LEED certification, sustainability objectives, or municipal green building incentives, Large impervious areas: Properties with significant roof or paved areas requiring stormwater management solutions. Spring planning allows for summer installation and fall system establishment before winter."
+  }
+];
+
+// Service offers with 3 pricing tiers
+const serviceOffers = [
+  {
+    name: "Residential PICP Driveway",
+    price: "$8,650-$19,000",
+    description: "Complete permeable interlocking concrete paver driveway (400-800 sq ft) with engineered base, installation, and 25-year warranty. Ideal for most Toronto residential applications."
+  },
+  {
+    name: "Premium Multi-Surface System",
+    price: "$22,000-$43,000",
+    description: "Comprehensive pervious paving including driveway, walkways, and patio areas with multiple material types, decorative options, and integrated drainage features. Includes design service and TGS compliance documentation."
+  },
+  {
+    name: "Commercial Pervious System",
+    price: "$38,000-$108,000",
+    description: "Large-scale pervious paving for commercial properties including parking areas, fire lanes, and pedestrian zones. Heavy-duty engineering with load calculations, municipal coordination, and maintenance program."
+  }
+];
+
+// Technical specifications section
+const technicalSpecs = [
+  {
+    title: "PICP Technical Specifications",
+    specs: [
+      "Paver thickness: 60-100mm for residential, 80-120mm commercial",
+      "Joint width: 2-8mm with permeable aggregate fill",
+      "Base course: 150-300mm clean crushed aggregate (19-37mm)",
+      "Subbase: 300-600mm open-graded aggregate (37-75mm)",
+      "Permeability: 1000+ inches/hour through joint systems",
+      "Compressive strength: 50-80 MPa average",
+      "Freeze-thaw resistance: 300+ cycles per ASTM C67"
+    ]
+  },
+  {
+    title: "Porous Concrete Specifications",
+    specs: [
+      "Thickness: 100-200mm depending on load requirements",
+      "Void content: 15-25% for optimal drainage/strength balance",
+      "Infiltration rate: 120-600 inches/hour",
+      "Compressive strength: 2.8-28 MPa (400-4000 psi)",
+      "Aggregate size: 9.5-19mm uniform grading",
+      "Water-cement ratio: 0.27-0.34 typical",
+      "Base course: 150-450mm open-graded aggregate"
+    ]
+  }
+];
+
+---
+
+<PageLayout 
+  title={pageTitle}
+  description={pageDescription}
+>
+  
+  <!-- Breadcrumbs -->
+  <div class="container mx-auto px-4 mt-4">
+    <Breadcrumbs 
+      items={[
+        { name: "Home", url: "/" },
+        { name: "Services", url: "/services" },
+        { name: "Pervious Paving Materials" }
+      ]}
+    />
+  </div>
+
+<ServiceSchema 
+    serviceName="Pervious Paving Materials Installation"
+    description="Professional installation of permeable paving systems including PICP, porous concrete, grass pavers, and resin-bound surfaces for sustainable drainage and foundation protection in Toronto."
+    priceRange="$8,650-$108,000"
+    offers={serviceOffers}
+    faqs={serviceFAQs}
+  />
+  <!-- Hero Section -->
+  <Hero 
+    title="Pervious Paving Materials"
+    subtitle="Sustainable permeable surfaces that protect your foundation while managing stormwater. LEED certified, Toronto Green Standard compliant."
+    primaryCTA={{ text: "Get Free Assessment", href: "/free-inspection" }}
+    secondaryCTA={{ text: "Call: 437-545-0067", href: "tel:437-545-0067" }}
+    backgroundImage="/images/waterproofing diagram with basement sump pump weeping tile and exterior drainage.webp"
+    badge="Green Infrastructure Solutions"
+  />
+
+  <!-- Stats -->
+  <Stats />
+
+  <!-- Comprehensive Content Section -->
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Introduction -->
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold text-slate-900 mb-6">
+          Revolutionary Pervious Paving Solutions for Toronto Properties
+        </h2>
+        <p class="text-xl text-slate-500 max-w-4xl mx-auto mb-8">
+          Transform your property with innovative permeable paving materials that eliminate surface water runoff, protect foundations from water damage, and contribute to sustainable urban development. Our pervious paving systems reduce stormwater runoff by 80-90% while meeting all Toronto building codes and environmental standards.
+        </p>
+      </div>
+
+      <!-- Material Types Grid -->
+      <div class="grid lg:grid-cols-2 gap-12 mb-16">
+        <div class="space-y-8">
+          <h3 class="text-3xl font-bold text-slate-900">Permeable Interlocking Concrete Pavers (PICP)</h3>
+          <p class="text-lg text-slate-600">
+            The gold standard for residential pervious paving, PICP systems offer unmatched performance with infiltration rates exceeding 1000 inches per hour. These precisely engineered pavers feature narrow joints filled with permeable aggregate, creating a surface that handles both traffic loads and extreme weather while protecting your foundation from water infiltration.
+          </p>
+          <div class="bg-cyan-50 p-6 rounded-lg">
+            <h4 class="font-semibold text-cyan-900 mb-3">Key Benefits:</h4>
+            <ul class="space-y-2 text-cyan-800">
+              <li>• 95%+ permeability through joint systems</li>
+              <li>• 50-80 MPa compressive strength</li>
+              <li>• Modular design allows easy repairs</li>
+              <li>• 25+ color and pattern options</li>
+              <li>• Excellent freeze-thaw resistance</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="space-y-8">
+          <h3 class="text-3xl font-bold text-slate-900">Porous Concrete & Asphalt Systems</h3>
+          <p class="text-lg text-slate-600">
+            Seamless pervious surfaces ideal for larger areas requiring consistent infiltration rates. Our porous concrete systems feature 15-25% void space engineered for optimal balance between strength and permeability. These systems are perfect for driveways, walkways, and parking areas where aesthetic consistency is important.
+          </p>
+          <div class="bg-cyan-50 p-6 rounded-lg">
+            <h4 class="font-semibold text-cyan-800 mb-3">Performance Specifications:</h4>
+            <ul class="space-y-2 text-cyan-700">
+              <li>• 120-600 inches/hour infiltration rates</li>
+              <li>• 2.8-28 MPa compressive strength range</li>
+              <li>• Continuous surface with no joints</li>
+              <li>• Cost-effective for large areas</li>
+              <li>• Customizable with colored aggregates</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Advanced Systems -->
+      <div class="grid lg:grid-cols-2 gap-12 mb-16">
+        <div class="space-y-8">
+          <h3 class="text-3xl font-bold text-slate-900">Grass Pavers & Turf Stone Systems</h3>
+          <p class="text-lg text-slate-600">
+            Combine the load-bearing capacity of engineered pavements with the environmental benefits of living vegetation. Our grass paver systems achieve 70-95% grass coverage while supporting vehicle loads up to 75,000 lbs for emergency access. Perfect for fire lanes, overflow parking, and areas requiring both function and aesthetics.
+          </p>
+          <div class="bg-cyan-50 p-6 rounded-lg">
+            <h4 class="font-semibold text-cyan-800 mb-3">Applications & Benefits:</h4>
+            <ul class="space-y-2 text-cyan-700">
+              <li>• Fire department access lanes</li>
+              <li>• Overflow and emergency parking</li>
+              <li>• Erosion control on slopes</li>
+              <li>• Recreational pathways</li>
+              <li>• Stormwater treatment areas</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="space-y-8">
+          <h3 class="text-3xl font-bold text-slate-900">Resin-Bound Permeable Surfaces</h3>
+          <p class="text-lg text-slate-600">
+            Premium decorative pervious surfaces combining natural aggregates with UV-stable resin binders. These systems offer exceptional permeability while providing slip-resistant surfaces in over 20 color combinations. Ideal for high-visibility areas where aesthetics and performance are equally important.
+          </p>
+          <div class="bg-purple-50 p-6 rounded-lg">
+            <h4 class="font-semibold text-purple-900 mb-3">Premium Features:</h4>
+            <ul class="space-y-2 text-purple-800">
+              <li>• 20+ natural aggregate color options</li>
+              <li>• Slip-resistant textured surface</li>
+              <li>• UV and weather resistant</li>
+              <li>• Low maintenance requirements</li>
+              <li>• Suitable for pedestrian and light vehicle traffic</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Toronto Regulations & Compliance -->
+      <div class="bg-slate-50 p-8 rounded-lg mb-16">
+        <h3 class="text-3xl font-bold text-slate-900 mb-6">Toronto Green Standard & LEED Compliance</h3>
+        <div class="grid md:grid-cols-2 gap-8">
+          <div>
+            <h4 class="text-xl font-semibold text-slate-900 mb-4">Municipal Requirements</h4>
+            <ul class="space-y-3 text-slate-600">
+              <li class="flex items-start">
+                <span class="flex-shrink-0 w-2 h-2 bg-cyan-500 rounded-full mt-2 mr-3"></span>
+                <span>Minimum 15mm/hour infiltration rate (our systems exceed 50x this requirement)</span>
+              </li>
+              <li class="flex items-start">
+                <span class="flex-shrink-0 w-2 h-2 bg-cyan-500 rounded-full mt-2 mr-3"></span>
+                <span>Toronto Green Standard Tier 1-4 performance targets</span>
+              </li>
+              <li class="flex items-start">
+                <span class="flex-shrink-0 w-2 h-2 bg-cyan-500 rounded-full mt-2 mr-3"></span>
+                <span>Stormwater management facility credits</span>
+              </li>
+              <li class="flex items-start">
+                <span class="flex-shrink-0 w-2 h-2 bg-cyan-500 rounded-full mt-2 mr-3"></span>
+                <span>Development charge reduction eligibility</span>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="text-xl font-semibold text-slate-900 mb-4">LEED Points Available</h4>
+            <ul class="space-y-3 text-slate-600">
+              <li class="flex items-start">
+                <span class="flex-shrink-0 w-2 h-2 bg-cyan-500 rounded-full mt-2 mr-3"></span>
+                <span>Sustainable Sites: Site Development (up to 2 points)</span>
+              </li>
+              <li class="flex items-start">
+                <span class="flex-shrink-0 w-2 h-2 bg-cyan-500 rounded-full mt-2 mr-3"></span>
+                <span>Water Efficiency: Stormwater Design (up to 3 points)</span>
+              </li>
+              <li class="flex items-start">
+                <span class="flex-shrink-0 w-2 h-2 bg-cyan-500 rounded-full mt-2 mr-3"></span>
+                <span>Materials & Resources: Recycled Content (up to 2 points)</span>
+              </li>
+              <li class="flex items-start">
+                <span class="flex-shrink-0 w-2 h-2 bg-cyan-500 rounded-full mt-2 mr-3"></span>
+                <span>Innovation in Design: Innovative Technologies (up to 1 point)</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cost Analysis -->
+      <div class="mb-16">
+        <h3 class="text-3xl font-bold text-slate-900 mb-8 text-center">Investment & Value Comparison</h3>
+        <div class="overflow-x-auto">
+          <table class="w-full border-collapse border border-slate-200">
+            <thead>
+              <tr class="bg-slate-50">
+                <th class="border border-slate-200 px-4 py-3 text-left font-semibold">Paving Type</th>
+                <th class="border border-slate-200 px-4 py-3 text-center font-semibold">Cost Range ($/sq ft)</th>
+                <th class="border border-slate-200 px-4 py-3 text-center font-semibold">Infiltration Rate</th>
+                <th class="border border-slate-200 px-4 py-3 text-center font-semibold">Load Capacity</th>
+                <th class="border border-slate-200 px-4 py-3 text-center font-semibold">Lifespan</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="border border-slate-200 px-4 py-3 font-medium">PICP Systems</td>
+                <td class="border border-slate-200 px-4 py-3 text-center">$8-15</td>
+                <td class="border border-slate-200 px-4 py-3 text-center">1000+ in/hr</td>
+                <td class="border border-slate-200 px-4 py-3 text-center">Heavy Duty</td>
+                <td class="border border-slate-200 px-4 py-3 text-center">25+ years</td>
+              </tr>
+              <tr class="bg-slate-50">
+                <td class="border border-slate-200 px-4 py-3 font-medium">Porous Concrete</td>
+                <td class="border border-slate-200 px-4 py-3 text-center">$6-12</td>
+                <td class="border border-slate-200 px-4 py-3 text-center">120-600 in/hr</td>
+                <td class="border border-slate-200 px-4 py-3 text-center">Medium-Heavy</td>
+                <td class="border border-slate-200 px-4 py-3 text-center">20+ years</td>
+              </tr>
+              <tr>
+                <td class="border border-slate-200 px-4 py-3 font-medium">Porous Asphalt</td>
+                <td class="border border-slate-200 px-4 py-3 text-center">$5-9</td>
+                <td class="border border-slate-200 px-4 py-3 text-center">120-600 in/hr</td>
+                <td class="border border-slate-200 px-4 py-3 text-center">Heavy Duty</td>
+                <td class="border border-slate-200 px-4 py-3 text-center">15-20 years</td>
+              </tr>
+              <tr class="bg-slate-50">
+                <td class="border border-slate-200 px-4 py-3 font-medium">Grass Pavers</td>
+                <td class="border border-slate-200 px-4 py-3 text-center">$4-8</td>
+                <td class="border border-slate-200 px-4 py-3 text-center">Variable</td>
+                <td class="border border-slate-200 px-4 py-3 text-center">Emergency Loads</td>
+                <td class="border border-slate-200 px-4 py-3 text-center">20+ years</td>
+              </tr>
+              <tr>
+                <td class="border border-slate-200 px-4 py-3 font-medium">Resin-Bound</td>
+                <td class="border border-slate-200 px-4 py-3 text-center">$10-18</td>
+                <td class="border border-slate-200 px-4 py-3 text-center">High</td>
+                <td class="border border-slate-200 px-4 py-3 text-center">Light-Medium</td>
+                <td class="border border-slate-200 px-4 py-3 text-center">15-20 years</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <Features 
+    title="Why Choose Our Pervious Paving Solutions"
+    subtitle="Advanced materials and installation techniques for superior performance"
+    features={serviceFeatures}
+    columns={3}
+  />
+
+  <!-- Process -->
+  <Process 
+    title="Our Professional Installation Process"
+    subtitle="Engineered approach ensuring optimal performance and longevity"
+    steps={processSteps}
+  />
+
+  <!-- Testimonials -->
+  <Testimonials />
+
+  <!-- FAQ -->
+  <FAQ 
+    title="Pervious Paving Frequently Asked Questions"
+    subtitle="Expert answers about permeable surfaces and foundation protection"
+    faqs={serviceFAQs}
+    columns={1}
+  />
+
+  <!-- Internal Links -->
+  <InternalLinks 
+    category="drainage"
+    currentPage="pervious-paving-materials"
+    limit={6}
+  />
+
+  <!-- CTA -->
+  <CTA 
+    title="Ready to Upgrade to Sustainable Paving?"
+    subtitle="Schedule your free site assessment and receive a detailed proposal with cost estimates and performance projections."
+    primaryCTA={{ text: "Schedule Free Assessment", href: "/free-inspection" }}
+    secondaryCTA={{ text: "Call: 437-545-0067", href: "tel:437-545-0067" }}
+    background="gradient"
+  />
+</PageLayout>

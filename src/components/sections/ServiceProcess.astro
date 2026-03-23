@@ -1,0 +1,49 @@
+---
+export interface Props {
+  steps?: Array<{
+    number: number;
+    title: string;
+    description: string;
+  }>;
+  title?: string;
+  label?: string;
+}
+
+const {
+  title = "Our Process",
+  label = "How It Works",
+  steps = [
+    { number: 1, title: "Free Inspection", description: "Our certified experts assess your property and identify all moisture issues." },
+    { number: 2, title: "Detailed Quote", description: "Receive a transparent, itemized quote with all options and rebate eligibility." },
+    { number: 3, title: "Expert Installation", description: "Our licensed crew completes the work on schedule with minimal disruption." },
+    { number: 4, title: "25-Year Warranty", description: "Your home is protected with our industry-leading transferable warranty." },
+  ],
+} = Astro.props;
+---
+
+<section class="section-padding bg-white">
+  <div class="container mx-auto px-4">
+    <div class="text-center max-w-3xl mx-auto mb-12 lg:mb-16">
+      <p class="section-label-pill mb-4">{label}</p>
+      <h2 class="text-headline text-slate-900">{title}</h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-5xl mx-auto">
+      {steps.map((step, i) => (
+        <div class="reveal reveal-delay-{i + 1} relative text-center">
+          {/* Connector line */}
+          {i < steps.length - 1 && (
+            <div class="hidden lg:block absolute top-8 left-[calc(50%+2rem)] w-[calc(100%-4rem)] h-px bg-gradient-to-r from-cyan-200 to-cyan-100"></div>
+          )}
+
+          {/* Step number */}
+          <div class="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-cyan-50 text-cyan-600 text-2xl font-bold mb-4 relative z-10">
+            {step.number}
+          </div>
+          <h3 class="text-lg font-semibold text-slate-900 mb-2">{step.title}</h3>
+          <p class="text-sm text-slate-600 leading-relaxed">{step.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

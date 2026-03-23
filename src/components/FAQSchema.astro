@@ -1,0 +1,89 @@
+---
+interface Props {
+  faqs: Array<{
+    question: string;
+    answer: string;
+  }>;
+}
+
+const { faqs } = Astro.props;
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(faq => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer
+    }
+  }))
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(faqSchema)}></script>
+
+<div class="faq-visual">
+  <h2>Frequently Asked Questions</h2>
+  <div class="faq-list">
+    {faqs.map((faq, index) => (
+      <details class="faq-item">
+        <summary>{faq.question}</summary>
+        <div class="faq-answer">
+          <p>{faq.answer}</p>
+        </div>
+      </details>
+    ))}
+  </div>
+</div>
+
+<style>
+  .faq-visual {
+    padding: 40px 0;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .faq-visual h2 {
+    margin-bottom: 30px;
+    text-align: center;
+    color: #333;
+  }
+  
+  .faq-item {
+    margin-bottom: 15px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    overflow: hidden;
+  }
+  
+  .faq-item summary {
+    padding: 20px;
+    cursor: pointer;
+    font-weight: 600;
+    color: #333;
+    background: #f8f9fa;
+    transition: background 0.3s;
+  }
+  
+  .faq-item summary:hover {
+    background: #e9ecef;
+  }
+  
+  .faq-item[open] summary {
+    background: #0077BE;
+    color: white;
+  }
+  
+  .faq-answer {
+    padding: 20px;
+    color: #666;
+    line-height: 1.6;
+  }
+  
+  .faq-answer p {
+    margin: 0;
+  }
+</style>

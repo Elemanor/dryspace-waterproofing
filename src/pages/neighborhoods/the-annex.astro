@@ -1,0 +1,312 @@
+---
+import Testimonials from '../../components/sections/Testimonials.astro';
+import Process from '../../components/sections/Process.astro';
+import Services from '../../components/sections/Services.astro';
+import Stats from '../../components/sections/Stats.astro';
+import PageLayout from '../../layouts/PageLayout.astro';
+import TrustBadges from '../../components/TrustBadges.astro';
+import StickyBooking from '../../components/StickyBooking.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import BreadcrumbSchema from '../../components/BreadcrumbSchema.astro';
+
+const neighborhoodData = {
+  name: 'The Annex',
+  avgHomeAge: '100+ years',
+  commonFoundation: 'Stone & Rubble',
+  floodRisk: 'Medium-High',
+  avgProjectCost: '$8,000-$15,000',
+  responseTime: '15-20 minutes'
+};
+---
+
+<PageLayout 
+  title="Lower Level Water Protection in The Annex Toronto | Victorian Homes Expert" 
+  description="Specialized water protection for this area's historic Victorian homes. Expert in stone foundations, heritage preservation. 15-minute response. Call (437) 545-0067."
+>
+  
+  <!-- Breadcrumbs -->
+  <div class="container mx-auto px-4 mt-4">
+    <Breadcrumbs 
+      items={[
+        { name: "Home", url: "/" },
+        { name: "Toronto", url: "/locations/toronto" },
+        { name: "Neighborhoods", url: "/locations/toronto#neighborhoods" },
+        { name: "The Annex" }
+      ]}
+    />
+  </div>
+
+<section class="py-16 bg-navy-900">
+    <div class="container mx-auto px-4">
+      <div class="container mx-auto px-4 text-center">
+        <h1 class="text-5xl font-bold text-white mb-6 uppercase">LOWER LEVEL WATER PROTECTION LOCALLY</h1>
+        <p class="text-xl text-slate-300 mb-8">Protecting Toronto's Historic Victorian Homes Since 1999</p>
+        
+        <div class="grid grid-cols-3 gap-4 mb-8">
+          <div class="bg-white border-2 border-slate-200 p-4">
+            <span class="text-2xl font-bold text-slate-900">247</span>
+            <span class="text-sm text-slate-600 uppercase">Homes Protected in This Area</span>
+          </div>
+          <div class="bg-white border-2 border-slate-200 p-4">
+            <span class="text-2xl font-bold text-slate-900">15 min</span>
+            <span class="text-sm text-slate-600 uppercase">Average Response Time</span>
+          </div>
+          <div class="bg-white border-2 border-slate-200 p-4">
+            <span class="text-2xl font-bold text-slate-900">100%</span>
+            <span class="text-sm text-slate-600 uppercase">Stone Foundation Experience</span>
+          </div>
+        </div>
+        
+        <div class="flex gap-4 justify-center">
+          <a href="/free-inspection" class="bg-amber-500 text-black px-8 py-4 text-lg font-bold hover:bg-amber-400 transition-colors uppercase">Get Free Annex Home Assessment</a>
+          <a href="tel:4375450067" class="border-2 border-white text-slate-900 px-8 py-4 text-lg font-bold hover:bg-white hover:text-black transition-colors uppercase">
+            <i class="fa-solid fa-phone"></i>
+            (437) 545-0067
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-slate-50">
+    <div class="container mx-auto px-4">
+      <h2 class="text-4xl font-bold text-slate-900 mb-4 uppercase">THE ANNEX'S UNIQUE WATERPROOFING CHALLENGES</h2>
+      
+      <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div class="bg-white border-2 border-slate-200 p-6">
+          <div class="hidden"</div>
+          <h3 class="text-xl font-bold text-slate-900 mb-3 uppercase">CENTURY-OLD STONE FOUNDATIONS</h3>
+          <p class="text-slate-600">Most Annex homes built 1880-1920 have rubble stone foundations requiring specialized lime-based mortars and breathable waterproofing systems.</p>
+          <div class="mt-4 pt-4 border-t border-slate-100">
+            <strong>Our Solution:</strong> Heritage-approved methods that preserve stone integrity while preventing water infiltration.
+          </div>
+        </div>
+        
+        <div class="bg-white border-2 border-slate-200 p-6">
+          <div class="hidden"</div>
+          <h3 class="text-xl font-bold text-slate-900 mb-3 uppercase">MATURE TREE ROOT SYSTEMS</h3>
+          <p class="text-slate-600">The Annex's beautiful mature trees along Huron, Brunswick, and Madison can compromise drainage and foundation walls.</p>
+          <div class="mt-4 pt-4 border-t border-slate-100">
+            <strong>Our Solution:</strong> Root barrier installation and specialized drainage systems that protect both trees and foundations.
+          </div>
+        </div>
+        
+        <div class="bg-white border-2 border-slate-200 p-6">
+          <div class="hidden"</div>
+          <h3 class="text-xl font-bold text-slate-900 mb-3 uppercase">COMBINED SEWER SYSTEM OVERFLOWS</h3>
+          <p class="text-slate-600">During heavy rains, the area between Bloor and Dupont experiences increased hydrostatic pressure from aging infrastructure.</p>
+          <div class="mt-4 pt-4 border-t border-slate-100">
+            <strong>Our Solution:</strong> Backwater valve installation and enhanced sump pump systems with battery backup.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <h2 class="text-4xl font-bold text-slate-900 mb-4 uppercase">THE ANNEX WEATHER & FLOODING PATTERNS</h2>
+      
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="bg-white border-2 border-slate-200 p-6">
+          <h3 class="text-xl font-bold text-slate-900 mb-3 uppercase">SPRING THAW RISK</h3>
+          <div class="inline-block px-3 py-1 bg-cyan-500 text-slate-900 font-bold uppercase text-xs mb-2">HIGH</div>
+          <p class="text-slate-600">March-April: Rapid snow melt combined with spring rains overwhelm century-old drainage</p>
+        </div>
+        
+        <div class="bg-white border-2 border-slate-200 p-6">
+          <h3 class="text-xl font-bold text-slate-900 mb-3 uppercase">SUMMER STORMS</h3>
+          <div class="inline-block px-3 py-1 bg-amber-500 text-black font-bold uppercase text-xs mb-2">MEDIUM</div>
+          <p class="text-slate-600">July-August: Intense thunderstorms can deliver 50mm+ rain in under an hour</p>
+        </div>
+        
+        <div class="bg-white border-2 border-slate-200 p-6">
+          <h3 class="text-xl font-bold text-slate-900 mb-3 uppercase">FALL SATURATION</h3>
+          <div class="inline-block px-3 py-1 bg-amber-500 text-black font-bold uppercase text-xs mb-2">MEDIUM</div>
+          <p class="text-slate-600">October-November: Fallen leaves block drains, increasing surface water</p>
+        </div>
+      </div>
+      
+      <div class="mt-8 bg-navy-900 border-2 border-slate-200 p-6">
+        <h3 class="text-xl font-bold text-slate-900 mb-3 uppercase">RECENT FLOODING EVENTS IN THE ANNEX</h3>
+        <ul class="space-y-2">
+          <li class="text-slate-600 mb-2" class="text-slate-600"><span class="font-bold text-slate-900">July 2024:</span> 78mm rainfall caused widespread basement flooding on Howland Ave</li>
+          <li class="text-slate-600 mb-2" class="text-slate-600"><span class="font-bold text-slate-900">April 2024:</span> Spring thaw affected 30+ homes near Casa Loma</li>
+          <li class="text-slate-600 mb-2" class="text-slate-600"><span class="font-bold text-slate-900">August 2023:</span> Storm drains overwhelmed on St. George St</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-slate-50">
+    <div class="container mx-auto px-4">
+      <h2 class="text-4xl font-bold text-slate-900 mb-4 uppercase">RECENT ANNEX WATERPROOFING PROJECTS</h2>
+      
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-white border-2 border-slate-200 p-6">
+          <img src="/projects/annex-brunswick-ave.jpg" alt="Brunswick Avenue Victorian" / width="800" height="600" loading="lazy" decoding="async">
+          <div class="">
+            <h3 class="text-xl font-bold text-slate-900 mb-3 uppercase">BRUNSWICK AVENUE VICTORIAN</h3>
+            <p class="text-sm font-semibold text-slate-600 uppercase mb-2">Full Exterior Waterproofing</p>
+            <ul class="space-y-2">
+              <li class="text-slate-600 mb-2">120-year-old rubble foundation</li>
+              <li class="text-slate-600 mb-2">Heritage-approved methods</li>
+              <li class="text-slate-600 mb-2">Preserved original stone</li>
+            </ul>
+            <div class="mt-4 pt-4 border-t border-slate-100 font-bold text-slate-900">Investment: $12,500</div>
+          </div>
+        </div>
+        
+        <div class="bg-white border-2 border-slate-200 p-6">
+          <img src="/projects/annex-madison-ave.jpg" alt="Madison Avenue Semi" / width="800" height="600" loading="lazy" decoding="async">
+          <div class="">
+            <h3 class="text-xl font-bold text-slate-900 mb-3 uppercase">MADISON AVENUE SEMI-DETACHED</h3>
+            <p class="text-sm font-semibold text-slate-600 uppercase mb-2">Interior Drainage System</p>
+            <ul class="space-y-2">
+              <li class="text-slate-600 mb-2">French drain installation</li>
+              <li class="text-slate-600 mb-2">Sump pump with battery backup</li>
+              <li class="text-slate-600 mb-2">Moisture barrier application</li>
+            </ul>
+            <div class="mt-4 pt-4 border-t border-slate-100 font-bold text-slate-900">Investment: $8,200</div>
+          </div>
+        </div>
+        
+        <div class="bg-white border-2 border-slate-200 p-6">
+          <img src="/projects/annex-huron-st.jpg" alt="Huron Street Townhouse" / width="800" height="600" loading="lazy" decoding="async">
+          <div class="">
+            <h3 class="text-xl font-bold text-slate-900 mb-3 uppercase">HURON STREET TOWNHOUSE</h3>
+            <p class="text-sm font-semibold text-slate-600 uppercase mb-2">Emergency Flood Recovery</p>
+            <ul class="space-y-2">
+              <li class="text-slate-600 mb-2">24-hour emergency response</li>
+              <li class="text-slate-600 mb-2">Complete water extraction</li>
+              <li class="text-slate-600 mb-2">Mold prevention treatment</li>
+            </ul>
+            <div class="mt-4 pt-4 border-t border-slate-100 font-bold text-slate-900">Investment: $6,800</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <h2 class="text-4xl font-bold text-slate-900 mb-4 uppercase">WHAT YOUR ANNEX NEIGHBORS SAY</h2>
+      
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-slate-50 border-2 border-slate-200 p-6">
+          <div class="stars"></div>
+          <p class="text-slate-600">"They understood the unique challenges of our 1890s home. The team was careful to preserve our original stonework while completely solving our water issues."</p>
+          <div class="mt-4 pt-4 border-t border-slate-100">
+            <strong>Sarah M.</strong>
+            <span>Walmer Road</span>
+          </div>
+        </div>
+        
+        <div class="bg-slate-50 border-2 border-slate-200 p-6">
+          <div class="stars"></div>
+          <p class="text-slate-600">"After the July storm flooded our basement, Dryspace was here in 20 minutes. They handled everything, including working with our insurance company."</p>
+          <div class="mt-4 pt-4 border-t border-slate-100">
+            <strong>Michael T.</strong>
+            <span>Howland Avenue</span>
+          </div>
+        </div>
+        
+        <div class="bg-slate-50 border-2 border-slate-200 p-6">
+          <div class="stars"></div>
+          <p class="text-slate-600">"The only company that offered a solution that wouldn't damage our mature oak tree. Five years later, both the tree and basement are thriving!"</p>
+          <div class="mt-4 pt-4 border-t border-slate-100">
+            <strong>Jennifer L.</strong>
+            <span>Admiral Road</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-slate-50">
+    <div class="container mx-auto px-4">
+      <h2 class="text-4xl font-bold text-slate-900 mb-4 uppercase">PROTECTING HOMES NEAR ANNEX LANDMARKS</h2>
+      
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="bg-white border-2 border-slate-200 p-6">
+          <h3 class="text-xl font-bold text-slate-900 mb-3 uppercase">CASA LOMA AREA</h3>
+          <p class="text-slate-600">Homes near the castle face unique drainage challenges from elevation changes. We've waterproofed 45+ homes in this micro-neighborhood.</p>
+        </div>
+        
+        <div class="bg-white border-2 border-slate-200 p-6">
+          <h3 class="text-xl font-bold text-slate-900 mb-3 uppercase">UNIVERSITY OF TORONTO CAMPUS</h3>
+          <p class="text-slate-600">Student housing and residential properties near campus require fast, efficient service. We work around academic schedules.</p>
+        </div>
+        
+        <div class="bg-white border-2 border-slate-200 p-6">
+          <h3 class="text-xl font-bold text-slate-900 mb-3 uppercase">SPADINA MUSEUM GARDENS</h3>
+          <p class="text-slate-600">Properties adjacent to the historic gardens need careful water management to preserve both structures and landscaping.</p>
+        </div>
+        
+        <div class="bg-white border-2 border-slate-200 p-6">
+          <h3 class="text-xl font-bold text-slate-900 mb-3 uppercase">BLOOR STREET CORRIDOR</h3>
+          <p class="text-slate-600">High-traffic area properties face unique challenges from vibration and underground infrastructure. Specialized solutions required.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <h2 class="text-4xl font-bold text-slate-900 mb-4 uppercase">OUR ANNEX SERVICE AREA</h2>
+      
+      <div class="bg-slate-50 border-2 border-slate-200 p-8">
+        <h3 class="text-xl font-bold text-slate-900 mb-3 uppercase">SERVICE BOUNDARIES:</h3>
+        <ul class="space-y-2">
+          <li class="text-slate-600 mb-2" class="text-slate-600"><span class="font-bold text-slate-900">North:</span> Dupont Street</li>
+          <li class="text-slate-600 mb-2" class="text-slate-600"><span class="font-bold text-slate-900">South:</span> Bloor Street West</li>
+          <li class="text-slate-600 mb-2" class="text-slate-600"><span class="font-bold text-slate-900">East:</span> Avenue Road</li>
+          <li class="text-slate-600 mb-2" class="text-slate-600"><span class="font-bold text-slate-900">West:</span> Bathurst Street</li>
+        </ul>
+        
+        <div class="mt-8">
+          <h4 class="text-lg font-bold text-slate-900 mb-2 uppercase">MAJOR STREETS SERVED:</h4>
+          <div class="grid grid-cols-3 md:grid-cols-4 gap-2 mt-4">
+            <span>Huron Street</span>
+            <span>St. George Street</span>
+            <span>Brunswick Avenue</span>
+            <span>Madison Avenue</span>
+            <span>Spadina Road</span>
+            <span>Walmer Road</span>
+            <span>Admiral Road</span>
+            <span>Lowther Avenue</span>
+            <span>Prince Arthur Avenue</span>
+            <span>Sussex Avenue</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="container mx-auto px-4">
+      <div class="cta-content">
+        <h2 class="text-4xl font-bold text-slate-900 mb-4 uppercase">PROTECT YOUR ANNEX HOME TODAY</h2>
+        <p class="text-slate-600">Don't wait for the next storm. Get your free assessment from The Annex's trusted waterproofing experts.</p>
+        
+        <div class="cta-features">
+          <div class="feature"> Heritage home specialists</div>
+          <div class="feature"> 15-minute response time</div>
+          <div class="feature"> Insurance claim assistance</div>
+          <div class="feature"> 25-year warranty</div>
+        </div>
+        
+        <div class="cta-buttons">
+          <a href="/free-inspection" class="bg-amber-500 text-black px-8 py-4 text-lg font-bold hover:bg-amber-400 transition-colors uppercase">Book Free Inspection</a>
+          <a href="tel:4375450067" class="border-2 border-white text-slate-900 px-8 py-4 text-lg font-bold hover:bg-white hover:text-black transition-colors uppercase">Call (437) 545-0067</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <TrustBadges />
+  <StickyBooking />
+
+  
+<BreadcrumbSchema items={[{name: 'Home', url: '/'}, {name: 'Neighborhoods'}, {name: 'The Annex'}]} />
+</PageLayout>

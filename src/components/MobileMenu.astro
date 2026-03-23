@@ -1,0 +1,211 @@
+---
+export interface Props {
+  navigation: Array<{
+    name: string;
+    href: string;
+    dropdown?: Array<{
+      name: string;
+      href: string;
+      highlight?: boolean;
+    }>;
+  }>;
+}
+
+const { navigation } = Astro.props;
+const currentPath = Astro.url.pathname;
+---
+
+<div class="mobile-menu">
+  <button 
+    id="mobile-menu-button"
+    class="p-2 rounded-md text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-navy-900 transition-colors"
+    aria-label="Open menu"
+  >
+    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+    </svg>
+  </button>
+  
+  <!-- Mobile Menu Overlay -->
+  <div 
+    id="mobile-menu-overlay"
+    class="fixed inset-0 z-50 hidden"
+  >
+    <!-- Background overlay -->
+    <div class="fixed inset-0 bg-black bg-opacity-50" id="mobile-menu-backdrop"></div>
+    
+    <!-- Menu panel -->
+    <div class="fixed right-0 top-0 h-full w-80 max-w-full bg-white dark:bg-navy-900 shadow-xl transform translate-x-full transition-transform duration-300" id="mobile-menu-panel">
+      <div class="flex items-center justify-between p-4 border-b border-slate-100 dark:border-slate-600">
+        <span class="text-lg font-semibold text-slate-900 dark:text-slate-900">Menu</span>
+        <button 
+          id="mobile-menu-close"
+          class="p-2 rounded-md text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-navy-900 transition-colors"
+          aria-label="Close menu"
+        >
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+      
+      <nav class="p-4 overflow-y-auto max-h-[calc(100vh-80px)]">
+        <div class="space-y-2">
+          {navigation.map((item) => (
+            <div class="mobile-menu-item">
+              {item.dropdown ? (
+                <div class="dropdown-container">
+                  <button 
+                    class={`w-full flex items-center justify-between px-4 py-2 rounded-md text-left transition-colors ${
+                      currentPath.startsWith(item.href) && item.href !== '#'
+                        ? 'bg-cyan-50 dark:bg-navy-900/20 text-cyan-600 dark:text-cyan-400'
+                        : 'text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-navy-900'
+                    }`}
+                    data-dropdown-toggle
+                  >
+                    <span>{item.name}</span>
+                    <svg class="w-4 h-4 transition-transform dropdown-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </button>
+                  <div class="dropdown-content hidden pl-4 mt-2 space-y-1">
+                    {item.dropdown.map((subItem) => (
+                      <a
+                        href={subItem.href}
+                        class={`block px-4 py-2 rounded-md text-sm transition-colors ${
+                          subItem.highlight
+                            ? 'text-cyan-600 dark:text-cyan-400 font-semibold'
+                            : 'text-slate-500 dark:text-slate-300'
+                        } ${
+                          currentPath === subItem.href
+                            ? 'bg-slate-50 dark:bg-navy-900'
+                            : 'hover:bg-slate-50 dark:hover:bg-navy-900'
+                        }`}
+                      >
+                        {subItem.name}
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              ) : (
+                <a
+                  href={item.href}
+                  class={`block px-4 py-2 rounded-md transition-colors ${
+                    currentPath === item.href
+                      ? 'bg-cyan-50 dark:bg-navy-900/20 text-cyan-600 dark:text-cyan-400'
+                      : 'text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-navy-900'
+                  }`}
+                >
+                  {item.name}
+                </a>
+              )}
+            </div>
+          ))}
+        </div>
+        
+        <!-- Mobile CTAs -->
+        <div class="mt-6 pt-6 border-t border-slate-100 dark:border-slate-600 space-y-3">
+          <a 
+            href="tel:437-545-0067" 
+            class="flex items-center justify-center gap-2 w-full bg-red-600 text-white py-3 px-4 rounded-lg font-semibold hover:bg-red-700 transition-colors"
+          >
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+            </svg>
+            Emergency: 437-545-0067
+          </a>
+          <a 
+            href="/free-inspection" 
+            class="block w-full bg-cyan-600 text-white py-3 px-4 rounded-lg font-semibold text-center hover:bg-cyan-700 transition-colors"
+          >
+            Get Free Inspection
+          </a>
+        </div>
+        
+        <!-- Trust Badges -->
+        <div class="mt-6 pt-6 border-t border-slate-100 dark:border-slate-600">
+          <div class="space-y-2 text-sm text-slate-500 dark:text-slate-400">
+            <div class="flex items-center gap-2">
+              <svg class="w-5 h-5 text-cyan-500" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              <span>Licensed & Insured</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <svg class="w-5 h-5 text-cyan-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+              </svg>
+              <span>25-Year Warranty</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <svg class="w-5 h-5 text-cyan-400" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+              </svg>
+              <span>4.9★ Google Reviews</span>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </div>
+</div>
+
+<script>
+  const mobileMenuButton = document.getElementById('mobile-menu-button');
+  const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
+  const mobileMenuPanel = document.getElementById('mobile-menu-panel');
+  const mobileMenuClose = document.getElementById('mobile-menu-close');
+  const mobileMenuBackdrop = document.getElementById('mobile-menu-backdrop');
+  
+  function openMobileMenu() {
+    mobileMenuOverlay?.classList.remove('hidden');
+    setTimeout(() => {
+      mobileMenuPanel?.classList.remove('translate-x-full');
+    }, 10);
+    document.body.style.overflow = 'hidden';
+  }
+  
+  function closeMobileMenu() {
+    mobileMenuPanel?.classList.add('translate-x-full');
+    setTimeout(() => {
+      mobileMenuOverlay?.classList.add('hidden');
+    }, 300);
+    document.body.style.overflow = '';
+  }
+  
+  mobileMenuButton?.addEventListener('click', openMobileMenu);
+  mobileMenuClose?.addEventListener('click', closeMobileMenu);
+  mobileMenuBackdrop?.addEventListener('click', closeMobileMenu);
+  
+  // Handle dropdown toggles
+  const dropdownToggles = document.querySelectorAll('[data-dropdown-toggle]');
+  dropdownToggles.forEach(toggle => {
+    toggle.addEventListener('click', () => {
+      const dropdown = toggle.nextElementSibling;
+      const arrow = toggle.querySelector('.dropdown-arrow');
+      
+      dropdown?.classList.toggle('hidden');
+      arrow?.classList.toggle('rotate-180');
+    });
+  });
+  
+  // Close menu when clicking on a link
+  const mobileMenuLinks = document.querySelectorAll('#mobile-menu-panel a');
+  mobileMenuLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      if (!link.getAttribute('data-dropdown-toggle')) {
+        closeMobileMenu();
+      }
+    });
+  });
+</script>
+
+<style>
+  .dropdown-arrow {
+    transition: transform 0.2s ease;
+  }
+  
+  .dropdown-arrow.rotate-180 {
+    transform: rotate(180deg);
+  }
+</style>

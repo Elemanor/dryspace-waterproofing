@@ -1,0 +1,1286 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import BreadcrumbSchema from '../../components/BreadcrumbSchema.astro';
+
+const breadcrumbItems = [
+  { label: 'Home', href: '/' },
+  { label: 'Blog', href: '/blog' },
+  { label: 'Emergency Basement Flooding Response Guide', href: '/blog/emergency-basement-flooding-response-guide' }
+];
+---
+
+<PageLayout
+  title="Emergency Basement Flooding Response Guide | What To Do NOW | DrySpace"
+  description="Basement flooding emergency? Follow this step-by-step guide for Toronto homeowners. Critical safety steps, water removal methods, insurance claims, and 24/7 professional help available."
+>
+  <BreadcrumbSchema items={breadcrumbItems} />
+  <div class="container mx-auto px-4 mt-4">
+    <Breadcrumbs items={breadcrumbItems} />
+  </div>
+
+  <main class="min-h-screen bg-white">
+    <!-- Emergency Hero Section -->
+    <section class="bg-gradient-to-br from-red-500 to-red-600 text-white py-12 md:py-16">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto text-center">
+          <div class="inline-block bg-amber-500 text-navy-900 px-4 py-2 rounded-full font-bold text-sm uppercase mb-6 animate-pulse">
+            Emergency Response Guide
+          </div>
+          <h1 class="uppercase text-3xl md:text-5xl font-bold mb-6 leading-tight">
+            Your Basement Is Flooding — Here's What To Do Right Now
+          </h1>
+          <p class="text-xl md:text-2xl mb-8 text-red-50">
+            Time-sensitive action steps to protect your home, family, and belongings. Every minute counts.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <a href="tel:4375450067" class="btn-primary bg-amber-500 hover:bg-amber-600 text-navy-900 font-bold px-8 py-4 rounded-lg text-lg flex items-center gap-2 shadow-lg">
+              <span class="text-2xl">📞</span>
+              Call 24/7 Emergency: 437-545-0067
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Critical Safety Warning -->
+    <section class="py-8 bg-amber-50 border-y-4 border-amber-500">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <div class="flex items-start gap-4">
+            <span class="text-4xl">⚠️</span>
+            <div>
+              <h2 class="text-2xl font-bold text-amber-900 mb-2">STOP: Read This Before Entering Your Flooded Basement</h2>
+              <p class="text-amber-800 font-semibold">
+                Water and electricity are a deadly combination. If you see standing water near electrical outlets, appliances, or your electrical panel, DO NOT ENTER. Call 911 or your local fire department immediately.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- First 15 Minutes: Critical Safety Steps -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="uppercase text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+            First 15 Minutes: Critical Safety Steps
+          </h2>
+          <p class="text-lg text-slate-600 mb-12">
+            When dealing with a basement flooding emergency, what you do in the first 15 minutes can determine the extent of damage to your property and prevent serious safety hazards. Follow these steps in order.
+          </p>
+
+          <div class="space-y-6">
+            <!-- Step 1 -->
+            <div class="bg-slate-50 rounded-xl p-6 border-l-4 border-red-500">
+              <div class="flex items-start gap-4">
+                <div class="bg-red-500 text-white rounded-full w-12 h-12 flex items-center justify-center font-bold text-xl flex-shrink-0">
+                  1
+                </div>
+                <div>
+                  <h3 class="text-xl font-bold text-slate-900 mb-2">Shut Off Electricity Immediately</h3>
+                  <p class="text-slate-700 mb-3">
+                    If you can safely access your electrical panel without walking through water, turn off the power to your basement. If the panel is in the flooded area or you're unsure, call your utility company or electrician to disconnect power from outside.
+                  </p>
+                  <div class="bg-amber-50 border-l-4 border-amber-500 p-3 rounded">
+                    <p class="text-sm text-amber-900 font-semibold">
+                      Toronto Hydro Emergency: 416-542-8000 (24/7)
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="bg-slate-50 rounded-xl p-6 border-l-4 border-amber-500">
+              <div class="flex items-start gap-4">
+                <div class="bg-amber-500 text-white rounded-full w-12 h-12 flex items-center justify-center font-bold text-xl flex-shrink-0">
+                  2
+                </div>
+                <div>
+                  <h3 class="text-xl font-bold text-slate-900 mb-2">Identify the Water Source</h3>
+                  <p class="text-slate-700 mb-3">
+                    Determine where the water is coming from to decide on your next action:
+                  </p>
+                  <ul class="space-y-2 text-slate-700">
+                    <li class="flex items-start gap-2">
+                      <span class="text-cyan-500 font-bold">•</span>
+                      <span><strong>Clean water</strong> (burst pipe, rainwater): Less health risk, but still requires immediate action</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                      <span class="text-cyan-500 font-bold">•</span>
+                      <span><strong>Grey water</strong> (sump pump failure, washing machine): Contains contaminants, wear protective gear</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                      <span class="text-cyan-500 font-bold">•</span>
+                      <span><strong>Black water</strong> (sewage backup): Highly contaminated, call professionals immediately, do not attempt cleanup yourself</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="bg-slate-50 rounded-xl p-6 border-l-4 border-cyan-500">
+              <div class="flex items-start gap-4">
+                <div class="bg-cyan-500 text-white rounded-full w-12 h-12 flex items-center justify-center font-bold text-xl flex-shrink-0">
+                  3
+                </div>
+                <div>
+                  <h3 class="text-xl font-bold text-slate-900 mb-2">Stop the Water if Possible</h3>
+                  <p class="text-slate-700 mb-3">
+                    If you've identified a controllable source:
+                  </p>
+                  <ul class="space-y-2 text-slate-700">
+                    <li class="flex items-start gap-2">
+                      <span class="text-cyan-500 font-bold">•</span>
+                      <span><strong>Burst pipe:</strong> Turn off the main water valve</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                      <span class="text-cyan-500 font-bold">•</span>
+                      <span><strong>Appliance leak:</strong> Close the supply valve to that appliance</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                      <span class="text-cyan-500 font-bold">•</span>
+                      <span><strong>Sewer backup:</strong> Stop using all water in the house immediately</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                      <span class="text-cyan-500 font-bold">•</span>
+                      <span><strong>Exterior flooding:</strong> Check if sump pump is functioning; clear window well drains</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- Step 4 -->
+            <div class="bg-slate-50 rounded-xl p-6 border-l-4 border-cyan-500">
+              <div class="flex items-start gap-4">
+                <div class="bg-cyan-500 text-white rounded-full w-12 h-12 flex items-center justify-center font-bold text-xl flex-shrink-0">
+                  4
+                </div>
+                <div>
+                  <h3 class="text-xl font-bold text-slate-900 mb-2">Protect Valuable Items</h3>
+                  <p class="text-slate-700 mb-3">
+                    If it's safe to enter (no standing water near electrical sources), quickly move valuables to higher ground:
+                  </p>
+                  <ul class="space-y-2 text-slate-700">
+                    <li class="flex items-start gap-2">
+                      <span class="text-cyan-500 font-bold">•</span>
+                      <span>Important documents, photos, and electronics</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                      <span class="text-cyan-500 font-bold">•</span>
+                      <span>Furniture that can be easily lifted</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                      <span class="text-cyan-500 font-bold">•</span>
+                      <span>Personal items with sentimental value</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                      <span class="text-cyan-500 font-bold">•</span>
+                      <span>Portable appliances and tools</span>
+                    </li>
+                  </ul>
+                  <div class="mt-3 bg-slate-100 p-3 rounded border border-slate-300">
+                    <p class="text-sm text-slate-700">
+                      <strong>Safety First:</strong> Never prioritize belongings over personal safety. If conditions are dangerous, evacuate and wait for professionals.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Step 5 -->
+            <div class="bg-slate-50 rounded-xl p-6 border-l-4 border-cyan-500">
+              <div class="flex items-start gap-4">
+                <div class="bg-cyan-500 text-white rounded-full w-12 h-12 flex items-center justify-center font-bold text-xl flex-shrink-0">
+                  5
+                </div>
+                <div>
+                  <h3 class="text-xl font-bold text-slate-900 mb-2">Document Everything for Insurance</h3>
+                  <p class="text-slate-700 mb-3">
+                    Before you start cleanup, thorough documentation is critical for your insurance claim:
+                  </p>
+                  <ul class="space-y-2 text-slate-700">
+                    <li class="flex items-start gap-2">
+                      <span class="text-cyan-500 font-bold">•</span>
+                      <span>Take photos and videos of all affected areas from multiple angles</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                      <span class="text-cyan-500 font-bold">•</span>
+                      <span>Document water levels using a measuring tape in photos</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                      <span class="text-cyan-500 font-bold">•</span>
+                      <span>Photograph all damaged items individually</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                      <span class="text-cyan-500 font-bold">•</span>
+                      <span>Save receipts for all emergency expenses</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                      <span class="text-cyan-500 font-bold">•</span>
+                      <span>Note the date and time the flooding began</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- Step 6 -->
+            <div class="bg-slate-50 rounded-xl p-6 border-l-4 border-cyan-500">
+              <div class="flex items-start gap-4">
+                <div class="bg-cyan-500 text-white rounded-full w-12 h-12 flex items-center justify-center font-bold text-xl flex-shrink-0">
+                  6
+                </div>
+                <div>
+                  <h3 class="text-xl font-bold text-slate-900 mb-2">Ventilate the Area</h3>
+                  <p class="text-slate-700">
+                    Open windows and doors to promote air circulation and prevent mold growth. If weather permits and it's safe to do so, use fans to help dry the area. However, do not use electrical equipment in areas with standing water.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Water Removal Methods -->
+    <section class="py-16 bg-slate-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="uppercase text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+            Water Removal Methods: What Works Best
+          </h2>
+          <p class="text-lg text-slate-600 mb-12">
+            The method you use to remove water depends on the volume of flooding and the type of water involved. For Toronto homeowners dealing with basement flooding, here are your options ranked by severity.
+          </p>
+
+          <div class="grid md:grid-cols-2 gap-6 mb-8">
+            <!-- Method 1: Sump Pump -->
+            <div class="bg-white rounded-xl p-6 shadow-card border border-slate-200/60">
+              <div class="flex items-center gap-3 mb-4">
+                <span class="text-3xl">🌊</span>
+                <h3 class="text-xl font-bold text-slate-900">Sump Pump</h3>
+              </div>
+              <p class="text-slate-700 mb-3">
+                <strong>Best for:</strong> Large volumes of clean or grey water (2+ inches)
+              </p>
+              <p class="text-slate-600 mb-3">
+                A submersible sump pump is the most efficient tool for removing significant water accumulation. If your existing pump failed, a backup pump or emergency rental can handle thousands of gallons per hour.
+              </p>
+              <div class="bg-cyan-50 p-3 rounded border-l-4 border-cyan-500">
+                <p class="text-sm text-slate-700">
+                  <strong>Cost:</strong> Pump rental $50-150/day | Professional installation $800-2,500
+                </p>
+              </div>
+            </div>
+
+            <!-- Method 2: Wet-Dry Vacuum -->
+            <div class="bg-white rounded-xl p-6 shadow-card border border-slate-200/60">
+              <div class="flex items-center gap-3 mb-4">
+                <span class="text-3xl">🔧</span>
+                <h3 class="text-xl font-bold text-slate-900">Wet-Dry Vacuum</h3>
+              </div>
+              <p class="text-slate-700 mb-3">
+                <strong>Best for:</strong> Small amounts of water (less than 2 inches), localized flooding
+              </p>
+              <p class="text-slate-600 mb-3">
+                For minor flooding from a small leak or overflow, a shop vac can handle the job. Expect this to be labor-intensive for anything more than a few dozen gallons.
+              </p>
+              <div class="bg-cyan-50 p-3 rounded border-l-4 border-cyan-500">
+                <p class="text-sm text-slate-700">
+                  <strong>Cost:</strong> Rental $30-60/day | Purchase $100-300
+                </p>
+              </div>
+            </div>
+
+            <!-- Method 3: Mops and Towels -->
+            <div class="bg-white rounded-xl p-6 shadow-card border border-slate-200/60">
+              <div class="flex items-center gap-3 mb-4">
+                <span class="text-3xl">🧹</span>
+                <h3 class="text-xl font-bold text-slate-900">Mops, Towels & Squeegees</h3>
+              </div>
+              <p class="text-slate-700 mb-3">
+                <strong>Best for:</strong> Final cleanup after pumping, very minor seepage
+              </p>
+              <p class="text-slate-600 mb-3">
+                After removing the bulk of water, use mops, towels, and squeegees to eliminate remaining moisture. This is essential for preventing mold growth in crevices and corners.
+              </p>
+              <div class="bg-cyan-50 p-3 rounded border-l-4 border-cyan-500">
+                <p class="text-sm text-slate-700">
+                  <strong>Cost:</strong> Minimal ($20-50 for supplies)
+                </p>
+              </div>
+            </div>
+
+            <!-- Method 4: Professional Extraction -->
+            <div class="bg-white rounded-xl p-6 shadow-card border border-slate-200/60">
+              <div class="flex items-center gap-3 mb-4">
+                <span class="text-3xl">👷</span>
+                <h3 class="text-xl font-bold text-slate-900">Professional Water Extraction</h3>
+              </div>
+              <p class="text-slate-700 mb-3">
+                <strong>Best for:</strong> Sewage backups, extensive flooding, time-sensitive situations
+              </p>
+              <p class="text-slate-600 mb-3">
+                Professional restoration companies use truck-mounted extraction units and industrial dehumidifiers. They can remove water faster and more thoroughly than DIY methods, plus handle contaminated water safely.
+              </p>
+              <div class="bg-cyan-50 p-3 rounded border-l-4 border-cyan-500">
+                <p class="text-sm text-slate-700">
+                  <strong>Cost:</strong> $3,000-8,000+ depending on severity (often covered by insurance)
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-amber-50 rounded-xl p-6 border-l-4 border-amber-500">
+            <h4 class="font-bold text-amber-900 mb-2">When to Call the Fire Department</h4>
+            <p class="text-amber-800 mb-2">
+              Toronto Fire Services can assist with emergency water removal in specific situations:
+            </p>
+            <ul class="space-y-1 text-amber-800">
+              <li class="flex items-start gap-2">
+                <span>•</span>
+                <span>Water level is rising rapidly and poses immediate danger</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span>•</span>
+                <span>You cannot safely access water shutoff valves</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span>•</span>
+                <span>Electrical hazards prevent safe entry</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span>•</span>
+                <span>Structural damage is visible or suspected</span>
+              </li>
+            </ul>
+            <p class="text-amber-900 font-bold mt-3">Emergency: 911 | Non-Emergency: 416-338-9050</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Damage Assessment Checklist -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="uppercase text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+            Damage Assessment Checklist
+          </h2>
+          <p class="text-lg text-slate-600 mb-8">
+            After the immediate emergency is handled, conduct a thorough assessment of all affected areas. This checklist helps you identify damage that may not be immediately visible but could cause problems later.
+          </p>
+
+          <div class="bg-red-50 rounded-xl p-6 border-l-4 border-red-500 mb-8">
+            <div class="flex items-start gap-3">
+              <span class="text-2xl">⏰</span>
+              <div>
+                <h3 class="font-bold text-red-900 text-lg mb-2">Critical Timeline: Mold Growth Risk</h3>
+                <p class="text-red-800 mb-2">
+                  Mold can begin growing within 24-48 hours of water exposure. This is why immediate action and thorough drying are essential for Toronto homeowners dealing with basement flooding.
+                </p>
+                <p class="text-red-900 font-semibold">
+                  If you cannot fully dry your basement within 48 hours, call a professional restoration company immediately.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Assessment Categories -->
+          <div class="space-y-6">
+            <!-- Walls and Drywall -->
+            <div class="bg-slate-50 rounded-xl p-6 border border-slate-200">
+              <h3 class="text-xl font-bold text-slate-900 mb-3 flex items-center gap-2">
+                <span class="text-2xl">🧱</span>
+                Walls, Drywall, and Insulation
+              </h3>
+              <ul class="space-y-2 text-slate-700">
+                <li class="flex items-start gap-2">
+                  <input type="checkbox" class="mt-1" />
+                  <span>Check for water stains and discoloration extending above the waterline</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <input type="checkbox" class="mt-1" />
+                  <span>Feel drywall for dampness (may absorb water several feet above flood level)</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <input type="checkbox" class="mt-1" />
+                  <span>Look for bubbling, peeling, or warping in painted surfaces</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <input type="checkbox" class="mt-1" />
+                  <span>Test insulation behind walls (may need removal if saturated)</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <input type="checkbox" class="mt-1" />
+                  <span>Inspect baseboards and trim for swelling or separation</span>
+                </li>
+              </ul>
+              <p class="text-sm text-slate-600 mt-3 italic">
+                Note: Drywall that has been submerged typically needs replacement at least 12 inches above the waterline.
+              </p>
+            </div>
+
+            <!-- Flooring -->
+            <div class="bg-slate-50 rounded-xl p-6 border border-slate-200">
+              <h3 class="text-xl font-bold text-slate-900 mb-3 flex items-center gap-2">
+                <span class="text-2xl">🏠</span>
+                Flooring and Subflooring
+              </h3>
+              <ul class="space-y-2 text-slate-700">
+                <li class="flex items-start gap-2">
+                  <input type="checkbox" class="mt-1" />
+                  <span>Check for warping, buckling, or cupping in hardwood floors</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <input type="checkbox" class="mt-1" />
+                  <span>Look for lifting or loose tiles in ceramic/porcelain flooring</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <input type="checkbox" class="mt-1" />
+                  <span>Inspect carpet and padding (usually requires replacement after flooding)</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <input type="checkbox" class="mt-1" />
+                  <span>Test subfloor for moisture and soft spots</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <input type="checkbox" class="mt-1" />
+                  <span>Check concrete for new cracks or spalling</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- HVAC and Mechanical -->
+            <div class="bg-slate-50 rounded-xl p-6 border border-slate-200">
+              <h3 class="text-xl font-bold text-slate-900 mb-3 flex items-center gap-2">
+                <span class="text-2xl">🔥</span>
+                HVAC, Water Heater, and Mechanical Systems
+              </h3>
+              <ul class="space-y-2 text-slate-700">
+                <li class="flex items-start gap-2">
+                  <input type="checkbox" class="mt-1" />
+                  <span>Inspect furnace blower motor and controls for water damage</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <input type="checkbox" class="mt-1" />
+                  <span>Check water heater for rust or damage (especially if submerged)</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <input type="checkbox" class="mt-1" />
+                  <span>Examine air ducts for water accumulation or contamination</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <input type="checkbox" class="mt-1" />
+                  <span>Test sump pump operation after event</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <input type="checkbox" class="mt-1" />
+                  <span>Have HVAC system professionally inspected before restarting</span>
+                </li>
+              </ul>
+              <p class="text-sm text-red-600 mt-3 font-semibold">
+                Warning: Never operate a furnace or water heater that has been submerged until inspected by a licensed technician.
+              </p>
+            </div>
+
+            <!-- Electrical -->
+            <div class="bg-slate-50 rounded-xl p-6 border border-slate-200">
+              <h3 class="text-xl font-bold text-slate-900 mb-3 flex items-center gap-2">
+                <span class="text-2xl">⚡</span>
+                Electrical Systems
+              </h3>
+              <ul class="space-y-2 text-slate-700">
+                <li class="flex items-start gap-2">
+                  <input type="checkbox" class="mt-1" />
+                  <span>Document all outlets, switches, and fixtures that were submerged</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <input type="checkbox" class="mt-1" />
+                  <span>Check electrical panel for water intrusion or corrosion</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <input type="checkbox" class="mt-1" />
+                  <span>Test GFCI outlets after drying</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <input type="checkbox" class="mt-1" />
+                  <span>Inspect wiring in walls for potential water damage</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <input type="checkbox" class="mt-1" />
+                  <span>Schedule electrical inspection before restoring power to affected areas</span>
+                </li>
+              </ul>
+              <p class="text-sm text-red-600 mt-3 font-semibold">
+                Critical: Hire a licensed electrician (ESA-certified in Ontario) to inspect all electrical before restoration.
+              </p>
+            </div>
+
+            <!-- Furniture and Belongings -->
+            <div class="bg-slate-50 rounded-xl p-6 border border-slate-200">
+              <h3 class="text-xl font-bold text-slate-900 mb-3 flex items-center gap-2">
+                <span class="text-2xl">🪑</span>
+                Furniture, Belongings, and Storage
+              </h3>
+              <ul class="space-y-2 text-slate-700">
+                <li class="flex items-start gap-2">
+                  <input type="checkbox" class="mt-1" />
+                  <span>Separate salvageable items from those requiring disposal</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <input type="checkbox" class="mt-1" />
+                  <span>Check wood furniture for warping, swelling, or veneer damage</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <input type="checkbox" class="mt-1" />
+                  <span>Inspect upholstered items (usually unsalvageable after sewage exposure)</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <input type="checkbox" class="mt-1" />
+                  <span>Test electronics (do not power on until fully dried and inspected)</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <input type="checkbox" class="mt-1" />
+                  <span>Photograph all damaged items for insurance documentation</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Insurance Claims -->
+    <section class="py-16 bg-slate-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="uppercase text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+            Insurance Claims: What Toronto Homeowners Need To Know
+          </h2>
+          <p class="text-lg text-slate-600 mb-8">
+            Understanding your insurance coverage before basement flooding occurs can save thousands of dollars and significant stress. Here's what Toronto homeowners should know about filing claims.
+          </p>
+
+          <!-- Coverage Types -->
+          <div class="bg-white rounded-xl p-6 shadow-card border border-slate-200/60 mb-8">
+            <h3 class="text-2xl font-bold text-slate-900 mb-4">Understanding Your Coverage</h3>
+
+            <div class="space-y-4">
+              <div class="border-l-4 border-red-500 pl-4">
+                <h4 class="font-bold text-slate-900 mb-1">Standard Home Insurance (Usually NOT Covered)</h4>
+                <p class="text-slate-700 text-sm">
+                  Most basic policies exclude overland flooding, groundwater seepage, and sewer backups. You need specific endorsements for these perils.
+                </p>
+              </div>
+
+              <div class="border-l-4 border-cyan-500 pl-4">
+                <h4 class="font-bold text-slate-900 mb-1">Overland Water Coverage (Optional Add-On)</h4>
+                <p class="text-slate-700 text-sm">
+                  Covers water entering from outside sources: heavy rain, snow melt, river overflow. Typical cost: $150-300/year additional premium for Toronto homes.
+                </p>
+              </div>
+
+              <div class="border-l-4 border-cyan-500 pl-4">
+                <h4 class="font-bold text-slate-900 mb-1">Sewer Backup Coverage (Critical for Toronto)</h4>
+                <p class="text-slate-700 text-sm">
+                  Covers damage from municipal sewer or drain backups. Given Toronto's aging infrastructure, this is essential. Cost: $75-200/year. Typical limit: $25,000-50,000.
+                </p>
+              </div>
+
+              <div class="border-l-4 border-amber-500 pl-4">
+                <h4 class="font-bold text-slate-900 mb-1">Sudden and Accidental Water Damage (Usually Covered)</h4>
+                <p class="text-slate-700 text-sm">
+                  Covers burst pipes, plumbing failures, and appliance malfunctions. This is typically included in standard policies but verify with your provider.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Filing Your Claim -->
+          <div class="bg-white rounded-xl p-6 shadow-card border border-slate-200/60 mb-8">
+            <h3 class="text-2xl font-bold text-slate-900 mb-4">Filing Your Claim: Step-by-Step</h3>
+
+            <ol class="space-y-4">
+              <li class="flex gap-3">
+                <span class="font-bold text-cyan-500 flex-shrink-0">1.</span>
+                <div>
+                  <h4 class="font-bold text-slate-900">Contact Your Insurer Immediately</h4>
+                  <p class="text-slate-700 text-sm">
+                    Most policies require notification within 24-48 hours. Have your policy number ready and describe the situation clearly. Ask about coverage for temporary accommodation if your home is uninhabitable.
+                  </p>
+                </div>
+              </li>
+
+              <li class="flex gap-3">
+                <span class="font-bold text-cyan-500 flex-shrink-0">2.</span>
+                <div>
+                  <h4 class="font-bold text-slate-900">Document Everything Thoroughly</h4>
+                  <p class="text-slate-700 text-sm mb-2">
+                    Your claim's success depends on documentation quality:
+                  </p>
+                  <ul class="text-slate-700 text-sm space-y-1">
+                    <li>• Photos/videos of all damage from multiple angles</li>
+                    <li>• Water level measurements with tape measure visible</li>
+                    <li>• Written inventory of all damaged items with estimated values</li>
+                    <li>• Receipts for emergency repairs and cleanup supplies</li>
+                    <li>• Contractor estimates for restoration work</li>
+                  </ul>
+                </div>
+              </li>
+
+              <li class="flex gap-3">
+                <span class="font-bold text-cyan-500 flex-shrink-0">3.</span>
+                <div>
+                  <h4 class="font-bold text-slate-900">Take Reasonable Steps to Prevent Further Damage</h4>
+                  <p class="text-slate-700 text-sm">
+                    Insurance policies require you to mitigate losses. This means removing standing water promptly, protecting undamaged areas, and making temporary repairs. Keep all receipts; reasonable mitigation costs are typically reimbursed.
+                  </p>
+                </div>
+              </li>
+
+              <li class="flex gap-3">
+                <span class="font-bold text-cyan-500 flex-shrink-0">4.</span>
+                <div>
+                  <h4 class="font-bold text-slate-900">Don't Dispose of Damaged Items Prematurely</h4>
+                  <p class="text-slate-700 text-sm">
+                    The adjuster may need to inspect damaged property. Get permission before discarding items, or at minimum, photograph everything before disposal. For health hazards like sewage-contaminated items, document thoroughly and note the safety reason for immediate disposal.
+                  </p>
+                </div>
+              </li>
+
+              <li class="flex gap-3">
+                <span class="font-bold text-cyan-500 flex-shrink-0">5.</span>
+                <div>
+                  <h4 class="font-bold text-slate-900">Cooperate with the Insurance Adjuster</h4>
+                  <p class="text-slate-700 text-sm">
+                    The adjuster will inspect your property, often within 3-7 days. Provide access to all affected areas, share your documentation, and be honest about the circumstances. Their assessment determines your payout.
+                  </p>
+                </div>
+              </li>
+
+              <li class="flex gap-3">
+                <span class="font-bold text-cyan-500 flex-shrink-0">6.</span>
+                <div>
+                  <h4 class="font-bold text-slate-900">Get Multiple Contractor Estimates</h4>
+                  <p class="text-slate-700 text-sm">
+                    Don't rely solely on the adjuster's estimate. Get 2-3 quotes from licensed contractors familiar with insurance work. If there's a significant discrepancy, your adjuster may reconsider.
+                  </p>
+                </div>
+              </li>
+            </ol>
+          </div>
+
+          <!-- Typical Costs and Deductibles -->
+          <div class="bg-amber-50 rounded-xl p-6 border-l-4 border-amber-500">
+            <h3 class="text-xl font-bold text-amber-900 mb-3">Typical Deductibles for Toronto Homeowners</h3>
+            <div class="space-y-2 text-amber-800">
+              <p><strong>Standard deductible:</strong> $500-$2,000 (applies to most perils)</p>
+              <p><strong>Water damage deductible:</strong> Often higher, $1,000-$5,000</p>
+              <p><strong>Overland water:</strong> May have separate higher deductible ($2,500-$10,000)</p>
+              <p><strong>Sewer backup:</strong> Typically $1,000-$2,500 deductible, $25,000-$50,000 coverage limit</p>
+            </div>
+            <p class="text-amber-900 font-semibold mt-4">
+              Important: Review your policy now, not during an emergency. Many Toronto homeowners discover inadequate coverage only after flooding occurs.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Preventing Future Flooding -->
+    <section class="py-16 bg-navy-900 text-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="uppercase text-3xl md:text-4xl font-bold mb-4">
+            Preventing Future Basement Flooding
+          </h2>
+          <p class="text-lg text-slate-300 mb-12">
+            Once you've handled the immediate crisis, the next step is ensuring it never happens again. These proven solutions protect Toronto homes from recurring water damage.
+          </p>
+
+          <div class="grid md:grid-cols-2 gap-6">
+            <!-- Backwater Valve -->
+            <div class="bg-slate-800 rounded-xl p-6 border border-slate-700 hover:border-cyan-500 transition-colors">
+              <h3 class="text-xl font-bold text-white mb-3 flex items-center gap-2">
+                <span class="text-2xl">🚰</span>
+                Backwater Valve Installation
+              </h3>
+              <p class="text-slate-300 text-sm mb-3">
+                Prevents sewage from flowing back into your home during heavy storms. The City of Toronto offers a subsidy program covering up to $3,400 of installation costs.
+              </p>
+              <div class="space-y-2 text-sm text-slate-300 mb-4">
+                <p><strong>Protection Level:</strong> Sewage backup</p>
+                <p><strong>Typical Cost:</strong> $2,500-$4,000</p>
+                <p><strong>Toronto Subsidy:</strong> Up to $3,400</p>
+              </div>
+              <a href="/services/backwater-valve-installation" class="inline-block text-cyan-400 hover:text-cyan-300 font-semibold text-sm">
+                Learn More →
+              </a>
+            </div>
+
+            <!-- Sump Pump -->
+            <div class="bg-slate-800 rounded-xl p-6 border border-slate-700 hover:border-cyan-500 transition-colors">
+              <h3 class="text-xl font-bold text-white mb-3 flex items-center gap-2">
+                <span class="text-2xl">⚙️</span>
+                Sump Pump System
+              </h3>
+              <p class="text-slate-300 text-sm mb-3">
+                Actively removes groundwater before it can flood your basement. Battery backup systems ensure protection even during power outages common in Toronto storms.
+              </p>
+              <div class="space-y-2 text-sm text-slate-300 mb-4">
+                <p><strong>Protection Level:</strong> Groundwater, heavy rain</p>
+                <p><strong>Typical Cost:</strong> $800-$2,500</p>
+                <p><strong>Battery Backup:</strong> +$500-$1,200</p>
+              </div>
+              <a href="/services/sump-pump-installation" class="inline-block text-cyan-400 hover:text-cyan-300 font-semibold text-sm">
+                Learn More →
+              </a>
+            </div>
+
+            <!-- Exterior Waterproofing -->
+            <div class="bg-slate-800 rounded-xl p-6 border border-slate-700 hover:border-cyan-500 transition-colors">
+              <h3 class="text-xl font-bold text-white mb-3 flex items-center gap-2">
+                <span class="text-2xl">🏗️</span>
+                Exterior Waterproofing
+              </h3>
+              <p class="text-slate-300 text-sm mb-3">
+                The gold standard for basement waterproofing. Excavates foundation exterior, applies waterproof membrane, installs weeping tile system, and ensures proper drainage away from home.
+              </p>
+              <div class="space-y-2 text-sm text-slate-300 mb-4">
+                <p><strong>Protection Level:</strong> Comprehensive, all water sources</p>
+                <p><strong>Typical Cost:</strong> $150-$300 per linear foot</p>
+                <p><strong>Warranty:</strong> 25+ years typical</p>
+              </div>
+              <a href="/services/exterior-waterproofing" class="inline-block text-cyan-400 hover:text-cyan-300 font-semibold text-sm">
+                Learn More →
+              </a>
+            </div>
+
+            <!-- Interior Waterproofing -->
+            <div class="bg-slate-800 rounded-xl p-6 border border-slate-700 hover:border-cyan-500 transition-colors">
+              <h3 class="text-xl font-bold text-white mb-3 flex items-center gap-2">
+                <span class="text-2xl">🔧</span>
+                Interior Waterproofing
+              </h3>
+              <p class="text-slate-300 text-sm mb-3">
+                Cost-effective solution that captures water after it enters foundation but before it floods your basement. Interior drainage channels direct water to sump pump system.
+              </p>
+              <div class="space-y-2 text-sm text-slate-300 mb-4">
+                <p><strong>Protection Level:</strong> Groundwater management</p>
+                <p><strong>Typical Cost:</strong> $60-$100 per linear foot</p>
+                <p><strong>Installation Time:</strong> 3-5 days typical</p>
+              </div>
+              <a href="/services/interior-waterproofing" class="inline-block text-cyan-400 hover:text-cyan-300 font-semibold text-sm">
+                Learn More →
+              </a>
+            </div>
+
+            <!-- Foundation Crack Repair -->
+            <div class="bg-slate-800 rounded-xl p-6 border border-slate-700 hover:border-cyan-500 transition-colors">
+              <h3 class="text-xl font-bold text-white mb-3 flex items-center gap-2">
+                <span class="text-2xl">🔨</span>
+                Foundation Crack Repair
+              </h3>
+              <p class="text-slate-300 text-sm mb-3">
+                Seals existing cracks that allow water entry. Epoxy or polyurethane injection creates waterproof seal. Essential first step before comprehensive waterproofing.
+              </p>
+              <div class="space-y-2 text-sm text-slate-300 mb-4">
+                <p><strong>Protection Level:</strong> Targeted leak repair</p>
+                <p><strong>Typical Cost:</strong> $500-$2,000 per crack</p>
+                <p><strong>Timeline:</strong> Same-day repair possible</p>
+              </div>
+              <a href="/services/foundation-crack-repair" class="inline-block text-cyan-400 hover:text-cyan-300 font-semibold text-sm">
+                Learn More →
+              </a>
+            </div>
+
+            <!-- Window Well Protection -->
+            <div class="bg-slate-800 rounded-xl p-6 border border-slate-700 hover:border-cyan-500 transition-colors">
+              <h3 class="text-xl font-bold text-white mb-3 flex items-center gap-2">
+                <span class="text-2xl">🪟</span>
+                Window Well Covers & Drains
+              </h3>
+              <p class="text-slate-300 text-sm mb-3">
+                Prevents window wells from filling during rainstorms. Covers keep water out, while drain systems handle any accumulation. Common source of basement flooding often overlooked.
+              </p>
+              <div class="space-y-2 text-sm text-slate-300 mb-4">
+                <p><strong>Protection Level:</strong> Window area flooding</p>
+                <p><strong>Typical Cost:</strong> $150-$500 per window</p>
+                <p><strong>Benefit:</strong> Also improves insulation, security</p>
+              </div>
+              <a href="/services/window-well-repair" class="inline-block text-cyan-400 hover:text-cyan-300 font-semibold text-sm">
+                Learn More →
+              </a>
+            </div>
+          </div>
+
+          <div class="mt-12 bg-cyan-500 text-navy-900 rounded-xl p-6">
+            <h3 class="text-xl font-bold mb-3">Free Basement Waterproofing Assessment</h3>
+            <p class="mb-4">
+              Not sure which solution is right for your Toronto home? DrySpace Waterproofing provides complimentary on-site assessments with no-obligation quotes. We'll identify your specific vulnerabilities and recommend the most cost-effective protection strategy.
+            </p>
+            <a href="/contact" class="inline-block bg-navy-900 text-white px-6 py-3 rounded-lg font-bold hover:bg-slate-800 transition-colors">
+              Schedule Free Assessment
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- When to Call Professional -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="uppercase text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+            When To Call A Professional
+          </h2>
+          <p class="text-lg text-slate-600 mb-12">
+            While minor water issues can be handled DIY, certain situations require professional intervention. Here's how to assess severity and expected costs for Toronto homeowners.
+          </p>
+
+          <div class="space-y-6">
+            <!-- Level 1: DIY Possible -->
+            <div class="bg-slate-50 rounded-xl p-6 border-l-4 border-cyan-500">
+              <div class="flex items-start gap-4">
+                <span class="text-3xl">✅</span>
+                <div class="flex-1">
+                  <h3 class="text-xl font-bold text-slate-900 mb-2">Level 1: Minor — DIY Possible</h3>
+                  <p class="text-slate-700 mb-3">
+                    <strong>Situation:</strong> Less than 1 inch of clean water from a known source (minor leak, small pipe drip), limited affected area, no electrical hazard
+                  </p>
+                  <p class="text-slate-700 mb-3">
+                    <strong>Action:</strong> Fix source, extract water with wet-dry vac, dry thoroughly with fans and dehumidifier within 24 hours
+                  </p>
+                  <p class="text-slate-700 font-semibold">
+                    Expected DIY Cost: $50-$200 (equipment rental/purchase)
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Level 2: Professional Recommended -->
+            <div class="bg-slate-50 rounded-xl p-6 border-l-4 border-amber-500">
+              <div class="flex items-start gap-4">
+                <span class="text-3xl">⚠️</span>
+                <div class="flex-1">
+                  <h3 class="text-xl font-bold text-slate-900 mb-2">Level 2: Moderate — Professional Recommended</h3>
+                  <p class="text-slate-700 mb-3">
+                    <strong>Situation:</strong> 1-6 inches of water, affected area over 100 sq ft, grey water from appliances, sump pump failure, drywall saturation, carpet flooding
+                  </p>
+                  <p class="text-slate-700 mb-3">
+                    <strong>Action:</strong> Call water damage restoration company for extraction, drying, and moisture assessment. May need drywall/flooring removal.
+                  </p>
+                  <p class="text-slate-700 font-semibold">
+                    Expected Professional Cost: $2,000-$5,000
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Level 3: Professional Required -->
+            <div class="bg-slate-50 rounded-xl p-6 border-l-4 border-red-500">
+              <div class="flex items-start gap-4">
+                <span class="text-3xl">🚨</span>
+                <div class="flex-1">
+                  <h3 class="text-xl font-bold text-slate-900 mb-2">Level 3: Severe — Professional Required</h3>
+                  <p class="text-slate-700 mb-3">
+                    <strong>Situation:</strong> More than 6 inches of water, sewage backup (black water), electrical hazards, HVAC system submerged, structural damage visible, mold growth present
+                  </p>
+                  <p class="text-slate-700 mb-3">
+                    <strong>Action:</strong> Evacuate if unsafe. Call emergency restoration company immediately. May require hazmat protocols, complete demolition of affected materials, and extended drying period.
+                  </p>
+                  <p class="text-slate-700 font-semibold">
+                    Expected Professional Cost: $5,000-$15,000+ (often covered by insurance)
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- What Professionals Provide -->
+          <div class="mt-12 bg-cyan-50 rounded-xl p-6 border border-cyan-200">
+            <h3 class="text-xl font-bold text-slate-900 mb-4">What Professional Water Damage Restoration Includes</h3>
+            <div class="grid md:grid-cols-2 gap-4">
+              <ul class="space-y-2 text-slate-700">
+                <li class="flex items-start gap-2">
+                  <span class="text-cyan-500 font-bold">•</span>
+                  <span>Emergency water extraction (truck-mounted equipment)</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-cyan-500 font-bold">•</span>
+                  <span>Industrial dehumidification and air movers</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-cyan-500 font-bold">•</span>
+                  <span>Moisture mapping with thermal cameras</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-cyan-500 font-bold">•</span>
+                  <span>Antimicrobial treatment to prevent mold</span>
+                </li>
+              </ul>
+              <ul class="space-y-2 text-slate-700">
+                <li class="flex items-start gap-2">
+                  <span class="text-cyan-500 font-bold">•</span>
+                  <span>Content pack-out and storage if needed</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-cyan-500 font-bold">•</span>
+                  <span>Controlled demolition of unsalvageable materials</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-cyan-500 font-bold">•</span>
+                  <span>Daily moisture monitoring until fully dry</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-cyan-500 font-bold">•</span>
+                  <span>Direct insurance billing and documentation</span>
+                </li>
+              </ul>
+            </div>
+            <p class="text-slate-600 mt-4 text-sm italic">
+              Note: Most professional restoration companies work directly with insurance providers and can bill them directly after your deductible is met.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Emergency Contact Numbers -->
+    <section class="py-16 bg-slate-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="uppercase text-3xl md:text-4xl font-bold text-slate-900 mb-4 text-center">
+            Emergency Contact Numbers for Toronto Homeowners
+          </h2>
+          <p class="text-lg text-slate-600 mb-12 text-center">
+            Save these numbers in your phone now — you'll need them when seconds count.
+          </p>
+
+          <div class="grid md:grid-cols-2 gap-6">
+            <!-- DrySpace -->
+            <div class="bg-navy-900 text-white rounded-xl p-6 shadow-lg">
+              <div class="text-center">
+                <span class="text-4xl mb-3 block">💧</span>
+                <h3 class="text-xl font-bold mb-2">DrySpace Waterproofing</h3>
+                <p class="text-cyan-400 text-sm mb-4">24/7 Emergency Water Removal & Waterproofing</p>
+                <a href="tel:4375450067" class="inline-block bg-cyan-500 text-navy-900 font-bold px-6 py-3 rounded-lg text-lg hover:bg-cyan-400 transition-colors">
+                  437-545-0067
+                </a>
+                <p class="text-slate-300 text-xs mt-3">Serving Toronto and GTA</p>
+              </div>
+            </div>
+
+            <!-- Emergency Services -->
+            <div class="bg-white rounded-xl p-6 shadow-card border border-slate-200/60">
+              <h3 class="text-lg font-bold text-slate-900 mb-4">Emergency Services</h3>
+              <div class="space-y-3 text-sm">
+                <div>
+                  <p class="font-semibold text-slate-900">Fire/Police/Ambulance</p>
+                  <a href="tel:911" class="text-cyan-600 hover:text-cyan-700 font-bold">911</a>
+                </div>
+                <div>
+                  <p class="font-semibold text-slate-900">Toronto Fire (Non-Emergency)</p>
+                  <a href="tel:4163389050" class="text-cyan-600 hover:text-cyan-700">416-338-9050</a>
+                </div>
+                <div>
+                  <p class="font-semibold text-slate-900">Toronto Water Emergency</p>
+                  <a href="tel:311" class="text-cyan-600 hover:text-cyan-700">311</a>
+                  <p class="text-slate-600 text-xs">Outside Toronto: 416-392-2489</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Utilities -->
+            <div class="bg-white rounded-xl p-6 shadow-card border border-slate-200/60">
+              <h3 class="text-lg font-bold text-slate-900 mb-4">Utility Companies</h3>
+              <div class="space-y-3 text-sm">
+                <div>
+                  <p class="font-semibold text-slate-900">Toronto Hydro (Power Outage)</p>
+                  <a href="tel:4165428000" class="text-cyan-600 hover:text-cyan-700">416-542-8000</a>
+                </div>
+                <div>
+                  <p class="font-semibold text-slate-900">Enbridge Gas Emergency</p>
+                  <a href="tel:18663832782" class="text-cyan-600 hover:text-cyan-700">1-866-383-2782</a>
+                </div>
+                <div>
+                  <p class="font-semibold text-slate-900">Toronto Water (Billing/Service)</p>
+                  <a href="tel:4163929300" class="text-cyan-600 hover:text-cyan-700">416-392-9300</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- City Services -->
+            <div class="bg-white rounded-xl p-6 shadow-card border border-slate-200/60">
+              <h3 class="text-lg font-bold text-slate-900 mb-4">City Services</h3>
+              <div class="space-y-3 text-sm">
+                <div>
+                  <p class="font-semibold text-slate-900">Toronto Building Department</p>
+                  <a href="tel:4163967000" class="text-cyan-600 hover:text-cyan-700">416-396-7000</a>
+                </div>
+                <div>
+                  <p class="font-semibold text-slate-900">Basement Flooding Protection Subsidy</p>
+                  <a href="tel:4163925255" class="text-cyan-600 hover:text-cyan-700">416-392-5255</a>
+                </div>
+                <div>
+                  <p class="font-semibold text-slate-900">City of Toronto (General Inquiries)</p>
+                  <a href="tel:311" class="text-cyan-600 hover:text-cyan-700">311</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-8 bg-amber-50 rounded-xl p-6 border-l-4 border-amber-500">
+            <h3 class="font-bold text-amber-900 mb-2">Create Your Emergency Plan Now</h3>
+            <p class="text-amber-800 text-sm">
+              Print this page and post it in your basement and near your main water shutoff valve. Make sure every family member knows where the electrical panel and water shutoff are located. Review your home insurance policy to understand your coverage before an emergency occurs.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="uppercase text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+            Frequently Asked Questions
+          </h2>
+          <p class="text-lg text-slate-600 mb-12">
+            Quick answers to common questions Toronto homeowners have during basement flooding emergencies.
+          </p>
+
+          <div class="space-y-6">
+            <!-- FAQ 1 -->
+            <div class="bg-slate-50 rounded-xl p-6 border border-slate-200">
+              <h3 class="text-lg font-bold text-slate-900 mb-2">
+                What should I do first if my basement is flooding in Toronto?
+              </h3>
+              <p class="text-slate-700">
+                First, ensure safety: shut off electricity to the basement if you can do so without walking through water. Never enter a flooded basement with standing water near electrical outlets or appliances. If it's safe, identify and stop the water source, then begin documenting damage with photos for insurance. For sewage backups or extensive flooding, call professionals immediately rather than attempting cleanup yourself.
+              </p>
+            </div>
+
+            <!-- FAQ 2 -->
+            <div class="bg-slate-50 rounded-xl p-6 border border-slate-200">
+              <h3 class="text-lg font-bold text-slate-900 mb-2">
+                How quickly does mold grow after basement flooding?
+              </h3>
+              <p class="text-slate-700">
+                Mold can begin growing within 24-48 hours of water exposure in Toronto's humid climate. This is why immediate water removal and thorough drying are critical. If you cannot completely dry your basement within 48 hours using fans and dehumidifiers, professional restoration with industrial equipment is necessary to prevent mold growth and associated health risks.
+              </p>
+            </div>
+
+            <!-- FAQ 3 -->
+            <div class="bg-slate-50 rounded-xl p-6 border border-slate-200">
+              <h3 class="text-lg font-bold text-slate-900 mb-2">
+                Does home insurance cover basement flooding in Toronto?
+              </h3>
+              <p class="text-slate-700">
+                It depends on your specific coverage. Standard home insurance typically excludes overland flooding and sewer backups — you need optional endorsements for these perils. Sudden plumbing failures are usually covered. Given Toronto's aging sewer infrastructure, sewer backup coverage ($75-200/year additional) is highly recommended. Review your policy now to understand your protection and consider adding overland water coverage if you're in a flood-prone area.
+              </p>
+            </div>
+
+            <!-- FAQ 4 -->
+            <div class="bg-slate-50 rounded-xl p-6 border border-slate-200">
+              <h3 class="text-lg font-bold text-slate-900 mb-2">
+                When should I call a professional for basement water removal?
+              </h3>
+              <p class="text-slate-700">
+                Call professionals immediately for: sewage backups (black water), more than 2 inches of standing water, flooding affecting over 100 square feet, any situation with electrical hazards, HVAC system submersion, or visible structural damage. While minor leaks can be DIY, professional restoration companies have specialized equipment to extract water thoroughly, prevent mold growth, and document damage for insurance claims.
+              </p>
+            </div>
+
+            <!-- FAQ 5 -->
+            <div class="bg-slate-50 rounded-xl p-6 border border-slate-200">
+              <h3 class="text-lg font-bold text-slate-900 mb-2">
+                How much does emergency basement water removal cost in Toronto?
+              </h3>
+              <p class="text-slate-700">
+                Costs vary by severity: minor DIY cleanup runs $50-200 for equipment rental, moderate professional extraction costs $2,000-5,000, and severe flooding with sewage can reach $5,000-15,000+ for full restoration. Most insurance policies cover professional restoration after your deductible ($1,000-5,000 typical for water damage). Emergency services are available 24/7, and many companies bill insurance directly so you only pay your deductible upfront.
+              </p>
+            </div>
+
+            <!-- FAQ 6 -->
+            <div class="bg-slate-50 rounded-xl p-6 border border-slate-200">
+              <h3 class="text-lg font-bold text-slate-900 mb-2">
+                What causes basement flooding in Toronto homes?
+              </h3>
+              <p class="text-slate-700">
+                Common causes include: sewer backups during heavy storms (Toronto's aging infrastructure can't handle peak flow), sump pump failure, foundation cracks, exterior waterproofing failure, blocked weeping tiles, clogged eavestroughs causing foundation water pooling, and burst pipes. Toronto's clay soil and freeze-thaw cycles make foundation issues especially common. Preventive measures like backwater valve installation (City of Toronto offers up to $3,400 subsidy), sump pump backup systems, and proper exterior waterproofing significantly reduce flooding risk.
+              </p>
+            </div>
+
+            <!-- FAQ 7 -->
+            <div class="bg-slate-50 rounded-xl p-6 border border-slate-200">
+              <h3 class="text-lg font-bold text-slate-900 mb-2">
+                Can I stay in my house after basement flooding?
+              </h3>
+              <p class="text-slate-700">
+                If flooding is limited to the basement and there are no electrical hazards, structural damage, or sewage contamination, you can typically remain upstairs. However, for sewage backups, extensive flooding affecting HVAC systems, or visible mold growth, temporary relocation may be necessary for 3-7 days during professional remediation. Most home insurance policies include "additional living expenses" coverage that pays for temporary accommodation. Consult your insurance adjuster about coverage if your home becomes uninhabitable.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="py-16 bg-gradient-to-br from-navy-900 to-slate-900 text-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-3xl mx-auto text-center">
+          <span class="text-5xl mb-6 block">🚨</span>
+          <h2 class="uppercase text-3xl md:text-4xl font-bold mb-6">
+            24/7 Emergency Basement Flooding Response
+          </h2>
+          <p class="text-xl text-slate-300 mb-8">
+            DrySpace Waterproofing provides immediate emergency response for Toronto homeowners. Our certified technicians are on call 24 hours a day, 7 days a week for water extraction, damage assessment, and permanent waterproofing solutions.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-6">
+            <a href="tel:4375450067" class="btn-primary bg-amber-500 hover:bg-amber-600 text-navy-900 font-bold px-8 py-4 rounded-lg text-lg flex items-center gap-2 shadow-lg">
+              <span class="text-2xl">📞</span>
+              Call Emergency Line: 437-545-0067
+            </a>
+            <a href="/contact" class="bg-white text-navy-900 font-bold px-8 py-4 rounded-lg text-lg hover:bg-slate-100 transition-colors shadow-lg">
+              Request Callback
+            </a>
+          </div>
+          <p class="text-slate-400 text-sm">
+            Average response time: Under 2 hours for Toronto and GTA | Direct insurance billing available
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- JSON-LD Schemas -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Emergency Basement Flooding Response Guide | What To Do NOW",
+    "description": "Basement flooding emergency? Follow this step-by-step guide for Toronto homeowners. Critical safety steps, water removal methods, insurance claims, and 24/7 professional help available.",
+    "image": "https://dryspace.ca/images/basement-flooding-emergency.jpg",
+    "author": {
+      "@type": "Organization",
+      "name": "DrySpace Waterproofing"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "DrySpace Waterproofing",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://dryspace.ca/logo.png"
+      }
+    },
+    "datePublished": "2026-03-20",
+    "dateModified": "2026-03-20"
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What should I do first if my basement is flooding in Toronto?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "First, ensure safety: shut off electricity to the basement if you can do so without walking through water. Never enter a flooded basement with standing water near electrical outlets or appliances. If it's safe, identify and stop the water source, then begin documenting damage with photos for insurance. For sewage backups or extensive flooding, call professionals immediately rather than attempting cleanup yourself."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How quickly does mold grow after basement flooding?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Mold can begin growing within 24-48 hours of water exposure in Toronto's humid climate. This is why immediate water removal and thorough drying are critical. If you cannot completely dry your basement within 48 hours using fans and dehumidifiers, professional restoration with industrial equipment is necessary to prevent mold growth and associated health risks."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does home insurance cover basement flooding in Toronto?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "It depends on your specific coverage. Standard home insurance typically excludes overland flooding and sewer backups — you need optional endorsements for these perils. Sudden plumbing failures are usually covered. Given Toronto's aging sewer infrastructure, sewer backup coverage ($75-200/year additional) is highly recommended. Review your policy now to understand your protection and consider adding overland water coverage if you're in a flood-prone area."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "When should I call a professional for basement water removal?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Call professionals immediately for: sewage backups (black water), more than 2 inches of standing water, flooding affecting over 100 square feet, any situation with electrical hazards, HVAC system submersion, or visible structural damage. While minor leaks can be DIY, professional restoration companies have specialized equipment to extract water thoroughly, prevent mold growth, and document damage for insurance claims."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How much does emergency basement water removal cost in Toronto?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Costs vary by severity: minor DIY cleanup runs $50-200 for equipment rental, moderate professional extraction costs $2,000-5,000, and severe flooding with sewage can reach $5,000-15,000+ for full restoration. Most insurance policies cover professional restoration after your deductible ($1,000-5,000 typical for water damage). Emergency services are available 24/7, and many companies bill insurance directly so you only pay your deductible upfront."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What causes basement flooding in Toronto homes?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Common causes include: sewer backups during heavy storms (Toronto's aging infrastructure can't handle peak flow), sump pump failure, foundation cracks, exterior waterproofing failure, blocked weeping tiles, clogged eavestroughs causing foundation water pooling, and burst pipes. Toronto's clay soil and freeze-thaw cycles make foundation issues especially common. Preventive measures like backwater valve installation (City of Toronto offers up to $3,400 subsidy), sump pump backup systems, and proper exterior waterproofing significantly reduce flooding risk."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I stay in my house after basement flooding?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "If flooding is limited to the basement and there are no electrical hazards, structural damage, or sewage contamination, you can typically remain upstairs. However, for sewage backups, extensive flooding affecting HVAC systems, or visible mold growth, temporary relocation may be necessary for 3-7 days during professional remediation. Most home insurance policies include 'additional living expenses' coverage that pays for temporary accommodation. Consult your insurance adjuster about coverage if your home becomes uninhabitable."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "Emergency Basement Water Removal",
+    "provider": {
+      "@type": "LocalBusiness",
+      "name": "DrySpace Waterproofing",
+      "telephone": "437-545-0067",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Toronto",
+        "addressRegion": "ON",
+        "addressCountry": "CA"
+      }
+    },
+    "areaServed": {
+      "@type": "City",
+      "name": "Toronto"
+    },
+    "availableChannel": {
+      "@type": "ServiceChannel",
+      "servicePhone": {
+        "@type": "ContactPoint",
+        "telephone": "437-545-0067",
+        "contactType": "Emergency Service",
+        "availableLanguage": ["English"],
+        "hoursAvailable": "24/7"
+      }
+    }
+  }
+  </script>
+</PageLayout>

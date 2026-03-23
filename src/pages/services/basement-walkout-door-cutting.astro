@@ -1,0 +1,581 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Hero from "../../components/Hero.astro";
+import CTASection from '../../components/sections/CTA.astro';
+import FAQ from "../../components/FAQ.astro";
+import ServiceSchema from "../../components/ServiceSchema.astro";
+import InternalLinks from "../../components/InternalLinks.astro";
+
+const features = [
+  {
+    title: "Structural Engineering",
+    description: "P.Eng certified design ensuring load transfer and structural integrity",
+    icon: "🏗️"
+  },
+  {
+    title: "Concrete Cutting",
+    description: "Precision cutting through lower-level walls up to 24\" thick",
+    icon: "⚒️"
+  },
+  {
+    title: "Waterproofing",
+    description: "Complete moisture barrier around new opening with water management",
+    icon: "💧"
+  },
+  {
+    title: "Excavation",
+    description: "Professional excavation for walkout access and proper site grading",
+    icon: "🚜"
+  },
+  {
+    title: "Stairway Construction",
+    description: "Code-compliant stairways with proper rise/run and railings",
+    icon: "📐"
+  },
+  {
+    title: "Permits & Inspections",
+    description: "Complete permit acquisition and city inspection management",
+    icon: "📋"
+  }
+];
+
+const process = [
+  {
+    step: 1,
+    title: "Structural Assessment",
+    description: "Engineer evaluates structure and determines load-bearing requirements"
+  },
+  {
+    step: 2,
+    title: "Design & Permits",
+    description: "Create detailed plans and obtain necessary building permits"
+  },
+  {
+    step: 3,
+    title: "Excavation",
+    description: "Excavate exterior area for walkout access and water management"
+  },
+  {
+    step: 4,
+    title: "Structural Support",
+    description: "Install temporary supports and new header beam system"
+  },
+  {
+    step: 5,
+    title: "Cutting & Opening",
+    description: "Precision cut foundation wall and create new opening"
+  },
+  {
+    step: 6,
+    title: "Finishing",
+    description: "Install door, moisture protection, stairs, and complete landscaping"
+  }
+];
+
+const comparisonData = {
+  headers: ["Opening Type", "Size", "Cost Range", "Timeline", "Best For"],
+  rows: [
+    {
+      feature: "Standard Door",
+      cols: ["36\" x 80\"", "$8,650-12,000", "3-5 days", "Basic access, egress"]
+    },
+    {
+      feature: "Double Door",
+      cols: ["72\" x 80\"", "$13,000-18,000", "5-7 days", "Furniture moving, rental suites"]
+    },
+    {
+      feature: "Walkout Patio",
+      cols: ["8-12 ft wide", "$22,000-35,000", "2-3 weeks", "Full basement apartment"]
+    },
+    {
+      feature: "Window to Door",
+      cols: ["36\" x 80\"", "$6,500-10,000", "2-3 days", "Converting existing window"]
+    },
+    {
+      feature: "Emergency Exit",
+      cols: ["22\" x 43\" min", "$4,300-6,000", "1-2 days", "Code compliance only"]
+    }
+  ]
+};
+
+const pricingPlans = [
+  {
+    name: "Basic Egress",
+    price: "$8,650",
+    period: "starting from",
+    description: "Code-compliant emergency exit",
+    features: [
+      "Single 36\" door opening",
+      "Basic excavation",
+      "Structural header beam",
+      "Standard steel door",
+      "Basic waterproofing",
+      "Permit included",
+      "2-year warranty"
+    ],
+    highlighted: false
+  },
+  {
+    name: "Full Walkout",
+    price: "$27,000",
+    period: "starting from",
+    description: "Complete walkout with stairs",
+    features: [
+      "Double door or patio opening",
+      "Full excavation & grading",
+      "Engineered support system",
+      "Premium doors & hardware",
+      "Complete waterproofing",
+      "Concrete stairs with railings",
+      "Drainage system",
+      "Window well if needed",
+      "Landscaping restoration",
+      "5-year warranty"
+    ],
+    highlighted: true
+  },
+  {
+    name: "Premium Suite",
+    price: "$43,000+",
+    period: "custom quote",
+    description: "Luxury walkout with patio",
+    features: [
+      "Everything in Full Walkout",
+      "Sliding glass doors",
+      "Covered entrance/awning",
+      "Interlocking stone patio",
+      "Retaining walls if needed",
+      "Lighting system",
+      "Premium landscaping",
+      "10-year warranty"
+    ],
+    highlighted: false
+  }
+];
+
+// Service-specific FAQs for ServiceSchema
+const walkoutFAQs = [
+  {
+    question: "How much does a foundation walkout door cost in Toronto?",
+    answer: "Foundation walkout costs depend on complexity: Basic egress door cut $8,650-12,000, window to door conversion $6,500-10,000, full walkout with stairs $27,000-40,000, and premium walkout with patio $43,000+. Factors include wall thickness, excavation depth, structural requirements, moisture protection complexity, and finishing options. All prices include permits and engineering."
+  },
+  {
+    question: "How long does foundation walkout installation take?",
+    answer: "Timeline varies by project scope: Simple door cut-out 3-5 days, window to door conversion 2-3 days, full walkout with stairs 2-3 weeks, premium walkout with patio 3-4 weeks. Includes excavation, cutting, installation, waterproofing, and basic finishing. Weather and soil conditions can affect timeline."
+  },
+  {
+    question: "What are the benefits of a foundation walkout door?",
+    answer: "Foundation walkouts provide NBC code compliance, fire safety egress, separate entrance for legal suites, $2,200+/month rental income potential, 5-10% property value increase, natural light and ventilation, improved lower level functionality, and enhanced home marketability. Professional installation ensures structural integrity and moisture protection."
+  },
+  {
+    question: "When do I need a foundation walkout or door?",
+    answer: "Foundation doors are required for: legal lower level apartments, NBC fire safety compliance, lower levels with heating equipment, emergency egress from bedrooms, areas >25m long, separate home office access, and rental suite creation. Required by building code for safety and increasingly demanded by buyers."
+  }
+];
+
+// Service offers (pricing tiers)
+const walkoutOffers = [
+  {
+    name: "Basic Egress Door",
+    price: "$8,650-12,000",
+    description: "Code-compliant emergency exit with single 36\" door opening, basic excavation, structural header beam, standard steel door, basic waterproofing, permit included, and 2-year warranty."
+  },
+  {
+    name: "Full Walkout with Stairs",
+    price: "$27,000-40,000",
+    description: "Complete walkout entrance with double door or patio opening, full excavation and grading, engineered support system, premium doors and hardware, complete waterproofing, concrete stairs with railings, drainage system, and 5-year warranty."
+  },
+  {
+    name: "Premium Suite Entrance",
+    price: "$43,000+",
+    description: "Luxury walkout with sliding glass doors, covered entrance/awning, interlocking stone patio, retaining walls if needed, lighting system, premium landscaping, and 10-year warranty. Custom designed for maximum value."
+  }
+];
+
+const faqItems = [
+  {
+    question: "Why do I need a foundation walkout or door?",
+    answer: "NBC requires below-grade access for fire safety and rescue operations. Every lower level needs a door, window, or opening to facilitate occupant escape and firefighter access. This is especially critical for areas with heating equipment or storage. Legal lower level apartments require a separate entrance. Walkouts also add significant value, provide natural light, and improve area livability."
+  },
+  {
+    question: "What are the NBC requirements for basement access?",
+    answer: "For single dwelling units: At least one door or window opening is required from each lower level. For multiple units or areas >25m long: Direct outdoor access required with minimum 1100mm (43\") height and 550mm (22\") width, located maximum 900mm (35\") above floor. Standard doors must be 36\" wide minimum. Emergency exits require 3.8 sq ft opening area. All openings must be operable from inside without tools or keys."
+  },
+  {
+    question: "Can any foundation wall be cut for a door?",
+    answer: "Not all walls are suitable for cutting. Load-bearing walls require extensive reinforcement. Block walls are easier to cut than poured concrete. The location must avoid utility lines, maintain proper distances from corners (minimum 4 feet), and ensure adequate header support. Our structural engineer assesses each situation and designs appropriate reinforcement to maintain structural integrity."
+  },
+  {
+    question: "How long does a walkout installation take?",
+    answer: "Timeline depends on scope: Simple door cut-out: 3-5 days. Window to door conversion: 2-3 days. Full walkout with stairs: 2-3 weeks. Luxury walkout with patio: 3-4 weeks. This includes excavation, cutting, installation, waterproofing, and basic finishing. Weather and soil conditions can affect timeline. We provide detailed schedules and minimize disruption to your home."
+  },
+  {
+    question: "Will cutting my foundation wall cause structural problems?",
+    answer: "When properly engineered, foundation cutting is completely safe. We install steel or concrete lintels to carry loads around the opening, use temporary supports during cutting, and reinforce surrounding areas as needed. Our P.Eng certified designs ensure structural integrity. We've completed 500+ foundation cuts without any structural issues. All work includes structural warranty."
+  },
+  {
+    question: "What about waterproofing around the new door?",
+    answer: "Moisture protection is critical for walkouts. We install rubberized membrane around entire opening, proper water removal below door threshold, weeping tile connection to drainage system, and slope grading away from entrance. Window wells include gravel drainage base. All installations include interior and exterior protection with 10-year warranty against water infiltration."
+  },
+  {
+    question: "Do I need a permit for a basement door?",
+    answer: "Yes, permits are required for any foundation modification. This includes building permit for structural work, electrical permit if adding lighting, and plumbing permit if affecting water removal. Some municipalities also require engineering drawings and site plan amendments. We handle all permit applications and coordinate inspections. Unpermitted work can result in fines and problems when selling."
+  },
+  {
+    question: "How much value does a walkout add to my home?",
+    answer: "Walkouts typically add 5-10% to property value ($54,000-100,000 in Toronto). Benefits include: enables legal lower level apartment ($2,200+/month rental income), increases natural light and ventilation, provides separate entrance for privacy, improves emergency egress safety, and makes area feel like above-grade space. ROI is typically 150-200% of installation cost."
+  }
+];
+---
+
+<Layout title="Basement Walkout & Door Cutting Services Toronto | Foundation Opening Experts">
+  <ServiceSchema 
+    serviceName="Lower Level Walkout & Door Cutting Services"
+    description="Professional foundation opening services for lower level walkouts, emergency exits, and separate entrances. P.Eng certified structural design, moisture control, and NBC code compliance for Toronto homes."
+    priceRange="$6,500-40,000+"
+    areaServed={['Toronto', 'Mississauga', 'Brampton', 'Vaughan', 'Markham', 'Richmond Hill', 'North York', 'Scarborough']}
+    offers={walkoutOffers}
+    faqs={walkoutFAQs}
+  />
+  <Hero
+    title="Lower Level Walkout & Door Cutting"
+    subtitle="Professional Foundation Opening Services. Create Separate Entrances, Emergency Exits, and Walkout Access."
+    backgroundImage="/images/walkout-hero.webp"
+    ctaText="Get Free Quote"
+    ctaLink="/contact"
+  />
+
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-4xl font-bold mb-6">Professional Below-Grade Walkout Installation</h2>
+        <p class="text-lg text-slate-600 mb-8">
+          Transform your lower level with a proper walkout entrance. Whether you need a separate entrance for a legal suite, 
+          emergency egress for code compliance, or simply want to improve access and natural light, our structural engineers 
+          and certified installers ensure safe, waterproof, and code-compliant installations.
+        </p>
+
+        <!-- NBC Requirements Box -->
+        <div class="bg-cyan-50 border-2 border-cyan-400 rounded-lg p-8 mb-12">
+          <h3 class="text-2xl font-bold mb-6 text-cyan-900">NBC Below-Grade Access Requirements</h3>
+          
+          <div class="grid md:grid-cols-2 gap-6">
+            <div>
+              <h4 class="font-bold mb-3 text-lg">Single Dwelling Units</h4>
+              <ul class="space-y-2 text-sm">
+                <li class="flex items-start">
+                  <span class="text-cyan-600 mr-2">•</span>
+                  <span>Door or window required from each lower level</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-cyan-600 mr-2">•</span>
+                  <span>Facilitates rescue and fire department access</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-cyan-600 mr-2">•</span>
+                  <span>Critical for lower levels with heating equipment</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-cyan-600 mr-2">•</span>
+                  <span>Not required if secondary suite exists</span>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 class="font-bold mb-3 text-lg">Multiple Units / Long Lower Levels</h4>
+              <ul class="space-y-2 text-sm">
+                <li class="flex items-start">
+                  <span class="text-cyan-600 mr-2">•</span>
+                  <span>Required for lower levels >25m (82 ft) long</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-cyan-600 mr-2">•</span>
+                  <span>Minimum opening: 1100mm × 550mm</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-cyan-600 mr-2">•</span>
+                  <span>Maximum 900mm above floor level</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-cyan-600 mr-2">•</span>
+                  <span>Direct access to street required</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="mt-6 p-4 bg-cyan-100 rounded">
+            <p class="text-sm">
+              <strong>Fire Safety Note:</strong> Lower levels are high fire risk areas due to storage and heating equipment. 
+              Proper egress can save lives and limit property damage. Interior stairs accessible from outdoors also satisfy this requirement.
+            </p>
+          </div>
+        </div>
+
+        <!-- Types of Openings -->
+        <div class="mb-12">
+          <h3 class="text-2xl font-bold mb-6">Foundation Opening Options</h3>
+          
+          <div class="grid md:grid-cols-3 gap-6">
+            <div class="bg-white border-2 border-slate-100 rounded-lg p-6 hover:shadow-lg transition-shadow">
+              <div class="text-3xl mb-3">🚪</div>
+              <h4 class="font-bold text-lg mb-2">Standard Door Cut</h4>
+              <p class="text-sm text-slate-600 mb-4">
+                36" × 80" opening for basic access. Ideal for storage access or code compliance.
+              </p>
+              <ul class="text-sm space-y-1">
+                <li>✓ Single day cutting</li>
+                <li>✓ Steel or fiberglass door</li>
+                <li>✓ Basic waterproofing</li>
+              </ul>
+              <p class="mt-4 text-lg font-bold text-cyan-600">From $8,650</p>
+            </div>
+
+            <div class="bg-white border-2 border-slate-100 rounded-lg p-6 hover:shadow-lg transition-shadow">
+              <div class="text-3xl mb-3">🏠</div>
+              <h4 class="font-bold text-lg mb-2">Full Walkout</h4>
+              <p class="text-sm text-slate-600 mb-4">
+                Complete walkout with stairs and landing for lower level apartments.
+              </p>
+              <ul class="text-sm space-y-1">
+                <li>✓ Large opening (6-12 ft)</li>
+                <li>✓ Concrete stairs</li>
+                <li>✓ Drainage system</li>
+              </ul>
+              <p class="mt-4 text-lg font-bold text-cyan-600">From $27,000</p>
+            </div>
+
+            <div class="bg-white border-2 border-slate-100 rounded-lg p-6 hover:shadow-lg transition-shadow">
+              <div class="text-3xl mb-3">🪟</div>
+              <h4 class="font-bold text-lg mb-2">Window to Door</h4>
+              <p class="text-sm text-slate-600 mb-4">
+                Convert existing window to door opening. Most economical option.
+              </p>
+              <ul class="text-sm space-y-1">
+                <li>✓ Uses existing opening</li>
+                <li>✓ Minimal excavation</li>
+                <li>✓ 2-3 day completion</li>
+              </ul>
+              <p class="mt-4 text-lg font-bold text-purple-600">From $6,500</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Structural Considerations -->
+        <div class="bg-amber-50 border-2 border-amber-400 rounded-lg p-8 mb-12">
+          <h3 class="text-2xl font-bold mb-6 flex items-center">
+            <span class="text-3xl mr-3">⚠️</span>
+            Critical Structural Requirements
+          </h3>
+          
+          <div class="grid md:grid-cols-2 gap-6">
+            <div>
+              <h4 class="font-bold mb-3">Load Transfer System</h4>
+              <ul class="space-y-2 text-sm">
+                <li class="flex items-start">
+                  <span class="text-amber-500 mr-2">•</span>
+                  <span>Steel or concrete lintel installation</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-amber-500 mr-2">•</span>
+                  <span>Minimum 6" bearing on each side</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-amber-500 mr-2">•</span>
+                  <span>Temporary support during cutting</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-amber-500 mr-2">•</span>
+                  <span>P.Eng certified design required</span>
+                </li>
+              </ul>
+            </div>
+            
+            <div>
+              <h4 class="font-bold mb-3">Foundation Integrity</h4>
+              <ul class="space-y-2 text-sm">
+                <li class="flex items-start">
+                  <span class="text-amber-500 mr-2">•</span>
+                  <span>Minimum 4' from corners</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-amber-500 mr-2">•</span>
+                  <span>Avoid utility penetrations</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-amber-500 mr-2">•</span>
+                  <span>Reinforcement for block walls</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-amber-500 mr-2">•</span>
+                  <span>Crack monitoring during work</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Waterproofing Details -->
+        <div class="bg-cyan-50 rounded-lg p-8 mb-12">
+          <h3 class="text-2xl font-bold mb-6">Comprehensive Moisture Control System</h3>
+          
+          <div class="grid md:grid-cols-3 gap-6">
+            <div>
+              <h4 class="font-semibold mb-3">Exterior Protection</h4>
+              <ul class="text-sm space-y-2">
+                <li>• Rubberized membrane</li>
+                <li>• Dimpled drainage board</li>
+                <li>• Weeping tile connection</li>
+                <li>• Gravel drainage bed</li>
+              </ul>
+            </div>
+            
+            <div>
+              <h4 class="font-semibold mb-3">Door Installation</h4>
+              <ul class="text-sm space-y-2">
+                <li>• Sloped sill plate</li>
+                <li>• Weather stripping</li>
+                <li>• Threshold drainage</li>
+                <li>• Caulking & sealing</li>
+              </ul>
+            </div>
+            
+            <div>
+              <h4 class="font-semibold mb-3">Site Grading</h4>
+              <ul class="text-sm space-y-2">
+                <li>• 2% slope away</li>
+                <li>• Swale if needed</li>
+                <li>• Downspout relocation</li>
+                <li>• Surface drainage</li>
+              </ul>
+            </div>
+          </div>
+          
+          <div class="mt-6 text-center">
+            <p class="text-lg font-bold text-cyan-700">10-Year Water Protection Warranty Included</p>
+          </div>
+        </div>
+
+        <!-- Value Addition -->
+        <div class="bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-lg p-8 mb-12">
+          <h3 class="text-2xl font-bold mb-6">Investment Returns</h3>
+          
+          <div class="grid md:grid-cols-2 gap-8">
+            <div>
+              <h4 class="font-bold mb-4">Immediate Benefits</h4>
+              <ul class="space-y-2">
+                <li>✓ Legal lower level suite enabled</li>
+                <li>✓ $2,200+/month rental potential</li>
+                <li>✓ Code compliance achieved</li>
+                <li>✓ Enhanced fire safety</li>
+                <li>✓ Natural light & ventilation</li>
+              </ul>
+            </div>
+            
+            <div>
+              <h4 class="font-bold mb-4">Long-term Value</h4>
+              <ul class="space-y-2">
+                <li>✓ 5-10% property value increase</li>
+                <li>✓ Faster property sale</li>
+                <li>✓ Multi-generational living option</li>
+                <li>✓ Home office separate entrance</li>
+                <li>✓ Improved lower level functionality</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project Examples -->
+        <div class="mb-12">
+          <h3 class="text-2xl font-bold mb-6">Recent Walkout Projects</h3>
+          
+          <div class="grid md:grid-cols-2 gap-6">
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+              <div class="p-6">
+                <h4 class="font-bold text-xl mb-2">North York Legal Suite Entrance</h4>
+                <p class="text-slate-500 mb-4">
+                  Created separate entrance for legal lower level apartment with covered stairway.
+                </p>
+                <ul class="text-sm space-y-1 mb-4">
+                  <li>• 6' double door opening</li>
+                  <li>• Concrete stairs with landing</li>
+                  <li>• Covered entrance with lighting</li>
+                  <li>• Complete moisture protection system</li>
+                </ul>
+                <div class="border-t pt-4">
+                  <div class="flex justify-between text-sm">
+                    <span>Investment:</span>
+                    <span class="font-bold">$30,000</span>
+                  </div>
+                  <div class="flex justify-between text-sm">
+                    <span>Completion:</span>
+                    <span class="font-bold">12 days</span>
+                  </div>
+                  <div class="flex justify-between text-sm">
+                    <span>Added Value:</span>
+                    <span class="font-bold text-cyan-600">$81,000</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+              <div class="p-6">
+                <h4 class="font-bold text-xl mb-2">Scarborough Emergency Egress</h4>
+                <p class="text-slate-500 mb-4">
+                  Added code-required emergency exit for existing lower level bedroom.
+                </p>
+                <ul class="text-sm space-y-1 mb-4">
+                  <li>• Standard 36" door opening</li>
+                  <li>• Window well with ladder</li>
+                  <li>• Basic excavation & grading</li>
+                  <li>• Permit acquisition included</li>
+                </ul>
+                <div class="border-t pt-4">
+                  <div class="flex justify-between text-sm">
+                    <span>Investment:</span>
+                    <span class="font-bold">$10,500</span>
+                  </div>
+                  <div class="flex justify-between text-sm">
+                    <span>Completion:</span>
+                    <span class="font-bold">4 days</span>
+                  </div>
+                  <div class="flex justify-between text-sm">
+                    <span>Code Status:</span>
+                    <span class="font-bold text-cyan-600">Compliant</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Related Construction Services -->
+  <section class="py-16 bg-cyan-50">
+    <div class="container mx-auto px-4 max-w-6xl">
+      <InternalLinks category="construction" currentPage="basement-walkout-door-cutting" limit={6} />
+    </div>
+  </section>
+
+  <!-- ServiceFeatures removed -->
+  
+  
+  
+
+  <FAQ items={faqItems} />
+  
+  <CTASection
+    title="Ready to Add a Foundation Walkout?"
+    description="Get a free structural assessment and quote for your foundation entrance project."
+    primaryButtonText="Schedule Free Assessment"
+    primaryButtonLink="/contact"
+    secondaryButtonText="Call 437-545-0067"
+    secondaryButtonLink="tel:437-545-0067"
+  />
+
+  <!-- ServiceAreas removed -->
+</Layout>

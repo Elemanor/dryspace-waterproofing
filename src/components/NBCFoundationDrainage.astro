@@ -1,0 +1,245 @@
+---
+export interface Props {
+  showDrainageTile?: boolean;
+  showGranularLayer?: boolean;
+  showDisposal?: boolean;
+  showWetSite?: boolean;
+}
+
+const { 
+  showDrainageTile = true, 
+  showGranularLayer = true,
+  showDisposal = true,
+  showWetSite = false
+} = Astro.props;
+---
+
+<div class="nbc-foundation-drainage bg-cyan-50 rounded-lg p-6 my-8">
+  <h3 class="text-xl font-bold mb-4 flex items-center">
+    <span class="text-cyan-600 mr-2">💧</span>
+    NBC 9.14 Foundation Drainage Requirements
+  </h3>
+
+  <div class="bg-amber-50 border-l-4 border-cyan-500 p-4 mb-6">
+    <p class="text-sm">
+      <strong>NBC 9.14.2.1:</strong> Bottom of each exterior foundation wall must be drained to prevent 
+      water saturation that creates hydrostatic pressure against foundation and beneath floor.
+    </p>
+  </div>
+
+  {showDrainageTile && (
+    <div class="bg-white rounded-lg p-6 mb-6">
+      <h4 class="font-bold mb-4 text-cyan-700">9.14.3 Drainage Tile and Pipe</h4>
+      
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <h5 class="font-semibold mb-3">Installation Requirements</h5>
+          <ul class="text-sm space-y-2">
+            <li class="flex items-start">
+              <span class="text-cyan-600 mr-2">✓</span>
+              <span><strong>Size:</strong> Minimum 100mm (4") diameter</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-cyan-600 mr-2">✓</span>
+              <span><strong>Position:</strong> Top below floor bottom</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-cyan-600 mr-2">✓</span>
+              <span><strong>Base:</strong> Firm, stable support</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-cyan-600 mr-2">✓</span>
+              <span><strong>Slope:</strong> Level or slight grade</span>
+            </li>
+          </ul>
+        </div>
+        
+        <div>
+          <h5 class="font-semibold mb-3">Crushed Stone Requirements</h5>
+          <ul class="text-sm space-y-2">
+            <li class="flex items-start">
+              <span class="text-cyan-600 mr-2">✓</span>
+              <span>150mm minimum coverage (all sides)</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-cyan-600 mr-2">✓</span>
+              <span>Max 10% passing 4mm sieve</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-cyan-600 mr-2">✓</span>
+              <span>Clean, washed material</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-cyan-600 mr-2">✓</span>
+              <span>Filter fabric recommended</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mt-4 grid grid-cols-3 gap-3 text-center">
+        <div class="bg-cyan-50 p-3 rounded">
+          <div class="font-semibold text-sm">Clay Tile</div>
+          <div class="text-xs mt-1">6-10mm gaps</div>
+          <div class="text-xs">Cover joints</div>
+        </div>
+        <div class="bg-cyan-50 p-3 rounded">
+          <div class="font-semibold text-sm">Rigid PVC</div>
+          <div class="text-xs mt-1">Perforated</div>
+          <div class="text-xs">Most durable</div>
+        </div>
+        <div class="bg-cyan-50 p-3 rounded">
+          <div class="font-semibold text-sm">Corrugated PE</div>
+          <div class="text-xs mt-1">Flexible coils</div>
+          <div class="text-xs">Easy install</div>
+        </div>
+      </div>
+    </div>
+  )}
+
+  {showGranularLayer && (
+    <div class="bg-cyan-50 rounded-lg p-6 mb-6">
+      <h4 class="font-bold mb-4 text-cyan-700">9.14.4 Granular Drainage Layer</h4>
+      
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <h5 class="font-semibold mb-3">Material Requirements</h5>
+          <ul class="text-sm space-y-2">
+            <li><strong>Type:</strong> Crushed stone or clean granular</li>
+            <li><strong>Grading:</strong> Max 10% passing 4mm sieve</li>
+            <li><strong>Layer:</strong> Continuous beneath floor/footings</li>
+            <li><strong>Extension:</strong> Min 300mm beyond footings</li>
+            <li><strong>Prohibited:</strong> No pyritic shales</li>
+          </ul>
+        </div>
+        
+        <div>
+          <h5 class="font-semibold mb-3">Installation Details</h5>
+          <ul class="text-sm space-y-2">
+            <li class="flex items-start">
+              <span class="text-cyan-600 mr-2">✓</span>
+              <span>Grade to central sump</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-cyan-600 mr-2">✓</span>
+              <span>Entire area must drain</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-cyan-600 mr-2">✓</span>
+              <span>Voids allow water flow</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-cyan-600 mr-2">✓</span>
+              <span>Alternative to perimeter drains</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  )}
+
+  {showWetSite && (
+    <div class="bg-red-50 border-2 border-red-300 rounded-lg p-6 mb-6">
+      <h4 class="font-bold mb-4 text-red-700">9.14.4.4 Wet Site Conditions</h4>
+      <p class="text-sm mb-4">
+        When placing granular material in muddy excavations, mud mixes with bottom portion filling voids needed for drainage.
+      </p>
+      <div class="grid md:grid-cols-2 gap-4">
+        <div class="bg-white p-3 rounded">
+          <h5 class="font-semibold text-sm mb-2">Problem</h5>
+          <ul class="text-xs space-y-1">
+            <li>• Mud fills drainage voids</li>
+            <li>• Reduces permeability</li>
+            <li>• Impairs drainage function</li>
+          </ul>
+        </div>
+        <div class="bg-white p-3 rounded">
+          <h5 class="font-semibold text-sm mb-2">Solution</h5>
+          <ul class="text-xs space-y-1">
+            <li>• Extra thickness required</li>
+            <li>• Top 125mm must be clear</li>
+            <li>• Consider geotextile layer</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  )}
+
+  {showDisposal && (
+    <div class="bg-amber-50 rounded-lg p-6 mb-6">
+      <h4 class="font-bold mb-4 text-amber-600">9.14.5 Drainage Disposal</h4>
+      
+      <div class="grid md:grid-cols-3 gap-4">
+        <div class="bg-white p-4 rounded">
+          <h5 class="font-bold mb-2 text-sm">Storm Sewer/Ditch</h5>
+          <ul class="text-xs space-y-1">
+            <li>• Gravity flow preferred</li>
+            <li>• Most reliable method</li>
+            <li>• Check local codes</li>
+            <li>• May need backflow valve</li>
+          </ul>
+        </div>
+        
+        <div class="bg-white p-4 rounded">
+          <h5 class="font-bold mb-2 text-sm">Sump Pump (9.14.5.2)</h5>
+          <ul class="text-xs space-y-1">
+            <li>• Airtight cover required</li>
+            <li>• Seal to floor barrier</li>
+            <li>• Adequate capacity</li>
+            <li>• Battery backup advised</li>
+          </ul>
+        </div>
+        
+        <div class="bg-white p-4 rounded">
+          <h5 class="font-bold mb-2 text-sm">Dry Well (9.14.5.3)</h5>
+          <ul class="text-xs space-y-1">
+            <li>• Min 5m from building</li>
+            <li>• Water table below well</li>
+            <li>• 1-1.5m diameter typical</li>
+            <li>• Below frost level</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mt-4 p-3 bg-amber-50 rounded">
+        <p class="text-xs">
+          <strong>Important:</strong> Never connect roof downspouts directly to footing drains. 
+          This can overload the system during heavy rain causing basement flooding.
+        </p>
+      </div>
+    </div>
+  )}
+
+  <!-- Water Management Strategies -->
+  <div class="bg-slate-50 rounded-lg p-6">
+    <h4 class="font-bold mb-4">Complete Water Management System</h4>
+    
+    <div class="grid md:grid-cols-4 gap-3 text-center">
+      <div class="bg-white p-3 rounded">
+        <div class="text-2xl mb-1">📐</div>
+        <div class="text-xs font-semibold">Surface Grading</div>
+        <div class="text-xs">5% slope min</div>
+      </div>
+      <div class="bg-white p-3 rounded">
+        <div class="text-2xl mb-1">🏠</div>
+        <div class="text-xs font-semibold">Roof Drainage</div>
+        <div class="text-xs">Gutters & extensions</div>
+      </div>
+      <div class="bg-white p-3 rounded">
+        <div class="text-2xl mb-1">🧱</div>
+        <div class="text-xs font-semibold">Wall Drainage</div>
+        <div class="text-xs">Free-draining backfill</div>
+      </div>
+      <div class="bg-white p-3 rounded">
+        <div class="text-2xl mb-1">💧</div>
+        <div class="text-xs font-semibold">Footing Drains</div>
+        <div class="text-xs">Perimeter system</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="mt-6 text-xs text-slate-500 border-t pt-3">
+    <p><strong>Reference:</strong> NBC 2015 Part 9, Section 9.14 - Drainage</p>
+    <p>Proper foundation drainage prevents hydrostatic pressure, basement leaks, and structural damage.</p>
+  </div>
+</div>

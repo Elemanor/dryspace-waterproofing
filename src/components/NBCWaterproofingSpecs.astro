@@ -1,0 +1,195 @@
+---
+export interface Props {
+  showFloorSystem?: boolean;
+  showPressureCalc?: boolean;
+}
+
+const { showFloorSystem = true, showPressureCalc = false } = Astro.props;
+---
+
+<div class="nbc-waterproofing bg-cyan-50 rounded-lg p-6 my-8">
+  <h3 class="text-xl font-bold mb-4 flex items-center">
+    <span class="text-cyan-600 mr-2">💧</span>
+    NBC 9.13.3 Waterproofing System Requirements
+  </h3>
+
+  <div class="grid md:grid-cols-2 gap-6 mb-6">
+    <div class="bg-white rounded-lg p-4">
+      <h4 class="font-bold mb-3 text-cyan-700">Required Conditions</h4>
+      <ul class="text-sm space-y-2">
+        <li class="flex items-start">
+          <span class="text-cyan-600 mr-2">✓</span>
+          <span>Hydrostatic pressure present</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-cyan-600 mr-2">✓</span>
+          <span>Water table above floor level</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-cyan-600 mr-2">✓</span>
+          <span>Blocked/inadequate drainage</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-cyan-600 mr-2">✓</span>
+          <span>Wet site conditions</span>
+        </li>
+      </ul>
+    </div>
+    
+    <div class="bg-white rounded-lg p-4">
+      <h4 class="font-bold mb-3 text-cyan-700">Material Standards</h4>
+      <ul class="text-sm space-y-2">
+        <li class="flex items-start">
+          <span class="text-cyan-600 mr-2">✓</span>
+          <span>Two-membrane minimum</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-cyan-600 mr-2">✓</span>
+          <span>Emulsified/cut-back asphalt</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-cyan-600 mr-2">✓</span>
+          <span>Glass fiber reinforcement</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-cyan-600 mr-2">✓</span>
+          <span>CAN/CGSB compliance</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  {showFloorSystem && (
+    <div class="bg-amber-50 border-2 border-amber-400 rounded-lg p-6 mb-6">
+      <h4 class="font-bold mb-4 text-lg flex items-center">
+        <span class="text-2xl mr-3">⚠️</span>
+        NBC 9.13.3.5 Floor Waterproofing System
+      </h4>
+      
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <h5 class="font-semibold mb-3">System Components</h5>
+          <ol class="text-sm space-y-2">
+            <li><strong>1.</strong> Bottom concrete slab (min 75mm)</li>
+            <li><strong>2.</strong> Waterproof membrane system</li>
+            <li><strong>3.</strong> Top wearing slab (min 75mm)</li>
+            <li><strong>4.</strong> Continuous wall-floor seal</li>
+          </ol>
+        </div>
+        
+        <div>
+          <h5 class="font-semibold mb-3">Critical Details</h5>
+          <ul class="text-sm space-y-2">
+            <li>• Membrane between two slabs</li>
+            <li>• Lap with wall membrane</li>
+            <li>• Complete envelope seal</li>
+            <li>• Protect during construction</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mt-4 p-3 bg-amber-50 rounded">
+        <p class="text-sm">
+          <strong>Important:</strong> Floor membrane must be continuous with wall waterproofing to create 
+          complete hydrostatic barrier. Any discontinuity will result in water infiltration.
+        </p>
+      </div>
+    </div>
+  )}
+
+  {showPressureCalc && (
+    <div class="bg-red-50 border-2 border-red-300 rounded-lg p-6 mb-6">
+      <h4 class="font-bold mb-4 text-lg text-red-700">Hydrostatic Pressure Calculations</h4>
+      
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <h5 class="font-semibold mb-3">Pressure Formula</h5>
+          <div class="bg-white rounded p-3 font-mono text-sm">
+            P = ρ × g × h
+          </div>
+          <ul class="text-sm mt-3 space-y-1">
+            <li><strong>P</strong> = Pressure (kPa)</li>
+            <li><strong>ρ</strong> = Water density (1000 kg/m³)</li>
+            <li><strong>g</strong> = Gravity (9.81 m/s²)</li>
+            <li><strong>h</strong> = Water depth (m)</li>
+          </ul>
+        </div>
+        
+        <div>
+          <h5 class="font-semibold mb-3">Typical Pressures</h5>
+          <table class="w-full text-sm bg-white rounded">
+            <thead class="bg-red-100">
+              <tr>
+                <th class="px-3 py-2 text-left">Water Depth</th>
+                <th class="px-3 py-2">Pressure</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="border-b">
+                <td class="px-3 py-2">0.5m (20")</td>
+                <td class="px-3 py-2 text-center font-bold">4.9 kPa</td>
+              </tr>
+              <tr class="border-b">
+                <td class="px-3 py-2">1.0m (39")</td>
+                <td class="px-3 py-2 text-center font-bold">9.8 kPa</td>
+              </tr>
+              <tr class="border-b">
+                <td class="px-3 py-2">2.0m (79")</td>
+                <td class="px-3 py-2 text-center font-bold">19.6 kPa</td>
+              </tr>
+              <tr>
+                <td class="px-3 py-2">3.0m (118")</td>
+                <td class="px-3 py-2 text-center font-bold">29.4 kPa</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="mt-4 p-3 bg-red-100 rounded">
+        <p class="text-sm">
+          <strong>Buoyancy Warning:</strong> If water table rises >200mm (8") above floor, 
+          upward pressure exceeds slab weight. Special slab design required per NBC Part 4.
+        </p>
+      </div>
+    </div>
+  )}
+
+  <div class="bg-cyan-50 rounded-lg p-4">
+    <h4 class="font-bold mb-3">Surface Preparation (NBC 9.13.3.3)</h4>
+    
+    <div class="grid md:grid-cols-3 gap-4 text-sm">
+      <div>
+        <h5 class="font-semibold mb-2">Concrete Walls</h5>
+        <ul class="space-y-1">
+          <li>• Remove projections</li>
+          <li>• Fill tie holes</li>
+          <li>• Smooth surface</li>
+        </ul>
+      </div>
+      
+      <div>
+        <h5 class="font-semibold mb-2">Masonry Walls</h5>
+        <ul class="space-y-1">
+          <li>• 6mm parging</li>
+          <li>• Coved at footing</li>
+          <li>• Smooth finish</li>
+        </ul>
+      </div>
+      
+      <div>
+        <h5 class="font-semibold mb-2">All Surfaces</h5>
+        <ul class="space-y-1">
+          <li>• Clean and dry</li>
+          <li>• No ice or frost</li>
+          <li>• No contaminants</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="mt-4 text-xs text-slate-500 border-t pt-3">
+    <p><strong>Reference:</strong> NBC 2015 Part 9, Section 9.13.3 - Waterproofing</p>
+    <p>Professional waterproofing required where hydrostatic pressure exists.</p>
+  </div>
+</div>

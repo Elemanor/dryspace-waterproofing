@@ -1,0 +1,588 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import Hero from '../../components/sections/Hero.astro';
+import Stats from '../../components/sections/Stats.astro';
+import ProblemIdentifier from '../../components/ProblemIdentifier.astro';
+import SubsidyTeaser from '../../components/SubsidyTeaser.astro';
+import PermitTeaser from '../../components/PermitTeaser.astro';
+import CostCalculator from '../../components/CostCalculator.astro';
+import Process from '../../components/sections/Process.astro';
+import BeforeAfterGallery from '../../components/BeforeAfterGallery.astro';
+import WhyChooseUs from '../../components/WhyChooseUs.astro';
+import Testimonials from '../../components/sections/Testimonials.astro';
+import TechnicalDrawings from '../../components/TechnicalDrawings.astro';
+import FAQ from '../../components/FAQ.astro';
+import ContactForm from '../../components/ContactForm.astro';
+import ServiceSchema from '../../components/ServiceSchema.astro';
+import InternalLinks from '../../components/InternalLinks.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+
+// SEO-optimized metadata for permeable paving
+const pageTitle = "Permeable Paving & Water Management Toronto | Structure Protection Driveways | Eco-Friendly";
+const pageDescription = "Professional permeable paving in Toronto & GTA. Eco-friendly driveways, walkways & patios that protect your foundation from moisture pooling. Sustainable water management solutions. Licensed & insured. Call 437-545-0067.";
+
+// Service areas for local SEO
+const serviceAreas = [
+  "Toronto", "North York", "Scarborough", "Etobicoke", 
+  "Mississauga", "Brampton", "Vaughan", "Richmond Hill",
+  "Markham", "Oakville", "Burlington", "Hamilton"
+];
+
+// Service-specific FAQs with cost, timeline, benefits, process information
+const serviceFAQs = [
+  {
+    question: "How much does permeable paving cost in Toronto?",
+    answer: "Permeable surfaces cost in Toronto range from $20-$44/sq ft depending on system complexity: Basic permeable pavers: $20-$30/sq ft including excavation, base, and installation, Premium interlocking systems: $27-$37/sq ft with enhanced water management and decorative options, Commercial-grade systems: $32-$44/sq ft with heavy-duty base and load capacity. Complete residential driveway projects typically cost $13,000-$49,000. While more expensive than traditional concrete initially, permeable systems provide long-term value through foundation protection and reduced water removal infrastructure needs."
+  },
+  {
+    question: "How long does permeable paving installation take?",
+    answer: "Installation timeline varies by project scope: Site assessment and design: 2-3 days including soil testing and water flow analysis, Excavation and base preparation: 3-5 days for proper depth and drainage layers, Permeable paver installation: 2-4 days depending on area size and pattern complexity, System testing and finishing: 1-2 days for infiltration testing and joint filling. Total project timeline is typically 2-3 weeks from start to completion. Weather conditions may affect scheduling, with optimal installation during dry periods from spring through fall."
+  },
+  {
+    question: "What are the benefits of permeable paving for Toronto properties?",
+    answer: "Permeable paving provides significant advantages: Foundation protection: 85-95% reduction in surface runoff prevents water pooling against foundations, Storm management: Systems handle 5-10 inches/hour rainfall, exceeding Toronto's extreme weather events, Winter benefits: Reduces ice formation and handles freeze-thaw cycles better than solid concrete, Environmental impact: Reduces urban runoff, supports groundwater recharge, Property value: 8-15% increase from sustainable infrastructure and improved drainage, Durability: 25-30 year lifespan with minimal maintenance requirements, Aesthetics: Multiple design options and patterns available for enhanced curb appeal."
+  },
+  {
+    question: "When should I consider permeable paving for my property?",
+    answer: "Permeable paving is ideal in several scenarios: Foundation water issues: Properties experiencing basement moisture, foundation leaks, or poor drainage, Driveway replacement: When existing concrete/asphalt needs renewal, upgrade to permeable for long-term benefits, New construction: Integrate permeable paving during initial development for optimal foundation protection, Environmental goals: Properties pursuing sustainable practices, LEED certification, or green building standards, Heavy rainfall areas: Properties in flood-prone areas or with inadequate stormwater management, Spring planning optimal for summer/fall installation when weather conditions are favorable."
+  }
+];
+
+// Service offers with 3 pricing tiers
+const serviceOffers = [
+  {
+    name: "Residential Permeable Driveway",
+    price: "$16,000-$27,000",
+    description: "Complete permeable driveway installation (500-800 sq ft) with engineered base system, quality pavers, and foundation protection integration. Includes 25-year warranty."
+  },
+  {
+    name: "Complete Property Solution",
+    price: "$27,000-$49,000",
+    description: "Comprehensive permeable paving for driveway, walkways, and patio areas with integrated water management systems. Includes design service, multiple paver options, and smart drainage integration."
+  },
+  {
+    name: "Commercial Permeable System",
+    price: "$49,000-$108,000",
+    description: "Heavy-duty permeable paving for commercial properties including parking areas and access roads. Engineered for commercial loads with advanced drainage systems and long-term maintenance program."
+  }
+];
+
+---
+
+<PageLayout 
+  title={pageTitle}
+  description={pageDescription}
+  canonical="https://dryspacewaterproofing.ca/services/permeable-paving-water-management"
+>
+  
+  <!-- Breadcrumbs -->
+  <div class="container mx-auto px-4 mt-4">
+    <Breadcrumbs 
+      items={[
+        { name: "Home", url: "/" },
+        { name: "Services", url: "/services" },
+        { name: "Permeable Paving Water Management" }
+      ]}
+    />
+  </div>
+
+<ServiceSchema 
+    serviceName="Permeable Paving & Water Management Toronto"
+    description={pageDescription}
+    priceRange="$16,000-$108,000"
+    offers={serviceOffers}
+    faqs={serviceFAQs}
+  />
+  <Hero 
+    title="Permeable Paving & Water Management Toronto"
+    subtitle="Eco-Friendly Driveways & Walkways That Protect Your Foundation"
+    description="Prevent basement flooding with permeable paving solutions that allow moisture to filter through instead of pooling around your structure. Beautiful, sustainable, and protective."
+    primaryButton="Get Free Surface Quote"
+    primaryButtonLink="/free-inspection"
+    secondaryButton="Call 437-545-0067"
+    secondaryButtonLink="tel:4375450067"
+    image="/images/permeable-paving-hero.webp"
+    imageAlt="Permeable paver driveway allowing water to filter through, protecting Toronto home foundation"
+    breadcrumbs={[
+      { text: 'Home', href: '/' },
+      { text: 'Services', href: '/services' },
+      { text: 'Permeable Paving & Water Management', href: '/services/permeable-paving-water-management' }
+    ]}
+  />
+
+  <Stats 
+    stats={[
+      { value: "90%", label: "Runoff Reduction Rate" },
+      { value: "800+", label: "Permeable Installations Completed" },
+      { value: "25-Year", label: "Paver System Warranty" },
+      { value: "10\"", label: "Rainfall Per Hour Capacity" }
+    ]}
+  />
+
+  <ProblemIdentifier 
+    title="Is Surface Water Runoff Threatening Your Foundation?"
+    problems={[
+      {
+        icon: "🌊",
+        title: "Driveway Water Pooling", 
+        description: "Traditional solid driveways direct all rainfall toward your home's base, overwhelming drainage systems."
+      },
+      {
+        icon: "❄️",
+        title: "Ice Dams & Flooding",
+        description: "Impermeable surfaces create ice dams in winter and contribute to spring flooding around foundations."
+      },
+      {
+        icon: "🚰", 
+        title: "Storm Water Overwhelm",
+        description: "Heavy Toronto rainfall creates surface floods that pool against basement walls."
+      },
+      {
+        icon: "🏠",
+        title: "Foundation Hydrostatic Pressure", 
+        description: "Moisture accumulation around structures increases pressure and causes basement leaks."
+      },
+      {
+        icon: "🌍",
+        title: "Environmental Impact",
+        description: "Non-permeable surfaces contribute to urban runoff and strain city storm water systems."
+      },
+      {
+        icon: "💸",
+        title: "Higher Insurance Claims",
+        description: "Properties with poor water management face higher basement flooding insurance claims."
+      }
+    ]}
+    ctaText="Get Free Permeable Surface Quote"
+    ctaLink="/free-inspection"
+  />
+
+  <section class="py-20 bg-white">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold text-slate-900 mb-4">Why Toronto Homes Need Permeable Systems</h2>
+        <p class="text-xl text-slate-500 max-w-3xl mx-auto">Traditional impermeable driveways and walkways create moisture management problems that threaten your structure and lower level.</p>
+      </div>
+
+      <div class="grid lg:grid-cols-2 gap-12 items-center mb-16">
+        <div>
+          <h3 class="text-2xl font-bold text-slate-900 mb-6">The Traditional Surface Problem</h3>
+          <div class="space-y-4">
+            <div class="flex items-start gap-3">
+              <div class="w-6 h-6 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                <span class="text-red-600 text-sm font-semibold">✗</span>
+              </div>
+              <div>
+                <h4 class="font-semibold text-slate-900">Complete Surface Runoff</h4>
+                <p class="text-slate-500">Solid concrete and asphalt direct ALL rainfall toward your home's foundation, overwhelming drainage systems.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <div class="w-6 h-6 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                <span class="text-red-600 text-sm font-semibold">✗</span>
+              </div>
+              <div>
+                <h4 class="font-semibold text-slate-900">Ice Formation</h4>
+                <p class="text-slate-500">Impermeable surfaces create ice dams and contribute to dangerous winter conditions around your home.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <div class="w-6 h-6 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                <span class="text-red-600 text-sm font-semibold">✗</span>
+              </div>
+              <div>
+                <h4 class="font-semibold text-slate-900">Foundation Pressure</h4>
+                <p class="text-slate-500">Moisture accumulation increases hydrostatic pressure against lower-level walls, causing leaks and damage.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <div class="w-6 h-6 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                <span class="text-red-600 text-sm font-semibold">✗</span>
+              </div>
+              <div>
+                <h4 class="font-semibold text-slate-900">Environmental Impact</h4>
+                <p class="text-slate-500">Non-permeable surfaces contribute to urban flooding and strain Toronto's storm water infrastructure.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="bg-cyan-50 p-8 rounded-lg">
+          <h3 class="text-xl font-bold text-slate-900 mb-4">Permeable Surface Solution</h3>
+          <div class="space-y-3">
+            <div class="flex items-start gap-3">
+              <div class="w-6 h-6 bg-cyan-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                <span class="text-cyan-600 text-sm font-semibold">✓</span>
+              </div>
+              <div>
+                <h4 class="font-semibold text-slate-900">90% Runoff Reduction</h4>
+                <p class="text-sm text-slate-500">Water filters through pavers into ground, dramatically reducing surface runoff.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <div class="w-6 h-6 bg-cyan-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                <span class="text-cyan-600 text-sm font-semibold">✓</span>
+              </div>
+              <div>
+                <h4 class="font-semibold text-slate-900">10\" Rainfall Capacity</h4>
+                <p class="text-sm text-slate-500">Handles extreme weather events far beyond Toronto's heaviest storms.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <div class="w-6 h-6 bg-cyan-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                <span class="text-cyan-600 text-sm font-semibold">✓</span>
+              </div>
+              <div>
+                <h4 class="font-semibold text-slate-900">Foundation Protection</h4>
+                <p class="text-sm text-slate-500">Reduces hydrostatic pressure and prevents lower level flooding.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <div class="w-6 h-6 bg-cyan-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                <span class="text-cyan-600 text-sm font-semibold">✓</span>
+              </div>
+              <div>
+                <h4 class="font-semibold text-slate-900">Winter Performance</h4>
+                <p class="text-sm text-slate-500">Reduces ice formation and handles freeze-thaw cycles better than concrete.</p>
+              </div>
+            </div>
+          </div>
+          <div class="mt-6 p-4 bg-cyan-50 rounded-lg">
+            <p class="text-sm text-cyan-800"><strong>Foundation Fact:</strong> Permeable surfaces can reduce building moisture pressure by up to 85% compared to traditional solid materials.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Process 
+    title="Our Permeable Surface Installation Process"
+    description="Professional installation ensures maximum water management and structural protection"
+    steps={[
+      {
+        number: 1,
+        title: "Site Analysis & Design Planning",
+        description: "Comprehensive assessment of your property's drainage patterns and structural protection needs.",
+        details: [
+          "Soil permeability testing and analysis",
+          "Water flow pattern mapping",
+          "Foundation vulnerability assessment", 
+          "Drainage integration planning",
+          "Custom paving design with CAD drawings"
+        ]
+      },
+      {
+        number: 2,
+        title: "Excavation & Base Preparation",
+        description: "Precise excavation and preparation of specialized base layers for optimal water infiltration.",
+        details: [
+          "Utility locates and safety preparation",
+          "Precise excavation to required depth",
+          "Geotextile fabric installation",
+          "Graded aggregate base installation",
+          "Compaction and grade verification"
+        ]
+      },
+      {
+        number: 3,
+        title: "Permeable Base System Installation",
+        description: "Installation of engineered base system designed for maximum water storage and infiltration.",
+        details: [
+          "Open-graded stone reservoir installation",
+          "Underdrain system connection (if required)",
+          "Bedding sand layer preparation",
+          "Grade verification with laser levels",
+          "Quality control and base testing"
+        ]
+      },
+      {
+        number: 4,
+        title: "Permeable Paver Installation", 
+        description: "Professional installation of permeable pavers with proper joint spacing for optimal performance.",
+        details: [
+          "Precise paver laying with gap spacing",
+          "Pattern alignment and grade maintenance",
+          "Edge restraint installation",
+          "Joint filling with permeable aggregate",
+          "Surface compaction and finishing"
+        ]
+      },
+      {
+        number: 5,
+        title: "System Testing & Quality Assurance",
+        description: "Comprehensive testing to ensure optimal water management performance and foundation protection.",
+        details: [
+          "Water infiltration rate testing",
+          "Surface drainage verification",
+          "Joint stability assessment",
+          "Final grade and slope confirmation",
+          "25-year warranty documentation"
+        ]
+      }
+    ]}
+  />
+
+  <section class="py-20 bg-cyan-50">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold text-slate-900 mb-4">Permeable Surface Solutions for Foundation Protection</h2>
+        <p class="text-xl text-slate-500">Complete water management systems that protect your foundation while enhancing your property.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="bg-white p-8 rounded-lg shadow-sm">
+          <div class="w-12 h-12 bg-cyan-100 rounded-lg flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-cyan-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 9l3 3m0 0l-3 3m3-3H8m13 0a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 mb-3">Permeable Driveways</h3>
+          <p class="text-slate-500 mb-4">Replace traditional concrete driveways with permeable pavers that filter water away from your foundation.</p>
+          <ul class="text-sm text-slate-500 space-y-1">
+            <li class="flex items-center gap-2"><span class="text-cyan-600">✓</span> 90% runoff reduction</li>
+            <li class="flex items-center gap-2"><span class="text-cyan-600">✓</span> 25-year durability</li>
+            <li class="flex items-center gap-2"><span class="text-cyan-600">✓</span> Multiple design options</li>
+          </ul>
+        </div>
+
+        <div class="bg-white p-8 rounded-lg shadow-sm">
+          <div class="w-12 h-12 bg-cyan-100 rounded-lg flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-cyan-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 mb-3">Permeable Walkways</h3>
+          <p class="text-slate-500 mb-4">Beautiful walkways that allow water infiltration while providing safe, slip-resistant surfaces.</p>
+          <ul class="text-sm text-slate-500 space-y-1">
+            <li class="flex items-center gap-2"><span class="text-cyan-600">✓</span> Slip-resistant surfaces</li>
+            <li class="flex items-center gap-2"><span class="text-cyan-600">✓</span> Winter ice reduction</li>
+            <li class="flex items-center gap-2"><span class="text-cyan-600">✓</span> Landscape integration</li>
+          </ul>
+        </div>
+
+        <div class="bg-white p-8 rounded-lg shadow-sm">
+          <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 mb-3">Permeable Patios</h3>
+          <p class="text-slate-500 mb-4">Outdoor living spaces that manage water naturally while creating beautiful entertainment areas.</p>
+          <ul class="text-sm text-slate-500 space-y-1">
+            <li class="flex items-center gap-2"><span class="text-cyan-600">✓</span> Natural water management</li>
+            <li class="flex items-center gap-2"><span class="text-cyan-600">✓</span> Design flexibility</li>
+            <li class="flex items-center gap-2"><span class="text-cyan-600">✓</span> Low maintenance</li>
+          </ul>
+        </div>
+
+        <div class="bg-white p-8 rounded-lg shadow-sm">
+          <div class="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 mb-3">Pool Deck Permeable Paving</h3>
+          <p class="text-slate-500 mb-4">Permeable pool decks that eliminate water pooling and provide slip-resistant surfaces around pools.</p>
+          <ul class="text-sm text-slate-500 space-y-1">
+            <li class="flex items-center gap-2"><span class="text-cyan-600">✓</span> No standing water</li>
+            <li class="flex items-center gap-2"><span class="text-cyan-600">✓</span> Slip resistance</li>
+            <li class="flex items-center gap-2"><span class="text-cyan-600">✓</span> Quick drying</li>
+          </ul>
+        </div>
+
+        <div class="bg-white p-8 rounded-lg shadow-sm">
+          <div class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 mb-3">Storm Water Management</h3>
+          <p class="text-slate-500 mb-4">Integrated systems that handle large storm events while protecting your foundation from water damage.</p>
+          <ul class="text-sm text-slate-500 space-y-1">
+            <li class="flex items-center gap-2"><span class="text-cyan-600">✓</span> 10" rainfall capacity</li>
+            <li class="flex items-center gap-2"><span class="text-cyan-600">✓</span> Underground storage</li>
+            <li class="flex items-center gap-2"><span class="text-cyan-600">✓</span> Overflow protection</li>
+          </ul>
+        </div>
+
+        <div class="bg-white p-8 rounded-lg shadow-sm">
+          <div class="w-12 h-12 bg-teal-100 rounded-lg flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 mb-3">Maintenance & Support</h3>
+          <p class="text-slate-500 mb-4">Long-term maintenance programs to ensure your permeable paving continues protecting your foundation.</p>
+          <ul class="text-sm text-slate-500 space-y-1">
+            <li class="flex items-center gap-2"><span class="text-cyan-600">✓</span> Annual cleaning service</li>
+            <li class="flex items-center gap-2"><span class="text-cyan-600">✓</span> Joint refilling</li>
+            <li class="flex items-center gap-2"><span class="text-cyan-600">✓</span> Performance monitoring</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <CostCalculator 
+    title="Permeable Surface Cost Calculator"
+    description="Get an instant estimate for your permeable surface project"
+    basePrice={20}
+    priceUnit="per square foot"
+    factors={[
+      { name: "Paver Type", multiplier: 1.3, unit: "premium materials" },
+      { name: "Site Conditions", multiplier: 1.2, unit: "complex drainage" },
+      { name: "Base System", multiplier: 1.4, unit: "engineered storage" },
+      { name: "Area Size", multiplier: 0.9, unit: "economies of scale" }
+    ]}
+  />
+
+  <SubsidyTeaser 
+    title="Eco-Friendly Rebates Available"
+    description="Toronto homeowners can receive rebates for environmentally-friendly water management improvements"
+    rebates={[
+      { program: "Toronto Green Standard", amount: "$2,200", description: "For sustainable drainage solutions" },
+      { program: "RainReady Program", amount: "$3,700", description: "Basement flooding prevention improvements" }
+    ]}
+  />
+
+  <BeforeAfterGallery 
+    title="Permeable Surface Transformations"
+    description="See how permeable surfaces protect Toronto foundations while creating beautiful outdoor spaces"
+  />
+
+  <WhyChooseUs 
+    title="Why Choose Dryspace for Permeable Surfaces"
+    reasons={[
+      {
+        icon: "🏆",
+        title: "Foundation Protection Experts",
+        description: "Unique expertise combining permeable surfaces with foundation moisture control - the only company in Toronto offering integrated solutions."
+      },
+      {
+        icon: "🧪",
+        title: "Engineered Water Management",
+        description: "Custom-engineered systems with precise calculations for Toronto's soil conditions and rainfall patterns."
+      },
+      {
+        icon: "🛡️",
+        title: "25-Year Performance Warranty",
+        description: "Industry-leading warranty on both paving materials and water management performance, backed by comprehensive insurance."
+      },
+      {
+        icon: "🌱",
+        title: "Environmental Leadership",
+        description: "LEED-qualified systems that exceed Toronto's green building standards while protecting your foundation."
+      },
+      {
+        icon: "📋",
+        title: "Complete Installation Service",
+        description: "Handle excavation, base preparation, paving installation, and integration with existing drainage systems."
+      },
+      {
+        icon: "🔧",
+        title: "Maintenance Programs",
+        description: "Long-term maintenance services to ensure continued water management performance and foundation protection."
+      }
+    ]}
+  />
+
+  <Testimonials 
+    title="What Toronto Homeowners Say About Our Permeable Surfaces"
+    testimonials={[
+      {
+        name: "Jennifer Liu",
+        location: "Vaughan",
+        rating: 5,
+        text: "Our new permeable driveway handles Toronto storms beautifully! No more water pooling by our foundation, and it looks amazing. The team explained how it protects our lower level from flooding. Worth every penny.",
+        service: "Permeable Driveway Installation"
+      },
+      {
+        name: "Robert Thompson",
+        location: "Mississauga", 
+        rating: 5,
+        text: "Dryspace installed permeable pavers for our entire front yard. During the last big storm, our neighbors had water issues but we didn't. The combination of their moisture control knowledge and surface expertise is unmatched.",
+        service: "Complete Permeable Hardscaping"
+      },
+      {
+        name: "Maria Santos",
+        location: "North York",
+        rating: 5,
+        text: "Love our permeable patio! It drains instantly after rain, never has standing water, and the kids can play on it right after storms. Plus it's helping protect our lower level. Great long-term investment.",
+        service: "Permeable Patio & Walkways"
+      }
+    ]}
+  />
+
+  <FAQ 
+    title="Permeable Surface & Water Management FAQ"
+    faqs={[
+      {
+        question: "What are permeable pavers and how do they protect foundations?",
+        answer: "Permeable pavers are interlocking stones with gaps that allow water to filter through to the ground below, reducing surface runoff. This prevents water from pooling around your foundation, reducing hydrostatic pressure and basement flooding risk."
+      },
+      {
+        question: "How much do permeable driveways cost in Toronto?",
+        answer: "Permeable driveways in Toronto cost $17-35 per square foot installed, depending on paver type and site conditions. While initially more expensive than regular concrete, they provide superior foundation protection and environmental benefits."
+      },
+      {
+        question: "Do permeable pavers work in Toronto winters?",
+        answer: "Yes, permeable pavers work excellently in Toronto winters. They reduce ice formation by allowing meltwater to drain through, and the interlocking design handles freeze-thaw cycles better than solid concrete surfaces."
+      },
+      {
+        question: "How much water can permeable pavers handle?",
+        answer: "Quality permeable paver systems can handle 5-10 inches of rainfall per hour, far exceeding Toronto's heaviest storms. This dramatically reduces surface runoff and foundation water pressure."
+      },
+      {
+        question: "Do I need permits for permeable paving in Toronto?",
+        answer: "Permits are typically not required for residential permeable paving, but may be needed for driveways near city property or storm water management systems. We handle all permit requirements and city approvals."
+      },
+      {
+        question: "How long do permeable pavers last?",
+        answer: "High-quality permeable pavers last 25-30 years with proper installation and minimal maintenance. They outlast traditional concrete driveways while providing continuous foundation protection benefits."
+      },
+      {
+        question: "Do permeable pavers require special maintenance?",
+        answer: "Minimal maintenance is required. Annual cleaning with a pressure washer or vacuum removes debris from joints. We offer maintenance programs to ensure continued optimal water management performance."
+      },
+      {
+        question: "Can permeable pavers clog over time?",
+        answer: "Quality permeable pavers with proper installation rarely clog completely. Even if surface infiltration reduces, they still significantly outperform traditional solid surfaces. Regular maintenance prevents clogging."
+      },
+      {
+        question: "Are permeable pavers suitable for heavy vehicle traffic?",
+        answer: "Yes, properly installed permeable pavers can handle regular vehicle traffic including SUVs and delivery trucks. The interlocking design distributes weight effectively across the base system."
+      },
+      {
+        question: "How do permeable pavers integrate with existing drainage systems?",
+        answer: "We design permeable paving systems to work with your existing foundation drainage, weeping tile, and sump pump systems. They reduce the load on these systems by managing water at the surface level."
+      }
+    ]}
+  />
+
+  <section class="py-20 bg-gradient-to-br from-green-600 to-green-800 text-white">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h2 class="text-4xl font-bold mb-6">Protect Your Foundation with Permeable Surfaces</h2>
+      <p class="text-xl mb-8 opacity-90">Transform your driveway, walkways, and patios into foundation protection systems while creating beautiful outdoor spaces.</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/free-inspection" class="bg-white text-cyan-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-slate-50 transition-colors">
+          Get Free Surface Quote
+        </a>
+        <a href="tel:4375450067" class="bg-cyan-700 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-cyan-800 transition-colors border-2 border-cyan-500">
+          Call 437-545-0067
+        </a>
+      </div>
+      <p class="text-sm mt-6 opacity-75">Eco-friendly solutions • 25-year warranty • Licensed & insured • Foundation protection guaranteed</p>
+    </div>
+  </section>
+
+  <!-- Internal Links -->
+  <InternalLinks 
+    category="drainage"
+    currentPage="permeable-paving-water-management"
+    limit={6}
+  />
+
+  <ContactForm 
+    title="Get Your Free Permeable Surface Quote"
+    description="Protect your foundation with beautiful, eco-friendly permeable paving solutions"
+  />
+</PageLayout>

@@ -1,0 +1,465 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import Hero from '../../components/sections/Hero.astro';
+import Features from '../../components/sections/Features.astro';
+import Process from '../../components/sections/Process.astro';
+import FAQ from '../../components/sections/FAQ.astro';
+import Testimonials from '../../components/sections/Testimonials.astro';
+import CTA from '../../components/sections/CTA.astro';
+import Stats from '../../components/sections/Stats.astro';
+import ServiceSchema from '../../components/ServiceSchema.astro';
+import InternalLinks from '../../components/InternalLinks.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+
+const pageTitle = "Slope Stabilization & Advanced Grading Toronto | Erosion Control & Terracing";
+const pageDescription = "Professional slope stabilization and advanced grading services in Toronto. Erosion control, terracing, retaining walls, bioengineering solutions. Expert foundation protection through proper grading.";
+
+// Comprehensive slope stabilization features
+const serviceFeatures = [
+  {
+    icon: '🏔️',
+    title: 'Comprehensive Erosion Control Systems',
+    description: 'Advanced erosion control using geotextiles, riprap, hydroseeding, and biodegradable erosion control blankets. Long-term soil stabilization with immediate and permanent solutions.',
+    highlight: true
+  },
+  {
+    icon: '🏗️',
+    title: 'Terracing & Benching Solutions',
+    description: 'Professional terracing systems for steep slopes. Engineered benches with integrated drainage, structural stability, and landscape integration for maximum functionality.',
+    highlight: true
+  },
+  {
+    icon: '🧱',
+    title: 'Retaining Wall Systems',
+    description: 'Multiple retaining wall solutions including segmental block, poured concrete, stone, and timber systems. Engineered for heights up to 12 feet with proper drainage.',
+    highlight: true
+  },
+  {
+    icon: '🌱',
+    title: 'Bioengineering & Living Systems',
+    description: 'Sustainable slope stabilization using vegetation, live stakes, brush layers, and root reinforcement. Combines natural beauty with engineering performance.'
+  },
+  {
+    icon: '💧',
+    title: 'Integrated Slope Drainage',
+    description: 'Comprehensive drainage systems for slope stability including interceptor drains, toe drains, and seepage control. Prevents saturation and slope failure.'
+  },
+  {
+    icon: '📐',
+    title: 'Advanced Precision Grading',
+    description: 'Laser-guided grading with 2% minimum slope requirements. GPS-controlled equipment ensuring optimal water flow patterns and foundation protection.'
+  }
+];
+
+// Detailed stabilization process
+const processSteps = [
+  {
+    number: '01',
+    title: 'Geotechnical Assessment & Slope Analysis',
+    description: 'Comprehensive site investigation including soil testing, stability analysis, groundwater assessment, and slope geometry evaluation. Includes risk assessment and failure mode analysis.',
+    icon: '🔬',
+    duration: '3-5 days'
+  },
+  {
+    number: '02',
+    title: 'Engineered Solution Design',
+    description: 'Custom stabilization design based on site conditions, load requirements, and environmental factors. Includes structural calculations, drainage design, and material specifications.',
+    icon: '📐',
+    duration: '1-2 weeks'
+  },
+  {
+    number: '03',
+    title: 'Staged Implementation & Construction',
+    description: 'Carefully sequenced construction to maintain safety and minimize disruption. Includes temporary stabilization, permanent system installation, and quality control testing.',
+    icon: '🚜',
+    duration: '1-4 weeks'
+  },
+  {
+    number: '04',
+    title: 'Monitoring & Establishment',
+    description: 'Post-installation monitoring for settlement, drainage performance, and vegetation establishment. Includes warranty documentation and maintenance planning.',
+    icon: '📊',
+    duration: 'Ongoing'
+  }
+];
+
+// Comprehensive slope stabilization FAQs
+const serviceFAQs = [
+  {
+    question: "How much does slope stabilization cost in Toronto?",
+    answer: "Slope stabilization costs vary significantly: Erosion control $5,400-$16,000, Basic terracing $16,000-$38,000, Retaining walls $11,000-$54,000, Bioengineering solutions $8,650-$27,000, Complete slope projects $22,000-$108,000. Final cost depends on slope size, soil conditions, and solution complexity. We provide detailed estimates after site assessment."
+  },
+  {
+    question: "How long does slope stabilization take to complete?",
+    answer: "Project timelines vary by scope: Erosion control takes 1-2 weeks, Terracing requires 2-4 weeks, Retaining wall construction takes 2-6 weeks, Bioengineering projects need 1-3 weeks plus growing season for establishment. Weather conditions and permit approvals affect scheduling."
+  },
+  {
+    question: "What are the benefits of professional slope stabilization?",
+    answer: "Slope stabilization prevents erosion damage, protects foundations from water infiltration, eliminates safety hazards, preserves property value, creates usable landscape areas, prevents costly emergency repairs, and provides long-term stability with engineering warranties."
+  },
+  {
+    question: "When should I stabilize slopes on my property?",
+    answer: "Address slope issues when you notice erosion, water runoff toward your foundation, sliding soil, cracks in slopes, leaning trees or fences, exposed roots, or after construction/excavation work. Early intervention prevents major failures and foundation damage."
+  }
+];
+
+// Service Offers
+const serviceOffers = [
+  {
+    name: "Erosion Control Package",
+    price: "$5,400-$16,000",
+    description: "Comprehensive erosion control using geotextiles, hydroseeding, and drainage. Includes surface protection, vegetation establishment, and minor grading corrections for slope stability."
+  },
+  {
+    name: "Terracing & Retaining System",
+    price: "$22,000-$54,000",
+    description: "Complete terracing with retaining walls, integrated drainage, and landscaping. Transforms steep slopes into stable, functional areas with engineered solutions and warranties."
+  },
+  {
+    name: "Complete Slope Engineering",
+    price: "$54,000-$108,000",
+    description: "Full geotechnical assessment, custom engineering design, and comprehensive stabilization including retaining walls, drainage systems, bioengineering, and long-term monitoring."
+  }
+];
+
+// Service Schema Data
+const schemaFAQs = [
+  {
+    question: "How much does slope stabilization cost in Toronto?",
+    answer: "Slope stabilization costs vary significantly: Erosion control $5,400-$16,000, Basic terracing $16,000-$38,000, Retaining walls $11,000-$54,000, Bioengineering solutions $8,650-$27,000, Complete slope projects $22,000-$108,000. Final cost depends on slope size, soil conditions, and solution complexity. We provide detailed estimates after site assessment."
+  },
+  {
+    question: "How long does slope stabilization take to complete?",
+    answer: "Project timelines vary by scope: Erosion control takes 1-2 weeks, Terracing requires 2-4 weeks, Retaining wall construction takes 2-6 weeks, Bioengineering projects need 1-3 weeks plus growing season for establishment. Weather conditions and permit approvals affect scheduling."
+  },
+  {
+    question: "What are the benefits of professional slope stabilization?",
+    answer: "Slope stabilization prevents erosion damage, protects foundations from water infiltration, eliminates safety hazards, preserves property value, creates usable landscape areas, prevents costly emergency repairs, and provides long-term stability with engineering warranties."
+  },
+  {
+    question: "When should I stabilize slopes on my property?",
+    answer: "Address slope issues when you notice erosion, water runoff toward your foundation, sliding soil, cracks in slopes, leaning trees or fences, exposed roots, or after construction/excavation work. Early intervention prevents major failures and foundation damage."
+  }
+];
+
+---
+
+<PageLayout 
+  title={pageTitle}
+  description={pageDescription}
+>
+  
+  <!-- Breadcrumbs -->
+  <div class="container mx-auto px-4 mt-4">
+    <Breadcrumbs 
+      items={[
+        { name: "Home", url: "/" },
+        { name: "Services", url: "/services" },
+        { name: "Slope Stabilization" }
+      ]}
+    />
+  </div>
+
+<ServiceSchema 
+    serviceName="Slope Stabilization & Advanced Grading"
+    description="Professional slope stabilization in Toronto. Erosion control, terracing, retaining walls, bioengineering solutions, and precision grading for foundation protection."
+    priceRange="$5,400-$108,000"
+    offers={serviceOffers}
+    faqs={schemaFAQs}
+  />
+  <!-- Hero Section -->
+  <Hero 
+    title="Slope Stabilization & Advanced Grading"
+    subtitle="Comprehensive slope stabilization solutions for Toronto properties. Erosion control, terracing, retaining walls, and precision grading protecting your foundation investment."
+    primaryCTA={{ text: "Get Slope Assessment", href: "/free-inspection" }}
+    secondaryCTA={{ text: "Call: 437-545-0067", href: "tel:437-545-0067" }}
+    backgroundImage="/images/waterproofing diagram with basement sump pump weeping tile and exterior drainage.webp"
+    badge="Geotechnical Engineering Solutions"
+  />
+
+  <!-- Stats -->
+  <Stats />
+
+  <!-- Comprehensive Content Section -->
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Introduction -->
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold text-slate-900 mb-6">
+          Professional Slope Stabilization Engineering for Toronto Properties
+        </h2>
+        <p class="text-xl text-slate-500 max-w-4xl mx-auto mb-8">
+          Toronto's varied topography and challenging soil conditions require expert slope stabilization solutions. Our comprehensive approach combines traditional engineering with innovative bioengineering techniques to provide lasting protection against erosion, slope failure, and foundation damage. Every project is custom-engineered for local soil conditions and climate challenges.
+        </p>
+      </div>
+
+      <!-- Stabilization Solutions Grid -->
+      <div class="grid lg:grid-cols-2 gap-12 mb-16">
+        <div class="space-y-8">
+          <h3 class="text-3xl font-bold text-slate-900">Comprehensive Erosion Control Systems</h3>
+          <p class="text-lg text-slate-600">
+            Advanced erosion control using multiple integrated approaches. Our systems include high-performance geotextiles, properly-graded riprap, professionally-applied hydroseeding, and biodegradable erosion control blankets. Each solution is engineered for Toronto's challenging climate with immediate protection and long-term stability.
+          </p>
+          <div class="bg-cyan-50 p-6 rounded-lg">
+            <h4 class="font-semibold text-cyan-900 mb-3">Erosion Control Methods:</h4>
+            <ul class="space-y-2 text-cyan-800">
+              <li>• Geotextile fabric systems for soil separation and reinforcement</li>
+              <li>• Riprap installation with properly-graded stone (2"-8" diameter)</li>
+              <li>• Hydroseeding with native grass and wildflower mixtures</li>
+              <li>• Biodegradable erosion control blankets for immediate protection</li>
+              <li>• Turf reinforcement mats for high-flow areas</li>
+              <li>• Check dams and sediment traps for runoff control</li>
+              <li>• Surface roughening and slope benching techniques</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="space-y-8">
+          <h3 class="text-3xl font-bold text-slate-900">Terracing & Benching Solutions</h3>
+          <p class="text-lg text-slate-600">
+            Professional terracing systems transform steep, unstable slopes into functional, stable landscapes. Our terraced designs incorporate integrated drainage, appropriate slope angles (typically 2:1 or flatter), and strategic vegetation placement. Each terrace is engineered for structural stability and optimal water management.
+          </p>
+          <div class="bg-cyan-50 p-6 rounded-lg">
+            <h4 class="font-semibold text-cyan-800 mb-3">Terracing Specifications:</h4>
+            <ul class="space-y-2 text-cyan-700">
+              <li>• Bench widths: 3-10 feet depending on slope and use</li>
+              <li>• Slope angles: Maximum 2:1 (50%) for stability</li>
+              <li>• Integrated drainage systems within each level</li>
+              <li>• Compacted fill materials meeting geotechnical requirements</li>
+              <li>• Strategic vegetation placement for root reinforcement</li>
+              <li>• Access pathways and maintenance considerations</li>
+              <li>• Structural reinforcement when required for loading</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Structural Solutions -->
+      <div class="grid lg:grid-cols-2 gap-12 mb-16">
+        <div class="space-y-8">
+          <h3 class="text-3xl font-bold text-slate-900">Engineered Retaining Wall Systems</h3>
+          <p class="text-lg text-slate-600">
+            Multiple retaining wall solutions engineered for Toronto soil conditions and loading requirements. Our installations include segmental retaining wall blocks, poured concrete walls, natural stone construction, and timber systems. All walls include proper drainage, appropriate foundations, and professional engineering when required.
+          </p>
+          <div class="bg-purple-50 p-6 rounded-lg">
+            <h4 class="font-semibold text-purple-900 mb-3">Wall System Options:</h4>
+            <ul class="space-y-2 text-purple-800">
+              <li>• Segmental retaining wall blocks: 2-12 foot heights</li>
+              <li>• Poured concrete walls with integrated drainage</li>
+              <li>• Natural stone walls with traditional or engineered design</li>
+              <li>• Timber retaining walls using pressure-treated lumber</li>
+              <li>• Mechanically stabilized earth (MSE) systems</li>
+              <li>• Sheet pile walls for waterfront applications</li>
+              <li>• Gabion basket systems for erosion-prone areas</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="space-y-8">
+          <h3 class="text-3xl font-bold text-slate-900">Bioengineering & Living Systems</h3>
+          <p class="text-lg text-slate-600">
+            Sustainable slope stabilization combining living plants with traditional engineering materials. Our bioengineering approaches include live stakes, brush layering, fascines, and root reinforcement systems. These solutions improve over time as vegetation establishes, providing long-term stability with environmental benefits.
+          </p>
+          <div class="bg-orange-50 p-6 rounded-lg">
+            <h4 class="font-semibold text-orange-900 mb-3">Bioengineering Techniques:</h4>
+            <ul class="space-y-2 text-orange-800">
+              <li>• Live stakes using dormant woody cuttings (willow, poplar, dogwood)</li>
+              <li>• Brush layering with live branches between soil lifts</li>
+              <li>• Live fascines (brush bundles) for immediate erosion protection</li>
+              <li>• Root reinforcement with deep-rooted native plants</li>
+              <li>• Living retaining walls combining plants with structural elements</li>
+              <li>• Vegetated geogrids for reinforced slope faces</li>
+              <li>• Integrated landscaping with functional and aesthetic benefits</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Advanced Grading & Drainage Integration -->
+      <div class="bg-slate-50 p-8 rounded-lg mb-16">
+        <h3 class="text-3xl font-bold text-slate-900 mb-6">Advanced Precision Grading & Drainage Integration</h3>
+        <div class="grid md:grid-cols-2 gap-8">
+          <div>
+            <h4 class="text-xl font-semibold text-slate-900 mb-4">Laser-Guided Grading Standards</h4>
+            <ul class="space-y-3 text-slate-600">
+              <li class="flex items-start">
+                <span class="flex-shrink-0 w-2 h-2 bg-cyan-500 rounded-full mt-2 mr-3"></span>
+                <span>2% minimum slope away from foundations (1/4" per foot)</span>
+              </li>
+              <li class="flex items-start">
+                <span class="flex-shrink-0 w-2 h-2 bg-cyan-500 rounded-full mt-2 mr-3"></span>
+                <span>GPS-controlled equipment for sub-inch accuracy</span>
+              </li>
+              <li class="flex items-start">
+                <span class="flex-shrink-0 w-2 h-2 bg-cyan-500 rounded-full mt-2 mr-3"></span>
+                <span>Strategic high and low points for optimal water flow</span>
+              </li>
+              <li class="flex items-start">
+                <span class="flex-shrink-0 w-2 h-2 bg-cyan-500 rounded-full mt-2 mr-3"></span>
+                <span>Integration with existing landscape and hardscape features</span>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="text-xl font-semibold text-slate-900 mb-4">Integrated Slope Drainage Systems</h4>
+            <ul class="space-y-3 text-slate-600">
+              <li class="flex items-start">
+                <span class="flex-shrink-0 w-2 h-2 bg-cyan-500 rounded-full mt-2 mr-3"></span>
+                <span>Interceptor drains at slope crests to prevent infiltration</span>
+              </li>
+              <li class="flex items-start">
+                <span class="flex-shrink-0 w-2 h-2 bg-cyan-500 rounded-full mt-2 mr-3"></span>
+                <span>Toe drains at slope bases for seepage collection</span>
+              </li>
+              <li class="flex items-start">
+                <span class="flex-shrink-0 w-2 h-2 bg-cyan-500 rounded-full mt-2 mr-3"></span>
+                <span>Horizontal drains for groundwater pressure relief</span>
+              </li>
+              <li class="flex items-start">
+                <span class="flex-shrink-0 w-2 h-2 bg-cyan-500 rounded-full mt-2 mr-3"></span>
+                <span>Surface swales and channels for runoff management</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Geotechnical Engineering & Analysis -->
+      <div class="mb-16">
+        <h3 class="text-3xl font-bold text-slate-900 mb-8 text-center">Geotechnical Engineering & Site Analysis</h3>
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <h4 class="text-xl font-semibold text-slate-900 mb-4">Soil Investigation</h4>
+            <ul class="space-y-2 text-slate-600">
+              <li>• Soil classification and strength testing</li>
+              <li>• Permeability and consolidation analysis</li>
+              <li>• Groundwater assessment and monitoring</li>
+              <li>• Seasonal variation evaluation</li>
+              <li>• Chemical analysis for corrosion potential</li>
+              <li>• Compaction characteristics determination</li>
+            </ul>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <h4 class="text-xl font-semibold text-slate-900 mb-4">Stability Analysis</h4>
+            <ul class="space-y-2 text-slate-600">
+              <li>• Slope stability calculations using limit equilibrium methods</li>
+              <li>• Factor of safety determination for various loading conditions</li>
+              <li>• Failure mode analysis and risk assessment</li>
+              <li>• Seismic stability evaluation when required</li>
+              <li>• Long-term stability under climate change scenarios</li>
+              <li>• Sensitivity analysis for design parameters</li>
+            </ul>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <h4 class="text-xl font-semibold text-slate-900 mb-4">Design Optimization</h4>
+            <ul class="space-y-2 text-slate-600">
+              <li>• Cost-benefit analysis of alternative solutions</li>
+              <li>• Material selection based on performance requirements</li>
+              <li>• Construction sequence optimization for safety</li>
+              <li>• Environmental impact minimization strategies</li>
+              <li>• Maintenance requirements and lifecycle costs</li>
+              <li>• Performance monitoring and instrumentation design</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cost Analysis & Investment Value -->
+      <div class="mb-16">
+        <h3 class="text-3xl font-bold text-slate-900 mb-8 text-center">Investment Analysis & Long-Term Value</h3>
+        <div class="overflow-x-auto">
+          <table class="w-full border-collapse border border-slate-200">
+            <thead>
+              <tr class="bg-slate-50">
+                <th class="border border-slate-200 px-4 py-3 text-left font-semibold">Stabilization Method</th>
+                <th class="border border-slate-200 px-4 py-3 text-center font-semibold">Cost Range ($/sq ft)</th>
+                <th class="border border-slate-200 px-4 py-3 text-center font-semibold">Suitable Slopes</th>
+                <th class="border border-slate-200 px-4 py-3 text-center font-semibold">Maintenance Level</th>
+                <th class="border border-slate-200 px-4 py-3 text-center font-semibold">Lifespan</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="border border-slate-200 px-4 py-3 font-medium">Erosion Control Systems</td>
+                <td class="border border-slate-200 px-4 py-3 text-center">$3-12</td>
+                <td class="border border-slate-200 px-4 py-3 text-center">All slopes</td>
+                <td class="border border-slate-200 px-4 py-3 text-center">Low-Medium</td>
+                <td class="border border-slate-200 px-4 py-3 text-center">5-20 years</td>
+              </tr>
+              <tr class="bg-slate-50">
+                <td class="border border-slate-200 px-4 py-3 font-medium">Terracing & Benching</td>
+                <td class="border border-slate-200 px-4 py-3 text-center">$17-35</td>
+                <td class="border border-slate-200 px-4 py-3 text-center">Steep slopes</td>
+                <td class="border border-slate-200 px-4 py-3 text-center">Medium</td>
+                <td class="border border-slate-200 px-4 py-3 text-center">25+ years</td>
+              </tr>
+              <tr>
+                <td class="border border-slate-200 px-4 py-3 font-medium">Segmental Retaining Walls</td>
+                <td class="border border-slate-200 px-4 py-3 text-center">$27-45</td>
+                <td class="border border-slate-200 px-4 py-3 text-center">2-12 feet high</td>
+                <td class="border border-slate-200 px-4 py-3 text-center">Low</td>
+                <td class="border border-slate-200 px-4 py-3 text-center">50+ years</td>
+              </tr>
+              <tr class="bg-slate-50">
+                <td class="border border-slate-200 px-4 py-3 font-medium">Concrete Retaining Walls</td>
+                <td class="border border-slate-200 px-4 py-3 text-center">$37-65</td>
+                <td class="border border-slate-200 px-4 py-3 text-center">High loads</td>
+                <td class="border border-slate-200 px-4 py-3 text-center">Very Low</td>
+                <td class="border border-slate-200 px-4 py-3 text-center">75+ years</td>
+              </tr>
+              <tr>
+                <td class="border border-slate-200 px-4 py-3 font-medium">Bioengineering Solutions</td>
+                <td class="border border-slate-200 px-4 py-3 text-center">$8-25</td>
+                <td class="border border-slate-200 px-4 py-3 text-center">Moderate slopes</td>
+                <td class="border border-slate-200 px-4 py-3 text-center">Medium-High</td>
+                <td class="border border-slate-200 px-4 py-3 text-center">20+ years</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <Features 
+    title="Why Choose Our Slope Stabilization Solutions"
+    subtitle="Geotechnical engineering expertise with comprehensive implementation capability"
+    features={serviceFeatures}
+    columns={3}
+  />
+
+  <!-- Process -->
+  <Process 
+    title="Our Professional Engineering & Construction Process"
+    subtitle="Systematic approach ensuring optimal stability and long-term performance"
+    steps={processSteps}
+  />
+
+  <!-- Testimonials -->
+  <Testimonials />
+
+  <!-- FAQ -->
+  <FAQ 
+    title="Slope Stabilization Frequently Asked Questions"
+    subtitle="Expert guidance on slope stability, erosion control, and foundation protection"
+    faqs={serviceFAQs}
+    columns={1}
+  />
+
+  <!-- Internal Links -->
+  <InternalLinks 
+    category="foundation"
+    currentPage="slope-stabilization"
+    limit={5}
+  />
+
+  <!-- CTA -->
+  <CTA 
+    title="Ready to Stabilize Your Slopes?"
+    subtitle="Schedule your professional geotechnical assessment and receive engineered solutions for lasting slope stability and foundation protection."
+    primaryCTA={{ text: "Schedule Slope Assessment", href: "/free-inspection" }}
+    secondaryCTA={{ text: "Call: 437-545-0067", href: "tel:437-545-0067" }}
+    background="gradient"
+  />
+</PageLayout>

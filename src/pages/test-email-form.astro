@@ -1,0 +1,141 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Test Email Form - Dryspace Waterproofing">
+  <div class="container mx-auto px-4 py-16">
+    <div class="max-w-2xl mx-auto">
+      <h1 class="text-3xl font-bold mb-8">Test Email Form</h1>
+      <p class="mb-4 text-slate-500">This form will send a test email to p.vysotckii@gmail.com</p>
+      
+      <div class="bg-amber-50 border-2 border-yellow-300 p-4 mb-8">
+        <h2 class="font-bold mb-2">EmailJS Status:</h2>
+        <ul class="list-disc list-inside">
+          <li>Public Key: cmiVEFrjF0XT3k_AO ✅</li>
+          <li>Service ID: service_q7hiar3 ✅</li>
+          <li>Gmail: p.vysotckii@gmail.com ✅</li>
+          <li>Template ID: template_2z5evl6 ✅</li>
+        </ul>
+      </div>
+
+      <form id="testForm" class="space-y-4 bg-white p-8 shadow-lg">
+        <div>
+          <label for="name" class="block font-bold mb-2">Name:</label>
+          <input type="text" id="name" name="name" required class="w-full p-3 border-2 border-slate-200 focus:border-cyan-500" value="Test User">
+        </div>
+        
+        <div>
+          <label for="email" class="block font-bold mb-2">Email:</label>
+          <input type="email" id="email" name="email" required class="w-full p-3 border-2 border-slate-200 focus:border-cyan-500" value="test@example.com">
+        </div>
+        
+        <div>
+          <label for="phone" class="block font-bold mb-2">Phone:</label>
+          <input type="tel" id="phone" name="phone" required class="w-full p-3 border-2 border-slate-200 focus:border-cyan-500" value="416-555-0123">
+        </div>
+        
+        <div>
+          <label for="service" class="block font-bold mb-2">Service:</label>
+          <select id="service" name="service" required class="w-full p-3 border-2 border-slate-200 focus:border-cyan-500">
+            <option value="Waterproofing">Waterproofing</option>
+            <option value="Foundation Repair">Foundation Repair</option>
+            <option value="Emergency">Emergency Service</option>
+          </select>
+        </div>
+        
+        <div>
+          <label for="message" class="block font-bold mb-2">Message:</label>
+          <textarea id="message" name="message" rows="4" required class="w-full p-3 border-2 border-slate-200 focus:border-cyan-500">This is a test message to verify EmailJS is working correctly.</textarea>
+        </div>
+        
+        <button type="submit" class="w-full bg-amber-500 text-black font-bold py-4 hover:bg-amber-400">
+          Send Test Email to p.vysotckii@gmail.com
+        </button>
+        
+        <div id="result" class="hidden p-4 border-2 mt-4"></div>
+      </form>
+
+      <div class="mt-8 p-6 bg-slate-50">
+        <h2 class="font-bold mb-4">To Complete Setup:</h2>
+        <ol class="list-decimal list-inside space-y-2">
+          <li>Go to <a href="https://dashboard.emailjs.com" target="_blank" class="text-cyan-600 underline">EmailJS Dashboard</a></li>
+          <li>Click "Email Templates" → "Create New Template"</li>
+          <li>Use this template content:</li>
+        </ol>
+        
+        <div class="mt-4 p-4 bg-white font-mono text-sm">
+          <p><strong>Subject:</strong> New Contact - {'{{from_name}}'}</p>
+          <p><strong>Content:</strong></p>
+          <pre>{`Name: {{from_name}}
+Email: {{from_email}}
+Phone: {{phone}}
+Service: {{service}}
+Message: {{message}}
+
+Date: {{submission_date}}
+Time: {{submission_time}}
+Page: {{page_url}}`}</pre>
+        </div>
+        
+        <ol class="list-decimal list-inside space-y-2 mt-4" start="4">
+          <li>Save the template and copy the Template ID</li>
+          <li>Update <code class="bg-slate-100 px-2 py-1">/src/scripts/emailjs-config.js</code> with the Template ID</li>
+          <li>Test the form above</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script>
+    // Initialize EmailJS
+    emailjs.init('cmiVEFrjF0XT3k_AO');
+    
+    // Form handler
+    document.getElementById('testForm').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      
+      const btn = e.target.querySelector('button[type="submit"]');
+      const result = document.getElementById('result');
+      const originalText = btn.textContent;
+      
+      // Get form data
+      const formData = new FormData(e.target);
+      const data = Object.fromEntries(formData);
+      
+      // Add metadata
+      data.submission_date = new Date().toLocaleDateString();
+      data.submission_time = new Date().toLocaleTimeString();
+      data.page_url = window.location.href;
+      data.from_name = data.name;
+      data.from_email = data.email;
+      
+      btn.disabled = true;
+      btn.textContent = 'Sending...';
+      
+      try {
+        // Your EmailJS template ID
+        const templateId = 'template_2z5evl6';
+        
+        const response = await emailjs.send(
+          'service_q7hiar3',
+          templateId,
+          data
+        );
+        
+        result.className = 'p-4 border-2 mt-4 bg-cyan-50 border-green-300 text-cyan-700';
+        result.innerHTML = '<strong>Success!</strong> Email sent to p.vysotckii@gmail.com<br>Response: ' + JSON.stringify(response);
+        result.classList.remove('hidden');
+        
+      } catch (error) {
+        result.className = 'p-4 border-2 mt-4 bg-red-50 border-red-300 text-red-700';
+        result.innerHTML = '<strong>Error:</strong> ' + (error.text || error.message || error);
+        result.classList.remove('hidden');
+        console.error('EmailJS error:', error);
+      } finally {
+        btn.disabled = false;
+        btn.textContent = originalText;
+      }
+    });
+  </script>
+</Layout>

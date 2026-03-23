@@ -1,0 +1,960 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import BlogImageGallery from '../../components/BlogImageGallery.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+
+
+---
+
+<PageLayout 
+  title="White Powder on Basement Walls: Efflorescence vs Mold Guide 2026"
+  description="Identify the white substance on your basement walls. Expert guide distinguishes efflorescence from dangerous mold, with solutions for Toronto homeowners."
+>
+  
+  
+  
+  <!-- Breadcrumbs -->
+  <div class="container mx-auto px-4 mt-4">
+    <Breadcrumbs 
+      items={[
+        { name: "Home", url: "/" },
+        { name: "Blog", url: "/blog" },
+        { name: "White Powder On Basement Walls" }
+      ]}
+    />
+  </div>
+
+<main class="min-h-screen bg-white">
+    <!-- Hero Section -->
+    <section class="py-16 bg-slate-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto text-center">
+          <h1 class="uppercase text-4xl md:text-6xl font-bold text-slate-900 mb-6 leading-tight">
+            White Powder on Basement Walls: <span class="text-cyan-400 bg-slate-50">Efflorescence vs Mold</span>
+          </h1>
+          <p class="text-xl text-slate-600 mb-8 leading-relaxed">
+            Not all white substances are the same. Learn to identify whether you're dealing with harmless mineral deposits or dangerous mold growth that threatens your family's health.
+          </p>
+          <div class="flex flex-wrap justify-center gap-4 mb-8">
+            <span class="px-4 py-2 bg-cyan-600 text-slate-900  text-sm font-medium">
+              Identification Guide
+            </span>
+            <span class="px-4 py-2 bg-amber-500 text-slate-900  text-sm font-medium">
+              Health & Safety
+            </span>
+            <span class="px-4 py-2 bg-navy-900 text-white  text-sm font-medium">
+              Treatment Solutions
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Identification Tool -->
+    <section id="identification-tool" class="py-16 bg-slate-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <div class="text-center mb-12">
+            <h2 class="uppercase text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+              Quick Identification Guide
+            </h2>
+            <p class="text-slate-600 text-lg">
+              Use this visual guide to quickly identify what type of white substance you're dealing with
+            </p>
+          </div>
+
+          <!-- Side-by-side Comparison -->
+          <div class="grid md:grid-cols-2 gap-8 mb-12">
+            
+            <!-- Efflorescence -->
+            <div class="bg-white  p-8 border-2 border-cyan-600/30">
+              <div class="text-center mb-6">
+                <div class="w-16 h-16 bg-cyan-600  mx-auto mb-4 flex items-center justify-center">
+                  <svg class="w-8 h-8 text-cyan-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                  </svg>
+                </div>
+                <h3 class="text-2xl font-bold text-cyan-600 mb-2">Efflorescence</h3>
+                <p class="text-slate-600 text-sm">Mineral deposits - Generally harmless</p>
+              </div>
+
+              <div class="space-y-4">
+                <div class="bg-slate-50  p-4">
+                  <h4 class="font-semibold text-slate-900 mb-2">Appearance</h4>
+                  <ul class="space-y-1 text-slate-600 text-sm">
+                    <li>• Crystalline, chalky white powder</li>
+                    <li>• Often forms geometric patterns</li>
+                    <li>• Dry and powdery texture</li>
+                    <li>• Usually on masonry surfaces</li>
+                  </ul>
+                </div>
+
+                <div class="bg-slate-50  p-4">
+                  <h4 class="font-semibold text-slate-900 mb-2">Touch Test</h4>
+                  <ul class="space-y-1 text-slate-600 text-sm">
+                    <li>• Brushes off easily</li>
+                    <li>• Feels gritty between fingers</li>
+                    <li>• Dissolves in water</li>
+                    <li>• No musty odor</li>
+                  </ul>
+                </div>
+
+                <div class="bg-slate-50  p-4">
+                  <h4 class="font-semibold text-slate-900 mb-2">Common Locations</h4>
+                  <ul class="space-y-1 text-slate-600 text-sm">
+                    <li>• Concrete foundation walls</li>
+                    <li>• Brick or block surfaces</li>
+                    <li>• Areas with water seepage</li>
+                    <li>• Floor-wall joints</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="mt-6 p-4 bg-cyan-600 border-2 border-cyan-600/30 ">
+                <p class="text-cyan-600 text-sm font-medium">
+                  <strong>Health Impact:</strong> Generally harmless, but indicates moisture problems that should be addressed.
+                </p>
+              </div>
+            </div>
+
+            <!-- Mold -->
+            <div class="bg-white  p-8 border-2 border-red-600/30">
+              <div class="text-center mb-6">
+                <div class="w-16 h-16 bg-red-600  mx-auto mb-4 flex items-center justify-center">
+                  <svg class="w-8 h-8 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.732-.833-2.464 0L4.35 16.5c-.77.833.192 2.5 1.732 2.5z"></path>
+                  </svg>
+                </div>
+                <h3 class="text-2xl font-bold text-red-600 mb-2">White Mold</h3>
+                <p class="text-slate-600 text-sm">Living organism - Health hazard</p>
+              </div>
+
+              <div class="space-y-4">
+                <div class="bg-slate-50  p-4">
+                  <h4 class="font-semibold text-slate-900 mb-2">Appearance</h4>
+                  <ul class="space-y-1 text-slate-600 text-sm">
+                    <li>• Fuzzy, cotton-like growth</li>
+                    <li>• Irregular, organic patterns</li>
+                    <li>• May appear thread-like</li>
+                    <li>• Often on organic materials</li>
+                  </ul>
+                </div>
+
+                <div class="bg-slate-50  p-4">
+                  <h4 class="font-semibold text-slate-900 mb-2">Touch Test</h4>
+                  <ul class="space-y-1 text-slate-600 text-sm">
+                    <li>• Soft, spongy texture</li>
+                    <li>• Streaks when wiped</li>
+                    <li>• Does not dissolve in water</li>
+                    <li>• Strong musty odor</li>
+                  </ul>
+                </div>
+
+                <div class="bg-slate-50  p-4">
+                  <h4 class="font-semibold text-slate-900 mb-2">Common Locations</h4>
+                  <ul class="space-y-1 text-slate-600 text-sm">
+                    <li>• Wood framing and trim</li>
+                    <li>• Drywall and insulation</li>
+                    <li>• Behind stored items</li>
+                    <li>• Dark, humid areas</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="mt-6 p-4 bg-red-600 border-2 border-red-600/30 ">
+                <p class="text-red-600 text-sm font-medium">
+                  <strong>Health Impact:</strong> Can cause respiratory problems, allergies, and other serious health issues. Requires immediate attention.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Simple Test Kit -->
+          <div class="bg-navy-900 border-2 border-slate-700/30  p-8">
+            <h3 class="text-2xl font-bold text-slate-900 mb-6 text-center">Simple At-Home Test</h3>
+            <div class="grid md:grid-cols-3 gap-6">
+              <div class="text-center">
+                <div class="w-12 h-12 bg-cyan-600  mx-auto mb-3 flex items-center justify-center font-bold text-slate-900">1</div>
+                <h4 class="font-semibold text-slate-900 mb-2">Spray Test</h4>
+                <p class="text-slate-600 text-sm">Spray the white substance with water from a spray bottle</p>
+              </div>
+              <div class="text-center">
+                <div class="w-12 h-12 bg-cyan-600  mx-auto mb-3 flex items-center justify-center font-bold text-slate-900">2</div>
+                <h4 class="font-semibold text-slate-900 mb-2">Observe</h4>
+                <p class="text-slate-600 text-sm">Watch what happens to the substance when wet</p>
+              </div>
+              <div class="text-center">
+                <div class="w-12 h-12 bg-cyan-600  mx-auto mb-3 flex items-center justify-center font-bold text-slate-900">3</div>
+                <h4 class="font-semibold text-slate-900 mb-2">Result</h4>
+                <p class="text-slate-600 text-sm">Efflorescence dissolves; mold becomes darker or spreads</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="py-16">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          
+          <!-- Article Content -->
+          <article class="prose prose-lg  max-w-none">
+            
+            <h2 class="uppercase text-3xl font-bold text-slate-900 mb-6">Understanding Efflorescence in Toronto Basements</h2>
+            
+            <p class="text-slate-600 text-lg leading-relaxed mb-6">
+              Efflorescence is one of the most common issues Toronto homeowners encounter in their basements. This white, chalky residue appears on concrete and masonry surfaces when water evaporates, leaving behind mineral deposits. While efflorescence itself isn't dangerous, it's a clear indicator of moisture problems that need attention to prevent more serious issues like structural damage or mold growth.
+            </p>
+
+            <div class="bg-amber-500 border-l-4 border-cyan-500 p-6  mb-8">
+              <h3 class="text-cyan-400 font-semibold mb-2">Toronto-Specific Factors</h3>
+              <p class="text-slate-600 mb-0">
+                Toronto's clay soil and limestone bedrock create ideal conditions for efflorescence. Our groundwater contains high levels of minerals that, when they pass through concrete foundations, leave behind the characteristic white deposits. Seasonal freeze-thaw cycles worsen the problem by creating micro-cracks that allow more water penetration.
+              </p>
+            </div>
+
+            <h2 class="uppercase text-3xl font-bold text-slate-900 mb-6">What Causes Efflorescence?</h2>
+
+            <div class="my-8">
+              <img src="/assets/waterproofing/Efflorescence.webp" 
+                   alt="Efflorescence showing white powder mineral deposits on basement wall" 
+                   loading="lazy" 
+                   class=" shadow-lg w-full max-w-2xl mx-auto" />
+            </div>
+            
+            <!-- Efflorescence Process -->
+            <div class="bg-white  p-8 mb-8 border-2 border-slate-600">
+              <h3 class="text-xl font-bold text-cyan-600 mb-6">The Three-Step Efflorescence Process</h3>
+              
+              <div class="grid md:grid-cols-3 gap-6">
+                <div class="text-center">
+                  <div class="w-16 h-16 bg-navy-900  mx-auto mb-4 flex items-center justify-center">
+                    <svg class="w-8 h-8 text-slate-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 7.172V5L8 4z"></path>
+                    </svg>
+                  </div>
+                  <h4 class="font-semibold text-slate-900 mb-2">1. Water Penetration</h4>
+                  <p class="text-slate-600 text-sm">Water containing dissolved minerals enters concrete through pores, cracks, or capillary action</p>
+                </div>
+
+                <div class="text-center">
+                  <div class="w-16 h-16 bg-amber-500  mx-auto mb-4 flex items-center justify-center">
+                    <svg class="w-8 h-8 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                    </svg>
+                  </div>
+                  <h4 class="font-semibold text-slate-900 mb-2">2. Migration</h4>
+                  <p class="text-slate-600 text-sm">The mineral-rich water travels through the concrete toward the surface</p>
+                </div>
+
+                <div class="text-center">
+                  <div class="w-16 h-16 bg-cyan-600  mx-auto mb-4 flex items-center justify-center">
+                    <svg class="w-8 h-8 text-cyan-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
+                    </svg>
+                  </div>
+                  <h4 class="font-semibold text-slate-900 mb-2">3. Crystallization</h4>
+                  <p class="text-slate-600 text-sm">Water evaporates at the surface, leaving behind white crystalline mineral deposits</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Common Sources -->
+            <div class="grid md:grid-cols-2 gap-6 mb-8">
+              <div class="bg-white  p-6 border-2 border-slate-600">
+                <h3 class="text-xl font-bold text-slate-900 mb-4">Primary Water Sources</h3>
+                <ul class="space-y-2 text-slate-600">
+                  <li class="flex items-start space-x-2">
+                    <svg class="w-5 h-5 text-slate-900 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path>
+                    </svg>
+                    <span><strong>Groundwater pressure:</strong> Hydrostatic pressure forces water through foundation</span>
+                  </li>
+                  <li class="flex items-start space-x-2">
+                    <svg class="w-5 h-5 text-slate-900 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path>
+                    </svg>
+                    <span><strong>Poor exterior drainage:</strong> Water pooling around foundation</span>
+                  </li>
+                  <li class="flex items-start space-x-2">
+                    <svg class="w-5 h-5 text-slate-900 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path>
+                    </svg>
+                    <span><strong>Capillary action:</strong> Concrete naturally draws moisture upward</span>
+                  </li>
+                  <li class="flex items-start space-x-2">
+                    <svg class="w-5 h-5 text-slate-900 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path>
+                    </svg>
+                    <span><strong>Foundation cracks:</strong> Direct water pathways through walls</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="bg-white  p-6 border-2 border-slate-600">
+                <h3 class="text-xl font-bold text-cyan-600 mb-4">Mineral Sources</h3>
+                <ul class="space-y-2 text-slate-600">
+                  <li class="flex items-start space-x-2">
+                    <svg class="w-5 h-5 text-cyan-600 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path>
+                    </svg>
+                    <span><strong>Concrete calcium hydroxide:</strong> Natural byproduct of cement curing</span>
+                  </li>
+                  <li class="flex items-start space-x-2">
+                    <svg class="w-5 h-5 text-cyan-600 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path>
+                    </svg>
+                    <span><strong>Groundwater minerals:</strong> Dissolved limestone, calcium, magnesium</span>
+                  </li>
+                  <li class="flex items-start space-x-2">
+                    <svg class="w-5 h-5 text-cyan-600 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path>
+                    </svg>
+                    <span><strong>Salt contamination:</strong> De-icing salts from adjacent surfaces</span>
+                  </li>
+                  <li class="flex items-start space-x-2">
+                    <svg class="w-5 h-5 text-cyan-600 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path>
+                    </svg>
+                    <span><strong>Mortar joint minerals:</strong> From deteriorating mortar between blocks</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <h2 class="uppercase text-3xl font-bold text-slate-900 mb-6">The Dangerous Side: White Mold</h2>
+            
+            <p class="text-slate-600 text-lg leading-relaxed mb-6">
+              While efflorescence is a cosmetic and moisture issue, white mold is a serious health hazard. Many homeowners mistake white mold for efflorescence, delaying crucial remediation. White mold thrives in Toronto's humid basements and can cause significant health problems, especially for children, elderly people, and those with compromised immune systems.
+            </p>
+
+            <!-- Health Impacts -->
+            <div class="bg-red-600 border-2 border-red-600/30  p-8 mb-8">
+              <h3 class="text-2xl font-bold text-red-600 mb-6">Health Impacts of White Mold</h3>
+              
+              <div class="grid md:grid-cols-2 gap-6">
+                <div>
+                  <h4 class="font-semibold text-red-600 mb-3">Immediate Symptoms</h4>
+                  <ul class="space-y-2 text-slate-600 text-sm">
+                    <li>• Respiratory irritation and coughing</li>
+                    <li>• Allergic reactions (sneezing, runny nose)</li>
+                    <li>• Skin and eye irritation</li>
+                    <li>• Headaches and fatigue</li>
+                    <li>• Worsening of existing asthma</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-red-600 mb-3">Long-term Risks</h4>
+                  <ul class="space-y-2 text-slate-600 text-sm">
+                    <li>• Chronic respiratory problems</li>
+                    <li>• Immune system suppression</li>
+                    <li>• Severe allergic sensitization</li>
+                    <li>• Potential toxic reactions (rare)</li>
+                    <li>• Compromised air quality throughout home</li>
+                  </ul>
+                </div>
+              </div>
+              
+              <div class="mt-6 p-4 bg-red-600 ">
+                <p class="text-red-600 text-sm font-medium">
+                  <strong>High-Risk Groups:</strong> Infants, elderly individuals, pregnant women, and people with respiratory conditions, autoimmune disorders, or allergies are at higher risk for severe reactions.
+                </p>
+              </div>
+            </div>
+
+            <!-- Mold Types -->
+            <div class="bg-white  p-8 mb-8 border-2 border-slate-600">
+              <h3 class="text-xl font-bold text-cyan-400 mb-6">Common White Mold Species in Toronto Basements</h3>
+              
+              <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-slate-50  p-4">
+                  <h4 class="font-semibold text-cyan-400 mb-2">Penicillium</h4>
+                  <p class="text-slate-600 text-sm mb-3">Blue-green mold that appears white in early stages. Common on water-damaged materials.</p>
+                  <div class="text-xs text-slate-500">
+                    <p><strong>Risk:</strong> Moderate to high allergenic potential</p>
+                  </div>
+                </div>
+
+                <div class="bg-slate-50  p-4">
+                  <h4 class="font-semibold text-cyan-400 mb-2">Aspergillus</h4>
+                  <p class="text-slate-600 text-sm mb-3">White, fuzzy growth on organic materials. Can become other colors as it matures.</p>
+                  <div class="text-xs text-slate-500">
+                    <p><strong>Risk:</strong> High allergenic and toxic potential</p>
+                  </div>
+                </div>
+
+                <div class="bg-slate-50  p-4">
+                  <h4 class="font-semibold text-cyan-400 mb-2">Fusarium</h4>
+                  <p class="text-slate-600 text-sm mb-3">Thrives in water-damaged areas, appears cotton-like and white initially.</p>
+                  <div class="text-xs text-slate-500">
+                    <p><strong>Risk:</strong> Moderate allergenic, potential for toxic reactions</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <h2 class="uppercase text-3xl font-bold text-slate-900 mb-6">Professional Testing vs DIY Identification</h2>
+            
+            <!-- Testing Options -->
+            <div class="grid md:grid-cols-2 gap-8 mb-8">
+              <div class="bg-cyan-600 border-2 border-cyan-600/30  p-6">
+                <h3 class="text-xl font-bold text-cyan-600 mb-4">DIY Identification Methods</h3>
+                <div class="space-y-4">
+                  <div>
+                    <h4 class="font-semibold text-slate-900 mb-2">Visual Inspection</h4>
+                    <ul class="text-slate-600 text-sm space-y-1">
+                      <li>• Pattern and texture analysis</li>
+                      <li>• Location assessment</li>
+                      <li>• Growth pattern observation</li>
+                      <li>• Color and consistency check</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 class="font-semibold text-slate-900 mb-2">Simple Tests</h4>
+                    <ul class="text-slate-600 text-sm space-y-1">
+                      <li>• Water spray test (dissolves efflorescence)</li>
+                      <li>• Smell test (mold has musty odor)</li>
+                      <li>• Touch test (texture differences)</li>
+                      <li>• Bleach test (mold lightens temporarily)</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="mt-4 p-3 bg-cyan-600 ">
+                  <p class="text-cyan-600 text-sm"><strong>Best for:</strong> Initial identification and preliminary assessment</p>
+                </div>
+              </div>
+
+              <div class="bg-amber-500 border-2 border-cyan-500/30  p-6">
+                <h3 class="text-xl font-bold text-cyan-400 mb-4">Professional Testing</h3>
+                <div class="space-y-4">
+                  <div>
+                    <h4 class="font-semibold text-slate-900 mb-2">Laboratory Analysis</h4>
+                    <ul class="text-slate-600 text-sm space-y-1">
+                      <li>• Species identification</li>
+                      <li>• Concentration levels</li>
+                      <li>• Toxicity assessment</li>
+                      <li>• Air quality testing</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 class="font-semibold text-slate-900 mb-2">Professional Benefits</h4>
+                    <ul class="text-slate-600 text-sm space-y-1">
+                      <li>• Accurate species identification</li>
+                      <li>• Health risk assessment</li>
+                      <li>• Remediation guidance</li>
+                      <li>• Insurance documentation</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="mt-4 p-3 bg-amber-500 ">
+                  <p class="text-cyan-400 text-sm"><strong>Best for:</strong> Health concerns, extensive growth, or insurance claims</p>
+                </div>
+              </div>
+            </div>
+
+            <h2 class="uppercase text-3xl font-bold text-slate-900 mb-6">Treatment Solutions</h2>
+            
+            <!-- Efflorescence Treatment -->
+            <div class="bg-white  p-8 mb-8 border-2 border-slate-600">
+              <div class="flex items-start space-x-4 mb-6">
+                <div class="flex-shrink-0 w-12 h-12 bg-cyan-600  flex items-center justify-center">
+                  <svg class="w-6 h-6 text-slate-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                  </svg>
+                </div>
+                <div class="flex-1">
+                  <h3 class="text-2xl font-bold text-cyan-600 mb-4">Efflorescence Removal & Prevention</h3>
+                  <p class="text-slate-600 mb-4">
+                    While efflorescence removal is straightforward, preventing recurrence requires addressing underlying moisture issues.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Step-by-step removal -->
+              <div class="grid md:grid-cols-2 gap-6 mb-6">
+                <div>
+                  <h4 class="font-semibold text-cyan-600 mb-3">Immediate Removal Steps</h4>
+                  <ol class="space-y-2 text-slate-600 text-sm">
+                    <li class="flex items-start space-x-2">
+                      <span class="flex-shrink-0 w-6 h-6 bg-cyan-600  flex items-center justify-center text-slate-900 text-xs font-bold">1</span>
+                      <span>Brush off loose deposits with stiff brush</span>
+                    </li>
+                    <li class="flex items-start space-x-2">
+                      <span class="flex-shrink-0 w-6 h-6 bg-cyan-600  flex items-center justify-center text-slate-900 text-xs font-bold">2</span>
+                      <span>Rinse with clean water to dissolve remaining minerals</span>
+                    </li>
+                    <li class="flex items-start space-x-2">
+                      <span class="flex-shrink-0 w-6 h-6 bg-cyan-600  flex items-center justify-center text-slate-900 text-xs font-bold">3</span>
+                      <span>For stubborn deposits, use mild acid solution (vinegar)</span>
+                    </li>
+                    <li class="flex items-start space-x-2">
+                      <span class="flex-shrink-0 w-6 h-6 bg-cyan-600  flex items-center justify-center text-slate-900 text-xs font-bold">4</span>
+                      <span>Neutralize acid with baking soda solution</span>
+                    </li>
+                    <li class="flex items-start space-x-2">
+                      <span class="flex-shrink-0 w-6 h-6 bg-cyan-600  flex items-center justify-center text-slate-900 text-xs font-bold">5</span>
+                      <span>Rinse thoroughly and allow to dry completely</span>
+                    </li>
+                  </ol>
+                </div>
+                
+                <div>
+                  <h4 class="font-semibold text-slate-900 mb-3">Long-term Prevention</h4>
+                  <ul class="space-y-2 text-slate-600 text-sm">
+                    <li class="flex items-start space-x-2">
+                      <svg class="w-4 h-4 text-slate-900 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path>
+                      </svg>
+                      <span>Improve exterior drainage systems</span>
+                    </li>
+                    <li class="flex items-start space-x-2">
+                      <svg class="w-4 h-4 text-slate-900 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path>
+                      </svg>
+                      <span>Seal foundation cracks and joints</span>
+                    </li>
+                    <li class="flex items-start space-x-2">
+                      <svg class="w-4 h-4 text-slate-900 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path>
+                      </svg>
+                      <span>Install proper basement waterproofing</span>
+                    </li>
+                    <li class="flex items-start space-x-2">
+                      <svg class="w-4 h-4 text-slate-900 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path>
+                      </svg>
+                      <span>Apply crystalline waterproofing treatments</span>
+                    </li>
+                    <li class="flex items-start space-x-2">
+                      <svg class="w-4 h-4 text-slate-900 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path>
+                      </svg>
+                      <span>Control basement humidity levels</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="bg-amber-500 border-2 border-cyan-500/30  p-4">
+                <p class="text-cyan-400 text-sm font-medium">
+                  <strong>Important:</strong> Simply removing efflorescence without addressing moisture sources will result in recurring problems. Focus on the underlying water intrusion causes.
+                </p>
+              </div>
+            </div>
+
+            <!-- Mold Remediation -->
+            <div class="bg-white  p-8 mb-8 border-2 border-slate-600">
+              <div class="flex items-start space-x-4 mb-6">
+                <div class="flex-shrink-0 w-12 h-12 bg-red-600  flex items-center justify-center">
+                  <svg class="w-6 h-6 text-slate-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.732-.833-2.464 0L4.35 16.5c-.77.833.192 2.5 1.732 2.5z"></path>
+                  </svg>
+                </div>
+                <div class="flex-1">
+                  <h3 class="text-2xl font-bold text-red-600 mb-4">White Mold Remediation</h3>
+                  <p class="text-slate-600 mb-4">
+                    Mold remediation requires proper safety precautions and often professional intervention. DIY removal is only appropriate for small areas (less than 10 square feet).
+                  </p>
+                </div>
+              </div>
+
+              <!-- Safety Precautions -->
+              <div class="bg-red-600 border-2 border-red-600/30  p-6 mb-6">
+                <h4 class="font-semibold text-red-600 mb-3">Essential Safety Precautions</h4>
+                <div class="grid md:grid-cols-2 gap-4">
+                  <ul class="space-y-2 text-slate-600 text-sm">
+                    <li class="flex items-center space-x-2">
+                      <svg class="w-4 h-4 text-red-600" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"></path>
+                      </svg>
+                      <span>Wear N95 or P100 respirator mask</span>
+                    </li>
+                    <li class="flex items-center space-x-2">
+                      <svg class="w-4 h-4 text-red-600" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"></path>
+                      </svg>
+                      <span>Use protective eyewear and gloves</span>
+                    </li>
+                    <li class="flex items-center space-x-2">
+                      <svg class="w-4 h-4 text-red-600" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"></path>
+                      </svg>
+                      <span>Seal off work area with plastic sheeting</span>
+                    </li>
+                  </ul>
+                  <ul class="space-y-2 text-slate-600 text-sm">
+                    <li class="flex items-center space-x-2">
+                      <svg class="w-4 h-4 text-red-600" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"></path>
+                      </svg>
+                      <span>Use negative air pressure (exhaust fan)</span>
+                    </li>
+                    <li class="flex items-center space-x-2">
+                      <svg class="w-4 h-4 text-red-600" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"></path>
+                      </svg>
+                      <span>Wear disposable coveralls</span>
+                    </li>
+                    <li class="flex items-center space-x-2">
+                      <svg class="w-4 h-4 text-red-600" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"></path>
+                      </svg>
+                      <span>Avoid disturbing mold unnecessarily</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- Professional vs DIY -->
+              <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-amber-500 border-2 border-cyan-500/30  p-4">
+                  <h4 class="font-semibold text-cyan-400 mb-3">When DIY May Be Appropriate</h4>
+                  <ul class="space-y-2 text-slate-600 text-sm">
+                    <li>• Area smaller than 10 square feet</li>
+                    <li>• Surface mold on non-porous materials</li>
+                    <li>• No underlying moisture issues</li>
+                    <li>• No one in household has health issues</li>
+                    <li>• Recent, limited growth</li>
+                  </ul>
+                  <div class="mt-3 p-2 bg-amber-500 ">
+                    <p class="text-cyan-400 text-xs font-medium">Use proper safety equipment and follow EPA guidelines</p>
+                  </div>
+                </div>
+
+                <div class="bg-red-600 border-2 border-red-600/30  p-4">
+                  <h4 class="font-semibold text-red-600 mb-3">When Professional Help Required</h4>
+                  <ul class="space-y-2 text-slate-600 text-sm">
+                    <li>• Area larger than 10 square feet</li>
+                    <li>• Mold on porous materials (wood, drywall)</li>
+                    <li>• HVAC system contamination</li>
+                    <li>• Health concerns or compromised individuals</li>
+                    <li>• Extensive structural damage</li>
+                  </ul>
+                  <div class="mt-3 p-2 bg-red-600 ">
+                    <p class="text-red-600 text-xs font-medium">Professional remediation ensures safe, complete removal</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <h2 class="uppercase text-3xl font-bold text-slate-900 mb-6">Prevention Strategies for Toronto Homes</h2>
+            
+            <div class="grid md:grid-cols-2 gap-8 mb-8">
+              <div class="bg-white  p-6 border-2 border-slate-600">
+                <h3 class="text-xl font-bold text-slate-900 mb-4">Moisture Control</h3>
+                <ul class="space-y-3 text-slate-600">
+                  <li class="flex items-start space-x-3">
+                    <svg class="w-5 h-5 text-slate-900 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path>
+                    </svg>
+                    <span><strong>Basement dehumidification:</strong> Maintain humidity below 50%</span>
+                  </li>
+                  <li class="flex items-start space-x-3">
+                    <svg class="w-5 h-5 text-slate-900 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path>
+                    </svg>
+                    <span><strong>Proper ventilation:</strong> Exhaust fans in high-moisture areas</span>
+                  </li>
+                  <li class="flex items-start space-x-3">
+                    <svg class="w-5 h-5 text-slate-900 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path>
+                    </svg>
+                    <span><strong>Fix leaks promptly:</strong> Address plumbing issues immediately</span>
+                  </li>
+                  <li class="flex items-start space-x-3">
+                    <svg class="w-5 h-5 text-slate-900 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path>
+                    </svg>
+                    <span><strong>Improve air circulation:</strong> Use fans to prevent stagnant air</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="bg-white  p-6 border-2 border-slate-600">
+                <h3 class="text-xl font-bold text-cyan-400 mb-4">Foundation Protection</h3>
+                <ul class="space-y-3 text-slate-600">
+                  <li class="flex items-start space-x-3">
+                    <svg class="w-5 h-5 text-cyan-400 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path>
+                    </svg>
+                    <span><strong>Exterior waterproofing:</strong> Professional membrane installation</span>
+                  </li>
+                  <li class="flex items-start space-x-3">
+                    <svg class="w-5 h-5 text-cyan-400 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path>
+                    </svg>
+                    <span><strong>Proper drainage:</strong> French drains and weeping tile systems</span>
+                  </li>
+                  <li class="flex items-start space-x-3">
+                    <svg class="w-5 h-5 text-cyan-400 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path>
+                    </svg>
+                    <span><strong>Crack sealing:</strong> Professional injection and sealing</span>
+                  </li>
+                  <li class="flex items-start space-x-3">
+                    <svg class="w-5 h-5 text-cyan-400 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path>
+                    </svg>
+                    <span><strong>Sump pump systems:</strong> Backup power and regular maintenance</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+          </article>
+        </div>
+      </div>
+    </section>
+
+    
+      <!-- Related Images Gallery -->
+      <BlogImageGallery topic="efflorescence" />
+
+<!-- FAQ Section -->
+    <section class="py-16 bg-slate-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="uppercase text-3xl font-bold text-slate-900 mb-8 text-center">White Powder FAQ</h2>
+          
+          <div class="space-y-4">
+            <div class="bg-white  overflow-hidden border-2 border-slate-600">
+              <button class="w-full text-left p-6 focus:outline-none focus:ring-2 focus:ring-yellow-500" onclick="toggleFAQ(this)">
+                <div class="flex justify-between items-center">
+                  <h3 class="text-lg font-semibold text-slate-900">Is efflorescence dangerous to my health?</h3>
+                  <svg class="w-5 h-5 text-cyan-400 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                  </svg>
+                </div>
+              </button>
+              <div class="hidden px-6 pb-6">
+                <p class="text-slate-600">
+                  Efflorescence itself is not toxic or dangerous to health. However, it indicates moisture problems that can lead to mold growth and structural issues. Some people may experience minor skin or eye irritation from direct contact with mineral deposits, but this is uncommon and mild.
+                </p>
+              </div>
+            </div>
+
+            <div class="bg-white  overflow-hidden border-2 border-slate-600">
+              <button class="w-full text-left p-6 focus:outline-none focus:ring-2 focus:ring-yellow-500" onclick="toggleFAQ(this)">
+                <div class="flex justify-between items-center">
+                  <h3 class="text-lg font-semibold text-slate-900">Can I paint over efflorescence?</h3>
+                  <svg class="w-5 h-5 text-cyan-400 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                  </svg>
+                </div>
+              </button>
+              <div class="hidden px-6 pb-6">
+                <p class="text-slate-600">
+                  No, never paint over efflorescence. The salt deposits will continue to push through the paint, causing peeling and bubbling. You must remove all efflorescence, address the moisture source, and allow the surface to completely dry before applying any waterproof primer and paint.
+                </p>
+              </div>
+            </div>
+
+            <div class="bg-white  overflow-hidden border-2 border-slate-600">
+              <button class="w-full text-left p-6 focus:outline-none focus:ring-2 focus:ring-yellow-500" onclick="toggleFAQ(this)">
+                <div class="flex justify-between items-center">
+                  <h3 class="text-lg font-semibold text-slate-900">How do I know if white mold is dangerous?</h3>
+                  <svg class="w-5 h-5 text-cyan-400 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                  </svg>
+                </div>
+              </button>
+              <div class="hidden px-6 pb-6">
+                <p class="text-slate-600">
+                  All mold growth should be considered potentially dangerous. White mold can be allergenic and some species produce toxins. If you're experiencing respiratory symptoms, allergic reactions, or if the affected area is larger than 10 square feet, get professional testing and remediation immediately.
+                </p>
+              </div>
+            </div>
+
+            <div class="bg-white  overflow-hidden border-2 border-slate-600">
+              <button class="w-full text-left p-6 focus:outline-none focus:ring-2 focus:ring-yellow-500" onclick="toggleFAQ(this)">
+                <div class="flex justify-between items-center">
+                  <h3 class="text-lg font-semibold text-slate-900">Why does efflorescence keep coming back?</h3>
+                  <svg class="w-5 h-5 text-cyan-400 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                  </svg>
+                </div>
+              </button>
+              <div class="hidden px-6 pb-6">
+                <p class="text-slate-600">
+                  Recurring efflorescence means the underlying moisture problem hasn't been resolved. Water is still entering your foundation and carrying minerals to the surface. You need to address the root cause - usually poor drainage, foundation cracks, or waterproofing failures.
+                </p>
+              </div>
+            </div>
+
+            <div class="bg-white  overflow-hidden border-2 border-slate-600">
+              <button class="w-full text-left p-6 focus:outline-none focus:ring-2 focus:ring-yellow-500" onclick="toggleFAQ(this)">
+                <div class="flex justify-between items-center">
+                  <h3 class="text-lg font-semibold text-slate-900">When should I call a professional?</h3>
+                  <svg class="w-5 h-5 text-cyan-400 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                  </svg>
+                </div>
+              </button>
+              <div class="hidden px-6 pb-6">
+                <p class="text-slate-600">
+                  Call professionals for: extensive efflorescence indicating major moisture problems, any suspected mold growth, health symptoms in your family, recurring problems after attempted fixes, or if you're unsure whether you're dealing with mold or mineral deposits. Professional assessment can save time and protect your health.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-slate-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto text-center">
+          <h2 class="uppercase text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+            Don't Ignore White Substances in Your Basement
+          </h2>
+          <p class="text-slate-900 text-lg mb-8">
+            Whether it's efflorescence or mold, white substances indicate problems that need professional attention. Our Toronto basement specialists provide accurate identification and complete solutions.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="tel:+14168721663" class="inline-flex items-center justify-center px-8 py-3 bg-white text-cyan-400 font-semibold  hover:bg-slate-50 transition-all duration-200 shadow-lg">
+              <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+              </svg>
+              Call for Professional Assessment
+            </a>
+            <a href="/contact" class="inline-flex items-center justify-center px-8 py-3 bg-slate-50 text-slate-900 font-semibold  hover:bg-white transition-all duration-200 shadow-lg border-2 border-white/20">
+              Schedule Basement Inspection
+            </a>
+          </div>
+          <div class="mt-6 text-slate-600">
+            <p class="text-sm"> Moisture Source Identification   Mold Testing Available   Complete Waterproofing Solutions</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Related Services & Resources -->
+  <section class="py-12 bg-slate-50">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="uppercase text-2xl font-bold mb-6 text-slate-900">Solutions & Resources</h2>
+      
+      <div class="grid md:grid-cols-3 gap-6 mb-8">
+        <!-- Efflorescence Treatment -->
+        <div class="bg-white p-6  shadow-md border-2 border-slate-100">
+          <div class="flex items-center mb-4">
+            <div class="w-12 h-12 bg-construction-yellow  flex items-center justify-center mr-4">
+              <svg class="w-6 h-6 text-slate-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+              </svg>
+            </div>
+            <h3 class="text-lg font-bold text-slate-900">Efflorescence Treatment</h3>
+          </div>
+          <p class="text-slate-500 mb-4 text-sm">Specialized treatment to remove white mineral deposits and prevent recurrence.</p>
+          <a href="/services/efflorescence-treatment" class="text-cyan-400 hover:text-cyan-400/80 font-medium text-sm">Learn More →</a>
+        </div>
+
+        <!-- Waterproof Coatings -->
+        <div class="bg-white p-6  shadow-md border-2 border-slate-100">
+          <div class="flex items-center mb-4">
+            <div class="w-12 h-12 bg-cyan-600  flex items-center justify-center mr-4">
+              <svg class="w-6 h-6 text-slate-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zM21 5a2 2 0 00-2-2h-4a2 2 0 00-2 2v12a4 4 0 004 4h4a2 2 0 002-2V5z"></path>
+              </svg>
+            </div>
+            <h3 class="text-lg font-bold text-slate-900">Waterproof Coatings</h3>
+          </div>
+          <p class="text-slate-500 mb-4 text-sm">Protective coatings to seal basement walls and prevent moisture penetration.</p>
+          <a href="/services/waterproof-coatings" class="text-cyan-600 hover:text-cyan-600/80 font-medium text-sm">Learn More →</a>
+        </div>
+
+        <!-- Interior Waterproofing -->
+        <div class="bg-white p-6  shadow-md border-2 border-slate-100">
+          <div class="flex items-center mb-4">
+            <div class="w-12 h-12 bg-cyan-600  flex items-center justify-center mr-4">
+              <svg class="w-6 h-6 text-slate-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2H5a2 2 0 00-2 2z"></path>
+              </svg>
+            </div>
+            <h3 class="text-lg font-bold text-slate-900">Interior Waterproofing</h3>
+          </div>
+          <p class="text-slate-500 mb-4 text-sm">Comprehensive interior solutions to address underlying moisture issues.</p>
+          <a href="/services/interior-waterproofing" class="text-slate-900 hover:text-slate-900/80 font-medium text-sm">Learn More →</a>
+        </div>
+      </div>
+      
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="p-6 bg-cyan-50 ">
+          <h3 class="font-bold mb-3 text-slate-900">Helpful Tools</h3>
+          <ul class="space-y-2">
+            <li> <a href="/tools/detailed-cost-estimator" class="text-cyan-600 hover:underline">Calculate Repair Cost</a></li>
+            <li> <a href="/free-inspection" class="text-cyan-600 hover:underline">Get Free Assessment</a></li>
+          </ul>
+        </div>
+        <div class="p-6 bg-orange-50 ">
+          <h3 class="font-bold mb-3 text-slate-900">Related Articles</h3>
+          <ul class="space-y-2">
+            <li> <a href="/blog/basement-smells-musty-after-rain" class="text-orange-600 hover:underline">Basement Smells Musty After Rain</a></li>
+            <li> <a href="/blog/water-coming-through-basement-floor" class="text-orange-600 hover:underline">Water Coming Through Basement Floor</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  
+</PageLayout>
+
+<script>
+  // FAQ toggle functionality
+  function toggleFAQ(button) {
+    const content = button.nextElementSibling;
+    const arrow = button.querySelector('svg');
+    
+    if (content.classList.contains('hidden')) {
+      content.classList.remove('hidden');
+      arrow.classList.add('rotate-180');
+    } else {
+      content.classList.add('hidden');
+      arrow.classList.remove('rotate-180');
+    }
+  }
+
+  // Smooth scrolling for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        target.scrollIntoView({
+          behavior: 'smooth'
+        });
+      }
+    });
+  });
+
+  // Image comparison slider (if implemented)
+  const comparisonSliders = document.querySelectorAll('.comparison-slider');
+  comparisonSliders.forEach(slider => {
+    const handle = slider.querySelector('.comparison-handle');
+    const beforeImage = slider.querySelector('.before-image');
+    
+    if (handle && beforeImage) {
+      let isDragging = false;
+      
+      handle.addEventListener('mousedown', () => isDragging = true);
+      document.addEventListener('mouseup', () => isDragging = false);
+      
+      slider.addEventListener('mousemove', (e) => {
+        if (!isDragging) return;
+        
+        const rect = slider.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const percentage = (x / rect.width) * 100;
+        
+        if (percentage >= 0 && percentage <= 100) {
+          beforeImage.style.clipPath = `inset(0 ${100 - percentage}% 0 0)`;
+          handle.style.left = `${percentage}%`;
+        }
+      });
+    }
+  });
+</script>

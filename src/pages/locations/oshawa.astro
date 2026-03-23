@@ -1,0 +1,422 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import Hero from '../../components/sections/Hero.astro';
+import Services from '../../components/sections/Services.astro';
+import Process from '../../components/sections/Process.astro';
+import Testimonials from '../../components/sections/Testimonials.astro';
+import Stats from '../../components/sections/Stats.astro';
+import LocationImageShowcase from '../../components/LocationImageShowcase.astro';
+import InternalLinks from '../../components/InternalLinks.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import BreadcrumbSchema from '../../components/BreadcrumbSchema.astro';
+
+const pageTitle = "Moisture Protection Oshawa | Foundation & Lower Level Experts";
+const pageDescription = "Local industrial heritage moisture protection. Lakefront specialists, working-class home experts, automotive district solutions.";
+
+// Local area information
+const localInfo = {
+  cityName: "Oshawa",
+  population: "175,000",
+  waterTable: "Lake influenced",
+  soilType: "Glacial lake clay",
+  avgHomesAge: "50-80 years industrial era",
+  floodRisk: "Lakefront + creek systems",
+  avgRainfall: "850mm + lake effect"
+};
+
+// Location-specific features
+const locationFeatures = [
+  {
+    title: 'LOCAL OSHAWA EXPERTS',
+    description: 'Serving Oshawa for over 25 years with deep knowledge of local conditions.',
+    highlight: true
+  },
+  {
+    title: 'FAST RESPONSE TIME',
+    description: '2-hour emergency response anywhere in Oshawa. Available 24/7.',
+    highlight: true
+  },
+  {
+    title: 'ALL NEIGHBORHOODS',
+    description: 'Serving Downtown, Windfields, Kedron and all Oshawa areas.',
+    highlight: true
+  },
+  {
+    title: 'INDUSTRIAL HERITAGE EXPERTS',
+    description: 'Specialized in GM era housing, industrial area drainage, and working-class home preservation.'
+  },
+  {
+    title: 'LAKEFRONT PROTECTION',
+    description: 'Advanced solutions for Lake Ontario proximity and shoreline erosion challenges.'
+  },
+  {
+    title: 'CREEK SYSTEM SOLUTIONS',
+    description: 'Expert management of Oshawa Creek and Harmony Creek watershed drainage issues.'
+  }
+];
+
+// Location-specific FAQs
+const locationFAQs = [
+  {
+    question: "How do you waterproof Oshawa's industrial heritage homes?",
+    answer: "Oshawa's GM-era working-class homes from the 1940s-1970s require specialized approaches for post-war construction methods, steel-frame foundations, and industrial-area soil conditions. We preserve the character of these heritage properties while providing modern waterproofing protection."
+  },
+  {
+    question: "What challenges does Lake Ontario create for Oshawa properties?",
+    answer: "Lake Ontario proximity creates elevated groundwater, storm surge risks, and lake effect precipitation patterns. Our lakefront expertise includes specialized drainage systems, surge protection, and seasonal water level management for Oshawa's shoreline properties."
+  },
+  {
+    question: "How do Oshawa Creek and Harmony Creek affect waterproofing?",
+    answer: "These creek systems create complex drainage patterns throughout Oshawa, with seasonal flooding risks and variable water tables. Our creek system expertise includes specialized retention systems and watershed-aware solutions for properties in these drainage areas."
+  },
+  {
+    question: "What makes the automotive district area different for waterproofing?",
+    answer: "The former GM automotive district has unique soil conditions from decades of industrial activity, different foundation types, and modified drainage patterns. We provide specialized solutions for these industrial heritage areas with their unique environmental considerations."
+  },
+  {
+    question: "How do you handle Oshawa's older working-class neighborhoods?",
+    answer: "Neighborhoods like Simcoe South and Centennial have older, smaller homes built for automotive workers. These areas require cost-effective solutions that work within budget constraints while providing reliable long-term protection for family investments."
+  },
+  {
+    question: "Do you provide commercial waterproofing for industrial sites?",
+    answer: "Yes! We provide commercial waterproofing for Oshawa's remaining industrial facilities, former automotive sites, and commercial buildings in the downtown core. Our solutions accommodate heavy machinery, chemical considerations, and continuous operation requirements."
+  }
+];
+
+// Schema markup for local business
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": ["LocalBusiness", "HomeAndConstructionBusiness", "WaterproofingService"],
+  "name": "Dryspace Waterproofing",
+  "description": "Professional waterproofing services in Oshawa. Expert basement waterproofing, foundation repair, and drainage solutions. Serving all Oshawa neighborhoods with 25-year warranty protection.",
+  "telephone": "437-545-0067",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Oshawa Service Area",
+    "addressLocality": "Oshawa",
+    "addressRegion": "ON",
+    "postalCode": "L1H",
+    "addressCountry": "CA"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "43.8971",
+    "longitude": "-78.8658"
+  },
+  "areaServed": [
+    {
+      "@type": "City",
+      "name": "Oshawa",
+      "sameAs": "https://en.wikipedia.org/wiki/Oshawa"
+    },
+    {
+      "@type": "Place",
+      "name": "Durham Region"
+    }
+  ],
+  "serviceArea": {
+    "@type": "GeoCircle",
+    "geoMidpoint": {
+      "@type": "GeoCoordinates", 
+      "latitude": "43.8971",
+      "longitude": "-78.8658"
+    },
+    "geoRadius": "25000"
+  },
+  "openingHours": [
+    "Mo-Fr 07:00-19:00",
+    "Sa 08:00-17:00", 
+    "Su 09:00-17:00"
+  ],
+  "availableLanguage": ["English"],
+  "currenciesAccepted": "CAD",
+  "paymentAccepted": ["Cash", "Credit Card", "Debit Card", "Bank Transfer"],
+  "priceRange": "$$",
+  "url": "https://dryspacewaterproofing.com/locations/oshawa",
+  "logo": "https://dryspacewaterproofing.com/images/dryspace-logo.webp",
+  "image": "https://dryspacewaterproofing.com/images/dryspace_hero_desktop.webp",
+  "sameAs": [
+    "https://www.facebook.com/dryspacewaterproofing",
+    "https://www.linkedin.com/company/dryspace-waterproofing"
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Waterproofing Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Basement Waterproofing",
+          "description": "Complete basement waterproofing solutions"
+        }
+      },
+      {
+        "@type": "Offer", 
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Foundation Repair",
+          "description": "Foundation crack repair and structural solutions"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service", 
+          "name": "Drainage Solutions",
+          "description": "French drains, sump pumps, and drainage systems"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Emergency Water Removal",
+          "description": "24/7 emergency flooding and water damage response"
+        }
+      }
+    ]
+  },
+  "review": {
+    "@type": "Review",
+    "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": "4.9",
+      "bestRating": "5"
+    },
+    "author": {
+      "@type": "Organization",
+      "name": "Dryspace Waterproofing Customers"
+    }
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "reviewCount": "150",
+    "bestRating": "5"
+  }
+};
+---
+
+<PageLayout 
+  title={pageTitle}
+  description={pageDescription}
+>
+  
+  <!-- Breadcrumbs -->
+  <div class="container mx-auto px-4 mt-4">
+    <Breadcrumbs 
+      items={[
+        { name: "Home", url: "/" },
+        { name: "Service Areas", url: "/service-areas" },
+        { name: "Oshawa" }
+      ]}
+    />
+  </div>
+
+<!-- Location Hero -->
+  <Hero 
+    title="Waterproofing Oshawa"
+    subtitle="Professional basement waterproofing and foundation repair serving all Oshawa neighborhoods. 25-year warranty, free inspection."
+    primaryCTA={{ text: "Get Free Oshawa Quote", href: "/free-inspection" }}
+    secondaryCTA={{ text: "Call: 437-545-0067", href: "tel:437-545-0067" }}
+    backgroundImage="/images/dryspace_hero_desktop.webp"
+    badge="Serving Oshawa"
+  />
+
+  <!-- Internal Links -->
+  <section class="py-8 bg-white">
+    <div class="container mx-auto px-4">
+      <InternalLinks category="location" currentPage="oshawa" />
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <Stats />
+
+  <!-- Local Information Section -->
+  <section class="py-16 bg-slate-50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-4xl font-bold text-slate-900 mb-4 uppercase">WATERPROOFING SERVICES IN OSHAWA</h2>
+        
+        <div class="prose prose-lg  max-w-none">
+          <p class="text-lg text-slate-600 mb-6">
+            Oshawa presents unique waterproofing challenges rooted in its industrial heritage and Lake Ontario location. As the former "Motor City" of Canada, Oshawa features distinctive GM-era housing, industrial soil conditions, and complex creek systems, while lakefront areas face additional storm surge and erosion challenges.
+          </p>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
+            <div class="bg-white border-2 border-slate-200  p-6">
+              <h3 class="text-xl font-bold text-slate-900 mb-6 uppercase">OSHAWA QUICK FACTS</h3>
+              <ul class="space-y-2 text-slate-600 ">
+                <li class="flex justify-between items-center pb-2 border-b border-slate-100">
+                <span class="text-sm font-semibold text-slate-600 uppercase">Population</span>
+                <span class="text-sm font-bold text-slate-900">175,000</span>
+              </li>
+                <li class="flex justify-between items-center pb-2 border-b border-slate-100">
+                <span class="text-sm font-semibold text-slate-600 uppercase">Average Home Age</span>
+                <span class="text-sm font-bold text-slate-900">50-80 YEARS INDUSTRIAL ERA</span>
+              </li>
+                <li class="flex justify-between items-center pb-2 border-b border-slate-100">
+                <span class="text-sm font-semibold text-slate-600 uppercase">Annual Rainfall</span>
+                <span class="text-sm font-bold text-slate-900">850MM + LAKE EFFECT</span>
+              </li>
+                <li class="flex justify-between items-center pb-2 border-b border-slate-100">
+                <span class="text-sm font-semibold text-slate-600 uppercase">Frost Line</span>
+                <span class="text-sm font-bold text-slate-900">1.2 METERS</span>
+              </li>
+                <li class="flex justify-between items-center pb-2 border-b border-slate-100">
+                <span class="text-sm font-semibold text-slate-600 uppercase">Flood Risk</span>
+                <span class="text-sm font-bold text-slate-900">LAKEFRONT + CREEK SYSTEMS</span>
+              </li>
+              </ul>
+            </div>
+            
+            <div class="bg-navy-900 border-2 border-slate-200  p-6">
+              <h3 class="text-xl font-bold text-slate-900 mb-6 uppercase">WHY OSHAWA NEEDS WATERPROOFING</h3>
+              <ul class="space-y-2 text-slate-300">
+                <li class="text-sm text-slate-300 flex items-start">
+                <span class="mr-2 text-cyan-400">•</span>
+                <span>Glacial lake clay from automotive era development</span>
+              </li>
+                <li class="text-sm text-slate-300 flex items-start">
+                <span class="mr-2 text-cyan-400">•</span>
+                <span>Lake Ontario and creek systems influence drainage</span>
+              </li>
+                <li class="text-sm text-slate-300 flex items-start">
+                <span class="mr-2 text-cyan-400">•</span>
+                <span>Lake effect increases precipitation patterns</span>
+              </li>
+                <li class="text-sm text-slate-300 flex items-start">
+                <span class="mr-2 text-cyan-400">•</span>
+                <span>Freeze-thaw cycles damage foundations</span>
+              </li>
+                <li class="text-sm text-slate-300 flex items-start">
+                <span class="mr-2 text-cyan-400">•</span>
+                <span>Creek flooding and lake storm surge risks</span>
+              </li>
+              </ul>
+            </div>
+          </div>
+
+          <h3 class="text-2xl font-bold mt-8 mb-4">Neighborhoods We Serve</h3>
+          <p class="mb-4">
+            Our Oshawa waterproofing team serves all neighborhoods including:
+          </p>
+          <div class="flex flex-wrap gap-2">
+            {["Downtown","Windfields","Kedron","Taunton","Simcoe South","Centennial","Lakeview"].map((neighborhood) => (
+              <span class="border-2 border-slate-200 px-4 py-2 text-sm">
+                {neighborhood}
+              </span>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <Services />
+
+  <!-- Location Features -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl font-bold text-slate-900 mb-4 uppercase">WHY CHOOSE DRYSPACE IN OSHAWA</h2>
+        <p class="text-lg text-slate-600 max-w-3xl mx-auto">
+          Local expertise combined with industry-leading warranties and service
+        </p>
+      </div>
+      
+      <!-- Highlighted Features -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+        {locationFeatures.filter(f => f.highlight).map((feature) => (
+          <div class="bg-amber-500 border-2 border-slate-700 p-6">
+            <h3 class="text-lg font-bold text-slate-900 mb-3 uppercase">{feature.title}</h3>
+            <p class="text-sm text-slate-900">{feature.description}</p>
+          </div>
+        ))}
+      </div>
+      
+      <!-- Regular Features -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {locationFeatures.filter(f => !f.highlight).map((feature) => (
+          <div class="bg-white border-2 border-slate-200 p-6 hover:border-slate-300 transition-colors">
+            <h3 class="text-lg font-bold text-slate-900 mb-3 uppercase">{feature.title}</h3>
+            <p class="text-sm text-slate-600">{feature.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Process -->
+  <Process />
+
+
+  <!-- Location Image Showcase -->
+  <LocationImageShowcase city="Oshawa" />
+
+  <!-- Testimonials -->
+  <Testimonials />
+
+  <!-- FAQ Section -->
+  <section class="py-16 bg-slate-50">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl font-bold text-slate-900 mb-4 uppercase">OSHAWA WATERPROOFING FAQS</h2>
+        <p class="text-lg text-slate-600">Common questions from Oshawa homeowners</p>
+      </div>
+      
+      <div class="max-w-4xl mx-auto">
+        {locationFAQs.map((faq, index) => (
+          <details class="mb-4 border-2 border-slate-200 bg-white">
+            <summary class="cursor-pointer p-6 hover:bg-slate-50 transition-colors">
+              <div class="flex items-center justify-between">
+                <h3 class="text-lg font-bold text-slate-900 uppercase pr-4">{faq.question}</h3>
+                <span class="text-slate-400 flex-shrink-0 text-2xl">+</span>
+              </div>
+            </summary>
+            <div class="px-6 pb-6 pt-0">
+              <p class="text-slate-600">{faq.answer}</p>
+            </div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-16 bg-navy-900">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-4xl font-bold text-slate-900 mb-4 uppercase">PRESERVE OSHAWA'S WORKING-CLASS HERITAGE</h2>
+        <p class="text-lg text-slate-300 mb-8">
+          Specialized waterproofing for industrial heritage homes and lakefront properties
+        </p>
+        
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a 
+            href="/free-inspection"
+            class="bg-amber-500 text-black px-8 py-4 text-lg font-bold hover:bg-amber-400 transition-colors uppercase"
+          >
+            Get Industrial Heritage Assessment
+          </a>
+          <a 
+            href="tel:437-545-0067"
+            class="border-2 border-white text-slate-900 px-8 py-4 text-lg font-bold hover:bg-white hover:text-black transition-colors uppercase"
+          >
+            Call: 437-545-0067
+          </a>
+        </div>
+        
+        <div class="mt-8 inline-flex items-center text-cyan-400">
+          <span class="text-sm font-bold uppercase">24/7 Emergency Service Available</span>
+        </div>
+      </div>
+    </div>
+  </section>
+</PageLayout>
+
+<script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)}>
+<BreadcrumbSchema items={[{name: 'Home', url: '/'}, {name: 'Locations', url: '/locations'}, {name: 'Oshawa'}]} />

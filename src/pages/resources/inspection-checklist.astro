@@ -1,0 +1,637 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import ContactForm from '../../components/ContactForm.astro';
+import Footer from '../../components/Footer.astro';
+import ResourceImageGallery from '../../components/ResourceImageGallery.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+
+const homeownerQuestions = [
+  { category: 'Previous Work', question: 'Has the house been previously renovated?' },
+  { category: 'Awareness', question: 'How was the homeowner made aware of the renovation need?' },
+  { category: 'Type', question: 'What kind of renovation was previously done?' }
+];
+
+const moistureIssues = [
+  'Water leak',
+  'Too much humidity',
+  'Too dry',
+  'Smells',
+  'Smoky fireplace'
+];
+
+const structuralIssues = [
+  'Cracks (note location)',
+  'Movement of structure',
+  'Ice damming',
+  'Other roof issues'
+];
+
+const basementChecklist = {
+  construction: ['Poured concrete', 'Block', 'Stone', 'Other', 'Wood standoff wall'],
+  crackTypes: ['In slab', 'In walls', 'In footings'],
+  crackSeverity: ['Minor', 'Severe', 'Possibly growing'],
+  concreteCondition: ['Spalling', 'Porous or powdery concrete'],
+  structuralProblems: [
+    'Inadequate support of main floor',
+    'Beam construction issues',
+    'Floor joists (size, spacing, span)',
+    'Condition (rot, cut-outs, insect damage)'
+  ]
+};
+
+const waterProblems = {
+  vapor: [
+    'High humidity',
+    'Condensation on pipes, windows',
+    'Vapor barrier issues',
+    'Damp spots, mould presence'
+  ],
+  capillary: [
+    'Damp walls or floors',
+    'Damp carpet',
+    'Sill decay on windows',
+    'Efflorescence, paint peeling'
+  ],
+  bulk: [
+    'Water staining',
+    'Wet insulation',
+    'Standing water',
+    'Condition of sump pump/pit',
+    'Decaying sill plate',
+    'Presence of mould'
+  ]
+};
+
+const airQualityChecks = [
+  'Radon monitor',
+  'High humidity',
+  'Musty smells',
+  'Bad smells or odours'
+];
+
+const plumbingChecks = [
+  'Plumbing leak (note damage)',
+  'Frozen pipes',
+  'Water pressure issues'
+];
+
+const electricalChecks = [
+  'Fuse/circuit breakers blown/triggered regularly',
+  'More electrical outlets needed',
+  'Upgraded lighting required'
+];
+---
+
+<PageLayout 
+  title="DIY Basement Self-Inspection Checklist | What to Look For | Free Guide" 
+  description="Comprehensive inspection checklist for basement waterproofing assessments. Professional guide covering structural, moisture, and air quality evaluations."
+>
+  
+  <!-- Breadcrumbs -->
+  <div class="container mx-auto px-4 mt-4">
+    <Breadcrumbs 
+      items={[
+        { name: "Home", url: "/" },
+        { name: "Resources", url: "/resources" },
+        { name: "Inspection Checklist" }
+      ]}
+    />
+  </div>
+
+<!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-container">
+      <div class="badge-container">
+        <span class="badge professional">Professional Tool</span>
+        <span class="badge comprehensive">45+ Check Points</span>
+        <span class="badge downloadable">Free Download</span>
+      </div>
+      
+      <h1 class="hero-title">
+        Professional Basement Inspection Checklist
+        <span class="subtitle">Complete Assessment Guide for Waterproofing Professionals</span>
+      </h1>
+      
+      <p class="hero-description">
+        Use our comprehensive inspection checklist to thoroughly assess basement and foundation conditions. 
+        This professional tool ensures nothing is missed during your waterproofing evaluation.
+      </p>
+
+      <div class="hero-actions">
+        <button class="btn-primary" onclick="window.print()">
+          <i class="fa-solid fa-print"></i>
+          Print Checklist
+        </button>
+        <a href="#digital-checklist" class="btn-secondary">
+          <i class="fa-solid fa-clipboard-check"></i>
+          Use Digital Version
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Checklist Images Reference -->
+  <section class="reference-section">
+    <div class="container">
+      <h2 class="text-4xl font-bold text-slate-900 uppercase">PROFESSIONAL INSPECTION FORMS</h2>
+      <div class="reference-grid">
+        <div class="reference-card border-2 border-slate-200">
+          <img src="/waterproofing manual/content/photo_2025-08-25_20-49-36.jpg" 
+               alt="Homeowner interview checklist" / width="800" height="600" loading="lazy" decoding="async">
+          <p class="caption">Homeowner Interview Assessment Form</p>
+        </div>
+        <div class="reference-card border-2 border-slate-200">
+          <img src="/waterproofing manual/content/photo_2025-08-25_20-49-37.jpg" 
+               alt="Basement foundation inspection checklist" / width="800" height="600" loading="lazy" decoding="async">
+          <p class="caption">Basement & Foundation Condition Checklist</p>
+        </div>
+        <div class="reference-card border-2 border-slate-200">
+          <img src="/waterproofing manual/content/photo_2025-08-25_20-49-39.jpg" 
+               alt="Crawlspace technical specifications" / width="800" height="600" loading="lazy" decoding="async">
+          <p class="caption">Technical Assessment Guidelines</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Digital Checklist Section -->
+  <section id="digital-checklist" class="checklist-section">
+    <div class="container">
+      <h2 class="text-4xl font-bold text-slate-900 uppercase">DIGITAL INSPECTION CHECKLIST</h2>
+      <p class="section-intro">Complete each section thoroughly for accurate assessment</p>
+      
+      <!-- Homeowner Interview -->
+      <div class="checklist-category">
+        <h3>
+          <i class="fa-solid fa-user"></i>
+          Section 1: Homeowner Interview
+        </h3>
+        <div class="checklist-grid">
+          {homeownerQuestions.map(item => (
+            <div class="checklist-item">
+              <input type="checkbox" id={`ho-${item.category}`} class="checklist-checkbox" />
+              <label for={`ho-${item.category}`}>
+                <strong>{item.category}:</strong> {item.question}
+              </label>
+            </div>
+          ))}
+          
+          <div class="checklist-subsection">
+            <h4 class="text-xl font-bold text-slate-900 uppercase">MOISTURE AND AIR QUALITY ISSUES</h4>
+            {moistureIssues.map(issue => (
+              <div class="checklist-item">
+                <input type="checkbox" id={`moisture-${issue}`} class="checklist-checkbox" />
+                <label for={`moisture-${issue}`}>{issue}</label>
+              </div>
+            ))}
+          </div>
+
+          <div class="checklist-subsection">
+            <h4 class="text-xl font-bold text-slate-900 uppercase">INDOOR AIR QUALITY NOTES</h4>
+            <textarea class="notes-field" placeholder="Additional observations..."></textarea>
+          </div>
+        </div>
+      </div>
+
+      <!-- Foundation Construction -->
+      <div class="checklist-category">
+        <h3>
+          <i class="fa-solid fa-building"></i>
+          Section 2: Basement/Foundation Construction
+        </h3>
+        <div class="checklist-grid">
+          <div class="checklist-subsection">
+            <h4 class="text-xl font-bold text-slate-900 uppercase">CONSTRUCTION TYPE</h4>
+            {basementChecklist.construction.map(type => (
+              <div class="checklist-item">
+                <input type="radio" name="construction" id={`const-${type}`} />
+                <label for={`const-${type}`}>{type}</label>
+              </div>
+            ))}
+          </div>
+
+          <div class="checklist-subsection">
+            <h4 class="text-xl font-bold text-slate-900 uppercase">CRACK ASSESSMENT</h4>
+            <div class="crack-grid">
+              <div>
+                <h5 class="text-lg font-bold text-slate-900 uppercase">LOCATION</h5>
+                {basementChecklist.crackTypes.map(type => (
+                  <div class="checklist-item">
+                    <input type="checkbox" id={`crack-${type}`} class="checklist-checkbox" />
+                    <label for={`crack-${type}`}>{type}</label>
+                  </div>
+                ))}
+              </div>
+              <div>
+                <h5 class="text-lg font-bold text-slate-900 uppercase">SEVERITY</h5>
+                {basementChecklist.crackSeverity.map(severity => (
+                  <div class="checklist-item">
+                    <input type="radio" name="severity" id={`sev-${severity}`} />
+                    <label for={`sev-${severity}`}>{severity}</label>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          <div class="checklist-subsection">
+            <h4 class="text-xl font-bold text-slate-900 uppercase">CONCRETE CONDITION</h4>
+            {basementChecklist.concreteCondition.map(condition => (
+              <div class="checklist-item">
+                <input type="checkbox" id={`concrete-${condition}`} class="checklist-checkbox" />
+                <label for={`concrete-${condition}`}>{condition}</label>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <!-- Water Problems -->
+      <div class="checklist-category">
+        <h3>
+          <i class="fa-solid fa-droplet"></i>
+          Section 3: Water & Moisture Assessment
+        </h3>
+        <div class="checklist-grid">
+          <div class="checklist-subsection">
+            <h4 class="text-xl font-bold text-slate-900 uppercase">WATER VAPOR PROBLEMS</h4>
+            {waterProblems.vapor.map(problem => (
+              <div class="checklist-item">
+                <input type="checkbox" id={`vapor-${problem}`} class="checklist-checkbox" />
+                <label for={`vapor-${problem}`}>{problem}</label>
+              </div>
+            ))}
+          </div>
+
+          <div class="checklist-subsection">
+            <h4 class="text-xl font-bold text-slate-900 uppercase">CAPILLARY WATER PROBLEMS</h4>
+            {waterProblems.capillary.map(problem => (
+              <div class="checklist-item">
+                <input type="checkbox" id={`cap-${problem}`} class="checklist-checkbox" />
+                <label for={`cap-${problem}`}>{problem}</label>
+              </div>
+            ))}
+          </div>
+
+          <div class="checklist-subsection">
+            <h4 class="text-xl font-bold text-slate-900 uppercase">BULK WATER PROBLEMS</h4>
+            {waterProblems.bulk.map(problem => (
+              <div class="checklist-item">
+                <input type="checkbox" id={`bulk-${problem}`} class="checklist-checkbox" />
+                <label for={`bulk-${problem}`}>{problem}</label>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <!-- Structural Issues -->
+      <div class="checklist-category">
+        <h3>
+          <i class="fa-solid fa-hammer"></i>
+          Section 4: Structural Assessment
+        </h3>
+        <div class="checklist-grid">
+          {structuralIssues.map(issue => (
+            <div class="checklist-item">
+              <input type="checkbox" id={`struct-${issue}`} class="checklist-checkbox" />
+              <label for={`struct-${issue}`}>{issue}</label>
+            </div>
+          ))}
+          
+          <div class="checklist-subsection">
+            <h4 class="text-xl font-bold text-slate-900 uppercase">STRUCTURAL PROBLEMS DETAIL</h4>
+            {basementChecklist.structuralProblems.map(problem => (
+              <div class="checklist-item">
+                <input type="checkbox" id={`detail-${problem}`} class="checklist-checkbox" />
+                <label for={`detail-${problem}`}>{problem}</label>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <!-- Systems Check -->
+      <div class="checklist-category">
+        <h3>
+          <i class="fa-solid fa-gear"></i>
+          Section 5: Systems & Utilities
+        </h3>
+        <div class="checklist-grid">
+          <div class="checklist-subsection">
+            <h4 class="text-xl font-bold text-slate-900 uppercase">PLUMBING ISSUES</h4>
+            {plumbingChecks.map(check => (
+              <div class="checklist-item">
+                <input type="checkbox" id={`plumb-${check}`} class="checklist-checkbox" />
+                <label for={`plumb-${check}`}>{check}</label>
+              </div>
+            ))}
+          </div>
+
+          <div class="checklist-subsection">
+            <h4 class="text-xl font-bold text-slate-900 uppercase">ELECTRICAL PROBLEMS</h4>
+            {electricalChecks.map(check => (
+              <div class="checklist-item">
+                <input type="checkbox" id={`elec-${check}`} class="checklist-checkbox" />
+                <label for={`elec-${check}`}>{check}</label>
+              </div>
+            ))}
+          </div>
+
+          <div class="checklist-subsection">
+            <h4 class="text-xl font-bold text-slate-900 uppercase">AIR QUALITY</h4>
+            {airQualityChecks.map(check => (
+              <div class="checklist-item">
+                <input type="checkbox" id={`air-${check}`} class="checklist-checkbox" />
+                <label for={`air-${check}`}>{check}</label>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <!-- Summary Section -->
+      <div class="summary-section">
+        <h3 class="text-2xl font-bold text-slate-900 uppercase">INSPECTION SUMMARY</h3>
+        <div class="summary-grid">
+          <div class="summary-stat">
+            <span class="stat-label">Total Issues Found:</span>
+            <span class="stat-value" id="issueCount">0</span>
+          </div>
+          <div class="summary-stat">
+            <span class="stat-label">Critical Issues:</span>
+            <span class="stat-value critical" id="criticalCount">0</span>
+          </div>
+          <div class="summary-stat">
+            <span class="stat-label">Completion:</span>
+            <span class="stat-value" id="completionPercent">0%</span>
+          </div>
+        </div>
+        
+        <div class="summary-actions">
+          <button class="btn-save" onclick="saveChecklist()">
+            <i class="fa-solid fa-save"></i>
+            Save Progress
+          </button>
+          <button class="btn-generate" onclick="generateReport()">
+            <i class="fa-solid fa-file-pdf"></i>
+            Generate Report
+          </button>
+          <button class="btn-clear" onclick="clearChecklist()">
+            <i class="fa-solid fa-trash"></i>
+            Clear All
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Technical Reference -->
+  <section class="technical-section">
+    <div class="container">
+      <h2 class="text-4xl font-bold text-slate-900 uppercase">TECHNICAL CONSTRUCTION DETAILS</h2>
+      <p class="section-intro">Reference diagrams for proper foundation waterproofing assembly</p>
+      
+      <div class="technical-grid">
+        <div class="technical-card border-2 border-slate-200">
+          <img src="/waterproofing manual/content/photo_2025-08-25_20-49-42.jpg" 
+               alt="Foundation waterproofing assembly detail" / width="800" height="600" loading="lazy" decoding="async">
+          <h3 class="text-2xl font-bold text-slate-900 uppercase">COMPLETE FOUNDATION ASSEMBLY</h3>
+          <ul>
+            <li>Protective membrane placement</li>
+            <li>Proper insulation layers</li>
+            <li>Drainage system integration</li>
+            <li>Vapor barrier installation</li>
+            <li>Granular backfill requirements</li>
+          </ul>
+        </div>
+        
+        <div class="technical-card border-2 border-slate-200">
+          <img src="/waterproofing manual/content/photo_2025-08-25_20-49-39.jpg" 
+               alt="Crawlspace insulation details" / width="800" height="600" loading="lazy" decoding="async">
+          <h3 class="text-2xl font-bold text-slate-900 uppercase">CRAWLSPACE SPECIFICATIONS</h3>
+          <ul>
+            <li>Thermal bridge prevention</li>
+            <li>Unheated vs conditioned spaces</li>
+            <li>Proper ventilation requirements</li>
+            <li>Insulation R-value specifications</li>
+            <li>Moisture control strategies</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contract Types Reference -->
+  <section class="contracts-section">
+    <div class="container">
+      <h2 class="text-4xl font-bold text-slate-900 uppercase">UNDERSTANDING CONTRACT TYPES</h2>
+      <p class="section-intro">Choose the right contract structure for your project</p>
+      
+      <div class="contracts-grid">
+        <div class="contract-card border-2 border-slate-200">
+          <img src="/waterproofing manual/content/photo_2025-08-25_20-49-32.jpg" 
+               alt="Unit price contracts" / width="800" height="600" loading="lazy" decoding="async">
+          <h3 class="text-2xl font-bold text-slate-900 uppercase">UNIT PRICE CONTRACTS</h3>
+          <div class="pros-cons">
+            <div class="pros">
+              <h4 class="text-xl font-bold text-slate-900 uppercase">PROS:</h4>
+              <ul>
+                <li>Simplified invoicing</li>
+                <li>Transparent pricing</li>
+                <li>Flexible for scope changes</li>
+              </ul>
+            </div>
+            <div class="cons">
+              <h4 class="text-xl font-bold text-slate-900 uppercase">CONS:</h4>
+              <ul>
+                <li>Final cost uncertainty</li>
+                <li>Requires detailed tracking</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="contract-card border-2 border-slate-200">
+          <img src="/waterproofing manual/content/photo_2025-08-25_20-49-33.jpg" 
+               alt="Cost plus and design-build contracts" / width="800" height="600" loading="lazy" decoding="async">
+          <h3 class="text-2xl font-bold text-slate-900 uppercase">COST PLUS CONTRACTS</h3>
+          <div class="pros-cons">
+            <div class="pros">
+              <h4 class="text-xl font-bold text-slate-900 uppercase">PROS:</h4>
+              <ul>
+                <li>Budget flexibility</li>
+                <li>No markup disputes</li>
+                <li>Transparent costs</li>
+              </ul>
+            </div>
+            <div class="cons">
+              <h4 class="text-xl font-bold text-slate-900 uppercase">CONS:</h4>
+              <ul>
+                <li>Requires cost reimbursement</li>
+                <li>Client may resist indirect costs</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="contract-card border-2 border-slate-200">
+          <img src="/waterproofing manual/content/photo_2025-08-25_20-49-34.jpg" 
+               alt="Fixed price contracts" / width="800" height="600" loading="lazy" decoding="async">
+          <h3 class="text-2xl font-bold text-slate-900 uppercase">FIXED PRICE CONTRACTS</h3>
+          <div class="pros-cons">
+            <div class="pros">
+              <h4 class="text-xl font-bold text-slate-900 uppercase">PROS:</h4>
+              <ul>
+                <li>Finalized cost upfront</li>
+                <li>Low financial risk</li>
+                <li>Settled deadline</li>
+              </ul>
+            </div>
+            <div class="cons">
+              <h4 class="text-xl font-bold text-slate-900 uppercase">CONS:</h4>
+              <ul>
+                <li>Less flexible process</li>
+                <li>Risk of miscommunication</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+  <!-- Resource Images and Diagrams -->
+  <ResourceImageGallery resource="inspection" />
+
+<!-- CTA Section -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-content">
+        <h2 class="text-4xl font-bold text-slate-900 uppercase">NEED A PROFESSIONAL INSPECTION?</h2>
+        <p>Our certified inspectors use this comprehensive checklist to evaluate your basement</p>
+        
+        <div class="cta-features">
+          <div class="cta-feature">
+            <i class="fa-solid fa-clipboard-check"></i>
+            <span>45+ Point Inspection</span>
+          </div>
+          <div class="cta-feature">
+            <i class="fa-solid fa-certificate"></i>
+            <span>Certified Inspectors</span>
+          </div>
+          <div class="cta-feature">
+            <i class="fa-solid fa-file-lines"></i>
+            <span>Detailed Report</span>
+          </div>
+          <div class="cta-feature">
+            <i class="fa-solid fa-dollar-sign"></i>
+            <span>Free Assessment</span>
+          </div>
+        </div>
+        
+        <div class="cta-actions">
+          <a href="/free-inspection" class="btn-primary">Schedule Free Inspection</a>
+          <a href="tel:437-545-0067" class="btn-secondary">
+            <i class="fa-solid fa-phone"></i>
+            Call: 437-545-0067
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <ContactForm />
+  <Footer />
+</PageLayout>
+
+
+
+<script>
+  // Checklist functionality
+  document.addEventListener('DOMContentLoaded', () => {
+    const checkboxes = document.querySelectorAll('.checklist-checkbox');
+    const radios = document.querySelectorAll('input[type="radio"]');
+    const issueCount = document.getElementById('issueCount');
+    const criticalCount = document.getElementById('criticalCount');
+    const completionPercent = document.getElementById('completionPercent');
+    
+    function updateSummary() {
+      const totalItems = checkboxes.length + document.querySelectorAll('input[type="radio"]:checked').length;
+      const checkedItems = document.querySelectorAll('.checklist-checkbox:checked').length;
+      
+      issueCount.textContent = checkedItems;
+      
+      // Count critical issues (structural, bulk water)
+      const critical = document.querySelectorAll('[id^="struct-"]:checked, [id^="bulk-"]:checked').length;
+      criticalCount.textContent = critical;
+      
+      // Calculate completion
+      const completion = Math.round((checkedItems / checkboxes.length) * 100);
+      completionPercent.textContent = completion + '%';
+      
+      // Save to localStorage
+      saveToLocal();
+    }
+    
+    function saveToLocal() {
+      const checklistData = {};
+      checkboxes.forEach(cb => {
+        checklistData[cb.id] = cb.checked;
+      });
+      localStorage.setItem('inspectionChecklist', JSON.stringify(checklistData));
+    }
+    
+    function loadFromLocal() {
+      const saved = localStorage.getItem('inspectionChecklist');
+      if (saved) {
+        const data = JSON.parse(saved);
+        Object.keys(data).forEach(id => {
+          const element = document.getElementById(id);
+          if (element) element.checked = data[id];
+        });
+        updateSummary();
+      }
+    }
+    
+    checkboxes.forEach(cb => {
+      cb.addEventListener('change', updateSummary);
+    });
+    
+    radios.forEach(radio => {
+      radio.addEventListener('change', updateSummary);
+    });
+    
+    // Save, generate, and clear functions
+    window.saveChecklist = function() {
+      saveToLocal();
+      alert('Checklist saved successfully!');
+    };
+    
+    window.generateReport = function() {
+      const issues = document.querySelectorAll('.checklist-checkbox:checked');
+      if (issues.length === 0) {
+        alert('No issues selected for report');
+        return;
+      }
+      
+      // In production, this would generate a PDF
+      alert(`Report will include ${issues.length} identified issues. Contact us to receive the full professional assessment.`);
+      window.location.href = '/contact';
+    };
+    
+    window.clearChecklist = function() {
+      if (confirm('Clear all checklist items?')) {
+        checkboxes.forEach(cb => cb.checked = false);
+        document.querySelectorAll('input[type="radio"]').forEach(r => r.checked = false);
+        document.querySelectorAll('textarea').forEach(t => t.value = '');
+        localStorage.removeItem('inspectionChecklist');
+        updateSummary();
+      }
+    };
+    
+    // Load saved data on page load
+    loadFromLocal();
+  });
+</script>

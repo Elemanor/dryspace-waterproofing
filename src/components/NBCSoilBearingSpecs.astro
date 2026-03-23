@@ -1,0 +1,233 @@
+---
+export interface Props {
+  showCalculations?: boolean;
+  highlightSoilType?: 'rock' | 'gravel' | 'sand' | 'silt' | 'clay';
+}
+
+const { showCalculations = false, highlightSoilType } = Astro.props;
+
+const soilTypes = [
+  {
+    type: 'rock',
+    category: 'Sound Rock',
+    description: 'Granite, limestone, sandstone',
+    bearingPressure: '600+ kPa',
+    testing: 'Geological assessment required',
+    settlement: 'Negligible'
+  },
+  {
+    type: 'gravel',
+    category: 'Dense/Compact Gravel',
+    description: 'Well-graded, angular particles',
+    bearingPressure: '150 kPa',
+    testing: 'Picket test: <200mm penetration',
+    settlement: 'Very low'
+  },
+  {
+    type: 'gravel',
+    category: 'Loose Gravel',
+    description: 'Poorly graded, rounded particles',
+    bearingPressure: '50 kPa',
+    testing: 'Picket test: >200mm penetration',
+    settlement: 'Moderate'
+  },
+  {
+    type: 'sand',
+    category: 'Dense/Compact Sand',
+    description: 'Well-graded, angular grains',
+    bearingPressure: '150 kPa',
+    testing: 'Picket test: <200mm penetration',
+    settlement: 'Low'
+  },
+  {
+    type: 'sand',
+    category: 'Loose Sand',
+    description: 'Uniform, rounded grains',
+    bearingPressure: '50 kPa',
+    testing: 'Picket test: >200mm penetration',
+    settlement: 'High'
+  },
+  {
+    type: 'silt',
+    category: 'Stiff Silt',
+    description: 'Difficult to indent',
+    bearingPressure: '100 kPa',
+    testing: 'Thumb pressure: difficult indent',
+    settlement: 'Low-moderate'
+  },
+  {
+    type: 'silt',
+    category: 'Firm Silt',
+    description: 'Moderate indentation',
+    bearingPressure: '75 kPa',
+    testing: 'Thumb pressure: moderate indent',
+    settlement: 'Moderate'
+  },
+  {
+    type: 'clay',
+    category: 'Stiff Clay',
+    description: 'Very cohesive, dry',
+    bearingPressure: '100 kPa',
+    testing: 'Thumb pressure: difficult indent',
+    settlement: 'Low'
+  },
+  {
+    type: 'clay',
+    category: 'Firm Clay',
+    description: 'Moderately cohesive',
+    bearingPressure: '75 kPa',
+    testing: 'Thumb pressure: moderate indent',
+    settlement: 'Moderate'
+  },
+  {
+    type: 'clay',
+    category: 'Soft Clay',
+    description: 'Easily deformed',
+    bearingPressure: '40 kPa',
+    testing: 'Thumb pressure: easy indent',
+    settlement: 'High - requires special design'
+  }
+];
+
+const filteredSoils = highlightSoilType 
+  ? soilTypes.filter(s => s.type === highlightSoilType)
+  : soilTypes;
+---
+
+<div class="nbc-soil-bearing bg-amber-50 rounded-lg p-6 my-8">
+  <h3 class="text-xl font-bold mb-4 flex items-center">
+    <span class="text-amber-600 mr-2">⛰️</span>
+    NBC Table 9.4.4.1 - Soil Bearing Pressures
+  </h3>
+
+  <div class="overflow-x-auto mb-6">
+    <table class="w-full bg-white rounded-lg overflow-hidden">
+      <thead class="bg-amber-600 text-white">
+        <tr>
+          <th class="px-4 py-3 text-left">Soil/Rock Type</th>
+          <th class="px-4 py-3 text-left">Max Bearing Pressure</th>
+          <th class="px-4 py-3 text-left">Field Testing Method</th>
+          <th class="px-4 py-3 text-left">Settlement Risk</th>
+        </tr>
+      </thead>
+      <tbody>
+        {filteredSoils.map((soil, index) => (
+          <tr class={`border-b ${index % 2 === 0 ? 'bg-slate-50' : 'bg-white'} ${highlightSoilType === soil.type ? 'ring-2 ring-amber-400' : ''}`}>
+            <td class="px-4 py-3">
+              <div>
+                <div class="font-semibold">{soil.category}</div>
+                <div class="text-sm text-slate-500">{soil.description}</div>
+              </div>
+            </td>
+            <td class="px-4 py-3">
+              <span class="font-bold text-lg text-cyan-600">{soil.bearingPressure}</span>
+            </td>
+            <td class="px-4 py-3 text-sm">{soil.testing}</td>
+            <td class="px-4 py-3">
+              <span class={`inline-block px-2 py-1 rounded text-xs font-semibold
+                ${soil.settlement.includes('High') ? 'bg-red-100 text-red-700' : 
+                  soil.settlement.includes('Moderate') ? 'bg-amber-50 text-amber-600' : 
+                  'bg-cyan-50 text-cyan-700'}`}>
+                {soil.settlement}
+              </span>
+            </td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+
+  <div class="grid md:grid-cols-2 gap-6 mb-6">
+    <div class="bg-white rounded-lg p-4 border-2 border-amber-200">
+      <h4 class="font-bold mb-3 flex items-center">
+        <span class="text-xl mr-2">🥖</span>
+        Picket Test for Sand/Gravel
+      </h4>
+      <ol class="text-sm space-y-2">
+        <li><strong>1.</strong> Use 38×38mm (2"×2") wood picket</li>
+        <li><strong>2.</strong> Cut 45° bevel on end</li>
+        <li><strong>3.</strong> Person of average weight pushes down</li>
+        <li><strong>4.</strong> Measure penetration depth:</li>
+        <li class="ml-4">• <200mm = Dense/Compact (150 kPa)</li>
+        <li class="ml-4">• >200mm = Loose (50 kPa)</li>
+      </ol>
+    </div>
+
+    <div class="bg-white rounded-lg p-4 border-2 border-amber-200">
+      <h4 class="font-bold mb-3 flex items-center">
+        <span class="text-xl mr-2">👍</span>
+        Thumb Test for Clay/Silt
+      </h4>
+      <ol class="text-sm space-y-2">
+        <li><strong>1.</strong> Test on undisturbed sample</li>
+        <li><strong>2.</strong> Use wall of test pit</li>
+        <li><strong>3.</strong> Apply thumb pressure:</li>
+        <li class="ml-4">• Difficult indent = Stiff (100 kPa)</li>
+        <li class="ml-4">• Moderate indent = Firm (75 kPa)</li>
+        <li class="ml-4">• Easy indent = Soft (40 kPa)</li>
+      </ol>
+    </div>
+  </div>
+
+  {showCalculations && (
+    <div class="bg-cyan-50 rounded-lg p-6 mb-6">
+      <h4 class="font-bold mb-4 text-lg">Weaker Soil Layer Calculations (NBC 9.4.4.2)</h4>
+      
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <h5 class="font-semibold mb-2">Strip Footing Formula:</h5>
+          <div class="bg-white rounded p-3 font-mono text-sm">
+            P₁ = P × W / (W + 1.155h)
+          </div>
+          <ul class="text-sm mt-2 space-y-1">
+            <li>P₁ = Pressure at depth h</li>
+            <li>P = Footing bearing pressure</li>
+            <li>W = Footing width</li>
+            <li>h = Depth to weaker layer</li>
+          </ul>
+        </div>
+
+        <div>
+          <h5 class="font-semibold mb-2">Square Footing Formula:</h5>
+          <div class="bg-white rounded p-3 font-mono text-sm">
+            P₂ = P × W² / (W + 1.155h)²
+          </div>
+          <ul class="text-sm mt-2 space-y-1">
+            <li>P₂ = Pressure at depth h</li>
+            <li>P = Footing bearing pressure</li>
+            <li>W = Footing width</li>
+            <li>h = Depth to weaker layer</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mt-4 p-4 bg-amber-50 rounded-lg">
+        <h5 class="font-semibold mb-2">Example Calculation:</h5>
+        <p class="text-sm">
+          Strip footing: 1.0m wide, 200 kPa bearing pressure, soft clay at 0.5m depth<br/>
+          P₁ = 200 × 1.0 / (1.0 + 1.155 × 0.5) = 200 / 1.578 = <strong class="text-red-600">127 kPa</strong><br/>
+          <span class="text-red-600">⚠️ Exceeds 40 kPa limit for soft clay - redesign required!</span>
+        </p>
+      </div>
+    </div>
+  )}
+
+  <div class="bg-red-50 border-2 border-red-300 rounded-lg p-4">
+    <h4 class="font-bold mb-2 flex items-center text-red-700">
+      <span class="text-xl mr-2">⚠️</span>
+      Critical Design Requirements
+    </h4>
+    <ul class="text-sm space-y-2">
+      <li>• If soil < 75 kPa, footings must be designed per NBC Section 9.4</li>
+      <li>• Check for weaker layers within 2× footing width depth</li>
+      <li>• If weaker layer exists at depth < 2W, use lower bearing capacity</li>
+      <li>• Load spreads at 60° angle from horizontal (frustum distribution)</li>
+      <li>• Eccentric loading near property lines requires special design</li>
+    </ul>
+  </div>
+
+  <div class="mt-4 text-xs text-slate-500 border-t pt-3">
+    <p><strong>Reference:</strong> NBC 2015 Part 9, Section 9.4.4 - Foundation Conditions</p>
+    <p>Professional geotechnical investigation recommended for all major foundation work.</p>
+  </div>
+</div>

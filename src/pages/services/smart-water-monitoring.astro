@@ -1,0 +1,212 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import Hero from '../../components/sections/Hero.astro';
+import Features from '../../components/sections/Features.astro';
+import Process from '../../components/sections/Process.astro';
+import Gallery from '../../components/sections/Gallery.astro';
+import FAQ from '../../components/sections/FAQ.astro';
+import Testimonials from '../../components/sections/Testimonials.astro';
+import CTA from '../../components/sections/CTA.astro';
+import Stats from '../../components/sections/Stats.astro';
+import ServiceSchema from '../../components/ServiceSchema.astro';
+import InternalLinks from '../../components/InternalLinks.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+
+const pageTitle = "Smart Water Monitoring Systems Toronto | AI Leak Detection & Prevention";
+const pageDescription = "Advanced smart water monitoring systems with AI leak detection, WiFi alerts, automatic shutoff valves, and real-time analytics. Prevent flooding damage with Toronto's most advanced water monitoring technology.";
+
+// Smart water monitoring features
+const serviceFeatures = [
+  {
+    icon: '📱',
+    title: 'Smart Home Integration',
+    description: 'Works with Alexa, Google Home, Apple HomeKit. Complete smart home ecosystem integration with voice control and automation.',
+    highlight: true
+  },
+  {
+    icon: '🤖',
+    title: 'AI Leak Detection',
+    description: 'Advanced machine learning algorithms detect micro-leaks, abnormal flow patterns, and potential failure points before damage occurs.',
+    highlight: true
+  },
+  {
+    icon: '🚨',
+    title: 'Instant WiFi Alerts',
+    description: 'Real-time smartphone notifications, email alerts, and emergency contacts. Never miss a water emergency again.',
+    highlight: true
+  },
+  {
+    icon: '🔧',
+    title: 'Automatic Shutoff Valves',
+    description: 'Smart valves automatically shut off water supply when leaks are detected, preventing catastrophic flooding damage.'
+  },
+  {
+    icon: '📊',
+    title: 'Water Usage Analytics',
+    description: 'Detailed usage reports, efficiency recommendations, and cost-saving insights for informed water management.'
+  },
+  {
+    icon: '⚡',
+    title: 'Battery Backup Systems',
+    description: 'Uninterrupted monitoring during power outages with 72-hour battery backup and cellular connectivity.'
+  }
+];
+
+// Smart monitoring installation process
+const processSteps = [
+  {
+    number: '01',
+    title: 'Smart Home Assessment',
+    description: 'Comprehensive evaluation of your plumbing system, water usage patterns, and smart home integration requirements.',
+    icon: '🔍',
+    duration: '2-3 hours'
+  },
+  {
+    number: '02',
+    title: 'System Design & Configuration',
+    description: 'Custom smart monitoring system design with sensor placement, shutoff valve locations, and mobile app setup.',
+    icon: '📐',
+    duration: '1-2 days'
+  },
+  {
+    number: '03',
+    title: 'Professional Installation',
+    description: 'Certified technicians install smart sensors, automatic shutoff valves, and configure WiFi connectivity.',
+    icon: '🔧',
+    duration: '4-8 hours'
+  },
+  {
+    number: '04',
+    title: 'System Calibration & Testing',
+    description: 'Complete system testing, AI calibration, alert verification, and smart home integration activation.',
+    icon: '⚙️',
+    duration: '1-2 hours'
+  },
+  {
+    number: '05',
+    title: 'User Training & Support',
+    description: 'Comprehensive training on mobile app usage, alert management, and ongoing system monitoring features.',
+    icon: '📱',
+    duration: '30 minutes'
+  }
+];
+
+// Service-specific FAQs with cost, timeline, benefits, process information
+const serviceFAQs = [
+  {
+    question: "How much do smart water monitoring systems cost in Toronto?",
+    answer: "Smart water monitoring system costs vary by complexity and coverage: Basic leak detection sensors: $850-$1,600 for key areas like water heater, basement, and under sinks, Comprehensive whole-home systems: $2,700-$5,950 including smart shutoff valves, multiple sensors, and professional installation, Commercial/multi-unit systems: $5,400-$16,000+ depending on building size and monitoring points. All systems include mobile app, WiFi connectivity, and 2-year warranty. Monthly monitoring fees range $17-$37. Insurance discounts of 5-15% often offset ongoing costs."
+  },
+  {
+    question: "How long does smart water monitoring installation take?",
+    answer: "Installation timeline depends on system complexity: Basic sensor systems: 2-4 hours for standard residential installation with WiFi setup, Comprehensive systems: 6-10 hours including smart valve installation, sensor placement, and system calibration, Multi-zone commercial systems: 1-3 days depending on building size and complexity, System configuration and testing: Additional 1-2 hours for app setup and user training. Most residential installations completed in single day. Business/commercial installations may require 2-3 days for complete integration."
+  },
+  {
+    question: "What are the benefits of smart water monitoring systems?",
+    answer: "Smart monitoring provides significant advantages: Flood prevention: Early leak detection prevents catastrophic water damage costing thousands in repairs, Insurance savings: 5-15% discounts on home insurance premiums for monitored properties, Water conservation: Usage analytics identify inefficiencies, reducing bills by 10-25%, Remote monitoring: Monitor vacation homes, rental properties, or travel with peace of mind, Property value: Smart home technology increases resale value and buyer appeal, Emergency response: Automatic shutoff valves minimize damage when leaks occur, 24/7 protection: Continuous monitoring even during power outages with battery backup."
+  },
+  {
+    question: "When should I install smart water monitoring?",
+    answer: "Smart monitoring is beneficial in several scenarios: New home construction: Integrate during building for optimal sensor placement and smart home compatibility, Aging plumbing: Properties with older pipes, water heaters, or appliances prone to leaks, Vacation properties: Remote monitoring for cottages, rental properties, or seasonal homes, Post-flood recovery: After water damage incidents to prevent future occurrences, Smart home upgrades: When adding other smart home technologies for comprehensive automation, Insurance requirements: Some insurers require monitoring systems for coverage in flood-prone areas. Best installed during dry seasons for optimal setup and testing."
+  }
+];
+
+// Service offers with 3 pricing tiers
+const serviceOffers = [
+  {
+    name: "Smart Leak Detection Starter",
+    price: "$1,300-$2,400",
+    description: "Essential smart monitoring with 6-8 leak sensors, WiFi alerts, mobile app, and basic water usage tracking. Perfect for key areas like basements, water heaters, and appliances."
+  },
+  {
+    name: "Comprehensive Smart System",
+    price: "$3,800-$5,950",
+    description: "Complete whole-home monitoring with smart shutoff valves, 12-15 sensors, AI leak detection, smart home integration, and advanced analytics. Includes professional installation and training."
+  },
+  {
+    name: "Commercial Smart Monitoring",
+    price: "$8,650-$22,000",
+    description: "Enterprise-grade monitoring for commercial properties with multiple zones, automatic shutoffs, central monitoring dashboard, maintenance alerts, and integration with building management systems."
+  }
+];
+
+---
+
+<PageLayout 
+  title={pageTitle}
+  description={pageDescription}
+>
+  
+  <!-- Breadcrumbs -->
+  <div class="container mx-auto px-4 mt-4">
+    <Breadcrumbs 
+      items={[
+        { name: "Home", url: "/" },
+        { name: "Services", url: "/services" },
+        { name: "Smart Water Monitoring" }
+      ]}
+    />
+  </div>
+
+<ServiceSchema 
+    serviceName="Smart Water Monitoring Systems Toronto"
+    description={pageDescription}
+    priceRange="$1,300-$22,000"
+    offers={serviceOffers}
+    faqs={serviceFAQs}
+  />
+  <!-- Hero Section -->
+  <Hero 
+    title="Smart Water Monitoring Systems"
+    subtitle="AI-powered leak detection with instant alerts and automatic shutoff valves. Prevent flooding damage before it starts."
+    primaryCTA={{ text: "Get Free Smart Assessment", href: "/free-inspection" }}
+    secondaryCTA={{ text: "Call: 437-545-0067", href: "tel:437-545-0067" }}
+    backgroundImage="/images/sump pump with water.webp"
+    badge="AI-Powered Protection"
+  />
+
+  <!-- Stats -->
+  <Stats />
+
+  <!-- Features -->
+  <Features 
+    title="Advanced Smart Water Monitoring Technology"
+    subtitle="AI-powered protection with smart home integration and real-time analytics"
+    features={serviceFeatures}
+    columns={3}
+  />
+
+  <!-- Process -->
+  <Process 
+    title="Smart Monitoring Installation Process"
+    subtitle="Professional installation with comprehensive training and support"
+    steps={processSteps}
+  />
+
+  <!-- Testimonials -->
+  <Testimonials />
+
+  <!-- FAQ -->
+  <FAQ 
+    title="Smart Water Monitoring FAQs"
+    subtitle="Everything you need to know about smart leak detection and prevention"
+    faqs={serviceFAQs}
+    columns={1}
+  />
+
+  <!-- Internal Links -->
+  <InternalLinks 
+    category="waterproofing"
+    currentPage="smart-water-monitoring"
+    limit={6}
+  />
+
+  <!-- CTA -->
+  <CTA 
+    title="Protect Your Property with Smart Technology"
+    subtitle="Advanced AI leak detection and prevention systems for complete peace of mind."
+    primaryCTA={{ text: "Schedule Smart Assessment", href: "/free-inspection" }}
+    secondaryCTA={{ text: "Call: 437-545-0067", href: "tel:437-545-0067" }}
+    background="gradient"
+  />
+</PageLayout>

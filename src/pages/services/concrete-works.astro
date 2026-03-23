@@ -1,0 +1,1084 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import HeroSection from '../../components/widgets/Hero.astro';
+import ConcreteServices from '../../components/react/ConcreteServices';
+import ConcreteCalculator from '../../components/react/ConcreteCalculator';
+import NBCWaterTableSoilMovement from '../../components/NBCWaterTableSoilMovement.astro';
+import NBCLateralPressure from '../../components/NBCLateralPressure.astro';
+import ServiceSchema from '../../components/ServiceSchema.astro';
+import InternalLinks from '../../components/InternalLinks.astro';
+import ContactForm from '../../components/ContactForm.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+
+const meta = {
+  title: "Professional Concrete Works Toronto | Slabs, Walls, Driveways & Stamped Concrete",
+  description: "Expert concrete contractors in Toronto. Specializing in concrete slabs, walls, block walls, sidewalks, patios, walkways, driveways, and decorative stamped concrete. 25-year warranty.",
+  keywords: "concrete contractors Toronto, concrete slabs, concrete walls, block walls, sidewalks, concrete patios, walkways, driveways, stamped concrete, decorative concrete",
+  canonical: "https://dryspacegroup.com/services/concrete-works"
+};
+
+// Service areas for local SEO
+const serviceAreas = [
+  "Toronto", "North York", "Scarborough", "Etobicoke", 
+  "Mississauga", "Brampton", "Vaughan", "Richmond Hill",
+  "Markham", "Oakville", "Burlington", "Hamilton"
+];
+
+// Service FAQs for schema
+const serviceFAQs = [
+  {
+    question: "How much do concrete works cost in Toronto?",
+    answer: "Concrete work pricing varies by project type: basement slabs $8-12/sq ft, garage floors $12-18/sq ft, driveways $12-18/sq ft, patios $10-15/sq ft, stamped concrete $17-25/sq ft, and retaining walls $250-750/linear ft. Final cost depends on size, complexity, and finishing requirements."
+  },
+  {
+    question: "How long do concrete projects take to complete?",
+    answer: "Most residential concrete projects take 2-5 days: slabs and patios 2-3 days, driveways 3-4 days, retaining walls 3-7 days depending on height and engineering requirements. Stamped concrete adds 1-2 days for decorative work. Weather and curing time may extend schedules."
+  },
+  {
+    question: "Do concrete works require permits in Toronto?",
+    answer: "Yes, most concrete work requires building permits: all foundation work, retaining walls over 4 feet, driveways connecting to city roads, and structural slabs. We handle all permit applications, engineering drawings, and city inspections as part of our comprehensive service."
+  },
+  {
+    question: "What warranty do you provide on concrete work?",
+    answer: "We provide a 25-year structural warranty on all concrete work, covering material defects, workmanship issues, and structural integrity. Decorative finishes have a 5-year warranty. All warranties are transferable and backed by our $5 million liability insurance coverage."
+  }
+];
+
+// Service offers for schema
+const serviceOffers = [
+  {
+    name: "Concrete Slabs & Floors",
+    price: "$8-15/sq ft",
+    description: "Basement floors, garage slabs, heated floor systems with professional installation"
+  },
+  {
+    name: "Driveways & Patios",
+    price: "$10-18/sq ft",
+    description: "Durable outdoor concrete with decorative options and proper drainage"
+  },
+  {
+    name: "Stamped Decorative Concrete",
+    price: "$17-25/sq ft",
+    description: "Custom patterns, colors, and finishes with protective sealing"
+  }
+];
+---
+
+<PageLayout {...meta}>
+  
+  <!-- Breadcrumbs -->
+  <div class="container mx-auto px-4 mt-4">
+    <Breadcrumbs 
+      items={[
+        { name: "Home", url: "/" },
+        { name: "Services", url: "/services" },
+        { name: "Concrete Works" }
+      ]}
+    />
+  </div>
+
+<!-- Add Service Schema -->
+  <ServiceSchema
+    serviceName="Concrete Works"
+    description="Professional concrete contractors specializing in slabs, walls, driveways, patios, stamped concrete, and retaining walls in Toronto and GTA. NBC compliant with 25-year warranty."
+    priceRange="$8-25/sq ft"
+    offers={serviceOffers}
+    faqs={serviceFAQs}
+    areaServed={serviceAreas}
+  />
+  <HeroSection
+    title="Professional Concrete Works"
+    subtitle="Complete Concrete Solutions for Residential & Commercial Properties"
+    backgroundImage="/images/concrete-works-hero.webp"
+    ctaText="Get Free Quote"
+    ctaLink="/free-inspection"
+  />
+
+  <!-- Service Overview -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4 max-w-6xl">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl font-bold mb-4">Toronto's Trusted Concrete Contractors</h2>
+        <p class="text-xl text-slate-500 max-w-3xl mx-auto">
+          From foundation slabs to decorative stamped patios, we deliver superior concrete work with 25-year structural warranties. Licensed, insured, and City of Toronto approved.
+        </p>
+      </div>
+
+      <!-- Key Services Grid -->
+      <div class="grid md:grid-cols-4 gap-6 mb-12">
+        <div class="text-center">
+          <div class="bg-cyan-100 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
+            <svg class="w-10 h-10 text-cyan-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+            </svg>
+          </div>
+          <h3 class="font-bold text-lg mb-2">Structural Concrete</h3>
+          <p class="text-slate-500 text-sm">Foundations, walls, slabs</p>
+        </div>
+        
+        <div class="text-center">
+          <div class="bg-cyan-100 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
+            <svg class="w-10 h-10 text-cyan-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
+            </svg>
+          </div>
+          <h3 class="font-bold text-lg mb-2">Outdoor Living</h3>
+          <p class="text-slate-500 text-sm">Patios, walkways, pools</p>
+        </div>
+        
+        <div class="text-center">
+          <div class="bg-purple-100 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
+            <svg class="w-10 h-10 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"/>
+            </svg>
+          </div>
+          <h3 class="font-bold text-lg mb-2">Decorative Concrete</h3>
+          <p class="text-slate-500 text-sm">Stamped, colored, exposed</p>
+        </div>
+        
+        <div class="text-center">
+          <div class="bg-orange-100 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
+            <svg class="w-10 h-10 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+          </div>
+          <h3 class="font-bold text-lg mb-2">24/7 Emergency</h3>
+          <p class="text-slate-500 text-sm">Repairs & replacements</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NBC Concrete Specifications Section -->
+  <section class="py-16 bg-cyan-50">
+    <div class="container mx-auto px-4 max-w-6xl">
+      <h2 class="text-3xl font-bold mb-8 text-center">NBC 9.3.1 Concrete Specifications Compliance</h2>
+      
+      <div class="grid md:grid-cols-2 gap-8 mb-12">
+        <div class="bg-white rounded-lg shadow-lg p-6">
+          <h3 class="text-xl font-bold mb-4 text-cyan-600">Compressive Strength Requirements</h3>
+          <table class="w-full text-sm">
+            <thead>
+              <tr class="border-b">
+                <th class="text-left py-2">Application</th>
+                <th class="text-right py-2">Min. Strength</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="border-b">
+                <td class="py-2">Walls, Columns, Footings</td>
+                <td class="text-right font-bold">15 MPa</td>
+              </tr>
+              <tr class="border-b">
+                <td class="py-2">Interior Floors</td>
+                <td class="text-right font-bold">20 MPa</td>
+              </tr>
+              <tr class="border-b">
+                <td class="py-2">Garage/Carport Floors</td>
+                <td class="text-right font-bold">32 MPa</td>
+              </tr>
+              <tr>
+                <td class="py-2">Exterior Steps</td>
+                <td class="text-right font-bold">32 MPa</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        
+        <div class="bg-white rounded-lg shadow-lg p-6">
+          <h3 class="text-xl font-bold mb-4 text-cyan-600">Water/Cement Ratios</h3>
+          <table class="w-full text-sm">
+            <thead>
+              <tr class="border-b">
+                <th class="text-left py-2">Application</th>
+                <th class="text-right py-2">Max W/C Ratio</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="border-b">
+                <td class="py-2">Foundations & Walls</td>
+                <td class="text-right font-bold">0.70</td>
+              </tr>
+              <tr class="border-b">
+                <td class="py-2">Interior Floors</td>
+                <td class="text-right font-bold">0.65</td>
+              </tr>
+              <tr>
+                <td class="py-2">Garage Floors & Steps</td>
+                <td class="text-right font-bold">0.45</td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="text-xs text-slate-500 mt-3">Per NBC Table 9.3.1.7</p>
+        </div>
+      </div>
+
+      <div class="bg-amber-50 border-2 border-amber-400 rounded-lg p-6 mb-8">
+        <h3 class="text-xl font-bold mb-4 flex items-center">
+          <span class="text-2xl mr-3">❄️</span>
+          Cold Weather Concrete Requirements (NBC 9.3.1.9)
+        </h3>
+        <div class="grid md:grid-cols-2 gap-6">
+          <div>
+            <h4 class="font-bold mb-2">When Air Temperature < 5°C (41°F):</h4>
+            <ul class="space-y-2 text-sm">
+              <li>• Concrete temp: 10-25°C during mixing/placing</li>
+              <li>• Maintain ≥10°C for 72 hours after placing</li>
+              <li>• No frozen materials in mix</li>
+              <li>• Protected curing required</li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-bold mb-2">Air Entrainment Requirements:</h4>
+            <ul class="space-y-2 text-sm">
+              <li>• Garage/carport floors: 5-8% air content</li>
+              <li>• Exterior steps: 5-8% air content</li>
+              <li>• Protects against freeze-thaw cycles</li>
+              <li>• Required for de-icing salt resistance</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="bg-white rounded-lg p-6 border-2 border-slate-100">
+          <h4 class="font-bold mb-3 text-lg">Aggregate Requirements</h4>
+          <ul class="text-sm space-y-2">
+            <li>• Max size: 1/5 form width</li>
+            <li>• Max size: 1/3 slab thickness</li>
+            <li>• Well-graded for density</li>
+            <li>• Free from organics</li>
+          </ul>
+        </div>
+        
+        <div class="bg-white rounded-lg p-6 border-2 border-slate-100">
+          <h4 class="font-bold mb-3 text-lg">Curing Standards</h4>
+          <ul class="text-sm space-y-2">
+            <li>• Minimum 7 days moist cure</li>
+            <li>• 28-day strength testing</li>
+            <li>• No load before full cure</li>
+            <li>• Forms remain until set</li>
+          </ul>
+        </div>
+        
+        <div class="bg-white rounded-lg p-6 border-2 border-slate-100">
+          <h4 class="font-bold mb-3 text-lg">Quality Control</h4>
+          <ul class="text-sm space-y-2">
+            <li>• Slump testing on-site</li>
+            <li>• Cylinder samples taken</li>
+            <li>• CSA A23.1 compliance</li>
+            <li>• No site water addition</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Concrete Slabs Section -->
+  <section class="py-16 bg-slate-50">
+    <div class="container mx-auto px-4 max-w-6xl">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div>
+          <h2 class="text-3xl font-bold mb-6">Concrete Slabs & Floors</h2>
+          <p class="text-slate-500 mb-6">
+            Professional concrete slab installation for basements, garages, additions, and commercial spaces. We ensure proper grading, vapor barriers, and reinforcement for lasting durability. All work meets NBC Part 9 specifications.
+          </p>
+          
+          <div class="space-y-4 mb-8">
+            <h3 class="font-bold text-xl">Our Slab Services:</h3>
+            <ul class="space-y-3">
+              <li class="flex items-start">
+                <svg class="w-6 h-6 text-cyan-600 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                </svg>
+                <div>
+                  <strong>Basement Floor Slabs</strong> - 4-6" reinforced, 20 MPa minimum
+                </div>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-6 h-6 text-cyan-600 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                </svg>
+                <div>
+                  <strong>Garage Floor Slabs</strong> - Heavy-duty 6", 32 MPa, 5-8% air entrainment
+                </div>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-6 h-6 text-cyan-600 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                </svg>
+                <div>
+                  <strong>Heated Floor Systems</strong> - In-floor radiant heating installation
+                </div>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-6 h-6 text-cyan-600 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                </svg>
+                <div>
+                  <strong>Polish & Epoxy Finishes</strong> - Decorative and protective coatings
+                </div>
+              </li>
+            </ul>
+          </div>
+          
+          <div class="bg-cyan-50 border-l-4 border-cyan-600 p-4">
+            <p class="font-semibold">Starting at $8-12 per sq ft • 25-year warranty</p>
+          </div>
+        </div>
+        
+        <div class="bg-white rounded-lg shadow-lg p-8">
+          <h3 class="text-xl font-bold mb-4">Quick Slab Cost Estimate</h3>
+          <div class="space-y-4">
+            <div>
+              <label class="block text-sm font-medium mb-2">Area (sq ft)</label>
+              <input type="number" id="slabArea" class="w-full px-4 py-2 border rounded-lg" value="500" min="100">
+            </div>
+            <div>
+              <label class="block text-sm font-medium mb-2">Thickness</label>
+              <select id="slabThickness" class="w-full px-4 py-2 border rounded-lg">
+                <option value="4">4 inches (basement)</option>
+                <option value="6">6 inches (garage)</option>
+                <option value="8">8 inches (commercial)</option>
+              </select>
+            </div>
+            <button onclick="calculateSlabCost()" class="w-full bg-cyan-600 text-white py-3 rounded-lg font-semibold hover:bg-cyan-700">
+              Calculate Cost
+            </button>
+            <div id="slabCostResult" class="hidden">
+              <div class="bg-slate-50 rounded-lg p-4">
+                <p class="text-sm text-slate-500">Estimated Cost:</p>
+                <p class="text-2xl font-bold text-cyan-600" id="slabCostDisplay"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Concrete Walls Section -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4 max-w-6xl">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div class="order-2 md:order-1">
+          <div class="bg-slate-50 rounded-lg p-8">
+            <h3 class="text-xl font-bold mb-6">Wall Types & Applications</h3>
+            
+            <div class="space-y-6">
+              <div class="border-l-4 border-cyan-600 pl-4">
+                <h4 class="font-bold mb-2">Poured Concrete Walls</h4>
+                <ul class="text-sm text-slate-500 space-y-1">
+                  <li>• Foundation walls (8-10" thick, 15 MPa min)</li>
+                  <li>• Retaining walls (4-12' height)</li>
+                  <li>• Privacy walls (6-8" decorative)</li>
+                  <li>• 0.70 max water/cement ratio</li>
+                </ul>
+              </div>
+              
+              <div class="border-l-4 border-cyan-600 pl-4">
+                <h4 class="font-bold mb-2">Concrete Block Walls</h4>
+                <ul class="text-sm text-slate-500 space-y-1">
+                  <li>• Standard blocks (8x8x16")</li>
+                  <li>• Reinforced with rebar</li>
+                  <li>• Core-filled for strength</li>
+                  <li>• Decorative block options</li>
+                </ul>
+              </div>
+              
+              <div class="border-l-4 border-purple-600 pl-4">
+                <h4 class="font-bold mb-2">ICF Walls (Insulated)</h4>
+                <ul class="text-sm text-slate-500 space-y-1">
+                  <li>• Superior insulation (R-22+)</li>
+                  <li>• Sound dampening</li>
+                  <li>• Energy efficient</li>
+                  <li>• Disaster resistant</li>
+                </ul>
+              </div>
+            </div>
+            
+            <div class="mt-6 p-4 bg-amber-50 rounded-lg">
+              <p class="text-sm">
+                <strong>Free Engineering:</strong> All retaining walls over 4' include professional engineering at no extra cost
+              </p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="order-1 md:order-2">
+          <h2 class="text-3xl font-bold mb-6">Concrete & Block Walls</h2>
+          <p class="text-slate-500 mb-6">
+            Expert installation of poured concrete walls, concrete block walls, and ICF systems. From foundation walls to decorative garden walls, we ensure structural integrity and aesthetic appeal.
+          </p>
+          
+          <div class="grid grid-cols-2 gap-4 mb-8">
+            <div class="bg-slate-50 rounded-lg p-4 text-center">
+              <div class="text-3xl font-bold text-cyan-600">500+</div>
+              <div class="text-sm text-slate-500">Walls Built</div>
+            </div>
+            <div class="bg-slate-50 rounded-lg p-4 text-center">
+              <div class="text-3xl font-bold text-cyan-600">100%</div>
+              <div class="text-sm text-slate-500">Code Compliant</div>
+            </div>
+          </div>
+          
+          <a href="/free-inspection" class="inline-block bg-cyan-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-cyan-700">
+            Get Wall Quote →
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Retaining Walls Section -->
+  <section class="py-16 bg-cyan-50">
+    <div class="container mx-auto px-4 max-w-6xl">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl font-bold mb-4">Retaining Wall Solutions</h2>
+        <p class="text-xl text-slate-500 max-w-3xl mx-auto">
+          Professional retaining wall design and construction for residential and commercial properties. 
+          Engineered solutions for slopes, grade changes, and erosion control.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-12 items-center mb-12">
+        <div>
+          <h3 class="text-2xl font-bold mb-6">Retaining Wall Types</h3>
+          
+          <div class="space-y-4">
+            <div class="bg-white rounded-lg p-6 shadow-md">
+              <h4 class="font-bold text-lg mb-3 text-cyan-600">Gravity Walls (Up to 4')</h4>
+              <ul class="space-y-2 text-sm">
+                <li class="flex items-start">
+                  <span class="text-cyan-600 mr-2">✓</span>
+                  <span>Mass concrete or concrete block construction</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-cyan-600 mr-2">✓</span>
+                  <span>Relies on weight for stability</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-cyan-600 mr-2">✓</span>
+                  <span>Cost-effective for shorter walls</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-cyan-600 mr-2">✓</span>
+                  <span>Starting at $250/linear foot</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="bg-white rounded-lg p-6 shadow-md">
+              <h4 class="font-bold text-lg mb-3 text-cyan-600">Cantilever Walls (4-10')</h4>
+              <ul class="space-y-2 text-sm">
+                <li class="flex items-start">
+                  <span class="text-cyan-600 mr-2">✓</span>
+                  <span>Reinforced concrete with L-shaped footing</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-cyan-600 mr-2">✓</span>
+                  <span>P.Eng structural design included</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-cyan-600 mr-2">✓</span>
+                  <span>Efficient for medium heights</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-cyan-600 mr-2">✓</span>
+                  <span>Starting at $500/linear foot</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="bg-white rounded-lg p-6 shadow-md">
+              <h4 class="font-bold text-lg mb-3 text-purple-600">Counterfort Walls (10'+)</h4>
+              <ul class="space-y-2 text-sm">
+                <li class="flex items-start">
+                  <span class="text-cyan-600 mr-2">✓</span>
+                  <span>Buttressed design for tall walls</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-cyan-600 mr-2">✓</span>
+                  <span>Maximum structural efficiency</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-cyan-600 mr-2">✓</span>
+                  <span>Commercial & infrastructure projects</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-cyan-600 mr-2">✓</span>
+                  <span>Custom engineered pricing</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="bg-gradient-to-br from-blue-600 to-purple-600 text-white rounded-lg p-8">
+            <h3 class="text-2xl font-bold mb-6">Engineering & Design Features</h3>
+            
+            <div class="space-y-4">
+              <div class="border-l-4 border-white pl-4">
+                <h4 class="font-semibold mb-2">Drainage System</h4>
+                <ul class="text-sm space-y-1 opacity-90">
+                  <li>• Weep holes at 8' centers</li>
+                  <li>• French drain at footing level</li>
+                  <li>• Free-draining gravel backfill</li>
+                  <li>• Geotextile filter fabric</li>
+                </ul>
+              </div>
+
+              <div class="border-l-4 border-white pl-4">
+                <h4 class="font-semibold mb-2">Structural Components</h4>
+                <ul class="text-sm space-y-1 opacity-90">
+                  <li>• #4 rebar @ 12" O.C. vertical</li>
+                  <li>• #4 rebar @ 18" O.C. horizontal</li>
+                  <li>• 20 MPa concrete minimum</li>
+                  <li>• Keyway construction joints</li>
+                </ul>
+              </div>
+
+              <div class="border-l-4 border-white pl-4">
+                <h4 class="font-semibold mb-2">Safety Factors</h4>
+                <ul class="text-sm space-y-1 opacity-90">
+                  <li>• 1.5 factor against overturning</li>
+                  <li>• 2.0 factor against sliding</li>
+                  <li>• 3.0 factor for bearing capacity</li>
+                  <li>• Seismic design where required</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="mt-6 pt-6 border-t border-white/30">
+              <p class="text-sm opacity-90">
+                <strong>Free Engineering:</strong> All walls over 4' include P.Eng stamped drawings at no extra cost
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- NBC Requirements for Retaining Walls -->
+      <NBCLateralPressure wallType="retaining" showCalculations={true} />
+      <NBCWaterTableSoilMovement application="retaining" />
+
+      <!-- Retaining Wall Calculator -->
+      <div class="bg-white rounded-lg shadow-xl p-8 max-w-2xl mx-auto">
+        <h3 class="text-2xl font-bold mb-6 text-center">Retaining Wall Cost Estimator</h3>
+        
+        <div class="space-y-4">
+          <div>
+            <label class="block text-sm font-semibold mb-2">Wall Height (feet)</label>
+            <select id="wallHeight" class="w-full px-4 py-2 border rounded-lg">
+              <option value="3">3 feet</option>
+              <option value="4">4 feet</option>
+              <option value="6">6 feet</option>
+              <option value="8">8 feet</option>
+              <option value="10">10 feet</option>
+            </select>
+          </div>
+          
+          <div>
+            <label class="block text-sm font-semibold mb-2">Wall Length (feet)</label>
+            <input type="number" id="wallLength" class="w-full px-4 py-2 border rounded-lg" value="50" min="10">
+          </div>
+          
+          <div>
+            <label class="block text-sm font-semibold mb-2">Wall Type</label>
+            <select id="wallType" class="w-full px-4 py-2 border rounded-lg">
+              <option value="gravity">Gravity Wall (up to 4')</option>
+              <option value="cantilever">Cantilever Wall (4-10')</option>
+              <option value="counterfort">Counterfort Wall (10'+)</option>
+            </select>
+          </div>
+          
+          <button onclick="calculateRetainingWallCost()" class="w-full bg-cyan-600 text-white py-3 rounded-lg font-semibold hover:bg-cyan-700">
+            Calculate Estimate
+          </button>
+          
+          <div id="wallCostResult" class="hidden">
+            <div class="bg-cyan-50 rounded-lg p-6">
+              <p class="text-sm text-slate-500 mb-2">Estimated Cost Range:</p>
+              <p class="text-3xl font-bold text-cyan-600" id="wallCostDisplay"></p>
+              <p class="text-xs text-slate-400 mt-2">*Includes materials, labor, drainage, and engineering (if required)</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    function calculateRetainingWallCost() {
+      const height = parseFloat(document.getElementById('wallHeight').value);
+      const length = parseFloat(document.getElementById('wallLength').value);
+      const type = document.getElementById('wallType').value;
+      
+      let costPerFoot = 250;
+      
+      if (type === 'gravity') {
+        costPerFoot = height <= 3 ? 250 : 350;
+      } else if (type === 'cantilever') {
+        costPerFoot = 450 + (height - 4) * 50;
+      } else if (type === 'counterfort') {
+        costPerFoot = 750 + (height - 10) * 100;
+      }
+      
+      const totalCost = costPerFoot * length;
+      const minCost = totalCost * 0.9;
+      const maxCost = totalCost * 1.1;
+      
+      document.getElementById('wallCostDisplay').textContent = 
+        `$${minCost.toLocaleString()} - $${maxCost.toLocaleString()}`;
+      document.getElementById('wallCostResult').classList.remove('hidden');
+    }
+  </script>
+
+  <!-- Outdoor Concrete Services -->
+  <section class="py-16 bg-slate-50">
+    <div class="container mx-auto px-4 max-w-6xl">
+      <h2 class="text-3xl font-bold text-center mb-12">Outdoor Concrete Services</h2>
+      
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Driveways -->
+        <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+          <div class="h-48 bg-slate-100"></div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold mb-3">Concrete Driveways</h3>
+            <p class="text-slate-500 mb-4">
+              Durable driveways built to handle Canadian winters. Proper base preparation, reinforcement, and control joints prevent cracking.
+            </p>
+            <ul class="space-y-2 text-sm mb-4">
+              <li class="flex items-center">
+                <svg class="w-4 h-4 text-cyan-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+                6" thickness standard
+              </li>
+              <li class="flex items-center">
+                <svg class="w-4 h-4 text-cyan-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+                Fiber reinforced concrete
+              </li>
+              <li class="flex items-center">
+                <svg class="w-4 h-4 text-cyan-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+                Proper slope for drainage
+              </li>
+            </ul>
+            <div class="text-lg font-bold text-cyan-600">$12-18/sq ft</div>
+          </div>
+        </div>
+        
+        <!-- Patios -->
+        <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+          <div class="h-48 bg-slate-100"></div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold mb-3">Concrete Patios</h3>
+            <p class="text-slate-500 mb-4">
+              Transform your backyard with a beautiful concrete patio. Multiple finish options from broom to stamped patterns.
+            </p>
+            <ul class="space-y-2 text-sm mb-4">
+              <li class="flex items-center">
+                <svg class="w-4 h-4 text-cyan-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+                4" thickness minimum
+              </li>
+              <li class="flex items-center">
+                <svg class="w-4 h-4 text-cyan-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+                Custom shapes & sizes
+              </li>
+              <li class="flex items-center">
+                <svg class="w-4 h-4 text-cyan-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+                Decorative borders available
+              </li>
+            </ul>
+            <div class="text-lg font-bold text-cyan-600">$10-15/sq ft</div>
+          </div>
+        </div>
+        
+        <!-- Sidewalks & Walkways -->
+        <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+          <div class="h-48 bg-slate-100"></div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold mb-3">Sidewalks & Walkways</h3>
+            <p class="text-slate-500 mb-4">
+              Safe, attractive walkways that enhance curb appeal and provide slip-resistant surfaces year-round.
+            </p>
+            <ul class="space-y-2 text-sm mb-4">
+              <li class="flex items-center">
+                <svg class="w-4 h-4 text-cyan-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+                City code compliant
+              </li>
+              <li class="flex items-center">
+                <svg class="w-4 h-4 text-cyan-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+                ADA accessible options
+              </li>
+              <li class="flex items-center">
+                <svg class="w-4 h-4 text-cyan-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+                Broom or exposed finish
+              </li>
+            </ul>
+            <div class="text-lg font-bold text-cyan-600">$8-12/sq ft</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stamped Concrete Section -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4 max-w-6xl">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold mb-4">Decorative Stamped Concrete</h2>
+        <p class="text-xl text-slate-500 max-w-3xl mx-auto">
+          Get the look of natural stone, brick, or wood at a fraction of the cost. Our stamped concrete transforms ordinary surfaces into stunning architectural features.
+        </p>
+      </div>
+      
+      <div class="grid md:grid-cols-2 gap-12 items-center mb-12">
+        <div>
+          <h3 class="text-2xl font-bold mb-6">Popular Stamped Patterns</h3>
+          
+          <div class="grid grid-cols-2 gap-4 mb-8">
+            <div class="bg-slate-50 rounded-lg p-4">
+              <h4 class="font-bold mb-2">Stone Patterns</h4>
+              <ul class="text-sm text-slate-500 space-y-1">
+                <li>• Ashlar Slate</li>
+                <li>• Random Stone</li>
+                <li>• Fieldstone</li>
+                <li>• Limestone</li>
+              </ul>
+            </div>
+            <div class="bg-slate-50 rounded-lg p-4">
+              <h4 class="font-bold mb-2">Brick & Tile</h4>
+              <ul class="text-sm text-slate-500 space-y-1">
+                <li>• Running Bond</li>
+                <li>• Herringbone</li>
+                <li>• Cobblestone</li>
+                <li>• European Fan</li>
+              </ul>
+            </div>
+            <div class="bg-slate-50 rounded-lg p-4">
+              <h4 class="font-bold mb-2">Wood Patterns</h4>
+              <ul class="text-sm text-slate-500 space-y-1">
+                <li>• Wood Plank</li>
+                <li>• Boardwalk</li>
+                <li>• Log Texture</li>
+                <li>• Weathered Wood</li>
+              </ul>
+            </div>
+            <div class="bg-slate-50 rounded-lg p-4">
+              <h4 class="font-bold mb-2">Custom Designs</h4>
+              <ul class="text-sm text-slate-500 space-y-1">
+                <li>• Compass Rose</li>
+                <li>• Borders & Bands</li>
+                <li>• Logo Integration</li>
+                <li>• Mixed Patterns</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <div>
+          <div class="bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-lg p-8">
+            <h3 class="text-2xl font-bold mb-6">Color Options</h3>
+            
+            <div class="space-y-4">
+              <div>
+                <h4 class="font-semibold mb-2">Integral Colors</h4>
+                <p class="text-sm opacity-90">Mixed throughout concrete for consistent, fade-resistant color</p>
+              </div>
+              <div>
+                <h4 class="font-semibold mb-2">Color Hardeners</h4>
+                <p class="text-sm opacity-90">Surface application for vibrant colors and increased durability</p>
+              </div>
+              <div>
+                <h4 class="font-semibold mb-2">Antiquing Release</h4>
+                <p class="text-sm opacity-90">Creates realistic texture and color variations</p>
+              </div>
+              <div>
+                <h4 class="font-semibold mb-2">Stains & Dyes</h4>
+                <p class="text-sm opacity-90">Post-application color enhancement and effects</p>
+              </div>
+            </div>
+            
+            <div class="mt-6 pt-6 border-t border-white/30">
+              <div class="text-2xl font-bold">$17-25/sq ft</div>
+              <div class="text-sm opacity-90">Includes pattern, color, and sealer</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Stamped Concrete Process -->
+      <div class="bg-slate-50 rounded-lg p-8">
+        <h3 class="text-2xl font-bold mb-6 text-center">Our Stamped Concrete Process</h3>
+        
+        <div class="grid md:grid-cols-6 gap-4">
+          <div class="text-center">
+            <div class="bg-cyan-600 text-white rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-3 font-bold">1</div>
+            <h4 class="font-semibold text-sm mb-1">Design</h4>
+            <p class="text-xs text-slate-500">Pattern & color selection</p>
+          </div>
+          <div class="text-center">
+            <div class="bg-cyan-600 text-white rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-3 font-bold">2</div>
+            <h4 class="font-semibold text-sm mb-1">Preparation</h4>
+            <p class="text-xs text-slate-500">Base & forms setup</p>
+          </div>
+          <div class="text-center">
+            <div class="bg-cyan-600 text-white rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-3 font-bold">3</div>
+            <h4 class="font-semibold text-sm mb-1">Pour</h4>
+            <p class="text-xs text-slate-500">Colored concrete placement</p>
+          </div>
+          <div class="text-center">
+            <div class="bg-cyan-600 text-white rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-3 font-bold">4</div>
+            <h4 class="font-semibold text-sm mb-1">Stamp</h4>
+            <p class="text-xs text-slate-500">Pattern impression</p>
+          </div>
+          <div class="text-center">
+            <div class="bg-cyan-600 text-white rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-3 font-bold">5</div>
+            <h4 class="font-semibold text-sm mb-1">Detail</h4>
+            <p class="text-xs text-slate-500">Hand tooling & touch-ups</p>
+          </div>
+          <div class="text-center">
+            <div class="bg-cyan-600 text-white rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-3 font-bold">6</div>
+            <h4 class="font-semibold text-sm mb-1">Seal</h4>
+            <p class="text-xs text-slate-500">Protective sealer application</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us -->
+  <section class="py-16 bg-slate-50">
+    <div class="container mx-auto px-4 max-w-6xl">
+      <h2 class="text-3xl font-bold text-center mb-12">Why Choose Dryspace for Concrete Work?</h2>
+      
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="text-center">
+          <div class="bg-cyan-100 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
+            <svg class="w-10 h-10 text-cyan-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold mb-3">25-Year Warranty</h3>
+          <p class="text-slate-500">Industry-leading warranty on all structural concrete work with transferable coverage</p>
+        </div>
+        
+        <div class="text-center">
+          <div class="bg-cyan-100 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
+            <svg class="w-10 h-10 text-cyan-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold mb-3">Transparent Pricing</h3>
+          <p class="text-slate-500">Detailed quotes with no hidden fees. Financing available with 0% interest options</p>
+        </div>
+        
+        <div class="text-center">
+          <div class="bg-orange-100 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
+            <svg class="w-10 h-10 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold mb-3">Fast Completion</h3>
+          <p class="text-slate-500">Most projects completed in 1-3 days with minimal disruption to your property</p>
+        </div>
+      </div>
+      
+      <div class="grid md:grid-cols-3 gap-8 mt-8">
+        <div class="text-center">
+          <div class="bg-purple-100 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
+            <svg class="w-10 h-10 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold mb-3">Licensed & Insured</h3>
+          <p class="text-slate-500">Fully licensed by City of Toronto with $5M liability insurance coverage</p>
+        </div>
+        
+        <div class="text-center">
+          <div class="bg-red-100 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
+            <svg class="w-10 h-10 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold mb-3">Premium Materials</h3>
+          <p class="text-slate-500">We use only high-grade concrete mixes and professional-grade sealers</p>
+        </div>
+        
+        <div class="text-center">
+          <div class="bg-cyan-50 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
+            <svg class="w-10 h-10 text-cyan-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z"/>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold mb-3">Expert Design</h3>
+          <p class="text-slate-500">Free design consultation with 3D renderings for decorative projects</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Service Areas -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4 max-w-6xl">
+      <h2 class="text-3xl font-bold text-center mb-12">Concrete Services Across the GTA</h2>
+      
+      <div class="grid md:grid-cols-4 gap-4">
+        <div>
+          <h3 class="font-bold mb-3">Toronto</h3>
+          <ul class="text-sm text-slate-500 space-y-1">
+            <li>• Downtown Core</li>
+            <li>• North York</li>
+            <li>• Scarborough</li>
+            <li>• Etobicoke</li>
+            <li>• East York</li>
+            <li>• York</li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="font-bold mb-3">West GTA</h3>
+          <ul class="text-sm text-slate-500 space-y-1">
+            <li>• Mississauga</li>
+            <li>• Brampton</li>
+            <li>• Oakville</li>
+            <li>• Burlington</li>
+            <li>• Milton</li>
+            <li>• Georgetown</li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="font-bold mb-3">North GTA</h3>
+          <ul class="text-sm text-slate-500 space-y-1">
+            <li>• Vaughan</li>
+            <li>• Richmond Hill</li>
+            <li>• Markham</li>
+            <li>• Aurora</li>
+            <li>• Newmarket</li>
+            <li>• King City</li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="font-bold mb-3">East GTA</h3>
+          <ul class="text-sm text-slate-500 space-y-1">
+            <li>• Pickering</li>
+            <li>• Ajax</li>
+            <li>• Whitby</li>
+            <li>• Oshawa</li>
+            <li>• Uxbridge</li>
+            <li>• Stouffville</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Calculator -->
+  <section class="py-16 bg-slate-50">
+    <div class="container mx-auto px-4 max-w-4xl">
+      <ConcreteCalculator client:load />
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-16 bg-gradient-to-r from-blue-600 to-blue-800">
+    <div class="container mx-auto px-4 max-w-4xl text-center text-white">
+      <h2 class="text-4xl font-bold mb-4">Ready to Start Your Concrete Project?</h2>
+      <p class="text-xl mb-8 opacity-95">
+        Get a free quote and professional design consultation. No obligations, no high-pressure sales.
+      </p>
+      
+      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+        <a href="/free-inspection" class="bg-white text-cyan-600 px-8 py-4 rounded-lg font-bold hover:bg-slate-50 transition-colors">
+          Get Free Quote
+        </a>
+        <a href="tel:437-545-0067" class="bg-red-600 text-white px-8 py-4 rounded-lg font-bold hover:bg-red-700 transition-colors">
+          <span class="flex items-center gap-2">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+            </svg>
+            Call 437-545-0067
+          </span>
+        </a>
+      </div>
+      
+      <div class="mt-8 flex flex-wrap gap-6 justify-center text-sm">
+        <div class="flex items-center gap-2">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+          </svg>
+          Free Estimates
+        </div>
+        <div class="flex items-center gap-2">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+          </svg>
+          25-Year Warranty
+        </div>
+        <div class="flex items-center gap-2">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+          </svg>
+          Licensed & Insured
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      
+    </div>
+  </section>
+
+  <!-- Related Services and Resources -->
+  <section class="py-8">
+    <div class="container mx-auto px-4">
+      <InternalLinks category="foundation" currentPage="concrete-works" limit={6} />
+    </div>
+  </section>
+
+  <!-- Contact Form -->
+  <ContactForm />
+
+  <!-- JavaScript for Calculator -->
+  <script>
+    function calculateSlabCost() {
+      const area = parseFloat(document.getElementById('slabArea').value) || 500;
+      const thickness = parseFloat(document.getElementById('slabThickness').value) || 4;
+      
+      let pricePerSqFt;
+      if (thickness === 4) {
+        pricePerSqFt = 10;
+      } else if (thickness === 6) {
+        pricePerSqFt = 12;
+      } else {
+        pricePerSqFt = 15;
+      }
+      
+      const totalCost = area * pricePerSqFt;
+      
+      document.getElementById('slabCostDisplay').textContent = `$${totalCost.toLocaleString()} - $${(totalCost * 1.3).toLocaleString()}`;
+      document.getElementById('slabCostResult').classList.remove('hidden');
+    }
+  </script>
+</PageLayout>

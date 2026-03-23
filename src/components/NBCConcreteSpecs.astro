@@ -1,0 +1,153 @@
+---
+export interface Props {
+  showFullSpecs?: boolean;
+  application?: 'foundation' | 'slab' | 'garage' | 'steps' | 'all';
+}
+
+const { showFullSpecs = true, application = 'all' } = Astro.props;
+
+const strengthRequirements = {
+  foundation: { name: 'Walls, Columns, Footings', strength: '15 MPa', ratio: '0.70' },
+  slab: { name: 'Interior Floors', strength: '20 MPa', ratio: '0.65' },
+  garage: { name: 'Garage/Carport Floors', strength: '32 MPa', ratio: '0.45' },
+  steps: { name: 'Exterior Steps', strength: '32 MPa', ratio: '0.45' }
+};
+
+const getRelevantSpecs = () => {
+  if (application === 'all') return Object.values(strengthRequirements);
+  return [strengthRequirements[application]];
+};
+
+const relevantSpecs = getRelevantSpecs();
+---
+
+<div class="nbc-concrete-specs bg-cyan-50 rounded-lg p-6 my-8">
+  <h3 class="text-xl font-bold mb-4 flex items-center">
+    <span class="text-cyan-600 mr-2">📋</span>
+    NBC 9.3.1 Concrete Specifications
+  </h3>
+  
+  {showFullSpecs ? (
+    <>
+      <div class="grid md:grid-cols-2 gap-6 mb-6">
+        <div class="bg-white rounded-lg p-4">
+          <h4 class="font-bold mb-3 text-cyan-600">Compressive Strength Requirements</h4>
+          <table class="w-full text-sm">
+            <thead>
+              <tr class="border-b">
+                <th class="text-left py-2">Application</th>
+                <th class="text-right py-2">Min. Strength</th>
+              </tr>
+            </thead>
+            <tbody>
+              {relevantSpecs.map(spec => (
+                <tr class="border-b">
+                  <td class="py-2">{spec.name}</td>
+                  <td class="text-right font-bold text-cyan-600">{spec.strength}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        
+        <div class="bg-white rounded-lg p-4">
+          <h4 class="font-bold mb-3 text-cyan-600">Water/Cement Ratios</h4>
+          <table class="w-full text-sm">
+            <thead>
+              <tr class="border-b">
+                <th class="text-left py-2">Application</th>
+                <th class="text-right py-2">Max W/C</th>
+              </tr>
+            </thead>
+            <tbody>
+              {relevantSpecs.map(spec => (
+                <tr class="border-b">
+                  <td class="py-2">{spec.name}</td>
+                  <td class="text-right font-bold text-cyan-600">{spec.ratio}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="bg-amber-50 border border-amber-400 rounded-lg p-4 mb-6">
+        <h4 class="font-bold mb-2 flex items-center">
+          <span class="text-xl mr-2">❄️</span>
+          Cold Weather Requirements (Air Temp &lt; 5°C)
+        </h4>
+        <div class="grid md:grid-cols-2 gap-4 text-sm">
+          <ul class="space-y-1">
+            <li>• Concrete temp: 10-25°C during mixing</li>
+            <li>• Maintain ≥10°C for 72 hours after placing</li>
+            <li>• No frozen materials in mix</li>
+          </ul>
+          <ul class="space-y-1">
+            <li>• Protected curing required</li>
+            <li>• Garage floors: 5-8% air entrainment</li>
+            <li>• Exterior steps: 5-8% air entrainment</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-4">
+        <div class="bg-white rounded-lg p-3">
+          <h5 class="font-bold mb-2 text-sm">Aggregate Specs</h5>
+          <ul class="text-xs space-y-1">
+            <li>• Max: 1/5 form width</li>
+            <li>• Max: 1/3 slab thickness</li>
+            <li>• Well-graded, no organics</li>
+          </ul>
+        </div>
+        
+        <div class="bg-white rounded-lg p-3">
+          <h5 class="font-bold mb-2 text-sm">Curing Standards</h5>
+          <ul class="text-xs space-y-1">
+            <li>• 7 days minimum moist cure</li>
+            <li>• 28-day strength testing</li>
+            <li>• No load before full cure</li>
+          </ul>
+        </div>
+        
+        <div class="bg-white rounded-lg p-3">
+          <h5 class="font-bold mb-2 text-sm">Quality Control</h5>
+          <ul class="text-xs space-y-1">
+            <li>• Slump testing on-site</li>
+            <li>• CSA A23.1 compliance</li>
+            <li>• No site water addition</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mt-4 p-3 bg-cyan-50 rounded-lg">
+        <p class="text-sm">
+          <strong>Site-Batched Concrete Mix (NBC Table 9.3.1.7):</strong>
+          Standard mix ratio 1:2:3 (cement:sand:gravel) with controlled water content.
+          Ready-mix concrete must meet CSA A23.1 standards for materials and methods.
+        </p>
+      </div>
+    </>
+  ) : (
+    <div class="grid md:grid-cols-2 gap-4">
+      <div class="bg-white rounded-lg p-3">
+        <h4 class="font-semibold text-sm mb-2">Required Strength</h4>
+        {relevantSpecs.map(spec => (
+          <p class="text-lg font-bold text-cyan-600">{spec.strength}</p>
+        ))}
+        <p class="text-xs text-slate-500 mt-1">NBC 9.3.1.6 compliant</p>
+      </div>
+      <div class="bg-white rounded-lg p-3">
+        <h4 class="font-semibold text-sm mb-2">W/C Ratio</h4>
+        {relevantSpecs.map(spec => (
+          <p class="text-lg font-bold text-cyan-600">{spec.ratio} max</p>
+        ))}
+        <p class="text-xs text-slate-500 mt-1">Per NBC Table 9.3.1.7</p>
+      </div>
+    </div>
+  )}
+
+  <div class="mt-4 text-xs text-slate-500 border-t pt-3">
+    <p><strong>Reference:</strong> National Building Code of Canada 2015, Part 9, Section 9.3.1 - Concrete</p>
+    <p>All concrete work meets or exceeds NBC requirements for structural integrity and durability.</p>
+  </div>
+</div>

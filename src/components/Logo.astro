@@ -1,0 +1,43 @@
+---
+export interface Props {
+  variant?: 'default' | 'light';
+  size?: 'sm' | 'md' | 'lg';
+}
+
+const { variant = 'default', size = 'md' } = Astro.props;
+
+const sizeClasses = {
+  sm: 'h-8',
+  md: 'h-10',
+  lg: 'h-12',
+};
+
+const textColor = variant === 'light' ? 'text-white' : 'text-slate-900 dark:text-white';
+---
+
+<a href="/" class="flex items-center gap-2">
+  <svg 
+    class={`${sizeClasses[size]} w-auto`}
+    viewBox="0 0 200 50" 
+    fill="none" 
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <!-- Water Drop Icon -->
+    <path 
+      d="M25 5C25 5 10 20 10 30C10 37.5 16.5 44 25 44C33.5 44 40 37.5 40 30C40 20 25 5 25 5Z" 
+      fill="#3B82F6" 
+      stroke="#1E40AF" 
+      stroke-width="2"
+    />
+    <path 
+      d="M25 15C25 15 18 24 18 30C18 33.5 21 36 25 36C29 36 32 33.5 32 30C32 24 25 15 25 15Z" 
+      fill="#60A5FA"
+    />
+  </svg>
+  <div class="flex flex-col">
+    <span class={`font-bold text-xl ${textColor}`}>DRYSPACE</span>
+    <span class={`text-xs ${variant === 'light' ? 'text-slate-300' : 'text-slate-500 dark:text-slate-400'}`}>
+      Waterproofing Experts
+    </span>
+  </div>
+</a>

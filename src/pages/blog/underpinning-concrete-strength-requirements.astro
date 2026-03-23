@@ -1,0 +1,999 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import BlogImageGallery from '../../components/BlogImageGallery.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+
+const publishDate = new Date('2026-03-18');
+const author = 'Dryspace Waterproofing Team';
+const readingTime = '18 min read';
+---
+
+<PageLayout 
+  title="Underpinning Concrete Strength Requirements: MPa, Slump & Mix Design Guide"
+  description="Complete technical guide to concrete specifications for basement underpinning. Learn about MPa strength requirements, slump testing, mix design, and concrete composition for structural underpinning projects in Toronto."
+>
+  
+  
+  <!-- Breadcrumbs -->
+  <div class="container mx-auto px-4 mt-4">
+    <Breadcrumbs 
+      items={[
+        { name: "Home", url: "/" },
+        { name: "Blog", url: "/blog" },
+        { name: "Underpinning Concrete Strength Requirements" }
+      ]}
+    />
+  </div>
+
+<main class="min-h-screen bg-slate-50">
+    <!-- Blog Article Header -->
+    <article class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <header class="mb-10">
+        <!-- Category Badge -->
+        <div class="flex flex-wrap gap-2 mb-6">
+          <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-cyan-50 text-cyan-700">
+            Technical Guides
+          </span>
+          <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-amber-50 text-amber-700">
+            Concrete Specifications
+          </span>
+          <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-cyan-50 text-cyan-700">
+            Underpinning
+          </span>
+        </div>
+        
+        <!-- Title -->
+        <h1 class="text-4xl md:text-5xl font-bold text-slate-900 mb-6 leading-tight">
+          Underpinning Concrete Strength Requirements: MPa, Slump & Mix Design Guide
+        </h1>
+        
+        <!-- Meta Information -->
+        <div class="flex flex-wrap items-center gap-4 text-sm text-slate-500 mb-6">
+          <span class="flex items-center gap-1">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+            </svg>
+            {publishDate.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
+          </span>
+          <span class="flex items-center gap-1">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+            {readingTime}
+          </span>
+          <span class="flex items-center gap-1">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+            </svg>
+            {author}
+          </span>
+        </div>
+        
+        <!-- Featured Image -->
+        <div class="relative rounded-2xl overflow-hidden mb-8">
+          <img 
+            src="/images/blog/concrete-testing.webp" 
+            alt="Concrete strength testing for underpinning"
+            class="w-full h-96 object-cover"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+        </div>
+      </header>
+
+      <!-- Quick Reference Box -->
+      <div class="bg-cyan-50 border-l-4 border-cyan-500 p-6 mb-10">
+        <h2 class="font-bold text-xl mb-3">Quick Reference: Underpinning Concrete Specs</h2>
+        <ul class="space-y-2">
+          <li class="flex justify-between">
+            <span>Minimum Strength:</span>
+            <strong>15 MPa (2,175 PSI)</strong>
+          </li>
+          <li class="flex justify-between">
+            <span>Recommended Strength:</span>
+            <strong>20-25 MPa (2,900-3,625 PSI)</strong>
+          </li>
+          <li class="flex justify-between">
+            <span>Maximum Strength:</span>
+            <strong>32 MPa (4,640 PSI)</strong>
+          </li>
+          <li class="flex justify-between">
+            <span>Typical Slump:</span>
+            <strong>75-100mm (3-4 inches)</strong>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Article Content -->
+      <div class="prose prose-lg max-w-none">
+        
+        <!-- Introduction Section -->
+        <section class="mb-12">
+          <h2 class="text-3xl font-bold text-slate-900 mb-6">Understanding Concrete for Underpinning</h2>
+          <p class="text-slate-600 leading-relaxed">
+            Selecting the right concrete mix for basement underpinning is critical to the structural integrity 
+            and longevity of your foundation. Unlike standard concrete pours, underpinning requires specific 
+            strength characteristics, workability parameters, and mix designs that ensure proper load transfer 
+            and long-term stability.
+          </p>
+          <p class="text-slate-600 leading-relaxed mt-4">
+            This comprehensive guide covers everything contractors and engineers need to know about concrete 
+            specifications for underpinning projects, from basic composition to advanced mix design considerations.
+          </p>
+        </section>
+
+        <!-- What is Concrete Section -->
+        <section class="mb-12 bg-white rounded-xl p-8 shadow-lg">
+          <h2 class="text-3xl font-bold text-slate-900 mb-6">
+            <span class="text-cyan-600">1.</span> What is Concrete? Understanding the Basics
+          </h2>
+          
+          <p class="text-slate-600 mb-6">
+            Concrete is a composite material that hardens over time through a chemical process called hydration. 
+            When water is added to cement, it triggers a reaction that binds all components together into a 
+            rock-like mass.
+          </p>
+
+          <!-- Concrete Components -->
+          <div class="bg-slate-50 p-6 rounded-lg mb-6">
+            <h3 class="font-bold text-xl mb-4">The Four Essential Components of Concrete</h3>
+            
+            <div class="space-y-6">
+              <!-- Cement -->
+              <div class="border-l-4 border-cyan-500 pl-4">
+                <h4 class="font-bold text-lg mb-2">1. Portland Cement (10-15% by volume)</h4>
+                <p class="text-slate-600 mb-2">
+                  The binding agent that reacts with water to form a paste that hardens and binds aggregates together.
+                </p>
+                <ul class="list-disc ml-6 text-slate-500">
+                  <li>Type GU (General Use) - Standard for most underpinning</li>
+                  <li>Type HS (High Sulfate Resistance) - For aggressive soil conditions</li>
+                  <li>Type HE (High Early) - For cold weather or fast-track projects</li>
+                </ul>
+              </div>
+
+              <!-- Water -->
+              <div class="border-l-4 border-cyan-500 pl-4">
+                <h4 class="font-bold text-lg mb-2">2. Water (14-21% by volume)</h4>
+                <p class="text-slate-600 mb-2">
+                  Activates cement hydration and provides workability. The water-cement ratio is critical for strength.
+                </p>
+                <ul class="list-disc ml-6 text-slate-500">
+                  <li>Potable water required (drinking water quality)</li>
+                  <li>Water-cement ratio: 0.40-0.50 for underpinning</li>
+                  <li>Lower ratio = higher strength but less workability</li>
+                </ul>
+              </div>
+
+              <!-- Aggregates -->
+              <div class="border-l-4 border-orange-500 pl-4">
+                <h4 class="font-bold text-lg mb-2">3. Aggregates (60-75% by volume)</h4>
+                <div class="grid md:grid-cols-2 gap-4 mt-3">
+                  <div>
+                    <p class="font-semibold">Fine Aggregate (Sand)</p>
+                    <ul class="list-disc ml-6 text-slate-500 text-sm">
+                      <li>Particle size: 0.075-4.75mm</li>
+                      <li>Fills voids between coarse aggregate</li>
+                      <li>25-35% of total aggregate volume</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <p class="font-semibold">Coarse Aggregate (Gravel/Stone)</p>
+                    <ul class="list-disc ml-6 text-slate-500 text-sm">
+                      <li>Particle size: 10-20mm typical</li>
+                      <li>Provides bulk and strength</li>
+                      <li>65-75% of total aggregate volume</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Admixtures -->
+              <div class="border-l-4 border-purple-500 pl-4">
+                <h4 class="font-bold text-lg mb-2">4. Admixtures (Optional, 0.1-2% by volume)</h4>
+                <p class="text-slate-600 mb-2">
+                  Chemical additives that modify concrete properties for specific requirements.
+                </p>
+                <ul class="list-disc ml-6 text-slate-500">
+                  <li><strong>Water reducers:</strong> Increase workability without adding water</li>
+                  <li><strong>Air entrainers:</strong> Improve freeze-thaw resistance</li>
+                  <li><strong>Accelerators:</strong> Speed up setting in cold weather</li>
+                  <li><strong>Retarders:</strong> Slow setting in hot weather</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hydration Process -->
+          <div class="bg-cyan-50 p-6 rounded-lg">
+            <h3 class="font-bold text-xl mb-4">The Hydration Process</h3>
+            <div class="space-y-3">
+              <p class="text-slate-600">
+                <strong>0-45 minutes:</strong> Initial mixing, concrete is fluid and workable
+              </p>
+              <p class="text-slate-600">
+                <strong>45 min - 4 hours:</strong> Initial set begins, concrete starts to stiffen
+              </p>
+              <p class="text-slate-600">
+                <strong>4-8 hours:</strong> Final set, concrete becomes solid but weak
+              </p>
+              <p class="text-slate-600">
+                <strong>1-7 days:</strong> Rapid strength gain (70% of final strength)
+              </p>
+              <p class="text-slate-600">
+                <strong>7-28 days:</strong> Continued curing to design strength
+              </p>
+              <p class="text-slate-600">
+                <strong>28+ days:</strong> Slow strength gain continues for months
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- MPa Strength Requirements Section -->
+        <section class="mb-12 bg-white rounded-xl p-8 shadow-lg">
+          <h2 class="text-3xl font-bold text-slate-900 mb-6">
+            <span class="text-cyan-600">2.</span> Understanding MPa Strength Requirements
+          </h2>
+          
+          <div class="bg-amber-50 border-l-4 border-cyan-500 p-4 mb-6">
+            <p class="font-bold">What is MPa?</p>
+            <p class="text-slate-600">
+              MPa (Megapascal) measures compressive strength - the concrete's ability to resist crushing forces. 
+              1 MPa = 145 PSI (pounds per square inch). The MPa rating indicates the pressure the concrete can 
+              withstand after 28 days of curing.
+            </p>
+          </div>
+
+          <!-- Strength Categories -->
+          <h3 class="font-bold text-xl mb-4">Concrete Strength Categories for Underpinning</h3>
+          
+          <div class="space-y-6">
+            <!-- 15 MPa -->
+            <div class="border rounded-lg p-6 bg-red-50 border-red-200">
+              <div class="flex justify-between items-start mb-3">
+                <h4 class="text-xl font-bold text-red-700">15 MPa - Minimum Acceptable</h4>
+                <span class="bg-red-100 text-red-700 px-3 py-1 rounded-full text-sm">2,175 PSI</span>
+              </div>
+              <p class="text-slate-600 mb-3">
+                The absolute minimum strength allowed by building codes for structural underpinning. 
+                Should only be used in specific conditions with engineering approval.
+              </p>
+              <div class="grid md:grid-cols-2 gap-4">
+                <div>
+                  <p class="font-semibold text-cyan-700 mb-2">✓ When to Use:</p>
+                  <ul class="text-sm text-slate-500 space-y-1">
+                    <li>• Temporary underpinning</li>
+                    <li>• Non-critical sections</li>
+                    <li>• Light residential loads only</li>
+                    <li>• Budget-critical projects</li>
+                  </ul>
+                </div>
+                <div>
+                  <p class="font-semibold text-red-700 mb-2">✗ Limitations:</p>
+                  <ul class="text-sm text-slate-500 space-y-1">
+                    <li>• Not suitable for commercial</li>
+                    <li>• Limited durability</li>
+                    <li>• Higher permeability</li>
+                    <li>• May not meet some codes</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="mt-4 p-3 bg-white rounded">
+                <p class="text-sm"><strong>Mix Design:</strong> 1:3:6 (cement:sand:aggregate) | W/C ratio: 0.65</p>
+                <p class="text-sm"><strong>Cost:</strong> $290-310/m³</p>
+              </div>
+            </div>
+
+            <!-- 20 MPa -->
+            <div class="border rounded-lg p-6 bg-cyan-50 border-cyan-200">
+              <div class="flex justify-between items-start mb-3">
+                <h4 class="text-xl font-bold text-cyan-700">20 MPa - Standard Recommended</h4>
+                <span class="bg-cyan-50 text-cyan-700 px-3 py-1 rounded-full text-sm">2,900 PSI</span>
+              </div>
+              <p class="text-slate-600 mb-3">
+                The industry standard for residential underpinning. Provides good balance of strength, 
+                durability, and cost-effectiveness. Most commonly specified by engineers.
+              </p>
+              <div class="grid md:grid-cols-2 gap-4">
+                <div>
+                  <p class="font-semibold text-cyan-700 mb-2">✓ Advantages:</p>
+                  <ul class="text-sm text-slate-500 space-y-1">
+                    <li>• Meets all residential codes</li>
+                    <li>• Good durability (50+ years)</li>
+                    <li>• Moderate permeability</li>
+                    <li>• Cost-effective</li>
+                    <li>• Wide contractor familiarity</li>
+                  </ul>
+                </div>
+                <div>
+                  <p class="font-semibold text-cyan-700 mb-2">◉ Applications:</p>
+                  <ul class="text-sm text-slate-500 space-y-1">
+                    <li>• Standard home underpinning</li>
+                    <li>• Basement lowering</li>
+                    <li>• Foundation repairs</li>
+                    <li>• Most soil conditions</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="mt-4 p-3 bg-white rounded">
+                <p class="text-sm"><strong>Mix Design:</strong> 1:2.5:4 (cement:sand:aggregate) | W/C ratio: 0.55</p>
+                <p class="text-sm"><strong>Cost:</strong> $310-330/m³</p>
+              </div>
+            </div>
+
+            <!-- 25 MPa -->
+            <div class="border rounded-lg p-6 bg-cyan-50 border-cyan-200">
+              <div class="flex justify-between items-start mb-3">
+                <h4 class="text-xl font-bold text-cyan-700">25 MPa - Enhanced Performance</h4>
+                <span class="bg-cyan-50 text-cyan-700 px-3 py-1 rounded-full text-sm">3,625 PSI</span>
+              </div>
+              <p class="text-slate-600 mb-3">
+                Premium strength for challenging conditions or higher loads. Recommended for commercial 
+                properties or when superior durability is required.
+              </p>
+              <div class="grid md:grid-cols-2 gap-4">
+                <div>
+                  <p class="font-semibold text-cyan-700 mb-2">✓ Benefits:</p>
+                  <ul class="text-sm text-slate-500 space-y-1">
+                    <li>• Superior durability</li>
+                    <li>• Lower permeability</li>
+                    <li>• Better freeze-thaw resistance</li>
+                    <li>• Handles higher loads</li>
+                    <li>• Longer service life</li>
+                  </ul>
+                </div>
+                <div>
+                  <p class="font-semibold text-cyan-700 mb-2">◉ Ideal For:</p>
+                  <ul class="text-sm text-slate-500 space-y-1">
+                    <li>• Commercial buildings</li>
+                    <li>• High water table areas</li>
+                    <li>• Aggressive soil conditions</li>
+                    <li>• Multi-story additions</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="mt-4 p-3 bg-white rounded">
+                <p class="text-sm"><strong>Mix Design:</strong> 1:2:3.5 (cement:sand:aggregate) | W/C ratio: 0.50</p>
+                <p class="text-sm"><strong>Cost:</strong> $325-345/m³</p>
+              </div>
+            </div>
+
+            <!-- 32 MPa -->
+            <div class="border rounded-lg p-6 bg-purple-50 border-purple-200">
+              <div class="flex justify-between items-start mb-3">
+                <h4 class="text-xl font-bold text-purple-700">32 MPa - Maximum Strength</h4>
+                <span class="bg-purple-100 text-purple-700 px-3 py-1 rounded-full text-sm">4,640 PSI</span>
+              </div>
+              <p class="text-slate-600 mb-3">
+                High-performance concrete for specialized applications. Rarely needed for typical underpinning 
+                but may be specified for critical infrastructure or extreme conditions.
+              </p>
+              <div class="grid md:grid-cols-2 gap-4">
+                <div>
+                  <p class="font-semibold text-cyan-700 mb-2">✓ Advantages:</p>
+                  <ul class="text-sm text-slate-500 space-y-1">
+                    <li>• Maximum durability</li>
+                    <li>• Minimal permeability</li>
+                    <li>• Chemical resistance</li>
+                    <li>• 100+ year service life</li>
+                    <li>• Rapid early strength</li>
+                  </ul>
+                </div>
+                <div>
+                  <p class="font-semibold text-orange-700 mb-2">⚠ Considerations:</p>
+                  <ul class="text-sm text-slate-500 space-y-1">
+                    <li>• Higher cost</li>
+                    <li>• Requires experienced contractors</li>
+                    <li>• Special curing requirements</li>
+                    <li>• May be over-designed</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="mt-4 p-3 bg-white rounded">
+                <p class="text-sm"><strong>Mix Design:</strong> 1:1.5:3 (cement:sand:aggregate) | W/C ratio: 0.40-0.45</p>
+                <p class="text-sm"><strong>Cost:</strong> $340-370/m³</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Slump Requirements Section -->
+        <section class="mb-12 bg-white rounded-xl p-8 shadow-lg">
+          <h2 class="text-3xl font-bold text-slate-900 mb-6">
+            <span class="text-cyan-600">3.</span> Understanding Slump Requirements
+          </h2>
+          
+          <div class="bg-cyan-50 border-l-4 border-cyan-500 p-4 mb-6">
+            <p class="font-bold">What is Slump?</p>
+            <p class="text-slate-600">
+              Slump measures concrete workability - how easily it flows and can be placed. It's tested by filling 
+              a cone-shaped mold with concrete, removing it, and measuring how much the concrete "slumps" or settles. 
+              Higher slump = more flowable concrete.
+            </p>
+          </div>
+
+          <!-- Slump Test Diagram -->
+          <div class="bg-slate-50 p-6 rounded-lg mb-6">
+            <h3 class="font-bold text-xl mb-4">The Slump Test Procedure</h3>
+            <div class="grid md:grid-cols-3 gap-4">
+              <div class="text-center">
+                <div class="bg-white p-4 rounded-lg shadow mb-3">
+                  <p class="font-bold text-cyan-600">Step 1</p>
+                  <p class="text-sm">Fill cone in 3 layers, rod 25 times per layer</p>
+                </div>
+              </div>
+              <div class="text-center">
+                <div class="bg-white p-4 rounded-lg shadow mb-3">
+                  <p class="font-bold text-cyan-600">Step 2</p>
+                  <p class="text-sm">Strike off top, lift cone vertically in 5-7 seconds</p>
+                </div>
+              </div>
+              <div class="text-center">
+                <div class="bg-white p-4 rounded-lg shadow mb-3">
+                  <p class="font-bold text-cyan-600">Step 3</p>
+                  <p class="text-sm">Measure vertical settlement (slump) in mm or inches</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slump Categories for Underpinning -->
+          <h3 class="font-bold text-xl mb-4">Slump Classifications for Underpinning</h3>
+          
+          <div class="space-y-4">
+            <!-- Very Low Slump -->
+            <div class="border-l-4 border-slate-300 pl-4 bg-slate-50 p-4 rounded-r-lg">
+              <div class="flex justify-between items-center mb-2">
+                <h4 class="font-bold text-lg">0-25mm (0-1")</h4>
+                <span class="text-red-600 font-semibold">Too Stiff</span>
+              </div>
+              <p class="text-slate-600 text-sm">
+                Nearly impossible to work with for underpinning. Requires mechanical vibration. 
+                Risk of honeycombing and voids.
+              </p>
+            </div>
+
+            <!-- Low Slump -->
+            <div class="border-l-4 border-orange-400 pl-4 bg-orange-50 p-4 rounded-r-lg">
+              <div class="flex justify-between items-center mb-2">
+                <h4 class="font-bold text-lg">25-50mm (1-2")</h4>
+                <span class="text-orange-600 font-semibold">Difficult</span>
+              </div>
+              <p class="text-slate-600 text-sm">
+                Challenging for underpinning due to limited access. May not flow properly into forms. 
+                Requires extensive vibration.
+              </p>
+            </div>
+
+            <!-- Optimal Slump -->
+            <div class="border-l-4 border-cyan-500 pl-4 bg-cyan-50 p-4 rounded-r-lg">
+              <div class="flex justify-between items-center mb-2">
+                <h4 class="font-bold text-lg">75-100mm (3-4")</h4>
+                <span class="text-cyan-600 font-semibold">Optimal</span>
+              </div>
+              <p class="text-slate-600 text-sm">
+                <strong>Ideal for underpinning.</strong> Good workability while maintaining strength. 
+                Flows into tight spaces, self-consolidates partially, minimal segregation risk.
+              </p>
+            </div>
+
+            <!-- High Slump -->
+            <div class="border-l-4 border-cyan-400 pl-4 bg-cyan-50 p-4 rounded-r-lg">
+              <div class="flex justify-between items-center mb-2">
+                <h4 class="font-bold text-lg">125-175mm (5-7")</h4>
+                <span class="text-cyan-600 font-semibold">Flowable</span>
+              </div>
+              <p class="text-slate-600 text-sm">
+                Good for pumping and difficult access areas. Requires water-reducing admixtures to maintain 
+                strength. Monitor for segregation.
+              </p>
+            </div>
+
+            <!-- Very High Slump -->
+            <div class="border-l-4 border-red-400 pl-4 bg-red-50 p-4 rounded-r-lg">
+              <div class="flex justify-between items-center mb-2">
+                <h4 class="font-bold text-lg">200mm+ (8"+)</h4>
+                <span class="text-red-600 font-semibold">Self-Consolidating</span>
+              </div>
+              <p class="text-slate-600 text-sm">
+                Special SCC (Self-Consolidating Concrete) mix. Requires careful mix design and quality control. 
+                Higher cost but excellent for congested reinforcement.
+              </p>
+            </div>
+          </div>
+
+          <!-- Factors Affecting Slump -->
+          <div class="mt-8 bg-amber-50 p-6 rounded-lg">
+            <h3 class="font-bold text-xl mb-4">Factors That Affect Slump</h3>
+            <div class="grid md:grid-cols-2 gap-6">
+              <div>
+                <h4 class="font-semibold mb-2">Increases Slump ↑</h4>
+                <ul class="text-sm text-slate-600 space-y-1">
+                  <li>• Adding water (reduces strength!)</li>
+                  <li>• Water-reducing admixtures</li>
+                  <li>• Higher temperature</li>
+                  <li>• Rounded aggregates</li>
+                  <li>• Smaller aggregate size</li>
+                  <li>• More sand content</li>
+                </ul>
+              </div>
+              <div>
+                <h4 class="font-semibold mb-2">Decreases Slump ↓</h4>
+                <ul class="text-sm text-slate-600 space-y-1">
+                  <li>• Time after mixing</li>
+                  <li>• Lower temperature</li>
+                  <li>• Angular aggregates</li>
+                  <li>• Larger aggregate size</li>
+                  <li>• Less water content</li>
+                  <li>• Air entrainment</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Mix Design Specifications Section -->
+        <section class="mb-12 bg-white rounded-xl p-8 shadow-lg">
+          <h2 class="text-3xl font-bold text-slate-900 mb-6">
+            <span class="text-cyan-600">4.</span> Mix Design Specifications for Underpinning
+          </h2>
+          
+          <!-- Standard Mix Design Table -->
+          <div class="overflow-x-auto mb-8">
+            <table class="w-full border-collapse">
+              <thead>
+                <tr class="bg-slate-50">
+                  <th class="border p-3 text-left">Strength</th>
+                  <th class="border p-3 text-center">Cement (kg/m³)</th>
+                  <th class="border p-3 text-center">Water (L/m³)</th>
+                  <th class="border p-3 text-center">Sand (kg/m³)</th>
+                  <th class="border p-3 text-center">Stone (kg/m³)</th>
+                  <th class="border p-3 text-center">W/C Ratio</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="border p-3 font-semibold">15 MPa</td>
+                  <td class="border p-3 text-center">250</td>
+                  <td class="border p-3 text-center">165</td>
+                  <td class="border p-3 text-center">750</td>
+                  <td class="border p-3 text-center">1100</td>
+                  <td class="border p-3 text-center">0.66</td>
+                </tr>
+                <tr class="bg-cyan-50">
+                  <td class="border p-3 font-semibold">20 MPa</td>
+                  <td class="border p-3 text-center">300</td>
+                  <td class="border p-3 text-center">165</td>
+                  <td class="border p-3 text-center">720</td>
+                  <td class="border p-3 text-center">1080</td>
+                  <td class="border p-3 text-center">0.55</td>
+                </tr>
+                <tr>
+                  <td class="border p-3 font-semibold">25 MPa</td>
+                  <td class="border p-3 text-center">350</td>
+                  <td class="border p-3 text-center">175</td>
+                  <td class="border p-3 text-center">680</td>
+                  <td class="border p-3 text-center">1040</td>
+                  <td class="border p-3 text-center">0.50</td>
+                </tr>
+                <tr>
+                  <td class="border p-3 font-semibold">32 MPa</td>
+                  <td class="border p-3 text-center">400</td>
+                  <td class="border p-3 text-center">170</td>
+                  <td class="border p-3 text-center">650</td>
+                  <td class="border p-3 text-center">1000</td>
+                  <td class="border p-3 text-center">0.42</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Special Considerations -->
+          <div class="bg-cyan-50 p-6 rounded-lg">
+            <h3 class="font-bold text-xl mb-4">Special Mix Considerations for Underpinning</h3>
+            <div class="space-y-4">
+              <div>
+                <h4 class="font-semibold text-cyan-700">Aggregate Size</h4>
+                <p class="text-slate-600 text-sm">
+                  Maximum 20mm (3/4") aggregate recommended. Smaller aggregate (10-14mm) may be needed for 
+                  congested reinforcement or narrow pours.
+                </p>
+              </div>
+              <div>
+                <h4 class="font-semibold text-cyan-700">Air Entrainment</h4>
+                <p class="text-slate-600 text-sm">
+                  4-7% air content for exterior exposure. Improves freeze-thaw resistance but slightly 
+                  reduces strength (about 5% per 1% air).
+                </p>
+              </div>
+              <div>
+                <h4 class="font-semibold text-cyan-700">Admixtures</h4>
+                <p class="text-slate-600 text-sm">
+                  Water reducers allow 75-100mm slump without compromising strength. Retarders helpful 
+                  for hot weather or delayed placement.
+                </p>
+              </div>
+              <div>
+                <h4 class="font-semibold text-cyan-700">Supplementary Cementing Materials</h4>
+                <p class="text-slate-600 text-sm">
+                  Fly ash (15-25%) or slag (25-50%) can improve workability, reduce heat of hydration, 
+                  and increase long-term strength.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Quality Control Section -->
+        <section class="mb-12 bg-white rounded-xl p-8 shadow-lg">
+          <h2 class="text-3xl font-bold text-slate-900 mb-6">
+            <span class="text-cyan-600">5.</span> Quality Control & Testing Requirements
+          </h2>
+          
+          <!-- Testing Schedule -->
+          <div class="bg-slate-50 p-6 rounded-lg mb-6">
+            <h3 class="font-bold text-xl mb-4">Standard Testing Protocol</h3>
+            
+            <div class="space-y-4">
+              <div class="border-l-4 border-cyan-500 pl-4">
+                <h4 class="font-semibold">Before Pour</h4>
+                <ul class="text-sm text-slate-600 mt-2 space-y-1">
+                  <li>✓ Verify mix design certification</li>
+                  <li>✓ Check delivery ticket for correct mix</li>
+                  <li>✓ Confirm water hasn't been added in transit</li>
+                </ul>
+              </div>
+
+              <div class="border-l-4 border-cyan-500 pl-4">
+                <h4 class="font-semibold">During Pour</h4>
+                <ul class="text-sm text-slate-600 mt-2 space-y-1">
+                  <li>✓ Slump test on first truck and every 40m³</li>
+                  <li>✓ Air content test (if air-entrained)</li>
+                  <li>✓ Temperature measurement</li>
+                  <li>✓ Make test cylinders (minimum 3 per test)</li>
+                </ul>
+              </div>
+
+              <div class="border-l-4 border-orange-500 pl-4">
+                <h4 class="font-semibold">After Pour</h4>
+                <ul class="text-sm text-slate-600 mt-2 space-y-1">
+                  <li>✓ 7-day cylinder break (should be ~70% of 28-day strength)</li>
+                  <li>✓ 28-day cylinder break (must meet specified MPa)</li>
+                  <li>✓ Additional breaks at 56 or 90 days if required</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Acceptance Criteria -->
+          <div class="bg-amber-50 p-6 rounded-lg">
+            <h3 class="font-bold text-xl mb-4">Acceptance Criteria (CSA A23.1)</h3>
+            <div class="space-y-3">
+              <p class="text-slate-600">
+                <strong>Individual Test:</strong> No single test below specified strength minus 3.5 MPa
+              </p>
+              <p class="text-slate-600">
+                <strong>Average of 3 Tests:</strong> Must equal or exceed specified strength
+              </p>
+              <p class="text-slate-600">
+                <strong>Slump Tolerance:</strong> ±25mm from specified slump
+              </p>
+              <p class="text-slate-600">
+                <strong>Air Content:</strong> ±1.5% from specified air content
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Cold Weather Considerations -->
+        <section class="mb-12 bg-gradient-to-r from-blue-500 to-cyan-600 rounded-xl p-8 text-white">
+          <h2 class="text-3xl font-bold mb-6">Cold Weather Concrete Requirements</h2>
+          
+          <p class="mb-6 text-cyan-50">
+            Special requirements apply when air temperature is below 5°C or expected to fall below 5°C within 24 hours.
+          </p>
+
+          <div class="grid md:grid-cols-2 gap-6">
+            <div class="bg-white/10 backdrop-blur-sm rounded-lg p-6">
+              <h3 class="font-bold text-xl mb-3">Mix Adjustments</h3>
+              <ul class="space-y-2 text-cyan-50">
+                <li>• Increase cement content by 50-100 kg/m³</li>
+                <li>• Use Type HE (high early) cement</li>
+                <li>• Add accelerating admixtures</li>
+                <li>• Heat mixing water (max 60°C)</li>
+                <li>• Minimum concrete temp: 10°C at placement</li>
+              </ul>
+            </div>
+            
+            <div class="bg-white/10 backdrop-blur-sm rounded-lg p-6">
+              <h3 class="font-bold text-xl mb-3">Protection Requirements</h3>
+              <ul class="space-y-2 text-cyan-50">
+                <li>• Insulated blankets for 7 days minimum</li>
+                <li>• Maintain 10°C for first 72 hours</li>
+                <li>• No frozen subgrade allowed</li>
+                <li>• Extended curing time (strength gain slower)</li>
+                <li>• Consider heated enclosures below -5°C</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- Common Problems Section -->
+        <section class="mb-12">
+          <h2 class="text-3xl font-bold text-slate-900 mb-6">Common Concrete Problems in Underpinning</h2>
+          
+          <div class="space-y-4">
+            <!-- Honeycombing -->
+            <div class="bg-red-50 border-l-4 border-red-500 p-6 rounded-r-lg">
+              <h3 class="font-bold text-xl text-red-700 mb-2">Honeycombing</h3>
+              <p class="text-slate-600 mb-3">
+                Voids and exposed aggregate due to poor consolidation or low slump.
+              </p>
+              <div class="grid md:grid-cols-2 gap-4">
+                <div>
+                  <p class="font-semibold text-sm">Causes:</p>
+                  <ul class="text-sm text-slate-500">
+                    <li>• Insufficient vibration</li>
+                    <li>• Mix too stiff (low slump)</li>
+                    <li>• Congested reinforcement</li>
+                  </ul>
+                </div>
+                <div>
+                  <p class="font-semibold text-sm">Prevention:</p>
+                  <ul class="text-sm text-slate-500">
+                    <li>• Use 75-100mm slump</li>
+                    <li>• Proper vibration technique</li>
+                    <li>• Consider SCC for tight spaces</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- Segregation -->
+            <div class="bg-orange-50 border-l-4 border-orange-500 p-6 rounded-r-lg">
+              <h3 class="font-bold text-xl text-orange-700 mb-2">Segregation</h3>
+              <p class="text-slate-600 mb-3">
+                Separation of coarse aggregate from mortar, creating weak zones.
+              </p>
+              <div class="grid md:grid-cols-2 gap-4">
+                <div>
+                  <p class="font-semibold text-sm">Causes:</p>
+                  <ul class="text-sm text-slate-500">
+                    <li>• Excessive water/high slump</li>
+                    <li>• Over-vibration</li>
+                    <li>• Dropping from height</li>
+                  </ul>
+                </div>
+                <div>
+                  <p class="font-semibold text-sm">Prevention:</p>
+                  <ul class="text-sm text-slate-500">
+                    <li>• Control slump (75-100mm)</li>
+                    <li>• Limit drop height to 1.5m</li>
+                    <li>• Use tremie or pump for deep pours</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- Cold Joints -->
+            <div class="bg-cyan-50 border-l-4 border-cyan-500 p-6 rounded-r-lg">
+              <h3 class="font-bold text-xl text-cyan-700 mb-2">Cold Joints</h3>
+              <p class="text-slate-600 mb-3">
+                Weak planes where fresh concrete meets partially set concrete.
+              </p>
+              <div class="grid md:grid-cols-2 gap-4">
+                <div>
+                  <p class="font-semibold text-sm">Causes:</p>
+                  <ul class="text-sm text-slate-500">
+                    <li>• Delays between trucks</li>
+                    <li>• Slow placement rate</li>
+                    <li>• Equipment breakdown</li>
+                  </ul>
+                </div>
+                <div>
+                  <p class="font-semibold text-sm">Prevention:</p>
+                  <ul class="text-sm text-slate-500">
+                    <li>• Continuous pour planning</li>
+                    <li>• Use retarders if needed</li>
+                    <li>• Proper joint preparation</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Cost Comparison Section -->
+        <section class="mb-12 bg-white rounded-xl p-8 shadow-lg">
+          <h2 class="text-3xl font-bold text-slate-900 mb-6">Cost Analysis by Strength</h2>
+          
+          <div class="overflow-x-auto">
+            <table class="w-full">
+              <thead>
+                <tr class="bg-slate-50">
+                  <th class="p-3 text-left">Strength</th>
+                  <th class="p-3 text-center">$/m³</th>
+                  <th class="p-3 text-center">$/yd³</th>
+                  <th class="p-3 text-center">For 50m³ Project</th>
+                  <th class="p-3 text-center">% Premium</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="border-b">
+                  <td class="p-3 font-semibold">15 MPa</td>
+                  <td class="p-3 text-center">$290-310</td>
+                  <td class="p-3 text-center">$222-237</td>
+                  <td class="p-3 text-center">$14,500-15,500</td>
+                  <td class="p-3 text-center">Base</td>
+                </tr>
+                <tr class="border-b bg-cyan-50">
+                  <td class="p-3 font-semibold">20 MPa</td>
+                  <td class="p-3 text-center">$310-330</td>
+                  <td class="p-3 text-center">$237-252</td>
+                  <td class="p-3 text-center">$15,500-16,500</td>
+                  <td class="p-3 text-center">+6.5%</td>
+                </tr>
+                <tr class="border-b">
+                  <td class="p-3 font-semibold">25 MPa</td>
+                  <td class="p-3 text-center">$325-345</td>
+                  <td class="p-3 text-center">$248-264</td>
+                  <td class="p-3 text-center">$16,250-17,250</td>
+                  <td class="p-3 text-center">+11.2%</td>
+                </tr>
+                <tr class="border-b">
+                  <td class="p-3 font-semibold">32 MPa</td>
+                  <td class="p-3 text-center">$340-370</td>
+                  <td class="p-3 text-center">$260-283</td>
+                  <td class="p-3 text-center">$17,000-18,500</td>
+                  <td class="p-3 text-center">+17.2%</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          
+          <div class="mt-6 p-4 bg-cyan-50 rounded-lg">
+            <p class="text-sm text-slate-600">
+              <strong>Note:</strong> Prices are 2024-2026 Toronto area estimates including delivery. 
+              Add $50-75/m³ for pump truck if required. Minimum delivery charges may apply for orders under 5m³.
+            </p>
+          </div>
+        </section>
+
+        <!-- Best Practices Checklist -->
+        <section class="mb-12 bg-gradient-to-r from-green-500 to-teal-600 rounded-xl p-8 text-white">
+          <h2 class="text-3xl font-bold mb-6">Best Practices Checklist</h2>
+          
+          <div class="grid md:grid-cols-2 gap-6">
+            <div>
+              <h3 class="font-bold text-xl mb-3">Before Ordering</h3>
+              <ul class="space-y-2 text-cyan-50">
+                <li>☐ Confirm engineer's strength specification</li>
+                <li>☐ Calculate exact volume needed (+5-10%)</li>
+                <li>☐ Check access for concrete truck</li>
+                <li>☐ Arrange pump if needed</li>
+                <li>☐ Schedule continuous pour</li>
+                <li>☐ Order test cylinders/equipment</li>
+              </ul>
+            </div>
+            
+            <div>
+              <h3 class="font-bold text-xl mb-3">During Pour</h3>
+              <ul class="space-y-2 text-cyan-50">
+                <li>☐ Verify mix on delivery ticket</li>
+                <li>☐ Perform slump test</li>
+                <li>☐ Take test cylinders</li>
+                <li>☐ Ensure proper vibration</li>
+                <li>☐ Maintain pour continuity</li>
+                <li>☐ Start curing immediately</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="mb-12">
+          <h2 class="text-3xl font-bold text-slate-900 mb-6">Frequently Asked Questions</h2>
+          
+          <div class="space-y-4">
+            <div class="bg-white p-6 rounded-lg shadow">
+              <h3 class="font-bold text-xl mb-2">Can I use 15 MPa for all underpinning?</h3>
+              <p class="text-slate-600">
+                While 15 MPa meets minimum code requirements, most engineers specify 20 MPa or higher for 
+                durability and safety factors. 15 MPa should only be used with specific engineering approval 
+                and is not recommended for high water tables or aggressive soils.
+              </p>
+            </div>
+            
+            <div class="bg-white p-6 rounded-lg shadow">
+              <h3 class="font-bold text-xl mb-2">What if my concrete fails the 28-day test?</h3>
+              <p class="text-slate-600">
+                Core samples can be drilled from the structure for testing. If cores also fail, the engineer 
+                must evaluate whether the in-place strength is adequate. Remediation may include additional 
+                reinforcement, thickening sections, or in extreme cases, removal and replacement.
+              </p>
+            </div>
+            
+            <div class="bg-white p-6 rounded-lg shadow">
+              <h3 class="font-bold text-xl mb-2">Can I add water to increase slump on site?</h3>
+              <p class="text-slate-600">
+                Never add water on site as it dramatically reduces strength. Each gallon of water added 
+                reduces compressive strength by 150-200 PSI. Use water-reducing admixtures instead, which 
+                must be added by the ready-mix supplier.
+              </p>
+            </div>
+            
+            <div class="bg-white p-6 rounded-lg shadow">
+              <h3 class="font-bold text-xl mb-2">How long should I wait before loading underpinning?</h3>
+              <p class="text-slate-600">
+                Concrete reaches about 70% strength at 7 days and specified strength at 28 days. Light loads 
+                can typically be applied after 7 days, but full loading should wait until 28 days or when 
+                cylinder tests confirm adequate strength. Always follow engineer's specifications.
+              </p>
+            </div>
+
+            <div class="bg-white p-6 rounded-lg shadow">
+              <h3 class="font-bold text-xl mb-2">Is higher strength always better?</h3>
+              <p class="text-slate-600">
+                Not necessarily. While higher strength provides better durability and lower permeability, 
+                it also costs more and can be harder to work with (lower slump). 20-25 MPa provides the 
+                best balance for most residential underpinning projects. Over-specifying strength wastes money.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Conclusion -->
+        <section class="mb-12 bg-slate-50 rounded-xl p-8">
+          <h2 class="text-3xl font-bold text-slate-900 mb-6">Key Takeaways</h2>
+          
+          <div class="grid md:grid-cols-2 gap-6">
+            <div>
+              <h3 class="font-bold text-xl mb-3 text-cyan-600">Strength Selection</h3>
+              <ul class="space-y-2 text-slate-600">
+                <li>• 20 MPa is standard for residential</li>
+                <li>• 25 MPa for challenging conditions</li>
+                <li>• Never compromise on specified strength</li>
+                <li>• Higher strength = better durability</li>
+              </ul>
+            </div>
+            
+            <div>
+              <h3 class="font-bold text-xl mb-3 text-cyan-600">Workability</h3>
+              <ul class="space-y-2 text-slate-600">
+                <li>• 75-100mm slump is optimal</li>
+                <li>• Use admixtures, not water, for slump</li>
+                <li>• Test every truck on critical pours</li>
+                <li>• Proper vibration is essential</li>
+              </ul>
+            </div>
+          </div>
+          
+          <div class="mt-8 p-6 bg-cyan-50 rounded-lg">
+            <p class="text-center text-lg text-slate-800">
+              <strong>Remember:</strong> The concrete you choose for underpinning becomes a permanent part 
+              of your home's foundation. Investing in proper strength and quality control ensures decades 
+              of reliable structural support.
+            </p>
+          </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="bg-gradient-to-r from-blue-600 to-blue-800 rounded-xl p-8 text-white text-center">
+          <h2 class="text-3xl font-bold mb-4">Need Expert Underpinning Services?</h2>
+          <p class="text-xl mb-6">
+            Our engineers specify the right concrete mix for your specific soil conditions and structural requirements
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="/contact" class="bg-white text-cyan-600 px-8 py-3 rounded-lg font-semibold hover:bg-slate-50">
+              Get Engineering Consultation
+            </a>
+            <a href="tel:437-545-0067" class="bg-cyan-500 text-white px-8 py-3 rounded-lg font-semibold hover:bg-cyan-400">
+              Call 437-545-0067
+            </a>
+          </div>
+        </section>
+
+      </div>
+    </article>
+  </main>
+</PageLayout>

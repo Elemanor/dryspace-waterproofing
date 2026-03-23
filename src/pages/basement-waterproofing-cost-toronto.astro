@@ -1,0 +1,1160 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import ContactForm from '../components/ContactForm.astro';
+import FAQ from '../components/FAQ.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import StructuredData from '../components/StructuredData.astro';
+import BeforeAfterGallery from '../components/BeforeAfterGallery.astro';
+import CostCalculator from '../components/react/CostCalculator.tsx';
+
+const pageTitle = "Basement Waterproofing Cost Toronto 2025 | Pricing Guide";
+const pageDescription = "Basement waterproofing costs $150-300/linear foot in the GTA. Average home: $15,000-30,000. ✓ Get exact quote ✓ $3,400 rebates ✓ Financing available. Free inspection and transparent pricing."
+
+// Comprehensive pricing data for Toronto 2025
+const pricingData = {
+  interiorSystems: {
+    perimeter_drainage: { min: 85, max: 125, unit: 'linear foot', description: 'Complete drainage system with pipe, gravel, membrane' },
+    sump_pump: { min: 2000, max: 4500, unit: 'system', description: 'Primary pump, backup, basin, discharge line' },
+    vapor_barrier: { min: 8, max: 15, unit: 'sq ft', description: 'CleanSpace or equivalent membrane system' },
+    crack_repair: { min: 15, max: 35, unit: 'linear foot', description: 'Polyurethane or epoxy injection' },
+    floor_restoration: { min: 12, max: 25, unit: 'sq ft', description: 'Concrete patching and refinishing' }
+  },
+  exteriorSystems: {
+    excavation: { min: 35, max: 60, unit: 'linear foot', description: 'Machine excavation to footing level' },
+    foundation_prep: { min: 15, max: 25, unit: 'linear foot', description: 'Cleaning, crack repair, priming' },
+    moisture_barrier: { min: 25, max: 45, unit: 'linear foot', description: 'Rubberized asphalt or polymer membrane' },
+    weeping_tile: { min: 45, max: 75, unit: 'linear foot', description: 'New perforated pipe and gravel bed' },
+    backfill_restoration: { min: 20, max: 35, unit: 'linear foot', description: 'Proper grading and landscaping' }
+  },
+  specializedServices: {
+    foundation_underpinning: { min: 350, max: 600, unit: 'linear foot', description: 'Full foundation lowering' },
+    structural_repair: { min: 800, max: 2500, unit: 'repair', description: 'Major foundation crack repair' },
+    mold_remediation: { min: 15, max: 35, unit: 'sq ft', description: 'Professional mold removal' },
+    emergency_service: { min: 500, max: 2000, unit: 'call', description: '24/7 emergency water removal' }
+  }
+};
+
+// Location-based pricing adjustments for GTA
+const locationPricing = {
+  toronto: { multiplier: 1.0, rebate: 3400, description: 'Base Toronto pricing' },
+  mississauga: { multiplier: 0.95, rebate: 3400, description: '5% lower than Toronto' },
+  brampton: { multiplier: 0.92, rebate: 3400, description: '8% lower than Toronto' },
+  markham: { multiplier: 1.05, rebate: 3400, description: '5% higher than Toronto' },
+  vaughan: { multiplier: 1.03, rebate: 3400, description: '3% higher than Toronto' },
+  oakville: { multiplier: 1.08, rebate: 3400, description: '8% higher than Toronto' },
+  burlington: { multiplier: 1.06, rebate: 3400, description: '6% higher than Toronto' },
+  richmond_hill: { multiplier: 1.04, rebate: 3400, description: '4% higher than Toronto' }
+};
+
+// Comprehensive FAQs focused on cost
+const costFAQs = [
+  {
+    question: "How much does basement waterproofing cost in Toronto?",
+    answer: "Lower level moisture protection in Toronto runs $150-300 per linear foot, or $15,000-30,000 for an average 1,000 sq ft space. Interior systems run $85-125/linear foot, while exterior systems range $200-350/linear foot. Factors affecting pricing include space size, damage severity, soil conditions, and access limitations."
+  },
+  {
+    question: "What's included in the $3,400 basement flooding protection rebate?",
+    answer: "The City of Toronto's Basement Flooding Protection Subsidy covers up to $3,400 for eligible work including: sump pump systems ($1,750), backwater valves ($1,250), drain tile repairs ($400). Property must be residential, owner-occupied, and work must be pre-approved by licensed contractors like DrySpace."
+  },
+  {
+    question: "Is interior or exterior moisture protection more cost-effective?",
+    answer: "Interior water management runs 40-60% less than exterior ($12,000-18,000 vs $20,000-35,000 for average homes). Interior systems work effectively for most Toronto lower levels, operate year-round, and don't require landscaping restoration. Exterior is necessary for severe structural issues or new construction."
+  },
+  {
+    question: "What financing options are available for moisture protection?",
+    answer: "DrySpace offers 0% interest for 6-18 months, extended payment plans up to 60 months (6.99%-14.99% APR), and same-day approval. For a $15,000 project: 12-month 0% = $1,250/month, 36-month plan = $475/month, or use home equity lines for the best rates."
+  },
+  {
+    question: "How much does space size affect protection pricing?",
+    answer: "Larger basements have lower cost per square foot due to economies of scale. Small basement (600-800 sq ft): $8,000-12,000 interior/$15,000-20,000 exterior. Average (1000-1200 sq ft): $12,000-18,000 interior/$20,000-30,000 exterior. Large (1500+ sq ft): $18,000-28,000 interior/$30,000-45,000 exterior."
+  },
+  {
+    question: "What factors increase moisture protection expenses?",
+    answer: "Cost increases come from: difficult site access (+20-50%), severe damage requiring structural repair (+$5,000-15,000), clay soil conditions (+10-20%), finished basements requiring restoration (+$3,000-8,000), emergency/rush work (+15-30%), and multiple utility relocations (+$2,000-5,000 per line)."
+  },
+  {
+    question: "Does moisture protection increase home value?",
+    answer: "Professional water management typically recovers 60-70% of expenses in increased home value. A $20,000 protection project adds approximately $12,000-14,000 to home value, plus eliminates buyer concerns that could reduce sale price by $10,000-20,000. Dry lower levels can be finished as living space, adding $15-30/sq ft in value."
+  },
+  {
+    question: "How can I reduce protection expenses without compromising quality?",
+    answer: "Cost reduction strategies: schedule during off-peak seasons (late fall/winter, 10-15% savings), address problems early before they worsen, get multiple quotes, consider interior solutions first, ask about package deals for multiple services. Never compromise on contractor licensing, insurance, or warranties."
+  },
+  {
+    question: "What's the expense of delaying foundation protection?",
+    answer: "Delaying moisture control escalates expenses exponentially: Year 1 crack repair ($800) becomes Year 3 multiple repairs ($8,000), then Year 5 full system + mold remediation ($18,000+). Additional hidden expenses: damaged belongings ($2,000-10,000), health issues ($1,000-5,000), temporary accommodation ($3,000-12,000)."
+  },
+  {
+    question: "Are there seasonal pricing differences for protective systems?",
+    answer: "Yes, Toronto water management pricing varies by season. Spring (March-May): peak demand, 10-15% higher prices. Summer (June-August): standard pricing, best weather for exterior work. Fall (September-November): 5-10% discounts, good conditions. Winter (December-February): 10-20% discounts, interior work only."
+  },
+  {
+    question: "What's the ROI on moisture protection investment?",
+    answer: "Foundation protection ROI is typically 180-250% over 10 years. Benefits include: immediate home value increase (60-70% of investment), prevented major repairs (saves $50,000+ foundation reconstruction), insurance premium reductions (5-15%), usable living space creation ($15-30/sq ft value), and health expense avoidance."
+  },
+  {
+    question: "How do Toronto soil conditions affect protection expenses?",
+    answer: "Toronto's clay soil significantly impacts pricing. Clay soil: +15-25% due to difficult excavation, specialized drainage needs, and hydrostatic pressure. Sandy soil: standard pricing, easier excavation. Mixed soil: +10-15% due to unpredictable conditions. Soil testing ($300-500) is recommended for major projects to avoid surprises."
+  }
+];
+---
+
+<PageLayout 
+  title={pageTitle}
+  description={pageDescription}
+  showAnnouncement={true}
+>
+  <!-- Structured Data for Cost Information -->
+  <StructuredData 
+    type="Service" 
+    data={{
+      name: "Foundation Protection Pricing Toronto",
+      description: "Comprehensive foundation moisture control pricing guide for Toronto 2025. Interior systems $85-125/linear foot, exterior systems $200-350/linear foot. Government rebates up to $3,400 available.",
+      areaServed: [
+        { name: "Toronto", geo: { latitude: 43.6532, longitude: -79.3832 }},
+        { name: "Mississauga", geo: { latitude: 43.5890, longitude: -79.6441 }},
+        { name: "Brampton", geo: { latitude: 43.7315, longitude: -79.7624 }}
+      ],
+      offers: [
+        {
+          name: "Interior Water Management",
+          priceCurrency: "CAD",
+          price: "12000-18000",
+          description: "Complete interior drainage system for average Toronto basement"
+        },
+        {
+          name: "Exterior Protection Systems", 
+          priceCurrency: "CAD",
+          price: "20000-35000",
+          description: "Full exterior foundation protection system"
+        }
+      ],
+      rating: { value: 4.9, count: 847 }
+    }}
+  />
+  
+  <!-- Breadcrumbs -->
+  <div class="container mx-auto px-4 mt-4">
+    <Breadcrumbs 
+      items={[
+        { name: "Home", url: "/" },
+        { name: "Services", url: "/services" },
+        { name: "Foundation Protection Pricing Toronto" }
+      ]}
+    />
+  </div>
+
+  <!-- Hero Section -->
+  <section class="py-12 bg-gradient-to-r from-blue-600 to-blue-700 text-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto text-center">
+        <h1 class="text-4xl md:text-5xl font-bold mb-6">
+          Basement Waterproofing Cost Toronto 2025
+        </h1>
+        <p class="text-xl mb-8 text-cyan-100">
+          Complete waterproofing pricing guide with transparent rates, rebate information, and interactive calculator. 
+          Get honest pricing from the GTA's most trusted water protection experts.
+        </p>
+        <div class="grid md:grid-cols-3 gap-4 mb-8">
+          <div class="bg-cyan-800/50 p-4 rounded-lg">
+            <div class="text-2xl font-bold">$150-300</div>
+            <div class="text-sm text-cyan-200">Per Linear Foot</div>
+          </div>
+          <div class="bg-cyan-800/50 p-4 rounded-lg">
+            <div class="text-2xl font-bold">$3,400</div>
+            <div class="text-sm text-cyan-200">Government Rebate</div>
+          </div>
+          <div class="bg-cyan-800/50 p-4 rounded-lg">
+            <div class="text-2xl font-bold">0%</div>
+            <div class="text-sm text-cyan-200">Financing Available</div>
+          </div>
+        </div>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="/free-inspection" 
+             class="bg-amber-400 text-slate-900 px-8 py-4 rounded-lg font-bold text-lg hover:bg-amber-300 transition">
+            Get Your Detailed Quote
+          </a>
+          <a href="#calculator" 
+             class="bg-white text-cyan-600 px-8 py-4 rounded-lg font-bold text-lg hover:bg-slate-50 transition">
+            Use Cost Calculator
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick Cost Overview -->
+  <section class="py-12 bg-slate-50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-3xl font-bold text-center mb-8">2025 GTA Water Protection Pricing at a Glance</h2>
+        
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+          <!-- Interior Systems -->
+          <div class="bg-white p-6 rounded-lg shadow-sm border-l-4 border-cyan-500">
+            <h3 class="text-xl font-bold text-cyan-600 mb-4">Interior Water Management</h3>
+            <div class="space-y-3">
+              <div class="flex justify-between">
+                <span class="text-slate-500">Small (600-800 sq ft):</span>
+                <span class="font-bold">$8,000-12,000</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-slate-500">Average (1000-1200 sq ft):</span>
+                <span class="font-bold">$12,000-18,000</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-slate-500">Large (1500+ sq ft):</span>
+                <span class="font-bold">$18,000-28,000</span>
+              </div>
+              <div class="text-sm text-cyan-600 font-semibold mt-3">
+                ✓ Most popular choice
+              </div>
+            </div>
+          </div>
+
+          <!-- Exterior Systems -->
+          <div class="bg-white p-6 rounded-lg shadow-sm border-l-4 border-cyan-500">
+            <h3 class="text-xl font-bold text-amber-500 mb-4">Exterior Protection Systems</h3>
+            <div class="space-y-3">
+              <div class="flex justify-between">
+                <span class="text-slate-500">Small (600-800 sq ft):</span>
+                <span class="font-bold">$15,000-20,000</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-slate-500">Average (1000-1200 sq ft):</span>
+                <span class="font-bold">$20,000-35,000</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-slate-500">Large (1500+ sq ft):</span>
+                <span class="font-bold">$30,000-45,000</span>
+              </div>
+              <div class="text-sm text-amber-500 font-semibold mt-3">
+                ✓ Ultimate protection
+              </div>
+            </div>
+          </div>
+
+          <!-- Cost Factors -->
+          <div class="bg-white p-6 rounded-lg shadow-sm border-l-4 border-cyan-500">
+            <h3 class="text-xl font-bold text-cyan-600 mb-4">Pricing Factors</h3>
+            <div class="space-y-2 text-sm">
+              <div class="flex justify-between">
+                <span>Lower level size:</span>
+                <span class="text-cyan-600">Major factor</span>
+              </div>
+              <div class="flex justify-between">
+                <span>Problem severity:</span>
+                <span class="text-cyan-600">±30%</span>
+              </div>
+              <div class="flex justify-between">
+                <span>Site access:</span>
+                <span class="text-cyan-600">±25%</span>
+              </div>
+              <div class="flex justify-between">
+                <span>Soil type (clay):</span>
+                <span class="text-cyan-600">+15%</span>
+              </div>
+              <div class="flex justify-between">
+                <span>Emergency work:</span>
+                <span class="text-cyan-600">+25%</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Market Update Alert -->
+        <div class="bg-cyan-50 border-l-4 border-cyan-400 p-6 rounded-lg">
+          <h4 class="font-bold text-cyan-800 mb-2">2025 Market Update</h4>
+          <p class="text-slate-600">
+            Material expenses stabilized in 2024 after 15-20% increases in 2022-2023. Labor rates remain elevated but competitive pricing available 
+            due to increased contractor capacity. Best savings: off-season scheduling (fall/winter) and early problem addressing.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Cost Calculator -->
+  <section id="calculator" class="py-16">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl font-bold text-center mb-8">
+          Interactive Protection Cost Calculator
+        </h2>
+        <p class="text-lg text-center text-slate-500 mb-8">
+          Get instant pricing estimates based on your specific space size, problem type, and location. 
+          Includes municipal rebates and financing options.
+        </p>
+        <CostCalculator client:load />
+        <div class="mt-8 grid md:grid-cols-3 gap-4 text-center">
+          <div class="bg-slate-50 p-4 rounded-lg">
+            <div class="text-2xl font-bold text-cyan-600">847+</div>
+            <div class="text-sm text-slate-500">Projects Completed</div>
+          </div>
+          <div class="bg-slate-50 p-4 rounded-lg">
+            <div class="text-2xl font-bold text-cyan-600">4.9★</div>
+            <div class="text-sm text-slate-500">Average Rating</div>
+          </div>
+          <div class="bg-slate-50 p-4 rounded-lg">
+            <div class="text-2xl font-bold text-amber-500">25 Year</div>
+            <div class="text-sm text-slate-500">Warranty</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Detailed Pricing Tables -->
+  <section class="py-16 bg-slate-50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-3xl font-bold text-center mb-12">Detailed 2025 Pricing Breakdown</h2>
+
+        <!-- Interior System Pricing -->
+        <div class="mb-12">
+          <h3 class="text-2xl font-bold mb-6 text-cyan-600">Interior Protection System Pricing</h3>
+          <div class="bg-white rounded-lg shadow-sm overflow-hidden">
+            <div class="overflow-x-auto">
+              <table class="w-full">
+                <thead class="bg-cyan-50">
+                  <tr>
+                    <th class="px-6 py-4 text-left text-sm font-bold text-cyan-800">Component</th>
+                    <th class="px-6 py-4 text-center text-sm font-bold text-cyan-800">Price Range</th>
+                    <th class="px-6 py-4 text-center text-sm font-bold text-cyan-800">Unit</th>
+                    <th class="px-6 py-4 text-left text-sm font-bold text-cyan-800">What's Included</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-200">
+                  {Object.entries(pricingData.interiorSystems).map(([key, item]) => (
+                    <tr>
+                      <td class="px-6 py-4 font-medium text-slate-900 capitalize">
+                        {key.replace('_', ' ')}
+                      </td>
+                      <td class="px-6 py-4 text-center font-bold text-cyan-600">
+                        ${item.min} - ${item.max}
+                      </td>
+                      <td class="px-6 py-4 text-center text-slate-500">
+                        per {item.unit}
+                      </td>
+                      <td class="px-6 py-4 text-sm text-slate-500">
+                        {item.description}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <div class="bg-cyan-50 p-4">
+              <p class="text-sm text-cyan-700">
+                <strong>Complete Interior System:</strong> Includes all components above, 25-year warranty, annual maintenance check, and restoration work.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Exterior System Pricing -->
+        <div class="mb-12">
+          <h3 class="text-2xl font-bold mb-6 text-amber-500">Exterior Protection System Pricing</h3>
+          <div class="bg-white rounded-lg shadow-sm overflow-hidden">
+            <div class="overflow-x-auto">
+              <table class="w-full">
+                <thead class="bg-amber-50">
+                  <tr>
+                    <th class="px-6 py-4 text-left text-sm font-bold text-amber-800">Component</th>
+                    <th class="px-6 py-4 text-center text-sm font-bold text-amber-800">Price Range</th>
+                    <th class="px-6 py-4 text-center text-sm font-bold text-amber-800">Unit</th>
+                    <th class="px-6 py-4 text-left text-sm font-bold text-amber-800">What's Included</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-200">
+                  {Object.entries(pricingData.exteriorSystems).map(([key, item]) => (
+                    <tr>
+                      <td class="px-6 py-4 font-medium text-slate-900 capitalize">
+                        {key.replace('_', ' ')}
+                      </td>
+                      <td class="px-6 py-4 text-center font-bold text-cyan-600">
+                        ${item.min} - ${item.max}
+                      </td>
+                      <td class="px-6 py-4 text-center text-slate-500">
+                        per {item.unit}
+                      </td>
+                      <td class="px-6 py-4 text-sm text-slate-500">
+                        {item.description}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <div class="bg-amber-50 p-4">
+              <p class="text-sm text-amber-700">
+                <strong>Complete Exterior System:</strong> Includes excavation, moisture barrier installation, drainage, restoration, permits, and 25-year warranty.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Specialized Services -->
+        <div class="mb-12">
+          <h3 class="text-2xl font-bold mb-6 text-cyan-600">Specialized Services & Add-ons</h3>
+          <div class="grid md:grid-cols-2 gap-6">
+            {Object.entries(pricingData.specializedServices).map(([key, item]) => (
+              <div class="bg-white p-6 rounded-lg shadow-sm border-l-4 border-green-400">
+                <h4 class="font-bold text-slate-900 mb-2 capitalize">
+                  {key.replace('_', ' ')}
+                </h4>
+                <div class="text-2xl font-bold text-cyan-600 mb-2">
+                  ${item.min.toLocaleString()} - ${item.max.toLocaleString()}
+                </div>
+                <div class="text-sm text-slate-500 mb-2">per {item.unit}</div>
+                <p class="text-sm text-slate-600">{item.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Location-Based Pricing -->
+  <section class="py-16">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-3xl font-bold text-center mb-8">Greater Toronto Area Pricing Differences</h2>
+        <p class="text-lg text-center text-slate-500 mb-8">
+          Water protection pricing varies across the region based on local labor rates, permit fees, and market conditions.
+        </p>
+        
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+          {Object.entries(locationPricing).map(([key, data]) => (
+            <div class="bg-white p-4 rounded-lg shadow-sm border">
+              <h4 class="font-bold text-slate-900 mb-2 capitalize">
+                {key.replace('_', ' ')}
+              </h4>
+              <div class="text-lg font-bold text-cyan-600 mb-1">
+                {data.multiplier === 1.0 ? 'Base' : `${((data.multiplier - 1) * 100).toFixed(0)}% ${data.multiplier > 1 ? 'higher' : 'lower'}`}
+              </div>
+              <div class="text-sm text-cyan-600 font-semibold mb-2">
+                Up to ${data.rebate.toLocaleString()} rebate
+              </div>
+              <p class="text-xs text-slate-500">{data.description}</p>
+            </div>
+          ))}
+        </div>
+
+        <div class="mt-8 bg-cyan-50 p-6 rounded-lg">
+          <h4 class="font-bold text-cyan-800 mb-3">Why Location Affects Pricing:</h4>
+          <div class="grid md:grid-cols-2 gap-4 text-sm text-slate-600">
+            <ul class="space-y-1">
+              <li>• Municipal permit fees and requirements</li>
+              <li>• Local labor market rates</li>
+              <li>• Soil conditions and water table levels</li>
+              <li>• Competition density and market maturity</li>
+            </ul>
+            <ul class="space-y-1">
+              <li>• Transportation and logistics costs</li>
+              <li>• Local building code variations</li>
+              <li>• Seasonal weather impact differences</li>
+              <li>• Available rebate and subsidy programs</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Government Rebates & Financing -->
+  <section class="py-16 bg-cyan-50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-3xl font-bold text-center mb-8">$3,400 Municipal Rebate + Financing Options</h2>
+        
+        <div class="grid md:grid-cols-2 gap-8 mb-8">
+          <!-- Rebate Information -->
+          <div class="bg-white p-8 rounded-lg shadow-sm">
+            <h3 class="text-2xl font-bold text-cyan-600 mb-6">Municipal Rebates Available</h3>
+            <div class="space-y-4">
+              <div class="border-l-4 border-green-400 pl-4">
+                <h4 class="font-bold text-slate-900">Basement Flooding Protection Subsidy</h4>
+                <div class="text-2xl font-bold text-cyan-600">Up to $3,400</div>
+                <div class="text-sm text-slate-500 mt-2">
+                  <strong>Sump Pump Systems:</strong> $1,750 maximum<br>
+                  <strong>Backwater Valves:</strong> $1,250 maximum<br>
+                  <strong>Drain Tile Repairs:</strong> $400 maximum
+                </div>
+              </div>
+              
+              <div class="bg-cyan-50 p-4 rounded">
+                <h5 class="font-semibold mb-2">Eligibility Requirements:</h5>
+                <ul class="text-sm text-slate-600 space-y-1">
+                  <li>✓ Residential property (owner-occupied)</li>
+                  <li>✓ Toronto, Mississauga, Brampton, or participating municipality</li>
+                  <li>✓ Work must be pre-approved</li>
+                  <li>✓ Licensed contractor installation required</li>
+                  <li>✓ Building permits obtained</li>
+                </ul>
+              </div>
+
+              <div class="text-sm text-cyan-600">
+                <strong>DrySpace handles all rebate applications at no extra charge!</strong>
+              </div>
+            </div>
+          </div>
+
+          <!-- Financing Options -->
+          <div class="bg-white p-8 rounded-lg shadow-sm">
+            <h3 class="text-2xl font-bold text-cyan-600 mb-6">Flexible Financing Options</h3>
+            
+            <div class="space-y-6">
+              <div>
+                <h4 class="font-bold text-slate-900 mb-3">0% Interest Programs</h4>
+                <div class="grid grid-cols-3 gap-2 text-center text-sm">
+                  <div class="bg-slate-50 p-2 rounded">
+                    <div class="font-bold">6 months</div>
+                    <div class="text-slate-500">Same as cash</div>
+                  </div>
+                  <div class="bg-slate-50 p-2 rounded">
+                    <div class="font-bold">12 months</div>
+                    <div class="text-slate-500">0% APR</div>
+                  </div>
+                  <div class="bg-slate-50 p-2 rounded">
+                    <div class="font-bold">18 months</div>
+                    <div class="text-slate-500">Promotional</div>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <h4 class="font-bold text-slate-900 mb-3">Extended Payment Plans</h4>
+                <div class="text-sm text-slate-600 space-y-2">
+                  <div class="flex justify-between">
+                    <span>24-60 month terms</span>
+                    <span class="text-cyan-600">6.99%-14.99% APR</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span>Same-day approval</span>
+                    <span class="text-cyan-600">✓ Available</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span>No prepayment penalty</span>
+                    <span class="text-cyan-600">✓ Included</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="bg-cyan-50 p-4 rounded">
+                <h5 class="font-semibold text-cyan-800 mb-2">Sample Payment ($15,000 project):</h5>
+                <div class="text-sm space-y-1">
+                  <div class="flex justify-between">
+                    <span>12 months 0% APR:</span>
+                    <span class="font-bold">$1,250/month</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span>36 months at 8.99%:</span>
+                    <span class="font-bold">$475/month</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span>60 months at 10.99%:</span>
+                    <span class="font-bold">$327/month</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Rebate Process -->
+        <div class="bg-white p-6 rounded-lg shadow-sm">
+          <h4 class="text-xl font-bold text-center mb-6">How We Handle Your Rebate Application</h4>
+          <div class="grid md:grid-cols-5 gap-4">
+            <div class="text-center">
+              <div class="bg-cyan-50 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-2">
+                <span class="font-bold text-cyan-600">1</span>
+              </div>
+              <h5 class="font-semibold text-sm mb-1">Free Assessment</h5>
+              <p class="text-xs text-slate-500">Determine rebate eligibility</p>
+            </div>
+            <div class="text-center">
+              <div class="bg-cyan-50 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-2">
+                <span class="font-bold text-cyan-600">2</span>
+              </div>
+              <h5 class="font-semibold text-sm mb-1">Pre-Approval</h5>
+              <p class="text-xs text-slate-500">Submit application to city</p>
+            </div>
+            <div class="text-center">
+              <div class="bg-cyan-50 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-2">
+                <span class="font-bold text-cyan-600">3</span>
+              </div>
+              <h5 class="font-semibold text-sm mb-1">Installation</h5>
+              <p class="text-xs text-slate-500">Complete approved work</p>
+            </div>
+            <div class="text-center">
+              <div class="bg-cyan-50 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-2">
+                <span class="font-bold text-cyan-600">4</span>
+              </div>
+              <h5 class="font-semibold text-sm mb-1">Documentation</h5>
+              <p class="text-xs text-slate-500">Submit final claim</p>
+            </div>
+            <div class="text-center">
+              <div class="bg-cyan-50 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-2">
+                <span class="font-bold text-cyan-600">5</span>
+              </div>
+              <h5 class="font-semibold text-sm mb-1">Your Rebate</h5>
+              <p class="text-xs text-slate-500">Receive up to $3,400</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cost vs DIY Comparison -->
+  <section class="py-16">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-3xl font-bold text-center mb-8">Professional vs DIY Comparison</h2>
+        
+        <div class="grid md:grid-cols-2 gap-8">
+          <!-- Professional Installation -->
+          <div class="bg-white p-8 rounded-lg shadow-sm border-l-4 border-cyan-500">
+            <h3 class="text-2xl font-bold text-cyan-600 mb-6">Professional Installation</h3>
+            
+            <div class="space-y-4 mb-6">
+              <h4 class="font-bold text-slate-900">Typical Pricing:</h4>
+              <div class="text-sm space-y-2">
+                <div class="flex justify-between">
+                  <span>Interior system (1000 sq ft space):</span>
+                  <span class="font-bold">$12,000-18,000</span>
+                </div>
+                <div class="flex justify-between">
+                  <span>Labor (60% of total):</span>
+                  <span class="font-bold">$7,200-10,800</span>
+                </div>
+                <div class="flex justify-between">
+                  <span>Materials (25%):</span>
+                  <span class="font-bold">$3,000-4,500</span>
+                </div>
+                <div class="flex justify-between">
+                  <span>Equipment, permits, warranty (15%):</span>
+                  <span class="font-bold">$1,800-2,700</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-cyan-50 p-4 rounded mb-6">
+              <h4 class="font-bold text-cyan-800 mb-2">What's Included:</h4>
+              <ul class="text-sm text-slate-600 space-y-1">
+                <li>✓ Professional excavation equipment</li>
+                <li>✓ Building permits and inspections</li>
+                <li>✓ Commercial-grade materials</li>
+                <li>✓ 25-year transferable warranty</li>
+                <li>✓ Insurance and WSIB coverage</li>
+                <li>✓ Proper disposal and cleanup</li>
+                <li>✓ Annual maintenance checks</li>
+                <li>✓ Emergency service availability</li>
+              </ul>
+            </div>
+
+            <div class="bg-cyan-50 p-4 rounded">
+              <h4 class="font-bold text-cyan-800 mb-2">ROI Benefits:</h4>
+              <ul class="text-sm text-slate-600 space-y-1">
+                <li>• Home value increase: $8,000-12,000</li>
+                <li>• Insurance premium savings: $200-500/year</li>
+                <li>• Prevented major repairs: $20,000-50,000</li>
+                <li>• Health cost avoidance: $1,000-5,000</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- DIY Costs -->
+          <div class="bg-white p-8 rounded-lg shadow-sm border-l-4 border-red-500">
+            <h3 class="text-2xl font-bold text-red-600 mb-6">DIY Installation</h3>
+            
+            <div class="space-y-4 mb-6">
+              <h4 class="font-bold text-slate-900">Estimated Pricing:</h4>
+              <div class="text-sm space-y-2">
+                <div class="flex justify-between">
+                  <span>Materials only:</span>
+                  <span class="font-bold">$3,000-5,000</span>
+                </div>
+                <div class="flex justify-between">
+                  <span>Tool rental (3-4 days):</span>
+                  <span class="font-bold">$800-1,200</span>
+                </div>
+                <div class="flex justify-between">
+                  <span>Permits (DIY rates):</span>
+                  <span class="font-bold">$300-600</span>
+                </div>
+                <div class="flex justify-between">
+                  <span>Disposal fees:</span>
+                  <span class="font-bold">$400-800</span>
+                </div>
+                <div class="flex justify-between border-t pt-2">
+                  <span class="font-bold">Total direct expenses:</span>
+                  <span class="font-bold text-red-600">$4,500-7,600</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-red-50 p-4 rounded mb-6">
+              <h4 class="font-bold text-red-900 mb-2">Hidden Expenses & Risks:</h4>
+              <ul class="text-sm text-slate-600 space-y-1">
+                <li>× Time investment: 40-80 hours</li>
+                <li>× Potential mistakes: $2,000-8,000</li>
+                <li>× No warranty protection</li>
+                <li>× Insurance may not cover DIY work</li>
+                <li>× Permit complications/fines</li>
+                <li>× Utility line damage risk: $5,000+</li>
+                <li>× Health/safety risks</li>
+                <li>× Resale concerns for buyers</li>
+              </ul>
+            </div>
+
+            <div class="bg-amber-50 p-4 rounded">
+              <h4 class="font-bold text-amber-800 mb-2">Reality Check:</h4>
+              <p class="text-sm text-slate-600">
+                While DIY saves on labor expenses, the risk of errors, lack of warranty, insurance issues, 
+                and time investment often make professional installation more economical long-term. 
+                95% of DIY moisture protection attempts require professional correction within 2-3 years.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Conclusion -->
+        <div class="mt-8 bg-slate-50 p-6 rounded-lg">
+          <h4 class="font-bold text-center text-slate-900 mb-4">Pricing Comparison Summary</h4>
+          <div class="grid md:grid-cols-3 gap-4 text-center">
+            <div>
+              <div class="text-lg font-bold text-cyan-600">Professional</div>
+              <div class="text-2xl font-bold">$12,000-18,000</div>
+              <div class="text-sm text-slate-500">Total expense with warranty</div>
+            </div>
+            <div>
+              <div class="text-lg font-bold text-red-600">DIY (Real Cost)</div>
+              <div class="text-2xl font-bold">$8,000-15,000+</div>
+              <div class="text-sm text-slate-500">Including mistakes & corrections</div>
+            </div>
+            <div>
+              <div class="text-lg font-bold text-cyan-600">Professional Value</div>
+              <div class="text-2xl font-bold">25%+ Better</div>
+              <div class="text-sm text-slate-500">ROI with warranty protection</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Insurance Coverage Information -->
+  <section class="py-16 bg-cyan-50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-3xl font-bold text-center mb-8">Insurance Coverage & Claims</h2>
+        
+        <div class="grid md:grid-cols-2 gap-8 mb-8">
+          <div class="bg-white p-6 rounded-lg shadow-sm">
+            <h3 class="text-xl font-bold text-cyan-600 mb-4">What Insurance Typically Covers</h3>
+            <div class="space-y-3">
+              <div class="flex items-start space-x-3">
+                <div class="w-2 h-2 bg-cyan-500 rounded-full mt-2"></div>
+                <div>
+                  <div class="font-semibold">Sudden Water Damage</div>
+                  <div class="text-sm text-slate-500">Burst pipes, appliance failures, storm damage</div>
+                </div>
+              </div>
+              <div class="flex items-start space-x-3">
+                <div class="w-2 h-2 bg-cyan-500 rounded-full mt-2"></div>
+                <div>
+                  <div class="font-semibold">Sewer Backup (if endorsed)</div>
+                  <div class="text-sm text-slate-500">Coverage limits: $25,000-$50,000 typical</div>
+                </div>
+              </div>
+              <div class="flex items-start space-x-3">
+                <div class="w-2 h-2 bg-cyan-500 rounded-full mt-2"></div>
+                <div>
+                  <div class="font-semibold">Emergency Water Sealing</div>
+                  <div class="text-sm text-slate-500">Temporary measures to prevent further damage</div>
+                </div>
+              </div>
+              <div class="flex items-start space-x-3">
+                <div class="w-2 h-2 bg-cyan-500 rounded-full mt-2"></div>
+                <div>
+                  <div class="font-semibold">Additional Living Expenses</div>
+                  <div class="text-sm text-slate-500">Temporary accommodation during major repairs</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white p-6 rounded-lg shadow-sm">
+            <h3 class="text-xl font-bold text-red-600 mb-4">What Insurance Doesn't Cover</h3>
+            <div class="space-y-3">
+              <div class="flex items-start space-x-3">
+                <div class="w-2 h-2 bg-red-500 rounded-full mt-2"></div>
+                <div>
+                  <div class="font-semibold">Gradual Water Damage</div>
+                  <div class="text-sm text-slate-500">Slow leaks, seepage, poor maintenance</div>
+                </div>
+              </div>
+              <div class="flex items-start space-x-3">
+                <div class="w-2 h-2 bg-red-500 rounded-full mt-2"></div>
+                <div>
+                  <div class="font-semibold">Preventive Moisture Control</div>
+                  <div class="text-sm text-slate-500">Installing systems before damage occurs</div>
+                </div>
+              </div>
+              <div class="flex items-start space-x-3">
+                <div class="w-2 h-2 bg-red-500 rounded-full mt-2"></div>
+                <div>
+                  <div class="font-semibold">Foundation Issues</div>
+                  <div class="text-sm text-slate-500">Structural problems, settling, design flaws</div>
+                </div>
+              </div>
+              <div class="flex items-start space-x-3">
+                <div class="w-2 h-2 bg-red-500 rounded-full mt-2"></div>
+                <div>
+                  <div class="font-semibold">Flood Damage</div>
+                  <div class="text-sm text-slate-500">Surface water entry (requires separate flood insurance)</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="bg-white p-6 rounded-lg shadow-sm text-center">
+            <h4 class="font-bold text-slate-900 mb-2">Typical Deductible</h4>
+            <div class="text-3xl font-bold text-cyan-600 mb-2">$500-2,500</div>
+            <p class="text-sm text-slate-500">
+              Water damage claims often have higher deductibles than standard claims
+            </p>
+          </div>
+
+          <div class="bg-white p-6 rounded-lg shadow-sm text-center">
+            <h4 class="font-bold text-slate-900 mb-2">Premium Impact</h4>
+            <div class="text-3xl font-bold text-red-600 mb-2">+15-30%</div>
+            <p class="text-sm text-slate-500">
+              Multiple claims can significantly increase premiums or lead to cancellation
+            </p>
+          </div>
+
+          <div class="bg-white p-6 rounded-lg shadow-sm text-center">
+            <h4 class="font-bold text-slate-900 mb-2">Prevention Discount</h4>
+            <div class="text-3xl font-bold text-cyan-600 mb-2">-5-15%</div>
+            <p class="text-sm text-slate-500">
+              Many insurers offer discounts for proper protective systems
+            </p>
+          </div>
+        </div>
+
+        <div class="mt-8 bg-amber-50 border-l-4 border-amber-400 p-6 rounded-lg">
+          <h4 class="font-bold text-amber-800 mb-2">DrySpace Insurance Claim Assistance</h4>
+          <p class="text-slate-600 mb-4">
+            We work with all major insurance companies and can help with emergency claims and documentation. Our detailed reports 
+            and professional assessments help ensure maximum coverage when claims are valid.
+          </p>
+          <ul class="text-sm text-slate-600 space-y-1">
+            <li>✓ Emergency water removal and damage mitigation</li>
+            <li>✓ Professional assessment and documentation</li>
+            <li>✓ Direct billing to insurance (when approved)</li>
+            <li>✓ Work with adjusters and restoration companies</li>
+            <li>✓ Warranty protection for peace of mind</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Warranty Value Analysis -->
+  <section class="py-16">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-3xl font-bold text-center mb-8">25-Year Warranty Value Analysis</h2>
+        
+        <div class="grid md:grid-cols-2 gap-8 mb-8">
+          <div class="bg-white p-8 rounded-lg shadow-sm">
+            <h3 class="text-2xl font-bold text-cyan-600 mb-6">DrySpace 25-Year Warranty</h3>
+            
+            <div class="space-y-4">
+              <div class="border-l-4 border-green-400 pl-4">
+                <h4 class="font-bold text-slate-900">Coverage Includes:</h4>
+                <ul class="text-sm text-slate-600 space-y-1 mt-2">
+                  <li>✓ All materials and workmanship defects</li>
+                  <li>✓ System performance guarantee</li>
+                  <li>✓ Emergency repair response</li>
+                  <li>✓ Annual maintenance inspections</li>
+                  <li>✓ Transferable to new homeowners</li>
+                  <li>✓ No deductible for warranty repairs</li>
+                </ul>
+              </div>
+              
+              <div class="bg-cyan-50 p-4 rounded">
+                <h4 class="font-bold text-cyan-800 mb-2">Financial Protection:</h4>
+                <div class="text-sm space-y-2">
+                  <div class="flex justify-between">
+                    <span>Warranty replacement value:</span>
+                    <span class="font-bold">$15,000-35,000</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span>Annual maintenance value:</span>
+                    <span class="font-bold">$200-400/year</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span>25-year maintenance value:</span>
+                    <span class="font-bold">$5,000-10,000</span>
+                  </div>
+                  <div class="flex justify-between border-t pt-2">
+                    <span class="font-bold">Total warranty value:</span>
+                    <span class="font-bold text-cyan-600">$20,000-45,000</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white p-8 rounded-lg shadow-sm">
+            <h3 class="text-2xl font-bold text-slate-500 mb-6">Industry Standard Warranties</h3>
+            
+            <div class="space-y-4">
+              <div class="border-l-4 border-slate-300 pl-4">
+                <h4 class="font-bold text-slate-900">Typical Coverage (5-10 years):</h4>
+                <ul class="text-sm text-slate-600 space-y-1 mt-2">
+                  <li>• Materials only (2-5 years)</li>
+                  <li>• Workmanship (1-2 years)</li>
+                  <li>• Limited system performance</li>
+                  <li>• No maintenance included</li>
+                  <li>• May not be transferable</li>
+                  <li>• Often requires deductibles</li>
+                </ul>
+              </div>
+              
+              <div class="bg-slate-50 p-4 rounded">
+                <h4 class="font-bold text-slate-900 mb-2">What Happens After Warranty:</h4>
+                <div class="text-sm space-y-2">
+                  <div class="flex justify-between">
+                    <span>System failure risk:</span>
+                    <span class="font-bold text-red-600">High</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span>Repair costs (years 10-25):</span>
+                    <span class="font-bold">$3,000-8,000</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span>Replacement cost:</span>
+                    <span class="font-bold">$18,000-40,000</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span>Maintenance costs:</span>
+                    <span class="font-bold">$300-600/year</span>
+                  </div>
+                  <div class="flex justify-between border-t pt-2">
+                    <span class="font-bold">Potential out-of-pocket:</span>
+                    <span class="font-bold text-red-600">$25,000-50,000</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-cyan-50 p-8 rounded-lg">
+          <h3 class="text-2xl font-bold text-center text-cyan-800 mb-6">Warranty Comparison Impact</h3>
+          
+          <div class="grid md:grid-cols-3 gap-6">
+            <div class="text-center">
+              <div class="bg-white p-6 rounded-lg shadow-sm">
+                <h4 class="font-bold text-slate-900 mb-2">5-Year Standard</h4>
+                <div class="text-3xl font-bold text-red-600 mb-2">$45,000+</div>
+                <div class="text-sm text-slate-500">
+                  25-year total cost of ownership including repairs and replacements
+                </div>
+              </div>
+            </div>
+
+            <div class="text-center">
+              <div class="bg-white p-6 rounded-lg shadow-sm">
+                <h4 class="font-bold text-slate-900 mb-2">10-Year Enhanced</h4>
+                <div class="text-3xl font-bold text-orange-600 mb-2">$35,000+</div>
+                <div class="text-sm text-slate-500">
+                  25-year total cost with extended warranty and some maintenance
+                </div>
+              </div>
+            </div>
+
+            <div class="text-center">
+              <div class="bg-white p-6 rounded-lg shadow-sm border-4 border-cyan-500">
+                <h4 class="font-bold text-slate-900 mb-2">DrySpace 25-Year</h4>
+                <div class="text-3xl font-bold text-cyan-600 mb-2">$20,000</div>
+                <div class="text-sm text-slate-500">
+                  Total cost with complete protection and maintenance included
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-6 text-center">
+            <p class="text-lg font-semibold text-cyan-800">
+              DrySpace's 25-year warranty saves $15,000-25,000 over standard warranties
+            </p>
+            <p class="text-sm text-slate-500 mt-2">
+              Plus the peace of mind knowing you're protected for the life of your system
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Before/After Gallery -->
+  <section class="py-16 bg-slate-50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-3xl font-bold text-center mb-8">
+          Recent GTA Waterproofing Projects
+        </h2>
+        <p class="text-lg text-center text-slate-500 mb-8">
+          See real GTA water protection projects with actual costs and results
+        </p>
+        <BeforeAfterGallery />
+        
+        <div class="grid md:grid-cols-3 gap-6 mt-8">
+          <div class="bg-white p-6 rounded-lg shadow-sm text-center">
+            <div class="text-4xl mb-2">🏠</div>
+            <h4 class="font-bold text-slate-900 mb-2">Cabbagetown Interior System</h4>
+            <div class="text-2xl font-bold text-cyan-600 mb-2">$14,500</div>
+            <div class="text-sm text-slate-500 mb-2">1,100 sq ft space</div>
+            <p class="text-xs text-slate-500">
+              Complete interior drainage, sump pump, vapor barrier. $3,400 municipal rebate applied.
+            </p>
+          </div>
+
+          <div class="bg-white p-6 rounded-lg shadow-sm text-center">
+            <div class="text-4xl mb-2">🏘️</div>
+            <h4 class="font-bold text-slate-900 mb-2">Leslieville Exterior System</h4>
+            <div class="text-2xl font-bold text-cyan-600 mb-2">$26,800</div>
+            <div class="text-sm text-slate-500 mb-2">850 sq ft lower level</div>
+            <p class="text-xs text-slate-500">
+              Full excavation, membrane, weeping tile. Difficult access premium included.
+            </p>
+          </div>
+
+          <div class="bg-white p-6 rounded-lg shadow-sm text-center">
+            <div class="text-4xl mb-2">🏢</div>
+            <h4 class="font-bold text-slate-900 mb-2">Riverside Emergency Repair</h4>
+            <div class="text-2xl font-bold text-cyan-600 mb-2">$8,200</div>
+            <div class="text-sm text-slate-500 mb-2">Foundation crack repair</div>
+            <p class="text-xs text-slate-500">
+              Multiple crack injection, interior drainage tie-in. Same-day completion.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="py-16">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl font-bold text-center mb-8">
+          Frequently Asked Pricing Questions
+        </h2>
+        <FAQ faqs={costFAQs} />
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials with Cost Focus -->
+  <section class="py-16 bg-slate-50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-3xl font-bold text-center mb-8">
+          What GTA Homeowners Say About Our Waterproofing Pricing
+        </h2>
+        
+        
+        <div class="grid md:grid-cols-2 gap-6 mt-8">
+          <div class="bg-white p-6 rounded-lg shadow-sm">
+            <div class="flex mb-2">
+              {[...Array(5)].map(() => <span class="text-amber-400">★</span>)}
+            </div>
+            <p class="mb-4">
+              "Got quotes from 4 companies for our Riverdale foundation work. DrySpace wasn't the cheapest, but when I factored 
+              in their 25-year warranty, rebate handling, and financing options, they were the best value. The $3,400 
+              rebate saved us significantly, and the work quality exceeded expectations."
+            </p>
+            <p class="font-semibold">- Sarah M., Riverdale</p>
+            <p class="text-sm text-slate-500">Interior system: $16,200 (after rebate: $12,800)</p>
+          </div>
+
+          <div class="bg-white p-6 rounded-lg shadow-sm">
+            <div class="flex mb-2">
+              {[...Array(5)].map(() => <span class="text-amber-400">★</span>)}
+            </div>
+            <p class="mb-4">
+              "Emergency flooding in our High Park lower level. DrySpace responded in 45 minutes, pumped out the water, 
+              and gave us a transparent quote for permanent repairs. The 0% financing for 18 months made it affordable. 
+              Two years later, completely dry and couldn't be happier."
+            </p>
+            <p class="font-semibold">- James T., High Park</p>
+            <p class="text-sm text-slate-500">Interior + exterior: $28,500 (18-month 0% financing)</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA Section -->
+  <section class="py-16 bg-cyan-600 text-white">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-3xl font-bold mb-4">
+        Get Your Exact Protection Pricing Today
+      </h2>
+      <p class="text-xl mb-4">
+        Free inspection with detailed written estimate. No surprises, no hidden fees.
+      </p>
+      <p class="text-lg mb-8 text-cyan-200">
+        We handle rebate applications, offer 0% financing, and provide the region's best warranty.
+      </p>
+      
+      <div class="grid md:grid-cols-4 gap-4 mb-8 max-w-4xl mx-auto">
+        <div class="bg-cyan-700/50 p-4 rounded-lg">
+          <div class="text-2xl font-bold">FREE</div>
+          <div class="text-sm">Written Estimate</div>
+        </div>
+        <div class="bg-cyan-700/50 p-4 rounded-lg">
+          <div class="text-2xl font-bold">$3,400</div>
+          <div class="text-sm">Rebate Handled</div>
+        </div>
+        <div class="bg-cyan-700/50 p-4 rounded-lg">
+          <div class="text-2xl font-bold">0%</div>
+          <div class="text-sm">Financing Available</div>
+        </div>
+        <div class="bg-cyan-700/50 p-4 rounded-lg">
+          <div class="text-2xl font-bold">25 Year</div>
+          <div class="text-sm">Warranty Included</div>
+        </div>
+      </div>
+
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/free-inspection" 
+           class="bg-amber-400 text-slate-900 px-8 py-4 rounded-lg font-bold text-xl hover:bg-amber-300 transition">
+          Get Custom Quote
+        </a>
+        <a href="/free-inspection" 
+           class="bg-white text-cyan-600 px-8 py-4 rounded-lg font-bold text-xl hover:bg-slate-50 transition">
+          Book Free Inspection
+        </a>
+      </div>
+      
+      <div class="mt-6 text-sm text-cyan-200">
+        <p>⏰ Same-day estimates available | 🔒 Licensed & insured | ⭐ 847+ five-star reviews</p>
+        <p class="mt-2">Serving the Greater Toronto Area including all major municipalities</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Form -->
+  <ContactForm />
+</PageLayout>

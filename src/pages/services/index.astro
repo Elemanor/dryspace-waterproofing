@@ -1,0 +1,522 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import Hero from '../../components/sections/Hero.astro';
+import Stats from '../../components/sections/Stats.astro';
+import ContactForm from '../../components/ContactForm.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+
+// SEO metadata
+const pageTitle = "Waterproofing Services Toronto | Foundation Repair & Drainage Solutions";
+const pageDescription = "Complete waterproofing services in Toronto & GTA. Exterior & interior waterproofing, foundation repair, sump pumps, drainage systems. 25-year warranty. 24/7 emergency service.";
+
+// Service categories with all services
+const serviceCategories = [
+  {
+    category: "WATERPROOFING SOLUTIONS",
+    priority: "PRIMARY",
+    services: [
+      {
+        name: "EXTERIOR WATERPROOFING",
+        description: "Complete excavation and membrane installation. The most effective permanent solution.",
+        price: "$200-$400/linear foot",
+        warranty: "25 years",
+        href: "/services/exterior-waterproofing",
+        featured: true
+      },
+      {
+        name: "INTERIOR WATERPROOFING",
+        description: "Interior drainage systems and vapor barriers. Cost-effective water management.",
+        price: "$100-$150/linear foot",
+        warranty: "25 years",
+        href: "/services/interior-waterproofing",
+        featured: true
+      },
+      {
+        name: "CRAWL SPACE WATERPROOFING",
+        description: "Encapsulation and moisture control for crawl spaces.",
+        price: "$17-$27/sq ft",
+        warranty: "15 years",
+        href: "/services/crawl-space-waterproofing"
+      },
+      {
+        name: "WATERPROOF COATINGS",
+        description: "Professional-grade sealants and coatings for concrete and masonry.",
+        price: "$3-$5/sq ft",
+        warranty: "10 years",
+        href: "/services/waterproof-coatings"
+      }
+    ]
+  },
+  {
+    category: "FOUNDATION SERVICES",
+    priority: "PRIMARY",
+    services: [
+      {
+        name: "FOUNDATION REPAIR",
+        description: "Structural repairs for cracks, settlement, and damage. Licensed engineers.",
+        price: "$550-$43,000",
+        warranty: "25 years",
+        href: "/services/foundation-repair",
+        featured: true
+      },
+      {
+        name: "FOUNDATION CRACK REPAIR",
+        description: "Injection repair for foundation cracks. Stop water infiltration.",
+        price: "$550-$1,600/crack",
+        warranty: "Lifetime",
+        href: "/services/foundation-crack-repair"
+      },
+      {
+        name: "UNDERPINNING",
+        description: "Lower your basement or stabilize foundations. Add ceiling height.",
+        price: "$400-$550/linear foot",
+        warranty: "25 years",
+        href: "/services/underpinning"
+      },
+      {
+        name: "BOWING BASEMENT WALLS",
+        description: "Wall anchors and carbon fiber reinforcement for structural stability.",
+        price: "$5,400-$16,000",
+        warranty: "25 years",
+        href: "/services/bowing-basement-walls"
+      }
+    ]
+  },
+  {
+    category: "DRAINAGE & PUMP SYSTEMS",
+    priority: "PRIMARY",
+    services: [
+      {
+        name: "SUMP PUMP INSTALLATION",
+        description: "Triple pump systems with battery backup. City rebates available.",
+        price: "$2,200-$5,400",
+        warranty: "10 years",
+        href: "/services/sump-pump-installation",
+        featured: true,
+        rebate: "$1,850"
+      },
+      {
+        name: "INTERIOR DRAINAGE SYSTEMS",
+        description: "French drains and weeping tile for water management.",
+        price: "$100-$150/linear foot",
+        warranty: "25 years",
+        href: "/services/interior-drainage-systems"
+      },
+      {
+        name: "EXTERIOR DRAINAGE SOLUTIONS",
+        description: "Grading, downspout extensions, and surface drainage.",
+        price: "$2,200-$11,000",
+        warranty: "10 years",
+        href: "/services/exterior-drainage-solutions"
+      },
+      {
+        name: "WEEPING TILE SYSTEMS",
+        description: "Professional weeping tile installation and replacement.",
+        price: "$150-$250/linear foot",
+        warranty: "25 years",
+        href: "/services/weeping-tile"
+      },
+      {
+        name: "BACKWATER VALVE",
+        description: "Prevent sewage backup during floods. City rebates available.",
+        price: "$3,200-$4,300",
+        warranty: "Lifetime",
+        href: "/services/backwater-valve-installation",
+        rebate: "$1,350"
+      }
+    ]
+  },
+  {
+    category: "SPECIALTY SERVICES",
+    priority: "SECONDARY",
+    services: [
+      {
+        name: "EMERGENCY WATERPROOFING",
+        description: "24/7 emergency response for flooding and water damage.",
+        price: "Call for quote",
+        warranty: "Varies",
+        href: "/services/emergency-waterproofing",
+        emergency: true
+      },
+      {
+        name: "MOLD REMEDIATION",
+        description: "Professional mold removal and prevention.",
+        price: "$550-$6,500",
+        warranty: "2 years",
+        href: "/services/mold-remediation"
+      },
+      {
+        name: "EFFLORESCENCE TREATMENT",
+        description: "Remove white mineral deposits and prevent recurrence.",
+        price: "$550-$2,200",
+        warranty: "5 years",
+        href: "/services/efflorescence-treatment"
+      },
+      {
+        name: "WINDOW WELL INSTALLATION",
+        description: "Proper drainage for basement windows.",
+        price: "$1,600-$3,200/well",
+        warranty: "10 years",
+        href: "/services/window-well-installation"
+      },
+      {
+        name: "LEAK DETECTION",
+        description: "Advanced technology to find hidden water leaks.",
+        price: "$300-$550",
+        warranty: "Service guarantee",
+        href: "/services/leak-detection"
+      },
+      {
+        name: "SMART WATER MONITORING",
+        description: "WiFi-enabled leak detection and monitoring systems.",
+        price: "$550-$1,600",
+        warranty: "2 years",
+        href: "/services/smart-water-monitoring"
+      }
+    ]
+  }
+];
+
+// Service areas
+const serviceAreas = [
+  "Toronto", "North York", "Scarborough", "Etobicoke",
+  "Mississauga", "Brampton", "Vaughan", "Richmond Hill",
+  "Markham", "Oakville", "Burlington", "Hamilton"
+];
+
+// Schema markup
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Dryspace Waterproofing",
+  "description": pageDescription,
+  "telephone": "437-545-0067",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Toronto",
+    "addressRegion": "ON",
+    "addressCountry": "CA"
+  },
+  "areaServed": serviceAreas.map(area => ({
+    "@type": "City",
+    "name": area
+  }))
+};
+---
+
+<PageLayout 
+  title={pageTitle}
+  description={pageDescription}
+  showAnnouncement={true}
+>
+  
+  <!-- Breadcrumbs -->
+  <div class="container mx-auto px-4 mt-4">
+    <Breadcrumbs 
+      items={[
+        { name: "Home", url: "/" },
+        { name: "Services", url: "/services" },
+        { name: "Services" }
+      ]}
+    />
+  </div>
+
+<!-- Hero Section -->
+  <Hero 
+    title="WATERPROOFING SERVICES TORONTO"
+    subtitle="Complete foundation protection and waterproofing solutions. 25-year transferable warranty. Government rebates up to $3,700. Licensed & insured. 24/7 emergency service."
+    primaryCTA={{ text: "Get Free Inspection", href: "/free-inspection" }}
+    secondaryCTA={{ text: "Emergency: 437-545-0067", href: "tel:437-545-0067" }}
+    backgroundImage="/images/dryspace_hero_desktop.webp"
+    badge="24/7 EMERGENCY SERVICE"
+  />
+
+  <!-- Stats Section -->
+  <Stats />
+
+  <!-- Emergency Banner -->
+  <section class="bg-red-600 text-white py-8">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col md:flex-row items-center justify-between">
+        <div class="mb-4 md:mb-0">
+          <p class="text-2xl font-bold uppercase">FLOODING EMERGENCY?</p>
+          <p class="text-lg">We respond within 2 hours - 24 hours a day, 7 days a week</p>
+        </div>
+        <a href="tel:437-545-0067" class="bg-white text-red-600 px-8 py-4 font-bold uppercase hover:bg-slate-50 transition-colors">
+          CALL NOW: 437-545-0067
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Services Grid -->
+  {serviceCategories.map(category => (
+    <section class={`py-16 ${category.priority === 'PRIMARY' ? 'bg-white' : 'bg-slate-50'}`}>
+      <div class="container mx-auto px-4">
+        <div class="max-w-7xl mx-auto">
+          <!-- Category Header -->
+          <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4 uppercase">
+              {category.category}
+            </h2>
+            <div class="w-24 h-1 bg-amber-500 mx-auto"></div>
+          </div>
+
+          <!-- Services Grid -->
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {category.services.map(service => (
+              <a 
+                href={service.href}
+                class={`block bg-white border-4 ${
+                  service.featured ? 'border-cyan-500' : 
+                  service.emergency ? 'border-red-600' : 
+                  'border-slate-200'
+                } hover:border-slate-700 transition-colors relative group`}
+              >
+                {service.featured && (
+                  <div class="absolute -top-3 left-4 bg-amber-500 text-black px-3 py-1 text-xs font-bold uppercase">
+                    MOST POPULAR
+                  </div>
+                )}
+                {service.emergency && (
+                  <div class="absolute -top-3 left-4 bg-red-600 text-slate-900 px-3 py-1 text-xs font-bold uppercase">
+                    24/7 EMERGENCY
+                  </div>
+                )}
+                {service.rebate && (
+                  <div class="absolute -top-3 right-4 bg-cyan-600 text-slate-900 px-3 py-1 text-xs font-bold uppercase">
+                    {service.rebate} REBATE
+                  </div>
+                )}
+                
+                <div class="p-6">
+                  <h3 class="text-xl font-bold text-slate-900 uppercase mb-3 group-hover:text-amber-500 transition-colors">
+                    {service.name}
+                  </h3>
+                  
+                  <p class="text-slate-600 mb-4">
+                    {service.description}
+                  </p>
+                  
+                  <div class="space-y-2 text-sm">
+                    <div class="flex justify-between items-center">
+                      <span class="font-bold uppercase text-slate-500">Price:</span>
+                      <span class="font-bold text-slate-900">{service.price}</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                      <span class="font-bold uppercase text-slate-500">Warranty:</span>
+                      <span class="font-bold text-slate-900">{service.warranty}</span>
+                    </div>
+                  </div>
+                  
+                  <div class="mt-4 pt-4 border-t border-slate-200">
+                    <span class="text-amber-500 font-bold uppercase group-hover:text-slate-900 transition-colors">
+                      LEARN MORE →
+                    </span>
+                  </div>
+                </div>
+              </a>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  ))}
+
+  <!-- Why Choose Our Services -->
+  <section class="py-16 bg-navy-900 text-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-4xl font-bold mb-4 uppercase">
+            WHY CHOOSE DRYSPACE WATERPROOFING
+          </h2>
+          <p class="text-lg text-slate-300">
+            Toronto's most trusted waterproofing contractor since 1999
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="text-center">
+            <div class="text-5xl font-bold text-cyan-400 mb-4">25</div>
+            <p class="text-xl font-bold uppercase mb-2">YEAR WARRANTY</p>
+            <p class="text-slate-300">Fully transferable warranty that adds value to your home</p>
+          </div>
+          
+          <div class="text-center">
+            <div class="text-5xl font-bold text-cyan-400 mb-4">24/7</div>
+            <p class="text-xl font-bold uppercase mb-2">EMERGENCY SERVICE</p>
+            <p class="text-slate-300">2-hour response time for flooding emergencies</p>
+          </div>
+          
+          <div class="text-center">
+            <div class="text-5xl font-bold text-cyan-400 mb-4">$3.4K</div>
+            <p class="text-xl font-bold uppercase mb-2">CITY REBATES</p>
+            <p class="text-slate-300">We handle all paperwork for maximum savings</p>
+          </div>
+        </div>
+
+        <div class="grid md:grid-cols-4 gap-6 mt-12 pt-12 border-t border-slate-600">
+          <div class="text-center">
+            <p class="text-3xl font-bold text-cyan-400 mb-2">10,000+</p>
+            <p class="uppercase text-slate-300">Homes Protected</p>
+          </div>
+          <div class="text-center">
+            <p class="text-3xl font-bold text-cyan-400 mb-2">4.9</p>
+            <p class="uppercase text-slate-300">Google Rating</p>
+          </div>
+          <div class="text-center">
+            <p class="text-3xl font-bold text-cyan-400 mb-2">100%</p>
+            <p class="uppercase text-slate-300">Licensed & Insured</p>
+          </div>
+          <div class="text-center">
+            <p class="text-3xl font-bold text-cyan-400 mb-2">0%</p>
+            <p class="uppercase text-slate-300">Financing Available</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Service Process -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-4xl font-bold text-slate-900 mb-4 uppercase">
+            OUR SERVICE PROCESS
+          </h2>
+          <p class="text-lg text-slate-600">
+            Professional service from inspection to warranty
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-4 gap-6">
+          <div class="text-center">
+            <div class="bg-amber-500 text-black text-3xl font-bold w-16 h-16  flex items-center justify-center mx-auto mb-4">
+              1
+            </div>
+            <h3 class="text-xl font-bold uppercase mb-2">FREE INSPECTION</h3>
+            <p class="text-slate-600">Comprehensive assessment with detailed report and photos</p>
+          </div>
+          
+          <div class="text-center">
+            <div class="bg-amber-500 text-black text-3xl font-bold w-16 h-16  flex items-center justify-center mx-auto mb-4">
+              2
+            </div>
+            <h3 class="text-xl font-bold uppercase mb-2">CUSTOM SOLUTION</h3>
+            <p class="text-slate-600">Tailored approach with multiple options and transparent pricing</p>
+          </div>
+          
+          <div class="text-center">
+            <div class="bg-amber-500 text-black text-3xl font-bold w-16 h-16  flex items-center justify-center mx-auto mb-4">
+              3
+            </div>
+            <h3 class="text-xl font-bold uppercase mb-2">PROFESSIONAL WORK</h3>
+            <p class="text-slate-600">Licensed technicians with minimal disruption to your home</p>
+          </div>
+          
+          <div class="text-center">
+            <div class="bg-amber-500 text-black text-3xl font-bold w-16 h-16  flex items-center justify-center mx-auto mb-4">
+              4
+            </div>
+            <h3 class="text-xl font-bold uppercase mb-2">WARRANTY & SUPPORT</h3>
+            <p class="text-slate-600">25-year warranty with lifetime support and maintenance</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Service Areas -->
+  <section class="py-16 bg-slate-50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-4xl font-bold text-slate-900 mb-4 uppercase">
+            SERVICE AREAS
+          </h2>
+          <p class="text-lg text-slate-600">
+            Professional waterproofing services across the Greater Toronto Area
+          </p>
+        </div>
+        
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          {serviceAreas.map(area => (
+            <div class="bg-white border-2 border-slate-200 p-4 text-center hover:border-cyan-500 transition-colors">
+              <p class="font-bold text-slate-900 uppercase">{area}</p>
+            </div>
+          ))}
+        </div>
+        
+        <div class="mt-8 bg-amber-500 text-slate-900 p-6 text-center">
+          <p class="text-xl font-bold uppercase">
+            SERVING THE GTA FOR OVER 25 YEARS
+          </p>
+          <p class="mt-2">
+            Licensed, insured, and WSIB compliant for your protection
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certifications & Memberships -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-4xl font-bold text-slate-900 mb-4 uppercase">
+            CERTIFICATIONS & MEMBERSHIPS
+          </h2>
+        </div>
+        
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div class="bg-slate-50 border-2 border-slate-200 p-6 text-center">
+            <p class="font-bold uppercase">CITY OF TORONTO</p>
+            <p class="text-sm text-slate-500">Licensed Contractor</p>
+          </div>
+          <div class="bg-slate-50 border-2 border-slate-200 p-6 text-center">
+            <p class="font-bold uppercase">WSIB</p>
+            <p class="text-sm text-slate-500">Fully Compliant</p>
+          </div>
+          <div class="bg-slate-50 border-2 border-slate-200 p-6 text-center">
+            <p class="font-bold uppercase">$5 MILLION</p>
+            <p class="text-sm text-slate-500">Liability Insurance</p>
+          </div>
+          <div class="bg-slate-50 border-2 border-slate-200 p-6 text-center">
+            <p class="font-bold uppercase">BBB A+</p>
+            <p class="text-sm text-slate-500">Accredited Business</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Form -->
+  <ContactForm />
+
+  <!-- Bottom CTA -->
+  <section class="py-16 bg-amber-500">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-4xl font-bold text-black mb-4 uppercase">
+          NEED WATERPROOFING? GET YOUR FREE INSPECTION
+        </h2>
+        <p class="text-xl text-black mb-8">
+          Professional assessment with no obligation. Same-day service available.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="/free-inspection" class="bg-black text-white px-8 py-4 font-bold uppercase hover:bg-navy-900 transition-colors">
+            SCHEDULE FREE INSPECTION
+          </a>
+          <a href="tel:437-545-0067" class="bg-white text-black px-8 py-4 font-bold uppercase hover:bg-slate-50 transition-colors">
+            CALL: 437-545-0067
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</PageLayout>
+
+<script type="application/ld+json" set:html={JSON.stringify(serviceSchema)}></script>

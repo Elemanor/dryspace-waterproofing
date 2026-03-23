@@ -1,0 +1,230 @@
+---
+export interface Props {
+  showSizing?: boolean;
+  showThickness?: boolean;
+  showStepFootings?: boolean;
+  showAdjustments?: boolean;
+}
+
+const { 
+  showSizing = true, 
+  showThickness = true,
+  showStepFootings = false,
+  showAdjustments = false
+} = Astro.props;
+---
+
+<div class="nbc-footing-specs bg-cyan-50 rounded-lg p-6 my-8">
+  <h3 class="text-xl font-bold mb-4 flex items-center">
+    <span class="text-cyan-600 mr-2">🏗️</span>
+    NBC 9.15.3 Foundation Footing Requirements
+  </h3>
+
+  <div class="bg-amber-50 border-l-4 border-cyan-500 p-4 mb-6">
+    <p class="text-sm">
+      <strong>Purpose:</strong> Footings spread concentrated loads over wider areas to prevent excessive 
+      settlement. Must rest on undisturbed soil, rock, or compacted granular fill (no pyritic material).
+    </p>
+  </div>
+
+  {showSizing && (
+    <div class="bg-white rounded-lg p-6 mb-6">
+      <h4 class="font-bold mb-4 text-cyan-700">NBC Table 9.15.3.4 - Minimum Footing Sizes</h4>
+      
+      <div class="mb-4">
+        <h5 class="font-semibold mb-3">Strip Footings - Minimum Width</h5>
+        <table class="w-full text-sm">
+          <thead class="bg-cyan-50">
+            <tr>
+              <th class="px-3 py-2 text-left">Storeys</th>
+              <th class="px-3 py-2 text-center">Exterior Walls</th>
+              <th class="px-3 py-2 text-center">Interior Walls</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-b">
+              <td class="px-3 py-2">1 Storey</td>
+              <td class="px-3 py-2 text-center font-bold">250mm</td>
+              <td class="px-3 py-2 text-center font-bold">200mm</td>
+            </tr>
+            <tr class="border-b bg-slate-50">
+              <td class="px-3 py-2">2 Storeys</td>
+              <td class="px-3 py-2 text-center font-bold">350mm</td>
+              <td class="px-3 py-2 text-center font-bold">350mm</td>
+            </tr>
+            <tr>
+              <td class="px-3 py-2">3 Storeys</td>
+              <td class="px-3 py-2 text-center font-bold">450mm</td>
+              <td class="px-3 py-2 text-center font-bold">500mm</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-4 mt-4">
+        <div class="bg-cyan-50 p-3 rounded">
+          <h5 class="font-semibold text-sm mb-2">Column Footings (3m spacing)</h5>
+          <ul class="text-xs space-y-1">
+            <li>• 1 Storey: 0.40 m² (640×640mm)</li>
+            <li>• 2 Storeys: 0.75 m² (870×870mm)</li>
+            <li>• 3 Storeys: 1.00 m² (1000×1000mm)</li>
+          </ul>
+        </div>
+        <div class="bg-cyan-50 p-3 rounded">
+          <h5 class="font-semibold text-sm mb-2">Conditions</h5>
+          <ul class="text-xs space-y-1">
+            <li>• Max 4.9m joist span</li>
+            <li>• Max 2.4 kPa live load</li>
+            <li>• Min 75 kPa soil bearing</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  )}
+
+  {showThickness && (
+    <div class="bg-cyan-50 rounded-lg p-6 mb-6">
+      <h4 class="font-bold mb-4 text-cyan-700">9.15.3.8 Footing Thickness</h4>
+      
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <h5 class="font-semibold mb-3">Requirements</h5>
+          <ul class="text-sm space-y-2">
+            <li class="flex items-start">
+              <span class="text-cyan-600 mr-2">✓</span>
+              <span>Minimum 100mm (4") thickness</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-cyan-600 mr-2">✓</span>
+              <span>Thickness ≥ projection (T ≥ P)</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-cyan-600 mr-2">✓</span>
+              <span>45° shear line from wall face</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-cyan-600 mr-2">✓</span>
+              <span>Unless reinforced</span>
+            </li>
+          </ul>
+        </div>
+        
+        <div class="bg-white p-4 rounded">
+          <h5 class="font-semibold mb-2 text-sm">Example Calculation</h5>
+          <div class="text-xs space-y-1">
+            <p>200mm wall on 600mm footing:</p>
+            <p>• Projection = (600-200)/2 = 200mm</p>
+            <p>• Min thickness = 200mm</p>
+            <p class="font-bold text-cyan-700">T = 200mm required</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  )}
+
+  {showStepFootings && (
+    <div class="bg-orange-50 rounded-lg p-6 mb-6">
+      <h4 class="font-bold mb-4 text-orange-700">9.15.3.9 Step Footings</h4>
+      
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <h5 class="font-semibold mb-3">Maximum Dimensions</h5>
+          <div class="bg-white p-3 rounded">
+            <ul class="text-sm space-y-2">
+              <li><strong>Rise:</strong> 600mm (24") maximum</li>
+              <li><strong>Run:</strong> 600mm (24") minimum</li>
+              <li><strong>Purpose:</strong> Prevent shear failure</li>
+              <li><strong>Top:</strong> Must be horizontal</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div>
+          <h5 class="font-semibold mb-3">Design Rationale</h5>
+          <ul class="text-sm space-y-2">
+            <li>• Prevents sliding on slopes</li>
+            <li>• Reduces excavation depth</li>
+            <li>• Maintains horizontal bearing</li>
+            <li>• Avoids soil instability >600mm</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  )}
+
+  {showAdjustments && (
+    <div class="bg-amber-50 rounded-lg p-6 mb-6">
+      <h4 class="font-bold mb-4 text-amber-600">Width Adjustments Required</h4>
+      
+      <div class="grid md:grid-cols-2 gap-4">
+        <div class="bg-white p-4 rounded">
+          <h5 class="font-bold mb-2 text-sm">Masonry Loads (9.15.3.5-6)</h5>
+          <ul class="text-xs space-y-1">
+            <li>• Brick veneer: +65mm/storey</li>
+            <li>• Solid masonry: +130mm/storey</li>
+            <li>• Interior masonry: +100mm/storey</li>
+            <li>• Flat ICF walls: per load</li>
+          </ul>
+        </div>
+        
+        <div class="bg-white p-4 rounded">
+          <h5 class="font-bold mb-2 text-sm">Special Conditions</h5>
+          <ul class="text-xs space-y-1">
+            <li>• High water table: 2× width</li>
+            <li>• Spans >4.9m: proportional increase</li>
+            <li>• Columns >3m: area × ratio</li>
+            <li>• Weak soils: engineer design</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mt-4 p-3 bg-amber-50 rounded">
+        <p class="text-xs">
+          <strong>Example - 2 storey with brick veneer:</strong> 350mm base + 65mm = 415mm minimum width
+        </p>
+      </div>
+    </div>
+  )}
+
+  <!-- Critical Requirements -->
+  <div class="bg-red-50 rounded-lg p-6">
+    <h4 class="font-bold mb-4 text-red-700">Critical Requirements</h4>
+    
+    <div class="grid md:grid-cols-3 gap-3">
+      <div class="bg-white p-3 rounded">
+        <h5 class="font-semibold text-xs mb-2">Support (9.15.3.2)</h5>
+        <ul class="text-xs space-y-1">
+          <li>• Undisturbed soil</li>
+          <li>• Sound rock</li>
+          <li>• Compacted fill (95%)</li>
+          <li>• No organics</li>
+        </ul>
+      </div>
+      
+      <div class="bg-white p-3 rounded">
+        <h5 class="font-semibold text-xs mb-2">Depth</h5>
+        <ul class="text-xs space-y-1">
+          <li>• Below frost line</li>
+          <li>• 1.2m minimum (GTA)</li>
+          <li>• Consider services</li>
+          <li>• Check water table</li>
+        </ul>
+      </div>
+      
+      <div class="bg-white p-3 rounded">
+        <h5 class="font-semibold text-xs mb-2">Concrete</h5>
+        <ul class="text-xs space-y-1">
+          <li>• 15 MPa minimum</li>
+          <li>• 0.70 W/C ratio max</li>
+          <li>• 7 day cure min</li>
+          <li>• Cold weather protection</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="mt-6 text-xs text-slate-500 border-t pt-3">
+    <p><strong>Reference:</strong> NBC 2015 Part 9, Section 9.15.3 - Footings</p>
+    <p>Proper footing design prevents settlement and ensures structural stability.</p>
+  </div>
+</div>

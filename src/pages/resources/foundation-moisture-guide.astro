@@ -1,0 +1,1241 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import ContactForm from '../../components/ContactForm.astro';
+import ResourceImageGallery from '../../components/ResourceImageGallery.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+---
+
+<PageLayout 
+  title="Foundation Moisture Issues Guide Toronto | Water Management, Efflorescence, Mold | Dryspace"
+  description="Complete guide to foundation moisture problems in Toronto: water management, drainage failures, efflorescence, mold prevention, weeping tile installation, high water table solutions."
+  keywords="foundation moisture Toronto, water management foundation, efflorescence basement, mold prevention foundation, weeping tile installation, drainage failure Toronto, high water table solutions"
+>
+  
+  <!-- Breadcrumbs -->
+  <div class="container mx-auto px-4 mt-4">
+    <Breadcrumbs 
+      items={[
+        { name: "Home", url: "/" },
+        { name: "Resources", url: "/resources" },
+        { name: "Foundation Moisture Guide" }
+      ]}
+    />
+  </div>
+
+<main class="flex-grow">
+    <!-- Hero Section -->
+    <section class="bg-navy-900 text-white py-20">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="max-w-4xl">
+          <h1 class="text-4xl md:text-5xl font-bold mb-6">
+            Foundation Moisture Issues: Complete Toronto Management Guide
+          </h1>
+          <p class="text-xl mb-8 text-cyan-100">
+            Toronto's unique climate—heavy spring snowmelt, summer storms, and expansive clay soil—creates complex moisture challenges. Understanding water sources and management systems is critical for protecting your foundation and basement.
+          </p>
+          
+          <!-- Moisture Risk Factors -->
+          <div class="bg-cyan-800 border border-cyan-600 p-6 rounded-lg mb-8">
+            <h3 class="text-xl font-bold mb-4 flex items-center">
+              <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+              Toronto Foundation Moisture Risk Factors
+            </h3>
+            <div class="grid md:grid-cols-4 gap-4">
+              <div>
+                <h4 class="font-semibold mb-2">Climate:</h4>
+                <ul class="text-sm space-y-1 text-cyan-200">
+                  <li>• Spring snowmelt flooding</li>
+                  <li>• Heavy summer storms</li>
+                  <li>• Fall saturation periods</li>
+                  <li>• Freeze-thaw cycles</li>
+                </ul>
+              </div>
+              <div>
+                <h4 class="font-semibold mb-2">Geological:</h4>
+                <ul class="text-sm space-y-1 text-cyan-200">
+                  <li>• Expansive clay soil</li>
+                  <li>• High water table areas</li>
+                  <li>• Poor soil drainage</li>
+                  <li>• Ravine proximity</li>
+                </ul>
+              </div>
+              <div>
+                <h4 class="font-semibold mb-2">Urban:</h4>
+                <ul class="text-sm space-y-1 text-cyan-200">
+                  <li>• Increased surface runoff</li>
+                  <li>• Storm sewer capacity</li>
+                  <li>• Construction impacts</li>
+                  <li>• Utility line failures</li>
+                </ul>
+              </div>
+              <div>
+                <h4 class="font-semibold mb-2">Building:</h4>
+                <ul class="text-sm space-y-1 text-cyan-200">
+                  <li>• Poor original drainage</li>
+                  <li>• Aging waterproofing</li>
+                  <li>• Foundation settling</li>
+                  <li>• Inadequate ventilation</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex flex-col md:flex-row gap-4">
+            <a href="tel:437-545-0067" class="bg-cyan-600 hover:bg-cyan-700 text-white font-bold py-4 px-8 rounded-lg text-lg transition-colors flex items-center justify-center">
+              <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+              </svg>
+              Emergency Moisture: 437-545-0067
+            </a>
+            <a href="/free-inspection" class="bg-white hover:bg-slate-50 text-cyan-800 font-bold py-4 px-8 rounded-lg text-lg transition-colors">
+              Free Moisture Assessment
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Water Sources Overview -->
+    <section class="py-16 bg-white">
+      <div class="max-w-7xl mx-auto px-4">
+        <h2 class="text-3xl font-bold mb-12 text-center">Water Sources Affecting Toronto Foundations</h2>
+        
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+          
+          <div class="bg-red-50 p-6 rounded-lg border-l-4 border-red-500">
+            <div class="flex items-center mb-4">
+              <div class="bg-red-500 p-2 rounded">
+                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path>
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold ml-3">Surface Water</h3>
+            </div>
+            <p class="text-slate-600 mb-3">Rainwater and snowmelt that flows toward the foundation due to improper grading.</p>
+            <div class="space-y-2 text-sm">
+              <div><strong>Sources:</strong></div>
+              <ul class="text-slate-500 space-y-1 pl-4">
+                <li>• Poor lot grading</li>
+                <li>• Clogged eavestroughs</li>
+                <li>• Missing downspout extensions</li>
+                <li>• Driveway/walkway pooling</li>
+                <li>• Landscaping water collection</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="bg-cyan-50 p-6 rounded-lg border-l-4 border-cyan-500">
+            <div class="flex items-center mb-4">
+              <div class="bg-cyan-500 p-2 rounded">
+                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold ml-3">Groundwater</h3>
+            </div>
+            <p class="text-slate-600 mb-3">Natural water table fluctuations and springs that create hydrostatic pressure.</p>
+            <div class="space-y-2 text-sm">
+              <div><strong>Sources:</strong></div>
+              <ul class="text-slate-500 space-y-1 pl-4">
+                <li>• High water table areas</li>
+                <li>• Natural springs</li>
+                <li>• Ravine seepage</li>
+                <li>• Lake Ontario influence</li>
+                <li>• Seasonal water table rise</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="bg-cyan-50 p-6 rounded-lg border-l-4 border-cyan-500">
+            <div class="flex items-center mb-4">
+              <div class="bg-cyan-500 p-2 rounded">
+                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold ml-3">Capillary Action</h3>
+            </div>
+            <p class="text-slate-600 mb-3">Water drawn up through concrete and masonry by molecular forces.</p>
+            <div class="space-y-2 text-sm">
+              <div><strong>Sources:</strong></div>
+              <ul class="text-slate-500 space-y-1 pl-4">
+                <li>• Ground moisture wicking</li>
+                <li>• Concrete porosity</li>
+                <li>• Mortar joint absorption</li>
+                <li>• Salt crystallization cycles</li>
+                <li>• Missing vapor barriers</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="bg-amber-50 p-6 rounded-lg border-l-4 border-cyan-500">
+            <div class="flex items-center mb-4">
+              <div class="bg-amber-500 p-2 rounded">
+                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.111 16.404a5.5 5.5 0 017.778 0M12 20h.01m-7.08-7.071c3.904-3.905 10.236-3.905 14.141 0M1.394 9.393c5.857-5.857 15.355-5.857 21.213 0"></path>
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold ml-3">Interior Sources</h3>
+            </div>
+            <p class="text-slate-600 mb-3">Moisture generated inside the building from human activities and mechanical systems.</p>
+            <div class="space-y-2 text-sm">
+              <div><strong>Sources:</strong></div>
+              <ul class="text-slate-500 space-y-1 pl-4">
+                <li>• Cooking and bathing humidity</li>
+                <li>• Clothes drying</li>
+                <li>• Poor ventilation</li>
+                <li>• Leaking appliances</li>
+                <li>• Humidifier over-use</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="bg-purple-50 p-6 rounded-lg border-l-4 border-purple-500">
+            <div class="flex items-center mb-4">
+              <div class="bg-purple-500 p-2 rounded">
+                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path>
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold ml-3">Lateral Water</h3>
+            </div>
+            <p class="text-slate-600 mb-3">Water that moves horizontally through soil layers and encounters foundation walls.</p>
+            <div class="space-y-2 text-sm">
+              <div><strong>Sources:</strong></div>
+              <ul class="text-slate-500 space-y-1 pl-4">
+                <li>• Perched water tables</li>
+                <li>• Sloping terrain drainage</li>
+                <li>• Neighboring property runoff</li>
+                <li>• Utility trench seepage</li>
+                <li>• Broken water/sewer mains</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="bg-orange-50 p-6 rounded-lg border-l-4 border-orange-500">
+            <div class="flex items-center mb-4">
+              <div class="bg-orange-500 p-2 rounded">
+                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold ml-3">Condensation</h3>
+            </div>
+            <p class="text-slate-600 mb-3">Moisture that forms when warm, humid air meets cold foundation surfaces.</p>
+            <div class="space-y-2 text-sm">
+              <div><strong>Sources:</strong></div>
+              <ul class="text-slate-500 space-y-1 pl-4">
+                <li>• Summer cooling of basement</li>
+                <li>• Poor insulation/vapor barriers</li>
+                <li>• HVAC system issues</li>
+                <li>• Cold water pipes sweating</li>
+                <li>• Inadequate ventilation</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Moisture Evidence & Identification -->
+    <section class="py-16 bg-slate-50">
+      <div class="max-w-7xl mx-auto px-4">
+        <h2 class="text-3xl font-bold mb-12 text-center">Identifying Foundation Moisture Evidence</h2>
+        
+        <div class="space-y-12">
+          
+          <!-- Efflorescence -->
+          <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+            <div class="bg-amber-700 text-white p-6">
+              <h3 class="text-2xl font-bold mb-2">Efflorescence: White Mineral Deposits</h3>
+              <p class="text-amber-100">Most visible sign of water migration through foundation walls</p>
+            </div>
+            <div class="p-6">
+              <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                  <h4 class="text-xl font-semibold mb-4">What is Efflorescence?</h4>
+                  <p class="text-slate-600 mb-4">
+                    Efflorescence occurs when water carrying dissolved minerals (primarily salts) migrates through concrete, brick, or stone. As water evaporates at the surface, it leaves behind white, chalky deposits.
+                  </p>
+                  
+                  <h5 class="font-semibold mb-2">Formation Process:</h5>
+                  <ol class="list-decimal list-inside space-y-1 text-slate-500 text-sm mb-4">
+                    <li>Water enters foundation wall</li>
+                    <li>Dissolves minerals from concrete/mortar</li>
+                    <li>Migrates through wall to interior surface</li>
+                    <li>Evaporates, leaving mineral deposits</li>
+                  </ol>
+
+                  <h5 class="font-semibold mb-2">Common Mineral Types:</h5>
+                  <ul class="space-y-1 text-slate-500 text-sm">
+                    <li><strong>Calcium Carbonate:</strong> White, chalky (limestone)</li>
+                    <li><strong>Sodium Sulfate:</strong> White crystals (concrete additives)</li>
+                    <li><strong>Potassium Sulfate:</strong> Needle-like crystals</li>
+                    <li><strong>Calcium Sulfate:</strong> Gypsum deposits</li>
+                  </ul>
+                </div>
+                
+                <div>
+                  <h4 class="text-xl font-semibold mb-4">Diagnostic Significance</h4>
+                  <div class="space-y-4">
+                    <div class="bg-cyan-50 border border-green-300 p-3 rounded">
+                      <h5 class="font-semibold text-cyan-700 mb-2">Primary Efflorescence:</h5>
+                      <p class="text-sm text-cyan-700 mb-2">Forms during construction from excess water in concrete mix</p>
+                      <ul class="text-sm text-cyan-700 space-y-1">
+                        <li>• Usually harmless</li>
+                        <li>• Stops after first year</li>
+                        <li>• Uniform distribution</li>
+                        <li>• No ongoing moisture issues</li>
+                      </ul>
+                    </div>
+                    <div class="bg-red-100 border border-red-300 p-3 rounded">
+                      <h5 class="font-semibold text-red-800 mb-2">Secondary Efflorescence:</h5>
+                      <p class="text-sm text-red-700 mb-2">Indicates ongoing water intrusion requiring attention</p>
+                      <ul class="text-sm text-red-700 space-y-1">
+                        <li>• Continuous formation</li>
+                        <li>• Concentrated in wet areas</li>
+                        <li>• Accompanies staining/odors</li>
+                        <li>• Structural damage potential</li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  <h4 class="text-xl font-semibold mb-4 mt-6">Treatment Approach</h4>
+                  <div class="space-y-2 text-sm">
+                    <div class="flex items-start">
+                      <div class="w-2 h-2 bg-cyan-500 rounded-full mt-1 mr-2"></div>
+                      <div><strong>Address Water Source:</strong> Fix leaks before cleaning deposits</div>
+                    </div>
+                    <div class="flex items-start">
+                      <div class="w-2 h-2 bg-cyan-500 rounded-full mt-1 mr-2"></div>
+                      <div><strong>Physical Removal:</strong> Wire brush and water cleaning</div>
+                    </div>
+                    <div class="flex items-start">
+                      <div class="w-2 h-2 bg-cyan-500 rounded-full mt-1 mr-2"></div>
+                      <div><strong>Acid Cleaning:</strong> Muriatic acid for stubborn deposits</div>
+                    </div>
+                    <div class="flex items-start">
+                      <div class="w-2 h-2 bg-cyan-500 rounded-full mt-1 mr-2"></div>
+                      <div><strong>Prevent Return:</strong> Waterproofing and ventilation</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Mold and Mildew -->
+          <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+            <div class="bg-red-800 text-white p-6">
+              <h3 class="text-2xl font-bold mb-2">Mold and Mildew Growth</h3>
+              <p class="text-red-100">Health hazard requiring immediate attention and moisture control</p>
+            </div>
+            <div class="p-6">
+              <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                  <h4 class="text-xl font-semibold mb-4">Growth Conditions</h4>
+                  <p class="text-slate-600 mb-4">
+                    Mold thrives in Toronto basements due to ideal conditions: moisture, organic materials, and moderate temperatures.
+                  </p>
+                  
+                  <h5 class="font-semibold mb-2">Requirements for Growth:</h5>
+                  <ul class="space-y-1 text-slate-500 text-sm mb-4">
+                    <li><strong>Moisture:</strong> >60% relative humidity</li>
+                    <li><strong>Temperature:</strong> 15-30°C (typical basement range)</li>
+                    <li><strong>Organic Material:</strong> Wood, drywall, carpet</li>
+                    <li><strong>Poor Air Circulation:</strong> Stagnant air pockets</li>
+                  </ul>
+
+                  <h5 class="font-semibold mb-2">Common Basement Locations:</h5>
+                  <ul class="space-y-1 text-slate-500 text-sm">
+                    <li>• Behind finished walls</li>
+                    <li>• Around windows and doors</li>
+                    <li>• Near water heaters/utilities</li>
+                    <li>• Carpet over concrete</li>
+                    <li>• Storage areas</li>
+                  </ul>
+                </div>
+                
+                <div>
+                  <h4 class="text-xl font-semibold mb-4">Types & Identification</h4>
+                  <div class="space-y-3">
+                    <div class="bg-slate-50 p-3 rounded">
+                      <h5 class="font-semibold mb-1">Surface Mold</h5>
+                      <p class="text-sm text-slate-500">Visible growth on surfaces, often black, green, or white patches</p>
+                    </div>
+                    <div class="bg-slate-50 p-3 rounded">
+                      <h5 class="font-semibold mb-1">Hidden Mold</h5>
+                      <p class="text-sm text-slate-500">Behind walls, under carpets - detected by musty odors</p>
+                    </div>
+                    <div class="bg-slate-50 p-3 rounded">
+                      <h5 class="font-semibold mb-1">Allergenic Molds</h5>
+                      <p class="text-sm text-slate-500">Trigger respiratory symptoms (Penicillium, Aspergillus)</p>
+                    </div>
+                    <div class="bg-slate-50 p-3 rounded">
+                      <h5 class="font-semibold mb-1">Toxic Molds</h5>
+                      <p class="text-sm text-slate-500">Produce mycotoxins (Stachybotrys chartarum - "black mold")</p>
+                    </div>
+                  </div>
+
+                  <h4 class="text-lg font-semibold mb-2 mt-4">Health Impacts</h4>
+                  <ul class="space-y-1 text-slate-500 text-sm">
+                    <li>• Respiratory problems</li>
+                    <li>• Allergic reactions</li>
+                    <li>• Asthma exacerbation</li>
+                    <li>• Eye/skin irritation</li>
+                    <li>• Immune system impact</li>
+                  </ul>
+                </div>
+                
+                <div>
+                  <h4 class="text-xl font-semibold mb-4">Prevention & Treatment</h4>
+                  <div class="space-y-4">
+                    <div class="bg-cyan-50 border border-blue-300 p-3 rounded">
+                      <h5 class="font-semibold text-cyan-700 mb-2">Prevention Strategies:</h5>
+                      <ul class="text-sm text-cyan-700 space-y-1">
+                        <li>• Control moisture <60% RH</li>
+                        <li>• Proper ventilation systems</li>
+                        <li>• Fix water leaks immediately</li>
+                        <li>• Use mold-resistant materials</li>
+                        <li>• Regular inspection/cleaning</li>
+                      </ul>
+                    </div>
+                    <div class="bg-cyan-50 border border-green-300 p-3 rounded">
+                      <h5 class="font-semibold text-cyan-700 mb-2">Safe Removal (Small Areas):</h5>
+                      <ul class="text-sm text-cyan-700 space-y-1">
+                        <li>• Wear N95 respirator</li>
+                        <li>• Use bleach solution (1:10)</li>
+                        <li>• Remove/replace porous materials</li>
+                        <li>• Dry area completely</li>
+                        <li>• Fix moisture source first</li>
+                      </ul>
+                    </div>
+                    <div class="bg-red-100 border border-red-300 p-3 rounded">
+                      <h5 class="font-semibold text-red-800 mb-2">Professional Required:</h5>
+                      <ul class="text-sm text-red-700 space-y-1">
+                        <li>• Areas >10 square feet</li>
+                        <li>• HVAC system contamination</li>
+                        <li>• Health symptoms present</li>
+                        <li>• Hidden mold suspected</li>
+                        <li>• Immunocompromised occupants</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Musty Odors and Air Quality -->
+          <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+            <div class="bg-purple-800 text-white p-6">
+              <h3 class="text-2xl font-bold mb-2">Musty Odors and Air Quality</h3>
+              <p class="text-purple-100">Often the first sign of moisture problems before visible damage appears</p>
+            </div>
+            <div class="p-6">
+              <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                  <h4 class="text-xl font-semibold mb-4">Odor Sources & Chemistry</h4>
+                  <p class="text-slate-600 mb-4">
+                    Musty basement odors result from microbial volatile organic compounds (MVOCs) produced by mold, mildew, and bacteria in moisture-rich environments.
+                  </p>
+
+                  <h5 class="font-semibold mb-2">Primary MVOC Producers:</h5>
+                  <ul class="space-y-2 text-slate-500 text-sm mb-4">
+                    <li><strong>Geotrichum candidum:</strong> Sweet, musty odor</li>
+                    <li><strong>Penicillium species:</strong> Earthy, soil-like smell</li>
+                    <li><strong>Aspergillus versicolor:</strong> Moldy, stale odor</li>
+                    <li><strong>Stachybotrys chartarum:</strong> Strong, pungent smell</li>
+                    <li><strong>Actinomycetes bacteria:</strong> Earthy, basement smell</li>
+                  </ul>
+
+                  <h5 class="font-semibold mb-2">Odor Characteristics:</h5>
+                  <div class="space-y-2">
+                    <div class="flex items-start">
+                      <div class="w-2 h-2 bg-purple-500 rounded-full mt-1 mr-2"></div>
+                      <div class="text-sm"><strong>Musty/Moldy:</strong> Active microbial growth</div>
+                    </div>
+                    <div class="flex items-start">
+                      <div class="w-2 h-2 bg-purple-500 rounded-full mt-1 mr-2"></div>
+                      <div class="text-sm"><strong>Earthy/Soil-like:</strong> Geological moisture sources</div>
+                    </div>
+                    <div class="flex items-start">
+                      <div class="w-2 h-2 bg-purple-500 rounded-full mt-1 mr-2"></div>
+                      <div class="text-sm"><strong>Sewage-like:</strong> Drain backup or sewer gas</div>
+                    </div>
+                    <div class="flex items-start">
+                      <div class="w-2 h-2 bg-purple-500 rounded-full mt-1 mr-2"></div>
+                      <div class="text-sm"><strong>Chemical:</strong> Building materials breakdown</div>
+                    </div>
+                  </div>
+                </div>
+                
+                <div>
+                  <h4 class="text-xl font-semibold mb-4">Air Quality Testing</h4>
+                  <div class="space-y-4">
+                    <div class="bg-slate-50 p-4 rounded">
+                      <h5 class="font-semibold mb-2">Professional Testing Methods:</h5>
+                      <ul class="text-sm space-y-1">
+                        <li><strong>Air Sampling:</strong> Spore count analysis</li>
+                        <li><strong>Surface Sampling:</strong> Direct mold testing</li>
+                        <li><strong>Bulk Sampling:</strong> Material contamination</li>
+                        <li><strong>MVOC Analysis:</strong> Chemical odor identification</li>
+                        <li><strong>Moisture Mapping:</strong> Hidden moisture detection</li>
+                      </ul>
+                    </div>
+
+                    <div class="bg-slate-50 p-4 rounded">
+                      <h5 class="font-semibold mb-2">DIY Testing Options:</h5>
+                      <ul class="text-sm space-y-1">
+                        <li><strong>Hygrometer:</strong> Humidity measurement</li>
+                        <li><strong>Moisture Meter:</strong> Material moisture content</li>
+                        <li><strong>Mold Test Kits:</strong> Basic spore identification</li>
+                        <li><strong>VOC Detectors:</strong> Chemical vapor detection</li>
+                        <li><strong>Infrared Thermometer:</strong> Cold spots (condensation)</li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  <h4 class="text-xl font-semibold mb-4 mt-6">Air Quality Improvement</h4>
+                  <div class="space-y-2 text-sm">
+                    <div><strong>Immediate Actions:</strong></div>
+                    <ul class="space-y-1 text-slate-500 pl-4">
+                      <li>• Increase ventilation</li>
+                      <li>• Run dehumidifier (<50% RH)</li>
+                      <li>• Clean visible mold</li>
+                      <li>• Remove water-damaged materials</li>
+                      <li>• Fix moisture sources</li>
+                    </ul>
+                    <div class="mt-3"><strong>Long-term Solutions:</strong></div>
+                    <ul class="space-y-1 text-slate-500 pl-4">
+                      <li>• Install proper drainage</li>
+                      <li>• Waterproof foundation</li>
+                      <li>• Upgrade HVAC ventilation</li>
+                      <li>• Use mold-resistant materials</li>
+                      <li>• Regular professional inspection</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Poor Water Management Systems -->
+    <section class="py-16 bg-white">
+      <div class="max-w-7xl mx-auto px-4">
+        <h2 class="text-3xl font-bold mb-12 text-center">Poor Water Management Around Foundations</h2>
+        
+        <div class="space-y-12">
+          
+          <!-- Grading and Drainage -->
+          <div class="bg-white rounded-lg shadow-lg border border-slate-100 overflow-hidden">
+            <div class="bg-cyan-800 text-white p-6">
+              <h3 class="text-2xl font-bold mb-2">Site Grading and Surface Drainage</h3>
+              <p class="text-cyan-100">Foundation of all water management - controls 80% of basement moisture</p>
+            </div>
+            <div class="p-6">
+              <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                  <h4 class="text-xl font-semibold mb-4">Proper Grading Requirements</h4>
+                  
+                  <div class="bg-cyan-50 border-l-4 border-cyan-500 p-4 mb-4">
+                    <h5 class="font-semibold mb-2">Toronto Building Code Standards:</h5>
+                    <ul class="space-y-1 text-sm">
+                      <li><strong>Minimum Slope:</strong> 6 inches drop in first 10 feet</li>
+                      <li><strong>Preferred Slope:</strong> 1 inch per foot for first 6 feet</li>
+                      <li><strong>Soil Type:</strong> Clay soil requires greater slopes</li>
+                      <li><strong>Drainage Distance:</strong> Water must drain 10+ feet from foundation</li>
+                    </ul>
+                  </div>
+
+                  <h5 class="font-semibold mb-2">Common Grading Problems:</h5>
+                  <div class="space-y-3">
+                    <div class="border-l-4 border-red-500 pl-3">
+                      <h6 class="font-medium text-red-700">Reverse Grading</h6>
+                      <p class="text-sm text-slate-500">Soil slopes toward foundation</p>
+                      <p class="text-xs text-slate-400">Solution: Regrade with proper slope materials</p>
+                    </div>
+                    <div class="border-l-4 border-red-500 pl-3">
+                      <h6 class="font-medium text-red-700">Flat Grading</h6>
+                      <p class="text-sm text-slate-500">No slope creates water pooling</p>
+                      <p class="text-xs text-slate-400">Solution: Build up soil with clay/topsoil mix</p>
+                    </div>
+                    <div class="border-l-4 border-red-500 pl-3">
+                      <h6 class="font-medium text-red-700">Landscaping Barriers</h6>
+                      <p class="text-sm text-slate-500">Gardens, retaining walls trap water</p>
+                      <p class="text-xs text-slate-400">Solution: Install drainage behind barriers</p>
+                    </div>
+                    <div class="border-l-4 border-red-500 pl-3">
+                      <h6 class="font-medium text-red-700">Settlement Issues</h6>
+                      <p class="text-sm text-slate-500">Backfill soil settling over time</p>
+                      <p class="text-xs text-slate-400">Solution: Regular maintenance, proper compaction</p>
+                    </div>
+                  </div>
+                </div>
+                
+                <div>
+                  <h4 class="text-xl font-semibold mb-4">Drainage System Components</h4>
+                  
+                  <div class="space-y-4">
+                    <div class="bg-slate-50 p-4 rounded">
+                      <h5 class="font-semibold mb-2">Surface Drainage</h5>
+                      <ul class="text-sm space-y-1">
+                        <li><strong>Swales:</strong> Shallow channels direct water away</li>
+                        <li><strong>French Drains:</strong> Gravel-filled trenches collect surface water</li>
+                        <li><strong>Catch Basins:</strong> Collect water from low spots</li>
+                        <li><strong>Downspout Extensions:</strong> Carry roof water away</li>
+                      </ul>
+                    </div>
+
+                    <div class="bg-slate-50 p-4 rounded">
+                      <h5 class="font-semibold mb-2">Hardscape Management</h5>
+                      <ul class="text-sm space-y-1">
+                        <li><strong>Driveways:</strong> Slope away from foundation</li>
+                        <li><strong>Walkways:</strong> Proper drainage to prevent pooling</li>
+                        <li><strong>Patios:</strong> 1/4" per foot slope minimum</li>
+                        <li><strong>Pool Decks:</strong> Drain to storm sewers</li>
+                      </ul>
+                    </div>
+
+                    <div class="bg-slate-50 p-4 rounded">
+                      <h5 class="font-semibold mb-2">Maintenance Requirements</h5>
+                      <ul class="text-sm space-y-1">
+                        <li><strong>Annual:</strong> Check and adjust grading</li>
+                        <li><strong>Spring:</strong> Clear drainage channels</li>
+                        <li><strong>Fall:</strong> Clean gutters and downspouts</li>
+                        <li><strong>As Needed:</strong> Repair settling areas</li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  <div class="mt-6 bg-amber-50 border border-yellow-300 p-4 rounded">
+                    <h5 class="font-semibold mb-2 text-amber-700">Toronto Clay Soil Considerations:</h5>
+                    <ul class="text-sm text-amber-600 space-y-1">
+                      <li>• Extremely poor drainage when saturated</li>
+                      <li>• Creates surface runoff rather than absorption</li>
+                      <li>• Requires steeper grades than sandy soils</li>
+                      <li>• Benefits from surface drainage systems</li>
+                      <li>• May need imported topsoil for proper grading</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Gutter and Downspout Systems -->
+          <div class="bg-white rounded-lg shadow-lg border border-slate-100 overflow-hidden">
+            <div class="bg-cyan-800 text-white p-6">
+              <h3 class="text-2xl font-bold mb-2">Gutter and Downspout Systems</h3>
+              <p class="text-cyan-100">Critical for managing roof water - single largest water source for many foundations</p>
+            </div>
+            <div class="p-6">
+              <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                  <h4 class="text-xl font-semibold mb-4">System Sizing for Toronto Climate</h4>
+                  
+                  <div class="bg-cyan-50 p-4 rounded mb-4">
+                    <h5 class="font-semibold mb-2">Toronto Rainfall Data:</h5>
+                    <ul class="text-sm space-y-1">
+                      <li><strong>Annual Average:</strong> 831mm (32.7 inches)</li>
+                      <li><strong>Wettest Month:</strong> August (81mm average)</li>
+                      <li><strong>Design Storm:</strong> 100mm (4") in 24 hours</li>
+                      <li><strong>Extreme Events:</strong> Hurricane Hazel (200mm in 24h)</li>
+                    </ul>
+                  </div>
+
+                  <h5 class="font-semibold mb-2">Proper Sizing Guidelines:</h5>
+                  <div class="space-y-2">
+                    <div class="bg-slate-50 p-3 rounded">
+                      <h6 class="font-medium">Gutter Capacity</h6>
+                      <ul class="text-sm space-y-1 mt-1">
+                        <li>• 5" K-style: Up to 2,500 sq ft roof</li>
+                        <li>• 6" K-style: 2,500-4,000 sq ft roof</li>
+                        <li>• Commercial: >4,000 sq ft roof</li>
+                        <li>• Clay soil areas: Size up one category</li>
+                      </ul>
+                    </div>
+                    <div class="bg-slate-50 p-3 rounded">
+                      <h6 class="font-medium">Downspout Requirements</h6>
+                      <ul class="text-sm space-y-1 mt-1">
+                        <li>• Standard: One per 600 sq ft of roof</li>
+                        <li>• Minimum: 3" x 4" rectangular</li>
+                        <li>• Preferred: 4" round for better flow</li>
+                        <li>• Maximum spacing: 40 feet apart</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                
+                <div>
+                  <h4 class="text-xl font-semibold mb-4">Common Failures & Solutions</h4>
+                  
+                  <div class="space-y-4">
+                    <div class="border border-red-200 bg-red-50 p-3 rounded">
+                      <h5 class="font-semibold text-red-800 mb-2">Clogged Gutters</h5>
+                      <p class="text-sm text-red-700 mb-2">Leaves, debris block water flow causing overflow</p>
+                      <ul class="text-sm text-red-600 space-y-1">
+                        <li>• Install gutter guards</li>
+                        <li>• Clean twice yearly minimum</li>
+                        <li>• Trim overhanging branches</li>
+                        <li>• Check after major storms</li>
+                      </ul>
+                    </div>
+
+                    <div class="border border-red-200 bg-red-50 p-3 rounded">
+                      <h5 class="font-semibold text-red-800 mb-2">Improper Slope</h5>
+                      <p class="text-sm text-red-700 mb-2">Standing water in gutters, inadequate flow</p>
+                      <ul class="text-sm text-red-600 space-y-1">
+                        <li>• Minimum 1/4" slope per 10 feet</li>
+                        <li>• Adjust hanger positions</li>
+                        <li>• Add intermediate supports</li>
+                        <li>• Consider expanding to larger gutters</li>
+                      </ul>
+                    </div>
+
+                    <div class="border border-red-200 bg-red-50 p-3 rounded">
+                      <h5 class="font-semibold text-red-800 mb-2">Inadequate Extensions</h5>
+                      <p class="text-sm text-red-700 mb-2">Water dumped too close to foundation</p>
+                      <ul class="text-sm text-red-600 space-y-1">
+                        <li>• Minimum 6 feet from foundation</li>
+                        <li>• Splash blocks for surface discharge</li>
+                        <li>• Underground drainage preferred</li>
+                        <li>• Connect to storm sewer if possible</li>
+                      </ul>
+                    </div>
+
+                    <div class="border border-red-200 bg-red-50 p-3 rounded">
+                      <h5 class="font-semibold text-red-800 mb-2">Ice Dam Formation</h5>
+                      <p class="text-sm text-red-700 mb-2">Toronto winters create ice backup in gutters</p>
+                      <ul class="text-sm text-red-600 space-y-1">
+                        <li>• Install heated gutter cables</li>
+                        <li>• Improve attic insulation/ventilation</li>
+                        <li>• Clean gutters before freeze-up</li>
+                        <li>• Consider ice dam prevention systems</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mt-8 bg-cyan-50 p-6 rounded border border-cyan-200">
+                <h4 class="font-semibold mb-3 text-cyan-700">Professional Gutter System Upgrades</h4>
+                <div class="grid md:grid-cols-3 gap-4">
+                  <div>
+                    <h5 class="font-medium mb-2">Seamless Gutters</h5>
+                    <ul class="text-sm space-y-1">
+                      <li>• Fewer leak points</li>
+                      <li>• Custom fit to home</li>
+                      <li>• 25-year materials warranty</li>
+                      <li>• Professional installation</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h5 class="font-medium mb-2">Gutter Guards</h5>
+                    <ul class="text-sm space-y-1">
+                      <li>• Micro-mesh technology</li>
+                      <li>• Lifetime clog protection</li>
+                      <li>• Reduced maintenance</li>
+                      <li>• Ice dam prevention</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h5 class="font-medium mb-2">Underground Drainage</h5>
+                    <ul class="text-sm space-y-1">
+                      <li>• 4" PVC collection systems</li>
+                      <li>• Connect to storm sewers</li>
+                      <li>• Popup emitters at grade</li>
+                      <li>• French drain integration</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Drainage System Failures -->
+    <section class="py-16 bg-slate-50">
+      <div class="max-w-7xl mx-auto px-4">
+        <h2 class="text-3xl font-bold mb-12 text-center">Foundation Drainage System Failures</h2>
+        
+        <div class="space-y-12">
+          
+          <!-- Weeping Tile Systems -->
+          <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+            <div class="bg-orange-800 text-white p-6">
+              <h3 class="text-2xl font-bold mb-2">Weeping Tile (Foundation Drain) Failures</h3>
+              <p class="text-orange-100">Critical subsurface drainage system - failure leads to basement flooding</p>
+            </div>
+            <div class="p-6">
+              <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                  <h4 class="text-xl font-semibold mb-4">Weeping Tile System Components</h4>
+                  
+                  <div class="space-y-4">
+                    <div class="bg-cyan-50 border-l-4 border-cyan-500 p-4">
+                      <h5 class="font-semibold mb-2">Traditional Systems (Pre-1980s):</h5>
+                      <ul class="text-sm space-y-1">
+                        <li><strong>Clay Tile:</strong> 4" diameter sections with gaps</li>
+                        <li><strong>Gravel Bed:</strong> Coarse aggregate filter</li>
+                        <li><strong>Tar Paper:</strong> Primitive filter fabric</li>
+                        <li><strong>Open Joints:</strong> Allow water and debris entry</li>
+                      </ul>
+                    </div>
+
+                    <div class="bg-cyan-50 border-l-4 border-cyan-500 p-4">
+                      <h5 class="font-semibold mb-2">Modern Systems (1980s-Present):</h5>
+                      <ul class="text-sm space-y-1">
+                        <li><strong>Perforated Pipe:</strong> 4" ABS or PVC with holes</li>
+                        <li><strong>Geotextile Fabric:</strong> Prevents soil infiltration</li>
+                        <li><strong>Graded Gravel:</strong> 3/4" clear stone filter</li>
+                        <li><strong>Connection Systems:</strong> Sealed joints to sump pit</li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  <h4 class="text-xl font-semibold mb-4 mt-6">Common Failure Modes</h4>
+                  <div class="space-y-3">
+                    <div class="border border-slate-100 p-3 rounded">
+                      <h5 class="font-semibold mb-1 text-red-700">Siltation/Clogging</h5>
+                      <p class="text-sm text-slate-500 mb-1">Fine particles block pipe perforations</p>
+                      <p class="text-xs text-slate-400"><strong>Cause:</strong> Missing/failed filter fabric, clay soil infiltration</p>
+                    </div>
+                    <div class="border border-slate-100 p-3 rounded">
+                      <h5 class="font-semibold mb-1 text-red-700">Root Intrusion</h5>
+                      <p class="text-sm text-slate-500 mb-1">Tree roots grow into pipes seeking water</p>
+                      <p class="text-xs text-slate-400"><strong>Cause:</strong> Joints open over time, attractive moisture source</p>
+                    </div>
+                    <div class="border border-slate-100 p-3 rounded">
+                      <h5 class="font-semibold mb-1 text-red-700">Pipe Collapse</h5>
+                      <p class="text-sm text-slate-500 mb-1">Clay tiles break, plastic pipes crush</p>
+                      <p class="text-xs text-slate-400"><strong>Cause:</strong> Poor bedding, soil settlement, frost action</p>
+                    </div>
+                    <div class="border border-slate-100 p-3 rounded">
+                      <h5 class="font-semibold mb-1 text-red-700">Disconnection</h5>
+                      <p class="text-sm text-slate-500 mb-1">System no longer connected to sump pit</p>
+                      <p class="text-xs text-slate-400"><strong>Cause:</strong> Settlement, renovation work, poor installation</p>
+                    </div>
+                  </div>
+                </div>
+                
+                <div>
+                  <h4 class="text-xl font-semibold mb-4">Inspection & Diagnosis</h4>
+                  
+                  <div class="space-y-4">
+                    <div class="bg-slate-50 p-4 rounded">
+                      <h5 class="font-semibold mb-2">Visual Inspection Methods:</h5>
+                      <ul class="text-sm space-y-1">
+                        <li><strong>Sump Pit Examination:</strong> Check connection points</li>
+                        <li><strong>Cleanout Access:</strong> Inspect pipe condition</li>
+                        <li><strong>Foundation Exterior:</strong> Look for tile remnants</li>
+                        <li><strong>Soil Conditions:</strong> Evidence of water pooling</li>
+                      </ul>
+                    </div>
+
+                    <div class="bg-slate-50 p-4 rounded">
+                      <h5 class="font-semibold mb-2">Camera Inspection (CCTV):</h5>
+                      <ul class="text-sm space-y-1">
+                        <li><strong>Full System Survey:</strong> End-to-end condition assessment</li>
+                        <li><strong>Blockage Location:</strong> Precise problem identification</li>
+                        <li><strong>Structural Integrity:</strong> Joint condition, pipe damage</li>
+                        <li><strong>Flow Testing:</strong> Capacity verification</li>
+                      </ul>
+                    </div>
+
+                    <div class="bg-slate-50 p-4 rounded">
+                      <h5 class="font-semibold mb-2">Flow Testing Methods:</h5>
+                      <ul class="text-sm space-y-1">
+                        <li><strong>Water Introduction:</strong> Hose water at system inlet</li>
+                        <li><strong>Dye Testing:</strong> Trace water flow patterns</li>
+                        <li><strong>Sump Activation:</strong> Verify pump operation</li>
+                        <li><strong>Capacity Measurement:</strong> GPM flow rates</li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  <h4 class="text-xl font-semibold mb-4 mt-6">Repair vs. Replacement</h4>
+                  <div class="grid grid-cols-2 gap-4">
+                    <div class="bg-cyan-50 border border-green-300 p-3 rounded">
+                      <h5 class="font-semibold text-cyan-700 mb-2">Repair Suitable:</h5>
+                      <ul class="text-sm text-cyan-700 space-y-1">
+                        <li>• Localized blockages</li>
+                        <li>• Recent pipe systems</li>
+                        <li>• Minor root intrusion</li>
+                        <li>• Single problem area</li>
+                        <li>• Cost: $1,000-3,000</li>
+                      </ul>
+                    </div>
+                    <div class="bg-red-100 border border-red-300 p-3 rounded">
+                      <h5 class="font-semibold text-red-800 mb-2">Replacement Needed:</h5>
+                      <ul class="text-sm text-red-700 space-y-1">
+                        <li>• Clay tile systems</li>
+                        <li>• Multiple problem areas</li>
+                        <li>• Structural collapse</li>
+                        <li>• System older than 40 years</li>
+                        <li>• Cost: $150-250/linear foot</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Interior Weeping Tile Installation -->
+          <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+            <div class="bg-navy-900 text-white p-6">
+              <h3 class="text-2xl font-bold mb-2">Interior Weeping Tile Installation</h3>
+              <p class="text-slate-300">Alternative approach when exterior systems fail or access is limited</p>
+            </div>
+            <div class="p-6">
+              <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                  <h4 class="text-xl font-semibold mb-4">When Interior Systems Are Preferred</h4>
+                  
+                  <div class="space-y-3">
+                    <div class="bg-cyan-50 border-l-4 border-cyan-500 p-3">
+                      <h5 class="font-semibold text-cyan-700">Access Limitations:</h5>
+                      <ul class="text-sm text-cyan-700 space-y-1">
+                        <li>• Finished landscaping/hardscaping</li>
+                        <li>• Adjacent structures preventing excavation</li>
+                        <li>• Utility lines close to foundation</li>
+                        <li>• Property line restrictions</li>
+                      </ul>
+                    </div>
+                    
+                    <div class="bg-cyan-50 border-l-4 border-cyan-500 p-3">
+                      <h5 class="font-semibold text-cyan-700">Cost Considerations:</h5>
+                      <ul class="text-sm text-cyan-700 space-y-1">
+                        <li>• No excavation equipment needed</li>
+                        <li>• Lower labor costs</li>
+                        <li>• Year-round installation possible</li>
+                        <li>• Less disruption to property</li>
+                      </ul>
+                    </div>
+
+                    <div class="bg-purple-100 border-l-4 border-purple-500 p-3">
+                      <h5 class="font-semibold text-purple-800">Technical Advantages:</h5>
+                      <ul class="text-sm text-purple-700 space-y-1">
+                        <li>• Gravity flow to sump pit</li>
+                        <li>• Accessible for maintenance</li>
+                        <li>• Integration with floor drains</li>
+                        <li>• Immediate inspection capability</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                
+                <div>
+                  <h4 class="text-xl font-semibold mb-4">Installation Process</h4>
+                  
+                  <div class="space-y-4">
+                    <div class="bg-slate-50 p-4 rounded">
+                      <h5 class="font-semibold mb-2">Step 1: Excavation Trench</h5>
+                      <ul class="text-sm space-y-1">
+                        <li>• 12" wide x 12" deep trench along perimeter</li>
+                        <li>• Jackhammer concrete floor if present</li>
+                        <li>• Remove soil to footing level</li>
+                        <li>• Clean footing surface thoroughly</li>
+                      </ul>
+                    </div>
+
+                    <div class="bg-slate-50 p-4 rounded">
+                      <h5 class="font-semibold mb-2">Step 2: Drainage Installation</h5>
+                      <ul class="text-sm space-y-1">
+                        <li>• 4" perforated PVC pipe with holes down</li>
+                        <li>• Geotextile fabric wrapping</li>
+                        <li>• 3/4" clear stone bedding and cover</li>
+                        <li>• Slope 1/4" per foot to sump location</li>
+                      </ul>
+                    </div>
+
+                    <div class="bg-slate-50 p-4 rounded">
+                      <h5 class="font-semibold mb-2">Step 3: Sump Pit & Pump</h5>
+                      <ul class="text-sm space-y-1">
+                        <li>• 18" diameter x 30" deep pit</li>
+                        <li>• 1/3 HP submersible pump minimum</li>
+                        <li>• Discharge line to exterior or storm sewer</li>
+                        <li>• Battery backup system recommended</li>
+                      </ul>
+                    </div>
+
+                    <div class="bg-slate-50 p-4 rounded">
+                      <h5 class="font-semibold mb-2">Step 4: Floor Restoration</h5>
+                      <ul class="text-sm space-y-1">
+                        <li>• New concrete floor over drainage system</li>
+                        <li>• Vapor barrier installation</li>
+                        <li>• Control joints at appropriate locations</li>
+                        <li>• Floor finishes as desired</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mt-8 bg-amber-50 p-6 rounded border border-yellow-200">
+                <h4 class="font-semibold mb-3 text-amber-700">Interior vs. Exterior Weeping Tile Comparison</h4>
+                <div class="overflow-x-auto">
+                  <table class="w-full text-sm">
+                    <thead class="bg-amber-50">
+                      <tr>
+                        <th class="p-2 text-left">Factor</th>
+                        <th class="p-2 text-center">Interior System</th>
+                        <th class="p-2 text-center">Exterior System</th>
+                      </tr>
+                    </thead>
+                    <tbody class="divide-y divide-yellow-200">
+                      <tr>
+                        <td class="p-2 font-medium">Cost</td>
+                        <td class="p-2 text-center">$100-150/linear ft</td>
+                        <td class="p-2 text-center">$150-250/linear ft</td>
+                      </tr>
+                      <tr>
+                        <td class="p-2 font-medium">Installation Time</td>
+                        <td class="p-2 text-center">2-3 days</td>
+                        <td class="p-2 text-center">3-5 days</td>
+                      </tr>
+                      <tr>
+                        <td class="p-2 font-medium">Disruption Level</td>
+                        <td class="p-2 text-center">Low (interior only)</td>
+                        <td class="p-2 text-center">High (landscaping/hardscaping)</td>
+                      </tr>
+                      <tr>
+                        <td class="p-2 font-medium">Seasonal Restrictions</td>
+                        <td class="p-2 text-center">None</td>
+                        <td class="p-2 text-center">Weather dependent</td>
+                      </tr>
+                      <tr>
+                        <td class="p-2 font-medium">Effectiveness</td>
+                        <td class="p-2 text-center">Very Good</td>
+                        <td class="p-2 text-center">Excellent</td>
+                      </tr>
+                      <tr>
+                        <td class="p-2 font-medium">Maintenance Access</td>
+                        <td class="p-2 text-center">Easy</td>
+                        <td class="p-2 text-center">Difficult</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Water Table Issues -->
+    <section class="py-16 bg-white">
+      <div class="max-w-7xl mx-auto px-4">
+        <h2 class="text-3xl font-bold mb-12 text-center">High Water Table Issues in Toronto</h2>
+        
+        <div class="grid md:grid-cols-2 gap-12 mb-12">
+          <div>
+            <h3 class="text-2xl font-bold mb-6">Toronto Water Table Characteristics</h3>
+            <p class="text-slate-600 mb-6">
+              Toronto's proximity to Lake Ontario and underlying geological conditions create complex groundwater patterns that significantly impact foundation moisture management.
+            </p>
+            
+            <div class="space-y-4">
+              <div class="bg-cyan-50 border-l-4 border-cyan-500 p-4">
+                <h4 class="font-semibold mb-2">Lake Ontario Influence</h4>
+                <ul class="text-sm space-y-1 text-slate-500">
+                  <li>• Lake level: 75 meters above sea level</li>
+                  <li>• Groundwater connection within 5km of shore</li>
+                  <li>• Seasonal fluctuations: 0.5-1.0 meters</li>
+                  <li>• Storm surge impacts: Up to 2 meters temporarily</li>
+                </ul>
+              </div>
+
+              <div class="bg-cyan-50 border-l-4 border-cyan-500 p-4">
+                <h4 class="font-semibold mb-2">Geological Layers</h4>
+                <ul class="text-sm space-y-1 text-slate-500">
+                  <li>• <strong>Surface Clay:</strong> 15-50 feet thick, low permeability</li>
+                  <li>• <strong>Sand/Gravel Layers:</strong> Confined aquifers</li>
+                  <li>• <strong>Bedrock:</strong> Shale, limestone at varying depths</li>
+                  <li>• <strong>Perched Water:</strong> Clay layers trap water above main table</li>
+                </ul>
+              </div>
+
+              <div class="bg-amber-50 border-l-4 border-cyan-500 p-4">
+                <h4 class="font-semibold mb-2">Seasonal Patterns</h4>
+                <ul class="text-sm space-y-1 text-slate-500">
+                  <li>• <strong>Spring:</strong> Highest levels from snowmelt</li>
+                  <li>• <strong>Summer:</strong> Gradual decline, storm fluctuations</li>
+                  <li>• <strong>Fall:</strong> Lowest levels, recharge begins</li>
+                  <li>• <strong>Winter:</strong> Frozen surface reduces recharge</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <h3 class="text-2xl font-bold mb-6">High-Risk Areas in Toronto</h3>
+            
+            <div class="bg-red-50 border border-red-200 p-6 rounded-lg mb-6">
+              <h4 class="font-semibold mb-3 text-red-800">Critical Risk Zones:</h4>
+              <div class="space-y-3">
+                <div>
+                  <h5 class="font-medium text-red-700">Lakeshore Areas</h5>
+                  <p class="text-sm text-red-600">Beaches, Port lands, Harbourfront - water table 2-4 feet below grade</p>
+                </div>
+                <div>
+                  <h5 class="font-medium text-red-700">Ravine Systems</h5>
+                  <p class="text-sm text-red-600">Don Valley, Humber River, Etobicoke Creek - natural drainage corridors</p>
+                </div>
+                <div>
+                  <h5 class="font-medium text-red-700">Former Wetlands</h5>
+                  <p class="text-sm text-red-600">Ashbridges Bay, Central Waterfront - filled marshy areas</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-orange-50 border border-orange-200 p-6 rounded-lg">
+              <h4 class="font-semibold mb-3 text-orange-800">Moderate Risk Areas:</h4>
+              <div class="space-y-2">
+                <p class="text-sm"><strong>Midtown:</strong> Seasonal variations, localized springs</p>
+                <p class="text-sm"><strong>North York:</strong> Clay-controlled drainage patterns</p>
+                <p class="text-sm"><strong>Etobicoke:</strong> Creek valleys and low-lying areas</p>
+                <p class="text-sm"><strong>Scarborough:</strong> Bluff areas with seepage issues</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Management Strategies -->
+        <div class="bg-slate-50 p-8 rounded-lg">
+          <h3 class="text-2xl font-bold mb-6 text-center">High Water Table Management Strategies</h3>
+          
+          <div class="grid md:grid-cols-3 gap-8">
+            <div class="bg-white p-6 rounded-lg shadow">
+              <div class="bg-cyan-500 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path>
+                </svg>
+              </div>
+              <h4 class="text-xl font-bold mb-4">Dewatering Systems</h4>
+              <ul class="text-sm space-y-2 text-slate-500">
+                <li>• <strong>Sump Pump Systems:</strong> Multiple pumps with backup</li>
+                <li>• <strong>French Drains:</strong> Intercept groundwater flow</li>
+                <li>• <strong>Relief Wells:</strong> Reduce hydrostatic pressure</li>
+                <li>• <strong>Ejector Pumps:</strong> Below-grade discharge systems</li>
+              </ul>
+            </div>
+
+            <div class="bg-white p-6 rounded-lg shadow">
+              <div class="bg-cyan-500 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                </svg>
+              </div>
+              <h4 class="text-xl font-bold mb-4">Waterproofing Barriers</h4>
+              <ul class="text-sm space-y-2 text-slate-500">
+                <li>• <strong>Tanking Systems:</strong> Complete below-grade membrane</li>
+                <li>• <strong>Crystalline Treatments:</strong> Self-sealing concrete additives</li>
+                <li>• <strong>Injection Systems:</strong> Fill active cracks and joints</li>
+                <li>• <strong>Vapor Barriers:</strong> Interior moisture control</li>
+              </ul>
+            </div>
+
+            <div class="bg-white p-6 rounded-lg shadow">
+              <div class="bg-purple-500 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                </svg>
+              </div>
+              <h4 class="text-xl font-bold mb-4">Environmental Controls</h4>
+              <ul class="text-sm space-y-2 text-slate-500">
+                <li>• <strong>Dehumidification:</strong> Maintain &lt;50% relative humidity</li>
+                <li>• <strong>Ventilation Systems:</strong> Air exchange and circulation</li>
+                <li>• <strong>Heating Systems:</strong> Prevent condensation cycles</li>
+                <li>• <strong>Monitoring:</strong> Water level and humidity tracking</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Professional Moisture Solutions -->
+    
+  <!-- Resource Images and Diagrams -->
+  <ResourceImageGallery resource="moisture-problems" />
+
+<section class="py-16 bg-navy-900 text-white">
+      <div class="max-w-4xl mx-auto px-4 text-center">
+        <h2 class="text-3xl font-bold mb-6">Professional Foundation Moisture Solutions</h2>
+        <p class="text-xl mb-8 text-slate-300">
+          Over 25 years solving Toronto's unique foundation moisture challenges. Our P.Eng certified engineers understand local geology, climate, and building conditions to provide permanent solutions.
+        </p>
+        
+        <div class="grid md:grid-cols-4 gap-6 mb-8">
+          <div class="bg-white/10 p-4 rounded">
+            <div class="text-2xl font-bold text-cyan-400 mb-2">3,000+</div>
+            <div class="text-sm">Basements Waterproofed</div>
+          </div>
+          <div class="bg-white/10 p-4 rounded">
+            <div class="text-2xl font-bold text-cyan-400 mb-2">25-Year</div>
+            <div class="text-sm">Transferable Warranty</div>
+          </div>
+          <div class="bg-white/10 p-4 rounded">
+            <div class="text-2xl font-bold text-cyan-400 mb-2">P.Eng</div>
+            <div class="text-sm">Licensed Engineers</div>
+          </div>
+          <div class="bg-white/10 p-4 rounded">
+            <div class="text-2xl font-bold text-cyan-400 mb-2">24/7</div>
+            <div class="text-sm">Emergency Response</div>
+          </div>
+        </div>
+
+        <div class="bg-navy-900 p-6 rounded-lg mb-8">
+          <h3 class="text-xl font-bold mb-4">Comprehensive Moisture Management Services</h3>
+          <div class="grid md:grid-cols-2 gap-6 text-left">
+            <div>
+              <h4 class="font-semibold mb-2">Assessment & Diagnosis:</h4>
+              <ul class="text-sm space-y-1 text-slate-300">
+                <li>• Moisture source identification</li>
+                <li>• Structural impact evaluation</li>
+                <li>• Air quality testing</li>
+                <li>• Drainage system inspection</li>
+                <li>• Water table level assessment</li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="font-semibold mb-2">Permanent Solutions:</h4>
+              <ul class="text-sm space-y-1 text-slate-300">
+                <li>• Exterior/interior waterproofing</li>
+                <li>• Weeping tile installation/repair</li>
+                <li>• Sump pump systems</li>
+                <li>• Mold remediation</li>
+                <li>• Humidity control systems</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex flex-col md:flex-row gap-4 justify-center">
+          <a href="tel:437-545-0067" class="bg-red-600 hover:bg-red-700 text-white font-bold py-4 px-8 rounded-lg text-lg transition-colors">
+            Emergency Moisture: 437-545-0067
+          </a>
+          <a href="/free-inspection" class="bg-cyan-600 hover:bg-cyan-700 text-white font-bold py-4 px-8 rounded-lg text-lg transition-colors">
+            Free Moisture Assessment
+          </a>
+        </div>
+        <p class="mt-4 text-slate-400">
+          Licensed & insured • Written guarantee • Same-day emergency response
+        </p>
+      </div>
+    </section>
+
+    <!-- Contact Form -->
+    <ContactForm />
+  </main>
+</PageLayout>

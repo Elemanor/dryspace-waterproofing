@@ -1,0 +1,751 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import HeroSection from '../../components/widgets/Hero.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+
+const meta = {
+  title: "Reshoring & Load Bearing Safety Guide | Aluminum Beams & Props Requirements",
+  description: "Complete guide to reshoring during interior load-bearing demolition. Learn about aluminum beam installation, prop requirements, and safety protocols for structural support.",
+  keywords: "reshoring, load bearing walls, aluminum beams, structural props, demolition safety, temporary support, interior renovation safety",
+  canonical: "https://dryspacegroup.com/blog/reshoring-load-bearing-safety-guide"
+};
+---
+
+<PageLayout {...meta}>
+  
+  <!-- Breadcrumbs -->
+  <div class="container mx-auto px-4 mt-4">
+    <Breadcrumbs 
+      items={[
+        { name: "Home", url: "/" },
+        { name: "Blog", url: "/blog" },
+        { name: "Reshoring Load Bearing Safety Guide" }
+      ]}
+    />
+  </div>
+
+<HeroSection
+    title="Reshoring & Load Bearing Safety"
+    subtitle="Critical Protocols for Interior Structural Work"
+    backgroundImage="/images/reshoring-safety.webp"
+    ctaText="Get Structural Assessment"
+    ctaLink="/free-inspection"
+  />
+
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4 max-w-4xl">
+      <!-- Critical Warning -->
+      <div class="bg-red-50 border-2 border-red-600 rounded-lg p-6 mb-12">
+        <div class="flex items-start gap-4">
+          <div class="bg-red-600 text-white rounded-full p-3">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
+            </svg>
+          </div>
+          <div>
+            <h2 class="text-2xl font-bold text-red-900 mb-2">STRUCTURAL WARNING</h2>
+            <p class="text-red-800 font-semibold">
+              Improper reshoring during load-bearing demolition can cause immediate structural collapse. Never remove load-bearing elements without engineered temporary support systems.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Introduction -->
+      <div class="prose prose-lg max-w-none mb-12">
+        <p class="text-xl text-slate-600 leading-relaxed mb-8">
+          Reshoring is the critical process of installing temporary structural support when load-bearing walls, beams, or columns are removed or modified. This guide covers the essential safety protocols, equipment requirements, and installation procedures for aluminum beams and adjustable props during interior demolition and renovation work.
+        </p>
+      </div>
+
+      <!-- What is Reshoring -->
+      <section class="mb-16">
+        <h2 class="text-3xl font-bold mb-8 text-slate-900">Understanding Reshoring Systems</h2>
+        
+        <div class="grid md:grid-cols-2 gap-8 mb-8">
+          <div class="bg-cyan-50 rounded-lg p-6">
+            <h3 class="text-xl font-bold mb-4 text-cyan-800">What is Reshoring?</h3>
+            <p class="text-slate-600 mb-4">
+              Reshoring provides temporary structural support to safely transfer loads around areas where permanent support is being removed or modified.
+            </p>
+            <ul class="space-y-2 text-slate-600">
+              <li>• Supports floors and roofs during wall removal</li>
+              <li>• Maintains structural integrity during renovation</li>
+              <li>• Prevents sagging, cracking, and collapse</li>
+              <li>• Allows safe work below supported areas</li>
+            </ul>
+          </div>
+          
+          <div class="bg-cyan-50 rounded-lg p-6">
+            <h3 class="text-xl font-bold mb-4 text-cyan-800">When is Reshoring Required?</h3>
+            <ul class="space-y-3 text-slate-600">
+              <li class="flex items-start">
+                <span class="text-cyan-600 mr-2">✓</span>
+                <span>Removing any load-bearing wall</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-cyan-600 mr-2">✓</span>
+                <span>Creating openings in load-bearing walls</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-cyan-600 mr-2">✓</span>
+                <span>Underpinning beneath load-bearing walls</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-cyan-600 mr-2">✓</span>
+                <span>Beam or column replacement</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-cyan-600 mr-2">✓</span>
+                <span>Foundation repairs under loaded walls</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Aluminum Beam Systems -->
+      <section class="mb-16">
+        <h2 class="text-3xl font-bold mb-8 text-slate-900">Aluminum Beam Support Systems</h2>
+        
+        <div class="bg-slate-50 rounded-lg p-8 mb-8">
+          <h3 class="text-2xl font-bold mb-6">Standard Aluminum Beam Specifications</h3>
+          
+          <div class="overflow-x-auto">
+            <table class="w-full bg-white rounded-lg overflow-hidden">
+              <thead class="bg-cyan-600 text-white">
+                <tr>
+                  <th class="px-4 py-3 text-left">Beam Type</th>
+                  <th class="px-4 py-3 text-left">Load Capacity</th>
+                  <th class="px-4 py-3 text-left">Max Span</th>
+                  <th class="px-4 py-3 text-left">Weight</th>
+                  <th class="px-4 py-3 text-left">Application</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y">
+                <tr>
+                  <td class="px-4 py-3">Light Duty (4")</td>
+                  <td class="px-4 py-3">2,500 lbs/ft</td>
+                  <td class="px-4 py-3">12 ft</td>
+                  <td class="px-4 py-3">8 lbs/ft</td>
+                  <td class="px-4 py-3">Residential walls</td>
+                </tr>
+                <tr class="bg-slate-50">
+                  <td class="px-4 py-3">Medium Duty (6")</td>
+                  <td class="px-4 py-3">4,000 lbs/ft</td>
+                  <td class="px-4 py-3">16 ft</td>
+                  <td class="px-4 py-3">12 lbs/ft</td>
+                  <td class="px-4 py-3">Floor joists support</td>
+                </tr>
+                <tr>
+                  <td class="px-4 py-3">Heavy Duty (8")</td>
+                  <td class="px-4 py-3">6,500 lbs/ft</td>
+                  <td class="px-4 py-3">20 ft</td>
+                  <td class="px-4 py-3">18 lbs/ft</td>
+                  <td class="px-4 py-3">Multi-story loads</td>
+                </tr>
+                <tr class="bg-slate-50">
+                  <td class="px-4 py-3">Extra Heavy (10")</td>
+                  <td class="px-4 py-3">10,000 lbs/ft</td>
+                  <td class="px-4 py-3">24 ft</td>
+                  <td class="px-4 py-3">25 lbs/ft</td>
+                  <td class="px-4 py-3">Commercial/industrial</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          
+          <div class="mt-6 p-4 bg-amber-50 border-l-4 border-yellow-600">
+            <p class="text-sm">
+              <strong>Important:</strong> Actual capacity depends on prop spacing, load distribution, and safety factors. Always consult engineer's specifications.
+            </p>
+          </div>
+        </div>
+
+        <!-- Beam Installation Process -->
+        <div class="bg-white border rounded-lg p-8">
+          <h3 class="text-xl font-bold mb-6">Aluminum Beam Installation Process</h3>
+          
+          <div class="space-y-4">
+            <div class="flex items-start">
+              <span class="bg-cyan-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-4 flex-shrink-0">1</span>
+              <div>
+                <h4 class="font-semibold mb-1">Calculate Load Requirements</h4>
+                <p class="text-slate-500">Determine total load from floors, roof, and live loads above</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start">
+              <span class="bg-cyan-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-4 flex-shrink-0">2</span>
+              <div>
+                <h4 class="font-semibold mb-1">Select Beam Size</h4>
+                <p class="text-slate-500">Choose beam with 2x safety factor over calculated load</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start">
+              <span class="bg-cyan-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-4 flex-shrink-0">3</span>
+              <div>
+                <h4 class="font-semibold mb-1">Position Support Posts</h4>
+                <p class="text-slate-500">Install adjustable props at maximum 4-foot centers</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start">
+              <span class="bg-cyan-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-4 flex-shrink-0">4</span>
+              <div>
+                <h4 class="font-semibold mb-1">Install Bearing Plates</h4>
+                <p class="text-slate-500">Use minimum 12"x12" steel plates to distribute load</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start">
+              <span class="bg-cyan-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-4 flex-shrink-0">5</span>
+              <div>
+                <h4 class="font-semibold mb-1">Place and Level Beam</h4>
+                <p class="text-slate-500">Position beam tight against existing structure</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start">
+              <span class="bg-cyan-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-4 flex-shrink-0">6</span>
+              <div>
+                <h4 class="font-semibold mb-1">Pre-load System</h4>
+                <p class="text-slate-500">Adjust props to take load before demolition begins</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Adjustable Props/Posts -->
+      <section class="mb-16">
+        <h2 class="text-3xl font-bold mb-8 text-slate-900">Adjustable Props & Support Posts</h2>
+        
+        <div class="grid md:grid-cols-3 gap-6 mb-8">
+          <div class="bg-white border rounded-lg p-6">
+            <h3 class="text-lg font-bold mb-3">Light-Duty Props</h3>
+            <div class="text-3xl font-bold text-cyan-600 mb-2">4,500 lbs</div>
+            <ul class="text-sm space-y-1 text-slate-500">
+              <li>• Height: 4'7" - 7'9"</li>
+              <li>• Plate: 6" x 6"</li>
+              <li>• Residential use</li>
+              <li>• Single story loads</li>
+            </ul>
+          </div>
+          
+          <div class="bg-white border rounded-lg p-6">
+            <h3 class="text-lg font-bold mb-3">Heavy-Duty Props</h3>
+            <div class="text-3xl font-bold text-cyan-600 mb-2">12,000 lbs</div>
+            <ul class="text-sm space-y-1 text-slate-500">
+              <li>• Height: 5'7" - 9'10"</li>
+              <li>• Plate: 8" x 8"</li>
+              <li>• Multi-story loads</li>
+              <li>• Commercial use</li>
+            </ul>
+          </div>
+          
+          <div class="bg-white border rounded-lg p-6">
+            <h3 class="text-lg font-bold mb-3">Super-Duty Props</h3>
+            <div class="text-3xl font-bold text-orange-600 mb-2">22,000 lbs</div>
+            <ul class="text-sm space-y-1 text-slate-500">
+              <li>• Height: 6'6" - 16'5"</li>
+              <li>• Plate: 12" x 12"</li>
+              <li>• Industrial loads</li>
+              <li>• High-rise work</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Prop Safety Requirements -->
+        <div class="bg-amber-50 border-2 border-yellow-600 rounded-lg p-8">
+          <h3 class="text-xl font-bold mb-4">Critical Prop Safety Requirements</h3>
+          
+          <div class="grid md:grid-cols-2 gap-6">
+            <div>
+              <h4 class="font-bold mb-3">Installation Requirements</h4>
+              <ul class="space-y-2 text-sm">
+                <li class="flex items-start">
+                  <span class="text-amber-600 mr-2">⚠️</span>
+                  <span>Props must be perfectly plumb (±1°)</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-amber-600 mr-2">⚠️</span>
+                  <span>Base plates on solid, level surface</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-amber-600 mr-2">⚠️</span>
+                  <span>Pins locked in designated holes only</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-amber-600 mr-2">⚠️</span>
+                  <span>Never exceed rated capacity</span>
+                </li>
+              </ul>
+            </div>
+            
+            <div>
+              <h4 class="font-bold mb-3">Prohibited Practices</h4>
+              <ul class="space-y-2 text-sm">
+                <li class="flex items-start">
+                  <span class="text-red-600 mr-2">✗</span>
+                  <span>No extensions or modifications</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-red-600 mr-2">✗</span>
+                  <span>No damaged or bent props</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-red-600 mr-2">✗</span>
+                  <span>No eccentric loading</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-red-600 mr-2">✗</span>
+                  <span>No removal under load</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Load Calculation Guide -->
+      <section class="mb-16">
+        <h2 class="text-3xl font-bold mb-8 text-slate-900">Load Calculation & Distribution</h2>
+        
+        <div class="bg-slate-50 rounded-lg p-8">
+          <h3 class="text-xl font-bold mb-6">Typical Residential Load Calculations</h3>
+          
+          <div class="grid md:grid-cols-2 gap-6 mb-6">
+            <div class="bg-white rounded-lg p-6">
+              <h4 class="font-bold mb-3">Dead Loads (Structure)</h4>
+              <ul class="space-y-2 text-sm">
+                <li class="flex justify-between">
+                  <span>Wood frame floor:</span>
+                  <span class="font-semibold">10 psf</span>
+                </li>
+                <li class="flex justify-between">
+                  <span>Concrete slab (4"):</span>
+                  <span class="font-semibold">50 psf</span>
+                </li>
+                <li class="flex justify-between">
+                  <span>Drywall ceiling:</span>
+                  <span class="font-semibold">5 psf</span>
+                </li>
+                <li class="flex justify-between">
+                  <span>Roofing (asphalt):</span>
+                  <span class="font-semibold">3 psf</span>
+                </li>
+                <li class="flex justify-between">
+                  <span>Interior walls:</span>
+                  <span class="font-semibold">20 psf</span>
+                </li>
+              </ul>
+            </div>
+            
+            <div class="bg-white rounded-lg p-6">
+              <h4 class="font-bold mb-3">Live Loads (Occupancy)</h4>
+              <ul class="space-y-2 text-sm">
+                <li class="flex justify-between">
+                  <span>Residential floor:</span>
+                  <span class="font-semibold">40 psf</span>
+                </li>
+                <li class="flex justify-between">
+                  <span>Bedroom areas:</span>
+                  <span class="font-semibold">30 psf</span>
+                </li>
+                <li class="flex justify-between">
+                  <span>Storage/attic:</span>
+                  <span class="font-semibold">20 psf</span>
+                </li>
+                <li class="flex justify-between">
+                  <span>Snow load:</span>
+                  <span class="font-semibold">25 psf</span>
+                </li>
+                <li class="flex justify-between">
+                  <span>Construction:</span>
+                  <span class="font-semibold">50 psf</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+          
+          <div class="bg-cyan-50 rounded-lg p-6">
+            <h4 class="font-bold mb-3">Example Calculation: 12-foot Wall Removal</h4>
+            <div class="space-y-2 text-sm">
+              <p>• Tributary area: 12 ft wall × 10 ft floor span = 120 sq ft</p>
+              <p>• Dead load: 120 sq ft × 65 psf = 7,800 lbs</p>
+              <p>• Live load: 120 sq ft × 40 psf = 4,800 lbs</p>
+              <p>• <strong>Total load: 12,600 lbs</strong></p>
+              <p>• With 2x safety factor: <strong>25,200 lbs capacity required</strong></p>
+              <p class="mt-3 font-semibold">Required: (2) Heavy-duty props at 4 ft spacing with 8" aluminum beam</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Installation Sequence -->
+      <section class="mb-16">
+        <h2 class="text-3xl font-bold mb-8 text-slate-900">Safe Reshoring Installation Sequence</h2>
+        
+        <div class="space-y-6">
+          <!-- Phase 1 -->
+          <div class="bg-white border-2 border-cyan-500 rounded-lg overflow-hidden">
+            <div class="bg-cyan-500 text-white px-6 py-3">
+              <h3 class="text-xl font-bold">Phase 1: Preparation & Setup</h3>
+            </div>
+            <div class="p-6">
+              <ul class="space-y-3">
+                <li class="flex items-start">
+                  <input type="checkbox" class="mt-1 mr-3">
+                  <div>
+                    <strong>Verify load calculations with engineer</strong>
+                    <p class="text-sm text-slate-500">Double-check all loads and safety factors</p>
+                  </div>
+                </li>
+                <li class="flex items-start">
+                  <input type="checkbox" class="mt-1 mr-3">
+                  <div>
+                    <strong>Inspect all equipment</strong>
+                    <p class="text-sm text-slate-500">Check props, beams, plates for damage</p>
+                  </div>
+                </li>
+                <li class="flex items-start">
+                  <input type="checkbox" class="mt-1 mr-3">
+                  <div>
+                    <strong>Mark prop locations</strong>
+                    <p class="text-sm text-slate-500">Layout according to engineer's plan</p>
+                  </div>
+                </li>
+                <li class="flex items-start">
+                  <input type="checkbox" class="mt-1 mr-3">
+                  <div>
+                    <strong>Install monitoring equipment</strong>
+                    <p class="text-sm text-slate-500">Set up dial gauges and level points</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Phase 2 -->
+          <div class="bg-white border-2 border-cyan-500 rounded-lg overflow-hidden">
+            <div class="bg-cyan-500 text-white px-6 py-3">
+              <h3 class="text-xl font-bold">Phase 2: Installation</h3>
+            </div>
+            <div class="p-6">
+              <ul class="space-y-3">
+                <li class="flex items-start">
+                  <input type="checkbox" class="mt-1 mr-3">
+                  <div>
+                    <strong>Place bearing plates</strong>
+                    <p class="text-sm text-slate-500">Center on marked locations, verify level</p>
+                  </div>
+                </li>
+                <li class="flex items-start">
+                  <input type="checkbox" class="mt-1 mr-3">
+                  <div>
+                    <strong>Erect props at correct height</strong>
+                    <p class="text-sm text-slate-500">Leave 1" gap for beam insertion</p>
+                  </div>
+                </li>
+                <li class="flex items-start">
+                  <input type="checkbox" class="mt-1 mr-3">
+                  <div>
+                    <strong>Install aluminum beams</strong>
+                    <p class="text-sm text-slate-500">Center on props, check alignment</p>
+                  </div>
+                </li>
+                <li class="flex items-start">
+                  <input type="checkbox" class="mt-1 mr-3">
+                  <div>
+                    <strong>Pre-load system gradually</strong>
+                    <p class="text-sm text-slate-500">Raise props in 1/4" increments</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Phase 3 -->
+          <div class="bg-white border-2 border-orange-500 rounded-lg overflow-hidden">
+            <div class="bg-orange-500 text-white px-6 py-3">
+              <h3 class="text-xl font-bold">Phase 3: Load Transfer</h3>
+            </div>
+            <div class="p-6">
+              <ul class="space-y-3">
+                <li class="flex items-start">
+                  <input type="checkbox" class="mt-1 mr-3">
+                  <div>
+                    <strong>Final adjustment to contact</strong>
+                    <p class="text-sm text-slate-500">Beam tight against structure, no gaps</p>
+                  </div>
+                </li>
+                <li class="flex items-start">
+                  <input type="checkbox" class="mt-1 mr-3">
+                  <div>
+                    <strong>Lock all adjustment pins</strong>
+                    <p class="text-sm text-slate-500">Double-check pin engagement</p>
+                  </div>
+                </li>
+                <li class="flex items-start">
+                  <input type="checkbox" class="mt-1 mr-3">
+                  <div>
+                    <strong>Begin controlled demolition</strong>
+                    <p class="text-sm text-slate-500">Remove wall in small sections</p>
+                  </div>
+                </li>
+                <li class="flex items-start">
+                  <input type="checkbox" class="mt-1 mr-3">
+                  <div>
+                    <strong>Monitor continuously</strong>
+                    <p class="text-sm text-slate-500">Check for any movement or deflection</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Monitoring Requirements -->
+      <section class="mb-16">
+        <h2 class="text-3xl font-bold mb-8 text-slate-900">Monitoring During Reshoring</h2>
+        
+        <div class="bg-slate-50 rounded-lg p-8">
+          <h3 class="text-xl font-bold mb-6">Continuous Monitoring Protocol</h3>
+          
+          <div class="grid md:grid-cols-2 gap-6">
+            <div>
+              <h4 class="font-bold mb-3">Visual Inspections</h4>
+              <ul class="space-y-2 text-sm">
+                <li>✓ Check props for plumbness every 2 hours</li>
+                <li>✓ Inspect beam contact with structure</li>
+                <li>✓ Look for new cracks in walls/ceilings</li>
+                <li>✓ Monitor prop base plate stability</li>
+                <li>✓ Check for water infiltration</li>
+                <li>✓ Verify pin locks remain engaged</li>
+              </ul>
+            </div>
+            
+            <div>
+              <h4 class="font-bold mb-3">Measurements</h4>
+              <ul class="space-y-2 text-sm">
+                <li>✓ Deflection gauges at beam midspan</li>
+                <li>✓ Level monitoring at 4 points minimum</li>
+                <li>✓ Crack width measurements</li>
+                <li>✓ Floor elevation checks</li>
+                <li>✓ Daily photo documentation</li>
+                <li>✓ Load cell readings (if installed)</li>
+              </ul>
+            </div>
+          </div>
+          
+          <div class="mt-6 p-4 bg-red-100 rounded-lg">
+            <p class="font-semibold text-red-900">
+              Maximum Allowable Deflection: L/360 (where L = span length)
+            </p>
+            <p class="text-sm text-red-700 mt-1">
+              Example: 12-foot span = 0.4 inches maximum deflection
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Common Mistakes -->
+      <section class="mb-16">
+        <h2 class="text-3xl font-bold mb-8 text-slate-900">Critical Mistakes to Avoid</h2>
+        
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="bg-red-50 border-2 border-red-500 rounded-lg p-6">
+            <h3 class="text-xl font-bold mb-4 text-red-900">Never Do This</h3>
+            <ul class="space-y-3">
+              <li class="flex items-start">
+                <span class="text-red-600 text-xl mr-3">✗</span>
+                <div>
+                  <strong>Remove wall before reshoring is loaded</strong>
+                  <p class="text-sm text-slate-500">Can cause immediate collapse</p>
+                </div>
+              </li>
+              <li class="flex items-start">
+                <span class="text-red-600 text-xl mr-3">✗</span>
+                <div>
+                  <strong>Use wood cribbing instead of rated props</strong>
+                  <p class="text-sm text-slate-500">Unpredictable failure modes</p>
+                </div>
+              </li>
+              <li class="flex items-start">
+                <span class="text-red-600 text-xl mr-3">✗</span>
+                <div>
+                  <strong>Exceed prop spacing limits</strong>
+                  <p class="text-sm text-slate-500">Beam can buckle or fail</p>
+                </div>
+              </li>
+              <li class="flex items-start">
+                <span class="text-red-600 text-xl mr-3">✗</span>
+                <div>
+                  <strong>Remove reshoring too early</strong>
+                  <p class="text-sm text-slate-500">New structure needs full cure</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+          
+          <div class="bg-cyan-50 border-2 border-cyan-500 rounded-lg p-6">
+            <h3 class="text-xl font-bold mb-4 text-cyan-800">Always Do This</h3>
+            <ul class="space-y-3">
+              <li class="flex items-start">
+                <span class="text-cyan-600 text-xl mr-3">✓</span>
+                <div>
+                  <strong>Follow engineer's exact specifications</strong>
+                  <p class="text-sm text-slate-500">No field modifications allowed</p>
+                </div>
+              </li>
+              <li class="flex items-start">
+                <span class="text-cyan-600 text-xl mr-3">✓</span>
+                <div>
+                  <strong>Use certified equipment only</strong>
+                  <p class="text-sm text-slate-500">With current inspection tags</p>
+                </div>
+              </li>
+              <li class="flex items-start">
+                <span class="text-cyan-600 text-xl mr-3">✓</span>
+                <div>
+                  <strong>Install redundant support</strong>
+                  <p class="text-sm text-slate-500">2x safety factor minimum</p>
+                </div>
+              </li>
+              <li class="flex items-start">
+                <span class="text-cyan-600 text-xl mr-3">✓</span>
+                <div>
+                  <strong>Document everything</strong>
+                  <p class="text-sm text-slate-500">Photos, measurements, inspections</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Removal Sequence -->
+      <section class="mb-16">
+        <h2 class="text-3xl font-bold mb-8 text-slate-900">Safe Reshoring Removal</h2>
+        
+        <div class="bg-amber-50 border-2 border-yellow-600 rounded-lg p-8">
+          <h3 class="text-xl font-bold mb-6">Removal Timing Requirements</h3>
+          
+          <div class="space-y-4 mb-6">
+            <div class="flex items-center justify-between p-4 bg-white rounded-lg">
+              <span class="font-semibold">Steel beam installation:</span>
+              <span class="text-cyan-600 font-bold">Remove after full welding/bolting</span>
+            </div>
+            <div class="flex items-center justify-between p-4 bg-white rounded-lg">
+              <span class="font-semibold">Concrete beam/lintel:</span>
+              <span class="text-orange-600 font-bold">28 days minimum cure</span>
+            </div>
+            <div class="flex items-center justify-between p-4 bg-white rounded-lg">
+              <span class="font-semibold">Wood beam installation:</span>
+              <span class="text-cyan-600 font-bold">After full connection verified</span>
+            </div>
+            <div class="flex items-center justify-between p-4 bg-white rounded-lg">
+              <span class="font-semibold">Masonry/block work:</span>
+              <span class="text-red-600 font-bold">14 days minimum cure</span>
+            </div>
+          </div>
+          
+          <h4 class="font-bold mb-3">Removal Sequence:</h4>
+          <ol class="space-y-2 text-sm">
+            <li>1. Verify permanent structure is complete and cured</li>
+            <li>2. Install monitoring equipment to detect movement</li>
+            <li>3. Release props gradually (1/4" at a time)</li>
+            <li>4. Monitor for 24 hours after each adjustment</li>
+            <li>5. Remove center props first, then work outward</li>
+            <li>6. Document final structure position</li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- Equipment Specifications -->
+      <section class="mb-16">
+        <h2 class="text-3xl font-bold mb-8 text-slate-900">Equipment Inspection Checklist</h2>
+        
+        <div class="bg-white border rounded-lg p-8">
+          <h3 class="text-xl font-bold mb-6">Daily Equipment Inspection</h3>
+          
+          <div class="grid md:grid-cols-2 gap-8">
+            <div>
+              <h4 class="font-bold mb-3">Aluminum Beams</h4>
+              <ul class="space-y-2">
+                <li class="flex items-start">
+                  <input type="checkbox" class="mt-1 mr-3">
+                  <span>No visible bends or kinks</span>
+                </li>
+                <li class="flex items-start">
+                  <input type="checkbox" class="mt-1 mr-3">
+                  <span>No cracks at welds or connections</span>
+                </li>
+                <li class="flex items-start">
+                  <input type="checkbox" class="mt-1 mr-3">
+                  <span>Flanges not damaged or twisted</span>
+                </li>
+                <li class="flex items-start">
+                  <input type="checkbox" class="mt-1 mr-3">
+                  <span>Load rating tag present and legible</span>
+                </li>
+                <li class="flex items-start">
+                  <input type="checkbox" class="mt-1 mr-3">
+                  <span>No unauthorized modifications</span>
+                </li>
+              </ul>
+            </div>
+            
+            <div>
+              <h4 class="font-bold mb-3">Adjustable Props</h4>
+              <ul class="space-y-2">
+                <li class="flex items-start">
+                  <input type="checkbox" class="mt-1 mr-3">
+                  <span>Threads clean and operational</span>
+                </li>
+                <li class="flex items-start">
+                  <input type="checkbox" class="mt-1 mr-3">
+                  <span>Pins straight and properly sized</span>
+                </li>
+                <li class="flex items-start">
+                  <input type="checkbox" class="mt-1 mr-3">
+                  <span>Base plates flat and undamaged</span>
+                </li>
+                <li class="flex items-start">
+                  <input type="checkbox" class="mt-1 mr-3">
+                  <span>No rust affecting strength</span>
+                </li>
+                <li class="flex items-start">
+                  <input type="checkbox" class="mt-1 mr-3">
+                  <span>Capacity marking visible</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA Section -->
+      <section class="py-12 bg-gradient-to-r from-blue-600 to-blue-800 rounded-lg text-white">
+        <div class="text-center px-8">
+          <h2 class="text-3xl font-bold mb-4">Professional Reshoring Services</h2>
+          <p class="text-xl mb-8 opacity-95">
+            Our certified teams provide engineered reshoring solutions for safe load-bearing modifications
+          </p>
+          
+          <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <a href="/free-inspection" class="bg-white text-cyan-600 px-8 py-4 rounded-lg font-bold hover:bg-slate-50 transition-colors">
+              Get Structural Assessment
+            </a>
+            <a href="tel:437-545-0067" class="bg-red-600 text-white px-8 py-4 rounded-lg font-bold hover:bg-red-700 transition-colors">
+              Emergency Support: 437-545-0067
+            </a>
+          </div>
+        </div>
+      </section>
+    </div>
+  </section>
+</PageLayout>

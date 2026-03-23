@@ -1,0 +1,422 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import Hero from '../../components/sections/Hero.astro';
+import Services from '../../components/sections/Services.astro';
+import Process from '../../components/sections/Process.astro';
+import Testimonials from '../../components/sections/Testimonials.astro';
+import Stats from '../../components/sections/Stats.astro';
+import LocationImageShowcase from '../../components/LocationImageShowcase.astro';
+import InternalLinks from '../../components/InternalLinks.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import BreadcrumbSchema from '../../components/BreadcrumbSchema.astro';
+
+const pageTitle = "Moisture Protection Richmond Hill | Professional Basement Solutions";
+const pageDescription = "Richmond Hill Oak Ridges Moraine moisture protection. Kettle lake specialists, affluent estate solutions, moraine geology experts.";
+
+// Local area information
+const localInfo = {
+  cityName: "Richmond Hill",
+  population: "202,000",
+  waterTable: "Moraine influenced",
+  soilType: "Glacial moraine complex",
+  avgHomesAge: "20-30 years affluent",
+  floodRisk: "Kettle lake seasonal",
+  avgRainfall: "850mm + elevation"
+};
+
+// Location-specific features
+const locationFeatures = [
+  {
+    title: 'LOCAL EXPERTS',
+    description: 'Serving the area for over 25 years with deep knowledge of local conditions.',
+    highlight: true
+  },
+  {
+    title: 'FAST RESPONSE TIME',
+    description: '2-hour emergency response anywhere in the area. Available 24/7.',
+    highlight: true
+  },
+  {
+    title: 'ALL NEIGHBORHOODS',
+    description: 'Serving Oak Ridges, Langstaff, Jefferson and all local areas.',
+    highlight: true
+  },
+  {
+    title: 'MORAINE GEOLOGY EXPERTS',
+    description: 'Specialized in Oak Ridges Moraine unique geology, kettle lakes, and complex drainage.'
+  },
+  {
+    title: 'LUXURY ESTATE SPECIALISTS',
+    description: 'Premium moisture protection solutions for local affluent properties and custom homes.',
+  },
+  {
+    title: 'KETTLE LAKE SOLUTIONS',
+    description: 'Advanced management of kettle lake drainage and seasonal water level variations.'
+  }
+];
+
+// Location-specific FAQs
+const locationFAQs = [
+  {
+    question: "How does the Oak Ridges Moraine affect local moisture protection?",
+    answer: "The Oak Ridges Moraine creates unique geological conditions with complex glacial deposits, kettle lakes, and variable drainage patterns. Our moraine expertise includes specialized solutions for the challenging soil conditions and natural water retention areas characteristic of this sensitive geological formation."
+  },
+  {
+    question: "What are kettle lakes and how do they affect foundations?",
+    answer: "Kettle lakes are natural depressions formed by glacial activity, common in Richmond Hill. They create localized high water tables, seasonal flooding, and unique drainage challenges. Our kettle lake solutions include specialized drainage systems and water level management for properties near these natural features."
+  },
+  {
+    question: "How do you protect luxury estates in the area?",
+    answer: "Local affluent properties require premium moisture protection solutions including sophisticated drainage systems, high-end finishes, and minimal disruption to extensive landscaping. We provide white-glove service that meets the expectations of luxury homeowners while delivering superior protection."
+  },
+  {
+    question: "What makes Oak Ridges area soil conditions unique?",
+    answer: "Oak Ridges sits on complex glacial moraine deposits mixing clay, sand, gravel, and till in unpredictable patterns. This creates challenging drainage conditions requiring detailed soil analysis and customized waterproofing approaches for each property's unique geological profile."
+  },
+  {
+    question: "Do you work with environmental restrictions in the moraine?",
+    answer: "Yes! The Oak Ridges Moraine is environmentally protected, requiring compliance with strict conservation guidelines. Our moraine-compliant solutions work within environmental restrictions while providing effective waterproofing protection for this sensitive ecological area."
+  },
+  {
+    question: "How do you handle newer development challenges?",
+    answer: "Local rapid upscale development often features inadequate initial drainage, construction settling, and overwhelmed systems. We specialize in post-construction protection upgrades that exceed original builder specifications while maintaining property values."
+  }
+];
+
+// Schema markup for local business
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": ["LocalBusiness", "HomeAndConstructionBusiness", "ProtectionService"],
+  "name": "Dryspace Protection",
+  "description": "Professional basement protection services in Richmond Hill. Expert foundation repair, and drainage solutions. Serving all local neighborhoods with 25-year warranty protection.",
+  "telephone": "437-545-0067",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Service Area",
+    "addressLocality": "Richmond Hill",
+    "addressRegion": "ON",
+    "postalCode": "L4C",
+    "addressCountry": "CA"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "43.8828",
+    "longitude": "-79.4403"
+  },
+  "areaServed": [
+    {
+      "@type": "City",
+      "name": "Richmond Hill",
+      "sameAs": "https://en.wikipedia.org/wiki/Richmond_Hill,_Ontario"
+    },
+    {
+      "@type": "Place",
+      "name": "York Region"
+    }
+  ],
+  "serviceArea": {
+    "@type": "GeoCircle",
+    "geoMidpoint": {
+      "@type": "GeoCoordinates", 
+      "latitude": "43.8828",
+      "longitude": "-79.4403"
+    },
+    "geoRadius": "25000"
+  },
+  "openingHours": [
+    "Mo-Fr 07:00-19:00",
+    "Sa 08:00-17:00", 
+    "Su 09:00-17:00"
+  ],
+  "availableLanguage": ["English"],
+  "currenciesAccepted": "CAD",
+  "paymentAccepted": ["Cash", "Credit Card", "Debit Card", "Bank Transfer"],
+  "priceRange": "$$",
+  "url": "https://dryspacewaterproofing.com/locations/richmond-hill",
+  "logo": "https://dryspacewaterproofing.com/images/dryspace-logo.webp",
+  "image": "https://dryspacewaterproofing.com/images/dryspace_hero_desktop.webp",
+  "sameAs": [
+    "https://www.facebook.com/dryspacewaterproofing",
+    "https://www.linkedin.com/company/dryspace-waterproofing"
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Protection Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Basement Waterproofing",
+          "description": "Complete basement protection solutions"
+        }
+      },
+      {
+        "@type": "Offer", 
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Foundation Repair",
+          "description": "Foundation crack repair and structural solutions"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service", 
+          "name": "Drainage Solutions",
+          "description": "French drains, sump pumps, and drainage systems"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Emergency Water Removal",
+          "description": "24/7 emergency flooding and moisture damage response"
+        }
+      }
+    ]
+  },
+  "review": {
+    "@type": "Review",
+    "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": "4.9",
+      "bestRating": "5"
+    },
+    "author": {
+      "@type": "Organization",
+      "name": "Dryspace Protection Customers"
+    }
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "reviewCount": "150",
+    "bestRating": "5"
+  }
+};
+---
+
+<PageLayout 
+  title={pageTitle}
+  description={pageDescription}
+>
+  
+  <!-- Breadcrumbs -->
+  <div class="container mx-auto px-4 mt-4">
+    <Breadcrumbs 
+      items={[
+        { name: "Home", url: "/" },
+        { name: "Service Areas", url: "/service-areas" },
+        { name: "Richmond Hill" }
+      ]}
+    />
+  </div>
+
+<!-- Location Hero -->
+  <Hero 
+    title="Moisture Protection Richmond Hill"
+    subtitle="Professional basement protection and foundation repair serving all local neighborhoods. 25-year warranty, free inspection."
+    primaryCTA={{ text: "Get Free Quote", href: "/free-inspection" }}
+    secondaryCTA={{ text: "Call: 437-545-0067", href: "tel:437-545-0067" }}
+    backgroundImage="/images/dryspace_hero_desktop.webp"
+    badge="Serving the Area"
+  />
+
+  <!-- Internal Links -->
+  <section class="py-8 bg-white">
+    <div class="container mx-auto px-4">
+      <InternalLinks category="location" currentPage="richmond-hill" />
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <Stats />
+
+  <!-- Local Information Section -->
+  <section class="py-16 bg-slate-50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-4xl font-bold text-slate-900 mb-4 uppercase">MOISTURE PROTECTION SERVICES IN RICHMOND HILL</h2>
+        
+        <div class="prose prose-lg  max-w-none">
+          <p class="text-lg text-slate-600 mb-6">
+            The area presents unique moisture challenges rooted in its location on the environmentally sensitive Oak Ridges Moraine. This glacial formation creates complex geological conditions, kettle lake drainage patterns, and strict environmental protections, while the community's affluent character demands premium solutions for luxury properties.
+          </p>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
+            <div class="bg-white border-2 border-slate-200  p-6">
+              <h3 class="text-xl font-bold text-slate-900 mb-6 uppercase">LOCAL QUICK FACTS</h3>
+              <ul class="space-y-2 text-slate-600 ">
+                <li class="flex justify-between items-center pb-2 border-b border-slate-100">
+                <span class="text-sm font-semibold text-slate-600 uppercase">Population</span>
+                <span class="text-sm font-bold text-slate-900">202,000</span>
+              </li>
+                <li class="flex justify-between items-center pb-2 border-b border-slate-100">
+                <span class="text-sm font-semibold text-slate-600 uppercase">Average Home Age</span>
+                <span class="text-sm font-bold text-slate-900">20-30 YEARS AFFLUENT</span>
+              </li>
+                <li class="flex justify-between items-center pb-2 border-b border-slate-100">
+                <span class="text-sm font-semibold text-slate-600 uppercase">Annual Rainfall</span>
+                <span class="text-sm font-bold text-slate-900">850MM + ELEVATION</span>
+              </li>
+                <li class="flex justify-between items-center pb-2 border-b border-slate-100">
+                <span class="text-sm font-semibold text-slate-600 uppercase">Frost Line</span>
+                <span class="text-sm font-bold text-slate-900">1.2 METERS</span>
+              </li>
+                <li class="flex justify-between items-center pb-2 border-b border-slate-100">
+                <span class="text-sm font-semibold text-slate-600 uppercase">Flood Risk</span>
+                <span class="text-sm font-bold text-slate-900">KETTLE LAKE SEASONAL</span>
+              </li>
+              </ul>
+            </div>
+            
+            <div class="bg-navy-900 border-2 border-slate-200  p-6">
+              <h3 class="text-xl font-bold text-slate-900 mb-6 uppercase">WHY THE AREA NEEDS MOISTURE PROTECTION</h3>
+              <ul class="space-y-2 text-slate-300">
+                <li class="text-sm text-slate-300 flex items-start">
+                <span class="mr-2 text-cyan-400">•</span>
+                <span>Complex moraine geology creates drainage challenges</span>
+              </li>
+                <li class="text-sm text-slate-300 flex items-start">
+                <span class="mr-2 text-cyan-400">•</span>
+                <span>Kettle lakes create localized high water tables</span>
+              </li>
+                <li class="text-sm text-slate-300 flex items-start">
+                <span class="mr-2 text-cyan-400">•</span>
+                <span>Moraine elevation increases precipitation retention</span>
+              </li>
+                <li class="text-sm text-slate-300 flex items-start">
+                <span class="mr-2 text-cyan-400">•</span>
+                <span>Freeze-thaw cycles damage foundations</span>
+              </li>
+                <li class="text-sm text-slate-300 flex items-start">
+                <span class="mr-2 text-cyan-400">•</span>
+                <span>Kettle lake seasonal water level variations</span>
+              </li>
+              </ul>
+            </div>
+          </div>
+
+          <h3 class="text-2xl font-bold mt-8 mb-4">Neighborhoods We Serve</h3>
+          <p class="mb-4">
+            Our local moisture protection team serves all neighborhoods including:
+          </p>
+          <div class="flex flex-wrap gap-2">
+            {["Oak Ridges","Langstaff","Jefferson","Bayview Hill","Rouge Woods","Mill Pond"].map((neighborhood) => (
+              <span class="border-2 border-slate-200 px-4 py-2 text-sm">
+                {neighborhood}
+              </span>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <Services />
+
+  <!-- Location Features -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl font-bold text-slate-900 mb-4 uppercase">WHY CHOOSE DRYSPACE LOCALLY</h2>
+        <p class="text-lg text-slate-600 max-w-3xl mx-auto">
+          Local expertise combined with industry-leading warranties and service
+        </p>
+      </div>
+      
+      <!-- Highlighted Features -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+        {locationFeatures.filter(f => f.highlight).map((feature) => (
+          <div class="bg-amber-500 border-2 border-slate-700 p-6">
+            <h3 class="text-lg font-bold text-slate-900 mb-3 uppercase">{feature.title}</h3>
+            <p class="text-sm text-slate-900">{feature.description}</p>
+          </div>
+        ))}
+      </div>
+      
+      <!-- Regular Features -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {locationFeatures.filter(f => !f.highlight).map((feature) => (
+          <div class="bg-white border-2 border-slate-200 p-6 hover:border-slate-300 transition-colors">
+            <h3 class="text-lg font-bold text-slate-900 mb-3 uppercase">{feature.title}</h3>
+            <p class="text-sm text-slate-600">{feature.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Process -->
+  <Process />
+
+
+  <!-- Location Image Showcase -->
+  <LocationImageShowcase city="Richmond Hill" />
+
+  <!-- Testimonials -->
+  <Testimonials />
+
+  <!-- FAQ Section -->
+  <section class="py-16 bg-slate-50">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl font-bold text-slate-900 mb-4 uppercase">LOCAL MOISTURE PROTECTION FAQS</h2>
+        <p class="text-lg text-slate-600">Common questions from local homeowners</p>
+      </div>
+      
+      <div class="max-w-4xl mx-auto">
+        {locationFAQs.map((faq, index) => (
+          <details class="mb-4 border-2 border-slate-200 bg-white">
+            <summary class="cursor-pointer p-6 hover:bg-slate-50 transition-colors">
+              <div class="flex items-center justify-between">
+                <h3 class="text-lg font-bold text-slate-900 uppercase pr-4">{faq.question}</h3>
+                <span class="text-slate-400 flex-shrink-0 text-2xl">+</span>
+              </div>
+            </summary>
+            <div class="px-6 pb-6 pt-0">
+              <p class="text-slate-600">{faq.answer}</p>
+            </div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-16 bg-navy-900">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-4xl font-bold text-slate-900 mb-4 uppercase">PRESERVE YOUR MORAINE ESTATE</h2>
+        <p class="text-lg text-slate-300 mb-8">
+          Premium moisture protection solutions for Oak Ridges Moraine luxury properties and environmental compliance
+        </p>
+        
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a 
+            href="/free-inspection"
+            class="bg-amber-500 text-black px-8 py-4 text-lg font-bold hover:bg-amber-400 transition-colors uppercase"
+          >
+            Get Luxury Estate Assessment
+          </a>
+          <a 
+            href="tel:437-545-0067"
+            class="border-2 border-white text-slate-900 px-8 py-4 text-lg font-bold hover:bg-white hover:text-black transition-colors uppercase"
+          >
+            Call: 437-545-0067
+          </a>
+        </div>
+        
+        <div class="mt-8 inline-flex items-center text-cyan-400">
+          <span class="text-sm font-bold uppercase">24/7 Emergency Service Available</span>
+        </div>
+      </div>
+    </div>
+  </section>
+</PageLayout>
+
+<script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)}>
+<BreadcrumbSchema items={[{name: 'Home', url: '/'}, {name: 'Locations', url: '/locations'}, {name: 'Richmond Hill'}]} />

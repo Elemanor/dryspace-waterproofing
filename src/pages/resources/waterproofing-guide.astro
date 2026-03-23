@@ -1,0 +1,527 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Navbar from "../../components/Navbar.astro";
+import Hero from "../../components/Hero.astro";
+import Footer from "../../components/Footer.astro";
+import CTASection from '../../components/sections/CTA.astro';
+---
+
+<Layout
+  title="Below-Grade Waterproofing Guide | Building Science | DrySpace"
+  description="Professional guide to foundation waterproofing, moisture control, and building science principles. Learn about hydrostatic pressure, capillary action, and proven solutions."
+>
+  <Navbar />
+  <Hero
+    title="The Complete Guide to Below-Grade Waterproofing"
+    subtitle="Building Science Principles for Dry, Healthy Basements"
+    backgroundImage="/images/dryspace_hero_desktop.webp"
+  />
+
+  <main class="container mx-auto px-6 py-12">
+    <!-- Introduction Section -->
+    <section class="mb-16">
+      <div class="max-w-4xl mx-auto">
+        <p class="text-lg text-slate-600 mb-6">
+          Modern basements serve as valuable living spaces, yet many construction practices haven't evolved to meet these expectations. Understanding the science of moisture movement and implementing proper waterproofing systems is essential for creating healthy, comfortable below-grade spaces.
+        </p>
+        <div class="bg-cyan-50 border-l-4 border-cyan-600 p-6 rounded-lg">
+          <h3 class="font-bold text-xl mb-3">Two Fundamental Principles of Moisture Control:</h3>
+          <ol class="space-y-2">
+            <li><span class="font-semibold">1. Surface Water Management:</span> Direct rainwater away from foundation perimeters</li>
+            <li><span class="font-semibold">2. Groundwater Drainage:</span> Control hydrostatic pressure and capillary action through proper drainage systems</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- Understanding Moisture Sources -->
+    <section class="mb-16">
+      <h2 class="text-3xl font-bold mb-8 text-center">Understanding Moisture Sources</h2>
+      
+      <div class="grid md:grid-cols-2 gap-8 mb-8">
+        <!-- Interior Sources -->
+        <div class="bg-white rounded-lg shadow-lg p-6">
+          <h3 class="font-bold text-xl mb-4 text-cyan-600">Interior Moisture Sources</h3>
+          <p class="text-slate-500 mb-4">A typical 4-person household generates approximately 2 gallons (7.5L) of moisture daily through:</p>
+          <ul class="space-y-2">
+            <li class="flex items-start">
+              <span class="text-cyan-500 mr-2">💧</span>
+              <span>Cooking and dishwashing activities</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-cyan-500 mr-2">💧</span>
+              <span>Bathing and personal hygiene</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-cyan-500 mr-2">💧</span>
+              <span>Respiration and perspiration (0.3 gal/person/day)</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-cyan-500 mr-2">💧</span>
+              <span>Laundry and floor cleaning</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-cyan-500 mr-2">💧</span>
+              <span>Indoor plants and aquariums</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Exterior Sources -->
+        <div class="bg-white rounded-lg shadow-lg p-6">
+          <h3 class="font-bold text-xl mb-4 text-orange-600">Exterior Moisture Sources</h3>
+          <p class="text-slate-500 mb-4">External moisture threatens foundations through multiple pathways:</p>
+          <ul class="space-y-2">
+            <li class="flex items-start">
+              <span class="text-orange-500 mr-2">🌧️</span>
+              <span>Direct precipitation and roof runoff</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-orange-500 mr-2">🌊</span>
+              <span>Surface water accumulation</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-orange-500 mr-2">💦</span>
+              <span>Rising water tables and groundwater</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-orange-500 mr-2">🌫️</span>
+              <span>Soil moisture and water vapor</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-orange-500 mr-2">❄️</span>
+              <span>Frost action and freeze-thaw cycles</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Construction Moisture -->
+      <div class="bg-amber-50 rounded-lg p-6">
+        <h3 class="font-bold text-xl mb-3">Construction Moisture Facts:</h3>
+        <p class="text-slate-600">Fresh concrete contains substantial water that releases slowly over 18 months. A typical foundation (8' walls, 10" thick, 115' perimeter) can release 530-790 gallons during curing, contributing 1-1.3 gallons daily to indoor humidity during the drying period.</p>
+      </div>
+    </section>
+
+    <!-- How Moisture Moves -->
+    <section class="mb-16">
+      <h2 class="text-3xl font-bold mb-8 text-center">Three Ways Moisture Penetrates Foundations</h2>
+      
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-lg p-6">
+          <div class="text-3xl mb-4">💧</div>
+          <h3 class="font-bold text-xl mb-3">Hydrostatic Pressure</h3>
+          <p class="text-slate-600">Water accumulation in soil creates pressure against foundation walls. Even minimal pressure can force water through tiny cracks, requiring proper drainage to relieve this force.</p>
+        </div>
+        
+        <div class="bg-gradient-to-br from-green-50 to-green-100 rounded-lg p-6">
+          <div class="text-3xl mb-4">🧽</div>
+          <h3 class="font-bold text-xl mb-3">Capillary Action</h3>
+          <p class="text-slate-600">Concrete's porous nature allows moisture to wick upward through microscopic channels. This silent moisture movement can transport water several feet vertically.</p>
+        </div>
+        
+        <div class="bg-gradient-to-br from-orange-50 to-orange-100 rounded-lg p-6">
+          <div class="text-3xl mb-4">💨</div>
+          <h3 class="font-bold text-xl mb-3">Vapor Diffusion</h3>
+          <p class="text-slate-600">Moisture vapor moves through materials from high to low pressure areas, independent of air movement. This process continues year-round, regardless of temperature.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Signs of Moisture Problems -->
+    <section class="mb-16">
+      <h2 class="text-3xl font-bold mb-8 text-center">Recognizing Basement Moisture Problems</h2>
+      
+      <div class="max-w-4xl mx-auto">
+        <div class="space-y-6">
+          <!-- Visual Signs -->
+          <div class="bg-white rounded-lg shadow-md p-6">
+            <h3 class="font-bold text-xl mb-3 flex items-center">
+              <span class="text-2xl mr-3">👁️</span>
+              Visual Indicators
+            </h3>
+            <ul class="grid md:grid-cols-2 gap-3">
+              <li>• Water stains or rust-colored marks</li>
+              <li>• Peeling or bubbling paint</li>
+              <li>• White mineral deposits (efflorescence)</li>
+              <li>• Visible mold or mildew growth</li>
+              <li>• Cracking or spalling concrete</li>
+              <li>• Standing water or puddles</li>
+            </ul>
+          </div>
+
+          <!-- Smell Signs -->
+          <div class="bg-white rounded-lg shadow-md p-6">
+            <h3 class="font-bold text-xl mb-3 flex items-center">
+              <span class="text-2xl mr-3">👃</span>
+              Odor Indicators
+            </h3>
+            <p class="text-slate-600 mb-3">Musty or earthy smells indicate active mold growth. These odors often precede visible mold and signal serious moisture issues requiring immediate attention.</p>
+            <div class="bg-red-50 border border-red-200 rounded p-3">
+              <p class="text-sm text-red-800"><strong>Health Warning:</strong> Mold exposure can cause respiratory issues, allergic reactions, and worsen asthma, particularly in children and immunocompromised individuals.</p>
+            </div>
+          </div>
+
+          <!-- Physical Signs -->
+          <div class="bg-white rounded-lg shadow-md p-6">
+            <h3 class="font-bold text-xl mb-3 flex items-center">
+              <span class="text-2xl mr-3">🌡️</span>
+              Environmental Indicators
+            </h3>
+            <ul class="space-y-2">
+              <li>• Elevated humidity levels (>60%)</li>
+              <li>• Condensation on windows or pipes</li>
+              <li>• Warped wood or swollen doors</li>
+              <li>• Cold, clammy feeling in basement</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Three Lines of Defense -->
+    <section class="mb-16">
+      <h2 class="text-3xl font-bold mb-8 text-center">Three Lines of Defense Against Water</h2>
+      
+      <div class="space-y-8">
+        <!-- Line 1 -->
+        <div class="flex items-start">
+          <div class="bg-cyan-600 text-white rounded-full w-12 h-12 flex items-center justify-center text-xl font-bold mr-6 flex-shrink-0">1</div>
+          <div class="flex-grow">
+            <h3 class="font-bold text-xl mb-3">Surface Water Management</h3>
+            <p class="text-slate-600 mb-3">Proper grading directs water away from foundations. IRC requires minimum 6" fall within first 10 feet from foundation.</p>
+            <div class="bg-slate-50 rounded-lg p-4">
+              <ul class="grid md:grid-cols-2 gap-2 text-sm">
+                <li>✓ Slope walkways and driveways away</li>
+                <li>✓ Install proper gutters and downspouts</li>
+                <li>✓ Extend downspouts 6+ feet from foundation</li>
+                <li>✓ Maintain positive grading around perimeter</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Line 2 -->
+        <div class="flex items-start">
+          <div class="bg-orange-600 text-white rounded-full w-12 h-12 flex items-center justify-center text-xl font-bold mr-6 flex-shrink-0">2</div>
+          <div class="flex-grow">
+            <h3 class="font-bold text-xl mb-3">Perimeter Drainage Systems</h3>
+            <p class="text-slate-600 mb-3">Foundation drains prevent water accumulation and relieve hydrostatic pressure.</p>
+            <div class="bg-slate-50 rounded-lg p-4">
+              <ul class="grid md:grid-cols-2 gap-2 text-sm">
+                <li>✓ Install perforated drain tile at footing level</li>
+                <li>✓ Use free-draining gravel backfill</li>
+                <li>✓ Connect to sump pump or daylight drain</li>
+                <li>✓ Include cleanout access points</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Line 3 -->
+        <div class="flex items-start">
+          <div class="bg-cyan-600 text-white rounded-full w-12 h-12 flex items-center justify-center text-xl font-bold mr-6 flex-shrink-0">3</div>
+          <div class="flex-grow">
+            <h3 class="font-bold text-xl mb-3">Foundation Protection Systems</h3>
+            <p class="text-slate-600 mb-3">The final barrier protecting your foundation from moisture intrusion.</p>
+            <div class="bg-slate-50 rounded-lg p-4">
+              <ul class="grid md:grid-cols-2 gap-2 text-sm">
+                <li>✓ Dimpled drainage membranes create air gaps</li>
+                <li>✓ Elastomeric coatings bridge cracks</li>
+                <li>✓ Proper detailing at penetrations</li>
+                <li>✓ Protection during backfilling</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Solutions Comparison -->
+    <section class="mb-16">
+      <h2 class="text-3xl font-bold mb-8 text-center">Waterproofing Solutions Comparison</h2>
+      
+      <div class="overflow-x-auto">
+        <table class="min-w-full bg-white rounded-lg overflow-hidden shadow-lg">
+          <thead class="bg-navy-900 text-white">
+            <tr>
+              <th class="px-6 py-4 text-left">Solution Type</th>
+              <th class="px-6 py-4 text-left">Pros</th>
+              <th class="px-6 py-4 text-left">Cons</th>
+              <th class="px-6 py-4 text-left">Best For</th>
+              <th class="px-6 py-4 text-center">Cost Range</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-200">
+            <tr>
+              <td class="px-6 py-4 font-semibold">Spray-Applied Coatings</td>
+              <td class="px-6 py-4">
+                <ul class="text-sm space-y-1">
+                  <li>• Quick application</li>
+                  <li>• Seamless coverage</li>
+                  <li>• Low initial cost</li>
+                </ul>
+              </td>
+              <td class="px-6 py-4">
+                <ul class="text-sm space-y-1">
+                  <li>• Can't bridge cracks</li>
+                  <li>• Damage during backfill</li>
+                  <li>• Temperature sensitive</li>
+                </ul>
+              </td>
+              <td class="px-6 py-4">Minimal protection needs</td>
+              <td class="px-6 py-4 text-center">$2-4/sq ft</td>
+            </tr>
+            <tr class="bg-slate-50">
+              <td class="px-6 py-4 font-semibold">Dimpled Membranes</td>
+              <td class="px-6 py-4">
+                <ul class="text-sm space-y-1">
+                  <li>• Creates air gap</li>
+                  <li>• Bridges cracks</li>
+                  <li>• Cold weather install</li>
+                  <li>• 65-year lifespan</li>
+                </ul>
+              </td>
+              <td class="px-6 py-4">
+                <ul class="text-sm space-y-1">
+                  <li>• Higher initial cost</li>
+                  <li>• Requires proper fastening</li>
+                </ul>
+              </td>
+              <td class="px-6 py-4">High water tables, quality construction</td>
+              <td class="px-6 py-4 text-center">$4-6/sq ft</td>
+            </tr>
+            <tr>
+              <td class="px-6 py-4 font-semibold">Elastomeric Membranes</td>
+              <td class="px-6 py-4">
+                <ul class="text-sm space-y-1">
+                  <li>• 1500% elongation</li>
+                  <li>• Self-healing properties</li>
+                  <li>• Chemical resistant</li>
+                </ul>
+              </td>
+              <td class="px-6 py-4">
+                <ul class="text-sm space-y-1">
+                  <li>• Requires protection</li>
+                  <li>• Longer cure time</li>
+                  <li>• Solvent-based</li>
+                </ul>
+              </td>
+              <td class="px-6 py-4">Critical applications, repairs</td>
+              <td class="px-6 py-4 text-center">$5-7/sq ft</td>
+            </tr>
+            <tr class="bg-slate-50">
+              <td class="px-6 py-4 font-semibold">Interior Drainage</td>
+              <td class="px-6 py-4">
+                <ul class="text-sm space-y-1">
+                  <li>• No excavation needed</li>
+                  <li>• Year-round installation</li>
+                  <li>• Cost-effective retrofit</li>
+                </ul>
+              </td>
+              <td class="px-6 py-4">
+                <ul class="text-sm space-y-1">
+                  <li>• Doesn't stop deterioration</li>
+                  <li>• Requires sump pump</li>
+                  <li>• Interior disruption</li>
+                </ul>
+              </td>
+              <td class="px-6 py-4">Existing homes, limited access</td>
+              <td class="px-6 py-4 text-center">$700-2,600</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Advanced Technology Section -->
+    <section class="mb-16">
+      <h2 class="text-3xl font-bold mb-8 text-center">Advanced Dimpled Membrane Technology</h2>
+      
+      <div class="grid md:grid-cols-2 gap-8">
+        <!-- How It Works -->
+        <div class="bg-cyan-50 rounded-lg p-6">
+          <h3 class="font-bold text-xl mb-4">How Dimpled Membranes Work</h3>
+          <div class="space-y-4">
+            <div class="flex items-start">
+              <span class="bg-cyan-600 text-white rounded-full w-6 h-6 flex items-center justify-center mr-3 flex-shrink-0 text-sm">1</span>
+              <p class="text-slate-600"><strong>Air Gap Creation:</strong> Dimples form a continuous drainage space between membrane and wall</p>
+            </div>
+            <div class="flex items-start">
+              <span class="bg-cyan-600 text-white rounded-full w-6 h-6 flex items-center justify-center mr-3 flex-shrink-0 text-sm">2</span>
+              <p class="text-slate-600"><strong>Pressure Relief:</strong> Water flows freely to footing drains without building hydrostatic pressure</p>
+            </div>
+            <div class="flex items-start">
+              <span class="bg-cyan-600 text-white rounded-full w-6 h-6 flex items-center justify-center mr-3 flex-shrink-0 text-sm">3</span>
+              <p class="text-slate-600"><strong>Capillary Break:</strong> Physical separation prevents moisture wicking into foundation</p>
+            </div>
+            <div class="flex items-start">
+              <span class="bg-cyan-600 text-white rounded-full w-6 h-6 flex items-center justify-center mr-3 flex-shrink-0 text-sm">4</span>
+              <p class="text-slate-600"><strong>Crack Bridging:</strong> Membrane spans settlement cracks up to 10mm</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Technical Specifications -->
+        <div class="bg-orange-50 rounded-lg p-6">
+          <h3 class="font-bold text-xl mb-4">Performance Specifications</h3>
+          <table class="w-full text-sm">
+            <tbody class="divide-y divide-gray-300">
+              <tr>
+                <td class="py-2 font-medium">Material:</td>
+                <td class="py-2">High-density polyethylene (HDPE)</td>
+              </tr>
+              <tr>
+                <td class="py-2 font-medium">Dimple Height:</td>
+                <td class="py-2">5/16" (8mm) typical</td>
+              </tr>
+              <tr>
+                <td class="py-2 font-medium">Compressive Strength:</td>
+                <td class="py-2">5,200 psf (250 kN/m²)</td>
+              </tr>
+              <tr>
+                <td class="py-2 font-medium">Temperature Range:</td>
+                <td class="py-2">-30°F to 160°F (-35°C to 70°C)</td>
+              </tr>
+              <tr>
+                <td class="py-2 font-medium">Installation Temp:</td>
+                <td class="py-2">Down to -24°F (-31°C)</td>
+              </tr>
+              <tr>
+                <td class="py-2 font-medium">Life Expectancy:</td>
+                <td class="py-2">65+ years</td>
+              </tr>
+              <tr>
+                <td class="py-2 font-medium">Recycled Content:</td>
+                <td class="py-2">60% post-consumer</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Installation Best Practices -->
+    <section class="mb-16">
+      <h2 class="text-3xl font-bold mb-8 text-center">Professional Installation Guidelines</h2>
+      
+      <div class="bg-slate-50 rounded-lg p-8">
+        <div class="grid md:grid-cols-2 gap-8">
+          <!-- Surface Preparation -->
+          <div>
+            <h3 class="font-bold text-xl mb-4 text-cyan-600">Surface Preparation</h3>
+            <ul class="space-y-2">
+              <li class="flex items-start">
+                <span class="text-cyan-600 mr-2">✓</span>
+                <span>Remove form ties and seal holes</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-cyan-600 mr-2">✓</span>
+                <span>Repair honeycombing and voids</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-cyan-600 mr-2">✓</span>
+                <span>Parge block walls per code</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-cyan-600 mr-2">✓</span>
+                <span>Create cove at wall-footing junction</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-cyan-600 mr-2">✓</span>
+                <span>Mark final grade line</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Installation Steps -->
+          <div>
+            <h3 class="font-bold text-xl mb-4 text-orange-600">Key Installation Steps</h3>
+            <ul class="space-y-2">
+              <li class="flex items-start">
+                <span class="text-cyan-600 mr-2">✓</span>
+                <span>Install with dimples facing wall</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-cyan-600 mr-2">✓</span>
+                <span>Secure with proper fastening pattern</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-cyan-600 mr-2">✓</span>
+                <span>Overlap seams minimum 6 inches</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-cyan-600 mr-2">✓</span>
+                <span>Seal terminations and penetrations</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-cyan-600 mr-2">✓</span>
+                <span>Protect during backfilling</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Critical Details -->
+        <div class="mt-8 bg-amber-50 border border-amber-400 rounded-lg p-6">
+          <h3 class="font-bold text-lg mb-3">Critical Installation Details:</h3>
+          <div class="grid md:grid-cols-2 gap-4 text-sm">
+            <div>
+              <strong>Fastening Pattern:</strong> "W" pattern, 24" horizontal, 4-6" vertical spacing
+            </div>
+            <div>
+              <strong>Corner Treatment:</strong> No fasteners within 3" of corners
+            </div>
+            <div>
+              <strong>UV Exposure:</strong> Maximum 30 days before covering
+            </div>
+            <div>
+              <strong>Backfill Method:</strong> In lifts when soil is frozen
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ROI Section -->
+    <section class="mb-16">
+      <div class="bg-gradient-to-r from-green-600 to-green-700 text-white rounded-lg p-12">
+        <h2 class="text-3xl font-bold mb-8 text-center">Return on Investment</h2>
+        
+        <div class="grid md:grid-cols-3 gap-8 text-center">
+          <div>
+            <div class="text-4xl font-bold mb-2">30%</div>
+            <p>Reduction in heating/cooling costs with proper moisture control</p>
+          </div>
+          <div>
+            <div class="text-4xl font-bold mb-2">$15,000+</div>
+            <p>Average cost of mold remediation avoided</p>
+          </div>
+          <div>
+            <div class="text-4xl font-bold mb-2">100%</div>
+            <p>ROI when selling - dry basements are expected</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="text-center">
+      <h2 class="text-3xl font-bold mb-6">Protect Your Foundation Investment</h2>
+      <p class="text-xl text-slate-600 mb-8 max-w-3xl mx-auto">
+        Don't wait for moisture problems to develop. Professional waterproofing installed correctly the first time costs far less than remediation and repairs.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/contact" class="bg-orange-500 text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-orange-600 transition">
+          Get Professional Assessment
+        </a>
+        <a href="/services/exterior-waterproofing" class="bg-cyan-600 text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-cyan-700 transition">
+          View Our Services
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <CTASection />
+  <Footer />
+</Layout>

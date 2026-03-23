@@ -1,0 +1,290 @@
+---
+// Technical Drawings & CAD Details - Professional contractor resources
+const drawings = [
+  {
+    title: 'EXTERIOR WATERPROOFING DETAIL',
+    category: 'FOUNDATION SYSTEMS',
+    format: 'DWG',
+    size: '2.4 MB',
+    preview: '/images/exterior-waterproofing-membrane.webp',
+    description: 'Complete exterior membrane application with drainage board',
+    includes: [
+      'Foundation wall detail',
+      'Membrane application layers',
+      'Drainage board installation',
+      'Gravel bed specifications'
+    ],
+    downloadUrl: '/downloads/exterior-waterproofing-detail.dwg'
+  },
+  {
+    title: 'INTERIOR DRAINAGE SYSTEM',
+    category: 'DRAINAGE SOLUTIONS',
+    format: 'DWG',
+    size: '1.8 MB',
+    preview: '/images/interior-waterproofing.webp',
+    description: 'Weeping tile and sump pump configuration',
+    includes: [
+      'Weeping tile placement',
+      'Sump pit dimensions',
+      'Discharge piping layout',
+      'Backfill requirements'
+    ],
+    downloadUrl: '/downloads/interior-drainage-system.dwg'
+  },
+  {
+    title: 'FOUNDATION CRACK REPAIR',
+    category: 'REPAIR METHODS',
+    format: 'PDF',
+    size: '856 KB',
+    preview: '/images/crack.webp',
+    description: 'Injection repair methodology and specifications',
+    includes: [
+      'Crack preparation steps',
+      'Injection port spacing',
+      'Material specifications',
+      'Quality control checklist'
+    ],
+    downloadUrl: '/downloads/crack-repair-method.pdf'
+  },
+  {
+    title: 'SUMP PUMP INSTALLATION',
+    category: 'MECHANICAL SYSTEMS',
+    format: 'SKP',
+    size: '3.2 MB',
+    preview: '/images/sump-pump.webp',
+    description: '3D model of complete sump pump system',
+    includes: [
+      '3D sump pit model',
+      'Pump placement options',
+      'Battery backup configuration',
+      'Discharge line routing'
+    ],
+    downloadUrl: '/downloads/sump-pump-3d-model.skp'
+  },
+  {
+    title: 'FRENCH DRAIN ASSEMBLY',
+    category: 'DRAINAGE SOLUTIONS',
+    format: 'DWG',
+    size: '1.5 MB',
+    preview: '/images/drains.webp',
+    description: 'French drain installation with grading details',
+    includes: [
+      'Trench dimensions',
+      'Pipe specifications',
+      'Filter fabric placement',
+      'Grading requirements'
+    ],
+    downloadUrl: '/downloads/french-drain-assembly.dwg'
+  },
+  {
+    title: 'BACKWATER VALVE DETAIL',
+    category: 'PLUMBING SYSTEMS',
+    format: 'PDF',
+    size: '1.1 MB',
+    preview: '/images/waterp on the floor.webp',
+    description: 'City-compliant backwater valve installation',
+    includes: [
+      'Valve placement requirements',
+      'Access box specifications',
+      'Permit requirements',
+      'Inspection checklist'
+    ],
+    downloadUrl: '/downloads/backwater-valve-detail.pdf'
+  },
+  {
+    title: 'WINDOW WELL DRAINAGE',
+    category: 'DRAINAGE SOLUTIONS',
+    format: 'SKP',
+    size: '2.7 MB',
+    preview: '/images/window-well.webp',
+    description: '3D window well with drainage system',
+    includes: [
+      'Well dimensions guide',
+      'Drainage pipe connection',
+      'Gravel bed depth',
+      'Cover specifications'
+    ],
+    downloadUrl: '/downloads/window-well-drainage.skp'
+  },
+  {
+    title: 'FOUNDATION WALL SECTIONS',
+    category: 'STRUCTURAL DETAILS',
+    format: 'DWG',
+    size: '4.1 MB',
+    preview: '/images/structural foundation crack.webp',
+    description: 'Comprehensive foundation wall construction details',
+    includes: [
+      'Concrete specifications',
+      'Rebar placement',
+      'Waterproofing layers',
+      'Insulation options'
+    ],
+    downloadUrl: '/downloads/foundation-wall-sections.dwg'
+  }
+];
+
+// Group by format for statistics
+const formatCounts = {
+  DWG: drawings.filter(d => d.format === 'DWG').length,
+  PDF: drawings.filter(d => d.format === 'PDF').length,
+  SKP: drawings.filter(d => d.format === 'SKP').length
+};
+---
+
+<section class="py-16 bg-slate-50">
+  <div class="container mx-auto px-4">
+    <!-- Section Header -->
+    <div class="text-center mb-12">
+      <h2 class="text-4xl font-bold text-slate-900 mb-4 uppercase">
+        Technical Drawings & CAD Details
+      </h2>
+      <p class="text-lg text-slate-600 max-w-3xl mx-auto">
+        Professional construction details for contractors and engineers
+      </p>
+      
+      <!-- Format Statistics -->
+      <div class="mt-8 flex justify-center gap-8">
+        <div class="bg-white border-2 border-slate-200 px-6 py-3">
+          <span class="font-bold text-2xl text-slate-900">{formatCounts.DWG}</span>
+          <span class="text-sm text-slate-500 ml-2">AutoCAD Files</span>
+        </div>
+        <div class="bg-white border-2 border-slate-200 px-6 py-3">
+          <span class="font-bold text-2xl text-slate-900">{formatCounts.PDF}</span>
+          <span class="text-sm text-slate-500 ml-2">PDF Documents</span>
+        </div>
+        <div class="bg-white border-2 border-slate-200 px-6 py-3">
+          <span class="font-bold text-2xl text-slate-900">{formatCounts.SKP}</span>
+          <span class="text-sm text-slate-500 ml-2">SketchUp Models</span>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Drawings Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+      {drawings.map((drawing) => (
+        <div class="bg-white border-2 border-slate-200 hover:border-slate-300 transition-colors group">
+          <!-- Preview Image -->
+          <div class="relative h-48 overflow-hidden bg-slate-100">
+            <img 
+              src={drawing.preview} 
+              alt={drawing.title}
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+              loading="lazy"
+            />
+            <!-- Format Badge -->
+            <div class="absolute top-2 right-2 bg-navy-900 text-white px-3 py-1">
+              <span class="font-bold text-xs">{drawing.format}</span>
+            </div>
+            <!-- Category Badge -->
+            <div class="absolute bottom-2 left-2 bg-amber-500 text-black px-3 py-1">
+              <span class="font-bold text-xs uppercase">{drawing.category}</span>
+            </div>
+          </div>
+          
+          <!-- Content -->
+          <div class="p-4">
+            <h3 class="font-bold text-slate-900 text-sm uppercase mb-2">
+              {drawing.title}
+            </h3>
+            <p class="text-xs text-slate-500 mb-3">
+              {drawing.description}
+            </p>
+            
+            <!-- Includes List -->
+            <div class="border-t border-slate-100 pt-3 mb-3">
+              <p class="text-xs font-bold text-slate-900 uppercase mb-1">Includes:</p>
+              <ul class="text-xs text-slate-500 space-y-1">
+                {drawing.includes.map((item) => (
+                  <li class="flex items-start">
+                    <span class="mr-1">•</span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            
+            <!-- Download Button -->
+            <a 
+              href={drawing.downloadUrl}
+              download
+              class="block w-full bg-navy-900 text-white text-center py-3 font-bold text-sm hover:bg-navy-900 transition-colors uppercase"
+            >
+              Download {drawing.format} ({drawing.size})
+            </a>
+          </div>
+        </div>
+      ))}
+    </div>
+    
+    <!-- Bottom Info Section -->
+    <div class="mt-16 bg-white border-2 border-slate-200 p-12">
+      <div class="max-w-4xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-8">
+          <!-- Usage Rights -->
+          <div>
+            <h3 class="text-xl font-bold text-slate-900 uppercase mb-4">
+              Usage Rights
+            </h3>
+            <div class="space-y-2 text-sm text-slate-600">
+              <p class="flex items-start">
+                <span class="mr-2">•</span>
+                <span>Free for commercial and residential projects</span>
+              </p>
+              <p class="flex items-start">
+                <span class="mr-2">•</span>
+                <span>Modify as needed for specific applications</span>
+              </p>
+              <p class="flex items-start">
+                <span class="mr-2">•</span>
+                <span>Include in project submissions and permits</span>
+              </p>
+              <p class="flex items-start">
+                <span class="mr-2">•</span>
+                <span>Share with team members and subcontractors</span>
+              </p>
+            </div>
+          </div>
+          
+          <!-- Technical Support -->
+          <div>
+            <h3 class="text-xl font-bold text-slate-900 uppercase mb-4">
+              Technical Support
+            </h3>
+            <div class="space-y-3">
+              <div class="border-l-4 border-cyan-500 pl-4">
+                <p class="font-bold text-slate-900 uppercase text-sm">Engineering Department</p>
+                <p class="text-slate-600">Monday - Friday: 8:00 AM - 5:00 PM</p>
+                <p class="text-slate-600">Email: p.vysotckii@gmail.com</p>
+                <p class="text-slate-600">Phone: 437-545-0067 ext. 200</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Request Custom Drawings -->
+        <div class="mt-8 pt-8 border-t-2 border-slate-100 text-center">
+          <h3 class="text-xl font-bold text-slate-900 uppercase mb-4">
+            Need Custom Drawings?
+          </h3>
+          <p class="text-slate-600 mb-6">
+            Our engineering team can create project-specific details and specifications
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a 
+              href="/contact-engineering"
+              class="bg-amber-500 text-black px-8 py-4 text-lg font-bold hover:bg-amber-400 transition-colors uppercase"
+            >
+              Request Custom CAD Details
+            </a>
+            <a 
+              href="tel:437-545-0067"
+              class="bg-navy-900 text-white px-8 py-4 text-lg font-bold hover:bg-navy-900 transition-colors uppercase"
+            >
+              Call Engineering: 437-545-0067
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

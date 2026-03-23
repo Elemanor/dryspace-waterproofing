@@ -1,0 +1,876 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import ServiceHero from '../../components/sections/ServiceHero.astro';
+import TrustBar from '../../components/sections/TrustBar.astro';
+import ServiceProcess from '../../components/sections/ServiceProcess.astro';
+import ServicePricing from '../../components/sections/ServicePricing.astro';
+import CTABand from '../../components/sections/CTABand.astro';
+import SectionHeader from '../../components/sections/SectionHeader.astro';
+import ServiceSchema from '../../components/ServiceSchema.astro';
+import InternalLinks from '../../components/InternalLinks.astro';
+import BeforeAfterGallery from '../../components/BeforeAfterGallery.astro';
+import WhyChooseUs from '../../components/WhyChooseUs.astro';
+import Testimonials from '../../components/sections/Testimonials.astro';
+import TechnicalDrawings from '../../components/TechnicalDrawings.astro';
+import ContactForm from '../../components/ContactForm.astro';
+import ServiceImageGallery from '../../components/ServiceImageGallery.astro';
+
+// SEO-optimized metadata focused on service
+const pageTitle = "Sump Pump Installation | $1,850 Rebate | DrySpace";
+const pageDescription = "Drainage pump installation & repair. Battery backup systems, $1,850 City rebate, 25-year warranty. Same-day service. Call 437-545-0067.";
+
+// Sump pump types and brands
+const pumpTypes = [
+  "Submersible Pumps",
+  "Pedestal Pumps",
+  "Battery Backup Systems",
+  "Water-Powered Backup",
+  "Combination Systems"
+];
+
+// Pump system options
+const pumpSystems = [
+  {
+    name: "SINGLE PUMP SYSTEM",
+    price: "$2,200-$2,700",
+    capacity: "2,200 GPH",
+    features: ["Basic protection", "1/3 HP pump", "Check valve", "Discharge line"],
+    best_for: "Low water table areas"
+  },
+  {
+    name: "DUAL PUMP SYSTEM",
+    price: "$3,200-$3,800",
+    capacity: "4,400 GPH",
+    features: ["Primary + backup pump", "Alternating operation", "Extended lifespan", "Redundancy"],
+    best_for: "Average water conditions",
+    recommended: true
+  },
+  {
+    name: "TRIPLE PROTECTION SYSTEM",
+    price: "$4,300-$5,400",
+    capacity: "6,600 GPH + Battery",
+    features: ["2 AC pumps + battery backup", "Power outage protection", "WiFi monitoring", "Alarm system"],
+    best_for: "High risk areas",
+    premium: true
+  }
+];
+
+// Common sump pump problems
+const pumpProblems = [
+  {
+    issue: "POWER OUTAGES",
+    risk: "EXTREME",
+    consequence: "Complete flooding during storms when you need protection most",
+    solution: "Battery backup system keeps pumping for 7-10 hours"
+  },
+  {
+    issue: "PUMP FAILURE",
+    risk: "HIGH",
+    consequence: "$16,000-$32,000 in water damage",
+    solution: "Dual pump system provides automatic backup"
+  },
+  {
+    issue: "OVERWHELMING FLOW",
+    risk: "SEVERE",
+    consequence: "Single pump can't handle heavy rainfall",
+    solution: "Multiple pumps handle 6,600+ gallons per hour"
+  },
+  {
+    issue: "FROZEN DISCHARGE",
+    risk: "WINTER",
+    consequence: "Backed up water floods basement",
+    solution: "IceGuard system prevents freeze blockage"
+  }
+];
+
+// Service FAQs for schema
+const serviceFAQs = [
+  {
+    question: "How much does drainage pump installation cost in Toronto?",
+    answer: "Drainage pump installation costs $2,200-$5,400 depending on system complexity. Single pumping systems cost $2,200-$2,700, dual systems $3,200-$3,800, and triple protection with battery backup $4,300-$5,400. City rebates up to $3,700 available."
+  },
+  {
+    question: "How long does drainage pump installation take?",
+    answer: "Professional drainage pump installation takes 1-2 days. Day 1 includes assessment, pit preparation, and excavation (3-4 hours). Day 2 covers system installation, discharge setup, and testing (4-6 hours total)."
+  },
+  {
+    question: "What's included with drainage pump installation?",
+    answer: "Complete installation includes pit excavation, pump installation, check valves, discharge line to exterior, IceGuard freeze protection, electrical connections, testing, and warranty registration. Battery backup and WiFi monitoring included with premium systems."
+  },
+  {
+    question: "Do I qualify for City of Toronto drainage pump rebates?",
+    answer: "Yes! Toronto offers up to $3,700 in rebates: $1,850 for drainage pump installation, $1,350 for backwater valve, and $450 for pipe severance. We handle all paperwork and credit rebates to your final invoice."
+  },
+  {
+    question: "What warranty comes with drainage pump installation?",
+    answer: "We provide comprehensive warranties: 10 years on triple systems, 5 years on dual systems, 3 years on single systems, plus lifetime installation warranty. Our No-Flood Guarantee covers up to $11,000 in damages with annual maintenance."
+  }
+];
+
+// Service offers for schema
+const serviceOffers = [
+  {
+    name: "Single Pump System",
+    price: "$2,200-$2,700",
+    description: "Basic protection with 1/3 HP pump, 2,200 GPH capacity, check valve, and discharge line. Ideal for low water table areas."
+  },
+  {
+    name: "Dual Pump System",
+    price: "$3,200-$3,800",
+    description: "Enhanced protection with primary and backup pumps, 4,400 GPH capacity, alternating operation, and extended lifespan. Recommended for most homes."
+  },
+  {
+    name: "Triple Protection System",
+    price: "$4,300-$5,400",
+    description: "Maximum protection with 2 AC pumps plus battery backup, 6,600+ GPH capacity, WiFi monitoring, and alarm system. Best for high-risk areas."
+  }
+];
+
+// Installation process steps
+const processSteps = [
+  {
+    title: "Assessment & Planning",
+    description: "Measure water table depth, calculate flow rate requirements, design pump configuration, and provide detailed quote.",
+    duration: "2-3 hours"
+  },
+  {
+    title: "Pit Preparation",
+    description: "Excavate proper pit size (24\" x 30\" minimum), install drainage stone base, position perforated liner, and create water collection channels.",
+    duration: "3-4 hours"
+  },
+  {
+    title: "Pump Installation",
+    description: "Install primary and backup pumps, connect check valves, wire to dedicated circuits, and install battery backup system with WiFi monitoring.",
+    duration: "2-3 hours"
+  },
+  {
+    title: "Discharge System",
+    description: "Install 2\" PVC discharge line, core drill through foundation, install IceGuard freeze protection, and route 10' from foundation.",
+    duration: "2-3 hours"
+  },
+  {
+    title: "Testing & Commissioning",
+    description: "Fill pit to test operation, verify all pumps activate properly, test battery backup, program WiFi alerts, and train homeowner.",
+    duration: "1-2 hours"
+  }
+];
+
+// Pricing tiers
+const pricingTiers = [
+  {
+    name: "Single Pump",
+    price: "$2,200-$2,700",
+    features: [
+      "1/3 HP pump",
+      "2,200 GPH capacity",
+      "Check valve & discharge line",
+      "Basic protection",
+      "3-year warranty"
+    ],
+    description: "Ideal for low water table areas"
+  },
+  {
+    name: "Dual Pump",
+    price: "$3,200-$3,800",
+    features: [
+      "Primary + backup pump",
+      "4,400 GPH capacity",
+      "Alternating operation",
+      "Extended lifespan",
+      "5-year warranty"
+    ],
+    description: "Recommended for most homes",
+    recommended: true
+  },
+  {
+    name: "Triple Protection",
+    price: "$4,300-$5,400",
+    features: [
+      "2 AC pumps + battery backup",
+      "6,600+ GPH capacity",
+      "WiFi monitoring & alarm",
+      "Power outage protection",
+      "10-year warranty"
+    ],
+    description: "Maximum protection for high-risk areas",
+    premium: true
+  }
+];
+---
+
+<PageLayout
+  title={pageTitle}
+  description={pageDescription}
+  showAnnouncement={true}
+>
+
+  <!-- ServiceSchema Component -->
+  <ServiceSchema
+    serviceName="Sump Pump Installation Toronto"
+    description={pageDescription}
+    priceRange="$2,200-$5,400"
+    areaServed={pumpTypes}
+    offers={serviceOffers}
+    faqs={serviceFAQs}
+  />
+
+  <!-- Hero Section -->
+  <ServiceHero
+    title="Drainage Pump Installation Toronto"
+    description="Triple pumping protection with battery backup. Never flood again - even during power outages. City of Toronto rebates up to $3,700 available. Licensed master plumbers."
+    priceRange="$2,200-$5,400"
+    duration="1-2 days"
+    rebate="Up to $3,700"
+    breadcrumbs={[
+      { label: "Home", href: "/" },
+      { label: "Services", href: "/services" },
+      { label: "Sump Pump Installation" }
+    ]}
+  />
+
+  <!-- Trust Bar -->
+  <TrustBar />
+
+  <!-- Critical Warning Section -->
+  <section class="section-padding bg-slate-50">
+    <div class="container mx-auto px-4">
+      <SectionHeader
+        label="Toronto's Flooding Crisis"
+        title="Extreme Weather Demands Action"
+        description="July 2024 storms caused $1,000 million in damage. Don't be the next victim."
+        centered={true}
+      />
+
+      <!-- Flooding Statistics -->
+      <div class="bg-gradient-to-br from-red-600 to-red-700 text-white p-8 rounded-lg shadow-card mb-12">
+        <div class="grid md:grid-cols-4 gap-6 text-center">
+          <div>
+            <p class="text-5xl font-bold mb-2">47%</p>
+            <p class="text-display uppercase">Toronto homes at flood risk</p>
+          </div>
+          <div>
+            <p class="text-5xl font-bold mb-2">100mm</p>
+            <p class="text-display uppercase">Rainfall in 3 hours (July 2024)</p>
+          </div>
+          <div>
+            <p class="text-5xl font-bold mb-2">$47K</p>
+            <p class="text-display uppercase">Average flood damage cost</p>
+          </div>
+          <div>
+            <p class="text-5xl font-bold mb-2">72hrs</p>
+            <p class="text-display uppercase">Mold growth starts</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Common Problems -->
+      <div class="grid md:grid-cols-2 gap-6">
+        {pumpProblems.map(problem => (
+          <div class="bg-white rounded-lg shadow-card hover:shadow-card-hover transition-all duration-300 p-8">
+            <div class="flex justify-between items-start mb-4">
+              <h3 class="text-headline text-navy-900">{problem.issue}</h3>
+              <span class={`section-label-pill ${
+                problem.risk === 'EXTREME' ? 'bg-red-600 text-white' :
+                problem.risk === 'HIGH' ? 'bg-red-500 text-white' :
+                problem.risk === 'SEVERE' ? 'bg-amber-500 text-navy-900' :
+                'bg-amber-400 text-navy-900'
+              }`}>
+                {problem.risk}
+              </span>
+            </div>
+            <p class="text-slate-700 mb-4">{problem.consequence}</p>
+            <div class="border-t-2 border-slate-200 pt-4">
+              <p class="section-label-pill bg-cyan-100 text-cyan-900 inline-block mb-2">Our Solution</p>
+              <p class="text-navy-900 font-semibold">{problem.solution}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Pump System Options -->
+  <section class="section-padding bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <SectionHeader
+          label="Choose Your Protection Level"
+          title="Drainage System Options"
+          description="Choose the right protection level for your home"
+          centered={true}
+        />
+
+        <div class="grid md:grid-cols-3 gap-6 mb-12">
+          {pumpSystems.map(system => (
+            <div class={`bg-slate-50 rounded-lg shadow-card hover:shadow-card-hover transition-all duration-300 relative overflow-hidden ${
+              system.premium ? 'ring-2 ring-amber-500' :
+              system.recommended ? 'ring-2 ring-cyan-500' : ''
+            }`}>
+              {system.premium && (
+                <div class="absolute top-0 left-0 right-0 bg-gradient-to-r from-amber-500 to-amber-600 text-white px-4 py-2 text-center">
+                  <span class="text-display font-bold">BEST PROTECTION</span>
+                </div>
+              )}
+              {system.recommended && (
+                <div class="absolute top-0 left-0 right-0 bg-gradient-to-r from-cyan-500 to-cyan-600 text-white px-4 py-2 text-center">
+                  <span class="text-display font-bold">RECOMMENDED</span>
+                </div>
+              )}
+
+              <div class={`p-8 ${system.premium || system.recommended ? 'pt-16' : ''}`}>
+                <h3 class="text-headline text-navy-900 mb-2">{system.name}</h3>
+                <p class="text-4xl font-bold text-cyan-600 mb-2">{system.price}</p>
+                <p class="text-slate-600 mb-6">Capacity: {system.capacity}</p>
+
+                <ul class="space-y-3 mb-6">
+                  {system.features.map(feature => (
+                    <li class="flex items-start">
+                      <span class="material-symbols-outlined text-cyan-500 mr-3" style="font-variation-settings: 'FILL' 1">check_circle</span>
+                      <span class="text-slate-700">{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                <div class="border-t-2 border-slate-200 pt-4">
+                  <p class="section-label-pill bg-slate-200 text-slate-700 inline-block mb-2">Best For</p>
+                  <p class="text-navy-900 font-semibold">{system.best_for}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <!-- Comparison Table -->
+        <div class="overflow-x-auto rounded-lg shadow-card">
+          <table class="w-full">
+            <thead>
+              <tr class="bg-gradient-to-r from-navy-900 to-navy-800 text-white">
+                <th class="p-4 text-left text-display">Feature</th>
+                <th class="p-4 text-center text-display">Single</th>
+                <th class="p-4 text-center text-display">Dual</th>
+                <th class="p-4 text-center text-display bg-cyan-600">Triple</th>
+              </tr>
+            </thead>
+            <tbody class="bg-white">
+              <tr class="border-b border-slate-200">
+                <td class="p-4 font-bold text-display text-navy-900">Power Outage Protection</td>
+                <td class="p-4 text-center text-red-600 font-bold">NO</td>
+                <td class="p-4 text-center text-red-600 font-bold">NO</td>
+                <td class="p-4 text-center text-cyan-600 font-bold">YES</td>
+              </tr>
+              <tr class="border-b border-slate-200 bg-slate-50">
+                <td class="p-4 font-bold text-display text-navy-900">Pump Failure Backup</td>
+                <td class="p-4 text-center text-red-600 font-bold">NO</td>
+                <td class="p-4 text-center text-cyan-600 font-bold">YES</td>
+                <td class="p-4 text-center text-cyan-600 font-bold">YES</td>
+              </tr>
+              <tr class="border-b border-slate-200">
+                <td class="p-4 font-bold text-display text-navy-900">Gallons Per Hour</td>
+                <td class="p-4 text-center">2,200</td>
+                <td class="p-4 text-center">4,400</td>
+                <td class="p-4 text-center font-bold text-cyan-600">6,600+</td>
+              </tr>
+              <tr class="border-b border-slate-200 bg-slate-50">
+                <td class="p-4 font-bold text-display text-navy-900">WiFi Monitoring</td>
+                <td class="p-4 text-center">Optional</td>
+                <td class="p-4 text-center">Optional</td>
+                <td class="p-4 text-center text-cyan-600 font-bold">INCLUDED</td>
+              </tr>
+              <tr class="border-b border-slate-200">
+                <td class="p-4 font-bold text-display text-navy-900">Warranty</td>
+                <td class="p-4 text-center">3 years</td>
+                <td class="p-4 text-center">5 years</td>
+                <td class="p-4 text-center font-bold text-cyan-600">10 years</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Toronto-Specific Challenges -->
+  <section class="section-padding bg-slate-50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <SectionHeader
+          label="Local Expertise"
+          title="Why Toronto Homes Need Superior Pumping Systems"
+          description="Local conditions demand professional-grade solutions"
+          centered={true}
+        />
+
+        <div class="grid md:grid-cols-2 gap-8">
+          <!-- Climate Challenges -->
+          <div class="bg-white rounded-lg shadow-card p-8">
+            <h3 class="text-headline text-navy-900 mb-6">Extreme Weather Patterns</h3>
+
+            <div class="space-y-6">
+              <div>
+                <h4 class="font-bold text-navy-900 text-display mb-2">Intense Storm Events</h4>
+                <p class="text-slate-700">Toronto now experiences 100-year storms every 5 years. Single pumps cannot handle 100mm rainfall in 3 hours - you need multiple pumps working together.</p>
+              </div>
+
+              <div>
+                <h4 class="font-bold text-navy-900 text-display mb-2">Spring Thaw Flooding</h4>
+                <p class="text-slate-700">Rapid snowmelt combined with frozen ground creates massive water volumes. March-April sees 300% increase in pump failures.</p>
+              </div>
+
+              <div>
+                <h4 class="font-bold text-navy-900 text-display mb-2">Power Grid Failures</h4>
+                <p class="text-slate-700">Ice storms and severe weather cause 15-20 power outages annually. Without battery backup, your basement floods when you need protection most.</p>
+              </div>
+
+              <div>
+                <h4 class="font-bold text-navy-900 text-display mb-2">Winter Discharge Freezing</h4>
+                <p class="text-slate-700">Discharge lines freeze in -20°C weather, causing pump burnout and flooding. IceGuard systems prevent this catastrophic failure.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Infrastructure Issues -->
+          <div class="bg-white rounded-lg shadow-card p-8">
+            <h3 class="text-headline text-navy-900 mb-6">Aging Infrastructure Risks</h3>
+
+            <div class="space-y-4">
+              <div class="border-l-4 border-cyan-500 pl-4 py-2">
+                <h4 class="font-bold text-display text-navy-900">Combined Sewer Overflows</h4>
+                <p class="text-slate-700">31% of Toronto uses combined sewers that backup during heavy rain</p>
+              </div>
+
+              <div class="border-l-4 border-cyan-500 pl-4 py-2">
+                <h4 class="font-bold text-display text-navy-900">High Water Table Areas</h4>
+                <p class="text-slate-700">Lakeshore, Beaches, Humber Bay require continuous pumping</p>
+              </div>
+
+              <div class="border-l-4 border-cyan-500 pl-4 py-2">
+                <h4 class="font-bold text-display text-navy-900">Clay Soil Saturation</h4>
+                <p class="text-slate-700">Poor drainage means water sits against foundation for weeks</p>
+              </div>
+
+              <div class="border-l-4 border-cyan-500 pl-4 py-2">
+                <h4 class="font-bold text-display text-navy-900">Basement Apartments</h4>
+                <p class="text-slate-700">200,000+ rental units at risk, requiring reliable protection</p>
+              </div>
+
+              <div class="border-l-4 border-cyan-500 pl-4 py-2">
+                <h4 class="font-bold text-display text-navy-900">Ravine Lot Drainage</h4>
+                <p class="text-slate-700">Properties near ravines face severe runoff and erosion</p>
+              </div>
+
+              <div class="border-l-4 border-cyan-500 pl-4 py-2">
+                <h4 class="font-bold text-display text-navy-900">Construction Dewatering</h4>
+                <p class="text-slate-700">New developments alter water tables, overwhelming pumps</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Professional Installation Process -->
+  <ServiceProcess
+    steps={processSteps}
+    title="Professional Installation Process"
+    label="Licensed Plumbers"
+  />
+
+  <!-- Professional Standards Callout -->
+  <section class="section-padding bg-gradient-to-br from-amber-500 to-amber-600">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <h3 class="text-headline text-navy-900 mb-8 text-center">Professional Standards We Follow</h3>
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="bg-white/95 backdrop-blur rounded-lg shadow-card p-6">
+            <h4 class="font-bold text-display text-navy-900 mb-3">Ontario Building Code</h4>
+            <ul class="space-y-2 text-slate-700">
+              <li class="flex items-start">
+                <span class="material-symbols-outlined text-cyan-500 mr-2 text-sm">check</span>
+                <span class="text-sm">Section 7.4.6 - Sump pits</span>
+              </li>
+              <li class="flex items-start">
+                <span class="material-symbols-outlined text-cyan-500 mr-2 text-sm">check</span>
+                <span class="text-sm">Minimum 0.25m³ capacity</span>
+              </li>
+              <li class="flex items-start">
+                <span class="material-symbols-outlined text-cyan-500 mr-2 text-sm">check</span>
+                <span class="text-sm">Sealed covers required</span>
+              </li>
+              <li class="flex items-start">
+                <span class="material-symbols-outlined text-cyan-500 mr-2 text-sm">check</span>
+                <span class="text-sm">Proper venting standards</span>
+              </li>
+            </ul>
+          </div>
+          <div class="bg-white/95 backdrop-blur rounded-lg shadow-card p-6">
+            <h4 class="font-bold text-display text-navy-900 mb-3">Electrical Safety</h4>
+            <ul class="space-y-2 text-slate-700">
+              <li class="flex items-start">
+                <span class="material-symbols-outlined text-cyan-500 mr-2 text-sm">check</span>
+                <span class="text-sm">ESA approved installation</span>
+              </li>
+              <li class="flex items-start">
+                <span class="material-symbols-outlined text-cyan-500 mr-2 text-sm">check</span>
+                <span class="text-sm">Dedicated 15A circuits</span>
+              </li>
+              <li class="flex items-start">
+                <span class="material-symbols-outlined text-cyan-500 mr-2 text-sm">check</span>
+                <span class="text-sm">GFCI protection</span>
+              </li>
+              <li class="flex items-start">
+                <span class="material-symbols-outlined text-cyan-500 mr-2 text-sm">check</span>
+                <span class="text-sm">Proper grounding</span>
+              </li>
+            </ul>
+          </div>
+          <div class="bg-white/95 backdrop-blur rounded-lg shadow-card p-6">
+            <h4 class="font-bold text-display text-navy-900 mb-3">Plumbing Standards</h4>
+            <ul class="space-y-2 text-slate-700">
+              <li class="flex items-start">
+                <span class="material-symbols-outlined text-cyan-500 mr-2 text-sm">check</span>
+                <span class="text-sm">CSA B181.1 compliance</span>
+              </li>
+              <li class="flex items-start">
+                <span class="material-symbols-outlined text-cyan-500 mr-2 text-sm">check</span>
+                <span class="text-sm">Anti-siphon devices</span>
+              </li>
+              <li class="flex items-start">
+                <span class="material-symbols-outlined text-cyan-500 mr-2 text-sm">check</span>
+                <span class="text-sm">Backflow prevention</span>
+              </li>
+              <li class="flex items-start">
+                <span class="material-symbols-outlined text-cyan-500 mr-2 text-sm">check</span>
+                <span class="text-sm">Approved materials only</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- City Rebate Program -->
+  <section class="section-padding bg-white">
+    <div class="container mx-auto px-4">
+      <SectionHeader
+        label="City of Toronto Rebates"
+        title="Save $3,700 With City Rebates"
+        description="We handle all paperwork and applications for maximum savings"
+        centered={true}
+      />
+
+      <div class="max-w-4xl mx-auto">
+        <!-- Rebate Breakdown -->
+        <div class="bg-slate-50 rounded-lg shadow-card p-8">
+          <h3 class="text-headline text-navy-900 mb-6">Rebate Breakdown</h3>
+
+          <div class="space-y-4 mb-6">
+            <div class="flex justify-between items-center pb-3 border-b-2 border-slate-200">
+              <span class="font-bold text-display text-navy-900">DRAINAGE PUMP INSTALLATION</span>
+              <span class="font-bold text-cyan-600 text-xl">$1,850</span>
+            </div>
+            <div class="flex justify-between items-center pb-3 border-b-2 border-slate-200">
+              <span class="font-bold text-display text-navy-900">BACKWATER VALVE</span>
+              <span class="font-bold text-cyan-600 text-xl">$1,350</span>
+            </div>
+            <div class="flex justify-between items-center pb-3 border-b-2 border-slate-200">
+              <span class="font-bold text-display text-navy-900">PIPE SEVERANCE</span>
+              <span class="font-bold text-cyan-600 text-xl">$450</span>
+            </div>
+            <div class="flex justify-between items-center pt-4 border-t-4 border-cyan-500">
+              <span class="font-bold text-display text-navy-900 text-xl">MAXIMUM REBATE</span>
+              <span class="font-bold text-cyan-600 text-3xl">$3,700</span>
+            </div>
+          </div>
+
+          <div class="bg-gradient-to-r from-amber-500 to-amber-600 rounded-lg p-6 text-center">
+            <p class="font-bold text-display text-white text-xl mb-2">WE SUBMIT ALL PAPERWORK</p>
+            <p class="text-white">Rebate credited to your final invoice</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Section -->
+  <ServicePricing
+    title="Drainage System Pricing"
+    tiers={pricingTiers}
+  />
+
+  <!-- Maintenance & Monitoring -->
+  <section class="section-padding bg-slate-50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <SectionHeader
+          label="Ongoing Protection"
+          title="Lifetime Maintenance & Monitoring"
+          description="Keep your system running perfectly with professional care"
+          centered={true}
+        />
+
+        <div class="grid md:grid-cols-2 gap-8">
+          <!-- Annual Maintenance -->
+          <div class="bg-white rounded-lg shadow-card p-8">
+            <h3 class="text-headline text-navy-900 mb-2">Annual Maintenance Program</h3>
+            <p class="text-4xl font-bold text-cyan-600 mb-6">$200/YEAR</p>
+
+            <ul class="space-y-3 mb-6">
+              <li class="flex items-start">
+                <span class="material-symbols-outlined text-cyan-500 mr-3" style="font-variation-settings: 'FILL' 1">check_circle</span>
+                <span class="text-slate-700">Spring inspection before flood season</span>
+              </li>
+              <li class="flex items-start">
+                <span class="material-symbols-outlined text-cyan-500 mr-3" style="font-variation-settings: 'FILL' 1">check_circle</span>
+                <span class="text-slate-700">Fall winterization service</span>
+              </li>
+              <li class="flex items-start">
+                <span class="material-symbols-outlined text-cyan-500 mr-3" style="font-variation-settings: 'FILL' 1">check_circle</span>
+                <span class="text-slate-700">Battery testing and replacement</span>
+              </li>
+              <li class="flex items-start">
+                <span class="material-symbols-outlined text-cyan-500 mr-3" style="font-variation-settings: 'FILL' 1">check_circle</span>
+                <span class="text-slate-700">Float switch cleaning and adjustment</span>
+              </li>
+              <li class="flex items-start">
+                <span class="material-symbols-outlined text-cyan-500 mr-3" style="font-variation-settings: 'FILL' 1">check_circle</span>
+                <span class="text-slate-700">Discharge line inspection</span>
+              </li>
+              <li class="flex items-start">
+                <span class="material-symbols-outlined text-cyan-500 mr-3" style="font-variation-settings: 'FILL' 1">check_circle</span>
+                <span class="text-slate-700">Priority emergency response</span>
+              </li>
+            </ul>
+
+            <div class="bg-cyan-50 border-2 border-cyan-500 rounded-lg p-4">
+              <p class="text-cyan-900 font-bold text-display text-center">SAVES $1,100+ IN REPAIRS</p>
+            </div>
+          </div>
+
+          <!-- Smart Monitoring -->
+          <div class="bg-white rounded-lg shadow-card p-8">
+            <h3 class="text-headline text-navy-900 mb-2">24/7 Smart Monitoring</h3>
+            <p class="text-xl font-bold text-amber-600 mb-6">INCLUDED WITH TRIPLE SYSTEM</p>
+
+            <div class="space-y-4 mb-6">
+              <div>
+                <h4 class="font-bold text-display text-navy-900 mb-2">Real-Time Alerts</h4>
+                <p class="text-slate-700">Text/email notifications for pump activation, high water, power loss</p>
+              </div>
+
+              <div>
+                <h4 class="font-bold text-display text-navy-900 mb-2">Usage Tracking</h4>
+                <p class="text-slate-700">Monitor pump cycles, run times, and water volume data</p>
+              </div>
+
+              <div>
+                <h4 class="font-bold text-display text-navy-900 mb-2">Predictive Maintenance</h4>
+                <p class="text-slate-700">AI detects problems before failure occurs</p>
+              </div>
+
+              <div>
+                <h4 class="font-bold text-display text-navy-900 mb-2">Mobile App Control</h4>
+                <p class="text-slate-700">Check status and receive alerts from anywhere</p>
+              </div>
+            </div>
+
+            <div class="bg-amber-50 border-2 border-amber-500 rounded-lg p-4">
+              <p class="text-amber-900 font-bold text-display text-center">PREVENTS 95% OF FAILURES</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Before/After Gallery -->
+  <BeforeAfterGallery />
+
+  <!-- Warranty & Guarantees -->
+  <section class="section-padding bg-gradient-to-br from-navy-900 to-navy-800 text-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <SectionHeader
+          label="Industry-Leading Coverage"
+          title="Comprehensive Warranty Protection"
+          description="Industry-leading coverage for your peace of mind"
+          centered={true}
+          dark={true}
+        />
+
+        <div class="grid md:grid-cols-4 gap-6 mb-12">
+          <div class="bg-white/10 backdrop-blur rounded-lg shadow-card p-6 text-center">
+            <p class="text-5xl font-bold text-cyan-400 mb-2">10</p>
+            <p class="text-display text-white mb-2">YEARS</p>
+            <p class="text-slate-300 text-sm">Triple system warranty</p>
+          </div>
+
+          <div class="bg-white/10 backdrop-blur rounded-lg shadow-card p-6 text-center">
+            <p class="text-5xl font-bold text-cyan-400 mb-2">5</p>
+            <p class="text-display text-white mb-2">YEARS</p>
+            <p class="text-slate-300 text-sm">Dual pump warranty</p>
+          </div>
+
+          <div class="bg-white/10 backdrop-blur rounded-lg shadow-card p-6 text-center">
+            <p class="text-5xl font-bold text-cyan-400 mb-2">3</p>
+            <p class="text-display text-white mb-2">YEARS</p>
+            <p class="text-slate-300 text-sm">Battery replacement</p>
+          </div>
+
+          <div class="bg-white/10 backdrop-blur rounded-lg shadow-card p-6 text-center">
+            <p class="text-4xl font-bold text-cyan-400 mb-2">LIFETIME</p>
+            <p class="text-display text-white mb-2">LABOR</p>
+            <p class="text-slate-300 text-sm">Installation warranty</p>
+          </div>
+        </div>
+
+        <div class="bg-gradient-to-r from-amber-500 to-amber-600 rounded-lg shadow-card p-8">
+          <h3 class="text-headline text-navy-900 mb-4 text-center">No-Flood Guarantee</h3>
+          <p class="text-center text-lg text-white mb-6">
+            If your basement floods due to pump failure, we'll cover up to $11,000 in damages
+          </p>
+          <p class="text-center text-sm text-navy-900">
+            *Requires annual maintenance program and proper system sizing
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Service Areas -->
+  <section class="section-padding bg-slate-50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <SectionHeader
+          label="GTA Coverage"
+          title="Drainage System Service Areas"
+          description="Same-day service across the Greater Toronto Area"
+          centered={true}
+        />
+
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mb-8">
+          {pumpTypes.map(type => (
+            <div class="bg-white rounded-lg shadow-card hover:shadow-card-hover transition-all duration-300 p-4 text-center">
+              <p class="font-bold text-display text-navy-900">{type}</p>
+            </div>
+          ))}
+        </div>
+
+        <div class="bg-gradient-to-r from-amber-500 to-amber-600 rounded-lg shadow-card p-8 text-center">
+          <p class="text-headline text-white mb-2">
+            FLOOD EMERGENCY? SAME-DAY INSTALLATION AVAILABLE
+          </p>
+          <p class="text-white">
+            Protect your home before the next storm hits
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us -->
+  <WhyChooseUs />
+
+  <!-- Service Image Gallery -->
+  <ServiceImageGallery service="sump-pump" />
+
+  <!-- Testimonials -->
+  <Testimonials />
+
+  <!-- Technical Drawings -->
+  <TechnicalDrawings />
+
+  <!-- FAQ Section -->
+  <section class="section-padding bg-slate-50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <SectionHeader
+          label="Common Questions"
+          title="Frequently Asked Questions"
+          description="Everything you need to know about sump pump installation"
+          centered={true}
+        />
+
+        <div class="space-y-4">
+          {serviceFAQs.map((faq, index) => (
+            <details class="bg-white rounded-lg shadow-card hover:shadow-card-hover transition-all duration-300 overflow-hidden group">
+              <summary class="cursor-pointer p-6 font-bold text-display text-navy-900 flex items-center justify-between">
+                <span>{faq.question}</span>
+                <span class="material-symbols-outlined text-cyan-500 transform transition-transform group-open:rotate-180">expand_more</span>
+              </summary>
+              <div class="px-6 pb-6 text-slate-700 border-t border-slate-200 pt-4">
+                {faq.answer}
+              </div>
+            </details>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Internal Links Component -->
+  <InternalLinks category="drainage" currentPage="sump-pump-installation" limit={5} />
+
+  <!-- Contact Form -->
+  <ContactForm />
+
+  <!-- Related Services -->
+  <section class="section-padding bg-gradient-to-br from-navy-900 to-navy-800">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <SectionHeader
+          label="Complete Protection"
+          title="Complete Basement Protection Services"
+          description="Comprehensive waterproofing solutions for total protection"
+          centered={true}
+          dark={true}
+        />
+
+        <div class="grid md:grid-cols-3 gap-6 mb-12">
+          <a href="/services/interior-waterproofing" class="bg-white/10 backdrop-blur rounded-lg shadow-card hover:shadow-card-hover transition-all duration-300 p-6 hover:bg-white/15 group">
+            <h3 class="text-headline text-white mb-3 group-hover:text-cyan-400 transition-colors">Interior Drainage</h3>
+            <p class="text-slate-300 mb-4">French drain systems to manage water</p>
+            <p class="text-cyan-400 font-bold text-xl">$100-$150/linear foot</p>
+            <span class="text-cyan-400 font-bold text-display mt-4 inline-block group-hover:translate-x-2 transition-transform">LEARN MORE →</span>
+          </a>
+
+          <a href="/services/backwater-valve" class="bg-white/10 backdrop-blur rounded-lg shadow-card hover:shadow-card-hover transition-all duration-300 p-6 hover:bg-white/15 group">
+            <h3 class="text-headline text-white mb-3 group-hover:text-cyan-400 transition-colors">Backwater Valve</h3>
+            <p class="text-slate-300 mb-4">Prevent sewage backup during floods</p>
+            <p class="text-cyan-400 font-bold text-xl">$3,200-$4,300 + $1,350 rebate</p>
+            <span class="text-cyan-400 font-bold text-display mt-4 inline-block group-hover:translate-x-2 transition-transform">LEARN MORE →</span>
+          </a>
+
+          <a href="/services/exterior-waterproofing" class="bg-white/10 backdrop-blur rounded-lg shadow-card hover:shadow-card-hover transition-all duration-300 p-6 hover:bg-white/15 group">
+            <h3 class="text-headline text-white mb-3 group-hover:text-cyan-400 transition-colors">Exterior Waterproofing</h3>
+            <p class="text-slate-300 mb-4">Complete foundation membrane system</p>
+            <p class="text-cyan-400 font-bold text-xl">$200-$400/linear foot</p>
+            <span class="text-cyan-400 font-bold text-display mt-4 inline-block group-hover:translate-x-2 transition-transform">LEARN MORE →</span>
+          </a>
+        </div>
+
+        <!-- Emergency CTA -->
+        <div class="bg-gradient-to-r from-amber-500 to-amber-600 rounded-lg shadow-card p-8 text-center">
+          <p class="text-3xl font-bold text-white mb-4 text-display">
+            STORM WARNING? GET PROTECTED NOW!
+          </p>
+          <p class="text-xl text-white mb-6">
+            Same-day drainage system installation available
+          </p>
+          <a href="tel:437-545-0067" class="btn-primary bg-white text-navy-900 hover:bg-slate-100">
+            437-545-0067 - EMERGENCY INSTALL
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA Band -->
+  <CTABand
+    title="Protect Your Home From Flooding"
+    subtitle="Get a free drainage system assessment and quote today"
+    primaryCTA={{ text: "Get Free Assessment", href: "/free-inspection" }}
+    secondaryCTA={{ text: "Call: 437-545-0067", href: "tel:437-545-0067" }}
+  />
+</PageLayout>

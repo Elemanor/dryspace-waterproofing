@@ -1,0 +1,338 @@
+---
+// Interactive Cost Calculator - Professional contractor version
+---
+
+<div class="bg-white border-2 border-slate-200 p-8" id="cost-calculator">
+  <div class="border-b-4 border-cyan-500 pb-4 mb-6">
+    <h2 class="text-2xl font-bold text-slate-900 uppercase">Project Cost Calculator</h2>
+    <p class="text-slate-600 mt-2">Instant estimates with Toronto subsidy eligibility (up to $3,400)</p>
+  </div>
+  
+  <form class="space-y-6" id="estimator-form">
+    <div class="grid md:grid-cols-2 gap-6">
+      <div>
+        <label class="block text-sm font-bold text-slate-900 uppercase mb-2" for="linear-feet">
+          Interior Drain Length
+        </label>
+        <div class="relative">
+          <input 
+            class="w-full px-4 py-3 border-2 border-slate-200 focus:border-cyan-500 focus:outline-none" 
+            id="linear-feet" 
+            min="0" 
+            name="linearFeet" 
+            placeholder="Enter linear feet" 
+            type="number"
+          />
+          <span class="absolute right-4 top-3 text-slate-400">ft</span>
+        </div>
+      </div>
+      
+      <div>
+        <label class="block text-sm font-bold text-slate-900 uppercase mb-2" for="exterior-length">
+          Exterior Waterproofing Length
+        </label>
+        <div class="relative">
+          <input 
+            class="w-full px-4 py-3 border-2 border-slate-200 focus:border-cyan-500 focus:outline-none" 
+            id="exterior-length" 
+            min="0" 
+            name="exteriorLength" 
+            placeholder="Enter linear feet" 
+            type="number"
+          />
+          <span class="absolute right-4 top-3 text-slate-400">ft</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="bg-slate-50 p-6 border-2 border-slate-100">
+      <h3 class="text-sm font-bold text-slate-900 uppercase mb-4">Waterproofing Systems</h3>
+      <div class="grid md:grid-cols-2 gap-4">
+        <label class="flex items-start cursor-pointer">
+          <input 
+            class="mt-1 w-4 h-4 border-2 border-slate-300 text-cyan-400 focus:ring-yellow-500" 
+            id="sumpPump" 
+            name="sumpPump" 
+            type="checkbox"
+          />
+          <div class="ml-3">
+            <span class="block font-semibold text-slate-900">Primary Sump Pump</span>
+            <span class="text-xs text-slate-500">Professional grade system</span>
+          </div>
+        </label>
+        
+        <label class="flex items-start cursor-pointer">
+          <input 
+            class="mt-1 w-4 h-4 border-2 border-slate-300 text-cyan-400 focus:ring-yellow-500" 
+            id="batteryBackup" 
+            name="batteryBackup" 
+            type="checkbox"
+          />
+          <div class="ml-3">
+            <span class="block font-semibold text-slate-900">Battery Backup</span>
+            <span class="text-xs text-slate-500">Power outage protection</span>
+          </div>
+        </label>
+        
+        <label class="flex items-start cursor-pointer">
+          <input 
+            class="mt-1 w-4 h-4 border-2 border-slate-300 text-cyan-400 focus:ring-yellow-500" 
+            id="backwaterValve" 
+            name="backwaterValve" 
+            type="checkbox"
+          />
+          <div class="ml-3">
+            <span class="block font-semibold text-slate-900">Backwater Valve</span>
+            <span class="text-xs text-slate-500">Permit required</span>
+          </div>
+        </label>
+        
+        <label class="flex items-start cursor-pointer">
+          <input 
+            class="mt-1 w-4 h-4 border-2 border-slate-300 text-cyan-400 focus:ring-yellow-500" 
+            id="drainSeverCap" 
+            name="drainSeverCap" 
+            type="checkbox"
+          />
+          <div class="ml-3">
+            <span class="block font-semibold text-slate-900">Drain Sever & Cap</span>
+            <span class="text-xs text-slate-500">Foundation protection</span>
+          </div>
+        </label>
+      </div>
+    </div>
+    
+    <div>
+      <label class="block text-sm font-bold text-slate-900 uppercase mb-2" for="access">
+        Site Access Conditions
+      </label>
+      <select 
+        class="w-full px-4 py-3 border-2 border-slate-200 focus:border-cyan-500 focus:outline-none bg-white" 
+        id="access" 
+        name="access"
+      >
+        <option value="good">Good Access - Standard Pricing</option>
+        <option value="limited">Limited Access - Premium Pricing</option>
+      </select>
+    </div>
+    
+    <button 
+      class="w-full bg-amber-500 text-black py-4 px-6 font-bold text-lg hover:bg-amber-400 transition-colors uppercase" 
+      type="submit"
+    >
+      Calculate Project Cost
+    </button>
+  </form>
+  
+  <div class="hidden mt-8 space-y-6" id="estimate-results">
+    <div class="bg-cyan-50 border-2 border-green-300 p-6">
+      <h3 class="text-lg font-bold text-slate-900 uppercase mb-3">Toronto Subsidy Eligibility</h3>
+      <div class="text-sm text-slate-600 space-y-2" id="subsidy-details"></div>
+      <p class="text-xs text-slate-500 mt-3 pt-3 border-t border-cyan-200">
+        * Subject to City approval and inspection requirements
+      </p>
+    </div>
+    
+    <div class="bg-slate-50 border-2 border-slate-200 p-6">
+      <h3 class="text-lg font-bold text-slate-900 uppercase mb-3">Project Cost Estimate</h3>
+      <div class="text-sm text-slate-600 space-y-2" id="cost-details"></div>
+      <p class="text-xs text-slate-500 mt-3 pt-3 border-t border-slate-100">
+        * Market reference pricing - final quote after site inspection
+      </p>
+    </div>
+    
+    <div class="bg-amber-50 border-2 border-yellow-300 p-6">
+      <h3 class="text-lg font-bold text-slate-900 uppercase mb-3">Permit Requirements</h3>
+      <div class="text-sm text-slate-600 space-y-2" id="permit-details"></div>
+    </div>
+    
+    <button 
+      class="w-full bg-navy-900 text-white py-4 px-6 font-bold text-lg hover:bg-navy-900 transition-colors uppercase"
+      id="get-quote-btn"
+    >
+      Get Accurate Quote - Schedule Free Inspection
+    </button>
+  </div>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById("estimator-form");
+  const results = document.getElementById("estimate-results");
+  const subsidyDetails = document.getElementById("subsidy-details");
+  const costDetails = document.getElementById("cost-details");
+  const permitDetails = document.getElementById("permit-details");
+  const getQuoteBtn = document.getElementById("get-quote-btn");
+  
+  form?.addEventListener("submit", (e) => {
+    e.preventDefault();
+    
+    const formData = new FormData(form);
+    const linearFeet = parseInt(formData.get("linearFeet")) || 0;
+    const exteriorLength = parseInt(formData.get("exteriorLength")) || 0;
+    const sumpPump = formData.get("sumpPump") === "on";
+    const batteryBackup = formData.get("batteryBackup") === "on";
+    const backwaterValve = formData.get("backwaterValve") === "on";
+    const drainSeverCap = formData.get("drainSeverCap") === "on";
+    const access = formData.get("access");
+    
+    // Calculate subsidy
+    let subsidyAmount = 0;
+    let subsidyItems = [];
+    
+    if (backwaterValve) {
+      const amount = Math.min(1250, 1000);
+      subsidyAmount += amount;
+      subsidyItems.push(`<div class="flex justify-between items-center">
+        <span>Backwater Valve Subsidy:</span>
+        <span class="font-bold">$${amount.toLocaleString()}</span>
+      </div>`);
+    }
+    
+    if (sumpPump) {
+      const amount = Math.min(1750, 1400);
+      subsidyAmount += amount;
+      subsidyItems.push(`<div class="flex justify-between items-center">
+        <span>Sump Pump Subsidy:</span>
+        <span class="font-bold">$${amount.toLocaleString()}</span>
+      </div>`);
+    }
+    
+    if (drainSeverCap) {
+      const amount = Math.min(400, 320);
+      subsidyAmount += amount;
+      subsidyItems.push(`<div class="flex justify-between items-center">
+        <span>Drain Sever/Cap Subsidy:</span>
+        <span class="font-bold">$${amount.toLocaleString()}</span>
+      </div>`);
+    }
+    
+    subsidyAmount = Math.min(subsidyAmount, 3400);
+    
+    if (subsidyDetails) {
+      if (subsidyItems.length > 0) {
+        subsidyDetails.innerHTML = subsidyItems.join("") + 
+          `<div class="mt-3 pt-3 border-t-2 border-green-300">
+            <div class="flex justify-between items-center text-lg">
+              <span class="font-bold uppercase">Total Subsidy Available:</span>
+              <span class="font-bold text-cyan-700">$${subsidyAmount.toLocaleString()}</span>
+            </div>
+          </div>`;
+      } else {
+        subsidyDetails.innerHTML = "<p class='text-slate-500'>No eligible items selected for subsidy calculation</p>";
+      }
+    }
+    
+    // Calculate costs
+    let costItems = [];
+    let minCost = 0;
+    let maxCost = 0;
+    
+    if (linearFeet > 0) {
+      const minRate = access === "good" ? 75 : 90;
+      const maxRate = access === "good" ? 120 : 140;
+      const min = linearFeet * minRate;
+      const max = linearFeet * maxRate;
+      minCost += min;
+      maxCost += max;
+      costItems.push(`Interior Drain (${linearFeet} ft): $${min.toLocaleString()} - $${max.toLocaleString()}`);
+    }
+    
+    if (exteriorLength > 0) {
+      const minRate = access === "good" ? 120 : 150;
+      const maxRate = access === "good" ? 200 : 250;
+      const min = exteriorLength * minRate;
+      const max = exteriorLength * maxRate;
+      minCost += min;
+      maxCost += max;
+      costItems.push(`Exterior Waterproofing (${exteriorLength} ft): $${min.toLocaleString()} - $${max.toLocaleString()}`);
+    }
+    
+    if (sumpPump) {
+      const min = batteryBackup ? 2800 : 1800;
+      const max = batteryBackup ? 4500 : 3500;
+      minCost += min;
+      maxCost += max;
+      costItems.push(`Sump System${batteryBackup ? " + Battery Backup" : ""}: $${min.toLocaleString()} - $${max.toLocaleString()}`);
+    }
+    
+    if (backwaterValve) {
+      minCost += 800;
+      maxCost += 1500;
+      costItems.push("Backwater Valve Installation: $800 - $1,500");
+    }
+    
+    if (costDetails) {
+      if (costItems.length > 0) {
+        const formattedCostItems = costItems.map(item => 
+          `<div class="py-2 border-b border-slate-100">${item}</div>`
+        ).join("");
+        
+        costDetails.innerHTML = formattedCostItems + 
+          `<div class="mt-3 pt-3 border-t-2 border-slate-200">
+            <div class="flex justify-between items-center text-lg">
+              <span class="font-bold uppercase">Total Project Cost:</span>
+              <span class="font-bold">$${minCost.toLocaleString()} - $${maxCost.toLocaleString()}</span>
+            </div>
+          </div>` + 
+          (subsidyAmount > 0 ? 
+            `<div class="mt-2 p-3 bg-cyan-50 border-2 border-green-300">
+              <div class="flex justify-between items-center text-lg">
+                <span class="font-bold uppercase">Your Cost After Subsidy:</span>
+                <span class="font-bold text-cyan-700">$${Math.max(0, minCost - subsidyAmount).toLocaleString()} - $${Math.max(0, maxCost - subsidyAmount).toLocaleString()}</span>
+              </div>
+            </div>` : "");
+      } else {
+        costDetails.innerHTML = "<p class='text-slate-500'>Enter project specifications above for cost estimate</p>";
+      }
+    }
+    
+    // Permit details
+    let permitItems = [];
+    
+    if (backwaterValve) {
+      permitItems.push(`<div class="py-2 border-b border-yellow-200">
+        <span class="font-semibold">BACKWATER VALVE PERMIT</span> - Stand-alone drain permit required
+      </div>`);
+      permitItems.push(`<div class="py-2 border-b border-yellow-200">
+        <span class="font-semibold">VALVE TYPE</span> - Full-port (normally open) per City requirements
+      </div>`);
+    }
+    
+    if (sumpPump) {
+      permitItems.push(`<div class="py-2 border-b border-yellow-200">
+        <span class="font-semibold">DISCHARGE REQUIREMENT</span> - Permeable surface minimum 2m from foundation
+      </div>`);
+      permitItems.push(`<div class="py-2 border-b border-yellow-200">
+        <span class="font-semibold">BY-LAW 681</span> - Cannot discharge to sanitary/combined sewer
+      </div>`);
+    }
+    
+    if (exteriorLength > 0) {
+      permitItems.push(`<div class="py-2 border-b border-yellow-200">
+        <span class="font-semibold">ONTARIO ONE CALL</span> - Required utility locates (FREE - 5 business days)
+      </div>`);
+    }
+    
+    permitItems.push(`<div class="py-2 border-b border-yellow-200">
+      <span class="font-semibold">INSPECTION TIMELINE</span> - Within 2 business days of request
+    </div>`);
+    permitItems.push(`<div class="py-2">
+      <span class="font-semibold">FINAL INSPECTION</span> - Required for permit closure
+    </div>`);
+    
+    if (permitDetails) {
+      permitDetails.innerHTML = permitItems.join("");
+    }
+    
+    results?.classList.remove("hidden");
+    results?.scrollIntoView({ behavior: "smooth", block: "nearest" });
+  });
+  
+  // Add event listener for the get quote button
+  getQuoteBtn?.addEventListener("click", () => {
+    // Navigate to contact page
+    window.location.href = '/contact';
+  });
+});
+</script>

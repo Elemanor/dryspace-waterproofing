@@ -1,0 +1,185 @@
+---
+// Before/After Gallery Component - Professional contractor version
+const projects = [
+  {
+    id: 1,
+    title: "NORTH YORK BASEMENT WATERPROOFING",
+    date: "NOVEMBER 2024",
+    problem: "Severe water infiltration and mold growth",
+    solution: "Complete exterior waterproofing with French drain",
+    cost: "$12,500",
+    duration: "5 DAYS",
+    before: "/images/basement-water-leak-inspection.webp",
+    after: "/images/dryspace_excellence.webp"
+  },
+  {
+    id: 2,
+    title: "SCARBOROUGH FOUNDATION REPAIR",
+    date: "OCTOBER 2024",
+    problem: "Foundation cracks and basement flooding",
+    solution: "Crack injection and interior waterproofing system",
+    cost: "$8,200",
+    duration: "3 DAYS",
+    before: "/images/crack.webp",
+    after: "/images/structural foundation crack.webp"
+  },
+  {
+    id: 3,
+    title: "MISSISSAUGA EMERGENCY WATER REMOVAL",
+    date: "SEPTEMBER 2024",
+    problem: "Flooded basement after heavy rainfall",
+    solution: "Emergency pumping and waterproofing installation",
+    cost: "$15,000",
+    duration: "24 HOURS + 4 DAYS",
+    before: "/images/waterp on the floor.webp",
+    after: "/images/sump-pump.webp"
+  }
+];
+---
+
+<section class="py-16 bg-slate-50">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-12">
+      <h2 class="text-4xl font-bold text-slate-900 mb-4 uppercase">Completed Projects</h2>
+      <p class="text-lg text-slate-600 max-w-3xl mx-auto">Real waterproofing solutions for Greater Toronto Area homes</p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+      {projects.map((project) => (
+        <div class="bg-white border-2 border-slate-200 hover:border-slate-300 transition-colors" data-project-id={project.id}>
+          <!-- Project Header -->
+          <div class="bg-navy-900 text-white p-4">
+            <h3 class="text-lg font-bold">{project.title}</h3>
+            <div class="flex justify-between items-center mt-2">
+              <span class="text-sm">{project.date}</span>
+              <span class="text-sm bg-amber-500 text-black px-2 py-1 font-bold">{project.duration}</span>
+            </div>
+          </div>
+          
+          <!-- Before/After Images with Slider -->
+          <div class="before-after-container relative h-64 overflow-hidden">
+            <div class="absolute inset-0">
+              <img src={project.before} alt={`Before - ${project.title}`} class="w-full h-full object-cover" width="600" height="400" decoding="async" loading="lazy" />
+              <div class="absolute top-2 left-2 bg-red-600 text-slate-900 px-3 py-1 text-xs font-bold uppercase">
+                BEFORE
+              </div>
+            </div>
+            <div class="after-image absolute inset-0" style="clip-path: inset(0 0 0 50%);">
+              <img src={project.after} alt={`After - ${project.title}`} class="w-full h-full object-cover" width="600" height="400" decoding="async" loading="lazy" />
+              <div class="absolute top-2 right-2 bg-cyan-600 text-slate-900 px-3 py-1 text-xs font-bold uppercase">
+                AFTER
+              </div>
+            </div>
+            <div class="slider-control absolute inset-0">
+              <input type="range" class="slider absolute w-full h-full opacity-0 cursor-ew-resize z-10" min="0" max="100" value="50" />
+              <div class="slider-line absolute top-0 bottom-0 w-1 bg-white" style="left: 50%;">
+                <div class="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-12 h-12 bg-white border-4 border-slate-700 flex items-center justify-center">
+                  <span class="text-slate-900 font-bold text-xs select-none">DRAG</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Project Details -->
+          <div class="p-6">
+            <div class="space-y-4">
+              <div class="pb-3 border-b border-slate-100">
+                <p class="text-sm font-bold text-slate-900 uppercase mb-1">Problem Identified</p>
+                <p class="text-sm text-slate-600">{project.problem}</p>
+              </div>
+              <div class="pb-3 border-b border-slate-100">
+                <p class="text-sm font-bold text-slate-900 uppercase mb-1">Solution Implemented</p>
+                <p class="text-sm text-slate-600">{project.solution}</p>
+              </div>
+              <div class="flex justify-between items-center pt-2">
+                <div>
+                  <p class="text-xs text-slate-500 uppercase">Project Cost</p>
+                  <p class="text-2xl font-bold text-slate-900">{project.cost}</p>
+                </div>
+                <a href="/free-inspection" class="bg-navy-900 text-white px-4 py-2 text-sm font-bold hover:bg-navy-900 transition-colors uppercase">
+                  Get Quote
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Bottom CTA -->
+    <div class="mt-16 bg-white border-2 border-slate-200 p-12">
+      <div class="max-w-4xl mx-auto text-center">
+        <h3 class="text-2xl font-bold text-slate-900 mb-4 uppercase">Have a Similar Problem?</h3>
+        <p class="text-lg text-slate-600 mb-8">Get your free inspection and professional quote today</p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="/free-inspection" class="bg-amber-500 text-black px-8 py-4 text-lg font-bold hover:bg-amber-400 transition-colors uppercase">
+            Schedule Free Inspection
+          </a>
+          <a href="tel:437-545-0067" class="bg-navy-900 text-white px-8 py-4 text-lg font-bold hover:bg-navy-900 transition-colors uppercase">
+            Call: 437-545-0067
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  // Before/After Slider Functionality
+  function initSliders() {
+    const containers = document.querySelectorAll('.before-after-container');
+    
+    containers.forEach(container => {
+      const slider = container.querySelector('.slider') as HTMLInputElement;
+      const afterImage = container.querySelector('.after-image') as HTMLElement;
+      const sliderLine = container.querySelector('.slider-line') as HTMLElement;
+
+      if (slider && afterImage && sliderLine) {
+        // Set initial state
+        afterImage.style.clipPath = 'inset(0 0 0 50%)';
+        sliderLine.style.left = '50%';
+        
+        // Handle slider input
+        const handleSliderChange = (e: Event) => {
+          const target = e.target as HTMLInputElement;
+          const value = parseFloat(target.value);
+          
+          // Update the clip path to reveal/hide the after image
+          afterImage.style.clipPath = `inset(0 0 0 ${value}%)`;
+          
+          // Move the slider line
+          sliderLine.style.left = `${value}%`;
+        };
+        
+        // Add event listeners
+        slider.addEventListener('input', handleSliderChange);
+        slider.addEventListener('change', handleSliderChange);
+        
+        // Touch support for mobile
+        slider.addEventListener('touchmove', handleSliderChange);
+
+        // Mouse hover effect
+        container.addEventListener('mouseenter', () => {
+          sliderLine.style.backgroundColor = '#facc15'; // Yellow on hover
+          sliderLine.style.transition = 'background-color 0.3s';
+        });
+        
+        container.addEventListener('mouseleave', () => {
+          sliderLine.style.backgroundColor = 'white';
+        });
+      }
+    });
+  }
+  
+  // Initialize on DOMContentLoaded
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initSliders);
+  } else {
+    // DOM is already loaded
+    initSliders();
+  }
+  
+  // Re-initialize on Astro page navigation
+  document.addEventListener('astro:page-load', initSliders);
+</script>
+

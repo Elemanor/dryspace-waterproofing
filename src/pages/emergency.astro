@@ -1,0 +1,404 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import Hero from '../components/sections/Hero.astro';
+import Stats from '../components/sections/Stats.astro';
+
+const pageTitle = "24/7 Emergency Waterproofing Toronto | Immediate Response";
+const pageDescription = "Emergency basement flooding help in Toronto. 30-minute response, water extraction, emergency pumping. Call now: 437-545-0067. Available 24/7/365.";
+
+const currentTime = new Date().toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
+
+// Emergency services
+const emergencyServices = [
+  {
+    title: 'WATER EXTRACTION',
+    description: 'High-powered pumps for immediate water removal',
+    features: ['Industrial pumps', 'Complete extraction', 'Sewage cleanup', 'Safe disposal'],
+    urgent: true
+  },
+  {
+    title: 'EMERGENCY PUMPING',
+    description: 'Continuous pumping to prevent further damage',
+    features: ['24/7 monitoring', 'Battery backup', 'Multiple pump setup', 'Overflow prevention'],
+    urgent: true
+  },
+  {
+    title: 'STRUCTURAL DRYING',
+    description: 'Industrial drying equipment deployment',
+    features: ['Dehumidifiers', 'Air movers', 'Moisture monitoring', 'Mold prevention'],
+    urgent: true
+  },
+  {
+    title: 'DAMAGE ASSESSMENT',
+    description: 'Complete evaluation and documentation',
+    features: ['Insurance documentation', 'Damage report', 'Cost estimate', 'Repair planning']
+  },
+  {
+    title: 'TEMPORARY WATERPROOFING',
+    description: 'Immediate protection measures',
+    features: ['Barrier installation', 'Crack sealing', 'Drainage setup', 'Pump installation']
+  },
+  {
+    title: 'ELECTRICAL SAFETY',
+    description: 'Ensure safe conditions before work',
+    features: ['Circuit inspection', 'Power isolation', 'Safety protocols', 'Hazard mitigation']
+  }
+];
+
+// Emergency response areas
+const responseAreas = [
+  { area: 'DOWNTOWN CORE', time: '15-20 MIN' },
+  { area: 'NORTH YORK', time: '20-25 MIN' },
+  { area: 'SCARBOROUGH', time: '25-30 MIN' },
+  { area: 'ETOBICOKE', time: '25-30 MIN' },
+  { area: 'EAST YORK', time: '20-25 MIN' },
+  { area: 'YORK', time: '20-25 MIN' }
+];
+
+// Common emergency situations
+const emergencySituations = [
+  'Sump pump failure during storm',
+  'Sewer backup flooding',
+  'Foundation wall collapse',
+  'Spring thaw flooding',
+  'Burst pipe in basement',
+  'Storm surge water entry'
+];
+---
+
+<PageLayout 
+  title={pageTitle}
+  description={pageDescription}
+>
+  <!-- Emergency Alert Bar -->
+  <section class="bg-amber-500 text-white py-3">
+    <div class="container mx-auto px-4">
+      <div class="flex items-center justify-between">
+        <span class="font-bold uppercase">EMERGENCY LINE ACTIVE 24/7</span>
+        <span class="text-sm uppercase">CURRENT TIME: {currentTime}</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Emergency Hero -->
+  <section class="bg-navy-900 py-16">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto text-center">
+        <div class="inline-block bg-amber-500 text-white px-4 py-2 mb-4 font-bold uppercase">
+          24/7 EMERGENCY SERVICE
+        </div>
+        
+        <h1 class="text-5xl font-bold text-white mb-6 uppercase">
+          BASEMENT FLOODING EMERGENCY
+        </h1>
+        
+        <p class="text-xl text-slate-300 mb-8">
+          Immediate response. Professional equipment. Insurance approved.
+        </p>
+        
+        <!-- Response Promise -->
+        <div class="grid grid-cols-3 gap-4 mb-8">
+          <div class="bg-white border-2 border-slate-200 p-4">
+            <p class="text-2xl font-bold text-slate-900">30 MIN</p>
+            <p class="text-sm text-slate-600 uppercase">Response Time</p>
+          </div>
+          <div class="bg-white border-2 border-slate-200 p-4">
+            <p class="text-2xl font-bold text-slate-900">24/7</p>
+            <p class="text-sm text-slate-600 uppercase">Always Available</p>
+          </div>
+          <div class="bg-white border-2 border-slate-200 p-4">
+            <p class="text-2xl font-bold text-slate-900">100%</p>
+            <p class="text-sm text-slate-600 uppercase">Equipped Teams</p>
+          </div>
+        </div>
+        
+        <!-- Emergency CTA -->
+        <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+          <a 
+            href="tel:437-545-0067"
+            class="bg-amber-500 text-white px-8 py-6 text-2xl font-bold hover:bg-red-700 transition-colors uppercase animate-pulse"
+          >
+            CALL NOW: 437-545-0067
+          </a>
+        </div>
+        
+        <!-- Emergency Steps -->
+        <div class="bg-white border-2 border-red-600 p-8 text-left">
+          <h2 class="text-2xl font-bold text-slate-900 mb-6 uppercase">WHILE YOU WAIT - DO THIS NOW:</h2>
+          <ol class="space-y-3">
+            <li class="flex items-start">
+              <span class="font-bold text-amber-500 mr-3">1.</span>
+              <span class="text-slate-600"><span class="font-bold">TURN OFF ELECTRICITY</span> to flooded areas at breaker panel</span>
+            </li>
+            <li class="flex items-start">
+              <span class="font-bold text-amber-500 mr-3">2.</span>
+              <span class="text-slate-600"><span class="font-bold">STOP WATER SOURCE</span> if possible (main shut-off valve)</span>
+            </li>
+            <li class="flex items-start">
+              <span class="font-bold text-amber-500 mr-3">3.</span>
+              <span class="text-slate-600"><span class="font-bold">MOVE VALUABLES</span> to higher ground immediately</span>
+            </li>
+            <li class="flex items-start">
+              <span class="font-bold text-amber-500 mr-3">4.</span>
+              <span class="text-slate-600"><span class="font-bold">DOCUMENT DAMAGE</span> with photos for insurance</span>
+            </li>
+            <li class="flex items-start">
+              <span class="font-bold text-amber-500 mr-3">5.</span>
+              <span class="text-slate-600"><span class="font-bold text-amber-500">DO NOT ENTER</span> deep water (electrical hazard)</span>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Emergency Services -->
+  <section class="py-16 bg-slate-50">
+    <div class="container mx-auto px-4">
+      <h2 class="text-4xl font-bold text-slate-900 mb-12 text-center uppercase">IMMEDIATE EMERGENCY SERVICES</h2>
+      
+      <div class="grid md:grid-cols-3 gap-8 mb-12">
+        {emergencyServices.filter(s => s.urgent).map((service) => (
+          <div class="bg-amber-50 border-2 border-red-600 p-6">
+            <h3 class="text-xl font-bold text-slate-900 mb-3 uppercase">{service.title}</h3>
+            <p class="text-sm text-slate-600 mb-4">{service.description}</p>
+            <ul class="space-y-2">
+              {service.features.map((feature) => (
+                <li class="text-sm text-slate-600 flex items-start">
+                  <span class="mr-2 text-amber-500">•</span>
+                  <span>{feature}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+      
+      <div class="grid md:grid-cols-3 gap-8">
+        {emergencyServices.filter(s => !s.urgent).map((service) => (
+          <div class="bg-white border-2 border-slate-200 p-6">
+            <h3 class="text-xl font-bold text-slate-900 mb-3 uppercase">{service.title}</h3>
+            <p class="text-sm text-slate-600 mb-4">{service.description}</p>
+            <ul class="space-y-2">
+              {service.features.map((feature) => (
+                <li class="text-sm text-slate-600 flex items-start">
+                  <span class="mr-2 text-slate-400">•</span>
+                  <span>{feature}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Response Times -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <h2 class="text-4xl font-bold text-slate-900 mb-12 text-center uppercase">EMERGENCY RESPONSE TIMES</h2>
+      
+      <div class="max-w-4xl mx-auto">
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+          {responseAreas.map((area) => (
+            <div class="bg-slate-50 border-2 border-slate-200 p-4 text-center">
+              <p class="font-bold text-slate-900 uppercase">{area.area}</p>
+              <p class="text-2xl font-bold text-amber-500 mt-2">{area.time}</p>
+            </div>
+          ))}
+        </div>
+        
+        <div class="mt-8 bg-amber-500 border-2 border-slate-700 p-6 text-center">
+          <p class="text-lg font-bold text-slate-900 uppercase">AVERAGE RESPONSE: 25 MINUTES</p>
+          <p class="text-sm text-slate-900 mt-2">Faster than any competitor in Toronto</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Common Emergencies -->
+  <section class="py-16 bg-slate-50">
+    <div class="container mx-auto px-4">
+      <h2 class="text-4xl font-bold text-slate-900 mb-12 text-center uppercase">WE HANDLE ALL FLOODING EMERGENCIES</h2>
+      
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-4xl mx-auto">
+        {emergencySituations.map((situation) => (
+          <div class="bg-white border-2 border-slate-200 p-4">
+            <p class="text-slate-900 font-semibold uppercase">{situation}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Insurance Section -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-4xl font-bold text-slate-900 mb-8 text-center uppercase">INSURANCE CLAIM ASSISTANCE</h2>
+        
+        <div class="grid md:grid-cols-2 gap-8">
+          <div class="bg-slate-50 border-2 border-slate-200 p-6">
+            <h3 class="text-xl font-bold text-slate-900 mb-4 uppercase">WE PROVIDE</h3>
+            <ul class="space-y-2">
+              <li class="text-slate-600 flex items-start">
+                <span class="mr-2 text-cyan-400">•</span>
+                <span>Complete damage documentation</span>
+              </li>
+              <li class="text-slate-600 flex items-start">
+                <span class="mr-2 text-cyan-400">•</span>
+                <span>Professional assessment report</span>
+              </li>
+              <li class="text-slate-600 flex items-start">
+                <span class="mr-2 text-cyan-400">•</span>
+                <span>Detailed repair estimates</span>
+              </li>
+              <li class="text-slate-600 flex items-start">
+                <span class="mr-2 text-cyan-400">•</span>
+                <span>Direct insurance billing</span>
+              </li>
+            </ul>
+          </div>
+          
+          <div class="bg-navy-900 border-2 border-slate-200 p-6">
+            <h3 class="text-xl font-bold text-slate-900 mb-4 uppercase">WE WORK WITH</h3>
+            <ul class="space-y-2">
+              <li class="text-slate-300">All major insurance companies</li>
+              <li class="text-slate-300">Adjusters and inspectors</li>
+              <li class="text-slate-300">Restoration contractors</li>
+              <li class="text-slate-300">Property managers</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <Stats />
+
+  <!-- Emergency Process -->
+  <section class="py-16 bg-slate-50">
+    <div class="container mx-auto px-4">
+      <h2 class="text-4xl font-bold text-slate-900 mb-12 text-center uppercase">OUR EMERGENCY RESPONSE PROCESS</h2>
+      
+      <div class="grid md:grid-cols-4 gap-6 max-w-6xl mx-auto">
+        <div class="text-center">
+          <div class="bg-amber-500 text-slate-900 w-16 h-16 flex items-center justify-center text-2xl font-bold mx-auto mb-4">
+            1
+          </div>
+          <h3 class="font-bold text-slate-900 mb-2 uppercase">IMMEDIATE DISPATCH</h3>
+          <p class="text-sm text-slate-600">Team deployed within 5 minutes of your call</p>
+        </div>
+        
+        <div class="text-center">
+          <div class="bg-amber-500 text-slate-900 w-16 h-16 flex items-center justify-center text-2xl font-bold mx-auto mb-4">
+            2
+          </div>
+          <h3 class="font-bold text-slate-900 mb-2 uppercase">RAPID ARRIVAL</h3>
+          <p class="text-sm text-slate-600">On-site with equipment in 30 minutes or less</p>
+        </div>
+        
+        <div class="text-center">
+          <div class="bg-amber-500 text-slate-900 w-16 h-16 flex items-center justify-center text-2xl font-bold mx-auto mb-4">
+            3
+          </div>
+          <h3 class="font-bold text-slate-900 mb-2 uppercase">WATER EXTRACTION</h3>
+          <p class="text-sm text-slate-600">Begin immediate pumping and removal</p>
+        </div>
+        
+        <div class="text-center">
+          <div class="bg-amber-500 text-slate-900 w-16 h-16 flex items-center justify-center text-2xl font-bold mx-auto mb-4">
+            4
+          </div>
+          <h3 class="font-bold text-slate-900 mb-2 uppercase">DAMAGE CONTROL</h3>
+          <p class="text-sm text-slate-600">Prevent further damage and begin drying</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Emergency Contact Form -->
+  <section class="py-16 bg-white" id="quickForm">
+    <div class="container mx-auto px-4">
+      <div class="max-w-2xl mx-auto">
+        <h2 class="text-4xl font-bold text-slate-900 mb-8 text-center uppercase">REQUEST EMERGENCY CALLBACK</h2>
+        
+        <div class="bg-slate-50 border-2 border-slate-200 p-8">
+          <form>
+            <div class="grid md:grid-cols-2 gap-4 mb-4">
+              <div>
+                <label class="block text-sm font-bold text-slate-600 uppercase mb-2">NAME *</label>
+                <input type="text" class="w-full border-2 border-slate-200 p-3" required />
+              </div>
+              <div>
+                <label class="block text-sm font-bold text-slate-600 uppercase mb-2">PHONE *</label>
+                <input type="tel" class="w-full border-2 border-slate-200 p-3" required />
+              </div>
+            </div>
+            
+            <div class="mb-4">
+              <label class="block text-sm font-bold text-slate-600 uppercase mb-2">ADDRESS *</label>
+              <input type="text" class="w-full border-2 border-slate-200 p-3" required />
+            </div>
+            
+            <div class="mb-4">
+              <label class="block text-sm font-bold text-slate-600 uppercase mb-2">EMERGENCY TYPE *</label>
+              <select class="w-full border-2 border-slate-200 p-3" required>
+                <option value="">Select Emergency Type</option>
+                <option value="flooding">Active Flooding</option>
+                <option value="sump">Sump Pump Failure</option>
+                <option value="sewer">Sewer Backup</option>
+                <option value="foundation">Foundation Leak</option>
+                <option value="other">Other Emergency</option>
+              </select>
+            </div>
+            
+            <div class="mb-6">
+              <label class="block text-sm font-bold text-slate-600 uppercase mb-2">DETAILS</label>
+              <textarea class="w-full border-2 border-slate-200 p-3" rows="3"></textarea>
+            </div>
+            
+            <button type="submit" class="w-full bg-amber-500 text-slate-900 py-4 text-lg font-bold uppercase hover:bg-red-700 transition-colors">
+              REQUEST IMMEDIATE CALLBACK
+            </button>
+          </form>
+        </div>
+        
+        <div class="mt-8 text-center">
+          <p class="text-slate-600 mb-4">For immediate assistance, call directly:</p>
+          <a href="tel:437-545-0067" class="text-3xl font-bold text-amber-500 hover:text-red-700">
+            437-545-0067
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="py-16 bg-amber-500">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-4xl font-bold text-slate-900 mb-4 uppercase">DON'T WAIT - WATER DAMAGE WORSENS EVERY MINUTE</h2>
+        <p class="text-xl text-white mb-8">
+          Our emergency team is standing by with pumps, equipment, and expertise
+        </p>
+        
+        <a 
+          href="tel:437-545-0067"
+          class="inline-block bg-white text-amber-500 px-12 py-6 text-2xl font-bold hover:bg-slate-50 transition-colors uppercase"
+        >
+          CALL EMERGENCY LINE: 437-545-0067
+        </a>
+        
+        <div class="mt-8">
+          <p class="text-white">
+            <span class="font-bold">24 HOURS</span> • 
+            <span class="font-bold">7 DAYS</span> • 
+            <span class="font-bold">365 DAYS</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</PageLayout>

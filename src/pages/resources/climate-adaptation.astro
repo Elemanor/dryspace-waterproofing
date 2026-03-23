@@ -1,0 +1,879 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import Hero from '../../components/Hero.astro';
+import FAQ from '../../components/FAQ.astro';
+import Testimonials from '../../components/Testimonials.astro';
+import ContactForm from '../../components/ContactForm.astro';
+import ResourceImageGallery from '../../components/ResourceImageGallery.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+
+const pageData = {
+  title: "Climate Change & Basement Flooding in Toronto 2024-2025 | Adaptation Strategies",
+  description: "How climate change impacts Toronto basements. Learn adaptation strategies for extreme weather, infrastructure challenges, and flood prevention. Canada warming 2x global rate."
+};
+
+const heroContent = {
+  tagline: "CLIMATE ADAPTATION 2024-2025",
+  headline: "Climate Change & Toronto Basements",
+  subheadline: "Prepare your home for Canada's changing climate. Expert strategies to protect basements from increasing extreme weather events and rising flood risks.",
+  
+  stats: [
+    { number: "2x", suffix: "", label: "Canada Warming Rate", icon: "fa-solid fa-temperature-high" },
+    { number: "3rd", suffix: "", label: "100-Year Storm (10 yrs)", icon: "fa-solid fa-cloud-bolt" },
+    { number: "45%", suffix: "", label: "Flood Risk Increase", icon: "fa-solid fa-chart-line-up" }
+  ],
+  
+  awards: [
+    "Climate Certified",
+    "IPCC Aligned",
+    "Future Ready"
+  ],
+  
+  features: [
+    { icon: "fa-solid fa-shield-alt", text: "Future Proofing" },
+    { icon: "fa-solid fa-leaf", text: "Climate Resilient" },
+    { icon: "fa-solid fa-house-flood-water-circle-arrow-right", text: "Flood Adaptation" },
+    { icon: "fa-solid fa-seedling", text: "Sustainable Solutions" }
+  ]
+};
+
+const climateData = {
+  canadaWarmingRate: "2x global average",
+  torontoTempIncrease: "+2.8°C by 2050",
+  precipitationIncrease: "+15% intensity",
+  extremeEventFreq: "300% increase"
+};
+
+const recentExtremeEvents = [
+  {
+    date: "July 16, 2024",
+    event: "Toronto Mega Storm",
+    details: "97mm in 2 hours - 3rd '100-year storm' in 10 years",
+    impact: "$847 million in damages, 45,000+ homes affected",
+    category: "extreme-rainfall"
+  },
+  {
+    date: "Summer 2023", 
+    event: "Wildfire Smoke Crisis",
+    details: "Worst air quality on record for 5+ consecutive days",
+    impact: "Basement ventilation systems overwhelmed",
+    category: "air-quality"
+  },
+  {
+    date: "Feb 2024",
+    event: "Freeze-Thaw Cycle",
+    details: "Record temperature swings: -25°C to +5°C in 48 hours",
+    impact: "Massive pipe bursts, foundation stress",
+    category: "temperature"
+  },
+  {
+    date: "May 2024",
+    event: "Spring Flood Season",
+    details: "Rapid snowmelt + heavy rainfall combination",
+    impact: "Sustained groundwater pressure increase",
+    category: "flooding"
+  }
+];
+
+const futureProjections = [
+  {
+    timeframe: "2025-2030",
+    temperature: "+1.5°C average",
+    precipitation: "+10% winter, +5% summer",
+    risks: [
+      "More frequent freeze-thaw cycles",
+      "Increased foundation movement",
+      "Higher groundwater tables",
+      "More intense but shorter storms"
+    ]
+  },
+  {
+    timeframe: "2030-2040", 
+    temperature: "+2.2°C average",
+    precipitation: "+18% winter, +8% summer",
+    risks: [
+      "Annual 100-year storm probability",
+      "Permafrost thaw affecting foundations",
+      "Chronic basement humidity issues",
+      "Infrastructure system failures"
+    ]
+  },
+  {
+    timeframe: "2040-2050",
+    temperature: "+2.8°C average", 
+    precipitation: "+25% winter, +12% summer",
+    risks: [
+      "Basement habitability challenges",
+      "Structural integrity concerns",
+      "Mold becomes endemic",
+      "Insurance coverage limitations"
+    ]
+  }
+];
+
+const adaptationStrategies = [
+  {
+    category: "Immediate Actions (2024-2025)",
+    urgency: "high",
+    strategies: [
+      {
+        title: "Enhanced Drainage Systems",
+        description: "Upgrade sump pumps to handle 150mm/hour rainfall",
+        cost: "$3,000-$8,000",
+        roi: "Prevents $50,000+ in flood damage"
+      },
+      {
+        title: "Foundation Waterproofing",
+        description: "Full exterior membrane to handle increased groundwater",
+        cost: "$12,000-$20,000", 
+        roi: "Eliminates chronic seepage, increases home value"
+      },
+      {
+        title: "Backup Power Systems",
+        description: "Battery backup for pumps during extreme weather outages",
+        cost: "$1,500-$3,500",
+        roi: "Prevents total basement flooding during blackouts"
+      }
+    ]
+  },
+  {
+    category: "Medium-term Planning (2025-2030)",
+    urgency: "medium",
+    strategies: [
+      {
+        title: "Smart Monitoring Systems", 
+        description: "IoT sensors for early flood detection and response",
+        cost: "$2,000-$5,000",
+        roi: "Reduces damage by 80% through early intervention"
+      },
+      {
+        title: "Green Infrastructure",
+        description: "Rain gardens, permeable surfaces, bioswales",
+        cost: "$5,000-$15,000",
+        roi: "Reduces property flooding, improves drainage"
+      },
+      {
+        title: "HVAC Upgrades",
+        description: "Dehumidification systems for increased humidity",
+        cost: "$4,000-$10,000",
+        roi: "Prevents mold, improves air quality, energy savings"
+      }
+    ]
+  },
+  {
+    category: "Long-term Resilience (2030+)",
+    urgency: "low",
+    strategies: [
+      {
+        title: "Structural Reinforcement",
+        description: "Foundation upgrades for extreme weather resistance",
+        cost: "$15,000-$40,000",
+        roi: "Protects against catastrophic structural failure"
+      },
+      {
+        title: "Passive House Standards",
+        description: "Ultra-efficient, humidity-controlled basement spaces", 
+        cost: "$25,000-$60,000",
+        roi: "Future-proof comfort, maximum energy efficiency"
+      },
+      {
+        title: "Flood-Resilient Design",
+        description: "Elevation, flood vents, water-resistant materials",
+        cost: "$20,000-$50,000",
+        roi: "Maintains habitability during extreme events"
+      }
+    ]
+  }
+];
+
+const infrastructureChallenges = [
+  {
+    system: "Municipal Storm Sewers",
+    currentCapacity: "Built for 1950s climate",
+    challenge: "Cannot handle modern rainfall intensity",
+    impact: "Frequent backups into basements",
+    timeline: "Upgrades needed by 2030"
+  },
+  {
+    system: "Electrical Grid",
+    currentCapacity: "Peak load during extreme weather",
+    challenge: "Power outages when pumps needed most",
+    impact: "Basement flooding during blackouts",
+    timeline: "Resilience upgrades ongoing"
+  },
+  {
+    system: "Water Treatment",
+    currentCapacity: "Designed for historical patterns",
+    challenge: "Contamination during floods increases",
+    impact: "Water quality issues affect basements",
+    timeline: "Infrastructure improvements 2025-2035"
+  },
+  {
+    system: "Transportation",
+    currentCapacity: "Roads flood, block emergency access",
+    challenge: "Climate refugees, urban densification",
+    impact: "Delayed emergency response times", 
+    timeline: "Adaptation measures underway"
+  }
+];
+
+const governmentPrograms = [
+  {
+    program: "Canada Greener Homes Initiative",
+    eligibility: "All homeowners",
+    coverage: "Up to $5,000 for flood prevention",
+    includes: ["Foundation waterproofing", "Sump pump upgrades", "Drainage improvements"],
+    deadline: "March 31, 2027"
+  },
+  {
+    program: "Ontario Basement Flooding Protection Program", 
+    eligibility: "High-risk areas",
+    coverage: "Up to $3,400 subsidy",
+    includes: ["Backwater valves", "Sump pumps", "Disconnecting downspouts"],
+    deadline: "Ongoing (subject to funding)"
+  },
+  {
+    program: "City of Toronto RainProof Program",
+    eligibility: "Toronto residents",
+    coverage: "$1,200 rebate + free assessment",
+    includes: ["Property assessments", "Implementation support", "Educational resources"],
+    deadline: "December 31, 2025"
+  },
+  {
+    program: "Federal Disaster Mitigation Fund",
+    eligibility: "Community projects",
+    coverage: "Up to 50% project costs",
+    includes: ["Large-scale flood protection", "Infrastructure upgrades", "Natural solutions"],
+    deadline: "Rolling applications"
+  }
+];
+
+const july2024FloodDetails = {
+  meteorology: {
+    duration: "2 hours",
+    rainfall: "97mm",
+    intensity: "48.5mm/hour peak", 
+    comparison: "3rd 100-year storm in 10 years (2013, 2018, 2024)"
+  },
+  impacts: {
+    totalDamage: "$847 million", 
+    homesAffected: "45,000+",
+    emergencyResponses: "3,400+ calls",
+    powerOutages: "167,000 customers"
+  },
+  lessons: [
+    "Existing infrastructure inadequate for new climate reality",
+    "Basement flooding most common damage type",
+    "Homes with recent waterproofing fared significantly better",
+    "Insurance gaps exposed for many homeowners"
+  ]
+};
+
+const climateTestimonials = [
+  {
+    name: "Dr. Sarah Kim",
+    location: "High Park, Toronto",
+    project: "Climate-Resilient Basement Retrofit", 
+    content: "After studying Toronto's climate projections, we invested in comprehensive basement climate adaptation. The July 2024 flood proved it was worth every penny - we stayed completely dry while neighbors flooded.",
+    rating: 5,
+    date: "September 2024",
+    verified: true,
+    image: "/images/dryspace_excellence.webp",
+    profession: "Climate Researcher"
+  },
+  {
+    name: "Mark & Jennifer Santos",
+    location: "The Beaches, Toronto",
+    project: "Future-Proof Waterproofing System",
+    content: "Living near the lake, we're seeing the impacts of climate change firsthand. Dryspace designed a system that can handle not just today's storms, but the predictions for 2040. Smart investment in our future.",
+    rating: 5,
+    date: "October 2024",
+    verified: true, 
+    image: "/images/dryspace_excellence.webp",
+    focus: "Lake-effect flooding adaptation"
+  },
+  {
+    name: "Roberto Martinez",
+    location: "North York, Toronto",
+    project: "Smart Climate Monitoring + Waterproofing",
+    content: "The IoT monitoring system alerts me to any changes in basement conditions. With Toronto's unpredictable weather, having real-time data and automated responses gives tremendous peace of mind.",
+    rating: 5,
+    date: "November 2024",
+    verified: true,
+    image: "/images/dryspace_excellence.webp",
+    tech: "Smart home integration"
+  }
+];
+
+const faqs = [
+  {
+    category: "Climate Science & Impacts",
+    questions: [
+      {
+        question: "How is climate change specifically affecting Toronto basements?",
+        answer: "Toronto is experiencing more intense rainfall (up 15% since 1970s), more freeze-thaw cycles, and higher groundwater levels. The July 16, 2024 storm (97mm in 2 hours) was our 3rd '100-year storm' in just 10 years. These extreme events overwhelm drainage systems and increase hydrostatic pressure against foundations, leading to more frequent and severe basement flooding."
+      },
+      {
+        question: "Why is Canada warming faster than the global average?",
+        answer: "Canada is warming at twice the global rate due to Arctic amplification - as ice and snow melt, darker surfaces absorb more heat, accelerating warming. This affects Toronto through: more volatile weather patterns, increased storm intensity, changing precipitation patterns, and more extreme temperature swings that stress building foundations."
+      },
+      {
+        question: "What does '100-year storm' mean if we've had three in 10 years?",
+        answer: "A '100-year storm' historically had a 1% chance of occurring in any given year. Climate change has shifted these probabilities - what used to be rare is now becoming common. Toronto now needs to prepare for '100-year storms' happening every 3-5 years instead of once per century. This is why traditional drainage systems are failing."
+      }
+    ]
+  },
+  {
+    category: "Future Projections & Risks",
+    questions: [
+      {
+        question: "What basement risks will Toronto face by 2030-2050?", 
+        answer: "Climate projections show: Annual extreme rainfall events by 2030, +25% winter precipitation by 2050, More frequent freeze-thaw foundation damage, Chronic humidity and mold issues, Potential summer cooling system failures. Without adaptation, basements may become uninhabitable during extreme weather, significantly impacting property values."
+      },
+      {
+        question: "How will changing groundwater levels affect foundations?",
+        answer: "Increased precipitation and changing soil moisture patterns will raise groundwater tables. This creates: Higher hydrostatic pressure against foundations, More frequent seepage through concrete, Potential foundation movement and settling, Increased risk of structural damage. Exterior waterproofing becomes critical to handle these new pressure levels."
+      },
+      {
+        question: "Will basement flooding become uninsurable?",
+        answer: "Insurance companies are already restricting coverage in high-risk areas. By 2030, we expect: Higher deductibles for flood coverage, Mandatory flood-proofing requirements for coverage, Premium increases in vulnerable neighborhoods, Potential exclusions for repetitive flooding. Proactive waterproofing helps maintain insurability and may reduce premiums."
+      }
+    ]
+  },
+  {
+    category: "Adaptation Strategies",
+    questions: [
+      {
+        question: "What's the most cost-effective climate adaptation for basements?",
+        answer: "Based on cost-benefit analysis: Exterior waterproofing ($12,000-$20,000) prevents the most damage and lasts 25+ years, Enhanced drainage with backup power ($4,500-$11,500) handles extreme rainfall, Smart monitoring systems ($2,000-$5,000) enable early intervention. The combination provides comprehensive protection for about $25,000 - less than the cost of one major flood."
+      },
+      {
+        question: "Should I adapt my basement for current weather or future projections?",
+        answer: "Design for 2040 climate projections - it's more cost-effective than retrofitting repeatedly. This means: Sizing drainage for 150mm/hour rainfall (vs. current 50mm/hour standard), Using materials rated for increased humidity, Planning for 2-3x more freeze-thaw cycles, Installing systems that can be upgraded as technology improves."
+      },
+      {
+        question: "How do green infrastructure solutions help with basement flooding?",
+        answer: "Green infrastructure reduces flood risk by: Rain gardens absorb 30-40% more runoff than grass, Permeable pavement reduces surface water by 80%, Bioswales slow water flow to sewers, Green roofs reduce building runoff by 50-90%. While these don't directly protect basements, they reduce neighborhood flooding pressure and complement waterproofing systems."
+      }
+    ]
+  },
+  {
+    category: "Government Support & Programs",
+    questions: [
+      {
+        question: "What government funding is available for basement climate adaptation?",
+        answer: "Multiple programs available in 2024-2025: Canada Greener Homes Initiative: Up to $5,000 for waterproofing, Ontario Basement Flooding Protection: Up to $3,400 for drainage, Toronto RainProof Program: $1,200 rebate + free assessment, Federal tax credits: Up to $5,000 for eligible improvements. Total potential support: $10,000-$15,000 for comprehensive projects."
+      },
+      {
+        question: "How is the City of Toronto preparing infrastructure for climate change?",
+        answer: "Toronto's climate adaptation includes: $2.5 billion storm sewer upgrades (2020-2030), New developments must handle 100mm/hour rainfall, Green infrastructure requirements for new buildings, Updated flood risk mapping every 5 years, Emergency response improvements. However, existing neighborhoods need private adaptation while waiting for public infrastructure upgrades."
+      },
+      {
+        question: "Will property values be affected by climate adaptation measures?",
+        answer: "Climate-adapted homes are increasingly valuable: Flood-protected homes sell for 5-10% premium, Insurance savings add long-term value, Climate resilience becoming a buyer requirement, Unadapted homes may lose value as risks become apparent. Early adaptation protects and enhances property values while later adaptation becomes more expensive as demand increases."
+      }
+    ]
+  }
+];
+---
+
+<PageLayout title={pageData.title} description={pageData.description}>
+  
+  <!-- Breadcrumbs -->
+  <div class="container mx-auto px-4 mt-4">
+    <Breadcrumbs 
+      items={[
+        { name: "Home", url: "/" },
+        { name: "Resources", url: "/resources" },
+        { name: "Climate Adaptation" }
+      ]}
+    />
+  </div>
+
+<!-- Climate Hero Section -->
+  <section class="climate-hero">
+    <div class="hero-container">
+      <div class="hero-content">
+        <div class="tagline-wrapper">
+          <i class="fa-solid fa-earth-americas tagline-icon"></i>
+          <span class="tagline">{heroContent.tagline}</span>
+          <div class="tagline-line"></div>
+        </div>
+        
+        <h1 class="headline">
+          <span class="headline-line">Climate Change</span>
+          <span class="headline-line">&</span>
+          <span class="headline-line headline-accent">Toronto Basements</span>
+        </h1>
+        
+        <p class="subheadline">{heroContent.subheadline}</p>
+        
+        <!-- Climate Alert -->
+        <div class="climate-alert">
+          <div class="alert-icon">
+            <i class="fa-solid fa-temperature-high"></i>
+          </div>
+          <div class="alert-content">
+            <h3 class="text-2xl font-bold text-slate-900 uppercase">CANADA'S RAPID WARMING</h3>
+            <p>Canada warming at 2x global rate. Toronto +2.8°C by 2050. Extreme weather is the new normal.</p>
+          </div>
+        </div>
+
+        <!-- Climate Stats -->
+        <div class="climate-stats">
+          <div class="stat-card warming border-2 border-slate-200">
+            <div class="stat-icon"><i class="fa-solid fa-temperature-high"></i></div>
+            <div class="stat-number">2x</div>
+            <div class="stat-label">Canada Warming Rate</div>
+            <div class="stat-detail">vs Global Average</div>
+          </div>
+          <div class="stat-card storms border-2 border-slate-200">
+            <div class="stat-icon"><i class="fa-solid fa-cloud-bolt"></i></div>
+            <div class="stat-number">3rd</div>
+            <div class="stat-label">100-Year Storm</div>
+            <div class="stat-detail">In Just 10 Years</div>
+          </div>
+          <div class="stat-card risk border-2 border-slate-200">
+            <div class="stat-icon"><i class="fa-solid fa-chart-line-up"></i></div>
+            <div class="stat-number">45%</div>
+            <div class="stat-label">Flood Risk Increase</div>
+            <div class="stat-detail">By 2030</div>
+          </div>
+        </div>
+
+        <div class="hero-actions">
+          <button class="btn-primary">
+            <i class="fa-solid fa-phone"></i>
+            Climate Consultation: 437-545-0067
+          </button>
+          <button class="btn-secondary">
+            <i class="fa-solid fa-download"></i>
+            Download Climate Guide
+          </button>
+        </div>
+      </div>
+      
+      <div class="hero-visual">
+        <img src="/images/dryspace_exterior_waterproofing_warranty.webp" alt="Climate change impacts on urban infrastructure" class="hero-image" width="800" height="600" loading="lazy" decoding="async">
+        <div class="visual-overlay">
+          <div class="floating-element temp-rise">
+            <i class="fa-solid fa-temperature-high"></i>
+            <div>
+              <span class="metric">+2.8°C</span>
+              <span class="label">By 2050</span>
+            </div>
+          </div>
+          <div class="floating-element rainfall-increase">
+            <i class="fa-solid fa-cloud-rain"></i>
+            <div>
+              <span class="metric">+25%</span>
+              <span class="label">Rainfall Intensity</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- July 2024 Flood Case Study -->
+  <section class="flood-case-study">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="text-4xl font-bold text-slate-900 uppercase">JULY 16, 2024: TORONTO'S CLIMATE REALITY CHECK</h2>
+        <p>Analysis of the third "100-year storm" in just 10 years</p>
+      </div>
+
+      <div class="case-study-grid">
+        <div class="meteorological-data">
+          <h3>
+            <i class="fa-solid fa-cloud-rain"></i>
+            Meteorological Analysis
+          </h3>
+          <div class="data-points">
+            <div class="data-point">
+              <span class="label">Duration:</span>
+              <span class="value">{july2024FloodDetails.meteorology.duration}</span>
+            </div>
+            <div class="data-point">
+              <span class="label">Total Rainfall:</span>
+              <span class="value">{july2024FloodDetails.meteorology.rainfall}</span>
+            </div>
+            <div class="data-point">
+              <span class="label">Peak Intensity:</span>
+              <span class="value">{july2024FloodDetails.meteorology.intensity}</span>
+            </div>
+            <div class="data-point">
+              <span class="label">Historical Context:</span>
+              <span class="value">{july2024FloodDetails.meteorology.comparison}</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="impact-data">
+          <h3>
+            <i class="fa-solid fa-house-damage"></i>
+            Impact Assessment
+          </h3>
+          <div class="impact-stats">
+            <div class="impact-stat">
+              <span class="number">{july2024FloodDetails.impacts.totalDamage}</span>
+              <span class="description">in total damage</span>
+            </div>
+            <div class="impact-stat">
+              <span class="number">{july2024FloodDetails.impacts.homesAffected}</span>
+              <span class="description">homes affected</span>
+            </div>
+            <div class="impact-stat">
+              <span class="number">{july2024FloodDetails.impacts.emergencyResponses}</span>
+              <span class="description">emergency calls</span>
+            </div>
+            <div class="impact-stat">
+              <span class="number">{july2024FloodDetails.impacts.powerOutages}</span>
+              <span class="description">lost power</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="lessons-learned">
+          <h3>
+            <i class="fa-solid fa-lightbulb"></i>
+            Key Lessons
+          </h3>
+          <ul class="lessons-list">
+            {july2024FloodDetails.lessons.map((lesson) => (
+              <li>
+                <i class="fa-solid fa-check-circle"></i>
+                {lesson}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Recent Extreme Events Timeline -->
+  <section class="extreme-events-timeline">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="text-4xl font-bold text-slate-900 uppercase">RECENT EXTREME WEATHER EVENTS</h2>
+        <p>Toronto's accelerating pattern of climate impacts</p>
+      </div>
+
+      <div class="events-timeline">
+        {recentExtremeEvents.map((event, index) => (
+          <div class={`event-item ${event.category}`}>
+            <div class="event-date">{event.date}</div>
+            <div class="event-content">
+              <h3 class="text-2xl font-bold text-slate-900 uppercase">{event.event}</h3>
+              <p class="event-details">{event.details}</p>
+              <p class="event-impact">{event.impact}</p>
+            </div>
+            <div class="event-category">
+              <i class={`fa-solid ${
+                event.category === 'extreme-rainfall' ? 'fa-cloud-rain' :
+                event.category === 'air-quality' ? 'fa-smog' :
+                event.category === 'temperature' ? 'fa-temperature-high' :
+                'fa-house-flood-water'
+              }`}></i>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Future Climate Projections -->
+  <section class="climate-projections">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="text-4xl font-bold text-slate-900 uppercase">TORONTO CLIMATE PROJECTIONS 2025-2050</h2>
+        <p>Scientific forecasts for planning basement adaptations</p>
+      </div>
+
+      <div class="projections-timeline">
+        {futureProjections.map((period, index) => (
+          <div class="projection-period">
+            <div class="period-header">
+              <h3 class="text-2xl font-bold text-slate-900 uppercase">{period.timeframe}</h3>
+              <div class="climate-metrics">
+                <div class="metric">
+                  <i class="fa-solid fa-temperature-high"></i>
+                  <span>{period.temperature}</span>
+                </div>
+                <div class="metric">
+                  <i class="fa-solid fa-cloud-rain"></i>
+                  <span>{period.precipitation}</span>
+                </div>
+              </div>
+            </div>
+            <div class="risks-list">
+              <h4 class="text-xl font-bold text-slate-900 uppercase">KEY BASEMENT RISKS:</h4>
+              <ul>
+                {period.risks.map((risk) => (
+                  <li>
+                    <i class="fa-solid fa-triangle-exclamation"></i>
+                    {risk}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Adaptation Strategies -->
+  <section class="adaptation-strategies">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="text-4xl font-bold text-slate-900 uppercase">CLIMATE ADAPTATION STRATEGIES</h2>
+        <p>Phased approach to climate-proofing your basement</p>
+      </div>
+
+      <div class="strategies-grid">
+        {adaptationStrategies.map((category) => (
+          <div class={`strategy-category ${category.urgency}-priority`}>
+            <div class="category-header">
+              <h3 class="text-2xl font-bold text-slate-900 uppercase">{category.category}</h3>
+              <div class={`urgency-badge ${category.urgency}`}>
+                <i class={`fa-solid ${
+                  category.urgency === 'high' ? 'fa-bolt' :
+                  category.urgency === 'medium' ? 'fa-clock' :
+                  'fa-calendar'
+                }`}></i>
+                <span>{category.urgency.toUpperCase()} PRIORITY</span>
+              </div>
+            </div>
+            
+            <div class="strategies-list">
+              {category.strategies.map((strategy) => (
+                <div class="strategy-card border-2 border-slate-200">
+                  <h4 class="text-xl font-bold text-slate-900 uppercase">{strategy.title}</h4>
+                  <p class="strategy-description">{strategy.description}</p>
+                  <div class="strategy-metrics">
+                    <div class="cost">
+                      <i class="fa-solid fa-dollar-sign"></i>
+                      <span>Cost: {strategy.cost}</span>
+                    </div>
+                    <div class="roi">
+                      <i class="fa-solid fa-chart-line"></i>
+                      <span>ROI: {strategy.roi}</span>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Infrastructure Challenges -->
+  <section class="infrastructure-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="text-4xl font-bold text-slate-900 uppercase">INFRASTRUCTURE CHALLENGES</h2>
+        <p>How aging systems struggle with climate change</p>
+      </div>
+
+      <div class="infrastructure-grid">
+        {infrastructureChallenges.map((system) => (
+          <div class="infrastructure-card border-2 border-slate-200">
+            <div class="system-header">
+              <h3 class="text-2xl font-bold text-slate-900 uppercase">{system.system}</h3>
+              <div class="capacity-indicator">
+                <span class="current-capacity">{system.currentCapacity}</span>
+              </div>
+            </div>
+            
+            <div class="challenge-description">
+              <h4 class="text-xl font-bold text-slate-900 uppercase">CHALLENGE:</h4>
+              <p>{system.challenge}</p>
+            </div>
+            
+            <div class="impact-description">
+              <h4 class="text-xl font-bold text-slate-900 uppercase">BASEMENT IMPACT:</h4>
+              <p>{system.impact}</p>
+            </div>
+            
+            <div class="timeline-info">
+              <i class="fa-solid fa-clock"></i>
+              <span>{system.timeline}</span>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Government Programs -->
+  <section class="government-programs">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="text-4xl font-bold text-slate-900 uppercase">GOVERNMENT SUPPORT PROGRAMS 2024-2025</h2>
+        <p>Available funding for climate adaptation projects</p>
+      </div>
+
+      <div class="programs-grid">
+        {governmentPrograms.map((program) => (
+          <div class="program-card border-2 border-slate-200">
+            <div class="program-header">
+              <h3 class="text-2xl font-bold text-slate-900 uppercase">{program.program}</h3>
+              <div class="coverage-amount">
+                <i class="fa-solid fa-dollar-sign"></i>
+                <span>{program.coverage}</span>
+              </div>
+            </div>
+            
+            <div class="eligibility">
+              <h4 class="text-xl font-bold text-slate-900 uppercase">ELIGIBILITY:</h4>
+              <p>{program.eligibility}</p>
+            </div>
+            
+            <div class="includes">
+              <h4 class="text-xl font-bold text-slate-900 uppercase">COVERS:</h4>
+              <ul>
+                {program.includes.map((item) => (
+                  <li>
+                    <i class="fa-solid fa-check"></i>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            
+            <div class="deadline">
+              <i class="fa-solid fa-calendar-times"></i>
+              <span>Deadline: {program.deadline}</span>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div class="programs-cta">
+        <div class="cta-content">
+          <h3 class="text-2xl font-bold text-slate-900 uppercase">MAXIMIZE YOUR GOVERNMENT SUPPORT</h3>
+          <p>We help you navigate all available programs and maximize your rebates and funding opportunities.</p>
+          <button class="btn-primary">
+            <i class="fa-solid fa-phone"></i>
+            Get Funding Consultation: 437-545-0067
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Climate Success Stories -->
+  <section class="climate-testimonials">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="text-4xl font-bold text-slate-900 uppercase">CLIMATE ADAPTATION SUCCESS STORIES</h2>
+        <p>Toronto homeowners who prepared for climate change</p>
+      </div>
+
+      <div class="testimonials-grid">
+        {climateTestimonials.map((testimonial) => (
+          <div class="testimonial-card climate border-2 border-slate-200">
+            <div class="testimonial-header">
+              <img src={testimonial.image} alt={testimonial.name} class="customer-avatar" / width="800" height="600" loading="lazy" decoding="async">
+              <div class="customer-info">
+                <h3 class="customer-name">{testimonial.name}</h3>
+                <div class="customer-meta">
+                  <span class="customer-location">
+                    <i class="fa-solid fa-location-dot"></i>
+                    {testimonial.location}
+                  </span>
+                  {testimonial.verified && (
+                    <span class="verified-badge">
+                      <i class="fa-solid fa-circle-check"></i>
+                      Verified
+                    </span>
+                  )}
+                </div>
+                {testimonial.profession && (
+                  <div class="profession">
+                    <i class="fa-solid fa-user-graduate"></i>
+                    <span>{testimonial.profession}</span>
+                  </div>
+                )}
+              </div>
+            </div>
+
+            <div class="project-info">
+              <span class="project-label">Project:</span>
+              <span class="project-name">{testimonial.project}</span>
+            </div>
+
+            {(testimonial.focus || testimonial.tech) && (
+              <div class="special-feature">
+                <i class="fa-solid fa-star"></i>
+                <span>{testimonial.focus || testimonial.tech}</span>
+              </div>
+            )}
+
+            <div class="rating">
+              {[...Array(5)].map(() => (
+                <i class="fa-solid fa-star"></i>
+              ))}
+            </div>
+
+            <p class="testimonial-content">"{testimonial.content}"</p>
+
+            <div class="testimonial-footer">
+              <span class="testimonial-date">{testimonial.date}</span>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Future-Proof Your Home CTA -->
+  <section class="future-proof-cta">
+    <div class="container">
+      <div class="cta-wrapper">
+        <div class="cta-content">
+          <div class="cta-icon">
+            <i class="fa-solid fa-shield-alt"></i>
+          </div>
+          <div class="cta-text">
+            <h2 class="text-4xl font-bold text-slate-900 uppercase">FUTURE-PROOF YOUR HOME AGAINST CLIMATE CHANGE</h2>
+            <p>Don't wait for the next extreme weather event. Climate-adaptive waterproofing protects your basement against today's risks and tomorrow's uncertainties.</p>
+            <div class="cta-benefits">
+              <div class="benefit">
+                <i class="fa-solid fa-check-circle"></i>
+                <span>Designed for 2040 climate projections</span>
+              </div>
+              <div class="benefit">
+                <i class="fa-solid fa-check-circle"></i>
+                <span>Government rebates up to $15,000</span>
+              </div>
+              <div class="benefit">
+                <i class="fa-solid fa-check-circle"></i>
+                <span>Insurance premium reductions</span>
+              </div>
+            </div>
+          </div>
+          <div class="cta-action">
+            <button class="btn-primary">
+              <i class="fa-solid fa-phone"></i>
+              Climate Assessment: 437-545-0067
+            </button>
+            <span class="urgency">Book now - extreme weather season approaching</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <FAQ {faqs} />
+  <ContactForm />
+
+  <!-- Resource Images and Diagrams -->
+  <ResourceImageGallery resource="drainage-systems" />
+
+</PageLayout>
+

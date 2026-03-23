@@ -1,0 +1,1021 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import BlogImageGallery from '../../components/BlogImageGallery.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+
+
+---
+
+<PageLayout title="Sump Pump Types Comparison Guide 2026: Pedestal vs Submersible | Dryspace Construction" 
+           description="Complete guide to sump pump types with product reviews, performance comparisons, and installation costs. Find the best sump pump for your Toronto basement.">
+  
+  
+  
+  <!-- Breadcrumbs -->
+  <div class="container mx-auto px-4 mt-4">
+    <Breadcrumbs 
+      items={[
+        { name: "Home", url: "/" },
+        { name: "Blog", url: "/blog" },
+        { name: "Sump Pump Types Comparison Guide" }
+      ]}
+    />
+  </div>
+
+<main>
+    <!-- Hero Section -->
+    <section class="bg-slate-50 text-slate-900 py-16">
+      <div class="max-w-4xl mx-auto px-4 text-center">
+        <h1 class="uppercase text-4xl md:text-5xl font-bold mb-6">Sump Pump Types Comparison Guide</h1>
+        <p class="text-xl mb-8">Complete buyer's guide with product reviews and performance analysis for 2026</p>
+        <div class="bg-white/10 backdrop-blur-sm  p-4 inline-block">
+          <p class="text-lg">210 monthly searches • Updated January 2026</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="max-w-4xl mx-auto px-4 py-12">
+      
+      <!-- Interactive Pump Selector -->
+      <section class="mb-16">
+        <h2 class="uppercase text-3xl font-bold text-construction-navy mb-8">Sump Pump Selector Tool</h2>
+        <div class="bg-construction-gray/10  p-8">
+          <p class="text-lg mb-6">Answer these questions to find your ideal sump pump:</p>
+          
+          <div id="pumpSelector" class="space-y-6">
+            <div class="selector-question">
+              <label class="block text-lg font-semibold mb-3">What's your basement water situation?</label>
+              <div class="space-y-2">
+                <label class="flex items-center">
+                  <input type="radio" name="water" value="light" class="mr-2">
+                  <span>Light seepage, occasional dampness</span>
+                </label>
+                <label class="flex items-center">
+                  <input type="radio" name="water" value="moderate" class="mr-2">
+                  <span>Moderate water entry during heavy rain</span>
+                </label>
+                <label class="flex items-center">
+                  <input type="radio" name="water" value="heavy" class="mr-2">
+                  <span>Regular water infiltration or past flooding</span>
+                </label>
+                <label class="flex items-center">
+                  <input type="radio" name="water" value="extreme" class="mr-2">
+                  <span>High water table, frequent pumping needed</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="selector-question">
+              <label class="block text-lg font-semibold mb-3">What's your sump pit depth?</label>
+              <div class="space-y-2">
+                <label class="flex items-center">
+                  <input type="radio" name="depth" value="shallow" class="mr-2">
+                  <span>Less than 2 feet deep</span>
+                </label>
+                <label class="flex items-center">
+                  <input type="radio" name="depth" value="standard" class="mr-2">
+                  <span>2-3 feet deep</span>
+                </label>
+                <label class="flex items-center">
+                  <input type="radio" name="depth" value="deep" class="mr-2">
+                  <span>More than 3 feet deep</span>
+                </label>
+                <label class="flex items-center">
+                  <input type="radio" name="depth" value="none" class="mr-2">
+                  <span>No existing pit (new installation)</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="selector-question">
+              <label class="block text-lg font-semibold mb-3">How often do you experience power outages?</label>
+              <div class="space-y-2">
+                <label class="flex items-center">
+                  <input type="radio" name="power" value="rare" class="mr-2">
+                  <span>Rarely or never</span>
+                </label>
+                <label class="flex items-center">
+                  <input type="radio" name="power" value="occasional" class="mr-2">
+                  <span>Occasionally during storms</span>
+                </label>
+                <label class="flex items-center">
+                  <input type="radio" name="power" value="frequent" class="mr-2">
+                  <span>Frequently during severe weather</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="selector-question">
+              <label class="block text-lg font-semibold mb-3">What's your budget range?</label>
+              <div class="space-y-2">
+                <label class="flex items-center">
+                  <input type="radio" name="budget" value="basic" class="mr-2">
+                  <span>Under $400 (basic protection)</span>
+                </label>
+                <label class="flex items-center">
+                  <input type="radio" name="budget" value="mid" class="mr-2">
+                  <span>$400-800 (standard system)</span>
+                </label>
+                <label class="flex items-center">
+                  <input type="radio" name="budget" value="premium" class="mr-2">
+                  <span>$800-1500 (premium system)</span>
+                </label>
+                <label class="flex items-center">
+                  <input type="radio" name="budget" value="luxury" class="mr-2">
+                  <span>$1500+ (professional grade)</span>
+                </label>
+              </div>
+            </div>
+
+            <button onclick="recommendPump()" class="bg-amber-500 text-slate-900 px-8 py-3  font-semibold hover:bg-amber-400 transition-colors">
+              Get My Recommendation
+            </button>
+          </div>
+
+          <div id="pumpResults" class="hidden mt-8 p-6 bg-white  border-2">
+            <h3 class="text-2xl font-bold mb-4">Recommended Sump Pump:</h3>
+            <div id="recommendationText" class="text-lg mb-4"></div>
+            <div id="specificModel" class="bg-slate-50 p-4 "></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Main Comparison Table -->
+      <section class="mb-16">
+        <h2 class="uppercase text-3xl font-bold text-construction-navy mb-8">Complete Sump Pump Comparison</h2>
+        
+        <div class="overflow-x-auto">
+          <table class="w-full border-collapse border-2 border-slate-200 bg-white  shadow-lg">
+            <thead>
+              <tr class="bg-construction-navy text-white">
+                <th class="border-2 border-slate-200 p-4 text-left">Feature</th>
+                <th class="border-2 border-slate-200 p-4 text-center">Pedestal Pumps</th>
+                <th class="border-2 border-slate-200 p-4 text-center">Submersible Pumps</th>
+                <th class="border-2 border-slate-200 p-4 text-center">Battery Backup</th>
+                <th class="border-2 border-slate-200 p-4 text-center">Water-Powered</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="hover:bg-slate-50">
+                <td class="border-2 border-slate-200 p-4 font-semibold">Installation Location</td>
+                <td class="border-2 border-slate-200 p-4 text-center">Above water level</td>
+                <td class="border-2 border-slate-200 p-4 text-center">Submerged in pit</td>
+                <td class="border-2 border-slate-200 p-4 text-center">Above or below water</td>
+                <td class="border-2 border-slate-200 p-4 text-center">Above water level</td>
+              </tr>
+              <tr class="hover:bg-slate-50">
+                <td class="border-2 border-slate-200 p-4 font-semibold">Pump Capacity (GPH)</td>
+                <td class="border-2 border-slate-200 p-4 text-center">
+                  <span class="font-bold">2,000-5,000</span><br>
+                  <span class="text-sm text-slate-500">Moderate flow</span>
+                </td>
+                <td class="border-2 border-slate-200 p-4 text-center">
+                  <span class="font-bold text-cyan-600">3,000-8,000</span><br>
+                  <span class="text-sm text-slate-500">High flow</span>
+                </td>
+                <td class="border-2 border-slate-200 p-4 text-center">
+                  <span class="font-bold">1,500-3,500</span><br>
+                  <span class="text-sm text-slate-500">Emergency use</span>
+                </td>
+                <td class="border-2 border-slate-200 p-4 text-center">
+                  <span class="font-bold">1,200-2,400</span><br>
+                  <span class="text-sm text-slate-500">Continuous flow</span>
+                </td>
+              </tr>
+              <tr class="hover:bg-slate-50">
+                <td class="border-2 border-slate-200 p-4 font-semibold">Lifespan</td>
+                <td class="border-2 border-slate-200 p-4 text-center">
+                  <span class="font-bold text-cyan-600">15-20 years</span><br>
+                  <span class="text-sm text-slate-500">Motor above water</span>
+                </td>
+                <td class="border-2 border-slate-200 p-4 text-center">
+                  <span class="font-bold">8-12 years</span><br>
+                  <span class="text-sm text-slate-500">Submerged wear</span>
+                </td>
+                <td class="border-2 border-slate-200 p-4 text-center">
+                  <span class="font-bold">5-10 years</span><br>
+                  <span class="text-sm text-slate-500">Battery replacement</span>
+                </td>
+                <td class="border-2 border-slate-200 p-4 text-center">
+                  <span class="font-bold text-cyan-600">20+ years</span><br>
+                  <span class="text-sm text-slate-500">No electrical parts</span>
+                </td>
+              </tr>
+              <tr class="hover:bg-slate-50">
+                <td class="border-2 border-slate-200 p-4 font-semibold">Price Range</td>
+                <td class="border-2 border-slate-200 p-4 text-center">
+                  <span class="font-bold text-cyan-600">$150-400</span><br>
+                  <span class="text-sm text-slate-500">Budget friendly</span>
+                </td>
+                <td class="border-2 border-slate-200 p-4 text-center">
+                  <span class="font-bold">$200-800</span><br>
+                  <span class="text-sm text-slate-500">Mid-range</span>
+                </td>
+                <td class="border-2 border-slate-200 p-4 text-center">
+                  <span class="font-bold text-red-600">$500-2000</span><br>
+                  <span class="text-sm text-slate-500">Premium cost</span>
+                </td>
+                <td class="border-2 border-slate-200 p-4 text-center">
+                  <span class="font-bold">$300-600</span><br>
+                  <span class="text-sm text-slate-500">Mid-range</span>
+                </td>
+              </tr>
+              <tr class="hover:bg-slate-50">
+                <td class="border-2 border-slate-200 p-4 font-semibold">Noise Level</td>
+                <td class="border-2 border-slate-200 p-4 text-center">
+                  <span class="font-bold text-red-600">High</span><br>
+                  <span class="text-sm text-slate-500">Motor exposed</span>
+                </td>
+                <td class="border-2 border-slate-200 p-4 text-center">
+                  <span class="font-bold text-cyan-600">Low</span><br>
+                  <span class="text-sm text-slate-500">Water muffles sound</span>
+                </td>
+                <td class="border-2 border-slate-200 p-4 text-center">
+                  <span class="font-bold">Variable</span><br>
+                  <span class="text-sm text-slate-500">Depends on type</span>
+                </td>
+                <td class="border-2 border-slate-200 p-4 text-center">
+                  <span class="font-bold text-cyan-600">Silent</span><br>
+                  <span class="text-sm text-slate-500">No motor</span>
+                </td>
+              </tr>
+              <tr class="hover:bg-slate-50">
+                <td class="border-2 border-slate-200 p-4 font-semibold">Maintenance</td>
+                <td class="border-2 border-slate-200 p-4 text-center">
+                  <span class="font-bold text-cyan-600">Easy</span><br>
+                  <span class="text-sm text-slate-500">Accessible motor</span>
+                </td>
+                <td class="border-2 border-slate-200 p-4 text-center">
+                  <span class="font-bold text-amber-600">Moderate</span><br>
+                  <span class="text-sm text-slate-500">Must remove from pit</span>
+                </td>
+                <td class="border-2 border-slate-200 p-4 text-center">
+                  <span class="font-bold text-red-600">Complex</span><br>
+                  <span class="text-sm text-slate-500">Battery & pump care</span>
+                </td>
+                <td class="border-2 border-slate-200 p-4 text-center">
+                  <span class="font-bold text-cyan-600">Minimal</span><br>
+                  <span class="text-sm text-slate-500">Few moving parts</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <!-- Related Images Gallery -->
+      <BlogImageGallery topic="sump-pump" />
+
+
+
+      <!-- Product Reviews Section -->
+      <section class="mb-16">
+        <h2 class="uppercase text-3xl font-bold text-construction-navy mb-8">Top-Rated Sump Pumps 2026</h2>
+        
+        <div class="space-y-8">
+          <!-- Submersible Pumps -->
+          <div class="bg-white  shadow-lg p-8 border-l-4 border-slate-700">
+            <h3 class="text-2xl font-bold text-slate-900 mb-6">Best Submersible Pumps</h3>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+              <div class="border-2 border-slate-100  p-6">
+                <div class="flex justify-between items-start mb-4">
+                  <div>
+                    <h4 class="text-xl font-bold">Zoeller M53 Mighty-Mate</h4>
+                    <p class="text-slate-500">1/3 HP Submersible</p>
+                  </div>
+                  <div class="text-right">
+                    <div class="text-cyan-400 text-lg"></div>
+                    <div class="text-sm text-slate-500">4.8/5 rating</div>
+                  </div>
+                </div>
+                
+                <div class="space-y-3 mb-4">
+                  <div class="flex justify-between">
+                    <span class="font-medium">Capacity:</span>
+                    <span>2,580 GPH at 10 ft head</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span class="font-medium">Price:</span>
+                    <span class="font-bold text-cyan-600">$280-320</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span class="font-medium">Warranty:</span>
+                    <span>3 years</span>
+                  </div>
+                </div>
+                
+                <div class="mb-4">
+                  <h5 class="font-semibold text-cyan-700 mb-2">Pros:</h5>
+                  <ul class="text-sm space-y-1">
+                    <li>• Cast iron construction for durability</li>
+                    <li>• Reliable float switch operation</li>
+                    <li>• Easy installation and maintenance</li>
+                    <li>• Excellent reputation for longevity</li>
+                  </ul>
+                </div>
+                
+                <div class="mb-4">
+                  <h5 class="font-semibold text-red-700 mb-2">Cons:</h5>
+                  <ul class="text-sm space-y-1">
+                    <li>• Heavier than plastic alternatives</li>
+                    <li>• Higher initial cost</li>
+                    <li>• May require larger pit diameter</li>
+                  </ul>
+                </div>
+                
+                <div class="bg-cyan-50 p-3 ">
+                  <p class="text-sm"><strong>Best For:</strong> Standard residential applications with moderate to heavy water infiltration. Ideal for homeowners seeking reliability and longevity.</p>
+                </div>
+              </div>
+
+              <div class="border-2 border-slate-100  p-6">
+                <div class="flex justify-between items-start mb-4">
+                  <div>
+                    <h4 class="text-xl font-bold">Wayne CDU1000</h4>
+                    <p class="text-slate-500">1 HP Cast Iron Submersible</p>
+                  </div>
+                  <div class="text-right">
+                    <div class="text-cyan-400 text-lg"></div>
+                    <div class="text-sm text-slate-500">4.6/5 rating</div>
+                  </div>
+                </div>
+                
+                <div class="space-y-3 mb-4">
+                  <div class="flex justify-between">
+                    <span class="font-medium">Capacity:</span>
+                    <span>5,100 GPH at 10 ft head</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span class="font-medium">Price:</span>
+                    <span class="font-bold text-cyan-600">$450-520</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span class="font-medium">Warranty:</span>
+                    <span>5 years</span>
+                  </div>
+                </div>
+                
+                <div class="mb-4">
+                  <h5 class="font-semibold text-cyan-700 mb-2">Pros:</h5>
+                  <ul class="text-sm space-y-1">
+                    <li>• High capacity for heavy water situations</li>
+                    <li>• Cast iron volute for durability</li>
+                    <li>• Automatic float switch included</li>
+                    <li>• 5-year manufacturer warranty</li>
+                  </ul>
+                </div>
+                
+                <div class="mb-4">
+                  <h5 class="font-semibold text-red-700 mb-2">Cons:</h5>
+                  <ul class="text-sm space-y-1">
+                    <li>• Higher power consumption</li>
+                    <li>• More expensive upfront cost</li>
+                    <li>• Requires larger electrical circuit</li>
+                  </ul>
+                </div>
+                
+                <div class="bg-cyan-50 p-3 ">
+                  <p class="text-sm"><strong>Best For:</strong> Heavy-duty applications with high water tables or frequent flooding. Ideal for larger homes or commercial light-duty applications.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pedestal Pumps -->
+          <div class="bg-white  shadow-lg p-8 border-l-4 border-cyan-500">
+            <h3 class="text-2xl font-bold text-cyan-400 mb-6">Best Pedestal Pumps</h3>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+              <div class="border-2 border-slate-100  p-6">
+                <div class="flex justify-between items-start mb-4">
+                  <div>
+                    <h4 class="text-xl font-bold">Little Giant 6-CIM-R</h4>
+                    <p class="text-slate-500">1/3 HP Manual Pedestal</p>
+                  </div>
+                  <div class="text-right">
+                    <div class="text-cyan-400 text-lg"></div>
+                    <div class="text-sm text-slate-500">4.5/5 rating</div>
+                  </div>
+                </div>
+                
+                <div class="space-y-3 mb-4">
+                  <div class="flex justify-between">
+                    <span class="font-medium">Capacity:</span>
+                    <span>3,300 GPH at 10 ft head</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span class="font-medium">Price:</span>
+                    <span class="font-bold text-cyan-600">$185-225</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span class="font-medium">Warranty:</span>
+                    <span>1 year</span>
+                  </div>
+                </div>
+                
+                <div class="mb-4">
+                  <h5 class="font-semibold text-cyan-700 mb-2">Pros:</h5>
+                  <ul class="text-sm space-y-1">
+                    <li>• Motor stays dry, longer lifespan</li>
+                    <li>• Easy access for maintenance</li>
+                    <li>• Budget-friendly option</li>
+                    <li>• Works in shallow pits</li>
+                  </ul>
+                </div>
+                
+                <div class="mb-4">
+                  <h5 class="font-semibold text-red-700 mb-2">Cons:</h5>
+                  <ul class="text-sm space-y-1">
+                    <li>• Noisy operation</li>
+                    <li>• Manual switch operation</li>
+                    <li>• Takes up basement space</li>
+                    <li>• Limited capacity compared to submersible</li>
+                  </ul>
+                </div>
+                
+                <div class="bg-orange-50 p-3 ">
+                  <p class="text-sm"><strong>Best For:</strong> Budget-conscious homeowners with light to moderate water issues. Good for shallow pits where submersible won't fit.</p>
+                </div>
+              </div>
+
+              <div class="border-2 border-slate-100  p-6">
+                <div class="flex justify-between items-start mb-4">
+                  <div>
+                    <h4 class="text-xl font-bold">Superior Pump 91250</h4>
+                    <p class="text-slate-500">1/4 HP Thermoplastic Pedestal</p>
+                  </div>
+                  <div class="text-right">
+                    <div class="text-cyan-400 text-lg"></div>
+                    <div class="text-sm text-slate-500">4.3/5 rating</div>
+                  </div>
+                </div>
+                
+                <div class="space-y-3 mb-4">
+                  <div class="flex justify-between">
+                    <span class="font-medium">Capacity:</span>
+                    <span>2,400 GPH at 10 ft head</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span class="font-medium">Price:</span>
+                    <span class="font-bold text-cyan-600">$120-160</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span class="font-medium">Warranty:</span>
+                    <span>1 year</span>
+                  </div>
+                </div>
+                
+                <div class="mb-4">
+                  <h5 class="font-semibold text-cyan-700 mb-2">Pros:</h5>
+                  <ul class="text-sm space-y-1">
+                    <li>• Very budget friendly</li>
+                    <li>• Lightweight thermoplastic construction</li>
+                    <li>• Easy DIY installation</li>
+                    <li>• Replacement parts readily available</li>
+                  </ul>
+                </div>
+                
+                <div class="mb-4">
+                  <h5 class="font-semibold text-red-700 mb-2">Cons:</h5>
+                  <ul class="text-sm space-y-1">
+                    <li>• Lower durability than cast iron</li>
+                    <li>• Limited capacity for heavy water</li>
+                    <li>• Shorter lifespan than premium models</li>
+                    <li>• Manual operation only</li>
+                  </ul>
+                </div>
+                
+                <div class="bg-orange-50 p-3 ">
+                  <p class="text-sm"><strong>Best For:</strong> Entry-level protection for homes with minimal water issues. Good temporary solution while planning system upgrades.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Battery Backup Systems -->
+          <div class="bg-white  shadow-lg p-8 border-l-4 border-construction-navy">
+            <h3 class="text-2xl font-bold text-construction-navy mb-6">Best Battery Backup Systems</h3>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+              <div class="border-2 border-slate-100  p-6">
+                <div class="flex justify-between items-start mb-4">
+                  <div>
+                    <h4 class="text-xl font-bold">Basement Watchdog BW4000</h4>
+                    <p class="text-slate-500">Emergency Battery Backup System</p>
+                  </div>
+                  <div class="text-right">
+                    <div class="text-cyan-400 text-lg"></div>
+                    <div class="text-sm text-slate-500">4.7/5 rating</div>
+                  </div>
+                </div>
+                
+                <div class="space-y-3 mb-4">
+                  <div class="flex justify-between">
+                    <span class="font-medium">Capacity:</span>
+                    <span>2,300 GPH continuous</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span class="font-medium">Price:</span>
+                    <span class="font-bold text-cyan-600">$650-800</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span class="font-medium">Runtime:</span>
+                    <span>8-53 hours (load dependent)</span>
+                  </div>
+                </div>
+                
+                <div class="mb-4">
+                  <h5 class="font-semibold text-cyan-700 mb-2">Pros:</h5>
+                  <ul class="text-sm space-y-1">
+                    <li>• Works during power outages</li>
+                    <li>• Smart battery charger included</li>
+                    <li>• Audible low battery alarm</li>
+                    <li>• Can work with existing primary pump</li>
+                  </ul>
+                </div>
+                
+                <div class="mb-4">
+                  <h5 class="font-semibold text-red-700 mb-2">Cons:</h5>
+                  <ul class="text-sm space-y-1">
+                    <li>• High initial investment</li>
+                    <li>• Battery replacement every 3-5 years</li>
+                    <li>• Limited runtime under heavy load</li>
+                    <li>• Requires annual maintenance</li>
+                  </ul>
+                </div>
+                
+                <div class="bg-navy-50 p-3 ">
+                  <p class="text-sm"><strong>Best For:</strong> Homes in areas with frequent power outages or those with valuable finished basements requiring maximum protection.</p>
+                </div>
+              </div>
+
+              <div class="border-2 border-slate-100  p-6">
+                <div class="flex justify-between items-start mb-4">
+                  <div>
+                    <h4 class="text-xl font-bold">Wayne ESP25</h4>
+                    <p class="text-slate-500">Emergency Sump Pump System</p>
+                  </div>
+                  <div class="text-right">
+                    <div class="text-cyan-400 text-lg"></div>
+                    <div class="text-sm text-slate-500">4.4/5 rating</div>
+                  </div>
+                </div>
+                
+                <div class="space-y-3 mb-4">
+                  <div class="flex justify-between">
+                    <span class="font-medium">Capacity:</span>
+                    <span>3,200 GPH at 10 ft head</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span class="font-medium">Price:</span>
+                    <span class="font-bold text-cyan-600">$480-580</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span class="font-medium">Runtime:</span>
+                    <span>6-40 hours (load dependent)</span>
+                  </div>
+                </div>
+                
+                <div class="mb-4">
+                  <h5 class="font-semibold text-cyan-700 mb-2">Pros:</h5>
+                  <ul class="text-sm space-y-1">
+                    <li>• Higher pumping capacity</li>
+                    <li>• Dual float switch system</li>
+                    <li>• LED status indicators</li>
+                    <li>• More affordable than premium models</li>
+                  </ul>
+                </div>
+                
+                <div class="mb-4">
+                  <h5 class="font-semibold text-red-700 mb-2">Cons:</h5>
+                  <ul class="text-sm space-y-1">
+                    <li>• Shorter battery life than premium units</li>
+                    <li>• Less sophisticated charging system</li>
+                    <li>• Manual battery testing required</li>
+                    <li>• Limited warranty coverage</li>
+                  </ul>
+                </div>
+                
+                <div class="bg-navy-50 p-3 ">
+                  <p class="text-sm"><strong>Best For:</strong> Homeowners seeking backup protection at a moderate price point. Good balance of features and affordability.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Installation Costs -->
+      <section class="mb-16">
+        <h2 class="uppercase text-3xl font-bold text-construction-navy mb-8">Installation Costs & Requirements</h2>
+        
+        <div class="bg-slate-50  p-8">
+          <div class="grid md:grid-cols-2 gap-8 mb-8">
+            <div class="bg-white  p-6 border-2 border-cyan-200">
+              <h3 class="text-xl font-bold text-cyan-700 mb-4">DIY Installation Costs</h3>
+              <div class="space-y-3">
+                <div class="flex justify-between">
+                  <span>Sump pump unit:</span>
+                  <span class="font-bold">$150-800</span>
+                </div>
+                <div class="flex justify-between">
+                  <span>PVC piping & fittings:</span>
+                  <span class="font-bold">$50-100</span>
+                </div>
+                <div class="flex justify-between">
+                  <span>Check valve:</span>
+                  <span class="font-bold">$20-40</span>
+                </div>
+                <div class="flex justify-between">
+                  <span>Electrical supplies:</span>
+                  <span class="font-bold">$30-60</span>
+                </div>
+                <div class="flex justify-between">
+                  <span>Pit liner (if needed):</span>
+                  <span class="font-bold">$40-80</span>
+                </div>
+                <div class="flex justify-between">
+                  <span>Gravel & tools:</span>
+                  <span class="font-bold">$50-100</span>
+                </div>
+                <hr class="border-t-2 border-blue-300">
+                <div class="flex justify-between text-lg font-bold">
+                  <span>Total DIY Cost:</span>
+                  <span class="text-cyan-700">$340-1,180</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-white  p-6 border-2 border-cyan-200">
+              <h3 class="text-xl font-bold text-cyan-700 mb-4">Professional Installation</h3>
+              <div class="space-y-3">
+                <div class="flex justify-between">
+                  <span>Sump pump unit:</span>
+                  <span class="font-bold">$200-900</span>
+                </div>
+                <div class="flex justify-between">
+                  <span>Labor (4-6 hours):</span>
+                  <span class="font-bold">$400-600</span>
+                </div>
+                <div class="flex justify-between">
+                  <span>Materials & supplies:</span>
+                  <span class="font-bold">$150-250</span>
+                </div>
+                <div class="flex justify-between">
+                  <span>Pit excavation (if needed):</span>
+                  <span class="font-bold">$200-500</span>
+                </div>
+                <div class="flex justify-between">
+                  <span>Electrical work:</span>
+                  <span class="font-bold">$150-300</span>
+                </div>
+                <div class="flex justify-between">
+                  <span>Permits & disposal:</span>
+                  <span class="font-bold">$50-150</span>
+                </div>
+                <hr class="border-t-2 border-green-300">
+                <div class="flex justify-between text-lg font-bold">
+                  <span>Total Professional Cost:</span>
+                  <span class="text-cyan-700">$1,150-2,700</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-amber-50 border-l-4 border-cyan-500 p-6">
+            <h4 class="text-lg font-bold text-slate-900 mb-2">Professional Installation Benefits</h4>
+            <ul class="space-y-2">
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-cyan-600 mr-2 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+                Proper electrical connections and code compliance
+              </li>
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-cyan-600 mr-2 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+                Warranty coverage on installation workmanship
+              </li>
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-cyan-600 mr-2 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7-293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+                Professional assessment of pit size and pump requirements
+              </li>
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-cyan-600 mr-2 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+                Insurance compliance and liability coverage
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Maintenance Schedule -->
+      <section class="mb-16">
+        <h2 class="uppercase text-3xl font-bold text-construction-navy mb-8">Maintenance Requirements by Pump Type</h2>
+        
+        <div class="grid md:grid-cols-2 gap-8">
+          <div class="bg-white  shadow-lg p-6">
+            <h3 class="text-xl font-bold text-slate-900 mb-4">Annual Maintenance Checklist</h3>
+            <div class="space-y-4">
+              <div class="border-l-4 border-cyan-500 pl-4">
+                <h4 class="font-semibold">All Pump Types</h4>
+                <ul class="text-sm text-slate-500 mt-2 space-y-1">
+                  <li> Test pump operation monthly</li>
+                  <li> Check discharge line for clogs</li>
+                  <li> Inspect pit for debris accumulation</li>
+                  <li> Test float switch operation</li>
+                  <li> Verify proper electrical connections</li>
+                </ul>
+              </div>
+              
+              <div class="border-l-4 border-cyan-500 pl-4">
+                <h4 class="font-semibold">Submersible Specific</h4>
+                <ul class="text-sm text-slate-500 mt-2 space-y-1">
+                  <li> Check for oil leaks in pump housing</li>
+                  <li> Inspect power cord for damage</li>
+                  <li> Clean intake screen if accessible</li>
+                  <li> Monitor for unusual vibrations</li>
+                </ul>
+              </div>
+              
+              <div class="border-l-4 border-orange-500 pl-4">
+                <h4 class="font-semibold">Pedestal Specific</h4>
+                <ul class="text-sm text-slate-500 mt-2 space-y-1">
+                  <li> Lubricate motor bearings annually</li>
+                  <li> Check shaft alignment</li>
+                  <li> Inspect suction line connections</li>
+                  <li> Clean motor housing and fan</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white  shadow-lg p-6">
+            <h3 class="text-xl font-bold text-cyan-400 mb-4">Seasonal Maintenance Tips</h3>
+            <div class="space-y-4">
+              <div class="border-l-4 border-cyan-500 pl-4">
+                <h4 class="font-semibold">Spring (March-May)</h4>
+                <ul class="text-sm text-slate-500 mt-2 space-y-1">
+                  <li>• Full system testing after winter</li>
+                  <li>• Clean pit of winter debris</li>
+                  <li>• Check for freeze damage</li>
+                  <li>• Test backup power systems</li>
+                </ul>
+              </div>
+              
+              <div class="border-l-4 border-red-500 pl-4">
+                <h4 class="font-semibold">Summer (June-August)</h4>
+                <ul class="text-sm text-slate-500 mt-2 space-y-1">
+                  <li>• Monitor for heavy rain performance</li>
+                  <li>• Check discharge line for blockages</li>
+                  <li>• Inspect for overheating issues</li>
+                  <li>• Test during storm season</li>
+                </ul>
+              </div>
+              
+              <div class="border-l-4 border-cyan-500 pl-4">
+                <h4 class="font-semibold">Fall/Winter (Sept-Feb)</h4>
+                <ul class="text-sm text-slate-500 mt-2 space-y-1">
+                  <li>• Prepare discharge line for freezing</li>
+                  <li>• Check insulation around pit</li>
+                  <li>• Test before heavy snow season</li>
+                  <li>• Battery backup full charge check</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ Section -->
+      <section class="mb-16">
+        <h2 class="uppercase text-3xl font-bold text-construction-navy mb-8">Sump Pump FAQ</h2>
+        
+        <div class="space-y-4">
+          <div class="bg-white  shadow-md border-2 border-slate-100">
+            <button class="w-full text-left p-6 font-semibold text-lg hover:bg-slate-50 flex justify-between items-center" onclick="toggleFaq(this)">
+              How long should a sump pump last?
+              <svg class="w-5 h-5 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </button>
+            <div class="hidden px-6 pb-6">
+              <p>Pedestal pumps typically last 15-20 years due to their motor being above water. Submersible pumps last 8-12 years on average. Battery backup systems need battery replacement every 3-5 years but the pump unit can last 8-15 years with proper maintenance.</p>
+            </div>
+          </div>
+
+          <div class="bg-white  shadow-md border-2 border-slate-100">
+            <button class="w-full text-left p-6 font-semibold text-lg hover:bg-slate-50 flex justify-between items-center" onclick="toggleFaq(this)">
+              What size sump pump do I need for my basement?
+              <svg class="w-5 h-5 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </button>
+            <div class="hidden px-6 pb-6">
+              <p>For most Toronto homes, a 1/3 HP pump handling 2,500-3,500 GPH is sufficient. Larger homes or high water table areas may need 1/2 HP or 1 HP pumps. Calculate based on: basement square footage, local rainfall patterns, soil drainage, and head height to discharge point.</p>
+            </div>
+          </div>
+
+          <div class="bg-white  shadow-md border-2 border-slate-100">
+            <button class="w-full text-left p-6 font-semibold text-lg hover:bg-slate-50 flex justify-between items-center" onclick="toggleFaq(this)">
+              Should I get a battery backup sump pump?
+              <svg class="w-5 h-5 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </button>
+            <div class="hidden px-6 pb-6">
+              <p>Consider battery backup if you: experience frequent power outages, have a finished basement with valuable items, live in a high water table area, or have had previous flooding. The extra cost ($500-1500) provides peace of mind during storms when power often fails.</p>
+            </div>
+          </div>
+
+          <div class="bg-white  shadow-md border-2 border-slate-100">
+            <button class="w-full text-left p-6 font-semibold text-lg hover:bg-slate-50 flex justify-between items-center" onclick="toggleFaq(this)">
+              Can I install a sump pump myself?
+              <svg class="w-5 h-5 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </button>
+            <div class="hidden px-6 pb-6">
+              <p>DIY installation is possible if you have basic plumbing and electrical skills. However, professional installation ensures proper electrical connections, code compliance, and warranty coverage. Consider professional installation for battery backup systems or if electrical work is required.</p>
+            </div>
+          </div>
+
+          <div class="bg-white  shadow-md border-2 border-slate-100">
+            <button class="w-full text-left p-6 font-semibold text-lg hover:bg-slate-50 flex justify-between items-center" onclick="toggleFaq(this)">
+              Why is my sump pump running constantly?
+              <svg class="w-5 h-5 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </button>
+            <div class="hidden px-6 pb-6">
+              <p>Common causes include: float switch stuck in "on" position, check valve failure allowing water to flow back, pump too small for water volume, discharge line frozen or blocked, or high water table. Check float switch first, then inspect discharge line and check valve.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA Section -->
+      <section class="bg-amber-50 text-slate-900 border-2 border-amber-400 rounded-lg p-8 text-center">
+        <h2 class="uppercase text-3xl font-bold mb-4">Professional Sump Pump Installation</h2>
+        <p class="text-xl mb-6">Get expert installation and ensure your basement stays dry with the right sump pump system.</p>
+        <div class="space-y-4 md:space-y-0 md:space-x-4 md:flex md:justify-center">
+          <a href="tel:416-333-0033" class="bg-white text-cyan-400 px-8 py-3  font-semibold hover:bg-slate-50 transition-colors inline-block">
+            Call (416) 333-0033
+          </a>
+          <a href="/contact" class="bg-construction-navy text-white px-8 py-3  font-semibold hover:bg-cyan-600 transition-colors inline-block">
+            Free Installation Quote
+          </a>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- Related Services & Resources -->
+  <section class="py-12 bg-slate-50">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="uppercase text-2xl font-bold mb-6 text-slate-900">Solutions & Resources</h2>
+      
+      <div class="grid md:grid-cols-3 gap-6 mb-8">
+        <!-- Sump Pump Service -->
+        <div class="bg-white p-6  shadow-md border-2 border-slate-100">
+          <div class="flex items-center mb-4">
+            <div class="w-12 h-12 bg-cyan-600  flex items-center justify-center mr-4">
+              <svg class="w-6 h-6 text-slate-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+              </svg>
+            </div>
+            <h3 class="text-lg font-bold text-slate-900">Sump Pump Systems</h3>
+          </div>
+          <p class="text-slate-500 mb-4 text-sm">Professional sump pump selection, maintenance, and repair services.</p>
+          <a href="/services/sump-pump" class="text-slate-900 hover:text-slate-900/80 font-medium text-sm">Learn More →</a>
+        </div>
+
+        <!-- Sump Pump Installation -->
+        <div class="bg-white p-6  shadow-md border-2 border-slate-100">
+          <div class="flex items-center mb-4">
+            <div class="w-12 h-12 bg-amber-500  flex items-center justify-center mr-4">
+              <svg class="w-6 h-6 text-slate-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+              </svg>
+            </div>
+            <h3 class="text-lg font-bold text-slate-900">Sump Pump Installation</h3>
+          </div>
+          <p class="text-slate-500 mb-4 text-sm">Expert installation of new sump pump systems with proper basin and discharge setup.</p>
+          <a href="/services/sump-pump-installation" class="text-cyan-400 hover:text-cyan-400/80 font-medium text-sm">Learn More →</a>
+        </div>
+
+        <!-- Battery Backup Sump Pump -->
+        <div class="bg-white p-6  shadow-md border-2 border-slate-100">
+          <div class="flex items-center mb-4">
+            <div class="w-12 h-12 bg-cyan-600  flex items-center justify-center mr-4">
+              <svg class="w-6 h-6 text-slate-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+              </svg>
+            </div>
+            <h3 class="text-lg font-bold text-slate-900">Battery Backup Sump Pump</h3>
+          </div>
+          <p class="text-slate-500 mb-4 text-sm">Reliable backup systems to protect your basement during power outages.</p>
+          <a href="/services/battery-backup-sump-pump" class="text-cyan-600 hover:text-cyan-600/80 font-medium text-sm">Learn More →</a>
+        </div>
+      </div>
+      
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="p-6 bg-cyan-50 ">
+          <h3 class="font-bold mb-3 text-slate-900">Helpful Tools</h3>
+          <ul class="space-y-2">
+            <li> <a href="/tools/detailed-cost-estimator" class="text-cyan-600 hover:underline">Calculate Repair Cost</a></li>
+            <li> <a href="/free-inspection" class="text-cyan-600 hover:underline">Get Free Assessment</a></li>
+          </ul>
+        </div>
+        <div class="p-6 bg-orange-50 ">
+          <h3 class="font-bold mb-3 text-slate-900">Related Articles</h3>
+          <ul class="space-y-2">
+            <li> <a href="/blog/water-coming-through-basement-floor" class="text-orange-600 hover:underline">Water Coming Through Basement Floor</a></li>
+            <li> <a href="/blog/french-drain-vs-weeping-tile" class="text-orange-600 hover:underline">French Drain vs Weeping Tile</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+
+  <script>
+    function recommendPump() {
+      const water = document.querySelector('input[name="water"]:checked')?.value;
+      const depth = document.querySelector('input[name="depth"]:checked')?.value;
+      const power = document.querySelector('input[name="power"]:checked')?.value;
+      const budget = document.querySelector('input[name="budget"]:checked')?.value;
+      
+      if (!water || !depth || !power || !budget) {
+        alert('Please answer all questions to get a recommendation.');
+        return;
+      }
+      
+      const resultDiv = document.getElementById('pumpResults');
+      const recommendationDiv = document.getElementById('recommendationText');
+      const modelDiv = document.getElementById('specificModel');
+      
+      let recommendation, model;
+      
+      // Decision logic based on inputs
+      if (power === 'frequent' && (water === 'moderate' || water === 'heavy' || water === 'extreme')) {
+        if (budget === 'premium' || budget === 'luxury') {
+          recommendation = " <strong>Battery Backup System Recommended</strong><br>Your frequent power outages and significant water issues make backup power essential for protection.";
+          model = "<strong>Recommended:</strong> Basement Watchdog BW4000 - $650-800<br>Provides 8-53 hours of backup power and works with your existing primary pump.";
+        } else {
+          recommendation = " <strong>Consider Upgrading Budget for Battery Backup</strong><br>Your situation really benefits from backup power, but budget constraints limit options.";
+          model = "<strong>Alternative:</strong> Wayne ESP25 - $480-580<br>More affordable backup option with good performance.";
+        }
+      } else if (depth === 'shallow' || depth === 'none') {
+        if (budget === 'basic') {
+          recommendation = " <strong>Pedestal Pump Recommended</strong><br>Perfect for shallow pits and budget-conscious installations.";
+          model = "<strong>Recommended:</strong> Superior Pump 91250 - $120-160<br>Budget-friendly pedestal pump ideal for light water issues.";
+        } else {
+          recommendation = " <strong>Quality Pedestal Pump Recommended</strong><br>Better build quality for longer service life in shallow pit applications.";
+          model = "<strong>Recommended:</strong> Little Giant 6-CIM-R - $185-225<br>Higher quality pedestal pump with better durability.";
+        }
+      } else if (water === 'heavy' || water === 'extreme') {
+        if (budget === 'luxury' || budget === 'premium') {
+          recommendation = " <strong>High-Capacity Submersible Recommended</strong><br>Heavy water situations require maximum pumping power and reliability.";
+          model = "<strong>Recommended:</strong> Wayne CDU1000 - $450-520<br>1 HP pump with 5,100 GPH capacity for heavy-duty applications.";
+        } else {
+          recommendation = " <strong>Standard Submersible Recommended</strong><br>Good balance of performance and cost for your water situation.";
+          model = "<strong>Recommended:</strong> Zoeller M53 Mighty-Mate - $280-320<br>Reliable cast iron construction with proven track record.";
+        }
+      } else {
+        // Light to moderate water, standard depth
+        if (budget === 'basic') {
+          recommendation = " <strong>Standard Submersible Recommended</strong><br>Good protection for typical basement water issues at budget-friendly price.";
+          model = "<strong>Recommended:</strong> Entry-level submersible pump - $200-300<br>Adequate protection for light to moderate water infiltration.";
+        } else {
+          recommendation = " <strong>Quality Submersible Recommended</strong><br>Excellent reliability and performance for standard residential applications.";
+          model = "<strong>Recommended:</strong> Zoeller M53 Mighty-Mate - $280-320<br>Top-rated pump with cast iron construction and 3-year warranty.";
+        }
+      }
+      
+      recommendationDiv.innerHTML = recommendation;
+      modelDiv.innerHTML = model;
+      resultDiv.classList.remove('hidden');
+    }
+
+    function toggleFaq(button) {
+      const content = button.nextElementSibling;
+      const arrow = button.querySelector('svg');
+      
+      if (content.classList.contains('hidden')) {
+        content.classList.remove('hidden');
+        arrow.style.transform = 'rotate(180deg)';
+      } else {
+        content.classList.add('hidden');
+        arrow.style.transform = 'rotate(0deg)';
+      }
+    }
+  </script>
+</PageLayout>

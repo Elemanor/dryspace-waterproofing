@@ -1,0 +1,810 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import BlogImageGallery from '../../components/BlogImageGallery.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+
+const publishDate = new Date('2026-03-14');
+const author = 'Dryspace Waterproofing Team';
+const readingTime = '8 min read';
+---
+
+<PageLayout title="French Drain vs Weeping Tile: Technical Comparison Guide 2026 | Dryspace Construction" 
+           description="Complete technical comparison of French drains vs weeping tiles for basement drainage. Expert analysis, installation costs, and performance data for Toronto properties.">
+  
+  
+  <!-- Breadcrumbs -->
+  <div class="container mx-auto px-4 mt-4">
+    <Breadcrumbs 
+      items={[
+        { name: "Home", url: "/" },
+        { name: "Blog", url: "/blog" },
+        { name: "French Drain Vs Weeping Tile" }
+      ]}
+    />
+  </div>
+
+<main class="min-h-screen bg-slate-50">
+    <!-- Blog Article Header -->
+    <article class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <header class="mb-10">
+        <!-- Category Badge -->
+        <div class="flex flex-wrap gap-2 mb-6">
+          <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-cyan-50 text-cyan-700">
+            Technical Guides
+          </span>
+          <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-cyan-50 text-cyan-700">
+            Drainage Systems
+          </span>
+        </div>
+        
+        <!-- Title -->
+        <h1 class="text-4xl md:text-5xl font-bold text-slate-900 mb-6 leading-tight">
+          French Drain vs Weeping Tile: Understanding the Differences (Explained)
+        </h1>
+        
+        <!-- Meta Information -->
+        <div class="flex flex-wrap items-center gap-4 text-sm text-slate-500 mb-6">
+          <span class="flex items-center gap-1">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+            </svg>
+            {publishDate.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
+          </span>
+          <span class="flex items-center gap-1">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+            {readingTime}
+          </span>
+          <span class="flex items-center gap-1">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+            </svg>
+            {author}
+          </span>
+        </div>
+        
+        <!-- Lead Paragraph -->
+        <p class="text-xl text-slate-600 leading-relaxed">
+          Learn how French drains and weeping tiles work for basement drainage. This educational guide explains the technical differences, applications, and terminology to help Toronto homeowners understand these drainage systems.
+        </p>
+      </header>
+      
+      <!-- Table of Contents -->
+      <nav class="mb-12 p-6 bg-white rounded-lg shadow-sm">
+        <h2 class="text-lg font-semibold text-slate-900 mb-4">Table of Contents</h2>
+        <ol class="space-y-2 text-slate-500">
+          <li><a href="#quick-comparison" class="hover:text-cyan-600 transition-colors">1. Quick Comparison Overview</a></li>
+          <li><a href="#technical-specs" class="hover:text-cyan-600 transition-colors">2. Technical Specifications</a></li>
+          <li><a href="#performance" class="hover:text-cyan-600 transition-colors">3. Performance Analysis</a></li>
+          <li><a href="#installation" class="hover:text-cyan-600 transition-colors">4. Installation Process</a></li>
+          <li><a href="#costs" class="hover:text-cyan-600 transition-colors">5. Cost Breakdown</a></li>
+          <li><a href="#maintenance" class="hover:text-cyan-600 transition-colors">6. Maintenance Requirements</a></li>
+          <li><a href="#recommendation" class="hover:text-cyan-600 transition-colors">7. Which System to Choose</a></li>
+        </ol>
+      </nav>
+      
+      <!-- Quick Comparison Chart -->
+      <section id="quick-comparison" class="mb-12">
+        <h2 class="text-2xl font-bold text-slate-900 mb-6">Quick Technical Comparison</h2>
+        
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-100">
+            <div class="text-center mb-6">
+              <h3 class="text-xl font-semibold text-slate-900">French Drain</h3>
+              <p class="text-sm text-slate-500">Modern Perforated Pipe System</p>
+            </div>
+            <div class="space-y-3">
+              <div class="flex justify-between text-sm">
+                <span class="text-slate-500">Installation Depth:</span>
+                <span class="font-medium">6-8 feet</span>
+              </div>
+              <div class="flex justify-between text-sm">
+                <span class="text-slate-500">Pipe Diameter:</span>
+                <span class="font-medium">4-6 inches</span>
+              </div>
+              <div class="flex justify-between text-sm">
+                <span class="text-slate-500">Drainage Capacity:</span>
+                <span class="text-cyan-600 font-semibold">Excellent</span>
+              </div>
+              <div class="flex justify-between text-sm">
+                <span class="text-slate-500">Longevity:</span>
+                <span class="font-medium">50+ years</span>
+              </div>
+              <div class="flex justify-between text-sm">
+                <span class="text-slate-500">Maintenance:</span>
+                <span class="text-cyan-600 font-medium">Low</span>
+              </div>
+              <div class="flex justify-between text-sm pt-3 border-t border-slate-100">
+                <span class="text-slate-900 font-medium">Cost (Linear Foot):</span>
+                <span class="font-semibold text-slate-900">$15-25</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-100">
+            <div class="text-center mb-6">
+              <h3 class="text-xl font-semibold text-slate-900">Weeping Tile</h3>
+              <p class="text-sm text-slate-500">Traditional Clay Tile System</p>
+            </div>
+            <div class="space-y-3">
+              <div class="flex justify-between text-sm">
+                <span class="text-slate-500">Installation Depth:</span>
+                <span class="font-medium">6-8 feet</span>
+              </div>
+              <div class="flex justify-between text-sm">
+                <span class="text-slate-500">Tile Size:</span>
+                <span class="font-medium">4-6 inches</span>
+              </div>
+              <div class="flex justify-between text-sm">
+                <span class="text-slate-500">Drainage Capacity:</span>
+                <span class="text-amber-600 font-semibold">Good</span>
+              </div>
+              <div class="flex justify-between text-sm">
+                <span class="text-slate-500">Longevity:</span>
+                <span class="font-medium">30-40 years</span>
+              </div>
+              <div class="flex justify-between text-sm">
+                <span class="text-slate-500">Maintenance:</span>
+                <span class="text-amber-600 font-medium">Moderate</span>
+              </div>
+              <div class="flex justify-between text-sm pt-3 border-t border-slate-100">
+                <span class="text-slate-900 font-medium">Cost (Linear Foot):</span>
+                <span class="font-semibold text-slate-900">$18-30</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Technical Specifications -->
+      <section class="mb-16">
+        <h2 class="uppercase text-3xl font-bold text-construction-navy mb-8">Detailed Technical Analysis</h2>
+        
+        <div class="space-y-8">
+          <!-- Drainage Performance -->
+          <div class="bg-white  shadow-lg p-8 border-l-4 border-slate-700">
+            <h3 class="text-2xl font-bold text-construction-navy mb-6">Drainage Performance Comparison</h3>
+            
+            <div class="overflow-x-auto">
+              <table class="w-full border-collapse border-2 border-slate-200">
+                <thead>
+                  <tr class="bg-construction-navy text-white">
+                    <th class="border-2 border-slate-200 p-4 text-left">Performance Metric</th>
+                    <th class="border-2 border-slate-200 p-4 text-center">French Drain</th>
+                    <th class="border-2 border-slate-200 p-4 text-center">Weeping Tile</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="hover:bg-slate-50">
+                    <td class="border-2 border-slate-200 p-4 font-semibold">Water Flow Rate (GPM)</td>
+                    <td class="border-2 border-slate-200 p-4 text-center">
+                      <span class="text-cyan-600 font-bold">25-40 GPM</span><br>
+                      <span class="text-sm text-slate-500">Per 100 linear feet</span>
+                    </td>
+                    <td class="border-2 border-slate-200 p-4 text-center">
+                      <span class="text-amber-600 font-bold">15-25 GPM</span><br>
+                      <span class="text-sm text-slate-500">Per 100 linear feet</span>
+                    </td>
+                  </tr>
+                  <tr class="hover:bg-slate-50">
+                    <td class="border-2 border-slate-200 p-4 font-semibold">Clog Resistance</td>
+                    <td class="border-2 border-slate-200 p-4 text-center">
+                      <span class="text-cyan-600 font-bold">Excellent</span><br>
+                      <span class="text-sm text-slate-500">Fabric filter protection</span>
+                    </td>
+                    <td class="border-2 border-slate-200 p-4 text-center">
+                      <span class="text-red-600 font-bold">Poor</span><br>
+                      <span class="text-sm text-slate-500">Open joints collect debris</span>
+                    </td>
+                  </tr>
+                  <tr class="hover:bg-slate-50">
+                    <td class="border-2 border-slate-200 p-4 font-semibold">Soil Filtration</td>
+                    <td class="border-2 border-slate-200 p-4 text-center">
+                      <span class="text-cyan-600 font-bold">Superior</span><br>
+                      <span class="text-sm text-slate-500">Geotextile fabric</span>
+                    </td>
+                    <td class="border-2 border-slate-200 p-4 text-center">
+                      <span class="text-amber-600 font-bold">Natural</span><br>
+                      <span class="text-sm text-slate-500">Gravel bedding only</span>
+                    </td>
+                  </tr>
+                  <tr class="hover:bg-slate-50">
+                    <td class="border-2 border-slate-200 p-4 font-semibold">Pressure Handling</td>
+                    <td class="border-2 border-slate-200 p-4 text-center">
+                      <span class="text-cyan-600 font-bold">High</span><br>
+                      <span class="text-sm text-slate-500">Continuous pipe structure</span>
+                    </td>
+                    <td class="border-2 border-slate-200 p-4 text-center">
+                      <span class="text-amber-600 font-bold">Moderate</span><br>
+                      <span class="text-sm text-slate-500">Segmented tile system</span>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Installation Requirements -->
+          <div class="bg-white  shadow-lg p-8 border-l-4 border-cyan-500">
+            <h3 class="text-2xl font-bold text-construction-navy mb-6">Installation Requirements</h3>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+              <div>
+                <h4 class="text-xl font-bold text-slate-900 mb-4">French Drain Installation</h4>
+                <div class="space-y-4">
+                  <div class="border-l-4 border-cyan-500 pl-4">
+                    <h5 class="font-semibold">Excavation Requirements</h5>
+                    <ul class="text-sm text-slate-500 mt-1 space-y-1">
+                      <li>• Trench width: 12-18 inches</li>
+                      <li>• Depth: 6-8 feet (below frost line)</li>
+                      <li>• Slope: 1% minimum (1 inch per 8 feet)</li>
+                      <li>• Foundation exposure: Full perimeter</li>
+                    </ul>
+                  </div>
+                  
+                  <div class="border-l-4 border-cyan-500 pl-4">
+                    <h5 class="font-semibold">Materials Required</h5>
+                    <ul class="text-sm text-slate-500 mt-1 space-y-1">
+                      <li>• 4" perforated PVC/ABS pipe</li>
+                      <li>• Geotextile filter fabric</li>
+                      <li>• 3/4" clear stone (6-8 inches below pipe)</li>
+                      <li>• Pipe connections and fittings</li>
+                    </ul>
+                  </div>
+                  
+                  <div class="border-l-4 border-cyan-500 pl-4">
+                    <h5 class="font-semibold">Installation Steps</h5>
+                    <ol class="text-sm text-slate-500 mt-1 space-y-1">
+                      <li>1. Excavate to footing level</li>
+                      <li>2. Install stone bed with fabric</li>
+                      <li>3. Place perforated pipe (holes down)</li>
+                      <li>4. Cover with stone and fabric</li>
+                      <li>5. Connect to discharge point</li>
+                    </ol>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <h4 class="text-xl font-bold text-cyan-400 mb-4">Weeping Tile Installation</h4>
+                <div class="space-y-4">
+                  <div class="border-l-4 border-orange-500 pl-4">
+                    <h5 class="font-semibold">Excavation Requirements</h5>
+                    <ul class="text-sm text-slate-500 mt-1 space-y-1">
+                      <li>• Trench width: 16-20 inches</li>
+                      <li>• Depth: 6-8 feet (below frost line)</li>
+                      <li>• Slope: 1% minimum (1 inch per 8 feet)</li>
+                      <li>• Foundation exposure: Full perimeter</li>
+                    </ul>
+                  </div>
+                  
+                  <div class="border-l-4 border-orange-500 pl-4">
+                    <h5 class="font-semibold">Materials Required</h5>
+                    <ul class="text-sm text-slate-500 mt-1 space-y-1">
+                      <li>• 4" clay or concrete tiles</li>
+                      <li>• Tar paper or plastic strips</li>
+                      <li>• 3/4" clear stone (8-10 inches below tiles)</li>
+                      <li>• Connection pipes to main drain</li>
+                    </ul>
+                  </div>
+                  
+                  <div class="border-l-4 border-orange-500 pl-4">
+                    <h5 class="font-semibold">Installation Steps</h5>
+                    <ol class="text-sm text-slate-500 mt-1 space-y-1">
+                      <li>1. Excavate to footing level</li>
+                      <li>2. Create stone bed foundation</li>
+                      <li>3. Place tiles with 1/4" gaps</li>
+                      <li>4. Cover joints with tar paper</li>
+                      <li>5. Surround with stone and backfill</li>
+                    </ol>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Performance Over Time -->
+      <section class="mb-16">
+        <h2 class="uppercase text-3xl font-bold text-construction-navy mb-8">Long-Term Performance Analysis</h2>
+        
+        <div class="bg-slate-50  p-8">
+          <div class="mb-8">
+            <h3 class="text-2xl font-bold mb-6">Drainage Efficiency Over 25 Years</h3>
+            <div class="bg-white  p-6">
+              <div class="space-y-4">
+                <div class="flex items-center justify-between border-b pb-2">
+                  <span class="font-semibold">Year 1-5:</span>
+                  <div class="flex space-x-8">
+                    <span class="text-cyan-600">French Drain: 95-100%</span>
+                    <span class="text-cyan-600">Weeping Tile: 90-95%</span>
+                  </div>
+                </div>
+                <div class="flex items-center justify-between border-b pb-2">
+                  <span class="font-semibold">Year 6-15:</span>
+                  <div class="flex space-x-8">
+                    <span class="text-cyan-600">French Drain: 90-95%</span>
+                    <span class="text-amber-600">Weeping Tile: 75-85%</span>
+                  </div>
+                </div>
+                <div class="flex items-center justify-between border-b pb-2">
+                  <span class="font-semibold">Year 16-25:</span>
+                  <div class="flex space-x-8">
+                    <span class="text-amber-600">French Drain: 85-90%</span>
+                    <span class="text-red-600">Weeping Tile: 60-70%</span>
+                  </div>
+                </div>
+                <div class="flex items-center justify-between">
+                  <span class="font-semibold">Year 25+:</span>
+                  <div class="flex space-x-8">
+                    <span class="text-amber-600">French Drain: 80-85%</span>
+                    <span class="text-red-600">Weeping Tile: 40-60%</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="grid md:grid-cols-2 gap-8">
+            <div class="bg-white  p-6 border-2 border-cyan-200">
+              <h4 class="text-xl font-bold text-cyan-700 mb-4">French Drain Advantages</h4>
+              <ul class="space-y-2">
+                <li class="flex items-start">
+                  <svg class="w-5 h-5 text-cyan-600 mr-2 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                  </svg>
+                  Continuous pipe system prevents joint failure
+                </li>
+                <li class="flex items-start">
+                  <svg class="w-5 h-5 text-cyan-600 mr-2 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                  </svg>
+                  Geotextile fabric prevents soil infiltration
+                </li>
+                <li class="flex items-start">
+                  <svg class="w-5 h-5 text-cyan-600 mr-2 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                  </svg>
+                  Modern materials resist root intrusion
+                </li>
+                <li class="flex items-start">
+                  <svg class="w-5 h-5 text-cyan-600 mr-2 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                  </svg>
+                  Easier to clean and maintain
+                </li>
+                <li class="flex items-start">
+                  <svg class="w-5 h-5 text-cyan-600 mr-2 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7-293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                  </svg>
+                  Better performance in clay soils
+                </li>
+              </ul>
+            </div>
+
+            <div class="bg-white  p-6 border-2 border-orange-200">
+              <h4 class="text-xl font-bold text-orange-700 mb-4">Weeping Tile Advantages</h4>
+              <ul class="space-y-2">
+                <li class="flex items-start">
+                  <svg class="w-5 h-5 text-orange-600 mr-2 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7-293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                  </svg>
+                  Traditional proven technology
+                </li>
+                <li class="flex items-start">
+                  <svg class="w-5 h-5 text-orange-600 mr-2 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7-293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                  </svg>
+                  Natural clay material longevity
+                </li>
+                <li class="flex items-start">
+                  <svg class="w-5 h-5 text-orange-600 mr-2 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7-293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                  </svg>
+                  Works well in sandy soils
+                </li>
+                <li class="flex items-start">
+                  <svg class="w-5 h-5 text-orange-600 mr-2 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                  </svg>
+                  Individual tile replacement possible
+                </li>
+                <li class="flex items-start">
+                  <svg class="w-5 h-5 text-orange-600 mr-2 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                  </svg>
+                  Historical code compliance
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Cost Analysis -->
+      <section class="mb-16">
+        <h2 class="uppercase text-3xl font-bold text-construction-navy mb-8">Comprehensive Cost Analysis</h2>
+        
+        <div class="space-y-8">
+          <!-- Installation Costs -->
+          <div class="bg-white  shadow-lg p-8">
+            <h3 class="text-2xl font-bold mb-6">Installation Cost Breakdown (Toronto Area)</h3>
+            
+            <div class="overflow-x-auto">
+              <table class="w-full border-collapse border-2 border-slate-200">
+                <thead>
+                  <tr class="bg-construction-navy text-white">
+                    <th class="border-2 border-slate-200 p-4 text-left">Cost Component</th>
+                    <th class="border-2 border-slate-200 p-4 text-center">French Drain</th>
+                    <th class="border-2 border-slate-200 p-4 text-center">Weeping Tile</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="hover:bg-slate-50">
+                    <td class="border-2 border-slate-200 p-4 font-semibold">Excavation (per linear foot)</td>
+                    <td class="border-2 border-slate-200 p-4 text-center">$8-12</td>
+                    <td class="border-2 border-slate-200 p-4 text-center">$10-15</td>
+                  </tr>
+                  <tr class="hover:bg-slate-50">
+                    <td class="border-2 border-slate-200 p-4 font-semibold">Materials (per linear foot)</td>
+                    <td class="border-2 border-slate-200 p-4 text-center">$4-6</td>
+                    <td class="border-2 border-slate-200 p-4 text-center">$6-10</td>
+                  </tr>
+                  <tr class="hover:bg-slate-50">
+                    <td class="border-2 border-slate-200 p-4 font-semibold">Installation Labor (per linear foot)</td>
+                    <td class="border-2 border-slate-200 p-4 text-center">$3-5</td>
+                    <td class="border-2 border-slate-200 p-4 text-center">$4-7</td>
+                  </tr>
+                  <tr class="hover:bg-slate-50">
+                    <td class="border-2 border-slate-200 p-4 font-semibold">Backfill & Restoration (per linear foot)</td>
+                    <td class="border-2 border-slate-200 p-4 text-center">$2-3</td>
+                    <td class="border-2 border-slate-200 p-4 text-center">$2-3</td>
+                  </tr>
+                  <tr class="bg-slate-50 font-bold">
+                    <td class="border-2 border-slate-200 p-4">Total per Linear Foot</td>
+                    <td class="border-2 border-slate-200 p-4 text-center text-cyan-600">$17-26</td>
+                    <td class="border-2 border-slate-200 p-4 text-center text-orange-600">$22-35</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            
+            <div class="mt-6 bg-cyan-50 border-l-4 border-cyan-500 p-4">
+              <h4 class="font-bold text-cyan-700 mb-2">Typical House Perimeter Cost (120 linear feet)</h4>
+              <div class="grid md:grid-cols-2 gap-4">
+                <div>
+                  <span class="font-semibold">French Drain:</span>
+                  <span class="text-cyan-600 font-bold">$2,040 - $3,120</span>
+                </div>
+                <div>
+                  <span class="font-semibold">Weeping Tile:</span>
+                  <span class="text-orange-600 font-bold">$2,640 - $4,200</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Lifetime Cost Analysis -->
+          <div class="bg-white  shadow-lg p-8">
+            <h3 class="text-2xl font-bold mb-6">25-Year Total Cost of Ownership</h3>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+              <div class="bg-cyan-50  p-6 border-2 border-cyan-200">
+                <h4 class="text-xl font-bold text-cyan-700 mb-4">French Drain - 25 Year Cost</h4>
+                <div class="space-y-3">
+                  <div class="flex justify-between">
+                    <span>Initial installation (120 LF):</span>
+                    <span class="font-bold">$2,580</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span>5-year inspection/cleaning:</span>
+                    <span class="font-bold">$400</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span>15-year partial renovation:</span>
+                    <span class="font-bold">$800</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span>25-year system cleaning:</span>
+                    <span class="font-bold">$600</span>
+                  </div>
+                  <hr class="border-t-2 border-green-300">
+                  <div class="flex justify-between text-lg font-bold">
+                    <span>Total 25-year cost:</span>
+                    <span class="text-cyan-700">$4,380</span>
+                  </div>
+                  <div class="text-sm text-cyan-600">
+                    <strong>Annual cost:</strong> $175
+                  </div>
+                </div>
+              </div>
+
+              <div class="bg-orange-50  p-6 border-2 border-orange-200">
+                <h4 class="text-xl font-bold text-orange-700 mb-4">Weeping Tile - 25 Year Cost</h4>
+                <div class="space-y-3">
+                  <div class="flex justify-between">
+                    <span>Initial installation (120 LF):</span>
+                    <span class="font-bold">$3,420</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span>3-year cleaning/maintenance:</span>
+                    <span class="font-bold">$600</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span>10-year joint repair:</span>
+                    <span class="font-bold">$1,200</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span>20-year partial replacement:</span>
+                    <span class="font-bold">$2,400</span>
+                  </div>
+                  <hr class="border-t-2 border-orange-300">
+                  <div class="flex justify-between text-lg font-bold">
+                    <span>Total 25-year cost:</span>
+                    <span class="text-orange-700">$7,620</span>
+                  </div>
+                  <div class="text-sm text-orange-600">
+                    <strong>Annual cost:</strong> $305
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-6 bg-cyan-50 border-l-4 border-cyan-500 p-6">
+              <h4 class="text-lg font-bold text-cyan-700 mb-2">French Drain Advantage: $3,240 savings over 25 years</h4>
+              <p class="text-cyan-700">Lower maintenance requirements and higher long-term performance make French drains more cost-effective over time.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Soil Type Considerations -->
+      <section class="mb-16">
+        <h2 class="uppercase text-3xl font-bold text-construction-navy mb-8">Performance by Soil Type</h2>
+        
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="bg-white  shadow-lg p-6 border-t-4 border-slate-700">
+            <h3 class="text-xl font-bold text-slate-900 mb-4">Clay Soils</h3>
+            <div class="space-y-4">
+              <div class="border-l-4 border-cyan-500 pl-4">
+                <h4 class="font-semibold text-cyan-700">French Drain</h4>
+                <p class="text-sm text-slate-500">Excellent performance. Geotextile fabric prevents clay infiltration. Smooth pipe walls resist clogging.</p>
+                <div class="mt-2">
+                  <span class="bg-slate-100 text-slate-700 px-2 py-1  text-xs font-bold">RECOMMENDED</span>
+                </div>
+              </div>
+              
+              <div class="border-l-4 border-red-500 pl-4">
+                <h4 class="font-semibold text-red-700">Weeping Tile</h4>
+                <p class="text-sm text-slate-500">Poor performance. Clay particles clog joints quickly. Requires frequent maintenance.</p>
+                <div class="mt-2">
+                  <span class="bg-amber-50 text-amber-700 px-2 py-1  text-xs font-bold">NOT RECOMMENDED</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white  shadow-lg p-6 border-t-4 border-cyan-500">
+            <h3 class="text-xl font-bold text-cyan-400 mb-4">Sandy Soils</h3>
+            <div class="space-y-4">
+              <div class="border-l-4 border-cyan-500 pl-4">
+                <h4 class="font-semibold text-cyan-700">French Drain</h4>
+                <p class="text-sm text-slate-500">Excellent performance. Natural filtration through sand. Long-term reliability.</p>
+                <div class="mt-2">
+                  <span class="bg-slate-100 text-slate-700 px-2 py-1  text-xs font-bold">EXCELLENT</span>
+                </div>
+              </div>
+              
+              <div class="border-l-4 border-cyan-500 pl-4">
+                <h4 class="font-semibold text-amber-600">Weeping Tile</h4>
+                <p class="text-sm text-slate-500">Good performance. Sand naturally filters well. Traditional choice for sandy soils.</p>
+                <div class="mt-2">
+                  <span class="bg-cyan-50 text-cyan-700 px-2 py-1  text-xs font-bold">ACCEPTABLE</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white  shadow-lg p-6 border-t-4 border-construction-navy">
+            <h3 class="text-xl font-bold text-construction-navy mb-4">Mixed Soils</h3>
+            <div class="space-y-4">
+              <div class="border-l-4 border-cyan-500 pl-4">
+                <h4 class="font-semibold text-cyan-700">French Drain</h4>
+                <p class="text-sm text-slate-500">Adaptable system. Geotextile handles varying soil conditions effectively.</p>
+                <div class="mt-2">
+                  <span class="bg-slate-100 text-slate-700 px-2 py-1  text-xs font-bold">RECOMMENDED</span>
+                </div>
+              </div>
+              
+              <div class="border-l-4 border-cyan-500 pl-4">
+                <h4 class="font-semibold text-amber-600">Weeping Tile</h4>
+                <p class="text-sm text-slate-500">Moderate performance. Variable soil conditions can affect different sections differently.</p>
+                <div class="mt-2">
+                  <span class="bg-cyan-50 text-cyan-700 px-2 py-1  text-xs font-bold">MARGINAL</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      
+      <!-- Related Images Gallery -->
+      <BlogImageGallery topic="french-drain" />
+
+<!-- FAQ Section -->
+      <section class="mb-16">
+        <h2 class="uppercase text-3xl font-bold text-construction-navy mb-8">Technical FAQ</h2>
+        
+        <div class="space-y-4">
+          <div class="bg-white  shadow-md border-2 border-slate-100">
+            <button class="w-full text-left p-6 font-semibold text-lg hover:bg-slate-50 flex justify-between items-center" data-faq-toggle>
+              Can I upgrade existing weeping tile to French drain?
+              <svg class="w-5 h-5 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </button>
+            <div class="hidden px-6 pb-6">
+              <p>Yes, but it requires full excavation and removal of existing tiles. Most contractors recommend complete replacement for optimal performance. The process involves excavating to footing level, removing old tiles and stone, and installing a new French drain system with proper filtration.</p>
+            </div>
+          </div>
+
+          <div class="bg-white  shadow-md border-2 border-slate-100">
+            <button class="w-full text-left p-6 font-semibold text-lg hover:bg-slate-50 flex justify-between items-center" data-faq-toggle>
+              Which system works better in Toronto's climate?
+              <svg class="w-5 h-5 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </button>
+            <div class="hidden px-6 pb-6">
+              <p>French drains perform better in Toronto's freeze-thaw cycles. The continuous pipe system is less susceptible to frost heaving, and the geotextile fabric prevents soil migration during spring thaw. Weeping tiles can separate at joints during freeze-thaw cycles.</p>
+            </div>
+          </div>
+
+          <div class="bg-white  shadow-md border-2 border-slate-100">
+            <button class="w-full text-left p-6 font-semibold text-lg hover:bg-slate-50 flex justify-between items-center" data-faq-toggle>
+              How often should each system be maintained?
+              <svg class="w-5 h-5 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </button>
+            <div class="hidden px-6 pb-6">
+              <p>French drains: Professional cleaning every 5-7 years. Weeping tiles: Inspection every 2-3 years, cleaning every 3-5 years. Weeping tiles require more frequent maintenance due to joint separation and debris accumulation at tile connections.</p>
+            </div>
+          </div>
+
+          <div class="bg-white  shadow-md border-2 border-slate-100">
+            <button class="w-full text-left p-6 font-semibold text-lg hover:bg-slate-50 flex justify-between items-center" data-faq-toggle>
+              What are the signs that my drainage system is failing?
+              <svg class="w-5 h-5 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </button>
+            <div class="hidden px-6 pb-6">
+              <p>Common failure signs include: water infiltration after heavy rain, efflorescence on foundation walls, musty odors in basement, soggy areas around foundation perimeter, and visible settlement or cracking near the foundation. Both systems show similar failure symptoms.</p>
+            </div>
+          </div>
+
+          <div class="bg-white  shadow-md border-2 border-slate-100">
+            <button class="w-full text-left p-6 font-semibold text-lg hover:bg-slate-50 flex justify-between items-center" data-faq-toggle>
+              Are there building code requirements for drainage systems?
+              <svg class="w-5 h-5 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </button>
+            <div class="hidden px-6 pb-6">
+              <p>Yes, Ontario Building Code requires foundation drainage systems for all new construction. Both French drains and weeping tiles meet code requirements when properly installed. French drains often exceed minimum standards and are preferred by most modern contractors.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA Section -->
+      <section class="bg-construction-navy text-white  p-8 text-center">
+        <h2 class="uppercase text-3xl font-bold mb-4">Choose the Right Drainage System</h2>
+        <p class="text-xl mb-6">Get professional assessment to determine the best drainage solution for your property.</p>
+        <div class="space-y-4 md:space-y-0 md:space-x-4 md:flex md:justify-center">
+          <a href="tel:416-333-0033" class="bg-amber-500 text-slate-900 px-8 py-3  font-semibold hover:bg-amber-400 transition-colors inline-block">
+            Call (416) 333-0033
+          </a>
+          <a href="/contact" class="bg-white text-construction-navy px-8 py-3  font-semibold hover:bg-slate-50 transition-colors inline-block">
+            Free Technical Consultation
+          </a>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- Related Services & Resources -->
+  <section class="py-12 bg-slate-50">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="uppercase text-2xl font-bold mb-6 text-slate-900">Solutions & Resources</h2>
+      
+      <div class="grid md:grid-cols-3 gap-6 mb-8">
+        <!-- French Drain System -->
+        <div class="bg-white p-6  shadow-md border-2 border-slate-100">
+          <div class="flex items-center mb-4">
+            <div class="w-12 h-12 bg-cyan-600  flex items-center justify-center mr-4">
+              <svg class="w-6 h-6 text-slate-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16l2.879-2.879m0 0a3 3 0 104.243-4.242 3 3 0 00-4.243 4.242zM21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+            </div>
+            <h3 class="text-lg font-bold text-slate-900">French Drain System</h3>
+          </div>
+          <p class="text-slate-500 mb-4 text-sm">Professional French drain installation for effective water management.</p>
+          <a href="/services/french-drain-system" class="text-slate-900 hover:text-slate-900/80 font-medium text-sm">Learn More →</a>
+        </div>
+
+        <!-- Weeping Tile -->
+        <div class="bg-white p-6  shadow-md border-2 border-slate-100">
+          <div class="flex items-center mb-4">
+            <div class="w-12 h-12 bg-amber-500  flex items-center justify-center mr-4">
+              <svg class="w-6 h-6 text-slate-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5"></path>
+              </svg>
+            </div>
+            <h3 class="text-lg font-bold text-slate-900">Weeping Tile Systems</h3>
+          </div>
+          <p class="text-slate-500 mb-4 text-sm">Traditional weeping tile installation and maintenance for foundation drainage.</p>
+          <a href="/services/weeping-tile" class="text-cyan-400 hover:text-cyan-400/80 font-medium text-sm">Learn More →</a>
+        </div>
+
+        <!-- Exterior Drainage -->
+        <div class="bg-white p-6  shadow-md border-2 border-slate-100">
+          <div class="flex items-center mb-4">
+            <div class="w-12 h-12 bg-cyan-600  flex items-center justify-center mr-4">
+              <svg class="w-6 h-6 text-slate-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+              </svg>
+            </div>
+            <h3 class="text-lg font-bold text-slate-900">Exterior Drainage Solutions</h3>
+          </div>
+          <p class="text-slate-500 mb-4 text-sm">Comprehensive exterior drainage systems to manage water around your foundation.</p>
+          <a href="/services/exterior-drainage-solutions" class="text-cyan-600 hover:text-cyan-600/80 font-medium text-sm">Learn More →</a>
+        </div>
+      </div>
+      
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="p-6 bg-cyan-50 ">
+          <h3 class="font-bold mb-3 text-slate-900">Helpful Tools</h3>
+          <ul class="space-y-2">
+            <li> <a href="/tools/detailed-cost-estimator" class="text-cyan-600 hover:underline">Calculate Repair Cost</a></li>
+            <li> <a href="/free-inspection" class="text-cyan-600 hover:underline">Get Free Assessment</a></li>
+          </ul>
+        </div>
+        <div class="p-6 bg-orange-50 ">
+          <h3 class="font-bold mb-3 text-slate-900">Related Articles</h3>
+          <ul class="space-y-2">
+            <li> <a href="/blog/interior-vs-exterior-waterproofing" class="text-orange-600 hover:underline">Interior vs Exterior Waterproofing</a></li>
+            <li> <a href="/blog/sump-pump-types-comparison-guide" class="text-orange-600 hover:underline">Sump Pump Types Comparison</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // FAQ toggle functionality
+      const faqButtons = document.querySelectorAll('[data-faq-toggle]');
+      faqButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          const content = button.nextElementSibling;
+          const arrow = button.querySelector('svg');
+          
+          if (content.classList.contains('hidden')) {
+            content.classList.remove('hidden');
+            arrow.style.transform = 'rotate(180deg)';
+          } else {
+            content.classList.add('hidden');
+            arrow.style.transform = 'rotate(0deg)';
+          }
+        });
+      });
+    });
+  </script>
+</PageLayout>

@@ -1,0 +1,692 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import BlogImageGallery from '../../components/BlogImageGallery.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+
+const publishDate = new Date('2026-03-12');
+const author = 'Dryspace Waterproofing Team';
+const readingTime = '10 min read';
+---
+
+<PageLayout title="DIY vs Professional Waterproofing: Complete Cost & Risk Analysis | Dryspace Construction" 
+           description="Comprehensive comparison of DIY waterproofing vs professional services. Interactive risk calculator, cost analysis, and decision guide for Toronto homeowners.">
+  
+  
+  <!-- Breadcrumbs -->
+  <div class="container mx-auto px-4 mt-4">
+    <Breadcrumbs 
+      items={[
+        { name: "Home", url: "/" },
+        { name: "Blog", url: "/blog" },
+        { name: "Diy Vs Professional Waterproofing" }
+      ]}
+    />
+  </div>
+
+<main class="min-h-screen bg-slate-50">
+    <!-- Blog Article Header -->
+    <article class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <header class="mb-10">
+        <!-- Category Badge -->
+        <div class="flex flex-wrap gap-2 mb-6">
+          <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-cyan-50 text-cyan-700">
+            Guides
+          </span>
+          <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-amber-50 text-amber-700">
+            DIY Tips
+          </span>
+        </div>
+        
+        <!-- Title -->
+        <h1 class="text-4xl md:text-5xl font-bold text-slate-900 mb-6 leading-tight">
+          DIY vs Professional Waterproofing: When to Call Experts (Guide)
+        </h1>
+        
+        <!-- Meta Information -->
+        <div class="flex flex-wrap items-center gap-4 text-sm text-slate-500 mb-6">
+          <span class="flex items-center gap-1">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+            </svg>
+            {publishDate.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
+          </span>
+          <span class="flex items-center gap-1">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+            {readingTime}
+          </span>
+          <span class="flex items-center gap-1">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+            </svg>
+            {author}
+          </span>
+        </div>
+        
+        <!-- Lead Paragraph -->
+        <p class="text-xl text-slate-600 leading-relaxed">
+          Learn when DIY waterproofing makes sense and when to call professionals. This educational guide helps Toronto homeowners understand the risks, skills required, and scenarios where expert help is essential.
+        </p>
+      </header>
+      
+      <!-- Table of Contents -->
+      <nav class="mb-12 p-6 bg-white rounded-lg shadow-sm">
+        <h2 class="text-lg font-semibold text-slate-900 mb-4">Table of Contents</h2>
+        <ol class="space-y-2 text-slate-500">
+          <li><a href="#risk-assessment" class="hover:text-cyan-600 transition-colors">1. Risk Assessment Calculator</a></li>
+          <li><a href="#cost-comparison" class="hover:text-cyan-600 transition-colors">2. Cost Comparison Analysis</a></li>
+          <li><a href="#diy-methods" class="hover:text-cyan-600 transition-colors">3. DIY Methods & Limitations</a></li>
+          <li><a href="#professional-advantages" class="hover:text-cyan-600 transition-colors">4. Professional Advantages</a></li>
+          <li><a href="#when-diy" class="hover:text-cyan-600 transition-colors">5. When DIY Makes Sense</a></li>
+          <li><a href="#when-professional" class="hover:text-cyan-600 transition-colors">6. When to Hire Professionals</a></li>
+          <li><a href="#decision-guide" class="hover:text-cyan-600 transition-colors">7. Decision Making Guide</a></li>
+        </ol>
+      </nav>
+      
+      <!-- Interactive Risk Assessment Tool -->
+      <section id="risk-assessment" class="mb-12">
+        <h2 class="text-2xl font-bold text-slate-900 mb-6">Risk Assessment Calculator</h2>
+        <div class="bg-white p-8 rounded-xl shadow-sm">
+          <p class="text-slate-600 mb-6">Answer these questions to get a personalized recommendation:</p>
+          
+          <div id="riskAssessment" class="space-y-6">
+            <div class="assessment-question">
+              <label class="block text-lg font-semibold text-slate-900 mb-3">What's your waterproofing experience level?</label>
+              <div class="space-y-2">
+                <label class="flex items-center p-3 border border-slate-100 rounded-lg hover:bg-slate-50 cursor-pointer transition-colors">
+                  <input type="radio" name="experience" value="0" class="mr-3 text-cyan-600">
+                  <span class="text-slate-600">Complete beginner (0 points)</span>
+                </label>
+                <label class="flex items-center p-3 border border-slate-100 rounded-lg hover:bg-slate-50 cursor-pointer transition-colors">
+                  <input type="radio" name="experience" value="2" class="mr-3 text-cyan-600">
+                  <span class="text-slate-600">Some DIY experience (2 points)</span>
+                </label>
+                <label class="flex items-center p-3 border border-slate-100 rounded-lg hover:bg-slate-50 cursor-pointer transition-colors">
+                  <input type="radio" name="experience" value="4" class="mr-3 text-cyan-600">
+                  <span class="text-slate-600">Experienced DIYer (4 points)</span>
+                </label>
+                <label class="flex items-center p-3 border border-slate-100 rounded-lg hover:bg-slate-50 cursor-pointer transition-colors">
+                  <input type="radio" name="experience" value="6" class="mr-3 text-cyan-600">
+                  <span class="text-slate-600">Professional contractor (6 points)</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="assessment-question">
+              <label class="block text-lg font-semibold mb-3">How severe is your water problem?</label>
+              <div class="space-y-2">
+                <label class="flex items-center">
+                  <input type="radio" name="severity" value="6" class="mr-2">
+                  <span>Minor seepage or dampness (6 points)</span>
+                </label>
+                <label class="flex items-center">
+                  <input type="radio" name="severity" value="4" class="mr-2">
+                  <span>Occasional water entry (4 points)</span>
+                </label>
+                <label class="flex items-center">
+                  <input type="radio" name="severity" value="2" class="mr-2">
+                  <span>Regular flooding (2 points)</span>
+                </label>
+                <label class="flex items-center">
+                  <input type="radio" name="severity" value="0" class="mr-2">
+                  <span>Severe structural issues (0 points)</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="assessment-question">
+              <label class="block text-lg font-semibold mb-3">What's your budget range?</label>
+              <div class="space-y-2">
+                <label class="flex items-center">
+                  <input type="radio" name="budget" value="6" class="mr-2">
+                  <span>Under $1,000 (6 points)</span>
+                </label>
+                <label class="flex items-center">
+                  <input type="radio" name="budget" value="4" class="mr-2">
+                  <span>$1,000 - $5,000 (4 points)</span>
+                </label>
+                <label class="flex items-center">
+                  <input type="radio" name="budget" value="2" class="mr-2">
+                  <span>$5,000 - $15,000 (2 points)</span>
+                </label>
+                <label class="flex items-center">
+                  <input type="radio" name="budget" value="0" class="mr-2">
+                  <span>$15,000+ available (0 points)</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="assessment-question">
+              <label class="block text-lg font-semibold mb-3">How much time can you dedicate?</label>
+              <div class="space-y-2">
+                <label class="flex items-center">
+                  <input type="radio" name="time" value="6" class="mr-2">
+                  <span>Weekends and evenings (6 points)</span>
+                </label>
+                <label class="flex items-center">
+                  <input type="radio" name="time" value="4" class="mr-2">
+                  <span>1-2 weeks full time (4 points)</span>
+                </label>
+                <label class="flex items-center">
+                  <input type="radio" name="time" value="2" class="mr-2">
+                  <span>Very limited time (2 points)</span>
+                </label>
+                <label class="flex items-center">
+                  <input type="radio" name="time" value="0" class="mr-2">
+                  <span>Need immediate solution (0 points)</span>
+                </label>
+              </div>
+            </div>
+
+            <button id="calculateRiskBtn" class="bg-amber-500 text-slate-900 px-8 py-3  font-semibold hover:bg-amber-400 transition-colors">
+              Get My Recommendation
+            </button>
+          </div>
+
+          <div id="riskResults" class="hidden mt-8 p-6 bg-white  border-2">
+            <h3 class="text-2xl font-bold mb-4">Your Recommendation:</h3>
+            <div id="recommendationText" class="text-lg mb-4"></div>
+            <div id="riskScore" class="text-sm text-slate-500"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Comprehensive Comparison Table -->
+      <section class="mb-16">
+        <h2 class="uppercase text-3xl font-bold text-construction-navy mb-8">Complete DIY vs Professional Comparison</h2>
+        
+        <div class="overflow-x-auto">
+          <table class="w-full border-collapse border-2 border-slate-200 bg-white  shadow-lg">
+            <thead>
+              <tr class="bg-construction-navy text-white">
+                <th class="border-2 border-slate-200 p-4 text-left">Factor</th>
+                <th class="border-2 border-slate-200 p-4 text-center">DIY Waterproofing</th>
+                <th class="border-2 border-slate-200 p-4 text-center">Professional Service</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="hover:bg-slate-50">
+                <td class="border-2 border-slate-200 p-4 font-semibold">Initial Cost</td>
+                <td class="border-2 border-slate-200 p-4 text-center">
+                  <span class="text-cyan-600 font-bold">$500 - $2,000</span><br>
+                  <span class="text-sm text-slate-500">Materials only</span>
+                </td>
+                <td class="border-2 border-slate-200 p-4 text-center">
+                  <span class="text-red-600 font-bold">$3,000 - $15,000</span><br>
+                  <span class="text-sm text-slate-500">Materials + labor</span>
+                </td>
+              </tr>
+              <tr class="hover:bg-slate-50">
+                <td class="border-2 border-slate-200 p-4 font-semibold">Time Investment</td>
+                <td class="border-2 border-slate-200 p-4 text-center">
+                  <span class="text-red-600 font-bold">2-4 weeks</span><br>
+                  <span class="text-sm text-slate-500">Evenings/weekends</span>
+                </td>
+                <td class="border-2 border-slate-200 p-4 text-center">
+                  <span class="text-cyan-600 font-bold">3-7 days</span><br>
+                  <span class="text-sm text-slate-500">Minimal disruption</span>
+                </td>
+              </tr>
+              <tr class="hover:bg-slate-50">
+                <td class="border-2 border-slate-200 p-4 font-semibold">Success Rate</td>
+                <td class="border-2 border-slate-200 p-4 text-center">
+                  <span class="text-amber-600 font-bold">60-70%</span><br>
+                  <span class="text-sm text-slate-500">First-time DIYers</span>
+                </td>
+                <td class="border-2 border-slate-200 p-4 text-center">
+                  <span class="text-cyan-600 font-bold">95-98%</span><br>
+                  <span class="text-sm text-slate-500">Licensed contractors</span>
+                </td>
+              </tr>
+              <tr class="hover:bg-slate-50">
+                <td class="border-2 border-slate-200 p-4 font-semibold">Warranty</td>
+                <td class="border-2 border-slate-200 p-4 text-center">
+                  <span class="text-red-600 font-bold">None</span><br>
+                  <span class="text-sm text-slate-500">Your responsibility</span>
+                </td>
+                <td class="border-2 border-slate-200 p-4 text-center">
+                  <span class="text-cyan-600 font-bold">10-25 years</span><br>
+                  <span class="text-sm text-slate-500">Workmanship guarantee</span>
+                </td>
+              </tr>
+              <tr class="hover:bg-slate-50">
+                <td class="border-2 border-slate-200 p-4 font-semibold">Permit Requirements</td>
+                <td class="border-2 border-slate-200 p-4 text-center">
+                  <span class="text-amber-600 font-bold">Your responsibility</span><br>
+                  <span class="text-sm text-slate-500">Research required</span>
+                </td>
+                <td class="border-2 border-slate-200 p-4 text-center">
+                  <span class="text-cyan-600 font-bold">Handled for you</span><br>
+                  <span class="text-sm text-slate-500">Licensed & insured</span>
+                </td>
+              </tr>
+              <tr class="hover:bg-slate-50">
+                <td class="border-2 border-slate-200 p-4 font-semibold">Insurance Coverage</td>
+                <td class="border-2 border-slate-200 p-4 text-center">
+                  <span class="text-red-600 font-bold">May void coverage</span><br>
+                  <span class="text-sm text-slate-500">Check with insurer</span>
+                </td>
+                <td class="border-2 border-slate-200 p-4 text-center">
+                  <span class="text-cyan-600 font-bold">Full coverage</span><br>
+                  <span class="text-sm text-slate-500">Liability included</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <!-- Related Images Gallery -->
+      <BlogImageGallery topic="diy-vs-pro" />
+
+
+
+      <!-- DIY Waterproofing Guide -->
+      <section class="mb-16">
+        <h2 class="uppercase text-3xl font-bold text-construction-navy mb-8">DIY Waterproofing: Complete Guide</h2>
+        
+        <div class="bg-amber-50 border-l-4 border-cyan-500 p-6 mb-8">
+          <div class="flex items-start">
+            <svg class="w-6 h-6 text-cyan-400 mr-3 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/>
+            </svg>
+            <div>
+              <h3 class="text-lg font-bold text-slate-900 mb-2">Important Safety Warning</h3>
+              <p class="text-slate-600">DIY waterproofing involves excavation, chemical handling, and structural work. Always check local building codes and consider professional consultation for complex issues.</p>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="text-2xl font-bold text-construction-navy mb-6">Best DIY Methods by Problem Type</h3>
+        
+        <div class="grid md:grid-cols-2 gap-8">
+          <!-- Interior Solutions -->
+          <div class="bg-white  shadow-lg p-6 border-2 border-cyan-200">
+            <h4 class="text-xl font-bold text-cyan-700 mb-4">Interior Solutions (Easier)</h4>
+            <div class="space-y-4">
+              <div class="border-l-4 border-cyan-500 pl-4">
+                <h5 class="font-semibold">Basement Sealing</h5>
+                <p class="text-sm text-slate-500 mb-2">Cost: $200-500 • Time: 1-2 days • Difficulty: Beginner</p>
+                <p>Apply waterproof paint or sealant to interior walls and floors.</p>
+              </div>
+              
+              <div class="border-l-4 border-cyan-500 pl-4">
+                <h5 class="font-semibold">Crack Injection</h5>
+                <p class="text-sm text-slate-500 mb-2">Cost: $100-300 • Time: 4-6 hours • Difficulty: Intermediate</p>
+                <p>Inject polyurethane or epoxy into foundation cracks.</p>
+              </div>
+              
+              <div class="border-l-4 border-cyan-500 pl-4">
+                <h5 class="font-semibold">Interior Drainage</h5>
+                <p class="text-sm text-slate-500 mb-2">Cost: $800-1500 • Time: 1 week • Difficulty: Advanced</p>
+                <p>Install interior French drain and sump pump system.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Exterior Solutions -->
+          <div class="bg-white  shadow-lg p-6 border-2 border-red-200">
+            <h4 class="text-xl font-bold text-red-700 mb-4">Exterior Solutions (Harder)</h4>
+            <div class="space-y-4">
+              <div class="border-l-4 border-red-500 pl-4">
+                <h5 class="font-semibold">Foundation Excavation</h5>
+                <p class="text-sm text-slate-500 mb-2">Cost: $2000-5000 • Time: 2-3 weeks • Difficulty: Expert</p>
+                <p>Excavate foundation walls for membrane application.</p>
+              </div>
+              
+              <div class="border-l-4 border-red-500 pl-4">
+                <h5 class="font-semibold">Exterior Membrane</h5>
+                <p class="text-sm text-slate-500 mb-2">Cost: $1000-2000 • Time: 1 week • Difficulty: Advanced</p>
+                <p>Apply waterproof membrane to exterior foundation.</p>
+              </div>
+              
+              <div class="border-l-4 border-red-500 pl-4">
+                <h5 class="font-semibold">Drain Tile Installation</h5>
+                <p class="text-sm text-slate-500 mb-2">Cost: $1500-3000 • Time: 1-2 weeks • Difficulty: Expert</p>
+                <p>Install perimeter drainage around foundation footing.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Professional Service Benefits -->
+      <section class="mb-16">
+        <h2 class="uppercase text-3xl font-bold text-construction-navy mb-8">Why Choose Professional Waterproofing</h2>
+        
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="bg-cyan-600 text-white  p-6">
+            <h3 class="text-xl font-bold mb-4">Expert Diagnosis</h3>
+            <ul class="space-y-2">
+              <li> Moisture meters & thermal imaging</li>
+              <li> Soil analysis & drainage assessment</li>
+              <li> Structural integrity evaluation</li>
+              <li> Code compliance review</li>
+            </ul>
+          </div>
+          
+          <div class="bg-amber-50 text-slate-900 border-2 border-amber-400 rounded-lg p-6">
+            <h3 class="text-xl font-bold mb-4">Advanced Solutions</h3>
+            <ul class="space-y-2">
+              <li> Commercial-grade materials</li>
+              <li> Specialized equipment access</li>
+              <li> Multiple system integration</li>
+              <li> Future-proof design</li>
+            </ul>
+          </div>
+          
+          <div class="bg-construction-navy text-white  p-6">
+            <h3 class="text-xl font-bold mb-4">Long-term Value</h3>
+            <ul class="space-y-2">
+              <li> 10-25 year warranties</li>
+              <li> Insurance compliance</li>
+              <li> Property value protection</li>
+              <li> Maintenance programs</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Cost Analysis -->
+      <section class="mb-16">
+        <h2 class="uppercase text-3xl font-bold text-construction-navy mb-8">True Cost Analysis</h2>
+        
+        <div class="bg-slate-50  p-8">
+          <h3 class="text-2xl font-bold mb-6">5-Year Cost Comparison</h3>
+          
+          <div class="grid md:grid-cols-2 gap-8">
+            <div class="bg-white  p-6 border-2 border-cyan-200">
+              <h4 class="text-xl font-bold text-cyan-700 mb-4">DIY Scenario</h4>
+              <div class="space-y-3">
+                <div class="flex justify-between">
+                  <span>Initial materials:</span>
+                  <span class="font-bold">$1,200</span>
+                </div>
+                <div class="flex justify-between">
+                  <span>Tool rental/purchase:</span>
+                  <span class="font-bold">$400</span>
+                </div>
+                <div class="flex justify-between">
+                  <span>Redo materials (30% failure rate):</span>
+                  <span class="font-bold">$480</span>
+                </div>
+                <div class="flex justify-between">
+                  <span>Professional fix after failure:</span>
+                  <span class="font-bold">$6,000</span>
+                </div>
+                <div class="flex justify-between">
+                  <span>Water damage (potential):</span>
+                  <span class="font-bold">$3,000</span>
+                </div>
+                <hr class="border-t-2 border-blue-300">
+                <div class="flex justify-between text-lg font-bold">
+                  <span>Total 5-year cost:</span>
+                  <span class="text-cyan-700">$11,080</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-white  p-6 border-2 border-cyan-200">
+              <h4 class="text-xl font-bold text-cyan-700 mb-4">Professional Service</h4>
+              <div class="space-y-3">
+                <div class="flex justify-between">
+                  <span>Professional installation:</span>
+                  <span class="font-bold">$8,500</span>
+                </div>
+                <div class="flex justify-between">
+                  <span>Annual maintenance:</span>
+                  <span class="font-bold">$200</span>
+                </div>
+                <div class="flex justify-between">
+                  <span>Warranty coverage:</span>
+                  <span class="font-bold">$0</span>
+                </div>
+                <div class="flex justify-between">
+                  <span>Water damage risk:</span>
+                  <span class="font-bold">$0</span>
+                </div>
+                <div class="flex justify-between">
+                  <span>Insurance premium reduction:</span>
+                  <span class="font-bold text-cyan-600">-$500</span>
+                </div>
+                <hr class="border-t-2 border-green-300">
+                <div class="flex justify-between text-lg font-bold">
+                  <span>Total 5-year cost:</span>
+                  <span class="text-cyan-700">$8,700</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="mt-8 bg-cyan-50 border-l-4 border-cyan-500 p-6">
+            <h4 class="text-lg font-bold text-cyan-700 mb-2">Professional Advantage: $2,380 savings</h4>
+            <p class="text-cyan-700">Professional installation typically saves money long-term due to higher success rates, warranties, and reduced damage risk.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Decision Framework -->
+      <section class="mb-16">
+        <h2 class="uppercase text-3xl font-bold text-construction-navy mb-8">Decision Framework</h2>
+        
+        <div class="bg-white  shadow-lg p-8 border-2 border-slate-700">
+          <h3 class="text-2xl font-bold mb-6">Choose DIY When:</h3>
+          <div class="grid md:grid-cols-2 gap-6 mb-8">
+            <div>
+              <h4 class="text-lg font-semibold text-cyan-700 mb-3">Ideal DIY Conditions</h4>
+              <ul class="space-y-2">
+                <li class="flex items-start">
+                  <svg class="w-5 h-5 text-cyan-600 mr-2 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                  </svg>
+                  Minor water seepage or dampness
+                </li>
+                <li class="flex items-start">
+                  <svg class="w-5 h-5 text-cyan-600 mr-2 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                  </svg>
+                  Interior-only solutions needed
+                </li>
+                <li class="flex items-start">
+                  <svg class="w-5 h-5 text-cyan-600 mr-2 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                  </svg>
+                  Budget under $2,000
+                </li>
+                <li class="flex items-start">
+                  <svg class="w-5 h-5 text-cyan-600 mr-2 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                  </svg>
+                  Significant construction experience
+                </li>
+                <li class="flex items-start">
+                  <svg class="w-5 h-5 text-cyan-600 mr-2 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                  </svg>
+                  Time for proper research and execution
+                </li>
+              </ul>
+            </div>
+            
+            <div>
+              <h4 class="text-lg font-semibold text-red-700 mb-3">Choose Professional When:</h4>
+              <ul class="space-y-2">
+                <li class="flex items-start">
+                  <svg class="w-5 h-5 text-red-600 mr-2 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                  </svg>
+                  Active water infiltration or flooding
+                </li>
+                <li class="flex items-start">
+                  <svg class="w-5 h-5 text-red-600 mr-2 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                  </svg>
+                  Exterior excavation required
+                </li>
+                <li class="flex items-start">
+                  <svg class="w-5 h-5 text-red-600 mr-2 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                  </svg>
+                  Structural foundation issues
+                </li>
+                <li class="flex items-start">
+                  <svg class="w-5 h-5 text-red-600 mr-2 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7-293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                  </svg>
+                  Insurance or warranty requirements
+                </li>
+                <li class="flex items-start">
+                  <svg class="w-5 h-5 text-red-600 mr-2 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                  </svg>
+                  Time-sensitive situations
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ Section -->
+      <section class="mb-16">
+        <h2 class="uppercase text-3xl font-bold text-construction-navy mb-8">Frequently Asked Questions</h2>
+        
+        <div class="space-y-4">
+          <div class="bg-white  shadow-md border-2 border-slate-100">
+            <button class="w-full text-left p-6 font-semibold text-lg hover:bg-slate-50 flex justify-between items-center" data-faq-toggle>
+              Can DIY waterproofing void my home insurance?
+              <svg class="w-5 h-5 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </button>
+            <div class="hidden px-6 pb-6">
+              <p>Many insurance policies require professional installation for waterproofing coverage. DIY work may void claims related to water damage. Always check with your insurer before starting DIY waterproofing projects.</p>
+            </div>
+          </div>
+
+          <div class="bg-white  shadow-md border-2 border-slate-100">
+            <button class="w-full text-left p-6 font-semibold text-lg hover:bg-slate-50 flex justify-between items-center" data-faq-toggle>
+              What's the biggest risk of DIY waterproofing failure?
+              <svg class="w-5 h-5 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </button>
+            <div class="hidden px-6 pb-6">
+              <p>The biggest risk is misdiagnosing the water source, leading to ineffective solutions. Professional contractors use moisture meters, thermal imaging, and experience to identify all water entry points and underlying causes.</p>
+            </div>
+          </div>
+
+          <div class="bg-white  shadow-md border-2 border-slate-100">
+            <button class="w-full text-left p-6 font-semibold text-lg hover:bg-slate-50 flex justify-between items-center" data-faq-toggle>
+              When should I definitely not attempt DIY waterproofing?
+              <svg class="w-5 h-5 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </button>
+            <div class="hidden px-6 pb-6">
+              <p>Never attempt DIY for: active flooding, structural foundation cracks wider than 1/4 inch, exterior excavation near utilities, or when permits are required. These situations require professional expertise and equipment.</p>
+            </div>
+          </div>
+
+          <div class="bg-white  shadow-md border-2 border-slate-100">
+            <button class="w-full text-left p-6 font-semibold text-lg hover:bg-slate-50 flex justify-between items-center" data-faq-toggle>
+              Can I start with DIY and upgrade to professional later?
+              <svg class="w-5 h-5 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </button>
+            <div class="hidden px-6 pb-6">
+              <p>Yes, but this often costs more than starting with professionals. Failed DIY attempts may require removal of incorrect materials, potentially doubling your total cost. Consider professional consultation even for DIY projects.</p>
+            </div>
+          </div>
+
+          <div class="bg-white  shadow-md border-2 border-slate-100">
+            <button class="w-full text-left p-6 font-semibold text-lg hover:bg-slate-50 flex justify-between items-center" data-faq-toggle>
+              How do I find qualified waterproofing contractors?
+              <svg class="w-5 h-5 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </button>
+            <div class="hidden px-6 pb-6">
+              <p>Look for contractors with waterproofing specialization, proper licensing and insurance, manufacturer certifications, local references, and comprehensive warranties. Get multiple quotes and verify credentials with your provincial licensing body.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA Section -->
+      <section class="bg-cyan-50 text-slate-900 border-2 border-cyan-400 rounded-lg p-8 text-center">
+        <h2 class="uppercase text-3xl font-bold mb-4">Explore Professional Waterproofing Services</h2>
+        <p class="text-xl mb-6">Ready to learn about professional options? Explore our detailed service pages to understand what professional waterproofing involves.</p>
+        <div class="space-y-4 md:space-y-0 md:space-x-4 md:flex md:justify-center">
+          <a href="/services/interior-waterproofing" class="bg-white text-cyan-600 px-8 py-3 font-semibold hover:bg-slate-50 transition-colors inline-block">
+            Interior Waterproofing Services
+          </a>
+          <a href="/services/exterior-waterproofing" class="bg-amber-500 text-slate-900 px-8 py-3 font-semibold hover:bg-amber-400 transition-colors inline-block">
+            Exterior Waterproofing Services
+          </a>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Calculator functionality
+      const calculateBtn = document.getElementById('calculateRiskBtn');
+      if (calculateBtn) {
+        calculateBtn.addEventListener('click', function() {
+          const experience = parseInt(document.querySelector('input[name="experience"]:checked')?.value || 0);
+          const severity = parseInt(document.querySelector('input[name="severity"]:checked')?.value || 0);
+          const budget = parseInt(document.querySelector('input[name="budget"]:checked')?.value || 0);
+          const time = parseInt(document.querySelector('input[name="time"]:checked')?.value || 0);
+          
+          const totalScore = experience + severity + budget + time;
+          const resultDiv = document.getElementById('riskResults');
+          const recommendationDiv = document.getElementById('recommendationText');
+          const scoreDiv = document.getElementById('riskScore');
+          
+          let recommendation, risk, color;
+          
+          if (totalScore >= 18) {
+            recommendation = " <strong>DIY Recommended</strong><br>You have the right combination of experience, budget constraints, and suitable problem severity for a successful DIY project. Consider starting with interior solutions and upgrading if needed.";
+            risk = "Low Risk";
+            color = "border-cyan-500";
+          } else if (totalScore >= 12) {
+            recommendation = " <strong>Professional Consultation Recommended</strong><br>While DIY is possible, consider getting a professional assessment first. You might benefit from a hybrid approach: professional diagnosis with some DIY execution.";
+            risk = "Medium Risk";
+            color = "border-cyan-500";
+          } else {
+            recommendation = " <strong>Professional Service Recommended</strong><br>Based on your situation, professional waterproofing offers the best value and success probability. The risks and potential costs of DIY failure outweigh the initial savings.";
+            risk = "High Risk";
+            color = "border-red-500";
+          }
+          
+          recommendationDiv.innerHTML = recommendation;
+          scoreDiv.textContent = `Risk Assessment: ${risk} (Score: ${totalScore}/24)`;
+          resultDiv.className = `mt-8 p-6 bg-white  border-2 ${color}`;
+          resultDiv.classList.remove('hidden');
+        });
+      }
+
+      // FAQ toggle functionality
+      const faqButtons = document.querySelectorAll('[data-faq-toggle]');
+      faqButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          const content = button.nextElementSibling;
+          const arrow = button.querySelector('svg');
+          
+          if (content.classList.contains('hidden')) {
+            content.classList.remove('hidden');
+            arrow.style.transform = 'rotate(180deg)';
+          } else {
+            content.classList.add('hidden');
+            arrow.style.transform = 'rotate(0deg)';
+          }
+        });
+      });
+    });
+  </script>
+</PageLayout>

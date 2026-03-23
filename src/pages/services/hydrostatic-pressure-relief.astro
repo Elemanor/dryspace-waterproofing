@@ -1,0 +1,221 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import Hero from '../../components/sections/Hero.astro';
+import Features from '../../components/sections/Features.astro';
+import Process from '../../components/sections/Process.astro';
+import Gallery from '../../components/sections/Gallery.astro';
+import FAQ from '../../components/sections/FAQ.astro';
+import Testimonials from '../../components/sections/Testimonials.astro';
+import CTA from '../../components/sections/CTA.astro';
+import Stats from '../../components/sections/Stats.astro';
+import ServiceSchema from '../../components/ServiceSchema.astro';
+import InternalLinks from '../../components/InternalLinks.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+
+const pageTitle = "Hydrostatic Pressure Relief Toronto | Foundation Pressure";
+const pageDescription = "Relieve hydrostatic pressure on foundation walls. Drainage systems, relief wells, permanent solutions.";
+
+// Service-specific features
+const serviceFeatures = [
+  {
+    icon: '',
+    title: 'Foundation Protection',
+    description: 'Industry-leading solution with proven results and long-term protection.',
+    highlight: true
+  },
+  {
+    icon: '',
+    title: 'Competitive Pricing',
+    description: 'Fair, transparent pricing. $5,400-12,000. Financing available.',
+    highlight: true
+  },
+  {
+    icon: '',
+    title: '25-Year Warranty',
+    description: 'Transferable warranty that adds value to your home.',
+    highlight: true
+  },
+  {
+    icon: '',
+    title: 'Fast Service',
+    description: 'Quick response times with professional installation.'
+  },
+  {
+    icon: '‍',
+    title: 'Licensed & Insured',
+    description: 'Fully licensed, bonded, and insured for your protection.'
+  },
+  {
+    icon: '',
+    title: '24/7 Support',
+    description: 'Emergency service and ongoing support whenever you need it.'
+  }
+];
+
+// Service process steps
+const processSteps = [
+  {
+    number: '01',
+    title: 'Free Inspection',
+    description: 'Comprehensive assessment of your specific needs.',
+    icon: '',
+    duration: 'Same day'
+  },
+  {
+    number: '02',
+    title: 'Custom Solution',
+    description: 'Tailored approach for your unique situation.',
+    icon: '',
+    duration: '24 hours'
+  },
+  {
+    number: '03',
+    title: 'Professional Work',
+    description: 'Expert installation by certified technicians.',
+    icon: '',
+    duration: 'On schedule'
+  },
+  {
+    number: '04',
+    title: 'Quality Assurance',
+    description: 'Testing, inspection, and warranty documentation.',
+    icon: '',
+    duration: 'Before leaving'
+  }
+];
+
+// Service FAQs
+const serviceFAQs = [
+  {
+    question: "How much does hydrostatic pressure relief cost in Toronto?",
+    answer: "Hydrostatic pressure relief in Toronto typically costs $6,500-$16,000 depending on system complexity. Basic drainage solutions cost $6,500-$9,700, while comprehensive relief systems with wells and pumps range from $11,000-$16,000. Price varies by foundation depth and soil conditions."
+  },
+  {
+    question: "How long does hydrostatic pressure relief installation take?",
+    answer: "Most hydrostatic pressure relief projects take 3-7 days to complete. Exterior drainage systems require 3-5 days, while interior relief wells and comprehensive systems may take 5-7 days. Timeline depends on excavation requirements and weather conditions."
+  },
+  {
+    question: "What are the benefits of hydrostatic pressure relief?",
+    answer: "Pressure relief prevents foundation cracking, eliminates basement flooding, stops structural damage, protects home value, and provides peace of mind. Our systems include long-term warranties and prevent costly foundation repairs."
+  },
+  {
+    question: "When do I need hydrostatic pressure relief?",
+    answer: "Install pressure relief when you notice basement flooding, foundation cracks, walls bowing inward, wet basement floors, or high water table issues. Acting early prevents structural damage and is more cost-effective than emergency repairs."
+  }
+];
+
+// Service Offers
+const serviceOffers = [
+  {
+    name: "Drainage System Installation",
+    price: "$6,500-$8,650",
+    description: "Exterior French drain system with gravel bed and drain tile. Reduces hydrostatic pressure around foundation perimeter. Ideal for moderate pressure issues."
+  },
+  {
+    name: "Pressure Relief Wells",
+    price: "$8,650-$13,000",
+    description: "Interior relief well system with sump pump installation. Direct pressure management for high water table areas. Includes backup power options."
+  },
+  {
+    name: "Complete Pressure Management",
+    price: "$13,000-$16,000",
+    description: "Comprehensive interior/exterior solution with drainage, relief wells, waterproofing, and monitoring systems. Maximum protection with 25-year warranty."
+  }
+];
+
+// Service Schema Data
+const schemaFAQs = [
+  {
+    question: "How much does hydrostatic pressure relief cost in Toronto?",
+    answer: "Hydrostatic pressure relief in Toronto typically costs $6,500-$16,000 depending on system complexity. Basic drainage solutions cost $6,500-$9,700, while comprehensive relief systems with wells and pumps range from $11,000-$16,000. Price varies by foundation depth and soil conditions."
+  },
+  {
+    question: "How long does hydrostatic pressure relief installation take?",
+    answer: "Most hydrostatic pressure relief projects take 3-7 days to complete. Exterior drainage systems require 3-5 days, while interior relief wells and comprehensive systems may take 5-7 days. Timeline depends on excavation requirements and weather conditions."
+  },
+  {
+    question: "What are the benefits of hydrostatic pressure relief?",
+    answer: "Pressure relief prevents foundation cracking, eliminates basement flooding, stops structural damage, protects home value, and provides peace of mind. Our systems include long-term warranties and prevent costly foundation repairs."
+  },
+  {
+    question: "When do I need hydrostatic pressure relief?",
+    answer: "Install pressure relief when you notice basement flooding, foundation cracks, walls bowing inward, wet basement floors, or high water table issues. Acting early prevents structural damage and is more cost-effective than emergency repairs."
+  }
+];
+
+---
+
+<PageLayout 
+  title={pageTitle}
+  description={pageDescription}
+>
+  
+  <!-- Breadcrumbs -->
+  <div class="container mx-auto px-4 mt-4">
+    <Breadcrumbs 
+      items={[
+        { name: "Home", url: "/" },
+        { name: "Services", url: "/services" },
+        { name: "Hydrostatic Pressure Relief" }
+      ]}
+    />
+  </div>
+
+<ServiceSchema 
+    serviceName="Hydrostatic Pressure Relief"
+    description="Professional hydrostatic pressure relief systems in Toronto. Eliminate foundation water pressure with drainage solutions, relief wells, and comprehensive waterproofing."
+    priceRange="$6,500-$16,000"
+    offers={serviceOffers}
+    faqs={schemaFAQs}
+  />
+  <!-- Hero Section -->
+  <Hero 
+    title="Hydrostatic Pressure Relief"
+    subtitle="Eliminate water pressure on foundation walls. Professional drainage and relief systems."
+    primaryCTA={{ text: "Get Free Inspection", href: "/free-inspection" }}
+    secondaryCTA={{ text: "Call: 437-545-0067", href: "tel:437-545-0067" }}
+    backgroundImage="/images/waterp on the floor.webp"
+    badge="Pressure Elimination"
+  />
+
+  <!-- Stats -->
+  <Stats />
+
+  <!-- Features -->
+  <Features 
+    title="Why Choose Our Service"
+    subtitle="Professional solutions backed by experience and warranty"
+    features={serviceFeatures}
+    columns={3}
+  />
+
+  <!-- Process -->
+  <Process />
+
+  <!-- Testimonials -->
+  <Testimonials />
+
+  <!-- FAQ -->
+  <FAQ 
+    title="Common Questions"
+    subtitle="Everything you need to know about our service"
+    faqs={serviceFAQs}
+    columns={1}
+  />
+
+  <!-- Internal Links -->
+  <InternalLinks 
+    category="waterproofing"
+    currentPage="hydrostatic-pressure-relief"
+    limit={5}
+  />
+
+  <!-- CTA -->
+  <CTA 
+    title="Ready to Get Started?"
+    subtitle="Schedule your free inspection today and protect your home."
+    primaryCTA={{ text: "Schedule Free Inspection", href: "/free-inspection" }}
+    secondaryCTA={{ text: "Call: 437-545-0067", href: "tel:437-545-0067" }}
+    background="gradient"
+  />
+</PageLayout>

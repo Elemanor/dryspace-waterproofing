@@ -1,0 +1,334 @@
+---
+export interface Props {
+  resource: string;
+}
+
+const { resource } = Astro.props;
+
+// Map of resource types to their relevant images
+const resourceImages = {
+  'foundation-types': [
+    {
+      src: '/images/concrete-block-foundation.webp',
+      alt: 'Concrete block foundation construction',
+      caption: 'Modern concrete block foundation with proper drainage'
+    },
+    {
+      src: '/images/poured-concrete-foundation.webp',
+      alt: 'Poured concrete foundation walls',
+      caption: 'Monolithic poured concrete foundation'
+    },
+    {
+      src: '/images/stone-foundation.webp',
+      alt: 'Historic stone foundation',
+      caption: 'Heritage stone foundation requiring special treatment'
+    },
+    {
+      src: '/images/brick-foundation.webp',
+      alt: 'Brick foundation wall',
+      caption: 'Traditional brick foundation construction'
+    }
+  ],
+  
+  'foundation-cracks': [
+    {
+      src: '/images/crack on foundation wall due winter freeze .webp',
+      alt: 'Foundation crack from winter freeze',
+      caption: 'Freeze-thaw cycle damage'
+    },
+    {
+      src: '/images/structural foundation crack.webp',
+      alt: 'Structural foundation crack',
+      caption: 'Major structural crack requiring immediate repair'
+    },
+    {
+      src: '/images/vertical-crack.webp',
+      alt: 'Vertical foundation crack',
+      caption: 'Common vertical settlement crack'
+    },
+    {
+      src: '/images/horizontal-crack.webp',
+      alt: 'Horizontal foundation crack',
+      caption: 'Serious horizontal crack from hydrostatic pressure'
+    }
+  ],
+  
+  'drainage-systems': [
+    {
+      src: '/images/french-drain-installation.webp',
+      alt: 'French drain installation',
+      caption: 'Proper French drain installation technique'
+    },
+    {
+      src: '/images/weeping-tile-system.webp',
+      alt: 'Weeping tile drainage system',
+      caption: 'Complete weeping tile perimeter drainage'
+    },
+    {
+      src: '/images/sump-pump.webp',
+      alt: 'Sump pump installation',
+      caption: 'Professional sump pump system'
+    },
+    {
+      src: '/images/drainage-membrane.webp',
+      alt: 'Drainage membrane installation',
+      caption: 'Dimpled drainage membrane for water management'
+    }
+  ],
+  
+  'waterproofing-methods': [
+    {
+      src: '/images/exterior-waterproofing-toronto in process (1).webp',
+      alt: 'Exterior waterproofing process',
+      caption: 'Full exterior excavation and waterproofing'
+    },
+    {
+      src: '/images/interior-waterproofing.webp',
+      alt: 'Interior waterproofing system',
+      caption: 'Interior drainage and waterproofing solution'
+    },
+    {
+      src: '/images/new foundation exterior waterproofing dimpled membrane.webp',
+      alt: 'Waterproofing membrane installation',
+      caption: 'Modern dimpled membrane waterproofing'
+    },
+    {
+      src: '/images/waterproofing-coating.webp',
+      alt: 'Waterproofing coating application',
+      caption: 'Liquid rubber waterproofing coating'
+    }
+  ],
+  
+  'moisture-problems': [
+    {
+      src: '/images/wet walls.webp',
+      alt: 'Wet basement walls',
+      caption: 'Water infiltration through foundation walls'
+    },
+    {
+      src: '/images/cove leak.webp',
+      alt: 'Cove joint leak',
+      caption: 'Common cove joint water seepage'
+    },
+    {
+      src: '/images/efflorescence.webp',
+      alt: 'Efflorescence on foundation wall',
+      caption: 'White mineral deposits from moisture'
+    },
+    {
+      src: '/images/mold-growth.webp',
+      alt: 'Mold growth in basement',
+      caption: 'Dangerous mold from chronic moisture'
+    }
+  ],
+  
+  'excavation': [
+    {
+      src: '/images/excavation-process.webp',
+      alt: 'Foundation excavation process',
+      caption: 'Professional excavation for waterproofing'
+    },
+    {
+      src: '/images/excavation-safety.webp',
+      alt: 'Excavation safety measures',
+      caption: 'Proper shoring and safety equipment'
+    },
+    {
+      src: '/images/backfill-process.webp',
+      alt: 'Backfilling after waterproofing',
+      caption: 'Proper backfilling with drainage gravel'
+    },
+    {
+      src: '/images/site-restoration.webp',
+      alt: 'Site restoration after excavation',
+      caption: 'Complete landscaping restoration'
+    }
+  ],
+  
+  'technical-specs': [
+    {
+      src: '/images/membrane-specs.webp',
+      alt: 'Waterproofing membrane specifications',
+      caption: 'Technical specifications for membrane systems'
+    },
+    {
+      src: '/images/drainage-specs.webp',
+      alt: 'Drainage system specifications',
+      caption: 'Proper drainage system design'
+    },
+    {
+      src: '/images/foundation-detail.webp',
+      alt: 'Foundation construction detail',
+      caption: 'Construction detail for waterproofing'
+    },
+    {
+      src: '/images/warranty-work.webp',
+      alt: 'Warranty-approved installation',
+      caption: '25-year warranty installation standards'
+    }
+  ],
+  
+  'flood-recovery': [
+    {
+      src: '/images/flood-damage.webp',
+      alt: 'Basement flood damage',
+      caption: 'Typical flood damage requiring remediation'
+    },
+    {
+      src: '/images/water-extraction.webp',
+      alt: 'Water extraction equipment',
+      caption: 'Professional water extraction process'
+    },
+    {
+      src: '/images/drying-equipment.webp',
+      alt: 'Industrial drying equipment',
+      caption: 'Commercial dehumidifiers and air movers'
+    },
+    {
+      src: '/images/restoration-complete.webp',
+      alt: 'Restored basement after flooding',
+      caption: 'Fully restored and waterproofed basement'
+    }
+  ],
+  
+  'building-envelope': [
+    {
+      src: '/images/envelope-diagram.webp',
+      alt: 'Building envelope diagram',
+      caption: 'Complete building envelope system'
+    },
+    {
+      src: '/images/vapor-barrier.webp',
+      alt: 'Vapor barrier installation',
+      caption: 'Proper vapor barrier placement'
+    },
+    {
+      src: '/images/insulation-waterproofing.webp',
+      alt: 'Insulation and waterproofing',
+      caption: 'Integrated insulation and moisture control'
+    },
+    {
+      src: '/images/air-sealing.webp',
+      alt: 'Air sealing details',
+      caption: 'Critical air sealing points'
+    }
+  ],
+  
+  'inspection': [
+    {
+      src: '/images/inspection-tools.webp',
+      alt: 'Foundation inspection tools',
+      caption: 'Professional inspection equipment'
+    },
+    {
+      src: '/images/moisture-meter.webp',
+      alt: 'Moisture meter reading',
+      caption: 'Digital moisture detection'
+    },
+    {
+      src: '/images/thermal-imaging.webp',
+      alt: 'Thermal imaging inspection',
+      caption: 'Infrared detection of moisture'
+    },
+    {
+      src: '/images/inspection-report.webp',
+      alt: 'Detailed inspection report',
+      caption: 'Comprehensive inspection documentation'
+    }
+  ]
+};
+
+// Get images for this resource type
+const images = resourceImages[resource] || [];
+
+// If no specific match, try to find related images based on page content
+const fallbackImages = [
+  {
+    src: '/images/dryspace_excellence.webp',
+    alt: 'Professional waterproofing excellence',
+    caption: 'Quality workmanship and attention to detail'
+  },
+  {
+    src: '/images/dryspace_exterior_waterproofing_warranty.webp',
+    alt: '25-year warranty waterproofing',
+    caption: 'Backed by comprehensive warranty'
+  },
+  {
+    src: '/images/basement_wall_insulation.webp',
+    alt: 'Basement wall insulation',
+    caption: 'Combined waterproofing and insulation'
+  },
+  {
+    src: '/images/backwatervalve.webp',
+    alt: 'Backwater valve installation',
+    caption: 'Flood prevention system'
+  }
+];
+
+const displayImages = images.length > 0 ? images : fallbackImages;
+---
+
+<section class="py-12 bg-slate-50">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-10">
+      <h2 class="text-3xl font-bold text-slate-900 mb-4 uppercase">
+        Technical Diagrams & Reference Images
+      </h2>
+      <p class="text-lg text-slate-600 max-w-3xl mx-auto">
+        Visual guides to help understand waterproofing concepts and techniques
+      </p>
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      {displayImages.map((image) => (
+        <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+          <div class="aspect-w-4 aspect-h-3 bg-slate-100">
+            <img 
+              src={image.src} 
+              alt={image.alt}
+              loading="lazy"
+              class="w-full h-full object-cover" width="600" height="400" decoding="async"
+              onerror="this.onerror=null; this.src='/images/placeholder.webp';"
+            />
+          </div>
+          <div class="p-4">
+            <p class="text-sm text-slate-600 font-medium">{image.caption}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+    
+    <!-- Additional Resources CTA -->
+    <div class="mt-12 text-center">
+      <div class="bg-amber-500 inline-block px-8 py-4">
+        <p class="text-black font-bold mb-2">Need Professional Assessment?</p>
+        <p class="text-sm text-slate-900 mb-4">
+          Our experts can evaluate your specific situation
+        </p>
+        <a 
+          href="/free-inspection" 
+          class="bg-black text-white px-6 py-2 font-bold hover:bg-navy-900 transition-colors uppercase inline-block"
+        >
+          Schedule Free Inspection
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .aspect-w-4 {
+    position: relative;
+    padding-bottom: 75%; /* 4:3 Aspect Ratio */
+  }
+  
+  .aspect-w-4 > img {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+</style>

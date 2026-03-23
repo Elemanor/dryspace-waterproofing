@@ -1,0 +1,234 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import Hero from '../../components/sections/Hero.astro';
+import Features from '../../components/sections/Features.astro';
+import Process from '../../components/sections/Process.astro';
+import Gallery from '../../components/sections/Gallery.astro';
+import FAQ from '../../components/sections/FAQ.astro';
+import Testimonials from '../../components/sections/Testimonials.astro';
+import CTA from '../../components/sections/CTA.astro';
+import Stats from '../../components/sections/Stats.astro';
+import ServiceSchema from '../../components/ServiceSchema.astro';
+import InternalLinks from '../../components/InternalLinks.astro';
+import ContactForm from '../../components/ContactForm.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+
+const pageTitle = "Window & Door Waterproofing Toronto | Seal Leaks";
+const pageDescription = "Professional window and door waterproofing in Toronto & GTA. Stop leaks, improve insulation, prevent water damage around all types of openings. Expert sealing and weatherproofing services."
+
+// Service areas for local SEO
+const serviceAreas = [
+  "Toronto", "North York", "Scarborough", "Etobicoke", 
+  "Mississauga", "Brampton", "Vaughan", "Richmond Hill",
+  "Markham", "Oakville", "Burlington", "Hamilton"
+];
+
+// Service FAQs for schema
+const windowDoorFAQs = [
+  {
+    question: "How much does window and door waterproofing cost in Toronto?",
+    answer: "Window and door waterproofing costs $200-800 per opening depending on size, condition, and sealing requirements. Basic caulking and weatherstripping costs $200-400, full frame sealing $450-600, and complex repairs with flashing $650-800. Includes materials, labor, and warranty."
+  },
+  {
+    question: "How long does window and door waterproofing take?",
+    answer: "Window and door waterproofing takes 1-2 days for most homes: assessment and preparation half day, sealing and weatherproofing 1 day, curing and final inspection half day. Large homes or extensive repairs may require additional time. Weather conditions affect curing times."
+  },
+  {
+    question: "What are the benefits of professional window and door waterproofing?",
+    answer: "Professional waterproofing stops water leaks, reduces energy costs by 10-15%, prevents mold growth, eliminates drafts, improves indoor comfort, protects frames from rot, extends window/door lifespan, and increases home value. Quality materials and proper installation ensure long-term effectiveness."
+  },
+  {
+    question: "When should windows and doors be resealed?",
+    answer: "Windows and doors should be resealed every 5-10 years or when signs appear: visible gaps, drafts, water stains, peeling caulk, condensation issues, or energy bill increases. Toronto's freeze-thaw cycles accelerate seal deterioration. Professional inspection identifies problem areas before damage occurs."
+  }
+];
+
+// Service offers for schema
+const serviceOffers = [
+  {
+    name: "Basic Window & Door Sealing",
+    price: "$200-400 per opening",
+    description: "Caulking, weatherstripping, basic leak sealing, draft elimination"
+  },
+  {
+    name: "Complete Waterproofing Package",
+    price: "$450-600 per opening",
+    description: "Frame sealing, weatherproofing, insulation, energy efficiency improvements"
+  },
+  {
+    name: "Full Restoration with Flashing",
+    price: "$650-800 per opening",
+    description: "Complete frame repair, flashing installation, structural waterproofing, warranty coverage"
+  }
+];
+
+// Service-specific features
+const serviceFeatures = [
+  {
+    icon: '',
+    title: 'Complete Sealing',
+    description: 'Industry-leading solution with proven results and long-term protection.',
+    highlight: true
+  },
+  {
+    icon: '',
+    title: 'Competitive Pricing',
+    description: 'Fair, transparent pricing. $200-800/opening. Financing available.',
+    highlight: true
+  },
+  {
+    icon: '',
+    title: '25-Year Warranty',
+    description: 'Transferable warranty that adds value to your home.',
+    highlight: true
+  },
+  {
+    icon: '',
+    title: 'Fast Service',
+    description: 'Quick response times with professional installation.'
+  },
+  {
+    icon: '‍',
+    title: 'Licensed & Insured',
+    description: 'Fully licensed, bonded, and insured for your protection.'
+  },
+  {
+    icon: '',
+    title: '24/7 Support',
+    description: 'Emergency service and ongoing support whenever you need it.'
+  }
+];
+
+// Service process steps
+const processSteps = [
+  {
+    number: '01',
+    title: 'Free Inspection',
+    description: 'Comprehensive assessment of your specific needs.',
+    icon: '',
+    duration: 'Same day'
+  },
+  {
+    number: '02',
+    title: 'Custom Solution',
+    description: 'Tailored approach for your unique situation.',
+    icon: '',
+    duration: '24 hours'
+  },
+  {
+    number: '03',
+    title: 'Professional Work',
+    description: 'Expert installation by certified technicians.',
+    icon: '',
+    duration: 'On schedule'
+  },
+  {
+    number: '04',
+    title: 'Quality Assurance',
+    description: 'Testing, inspection, and warranty documentation.',
+    icon: '',
+    duration: 'Before leaving'
+  }
+];
+
+// Service FAQs
+const serviceFAQs = [
+  {
+    question: "How much does this service cost?",
+    answer: "Our window door waterproofing service typically costs $200-800/opening. Final pricing depends on your specific needs, which we'll assess during our free inspection."
+  },
+  {
+    question: "How long does the work take?",
+    answer: "Most projects are completed within 1-5 days depending on scope. We'll provide a detailed timeline during your consultation."
+  },
+  {
+    question: "Do you offer warranties?",
+    answer: "Yes! We provide comprehensive warranties on all work, including our 25-year transferable warranty on major waterproofing projects."
+  },
+  {
+    question: "Are you licensed and insured?",
+    answer: "Absolutely. We're fully licensed by the City of Toronto, carry $5 million liability insurance, and are WSIB compliant."
+  }
+];
+
+---
+
+<PageLayout 
+  title={pageTitle}
+  description={pageDescription}
+>
+  
+  <!-- Breadcrumbs -->
+  <div class="container mx-auto px-4 mt-4">
+    <Breadcrumbs 
+      items={[
+        { name: "Home", url: "/" },
+        { name: "Services", url: "/services" },
+        { name: "Window Door Waterproofing" }
+      ]}
+    />
+  </div>
+
+<!-- Add Service Schema -->
+  <ServiceSchema
+    serviceName="Window & Door Waterproofing"
+    description="Professional window and door waterproofing and sealing services to stop leaks, improve insulation, and prevent water damage in Toronto and GTA"
+    priceRange="$200-$850 per opening"
+    offers={serviceOffers}
+    faqs={windowDoorFAQs}
+    areaServed={serviceAreas}
+  />
+  <!-- Hero Section -->
+  <Hero 
+    title="Window & Door Waterproofing"
+    subtitle="Seal leaks around windows and doors. Prevent water infiltration and improve efficiency."
+    primaryCTA={{ text: "Get Free Inspection", href: "/free-inspection" }}
+    secondaryCTA={{ text: "Call: 437-545-0067", href: "tel:437-545-0067" }}
+    backgroundImage="/images/wet walls.webp"
+    badge="Energy Savings"
+  />
+
+  <!-- Stats -->
+  <Stats />
+
+  <!-- Features -->
+  <Features 
+    title="Why Choose Our Service"
+    subtitle="Professional solutions backed by experience and warranty"
+    features={serviceFeatures}
+    columns={3}
+  />
+
+  <!-- Process -->
+  <Process />
+
+  <!-- Testimonials -->
+  <Testimonials />
+
+  <!-- FAQ -->
+  <FAQ 
+    title="Common Questions"
+    subtitle="Everything you need to know about our service"
+    faqs={serviceFAQs}
+    columns={1}
+  />
+
+  <!-- Related Services and Resources -->
+  <section class="py-8">
+    <div class="container mx-auto px-4">
+      <InternalLinks category="waterproofing" currentPage="window-door-waterproofing" limit={6} />
+    </div>
+  </section>
+
+  <!-- Contact Form -->
+  <ContactForm />
+
+  <!-- CTA -->
+  <CTA 
+    title="Ready to Get Started?"
+    subtitle="Schedule your free inspection today and protect your home."
+    primaryCTA={{ text: "Schedule Free Inspection", href: "/free-inspection" }}
+    secondaryCTA={{ text: "Call: 437-545-0067", href: "tel:437-545-0067" }}
+    background="gradient"
+  />
+</PageLayout>

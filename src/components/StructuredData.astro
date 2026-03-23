@@ -1,0 +1,142 @@
+---
+export interface Props {
+  type: 'Service' | 'LocalBusiness' | 'FAQPage' | 'BreadcrumbList';
+  data: any;
+}
+
+const { type, data } = Astro.props;
+
+function generateServiceSchema(service: any) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": service.name,
+    "description": service.description,
+    "provider": {
+      "@type": "LocalBusiness",
+      "name": "Dryspace Waterproofing",
+      "telephone": "437-545-0067",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Toronto",
+        "addressRegion": "ON",
+        "addressCountry": "CA"
+      }
+    },
+    "areaServed": {
+      "@type": "City",
+      "name": "Toronto"
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": service.name + " Services",
+      "itemListElement": service.offers?.map((offer: any) => ({
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": offer.name,
+          "description": offer.description
+        }
+      }))
+    },
+    "aggregateRating": service.rating ? {
+      "@type": "AggregateRating",
+      "ratingValue": service.rating.value,
+      "reviewCount": service.rating.count
+    } : undefined
+  };
+}
+
+function generateBreadcrumbSchema(items: any[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": items.map((item, index) => ({
+      "@type": "ListItem",
+      "position": index + 1,
+      "name": item.name,
+      "item": item.url
+    }))
+  };
+}
+
+function generateLocalBusinessSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Dryspace Waterproofing",
+    "image": "https://dryspacewaterproofing.ca/images/logo.webp",
+    "telephone": "437-545-0067",
+    "email": "info@dryspacewaterproofing.ca",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Toronto",
+      "addressRegion": "ON",
+      "postalCode": "M5V 3A8",
+      "addressCountry": "CA"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 43.6532,
+      "longitude": -79.3832
+    },
+    "url": "https://dryspacewaterproofing.ca",
+    "sameAs": [
+      "https://facebook.com/dryspaceca",
+      "https://instagram.com/dryspaceca",
+      "https://youtube.com/@dryspaceca",
+      "https://linkedin.com/company/dryspace"
+    ],
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "07:00",
+        "closes": "19:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Saturday", "Sunday"],
+        "opens": "08:00",
+        "closes": "17:00"
+      }
+    ],
+    "priceRange": "$$-$$$"
+  };
+}
+
+function generateFAQSchema(faqs: any[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map(faq => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer
+      }
+    }))
+  };
+}
+
+let schema;
+switch(type) {
+  case 'Service':
+    schema = generateServiceSchema(data);
+    break;
+  case 'BreadcrumbList':
+    schema = generateBreadcrumbSchema(data);
+    break;
+  case 'LocalBusiness':
+    schema = generateLocalBusinessSchema();
+    break;
+  case 'FAQPage':
+    schema = generateFAQSchema(data);
+    break;
+}
+---
+
+{schema && (
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+)}

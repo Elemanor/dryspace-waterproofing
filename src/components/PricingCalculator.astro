@@ -1,0 +1,984 @@
+---
+// Professional Pricing Calculator Component
+const services = [
+  { 
+    id: 'interior', 
+    name: 'Interior Waterproofing', 
+    basePrice: 3500,
+    icon: 'fa-solid fa-house-flood-water',
+    description: 'French drains & vapor barriers'
+  },
+  { 
+    id: 'exterior', 
+    name: 'Exterior Waterproofing', 
+    basePrice: 8000,
+    icon: 'fa-solid fa-shield-halved',
+    description: 'Full excavation & membrane'
+  },
+  { 
+    id: 'crack', 
+    name: 'Foundation Crack Repair', 
+    basePrice: 500,
+    icon: 'fa-solid fa-trowel-bricks',
+    description: 'Epoxy injection per crack'
+  },
+  { 
+    id: 'sump', 
+    name: 'Sump Pump System', 
+    basePrice: 1200,
+    icon: 'fa-solid fa-water-ladder',
+    description: 'With battery backup'
+  },
+  { 
+    id: 'drainage', 
+    name: 'Drainage Solutions', 
+    basePrice: 2500,
+    icon: 'fa-solid fa-pipe',
+    description: 'Complete drainage system'
+  },
+  { 
+    id: 'membrane', 
+    name: 'Waterproof Membrane', 
+    basePrice: 1800,
+    icon: 'fa-solid fa-layer-group',
+    description: 'Wall membrane protection'
+  }
+];
+
+const basementSizes = [
+  { value: 'small', label: 'Small', sqft: '< 500 sq ft', multiplier: 1, icon: 'fa-solid fa-home' },
+  { value: 'medium', label: 'Medium', sqft: '500-1000 sq ft', multiplier: 1.5, icon: 'fa-solid fa-house-user' },
+  { value: 'large', label: 'Large', sqft: '> 1000 sq ft', multiplier: 2, icon: 'fa-solid fa-building' }
+];
+
+const additionalOptions = [
+  { id: 'emergency', name: 'Emergency Service', price: 500, icon: 'fa-solid fa-bolt', popular: true },
+  { id: 'mold', name: 'Mold Remediation', price: 1500, icon: 'fa-solid fa-virus' },
+  { id: 'warranty', name: 'Extended Warranty', price: 750, icon: 'fa-solid fa-shield' },
+  { id: 'inspection', name: 'Annual Inspections', price: 299, icon: 'fa-solid fa-clipboard-check' }
+];
+---
+
+<section id="pricing" class="pricing-section">
+  <div class="pricing-container">
+    <!-- Section Header -->
+    <div class="section-header">
+      <div class="header-badge">
+        <i class="fa-solid fa-calculator"></i>
+        Pricing Calculator
+      </div>
+      <h2 class="section-title">
+        Estimate Your
+        <span class="title-accent">Investment</span>
+      </h2>
+      <p class="section-subtitle">
+        Get an instant estimate for your basement waterproofing project
+      </p>
+    </div>
+    
+    <div class="calculator-wrapper">
+      <!-- Calculator Form -->
+      <div class="calculator-form">
+        <!-- Step 1: Services -->
+        <div class="form-step">
+          <div class="step-header">
+            <span class="step-number">1</span>
+            <h3>Select Your Services</h3>
+          </div>
+          <div class="services-grid">
+            {services.map(service => (
+              <label class="service-option">
+                <input type="checkbox" value={service.basePrice} data-service={service.id} />
+                <div class="service-card">
+                  <div class="service-icon">
+                    <i class={service.icon}></i>
+                  </div>
+                  <div class="service-info">
+                    <span class="service-name">{service.name}</span>
+                    <span class="service-desc">{service.description}</span>
+                    <span class="service-price">
+                      <span class="price-from">from</span>
+                      ${service.basePrice.toLocaleString()}
+                    </span>
+                  </div>
+                  <div class="service-check">
+                    <i class="fa-solid fa-circle-check"></i>
+                  </div>
+                </div>
+              </label>
+            ))}
+          </div>
+        </div>
+        
+        <!-- Step 2: Basement Size -->
+        <div class="form-step">
+          <div class="step-header">
+            <span class="step-number">2</span>
+            <h3>Basement Size</h3>
+          </div>
+          <div class="size-options">
+            {basementSizes.map((size, index) => (
+              <label class="size-option">
+                <input 
+                  type="radio" 
+                  name="size" 
+                  value={size.multiplier} 
+                  checked={index === 0}
+                />
+                <div class="size-card">
+                  <i class={size.icon}></i>
+                  <span class="size-label">{size.label}</span>
+                  <span class="size-sqft">{size.sqft}</span>
+                  {size.multiplier > 1 && (
+                    <span class="size-multiplier">+{((size.multiplier - 1) * 100).toFixed(0)}%</span>
+                  )}
+                </div>
+              </label>
+            ))}
+          </div>
+        </div>
+        
+        <!-- Step 3: Additional Options -->
+        <div class="form-step">
+          <div class="step-header">
+            <span class="step-number">3</span>
+            <h3>Additional Services</h3>
+          </div>
+          <div class="options-grid">
+            {additionalOptions.map(option => (
+              <label class="option-item">
+                <input type="checkbox" value={option.price} />
+                <div class="option-card">
+                  {option.popular && <span class="popular-badge">Popular</span>}
+                  <i class={option.icon}></i>
+                  <span class="option-name">{option.name}</span>
+                  <span class="option-price">+${option.price}</span>
+                </div>
+              </label>
+            ))}
+          </div>
+        </div>
+      </div>
+      
+      <!-- Calculator Results -->
+      <div class="calculator-results">
+        <div class="results-card">
+          <div class="results-header">
+            <h3>Your Estimate</h3>
+            <span class="estimate-badge">
+              <i class="fa-solid fa-info-circle"></i>
+              Instant Quote
+            </span>
+          </div>
+          
+          <!-- Price Breakdown -->
+          <div class="price-breakdown">
+            <div class="breakdown-item">
+              <span class="breakdown-label">
+                <i class="fa-solid fa-wrench"></i>
+                Services
+              </span>
+              <span class="breakdown-value" id="servicesTotal">$0</span>
+            </div>
+            <div class="breakdown-item">
+              <span class="breakdown-label">
+                <i class="fa-solid fa-expand"></i>
+                Size Adjustment
+              </span>
+              <span class="breakdown-value" id="sizeAdjustment">$0</span>
+            </div>
+            <div class="breakdown-item">
+              <span class="breakdown-label">
+                <i class="fa-solid fa-plus"></i>
+                Additional Options
+              </span>
+              <span class="breakdown-value" id="optionsTotal">$0</span>
+            </div>
+          </div>
+          
+          <!-- Total Price -->
+          <div class="total-section">
+            <div class="total-price">
+              <span class="total-label">Estimated Total</span>
+              <div class="price-display">
+                <span class="currency">$</span>
+                <span id="totalPrice">0</span>
+                <span class="price-suffix">CAD</span>
+              </div>
+            </div>
+            
+            <!-- Financing Options -->
+            <div class="financing-options">
+              <div class="financing-card">
+                <i class="fa-solid fa-credit-card"></i>
+                <div>
+                  <span class="financing-title">Flexible Financing</span>
+                  <span class="financing-rate">As low as <strong>$99/month</strong></span>
+                </div>
+              </div>
+              <div class="financing-card">
+                <i class="fa-solid fa-percent"></i>
+                <div>
+                  <span class="financing-title">0% Interest</span>
+                  <span class="financing-rate">For 12 months OAC</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- CTA Buttons -->
+          <div class="results-actions">
+            <button class="btn-primary">
+              <i class="fa-solid fa-file-invoice"></i>
+              Get Detailed Quote
+            </button>
+            <button class="btn-secondary">
+              <i class="fa-solid fa-phone"></i>
+              Call for Consultation
+            </button>
+          </div>
+          
+          <!-- Trust Elements -->
+          <div class="trust-elements">
+            <div class="trust-item">
+              <i class="fa-solid fa-check-circle"></i>
+              <span>Price Match Guarantee</span>
+            </div>
+            <div class="trust-item">
+              <i class="fa-solid fa-check-circle"></i>
+              <span>No Hidden Fees</span>
+            </div>
+            <div class="trust-item">
+              <i class="fa-solid fa-check-circle"></i>
+              <span>Free Inspection</span>
+            </div>
+          </div>
+          
+          <p class="disclaimer">
+            *This is an estimate only. Final pricing will be provided after professional inspection.
+          </p>
+        </div>
+        
+        <!-- Savings Banner -->
+        <div class="savings-banner">
+          <i class="fa-solid fa-tag"></i>
+          <div>
+            <strong>Bundle & Save!</strong>
+            <span>Save up to 15% when combining services</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .pricing-section {
+    padding: 6rem 0;
+    background: var(--bg-dark-800);
+    position: relative;
+  }
+
+  .pricing-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, 
+      transparent 0%, 
+      rgba(212, 175, 55, 0.3) 50%, 
+      transparent 100%
+    );
+  }
+
+  .pricing-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  /* Section Header */
+  .section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .header-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1.5rem;
+    background: rgba(212, 175, 55, 0.1);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    color: var(--color-primary);
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 1.5rem;
+  }
+
+  .section-title {
+    font-size: clamp(2.5rem, 4vw, 3.5rem);
+    font-weight: 700;
+    color: var(--text-white);
+    margin-bottom: 1rem;
+    line-height: 1.2;
+  }
+
+  .title-accent {
+    color: var(--color-primary);
+    display: block;
+  }
+
+  .section-subtitle {
+    font-size: 1.125rem;
+    color: var(--text-muted);
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  /* Calculator Wrapper */
+  .calculator-wrapper {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 3rem;
+  }
+
+  /* Calculator Form */
+  .calculator-form {
+    background: var(--bg-dark-700);
+    border: 1px solid rgba(212, 175, 55, 0.1);
+    padding: 2rem;
+  }
+
+  .form-step {
+    margin-bottom: 3rem;
+  }
+
+  .form-step:last-child {
+    margin-bottom: 0;
+  }
+
+  .step-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .step-number {
+    width: 32px;
+    height: 32px;
+    background: var(--color-primary);
+    color: var(--bg-dark-900);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-weight: 700;
+    font-size: 1rem;
+  }
+
+  .step-header h3 {
+    color: var(--text-white);
+    font-size: 1.25rem;
+    margin: 0;
+  }
+
+  /* Services Grid */
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1rem;
+  }
+
+  .service-option {
+    position: relative;
+    cursor: pointer;
+  }
+
+  .service-option input {
+    position: absolute;
+    opacity: 0;
+  }
+
+  .service-card {
+    background: rgba(13, 17, 23, 0.5);
+    border: 2px solid rgba(212, 175, 55, 0.1);
+    padding: 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    transition: all 0.3s ease;
+    position: relative;
+  }
+
+  .service-option input:checked + .service-card {
+    background: rgba(212, 175, 55, 0.1);
+    border-color: var(--color-primary);
+  }
+
+  .service-icon {
+    width: 48px;
+    height: 48px;
+    background: rgba(212, 175, 55, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .service-icon i {
+    font-size: 1.5rem;
+    color: var(--color-primary);
+  }
+
+  .service-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .service-name {
+    color: var(--text-white);
+    font-weight: 600;
+  }
+
+  .service-desc {
+    color: var(--text-muted);
+    font-size: 0.75rem;
+  }
+
+  .service-price {
+    color: var(--color-primary);
+    font-weight: 700;
+    font-size: 0.875rem;
+  }
+
+  .price-from {
+    color: var(--text-muted);
+    font-weight: 400;
+    font-size: 0.75rem;
+    margin-right: 0.25rem;
+  }
+
+  .service-check {
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  .service-option input:checked + .service-card .service-check {
+    opacity: 1;
+  }
+
+  .service-check i {
+    color: var(--color-accent);
+    font-size: 1.25rem;
+  }
+
+  /* Size Options */
+  .size-options {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+
+  .size-option {
+    position: relative;
+    cursor: pointer;
+  }
+
+  .size-option input {
+    position: absolute;
+    opacity: 0;
+  }
+
+  .size-card {
+    background: rgba(13, 17, 23, 0.5);
+    border: 2px solid rgba(212, 175, 55, 0.1);
+    padding: 1.5rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .size-option input:checked + .size-card {
+    background: rgba(212, 175, 55, 0.1);
+    border-color: var(--color-primary);
+  }
+
+  .size-card i {
+    font-size: 2rem;
+    color: var(--color-primary);
+  }
+
+  .size-label {
+    color: var(--text-white);
+    font-weight: 600;
+  }
+
+  .size-sqft {
+    color: var(--text-muted);
+    font-size: 0.875rem;
+  }
+
+  .size-multiplier {
+    padding: 0.25rem 0.5rem;
+    background: rgba(212, 175, 55, 0.2);
+    color: var(--color-primary);
+    font-size: 0.75rem;
+    font-weight: 600;
+    border-radius: 0.25rem;
+  }
+
+  /* Options Grid */
+  .options-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .option-item {
+    position: relative;
+    cursor: pointer;
+  }
+
+  .option-item input {
+    position: absolute;
+    opacity: 0;
+  }
+
+  .option-card {
+    background: rgba(13, 17, 23, 0.5);
+    border: 2px solid rgba(212, 175, 55, 0.1);
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    transition: all 0.3s ease;
+    position: relative;
+  }
+
+  .option-item input:checked + .option-card {
+    background: rgba(212, 175, 55, 0.1);
+    border-color: var(--color-primary);
+  }
+
+  .popular-badge {
+    position: absolute;
+    top: -0.5rem;
+    right: 0.5rem;
+    padding: 0.25rem 0.5rem;
+    background: var(--color-warning);
+    color: var(--text-white);
+    font-size: 0.625rem;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  .option-card i {
+    font-size: 1.25rem;
+    color: var(--color-primary);
+  }
+
+  .option-name {
+    flex: 1;
+    color: var(--text-white);
+    font-weight: 500;
+  }
+
+  .option-price {
+    color: var(--color-accent);
+    font-weight: 600;
+  }
+
+  /* Calculator Results */
+  .calculator-results {
+    position: sticky;
+    top: 2rem;
+    height: fit-content;
+  }
+
+  .results-card {
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.05) 0%, rgba(27, 54, 93, 0.05) 100%);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    padding: 2rem;
+  }
+
+  .results-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+  }
+
+  .results-header h3 {
+    color: var(--text-white);
+    font-size: 1.5rem;
+    margin: 0;
+  }
+
+  .estimate-badge {
+    display: flex;
+    align-items: center;
+    gap: 0.375rem;
+    padding: 0.375rem 0.75rem;
+    background: rgba(74, 124, 89, 0.1);
+    border: 1px solid rgba(74, 124, 89, 0.3);
+    color: var(--color-accent);
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+
+  /* Price Breakdown */
+  .price-breakdown {
+    padding: 1.5rem 0;
+    border-top: 1px solid rgba(212, 175, 55, 0.1);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+    margin-bottom: 1.5rem;
+  }
+
+  .breakdown-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+
+  .breakdown-item:last-child {
+    margin-bottom: 0;
+  }
+
+  .breakdown-label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-muted);
+    font-size: 0.875rem;
+  }
+
+  .breakdown-label i {
+    color: var(--color-primary);
+    font-size: 0.875rem;
+  }
+
+  .breakdown-value {
+    color: var(--text-white);
+    font-weight: 600;
+  }
+
+  /* Total Section */
+  .total-section {
+    margin-bottom: 1.5rem;
+  }
+
+  .total-price {
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+
+  .total-label {
+    display: block;
+    color: var(--text-muted);
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.5rem;
+  }
+
+  .price-display {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 0.25rem;
+  }
+
+  .currency {
+    font-size: 1.5rem;
+    color: var(--color-primary);
+  }
+
+  #totalPrice {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--text-white);
+    transition: all 0.3s;
+  }
+
+  .price-suffix {
+    font-size: 1rem;
+    color: var(--text-muted);
+    margin-left: 0.5rem;
+  }
+
+  /* Financing Options */
+  .financing-options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .financing-card {
+    background: rgba(13, 17, 23, 0.5);
+    border: 1px solid rgba(212, 175, 55, 0.1);
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .financing-card i {
+    color: var(--color-primary);
+    font-size: 1.25rem;
+  }
+
+  .financing-card div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.125rem;
+  }
+
+  .financing-title {
+    color: var(--text-white);
+    font-size: 0.75rem;
+    font-weight: 600;
+  }
+
+  .financing-rate {
+    color: var(--text-muted);
+    font-size: 0.75rem;
+  }
+
+  .financing-rate strong {
+    color: var(--color-accent);
+  }
+
+  /* Results Actions */
+  .results-actions {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    flex: 1;
+    padding: 0.875rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+  }
+
+  .btn-primary {
+    background: var(--color-primary);
+    color: var(--bg-dark-900);
+  }
+
+  .btn-primary:hover {
+    background: var(--color-secondary);
+    color: var(--text-white);
+    transform: translateY(-2px);
+  }
+
+  .btn-secondary {
+    background: transparent;
+    color: var(--text-white);
+    border: 2px solid var(--color-secondary);
+  }
+
+  .btn-secondary:hover {
+    background: var(--color-secondary);
+    transform: translateY(-2px);
+  }
+
+  /* Trust Elements */
+  .trust-elements {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .trust-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-light);
+    font-size: 0.875rem;
+  }
+
+  .trust-item i {
+    color: var(--color-accent);
+    font-size: 0.875rem;
+  }
+
+  /* Disclaimer */
+  .disclaimer {
+    font-size: 0.75rem;
+    color: var(--text-dark);
+    text-align: center;
+    font-style: italic;
+  }
+
+  /* Savings Banner */
+  .savings-banner {
+    background: linear-gradient(135deg, rgba(230, 126, 34, 0.1) 0%, rgba(212, 175, 55, 0.1) 100%);
+    border: 1px solid rgba(230, 126, 34, 0.3);
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-top: 1rem;
+  }
+
+  .savings-banner i {
+    color: var(--color-warning);
+    font-size: 1.25rem;
+  }
+
+  .savings-banner div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.125rem;
+  }
+
+  .savings-banner strong {
+    color: var(--text-white);
+    font-size: 0.875rem;
+  }
+
+  .savings-banner span {
+    color: var(--text-muted);
+    font-size: 0.75rem;
+  }
+
+  /* Responsive */
+  @media (max-width: 1024px) {
+    .calculator-wrapper {
+      grid-template-columns: 1fr;
+    }
+
+    .calculator-results {
+      position: static;
+    }
+
+    .options-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .services-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .size-options {
+      grid-template-columns: 1fr;
+    }
+
+    .financing-options {
+      grid-template-columns: 1fr;
+    }
+
+    .results-actions {
+      flex-direction: column;
+    }
+  }
+</style>
+
+<script>
+  function updateCalculator() {
+    // Get selected services
+    let servicesTotal = 0;
+    document.querySelectorAll('.service-option input:checked').forEach(input => {
+      servicesTotal += parseInt(input.value);
+    });
+    
+    // Get size multiplier
+    const sizeMultiplier = parseFloat(
+      document.querySelector('input[name="size"]:checked')?.value || 1
+    );
+    
+    // Calculate size adjustment
+    const sizeAdjustment = servicesTotal * (sizeMultiplier - 1);
+    
+    // Get additional options
+    let optionsTotal = 0;
+    document.querySelectorAll('.option-item input:checked').forEach(input => {
+      optionsTotal += parseInt(input.value);
+    });
+    
+    // Calculate total
+    const total = servicesTotal + sizeAdjustment + optionsTotal;
+    
+    // Update display with animation
+    document.getElementById('servicesTotal').textContent = `$${servicesTotal.toLocaleString()}`;
+    document.getElementById('sizeAdjustment').textContent = `$${Math.round(sizeAdjustment).toLocaleString()}`;
+    document.getElementById('optionsTotal').textContent = `$${optionsTotal.toLocaleString()}`;
+    
+    // Animate total price
+    const totalElement = document.getElementById('totalPrice');
+    const currentValue = parseInt(totalElement.textContent.replace(/,/g, '') || 0);
+    const duration = 500;
+    const steps = 30;
+    const increment = (total - currentValue) / steps;
+    let current = currentValue;
+    let step = 0;
+    
+    const animate = () => {
+      if (step < steps) {
+        current += increment;
+        totalElement.textContent = Math.round(current).toLocaleString();
+        step++;
+        requestAnimationFrame(animate);
+      } else {
+        totalElement.textContent = total.toLocaleString();
+      }
+    };
+    
+    animate();
+  }
+  
+  // Add event listeners
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('input[type="checkbox"], input[type="radio"]').forEach(input => {
+      input.addEventListener('change', updateCalculator);
+    });
+    
+    // Add button click handlers
+    const quoteBtn = document.querySelector('.btn-primary');
+    const callBtn = document.querySelector('.btn-secondary');
+    
+    if (quoteBtn) {
+      quoteBtn.addEventListener('click', () => {
+        window.location.href = '/contact';
+      });
+    }
+    
+    if (callBtn) {
+      callBtn.addEventListener('click', () => {
+        window.location.href = 'tel:437-545-0067';
+      });
+    }
+    
+    // Initial calculation
+    updateCalculator();
+  });
+</script>

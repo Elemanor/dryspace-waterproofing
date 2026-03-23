@@ -1,0 +1,546 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import Hero from '../../components/sections/Hero.astro';
+import Features from '../../components/sections/Features.astro';
+import Process from '../../components/sections/Process.astro';
+import Gallery from '../../components/sections/Gallery.astro';
+import FAQ from '../../components/sections/FAQ.astro';
+import Testimonials from '../../components/sections/Testimonials.astro';
+import CTA from '../../components/sections/CTA.astro';
+import Stats from '../../components/sections/Stats.astro';
+import ServiceSchema from '../../components/ServiceSchema.astro';
+import InternalLinks from '../../components/InternalLinks.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+
+const pageTitle = "Bowing Basement Wall Repair Toronto | Wall Straightening";
+const pageDescription = "Fix bowing, buckling basement walls. Carbon fiber reinforcement, wall anchors, rebuilding. Structural warranty.";
+
+// Service-specific features
+const serviceFeatures = [
+  {
+    icon: '',
+    title: 'Wall Stabilization',
+    description: 'Industry-leading solution with proven results and long-term protection.',
+    highlight: true
+  },
+  {
+    icon: '',
+    title: 'Competitive Pricing',
+    description: 'Fair, transparent pricing. $5,400-15,000. Financing available.',
+    highlight: true
+  },
+  {
+    icon: '',
+    title: '25-Year Warranty',
+    description: 'Transferable warranty that adds value to your home.',
+    highlight: true
+  },
+  {
+    icon: '',
+    title: 'Fast Service',
+    description: 'Quick response times with professional installation.'
+  },
+  {
+    icon: '‍',
+    title: 'Licensed & Insured',
+    description: 'Fully licensed, bonded, and insured for your protection.'
+  },
+  {
+    icon: '',
+    title: '24/7 Support',
+    description: 'Emergency service and ongoing support whenever you need it.'
+  }
+];
+
+// Service process steps
+const processSteps = [
+  {
+    number: '01',
+    title: 'Free Inspection',
+    description: 'Comprehensive assessment of your specific needs.',
+    icon: '',
+    duration: 'Same day'
+  },
+  {
+    number: '02',
+    title: 'Custom Solution',
+    description: 'Tailored approach for your unique situation.',
+    icon: '',
+    duration: '24 hours'
+  },
+  {
+    number: '03',
+    title: 'Professional Work',
+    description: 'Expert installation by certified technicians.',
+    icon: '',
+    duration: 'On schedule'
+  },
+  {
+    number: '04',
+    title: 'Quality Assurance',
+    description: 'Testing, inspection, and warranty documentation.',
+    icon: '',
+    duration: 'Before leaving'
+  }
+];
+
+// Service FAQs
+const serviceFAQs = [
+  {
+    question: "How much does bowing basement wall repair cost in Toronto?",
+    answer: "Bowing basement wall repair in Toronto typically costs $8,650-$27,000 depending on the severity and method used. Carbon fiber reinforcement costs $8,650-$16,000, while wall anchors or complete rebuilding range from $16,000-$27,000. We provide free inspections with detailed quotes."
+  },
+  {
+    question: "How long does bowing wall repair take to complete?",
+    answer: "Most bowing wall repairs are completed within 2-5 days. Carbon fiber reinforcement takes 1-2 days, while wall anchor installation or partial rebuilding may take 3-5 days. Timeline depends on wall condition, access, and weather for exterior work."
+  },
+  {
+    question: "What are the benefits of fixing bowing basement walls?",
+    answer: "Repairing bowing walls prevents structural collapse, eliminates safety hazards, stops water infiltration, preserves home value, and provides peace of mind. Our solutions include 25-year transferable warranties and increase your property's marketability."
+  },
+  {
+    question: "When should I repair bowing basement walls?",
+    answer: "Repair bowing walls immediately if you notice horizontal cracks, walls leaning inward more than 2 inches, stair-step cracks, or doors/windows sticking. Early intervention with carbon fiber is more affordable than waiting for complete wall failure requiring rebuild."
+  }
+];
+
+// Service Offers
+const serviceOffers = [
+  {
+    name: "Carbon Fiber Reinforcement",
+    price: "$8,650-$13,000",
+    description: "High-strength carbon fiber strips bonded to walls. Ideal for walls bowing less than 2 inches. Quick installation with minimal disruption."
+  },
+  {
+    name: "Wall Anchor System",
+    price: "$13,000-$19,000",
+    description: "Steel anchors installed through wall to stable soil. Best for moderate bowing (2-6 inches). Can potentially straighten walls over time."
+  },
+  {
+    name: "Complete Wall Rebuild",
+    price: "$19,000-$27,000",
+    description: "Full wall removal and reconstruction for severely damaged walls. Includes new footings, drainage, and waterproofing. 25-year warranty."
+  }
+];
+
+// Service Schema Data
+const schemaFAQs = [
+  {
+    question: "How much does bowing basement wall repair cost in Toronto?",
+    answer: "Bowing basement wall repair in Toronto typically costs $8,650-$27,000 depending on the severity and method used. Carbon fiber reinforcement costs $8,650-$16,000, while wall anchors or complete rebuilding range from $16,000-$27,000. We provide free inspections with detailed quotes."
+  },
+  {
+    question: "How long does bowing wall repair take to complete?",
+    answer: "Most bowing wall repairs are completed within 2-5 days. Carbon fiber reinforcement takes 1-2 days, while wall anchor installation or partial rebuilding may take 3-5 days. Timeline depends on wall condition, access, and weather for exterior work."
+  },
+  {
+    question: "What are the benefits of fixing bowing basement walls?",
+    answer: "Repairing bowing walls prevents structural collapse, eliminates safety hazards, stops water infiltration, preserves home value, and provides peace of mind. Our solutions include 25-year transferable warranties and increase your property's marketability."
+  },
+  {
+    question: "When should I repair bowing basement walls?",
+    answer: "Repair bowing walls immediately if you notice horizontal cracks, walls leaning inward more than 2 inches, stair-step cracks, or doors/windows sticking. Early intervention with carbon fiber is more affordable than waiting for complete wall failure requiring rebuild."
+  }
+];
+
+---
+
+<PageLayout 
+  title={pageTitle}
+  description={pageDescription}
+>
+  
+  <!-- Breadcrumbs -->
+  <div class="container mx-auto px-4 mt-4">
+    <Breadcrumbs 
+      items={[
+        { name: "Home", url: "/" },
+        { name: "Services", url: "/services" },
+        { name: "Bowing Basement Walls" }
+      ]}
+    />
+  </div>
+
+<ServiceSchema 
+    serviceName="Bowing Basement Wall Repair"
+    description="Professional bowing basement wall repair in Toronto. Carbon fiber reinforcement, wall anchors, and complete rebuilding services. Structural warranty included."
+    priceRange="$8,650-$27,000"
+    offers={serviceOffers}
+    faqs={schemaFAQs}
+  />
+  <!-- Hero Section -->
+  <Hero 
+    title="Bowing Wall Repair"
+    subtitle="Straighten and reinforce bowing basement walls. Permanent structural solutions with warranty."
+    primaryCTA={{ text: "Get Free Inspection", href: "/free-inspection" }}
+    secondaryCTA={{ text: "Call: 437-545-0067", href: "tel:437-545-0067" }}
+    backgroundImage="/images/structural foundation crack.webp"
+    badge="Structural Warranty"
+  />
+
+  <!-- Stats -->
+  <Stats />
+
+  <!-- Features -->
+  <Features 
+    title="Why Choose Our Service"
+    subtitle="Professional solutions backed by experience and warranty"
+    features={serviceFeatures}
+    columns={3}
+  />
+
+  <!-- Comprehensive Content Section -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        
+        <!-- Main Content -->
+        <div class="prose prose-lg max-w-none mb-16">
+          <h2 class="text-3xl font-bold text-slate-900 mb-6">Professional Bowing Basement Wall Repair in Toronto</h2>
+          
+          <p class="text-lg text-slate-600 mb-6">
+            Bowing basement walls are a serious structural concern that requires immediate professional attention. At DrySpace Waterproofing, we specialize in comprehensive bowing wall repair solutions throughout Toronto and the GTA, using proven methods to stabilize, strengthen, and straighten compromised foundation walls.
+          </p>
+          
+          <h3 class="text-2xl font-bold text-slate-900 mt-8 mb-4">Understanding Bowing Basement Walls</h3>
+          
+          <p class="text-slate-600 mb-4">
+            Bowing basement walls occur when external pressure exceeds the wall's structural capacity. Toronto's unique soil conditions and climate contribute to this problem:
+          </p>
+          
+          <ul class="list-disc pl-6 text-slate-600 mb-6">
+            <li><strong>Hydrostatic pressure:</strong> Water-saturated clay soil exerts tremendous force against foundation walls</li>
+            <li><strong>Freeze-thaw cycles:</strong> Toronto's temperature swings cause soil expansion and contraction</li>
+            <li><strong>Poor drainage:</strong> Inadequate water management increases soil pressure</li>
+            <li><strong>Age factors:</strong> Many Toronto homes built 50+ years ago lack modern reinforcement</li>
+            <li><strong>Tree roots:</strong> Mature trees common in Toronto neighborhoods can contribute to wall movement</li>
+          </ul>
+          
+          <h3 class="text-2xl font-bold text-slate-900 mt-8 mb-4">Signs Your Basement Walls Are Bowing</h3>
+          
+          <div class="bg-red-50 border-l-4 border-red-400 p-6 mb-8">
+            <h4 class="text-lg font-semibold text-slate-900 mb-3">Critical Warning Signs - Act Immediately:</h4>
+            <div class="grid md:grid-cols-2 gap-4">
+              <ul class="list-disc pl-6 text-slate-600">
+                <li>Visible inward bowing or bulging of walls</li>
+                <li>Horizontal cracks along mortar joints</li>
+                <li>Stair-step cracks in block or stone walls</li>
+                <li>Walls leaning inward more than 1 inch</li>
+                <li>Separation between walls and floors</li>
+              </ul>
+              <ul class="list-disc pl-6 text-slate-600">
+                <li>Doors and windows sticking or not closing properly</li>
+                <li>Cracks appearing above basement windows</li>
+                <li>Water infiltration along wall joints</li>
+                <li>Visible shifting of foundation blocks</li>
+                <li>Sagging floors above basement areas</li>
+              </ul>
+            </div>
+          </div>
+          
+          <h3 class="text-2xl font-bold text-slate-900 mt-8 mb-4">Causes of Bowing Basement Walls in Toronto</h3>
+          
+          <div class="grid md:grid-cols-2 gap-8 mb-8">
+            <div>
+              <h4 class="text-xl font-semibold text-slate-900 mb-3">Environmental Factors</h4>
+              <ul class="list-disc pl-6 text-slate-600">
+                <li><strong>Clay soil expansion:</strong> Toronto's clay soil can expand up to 25% when wet</li>
+                <li><strong>Poor exterior drainage:</strong> Water accumulation around foundation</li>
+                <li><strong>Frost penetration:</strong> Freezing temperatures cause soil heaving</li>
+                <li><strong>Heavy rainfall periods:</strong> Seasonal flooding and saturation</li>
+                <li><strong>Snow melt:</strong> Rapid spring thaw creates pressure spikes</li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="text-xl font-semibold text-slate-900 mb-3">Structural Issues</h4>
+              <ul class="list-disc pl-6 text-slate-600">
+                <li><strong>Inadequate reinforcement:</strong> Older homes lack proper steel reinforcement</li>
+                <li><strong>Foundation settling:</strong> Uneven settling creates stress points</li>
+                <li><strong>Poor construction methods:</strong> Substandard materials or techniques</li>
+                <li><strong>Lack of maintenance:</strong> Ignored minor issues becoming major problems</li>
+                <li><strong>Age deterioration:</strong> Natural weakening of masonry over time</li>
+              </ul>
+            </div>
+          </div>
+          
+          <h3 class="text-2xl font-bold text-slate-900 mt-8 mb-4">Our Professional Repair Solutions</h3>
+          
+          <div class="space-y-8 mb-12">
+            <div class="border-l-4 border-cyan-500 pl-6">
+              <h4 class="text-xl font-semibold text-slate-900 mb-3">1. Carbon Fiber Reinforcement</h4>
+              <p class="text-slate-600 mb-3">
+                <strong>Best for:</strong> Walls bowing less than 2 inches with stable foundations. This non-invasive solution bonds high-strength carbon fiber strips to the interior wall surface.
+              </p>
+              <div class="grid md:grid-cols-2 gap-4">
+                <ul class="list-disc pl-6 text-slate-500 text-sm">
+                  <li><strong>Installation:</strong> 1-2 days with minimal disruption</li>
+                  <li><strong>Cost:</strong> $8,650-$13,000 per wall</li>
+                  <li><strong>Strength:</strong> 10x stronger than steel by weight</li>
+                  <li><strong>Warranty:</strong> 25-year transferable warranty</li>
+                </ul>
+                <ul class="list-disc pl-6 text-slate-500 text-sm">
+                  <li><strong>Benefits:</strong> No excavation required</li>
+                  <li><strong>Appearance:</strong> Can be painted over when cured</li>
+                  <li><strong>Effectiveness:</strong> Halts further movement immediately</li>
+                  <li><strong>Durability:</strong> Immune to moisture and corrosion</li>
+                </ul>
+              </div>
+            </div>
+            
+            <div class="border-l-4 border-cyan-500 pl-6">
+              <h4 class="text-xl font-semibold text-slate-900 mb-3">2. Wall Anchor Systems</h4>
+              <p class="text-slate-600 mb-3">
+                <strong>Best for:</strong> Moderate bowing (2-6 inches) where soil conditions allow anchor placement. Steel anchors connect interior wall to stable soil beyond foundation.
+              </p>
+              <div class="grid md:grid-cols-2 gap-4">
+                <ul class="list-disc pl-6 text-slate-500 text-sm">
+                  <li><strong>Installation:</strong> 2-3 days including excavation</li>
+                  <li><strong>Cost:</strong> $13,000-$19,000 per wall</li>
+                  <li><strong>Straightening:</strong> Can gradually pull walls back over time</li>
+                  <li><strong>Warranty:</strong> 25-year structural warranty</li>
+                </ul>
+                <ul class="list-disc pl-6 text-slate-500 text-sm">
+                  <li><strong>Adjustment:</strong> Can be tightened annually for improvement</li>
+                  <li><strong>Soil compatibility:</strong> Works in most Toronto soil types</li>
+                  <li><strong>Long-term solution:</strong> Prevents future movement</li>
+                  <li><strong>Property value:</strong> Adds significant structural value</li>
+                </ul>
+              </div>
+            </div>
+            
+            <div class="border-l-4 border-cyan-500 pl-6">
+              <h4 class="text-xl font-semibold text-slate-900 mb-3">3. Complete Wall Reconstruction</h4>
+              <p class="text-slate-600 mb-3">
+                <strong>Best for:</strong> Severely bowed walls (over 6 inches) or walls with structural failure. Complete removal and rebuilding with modern reinforcement.
+              </p>
+              <div class="grid md:grid-cols-2 gap-4">
+                <ul class="list-disc pl-6 text-slate-500 text-sm">
+                  <li><strong>Installation:</strong> 5-7 days including excavation</li>
+                  <li><strong>Cost:</strong> $19,000-$27,000 per wall</li>
+                  <li><strong>New foundation:</strong> Modern footings and drainage</li>
+                  <li><strong>Warranty:</strong> 25-year comprehensive warranty</li>
+                </ul>
+                <ul class="list-disc pl-6 text-slate-500 text-sm">
+                  <li><strong>Complete solution:</strong> Addresses all structural issues</li>
+                  <li><strong>Modern standards:</strong> Built to current building codes</li>
+                  <li><strong>Waterproofing:</strong> Includes full exterior waterproofing</li>
+                  <li><strong>Investment protection:</strong> Maximizes property value</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          
+          <h3 class="text-2xl font-bold text-slate-900 mt-8 mb-4">The Risks of Delaying Repairs</h3>
+          
+          <div class="bg-amber-50 border-l-4 border-amber-400 p-6 mb-8">
+            <h4 class="text-lg font-semibold text-slate-900 mb-3">Why immediate action is critical:</h4>
+            <div class="grid md:grid-cols-2 gap-6">
+              <div>
+                <h5 class="font-semibold text-slate-800 mb-2">Safety Hazards</h5>
+                <ul class="text-sm text-slate-600 space-y-1">
+                  <li>• Risk of sudden wall collapse</li>
+                  <li>• Structural instability throughout home</li>
+                  <li>• Danger to occupants and neighbors</li>
+                  <li>• Emergency evacuation scenarios</li>
+                </ul>
+              </div>
+              <div>
+                <h5 class="font-semibold text-slate-800 mb-2">Financial Consequences</h5>
+                <ul class="text-sm text-slate-600 space-y-1">
+                  <li>• Exponentially increasing repair costs</li>
+                  <li>• Complete home value loss</li>
+                  <li>• Insurance claim complications</li>
+                  <li>• Potential condemnation by city</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          
+          <h3 class="text-2xl font-bold text-slate-900 mt-8 mb-4">Our Professional Assessment Process</h3>
+          
+          <div class="space-y-6 mb-8">
+            <div class="flex items-start gap-4">
+              <div class="flex-shrink-0 w-12 h-12 bg-cyan-600 text-white rounded-full flex items-center justify-center font-bold">1</div>
+              <div>
+                <h4 class="text-lg font-semibold text-slate-900 mb-2">Emergency Response & Safety Assessment</h4>
+                <p class="text-slate-600">Immediate evaluation of structural integrity and occupant safety. We provide temporary stabilization measures if needed and clear recommendations for next steps.</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start gap-4">
+              <div class="flex-shrink-0 w-12 h-12 bg-cyan-600 text-white rounded-full flex items-center justify-center font-bold">2</div>
+              <div>
+                <h4 class="text-lg font-semibold text-slate-900 mb-2">Comprehensive Structural Analysis</h4>
+                <p class="text-slate-600">Detailed measurement of wall deflection, crack mapping, soil analysis, and drainage evaluation. We use laser levels and specialized equipment for precise assessment.</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start gap-4">
+              <div class="flex-shrink-0 w-12 h-12 bg-cyan-600 text-white rounded-full flex items-center justify-center font-bold">3</div>
+              <div>
+                <h4 class="text-lg font-semibold text-slate-900 mb-2">Solution Recommendation & Cost Analysis</h4>
+                <p class="text-slate-600">Based on our findings, we recommend the most appropriate and cost-effective repair method. Multiple options are provided with detailed cost breakdowns and timelines.</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start gap-4">
+              <div class="flex-shrink-0 w-12 h-12 bg-cyan-600 text-white rounded-full flex items-center justify-center font-bold">4</div>
+              <div>
+                <h4 class="text-lg font-semibold text-slate-900 mb-2">Engineering Review & Permits</h4>
+                <p class="text-slate-600">For major repairs, we coordinate with structural engineers and handle all permit applications. This ensures your repair meets building codes and insurance requirements.</p>
+              </div>
+            </div>
+          </div>
+          
+          <h3 class="text-2xl font-bold text-slate-900 mt-8 mb-4">Prevention and Maintenance Tips</h3>
+          
+          <div class="grid md:grid-cols-3 gap-6 mb-8">
+            <div class="bg-cyan-50 p-6 rounded-lg">
+              <h4 class="text-lg font-semibold text-slate-900 mb-3">Water Management</h4>
+              <ul class="text-sm text-slate-600 space-y-1">
+                <li>• Maintain proper lot grading away from house</li>
+                <li>• Keep gutters and downspouts clear</li>
+                <li>• Install drainage systems where needed</li>
+                <li>• Address basement moisture immediately</li>
+              </ul>
+            </div>
+            <div class="bg-cyan-50 p-6 rounded-lg">
+              <h4 class="text-lg font-semibold text-slate-900 mb-3">Regular Inspections</h4>
+              <ul class="text-sm text-slate-600 space-y-1">
+                <li>• Check basement walls monthly for changes</li>
+                <li>• Monitor doors and windows for fit issues</li>
+                <li>• Watch for new cracks or movement</li>
+                <li>• Document changes with photos and measurements</li>
+              </ul>
+            </div>
+            <div class="bg-cyan-50 p-6 rounded-lg">
+              <h4 class="text-lg font-semibold text-slate-900 mb-3">Professional Maintenance</h4>
+              <ul class="text-sm text-slate-600 space-y-1">
+                <li>• Annual foundation inspections</li>
+                <li>• Proper landscaping around foundation</li>
+                <li>• Tree root management programs</li>
+                <li>• Preventive waterproofing upgrades</li>
+              </ul>
+            </div>
+          </div>
+          
+          <h3 class="text-2xl font-bold text-slate-900 mt-8 mb-4">Why Choose DrySpace for Bowing Wall Repairs</h3>
+          
+          <div class="bg-gradient-to-r from-blue-50 to-blue-100 p-8 rounded-xl mb-8">
+            <div class="grid md:grid-cols-2 gap-8">
+              <div>
+                <h4 class="text-xl font-semibold text-slate-900 mb-4">Structural Expertise</h4>
+                <ul class="space-y-2 text-slate-600">
+                  <li class="flex items-start"><span class="text-cyan-600 mr-2">✓</span> 25+ years specializing in Toronto foundations</li>
+                  <li class="flex items-start"><span class="text-cyan-600 mr-2">✓</span> Licensed structural repair contractors</li>
+                  <li class="flex items-start"><span class="text-cyan-600 mr-2">✓</span> Partnership with structural engineers</li>
+                  <li class="flex items-start"><span class="text-cyan-600 mr-2">✓</span> All work meets or exceeds building codes</li>
+                </ul>
+              </div>
+              <div>
+                <h4 class="text-xl font-semibold text-slate-900 mb-4">Complete Service</h4>
+                <ul class="space-y-2 text-slate-600">
+                  <li class="flex items-start"><span class="text-cyan-600 mr-2">✓</span> Emergency response within 2 hours</li>
+                  <li class="flex items-start"><span class="text-cyan-600 mr-2">✓</span> Free comprehensive inspections</li>
+                  <li class="flex items-start"><span class="text-cyan-600 mr-2">✓</span> Handle all permits and engineering</li>
+                  <li class="flex items-start"><span class="text-cyan-600 mr-2">✓</span> 25-year transferable warranties</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          
+          <h3 class="text-2xl font-bold text-slate-900 mt-8 mb-4">Service Areas Throughout Toronto</h3>
+          
+          <p class="text-slate-600 mb-4">
+            We provide emergency bowing wall repair services throughout Toronto and the GTA:
+          </p>
+          
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+            <div class="text-slate-600">
+              <strong>Toronto:</strong>
+              <ul class="text-sm mt-1">
+                <li>• Downtown Toronto</li>
+                <li>• North York</li>
+                <li>• Scarborough</li>
+                <li>• Etobicoke</li>
+                <li>• East York</li>
+              </ul>
+            </div>
+            <div class="text-slate-600">
+              <strong>Peel Region:</strong>
+              <ul class="text-sm mt-1">
+                <li>• Mississauga</li>
+                <li>• Brampton</li>
+                <li>• Caledon</li>
+              </ul>
+            </div>
+            <div class="text-slate-600">
+              <strong>York Region:</strong>
+              <ul class="text-sm mt-1">
+                <li>• Markham</li>
+                <li>• Vaughan</li>
+                <li>• Richmond Hill</li>
+                <li>• Aurora</li>
+              </ul>
+            </div>
+            <div class="text-slate-600">
+              <strong>Durham Region:</strong>
+              <ul class="text-sm mt-1">
+                <li>• Ajax</li>
+                <li>• Pickering</li>
+                <li>• Oshawa</li>
+                <li>• Whitby</li>
+              </ul>
+            </div>
+          </div>
+          
+          <div class="bg-red-50 border-l-4 border-red-400 p-6 mb-8">
+            <h4 class="text-lg font-semibold text-slate-900 mb-3">Emergency Structural Situation?</h4>
+            <p class="text-slate-600 mb-3">
+              If you notice signs of wall bowing, cracking, or structural movement, don't wait. Contact us immediately for emergency structural assessment and temporary stabilization if needed.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4">
+              <a href="tel:437-545-0067" class="inline-flex items-center px-6 py-3 bg-red-600 text-white font-semibold rounded-lg hover:bg-red-700 transition duration-300">
+                📞 Emergency: 437-545-0067
+              </a>
+              <a href="/free-inspection" class="inline-flex items-center px-6 py-3 bg-cyan-600 text-white font-semibold rounded-lg hover:bg-cyan-700 transition duration-300">
+                📋 Schedule Structural Assessment
+              </a>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process -->
+  <Process />
+
+  <!-- Testimonials -->
+  <Testimonials />
+
+  <!-- FAQ -->
+  <FAQ 
+    title="Common Questions"
+    subtitle="Everything you need to know about our service"
+    faqs={serviceFAQs}
+    columns={1}
+  />
+
+  <!-- Internal Links -->
+  <InternalLinks 
+    category="foundation"
+    currentPage="bowing-basement-walls"
+    limit={5}
+  />
+
+  <!-- CTA -->
+  <CTA 
+    title="Ready to Get Started?"
+    subtitle="Schedule your free inspection today and protect your home."
+    primaryCTA={{ text: "Schedule Free Inspection", href: "/free-inspection" }}
+    secondaryCTA={{ text: "Call: 437-545-0067", href: "tel:437-545-0067" }}
+    background="gradient"
+  />
+</PageLayout>

@@ -1,0 +1,452 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import Hero from '../../components/sections/Hero.astro';
+import Features from '../../components/sections/Features.astro';
+import Process from '../../components/sections/Process.astro';
+import Gallery from '../../components/sections/Gallery.astro';
+import FAQ from '../../components/sections/FAQ.astro';
+import Testimonials from '../../components/sections/Testimonials.astro';
+import CTA from '../../components/sections/CTA.astro';
+import Stats from '../../components/sections/Stats.astro';
+import ServiceSchema from '../../components/ServiceSchema.astro';
+import InternalLinks from '../../components/InternalLinks.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+
+const pageTitle = "Rainwater Harvesting Toronto | Eco-Friendly Systems | City Rebates Available";
+const pageDescription = "Professional rainwater harvesting systems in Toronto with city rebates available. Eco-friendly conservation, custom system design, and expert installation.";
+
+// Rainwater harvesting features
+const harvestingFeatures = [
+  {
+    icon: '💧',
+    title: 'City of Toronto Rebates',
+    description: 'Take advantage of available municipal rebates for rainwater harvesting installations.',
+    highlight: true
+  },
+  {
+    icon: '🌱',
+    title: 'Eco-Friendly Solution',
+    description: 'Reduce environmental impact while lowering your utility bills significantly.',
+    highlight: true
+  },
+  {
+    icon: '⚙️',
+    title: 'Custom System Design',
+    description: 'Tailored rainwater collection systems based on your roof area and water needs.',
+    highlight: true
+  },
+  {
+    icon: '💰',
+    title: 'Long-Term Savings',
+    description: 'Reduce utility bills by 30-50% with professional rainwater harvesting.'
+  },
+  {
+    icon: '🔧',
+    title: 'Complete Installation',
+    description: 'Professional installation including storage tanks, filtration, and distribution.'
+  },
+  {
+    icon: '📊',
+    title: 'Water Usage Analytics',
+    description: 'Monitor your collection and usage patterns with smart system integration.'
+  }
+];
+
+// Rainwater harvesting process
+const harvestingProcessSteps = [
+  {
+    number: '01',
+    title: 'Property Assessment & Design',
+    description: 'Evaluate your roof area, rainfall patterns, and consumption needs to design an optimal rainwater harvesting system.',
+    icon: '📏',
+    duration: '1-2 days'
+  },
+  {
+    number: '02',
+    title: 'Rebate Application Assistance',
+    description: 'Help you apply for City of Toronto rebates and other available incentives to reduce project costs.',
+    icon: '💵',
+    duration: '2-4 weeks'
+  },
+  {
+    number: '03',
+    title: 'System Component Selection',
+    description: 'Choose appropriate storage tanks, filtration systems, and distribution components for your specific needs.',
+    icon: '🔧',
+    duration: '1 week'
+  },
+  {
+    number: '04',
+    title: 'Professional Installation',
+    description: 'Install gutters, downspouts, storage systems, filtration, and distribution networks with minimal disruption.',
+    icon: '🏗️',
+    duration: '2-3 days'
+  },
+  {
+    number: '05',
+    title: 'System Testing & Calibration',
+    description: 'Test all system components, calibrate controls, and ensure proper operation and water quality.',
+    icon: '🔍',
+    duration: '1 day'
+  },
+  {
+    number: '06',
+    title: 'Maintenance Program Setup',
+    description: 'Establish maintenance schedule and provide training on system operation for optimal performance.',
+    icon: '📅',
+    duration: 'Ongoing'
+  }
+];
+
+// Service-specific FAQs with cost, timeline, benefits, process information
+const harvestingFAQs = [
+  {
+    question: "How much does rainwater collection cost in Toronto?",
+    answer: "Rainwater collection system costs in Toronto range from $8,650-$38,000 depending on complexity: Basic residential systems (3,000-5,000 gallon): $8,650-$19,000 including collection, storage, and basic filtration, Comprehensive systems (8,000+ gallon): $22,000-$38,000 with advanced filtration, distribution, and monitoring, Commercial/institutional systems: $27,000-$81,000+ for larger scale installations. City of Toronto rebates cover 25-50% of costs, with additional conservation authority incentives available. Most systems pay for themselves within 6-10 years through water bill savings."
+  },
+  {
+    question: "How long does rainwater harvesting installation take?",
+    answer: "Installation timeline depends on system complexity: Assessment and design: 1-2 weeks including roof evaluation and usage analysis, Rebate application processing: 4-8 weeks for municipal and provincial approvals, Component procurement: 2-4 weeks for tanks, filtration, and distribution equipment, Installation: 3-5 days for complete system including excavation, plumbing, and electrical, System commissioning and testing: 1-2 days for calibration and water quality testing. Best installation timing is late spring through early fall (May-October) to avoid winter weather complications."
+  },
+  {
+    question: "What are the benefits of rainwater harvesting in Toronto?",
+    answer: "Rainwater harvesting provides multiple benefits: Utility bill savings: 35-55% reduction in municipal consumption, typically saving $650-$1,600 annually, Environmental impact: Reduces stormwater runoff, decreasing flood risk and water pollution, Supply independence: Reliable reserve for irrigation, toilet flushing, and laundry during dry periods, Property value: 3-8% increase from sustainable infrastructure and reduced operating costs, Rebates and incentives: Up to 50% cost recovery through municipal and conservation programs, Quality benefits: Harvested rainfall is naturally soft and chlorine-free, ideal for plants and many household uses."
+  },
+  {
+    question: "When should I consider rainwater harvesting for my Toronto property?",
+    answer: "Rainwater harvesting is ideal in several situations: High water usage: Properties with large landscaping, gardens, or high water bills (>$200/month), New construction or renovation: Integrate systems during building to maximize efficiency and rebate eligibility, Environmental goals: Homeowners pursuing sustainability, LEED certification, or reduced environmental footprint, Water quality concerns: Areas with hard municipal water or chlorine sensitivity, Large roof areas: Properties with 1,500+ sq ft roof area provide optimal collection potential, Rebate availability: When municipal incentive programs are active and well-funded. Spring is optimal timing for design and summer installation."
+  }
+];
+
+// Service offers with 3 pricing tiers
+const serviceOffers = [
+  {
+    name: "Residential Starter System",
+    price: "$8,650-$16,000",
+    description: "Basic rainwater collection with 3,000-5,000 gallon storage, gutter upgrades, filtration for irrigation and non-potable uses. Ideal for garden irrigation and outdoor water needs."
+  },
+  {
+    name: "Complete Home System",
+    price: "$19,000-$30,000",
+    description: "Comprehensive rainwater harvesting with 6,000-10,000 gallon storage, advanced filtration, distribution pumps, and toilet/laundry integration. Includes smart monitoring and city rebate assistance."
+  },
+  {
+    name: "Premium Whole-House System",
+    price: "$32,000-$54,000",
+    description: "Advanced system with 10,000+ gallon storage, potable water treatment, backup municipal connection, smart controls, and comprehensive monitoring. Commercial-grade components with performance guarantee."
+  }
+];
+
+// Rainwater harvesting statistics
+const harvestingStats = [
+  { number: '50%', label: 'Water Bill Savings', description: 'Average reduction with complete system' },
+  { number: '25%+', label: 'City Rebates', description: 'Available for qualified installations' },
+  { number: '30K', label: 'Gallons/Year', description: 'Typical collection from 2000 sq ft roof' },
+  { number: '5-8', label: 'Years Payback', description: 'System investment recovery time' }
+];
+
+---
+
+<PageLayout 
+  title={pageTitle} 
+  description={pageDescription}
+>
+  
+  <!-- Breadcrumbs -->
+  <div class="container mx-auto px-4 mt-4">
+    <Breadcrumbs 
+      items={[
+        { name: "Home", url: "/" },
+        { name: "Services", url: "/services" },
+        { name: "Rainwater Harvesting" }
+      ]}
+    />
+  </div>
+
+<ServiceSchema 
+    serviceName="Rainwater Harvesting Systems Toronto"
+    description="Eco-friendly rainwater harvesting systems with Toronto rebates available, reducing water bills by 35-55% through professional collection, storage, and distribution systems."
+    priceRange="$8,650-$54,000"
+    offers={serviceOffers}
+    faqs={harvestingFAQs}
+  />
+  <Hero
+    title="Rainwater Harvesting Systems Toronto"
+    subtitle="Eco-Friendly • City Rebates Available • 50% Water Savings"
+    description="Professional rainwater harvesting systems reducing your environmental impact and water bills. Take advantage of Toronto rebates for eco-friendly water conservation solutions."
+    primaryCTA="Get Free System Assessment"
+    secondaryCTA="Call 437-545-0067"
+    backgroundImage="/images/services/rainwater-harvesting-hero.webp"
+    features={[
+      "City of Toronto Rebates Available",
+      "30-50% Water Bill Savings",
+      "Custom Eco-Friendly Design", 
+      "Complete Installation Service"
+    ]}
+  />
+
+  <Stats 
+    title="Rainwater Harvesting Benefits"
+    subtitle="Measurable savings and environmental impact"
+    stats={harvestingStats}
+    backgroundClass="bg-dryspace-earth-50"
+  />
+
+  <Features
+    title="Complete Rainwater Harvesting Solutions"
+    subtitle="Eco-friendly water conservation"
+    description="Comprehensive rainwater collection systems designed to reduce your environmental footprint while providing significant water bill savings for Toronto homeowners."
+    features={harvestingFeatures}
+    layout="grid"
+  />
+
+  <!-- Toronto Rebates Section -->
+  <section class="py-20 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl lg:text-4xl font-bold text-dryspace-earth-500 mb-6">
+            Toronto Rebates & Incentives
+          </h2>
+          <p class="text-xl text-slate-500">
+            Take advantage of municipal and provincial incentives for rainwater harvesting
+          </p>
+        </div>
+        
+        <div class="grid lg:grid-cols-3 gap-8">
+          <div class="bg-dryspace-earth-50 p-8 rounded-lg text-center">
+            <div class="w-20 h-20 bg-dryspace-accent-500 rounded-full flex items-center justify-center mx-auto mb-6">
+              <span class="text-3xl text-white">💰</span>
+            </div>
+            <h3 class="text-2xl font-bold mb-4 text-dryspace-earth-500">City of Toronto</h3>
+            <p class="text-slate-500 mb-4">
+              Residential rebates covering 25-50% of rainwater harvesting system installation costs, up to specified limits based on system size.
+            </p>
+            <ul class="text-left space-y-2 text-sm text-slate-500">
+              <li>• Residential system rebates</li>
+              <li>• Commercial incentives available</li>
+              <li>• Stormwater management credits</li>
+              <li>• Property tax considerations</li>
+            </ul>
+          </div>
+          
+          <div class="bg-dryspace-water-50 p-8 rounded-lg text-center">
+            <div class="w-20 h-20 bg-dryspace-water-500 rounded-full flex items-center justify-center mx-auto mb-6">
+              <span class="text-3xl text-white">🌊</span>
+            </div>
+            <h3 class="text-2xl font-bold mb-4 text-dryspace-earth-500">Conservation Authorities</h3>
+            <p class="text-slate-500 mb-4">
+              Toronto and Region Conservation Authority (TRCA) and other conservation authorities offer additional incentives for water conservation projects.
+            </p>
+            <ul class="text-left space-y-2 text-sm text-slate-500">
+              <li>• TRCA funding programs</li>
+              <li>• Watershed protection incentives</li>
+              <li>• Environmental stewardship grants</li>
+              <li>• Community program support</li>
+            </ul>
+          </div>
+          
+          <div class="bg-dryspace-accent-50 p-8 rounded-lg text-center">
+            <div class="w-20 h-20 bg-dryspace-accent-500 rounded-full flex items-center justify-center mx-auto mb-6">
+              <span class="text-3xl text-white">🏛️</span>
+            </div>
+            <h3 class="text-2xl font-bold mb-4 text-dryspace-earth-500">Provincial Programs</h3>
+            <p class="text-slate-500 mb-4">
+              Ontario environmental and energy efficiency programs may provide additional funding for qualifying rainwater harvesting installations.
+            </p>
+            <ul class="text-left space-y-2 text-sm text-slate-500">
+              <li>• Energy efficiency rebates</li>
+              <li>• Environmental improvement grants</li>
+              <li>• Green technology incentives</li>
+              <li>• Low-interest financing options</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="text-center mt-12">
+          <div class="bg-cyan-100 border-l-4 border-cyan-500 p-6 max-w-2xl mx-auto">
+            <h4 class="text-xl font-bold text-cyan-700 mb-2">We Handle All Rebate Applications</h4>
+            <p class="text-cyan-700">
+              Our team assists with all rebate applications and documentation to maximize your savings on rainwater harvesting system installation.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Process
+    title="Complete Rainwater Harvesting Installation"
+    subtitle="From assessment to ongoing maintenance"
+    description="Our comprehensive approach ensures optimal rainwater collection while maximizing available rebates and long-term water savings."
+    steps={harvestingProcessSteps}
+    layout="vertical"
+  />
+
+  <!-- System Components Section -->
+  <section class="py-20 bg-dryspace-earth-50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl lg:text-4xl font-bold text-dryspace-earth-500 mb-6">
+            Rainwater Harvesting System Components
+          </h2>
+          <p class="text-xl text-slate-500">
+            Professional-grade components for reliable water collection and storage
+          </p>
+        </div>
+        
+        <div class="grid md:grid-cols-2 gap-8">
+          <div class="space-y-6">
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+              <h3 class="text-xl font-bold mb-3 text-dryspace-earth-500 flex items-center">
+                <span class="w-8 h-8 bg-dryspace-accent-500 rounded-full flex items-center justify-center text-white text-sm mr-3">💧</span>
+                Collection System
+              </h3>
+              <ul class="space-y-2 text-slate-500 text-sm">
+                <li>• Leaf screen gutters and downspouts</li>
+                <li>• First-flush diverters</li>
+                <li>• Debris filters and screens</li>
+                <li>• Overflow management systems</li>
+              </ul>
+            </div>
+            
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+              <h3 class="text-xl font-bold mb-3 text-dryspace-earth-500 flex items-center">
+                <span class="w-8 h-8 bg-dryspace-water-500 rounded-full flex items-center justify-center text-white text-sm mr-3">🏺</span>
+                Storage Solutions
+              </h3>
+              <ul class="space-y-2 text-slate-500 text-sm">
+                <li>• Underground cisterns (3,000-10,000 gallons)</li>
+                <li>• Above-ground storage tanks</li>
+                <li>• Food-grade materials</li>
+                <li>• Mosquito-proof covers and vents</li>
+              </ul>
+            </div>
+            
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+              <h3 class="text-xl font-bold mb-3 text-dryspace-earth-500 flex items-center">
+                <span class="w-8 h-8 bg-dryspace-earth-500 rounded-full flex items-center justify-center text-white text-sm mr-3">🔧</span>
+                Distribution System
+              </h3>
+              <ul class="space-y-2 text-slate-500 text-sm">
+                <li>• Variable speed pumps</li>
+                <li>• Pressure tanks and controls</li>
+                <li>• Distribution piping</li>
+                <li>• Smart monitoring systems</li>
+              </ul>
+            </div>
+          </div>
+          
+          <div class="space-y-6">
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+              <h3 class="text-xl font-bold mb-3 text-dryspace-earth-500 flex items-center">
+                <span class="w-8 h-8 bg-cyan-500 rounded-full flex items-center justify-center text-white text-sm mr-3">🌱</span>
+                Filtration Options
+              </h3>
+              <ul class="space-y-2 text-slate-500 text-sm">
+                <li>• Sediment filtration systems</li>
+                <li>• Carbon filters for taste/odor</li>
+                <li>• UV sterilization for potable use</li>
+                <li>• Multi-stage treatment options</li>
+              </ul>
+            </div>
+            
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+              <h3 class="text-xl font-bold mb-3 text-dryspace-earth-500 flex items-center">
+                <span class="w-8 h-8 bg-cyan-500 rounded-full flex items-center justify-center text-white text-sm mr-3">📊</span>
+                Monitoring & Controls
+              </h3>
+              <ul class="space-y-2 text-slate-500 text-sm">
+                <li>• Water level indicators</li>
+                <li>• Usage tracking systems</li>
+                <li>• Mobile app integration</li>
+                <li>• Automatic system controls</li>
+              </ul>
+            </div>
+            
+            <div class="bg-cyan-100 p-6 rounded-lg border-l-4 border-cyan-500">
+              <h4 class="text-lg font-bold text-cyan-700 mb-2">Environmental Benefits</h4>
+              <ul class="space-y-1 text-cyan-700 text-sm">
+                <li>• Reduces stormwater runoff</li>
+                <li>• Decreases municipal water demand</li>
+                <li>• Improves local water cycle</li>
+                <li>• Supports sustainable living</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <FAQ
+    title="Rainwater Harvesting FAQs"
+    subtitle="Everything you need to know about eco-friendly water conservation"
+    faqs={harvestingFAQs}
+    schema={true}
+  />
+
+  <Testimonials
+    title="Toronto Homeowners Love Rainwater Harvesting"
+    subtitle="Real savings and environmental benefits"
+    testimonials={[
+      {
+        name: "Emma Thompson",
+        location: "Leslieville",
+        rating: 5,
+        text: "Amazing water bill savings! Our rainwater harvesting system reduced our bills by 45% and we received a great rebate from the city. Professional installation and excellent support.",
+        service: "Rainwater Harvesting"
+      },
+      {
+        name: "David Park", 
+        location: "High Park",
+        rating: 5,
+        text: "The eco-friendly approach and city rebates made this an easy decision. Great system design and installation. We love being part of Toronto's sustainability efforts.",
+        service: "Eco-Friendly Installation"
+      },
+      {
+        name: "Lisa Chen",
+        location: "North York", 
+        rating: 5,
+        text: "Professional team helped with all rebate applications and installed a perfect system for our property. Water collection exceeded expectations - great investment!",
+        service: "Complete System"
+      }
+    ]}
+  />
+
+  <Gallery
+    title="Rainwater Harvesting Installation Gallery"
+    subtitle="Eco-friendly systems throughout Toronto"
+    description="See our professional rainwater harvesting installations"
+    images={[
+      { src: "/images/gallery/rainwater-collection-setup.webp", alt: "Rainwater collection system", caption: "Professional gutter and collection system installation" },
+      { src: "/images/gallery/underground-cistern.webp", alt: "Underground water storage cistern", caption: "Underground cistern installation for maximum storage" },
+      { src: "/images/gallery/filtration-system.webp", alt: "Water filtration components", caption: "Advanced filtration system for clean water" },
+      { src: "/images/gallery/completed-harvesting-system.webp", alt: "Completed rainwater harvesting system", caption: "Complete rainwater harvesting system in operation" }
+    ]}
+  />
+
+  <!-- Internal Links -->
+  <InternalLinks 
+    category="drainage"
+    currentPage="rainwater-harvesting"
+    limit={6}
+  />
+
+  <CTA
+    title="Start Saving Water and Money Today"
+    subtitle="Eco-friendly rainwater harvesting with Toronto rebates"
+    description="Join Toronto's sustainability efforts while reducing your water bills by up to 50%. Take advantage of available rebates and professional installation."
+    primaryCTA="Get Free Assessment & Rebate Info"
+    primaryCTALink="tel:437-545-0067"
+    secondaryCTA="Learn About System Options"
+    features={[
+      "Free property assessment and system design",
+      "Complete rebate application assistance", 
+      "Professional installation and setup",
+      "Ongoing maintenance and support programs"
+    ]}
+    urgent={false}
+  />
+</PageLayout>

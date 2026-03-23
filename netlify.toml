@@ -1,0 +1,87 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+# Keyword Cannibalization Fixes - Critical Redirects
+# Implemented: January 9, 2025
+
+# Fix Toronto cannibalization - Enhanced page was competing with homepage
+[[redirects]]
+  from = "/enhanced"
+  to = "/"
+  status = 301
+  force = true
+
+# Fix Mississauga duplication - Location page competing with dedicated service page
+[[redirects]]
+  from = "/locations/mississauga"
+  to = "/basement-waterproofing-mississauga"
+  status = 301
+  force = true
+
+# Fix Brampton duplication - Location page competing with dedicated service page
+[[redirects]]
+  from = "/locations/brampton"
+  to = "/basement-waterproofing-brampton"
+  status = 301
+  force = true
+
+# Fix calculator duplication - Tool page competing with main cost page
+[[redirects]]
+  from = "/tools/waterproofing-cost-calculator"
+  to = "/basement-waterproofing-cost-toronto"
+  status = 301
+  force = true
+
+# Fix Toronto location competing with homepage
+[[redirects]]
+  from = "/locations/toronto"
+  to = "/"
+  status = 301
+  force = true
+
+# Additional neighborhood consolidations to prevent cannibalization
+[[redirects]]
+  from = "/toronto-basement-waterproofing"
+  to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/mississauga-waterproofing"
+  to = "/basement-waterproofing-mississauga"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/brampton-waterproofing"
+  to = "/basement-waterproofing-brampton"
+  status = 301
+  force = true
+
+# Headers for better SEO
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    X-XSS-Protection = "1; mode=block"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+# Cache control for static assets
+[[headers]]
+  for = "/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/_astro/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Sitemap specific header
+[[headers]]
+  for = "/sitemap*.xml"
+  [headers.values]
+    Content-Type = "application/xml"
+    Cache-Control = "public, max-age=3600"

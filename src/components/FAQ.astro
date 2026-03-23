@@ -1,0 +1,608 @@
+---
+// Professional FAQ Component - Contractor style without icons
+const faqs = [
+  {
+    category: "GENERAL",
+    questions: [
+      {
+        question: "How long does basement waterproofing take?",
+        answer: "Most residential basement waterproofing projects are completed within 2-3 days. Interior systems typically take 1-2 days, while exterior waterproofing may require 3-5 days. We'll provide a detailed timeline during your free inspection."
+      },
+      {
+        question: "Is basement waterproofing worth the investment?",
+        answer: "Absolutely. Waterproofing protects your home's foundation, prevents costly water damage ($10,000+ average repair cost), eliminates mold growth health risks, and can increase your property value by up to 30%. Most homeowners see ROI within 3-5 years."
+      },
+      {
+        question: "Do you work year-round in Toronto?",
+        answer: "Yes, we operate 365 days a year. Our techniques are designed for Canadian weather conditions. Interior waterproofing can be done any time, and we use special materials for exterior work in cold weather."
+      },
+      {
+        question: "How do I know if I need waterproofing?",
+        answer: "Warning signs include: water stains or puddles in basement, musty odors or visible mold, white powder on walls (efflorescence), cracks in walls or floors, humidity over 60%, peeling paint, windows fogging up, or doors sticking. Any of these indicate moisture problems."
+      },
+      {
+        question: "What causes basement water problems?",
+        answer: "Common causes include: poor drainage around foundation, clogged or damaged weeping tiles, hydrostatic pressure from groundwater, foundation cracks, inadequate grading, clogged gutters, window well issues, and Toronto's clay soil expansion."
+      },
+      {
+        question: "Can I waterproof my basement myself?",
+        answer: "While minor repairs like small crack sealing can be DIY, professional waterproofing is recommended because it requires specialized equipment, proper drainage design, warranty protection, and building code compliance. DIY attempts often fail and can void insurance."
+      },
+      {
+        question: "What's the best time of year to waterproof?",
+        answer: "Spring and summer are ideal for exterior work, but we waterproof year-round. Interior systems can be installed any time. Don't wait if you have active water problems - emergency services are available 24/7."
+      },
+      {
+        question: "How long have you been in business?",
+        answer: "Dryspace has been protecting Toronto homes since 1999. With over 25 years of experience and 10,000+ completed projects, we're one of the GTA's most trusted waterproofing contractors."
+      }
+    ]
+  },
+  {
+    category: "WARRANTY & SERVICE",
+    questions: [
+      {
+        question: "What's included in your 25-year warranty?",
+        answer: "Our comprehensive 25-year warranty covers all materials and workmanship, is fully transferable to new homeowners (adds resale value), includes annual inspections, and provides 24/7 emergency support. No hidden fees or deductibles."
+      },
+      {
+        question: "Are you licensed and insured?",
+        answer: "Yes, we're fully licensed by the City of Toronto (License #BW-2019-3847), carry $5 million liability insurance, are WSIB compliant, and all our technicians are certified waterproofing specialists with 5+ years minimum experience."
+      },
+      {
+        question: "What areas do you service?",
+        answer: "We service all of Greater Toronto Area including Toronto, North York, Scarborough, Etobicoke, Mississauga, Brampton, Vaughan, Richmond Hill, Markham, and Oakville. Same-day service available for emergencies."
+      },
+      {
+        question: "Do you offer free inspections?",
+        answer: "Yes, we provide completely free, no-obligation inspections. Our certified inspector will assess your property, identify issues, explain solutions, and provide a detailed written quote. The inspection typically takes 45-60 minutes."
+      },
+      {
+        question: "What if the problem returns after repair?",
+        answer: "Our warranty covers this. If any issue we've addressed returns, we fix it free of charge. We also provide annual inspections to catch potential problems early. Our goal is permanent solutions, not repeat visits."
+      },
+      {
+        question: "Do you clean up after the work?",
+        answer: "Absolutely. Our service includes complete cleanup. We protect your property during work, remove all debris, restore landscaping where applicable, and leave your home cleaner than we found it. No mess left behind."
+      },
+      {
+        question: "Can you work with my contractor/renovation?",
+        answer: "Yes, we regularly coordinate with general contractors, renovation teams, and other trades. We can schedule our work to fit your renovation timeline and ensure proper integration with other improvements."
+      }
+    ]
+  },
+  {
+    category: "COST & FINANCING",
+    questions: [
+      {
+        question: "How much does waterproofing cost?",
+        answer: "Costs vary based on your specific needs: Interior waterproofing ($3,500-$8,000), Exterior waterproofing ($8,000-$15,000), Crack repairs ($500-$1,500), Sump pump installation ($1,200-$2,500). We provide free detailed quotes with no hidden fees."
+      },
+      {
+        question: "Do you offer financing options?",
+        answer: "Yes! We offer flexible financing with: 0% interest for 12 months OAC, Plans starting at $99/month, Instant approval process, No prepayment penalties. We work with multiple lenders to get you the best rates."
+      },
+      {
+        question: "Does insurance cover waterproofing?",
+        answer: "While preventive waterproofing typically isn't covered, water damage repairs often are. We work directly with insurance companies, provide detailed documentation for claims, and can help you understand your coverage options."
+      },
+      {
+        question: "Are there government rebates available?",
+        answer: "Yes! Toronto offers up to $3,400 through the Basement Flooding Protection Subsidy Program. We help you apply for all available rebates including City of Toronto subsidies, backwater valve rebates, and sump pump rebates."
+      },
+      {
+        question: "Do you require a deposit?",
+        answer: "We require a small 10% deposit to schedule your project, with the balance due upon completion. For emergency services, no deposit is required. We accept cash, cheque, credit cards, and e-transfer."
+      },
+      {
+        question: "Can I get a quote over the phone?",
+        answer: "We can provide rough estimates by phone, but accurate quotes require an on-site inspection. Every home is unique, and we need to assess the specific conditions, measure the area, and identify the best solution."
+      },
+      {
+        question: "Why are quotes so different between companies?",
+        answer: "Price variations often reflect differences in: scope of work, quality of materials, warranty terms, company reputation, and insurance/licensing. Be wary of extremely low quotes - they often lead to additional charges or substandard work."
+      },
+      {
+        question: "Is waterproofing tax deductible?",
+        answer: "Waterproofing may qualify for tax benefits if it's medical-related (mold remediation), part of rental property maintenance, or home office improvements. Consult your tax advisor. We provide detailed invoices for tax purposes."
+      }
+    ]
+  },
+  {
+    category: "TECHNICAL",
+    questions: [
+      {
+        question: "Interior vs. Exterior waterproofing - which is better?",
+        answer: "Both have advantages. Interior systems manage water efficiently and are less invasive/expensive. Exterior waterproofing provides the ultimate protection by stopping water before it reaches walls. We often recommend a combination approach for complete protection."
+      },
+      {
+        question: "Can you waterproof a finished basement?",
+        answer: "Yes! We specialize in waterproofing finished basements with minimal disruption. Our interior drainage systems can be installed along the perimeter without removing all finishes. We protect your belongings and clean up completely."
+      },
+      {
+        question: "What is a French drain system?",
+        answer: "A French drain is a perforated pipe installed around your foundation's perimeter to collect and redirect water. It's surrounded by gravel, connects to a sump pump, and effectively manages groundwater. Essential for Toronto's high water table areas."
+      },
+      {
+        question: "What's the difference between weeping tile and French drain?",
+        answer: "Weeping tile is the older term for foundation drainage (originally clay tiles). French drains are the modern version using perforated PVC pipe. Both serve the same purpose - managing water around your foundation. We install modern French drain systems."
+      },
+      {
+        question: "Do I need a sump pump?",
+        answer: "Sump pumps are essential if you have: high water table, history of flooding, below-grade living space, or interior drainage system. We recommend battery backup systems for power outages - crucial during storms when you need them most."
+      },
+      {
+        question: "What is foundation underpinning?",
+        answer: "Underpinning strengthens and stabilizes foundations by extending them deeper. It's needed for basement lowering, foundation settlement repair, or adding basement apartments. We're certified for all underpinning methods."
+      },
+      {
+        question: "Can you fix foundation cracks?",
+        answer: "Yes, we repair all types of foundation cracks using epoxy injection, polyurethane injection, or exterior excavation depending on crack type and severity. We identify the cause to prevent recurrence."
+      },
+      {
+        question: "What is efflorescence?",
+        answer: "Efflorescence is the white, powdery substance on basement walls. It's mineral deposits left when water evaporates, indicating moisture penetration. While not harmful itself, it signals water problems that need addressing."
+      }
+    ]
+  },
+  {
+    category: "EMERGENCY",
+    questions: [
+      {
+        question: "Do you offer 24/7 emergency service?",
+        answer: "Yes, we provide 24/7 emergency response for flooding, major leaks, and foundation emergencies. Our emergency team can arrive within 2 hours anywhere in the GTA. Call 437-545-0067 anytime."
+      },
+      {
+        question: "My basement is flooding right now - what should I do?",
+        answer: "1) Turn off electricity to the basement, 2) Stop water source if possible, 3) Move valuables to safety, 4) Document damage for insurance, 5) Call us immediately at 437-545-0067. Don't enter deep water - wait for professionals."
+      },
+      {
+        question: "How quickly can you respond to emergencies?",
+        answer: "Our emergency response time is typically under 2 hours in the GTA. We have crews on-call 24/7 with fully equipped trucks. Priority goes to active flooding situations."
+      },
+      {
+        question: "What's included in emergency service?",
+        answer: "Emergency service includes: immediate water extraction, temporary water diversion, emergency repairs to stop active leaks, setting up drying equipment, and planning permanent solutions. We bill insurance directly when applicable."
+      },
+      {
+        question: "Is emergency service more expensive?",
+        answer: "Emergency rates apply outside business hours, but we focus on stopping damage quickly to minimize overall costs. Many insurance policies cover emergency water damage response. We provide detailed documentation for claims."
+      }
+    ]
+  },
+  {
+    category: "PROCESS",
+    questions: [
+      {
+        question: "What happens during the free inspection?",
+        answer: "Our certified inspector will: examine interior and exterior foundation, test humidity levels, check grading and drainage, identify water entry points, explain findings in detail, provide written quote, and answer all questions. Takes about 45-60 minutes."
+      },
+      {
+        question: "How do I prepare for waterproofing work?",
+        answer: "Clear 3-4 feet from basement walls, move stored items to center, remove wall hangings, and ensure access to electrical panel. For exterior work, we'll need 10-12 feet clearance around foundation. We'll help with heavy items."
+      },
+      {
+        question: "Will you need permits?",
+        answer: "We handle all necessary permits. Most waterproofing doesn't require permits, but underpinning, structural work, and some exterior excavations do. Permit costs are included in our quotes when required."
+      },
+      {
+        question: "How disruptive is the work?",
+        answer: "Interior waterproofing is minimally disruptive - you can stay home. Exterior work is noisier but outside. We maintain clean, safe work areas, protect your property, and clean up daily. Most projects complete in 2-3 days."
+      },
+      {
+        question: "Can I stay in my home during work?",
+        answer: "Yes, you can stay home during waterproofing. We section off work areas, control dust, maintain safe pathways, and ensure utilities remain functional. Many clients go about normal routines during our work."
+      },
+      {
+        question: "What if you find additional problems?",
+        answer: "We'll stop work, explain findings, provide options and costs, and proceed only with your approval. No surprise charges. Our detailed inspections minimize unexpected issues, but we're transparent if anything arises."
+      }
+    ]
+  }
+];
+---
+
+<section class="py-16 bg-slate-50">
+  <div class="container mx-auto px-4">
+    <!-- Section Header -->
+    <div class="text-center mb-12">
+      <h2 class="text-4xl font-bold text-slate-900 mb-4 uppercase">
+        Frequently Asked Questions
+      </h2>
+      <p class="text-lg text-slate-600 max-w-3xl mx-auto">
+        Everything you need to know about basement waterproofing in Toronto
+      </p>
+    </div>
+
+    <div class="max-w-6xl mx-auto">
+      <div class="flex flex-col lg:grid lg:grid-cols-3 gap-8">
+        <!-- FAQ Content - Takes 2 columns on desktop, full width on mobile -->
+        <div class="lg:col-span-2 order-2 lg:order-1">
+          <!-- Category Tabs -->
+          <div class="flex flex-wrap gap-2 mb-8 overflow-x-auto">
+            {faqs.map((category, index) => (
+              <button 
+                class={`px-4 sm:px-6 py-2 sm:py-3 font-bold text-xs sm:text-sm uppercase transition-colors whitespace-nowrap ${
+                  index === 0 
+                    ? 'bg-navy-900 text-white' 
+                    : 'bg-white text-slate-900 border-2 border-slate-200 hover:border-slate-300'
+                }`}
+                data-category={index}
+              >
+                {category.category}
+                <span class="ml-2 px-2 py-1 bg-amber-500 text-black text-xs">
+                  {category.questions.length}
+                </span>
+              </button>
+            ))}
+          </div>
+
+          <!-- FAQ Lists -->
+          <div class="space-y-4">
+            {faqs.map((category, categoryIndex) => (
+              <div 
+                class={`faq-list ${categoryIndex === 0 ? 'block' : 'hidden'}`}
+                data-category={categoryIndex}
+              >
+                {category.questions.map((faq, index) => (
+                  <div class="bg-white border-2 border-slate-200 hover:border-slate-300 transition-colors" data-index={index}>
+                    <button class="w-full px-4 sm:px-6 py-3 sm:py-4 text-left flex justify-between items-center faq-question">
+                      <span class="font-bold text-sm sm:text-base text-slate-900 pr-4">{faq.question}</span>
+                      <span class="text-xl sm:text-2xl font-bold text-slate-900 flex-shrink-0 expand-icon">+</span>
+                    </button>
+                    <div class="faq-answer hidden px-4 sm:px-6 pb-4">
+                      <div class="border-t-2 border-slate-100 pt-4">
+                        <p class="text-sm sm:text-base text-slate-600">{faq.answer}</p>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <!-- Sidebar - Takes 1 column on desktop, full width on mobile -->
+        <div class="lg:col-span-1 order-1 lg:order-2">
+          <!-- Contact Card -->
+          <div class="bg-navy-900 text-white p-6 lg:p-8 mb-6">
+            <h3 class="text-xl font-bold mb-4 uppercase">Need Immediate Help?</h3>
+            <p class="mb-6">Our waterproofing experts are standing by</p>
+            
+            <div class="space-y-3">
+              <a href="tel:437-545-0067" class="block bg-amber-500 text-black text-center py-3 px-4 font-bold hover:bg-amber-400 transition-colors uppercase">
+                CALL NOW: 437-545-0067
+              </a>
+              <div class="text-center py-2 border-2 border-cyan-500">
+                <span class="text-cyan-400 font-bold uppercase">24/7 Emergency Service</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Resources Card -->
+          <div class="bg-white border-2 border-slate-200 p-6 mb-6">
+            <h4 class="font-bold text-slate-900 mb-4 uppercase">Free Resources</h4>
+            <ul class="space-y-3">
+              <li class="border-b border-slate-100 pb-3">
+                <div class="text-slate-600">
+                  <span class="font-semibold">Homeowner's Guide to Waterproofing</span>
+                  <span class="block text-sm text-slate-400">PDF • 2.4MB</span>
+                </div>
+              </li>
+              <li class="border-b border-slate-100 pb-3">
+                <div class="text-slate-600">
+                  <span class="font-semibold">DIY Inspection Tutorial</span>
+                  <span class="block text-sm text-slate-400">Video • 5min</span>
+                </div>
+              </li>
+              <li class="border-b border-slate-100 pb-3">
+                <div class="text-slate-600">
+                  <span class="font-semibold">Maintenance Checklist</span>
+                  <span class="block text-sm text-slate-400">PDF • 1.2MB</span>
+                </div>
+              </li>
+              <li>
+                <a href="/tools/waterproofing-cost-calculator" class="text-slate-600 hover:text-slate-900">
+                  <span class="font-semibold">Cost Calculator</span>
+                  <span class="block text-sm text-slate-400">Interactive Tool</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Trust Badge -->
+          <div class="bg-white border-2 border-slate-200 p-6">
+            <div class="text-center">
+              <p class="text-3xl font-bold text-slate-900 mb-2">2,847+</p>
+              <p class="text-sm text-slate-500 uppercase mb-4">Happy Customers</p>
+              <div class="border-t-2 border-slate-100 pt-4">
+                <p class="text-2xl font-bold text-slate-900">4.9/5.0</p>
+                <p class="text-sm text-slate-500">Average Rating</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // Category tabs
+    const categoryTabs = document.querySelectorAll('[data-category]');
+    const faqLists = document.querySelectorAll('.faq-list');
+    
+    categoryTabs.forEach(tab => {
+      if (tab.tagName === 'BUTTON') {
+        tab.addEventListener('click', () => {
+          const category = tab.dataset.category;
+          
+          // Update active tab styling
+          categoryTabs.forEach(t => {
+            if (t.tagName === 'BUTTON') {
+              t.classList.remove('bg-navy-900', 'text-white');
+              t.classList.add('bg-white', 'text-slate-900', 'border-2', 'border-slate-200');
+            }
+          });
+          tab.classList.remove('bg-white', 'text-slate-900', 'border-2', 'border-slate-200');
+          tab.classList.add('bg-navy-900', 'text-white');
+          
+          // Update active list
+          faqLists.forEach(list => {
+            if (list.dataset.category === category) {
+              list.classList.remove('hidden');
+              list.classList.add('block');
+            } else {
+              list.classList.remove('block');
+              list.classList.add('hidden');
+            }
+          });
+        });
+      }
+    });
+    
+    // FAQ items
+    const faqQuestions = document.querySelectorAll('.faq-question');
+    
+    faqQuestions.forEach(question => {
+      question.addEventListener('click', () => {
+        const answer = question.nextElementSibling;
+        const icon = question.querySelector('.expand-icon');
+        
+        if (answer.classList.contains('hidden')) {
+          // Close other items in the same list
+          const parentList = question.closest('.faq-list');
+          const otherAnswers = parentList?.querySelectorAll('.faq-answer');
+          const otherIcons = parentList?.querySelectorAll('.expand-icon');
+          
+          otherAnswers?.forEach(a => a.classList.add('hidden'));
+          otherIcons?.forEach(i => i.textContent = '+');
+          
+          // Open this item
+          answer.classList.remove('hidden');
+          icon.textContent = '−';
+        } else {
+          // Close this item
+          answer.classList.add('hidden');
+          icon.textContent = '+';
+        }
+      });
+    });
+  });
+</script>
+
+<style>
+  /* FAQ Component Styles */
+  .faq-list {
+    transition: opacity 0.3s ease;
+  }
+  
+  .faq-list.hidden {
+    display: none !important;
+  }
+  
+  .faq-list.block {
+    display: block !important;
+  }
+  
+  /* FAQ Questions */
+  .faq-question {
+    cursor: pointer;
+    transition: all 0.3s ease;
+    user-select: none;
+  }
+  
+  .faq-question:hover {
+    background-color: #f9fafb;
+  }
+  
+  /* FAQ Answers */
+  .faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+  }
+  
+  .faq-answer.hidden {
+    max-height: 0 !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+  
+  .faq-answer:not(.hidden) {
+    max-height: 500px;
+    animation: slideDown 0.3s ease;
+  }
+  
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Expand Icon Animation */
+  .expand-icon {
+    transition: transform 0.3s ease, color 0.3s ease;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    background: #fbbf24;
+    color: #1f2937;
+    font-weight: bold;
+  }
+  
+  .faq-question:hover .expand-icon {
+    background: #f59e0b;
+  }
+  
+  /* Category Buttons */
+  button[data-category] {
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+  }
+  
+  button[data-category]:not(.bg-navy-900):hover {
+    background: #fbbf24 !important;
+    color: #1f2937 !important;
+    border-color: #fbbf24 !important;
+  }
+  
+  button[data-category].bg-navy-900 {
+    position: relative;
+  }
+  
+  /* Active Category Indicator */
+  button[data-category].bg-navy-900::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: #fbbf24;
+  }
+  
+  /* Contact Card Styles */
+  .bg-navy-900 {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Resources Card */
+  .bg-white.border-2 {
+    transition: border-color 0.3s ease;
+  }
+  
+  .bg-white.border-2:hover {
+    border-color: #fbbf24;
+  }
+  
+  /* Mobile Responsive */
+  @media (max-width: 640px) {
+    .faq-question {
+      padding: 12px !important;
+    }
+    
+    .faq-answer {
+      padding-left: 12px !important;
+      padding-right: 12px !important;
+    }
+    
+    .expand-icon {
+      width: 24px;
+      height: 24px;
+      line-height: 24px;
+      font-size: 18px;
+    }
+    
+    button[data-category] {
+      padding: 8px 12px;
+      font-size: 12px;
+    }
+  }
+  
+  /* Ensure FAQ Works Properly */
+  .faq-question {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    width: 100% !important;
+    text-align: left !important;
+    background: transparent;
+    border: none;
+    outline: none;
+  }
+  
+  .faq-question:focus {
+    outline: 2px solid #fbbf24;
+    outline-offset: -2px;
+  }
+  
+  /* FAQ Item Container */
+  div[data-index] {
+    margin-bottom: 1rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  div[data-index]:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Category Badge Count */
+  button[data-category] span.ml-2 {
+    display: inline-block;
+    min-width: 24px;
+    text-align: center;
+    border-radius: 2px;
+    font-weight: bold;
+  }
+  
+  /* Scroll behavior for category tabs */
+  .overflow-x-auto {
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    scrollbar-color: #fbbf24 #f3f4f6;
+  }
+  
+  .overflow-x-auto::-webkit-scrollbar {
+    height: 6px;
+  }
+  
+  .overflow-x-auto::-webkit-scrollbar-track {
+    background: #f3f4f6;
+  }
+  
+  .overflow-x-auto::-webkit-scrollbar-thumb {
+    background: #fbbf24;
+    border-radius: 3px;
+  }
+  
+  /* Print Styles */
+  @media print {
+    .faq-answer {
+      max-height: none !important;
+      display: block !important;
+    }
+    
+    .expand-icon {
+      display: none !important;
+    }
+    
+    button[data-category] {
+      display: none !important;
+    }
+    
+    .faq-list {
+      display: block !important;
+    }
+  }
+</style>

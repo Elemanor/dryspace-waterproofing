@@ -1,0 +1,731 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+
+const featuredAreas = [
+  {
+    name: 'Toronto',
+    slug: 'toronto',
+    population: '2.8M',
+    responseTime: '30-45 min',
+    projects: '5,000+',
+    description: 'Serving downtown Toronto, Yorkville, The Annex, Beaches, and all central neighborhoods with rapid emergency response.',
+    neighborhoods: ['Downtown Core', 'Yorkville', 'The Annex', 'Beaches', 'Leslieville', 'Cabbagetown', 'Riverdale', 'Trinity Bellwoods'],
+    commonIssues: ['High water table near Lake Ontario', 'Aging infrastructure in older homes', 'Clay soil expansion', 'Storm sewer backup'],
+  },
+  {
+    name: 'North York',
+    slug: 'north-york',
+    population: '670K',
+    responseTime: '30-60 min',
+    projects: '2,500+',
+    description: 'Complete waterproofing services for North York homes, from Willowdale to York Mills.',
+    neighborhoods: ['Willowdale', 'York Mills', 'Bayview Village', 'Don Valley Village', 'Bathurst Manor', 'Lawrence Park'],
+    commonIssues: ['Foundation settling', 'Basement flooding', 'Window well leaks', 'Sump pump failures'],
+  },
+  {
+    name: 'Scarborough',
+    slug: 'scarborough',
+    population: '630K',
+    responseTime: '45-60 min',
+    projects: '2,000+',
+    description: 'Protecting Scarborough families from basement water damage with proven solutions.',
+    neighborhoods: ['Agincourt', 'Birch Cliff', 'Guildwood', 'Malvern', 'Rouge', 'West Hill', 'Woburn'],
+    commonIssues: ['Heavy clay soil', 'Ravine properties water issues', 'Foundation cracks', 'Poor drainage systems'],
+  },
+  {
+    name: 'Mississauga',
+    slug: 'mississauga',
+    population: '720K',
+    responseTime: '45-75 min',
+    projects: '3,000+',
+    description: 'Mississauga\'s trusted waterproofing experts, from Port Credit to Meadowvale.',
+    neighborhoods: ['Port Credit', 'Streetsville', 'Meadowvale', 'Erin Mills', 'Cooksville', 'Lorne Park', 'Clarkson'],
+    commonIssues: ['New construction settling', 'Hydrostatic pressure', 'French drain failures', 'Concrete deterioration'],
+  }
+];
+
+const allServiceAreas = [
+  // West GTA
+  { region: 'West GTA', areas: [
+    { name: 'Etobicoke', responseTime: '30-45 min', postalCodes: 'M8V-M9W', highlight: true },
+    { name: 'Brampton', responseTime: '60-90 min', postalCodes: 'L6P-L7A' },
+    { name: 'Oakville', responseTime: '60-75 min', postalCodes: 'L6H-L6M' },
+    { name: 'Burlington', responseTime: '75-90 min', postalCodes: 'L7L-L7T' },
+    { name: 'Milton', responseTime: '60-90 min', postalCodes: 'L9T-L9E' },
+    { name: 'Georgetown', responseTime: '75-90 min', postalCodes: 'L7G' }
+  ]},
+  // East GTA
+  { region: 'East GTA', areas: [
+    { name: 'Pickering', responseTime: '60-75 min', postalCodes: 'L1V-L1X' },
+    { name: 'Ajax', responseTime: '60-90 min', postalCodes: 'L1S-L1T' },
+    { name: 'Whitby', responseTime: '75-90 min', postalCodes: 'L1M-L1R' },
+    { name: 'Oshawa', responseTime: '90-120 min', postalCodes: 'L1G-L1L' },
+    { name: 'Markham', responseTime: '45-60 min', postalCodes: 'L3P-L6G', highlight: true },
+    { name: 'Stouffville', responseTime: '60-75 min', postalCodes: 'L4A' }
+  ]},
+  // North GTA
+  { region: 'North GTA', areas: [
+    { name: 'Vaughan', responseTime: '45-60 min', postalCodes: 'L4H-L6A', highlight: true },
+    { name: 'Richmond Hill', responseTime: '45-60 min', postalCodes: 'L4B-L4S', highlight: true },
+    { name: 'Thornhill', responseTime: '40-50 min', postalCodes: 'L3T-L4J' },
+    { name: 'Aurora', responseTime: '60-75 min', postalCodes: 'L4G' },
+    { name: 'Newmarket', responseTime: '60-90 min', postalCodes: 'L3X-L3Y' },
+    { name: 'King City', responseTime: '60-75 min', postalCodes: 'L7B' }
+  ]},
+  // Central Toronto
+  { region: 'Central Toronto', areas: [
+    { name: 'East York', responseTime: '30-45 min', postalCodes: 'M4B-M4J', highlight: true },
+    { name: 'York', responseTime: '30-45 min', postalCodes: 'M6C-M6N' },
+    { name: 'Forest Hill', responseTime: '30-40 min', postalCodes: 'M4V-M5N' },
+    { name: 'Rosedale', responseTime: '30-40 min', postalCodes: 'M4W-M5R' },
+    { name: 'The Beaches', responseTime: '35-45 min', postalCodes: 'M4E-M4L' },
+    { name: 'Leaside', responseTime: '35-45 min', postalCodes: 'M4G-M4H' }
+  ]}
+];
+
+const emergencyStats = {
+  avgResponseTime: '47 minutes',
+  fastestResponse: '15 minutes',
+  coverage247: true,
+  technicianCount: 50,
+  vehicleCount: 20
+};
+---
+
+<PageLayout title="Service Areas Toronto GTA | Basement Waterproofing Coverage Map | Dryspace" description="Professional waterproofing services across the Greater Toronto Area. 24/7 emergency response, 25-year warranty.">
+  <!-- Hero Section -->
+  <section class="py-16 bg-navy-900">
+    <div class="container mx-auto px-4">
+      <div class="text-center">
+        <h1 class="text-5xl font-bold text-white mb-4 uppercase">
+          WATERPROOFING SERVICES ACROSS GREATER TORONTO
+        </h1>
+        <p class="text-xl text-slate-300 mb-8">24/7 EMERGENCY RESPONSE • 30-MINUTE AVERAGE RESPONSE TIME</p>
+        
+        <div class="max-w-2xl mx-auto mb-8">
+          <div class="flex gap-4">
+            <input type="text" placeholder="ENTER YOUR POSTAL CODE..." class="flex-1 px-6 py-4 border-2 border-slate-200 bg-white text-slate-900 uppercase placeholder-gray-500" />
+            <button class="px-8 py-4 bg-amber-500 text-black font-bold uppercase hover:bg-amber-400 transition-colors">CHECK COVERAGE</button>
+          </div>
+        </div>
+        
+        <div class="flex justify-center gap-8 flex-wrap">
+          <div class="text-cyan-400">
+            <span class="font-bold">30+</span> SERVICE AREAS
+          </div>
+          <div class="text-cyan-400">
+            <span class="font-bold">20</span> SERVICE VEHICLES
+          </div>
+          <div class="text-cyan-400">
+            <span class="font-bold">SAME-DAY</span> SERVICE
+          </div>
+          <div class="text-cyan-400">
+            <span class="font-bold">15,000+</span> PROJECTS
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Service Areas Grid -->
+  <section class="py-16 bg-slate-50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-3xl font-bold text-slate-900 mb-8 uppercase text-center">SERVICE AREA COVERAGE</h2>
+        
+        <div class="grid md:grid-cols-2 gap-8 mb-12">
+          {allServiceAreas.map(region => (
+            <div class="bg-white border-2 border-slate-200 p-6">
+              <h3 class="text-xl font-bold text-slate-900 mb-4 uppercase border-b-2 border-slate-200 pb-2">{region.region}</h3>
+              <div class="space-y-2">
+                {region.areas.map(area => (
+                  <div class="flex justify-between items-center py-2 border-b border-slate-100">
+                    <div>
+                      <span class="font-semibold text-slate-900 uppercase">{area.name}</span>
+                      {area.highlight && <span class="ml-2 px-2 py-1 bg-amber-500 text-black text-xs font-bold uppercase">PREMIUM</span>}
+                    </div>
+                    <div class="text-right">
+                      <span class="text-sm text-slate-500 uppercase">{area.responseTime}</span>
+                      <span class="text-sm text-slate-400 ml-2">({area.postalCodes})</span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Emergency Response Stats -->
+  <section class="py-16 bg-navy-900">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-slate-900 mb-12 text-center uppercase">FASTEST EMERGENCY RESPONSE IN THE GTA</h2>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-8">
+        <div class="bg-navy-900 border-2 border-slate-600 p-6 text-center">
+          <div class="text-3xl font-bold text-cyan-400 mb-2">{emergencyStats.avgResponseTime}</div>
+          <div class="text-sm text-slate-400 uppercase">Average Response</div>
+        </div>
+        <div class="bg-navy-900 border-2 border-slate-600 p-6 text-center">
+          <div class="text-3xl font-bold text-cyan-400 mb-2">{emergencyStats.fastestResponse}</div>
+          <div class="text-sm text-slate-400 uppercase">Fastest Response</div>
+        </div>
+        <div class="bg-navy-900 border-2 border-slate-600 p-6 text-center">
+          <div class="text-3xl font-bold text-cyan-400 mb-2">{emergencyStats.technicianCount}+</div>
+          <div class="text-sm text-slate-400 uppercase">Certified Technicians</div>
+        </div>
+        <div class="bg-navy-900 border-2 border-slate-600 p-6 text-center">
+          <div class="text-3xl font-bold text-cyan-400 mb-2">{emergencyStats.vehicleCount}</div>
+          <div class="text-sm text-slate-400 uppercase">Service Vehicles</div>
+        </div>
+      </div>
+      <div class="text-center">
+        <p class="text-xl text-slate-300 mb-6">BASEMENT FLOODING? WATER EMERGENCY? WE'RE ON OUR WAY!</p>
+        <a href="tel:437-545-0067" class="inline-flex items-center px-8 py-4 bg-amber-500 text-black font-bold uppercase hover:bg-amber-400 transition-colors">
+          <svg class="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 00-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z" fill="currentColor"/>
+          </svg>
+          CALL EMERGENCY LINE: 437-545-0067
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Service Areas -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-3xl font-bold text-slate-900 mb-4 text-center uppercase">PRIMARY SERVICE AREAS</h2>
+        <p class="text-lg text-slate-600 mb-12 text-center">CLICK ANY AREA FOR DETAILED LOCAL INFORMATION</p>
+        
+        <div class="grid md:grid-cols-2 gap-8">
+          {featuredAreas.map((area) => (
+            <div class="bg-white border-2 border-slate-200 p-6" id={area.slug}>
+              <div class="border-b-2 border-slate-200 pb-4 mb-4">
+                <h3 class="text-2xl font-bold text-slate-900 uppercase">{area.name}</h3>
+                <div class="grid grid-cols-3 gap-4 mt-4">
+                  <div>
+                    <span class="text-sm text-slate-500 uppercase block">POPULATION</span>
+                    <span class="text-lg font-bold text-slate-900">{area.population}</span>
+                  </div>
+                  <div>
+                    <span class="text-sm text-slate-500 uppercase block">RESPONSE</span>
+                    <span class="text-lg font-bold text-slate-900">{area.responseTime}</span>
+                  </div>
+                  <div>
+                    <span class="text-sm text-slate-500 uppercase block">PROJECTS</span>
+                    <span class="text-lg font-bold text-slate-900">{area.projects}</span>
+                  </div>
+                </div>
+              </div>
+              
+              <p class="text-slate-600 mb-4">{area.description}</p>
+              
+              <div class="mb-4">
+                <h4 class="font-bold text-slate-900 mb-2 uppercase">NEIGHBORHOODS WE SERVE:</h4>
+                <div class="flex flex-wrap gap-2">
+                  {area.neighborhoods.map(n => (
+                    <span class="px-3 py-1 bg-slate-50 border border-slate-200 text-sm text-slate-600 uppercase">{n}</span>
+                  ))}
+                </div>
+              </div>
+              
+              <div class="mb-6">
+                <h4 class="font-bold text-slate-900 mb-2 uppercase">COMMON ISSUES IN {area.name.toUpperCase()}:</h4>
+                <ul class="space-y-1">
+                  {area.commonIssues.map(issue => (
+                    <li class="text-sm text-slate-600 flex items-start">
+                      <span class="mr-2 text-cyan-400">•</span>
+                      <span>{issue}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              
+              <div class="flex gap-4">
+                <a href={`/locations/${area.slug}`} class="flex-1 px-4 py-3 bg-amber-500 text-black font-bold text-center uppercase hover:bg-amber-400 transition-colors">
+                  VIEW {area.name.toUpperCase()} SERVICES
+                </a>
+                <a href="/contact" class="flex-1 px-4 py-3 border-2 border-slate-700 text-white font-bold text-center uppercase hover:bg-navy-900 hover:text-white transition-colors">
+                  GET LOCAL QUOTE
+                </a>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- All Service Areas Grid -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <h2 class="text-4xl font-bold text-slate-900 mb-4 text-center uppercase">COMPLETE SERVICE COVERAGE</h2>
+      <p class="text-lg text-slate-600 mb-12 text-center">WE PROVIDE WATERPROOFING SERVICES TO ALL GTA COMMUNITIES</p>
+      
+      {allServiceAreas.map(region => (
+        <div class="mb-12">
+          <h3 class="text-2xl font-bold text-slate-900 mb-6 uppercase border-b-2 border-slate-200 pb-2">{region.region}</h3>
+          <div class="grid md:grid-cols-3 lg:grid-cols-4 gap-4">
+            {region.areas.map(area => (
+              <div class="bg-white border-2 border-slate-200 p-4 hover:border-slate-300 transition-colors" id={area.name.toLowerCase().replace(' ', '-')}>
+                <div class="mb-3">
+                  <h4 class="text-lg font-bold text-slate-900 uppercase">{area.name}</h4>
+                  {area.highlight && <span class="inline-block mt-1 px-2 py-1 bg-amber-500 text-black text-xs font-bold uppercase">PREMIUM COVERAGE</span>}
+                </div>
+                <div class="space-y-2 mb-4">
+                  <div class="flex justify-between items-center pb-1 border-b border-slate-100">
+                    <span class="text-xs font-semibold text-slate-600 uppercase">RESPONSE TIME</span>
+                    <span class="text-xs font-bold text-slate-900">{area.responseTime}</span>
+                  </div>
+                  <div class="flex justify-between items-center pb-1 border-b border-slate-100">
+                    <span class="text-xs font-semibold text-slate-600 uppercase">POSTAL CODES</span>
+                    <span class="text-xs font-bold text-slate-900">{area.postalCodes}</span>
+                  </div>
+                </div>
+                <a href={`/contact?area=${area.name}`} class="block w-full py-2 bg-navy-900 text-white text-center font-bold uppercase hover:bg-navy-900 transition-colors text-sm">
+                  GET {area.name.toUpperCase()} QUOTE →
+                </a>
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Local Expertise Section -->
+  <section class="py-16 bg-slate-50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-3xl font-bold text-slate-900 mb-12 text-center uppercase">LOCAL TORONTO EXPERTISE THAT MAKES A DIFFERENCE</h2>
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="bg-white border-2 border-slate-200 p-6">
+            <h3 class="text-lg font-bold text-slate-900 mb-3 uppercase">LAKE ONTARIO WATER TABLES</h3>
+            <p class="text-slate-600">We understand the unique challenges of Toronto's proximity to Lake Ontario, including high water tables and seasonal flooding patterns.</p>
+          </div>
+          <div class="bg-white border-2 border-slate-200 p-6">
+            <h3 class="text-lg font-bold text-slate-900 mb-3 uppercase">TORONTO BUILDING CODES</h3>
+            <p class="text-slate-600">Fully licensed and compliant with all City of Toronto building codes and permit requirements for waterproofing work.</p>
+          </div>
+          <div class="bg-white border-2 border-slate-200 p-6">
+            <h3 class="text-lg font-bold text-slate-900 mb-3 uppercase">NEIGHBORHOOD KNOWLEDGE</h3>
+            <p class="text-slate-600">From century homes in Cabbagetown to new builds in Vaughan, we know each area's specific waterproofing challenges.</p>
+          </div>
+          <div class="bg-white border-2 border-slate-200 p-6">
+            <h3 class="text-lg font-bold text-slate-900 mb-3 uppercase">GTA WEATHER PATTERNS</h3>
+            <p class="text-slate-600">25 years of experience with Toronto's freeze-thaw cycles, spring melts, and summer downpours.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Service Comparison Table -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <h2 class="text-4xl font-bold text-slate-900 mb-8 text-center uppercase">WHY WE'RE #1 IN EVERY GTA NEIGHBORHOOD</h2>
+      <div class="max-w-6xl mx-auto">
+        <div class="overflow-x-auto">
+          <table class="w-full border-2 border-slate-200">
+            <thead>
+              <tr class="bg-navy-900 text-white">
+                <th class="border-2 border-slate-200 px-4 py-3 text-left uppercase">SERVICE FEATURE</th>
+                <th class="border-2 border-slate-200 px-4 py-3 text-center uppercase">DOWNTOWN TORONTO</th>
+                <th class="border-2 border-slate-200 px-4 py-3 text-center uppercase">SUBURBS (905)</th>
+                <th class="border-2 border-slate-200 px-4 py-3 text-center uppercase">EMERGENCY SERVICE</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="bg-white">
+                <td class="border-2 border-slate-200 px-4 py-3 font-semibold uppercase">RESPONSE TIME</td>
+                <td class="border-2 border-slate-200 px-4 py-3 text-center"><span class="font-bold text-amber-500">30-45 MIN</span></td>
+                <td class="border-2 border-slate-200 px-4 py-3 text-center">45-90 MIN</td>
+                <td class="border-2 border-slate-200 px-4 py-3 text-center"><span class="font-bold text-amber-500">&lt; 60 MIN</span></td>
+              </tr>
+              <tr class="bg-slate-50">
+                <td class="border-2 border-slate-200 px-4 py-3 font-semibold uppercase">SERVICE HOURS</td>
+                <td class="border-2 border-slate-200 px-4 py-3 text-center font-bold">24/7</td>
+                <td class="border-2 border-slate-200 px-4 py-3 text-center font-bold">24/7</td>
+                <td class="border-2 border-slate-200 px-4 py-3 text-center font-bold">24/7</td>
+              </tr>
+              <tr class="bg-white">
+                <td class="border-2 border-slate-200 px-4 py-3 font-semibold uppercase">FREE INSPECTION</td>
+                <td class="border-2 border-slate-200 px-4 py-3 text-center"> SAME DAY</td>
+                <td class="border-2 border-slate-200 px-4 py-3 text-center"> NEXT DAY</td>
+                <td class="border-2 border-slate-200 px-4 py-3 text-center"> IMMEDIATE</td>
+              </tr>
+              <tr class="bg-slate-50">
+                <td class="border-2 border-slate-200 px-4 py-3 font-semibold uppercase">WARRANTY</td>
+                <td class="border-2 border-slate-200 px-4 py-3 text-center font-bold">25 YEARS</td>
+                <td class="border-2 border-slate-200 px-4 py-3 text-center font-bold">25 YEARS</td>
+                <td class="border-2 border-slate-200 px-4 py-3 text-center font-bold">25 YEARS</td>
+              </tr>
+              <tr class="bg-white">
+                <td class="border-2 border-slate-200 px-4 py-3 font-semibold uppercase">PRICE MATCH</td>
+                <td class="border-2 border-slate-200 px-4 py-3 text-center"> GUARANTEED</td>
+                <td class="border-2 border-slate-200 px-4 py-3 text-center"> GUARANTEED</td>
+                <td class="border-2 border-slate-200 px-4 py-3 text-center"> GUARANTEED</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- All Service Locations Section -->
+  <section class="py-12">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-3xl font-bold mb-8 text-center uppercase">ALL SERVICE AREAS</h2>
+      <div class="grid md:grid-cols-4 gap-4">
+        <!-- Toronto Core -->
+        <div class="bg-white p-4 border-2 border-slate-200">
+          <h3 class="font-bold text-lg mb-3 text-slate-900 uppercase">TORONTO CORE</h3>
+          <ul class="space-y-2 text-sm">
+            <li class="flex items-start">
+              <span class="mr-2 text-cyan-400">•</span>
+              <a href="/locations/toronto" class="text-slate-600 hover:text-slate-900 transition-colors uppercase font-semibold">DOWNTOWN TORONTO</a>
+            </li>
+            <li class="flex items-start">
+              <span class="mr-2 text-cyan-400">•</span>
+              <a href="/neighborhoods/cabbagetown" class="text-slate-600 hover:text-slate-900 transition-colors uppercase font-semibold">CABBAGETOWN</a>
+            </li>
+            <li class="flex items-start">
+              <span class="mr-2 text-cyan-400">•</span>
+              <a href="/neighborhoods/distillery-district" class="text-slate-600 hover:text-slate-900 transition-colors uppercase font-semibold">DISTILLERY DISTRICT</a>
+            </li>
+            <li class="flex items-start">
+              <span class="mr-2 text-cyan-400">•</span>
+              <a href="/neighborhoods/regent-park" class="text-slate-600 hover:text-slate-900 transition-colors uppercase font-semibold">REGENT PARK</a>
+            </li>
+            <li class="flex items-start">
+              <span class="mr-2 text-cyan-400">•</span>
+              <a href="/neighborhoods/leslieville" class="text-slate-600 hover:text-slate-900 transition-colors uppercase font-semibold">LESLIEVILLE</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- East Toronto -->
+        <div class="bg-white p-4 border-2 border-slate-200">
+          <h3 class="font-bold text-lg mb-3 text-slate-900 uppercase">EAST TORONTO</h3>
+          <ul class="space-y-2 text-sm">
+            <li class="flex items-start">
+              <span class="mr-2 text-cyan-400">•</span>
+              <a href="/locations/scarborough" class="text-slate-600 hover:text-slate-900 transition-colors uppercase font-semibold">SCARBOROUGH</a>
+            </li>
+            <li class="flex items-start">
+              <span class="mr-2 text-cyan-400">•</span>
+              <a href="/neighborhoods/the-beaches" class="text-slate-600 hover:text-slate-900 transition-colors uppercase font-semibold">THE BEACHES</a>
+            </li>
+            <li class="flex items-start">
+              <span class="mr-2 text-cyan-400">•</span>
+              <a href="/neighborhoods/east-york" class="text-slate-600 hover:text-slate-900 transition-colors uppercase font-semibold">EAST YORK</a>
+            </li>
+            <li class="flex items-start">
+              <span class="mr-2 text-cyan-400">•</span>
+              <a href="/neighborhoods/danforth" class="text-slate-600 hover:text-slate-900 transition-colors uppercase font-semibold">DANFORTH</a>
+            </li>
+            <li class="flex items-start">
+              <span class="mr-2 text-cyan-400">•</span>
+              <a href="/neighborhoods/riverdale" class="text-slate-600 hover:text-slate-900 transition-colors uppercase font-semibold">RIVERDALE</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- North Toronto -->
+        <div class="bg-white p-4 border-2 border-slate-200">
+          <h3 class="font-bold text-lg mb-3 text-slate-900 uppercase">NORTH TORONTO</h3>
+          <ul class="space-y-2 text-sm">
+            <li class="flex items-start">
+              <span class="mr-2 text-cyan-400">•</span>
+              <a href="/locations/north-york" class="text-slate-600 hover:text-slate-900 transition-colors uppercase font-semibold">NORTH YORK</a>
+            </li>
+            <li class="flex items-start">
+              <span class="mr-2 text-cyan-400">•</span>
+              <a href="/neighborhoods/willowdale" class="text-slate-600 hover:text-slate-900 transition-colors uppercase font-semibold">WILLOWDALE</a>
+            </li>
+            <li class="flex items-start">
+              <span class="mr-2 text-cyan-400">•</span>
+              <a href="/neighborhoods/yorkville" class="text-slate-600 hover:text-slate-900 transition-colors uppercase font-semibold">YORKVILLE</a>
+            </li>
+            <li class="flex items-start">
+              <span class="mr-2 text-cyan-400">•</span>
+              <a href="/neighborhoods/rosedale" class="text-slate-600 hover:text-slate-900 transition-colors uppercase font-semibold">ROSEDALE</a>
+            </li>
+            <li class="flex items-start">
+              <span class="mr-2 text-cyan-400">•</span>
+              <a href="/neighborhoods/forest-hill" class="text-slate-600 hover:text-slate-900 transition-colors uppercase font-semibold">FOREST HILL</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- West Toronto -->
+        <div class="bg-white p-4 border-2 border-slate-200">
+          <h3 class="font-bold text-lg mb-3 text-slate-900 uppercase">WEST TORONTO</h3>
+          <ul class="space-y-2 text-sm">
+            <li class="flex items-start">
+              <span class="mr-2 text-cyan-400">•</span>
+              <a href="/locations/etobicoke" class="text-slate-600 hover:text-slate-900 transition-colors uppercase font-semibold">ETOBICOKE</a>
+            </li>
+            <li class="flex items-start">
+              <span class="mr-2 text-cyan-400">•</span>
+              <a href="/neighborhoods/high-park" class="text-slate-600 hover:text-slate-900 transition-colors uppercase font-semibold">HIGH PARK</a>
+            </li>
+            <li class="flex items-start">
+              <span class="mr-2 text-cyan-400">•</span>
+              <a href="/neighborhoods/parkdale" class="text-slate-600 hover:text-slate-900 transition-colors uppercase font-semibold">PARKDALE</a>
+            </li>
+            <li class="flex items-start">
+              <span class="mr-2 text-cyan-400">•</span>
+              <a href="/neighborhoods/the-junction" class="text-slate-600 hover:text-slate-900 transition-colors uppercase font-semibold">THE JUNCTION</a>
+            </li>
+            <li class="flex items-start">
+              <span class="mr-2 text-cyan-400">•</span>
+              <a href="/neighborhoods/roncesvalles" class="text-slate-600 hover:text-slate-900 transition-colors uppercase font-semibold">RONCESVALLES</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Service Quality by Area -->
+      <div class="mt-12">
+        <h3 class="text-2xl font-bold mb-6 text-center uppercase">SERVICE QUALITY BY AREA</h3>
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="bg-white p-6 border-2 border-slate-200 text-center">
+            <div class="text-3xl font-bold text-slate-900 mb-2">24/7</div>
+            <div class="text-lg font-semibold mb-2 uppercase">EMERGENCY RESPONSE</div>
+            <p class="text-slate-600 text-sm uppercase">AVAILABLE ACROSS ALL SERVICE AREAS FOR WATER EMERGENCIES</p>
+          </div>
+          
+          <div class="bg-white p-6 border-2 border-slate-200 text-center">
+            <div class="text-3xl font-bold text-slate-900 mb-2">2-HOUR</div>
+            <div class="text-lg font-semibold mb-2 uppercase">RESPONSE TIME</div>
+            <p class="text-slate-600 text-sm uppercase">AVERAGE EMERGENCY RESPONSE TIME IN GREATER TORONTO AREA</p>
+          </div>
+          
+          <div class="bg-white p-6 border-2 border-slate-200 text-center">
+            <div class="text-3xl font-bold text-slate-900 mb-2">LOCAL</div>
+            <div class="text-lg font-semibold mb-2 uppercase">EXPERTISE</div>
+            <p class="text-slate-600 text-sm uppercase">EACH TEAM KNOWS THE SPECIFIC CHALLENGES IN THEIR AREA</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Access -->
+      <div class="mt-8 bg-white border-2 border-slate-200 p-6">
+        <h3 class="text-lg font-bold mb-4 text-center uppercase">FIND YOUR SERVICE TEAM</h3>
+        <div class="grid md:grid-cols-2 gap-4">
+          <div>
+            <h4 class="font-semibold mb-2 uppercase">EMERGENCY SERVICES</h4>
+            <ul class="text-sm space-y-1">
+              <li>• <a href="tel:437-545-0067" class="text-slate-900 hover:text-amber-500 font-bold uppercase">CALL 437-545-0067 FOR EMERGENCIES</a></li>
+              <li>• <a href="/services/emergency-waterproofing" class="text-slate-600 hover:text-slate-900 uppercase">EMERGENCY WATER REMOVAL →</a></li>
+              <li>• <a href="/services/flood-cleanup" class="text-slate-600 hover:text-slate-900 uppercase">FLOOD CLEANUP SERVICES →</a></li>
+            </ul>
+          </div>
+          
+          <div>
+            <h4 class="font-semibold mb-2 uppercase">SCHEDULED SERVICES</h4>
+            <ul class="text-sm space-y-1">
+              <li>• <a href="/free-inspection" class="text-slate-600 hover:text-slate-900 uppercase">SCHEDULE FREE INSPECTION →</a></li>
+              <li>• <a href="/contact" class="text-slate-600 hover:text-slate-900 uppercase">REQUEST SERVICE QUOTE →</a></li>
+              <li>• <a href="/warranty#registration" class="text-slate-600 hover:text-slate-900 uppercase">REGISTER EXISTING WARRANTY →</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-16 bg-navy-900">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-4xl font-bold text-slate-900 mb-4 uppercase">FIND YOUR LOCAL WATERPROOFING EXPERT</h2>
+        <p class="text-lg text-slate-300 mb-8">ENTER YOUR POSTAL CODE TO CONNECT WITH YOUR NEAREST TECHNICIAN</p>
+        
+        <div class="max-w-2xl mx-auto mb-8">
+          <div class="flex gap-4">
+            <input type="text" placeholder="ENTER POSTAL CODE (E.G., M4B 1B3)" class="flex-1 px-6 py-4 border-2 border-slate-200 bg-white text-slate-900 uppercase placeholder-gray-500" />
+            <button class="px-8 py-4 bg-amber-500 text-black font-bold uppercase hover:bg-amber-400 transition-colors">FIND MY TECHNICIAN</button>
+          </div>
+        </div>
+        
+        <div class="text-slate-400 mb-8 uppercase">OR</div>
+        
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="tel:437-545-0067" class="border-2 border-white text-slate-900 px-8 py-4 text-lg font-bold hover:bg-white hover:text-black transition-colors uppercase inline-flex items-center justify-center">
+            <svg class="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 00-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z" fill="currentColor"/>
+            </svg>
+            CALL: 437-545-0067
+          </a>
+          <a href="/contact" class="bg-amber-500 text-black px-8 py-4 text-lg font-bold hover:bg-amber-400 transition-colors uppercase">
+            SCHEDULE FREE INSPECTION
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</PageLayout>
+
+
+
+<script>
+  // Check Coverage Search Functionality
+  document.addEventListener('DOMContentLoaded', () => {
+    const searchInput = document.querySelector('.search-input');
+    const searchButton = document.querySelector('.search-button');
+    
+    // Service area data for coverage check
+    const serviceAreas = [
+      // Central Toronto
+      { name: "Toronto Downtown", postalCodes: ["M4", "M5", "M6"], responseTime: "20-30 min" },
+      { name: "North York", postalCodes: ["M2", "M3", "M4N", "M5M", "M6A", "M9L", "M9M"], responseTime: "25-35 min" },
+      { name: "Scarborough", postalCodes: ["M1"], responseTime: "30-40 min" },
+      { name: "Etobicoke", postalCodes: ["M8", "M9"], responseTime: "30-40 min" },
+      { name: "East York", postalCodes: ["M4B", "M4C", "M4E", "M4G", "M4H", "M4J", "M4K", "M4L", "M4M"], responseTime: "20-30 min" },
+      { name: "York", postalCodes: ["M6C", "M6E", "M6M", "M6N", "M9N"], responseTime: "25-35 min" },
+      
+      // GTA West
+      { name: "Mississauga", postalCodes: ["L4", "L5"], responseTime: "35-45 min" },
+      { name: "Brampton", postalCodes: ["L6", "L7"], responseTime: "40-50 min" },
+      { name: "Oakville", postalCodes: ["L6H", "L6J", "L6K", "L6L", "L6M"], responseTime: "45-60 min" },
+      { name: "Burlington", postalCodes: ["L7L", "L7M", "L7N", "L7P", "L7R", "L7S", "L7T"], responseTime: "50-60 min" },
+      { name: "Milton", postalCodes: ["L9T", "L9E"], responseTime: "45-55 min" },
+      { name: "Georgetown", postalCodes: ["L7G"], responseTime: "50-60 min" },
+      
+      // GTA East
+      { name: "Markham", postalCodes: ["L3P", "L3R", "L3S", "L6B", "L6C", "L6E", "L6G"], responseTime: "35-45 min" },
+      { name: "Vaughan", postalCodes: ["L4H", "L4J", "L4K", "L4L", "L6A"], responseTime: "30-40 min" },
+      { name: "Richmond Hill", postalCodes: ["L4B", "L4C", "L4E", "L4S"], responseTime: "35-45 min" },
+      { name: "Pickering", postalCodes: ["L1V", "L1W", "L1X", "L1Y"], responseTime: "40-50 min" },
+      { name: "Ajax", postalCodes: ["L1S", "L1T", "L1Z"], responseTime: "45-55 min" },
+      { name: "Whitby", postalCodes: ["L1M", "L1N", "L1P", "L1R"], responseTime: "50-60 min" },
+      { name: "Oshawa", postalCodes: ["L1G", "L1H", "L1J", "L1K", "L1L"], responseTime: "55-65 min" },
+      
+      // GTA North
+      { name: "Aurora", postalCodes: ["L4G"], responseTime: "40-50 min" },
+      { name: "Newmarket", postalCodes: ["L3X", "L3Y"], responseTime: "45-55 min" },
+      { name: "King City", postalCodes: ["L7B"], responseTime: "45-55 min" },
+      { name: "Stouffville", postalCodes: ["L4A"], responseTime: "45-55 min" }
+    ];
+    
+    function checkCoverage() {
+      const searchTerm = searchInput.value.trim().toUpperCase();
+      
+      if (!searchTerm) {
+        showResult('Please enter a postal code or neighborhood name', 'error');
+        return;
+      }
+      
+      let foundArea = null;
+      
+      // Check if it's a postal code (starts with letter, has numbers)
+      if (/^[A-Z]\d/.test(searchTerm)) {
+        // Extract first 2-3 characters of postal code
+        const postalPrefix = searchTerm.substring(0, 3).replace(/\s/g, '');
+        
+        // Search for matching postal code
+        foundArea = serviceAreas.find(area => 
+          area.postalCodes.some(code => postalPrefix.startsWith(code))
+        );
+      } else {
+        // Search by neighborhood name
+        foundArea = serviceAreas.find(area => 
+          area.name.toLowerCase().includes(searchTerm.toLowerCase())
+        );
+      }
+      
+      if (foundArea) {
+        showResult(
+          ` Great news! We service ${foundArea.name}. Average response time: ${foundArea.responseTime}`,
+          'success',
+          foundArea
+        );
+      } else {
+        showResult(
+          `We may still service your area! Please call us at 437-545-0067 to confirm coverage.`,
+          'info'
+        );
+      }
+    }
+    
+    function showResult(message, type, area = null) {
+      // Remove existing result if any
+      const existingResult = document.querySelector('.coverage-result');
+      if (existingResult) {
+        existingResult.remove();
+      }
+      
+      // Create result element
+      const resultDiv = document.createElement('div');
+      resultDiv.className = `coverage-result ${type}`;
+      resultDiv.style.cssText = `
+        margin-top: 1rem;
+        padding: 1rem;
+        border-radius: 0.5rem;
+        animation: slideIn 0.3s ease;
+      `;
+      
+      if (type === 'success') {
+        resultDiv.style.background = '#10b981';
+        resultDiv.style.color = 'white';
+      } else if (type === 'error') {
+        resultDiv.style.background = '#ef4444';
+        resultDiv.style.color = 'white';
+      } else {
+        resultDiv.style.background = '#3b82f6';
+        resultDiv.style.color = 'white';
+      }
+      
+      resultDiv.innerHTML = `
+        <div style="display: flex; align-items: center; justify-content: space-between;">
+          <p style="margin: 0; font-weight: 500;">${message}</p>
+          ${area ? `
+            <a href="/contact?area=${encodeURIComponent(area.name)}" 
+               style="background: white; color: #3b82f6; padding: 0.5rem 1rem; border-radius: 0.25rem; text-decoration: none; font-weight: bold;">
+              Get Quote →
+            </a>
+          ` : ''}
+        </div>
+      `;
+      
+      // Insert after search container
+      const heroSearch = document.querySelector('.hero-search');
+      heroSearch.parentNode.insertBefore(resultDiv, heroSearch.nextSibling);
+      
+      // Auto scroll to result
+      resultDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+    
+    // Event listeners
+    searchButton.addEventListener('click', checkCoverage);
+    searchInput.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') {
+        checkCoverage();
+      }
+    });
+    
+    // Add animation styles
+    if (!document.querySelector('#coverage-animations')) {
+      const style = document.createElement('style');
+      style.id = 'coverage-animations';
+      style.textContent = `
+        @keyframes slideIn {
+          from {
+            opacity: 0;
+            transform: translateY(-10px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+      `;
+      document.head.appendChild(style);
+    }
+  });
+</script>

@@ -1,0 +1,195 @@
+---
+export interface Props {
+  topic: string;
+}
+
+const { topic } = Astro.props;
+
+// Map blog topics to relevant images
+const blogImages = {
+  'waterproofing-cost': [
+    {
+      src: '/images/exterior-waterproofing-toronto in process (1).webp',
+      alt: 'Exterior waterproofing process',
+      caption: 'Full exterior excavation and waterproofing'
+    },
+    {
+      src: '/images/interior-waterproofing.webp',
+      alt: 'Interior waterproofing installation',
+      caption: 'Interior drainage system installation'
+    },
+    {
+      src: '/images/dryspace_exterior_waterproofing_warranty.webp',
+      alt: '25-year warranty waterproofing',
+      caption: 'Professional installation with warranty'
+    }
+  ],
+  
+  'foundation-repair': [
+    {
+      src: '/images/structural foundation crack.webp',
+      alt: 'Structural foundation crack',
+      caption: 'Major structural crack requiring repair'
+    },
+    {
+      src: '/images/crack on foundation wall due winter freeze .webp',
+      alt: 'Foundation crack from freeze-thaw',
+      caption: 'Winter freeze-thaw damage'
+    },
+    {
+      src: '/images/foundation-repair-process.webp',
+      alt: 'Foundation repair in progress',
+      caption: 'Professional foundation repair work'
+    }
+  ],
+  
+  'basement-leaking': [
+    {
+      src: '/images/wet walls.webp',
+      alt: 'Wet basement walls',
+      caption: 'Water infiltration through walls'
+    },
+    {
+      src: '/images/cove leak.webp',
+      alt: 'Cove joint leak',
+      caption: 'Common cove joint water seepage'
+    },
+    {
+      src: '/images/water-damage.webp',
+      alt: 'Basement water damage',
+      caption: 'Severe water damage requiring attention'
+    }
+  ],
+  
+  'sump-pump': [
+    {
+      src: '/images/sump-pump.webp',
+      alt: 'Sump pump installation',
+      caption: 'Professional sump pump system'
+    },
+    {
+      src: '/images/battery-backup.webp',
+      alt: 'Battery backup system',
+      caption: 'Emergency battery backup for power outages'
+    },
+    {
+      src: '/images/sump-pump-maintenance.webp',
+      alt: 'Sump pump maintenance',
+      caption: 'Regular maintenance ensures reliability'
+    }
+  ],
+  
+  'french-drain': [
+    {
+      src: '/images/french-drain-installation.webp',
+      alt: 'French drain installation',
+      caption: 'Proper French drain installation'
+    },
+    {
+      src: '/images/weeping-tile-system.webp',
+      alt: 'Weeping tile system',
+      caption: 'Complete weeping tile perimeter drainage'
+    },
+    {
+      src: '/images/drainage-gravel.webp',
+      alt: 'Drainage gravel backfill',
+      caption: 'Proper gravel for optimal drainage'
+    }
+  ],
+  
+  'efflorescence': [
+    {
+      src: '/images/efflorescence.webp',
+      alt: 'White powder on basement walls',
+      caption: 'Efflorescence mineral deposits'
+    },
+    {
+      src: '/images/moisture-damage.webp',
+      alt: 'Moisture damage signs',
+      caption: 'Chronic moisture problems'
+    },
+    {
+      src: '/images/salt-deposits.webp',
+      alt: 'Salt deposits on concrete',
+      caption: 'Mineral salts from water infiltration'
+    }
+  ],
+  
+  'musty-smell': [
+    {
+      src: '/images/mold-growth.webp',
+      alt: 'Mold growth in basement',
+      caption: 'Mold causing musty odors'
+    },
+    {
+      src: '/images/moisture-meter.webp',
+      alt: 'Moisture detection',
+      caption: 'Professional moisture detection'
+    },
+    {
+      src: '/images/dehumidifier.webp',
+      alt: 'Industrial dehumidifier',
+      caption: 'Commercial dehumidification equipment'
+    }
+  ],
+  
+  'diy-vs-pro': [
+    {
+      src: '/images/diy-attempt.webp',
+      alt: 'DIY waterproofing attempt',
+      caption: 'Common DIY waterproofing mistakes'
+    },
+    {
+      src: '/images/professional-team.webp',
+      alt: 'Professional waterproofing team',
+      caption: 'Experienced professional crew'
+    },
+    {
+      src: '/images/warranty-work.webp',
+      alt: 'Warranty-backed professional work',
+      caption: '25-year warranty on professional work'
+    }
+  ]
+};
+
+// Get images for this topic, with fallback
+const images = blogImages[topic] || [
+  {
+    src: '/images/dryspace_excellence.webp',
+    alt: 'Professional waterproofing',
+    caption: 'Quality workmanship'
+  },
+  {
+    src: '/images/basement_wall_insulation.webp',
+    alt: 'Basement improvement',
+    caption: 'Complete basement solutions'
+  },
+  {
+    src: '/images/backwatervalve.webp',
+    alt: 'Flood prevention',
+    caption: 'Comprehensive protection systems'
+  }
+];
+---
+
+<section class="my-12">
+  <div class="bg-slate-50 rounded-lg p-6">
+    <h3 class="text-xl font-bold text-slate-900 mb-6">Related Images & Examples</h3>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+      {images.map((image) => (
+        <div class="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+          <img 
+            src={image.src} 
+            alt={image.alt}
+            loading="lazy"
+            class="w-full h-48 object-cover"
+            onerror="this.onerror=null; this.src='/images/placeholder.webp';"
+          />
+          <div class="p-3">
+            <p class="text-sm text-slate-600">{image.caption}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

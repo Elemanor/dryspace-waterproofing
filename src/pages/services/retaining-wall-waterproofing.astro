@@ -1,0 +1,568 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import Hero from '../../components/sections/Hero.astro';
+import Stats from '../../components/sections/Stats.astro';
+import ProblemIdentifier from '../../components/ProblemIdentifier.astro';
+import SubsidyTeaser from '../../components/SubsidyTeaser.astro';
+import PermitTeaser from '../../components/PermitTeaser.astro';
+import CostCalculator from '../../components/CostCalculator.astro';
+import Process from '../../components/sections/Process.astro';
+import BeforeAfterGallery from '../../components/BeforeAfterGallery.astro';
+import WhyChooseUs from '../../components/WhyChooseUs.astro';
+import Testimonials from '../../components/sections/Testimonials.astro';
+import TechnicalDrawings from '../../components/TechnicalDrawings.astro';
+import FAQ from '../../components/FAQ.astro';
+import ContactForm from '../../components/ContactForm.astro';
+import ServiceSchema from '../../components/ServiceSchema.astro';
+import InternalLinks from '../../components/InternalLinks.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+
+// SEO-optimized metadata for retaining wall waterproofing
+const pageTitle = "Retaining Wall Waterproofing Toronto | Landscape Wall Drainage | Foundation Protection";
+const pageDescription = "Professional retaining wall waterproofing in Toronto & GTA. Prevent water buildup behind landscape walls that threatens your foundation. Complete drainage systems for protective walls. Licensed & insured. Call 437-545-0067.";
+
+// Service areas for local SEO
+const serviceAreas = [
+  "Toronto", "North York", "Scarborough", "Etobicoke", 
+  "Mississauga", "Brampton", "Vaughan", "Richmond Hill",
+  "Markham", "Oakville", "Burlington", "Hamilton"
+];
+
+// Service Offers for ServiceSchema
+const serviceOffers = [
+  {
+    name: "Basic Wall Protection",
+    price: "$37-$50 per linear foot",
+    description: "Membrane sealing and basic water management for shorter protective walls. Includes surface preparation, membrane application, and gravel backfill."
+  },
+  {
+    name: "Complete Water Management System",
+    price: "$50-$80 per linear foot",
+    description: "Comprehensive moisture control with perforated water removal, stone backfill, and structural integration. Best for medium-height walls and challenging soil conditions."
+  },
+  {
+    name: "Structural Repair & Sealing",
+    price: "$80-$95 per linear foot",
+    description: "Full structural restoration with crack repair, reinforcement, premium protective systems, and integrated water management. For damaged walls requiring comprehensive restoration."
+  }
+];
+
+// Service Schema FAQs
+const schemaFAQs = [
+  {
+    question: "How much does retaining wall waterproofing cost in Toronto?",
+    answer: "Protective wall sealing locally costs $37-85 per linear foot depending on wall height, soil conditions, and water management complexity. This includes moisture barrier, runoff control system, and proper backfill. Investment prevents expensive wall replacement and structural damage."
+  },
+  {
+    question: "How long does protective wall sealing take to complete?",
+    answer: "Most protective wall sealing projects take 3-7 days depending on wall length, height, and complexity. We work efficiently while ensuring proper installation and minimal landscape disruption."
+  },
+  {
+    question: "What are the benefits of protective wall sealing?",
+    answer: "Moisture control prevents wall collapse, eliminates hydrostatic pressure buildup, protects nearby building supports, extends wall lifespan to 25-40 years, and prevents costly emergency repairs. Our integrated approach protects both walls and structural elements."
+  },
+  {
+    question: "When should I protect my landscape wall?",
+    answer: "Seal protective walls when you notice leaning, bulging, cracks, water pooling behind walls, or lower-level moisture issues. Early intervention prevents structural failure and building support damage. Best installed during construction or early signs of problems."
+  }
+];
+---
+
+<PageLayout 
+  title={pageTitle}
+  description={pageDescription}
+  canonical="https://dryspacewaterproofing.ca/services/retaining-wall-waterproofing"
+>
+  
+  <!-- Breadcrumbs -->
+  <div class="container mx-auto px-4 mt-4">
+    <Breadcrumbs 
+      items={[
+        { name: "Home", url: "/" },
+        { name: "Services", url: "/services" },
+        { name: "Retaining Wall Waterproofing" }
+      ]}
+    />
+  </div>
+
+<ServiceSchema 
+    serviceName="Retaining Wall Waterproofing Toronto"
+    description="Professional protective wall sealing locally. Prevent wall failure and structural damage with comprehensive water management and membrane systems."
+    priceRange="$37-$95 per linear foot"
+    offers={serviceOffers}
+    faqs={schemaFAQs}
+  />
+  <Hero 
+    title="Retaining Wall Waterproofing Toronto"
+    subtitle="Protect Your Landscape Walls & Foundation from Water Damage"
+    description="Prevent landscape wall failure and structural damage with professional moisture control and drainage systems. Expertise in both structural sealing and landscape protection."
+    primaryButton="Get Free Wall Assessment"
+    primaryButtonLink="/free-inspection"
+    secondaryButton="Call 437-545-0067"
+    secondaryButtonLink="tel:4375450067"
+    image="/images/retaining-wall-waterproofing-hero.webp"
+    imageAlt="Professional protective wall sealing with water management system protecting Toronto home structure"
+    breadcrumbs={[
+      { text: 'Home', href: '/' },
+      { text: 'Services', href: '/services' },
+      { text: 'Wall Protection', href: '/services/retaining-wall-waterproofing' }
+    ]}
+  />
+
+  <Stats 
+    stats={[
+      { value: "95%", label: "Wall Failure Prevention Rate" },
+      { value: "450+", label: "Protective Walls Sealed" },
+      { value: "25-Year", label: "Protection System Warranty" },
+      { value: "40ft", label: "Maximum Wall Height Expertise" }
+    ]}
+  />
+
+  <ProblemIdentifier 
+    title="Is Your Landscape Wall Threatening Your Foundation?"
+    problems={[
+      {
+        icon: "🧱",
+        title: "Wall Leaning or Bulging", 
+        description: "Hydrostatic pressure from poor water management causes protective walls to lean, bulge, or show cracks."
+      },
+      {
+        icon: "💧",
+        title: "Water Pooling Behind Wall",
+        description: "Standing water behind protective walls increases pressure and can redirect water toward your building support."
+      },
+      {
+        icon: "🏠", 
+        title: "Structure Water Damage",
+        description: "Failed protective wall water management systems direct water toward your home's structure, causing lower-level flooding."
+      },
+      {
+        icon: "⚡",
+        title: "Wall Structure Failure", 
+        description: "Without proper moisture control, protective walls deteriorate quickly and require expensive replacement."
+      },
+      {
+        icon: "🌿",
+        title: "Landscape Water Management Issues",
+        description: "Poor protective wall runoff control affects entire yard water flow, creating widespread problems."
+      },
+      {
+        icon: "❄️",
+        title: "Freeze-Thaw Damage",
+        description: "Water trapped behind walls freezes and expands, causing structural damage and building support threats."
+      }
+    ]}
+    ctaText="Schedule Free Wall Assessment"
+    ctaLink="/free-inspection"
+  />
+
+  <section class="py-20 bg-white">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold text-slate-900 mb-4">Why Toronto Landscape Walls Need Professional Moisture Control</h2>
+        <p class="text-xl text-slate-500 max-w-3xl mx-auto">Toronto's clay soil, freeze-thaw cycles, and heavy rainfall create unique challenges for protective wall stability and structural protection.</p>
+      </div>
+
+      <div class="grid lg:grid-cols-2 gap-12 items-center mb-16">
+        <div>
+          <h3 class="text-2xl font-bold text-slate-900 mb-6">The Landscape Wall Water Challenge</h3>
+          <div class="space-y-4">
+            <div class="flex items-start gap-3">
+              <div class="w-6 h-6 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                <span class="text-red-600 text-sm font-semibold">1</span>
+              </div>
+              <div>
+                <h4 class="font-semibold text-slate-900">Hydrostatic Pressure Buildup</h4>
+                <p class="text-slate-500">Water trapped behind protective walls creates enormous pressure that causes structural failure and threatens nearby building supports.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <div class="w-6 h-6 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                <span class="text-red-600 text-sm font-semibold">2</span>
+              </div>
+              <div>
+                <h4 class="font-semibold text-slate-900">Clay Soil Expansion</h4>
+                <p class="text-slate-500">Local clay soil expands dramatically when wet, increasing pressure against protective walls and redirecting water flow.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <div class="w-6 h-6 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                <span class="text-red-600 text-sm font-semibold">3</span>
+              </div>
+              <div>
+                <h4 class="font-semibold text-slate-900">Freeze-Thaw Cycles</h4>
+                <p class="text-slate-500">Water trapped in wall systems freezes and expands, causing cracks and structural damage that compromise building support protection.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <div class="w-6 h-6 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                <span class="text-red-600 text-sm font-semibold">4</span>
+              </div>
+              <div>
+                <h4 class="font-semibold text-slate-900">Structure Water Redirection</h4>
+                <p class="text-slate-500">Failed protective wall water management often directs water toward home structures, causing lower-level flooding and structural damage.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="bg-cyan-50 p-8 rounded-lg">
+          <h3 class="text-xl font-bold text-slate-900 mb-4">Professional Moisture Control Solution</h3>
+          <div class="space-y-3">
+            <div class="flex justify-between">
+              <span class="text-slate-600">Hydrostatic pressure reduction:</span>
+              <span class="font-semibold text-cyan-600">Up to 95%</span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-slate-600">Wall lifespan extension:</span>
+              <span class="font-semibold text-cyan-600">25-40 years</span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-slate-600">Structure protection:</span>
+              <span class="font-semibold text-cyan-600">Complete</span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-slate-600">Drainage capacity:</span>
+              <span class="font-semibold text-cyan-600">5" per hour</span>
+            </div>
+          </div>
+          <div class="mt-6 p-4 bg-cyan-50 rounded-lg">
+            <p class="text-sm text-cyan-700"><strong>Engineering Fact:</strong> Proper protective wall moisture control can prevent 95% of wall failures while protecting your home's structure.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Process 
+    title="Our Protective Wall Sealing Process"
+    description="Complete moisture control and water management solutions for protective wall and structural protection"
+    steps={[
+      {
+        number: 1,
+        title: "Structural & Water Management Assessment",
+        description: "Comprehensive evaluation of wall condition, water pressure, and building support protection needs.",
+        details: [
+          "Wall structural integrity inspection",
+          "Hydrostatic pressure analysis",
+          "Soil composition and runoff control testing",
+          "Structure proximity and risk assessment",
+          "Engineering calculations for proper water management"
+        ]
+      },
+      {
+        number: 2,
+        title: "Excavation & Wall Preparation",
+        description: "Safe excavation and preparation of protective wall surfaces for sealing application.",
+        details: [
+          "Utility locates and safety planning",
+          "Careful excavation to avoid wall damage",
+          "Wall surface cleaning and preparation",
+          "Crack repair and structural reinforcement",
+          "Surface priming for membrane adhesion"
+        ]
+      },
+      {
+        number: 3,
+        title: "Moisture Control System Installation",
+        description: "Application of professional sealing membranes and protective systems.",
+        details: [
+          "High-performance membrane application",
+          "Seam sealing and quality control",
+          "Protection board installation",
+          "Joint and penetration sealing",
+          "Multi-layer system verification"
+        ]
+      },
+      {
+        number: 4,
+        title: "Water Management System Construction", 
+        description: "Installation of comprehensive runoff control systems to prevent water buildup and protect structures.",
+        details: [
+          "Perforated drain pipe installation",
+          "Graded stone water removal layer",
+          "Filter fabric placement",
+          "Connection to existing runoff systems",
+          "Surface water management integration"
+        ]
+      },
+      {
+        number: 5,
+        title: "Proper Backfill & Testing",
+        description: "Engineered backfill and comprehensive testing to ensure optimal wall and structural protection.",
+        details: [
+          "Proper backfill material selection",
+          "Compaction in engineered lifts",
+          "Water management system testing",
+          "Water flow verification",
+          "25-year warranty documentation"
+        ]
+      }
+    ]}
+  />
+
+  <section class="py-20 bg-cyan-50">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold text-slate-900 mb-4">Complete Protective Wall Sealing Solutions</h2>
+        <p class="text-xl text-slate-500">Comprehensive systems that protect both your landscape walls and your home's structure.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="bg-white p-8 rounded-lg shadow-sm">
+          <div class="w-12 h-12 bg-cyan-100 rounded-lg flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-cyan-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 mb-3">Membrane Sealing</h3>
+          <p class="text-slate-500 mb-4">High-performance moisture barriers applied to protective wall surfaces to prevent water penetration.</p>
+          <ul class="text-sm text-slate-500 space-y-1">
+            <li class="flex items-center gap-2"><span class="text-cyan-600">✓</span> Rubberized asphalt membrane</li>
+            <li class="flex items-center gap-2"><span class="text-cyan-600">✓</span> Self-adhesive application</li>
+            <li class="flex items-center gap-2"><span class="text-cyan-600">✓</span> Seamless protection</li>
+          </ul>
+        </div>
+
+        <div class="bg-white p-8 rounded-lg shadow-sm">
+          <div class="w-12 h-12 bg-cyan-100 rounded-lg flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-cyan-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 mb-3">Water Management Systems</h3>
+          <p class="text-slate-500 mb-4">Comprehensive runoff control solutions to manage hydrostatic pressure and protect structures.</p>
+          <ul class="text-sm text-slate-500 space-y-1">
+            <li class="flex items-center gap-2"><span class="text-cyan-600">✓</span> Perforated drain pipes</li>
+            <li class="flex items-center gap-2"><span class="text-cyan-600">✓</span> Graded stone backfill</li>
+            <li class="flex items-center gap-2"><span class="text-cyan-600">✓</span> Filter fabric systems</li>
+          </ul>
+        </div>
+
+        <div class="bg-white p-8 rounded-lg shadow-sm">
+          <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 mb-3">Structure Integration</h3>
+          <p class="text-slate-500 mb-4">Seamless integration with existing building support moisture control systems for complete protection.</p>
+          <ul class="text-sm text-slate-500 space-y-1">
+            <li class="flex items-center gap-2"><span class="text-cyan-600">✓</span> Structure system connection</li>
+            <li class="flex items-center gap-2"><span class="text-cyan-600">✓</span> Weeping tile integration</li>
+            <li class="flex items-center gap-2"><span class="text-cyan-600">✓</span> Sump pump coordination</li>
+          </ul>
+        </div>
+
+        <div class="bg-white p-8 rounded-lg shadow-sm">
+          <div class="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 mb-3">Structural Reinforcement</h3>
+          <p class="text-slate-500 mb-4">Repair and reinforce existing walls before sealing to ensure long-term stability.</p>
+          <ul class="text-sm text-slate-500 space-y-1">
+            <li class="flex items-center gap-2"><span class="text-cyan-600">✓</span> Crack repair and sealing</li>
+            <li class="flex items-center gap-2"><span class="text-cyan-600">✓</span> Structural stabilization</li>
+            <li class="flex items-center gap-2"><span class="text-cyan-600">✓</span> Engineering compliance</li>
+          </ul>
+        </div>
+
+        <div class="bg-white p-8 rounded-lg shadow-sm">
+          <div class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 mb-3">Protection Systems</h3>
+          <p class="text-slate-500 mb-4">Multi-layer protection systems to shield moisture control membranes from damage during backfill.</p>
+          <ul class="text-sm text-slate-500 space-y-1">
+            <li class="flex items-center gap-2"><span class="text-cyan-600">✓</span> Protection board installation</li>
+            <li class="flex items-center gap-2"><span class="text-cyan-600">✓</span> Impact resistance</li>
+            <li class="flex items-center gap-2"><span class="text-cyan-600">✓</span> Long-term durability</li>
+          </ul>
+        </div>
+
+        <div class="bg-white p-8 rounded-lg shadow-sm">
+          <div class="w-12 h-12 bg-teal-100 rounded-lg flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 mb-3">Quality Monitoring</h3>
+          <p class="text-slate-500 mb-4">Comprehensive testing and monitoring to ensure optimal performance and structural protection.</p>
+          <ul class="text-sm text-slate-500 space-y-1">
+            <li class="flex items-center gap-2"><span class="text-cyan-600">✓</span> Pressure testing</li>
+            <li class="flex items-center gap-2"><span class="text-cyan-600">✓</span> Water management flow verification</li>
+            <li class="flex items-center gap-2"><span class="text-cyan-600">✓</span> Performance monitoring</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <CostCalculator 
+    title="Protective Wall Sealing Cost Calculator"
+    description="Get an instant estimate for your landscape wall moisture control project"
+    basePrice={50}
+    priceUnit="per linear foot"
+    factors={[
+      { name: "Wall Height", multiplier: 1.5, unit: "per additional foot" },
+      { name: "Soil Conditions", multiplier: 1.3, unit: "poor water management/clay" },
+      { name: "Access Difficulty", multiplier: 1.2, unit: "limited access" },
+      { name: "Structure Integration", multiplier: 1.4, unit: "existing system connection" }
+    ]}
+  />
+
+  <SubsidyTeaser 
+    title="Structure Protection Rebates Available"
+    description="Local homeowners can receive rebates for structural improvements that protect building supports"
+    rebates={[
+      { program: "Lower Level Flooding Protection Program", amount: "$3,700", description: "Covers protective wall water management improvements" },
+      { program: "Home Efficiency Rebate Plus", amount: "$5,400", description: "Comprehensive property improvements" }
+    ]}
+  />
+
+  <BeforeAfterGallery 
+    title="Protective Wall Sealing Projects"
+    description="See how professional moisture control systems protect landscape walls and structures"
+  />
+
+  <WhyChooseUs 
+    title="Why Choose Dryspace for Protective Wall Sealing"
+    reasons={[
+      {
+        icon: "🏗️",
+        title: "Structural + Moisture Control Expertise",
+        description: "Unique combination of structural engineering knowledge and sealing expertise - essential for landscape wall projects."
+      },
+      {
+        icon: "🛡️",
+        title: "Structure Protection Focus",
+        description: "Every protective wall project designed to protect your home's building supports from water damage and structural threats."
+      },
+      {
+        icon: "📋",
+        title: "Engineering Compliance",
+        description: "All work meets or exceeds local building codes and engineering standards, with professional engineer reviews when required."
+      },
+      {
+        icon: "🔧",
+        title: "Complete Integration",
+        description: "Seamless integration with existing structure sealing, water management systems, and landscape features."
+      },
+      {
+        icon: "⚡",
+        title: "25-Year Warranty",
+        description: "Industry-leading warranty on both sealing materials and installation workmanship, backed by comprehensive insurance."
+      },
+      {
+        icon: "🚛",
+        title: "Professional Equipment",
+        description: "Specialized excavation and sealing equipment for safe, efficient work around existing structures and landscaping."
+      }
+    ]}
+  />
+
+  <Testimonials 
+    title="What Local Homeowners Say About Our Protective Wall Sealing"
+    testimonials={[
+      {
+        name: "Thomas Anderson",
+        location: "Richmond Hill",
+        rating: 5,
+        text: "Dryspace saved our failing landscape wall and protected our structure. Their understanding of both structural issues and moisture control is impressive. The wall has been perfect for 3 years now, even through heavy storms.",
+        service: "Protective Wall Sealing & Repair"
+      },
+      {
+        name: "Lisa Patel",
+        location: "Oakville", 
+        rating: 5,
+        text: "Professional job from start to finish. They explained how our protective wall water management was affecting our lower level and fixed both issues. No more water problems and the wall looks great. Excellent investment.",
+        service: "Wall Sealing & Structure Protection"
+      },
+      {
+        name: "Mark Wilson",
+        location: "Burlington",
+        rating: 5,
+        text: "Amazing expertise! They sealed our 8-foot landscape wall and connected it to our existing structure water management. The engineering approach and attention to detail was exceptional. Highly recommend.",
+        service: "Integrated Wall & Structure Sealing"
+      }
+    ]}
+  />
+
+  <FAQ 
+    title="Protective Wall Sealing FAQ"
+    faqs={[
+      {
+        question: "Why do landscape walls need moisture control?",
+        answer: "Protective walls hold back soil and water, creating hydrostatic pressure. Without proper sealing and water management, water builds up behind the wall, causing structural failure and threatening nearby building supports. Proper moisture control prevents wall collapse and protects your home's structure."
+      },
+      {
+        question: "How much does protective wall sealing cost locally?",
+        answer: "Landscape wall sealing locally costs $37-85 per linear foot depending on wall height, soil conditions, and water management complexity. This includes moisture barrier, runoff control system, and proper backfill. Investment prevents expensive wall replacement and structural damage."
+      },
+      {
+        question: "How long do sealed protective walls last?",
+        answer: "Properly sealed landscape walls last 25-40 years with minimal maintenance. The sealing system protects the wall structure and prevents hydrostatic pressure buildup that causes most protective wall failures."
+      },
+      {
+        question: "Can protective wall water management affect my structure?",
+        answer: "Yes, improperly managed landscape walls can direct water toward your building support, causing lower-level flooding and structural damage. Our systems are designed to protect both the protective wall and your home's structure through proper water management."
+      },
+      {
+        question: "Do I need permits for protective wall sealing locally?",
+        answer: "Permits are typically required for landscape walls over 3 feet high or those supporting significant loads. We handle all permit applications and ensure compliance with local building codes and engineering requirements."
+      },
+      {
+        question: "What causes landscape walls to fail?",
+        answer: "Most protective wall failures are caused by hydrostatic pressure from poor water management. Water buildup behind walls creates enormous pressure that causes leaning, bulging, cracking, and eventual collapse. Proper sealing and runoff control prevent these failures."
+      },
+      {
+        question: "Can you repair damaged landscape walls?",
+        answer: "Yes, we repair structural damage before sealing. This includes crack repair, wall stabilization, and reinforcement. Combining repairs with proper moisture control ensures long-term wall stability and structural protection."
+      },
+      {
+        question: "How does protective wall sealing protect my structure?",
+        answer: "Proper landscape wall water management prevents water from being redirected toward your building support. Failed protective walls often channel water toward homes, causing lower-level flooding. Our integrated approach protects both the wall and your structure."
+      },
+      {
+        question: "What materials do you use for protective wall sealing?",
+        answer: "We use high-performance rubberized asphalt membranes, water management boards, perforated pipes, and engineered stone backfill. All materials are selected for local climate conditions and soil types."
+      },
+      {
+        question: "How long does protective wall sealing take?",
+        answer: "Most landscape wall sealing projects take 3-7 days depending on wall length, height, and complexity. We work efficiently while ensuring proper installation and minimal landscape disruption."
+      }
+    ]}
+  />
+
+  <!-- Internal Links -->
+  <InternalLinks 
+    category="waterproofing"
+    currentPage="retaining-wall-waterproofing"
+    limit={5}
+  />
+
+  <section class="py-20 bg-gradient-to-br from-gray-700 to-gray-900 text-white">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h2 class="text-4xl font-bold mb-6">Protect Your Landscape Walls & Structure</h2>
+      <p class="text-xl mb-8 opacity-90">Don't let failing protective walls threaten your building support. Get expert sealing that protects both your landscape and your home.</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/free-inspection" class="bg-white text-slate-800 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-slate-50 transition-colors">
+          Get Free Wall Assessment
+        </a>
+        <a href="tel:4375450067" class="bg-slate-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-slate-700 transition-colors border-2 border-slate-400">
+          Call 437-545-0067
+        </a>
+      </div>
+      <p class="text-sm mt-6 opacity-75">Structural & sealing expertise • 25-year warranty • Licensed & insured • Structure protection guaranteed</p>
+    </div>
+  </section>
+
+  <ContactForm 
+    title="Get Your Free Landscape Wall Assessment"
+    description="Protect your protective walls and structure with professional sealing solutions"
+  />
+</PageLayout>

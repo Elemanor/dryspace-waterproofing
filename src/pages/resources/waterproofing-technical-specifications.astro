@@ -1,0 +1,363 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import ContactForm from '../../components/ContactForm.astro';
+import Footer from '../../components/Footer.astro';
+import ResourceImageGallery from '../../components/ResourceImageGallery.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+
+const technicalSpecs = [
+  {
+    category: 'Insulation Requirements',
+    specs: [
+      { type: 'Glass/Mineral Fibre Batt', placement: 'Interior', belowGrade: 'No' },
+      { type: 'Glass/Mineral Loose-fill', placement: 'Interior', belowGrade: 'No' },
+      { type: 'Cellulose Loose-fill', placement: 'Yes', belowGrade: 'No' },
+      { type: 'Glass/Mineral Fibre Boardstock (semi-rigid)', placement: 'Yes', belowGrade: 'Yes' },
+      { type: 'Expanded Polystyrene (Types I, II, III)', placement: 'Yes*', belowGrade: 'Yes' },
+      { type: 'Extruded Polystyrene (Types II, III, IV)', placement: 'Yes*', belowGrade: 'Yes' },
+      { type: 'Polyurethane Spray', placement: 'Yes*', belowGrade: 'Yes' },
+      { type: 'Insulating Concrete Forms (ICF)', placement: 'Yes*', belowGrade: 'Yes' }
+    ],
+    note: '* A fire-protective covering such as drywall is required'
+  },
+  {
+    category: 'Heat Loss Management',
+    methods: [
+      'Full coverage: Gap of about 200mm (8 in.) left uninsulated above basement floor',
+      'Majority coverage: Insulated to within 600mm (24 in.) below grade',
+      'Partial coverage: Insulated to 600mm (24 in.) below grade for interior insulation'
+    ]
+  },
+  {
+    category: 'Drainage Requirements',
+    specs: [
+      'Free-draining backfill or drainage plane next to foundation',
+      'Properly graded drainage pipe system protected from plugging by fine soil particles',
+      'Effective means of conveying water away from foundation drainage system to municipal storm or open space'
+    ]
+  }
+];
+
+const waterManagementStrategies = [
+  {
+    title: 'Continuous Wall Drainage',
+    description: 'Interconnected drainage system using compatible materials to prevent water accumulation',
+    benefits: ['Prevents hydrostatic pressure', 'Protects against exterior drainage and dampproofing failures']
+  },
+  {
+    title: 'Full Barrier System',
+    description: 'Complete water penetration-waterproofing barrier on exterior walls',
+    benefits: ['Maximum protection', 'Suitable for high water table areas']
+  },
+  {
+    title: 'Hydrostatic Pressure Relief',
+    description: 'Strategic placement of drainage to prevent pressure buildup',
+    benefits: ['Prevents wall cracking', 'Reduces floor uplift', 'Minimizes water infiltration']
+  }
+];
+---
+
+<PageLayout 
+  title="Complete Foundation Waterproofing Technical Guide | Toronto Standards 2025" 
+  description="Professional foundation waterproofing specifications based on Canadian building codes. Technical diagrams, insulation requirements, and drainage standards for Toronto homes."
+>
+  
+  <!-- Breadcrumbs -->
+  <div class="container mx-auto px-4 mt-4">
+    <Breadcrumbs 
+      items={[
+        { name: "Home", url: "/" },
+        { name: "Resources", url: "/resources" },
+        { name: "Waterproofing Technical Specifications" }
+      ]}
+    />
+  </div>
+
+<!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-container">
+      <div class="badge-container">
+        <span class="badge technical">Technical Resource</span>
+        <span class="badge code">Building Code Compliant</span>
+        <span class="badge updated">2025 Standards</span>
+      </div>
+      
+      <h1 class="hero-title">
+        Foundation Waterproofing Technical Guide
+        <span class="subtitle">Canadian Building Code Standards & Best Practices</span>
+      </h1>
+      
+      <p class="hero-description">
+        Comprehensive technical specifications for foundation waterproofing, insulation, 
+        and drainage based on Canadian Home Builders' Association standards and the 
+        National Building Code of Canada.
+      </p>
+
+      <div class="hero-features">
+        <div class="feature">
+          <i class="fa-solid fa-book"></i>
+          <span>NBC 2015 Compliant</span>
+        </div>
+        <div class="feature">
+          <i class="fa-solid fa-ruler"></i>
+          <span>Technical Specifications</span>
+        </div>
+        <div class="feature">
+          <i class="fa-solid fa-shield-halved"></i>
+          <span>Professional Standards</span>
+        </div>
+      </div>
+
+      <div class="hero-actions">
+        <a href="#specifications" class="btn-primary">View Specifications</a>
+        <a href="/contact" class="btn-secondary">Get Professional Help</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Technical Diagrams Section -->
+  <section class="diagrams-section">
+    <div class="container">
+      <h2 class="text-4xl font-bold text-slate-900 uppercase">FOUNDATION WATERPROOFING SYSTEMS</h2>
+      <p class="section-intro">Professional waterproofing requires understanding multiple integrated systems</p>
+      
+      <div class="diagram-grid">
+        <div class="diagram-card border-2 border-slate-200">
+          <img src="/waterproofing manual/content/photo_2025-08-25_20-49-01.jpg" 
+               alt="Dampproofing and insulation technical specifications" / width="800" height="600" loading="lazy" decoding="async">
+          <h3 class="text-2xl font-bold text-slate-900 uppercase">DAMPPROOFING SPECIFICATIONS</h3>
+          <p>Essential dampproofing material requirements for board insulation and drainage systems</p>
+          <ul class="spec-list">
+            <li>Reduced condensation problems with proper insulation</li>
+            <li>Improved air tightness reducing thermal bridging</li>
+            <li>Temperature stability throughout foundation mass</li>
+          </ul>
+        </div>
+
+        <div class="diagram-card border-2 border-slate-200">
+          <img src="/waterproofing manual/content/photo_2025-08-25_20-49-02.jpg" 
+               alt="Cast-in-place concrete foundation diagram" / width="800" height="600" loading="lazy" decoding="async">
+          <h3 class="text-2xl font-bold text-slate-900 uppercase">CONCRETE FOUNDATION SYSTEMS</h3>
+          <p>Externally insulated concrete foundations with proper drainage implementation</p>
+          <ul class="spec-list">
+            <li>100mm (4 in) minimum clean granular material</li>
+            <li>Pipe roughness close to exterior wall or interior footing area</li>
+            <li>Sub-slab depressurization when required</li>
+          </ul>
+        </div>
+
+        <div class="diagram-card border-2 border-slate-200">
+          <img src="/waterproofing manual/content/photo_2025-08-25_20-49-05.jpg" 
+               alt="Heat loss through foundation wall and floor diagram" / width="800" height="600" loading="lazy" decoding="async">
+          <h3 class="text-2xl font-bold text-slate-900 uppercase">HEAT LOSS PREVENTION</h3>
+          <p>Strategic insulation placement to minimize heat loss through foundation</p>
+          <ul class="spec-list">
+            <li>Air leakage control through sill plate/header</li>
+            <li>Conduction management through walls and floor</li>
+            <li>Proper insulation coverage patterns</li>
+          </ul>
+        </div>
+
+        <div class="diagram-card border-2 border-slate-200">
+          <img src="/waterproofing manual/content/photo_2025-08-25_20-49-07.jpg" 
+               alt="Hydrostatic pressure effects on foundation" / width="800" height="600" loading="lazy" decoding="async">
+          <h3 class="text-2xl font-bold text-slate-900 uppercase">HYDROSTATIC PRESSURE MANAGEMENT</h3>
+          <p>Understanding and preventing water pressure damage to foundations</p>
+          <ul class="spec-list">
+            <li>Continuous wall drainage systems</li>
+            <li>Full barrier waterproofing protection</li>
+            <li>Strategic pressure relief placement</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Specifications Table Section -->
+  <section id="specifications" class="specs-section">
+    <div class="container">
+      <h2 class="text-4xl font-bold text-slate-900 uppercase">TECHNICAL SPECIFICATIONS & STANDARDS</h2>
+      
+      {technicalSpecs.map(spec => (
+        <div class="spec-category">
+          <h3 class="text-2xl font-bold text-slate-900 uppercase">{spec.category}</h3>
+          
+          {spec.specs && spec.specs[0]?.type && (
+            <div class="spec-table">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Insulation Type</th>
+                    <th>Permitted Placement</th>
+                    <th>Below Grade Use</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {spec.specs.map(item => (
+                    <tr>
+                      <td>{item.type}</td>
+                      <td class={item.placement && item.placement.includes('*') ? 'has-note' : ''}>
+                        {item.placement}
+                      </td>
+                      <td class={item.belowGrade === 'Yes' ? 'approved' : 'not-approved'}>
+                        {item.belowGrade}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+              {spec.note && (
+                <p class="spec-note">{spec.note}</p>
+              )}
+            </div>
+          )}
+          
+          {spec.specs && typeof spec.specs[0] === 'string' && (
+            <div class="specs-list">
+              <ul>
+                {spec.specs.map(item => (
+                  <li>{item}</li>
+                ))}
+              </ul>
+            </div>
+          )}
+          
+          {spec.methods && (
+            <div class="methods-list">
+              <ol>
+                {spec.methods.map(method => (
+                  <li>{method}</li>
+                ))}
+              </ol>
+            </div>
+          )}
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Water Management Strategies -->
+  <section class="strategies-section">
+    <div class="container">
+      <h2 class="text-4xl font-bold text-slate-900 uppercase">WATER MANAGEMENT STRATEGIES</h2>
+      <p class="section-intro">Professional approaches to foundation water control</p>
+      
+      <div class="strategy-grid">
+        {waterManagementStrategies.map(strategy => (
+          <div class="strategy-card border-2 border-slate-200">
+            <h3 class="text-2xl font-bold text-slate-900 uppercase">{strategy.title}</h3>
+            <p>{strategy.description}</p>
+            <h4 class="text-xl font-bold text-slate-900 uppercase">KEY BENEFITS:</h4>
+            <ul>
+              {strategy.benefits.map(benefit => (
+                <li>{benefit}</li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+
+      <div class="technical-images">
+        <div class="image-row">
+          <div class="tech-image">
+            <img src="/waterproofing manual/content/photo_2025-08-25_20-49-08.jpg" 
+                 alt="Water management and moisture movement diagram" / width="800" height="600" loading="lazy" decoding="async">
+            <p class="caption">Moisture Movement Analysis - Temperature differentials and condensation patterns</p>
+          </div>
+          <div class="tech-image">
+            <img src="/waterproofing manual/content/photo_2025-08-25_20-49-10.jpg" 
+                 alt="Foundation drainage and water management system" / width="800" height="600" loading="lazy" decoding="async">
+            <p class="caption">Comprehensive Water Management - Integrated drainage and barrier systems</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Soil Gas Protection -->
+  <section class="soil-gas-section">
+    <div class="container">
+      <h2 class="text-4xl font-bold text-slate-900 uppercase">RADON & SOIL GAS PROTECTION</h2>
+      <p class="section-intro">Critical requirements for soil gas barrier installation</p>
+      
+      <div class="gas-protection">
+        <div class="protection-content">
+          <h3 class="text-2xl font-bold text-slate-900 uppercase">NBC 2015 REQUIREMENTS</h3>
+          <p>Protection from soil gas ingress is now required in all buildings. This protection is achieved by installing a continuous air/soil gas barrier.</p>
+          
+          <div class="protection-methods">
+            <h4 class="text-xl font-bold text-slate-900 uppercase">TWO PROTECTION METHODS:</h4>
+            <ol>
+              <li>
+                <strong>Gas-Permeable Layer Method</strong>
+                <p>Installation of a gas-permeable layer between the undisturbed ground and the air barrier that allows for depressurization of the space below the soil gas barrier.</p>
+              </li>
+              <li>
+                <strong>Alternative Approved Methods</strong>
+                <p>Other methods as approved by local building authorities that provide equivalent protection.</p>
+              </li>
+            </ol>
+          </div>
+
+          <div class="protection-specs">
+            <h4 class="text-xl font-bold text-slate-900 uppercase">TECHNICAL REQUIREMENTS:</h4>
+            <ul>
+              <li>Continuous air/soil gas barrier installation</li>
+              <li>Proper sealing at all penetrations</li>
+              <li>Inlet pipes for effective depressurization</li>
+              <li>Outlet pipes for gas extraction and venting</li>
+              <li>Sealed connections to maintain system integrity</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="protection-diagram">
+          <img src="/waterproofing manual/content/photo_2025-08-25_20-49-03.jpg" 
+               alt="Radon protection and sump pump chamber diagram" / width="800" height="600" loading="lazy" decoding="async">
+          <p class="caption">Integrated Sump Pump Chamber with Radon Protection</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Professional Installation CTA -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-content">
+        <h2 class="text-4xl font-bold text-slate-900 uppercase">NEED PROFESSIONAL WATERPROOFING?</h2>
+        <p>Our certified technicians follow all Canadian building codes and industry best practices</p>
+        
+        <div class="cta-features">
+          <div class="cta-feature">
+            <i class="fa-solid fa-certificate"></i>
+            <span>Code Compliant</span>
+          </div>
+          <div class="cta-feature">
+            <i class="fa-solid fa-shield-halved"></i>
+            <span>Lifetime Warranty</span>
+          </div>
+          <div class="cta-feature">
+            <i class="fa-solid fa-award"></i>
+            <span>Certified Installers</span>
+          </div>
+        </div>
+        
+        <div class="cta-actions">
+          <a href="/contact" class="btn-primary">Get Expert Assessment</a>
+          <a href="tel:437-545-0067" class="btn-secondary">
+            <i class="fa-solid fa-phone"></i>
+            437-545-0067
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <ContactForm />
+  <Footer />
+
+  <!-- Resource Images and Diagrams -->
+  <ResourceImageGallery resource="technical-specs" />
+
+</PageLayout>
+

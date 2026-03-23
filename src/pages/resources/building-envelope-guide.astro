@@ -1,0 +1,551 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import ContactForm from '../../components/ContactForm.astro';
+import Footer from '../../components/Footer.astro';
+import ResourceImageGallery from '../../components/ResourceImageGallery.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+
+const envelopeComponents = [
+  { component: 'External Cladding', function: 'First defense against weather' },
+  { component: 'Weather Barrier', function: 'Secondary water protection' },
+  { component: 'Air Barrier', function: 'Prevents air infiltration' },
+  { component: 'Vapor Barrier', function: 'Controls moisture diffusion' },
+  { component: 'Insulation', function: 'Thermal control' },
+  { component: 'Structural Components', function: 'Support and stability' }
+];
+
+const waterManagementPrinciples = [
+  {
+    principle: 'Gravity Management',
+    description: 'Using sloped flashings and drainage planes to direct water downward and outward',
+    key: 'Proper overlap and shingling of materials'
+  },
+  {
+    principle: 'Wind Pressure Control',
+    description: 'Creating pressure-equalized rain screens to prevent wind-driven rain penetration',
+    key: 'Air space between cladding and weather barrier'
+  },
+  {
+    principle: 'Kinetic Energy Dissipation',
+    description: 'Breaking the force of wind-driven rain through textured surfaces and overhangs',
+    key: 'Proper detailing at penetrations and joints'
+  },
+  {
+    principle: 'Capillary Break',
+    description: 'Preventing water movement through small gaps via surface tension',
+    key: 'Minimum 6mm gaps and drainage spaces'
+  }
+];
+
+const commonProblems = [
+  {
+    issue: 'Ice Dams',
+    cause: 'Heat loss melting snow that refreezes at eaves',
+    damage: 'Water backup under shingles, interior leaks',
+    solution: 'Improve attic insulation and ventilation'
+  },
+  {
+    issue: 'Wall Rot',
+    cause: 'Water infiltration behind siding',
+    damage: 'Structural decay, mold growth',
+    solution: 'Replace weather barrier, improve drainage'
+  },
+  {
+    issue: 'Moss & Algae Growth',
+    cause: 'Moisture retention on roof surfaces',
+    damage: 'Shingle deterioration, reduced lifespan',
+    solution: 'Zinc strips, regular cleaning, improve drainage'
+  },
+  {
+    issue: 'Siding Failure',
+    cause: 'UV damage, moisture, poor installation',
+    damage: 'Water infiltration, energy loss',
+    solution: 'Proper installation with drainage plane'
+  }
+];
+
+const sidingTypes = [
+  {
+    type: 'Vinyl Siding',
+    lifespan: '20-40 years',
+    maintenance: 'Low - annual washing',
+    waterproofing: 'Requires proper overlap and J-channel',
+    repair: 'Zip tool for panel removal and replacement'
+  },
+  {
+    type: 'Metal Siding',
+    lifespan: '40-70 years',
+    maintenance: 'Low - inspect for rust',
+    waterproofing: 'Excellent with proper fasteners',
+    repair: 'Patch or panel replacement'
+  },
+  {
+    type: 'Wood Siding',
+    lifespan: '20-40 years with maintenance',
+    maintenance: 'High - regular painting/staining',
+    waterproofing: 'Requires diligent maintenance',
+    repair: 'Individual board replacement'
+  },
+  {
+    type: 'Fiber Cement',
+    lifespan: '50+ years',
+    maintenance: 'Low - periodic painting',
+    waterproofing: 'Excellent resistance',
+    repair: 'Caulking and patching'
+  }
+];
+---
+
+<PageLayout 
+  title="Building Envelope Protection Guide | Walls, Roofing & Siding" 
+  description="Comprehensive guide to protecting your home's building envelope including walls, roofing, siding, and moisture management systems."
+>
+  
+  <!-- Breadcrumbs -->
+  <div class="container mx-auto px-4 mt-4">
+    <Breadcrumbs 
+      items={[
+        { name: "Home", url: "/" },
+        { name: "Resources", url: "/resources" },
+        { name: "Building Envelope Guide" }
+      ]}
+    />
+  </div>
+
+<!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-container">
+      <h1 class="hero-title">
+        Building Envelope Protection Guide
+        <span class="subtitle">Complete Exterior Water Management Systems</span>
+      </h1>
+      
+      <p class="hero-description">
+        Your building envelope is the complete system that separates your home's interior 
+        from the exterior environment. Learn how to protect, maintain, and repair walls, 
+        roofing, and siding to prevent water infiltration and structural damage.
+      </p>
+
+      <div class="envelope-stats">
+        <div class="stat">
+          <i class="fa-solid fa-house-chimney-crack"></i>
+          <span class="number">90%</span>
+          <span class="label">Of leaks occur at transitions</span>
+        </div>
+        <div class="stat">
+          <i class="fa-solid fa-droplet"></i>
+          <span class="number">65%</span>
+          <span class="label">Due to improper installation</span>
+        </div>
+        <div class="stat">
+          <i class="fa-solid fa-wind"></i>
+          <span class="number">25 PSF</span>
+          <span class="label">Wind-driven rain pressure</span>
+        </div>
+        <div class="stat">
+          <i class="fa-solid fa-shield"></i>
+          <span class="number">4</span>
+          <span class="label">Barriers needed for protection</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Building Envelope Components -->
+  <section class="components-section">
+    <div class="container">
+      <h2 class="text-4xl font-bold text-slate-900 uppercase">THE BUILDING ENVELOPE SYSTEM</h2>
+      <p class="section-intro">Understanding the layers that protect your home</p>
+      
+      <div class="envelope-diagram">
+        <img src="/waterproofing manual/content/photo_2025-08-25_20-50-16.jpg" 
+             alt="Wall fundamentals and envelope components" / width="800" height="600" loading="lazy" decoding="async">
+        <div class="components-list">
+          <h3 class="text-2xl font-bold text-slate-900 uppercase">ESSENTIAL COMPONENTS (OUTSIDE TO INSIDE)</h3>
+          {envelopeComponents.map((item, index) => (
+            <div class="component-item">
+              <span class="component-number">{index + 1}</span>
+              <div class="component-details">
+                <strong>{item.component}</strong>
+                <p>{item.function}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Water Management Principles -->
+  <section class="principles-section">
+    <div class="container">
+      <h2 class="text-4xl font-bold text-slate-900 uppercase">WATER MANAGEMENT PRINCIPLES</h2>
+      <p class="section-intro">Four critical strategies for keeping water out</p>
+      
+      <div class="principles-grid">
+        {waterManagementPrinciples.map(principle => (
+          <div class="principle-card border-2 border-slate-200">
+            <h3 class="text-2xl font-bold text-slate-900 uppercase">{principle.principle}</h3>
+            <p>{principle.description}</p>
+            <div class="principle-key">
+              <i class="fa-solid fa-key"></i>
+              <span>{principle.key}</span>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div class="technical-diagrams">
+        <div class="diagram-row">
+          <div class="diagram-item">
+            <img src="/waterproofing manual/content/photo_2025-08-25_20-50-13.jpg" 
+                 alt="Gravity and capillary water management" / width="800" height="600" loading="lazy" decoding="async">
+            <h4 class="text-xl font-bold text-slate-900 uppercase">GRAVITY & CAPILLARY CONTROL</h4>
+            <p>Proper flashing and drainage plane installation prevents water entry through gravity and capillary action</p>
+          </div>
+          <div class="diagram-item">
+            <img src="/waterproofing manual/content/photo_2025-08-25_20-50-12.jpg" 
+                 alt="Wind pressure and air barrier systems" / width="800" height="600" loading="lazy" decoding="async">
+            <h4 class="text-xl font-bold text-slate-900 uppercase">WIND PRESSURE MANAGEMENT</h4>
+            <p>Pressure-equalized rain screen systems prevent wind-driven rain penetration</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Common Problems -->
+  <section class="problems-section">
+    <div class="container">
+      <h2 class="text-4xl font-bold text-slate-900 uppercase">COMMON ENVELOPE PROBLEMS</h2>
+      <p class="section-intro">Identifying and solving exterior water issues</p>
+      
+      <div class="problems-grid">
+        {commonProblems.map(problem => (
+          <div class="problem-card border-2 border-slate-200">
+            <div class="problem-header">
+              <i class="fa-solid fa-exclamation-triangle"></i>
+              <h3 class="text-2xl font-bold text-slate-900 uppercase">{problem.issue}</h3>
+            </div>
+            <div class="problem-content">
+              <div class="problem-detail">
+                <strong>Cause:</strong>
+                <p>{problem.cause}</p>
+              </div>
+              <div class="problem-detail">
+                <strong>Damage:</strong>
+                <p>{problem.damage}</p>
+              </div>
+              <div class="problem-solution">
+                <strong>Solution:</strong>
+                <p>{problem.solution}</p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Ice Dam Prevention -->
+  <section class="ice-dam-section">
+    <div class="container">
+      <h2 class="text-4xl font-bold text-slate-900 uppercase">ICE DAM PREVENTION & SOLUTIONS</h2>
+      <p class="section-intro">Protecting your roof from winter water damage</p>
+      
+      <div class="ice-dam-content">
+        <div class="ice-dam-diagram">
+          <img src="/waterproofing manual/content/photo_2025-08-25_20-50-19.jpg" 
+               alt="Ice dam formation and prevention" / width="800" height="600" loading="lazy" decoding="async">
+        </div>
+        
+        <div class="ice-dam-info">
+          <h3 class="text-2xl font-bold text-slate-900 uppercase">HOW ICE DAMS FORM</h3>
+          <ol>
+            <li>Heat loss from house melts snow on main roof</li>
+            <li>Water flows down to colder eaves</li>
+            <li>Water refreezes, creating dam</li>
+            <li>Pooled water backs up under shingles</li>
+            <li>Leaks occur through roof deck</li>
+          </ol>
+          
+          <div class="prevention-methods">
+            <h4 class="text-xl font-bold text-slate-900 uppercase">PREVENTION STRATEGIES</h4>
+            <ul>
+              <li><strong>Insulation:</strong> R-50 minimum in attic</li>
+              <li><strong>Ventilation:</strong> Soffit and ridge vents</li>
+              <li><strong>Air Sealing:</strong> Prevent warm air leakage</li>
+              <li><strong>Ice & Water Shield:</strong> First 3-6 feet of roof</li>
+              <li><strong>Heat Cables:</strong> Emergency solution only</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Roof Problems -->
+  <section class="roof-section">
+    <div class="container">
+      <h2 class="text-4xl font-bold text-slate-900 uppercase">ROOF MAINTENANCE & PROTECTION</h2>
+      <p class="section-intro">Preventing moss, algae, and moisture damage</p>
+      
+      <div class="roof-content">
+        <div class="roof-problems">
+          <img src="/waterproofing manual/content/photo_2025-08-25_20-50-16.jpg" 
+               alt="Moss and algae damage on roof shingles" / width="800" height="600" loading="lazy" decoding="async">
+          <h3 class="text-2xl font-bold text-slate-900 uppercase">MOSS & ALGAE IMPACT</h3>
+          <ul>
+            <li>Retains moisture against shingles</li>
+            <li>Lifts shingle edges allowing water entry</li>
+            <li>Accelerates shingle deterioration</li>
+            <li>Creates dam effect blocking drainage</li>
+            <li>Reduces roof lifespan by 10+ years</li>
+          </ul>
+        </div>
+        
+        <div class="roof-solutions">
+          <h3 class="text-2xl font-bold text-slate-900 uppercase">PREVENTION & TREATMENT</h3>
+          <div class="solution-cards">
+            <div class="solution">
+              <h4 class="text-xl font-bold text-slate-900 uppercase">ZINC STRIPS</h4>
+              <p>Install at ridge - rain carries zinc particles down roof preventing growth</p>
+            </div>
+            <div class="solution">
+              <h4 class="text-xl font-bold text-slate-900 uppercase">COPPER WIRE</h4>
+              <p>String below ridge tiles for similar antimicrobial effect</p>
+            </div>
+            <div class="solution">
+              <h4 class="text-xl font-bold text-slate-900 uppercase">REGULAR CLEANING</h4>
+              <p>Annual soft washing with appropriate cleaners</p>
+            </div>
+            <div class="solution">
+              <h4 class="text-xl font-bold text-slate-900 uppercase">TRIMMING</h4>
+              <p>Remove overhanging branches to increase sunlight</p>
+            </div>
+            <div class="solution">
+              <h4 class="text-xl font-bold text-slate-900 uppercase">IMPROVE DRAINAGE</h4>
+              <p>Clear gutters and ensure proper roof pitch</p>
+            </div>
+            <div class="solution">
+              <h4 class="text-xl font-bold text-slate-900 uppercase">ALGAE-RESISTANT SHINGLES</h4>
+              <p>Consider when replacing - contain copper granules</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Siding Systems -->
+  <section class="siding-section">
+    <div class="container">
+      <h2 class="text-4xl font-bold text-slate-900 uppercase">SIDING & WALL PROTECTION</h2>
+      <p class="section-intro">Proper installation and maintenance of exterior cladding</p>
+      
+      <div class="siding-comparison">
+        <h3 class="text-2xl font-bold text-slate-900 uppercase">SIDING TYPES COMPARISON</h3>
+        <div class="comparison-table">
+          <table>
+            <thead>
+              <tr>
+                <th>Type</th>
+                <th>Lifespan</th>
+                <th>Maintenance</th>
+                <th>Waterproofing</th>
+                <th>Repair Method</th>
+              </tr>
+            </thead>
+            <tbody>
+              {sidingTypes.map(siding => (
+                <tr>
+                  <td><strong>{siding.type}</strong></td>
+                  <td>{siding.lifespan}</td>
+                  <td>{siding.maintenance}</td>
+                  <td>{siding.waterproofing}</td>
+                  <td>{siding.repair}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="siding-details">
+        <div class="siding-repair">
+          <img src="/waterproofing manual/content/photo_2025-08-25_20-50-21.jpg" 
+               alt="Siding repair techniques and tools" / width="800" height="600" loading="lazy" decoding="async">
+          <h3 class="text-2xl font-bold text-slate-900 uppercase">PROFESSIONAL REPAIR TECHNIQUES</h3>
+          <ul>
+            <li><strong>Vinyl:</strong> Zip tool for unlocking panels</li>
+            <li><strong>Metal:</strong> Body filler for dents, primer & paint</li>
+            <li><strong>Wood:</strong> Epoxy consolidation for rot</li>
+            <li><strong>Fiber Cement:</strong> Color-matched caulk</li>
+          </ul>
+        </div>
+        
+        <div class="wall-rot-prevention">
+          <img src="/waterproofing manual/content/photo_2025-08-25_20-50-17.jpg" 
+               alt="Wall rot from plants and moisture" / width="800" height="600" loading="lazy" decoding="async">
+          <h3 class="text-2xl font-bold text-slate-900 uppercase">PREVENTING WALL ROT</h3>
+          <ul>
+            <li>Maintain 2" minimum gap from grade</li>
+            <li>Install proper flashing at transitions</li>
+            <li>Keep plants 12" away from siding</li>
+            <li>Ensure functioning weep holes</li>
+            <li>Annual inspection for damage</li>
+            <li>Prompt repair of any breaches</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Moisture Movement -->
+  <section class="moisture-section">
+    <div class="container">
+      <h2 class="text-4xl font-bold text-slate-900 uppercase">UNDERSTANDING MOISTURE MOVEMENT</h2>
+      <p class="section-intro">How water travels through your building envelope</p>
+      
+      <div class="moisture-content">
+        <div class="moisture-diagram">
+          <img src="/waterproofing manual/content/photo_2025-08-25_20-50-14.jpg" 
+               alt="Exterior moisture movement and barriers" / width="800" height="600" loading="lazy" decoding="async">
+        </div>
+        
+        <div class="moisture-info">
+          <h3 class="text-2xl font-bold text-slate-900 uppercase">FOUR MECHANISMS OF MOISTURE TRANSPORT</h3>
+          
+          <div class="transport-methods">
+            <div class="method">
+              <h4 class="text-xl font-bold text-slate-900 uppercase">1. BULK WATER FLOW</h4>
+              <p>Rain, snow melt, groundwater - prevented by roofing, siding, and drainage</p>
+            </div>
+            <div class="method">
+              <h4 class="text-xl font-bold text-slate-900 uppercase">2. CAPILLARY ACTION</h4>
+              <p>Wicking through porous materials - stopped by capillary breaks</p>
+            </div>
+            <div class="method">
+              <h4 class="text-xl font-bold text-slate-900 uppercase">3. AIR TRANSPORT</h4>
+              <p>Moisture in moving air - controlled by air barriers</p>
+            </div>
+            <div class="method">
+              <h4 class="text-xl font-bold text-slate-900 uppercase">4. VAPOR DIFFUSION</h4>
+              <p>Molecular movement through materials - managed by vapor barriers</p>
+            </div>
+          </div>
+          
+          <div class="barrier-placement">
+            <h4 class="text-xl font-bold text-slate-900 uppercase">CRITICAL BARRIER RULES</h4>
+            <ul>
+              <li>Air barrier must be continuous (6 sides)</li>
+              <li>Weather barrier lapped shingle-style</li>
+              <li>Vapor barrier on warm side in heating climates</li>
+              <li>Never trap moisture between two vapor barriers</li>
+              <li>Always provide drainage path for water</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Professional Services -->
+  <section class="services-section">
+    <div class="container">
+      <h2 class="text-4xl font-bold text-slate-900 uppercase">BUILDING ENVELOPE SERVICES</h2>
+      <p class="section-intro">Complete exterior protection solutions</p>
+      
+      <div class="services-grid">
+        <div class="service-card border-2 border-slate-200">
+          <i class="fa-solid fa-magnifying-glass-plus"></i>
+          <h3 class="text-2xl font-bold text-slate-900 uppercase">ENVELOPE ASSESSMENT</h3>
+          <ul>
+            <li>Thermal imaging inspection</li>
+            <li>Moisture detection</li>
+            <li>Air leakage testing</li>
+            <li>Detailed reporting</li>
+          </ul>
+        </div>
+        
+        <div class="service-card border-2 border-slate-200">
+          <i class="fa-solid fa-house-chimney"></i>
+          <h3 class="text-2xl font-bold text-slate-900 uppercase">ROOF SERVICES</h3>
+          <ul>
+            <li>Ice dam prevention</li>
+            <li>Moss & algae treatment</li>
+            <li>Flashing repair</li>
+            <li>Gutter systems</li>
+          </ul>
+        </div>
+        
+        <div class="service-card border-2 border-slate-200">
+          <i class="fa-solid fa-square"></i>
+          <h3 class="text-2xl font-bold text-slate-900 uppercase">SIDING & CLADDING</h3>
+          <ul>
+            <li>Siding repair/replacement</li>
+            <li>Weather barrier installation</li>
+            <li>Trim and fascia work</li>
+            <li>Caulking and sealing</li>
+          </ul>
+        </div>
+        
+        <div class="service-card border-2 border-slate-200">
+          <i class="fa-solid fa-shield-halved"></i>
+          <h3 class="text-2xl font-bold text-slate-900 uppercase">WATERPROOFING SYSTEMS</h3>
+          <ul>
+            <li>Complete envelope upgrade</li>
+            <li>Drainage plane installation</li>
+            <li>Flashing systems</li>
+            <li>Preventive maintenance</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+  <!-- Resource Images and Diagrams -->
+  <ResourceImageGallery resource="building-envelope" />
+
+<!-- CTA Section -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-content">
+        <h2 class="text-4xl font-bold text-slate-900 uppercase">PROTECT YOUR HOME'S ENVELOPE</h2>
+        <p>Professional assessment and solutions for complete exterior protection</p>
+        
+        <div class="cta-features">
+          <div class="feature">
+            <i class="fa-solid fa-umbrella"></i>
+            <span>Complete Protection</span>
+          </div>
+          <div class="feature">
+            <i class="fa-solid fa-certificate"></i>
+            <span>Certified Installers</span>
+          </div>
+          <div class="feature">
+            <i class="fa-solid fa-shield"></i>
+            <span>Warranty Coverage</span>
+          </div>
+          <div class="feature">
+            <i class="fa-solid fa-leaf"></i>
+            <span>Eco-Friendly Options</span>
+          </div>
+        </div>
+        
+        <div class="cta-actions">
+          <a href="/contact" class="btn-primary">Get Free Assessment</a>
+          <a href="tel:437-545-0067" class="btn-secondary">
+            <i class="fa-solid fa-phone"></i>
+            Call: 437-545-0067
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <ContactForm />
+  <Footer />
+</PageLayout>
+

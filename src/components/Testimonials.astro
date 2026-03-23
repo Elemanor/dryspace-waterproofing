@@ -1,0 +1,731 @@
+---
+// Professional Testimonials Component
+const testimonials = [
+  {
+    name: "John & Mary Thompson",
+    location: "North York, ON",
+    project: "Full Basement Waterproofing",
+    content: "After years of dealing with a damp basement, Dryspace completely transformed our space. Professional crew, fair pricing, and the lifetime warranty gives us peace of mind.",
+    rating: 5,
+    date: "November 2024",
+    verified: true,
+    image: "/images/dryspace_excellence.webp",
+    beforeAfter: {
+      before: "/images/basement-water-leak-inspection.webp",
+      after: "/images/dryspace_excellence.webp"
+    }
+  },
+  {
+    name: "Robert Chen",
+    location: "Mississauga, ON",
+    project: "Emergency Water Removal",
+    content: "When our basement flooded at 2 AM, Dryspace was there within an hour. They saved our home from serious damage. Can't thank them enough for their 24/7 service.",
+    rating: 5,
+    date: "October 2024",
+    verified: true,
+    image: "/images/dryspace_excellence.webp",
+    emergency: true
+  },
+  {
+    name: "Sarah Mitchell",
+    location: "Toronto, ON",
+    project: "Foundation Crack Repair",
+    content: "Quick, efficient, and professional. They fixed our foundation cracks in one day and the price was very reasonable. Highly recommend!",
+    rating: 5,
+    date: "October 2024",
+    verified: true,
+    image: "/images/dryspace_excellence.webp"
+  },
+  {
+    name: "David & Lisa Foster",
+    location: "Scarborough, ON",
+    project: "Interior Waterproofing System",
+    content: "The team installed a complete drainage system in just 3 days. Clean work, professional team, and they explained everything clearly. Our basement has been dry ever since.",
+    rating: 5,
+    date: "September 2024",
+    verified: true,
+    image: "/images/dryspace_excellence.webp"
+  },
+  {
+    name: "Angela Rodriguez",
+    location: "Vaughan, ON",
+    project: "Sump Pump Installation",
+    content: "Excellent service from start to finish. The battery backup system they installed has already saved us during two power outages. Worth every penny!",
+    rating: 5,
+    date: "September 2024",
+    verified: true,
+    image: "/images/dryspace_excellence.webp"
+  },
+  {
+    name: "Michael O'Brien",
+    location: "Oakville, ON",
+    project: "Exterior Waterproofing",
+    content: "Big job but they handled it perfectly. Excavated, waterproofed, and restored our landscaping better than before. True professionals.",
+    rating: 5,
+    date: "August 2024",
+    verified: true,
+    image: "/images/dryspace_excellence.webp"
+  }
+];
+
+const stats = {
+  totalReviews: "2,847",
+  averageRating: "4.9",
+  recommendRate: "98%"
+};
+---
+
+<section id="testimonials" class="testimonials-section">
+  <div class="testimonials-container">
+    <!-- Section Header -->
+    <div class="section-header">
+      <div class="header-badge">
+        <i class="fa-solid fa-star"></i>
+        Customer Reviews
+      </div>
+      <h2 class="section-title">
+        Trusted by Toronto
+        <span class="title-accent">Homeowners</span>
+      </h2>
+      <div class="trust-stats">
+        <div class="stat-item">
+          <span class="stat-value">{stats.totalReviews}</span>
+          <span class="stat-label">Reviews</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-value">{stats.averageRating}</span>
+          <span class="stat-label">Average Rating</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-value">{stats.recommendRate}</span>
+          <span class="stat-label">Recommend Us</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Testimonials Grid -->
+    <div class="testimonials-grid">
+      {testimonials.slice(0, 3).map((testimonial, index) => (
+        <div class="testimonial-card featured" style={`--index: ${index}`}>
+          {testimonial.emergency && (
+            <div class="emergency-badge">
+              <i class="fa-solid fa-bolt"></i>
+              24/7 Emergency
+            </div>
+          )}
+          
+          <div class="testimonial-header">
+            <img src={testimonial.image} alt={testimonial.name} class="customer-avatar" / width="800" height="600" loading="lazy" decoding="async">
+            <div class="customer-info">
+              <h3 class="customer-name">{testimonial.name}</h3>
+              <div class="customer-meta">
+                <span class="customer-location">
+                  <i class="fa-solid fa-location-dot"></i>
+                  {testimonial.location}
+                </span>
+                {testimonial.verified && (
+                  <span class="verified-badge">
+                    <i class="fa-solid fa-circle-check"></i>
+                    Verified
+                  </span>
+                )}
+              </div>
+            </div>
+          </div>
+
+          <div class="project-info">
+            <span class="project-label">Project:</span>
+            <span class="project-name">{testimonial.project}</span>
+          </div>
+
+          <div class="rating">
+            {[...Array(5)].map(() => (
+              <i class="fa-solid fa-star"></i>
+            ))}
+          </div>
+
+          <p class="testimonial-content">"{testimonial.content}"</p>
+
+          {testimonial.beforeAfter && (
+            <div class="before-after">
+              <div class="ba-image">
+                <span class="ba-label">Before</span>
+                <img src={testimonial.beforeAfter.before} alt="Before waterproofing - basement with water damage and moisture issues" / width="800" height="600" loading="lazy" decoding="async">
+              </div>
+              <div class="ba-arrow">
+                <i class="fa-solid fa-arrow-right"></i>
+              </div>
+              <div class="ba-image">
+                <span class="ba-label">After</span>
+                <img src={testimonial.beforeAfter.after} alt="After waterproofing - dry, protected basement with professional waterproofing system" / width="800" height="600" loading="lazy" decoding="async">
+              </div>
+            </div>
+          )}
+
+          <div class="testimonial-footer">
+            <span class="testimonial-date">{testimonial.date}</span>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- More Reviews Carousel -->
+    <div class="reviews-carousel">
+      <div class="carousel-track">
+        {testimonials.slice(3).map((testimonial, index) => (
+          <div class="review-card" style={`--index: ${index + 3}`}>
+            <div class="review-header">
+              <img src={testimonial.image} alt={testimonial.name} / width="800" height="600" loading="lazy" decoding="async">
+              <div>
+                <h4>{testimonial.name}</h4>
+                <span>{testimonial.location}</span>
+              </div>
+              <div class="review-rating">
+                {[...Array(5)].map(() => (
+                  <i class="fa-solid fa-star"></i>
+                ))}
+              </div>
+            </div>
+            <p class="review-project">{testimonial.project}</p>
+            <p class="review-content">"{testimonial.content}"</p>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- CTA Section -->
+    <div class="testimonials-cta">
+      <div class="cta-content">
+        <h3>Join Thousands of Satisfied Customers</h3>
+        <p>Get your free inspection and see why homeowners trust us</p>
+        <div class="cta-actions">
+          <button class="btn-primary">
+            <i class="fa-solid fa-calendar"></i>
+            Book Free Inspection
+          </button>
+          <a href="https://www.google.com/search?q=dryspace+waterproofing+toronto+reviews" target="_blank" rel="noopener noreferrer" class="btn-secondary">
+            <i class="fa-brands fa-google"></i>
+            Read More Reviews
+          </a>
+        </div>
+      </div>
+      <div class="trust-badges">
+        <div class="badge">
+          <i class="fa-solid fa-shield-halved"></i>
+          <span>Licensed & Insured</span>
+        </div>
+        <div class="badge">
+          <i class="fa-solid fa-award"></i>
+          <span>25+ Years Experience</span>
+        </div>
+        <div class="badge">
+          <i class="fa-solid fa-handshake"></i>
+          <span>Lifetime Warranty</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .testimonials-section {
+    padding: 6rem 0;
+    background: var(--bg-dark-900);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .testimonials-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, 
+      transparent 0%, 
+      rgba(212, 175, 55, 0.3) 50%, 
+      transparent 100%
+    );
+  }
+
+  .testimonials-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  /* Section Header */
+  .section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .header-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1.5rem;
+    background: rgba(212, 175, 55, 0.1);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    color: var(--color-primary);
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 1.5rem;
+  }
+
+  .section-title {
+    font-size: clamp(2.5rem, 4vw, 3.5rem);
+    font-weight: 700;
+    color: var(--text-white);
+    margin-bottom: 2rem;
+    line-height: 1.2;
+  }
+
+  .title-accent {
+    color: var(--color-primary);
+    display: block;
+  }
+
+  /* Trust Stats */
+  .trust-stats {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    margin-top: 2rem;
+  }
+
+  .stat-item {
+    text-align: center;
+  }
+
+  .stat-value {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    line-height: 1;
+  }
+
+  .stat-label {
+    display: block;
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-top: 0.5rem;
+  }
+
+  .stat-divider {
+    width: 1px;
+    height: 40px;
+    background: rgba(212, 175, 55, 0.2);
+  }
+
+  /* Testimonials Grid */
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+  }
+
+  .testimonial-card {
+    background: var(--bg-dark-800);
+    border: 1px solid rgba(212, 175, 55, 0.1);
+    padding: 2rem;
+    position: relative;
+    transition: all 0.3s ease;
+    animation: fadeInUp 0.8s ease-out backwards;
+    animation-delay: calc(0.1s * var(--index));
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .testimonial-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(212, 175, 55, 0.3);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  }
+
+  .emergency-badge {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.375rem;
+    padding: 0.375rem 0.75rem;
+    background: var(--color-danger);
+    color: var(--text-white);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  /* Testimonial Header */
+  .testimonial-header {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .customer-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid rgba(212, 175, 55, 0.2);
+  }
+
+  .customer-info {
+    flex: 1;
+  }
+
+  .customer-name {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: var(--text-white);
+    margin-bottom: 0.25rem;
+  }
+
+  .customer-meta {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .customer-location {
+    display: flex;
+    align-items: center;
+    gap: 0.375rem;
+    color: var(--text-muted);
+    font-size: 0.875rem;
+  }
+
+  .verified-badge {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    color: var(--color-accent);
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+
+  /* Project Info */
+  .project-info {
+    padding: 0.75rem;
+    background: rgba(212, 175, 55, 0.05);
+    border-left: 3px solid var(--color-primary);
+    margin-bottom: 1rem;
+  }
+
+  .project-label {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-right: 0.5rem;
+  }
+
+  .project-name {
+    font-weight: 600;
+    color: var(--text-white);
+  }
+
+  /* Rating */
+  .rating {
+    display: flex;
+    gap: 0.25rem;
+    margin-bottom: 1rem;
+  }
+
+  .rating i {
+    color: var(--color-primary);
+    font-size: 1rem;
+  }
+
+  /* Content */
+  .testimonial-content {
+    color: var(--text-light);
+    line-height: 1.6;
+    font-style: italic;
+    margin-bottom: 1rem;
+  }
+
+  /* Before/After */
+  .before-after {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background: rgba(13, 17, 23, 0.5);
+    border-radius: 0.5rem;
+    margin: 1rem 0;
+  }
+
+  .ba-image {
+    flex: 1;
+    position: relative;
+  }
+
+  .ba-image img {
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 0.375rem;
+  }
+
+  .ba-label {
+    position: absolute;
+    top: 0.5rem;
+    left: 0.5rem;
+    padding: 0.25rem 0.5rem;
+    background: rgba(0, 0, 0, 0.7);
+    color: var(--text-white);
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+
+  .ba-arrow {
+    color: var(--color-primary);
+    font-size: 1.5rem;
+  }
+
+  /* Footer */
+  .testimonial-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(212, 175, 55, 0.1);
+  }
+
+  .testimonial-date {
+    color: var(--text-muted);
+    font-size: 0.875rem;
+  }
+
+  /* Reviews Carousel */
+  .reviews-carousel {
+    overflow: hidden;
+    margin-bottom: 4rem;
+  }
+
+  .carousel-track {
+    display: flex;
+    gap: 1.5rem;
+    animation: slide 30s linear infinite;
+  }
+
+  @keyframes slide {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  .review-card {
+    flex: 0 0 400px;
+    background: var(--bg-dark-800);
+    border: 1px solid rgba(212, 175, 55, 0.1);
+    padding: 1.5rem;
+    opacity: 0;
+    animation: fadeIn 0.8s ease-out forwards;
+    animation-delay: calc(0.1s * var(--index));
+  }
+
+  .review-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .review-header img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  .review-header h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-white);
+    margin: 0;
+  }
+
+  .review-header span {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+  }
+
+  .review-rating {
+    margin-left: auto;
+    display: flex;
+    gap: 0.125rem;
+  }
+
+  .review-rating i {
+    color: var(--color-primary);
+    font-size: 0.75rem;
+  }
+
+  .review-project {
+    font-size: 0.875rem;
+    color: var(--color-primary);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+
+  .review-content {
+    color: var(--text-light);
+    font-size: 0.875rem;
+    line-height: 1.5;
+    font-style: italic;
+  }
+
+  /* CTA Section */
+  .testimonials-cta {
+    text-align: center;
+    padding: 3rem;
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.05) 0%, rgba(27, 54, 93, 0.05) 100%);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+  }
+
+  .cta-content h3 {
+    font-size: 2rem;
+    color: var(--text-white);
+    margin-bottom: 0.5rem;
+  }
+
+  .cta-content p {
+    color: var(--text-muted);
+    margin-bottom: 2rem;
+  }
+
+  .cta-actions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .btn-primary {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem 2rem;
+    background: var(--color-primary);
+    color: var(--bg-dark-900);
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .btn-primary:hover {
+    background: var(--color-secondary);
+    color: var(--text-white);
+    transform: translateY(-2px);
+  }
+
+  .btn-secondary {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem 2rem;
+    background: transparent;
+    color: var(--text-white);
+    border: 2px solid var(--color-secondary);
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+  }
+
+  .btn-secondary:hover {
+    background: var(--color-secondary);
+    transform: translateY(-2px);
+  }
+
+  /* Trust Badges */
+  .trust-badges {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+  }
+
+  .badge {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-muted);
+    font-size: 0.875rem;
+  }
+
+  .badge i {
+    color: var(--color-primary);
+    font-size: 1.25rem;
+  }
+
+  /* Responsive */
+  @media (max-width: 1024px) {
+    .testimonials-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .trust-stats {
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .stat-divider {
+      width: 60px;
+      height: 1px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .cta-actions {
+      flex-direction: column;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+      width: 100%;
+      justify-content: center;
+    }
+
+    .trust-badges {
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .before-after {
+      flex-direction: column;
+    }
+
+    .ba-arrow {
+      transform: rotate(90deg);
+    }
+  }
+</style>

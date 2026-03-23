@@ -1,0 +1,230 @@
+---
+export interface Props {
+  showGrading?: boolean;
+  showWindowWells?: boolean;
+  showCatchBasins?: boolean;
+  showDownspouts?: boolean;
+}
+
+const { 
+  showGrading = true, 
+  showWindowWells = true,
+  showCatchBasins = true,
+  showDownspouts = true
+} = Astro.props;
+---
+
+<div class="nbc-surface-drainage bg-cyan-50 rounded-lg p-6 my-8">
+  <h3 class="text-xl font-bold mb-4 flex items-center">
+    <span class="text-cyan-600 mr-2">🌊</span>
+    NBC 9.14.6 Surface Drainage Requirements
+  </h3>
+
+  <div class="bg-amber-50 border-l-4 border-cyan-500 p-4 mb-6">
+    <p class="text-sm">
+      <strong>NBC 9.14.6.1:</strong> Surface drainage directing water away from building reduces load on 
+      foundation drainage systems. Critical during winter thaws, spring snow-melt, and heavy rainfall.
+    </p>
+  </div>
+
+  {showGrading && (
+    <div class="bg-white rounded-lg p-6 mb-6">
+      <h4 class="font-bold mb-4 text-cyan-700">General Grading Requirements</h4>
+      
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <h5 class="font-semibold mb-3">Minimum Slopes</h5>
+          <ul class="text-sm space-y-2">
+            <li class="flex items-start">
+              <span class="text-cyan-600 mr-2">📐</span>
+              <span><strong>Foundation:</strong> 5% (6" in 10')</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-cyan-600 mr-2">📐</span>
+              <span><strong>First 2.5m:</strong> 10% ideal</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-cyan-600 mr-2">📐</span>
+              <span><strong>Swales:</strong> 2% minimum</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-cyan-600 mr-2">📐</span>
+              <span><strong>Settlement:</strong> Add 10-15%</span>
+            </li>
+          </ul>
+        </div>
+        
+        <div>
+          <h5 class="font-semibold mb-3">Key Principles</h5>
+          <ul class="text-sm space-y-2">
+            <li class="flex items-start">
+              <span class="text-cyan-600 mr-2">✓</span>
+              <span>Slope away from building</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-cyan-600 mr-2">✓</span>
+              <span>Account for backfill settlement</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-cyan-600 mr-2">✓</span>
+              <span>Prevent soil erosion</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-cyan-600 mr-2">✓</span>
+              <span>Direct to safe discharge</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  )}
+
+  {showWindowWells && (
+    <div class="bg-purple-50 rounded-lg p-6 mb-6">
+      <h4 class="font-bold mb-4 text-purple-700">9.14.6.3 Window Wells</h4>
+      <p class="text-sm mb-4">
+        Window wells must be drained to foundation drainage system to prevent hydrostatic pressure 
+        and leakage through windows or foundation walls.
+      </p>
+      
+      <div class="grid md:grid-cols-2 gap-4">
+        <div class="bg-white p-3 rounded">
+          <h5 class="font-semibold text-sm mb-2">Requirements</h5>
+          <ul class="text-xs space-y-1">
+            <li>• Connect to foundation drain</li>
+            <li>• Vertical drain pipe to tile</li>
+            <li>• 150mm gravel base minimum</li>
+            <li>• 760mm clearance from window</li>
+          </ul>
+        </div>
+        <div class="bg-white p-3 rounded">
+          <h5 class="font-semibold text-sm mb-2">Best Practices</h5>
+          <ul class="text-xs space-y-1">
+            <li>• Install well covers</li>
+            <li>• Use corrugated walls</li>
+            <li>• Regular cleaning needed</li>
+            <li>• Check egress requirements</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  )}
+
+  {showCatchBasins && (
+    <div class="bg-orange-50 rounded-lg p-6 mb-6">
+      <h4 class="font-bold mb-4 text-orange-700">9.14.6.4 Catch Basins</h4>
+      <p class="text-sm mb-4">
+        Required where driveways slope toward house/garage to intercept surface water before entering building.
+      </p>
+      
+      <div class="grid md:grid-cols-3 gap-3">
+        <div class="bg-white p-3 rounded text-center">
+          <div class="text-2xl mb-1">🚗</div>
+          <div class="font-semibold text-xs">Location</div>
+          <div class="text-xs mt-1">Low point before garage</div>
+        </div>
+        <div class="bg-white p-3 rounded text-center">
+          <div class="text-2xl mb-1">🔧</div>
+          <div class="font-semibold text-xs">Components</div>
+          <div class="text-xs mt-1">Grate, trap, outlet</div>
+        </div>
+        <div class="bg-white p-3 rounded text-center">
+          <div class="text-2xl mb-1">💧</div>
+          <div class="font-semibold text-xs">Discharge</div>
+          <div class="text-xs mt-1">Storm sewer or dry well</div>
+        </div>
+      </div>
+    </div>
+  )}
+
+  {showDownspouts && (
+    <div class="bg-cyan-50 rounded-lg p-6 mb-6">
+      <h4 class="font-bold mb-4 text-cyan-700">9.14.6.5 Downspouts (NBC 9.26.18.2)</h4>
+      <p class="text-sm mb-4">
+        Downspouts not connected to sewer must be extended away from building to prevent erosion.
+      </p>
+      
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <h5 class="font-semibold mb-2 text-sm">Requirements</h5>
+          <ul class="text-xs space-y-1">
+            <li>• Minimum 1.8m (6') extension</li>
+            <li>• Prevent soil erosion</li>
+            <li>• Discharge to splash pads</li>
+            <li>• Direct away from foundation</li>
+          </ul>
+        </div>
+        <div>
+          <h5 class="font-semibold mb-2 text-sm">Options</h5>
+          <ul class="text-xs space-y-1">
+            <li>• Flexible extensions</li>
+            <li>• Underground pipes to swale</li>
+            <li>• Splash blocks</li>
+            <li>• Rain barrels (seasonal)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  )}
+
+  <!-- Special Requirements -->
+  <div class="bg-red-50 rounded-lg p-6 mb-6">
+    <h4 class="font-bold mb-4 text-red-700">9.14.6.2 Wells & Septic Systems</h4>
+    
+    <div class="grid md:grid-cols-2 gap-4">
+      <div class="bg-white p-4 rounded">
+        <h5 class="font-bold mb-2 text-sm">Health Risks</h5>
+        <p class="text-xs mb-2">Surface water contamination sources:</p>
+        <ul class="text-xs space-y-1">
+          <li>• Animal/bird droppings</li>
+          <li>• Garbage & organic matter</li>
+          <li>• Chemical runoff</li>
+          <li>• Bacterial growth</li>
+        </ul>
+      </div>
+      
+      <div class="bg-white p-4 rounded">
+        <h5 class="font-bold mb-2 text-sm">Protection Requirements</h5>
+        <ul class="text-xs space-y-1">
+          <li>• Direct drainage away from wells</li>
+          <li>• Keep septic fields unsaturated</li>
+          <li>• Maintain separation distances</li>
+          <li>• Prevent effluent breakthrough</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Critical Timing -->
+  <div class="bg-amber-50 rounded-lg p-6">
+    <h4 class="font-bold mb-4">Critical Drainage Periods</h4>
+    
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-3 text-center">
+      <div class="bg-white p-3 rounded">
+        <div class="text-xl mb-1">❄️</div>
+        <div class="text-xs font-semibold">Winter Thaw</div>
+        <div class="text-xs">Frozen ground</div>
+      </div>
+      <div class="bg-white p-3 rounded">
+        <div class="text-xl mb-1">🌨️</div>
+        <div class="text-xs font-semibold">Spring Melt</div>
+        <div class="text-xs">Large volumes</div>
+      </div>
+      <div class="bg-white p-3 rounded">
+        <div class="text-xl mb-1">🌧️</div>
+        <div class="text-xs font-semibold">Heavy Rain</div>
+        <div class="text-xs">Rapid runoff</div>
+      </div>
+      <div class="bg-white p-3 rounded">
+        <div class="text-xl mb-1">⛈️</div>
+        <div class="text-xs font-semibold">Storm Events</div>
+        <div class="text-xs">System overload</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="mt-6 text-xs text-slate-500 border-t pt-3">
+    <p><strong>Reference:</strong> NBC 2015 Part 9, Section 9.14.6 - Surface Drainage</p>
+    <p>Proper surface drainage is the first defense against foundation water problems.</p>
+  </div>
+</div>

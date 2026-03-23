@@ -1,0 +1,660 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Hero from "../../components/Hero.astro";
+import CTASection from '../../components/sections/CTA.astro';
+import FAQ from "../../components/FAQ.astro";
+import ServiceSchema from '../../components/ServiceSchema.astro';
+import InternalLinks from '../../components/InternalLinks.astro';
+
+// Service areas for local SEO
+const serviceAreas = [
+  "Toronto", "North York", "Scarborough", "Etobicoke", 
+  "Mississauga", "Brampton", "Vaughan", "Richmond Hill",
+  "Markham", "Oakville", "Burlington", "Hamilton"
+];
+
+// Service FAQs for schema
+const serviceFAQs = [
+  {
+    question: "How much does legal basement conversion cost in Toronto?",
+    answer: "Legal basement conversion costs $49,000-125,000+ depending on scope. Basic compliance modifications start at $49,000. Complete conversions with underpinning, egress windows, and full finishes average $92,000. Premium suites with high-end finishes cost $130,000+. ROI typically 3-5 years."
+  },
+  {
+    question: "How long does basement legalization take?",
+    answer: "Complete legalization takes 3-6 months: permit approval 2-4 weeks, underpinning 4-6 weeks, egress windows 1 week, plumbing/electrical rough-in 2-3 weeks, finishing work 4-6 weeks, final inspections 1-2 weeks. Timeline varies by project complexity and permit processing."
+  },
+  {
+    question: "What are Ontario Building Code requirements for legal basements?",
+    answer: "Legal basements require: minimum 6'5\" ceiling height, egress windows (3.8 sq ft opening minimum), separate entrance, 1-hour fire separation, interconnected smoke/CO alarms, proper ventilation, approved electrical/plumbing, and all necessary permits and inspections."
+  },
+  {
+    question: "What is the ROI on legal basement apartments in Toronto?",
+    answer: "Legal basement apartments offer excellent ROI: rental income $1,900-2,500/month, property value increase 10-20% ($108,000-200,000+), typical payback 3-5 years. Legal status enables legitimate income for mortgages, tax benefits, and 20-30% higher rent than illegal units."
+  }
+];
+
+// Service offers for schema
+const serviceOffers = [
+  {
+    name: "Basic Legal Compliance",
+    price: "$49,000-65,000",
+    description: "Egress windows, basic underpinning, permits, fire safety, plumbing rough-in"
+  },
+  {
+    name: "Complete Basement Conversion",
+    price: "$92,000-105,000",
+    description: "Full underpinning, 2 egress windows, complete plumbing/electrical, separate entrance, all finishes"
+  },
+  {
+    name: "Premium Legal Suite",
+    price: "$130,000-150,000",
+    description: "Luxury finishes, in-floor heating, sound insulation, smart home integration, premium appliances"
+  }
+];
+
+const features = [
+  {
+    title: "Basement Underpinning",
+    description: "Lower your basement floor to achieve 6'5\" minimum ceiling height required by code",
+    icon: "🏗️"
+  },
+  {
+    title: "Egress Windows",
+    description: "Install code-compliant windows with proper wells for emergency escape",
+    icon: "🪟"
+  },
+  {
+    title: "Building Permits",
+    description: "Complete permit acquisition and city inspections management",
+    icon: "📋"
+  },
+  {
+    title: "3D Design & Planning",
+    description: "Professional architectural drawings and 3D visualization of your legal suite",
+    icon: "📐"
+  },
+  {
+    title: "Drainage & Plumbing",
+    description: "Separate entrance drains, bathroom rough-ins, and backwater valves",
+    icon: "🚿"
+  },
+  {
+    title: "Fire Safety Systems",
+    description: "Fire separation, interconnected alarms, and emergency lighting",
+    icon: "🚨"
+  }
+];
+
+const process = [
+  {
+    step: 1,
+    title: "Initial Assessment",
+    description: "Free inspection to evaluate basement potential and code requirements"
+  },
+  {
+    step: 2,
+    title: "Design & Planning",
+    description: "3D design, architectural drawings, and permit applications"
+  },
+  {
+    step: 3,
+    title: "Structural Work",
+    description: "Underpinning, egress windows, and foundation modifications"
+  },
+  {
+    step: 4,
+    title: "Systems Installation",
+    description: "Plumbing, electrical, HVAC, and fire safety systems"
+  },
+  {
+    step: 5,
+    title: "Finishing Work",
+    description: "Insulation, drywall, flooring, and final touches"
+  },
+  {
+    step: 6,
+    title: "Final Inspection",
+    description: "City inspection and occupancy permit approval"
+  }
+];
+
+const comparisonData = {
+  headers: ["Requirement", "City of Toronto", "Mississauga", "Brampton", "Vaughan"],
+  rows: [
+    {
+      feature: "Min. Ceiling Height",
+      cols: ["6'5\" (1.95m)", "6'5\" (1.95m)", "6'7\" (2.0m)", "6'5\" (1.95m)"]
+    },
+    {
+      feature: "Min. Window Size",
+      cols: ["3.8 sq ft", "3.8 sq ft", "3.8 sq ft", "3.8 sq ft"]
+    },
+    {
+      feature: "Separate Entrance",
+      cols: ["Required", "Required", "Required", "Required"]
+    },
+    {
+      feature: "Parking Space",
+      cols: ["1 additional", "1 additional", "1.25 spaces", "1 additional"]
+    },
+    {
+      feature: "Fire Separation",
+      cols: ["1 hour rating", "1 hour rating", "45 min rating", "1 hour rating"]
+    }
+  ]
+};
+
+const pricingPlans = [
+  {
+    name: "Basic Compliance",
+    price: "$49,000",
+    period: "starting from",
+    description: "Essential modifications for legal status",
+    features: [
+      "Egress window installation",
+      "Basic underpinning (if needed)",
+      "Permit acquisition",
+      "Fire safety upgrades",
+      "Basic plumbing rough-in",
+      "City inspection support"
+    ],
+    highlighted: false
+  },
+  {
+    name: "Complete Conversion",
+    price: "$92,000",
+    period: "starting from",
+    description: "Full basement apartment creation",
+    features: [
+      "Complete underpinning",
+      "2 egress windows",
+      "Full architectural design",
+      "3D visualization",
+      "Complete plumbing/electrical",
+      "Kitchen & bathroom install",
+      "Separate entrance",
+      "HVAC separation",
+      "All permits & inspections"
+    ],
+    highlighted: true
+  },
+  {
+    name: "Premium Suite",
+    price: "$130,000+",
+    period: "custom quote",
+    description: "Luxury basement suite with all amenities",
+    features: [
+      "Everything in Complete",
+      "High-end finishes",
+      "In-floor heating",
+      "Sound insulation",
+      "Smart home integration",
+      "Walkout if possible",
+      "Premium appliances",
+      "Designer consultation",
+      "Landscaping included"
+    ],
+    highlighted: false
+  }
+];
+
+const faqItems = [
+  {
+    question: "What makes a basement 'legal' in Ontario?",
+    answer: "A legal basement must meet Ontario Building Code requirements including: minimum 6'5\" ceiling height, proper egress windows (minimum 3.8 sq ft opening), separate entrance, fire-rated separation from main dwelling, interconnected smoke/CO alarms, proper ventilation, and approved electrical/plumbing systems. Additionally, you need proper permits and must pass all city inspections."
+  },
+  {
+    question: "How long does basement legalization take?",
+    answer: "The complete process typically takes 3-6 months depending on scope. Permit approval: 2-4 weeks. Underpinning (if needed): 4-6 weeks. Egress windows: 1 week. Plumbing/electrical rough-in: 2-3 weeks. Finishing work: 4-6 weeks. Final inspections: 1-2 weeks. We manage the entire timeline and coordinate all trades to minimize delays."
+  },
+  {
+    question: "What is the ROI on a legal basement apartment?",
+    answer: "Legal basements offer excellent ROI. Rental income: $1,900-2,500/month in Toronto. Property value increase: 10-20% ($108,000-200,000+). Typical payback period: 3-5 years. Legal status allows legitimate rental income for mortgage qualification and provides tax benefits. Plus, legal suites rent faster and command 20-30% higher rent than illegal units."
+  },
+  {
+    question: "Do I need underpinning for a legal basement?",
+    answer: "Underpinning is required if your current ceiling height is below 6'5\" (1.95m). Most Toronto homes built before 1960 have 6-6.5' basements requiring underpinning. We lower the floor by 8-16\" to achieve 7-8' finished height. This also allows for proper insulation, plumbing, and creates a more comfortable living space."
+  },
+  {
+    question: "What are egress window requirements?",
+    answer: "Every bedroom needs an egress window for emergency escape. Requirements: minimum 3.8 sq ft (0.35 m²) opening area, no dimension less than 15\" (380mm), sill height maximum 1.5m above floor, window well must be 760mm (30\") deep minimum with ladder if over 900mm deep. We handle all measurements and ensure full NBC compliance."
+  },
+  {
+    question: "Can I do some work myself to save money?",
+    answer: "While you can do finishing work like painting and flooring, all structural, plumbing, and electrical work must be done by licensed professionals for permit approval. DIY work often fails inspection, causing costly delays. We offer flexible packages where you can handle finishing touches while we manage all permit-required work."
+  },
+  {
+    question: "What happens if my illegal basement gets reported?",
+    answer: "The city can issue compliance orders requiring immediate vacancy, levy fines up to $54,000, and you may face lawsuits from tenants for illegal rental. Your insurance may deny claims, and you cannot claim rental income or expenses on taxes. Legalization protects you from all these risks."
+  },
+  {
+    question: "Are there any rebates or grants available?",
+    answer: "Yes! Canada Greener Homes Grant: up to $5,400 for insulation and windows. Toronto Multi-Residential Improvement Program: low-interest loans. CMHC Secondary Suite Financing: up to $43,000. HST New Housing Rebate: up to $32,000. We help you apply for all applicable programs."
+  }
+];
+---
+
+<Layout title="Legal Basement Conversion Toronto - Complete Basement Legalization | Dryspace">
+  <!-- Add Service Schema -->
+  <ServiceSchema
+    serviceName="Legal Basement Conversion"
+    description="Professional legal basement conversion services including underpinning, egress windows, permits, and full compliance with Ontario Building Code in Toronto and GTA"
+    priceRange="$49,000-$162,000"
+    offers={serviceOffers}
+    faqs={serviceFAQs}
+    areaServed={serviceAreas}
+  />
+  <Hero
+    title="Legal Basement Conversion Services"
+    subtitle="Transform Your Basement Into a Legal, Income-Generating Suite. Complete Toronto Building Code Compliance."
+    backgroundImage="/images/legal-basement-hero.webp"
+    ctaText="Get Free Assessment"
+    ctaLink="/contact"
+  />
+
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-4xl font-bold mb-6">Complete Legal Basement Solutions in Toronto</h2>
+        <p class="text-lg text-slate-600 mb-8">
+          Turn your basement into a legal, profitable rental suite. We handle everything from initial design to final city approval, 
+          ensuring your basement meets all Ontario Building Code requirements and maximizes your property value.
+        </p>
+
+        <div class="grid md:grid-cols-2 gap-8 mb-12">
+          <div class="bg-cyan-50 rounded-lg p-6">
+            <h3 class="text-2xl font-bold mb-4 text-cyan-700">Why Go Legal?</h3>
+            <ul class="space-y-3">
+              <li class="flex items-start">
+                <span class="text-cyan-600 mr-3">✓</span>
+                <div>
+                  <strong>$1,900-2,500/month</strong> rental income
+                </div>
+              </li>
+              <li class="flex items-start">
+                <span class="text-cyan-600 mr-3">✓</span>
+                <div>
+                  <strong>10-20% property value</strong> increase
+                </div>
+              </li>
+              <li class="flex items-start">
+                <span class="text-cyan-600 mr-3">✓</span>
+                <div>
+                  <strong>Legal protection</strong> from fines & lawsuits
+                </div>
+              </li>
+              <li class="flex items-start">
+                <span class="text-cyan-600 mr-3">✓</span>
+                <div>
+                  <strong>Tax benefits</strong> & mortgage qualification
+                </div>
+              </li>
+              <li class="flex items-start">
+                <span class="text-cyan-600 mr-3">✓</span>
+                <div>
+                  <strong>Insurance coverage</strong> for rental unit
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="bg-red-50 rounded-lg p-6">
+            <h3 class="text-2xl font-bold mb-4 text-red-800">Risks of Illegal Basements</h3>
+            <ul class="space-y-3">
+              <li class="flex items-start">
+                <span class="text-red-600 mr-3">✗</span>
+                <div>
+                  <strong>Fines up to $54,000</strong> for violations
+                </div>
+              </li>
+              <li class="flex items-start">
+                <span class="text-red-600 mr-3">✗</span>
+                <div>
+                  <strong>Immediate eviction</strong> orders
+                </div>
+              </li>
+              <li class="flex items-start">
+                <span class="text-red-600 mr-3">✗</span>
+                <div>
+                  <strong>Insurance claim</strong> denials
+                </div>
+              </li>
+              <li class="flex items-start">
+                <span class="text-red-600 mr-3">✗</span>
+                <div>
+                  <strong>Tenant lawsuits</strong> for illegal rental
+                </div>
+              </li>
+              <li class="flex items-start">
+                <span class="text-red-600 mr-3">✗</span>
+                <div>
+                  <strong>No tax deductions</strong> allowed
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Ontario Building Code Requirements -->
+        <div class="bg-cyan-50 border-2 border-cyan-400 rounded-lg p-8 mb-12">
+          <h3 class="text-2xl font-bold mb-6 text-cyan-900">Ontario Building Code Requirements</h3>
+          
+          <div class="grid md:grid-cols-2 gap-6">
+            <div>
+              <h4 class="font-bold mb-3 text-lg">Structural Requirements</h4>
+              <ul class="space-y-2 text-sm">
+                <li class="flex items-start">
+                  <span class="text-cyan-600 mr-2">•</span>
+                  <span><strong>Ceiling Height:</strong> Minimum 6'5" (1.95m)</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-cyan-600 mr-2">•</span>
+                  <span><strong>Room Sizes:</strong> Min 145 sq ft master, 75 sq ft other</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-cyan-600 mr-2">•</span>
+                  <span><strong>Hallways:</strong> Minimum 36" (915mm) wide</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-cyan-600 mr-2">•</span>
+                  <span><strong>Separate Entrance:</strong> Direct outside access</span>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 class="font-bold mb-3 text-lg">Safety Requirements</h4>
+              <ul class="space-y-2 text-sm">
+                <li class="flex items-start">
+                  <span class="text-cyan-600 mr-2">•</span>
+                  <span><strong>Fire Separation:</strong> 1-hour fire rating</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-cyan-600 mr-2">•</span>
+                  <span><strong>Egress Windows:</strong> 3.8 sq ft minimum</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-cyan-600 mr-2">•</span>
+                  <span><strong>Smoke Alarms:</strong> Interconnected system</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-cyan-600 mr-2">•</span>
+                  <span><strong>CO Detectors:</strong> In all sleeping areas</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Egress Window Requirements -->
+        <div class="bg-amber-50 border-2 border-amber-400 rounded-lg p-8 mb-12">
+          <h3 class="text-2xl font-bold mb-6 flex items-center">
+            <span class="text-3xl mr-3">🪟</span>
+            NBC Egress Window Requirements
+          </h3>
+          
+          <div class="grid md:grid-cols-2 gap-6">
+            <div>
+              <h4 class="font-bold mb-3">Window Opening Specifications</h4>
+              <ul class="space-y-2 text-sm">
+                <li><strong>Minimum Opening Area:</strong> 0.35 m² (3.8 sq ft)</li>
+                <li><strong>Minimum Height:</strong> 380mm (15")</li>
+                <li><strong>Minimum Width:</strong> 380mm (15")</li>
+                <li><strong>Maximum Sill Height:</strong> 1.5m above floor</li>
+                <li><strong>Operation:</strong> Without tools or keys</li>
+              </ul>
+            </div>
+            
+            <div>
+              <h4 class="font-bold mb-3">Window Well Requirements</h4>
+              <ul class="space-y-2 text-sm">
+                <li><strong>Minimum Clearance:</strong> 760mm (30") from window</li>
+                <li><strong>Well Depth >900mm:</strong> Permanent ladder required</li>
+                <li><strong>Drainage:</strong> Connected to weeping tile</li>
+                <li><strong>Cover:</strong> Openable from inside without tools</li>
+                <li><strong>Gravel Base:</strong> 6" minimum for drainage</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="mt-6 p-4 bg-amber-50 rounded">
+            <p class="text-sm">
+              <strong>Note:</strong> Every bedroom requires an egress window. Window wells must maintain 760mm clearance 
+              even with outward-opening windows fully extended. We ensure all installations meet NBC requirements.
+            </p>
+          </div>
+        </div>
+
+        <!-- Services Grid -->
+        <div class="mb-12">
+          <h3 class="text-2xl font-bold mb-6">Complete Service Package</h3>
+          
+          <div class="grid md:grid-cols-3 gap-6">
+            <div class="bg-white border-2 border-slate-100 rounded-lg p-6">
+              <div class="text-3xl mb-3">🏗️</div>
+              <h4 class="font-bold text-lg mb-2">Structural Work</h4>
+              <ul class="text-sm space-y-1 text-slate-600">
+                <li>• Basement underpinning</li>
+                <li>• Foundation reinforcement</li>
+                <li>• Load-bearing walls</li>
+                <li>• Concrete floors</li>
+                <li>• Structural beams</li>
+              </ul>
+            </div>
+
+            <div class="bg-white border-2 border-slate-100 rounded-lg p-6">
+              <div class="text-3xl mb-3">📐</div>
+              <h4 class="font-bold text-lg mb-2">Design & Permits</h4>
+              <ul class="text-sm space-y-1 text-slate-600">
+                <li>• 3D visualization</li>
+                <li>• Architectural drawings</li>
+                <li>• Permit applications</li>
+                <li>• Engineering reports</li>
+                <li>• City inspections</li>
+              </ul>
+            </div>
+
+            <div class="bg-white border-2 border-slate-100 rounded-lg p-6">
+              <div class="text-3xl mb-3">🔧</div>
+              <h4 class="font-bold text-lg mb-2">Systems & Utilities</h4>
+              <ul class="text-sm space-y-1 text-slate-600">
+                <li>• Plumbing rough-in</li>
+                <li>• Electrical panel upgrade</li>
+                <li>• HVAC separation</li>
+                <li>• Fire safety systems</li>
+                <li>• Drainage & sewage</li>
+              </ul>
+            </div>
+
+            <div class="bg-white border-2 border-slate-100 rounded-lg p-6">
+              <div class="text-3xl mb-3">🪟</div>
+              <h4 class="font-bold text-lg mb-2">Windows & Exits</h4>
+              <ul class="text-sm space-y-1 text-slate-600">
+                <li>• Egress windows</li>
+                <li>• Window wells</li>
+                <li>• Separate entrance</li>
+                <li>• Emergency exits</li>
+                <li>• Security doors</li>
+              </ul>
+            </div>
+
+            <div class="bg-white border-2 border-slate-100 rounded-lg p-6">
+              <div class="text-3xl mb-3">🏠</div>
+              <h4 class="font-bold text-lg mb-2">Interior Finishing</h4>
+              <ul class="text-sm space-y-1 text-slate-600">
+                <li>• Insulation & vapor barrier</li>
+                <li>• Drywall & taping</li>
+                <li>• Flooring installation</li>
+                <li>• Kitchen & bathroom</li>
+                <li>• Painting & trim</li>
+              </ul>
+            </div>
+
+            <div class="bg-white border-2 border-slate-100 rounded-lg p-6">
+              <div class="text-3xl mb-3">✅</div>
+              <h4 class="font-bold text-lg mb-2">Compliance & Safety</h4>
+              <ul class="text-sm space-y-1 text-slate-600">
+                <li>• Fire separation walls</li>
+                <li>• Smoke/CO alarms</li>
+                <li>• Sound insulation</li>
+                <li>• Ventilation systems</li>
+                <li>• Final inspections</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- ROI Calculator -->
+        <div class="bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg p-8 mb-12">
+          <h3 class="text-2xl font-bold mb-6">Investment Return Calculator</h3>
+          
+          <div class="grid md:grid-cols-2 gap-8">
+            <div>
+              <h4 class="font-bold mb-4">Your Investment</h4>
+              <div class="space-y-3">
+                <div class="flex justify-between">
+                  <span>Conversion Cost:</span>
+                  <span class="font-bold">$92,000</span>
+                </div>
+                <div class="flex justify-between">
+                  <span>Time to Complete:</span>
+                  <span class="font-bold">3-4 months</span>
+                </div>
+                <div class="flex justify-between">
+                  <span>Rebates/Grants:</span>
+                  <span class="font-bold text-cyan-300">-$11,000</span>
+                </div>
+                <div class="border-t pt-3 flex justify-between">
+                  <span>Net Investment:</span>
+                  <span class="font-bold text-xl">$81,000</span>
+                </div>
+              </div>
+            </div>
+            
+            <div>
+              <h4 class="font-bold mb-4">Your Returns</h4>
+              <div class="space-y-3">
+                <div class="flex justify-between">
+                  <span>Monthly Rent:</span>
+                  <span class="font-bold">$2,400</span>
+                </div>
+                <div class="flex justify-between">
+                  <span>Annual Income:</span>
+                  <span class="font-bold">$28,500</span>
+                </div>
+                <div class="flex justify-between">
+                  <span>Property Value +:</span>
+                  <span class="font-bold">$162,000</span>
+                </div>
+                <div class="border-t pt-3 flex justify-between">
+                  <span>ROI Period:</span>
+                  <span class="font-bold text-xl text-cyan-300">2.8 years</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="mt-6 text-center">
+            <p class="text-sm opacity-90">*Based on average Toronto market rates 2024</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ServiceFeatures removed -->
+  
+  
+  
+
+  <!-- Success Stories -->
+  <section class="py-16 bg-slate-50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl font-bold mb-8 text-center">Recent Legal Basement Projects</h2>
+        
+        <div class="grid md:grid-cols-2 gap-8">
+          <div class="bg-white rounded-lg shadow-lg p-6">
+            <h3 class="font-bold text-xl mb-3">Beaches 2-Bedroom Suite</h3>
+            <ul class="space-y-2 text-slate-600 mb-4">
+              <li>• 12" underpinning for 7'6" ceilings</li>
+              <li>• 2 large egress windows installed</li>
+              <li>• Separate side entrance created</li>
+              <li>• Full kitchen and bathroom</li>
+            </ul>
+            <div class="border-t pt-4">
+              <p class="text-sm"><strong>Investment:</strong> $99,500</p>
+              <p class="text-sm"><strong>Monthly Rent:</strong> $2,600</p>
+              <p class="text-sm text-cyan-600"><strong>Property Value:</strong> +$194,500</p>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-lg shadow-lg p-6">
+            <h3 class="font-bold text-xl mb-3">North York 1-Bedroom Suite</h3>
+            <ul class="space-y-2 text-slate-600 mb-4">
+              <li>• 8" underpinning to achieve 6'8"</li>
+              <li>• Walk-out entrance to backyard</li>
+              <li>• In-floor heating throughout</li>
+              <li>• Soundproofing between units</li>
+            </ul>
+            <div class="border-t pt-4">
+              <p class="text-sm"><strong>Investment:</strong> $84,000</p>
+              <p class="text-sm"><strong>Monthly Rent:</strong> $2,000</p>
+              <p class="text-sm text-cyan-600"><strong>Property Value:</strong> +$151,500</p>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-lg shadow-lg p-6">
+            <h3 class="font-bold text-xl mb-3">Etobicoke Studio Suite</h3>
+            <ul class="space-y-2 text-slate-600 mb-4">
+              <li>• No underpinning needed (6'6")</li>
+              <li>• 1 egress window upgraded</li>
+              <li>• Kitchenette and 3-piece bath</li>
+              <li>• Fire separation completed</li>
+            </ul>
+            <div class="border-t pt-4">
+              <p class="text-sm"><strong>Investment:</strong> $49,000</p>
+              <p class="text-sm"><strong>Monthly Rent:</strong> $1,600</p>
+              <p class="text-sm text-cyan-600"><strong>Property Value:</strong> +$97,000</p>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-lg shadow-lg p-6">
+            <h3 class="font-bold text-xl mb-3">Scarborough 3-Bedroom Suite</h3>
+            <ul class="space-y-2 text-slate-600 mb-4">
+              <li>• 14" underpinning for 8' ceilings</li>
+              <li>• 3 egress windows installed</li>
+              <li>• Separate HVAC system</li>
+              <li>• Premium finishes throughout</li>
+            </ul>
+            <div class="border-t pt-4">
+              <p class="text-sm"><strong>Investment:</strong> $135,000</p>
+              <p class="text-sm"><strong>Monthly Rent:</strong> $3,000</p>
+              <p class="text-sm text-cyan-600"><strong>Property Value:</strong> +$238,000</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <FAQ items={faqItems} />
+  
+  <!-- Related Services and Resources -->
+  <section class="py-8">
+    <div class="container mx-auto px-4">
+      <InternalLinks category="foundation" currentPage="legal-basement-conversion" limit={6} />
+    </div>
+  </section>
+  
+  <CTASection
+    title="Ready to Legalize Your Basement?"
+    description="Get a free assessment and detailed quote for your basement conversion project."
+    primaryButtonText="Schedule Free Assessment"
+    primaryButtonLink="/contact"
+    secondaryButtonText="Call 437-545-0067"
+    secondaryButtonLink="tel:437-545-0067"
+  />
+
+  <!-- ServiceAreas removed -->
+</Layout>

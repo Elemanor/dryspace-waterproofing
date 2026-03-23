@@ -1,0 +1,648 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import Footer from '../../components/Footer.astro';
+import ResourceImageGallery from '../../components/ResourceImageGallery.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+---
+
+<PageLayout title="DIY Drainage & Landscaping Guide for Homeowners | Dryspace" description="Homeowner's guide to maintaining proper drainage and landscaping around foundations. DIY tips, seasonal checklists, and when to call professionals. Free maintenance schedules.">
+  
+  
+  <!-- Breadcrumbs -->
+  <div class="container mx-auto px-4 mt-4">
+    <Breadcrumbs 
+      items={[
+        { name: "Home", url: "/" },
+        { name: "Resources", url: "/resources" },
+        { name: "Foundation Drainage Landscaping" }
+      ]}
+    />
+  </div>
+
+<section class="hero-section">
+    <div class="container">
+      <h1 class="text-5xl font-bold text-slate-900 uppercase">HOMEOWNER'S DIY DRAINAGE & LANDSCAPING GUIDE</h1>
+      <p class="hero-description">Learn how to maintain proper grading and drainage around your foundation. DIY maintenance tips, seasonal checklists, and warning signs that require professional help.</p>
+    </div>
+  </section>
+
+  <section class="drainage-fundamentals">
+    <div class="container">
+      <h2 class="text-4xl font-bold text-slate-900 uppercase">CRITICAL DRAINAGE PRINCIPLES</h2>
+      
+      <div class="principle-cards">
+        <div class="principle-card border-2 border-slate-200">
+          <div class="principle-icon"></div>
+          <h3 class="text-2xl font-bold text-slate-900 uppercase">6-INCH RULE</h3>
+          <p>Maintain minimum 6" drop in grade over first 10 feet from foundation</p>
+          <div class="calculation">
+            <strong>Slope Calculation:</strong>
+            <code>2% minimum grade = 2.4" per 10 feet</code>
+          </div>
+        </div>
+        
+        <div class="principle-card border-2 border-slate-200">
+          <div class="principle-icon"></div>
+          <h3 class="text-2xl font-bold text-slate-900 uppercase">8-FOOT RULE</h3>
+          <p>Keep water sources (sprinklers, downspouts) minimum 8 feet from foundation walls</p>
+          <div class="warning">
+            <strong>Critical:</strong> 90% of foundation issues start within this zone
+          </div>
+        </div>
+        
+        <div class="principle-card border-2 border-slate-200">
+          <div class="principle-icon"></div>
+          <h3 class="text-2xl font-bold text-slate-900 uppercase">TREE PLACEMENT</h3>
+          <p>Plant trees at distance equal to their mature height from foundation</p>
+          <div class="tree-guide">
+            <ul>
+              <li>Maple (50ft) → 50ft away</li>
+              <li>Oak (60ft) → 60ft away</li>
+              <li>Willow → Never near foundations</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="grading-solutions">
+    <div class="container">
+      <h2 class="text-4xl font-bold text-slate-900 uppercase">PROFESSIONAL GRADING SOLUTIONS</h2>
+      
+      <div class="solution-grid">
+        <div class="solution-card border-2 border-slate-200">
+          <h3 class="text-2xl font-bold text-slate-900 uppercase">POSITIVE GRADING INSTALLATION</h3>
+          <div class="installation-steps">
+            <div class="step">
+              <span class="step-number">1</span>
+              <div class="step-content">
+                <h4 class="text-xl font-bold text-slate-900 uppercase">REMOVE EXISTING MATERIAL</h4>
+                <p>Excavate negative grade areas to minimum 8" depth</p>
+              </div>
+            </div>
+            <div class="step">
+              <span class="step-number">2</span>
+              <div class="step-content">
+                <h4 class="text-xl font-bold text-slate-900 uppercase">INSTALL CLAY CAP</h4>
+                <p>Apply 6" compacted clay layer (k≤1×10⁻⁷ cm/s permeability)</p>
+              </div>
+            </div>
+            <div class="step">
+              <span class="step-number">3</span>
+              <div class="step-content">
+                <h4 class="text-xl font-bold text-slate-900 uppercase">CREATE SLOPE</h4>
+                <p>Build 2-5% grade away from foundation using clean fill</p>
+              </div>
+            </div>
+            <div class="step">
+              <span class="step-number">4</span>
+              <div class="step-content">
+                <h4 class="text-xl font-bold text-slate-900 uppercase">TOP LAYER</h4>
+                <p>Install 2" topsoil and sod or 3" decorative stone</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="solution-card border-2 border-slate-200">
+          <h3 class="text-2xl font-bold text-slate-900 uppercase">SWALE CONSTRUCTION</h3>
+          <div class="swale-diagram">
+            <div class="swale-visual">
+              <div class="ground-line"></div>
+              <div class="swale-channel"></div>
+              <div class="flow-arrows">→ → →</div>
+            </div>
+            <div class="swale-specs">
+              <h4 class="text-xl font-bold text-slate-900 uppercase">DESIGN SPECIFICATIONS:</h4>
+              <ul>
+                <li><strong>Width:</strong> 3-6 feet minimum</li>
+                <li><strong>Depth:</strong> 6-12 inches center</li>
+                <li><strong>Side slopes:</strong> 3:1 maximum</li>
+                <li><strong>Bottom gradient:</strong> 1-2%</li>
+                <li><strong>Capacity:</strong> 10-year storm event</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <div class="solution-card border-2 border-slate-200">
+          <h3 class="text-2xl font-bold text-slate-900 uppercase">FRENCH DRAIN SYSTEM</h3>
+          <div class="drain-components">
+            <table>
+              <thead>
+                <tr>
+                  <th>Component</th>
+                  <th>Specification</th>
+                  <th>Purpose</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Trench</td>
+                  <td>18"W × 24"D min</td>
+                  <td>Water collection</td>
+                </tr>
+                <tr>
+                  <td>Pipe</td>
+                  <td>4" perforated PVC</td>
+                  <td>Water transport</td>
+                </tr>
+                <tr>
+                  <td>Gravel</td>
+                  <td>3/4" clear stone</td>
+                  <td>Filtration/support</td>
+                </tr>
+                <tr>
+                  <td>Filter fabric</td>
+                  <td>Non-woven geotextile</td>
+                  <td>Soil separation</td>
+                </tr>
+                <tr>
+                  <td>Slope</td>
+                  <td>1% minimum</td>
+                  <td>Gravity flow</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="problem-areas">
+    <div class="container">
+      <h2 class="text-4xl font-bold text-slate-900 uppercase">COMMON PROBLEM AREAS & SOLUTIONS</h2>
+      
+      <div class="problem-matrix">
+        <div class="problem-item">
+          <div class="problem-header critical">
+            <h3 class="text-2xl font-bold text-slate-900 uppercase">WINDOW WELLS</h3>
+            <span class="risk-level">High Risk</span>
+          </div>
+          <div class="problem-content">
+            <h4 class="text-xl font-bold text-slate-900 uppercase">ISSUES:</h4>
+            <ul>
+              <li>Water accumulation</li>
+              <li>Improper drainage</li>
+              <li>Clogged drains</li>
+            </ul>
+            <h4 class="text-xl font-bold text-slate-900 uppercase">SOLUTIONS:</h4>
+            <ul>
+              <li>Install drain to weeping tile</li>
+              <li>Add clear covers</li>
+              <li>Fill with 3/4" gravel</li>
+              <li>Annual cleaning required</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="problem-item">
+          <div class="problem-header warning">
+            <h3 class="text-2xl font-bold text-slate-900 uppercase">DOWNSPOUT DISCHARGE</h3>
+            <span class="risk-level">Medium Risk</span>
+          </div>
+          <div class="problem-content">
+            <h4 class="text-xl font-bold text-slate-900 uppercase">ISSUES:</h4>
+            <ul>
+              <li>Discharge too close</li>
+              <li>Splash erosion</li>
+              <li>Ice damming</li>
+            </ul>
+            <h4 class="text-xl font-bold text-slate-900 uppercase">SOLUTIONS:</h4>
+            <ul>
+              <li>Extend 8+ feet from wall</li>
+              <li>Install splash blocks</li>
+              <li>Connect to storm sewer</li>
+              <li>Add rain barrels</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="problem-item">
+          <div class="problem-header critical">
+            <h3 class="text-2xl font-bold text-slate-900 uppercase">DRIVEWAY/WALKWAY JUNCTION</h3>
+            <span class="risk-level">High Risk</span>
+          </div>
+          <div class="problem-content">
+            <h4 class="text-xl font-bold text-slate-900 uppercase">ISSUES:</h4>
+            <ul>
+              <li>Negative slope to house</li>
+              <li>Settlement creating pools</li>
+              <li>Cracked control joints</li>
+            </ul>
+            <h4 class="text-xl font-bold text-slate-900 uppercase">SOLUTIONS:</h4>
+            <ul>
+              <li>Mud-jack to correct slope</li>
+              <li>Install trench drain</li>
+              <li>Seal all cracks annually</li>
+              <li>Apply concrete sealer</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="problem-item">
+          <div class="problem-header warning">
+            <h3 class="text-2xl font-bold text-slate-900 uppercase">GARDEN BEDS</h3>
+            <span class="risk-level">Medium Risk</span>
+          </div>
+          <div class="problem-content">
+            <h4 class="text-xl font-bold text-slate-900 uppercase">ISSUES:</h4>
+            <ul>
+              <li>Over-watering near walls</li>
+              <li>Mulch against siding</li>
+              <li>Raised beds trap water</li>
+            </ul>
+            <h4 class="text-xl font-bold text-slate-900 uppercase">SOLUTIONS:</h4>
+            <ul>
+              <li>Maintain 6" mulch gap</li>
+              <li>Install drip irrigation</li>
+              <li>Use permeable barriers</li>
+              <li>Slope beds away</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="seasonal-maintenance">
+    <div class="container">
+      <h2 class="text-4xl font-bold text-slate-900 uppercase">SEASONAL DRAINAGE MAINTENANCE SCHEDULE</h2>
+      
+      <div class="season-grid">
+        <div class="season-card spring border-2 border-slate-200">
+          <h3 class="text-2xl font-bold text-slate-900 uppercase">SPRING (MARCH-MAY)</h3>
+          <div class="task-list">
+            <label class="task">
+              <input type="checkbox">
+              <span>Check grade after frost heave</span>
+            </label>
+            <label class="task">
+              <input type="checkbox">
+              <span>Clean gutters and downspouts</span>
+            </label>
+            <label class="task">
+              <input type="checkbox">
+              <span>Test sump pump operation</span>
+            </label>
+            <label class="task">
+              <input type="checkbox">
+              <span>Clear window well drains</span>
+            </label>
+            <label class="task">
+              <input type="checkbox">
+              <span>Repair winter damage to grading</span>
+            </label>
+          </div>
+        </div>
+        
+        <div class="season-card summer border-2 border-slate-200">
+          <h3 class="text-2xl font-bold text-slate-900 uppercase"> SUMMER (JUNE-AUGUST)</h3>
+          <div class="task-list">
+            <label class="task">
+              <input type="checkbox">
+              <span>Monitor soil settlement</span>
+            </label>
+            <label class="task">
+              <input type="checkbox">
+              <span>Adjust sprinkler coverage</span>
+            </label>
+            <label class="task">
+              <input type="checkbox">
+              <span>Trim vegetation from walls</span>
+            </label>
+            <label class="task">
+              <input type="checkbox">
+              <span>Check A/C condensate drainage</span>
+            </label>
+            <label class="task">
+              <input type="checkbox">
+              <span>Seal concrete cracks</span>
+            </label>
+          </div>
+        </div>
+        
+        <div class="season-card fall border-2 border-slate-200">
+          <h3 class="text-2xl font-bold text-slate-900 uppercase">FALL (SEPTEMBER-NOVEMBER)</h3>
+          <div class="task-list">
+            <label class="task">
+              <input type="checkbox">
+              <span>Major gutter cleaning</span>
+            </label>
+            <label class="task">
+              <input type="checkbox">
+              <span>Install gutter guards</span>
+            </label>
+            <label class="task">
+              <input type="checkbox">
+              <span>Disconnect hoses</span>
+            </label>
+            <label class="task">
+              <input type="checkbox">
+              <span>Grade correction before freeze</span>
+            </label>
+            <label class="task">
+              <input type="checkbox">
+              <span>Mulch garden beds properly</span>
+            </label>
+          </div>
+        </div>
+        
+        <div class="season-card winter border-2 border-slate-200">
+          <h3 class="text-2xl font-bold text-slate-900 uppercase"> WINTER (DECEMBER-FEBRUARY)</h3>
+          <div class="task-list">
+            <label class="task">
+              <input type="checkbox">
+              <span>Keep snow 2ft from foundation</span>
+            </label>
+            <label class="task">
+              <input type="checkbox">
+              <span>Prevent ice dam formation</span>
+            </label>
+            <label class="task">
+              <input type="checkbox">
+              <span>Monitor freeze-thaw cycles</span>
+            </label>
+            <label class="task">
+              <input type="checkbox">
+              <span>Check for frost heaving</span>
+            </label>
+            <label class="task">
+              <input type="checkbox">
+              <span>Document problem areas</span>
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="stone-foundation">
+    <div class="container">
+      <h2 class="text-4xl font-bold text-slate-900 uppercase">SPECIAL CONSIDERATIONS: STONE & RUBBLE FOUNDATIONS</h2>
+      
+      <div class="stone-info">
+        <div class="stone-characteristics">
+          <h3 class="text-2xl font-bold text-slate-900 uppercase">UNIQUE CHALLENGES</h3>
+          <p>Historic Toronto homes (pre-1920) with stone foundations require specialized drainage approaches:</p>
+          
+          <div class="characteristic-list">
+            <div class="characteristic">
+              <h4 class="text-xl font-bold text-slate-900 uppercase">MOISTURE MOVEMENT</h4>
+              <p>Stone foundations are designed to "breathe" - they allow moisture vapor to pass through. Modern waterproofing can trap moisture and cause deterioration.</p>
+            </div>
+            
+            <div class="characteristic">
+              <h4 class="text-xl font-bold text-slate-900 uppercase">MORTAR DEGRADATION</h4>
+              <p>Lime mortar (pre-1900) is softer and more permeable than modern Portland cement. Water infiltration can wash out original mortar.</p>
+            </div>
+            
+            <div class="characteristic">
+              <h4 class="text-xl font-bold text-slate-900 uppercase">FOUNDATION MOVEMENT</h4>
+              <p>Stone foundations are flexible and settle over time. Rigid drainage systems may crack or separate.</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="stone-solutions">
+          <h3 class="text-2xl font-bold text-slate-900 uppercase">SPECIALIZED SOLUTIONS</h3>
+          
+          <div class="solution-table">
+            <table>
+              <thead>
+                <tr>
+                  <th>Component</th>
+                  <th>Modern Foundation</th>
+                  <th>Stone Foundation</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Exterior coating</td>
+                  <td>Rubber membrane</td>
+                  <td>Breathable lime parge coat</td>
+                </tr>
+                <tr>
+                  <td>Interior treatment</td>
+                  <td>Vapor barrier</td>
+                  <td>Lime plaster or exposed</td>
+                </tr>
+                <tr>
+                  <td>Drainage approach</td>
+                  <td>Tight to wall</td>
+                  <td>12" offset French drain</td>
+                </tr>
+                <tr>
+                  <td>Repointing mortar</td>
+                  <td>Type S Portland</td>
+                  <td>Type O lime mortar</td>
+                </tr>
+                <tr>
+                  <td>Grade material</td>
+                  <td>Clay cap acceptable</td>
+                  <td>Granular only - must breathe</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          
+          <div class="warning-box">
+            <h4 class="text-xl font-bold text-slate-900 uppercase"> CRITICAL WARNING</h4>
+            <p>Never use Portland cement or rubber membranes on historic stone foundations. This can cause rapid deterioration and structural failure within 5-10 years.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cost-calculator">
+    <div class="container">
+      <h2 class="text-4xl font-bold text-slate-900 uppercase">DRAINAGE PROJECT COST ESTIMATOR</h2>
+      
+      <div class="calc-container">
+        <div class="calc-inputs">
+          <h3 class="text-2xl font-bold text-slate-900 uppercase">PROJECT DETAILS</h3>
+          
+          <div class="input-group">
+            <label>Property Perimeter (linear feet)</label>
+            <input type="number" id="perimeter" value="120" min="40" max="500">
+          </div>
+          
+          <div class="input-group">
+            <label>Drainage Solution</label>
+            <select id="solution">
+              <option value="grading">Regrading Only</option>
+              <option value="french">French Drain System</option>
+              <option value="swale">Swale Installation</option>
+              <option value="complete">Complete System</option>
+            </select>
+          </div>
+          
+          <div class="input-group">
+            <label>Current Conditions</label>
+            <div class="radio-group">
+              <label>
+                <input type="radio" name="condition" value="minor" checked>
+                <span>Minor issues</span>
+              </label>
+              <label>
+                <input type="radio" name="condition" value="moderate">
+                <span>Moderate problems</span>
+              </label>
+              <label>
+                <input type="radio" name="condition" value="severe">
+                <span>Severe flooding</span>
+              </label>
+            </div>
+          </div>
+          
+          <div class="input-group">
+            <label>Additional Work</label>
+            <div class="checkbox-group">
+              <label>
+                <input type="checkbox" id="downspouts" checked>
+                <span>Downspout extensions (4)</span>
+              </label>
+              <label>
+                <input type="checkbox" id="windowWells">
+                <span>Window well drainage (2)</span>
+              </label>
+              <label>
+                <input type="checkbox" id="sumpPump">
+                <span>Sump pump installation</span>
+              </label>
+              <label>
+                <input type="checkbox" id="concrete">
+                <span>Concrete leveling</span>
+              </label>
+            </div>
+          </div>
+        </div>
+        
+        <div class="calc-results">
+          <h3 class="text-2xl font-bold text-slate-900 uppercase">ESTIMATED INVESTMENT</h3>
+          
+          <div class="cost-breakdown">
+            <div class="cost-line">
+              <span>Base drainage work:</span>
+              <span id="baseCost">$3,600</span>
+            </div>
+            <div class="cost-line">
+              <span>Condition adjustment:</span>
+              <span id="conditionCost">$0</span>
+            </div>
+            <div class="cost-line">
+              <span>Additional services:</span>
+              <span id="additionalCost">$800</span>
+            </div>
+            <div class="cost-line total">
+              <span>Total Estimate:</span>
+              <span id="totalCost">$4,400</span>
+            </div>
+          </div>
+          
+          <div class="roi-info">
+            <h4 class="text-xl font-bold text-slate-900 uppercase">RETURN ON INVESTMENT</h4>
+            <ul>
+              <li>Prevents $15,000-50,000 foundation repairs</li>
+              <li>Reduces basement flooding risk by 85%</li>
+              <li>Increases property value 2-5%</li>
+              <li>Lower insurance premiums</li>
+            </ul>
+          </div>
+          
+          <div class="subsidy-note">
+            <p><strong>Toronto Subsidy Available:</strong> Up to $3,400 for qualifying drainage improvements through the Basement Flooding Protection Subsidy Program.</p>
+          </div>
+          
+          <a href="/contact" class="btn-primary">Get Professional Assessment</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+  
+  
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const perimeter = document.getElementById('perimeter');
+      const solution = document.getElementById('solution');
+      const conditions = document.querySelectorAll('input[name="condition"]');
+      const downspouts = document.getElementById('downspouts');
+      const windowWells = document.getElementById('windowWells');
+      const sumpPump = document.getElementById('sumpPump');
+      const concrete = document.getElementById('concrete');
+      
+      function calculateCost() {
+        const perimeterValue = parseInt(perimeter.value);
+        const solutionValue = solution.value;
+        const condition = document.querySelector('input[name="condition"]:checked').value;
+        
+        let baseCost = 0;
+        
+        switch(solutionValue) {
+          case 'grading':
+            baseCost = perimeterValue * 30;
+            break;
+          case 'french':
+            baseCost = perimeterValue * 75;
+            break;
+          case 'swale':
+            baseCost = perimeterValue * 45;
+            break;
+          case 'complete':
+            baseCost = perimeterValue * 120;
+            break;
+        }
+        
+        let conditionMultiplier = 1;
+        if (condition === 'moderate') conditionMultiplier = 1.3;
+        if (condition === 'severe') conditionMultiplier = 1.6;
+        
+        const conditionAdjustment = baseCost * (conditionMultiplier - 1);
+        
+        let additionalCost = 0;
+        if (downspouts.checked) additionalCost += 800;
+        if (windowWells.checked) additionalCost += 1200;
+        if (sumpPump.checked) additionalCost += 2500;
+        if (concrete.checked) additionalCost += 2000;
+        
+        const totalCost = baseCost + conditionAdjustment + additionalCost;
+        
+        document.getElementById('baseCost').textContent = '$' + baseCost.toLocaleString();
+        document.getElementById('conditionCost').textContent = '+$' + Math.round(conditionAdjustment).toLocaleString();
+        document.getElementById('additionalCost').textContent = '+$' + additionalCost.toLocaleString();
+        document.getElementById('totalCost').textContent = '$' + Math.round(totalCost).toLocaleString();
+      }
+      
+      perimeter.addEventListener('input', calculateCost);
+      solution.addEventListener('change', calculateCost);
+      conditions.forEach(radio => radio.addEventListener('change', calculateCost));
+      downspouts.addEventListener('change', calculateCost);
+      windowWells.addEventListener('change', calculateCost);
+      sumpPump.addEventListener('change', calculateCost);
+      concrete.addEventListener('change', calculateCost);
+      
+      calculateCost();
+      
+      const tasks = document.querySelectorAll('.task input[type="checkbox"]');
+      tasks.forEach(task => {
+        task.addEventListener('change', function() {
+          const completed = document.querySelectorAll('.task input[type="checkbox"]:checked').length;
+          const total = tasks.length;
+          if (completed === total) {
+            console.log('All seasonal maintenance tasks completed!');
+          }
+        });
+      });
+    });
+  </script>
+
+  <!-- Resource Images and Diagrams -->
+  <ResourceImageGallery resource="drainage-systems" />
+
+</PageLayout>

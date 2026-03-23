@@ -1,0 +1,267 @@
+---
+export interface Props {
+  showAirBarrier?: boolean;
+  showDepressurization?: boolean;
+  showRoughIn?: boolean;
+}
+
+const { 
+  showAirBarrier = true, 
+  showDepressurization = true,
+  showRoughIn = false 
+} = Astro.props;
+---
+
+<div class="nbc-soil-gas bg-purple-50 rounded-lg p-6 my-8">
+  <h3 class="text-xl font-bold mb-4 flex items-center">
+    <span class="text-purple-600 mr-2">☢️</span>
+    NBC 9.13.4 Soil Gas Control Requirements
+  </h3>
+
+  {showAirBarrier && (
+    <div class="bg-white rounded-lg p-6 mb-6">
+      <h4 class="font-bold mb-4 text-purple-700">9.13.4.2 Air Barrier Systems</h4>
+      
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <h5 class="font-semibold mb-3">Material Requirements</h5>
+          <ul class="text-sm space-y-2">
+            <li class="flex items-start">
+              <span class="text-purple-600 mr-2">•</span>
+              <span><strong>Type 1:</strong> 0.15mm (6 mil) polyethylene</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-purple-600 mr-2">•</span>
+              <span><strong>Type 2:</strong> Cross-laminated polyethylene</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-purple-600 mr-2">•</span>
+              <span>CAN/CGSB-51.34-M compliance</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-purple-600 mr-2">•</span>
+              <span>Continuous coverage required</span>
+            </li>
+          </ul>
+        </div>
+        
+        <div>
+          <h5 class="font-semibold mb-3">Installation Details</h5>
+          <ul class="text-sm space-y-2">
+            <li class="flex items-start">
+              <span class="text-cyan-600 mr-2">✓</span>
+              <span>150mm minimum lap joints</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-cyan-600 mr-2">✓</span>
+              <span>Sealed with compatible tape/mastic</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-cyan-600 mr-2">✓</span>
+              <span>All penetrations sealed</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-cyan-600 mr-2">✓</span>
+              <span>Extend to foundation walls</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mt-4 p-3 bg-purple-100 rounded">
+        <p class="text-sm">
+          <strong>Critical:</strong> Air barrier must be installed beneath slab and protected from damage 
+          during concrete placement. Any tears or punctures compromise entire system.
+        </p>
+      </div>
+    </div>
+  )}
+
+  {showDepressurization && (
+    <div class="bg-amber-50 border-2 border-amber-400 rounded-lg p-6 mb-6">
+      <h4 class="font-bold mb-4 text-lg">9.13.4.3 Sub-Slab Depressurization System</h4>
+      
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <h5 class="font-semibold mb-3">Granular Layer</h5>
+          <ul class="text-sm space-y-2">
+            <li><strong>Thickness:</strong> 100mm minimum</li>
+            <li><strong>Material:</strong> Clean granular (no fines)</li>
+            <li><strong>Size:</strong> Not less than 12mm</li>
+            <li><strong>Coverage:</strong> Entire slab area</li>
+            <li><strong>Purpose:</strong> Gas collection zone</li>
+          </ul>
+        </div>
+        
+        <div>
+          <h5 class="font-semibold mb-3">Extraction Pipe</h5>
+          <ul class="text-sm space-y-2">
+            <li><strong>Size:</strong> 100mm (3") minimum</li>
+            <li><strong>Material:</strong> ABS or PVC</li>
+            <li><strong>Location:</strong> Central to coverage</li>
+            <li><strong>Termination:</strong> Above roof or sidewall</li>
+            <li><strong>Labeling:</strong> "Radon System"</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mt-6">
+        <h5 class="font-semibold mb-3">System Components</h5>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-3 text-sm">
+          <div class="bg-white p-3 rounded text-center">
+            <div class="text-2xl mb-1">🔧</div>
+            <div>Collection Pit</div>
+          </div>
+          <div class="bg-white p-3 rounded text-center">
+            <div class="text-2xl mb-1">📐</div>
+            <div>T-fitting</div>
+          </div>
+          <div class="bg-white p-3 rounded text-center">
+            <div class="text-2xl mb-1">💨</div>
+            <div>Inline Fan</div>
+          </div>
+          <div class="bg-white p-3 rounded text-center">
+            <div class="text-2xl mb-1">📊</div>
+            <div>Manometer</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  )}
+
+  {showRoughIn && (
+    <div class="bg-cyan-50 rounded-lg p-6 mb-6">
+      <h4 class="font-bold mb-4 text-cyan-700">Rough-In Requirements (New Construction)</h4>
+      
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <h5 class="font-semibold mb-3">Passive System Elements</h5>
+          <ol class="text-sm space-y-2">
+            <li><strong>1.</strong> Granular layer below slab</li>
+            <li><strong>2.</strong> Vapor barrier installation</li>
+            <li><strong>3.</strong> 3" vent pipe to attic</li>
+            <li><strong>4.</strong> Capped in attic space</li>
+            <li><strong>5.</strong> Electrical outlet nearby</li>
+          </ol>
+        </div>
+        
+        <div>
+          <h5 class="font-semibold mb-3">Future Activation</h5>
+          <ul class="text-sm space-y-2">
+            <li class="flex items-start">
+              <span class="text-cyan-600 mr-2">✓</span>
+              <span>Fan installation ready</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-cyan-600 mr-2">✓</span>
+              <span>No structural modifications</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-cyan-600 mr-2">✓</span>
+              <span>$800-1,500 activation cost</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-cyan-600 mr-2">✓</span>
+              <span>Same-day conversion possible</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  )}
+
+  <!-- Radon Entry Points -->
+  <div class="bg-red-50 rounded-lg p-6 mb-6">
+    <h4 class="font-bold mb-4 text-red-700">Common Radon Entry Points</h4>
+    
+    <div class="grid md:grid-cols-3 gap-4 text-sm">
+      <div>
+        <h5 class="font-semibold mb-2">Floor Level</h5>
+        <ul class="space-y-1">
+          <li>• Cracks in concrete slabs</li>
+          <li>• Construction joints</li>
+          <li>• Floor drains</li>
+          <li>• Sump pits</li>
+        </ul>
+      </div>
+      
+      <div>
+        <h5 class="font-semibold mb-2">Wall Penetrations</h5>
+        <ul class="space-y-1">
+          <li>• Pipe penetrations</li>
+          <li>• Wire/cable entries</li>
+          <li>• Foundation cracks</li>
+          <li>• Window wells</li>
+        </ul>
+      </div>
+      
+      <div>
+        <h5 class="font-semibold mb-2">Other Sources</h5>
+        <ul class="space-y-1">
+          <li>• Hollow block walls</li>
+          <li>• Crawl spaces</li>
+          <li>• Well water</li>
+          <li>• Building materials</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Performance Standards -->
+  <div class="bg-cyan-50 rounded-lg p-6">
+    <h4 class="font-bold mb-4 text-cyan-700">System Performance Standards</h4>
+    
+    <div class="grid md:grid-cols-2 gap-6">
+      <div>
+        <h5 class="font-semibold mb-3">Design Criteria</h5>
+        <table class="w-full text-sm">
+          <tbody>
+            <tr class="border-b">
+              <td class="py-2">Pressure Field:</td>
+              <td class="font-bold">-5 Pa minimum</td>
+            </tr>
+            <tr class="border-b">
+              <td class="py-2">Air Flow:</td>
+              <td class="font-bold">50-150 CFM</td>
+            </tr>
+            <tr class="border-b">
+              <td class="py-2">Coverage:</td>
+              <td class="font-bold">Entire footprint</td>
+            </tr>
+            <tr>
+              <td class="py-2">Target Level:</td>
+              <td class="font-bold">&lt;200 Bq/m³</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      
+      <div>
+        <h5 class="font-semibold mb-3">Testing Requirements</h5>
+        <ul class="text-sm space-y-2">
+          <li class="flex items-start">
+            <span class="text-cyan-600 mr-2">✓</span>
+            <span>Initial test before design</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-cyan-600 mr-2">✓</span>
+            <span>Communication testing</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-cyan-600 mr-2">✓</span>
+            <span>Post-mitigation verification</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-cyan-600 mr-2">✓</span>
+            <span>Annual monitoring recommended</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="mt-6 text-xs text-slate-500 border-t pt-3">
+    <p><strong>Reference:</strong> NBC 2015 Part 9, Section 9.13.4 - Soil Gas Control</p>
+    <p>Health Canada Guideline: 200 Bq/m³ | WHO Guideline: 100 Bq/m³</p>
+  </div>
+</div>

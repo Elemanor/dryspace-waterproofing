@@ -1,0 +1,588 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import ContactForm from '../../components/ContactForm.astro';
+import Footer from '../../components/Footer.astro';
+import ResourceImageGallery from '../../components/ResourceImageGallery.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+
+const healthHazards = [
+  {
+    hazard: 'Radon Gas',
+    severity: 'Critical',
+    healthRisk: 'Second leading cause of lung cancer',
+    detection: 'Radon monitor (long-term average)',
+    solution: 'Active soil depressurization (ASD) system',
+    actionLevel: '200 Bq/m³ (Health Canada guideline)'
+  },
+  {
+    hazard: 'Sewage Contamination',
+    severity: 'Critical',
+    healthRisk: 'Bacterial, viral, and parasitic infections',
+    detection: 'Visual inspection, odor detection',
+    solution: 'Professional cleanup and disinfection',
+    actionLevel: 'Any sewage backup requires immediate action'
+  },
+  {
+    hazard: 'Carbon Monoxide',
+    severity: 'Critical',
+    healthRisk: 'Poisoning, potentially fatal',
+    detection: 'CO detectors on every level',
+    solution: 'Proper ventilation, appliance maintenance',
+    actionLevel: 'Any detection requires immediate evacuation'
+  },
+  {
+    hazard: 'Mold Growth',
+    severity: 'High',
+    healthRisk: 'Respiratory issues, allergies',
+    detection: 'Visual inspection, air quality testing',
+    solution: 'Moisture control, remediation',
+    actionLevel: 'Visible growth or musty odors'
+  },
+  {
+    hazard: 'High Humidity',
+    severity: 'Moderate',
+    healthRisk: 'Mold growth, structural damage',
+    detection: 'Hygrometer (>60% concerning)',
+    solution: 'Dehumidification, improved ventilation',
+    actionLevel: 'Above 60% relative humidity'
+  }
+];
+
+const sewageCleanupSteps = [
+  {
+    step: 1,
+    title: 'Safety First',
+    actions: [
+      'Turn off electricity to affected areas',
+      'Wear protective gear (rubber boots, gloves, eye protection)',
+      'Ensure adequate ventilation',
+      'Keep children and pets away'
+    ]
+  },
+  {
+    step: 2,
+    title: 'Remove Water',
+    actions: [
+      'Use pump for large volumes',
+      'Extract water within 24-48 hours',
+      'Dispose of contaminated water properly',
+      'Document damage for insurance'
+    ]
+  },
+  {
+    step: 3,
+    title: 'Clean & Disinfect',
+    actions: [
+      'Remove all contaminated materials',
+      'Clean with detergent solution',
+      'Disinfect with bleach solution (1:10 ratio)',
+      'Allow surfaces to dry completely'
+    ]
+  },
+  {
+    step: 4,
+    title: 'Dispose & Restore',
+    actions: [
+      'Bag and dispose of contaminated items',
+      'Replace removed materials after drying',
+      'Test for contamination before reoccupying',
+      'Install backwater valve to prevent recurrence'
+    ]
+  }
+];
+
+const radonMitigationOptions = [
+  {
+    method: 'Active Soil Depressurization (ASD)',
+    effectiveness: '90-99% reduction',
+    description: 'Most common and effective method using a fan to draw radon from beneath the foundation',
+    cost: '$2,000 - $4,000'
+  },
+  {
+    method: 'Sub-slab Depressurization',
+    effectiveness: '85-95% reduction',
+    description: 'Creates negative pressure beneath concrete slab to prevent radon entry',
+    cost: '$1,500 - $3,500'
+  },
+  {
+    method: 'Sealing Cracks & Openings',
+    effectiveness: '10-30% reduction',
+    description: 'Supplementary measure to reduce radon entry points',
+    cost: '$500 - $1,500'
+  },
+  {
+    method: 'Improved Ventilation',
+    effectiveness: '25-50% reduction',
+    description: 'Increases air exchange to dilute radon concentrations',
+    cost: '$500 - $2,000'
+  }
+];
+
+const combustionSources = [
+  'Gas-fired furnace, boiler or water heater',
+  'Oil-fired furnace, boiler or water heater',
+  'Wood stove or fireplace',
+  'Portable propane, natural gas or kerosene heaters',
+  'Gas range or oven',
+  'Other fuel-burning devices'
+];
+---
+
+<PageLayout 
+  title="Basement Health & Safety Guide | Radon, Mold & Indoor Air Quality" 
+  description="Comprehensive guide to basement health hazards including radon mitigation, sewage cleanup, mold prevention, and indoor air quality management."
+>
+  
+  <!-- Breadcrumbs -->
+  <div class="container mx-auto px-4 mt-4">
+    <Breadcrumbs 
+      items={[
+        { name: "Home", url: "/" },
+        { name: "Resources", url: "/resources" },
+        { name: "Health Safety Guide" }
+      ]}
+    />
+  </div>
+
+<!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-container">
+      <div class="safety-badge">
+        <i class="fa-solid fa-shield-halved"></i>
+        <span>Health & Safety Resource</span>
+      </div>
+      
+      <h1 class="hero-title">
+        Basement Health & Safety Guide
+        <span class="subtitle">Protecting Your Family from Hidden Hazards</span>
+      </h1>
+      
+      <p class="hero-description">
+        Your basement may harbor invisible health threats. Learn to identify, test for, 
+        and eliminate radon, mold, sewage contamination, and other indoor air quality hazards.
+      </p>
+
+      <div class="hazard-stats">
+        <div class="stat">
+          <i class="fa-solid fa-lungs"></i>
+          <span class="number">16%</span>
+          <span class="label">Canadian homes exceed radon limits</span>
+        </div>
+        <div class="stat">
+          <i class="fa-solid fa-house-flood-water"></i>
+          <span class="number">14,000</span>
+          <span class="label">Annual sewage backups in Toronto</span>
+        </div>
+        <div class="stat">
+          <i class="fa-solid fa-virus"></i>
+          <span class="number">48hrs</span>
+          <span class="label">Mold growth after water damage</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Health Hazards Overview -->
+  <section class="hazards-section">
+    <div class="container">
+      <h2 class="text-4xl font-bold text-slate-900 uppercase">MAJOR BASEMENT HEALTH HAZARDS</h2>
+      <p class="section-intro">Understanding and addressing these hazards is critical for family safety</p>
+      
+      <div class="hazards-table">
+        <table>
+          <thead>
+            <tr>
+              <th>Hazard</th>
+              <th>Severity</th>
+              <th>Health Risk</th>
+              <th>Detection Method</th>
+              <th>Action Level</th>
+            </tr>
+          </thead>
+          <tbody>
+            {healthHazards.map(hazard => (
+              <tr class={`severity-${hazard.severity.toLowerCase()}`}>
+                <td class="hazard-name">
+                  <strong>{hazard.hazard}</strong>
+                </td>
+                <td>
+                  <span class={`severity-badge ${hazard.severity.toLowerCase()}`}>
+                    {hazard.severity}
+                  </span>
+                </td>
+                <td>{hazard.healthRisk}</td>
+                <td>{hazard.detection}</td>
+                <td>{hazard.actionLevel}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Radon Section -->
+  <section class="radon-section">
+    <div class="container">
+      <h2 class="text-4xl font-bold text-slate-900 uppercase">RADON GAS: THE SILENT KILLER</h2>
+      <p class="section-intro">Colorless, odorless, radioactive gas that's the #2 cause of lung cancer</p>
+      
+      <div class="radon-content">
+        <div class="radon-info">
+          <h3 class="text-2xl font-bold text-slate-900 uppercase">UNDERSTANDING RADON RISK</h3>
+          <p>Radon occurs naturally from uranium breakdown in soil and rocks. It enters homes through:</p>
+          <ul>
+            <li>Cracks in concrete floors and walls</li>
+            <li>Gaps in suspended floors</li>
+            <li>Openings around service pipes</li>
+            <li>Cavities inside walls</li>
+            <li>The water supply</li>
+          </ul>
+          
+          <div class="radon-levels">
+            <h4 class="text-xl font-bold text-slate-900 uppercase">RADON CONCENTRATION LEVELS:</h4>
+            <div class="level-grid">
+              <div class="level safe">
+                <span class="range">0-50 Bq/m³</span>
+                <span class="status">Low Risk</span>
+              </div>
+              <div class="level moderate">
+                <span class="range">50-200 Bq/m³</span>
+                <span class="status">Moderate</span>
+              </div>
+              <div class="level high">
+                <span class="range">200-600 Bq/m³</span>
+                <span class="status">Take Action</span>
+              </div>
+              <div class="level critical">
+                <span class="range">>600 Bq/m³</span>
+                <span class="status">Urgent Action</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="radon-diagrams">
+          <img src="/waterproofing manual/content/photo_2025-08-25_20-49-57.jpg" 
+               alt="Radon mitigation systems diagram" / width="800" height="600" loading="lazy" decoding="async">
+          <p class="caption">Professional radon mitigation system installations</p>
+        </div>
+      </div>
+
+      <div class="mitigation-options">
+        <h3 class="text-2xl font-bold text-slate-900 uppercase">RADON MITIGATION SOLUTIONS</h3>
+        <div class="options-grid">
+          {radonMitigationOptions.map(option => (
+            <div class="option-card border-2 border-slate-200">
+              <h4 class="text-xl font-bold text-slate-900 uppercase">{option.method}</h4>
+              <div class="effectiveness">
+                <i class="fa-solid fa-chart-line"></i>
+                <span>{option.effectiveness}</span>
+              </div>
+              <p>{option.description}</p>
+              <div class="cost">
+                <i class="fa-solid fa-dollar-sign"></i>
+                <span>{option.cost}</span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sewage Contamination -->
+  <section class="sewage-section">
+    <div class="container">
+      <h2 class="text-4xl font-bold text-slate-900 uppercase">SEWAGE BACKUP & CONTAMINATION</h2>
+      <p class="section-intro">Extremely dangerous requiring immediate professional response</p>
+      
+      <div class="sewage-warning">
+        <i class="fa-solid fa-biohazard"></i>
+        <div>
+          <h3 class="text-2xl font-bold text-slate-900 uppercase"> BIOHAZARD WARNING</h3>
+          <p>Sewage contains bacteria, viruses, parasites, and toxic substances. Professional cleanup is strongly recommended.</p>
+        </div>
+      </div>
+
+      <div class="sewage-content">
+        <div class="prevention-diagram">
+          <img src="/waterproofing manual/content/photo_2025-08-25_20-49-54.jpg" 
+               alt="Sewage backup prevention system" / width="800" height="600" loading="lazy" decoding="async">
+          <p class="caption">Backwater valve and sewage prevention systems</p>
+        </div>
+        
+        <div class="cleanup-steps">
+          <h3 class="text-2xl font-bold text-slate-900 uppercase">EMERGENCY SEWAGE CLEANUP PROTOCOL</h3>
+          {sewageCleanupSteps.map(step => (
+            <div class="cleanup-step">
+              <div class="step-header">
+                <span class="step-number">{step.step}</span>
+                <h4 class="text-xl font-bold text-slate-900 uppercase">{step.title}</h4>
+              </div>
+              <ul>
+                {step.actions.map(action => (
+                  <li>{action}</li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div class="prevention-measures">
+        <h3 class="text-2xl font-bold text-slate-900 uppercase">SEWAGE BACKUP PREVENTION</h3>
+        <div class="measures-grid">
+          <div class="measure">
+            <i class="fa-solid fa-valve"></i>
+            <h4 class="text-xl font-bold text-slate-900 uppercase">BACKWATER VALVE</h4>
+            <p>Prevents sewage from flowing back into your home during city sewer backups</p>
+          </div>
+          <div class="measure">
+            <i class="fa-solid fa-pump"></i>
+            <h4 class="text-xl font-bold text-slate-900 uppercase">SEWAGE EJECTOR PUMP</h4>
+            <p>Pumps wastewater from below-grade fixtures up to the main sewer line</p>
+          </div>
+          <div class="measure">
+            <i class="fa-solid fa-pipe"></i>
+            <h4 class="text-xl font-bold text-slate-900 uppercase">REGULAR MAINTENANCE</h4>
+            <p>Annual inspection and cleaning of sewer lines prevents blockages</p>
+          </div>
+          <div class="measure">
+            <i class="fa-solid fa-tree"></i>
+            <h4 class="text-xl font-bold text-slate-900 uppercase">ROOT CONTROL</h4>
+            <p>Remove tree roots that can infiltrate and block sewer lines</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Combustion Safety -->
+  <section class="combustion-section">
+    <div class="container">
+      <h2 class="text-4xl font-bold text-slate-900 uppercase">COMBUSTION SPILLAGE & CARBON MONOXIDE</h2>
+      <p class="section-intro">Deadly gases from improper venting of fuel-burning appliances</p>
+      
+      <div class="combustion-content">
+        <div class="combustion-info">
+          <h3 class="text-2xl font-bold text-slate-900 uppercase">COMMON CO SOURCES IN BASEMENTS</h3>
+          <img src="/waterproofing manual/content/photo_2025-08-25_20-49-56.jpg" 
+               alt="Combustion spillage hazards" / width="800" height="600" loading="lazy" decoding="async">
+          
+          <div class="sources-list">
+            <h4 class="text-xl font-bold text-slate-900 uppercase">CHECK THESE APPLIANCES:</h4>
+            <ul>
+              {combustionSources.map(source => (
+                <li>{source}</li>
+              ))}
+            </ul>
+          </div>
+        </div>
+        
+        <div class="co-safety">
+          <h3 class="text-2xl font-bold text-slate-900 uppercase">CARBON MONOXIDE SAFETY</h3>
+          
+          <div class="co-levels">
+            <h4 class="text-xl font-bold text-slate-900 uppercase">CO EXPOSURE LEVELS & EFFECTS:</h4>
+            <table class="co-table">
+              <thead>
+                <tr>
+                  <th>CO Level (ppm)</th>
+                  <th>Exposure Time</th>
+                  <th>Health Effects</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>35 ppm</td>
+                  <td>8 hours</td>
+                  <td>Maximum safe exposure (OSHA)</td>
+                </tr>
+                <tr class="warning">
+                  <td>200 ppm</td>
+                  <td>2-3 hours</td>
+                  <td>Headache, fatigue, nausea</td>
+                </tr>
+                <tr class="danger">
+                  <td>400 ppm</td>
+                  <td>1-2 hours</td>
+                  <td>Life-threatening</td>
+                </tr>
+                <tr class="critical">
+                  <td>800 ppm</td>
+                  <td>45 minutes</td>
+                  <td>Death within 2-3 hours</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          
+          <div class="co-prevention">
+            <h4 class="text-xl font-bold text-slate-900 uppercase">PREVENTION MEASURES:</h4>
+            <ul>
+              <li>Install CO detectors on every level</li>
+              <li>Annual furnace and appliance inspections</li>
+              <li>Keep vents and chimneys clear</li>
+              <li>Never use generators indoors</li>
+              <li>Ensure proper ventilation</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mold & Moisture -->
+  <section class="mold-section">
+    <div class="container">
+      <h2 class="text-4xl font-bold text-slate-900 uppercase">MOLD & MOISTURE CONTROL</h2>
+      <p class="section-intro">Preventing mold growth through proper moisture management</p>
+      
+      <div class="mold-content">
+        <div class="moisture-sources">
+          <h3 class="text-2xl font-bold text-slate-900 uppercase">COMMON MOISTURE SOURCES</h3>
+          <img src="/waterproofing manual/content/photo_2025-08-25_20-49-55.jpg" 
+               alt="Moisture and mold prevention" / width="800" height="600" loading="lazy" decoding="async">
+          <ul>
+            <li>Foundation leaks and cracks</li>
+            <li>Plumbing leaks</li>
+            <li>Poor ventilation</li>
+            <li>Condensation on cold surfaces</li>
+            <li>High indoor humidity</li>
+            <li>Flooding or water damage</li>
+          </ul>
+        </div>
+        
+        <div class="mold-prevention">
+          <h3 class="text-2xl font-bold text-slate-900 uppercase">MOLD PREVENTION STRATEGIES</h3>
+          <div class="strategy-cards">
+            <div class="strategy">
+              <i class="fa-solid fa-droplet-slash"></i>
+              <h4 class="text-xl font-bold text-slate-900 uppercase">CONTROL MOISTURE</h4>
+              <p>Keep humidity below 60%, fix leaks immediately</p>
+            </div>
+            <div class="strategy">
+              <i class="fa-solid fa-wind"></i>
+              <h4 class="text-xl font-bold text-slate-900 uppercase">IMPROVE VENTILATION</h4>
+              <p>Use exhaust fans, open windows when possible</p>
+            </div>
+            <div class="strategy">
+              <i class="fa-solid fa-temperature-low"></i>
+              <h4 class="text-xl font-bold text-slate-900 uppercase">INSULATE PROPERLY</h4>
+              <p>Prevent condensation on cold surfaces</p>
+            </div>
+            <div class="strategy">
+              <i class="fa-solid fa-broom"></i>
+              <h4 class="text-xl font-bold text-slate-900 uppercase">CLEAN & DRY</h4>
+              <p>Clean and dry water damage within 48 hours</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testing & Monitoring -->
+  <section class="testing-section">
+    <div class="container">
+      <h2 class="text-4xl font-bold text-slate-900 uppercase">TESTING & MONITORING EQUIPMENT</h2>
+      <p class="section-intro">Essential devices for maintaining healthy indoor air quality</p>
+      
+      <div class="equipment-grid">
+        <div class="equipment-card border-2 border-slate-200">
+          <img src="/waterproofing manual/content/photo_2025-08-25_20-49-57.jpg" 
+               alt="Radon monitor device" 
+               style="height: 150px; object-fit: contain;" / width="800" height="600" loading="lazy" decoding="async">
+          <h3 class="text-2xl font-bold text-slate-900 uppercase">RADON MONITOR</h3>
+          <p>Long-term measurement for accurate assessment</p>
+          <div class="specs">
+            <span>Range: 0-9999 Bq/m³</span>
+            <span>Test Period: 3-12 months</span>
+          </div>
+        </div>
+        
+        <div class="equipment-card border-2 border-slate-200">
+          <i class="fa-solid fa-smog"></i>
+          <h3 class="text-2xl font-bold text-slate-900 uppercase">CO DETECTOR</h3>
+          <p>Essential on every level of your home</p>
+          <div class="specs">
+            <span>Battery backup required</span>
+            <span>Replace every 5-7 years</span>
+          </div>
+        </div>
+        
+        <div class="equipment-card border-2 border-slate-200">
+          <i class="fa-solid fa-gauge"></i>
+          <h3 class="text-2xl font-bold text-slate-900 uppercase">HYGROMETER</h3>
+          <p>Monitor humidity levels</p>
+          <div class="specs">
+            <span>Ideal: 30-50% RH</span>
+            <span>Alert: >60% RH</span>
+          </div>
+        </div>
+        
+        <div class="equipment-card border-2 border-slate-200">
+          <i class="fa-solid fa-microscope"></i>
+          <h3 class="text-2xl font-bold text-slate-900 uppercase">AIR QUALITY TEST</h3>
+          <p>Professional IAQ assessment</p>
+          <div class="specs">
+            <span>Mold spores</span>
+            <span>VOCs & allergens</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Action Plan CTA -->
+  <section class="action-section">
+    <div class="container">
+      <div class="action-content">
+        <h2 class="text-4xl font-bold text-slate-900 uppercase">PROTECT YOUR FAMILY TODAY</h2>
+        <p>Don't wait for symptoms to appear. Professional testing can identify hazards before they harm your family.</p>
+        
+        <div class="services-grid">
+          <div class="service">
+            <i class="fa-solid fa-radiation"></i>
+            <h3 class="text-2xl font-bold text-slate-900 uppercase">RADON TESTING & MITIGATION</h3>
+            <p>Professional assessment and certified installation</p>
+          </div>
+          <div class="service">
+            <i class="fa-solid fa-biohazard"></i>
+            <h3 class="text-2xl font-bold text-slate-900 uppercase">SEWAGE CLEANUP</h3>
+            <p>24/7 emergency response team</p>
+          </div>
+          <div class="service">
+            <i class="fa-solid fa-virus"></i>
+            <h3 class="text-2xl font-bold text-slate-900 uppercase">MOLD REMEDIATION</h3>
+            <p>Complete removal and prevention</p>
+          </div>
+          <div class="service">
+            <i class="fa-solid fa-wind"></i>
+            <h3 class="text-2xl font-bold text-slate-900 uppercase">AIR QUALITY SOLUTIONS</h3>
+            <p>Ventilation and filtration systems</p>
+          </div>
+        </div>
+        
+        <div class="cta-buttons">
+          <a href="/contact" class="btn-primary">
+            Schedule Safety Assessment
+          </a>
+          <a href="tel:437-545-0067" class="btn-emergency">
+            <i class="fa-solid fa-phone"></i>
+            Emergency: 437-545-0067
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <ContactForm />
+  <Footer />
+
+  <!-- Resource Images and Diagrams -->
+  <ResourceImageGallery resource="moisture-problems" />
+
+</PageLayout>
+

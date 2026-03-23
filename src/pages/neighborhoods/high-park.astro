@@ -1,0 +1,342 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import Hero from '../../components/sections/Hero.astro';
+import Services from '../../components/sections/Services.astro';
+import Process from '../../components/sections/Process.astro';
+import Testimonials from '../../components/sections/Testimonials.astro';
+import Stats from '../../components/sections/Stats.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import BreadcrumbSchema from '../../components/BreadcrumbSchema.astro';
+
+const pageTitle = "High Park Water Protection | Lower-Level & Foundation Solutions";
+const pageDescription = "Expert waterproofing services in this vibrant Toronto neighborhood. brick & block structure specialists, 24/7 emergency response.";
+
+// Local area information
+const localInfo = {
+  neighborhoodName: "High Park",
+  cityName: "Toronto",
+  avgHomeAge: "70-100 years",
+  foundationType: "Brick & Block",
+  soilType: "Sandy Clay",
+  waterTable: "Moderate",
+  floodRisk: "Low-Moderate",
+  avgProjectCost: "$8,000-$15,000",
+  responseTime: "25-30 minutes"
+};
+
+// Neighborhood-specific features
+const neighborhoodFeatures = [
+  {
+    title: "PARK PROXIMITY EXPERTS",
+    description: "Handle runoff from this green space area.",
+    highlight: true
+  },
+  {
+    title: "HERITAGE HOME PROS",
+    description: "Preserve character homes in this area.",
+    highlight: true
+  },
+  {
+    title: "FAMILY FOCUSED",
+    description: "Safe solutions for this family-friendly community.",
+    highlight: true
+  },
+  {
+    title: "SLOPE MANAGEMENT",
+    description: "Solutions for hillside properties."
+  },
+  {
+    title: "TREE ROOT EXPERTS",
+    description: "Deal with mature tree damage."
+  },
+  {
+    title: "SEASONAL PREPARATION",
+    description: "Spring flood prevention programs."
+  }
+];
+
+// Local challenges specific to neighborhood
+const localChallenges = [
+  {
+    problem: "PARK WATER RUNOFF",
+    description: "Local slopes direct moisture to nearby homes",
+    solution: "Advanced drainage systems and barriers"
+  },
+  {
+    problem: "MATURE TREE ROOTS",
+    description: "Old growth trees damage foundations",
+    solution: "Root barriers and foundation reinforcement"
+  },
+  {
+    problem: "SPRING POND OVERFLOW",
+    description: "Grenadier Pond affects local groundwater table",
+    solution: "Enhanced pumping during spring melt"
+  }
+];
+
+// Neighborhood-specific FAQs
+const neighborhoodFAQs = [
+  {
+    question: "Do you service this entire area?",
+    answer: "Yes! We provide comprehensive waterproofing services throughout this neighborhood, with 25-30 minutes emergency response times. Our team knows every street and the unique challenges of local homes."
+  },
+  {
+    question: "What are common moisture issues in this neighborhood?",
+    answer: "Local homes, typically 70-100 years old with brick & block foundations, face challenges from sandy clay soil and moderate groundwater table levels. The area has a low-moderate flood risk."
+  },
+  {
+    question: "How much does waterproofing cost in this area?",
+    answer: "Typical waterproofing projects in this neighborhood range from $8,000-$15,000, depending on the extent of work needed. We provide free inspections and detailed quotes."
+  },
+  {
+    question: "How quickly can you respond to local emergencies?",
+    answer: "We guarantee 25-30 minutes emergency response anywhere in this area. Our team is available 24/7 for flooding emergencies."
+  }
+];
+
+// Schema markup for local business
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Dryspace Water Protection in High Park",
+  "description": "Expert moisture control services in this Toronto community. Brick & Block structure specialists.",
+  "telephone": "437-545-0067",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "High Park",
+    "addressRegion": "Toronto",
+    "addressCountry": "CA"
+  },
+  "areaServed": {
+    "@type": "Place",
+    "name": "High Park, Toronto"
+  }
+};
+---
+
+<PageLayout 
+  title={pageTitle}
+  description={pageDescription}
+>
+  
+  <!-- Breadcrumbs -->
+  <div class="container mx-auto px-4 mt-4">
+    <Breadcrumbs 
+      items={[
+        { name: "Home", url: "/" },
+        { name: "Toronto", url: "/locations/toronto" },
+        { name: "Neighborhoods", url: "/locations/toronto#neighborhoods" },
+        { name: "High Park" }
+      ]}
+    />
+  </div>
+
+<!-- Neighborhood Hero -->
+  <Hero 
+    title="Water Protection in High Park"
+    subtitle="Expert lower level moisture control and structure repair for local homes. 70-100 years home specialists, 24/7 emergency service."
+    primaryCTA={{ text: "Get Free Local Inspection", href: "/free-inspection" }}
+    secondaryCTA={{ text: "Call: 437-545-0067", href: "tel:437-545-0067" }}
+    backgroundImage="/images/dryspace_hero_desktop.webp"
+    badge="Serving This Area"
+  />
+
+  <!-- Stats -->
+  <Stats />
+
+  <!-- Local Information Section -->
+  <section class="py-16 bg-slate-50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-4xl font-bold text-slate-900 mb-4 uppercase">WATERPROOFING SERVICES IN HIGH PARK</h2>
+        
+        <div class="prose prose-lg max-w-none">
+          <p class="text-lg text-slate-600 mb-6">
+            This community's homes, typically {localInfo.avgHomeAge} old with {localInfo.foundationType} foundations, 
+            require specialized waterproofing expertise. Our team understands the unique challenges of {localInfo.soilType} soil 
+            and {localInfo.waterTable} water table conditions in this West Toronto neighborhood.
+          </p>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
+            <div class="bg-white border-2 border-slate-200 p-6">
+              <h3 class="text-xl font-bold text-slate-900 mb-6 uppercase">HIGH PARK QUICK FACTS</h3>
+              <ul class="space-y-2 text-slate-600">
+                <li class="flex justify-between items-center pb-2 border-b border-slate-100">
+                  <span class="text-sm font-semibold text-slate-600 uppercase">Average Home Age</span>
+                  <span class="text-sm font-bold text-slate-900">{localInfo.avgHomeAge.toUpperCase()}</span>
+                </li>
+                <li class="flex justify-between items-center pb-2 border-b border-slate-100">
+                  <span class="text-sm font-semibold text-slate-600 uppercase">Foundation Type</span>
+                  <span class="text-sm font-bold text-slate-900">{localInfo.foundationType.toUpperCase()}</span>
+                </li>
+                <li class="flex justify-between items-center pb-2 border-b border-slate-100">
+                  <span class="text-sm font-semibold text-slate-600 uppercase">Soil Type</span>
+                  <span class="text-sm font-bold text-slate-900">{localInfo.soilType.toUpperCase()}</span>
+                </li>
+                <li class="flex justify-between items-center pb-2 border-b border-slate-100">
+                  <span class="text-sm font-semibold text-slate-600 uppercase">Response Time</span>
+                  <span class="text-sm font-bold text-slate-900">{localInfo.responseTime.toUpperCase()}</span>
+                </li>
+                <li class="flex justify-between items-center pb-2 border-b border-slate-100">
+                  <span class="text-sm font-semibold text-slate-600 uppercase">Average Cost</span>
+                  <span class="text-sm font-bold text-slate-900">{localInfo.avgProjectCost}</span>
+                </li>
+              </ul>
+            </div>
+            
+            <div class="bg-navy-900 border-2 border-slate-200 p-6">
+              <h3 class="text-xl font-bold text-slate-900 mb-6 uppercase">HIGH PARK CHALLENGES</h3>
+              <ul class="space-y-2 text-slate-300">
+                <li class="text-sm text-slate-300 flex items-start">
+                  <span class="mr-2 text-cyan-400">•</span>
+                  <span>High Park slopes direct water to nearby homes</span>
+                </li>
+                <li class="text-sm text-slate-300 flex items-start">
+                  <span class="mr-2 text-cyan-400">•</span>
+                  <span>Old growth trees damage foundations</span>
+                </li>
+                <li class="text-sm text-slate-300 flex items-start">
+                  <span class="mr-2 text-cyan-400">•</span>
+                  <span>Grenadier Pond affects local water table</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <h3 class="text-2xl font-bold mt-8 mb-4 uppercase">STREETS WE SERVE IN HIGH PARK</h3>
+          <p class="mb-4">
+            Our team provides rapid response throughout this community:
+          </p>
+          <div class="flex flex-wrap gap-2">
+            {["Bloor Street West","Roncesvalles Avenue","Parkside Drive","Keele Street","High Park Avenue","Gothic Avenue","Indian Road"].map((street) => (
+              <span class="border-2 border-slate-200 px-4 py-2 text-sm uppercase">
+                {street}
+              </span>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <Services />
+
+  <!-- Neighborhood Features -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl font-bold text-slate-900 mb-4 uppercase">WHY CHOOSE DRYSPACE IN HIGH PARK</h2>
+        <p class="text-lg text-slate-600 max-w-3xl mx-auto">
+          Specialized expertise for local homes and properties
+        </p>
+      </div>
+      
+      <!-- Highlighted Features -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+        {neighborhoodFeatures.filter(f => f.highlight).map((feature) => (
+          <div class="bg-amber-500 border-2 border-slate-700 p-6">
+            <h3 class="text-lg font-bold text-slate-900 mb-3 uppercase">{feature.title}</h3>
+            <p class="text-sm text-slate-900">{feature.description}</p>
+          </div>
+        ))}
+      </div>
+      
+      <!-- Regular Features -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {neighborhoodFeatures.filter(f => !f.highlight).map((feature) => (
+          <div class="bg-white border-2 border-slate-200 p-6 hover:border-slate-300 transition-colors">
+            <h3 class="text-lg font-bold text-slate-900 mb-3 uppercase">{feature.title}</h3>
+            <p class="text-sm text-slate-600">{feature.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Local Challenges Section -->
+  <section class="py-16 bg-slate-50">
+    <div class="container mx-auto px-4">
+      <h2 class="text-4xl font-bold text-slate-900 mb-12 text-center uppercase">HIGH PARK WATER CHALLENGES</h2>
+      
+      <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        {localChallenges.map((challenge) => (
+          <div class="bg-white border-2 border-slate-200 p-6">
+            <h3 class="text-lg font-bold text-slate-900 mb-3 uppercase">{challenge.problem}</h3>
+            <p class="text-sm text-slate-600 mb-4">{challenge.description}</p>
+            <div class="pt-4 border-t border-slate-100">
+              <p class="text-sm font-semibold text-slate-900 uppercase mb-1">OUR SOLUTION:</p>
+              <p class="text-sm text-slate-600">{challenge.solution}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Process -->
+  <Process />
+
+  <!-- Testimonials -->
+  <Testimonials />
+
+  <!-- FAQ Section -->
+  <section class="py-16 bg-slate-50">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl font-bold text-slate-900 mb-4 uppercase">HIGH PARK WATERPROOFING FAQS</h2>
+        <p class="text-lg text-slate-600">Common questions from High Park homeowners</p>
+      </div>
+      
+      <div class="max-w-4xl mx-auto">
+        {neighborhoodFAQs.map((faq, index) => (
+          <details class="mb-4 border-2 border-slate-200 bg-white">
+            <summary class="cursor-pointer p-6 hover:bg-slate-50 transition-colors">
+              <div class="flex items-center justify-between">
+                <h3 class="text-lg font-bold text-slate-900 uppercase pr-4">{faq.question}</h3>
+                <span class="text-slate-400 flex-shrink-0 text-2xl">+</span>
+              </div>
+            </summary>
+            <div class="px-6 pb-6 pt-0">
+              <p class="text-slate-600">{faq.answer}</p>
+            </div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-16 bg-navy-900">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-4xl font-bold text-slate-900 mb-4 uppercase">PROTECT YOUR HIGH PARK HOME TODAY</h2>
+        <p class="text-lg text-slate-300 mb-8">
+          Expert waterproofing for 70-100 years homes in High Park
+        </p>
+        
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a 
+            href="/free-inspection"
+            class="bg-amber-500 text-black px-8 py-4 text-lg font-bold hover:bg-amber-400 transition-colors uppercase"
+          >
+            Schedule High Park Inspection
+          </a>
+          <a 
+            href="tel:437-545-0067"
+            class="border-2 border-white text-slate-900 px-8 py-4 text-lg font-bold hover:bg-white hover:text-black transition-colors uppercase"
+          >
+            Call: 437-545-0067
+          </a>
+        </div>
+        
+        <div class="mt-8 inline-flex items-center text-cyan-400">
+          <span class="text-sm font-bold uppercase">24/7 Emergency Service Available</span>
+        </div>
+      </div>
+    </div>
+  </section>
+<BreadcrumbSchema items={[{name: 'Home', url: '/'}, {name: 'Neighborhoods'}, {name: 'High Park'}]} />
+</PageLayout>
+
+<script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)}></script>

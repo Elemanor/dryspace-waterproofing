@@ -1,0 +1,720 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import FAQAccordion from '~/components/react/FAQAccordion';
+import Hero from '~/components/widgets/Hero.astro';
+import { Button } from '~/components/ui/button';
+import Content from '~/components/widgets/Content.astro';
+import { Icon } from 'astro-icon/components';
+
+const metadata = {
+  title: 'Underpinning Methods Explained: Bench Footing vs Flush vs 4-Inch Projection | DrySpace',
+  description: 'Complete guide to basement underpinning methods in Toronto. Compare bench footing, flush-with-wall, and 4-inch projection techniques. Learn costs, pros/cons, and which method suits your basement lowering project.',
+  canonical: 'https://dryspacewaterproofing.ca/blog/underpinning-methods-bench-flush-projection'
+};
+
+const underpinningMethodsFAQs = [
+  {
+    question: "What is bench footing underpinning?",
+    answer: "Bench footing creates a stepped concrete ledge (bench) along your basement walls. Instead of excavating under the existing foundation, we dig beside it and pour new footings at the lower level. This creates a 3-4 foot wide bench around the perimeter, reducing floor space by 15-20% but costing 30-40% less than full underpinning."
+  },
+  {
+    question: "What is flush-with-wall underpinning?",
+    answer: "Flush-with-wall underpinning excavates directly under your existing foundation walls, extending them vertically downward. This maintains the original wall line with no loss of floor space. It's the most expensive option but provides maximum usable square footage and is ideal for narrow basements where every inch counts."
+  },
+  {
+    question: "What is 4-inch projection underpinning?",
+    answer: "The 4-inch projection method extends the new foundation 4 inches beyond the existing footing width into the basement space. This creates a wider, stronger footing - essentially the full thickness of the existing footing plus 4 inches inside. Often required when dealing with high water tables or sewer line proximity for added structural stability."
+  },
+  {
+    question: "Which underpinning method is cheapest?",
+    answer: "Bench footing is the most economical, typically 30-40% less than flush-with-wall. The 4-inch projection method falls in between, about 15-20% less than flush. However, bench footing reduces usable space, so calculate cost per usable square foot, not just total project cost."
+  },
+  {
+    question: "How much floor space do I lose with bench footing?",
+    answer: "Bench footing typically creates a 3-4 foot wide ledge around your basement perimeter. In a 20x30 basement (600 sq ft), you'd lose approximately 108-144 sq ft or 18-24% of floor space. The bench is usually 3-4 feet high, creating a stepped appearance."
+  },
+  {
+    question: "Can I remove the bench later?",
+    answer: "No, the bench is a structural element that cannot be removed. It's bearing the load of your home's walls. However, you can incorporate it into your design as built-in seating, storage platforms, or planters. Many homeowners use it for mechanical systems or as a design feature."
+  },
+  {
+    question: "When is 4-inch projection required vs optional?",
+    answer: "4-inch projection is often required by engineers when: high water table exists (needs wider base for hydrostatic pressure), sewer lines run close to foundation, soil conditions are poor, or existing footings are minimal. It's optional but recommended for added stability in standard conditions."
+  },
+  {
+    question: "Which method is best for rental income suites?",
+    answer: "Flush-with-wall is typically best for rental suites as it maximizes usable space and ceiling clearance. The extra 108-144 sq ft preserved can mean the difference between a legal 1-bedroom vs bachelor unit. The higher upfront cost is often recovered through increased rental income."
+  },
+  {
+    question: "How do methods affect basement ceiling height?",
+    answer: "All methods can achieve the same final ceiling height - the difference is in floor space. Bench footing creates two height zones: full height in center, reduced height at perimeter. Flush and 4-inch projection provide uniform ceiling height throughout."
+  },
+  {
+    question: "What method do most Toronto homes use?",
+    answer: "In Toronto, approximately 40% choose bench footing (budget-conscious), 45% choose flush-with-wall (maximizing space), and 15% use 4-inch projection (engineering requirements). Narrow Victorian homes typically require flush, while larger suburban homes often choose bench footing."
+  }
+];
+
+const methodComparison = [
+  {
+    method: "Bench Footing",
+    cost: "$350-450/linear ft",
+    spaceImpact: "Lose 15-25% floor space",
+    timeline: "3-4 weeks",
+    bestFor: "Large basements, budget-conscious projects",
+    structural: "Good - meets code",
+    excavation: "Partial - beside foundation"
+  },
+  {
+    method: "Flush-with-Wall",
+    cost: "$500-650/linear ft",
+    spaceImpact: "No space loss",
+    timeline: "4-6 weeks",
+    bestFor: "Small basements, rental suites, maximum value",
+    structural: "Excellent - strongest option",
+    excavation: "Full - under foundation"
+  },
+  {
+    method: "4-Inch Projection",
+    cost: "$450-550/linear ft",
+    spaceImpact: "Lose 4 inches perimeter",
+    timeline: "4-5 weeks",
+    bestFor: "Water table issues, engineering requirements",
+    structural: "Excellent - wider base",
+    excavation: "Full - under foundation"
+  }
+];
+---
+
+<Layout metadata={metadata}>
+  <Hero>
+    <Fragment slot="title">
+      Underpinning Methods: <span class="text-accent">Bench vs Flush vs Projection</span>
+    </Fragment>
+    <Fragment slot="subtitle">
+      Complete guide to choosing between bench footing, flush-with-wall, and 4-inch projection underpinning
+    </Fragment>
+  </Hero>
+
+  <section class="py-12 bg-white">
+    <div class="max-w-4xl mx-auto px-4">
+      <div class="prose prose-lg max-w-none">
+        <p class="text-xl font-semibold text-slate-800 mb-6">
+          Choosing the right underpinning method affects your basement's usable space, project cost, and structural integrity. 
+          Here's everything you need to know about the three main approaches used in Toronto.
+        </p>
+
+        <div class="bg-cyan-50 border-l-4 border-cyan-500 p-6 my-8">
+          <h3 class="text-xl font-bold text-cyan-800 mb-3">
+            <Icon name="tabler:bulb" class="w-6 h-6 inline mr-2" />
+            Quick Decision Guide
+          </h3>
+          <ul class="space-y-2 text-cyan-700">
+            <li><strong>Choose Bench Footing if:</strong> You have a large basement and want to save 30-40% on costs</li>
+            <li><strong>Choose Flush-with-Wall if:</strong> You need every square foot or plan a rental suite</li>
+            <li><strong>Choose 4-Inch Projection if:</strong> Engineer requires it for water table or soil conditions</li>
+          </ul>
+        </div>
+
+        <h2 class="text-3xl font-bold text-slate-900 mt-12 mb-6">Method Comparison at a Glance</h2>
+        
+        <div class="overflow-x-auto my-8">
+          <table class="min-w-full bg-white border border-slate-100">
+            <thead class="bg-slate-50">
+              <tr>
+                <th class="px-4 py-3 text-left text-xs font-medium text-slate-400 uppercase">Method</th>
+                <th class="px-4 py-3 text-left text-xs font-medium text-slate-400 uppercase">Cost/Linear Ft</th>
+                <th class="px-4 py-3 text-left text-xs font-medium text-slate-400 uppercase">Space Impact</th>
+                <th class="px-4 py-3 text-left text-xs font-medium text-slate-400 uppercase">Timeline</th>
+                <th class="px-4 py-3 text-left text-xs font-medium text-slate-400 uppercase">Best For</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-200">
+              {methodComparison.map((item) => (
+                <tr>
+                  <td class="px-4 py-4 text-sm font-medium text-slate-900">{item.method}</td>
+                  <td class="px-4 py-4 text-sm text-slate-500">{item.cost}</td>
+                  <td class="px-4 py-4 text-sm text-slate-500">{item.spaceImpact}</td>
+                  <td class="px-4 py-4 text-sm text-slate-500">{item.timeline}</td>
+                  <td class="px-4 py-4 text-sm text-slate-500">{item.bestFor}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        <h2 class="text-3xl font-bold text-slate-900 mt-12 mb-6">1. Bench Footing Method (Budget-Friendly)</h2>
+        
+        <div class="bg-slate-50 rounded-lg p-6 my-6">
+          <h3 class="text-2xl font-bold text-slate-800 mb-4">How Bench Footing Works</h3>
+          <p class="mb-4">
+            Instead of excavating under your existing foundation, bench footing digs beside it at an angle, creating a stepped concrete structure. 
+            The result is a 3-4 foot wide "bench" or ledge running along your basement walls.
+          </p>
+          
+          <div class="grid md:grid-cols-2 gap-6 mt-6">
+            <div>
+              <h4 class="font-bold text-lg mb-3 text-cyan-700">✓ Advantages</h4>
+              <ul class="space-y-2 text-slate-600">
+                <li>• 30-40% cheaper than flush method</li>
+                <li>• Faster installation (3-4 weeks)</li>
+                <li>• Less structural risk during construction</li>
+                <li>• No undermining of existing foundation</li>
+                <li>• Good for DIY finishing afterward</li>
+                <li>• Bench can be used for storage/seating</li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="font-bold text-lg mb-3 text-red-700">✗ Disadvantages</h4>
+              <ul class="space-y-2 text-slate-600">
+                <li>• Lose 15-25% of floor space</li>
+                <li>• Creates two-level basement effect</li>
+                <li>• Harder to finish for rental suites</li>
+                <li>• May not meet minimum room sizes</li>
+                <li>• Permanent structure can't be removed</li>
+                <li>• Less appealing to future buyers</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-amber-50 border border-yellow-200 rounded-lg p-6 my-8">
+          <h4 class="text-lg font-bold text-amber-800 mb-3">
+            <Icon name="tabler:calculator" class="w-5 h-5 inline mr-2" />
+            Bench Footing Space Calculation
+          </h4>
+          <p class="text-amber-700 mb-3">For a typical 20' x 30' basement (600 sq ft):</p>
+          <ul class="space-y-1 text-amber-700">
+            <li>• Bench width: 3.5 feet average</li>
+            <li>• Perimeter length: 100 linear feet</li>
+            <li>• Lost space: ~126 sq ft (21%)</li>
+            <li>• Remaining usable: 474 sq ft</li>
+            <li>• Cost savings vs flush: $15,000-20,000</li>
+          </ul>
+        </div>
+
+        <h3 class="text-2xl font-bold text-slate-800 mt-8 mb-4">Typical Bench Footing Process</h3>
+        <ol class="list-decimal pl-6 space-y-3">
+          <li><strong>Excavation:</strong> Dig at 45-degree angle beside existing foundation to required depth</li>
+          <li><strong>Forming:</strong> Build forms for stepped concrete structure</li>
+          <li><strong>Reinforcement:</strong> Install rebar connecting to existing foundation</li>
+          <li><strong>Pouring:</strong> Pour concrete in controlled sections</li>
+          <li><strong>Waterproofing:</strong> Apply membrane to new bench structure</li>
+          <li><strong>Backfill:</strong> Fill and compact soil behind bench</li>
+        </ol>
+
+        <h2 class="text-3xl font-bold text-slate-900 mt-12 mb-6">2. Flush-with-Wall Method (Maximum Space)</h2>
+        
+        <div class="bg-slate-50 rounded-lg p-6 my-6">
+          <h3 class="text-2xl font-bold text-slate-800 mb-4">How Flush Underpinning Works</h3>
+          <p class="mb-4">
+            Flush-with-wall underpinning excavates directly beneath your existing foundation walls in controlled sections. 
+            The foundation is extended straight down, maintaining the original wall line with zero encroachment into living space.
+          </p>
+          
+          <div class="grid md:grid-cols-2 gap-6 mt-6">
+            <div>
+              <h4 class="font-bold text-lg mb-3 text-cyan-700">✓ Advantages</h4>
+              <ul class="space-y-2 text-slate-600">
+                <li>• Preserves 100% of floor space</li>
+                <li>• Uniform ceiling height throughout</li>
+                <li>• Ideal for legal basement suites</li>
+                <li>• Highest property value increase</li>
+                <li>• Clean, modern appearance</li>
+                <li>• Easier to meet building codes</li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="font-bold text-lg mb-3 text-red-700">✗ Disadvantages</h4>
+              <ul class="space-y-2 text-slate-600">
+                <li>• Most expensive option</li>
+                <li>• Longer timeline (4-6 weeks)</li>
+                <li>• Higher structural risk during work</li>
+                <li>• Requires experienced contractors</li>
+                <li>• More complex engineering</li>
+                <li>• Weather-sensitive process</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-cyan-50 border border-cyan-200 rounded-lg p-6 my-8">
+          <h4 class="text-lg font-bold text-cyan-800 mb-3">
+            <Icon name="tabler:home" class="w-5 h-5 inline mr-2" />
+            Flush Method ROI for Rental Suites
+          </h4>
+          <p class="text-cyan-700 mb-3">Extra space value in Toronto market:</p>
+          <ul class="space-y-1 text-cyan-700">
+            <li>• Additional 126 sq ft preserved</li>
+            <li>• Rental premium: $200-300/month</li>
+            <li>• Annual income difference: $2,400-3,600</li>
+            <li>• Extra cost vs bench: $15,000-20,000</li>
+            <li>• Payback period: 5-7 years</li>
+          </ul>
+        </div>
+
+        <h3 class="text-2xl font-bold text-slate-800 mt-8 mb-4">Typical Flush Underpinning Process</h3>
+        <ol class="list-decimal pl-6 space-y-3">
+          <li><strong>Section marking:</strong> Divide foundation into 3-4 foot sections</li>
+          <li><strong>Alternate excavation:</strong> Dig under every other section first</li>
+          <li><strong>Pin and shore:</strong> Support existing foundation with pins</li>
+          <li><strong>Pour new foundation:</strong> Extend wall straight down</li>
+          <li><strong>Cure and repeat:</strong> After curing, excavate remaining sections</li>
+          <li><strong>Waterproof and finish:</strong> Complete membrane application</li>
+        </ol>
+
+        <h2 class="text-3xl font-bold text-slate-900 mt-12 mb-6">3. Four-Inch Projection Method (Engineering Solution)</h2>
+        
+        <div class="bg-slate-50 rounded-lg p-6 my-6">
+          <h3 class="text-2xl font-bold text-slate-800 mb-4">How 4-Inch Projection Works</h3>
+          <p class="mb-4">
+            The 4-inch projection method extends the new foundation to the full width of the existing footing PLUS an additional 
+            4 inches into the basement space. This creates a wider, more stable base - essentially giving you an even wider footing 
+            than the original. This method is often required when dealing with high water tables or when sewer lines run close to 
+            the foundation, as the wider base provides better load distribution and resistance to hydrostatic pressure.
+          </p>
+          
+          <div class="grid md:grid-cols-2 gap-6 mt-6">
+            <div>
+              <h4 class="font-bold text-lg mb-3 text-cyan-700">✓ Advantages</h4>
+              <ul class="space-y-2 text-slate-600">
+                <li>• Superior structural strength</li>
+                <li>• Better for high water table areas</li>
+                <li>• Accommodates nearby utilities</li>
+                <li>• Minimal space loss (only 4 inches)</li>
+                <li>• Exceeds most engineering requirements</li>
+                <li>• Better lateral stability</li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="font-bold text-lg mb-3 text-red-700">✗ Disadvantages</h4>
+              <ul class="space-y-2 text-slate-600">
+                <li>• More concrete required</li>
+                <li>• Higher cost than bench footing</li>
+                <li>• Small reduction in room dimensions</li>
+                <li>• May affect door swings</li>
+                <li>• Requires precise forming</li>
+                <li>• Not always necessary</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-cyan-50 border border-cyan-200 rounded-lg p-6 my-8">
+          <h4 class="text-lg font-bold text-cyan-800 mb-3">
+            <Icon name="tabler:alert-circle" class="w-5 h-5 inline mr-2" />
+            When Engineers Require 4-Inch Projection
+          </h4>
+          <div class="space-y-3 text-cyan-700">
+            <p><strong>High Water Table:</strong> Wider base resists hydrostatic uplift pressure</p>
+            <p><strong>Sewer Line Proximity:</strong> Extra width prevents undermining utilities</p>
+            <p><strong>Poor Soil Conditions:</strong> Better load distribution in clay or fill</p>
+            <p><strong>Minimal Existing Footings:</strong> Older homes with narrow footings</p>
+            <p><strong>Seismic Considerations:</strong> Added stability for earthquake zones</p>
+          </div>
+        </div>
+
+        <h2 class="text-3xl font-bold text-slate-900 mt-12 mb-6">Cost Breakdown by Method</h2>
+        
+        <div class="bg-slate-50 rounded-lg p-8 my-8">
+          <p class="text-lg font-semibold mb-6">For a typical 100 linear foot perimeter basement:</p>
+          
+          <div class="space-y-6">
+            <div class="border-l-4 border-cyan-500 pl-4">
+              <h4 class="font-bold text-lg">Bench Footing</h4>
+              <ul class="mt-2 space-y-1 text-slate-600">
+                <li>Base cost: $35,000 - $45,000</li>
+                <li>Lost space value: -126 sq ft</li>
+                <li>Finishing complexity: Moderate</li>
+                <li>Total effective cost: Lowest upfront</li>
+              </ul>
+            </div>
+            
+            <div class="border-l-4 border-cyan-500 pl-4">
+              <h4 class="font-bold text-lg">Flush-with-Wall</h4>
+              <ul class="mt-2 space-y-1 text-slate-600">
+                <li>Base cost: $50,000 - $65,000</li>
+                <li>Lost space value: 0 sq ft</li>
+                <li>Finishing complexity: Simple</li>
+                <li>Total effective cost: Best long-term value</li>
+              </ul>
+            </div>
+            
+            <div class="border-l-4 border-purple-500 pl-4">
+              <h4 class="font-bold text-lg">4-Inch Projection</h4>
+              <ul class="mt-2 space-y-1 text-slate-600">
+                <li>Base cost: $45,000 - $55,000</li>
+                <li>Lost space value: -33 sq ft</li>
+                <li>Finishing complexity: Simple</li>
+                <li>Total effective cost: Mid-range</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <h2 class="text-3xl font-bold text-slate-900 mt-12 mb-6">Making Your Decision: Key Factors</h2>
+
+        <h3 class="text-2xl font-bold text-slate-800 mt-8 mb-4">1. Basement Size Considerations</h3>
+        
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="bg-cyan-50 p-6 rounded-lg">
+            <h4 class="font-bold text-cyan-800 mb-3">Large Basements (600+ sq ft)</h4>
+            <p class="text-cyan-700">
+              Bench footing often makes sense. Losing 120 sq ft still leaves 480+ sq ft of usable space. 
+              The $15,000-20,000 saved can go toward high-end finishes.
+            </p>
+          </div>
+          
+          <div class="bg-red-50 p-6 rounded-lg">
+            <h4 class="font-bold text-red-900 mb-3">Small Basements (<500 sq ft)</h4>
+            <p class="text-red-800">
+              Flush method usually best. In a 400 sq ft basement, bench footing leaves only 300 sq ft - 
+              potentially below legal suite minimums.
+            </p>
+          </div>
+        </div>
+
+        <h3 class="text-2xl font-bold text-slate-800 mt-8 mb-4">2. Intended Use Impact</h3>
+        
+        <div class="space-y-4">
+          <div class="flex items-start">
+            <Icon name="tabler:home" class="w-6 h-6 text-cyan-600 mr-3 mt-1" />
+            <div>
+              <strong>Rental Suite:</strong> Flush method recommended. Maximum space crucial for meeting 
+              legal requirements and commanding higher rent.
+            </div>
+          </div>
+          
+          <div class="flex items-start">
+            <Icon name="tabler:users" class="w-6 h-6 text-cyan-500 mr-3 mt-1" />
+            <div>
+              <strong>Family Recreation:</strong> Bench footing can work well. The bench becomes built-in 
+              seating for home theaters or play areas.
+            </div>
+          </div>
+          
+          <div class="flex items-start">
+            <Icon name="tabler:briefcase" class="w-6 h-6 text-purple-500 mr-3 mt-1" />
+            <div>
+              <strong>Home Office:</strong> Either method works, but flush provides more flexibility for 
+              desk and storage placement.
+            </div>
+          </div>
+          
+          <div class="flex items-start">
+            <Icon name="tabler:droplet" class="w-6 h-6 text-orange-500 mr-3 mt-1" />
+            <div>
+              <strong>High Water Table:</strong> 4-inch projection often required by engineer for additional 
+              structural stability and water resistance.
+            </div>
+          </div>
+        </div>
+
+        <h3 class="text-2xl font-bold text-slate-800 mt-8 mb-4">3. Property Type Recommendations</h3>
+        
+        <div class="bg-slate-50 rounded-lg p-6 my-6">
+          <div class="space-y-4">
+            <div>
+              <strong class="text-slate-900">Victorian Row Houses (pre-1920):</strong>
+              <p class="text-slate-600 mt-1">
+                Usually flush method due to narrow width (14-16 feet). Original stone foundations often 
+                require 4-inch projection for stability.
+              </p>
+            </div>
+            
+            <div>
+              <strong class="text-slate-900">Post-War Bungalows (1945-1960):</strong>
+              <p class="text-slate-600 mt-1">
+                Bench footing popular due to larger basements. Simple block foundations make bench 
+                installation straightforward.
+              </p>
+            </div>
+            
+            <div>
+              <strong class="text-slate-900">1970s-1980s Splits:</strong>
+              <p class="text-slate-600 mt-1">
+                Either method works. Consider existing ceiling height - if already 7.5'+, bench footing 
+                saves money without compromising livability.
+              </p>
+            </div>
+            
+            <div>
+              <strong class="text-slate-900">Modern Homes (1990+):</strong>
+              <p class="text-slate-600 mt-1">
+                Often already have adequate height. When underpinning for suites, flush method preserves 
+                valuable square footage.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <h2 class="text-3xl font-bold text-slate-900 mt-12 mb-6">Creative Solutions for Bench Footing</h2>
+        
+        <p class="mb-4">
+          If budget constraints lead you to bench footing, maximize the space with these design strategies:
+        </p>
+        
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="bg-cyan-50 p-6 rounded-lg">
+            <h4 class="font-bold text-cyan-800 mb-3">
+              <Icon name="tabler:sofa" class="w-5 h-5 inline mr-2" />
+              Built-In Features
+            </h4>
+            <ul class="space-y-2 text-cyan-700">
+              <li>• Home theater platform seating</li>
+              <li>• Built-in storage benches</li>
+              <li>• Wine cellar display shelving</li>
+              <li>• Kids' play area elevated stage</li>
+              <li>• Exercise equipment platform</li>
+            </ul>
+          </div>
+          
+          <div class="bg-cyan-50 p-6 rounded-lg">
+            <h4 class="font-bold text-cyan-800 mb-3">
+              <Icon name="tabler:tools" class="w-5 h-5 inline mr-2" />
+              Utility Integration
+            </h4>
+            <ul class="space-y-2 text-cyan-700">
+              <li>• HVAC ductwork concealment</li>
+              <li>• Electrical panel access platform</li>
+              <li>• Sump pump equipment housing</li>
+              <li>• Water heater/furnace platform</li>
+              <li>• Hidden storage compartments</li>
+            </ul>
+          </div>
+        </div>
+
+        <h2 class="text-3xl font-bold text-slate-900 mt-12 mb-6">Engineering Requirements by Municipality</h2>
+        
+        <div class="bg-amber-50 border border-yellow-200 rounded-lg p-6 my-8">
+          <h3 class="text-xl font-bold text-amber-800 mb-4">Toronto Building Code Requirements</h3>
+          
+          <div class="space-y-3 text-amber-700">
+            <p><strong>All Methods Must:</strong></p>
+            <ul class="list-disc pl-6 space-y-1">
+              <li>Extend minimum 4 feet below grade</li>
+              <li>Bear on undisturbed soil or engineered fill</li>
+              <li>Include moisture protection membrane</li>
+              <li>Have engineer's seal for permit</li>
+            </ul>
+            
+            <p class="mt-4"><strong>4-Inch Projection Required When:</strong></p>
+            <ul class="list-disc pl-6 space-y-1">
+              <li>Water table within 2 feet of new depth</li>
+              <li>Utilities within 3 feet of excavation</li>
+              <li>Soil bearing capacity under 2,000 PSF</li>
+              <li>Adjacent structures within influence zone</li>
+            </ul>
+          </div>
+        </div>
+
+        <h2 class="text-3xl font-bold text-slate-900 mt-12 mb-6">Timeline Comparison</h2>
+        
+        <div class="space-y-6">
+          <div class="border-l-4 border-cyan-500 pl-6">
+            <h4 class="font-bold text-lg text-slate-900">Bench Footing: 3-4 Weeks</h4>
+            <div class="mt-2 text-slate-600">
+              Week 1: Excavation and forming<br/>
+              Week 2: Concrete pouring and initial cure<br/>
+              Week 3: Waterproofing and drainage<br/>
+              Week 4: Backfill and cleanup
+            </div>
+          </div>
+          
+          <div class="border-l-4 border-cyan-500 pl-6">
+            <h4 class="font-bold text-lg text-slate-900">Flush Method: 4-6 Weeks</h4>
+            <div class="mt-2 text-slate-600">
+              Week 1: Initial section excavation<br/>
+              Week 2-3: First sections pour and cure<br/>
+              Week 3-4: Remaining sections<br/>
+              Week 5: Waterproofing application<br/>
+              Week 6: Final grading and cleanup
+            </div>
+          </div>
+          
+          <div class="border-l-4 border-purple-500 pl-6">
+            <h4 class="font-bold text-lg text-slate-900">4-Inch Projection: 4-5 Weeks</h4>
+            <div class="mt-2 text-slate-600">
+              Week 1: Excavation and shoring<br/>
+              Week 2: Forming for wider footings<br/>
+              Week 3: Concrete placement<br/>
+              Week 4: Curing and waterproofing<br/>
+              Week 5: Backfill and restoration
+            </div>
+          </div>
+        </div>
+
+        <h2 class="text-3xl font-bold text-slate-900 mt-12 mb-6">Real Cost Analysis: 20x30 Basement Example</h2>
+        
+        <div class="bg-slate-50 rounded-lg p-8 my-8">
+          <h3 class="text-2xl font-bold mb-6">Initial Investment vs. 10-Year Value</h3>
+          
+          <div class="overflow-x-auto">
+            <table class="min-w-full bg-white border border-slate-100">
+              <thead class="bg-slate-50">
+                <tr>
+                  <th class="px-4 py-3 text-left text-sm font-medium text-slate-500">Factor</th>
+                  <th class="px-4 py-3 text-center text-sm font-medium text-slate-500">Bench</th>
+                  <th class="px-4 py-3 text-center text-sm font-medium text-slate-500">Flush</th>
+                  <th class="px-4 py-3 text-center text-sm font-medium text-slate-500">4" Projection</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-gray-200">
+                <tr>
+                  <td class="px-4 py-3 text-sm text-slate-600">Initial Cost</td>
+                  <td class="px-4 py-3 text-center text-sm">$40,000</td>
+                  <td class="px-4 py-3 text-center text-sm">$60,000</td>
+                  <td class="px-4 py-3 text-center text-sm">$50,000</td>
+                </tr>
+                <tr>
+                  <td class="px-4 py-3 text-sm text-slate-600">Usable Sq Ft</td>
+                  <td class="px-4 py-3 text-center text-sm">474</td>
+                  <td class="px-4 py-3 text-center text-sm">600</td>
+                  <td class="px-4 py-3 text-center text-sm">567</td>
+                </tr>
+                <tr>
+                  <td class="px-4 py-3 text-sm text-slate-600">Cost per Usable Sq Ft</td>
+                  <td class="px-4 py-3 text-center text-sm">$84</td>
+                  <td class="px-4 py-3 text-center text-sm">$100</td>
+                  <td class="px-4 py-3 text-center text-sm">$88</td>
+                </tr>
+                <tr>
+                  <td class="px-4 py-3 text-sm text-slate-600">Rental Income Potential</td>
+                  <td class="px-4 py-3 text-center text-sm">$1,400/mo</td>
+                  <td class="px-4 py-3 text-center text-sm">$1,800/mo</td>
+                  <td class="px-4 py-3 text-center text-sm">$1,700/mo</td>
+                </tr>
+                <tr>
+                  <td class="px-4 py-3 text-sm text-slate-600">10-Year Rental Income</td>
+                  <td class="px-4 py-3 text-center text-sm">$168,000</td>
+                  <td class="px-4 py-3 text-center text-sm">$216,000</td>
+                  <td class="px-4 py-3 text-center text-sm">$204,000</td>
+                </tr>
+                <tr class="bg-cyan-50">
+                  <td class="px-4 py-3 text-sm font-bold text-slate-600">Net ROI</td>
+                  <td class="px-4 py-3 text-center text-sm font-bold">$128,000</td>
+                  <td class="px-4 py-3 text-center text-sm font-bold text-cyan-600">$156,000</td>
+                  <td class="px-4 py-3 text-center text-sm font-bold">$154,000</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <h2 class="text-3xl font-bold text-slate-900 mt-12 mb-6">Common Mistakes to Avoid</h2>
+        
+        <div class="space-y-6">
+          <div class="bg-red-50 border-l-4 border-red-500 p-6">
+            <h4 class="font-bold text-red-900 mb-2">
+              <Icon name="tabler:x" class="w-5 h-5 inline mr-2" />
+              Choosing Based on Price Alone
+            </h4>
+            <p class="text-red-800">
+              The cheapest method isn't always most economical long-term. Consider usable space value, 
+              rental potential, and resale impact.
+            </p>
+          </div>
+          
+          <div class="bg-red-50 border-l-4 border-red-500 p-6">
+            <h4 class="font-bold text-red-900 mb-2">
+              <Icon name="tabler:x" class="w-5 h-5 inline mr-2" />
+              Ignoring Engineer Recommendations
+            </h4>
+            <p class="text-red-800">
+              If an engineer specifies 4-inch projection for water table issues, don't switch to bench 
+              footing to save money. Structural failure costs far exceed initial savings.
+            </p>
+          </div>
+          
+          <div class="bg-red-50 border-l-4 border-red-500 p-6">
+            <h4 class="font-bold text-red-900 mb-2">
+              <Icon name="tabler:x" class="w-5 h-5 inline mr-2" />
+              Not Planning for Finishing Costs
+            </h4>
+            <p class="text-red-800">
+              Bench footing requires creative finishing that can add $5,000-8,000 to make the space 
+              attractive. Factor this into your budget.
+            </p>
+          </div>
+        </div>
+
+        <h2 class="text-3xl font-bold text-slate-900 mt-12 mb-6">Expert Recommendations by Scenario</h2>
+        
+        <div class="bg-cyan-50 rounded-lg p-8 my-8">
+          <h3 class="text-2xl font-bold text-cyan-800 mb-6">Our Professional Advice</h3>
+          
+          <div class="space-y-6">
+            <div>
+              <h4 class="font-bold text-lg text-cyan-700 mb-2">Scenario 1: Young Family, Tight Budget</h4>
+              <p class="text-cyan-700">
+                <strong>Recommendation:</strong> Bench footing with creative design. Use savings for quality 
+                finishes and built-in storage. The bench becomes a feature, not a limitation.
+              </p>
+            </div>
+            
+            <div>
+              <h4 class="font-bold text-lg text-cyan-700 mb-2">Scenario 2: Investment Property</h4>
+              <p class="text-cyan-700">
+                <strong>Recommendation:</strong> Flush-with-wall method. The extra rental income justifies 
+                higher cost. Maximum space attracts better tenants and higher rents.
+              </p>
+            </div>
+            
+            <div>
+              <h4 class="font-bold text-lg text-cyan-700 mb-2">Scenario 3: High Water Table Area</h4>
+              <p class="text-cyan-700">
+                <strong>Recommendation:</strong> 4-inch projection as specified by engineer. The wider base 
+                provides necessary stability and water resistance. Don't compromise on this.
+              </p>
+            </div>
+            
+            <div>
+              <h4 class="font-bold text-lg text-cyan-700 mb-2">Scenario 4: Narrow Victorian Home</h4>
+              <p class="text-cyan-700">
+                <strong>Recommendation:</strong> Flush method essential. With only 14-16 feet width, 
+                bench footing would leave an unusable 7-8 foot wide corridor.
+              </p>
+            </div>
+            
+            <div>
+              <h4 class="font-bold text-lg text-cyan-700 mb-2">Scenario 5: Large Suburban Basement</h4>
+              <p class="text-cyan-700">
+                <strong>Recommendation:</strong> Bench footing works well. With 800+ sq ft, losing perimeter 
+                space still leaves ample room. Use savings for home theater or gym equipment.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12 bg-slate-50">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-8">Frequently Asked Questions</h2>
+      <FAQAccordion faqs={underpinningMethodsFAQs} client:load />
+    </div>
+  </section>
+
+  <section class="py-12 bg-navy-900 text-white">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h2 class="text-3xl font-bold mb-4">Need Help Choosing Your Underpinning Method?</h2>
+      <p class="text-xl mb-8">
+        Our engineers provide free consultations to assess your basement and recommend the best approach
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/free-inspection" class="inline-flex items-center justify-center px-6 py-3 bg-white text-cyan-800 font-bold rounded-lg hover:bg-slate-50 transition">
+          Get Free Assessment
+          <Icon name="tabler:arrow-right" class="w-5 h-5 ml-2" />
+        </a>
+        <a href="tel:416-831-6907" class="inline-flex items-center justify-center px-6 py-3 bg-cyan-800 text-white font-bold rounded-lg hover:bg-cyan-700 transition">
+          <Icon name="tabler:phone" class="w-5 h-5 mr-2" />
+          Call: 416-831-6907
+        </a>
+      </div>
+      <p class="mt-6 text-cyan-200">
+        25+ years experience with all three underpinning methods across Toronto
+      </p>
+    </div>
+  </section>
+</Layout>

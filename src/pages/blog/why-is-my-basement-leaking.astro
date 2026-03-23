@@ -1,0 +1,913 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import BlogImageGallery from '../../components/BlogImageGallery.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+
+
+---
+
+<PageLayout 
+  title="Why Is My Basement Leaking? Complete Diagnostic Guide | Dryspace"
+  description="Discover the root causes of basement leaks with our comprehensive diagnostic guide. Interactive tools help identify water entry points and provide expert solutions for Toronto homeowners."
+>
+  
+  
+  
+  <!-- Breadcrumbs -->
+  <div class="container mx-auto px-4 mt-4">
+    <Breadcrumbs 
+      items={[
+        { name: "Home", url: "/" },
+        { name: "Blog", url: "/blog" },
+        { name: "Why Is My Basement Leaking" }
+      ]}
+    />
+  </div>
+
+<main class="min-h-screen bg-white">
+    <!-- Hero Section -->
+    <section class="py-16 bg-slate-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto text-center">
+          <h1 class="uppercase text-4xl md:text-6xl font-bold text-slate-900 mb-6 leading-tight">
+            Why Is My Basement <span class="text-cyan-400 bg-slate-50">Leaking?</span>
+          </h1>
+          <p class="text-xl text-slate-600 mb-8 leading-relaxed">
+            Don't let water damage your home's foundation. Use our interactive diagnostic tool to identify the source of your basement leak and get expert solutions.
+          </p>
+          <div class="flex flex-wrap justify-center gap-4 mb-8">
+            <span class="px-4 py-2 bg-amber-500 text-slate-900  text-sm font-medium">
+              Interactive Diagnostic Tool
+            </span>
+            <span class="px-4 py-2 bg-navy-900 text-white  text-sm font-medium">
+              Expert Solutions
+            </span>
+            <span class="px-4 py-2 bg-cyan-600 text-slate-900  text-sm font-medium">
+              Prevention Tips
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Diagnostic Tool -->
+    <section id="diagnostic-tool" class="py-16 bg-slate-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <div class="text-center mb-12">
+            <h2 class="uppercase text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+              Interactive Basement Leak Diagnostic Tool
+            </h2>
+            <p class="text-slate-600 text-lg">
+              Answer a few quick questions to identify the most likely cause of your basement leak
+            </p>
+          </div>
+
+          <div class="bg-white  p-8 shadow-2xl">
+            <div id="diagnostic-questions" class="space-y-6">
+              <!-- Question 1 -->
+              <div class="question-card bg-slate-50  p-6" data-question="1">
+                <h3 class="text-xl font-semibold text-slate-900 mb-4">When does the leaking occur?</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                  <button class="diagnostic-option p-4 bg-slate-50 hover:bg-amber-500 border-2 border-slate-300 hover:border-cyan-500  text-left transition-all duration-200" data-value="during-rain">
+                    <div class="font-medium text-slate-900">During or after heavy rain</div>
+                    <div class="text-sm text-slate-500 mt-1">Water appears when it rains heavily</div>
+                  </button>
+                  <button class="diagnostic-option p-4 bg-slate-50 hover:bg-amber-500 border-2 border-slate-300 hover:border-cyan-500  text-left transition-all duration-200" data-value="constant">
+                    <div class="font-medium text-slate-900">Constantly, regardless of weather</div>
+                    <div class="text-sm text-slate-500 mt-1">Water is always present</div>
+                  </button>
+                  <button class="diagnostic-option p-4 bg-slate-50 hover:bg-amber-500 border-2 border-slate-300 hover:border-cyan-500  text-left transition-all duration-200" data-value="spring-thaw">
+                    <div class="font-medium text-slate-900">During spring thaw</div>
+                    <div class="text-sm text-slate-500 mt-1">Snow melt causes the issue</div>
+                  </button>
+                  <button class="diagnostic-option p-4 bg-slate-50 hover:bg-amber-500 border-2 border-slate-300 hover:border-cyan-500  text-left transition-all duration-200" data-value="seasonal">
+                    <div class="font-medium text-slate-900">Seasonally (wet periods)</div>
+                    <div class="text-sm text-slate-500 mt-1">Only during certain times of year</div>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Question 2 -->
+              <div class="question-card bg-slate-50  p-6 hidden" data-question="2">
+                <h3 class="text-xl font-semibold text-slate-900 mb-4">Where is the water entering?</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                  <button class="diagnostic-option p-4 bg-slate-50 hover:bg-amber-500 border-2 border-slate-300 hover:border-cyan-500  text-left transition-all duration-200" data-value="floor-cracks">
+                    <div class="font-medium text-slate-900">Through cracks in the floor</div>
+                    <div class="text-sm text-slate-500 mt-1">Water seeps up from floor cracks</div>
+                  </button>
+                  <button class="diagnostic-option p-4 bg-slate-50 hover:bg-amber-500 border-2 border-slate-300 hover:border-cyan-500  text-left transition-all duration-200" data-value="wall-cracks">
+                    <div class="font-medium text-slate-900">Through wall cracks</div>
+                    <div class="text-sm text-slate-500 mt-1">Water comes through foundation walls</div>
+                  </button>
+                  <button class="diagnostic-option p-4 bg-slate-50 hover:bg-amber-500 border-2 border-slate-300 hover:border-cyan-500  text-left transition-all duration-200" data-value="floor-wall-joint">
+                    <div class="font-medium text-slate-900">Where floor meets wall</div>
+                    <div class="text-sm text-slate-500 mt-1">Water appears at the cove joint</div>
+                  </button>
+                  <button class="diagnostic-option p-4 bg-slate-50 hover:bg-amber-500 border-2 border-slate-300 hover:border-cyan-500  text-left transition-all duration-200" data-value="windows">
+                    <div class="font-medium text-slate-900">Around windows or window wells</div>
+                    <div class="text-sm text-slate-500 mt-1">Water enters near basement windows</div>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Question 3 -->
+              <div class="question-card bg-slate-50  p-6 hidden" data-question="3">
+                <h3 class="text-xl font-semibold text-slate-900 mb-4">How much water are you seeing?</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+                  <button class="diagnostic-option p-4 bg-slate-50 hover:bg-amber-500 border-2 border-slate-300 hover:border-cyan-500  text-left transition-all duration-200" data-value="dampness">
+                    <div class="font-medium text-slate-900">Slight dampness/moisture</div>
+                    <div class="text-sm text-slate-500 mt-1">Just feels wet to touch</div>
+                  </button>
+                  <button class="diagnostic-option p-4 bg-slate-50 hover:bg-amber-500 border-2 border-slate-300 hover:border-cyan-500  text-left transition-all duration-200" data-value="trickling">
+                    <div class="font-medium text-slate-900">Water trickling or dripping</div>
+                    <div class="text-sm text-slate-500 mt-1">Small streams or drops</div>
+                  </button>
+                  <button class="diagnostic-option p-4 bg-slate-50 hover:bg-amber-500 border-2 border-slate-300 hover:border-cyan-500  text-left transition-all duration-200" data-value="pooling">
+                    <div class="font-medium text-slate-900">Water pooling on floor</div>
+                    <div class="text-sm text-slate-500 mt-1">Significant water accumulation</div>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Results Section -->
+            <div id="diagnostic-results" class="hidden mt-8 p-6 bg-slate-50  border-2 border-cyan-500/30">
+              <h3 class="text-2xl font-bold text-slate-900 mb-4">Your Diagnosis Results</h3>
+              <div id="results-content" class="space-y-4">
+                <!-- Results will be populated by JavaScript -->
+              </div>
+              <div class="mt-6 p-4 bg-slate-50 ">
+                <p class="text-cyan-400 font-semibold mb-2">Ready to fix your basement leak?</p>
+                <p class="text-slate-600 mb-4">Get a professional assessment from Toronto's basement waterproofing experts.</p>
+                <a href="tel:+14168721663" class="inline-flex items-center px-6 py-3 bg-slate-50 text-slate-900 font-semibold  hover:shadow-lg transition-all duration-200">
+                  <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                  </svg>
+                  Call for Free Assessment
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="py-16">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          
+          <!-- Article Content -->
+          <article class="prose prose-lg  max-w-none">
+            
+            <h2 class="uppercase text-3xl font-bold text-slate-900 mb-6">Understanding Basement Water Problems</h2>
+            
+            <p class="text-slate-600 text-lg leading-relaxed mb-6">
+              A leaking basement is one of the most common and concerning issues Toronto homeowners face. With our city's clay soil, freeze-thaw cycles, and aging infrastructure, basement water problems affect thousands of homes each year. Understanding why your basement is leaking is the first step toward implementing an effective, long-lasting solution.
+            </p>
+
+            <div class="bg-amber-500 border-l-4 border-cyan-500 p-6  mb-8">
+              <h3 class="text-cyan-400 font-semibold mb-2">Critical Fact</h3>
+              <p class="text-slate-600 mb-0">
+                According to the Canadian Mortgage and Housing Corporation (CMHC), basement moisture problems affect up to 40% of Canadian homes, with Toronto's unique geological conditions making basements particularly vulnerable to water intrusion.
+              </p>
+            </div>
+
+            <h2 class="uppercase text-3xl font-bold text-slate-900 mb-6">The 7 Most Common Causes of Basement Leaks in Toronto</h2>
+
+            <!-- Cause 1 -->
+            <div class="bg-white  p-8 mb-8 border-2 border-slate-600">
+              <div class="flex items-start space-x-4">
+                <div class="flex-shrink-0 w-12 h-12 bg-slate-50  flex items-center justify-center font-bold text-slate-900 text-xl">1</div>
+                <div class="flex-1">
+                  <h3 class="text-2xl font-bold text-slate-900 mb-4">Hydrostatic Pressure</h3>
+                  <p class="text-slate-600 mb-4">
+                    The most common cause of basement leaks in Toronto. When soil around your foundation becomes saturated with water, it creates enormous pressure against basement walls and floors. Toronto's clay soil compounds this problem by preventing proper drainage.
+                  </p>
+                  <div class="bg-slate-50  p-4">
+                    <h4 class="font-semibold text-cyan-400 mb-2">Signs of Hydrostatic Pressure:</h4>
+                    <ul class="text-slate-600 space-y-1">
+                      <li>• Water seepage at floor-wall joints (cove joints)</li>
+                      <li>• Horizontal cracks in foundation walls</li>
+                      <li>• Water pushing up through floor cracks</li>
+                      <li>• Basement flooding during heavy rains</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Cause 2 -->
+            <div class="bg-white  p-8 mb-8 border-2 border-slate-600">
+              <div class="flex items-start space-x-4">
+                <div class="flex-shrink-0 w-12 h-12 bg-slate-50  flex items-center justify-center font-bold text-slate-900 text-xl">2</div>
+                <div class="flex-1">
+                  <h3 class="text-2xl font-bold text-slate-900 mb-4">Foundation Cracks</h3>
+                  <p class="text-slate-600 mb-4">
+                    Toronto's extreme temperature fluctuations cause concrete to expand and contract, leading to foundation cracks. These cracks provide direct pathways for water to enter your basement.
+                  </p>
+                  <div class="grid md:grid-cols-2 gap-4">
+                    <div class="bg-slate-50  p-4">
+                      <h4 class="font-semibold text-cyan-400 mb-2">Structural Cracks:</h4>
+                      <ul class="text-slate-600 space-y-1 text-sm">
+                        <li>• Horizontal or stair-step cracks</li>
+                        <li>• Cracks wider than 1/4 inch</li>
+                        <li>• Cracks that grow over time</li>
+                      </ul>
+                    </div>
+                    <div class="bg-slate-50  p-4">
+                      <h4 class="font-semibold text-slate-900 mb-2">Settlement Cracks:</h4>
+                      <ul class="text-slate-600 space-y-1 text-sm">
+                        <li>• Vertical cracks in walls</li>
+                        <li>• Hairline cracks (less than 1/8 inch)</li>
+                        <li>• Cracks that remain stable</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Cause 3 -->
+            <div class="bg-white  p-8 mb-8 border-2 border-slate-600">
+              <div class="flex items-start space-x-4">
+                <div class="flex-shrink-0 w-12 h-12 bg-slate-50  flex items-center justify-center font-bold text-slate-900 text-xl">3</div>
+                <div class="flex-1">
+                  <h3 class="text-2xl font-bold text-slate-900 mb-4">Poor Drainage Systems</h3>
+                  <p class="text-slate-600 mb-4">
+                    Inadequate or failed drainage systems can't handle Toronto's heavy rainfall and snowmelt. This includes problems with weeping tiles, French drains, and exterior drainage.
+                  </p>
+                  <div class="bg-red-600 border-2 border-red-600/30  p-4">
+                    <h4 class="font-semibold text-red-600 mb-2">Warning Signs:</h4>
+                    <ul class="text-slate-600 space-y-1">
+                      <li>• Water pools around foundation</li>
+                      <li>• Gutters overflow or are damaged</li>
+                      <li>• Poor grading slopes toward house</li>
+                      <li>• Basement floods during storms</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Cause 4 -->
+            <div class="bg-white  p-8 mb-8 border-2 border-slate-600">
+              <div class="flex items-start space-x-4">
+                <div class="flex-shrink-0 w-12 h-12 bg-slate-50  flex items-center justify-center font-bold text-slate-900 text-xl">4</div>
+                <div class="flex-1">
+                  <h3 class="text-2xl font-bold text-slate-900 mb-4">Window Well Problems</h3>
+                  <p class="text-slate-600 mb-4">
+                    Basement windows and window wells are common entry points for water. Poor installation, inadequate drainage, or damaged window wells allow water to pool and seep into your basement.
+                  </p>
+                  <div class="bg-slate-50  p-4">
+                    <h4 class="font-semibold text-cyan-400 mb-2">Common Window Well Issues:</h4>
+                    <ul class="text-slate-600 space-y-1">
+                      <li>• Missing or inadequate drainage</li>
+                      <li>• Cracked or deteriorated window well liner</li>
+                      <li>• Improperly sealed windows</li>
+                      <li>• Debris blocking drainage systems</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Cause 5 -->
+            <div class="bg-white  p-8 mb-8 border-2 border-slate-600">
+              <div class="flex items-start space-x-4">
+                <div class="flex-shrink-0 w-12 h-12 bg-slate-50  flex items-center justify-center font-bold text-slate-900 text-xl">5</div>
+                <div class="flex-1">
+                  <h3 class="text-2xl font-bold text-slate-900 mb-4">Failed Waterproofing Systems</h3>
+                  <p class="text-slate-600 mb-4">
+                    Older homes in Toronto may have outdated or failed waterproofing systems. Deteriorated membranes, clogged weeping tiles, or inadequate sump pump systems can lead to basement water problems.
+                  </p>
+                  <div class="grid md:grid-cols-2 gap-4">
+                    <div class="bg-slate-50  p-4">
+                      <h4 class="font-semibold text-cyan-400 mb-2">Exterior Failures:</h4>
+                      <ul class="text-slate-600 space-y-1 text-sm">
+                        <li>• Degraded waterproof membrane</li>
+                        <li>• Clogged weeping tiles</li>
+                        <li>• Damaged foundation coating</li>
+                      </ul>
+                    </div>
+                    <div class="bg-slate-50  p-4">
+                      <h4 class="font-semibold text-slate-900 mb-2">Interior Failures:</h4>
+                      <ul class="text-slate-600 space-y-1 text-sm">
+                        <li>• Sump pump malfunction</li>
+                        <li>• Failed interior drainage</li>
+                        <li>• Inadequate vapor barriers</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Cause 6 -->
+            <div class="bg-white  p-8 mb-8 border-2 border-slate-600">
+              <div class="flex items-start space-x-4">
+                <div class="flex-shrink-0 w-12 h-12 bg-slate-50  flex items-center justify-center font-bold text-slate-900 text-xl">6</div>
+                <div class="flex-1">
+                  <h3 class="text-2xl font-bold text-slate-900 mb-4">Plumbing Leaks</h3>
+                  <p class="text-slate-600 mb-4">
+                    Sometimes what appears to be a foundation leak is actually a plumbing problem. Leaking pipes, water supply lines, or sewer backups can create basement water problems.
+                  </p>
+                  <div class="bg-navy-900 border-2 border-slate-700/30  p-4">
+                    <h4 class="font-semibold text-slate-900 mb-2">How to Identify Plumbing Leaks:</h4>
+                    <ul class="text-slate-600 space-y-1">
+                      <li>• Water appears regardless of weather conditions</li>
+                      <li>• Higher than normal water bills</li>
+                      <li>• Sound of running water when no taps are on</li>
+                      <li>• Water near plumbing fixtures or utility lines</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Cause 7 -->
+            <div class="bg-white  p-8 mb-8 border-2 border-slate-600">
+              <div class="flex items-start space-x-4">
+                <div class="flex-shrink-0 w-12 h-12 bg-slate-50  flex items-center justify-center font-bold text-slate-900 text-xl">7</div>
+                <div class="flex-1">
+                  <h3 class="text-2xl font-bold text-slate-900 mb-4">High Water Table</h3>
+                  <p class="text-slate-600 mb-4">
+                    Toronto's proximity to Lake Ontario and underground water systems can create high water table conditions. During wet seasons, groundwater levels rise, putting additional pressure on basement structures.
+                  </p>
+                  <div class="bg-slate-50  p-4">
+                    <h4 class="font-semibold text-cyan-400 mb-2">High Water Table Indicators:</h4>
+                    <ul class="text-slate-600 space-y-1">
+                      <li>• Persistent basement moisture even in dry weather</li>
+                      <li>• Sump pump runs frequently</li>
+                      <li>• Water seepage increases during spring thaw</li>
+                      <li>• Neighbors report similar basement issues</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <h2 class="uppercase text-3xl font-bold text-slate-900 mb-6">How to Determine Your Basement Leak Source</h2>
+            
+            <div class="bg-amber-500 border-2 border-cyan-500/30  p-6 mb-8">
+              <h3 class="text-2xl font-bold text-slate-900 mb-4">Step-by-Step Investigation Process</h3>
+              <div class="space-y-4">
+                <div class="flex items-start space-x-3">
+                  <div class="flex-shrink-0 w-8 h-8 bg-amber-500  flex items-center justify-center text-slate-900 font-bold text-sm">1</div>
+                  <div>
+                    <h4 class="font-semibold text-slate-900">Document the Problem</h4>
+                    <p class="text-slate-600">Take photos and notes about when, where, and how much water you observe. Track patterns over several weather cycles.</p>
+                  </div>
+                </div>
+                <div class="flex items-start space-x-3">
+                  <div class="flex-shrink-0 w-8 h-8 bg-amber-500  flex items-center justify-center text-slate-900 font-bold text-sm">2</div>
+                  <div>
+                    <h4 class="font-semibold text-slate-900">Perform the Plastic Sheet Test</h4>
+                    <p class="text-slate-600">Tape plastic sheets to damp wall areas. If moisture appears on the room side, it's condensation. If it's behind the plastic, it's seepage.</p>
+                  </div>
+                </div>
+                <div class="flex items-start space-x-3">
+                  <div class="flex-shrink-0 w-8 h-8 bg-amber-500  flex items-center justify-center text-slate-900 font-bold text-sm">3</div>
+                  <div>
+                    <h4 class="font-semibold text-slate-900">Check Your Plumbing</h4>
+                    <p class="text-slate-600">Turn off all water in your home and check if your water meter is still running. This indicates a plumbing leak.</p>
+                  </div>
+                </div>
+                <div class="flex items-start space-x-3">
+                  <div class="flex-shrink-0 w-8 h-8 bg-amber-500  flex items-center justify-center text-slate-900 font-bold text-sm">4</div>
+                  <div>
+                    <h4 class="font-semibold text-slate-900">Inspect Foundation Walls</h4>
+                    <p class="text-slate-600">Look for cracks, efflorescence (white chalky deposits), or active water seepage. Use a bright flashlight for thorough inspection.</p>
+                  </div>
+                </div>
+                <div class="flex items-start space-x-3">
+                  <div class="flex-shrink-0 w-8 h-8 bg-amber-500  flex items-center justify-center text-slate-900 font-bold text-sm">5</div>
+                  <div>
+                    <h4 class="font-semibold text-slate-900">Examine Exterior Drainage</h4>
+                    <p class="text-slate-600">Check gutters, downspouts, grading, and any visible drainage systems around your home's perimeter.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <h2 class="uppercase text-3xl font-bold text-slate-900 mb-6">Professional Solutions for Different Leak Types</h2>
+            
+            <div class="grid md:grid-cols-2 gap-8 mb-8">
+              <div class="bg-white  p-6 border-2 border-slate-600">
+                <h3 class="text-xl font-bold text-cyan-400 mb-4">Interior Waterproofing Solutions</h3>
+                <ul class="space-y-3 text-slate-600">
+                  <li class="flex items-start space-x-2">
+                    <svg class="w-5 h-5 text-cyan-400 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path>
+                    </svg>
+                    <span>Interior drainage systems and sump pumps</span>
+                  </li>
+                  <li class="flex items-start space-x-2">
+                    <svg class="w-5 h-5 text-cyan-400 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path>
+                    </svg>
+                    <span>Crack injection and sealing</span>
+                  </li>
+                  <li class="flex items-start space-x-2">
+                    <svg class="w-5 h-5 text-cyan-400 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path>
+                    </svg>
+                    <span>Vapor barriers and dehumidification</span>
+                  </li>
+                  <li class="flex items-start space-x-2">
+                    <svg class="w-5 h-5 text-cyan-400 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path>
+                    </svg>
+                    <span>Interior waterproof coatings</span>
+                  </li>
+                </ul>
+              </div>
+              <div class="bg-white  p-6 border-2 border-slate-600">
+                <h3 class="text-xl font-bold text-slate-900 mb-4">Exterior Waterproofing Solutions</h3>
+                <ul class="space-y-3 text-slate-600">
+                  <li class="flex items-start space-x-2">
+                    <svg class="w-5 h-5 text-slate-900 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path>
+                    </svg>
+                    <span>Foundation excavation and waterproofing</span>
+                  </li>
+                  <li class="flex items-start space-x-2">
+                    <svg class="w-5 h-5 text-slate-900 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path>
+                    </svg>
+                    <span>Weeping tile installation and repair</span>
+                  </li>
+                  <li class="flex items-start space-x-2">
+                    <svg class="w-5 h-5 text-slate-900 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path>
+                    </svg>
+                    <span>Proper grading and drainage</span>
+                  </li>
+                  <li class="flex items-start space-x-2">
+                    <svg class="w-5 h-5 text-slate-900 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path>
+                    </svg>
+                    <span>Window well repair and drainage</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <h2 class="uppercase text-3xl font-bold text-slate-900 mb-6">Prevention Tips for Toronto Homeowners</h2>
+            
+            <div class="bg-cyan-600 border-2 border-cyan-600/30  p-8 mb-8">
+              <h3 class="text-xl font-bold text-cyan-600 mb-4">Seasonal Maintenance Checklist</h3>
+              <div class="grid md:grid-cols-2 gap-6">
+                <div>
+                  <h4 class="font-semibold text-slate-900 mb-3">Spring & Summer</h4>
+                  <ul class="space-y-2 text-slate-600">
+                    <li class="flex items-center space-x-2">
+                      <svg class="w-4 h-4 text-cyan-600" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path>
+                      </svg>
+                      <span>Clean gutters and downspouts</span>
+                    </li>
+                    <li class="flex items-center space-x-2">
+                      <svg class="w-4 h-4 text-cyan-600" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path>
+                      </svg>
+                      <span>Test sump pump operation</span>
+                    </li>
+                    <li class="flex items-center space-x-2">
+                      <svg class="w-4 h-4 text-cyan-600" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path>
+                      </svg>
+                      <span>Inspect foundation for new cracks</span>
+                    </li>
+                    <li class="flex items-center space-x-2">
+                      <svg class="w-4 h-4 text-cyan-600" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path>
+                      </svg>
+                      <span>Check window well drainage</span>
+                    </li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-slate-900 mb-3">Fall & Winter</h4>
+                  <ul class="space-y-2 text-slate-600">
+                    <li class="flex items-center space-x-2">
+                      <svg class="w-4 h-4 text-cyan-600" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path>
+                      </svg>
+                      <span>Disconnect and drain exterior hoses</span>
+                    </li>
+                    <li class="flex items-center space-x-2">
+                      <svg class="w-4 h-4 text-cyan-600" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path>
+                      </svg>
+                      <span>Clear snow away from foundation</span>
+                    </li>
+                    <li class="flex items-center space-x-2">
+                      <svg class="w-4 h-4 text-cyan-600" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7-293a1 1 0 011.414 0z"></path>
+                      </svg>
+                      <span>Check basement humidity levels</span>
+                    </li>
+                    <li class="flex items-center space-x-2">
+                      <svg class="w-4 h-4 text-cyan-600" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path>
+                      </svg>
+                      <span>Monitor for ice dam formation</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <h2 class="uppercase text-3xl font-bold text-slate-900 mb-6">When to Call a Professional</h2>
+            
+            <div class="bg-red-600 border-2 border-red-600/30  p-8 mb-8">
+              <h3 class="text-xl font-bold text-red-600 mb-4">Emergency Signs - Call Immediately</h3>
+              <ul class="space-y-3 text-slate-600">
+                <li class="flex items-start space-x-3">
+                  <div class="flex-shrink-0 w-6 h-6 bg-red-600  flex items-center justify-center mt-0.5">
+                    <svg class="w-4 h-4 text-slate-900" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"></path>
+                    </svg>
+                  </div>
+                  <div>
+                    <strong>Active flooding or standing water in basement</strong>
+                    <p class="text-sm mt-1">Immediate risk to electrical systems and structural damage</p>
+                  </div>
+                </li>
+                <li class="flex items-start space-x-3">
+                  <div class="flex-shrink-0 w-6 h-6 bg-red-600  flex items-center justify-center mt-0.5">
+                    <svg class="w-4 h-4 text-slate-900" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"></path>
+                    </svg>
+                  </div>
+                  <div>
+                    <strong>Structural cracks larger than 1/4 inch or growing cracks</strong>
+                    <p class="text-sm mt-1">May indicate foundation settlement or structural issues</p>
+                  </div>
+                </li>
+                <li class="flex items-start space-x-3">
+                  <div class="flex-shrink-0 w-6 h-6 bg-red-600  flex items-center justify-center mt-0.5">
+                    <svg class="w-4 h-4 text-slate-900" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"></path>
+                    </svg>
+                  </div>
+                  <div>
+                    <strong>Sewage backup or foul odors</strong>
+                    <p class="text-sm mt-1">Health hazard requiring immediate professional attention</p>
+                  </div>
+                </li>
+                <li class="flex items-start space-x-3">
+                  <div class="flex-shrink-0 w-6 h-6 bg-red-600  flex items-center justify-center mt-0.5">
+                    <svg class="w-4 h-4 text-slate-900" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"></path>
+                    </svg>
+                  </div>
+                  <div>
+                    <strong>Mold growth or strong musty odors</strong>
+                    <p class="text-sm mt-1">Potential health risks and hidden water damage</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+          </article>
+        </div>
+      </div>
+    </section>
+
+    
+      <!-- Related Images Gallery -->
+      <BlogImageGallery topic="basement-leaking" />
+
+<!-- FAQ Section -->
+    <section class="py-16 bg-slate-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="uppercase text-3xl font-bold text-slate-900 mb-8 text-center">Frequently Asked Questions</h2>
+          
+          <div class="space-y-4">
+            <div class="bg-white  overflow-hidden border-2 border-slate-600">
+              <button class="w-full text-left p-6 focus:outline-none focus:ring-2 focus:ring-yellow-500" onclick="toggleFAQ(this)">
+                <div class="flex justify-between items-center">
+                  <h3 class="text-lg font-semibold text-slate-900">How quickly should I address a basement leak?</h3>
+                  <svg class="w-5 h-5 text-cyan-400 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                  </svg>
+                </div>
+              </button>
+              <div class="hidden px-6 pb-6">
+                <p class="text-slate-600">
+                  Address basement leaks immediately. Even small leaks can quickly lead to mold growth (within 24-48 hours), structural damage, and significant repair costs. Early intervention is always less expensive than major repairs.
+                </p>
+              </div>
+            </div>
+
+            <div class="bg-white  overflow-hidden border-2 border-slate-600">
+              <button class="w-full text-left p-6 focus:outline-none focus:ring-2 focus:ring-yellow-500" onclick="toggleFAQ(this)">
+                <div class="flex justify-between items-center">
+                  <h3 class="text-lg font-semibold text-slate-900">Can I fix a basement leak myself?</h3>
+                  <svg class="w-5 h-5 text-cyan-400 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                  </svg>
+                </div>
+              </button>
+              <div class="hidden px-6 pb-6">
+                <p class="text-slate-600">
+                  Minor surface cracks and small leaks might be temporarily addressed with DIY solutions, but professional diagnosis is crucial. Improper repairs often worsen problems and void warranties. Major leaks, structural cracks, and drainage issues require professional expertise.
+                </p>
+              </div>
+            </div>
+
+            <div class="bg-white  overflow-hidden border-2 border-slate-600">
+              <button class="w-full text-left p-6 focus:outline-none focus:ring-2 focus:ring-yellow-500" onclick="toggleFAQ(this)">
+                <div class="flex justify-between items-center">
+                  <h3 class="text-lg font-semibold text-slate-900">How much does basement leak repair cost in Toronto?</h3>
+                  <svg class="w-5 h-5 text-cyan-400 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                  </svg>
+                </div>
+              </button>
+              <div class="hidden px-6 pb-6">
+                <p class="text-slate-600">
+                  Costs vary widely based on the cause and extent of the problem. Simple crack injection might cost $300-$800, while comprehensive exterior waterproofing can range from $8,000-$20,000+. Early intervention significantly reduces costs. Get a professional assessment for accurate pricing.
+                </p>
+              </div>
+            </div>
+
+            <div class="bg-white  overflow-hidden border-2 border-slate-600">
+              <button class="w-full text-left p-6 focus:outline-none focus:ring-2 focus:ring-yellow-500" onclick="toggleFAQ(this)">
+                <div class="flex justify-between items-center">
+                  <h3 class="text-lg font-semibold text-slate-900">Does insurance cover basement leak repairs?</h3>
+                  <svg class="w-5 h-5 text-cyan-400 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                  </svg>
+                </div>
+              </button>
+              <div class="hidden px-6 pb-6">
+                <p class="text-slate-600">
+                  Insurance coverage depends on the cause of the leak and your specific policy. Sudden plumbing failures are often covered, while gradual seepage from poor maintenance typically isn't. Sewer backup and overland flooding may require separate coverage. Review your policy and document everything.
+                </p>
+              </div>
+            </div>
+
+            <div class="bg-white  overflow-hidden border-2 border-slate-600">
+              <button class="w-full text-left p-6 focus:outline-none focus:ring-2 focus:ring-yellow-500" onclick="toggleFAQ(this)">
+                <div class="flex justify-between items-center">
+                  <h3 class="text-lg font-semibold text-slate-900">Will basement leaks affect my home's value?</h3>
+                  <svg class="w-5 h-5 text-cyan-400 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                  </svg>
+                </div>
+              </button>
+              <div class="hidden px-6 pb-6">
+                <p class="text-slate-600">
+                  Yes, basement water problems significantly reduce home value and saleability. However, professional waterproofing with transferable warranties can actually increase value by providing buyer confidence. Address issues before listing your home to avoid negotiation problems and inspection failures.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-slate-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto text-center">
+          <h2 class="uppercase text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+            Stop Guessing - Get Professional Basement Leak Diagnosis
+          </h2>
+          <p class="text-slate-900 text-lg mb-8">
+            Don't let a small leak become a major problem. Our Toronto waterproofing experts provide free, comprehensive basement assessments with guaranteed solutions.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="tel:+14168721663" class="inline-flex items-center justify-center px-8 py-3 bg-white text-cyan-400 font-semibold  hover:bg-slate-50 transition-all duration-200 shadow-lg">
+              <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+              </svg>
+              Call for Emergency Service
+            </a>
+            <a href="/contact" class="inline-flex items-center justify-center px-8 py-3 bg-slate-50 text-slate-900 font-semibold  hover:bg-white transition-all duration-200 shadow-lg border-2 border-white/20">
+              Schedule Free Assessment
+            </a>
+          </div>
+          <div class="mt-6 text-slate-600">
+            <p class="text-sm"> 24/7 Emergency Service   Free Comprehensive Assessment   25-Year Warranties Available</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  
+</PageLayout>
+
+<script>
+  // Diagnostic tool functionality
+  let currentQuestion = 1;
+  const maxQuestions = 3;
+  let answers = {};
+
+  // Diagnostic logic
+  const diagnosticOptions = document.querySelectorAll('.diagnostic-option');
+  diagnosticOptions.forEach(option => {
+    option.addEventListener('click', function() {
+      const questionCard = this.closest('.question-card');
+      const questionNum = questionCard.dataset.question;
+      const value = this.dataset.value;
+      
+      // Remove selection from other options in this question
+      questionCard.querySelectorAll('.diagnostic-option').forEach(opt => {
+        opt.classList.remove('bg-amber-500', 'border-cyan-500');
+        opt.classList.add('bg-slate-50', 'border-slate-300');
+      });
+      
+      // Mark this option as selected
+      this.classList.remove('bg-slate-50', 'border-slate-300');
+      this.classList.add('bg-amber-500', 'border-cyan-500');
+      
+      // Store answer
+      answers[`question${questionNum}`] = value;
+      
+      // Show next question or results
+      setTimeout(() => {
+        if (currentQuestion < maxQuestions) {
+          questionCard.classList.add('hidden');
+          const nextQuestion = document.querySelector(`[data-question="${currentQuestion + 1}"]`);
+          nextQuestion.classList.remove('hidden');
+          currentQuestion++;
+        } else {
+          // Show results
+          showDiagnosticResults();
+        }
+      }, 500);
+    });
+  });
+
+  function showDiagnosticResults() {
+    const resultsSection = document.getElementById('diagnostic-results');
+    const resultsContent = document.getElementById('results-content');
+    
+    // Hide all question cards
+    document.querySelectorAll('.question-card').forEach(card => {
+      card.classList.add('hidden');
+    });
+    
+    // Generate results based on answers
+    const diagnosis = generateDiagnosis(answers);
+    
+    resultsContent.innerHTML = `
+      <div class="flex items-start space-x-4 mb-6">
+        <div class="flex-shrink-0 w-12 h-12 bg-slate-50  flex items-center justify-center">
+          <svg class="w-6 h-6 text-slate-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+          </svg>
+        </div>
+        <div>
+          <h4 class="text-xl font-bold text-slate-900 mb-2">Most Likely Cause: ${diagnosis.cause}</h4>
+          <p class="text-slate-600 mb-4">${diagnosis.description}</p>
+        </div>
+      </div>
+      
+      <div class="bg-slate-50  p-4 mb-4">
+        <h5 class="font-semibold text-cyan-400 mb-2">Recommended Actions:</h5>
+        <ul class="space-y-2 text-slate-600">
+          ${diagnosis.recommendations.map(rec => `<li class="flex items-start space-x-2">
+            <svg class="w-4 h-4 text-cyan-400 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path>
+            </svg>
+            <span>${rec}</span>
+          </li>`).join('')}
+        </ul>
+      </div>
+      
+      <div class="bg-${diagnosis.urgency === 'high' ? 'construction-red' : diagnosis.urgency === 'medium' ? 'construction-yellow' : 'construction-blue'}/10 border-2 border-${diagnosis.urgency === 'high' ? 'construction-red' : diagnosis.urgency === 'medium' ? 'construction-yellow' : 'construction-blue'}/30  p-4">
+        <h5 class="font-semibold text-${diagnosis.urgency === 'high' ? 'construction-red' : diagnosis.urgency === 'medium' ? 'construction-yellow' : 'construction-blue'} mb-2">Urgency Level: ${diagnosis.urgency.charAt(0).toUpperCase() + diagnosis.urgency.slice(1)}</h5>
+        <p class="text-slate-600">${diagnosis.urgencyNote}</p>
+      </div>
+    `;
+    
+    resultsSection.classList.remove('hidden');
+  }
+
+  function generateDiagnosis(answers) {
+    const timing = answers.question1;
+    const location = answers.question2;
+    const amount = answers.question3;
+    
+    // Diagnostic logic
+    if (timing === 'during-rain' && location === 'floor-wall-joint') {
+      return {
+        cause: 'Hydrostatic Pressure',
+        description: 'Water pressure from saturated soil is forcing water through the foundation where the floor meets the wall.',
+        recommendations: [
+          'Install interior drainage system with sump pump',
+          'Consider exterior waterproofing if problem persists',
+          'Improve exterior drainage around foundation',
+          'Seal cove joint as temporary measure'
+        ],
+        urgency: amount === 'pooling' ? 'high' : 'medium',
+        urgencyNote: amount === 'pooling' ? 'Immediate action required to prevent structural damage and mold growth.' : 'Should be addressed within 1-2 weeks to prevent worsening.'
+      };
+    }
+    
+    if (location === 'wall-cracks' && timing !== 'constant') {
+      return {
+        cause: 'Foundation Wall Cracks',
+        description: 'Water is entering through cracks in your foundation walls, likely caused by settlement or freeze-thaw cycles.',
+        recommendations: [
+          'Professional crack injection and sealing',
+          'Monitor for crack growth',
+          'Improve exterior drainage',
+          'Consider structural assessment for large cracks'
+        ],
+        urgency: amount === 'pooling' ? 'high' : 'medium',
+        urgencyNote: 'Foundation cracks can worsen quickly, especially during freeze-thaw cycles.'
+      };
+    }
+    
+    if (timing === 'constant') {
+      return {
+        cause: 'Plumbing Leak or High Water Table',
+        description: 'Constant water presence suggests either a plumbing leak or groundwater issues not related to weather.',
+        recommendations: [
+          'Check for plumbing leaks immediately',
+          'Test water meter for continuous running',
+          'Professional inspection of water supply lines',
+          'Assess groundwater levels if plumbing is clear'
+        ],
+        urgency: 'high',
+        urgencyNote: 'Constant water can cause rapid damage and indicates an ongoing problem requiring immediate attention.'
+      };
+    }
+    
+    if (location === 'windows') {
+      return {
+        cause: 'Window Well Drainage Problems',
+        description: 'Poor drainage around basement windows is allowing water to pool and seep through window seals.',
+        recommendations: [
+          'Clear window well drains',
+          'Install or repair window well covers',
+          'Improve grading around windows',
+          'Seal window frames properly'
+        ],
+        urgency: 'medium',
+        urgencyNote: 'Window well issues are often simpler to fix but can cause significant damage if ignored.'
+      };
+    }
+    
+    // Default diagnosis
+    return {
+      cause: 'Multiple Potential Issues',
+      description: 'Your symptoms suggest several possible causes. A professional assessment is needed to determine the exact source.',
+      recommendations: [
+        'Professional basement inspection',
+        'Moisture testing and source identification',
+        'Review of drainage systems',
+        'Comprehensive waterproofing plan'
+      ],
+      urgency: 'medium',
+      urgencyNote: 'Professional diagnosis will save time and money by identifying the correct solution.'
+    };
+  }
+
+  // FAQ toggle functionality
+  function toggleFAQ(button) {
+    const content = button.nextElementSibling;
+    const arrow = button.querySelector('svg');
+    
+    if (content.classList.contains('hidden')) {
+      content.classList.remove('hidden');
+      arrow.classList.add('rotate-180');
+    } else {
+      content.classList.add('hidden');
+      arrow.classList.remove('rotate-180');
+    }
+  }
+
+  // Reset diagnostic tool function
+  function resetDiagnostic() {
+    currentQuestion = 1;
+    answers = {};
+    
+    // Reset all questions
+    document.querySelectorAll('.question-card').forEach((card, index) => {
+      if (index === 0) {
+        card.classList.remove('hidden');
+      } else {
+        card.classList.add('hidden');
+      }
+    });
+    
+    // Reset all options
+    document.querySelectorAll('.diagnostic-option').forEach(option => {
+      option.classList.remove('bg-amber-500', 'border-cyan-500');
+      option.classList.add('bg-slate-50', 'border-slate-300');
+    });
+    
+    // Hide results
+    document.getElementById('diagnostic-results').classList.add('hidden');
+  }
+</script>

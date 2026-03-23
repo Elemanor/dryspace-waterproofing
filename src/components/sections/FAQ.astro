@@ -1,0 +1,196 @@
+---
+export interface FAQItem {
+  question: string;
+  answer: string;
+  category?: string;
+}
+
+export interface Props {
+  title?: string;
+  subtitle?: string;
+  faqs?: FAQItem[];
+  columns?: 1 | 2;
+  showCategories?: boolean;
+}
+
+const {
+  title = "Frequently Asked Questions",
+  subtitle = "Everything you need to know about waterproofing and foundation repair",
+  columns = 2,
+  showCategories = true,
+  faqs = [
+    {
+      category: "Cost & Pricing",
+      question: "How much does basement waterproofing cost in Toronto?",
+      answer: "Basement waterproofing in Toronto typically ranges from $3,000 to $15,000 depending on the method. Interior waterproofing costs $3,000-$7,000, while exterior waterproofing ranges from $10,000-$15,000. We offer free inspections to provide accurate quotes, and you may qualify for up to $3,400 in city rebates."
+    },
+    {
+      category: "Cost & Pricing",
+      question: "Does insurance cover basement waterproofing?",
+      answer: "Most insurance policies don't cover waterproofing as it's considered preventive maintenance. However, they may cover sudden water damage from burst pipes or storms. We help document damage for insurance claims and offer flexible financing options with 0% interest for qualified homeowners."
+    },
+    {
+      category: "Process & Timeline",
+      question: "How long does waterproofing take?",
+      answer: "Interior waterproofing typically takes 1-2 days, while exterior waterproofing takes 3-5 days depending on the home's size. French drain installation takes 2-3 days, and crack injection can be completed in just a few hours. We work efficiently to minimize disruption to your daily routine."
+    },
+    {
+      category: "Process & Timeline",
+      question: "Do I need a permit for waterproofing in Toronto?",
+      answer: "Exterior waterproofing usually requires a permit in Toronto as it involves excavation. Interior waterproofing typically doesn't require permits. We handle all permit applications and approvals as part of our service, ensuring compliance with local building codes."
+    },
+    {
+      category: "Technical",
+      question: "What's the difference between interior and exterior waterproofing?",
+      answer: "Interior waterproofing manages water that enters your basement using drainage systems and sump pumps, costing less but treating symptoms. Exterior waterproofing prevents water from entering by applying membranes and drainage outside your foundation - more expensive but addresses the root cause. Many homes benefit from a combination approach."
+    },
+    {
+      category: "Technical",
+      question: "How do I know if I need waterproofing?",
+      answer: "Warning signs include: water stains on walls/floors, musty odors, visible mold, white powder (efflorescence) on walls, cracks in walls or floors, windows/doors sticking, and standing water. If you notice any of these signs, get a professional inspection immediately to prevent costly damage."
+    },
+    {
+      category: "Warranty & Service",
+      question: "What warranty do you offer?",
+      answer: "We provide a 25-year transferable warranty on exterior waterproofing and a 10-year warranty on interior systems. Our warranties cover materials and labor, are fully transferable to new owners (adding value to your home), and include free annual inspections for the first 5 years."
+    },
+    {
+      category: "Warranty & Service",
+      question: "Do you offer emergency services?",
+      answer: "Yes! We provide 24/7 emergency water removal and temporary waterproofing services. Our emergency team can respond within 2 hours in the Greater Toronto Area. Call 437-545-0067 anytime for immediate assistance with flooding or water damage."
+    },
+    {
+      category: "Local & Seasonal",
+      question: "When is the best time to waterproof in Toronto?",
+      answer: "Spring and summer are ideal for exterior waterproofing when the ground isn't frozen. However, interior waterproofing can be done year-round. Don't wait for 'perfect' timing - water damage can occur anytime, especially during Toronto's freeze-thaw cycles and spring flooding season."
+    },
+    {
+      category: "Local & Seasonal",
+      question: "Why is waterproofing important in Toronto?",
+      answer: "Toronto's unique challenges include: clay soil that expands when wet, freeze-thaw cycles causing foundation cracks, high water table near Lake Ontario, aging housing stock (many homes 50+ years old), and increased extreme weather events. These factors make waterproofing essential for protecting your investment."
+    }
+  ]
+} = Astro.props;
+
+const groupedFaqs = showCategories
+  ? faqs.reduce((acc, faq) => {
+      const category = faq.category || 'General';
+      if (!acc[category]) acc[category] = [];
+      acc[category].push(faq);
+      return acc;
+    }, {} as Record<string, FAQItem[]>)
+  : { 'All': faqs };
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(faq => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer
+    }
+  }))
+};
+---
+
+<section class="section-padding bg-slate-50">
+  <div class="container mx-auto px-4">
+    <!-- Section Header -->
+    <div class="text-center max-w-3xl mx-auto mb-12 lg:mb-16">
+      <p class="section-label-pill mb-4">FAQ</p>
+      <h2 class="text-headline text-slate-900">{title}</h2>
+      <p class="mt-4 text-lg text-slate-600">{subtitle}</p>
+    </div>
+
+    <!-- FAQ Items -->
+    <div class={`max-w-${columns === 1 ? '3xl' : '6xl'} mx-auto`}>
+      {showCategories && Object.keys(groupedFaqs).length > 1 ? (
+        <div class="space-y-10">
+          {Object.entries(groupedFaqs).map(([category, categoryFaqs]) => (
+            <div>
+              <h3 class="text-lg font-semibold text-slate-900 mb-4 pl-1">{category}</h3>
+              <div class={`grid grid-cols-1 ${columns === 2 ? 'lg:grid-cols-2' : ''} gap-3`}>
+                {categoryFaqs.map((faq) => (
+                  <details class="group rounded-xl border border-slate-200 bg-white px-6 transition-all data-[state=open]:border-cyan-200 data-[state=open]:shadow-card">
+                    <summary class="flex items-center justify-between py-5 cursor-pointer list-none [&::-webkit-details-marker]:hidden">
+                      <h4 class="text-[15px] font-medium text-slate-900 pr-4 group-open:text-cyan-600 transition-colors">
+                        {faq.question}
+                      </h4>
+                      <svg
+                        class="flex-shrink-0 w-5 h-5 text-slate-400 transform transition-transform duration-300 group-open:rotate-180 group-open:text-cyan-500"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </summary>
+                    <div class="pb-5">
+                      <p class="text-sm text-slate-600 leading-relaxed">{faq.answer}</p>
+                    </div>
+                  </details>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      ) : (
+        <div class={`grid grid-cols-1 ${columns === 2 ? 'lg:grid-cols-2' : ''} gap-3`}>
+          {faqs.map((faq) => (
+            <details class="group rounded-xl border border-slate-200 bg-white px-6 transition-all">
+              <summary class="flex items-center justify-between py-5 cursor-pointer list-none [&::-webkit-details-marker]:hidden">
+                <h4 class="text-[15px] font-medium text-slate-900 pr-4 group-open:text-cyan-600 transition-colors">
+                  {faq.question}
+                </h4>
+                <svg
+                  class="flex-shrink-0 w-5 h-5 text-slate-400 transform transition-transform duration-300 group-open:rotate-180 group-open:text-cyan-500"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </summary>
+              <div class="pb-5">
+                <p class="text-sm text-slate-600 leading-relaxed">{faq.answer}</p>
+              </div>
+            </details>
+          ))}
+        </div>
+      )}
+    </div>
+
+    <!-- CTA Section -->
+    <div class="text-center mt-12">
+      <div class="inline-block rounded-xl bg-cyan-50 border border-cyan-100 p-6">
+        <p class="text-sm font-semibold text-slate-900 mb-1.5">Still have questions?</p>
+        <p class="text-sm text-slate-600">
+          Call <a href="tel:437-545-0067" class="font-semibold text-cyan-600 hover:text-cyan-700 transition-colors">437-545-0067</a> or
+          book a <a href="/free-inspection" class="font-semibold text-cyan-600 hover:text-cyan-700 transition-colors">free inspection</a>.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ Schema Markup for SEO -->
+<script type="application/ld+json" set:html={JSON.stringify(faqSchema)}></script>
+
+<style>
+  details[open] summary ~ * {
+    animation: slideDown 0.3s ease-out;
+  }
+
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>

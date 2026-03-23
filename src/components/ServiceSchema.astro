@@ -1,0 +1,134 @@
+---
+export interface Props {
+  serviceName: string;
+  description: string;
+  priceRange?: string;
+  areaServed?: string[];
+  offers?: Array<{
+    name: string;
+    price: string;
+    description: string;
+  }>;
+  faqs?: Array<{
+    question: string;
+    answer: string;
+  }>;
+}
+
+const { 
+  serviceName, 
+  description, 
+  priceRange = '$1,000-$25,000',
+  areaServed = ['Toronto', 'Mississauga', 'Brampton', 'Vaughan', 'Markham', 'Richmond Hill'],
+  offers = [],
+  faqs = []
+} = Astro.props;
+
+const currentURL = Astro.url.href;
+
+// Service Schema with HowTo
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": serviceName,
+  "description": description,
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "DrySpace Waterproofing",
+    "telephone": "+1-437-545-0067",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Toronto, ON",
+      "addressLocality": "Toronto",
+      "addressRegion": "ON",
+      "postalCode": "M5V 3A8",
+      "addressCountry": "CA"
+    },
+    "priceRange": priceRange,
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "287",
+      "bestRating": "5"
+    }
+  },
+  "areaServed": areaServed.map(area => ({
+    "@type": "City",
+    "name": area
+  })),
+  "hasOfferCatalog": offers.length > 0 ? {
+    "@type": "OfferCatalog",
+    "name": `${serviceName} Options`,
+    "itemListElement": offers.map((offer, index) => ({
+      "@type": "Offer",
+      "position": index + 1,
+      "name": offer.name,
+      "price": offer.price,
+      "priceCurrency": "CAD",
+      "description": offer.description,
+      "availability": "https://schema.org/InStock"
+    }))
+  } : undefined,
+  "potentialAction": {
+    "@type": "OrderAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "https://dryspacewaterproofing.ca/contact",
+      "actionPlatform": [
+        "http://schema.org/DesktopWebPlatform",
+        "http://schema.org/MobileWebPlatform"
+      ]
+    },
+    "result": {
+      "@type": "Order",
+      "orderStatus": "https://schema.org/OrderPaymentDue"
+    }
+  }
+};
+
+// FAQ Schema if FAQs provided
+const faqSchema = faqs.length > 0 ? {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(faq => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer
+    }
+  }))
+} : null;
+
+// BreadcrumbList
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://dryspacewaterproofing.ca"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Services",
+      "item": "https://dryspacewaterproofing.ca/services"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": serviceName,
+      "item": currentURL
+    }
+  ]
+};
+
+// Combine all schemas
+const schemas = [serviceSchema, breadcrumbSchema];
+if (faqSchema) schemas.push(faqSchema);
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(schemas)}></script>

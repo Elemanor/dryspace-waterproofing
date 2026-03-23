@@ -1,0 +1,1297 @@
+---
+import Hero from '../components/sections/Hero.astro';
+import Stats from '../components/sections/Stats.astro';
+import PageLayout from '../layouts/PageLayout.astro';
+import FAQ from '../components/FAQ.astro';
+import ContactForm from '../components/ContactForm.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<PageLayout 
+  title="Waterproofing Financing Options | 0% Interest Available | Dryspace" 
+  description="Flexible financing options for your waterproofing project. 0% interest for 12 months, extended payment plans, and instant approvals. Make your basement waterproofing affordable with our financing solutions."
+>
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-text">
+          <div class="hero-badge">
+            <i class="fa-solid fa-credit-card border-2 border-slate-200"></i>
+            Flexible Financing • 0% Interest Available
+          </div>
+          <h1 class="text-5xl font-bold text-slate-900 uppercase">FLEXIBLE WATERPROOFING FINANCING OPTIONS</h1>
+          <p class="hero-description">Don't let budget concerns delay your basement protection. We offer flexible financing solutions including 0% interest options, extended payment plans, and instant approvals to make waterproofing affordable for every homeowner.</p>
+          <div class="hero-features">
+            <div class="hero-feature">
+              <span class="checkmark"></span>
+              <span>0% Interest for 12 Months</span>
+            </div>
+            <div class="hero-feature">
+              <span class="checkmark"></span>
+              <span>Instant Online Approval</span>
+            </div>
+            <div class="hero-feature">
+              <span class="checkmark"></span>
+              <span>No Prepayment Penalties</span>
+            </div>
+            <div class="hero-feature">
+              <span class="checkmark"></span>
+              <span>Payment Plans Up to 10 Years</span>
+            </div>
+          </div>
+          <div class="hero-stats">
+            <div class="stat-item">
+              <div class="stat-value">0%</div>
+              <div class="stat-label">Interest Rate</div>
+              <div class="stat-note">12 months</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-value">$0</div>
+              <div class="stat-label">Down Payment</div>
+              <div class="stat-note">Required</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-value">2</div>
+              <div class="stat-label">Minute</div>
+              <div class="stat-note">Approval</div>
+            </div>
+          </div>
+          <div class="hero-cta">
+            <a href="#apply-now" class="btn-primary">
+              <i class="fa-solid fa-play"></i>
+              Apply for Financing
+            </a>
+            <a href="tel:437-545-0067" class="btn-secondary">
+              <i class="fa-solid fa-phone"></i>
+              Call: 437-545-0067
+            </a>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="financing-showcase">
+            <h3 class="text-2xl font-bold text-slate-900 uppercase">POPULAR FINANCING OPTIONS</h3>
+            <div class="showcase-options">
+              <div class="showcase-option featured">
+                <div class="option-header">
+                  <span class="rate">0%</span>
+                  <span class="badge">Most Popular</span>
+                </div>
+                <div class="option-details">
+                  <div class="term">12 Months</div>
+                  <div class="payment">$1,000/month</div>
+                  <div class="total">$12,000 project</div>
+                </div>
+                <div class="option-benefits">
+                  <span> No interest charges</span>
+                  <span> No hidden fees</span>
+                </div>
+              </div>
+              <div class="showcase-option">
+                <div class="option-header">
+                  <span class="rate">4.9%</span>
+                </div>
+                <div class="option-details">
+                  <div class="term">60 Months</div>
+                  <div class="payment">$226/month</div>
+                  <div class="total">$12,000 project</div>
+                </div>
+                <div class="option-benefits">
+                  <span> Low monthly payment</span>
+                  <span> Extended term</span>
+                </div>
+              </div>
+              <div class="showcase-option">
+                <div class="option-header">
+                  <span class="rate">7.9%</span>
+                </div>
+                <div class="option-details">
+                  <div class="term">120 Months</div>
+                  <div class="payment">$146/month</div>
+                  <div class="total">$12,000 project</div>
+                </div>
+                <div class="option-benefits">
+                  <span> Lowest payment</span>
+                  <span> Maximum flexibility</span>
+                </div>
+              </div>
+            </div>
+            <div class="showcase-note">
+              <i class="fa-solid fa-info-circle"></i>
+              <span>Rates shown are for qualified applicants. Use calculator below for personalized options.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Financing Calculator -->
+  <section class="financing-calculator">
+    <div class="container">
+      <h2 class="text-4xl font-bold text-slate-900 uppercase">PAYMENT CALCULATOR</h2>
+      <p class="section-intro">Calculate your monthly payment with our interactive financing calculator</p>
+      
+      <div class="calculator-layout">
+        <div class="calculator-form">
+          <h3 class="text-2xl font-bold text-slate-900 uppercase">PROJECT DETAILS</h3>
+          
+          <div class="form-section">
+            <div class="form-group">
+              <label for="projectCost">Total Project Cost</label>
+              <div class="input-with-slider">
+                <input type="range" id="projectCostSlider" min="5000" max="50000" value="15000" step="500">
+                <input type="number" id="projectCost" value="15000" min="5000" max="50000" step="500">
+              </div>
+              <div class="cost-examples">
+                <button type="button" class="cost-preset" data-cost="8000">$8K - Interior System</button>
+                <button type="button" class="cost-preset" data-cost="15000">$15K - Typical Project</button>
+                <button type="button" class="cost-preset" data-cost="25000">$25K - Exterior + Interior</button>
+                <button type="button" class="cost-preset" data-cost="35000">$35K - Complete Solution</button>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="downPayment">Down Payment (Optional)</label>
+              <div class="input-with-slider">
+                <input type="range" id="downPaymentSlider" min="0" max="10000" value="0" step="100">
+                <input type="number" id="downPayment" value="0" min="0" max="10000" step="100">
+              </div>
+              <div class="down-payment-note">
+                <i class="fa-solid fa-lightbulb"></i>
+                <span>No down payment required, but any amount helps reduce monthly payments</span>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label>Preferred Payment Term</label>
+              <div class="term-options">
+                <label class="term-option">
+                  <input type="radio" name="term" value="12" checked>
+                  <span class="term-card border-2 border-slate-200">
+                    <span class="term-months">12 Months</span>
+                    <span class="term-rate">0% Interest</span>
+                    <span class="term-note">No interest charges</span>
+                  </span>
+                </label>
+                <label class="term-option">
+                  <input type="radio" name="term" value="24">
+                  <span class="term-card border-2 border-slate-200">
+                    <span class="term-months">24 Months</span>
+                    <span class="term-rate">3.9% Interest</span>
+                    <span class="term-note">Low rate</span>
+                  </span>
+                </label>
+                <label class="term-option">
+                  <input type="radio" name="term" value="36">
+                  <span class="term-card border-2 border-slate-200">
+                    <span class="term-months">36 Months</span>
+                    <span class="term-rate">4.9% Interest</span>
+                    <span class="term-note">Balanced payment</span>
+                  </span>
+                </label>
+                <label class="term-option">
+                  <input type="radio" name="term" value="60">
+                  <span class="term-card border-2 border-slate-200">
+                    <span class="term-months">60 Months</span>
+                    <span class="term-rate">6.9% Interest</span>
+                    <span class="term-note">Lower payment</span>
+                  </span>
+                </label>
+                <label class="term-option">
+                  <input type="radio" name="term" value="120">
+                  <span class="term-card border-2 border-slate-200">
+                    <span class="term-months">120 Months</span>
+                    <span class="term-rate">8.9% Interest</span>
+                    <span class="term-note">Lowest payment</span>
+                  </span>
+                </label>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label>Credit Score Range (Optional)</label>
+              <select id="creditScore">
+                <option value="excellent">Excellent (750+)</option>
+                <option value="good" selected>Good (650-749)</option>
+                <option value="fair">Fair (600-649)</option>
+                <option value="poor">Poor (Below 600)</option>
+                <option value="unknown">Don't Know</option>
+              </select>
+              <div class="credit-note">
+                <i class="fa-solid fa-info-circle"></i>
+                <span>We offer financing options for all credit levels</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="calculator-results">
+          <h3 class="text-2xl font-bold text-slate-900 uppercase">YOUR PAYMENT OPTIONS</h3>
+          
+          <div class="results-header">
+            <div class="project-summary">
+              <div class="summary-item">
+                <span class="label">Project Cost:</span>
+                <span class="value" id="displayProjectCost">$15,000</span>
+              </div>
+              <div class="summary-item">
+                <span class="label">Down Payment:</span>
+                <span class="value" id="displayDownPayment">$0</span>
+              </div>
+              <div class="summary-item">
+                <span class="label">Amount to Finance:</span>
+                <span class="value" id="displayFinanceAmount">$15,000</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="payment-options">
+            <div class="payment-option selected" data-term="12">
+              <div class="option-header">
+                <div class="option-term">12 Months</div>
+                <div class="option-rate">0% Interest</div>
+              </div>
+              <div class="option-payment">
+                <span class="payment-amount" id="payment12">$1,250</span>
+                <span class="payment-period">per month</span>
+              </div>
+              <div class="option-details">
+                <div class="detail-row">
+                  <span>Total Interest:</span>
+                  <span id="interest12">$0</span>
+                </div>
+                <div class="detail-row">
+                  <span>Total Amount:</span>
+                  <span id="total12">$15,000</span>
+                </div>
+              </div>
+              <div class="option-benefits">
+                <span> No interest charges</span>
+                <span> Pay off fastest</span>
+              </div>
+            </div>
+
+            <div class="payment-option" data-term="24">
+              <div class="option-header">
+                <div class="option-term">24 Months</div>
+                <div class="option-rate">3.9% Interest</div>
+              </div>
+              <div class="option-payment">
+                <span class="payment-amount" id="payment24">$651</span>
+                <span class="payment-period">per month</span>
+              </div>
+              <div class="option-details">
+                <div class="detail-row">
+                  <span>Total Interest:</span>
+                  <span id="interest24">$624</span>
+                </div>
+                <div class="detail-row">
+                  <span>Total Amount:</span>
+                  <span id="total24">$15,624</span>
+                </div>
+              </div>
+              <div class="option-benefits">
+                <span> Moderate payment</span>
+                <span> Low interest rate</span>
+              </div>
+            </div>
+
+            <div class="payment-option" data-term="36">
+              <div class="option-header">
+                <div class="option-term">36 Months</div>
+                <div class="option-rate">4.9% Interest</div>
+              </div>
+              <div class="option-payment">
+                <span class="payment-amount" id="payment36">$447</span>
+                <span class="payment-period">per month</span>
+              </div>
+              <div class="option-details">
+                <div class="detail-row">
+                  <span>Total Interest:</span>
+                  <span id="interest36">$1,092</span>
+                </div>
+                <div class="detail-row">
+                  <span>Total Amount:</span>
+                  <span id="total36">$16,092</span>
+                </div>
+              </div>
+              <div class="option-benefits">
+                <span> Balanced payment</span>
+                <span> Popular choice</span>
+              </div>
+            </div>
+
+            <div class="payment-option" data-term="60">
+              <div class="option-header">
+                <div class="option-term">60 Months</div>
+                <div class="option-rate">6.9% Interest</div>
+              </div>
+              <div class="option-payment">
+                <span class="payment-amount" id="payment60">$296</span>
+                <span class="payment-period">per month</span>
+              </div>
+              <div class="option-details">
+                <div class="detail-row">
+                  <span>Total Interest:</span>
+                  <span id="interest60">$2,760</span>
+                </div>
+                <div class="detail-row">
+                  <span>Total Amount:</span>
+                  <span id="total60">$17,760</span>
+                </div>
+              </div>
+              <div class="option-benefits">
+                <span> Lower monthly payment</span>
+                <span> Better cash flow</span>
+              </div>
+            </div>
+
+            <div class="payment-option" data-term="120">
+              <div class="option-header">
+                <div class="option-term">120 Months</div>
+                <div class="option-rate">8.9% Interest</div>
+              </div>
+              <div class="option-payment">
+                <span class="payment-amount" id="payment120">$189</span>
+                <span class="payment-period">per month</span>
+              </div>
+              <div class="option-details">
+                <div class="detail-row">
+                  <span>Total Interest:</span>
+                  <span id="interest120">$7,680</span>
+                </div>
+                <div class="detail-row">
+                  <span>Total Amount:</span>
+                  <span id="total120">$22,680</span>
+                </div>
+              </div>
+              <div class="option-benefits">
+                <span> Lowest monthly payment</span>
+                <span> Maximum affordability</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="results-actions">
+            <a href="#apply-now" class="btn-apply">
+              <i class="fa-solid fa-credit-card border-2 border-slate-200"></i>
+              Apply for This Option
+            </a>
+            <button type="button" class="btn-compare" id="compareOptions">
+              <i class="fa-solid fa-balance-scale"></i>
+              Compare All Options
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Financing Options -->
+  <section class="financing-options">
+    <div class="container">
+      <h2 class="text-4xl font-bold text-slate-900 uppercase">OUR FINANCING PARTNERS</h2>
+      <p class="section-intro">We work with trusted lending partners to offer the best rates and terms</p>
+      
+      <div class="partners-grid">
+        <div class="partner-card primary border-2 border-slate-200">
+          <div class="partner-header">
+            <div class="partner-logo">
+              <i class="fa-solid fa-building-columns"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-slate-900 uppercase">DRYSPACE DIRECT FINANCING</h3>
+            <div class="partner-badge">Recommended</div>
+          </div>
+          <div class="partner-details">
+            <div class="key-features">
+              <div class="feature-item">
+                <i class="fa-solid fa-percentage"></i>
+                <span>0% Interest Available</span>
+              </div>
+              <div class="feature-item">
+                <i class="fa-solid fa-clock"></i>
+                <span>Instant Decision</span>
+              </div>
+              <div class="feature-item">
+                <i class="fa-solid fa-shield-check"></i>
+                <span>No Hidden Fees</span>
+              </div>
+              <div class="feature-item">
+                <i class="fa-solid fa-calendar-alt"></i>
+                <span>Flexible Terms</span>
+              </div>
+            </div>
+            <div class="partner-offers">
+              <h4 class="text-xl font-bold text-slate-900 uppercase">AVAILABLE OPTIONS:</h4>
+              <ul>
+                <li><strong>0% APR</strong> for 12 months (OAC)</li>
+                <li><strong>3.9% APR</strong> for 24 months</li>
+                <li><strong>4.9% APR</strong> for 36 months</li>
+                <li><strong>6.9% APR</strong> for 60 months</li>
+              </ul>
+            </div>
+            <div class="partner-benefits">
+              <h4 class="text-xl font-bold text-slate-900 uppercase">WHY CHOOSE DIRECT FINANCING:</h4>
+              <ul>
+                <li>Streamlined approval process</li>
+                <li>Work directly with Dryspace</li>
+                <li>Coordinated project scheduling</li>
+                <li>Single point of contact</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="partner-card border-2 border-slate-200">
+          <div class="partner-header">
+            <div class="partner-logo">
+              <i class="fa-solid fa-university"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-slate-900 uppercase">TRADITIONAL BANK FINANCING</h3>
+          </div>
+          <div class="partner-details">
+            <div class="key-features">
+              <div class="feature-item">
+                <i class="fa-solid fa-chart-line"></i>
+                <span>Competitive Rates</span>
+              </div>
+              <div class="feature-item">
+                <i class="fa-solid fa-calendar-days"></i>
+                <span>Extended Terms</span>
+              </div>
+              <div class="feature-item">
+                <i class="fa-solid fa-handshake"></i>
+                <span>Established Relationships</span>
+              </div>
+            </div>
+            <div class="partner-offers">
+              <h4 class="text-xl font-bold text-slate-900 uppercase">TYPICAL OPTIONS:</h4>
+              <ul>
+                <li><strong>Home Equity Line of Credit</strong></li>
+                <li><strong>Personal Loans</strong> up to 7 years</li>
+                <li><strong>Home Improvement Loans</strong></li>
+                <li><strong>Secured Loans</strong> with collateral</li>
+              </ul>
+            </div>
+            <div class="partner-benefits">
+              <h4 class="text-xl font-bold text-slate-900 uppercase">ADVANTAGES:</h4>
+              <ul>
+                <li>Potentially lower long-term rates</li>
+                <li>Higher credit limits available</li>
+                <li>Tax-deductible interest (some loans)</li>
+                <li>Relationship building with your bank</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="partner-card border-2 border-slate-200">
+          <div class="partner-header">
+            <div class="partner-logo">
+              <i class="fa-solid fa-mobile-alt"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-slate-900 uppercase">ONLINE LENDING PLATFORMS</h3>
+          </div>
+          <div class="partner-details">
+            <div class="key-features">
+              <div class="feature-item">
+                <i class="fa-solid fa-bolt"></i>
+                <span>Fast Approval</span>
+              </div>
+              <div class="feature-item">
+                <i class="fa-solid fa-users"></i>
+                <span>Flexible Requirements</span>
+              </div>
+              <div class="feature-item">
+                <i class="fa-solid fa-laptop"></i>
+                <span>Digital Process</span>
+              </div>
+            </div>
+            <div class="partner-offers">
+              <h4 class="text-xl font-bold text-slate-900 uppercase">POPULAR OPTIONS:</h4>
+              <ul>
+                <li><strong>Personal Loans</strong> 2-7 years</li>
+                <li><strong>Peer-to-Peer Lending</strong></li>
+                <li><strong>Alternative Credit</strong> assessment</li>
+                <li><strong>Same-day Funding</strong> available</li>
+              </ul>
+            </div>
+            <div class="partner-benefits">
+              <h4 class="text-xl font-bold text-slate-900 uppercase">BENEFITS:</h4>
+              <ul>
+                <li>Quick approval process</li>
+                <li>Flexible credit requirements</li>
+                <li>Competitive rates for good credit</li>
+                <li>Entirely online application</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Application Process -->
+  <section class="application-process">
+    <div class="container">
+      <h2 class="text-4xl font-bold text-slate-900 uppercase">SIMPLE 3-STEP APPLICATION PROCESS</h2>
+      <p class="section-intro">Get approved for financing in minutes with our streamlined process</p>
+      
+      <div class="process-steps">
+        <div class="process-step">
+          <div class="step-number">1</div>
+          <div class="step-content">
+            <h3 class="text-2xl font-bold text-slate-900 uppercase">APPLY ONLINE</h3>
+            <p>Complete our secure online application in just 2-3 minutes. We only ask for essential information to get you pre-qualified.</p>
+            <ul>
+              <li>Basic personal information</li>
+              <li>Employment details</li>
+              <li>Preferred loan amount and term</li>
+              <li>Secure SSL encryption</li>
+            </ul>
+            <div class="step-time">
+              <i class="fa-solid fa-clock"></i>
+              <span>2-3 minutes</span>
+            </div>
+          </div>
+          <div class="step-visual">
+            <div class="application-form-preview">
+              <div class="form-header">
+                <h4 class="text-xl font-bold text-slate-900 uppercase">QUICK APPLICATION</h4>
+                <div class="security-badge">
+                  <i class="fa-solid fa-lock"></i>
+                  <span>Secure</span>
+                </div>
+              </div>
+              <div class="form-fields">
+                <div class="field-group">
+                  <div class="field-placeholder"></div>
+                  <div class="field-placeholder short"></div>
+                </div>
+                <div class="field-group">
+                  <div class="field-placeholder medium"></div>
+                  <div class="field-placeholder"></div>
+                </div>
+                <div class="field-group">
+                  <div class="field-placeholder long"></div>
+                </div>
+              </div>
+              <div class="form-button">Apply Now</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="process-step">
+          <div class="step-number">2</div>
+          <div class="step-content">
+            <h3 class="text-2xl font-bold text-slate-900 uppercase">INSTANT DECISION</h3>
+            <p>Receive an instant pre-approval decision with multiple financing options tailored to your situation.</p>
+            <ul>
+              <li>Automated credit assessment</li>
+              <li>Multiple offer comparison</li>
+              <li>No impact on credit score</li>
+              <li>Transparent terms and rates</li>
+            </ul>
+            <div class="step-time">
+              <i class="fa-solid fa-clock"></i>
+              <span>Under 60 seconds</span>
+            </div>
+          </div>
+          <div class="step-visual">
+            <div class="approval-preview">
+              <div class="approval-header">
+                <i class="fa-solid fa-check-circle"></i>
+                <h4 class="text-xl font-bold text-slate-900 uppercase">PRE-APPROVED!</h4>
+              </div>
+              <div class="approval-options">
+                <div class="approval-option">
+                  <div class="option-rate">0%</div>
+                  <div class="option-term">12 mo</div>
+                </div>
+                <div class="approval-option">
+                  <div class="option-rate">4.9%</div>
+                  <div class="option-term">36 mo</div>
+                </div>
+                <div class="approval-option">
+                  <div class="option-rate">6.9%</div>
+                  <div class="option-term">60 mo</div>
+                </div>
+              </div>
+              <div class="approval-amount">
+                Up to $25,000 approved
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="process-step">
+          <div class="step-number">3</div>
+          <div class="step-content">
+            <h3 class="text-2xl font-bold text-slate-900 uppercase">START YOUR PROJECT</h3>
+            <p>Choose your preferred option, complete final documentation, and schedule your waterproofing project.</p>
+            <ul>
+              <li>Select best financing option</li>
+              <li>E-sign loan documents</li>
+              <li>Schedule project start date</li>
+              <li>Work begins immediately</li>
+            </ul>
+            <div class="step-time">
+              <i class="fa-solid fa-clock"></i>
+              <span>Same day project start</span>
+            </div>
+          </div>
+          <div class="step-visual">
+            <div class="project-preview">
+              <div class="project-header">
+                <h4 class="text-xl font-bold text-slate-900 uppercase">PROJECT SCHEDULED</h4>
+                <div class="project-date">
+                  <i class="fa-solid fa-calendar"></i>
+                  <span>Tomorrow 9:00 AM</span>
+                </div>
+              </div>
+              <div class="project-details">
+                <div class="project-item">
+                  <i class="fa-solid fa-tools"></i>
+                  <span>Crew dispatched</span>
+                </div>
+                <div class="project-item">
+                  <i class="fa-solid fa-truck"></i>
+                  <span>Materials ready</span>
+                </div>
+                <div class="project-item">
+                  <i class="fa-solid fa-shield-check"></i>
+                  <span>Warranty active</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Financing Application Form -->
+  <section class="financing-application" id="apply-now">
+    <div class="container">
+      <h2 class="text-4xl font-bold text-slate-900 uppercase">APPLY FOR FINANCING</h2>
+      <p class="section-intro">Get pre-qualified in minutes with our secure online application</p>
+      
+      <div class="application-layout">
+        <div class="application-form">
+          <form id="financingApplication">
+            <div class="form-section">
+              <h3 class="text-2xl font-bold text-slate-900 uppercase">PERSONAL INFORMATION</h3>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="firstName">First Name *</label>
+                  <input type="text" id="firstName" name="firstName" required>
+                </div>
+                <div class="form-group">
+                  <label for="lastName">Last Name *</label>
+                  <input type="text" id="lastName" name="lastName" required>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="email">Email Address *</label>
+                  <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                  <label for="phone">Phone Number *</label>
+                  <input type="tel" id="phone" name="phone" required>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="address">Home Address *</label>
+                <input type="text" id="address" name="address" placeholder="123 Main Street, Toronto, ON M1A 1A1" required>
+              </div>
+            </div>
+
+            <div class="form-section">
+              <h3 class="text-2xl font-bold text-slate-900 uppercase">EMPLOYMENT & INCOME</h3>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="employmentStatus">Employment Status *</label>
+                  <select id="employmentStatus" name="employmentStatus" required>
+                    <option value="">Select employment status</option>
+                    <option value="employed">Full-time Employed</option>
+                    <option value="self-employed">Self-employed</option>
+                    <option value="part-time">Part-time Employed</option>
+                    <option value="contract">Contract/Freelance</option>
+                    <option value="retired">Retired</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="employer">Employer Name</label>
+                  <input type="text" id="employer" name="employer">
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="annualIncome">Annual Household Income *</label>
+                  <select id="annualIncome" name="annualIncome" required>
+                    <option value="">Select income range</option>
+                    <option value="25000-35000">$25,000 - $35,000</option>
+                    <option value="35000-50000">$35,000 - $50,000</option>
+                    <option value="50000-75000">$50,000 - $75,000</option>
+                    <option value="75000-100000">$75,000 - $100,000</option>
+                    <option value="100000-150000">$100,000 - $150,000</option>
+                    <option value="150000+">$150,000+</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="timeAtJob">Time at Current Job</label>
+                  <select id="timeAtJob" name="timeAtJob">
+                    <option value="">Select duration</option>
+                    <option value="less-than-6-months">Less than 6 months</option>
+                    <option value="6-12-months">6-12 months</option>
+                    <option value="1-2-years">1-2 years</option>
+                    <option value="2-5-years">2-5 years</option>
+                    <option value="5-plus-years">5+ years</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-section">
+              <h3 class="text-2xl font-bold text-slate-900 uppercase">LOAN INFORMATION</h3>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="requestedAmount">Requested Loan Amount *</label>
+                  <select id="requestedAmount" name="requestedAmount" required>
+                    <option value="">Select amount</option>
+                    <option value="5000-10000">$5,000 - $10,000</option>
+                    <option value="10000-15000">$10,000 - $15,000</option>
+                    <option value="15000-20000">$15,000 - $20,000</option>
+                    <option value="20000-25000">$20,000 - $25,000</option>
+                    <option value="25000-35000">$25,000 - $35,000</option>
+                    <option value="35000+">$35,000+</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="preferredTerm">Preferred Payment Term *</label>
+                  <select id="preferredTerm" name="preferredTerm" required>
+                    <option value="">Select term</option>
+                    <option value="12">12 months (0% interest)</option>
+                    <option value="24">24 months</option>
+                    <option value="36">36 months</option>
+                    <option value="60">60 months</option>
+                    <option value="120">120 months</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="projectType">Type of Waterproofing Work</label>
+                <select id="projectType" name="projectType">
+                  <option value="">Select project type</option>
+                  <option value="exterior-waterproofing">Exterior Waterproofing</option>
+                  <option value="interior-drainage">Interior Drainage System</option>
+                  <option value="foundation-repair">Foundation Repair</option>
+                  <option value="combination-project">Combination Project</option>
+                  <option value="emergency-repair">Emergency Repair</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-section">
+              <h3 class="text-2xl font-bold text-slate-900 uppercase">ADDITIONAL INFORMATION</h3>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="creditScore">Estimated Credit Score</label>
+                  <select id="creditScore" name="creditScore">
+                    <option value="">Select range (optional)</option>
+                    <option value="excellent">Excellent (750+)</option>
+                    <option value="good">Good (650-749)</option>
+                    <option value="fair">Fair (600-649)</option>
+                    <option value="poor">Poor (Below 600)</option>
+                    <option value="unknown">Don't know</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="homeOwnership">Home Ownership Status</label>
+                  <select id="homeOwnership" name="homeOwnership">
+                    <option value="own">Own my home</option>
+                    <option value="rent">Rent my home</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="additionalInfo">Additional Information (Optional)</label>
+                <textarea id="additionalInfo" name="additionalInfo" rows="3" placeholder="Tell us about your project timeline, special circumstances, or any questions you have..."></textarea>
+              </div>
+            </div>
+
+            <div class="form-section">
+              <div class="form-checkboxes">
+                <label class="checkbox-label">
+                  <input type="checkbox" name="creditConsent" required>
+                  <span class="checkmark"></span>
+                  <span>I authorize Dryspace Waterproofing and its lending partners to perform a credit check for the purpose of financing qualification</span>
+                </label>
+                <label class="checkbox-label">
+                  <input type="checkbox" name="communicationConsent" required>
+                  <span class="checkmark"></span>
+                  <span>I agree to receive communications about my financing application and waterproofing services</span>
+                </label>
+                <label class="checkbox-label">
+                  <input type="checkbox" name="termsConsent" required>
+                  <span class="checkmark"></span>
+                  <span>I agree to the <a href="/terms" target="_blank">Terms and Conditions</a> and <a href="/privacy" target="_blank">Privacy Policy</a></span>
+                </label>
+              </div>
+            </div>
+
+            <button type="submit" class="btn-submit">
+              <i class="fa-solid fa-paper-plane"></i>
+              Submit Application
+            </button>
+          </form>
+        </div>
+
+        <div class="application-sidebar">
+          <div class="security-assurance">
+            <div class="security-header">
+              <i class="fa-solid fa-shield-check"></i>
+              <h3 class="text-2xl font-bold text-slate-900 uppercase">YOUR INFORMATION IS SECURE</h3>
+            </div>
+            <div class="security-features">
+              <div class="security-feature">
+                <i class="fa-solid fa-lock"></i>
+                <div>
+                  <strong>256-bit SSL Encryption</strong>
+                  <p>Bank-level security protects your data</p>
+                </div>
+              </div>
+              <div class="security-feature">
+                <i class="fa-solid fa-eye-slash"></i>
+                <div>
+                  <strong>Privacy Protected</strong>
+                  <p>Your information is never sold or shared</p>
+                </div>
+              </div>
+              <div class="security-feature">
+                <i class="fa-solid fa-user-shield"></i>
+                <div>
+                  <strong>Secure Processing</strong>
+                  <p>Trusted lending partner network</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="application-benefits">
+            <h3 class="text-2xl font-bold text-slate-900 uppercase">WHY APPLY WITH DRYSPACE?</h3>
+            <div class="benefits-list">
+              <div class="benefit-item">
+                <i class="fa-solid fa-clock"></i>
+                <span>Instant pre-approval decision</span>
+              </div>
+              <div class="benefit-item">
+                <i class="fa-solid fa-percentage"></i>
+                <span>0% interest options available</span>
+              </div>
+              <div class="benefit-item">
+                <i class="fa-solid fa-users"></i>
+                <span>Accept all credit types</span>
+              </div>
+              <div class="benefit-item">
+                <i class="fa-solid fa-handshake"></i>
+                <span>No prepayment penalties</span>
+              </div>
+              <div class="benefit-item">
+                <i class="fa-solid fa-phone"></i>
+                <span>Dedicated support team</span>
+              </div>
+              <div class="benefit-item">
+                <i class="fa-solid fa-tools"></i>
+                <span>Coordinated project scheduling</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-help">
+            <h3 class="text-2xl font-bold text-slate-900 uppercase">NEED HELP?</h3>
+            <p>Our financing specialists are here to help you find the best option for your situation.</p>
+            <div class="contact-options">
+              <a href="tel:437-545-0067" class="contact-option">
+                <i class="fa-solid fa-phone"></i>
+                <div>
+                  <strong>Call Now</strong>
+                  <span>437-545-0067</span>
+                </div>
+              </a>
+              <a href="mailto:p.vysotckii@gmail.com" class="contact-option">
+                <i class="fa-solid fa-envelope"></i>
+                <div>
+                  <strong>Email Us</strong>
+                  <span>p.vysotckii@gmail.com</span>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Financing Services Section -->
+  <section class="py-12 bg-slate-50">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-3xl font-bold mb-8 text-center">Services We Finance</h2>
+      <div class="grid md:grid-cols-3 gap-6 mb-8">
+        <!-- High-Cost Services -->
+        <div class="bg-white p-6  ">
+          <h3 class="text-xl font-bold mb-4 text-amber-500"> Major Projects</h3>
+          <p class="text-sm text-slate-500 mb-4">Large-scale waterproofing and foundation work</p>
+          <ul class="space-y-3">
+            <li><a href="/services/basement-lowering" class="text-slate-600 hover:text-amber-500 transition-colors flex justify-between items-center">Basement Lowering <span class="text-sm text-amber-500 font-semibold">$25K-50K</span></a></li>
+            <li><a href="/services/basement-lowering" class="text-slate-600 hover:text-amber-500 transition-colors flex justify-between items-center">Underpinning <span class="text-sm text-amber-500 font-semibold">$15K-35K</span></a></li>
+            <li><a href="/services/exterior-waterproofing" class="text-slate-600 hover:text-amber-500 transition-colors flex justify-between items-center">Exterior Waterproofing <span class="text-sm text-amber-500 font-semibold">$12K-25K</span></a></li>
+            <li><a href="/services/foundation-repair" class="text-slate-600 hover:text-amber-500 transition-colors flex justify-between items-center">Foundation Repair <span class="text-sm text-amber-500 font-semibold">$8K-20K</span></a></li>
+            <li><a href="/services/bowing-basement-walls" class="text-slate-600 hover:text-amber-500 transition-colors flex justify-between items-center">Wall Stabilization <span class="text-sm text-amber-500 font-semibold">$8K-20K</span></a></li>
+          </ul>
+        </div>
+
+        <!-- Medium-Cost Services -->
+        <div class="bg-white p-6  ">
+          <h3 class="text-xl font-bold mb-4 text-orange-600"> Standard Projects</h3>
+          <p class="text-sm text-slate-500 mb-4">Common waterproofing solutions</p>
+          <ul class="space-y-3">
+            <li><a href="/services/interior-waterproofing" class="text-slate-600 hover:text-orange-600 transition-colors flex justify-between items-center">Interior Waterproofing <span class="text-sm text-orange-600 font-semibold">$8K-15K</span></a></li>
+            <li><a href="/services/interior-drainage-systems" class="text-slate-600 hover:text-orange-600 transition-colors flex justify-between items-center">Weeping Tile Replacement <span class="text-sm text-orange-600 font-semibold">$8K-16K</span></a></li>
+            <li><a href="/services/interior-drainage-systems" class="text-slate-600 hover:text-orange-600 transition-colors flex justify-between items-center">French Drain Systems <span class="text-sm text-orange-600 font-semibold">$6K-12K</span></a></li>
+            <li><a href="/services/interior-drainage-systems" class="text-slate-600 hover:text-orange-600 transition-colors flex justify-between items-center">Interior Drainage <span class="text-sm text-orange-600 font-semibold">$5K-10K</span></a></li>
+            <li><a href="/services/mold-remediation" class="text-slate-600 hover:text-orange-600 transition-colors flex justify-between items-center">Mold Remediation <span class="text-sm text-orange-600 font-semibold">$3K-8K</span></a></li>
+          </ul>
+        </div>
+
+        <!-- Small-Cost Services -->
+        <div class="bg-white p-6  ">
+          <h3 class="text-xl font-bold mb-4 text-cyan-400"> Quick Solutions</h3>
+          <p class="text-sm text-slate-500 mb-4">Smaller repairs and preventive measures</p>
+          <ul class="space-y-3">
+            <li><a href="/services/sump-pump-installation" class="text-slate-600 hover:text-cyan-400 transition-colors flex justify-between items-center">Sump Pump Systems <span class="text-sm text-cyan-400 font-semibold">$1.5K-3.5K</span></a></li>
+            <li><a href="/services/foundation-crack-repair" class="text-slate-600 hover:text-cyan-400 transition-colors flex justify-between items-center">Crack Repair <span class="text-sm text-cyan-400 font-semibold">$500-2K</span></a></li>
+            <li><a href="/services/window-well-installation" class="text-slate-600 hover:text-cyan-400 transition-colors flex justify-between items-center">Window Wells <span class="text-sm text-cyan-400 font-semibold">$800-1.5K</span></a></li>
+            <li><a href="/services/backwater-valve-installation" class="text-slate-600 hover:text-cyan-400 transition-colors flex justify-between items-center">Backwater Valve <span class="text-sm text-cyan-400 font-semibold">$800-1.5K</span></a></li>
+            <li><a href="/services/emergency-waterproofing" class="text-slate-600 hover:text-cyan-400 transition-colors flex justify-between items-center">Emergency Water Removal <span class="text-sm text-cyan-400 font-semibold">$800-2.5K</span></a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="bg-amber-500 p-6 ">
+          <h3 class="text-lg font-bold mb-3"> Financing Tools</h3>
+          <ul class="space-y-2">
+            <li><a href="/financing#calculator" class="text-slate-900 hover:text-cyan-800 transition-colors">Monthly Payment Calculator →</a></li>
+            <li><a href="/financing#application" class="text-slate-900 hover:text-cyan-800 transition-colors">Apply for Financing →</a></li>
+            <li><a href="/pricing" class="text-slate-900 hover:text-cyan-800 transition-colors">View Service Pricing →</a></li>
+          </ul>
+        </div>
+
+        <div class="bg-cyan-50 p-6 ">
+          <h3 class="text-lg font-bold mb-3"> Financing Benefits</h3>
+          <ul class="space-y-2 text-slate-600">
+            <li><strong>0% APR</strong> - Available on 12-month terms</li>
+            <li><strong>No Prepayment Penalty</strong> - Pay off early anytime</li>
+            <li><strong>Quick Approval</strong> - Decisions in minutes</li>
+            <li><strong>All Credit Types</strong> - Options for everyone</li>
+          </ul>
+          <div class="mt-4">
+            <a href="tel:437-545-0067" class="text-cyan-400 hover:text-cyan-700 font-semibold">Call for Pre-Approval: 437-545-0067 →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <FAQ />
+  <ContactForm />
+  <Footer />
+
+  
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Calculator elements
+      const projectCostSlider = document.getElementById('projectCostSlider');
+      const projectCostInput = document.getElementById('projectCost');
+      const downPaymentSlider = document.getElementById('downPaymentSlider');
+      const downPaymentInput = document.getElementById('downPayment');
+      const termRadios = document.querySelectorAll('input[name="term"]');
+      const paymentOptions = document.querySelectorAll('.payment-option');
+      
+      // Display elements
+      const displayProjectCost = document.getElementById('displayProjectCost');
+      const displayDownPayment = document.getElementById('displayDownPayment');
+      const displayFinanceAmount = document.getElementById('displayFinanceAmount');
+      
+      // Payment display elements
+      const payment12 = document.getElementById('payment12');
+      const payment24 = document.getElementById('payment24');
+      const payment36 = document.getElementById('payment36');
+      const payment60 = document.getElementById('payment60');
+      const payment120 = document.getElementById('payment120');
+      
+      const interest12 = document.getElementById('interest12');
+      const interest24 = document.getElementById('interest24');
+      const interest36 = document.getElementById('interest36');
+      const interest60 = document.getElementById('interest60');
+      const interest120 = document.getElementById('interest120');
+      
+      const total12 = document.getElementById('total12');
+      const total24 = document.getElementById('total24');
+      const total36 = document.getElementById('total36');
+      const total60 = document.getElementById('total60');
+      const total120 = document.getElementById('total120');
+      
+      // Interest rates
+      const rates = {
+        12: 0.00,   // 0%
+        24: 0.039,  // 3.9%
+        36: 0.049,  // 4.9%
+        60: 0.069,  // 6.9%
+        120: 0.089  // 8.9%
+      };
+      
+      // Sync sliders with inputs
+      projectCostSlider.addEventListener('input', function() {
+        projectCostInput.value = this.value;
+        updateCalculator();
+      });
+      
+      projectCostInput.addEventListener('input', function() {
+        projectCostSlider.value = this.value;
+        updateCalculator();
+      });
+      
+      downPaymentSlider.addEventListener('input', function() {
+        downPaymentInput.value = this.value;
+        updateDownPaymentMax();
+        updateCalculator();
+      });
+      
+      downPaymentInput.addEventListener('input', function() {
+        downPaymentSlider.value = this.value;
+        updateCalculator();
+      });
+      
+      // Update down payment maximum based on project cost
+      function updateDownPaymentMax() {
+        const projectCost = parseInt(projectCostInput.value);
+        const maxDownPayment = Math.floor(projectCost * 0.5); // Max 50% down
+        downPaymentSlider.max = maxDownPayment;
+        downPaymentInput.max = maxDownPayment;
+        
+        if (parseInt(downPaymentInput.value) > maxDownPayment) {
+          downPaymentSlider.value = maxDownPayment;
+          downPaymentInput.value = maxDownPayment;
+        }
+      }
+      
+      // Cost preset buttons
+      const costPresets = document.querySelectorAll('.cost-preset');
+      costPresets.forEach(preset => {
+        preset.addEventListener('click', function() {
+          const cost = this.dataset.cost;
+          projectCostSlider.value = cost;
+          projectCostInput.value = cost;
+          updateDownPaymentMax();
+          updateCalculator();
+        });
+      });
+      
+      // Term selection
+      termRadios.forEach(radio => {
+        radio.addEventListener('change', function() {
+          updatePaymentOptionsSelection();
+          updateCalculator();
+        });
+      });
+      
+      // Payment option selection
+      paymentOptions.forEach(option => {
+        option.addEventListener('click', function() {
+          const term = this.dataset.term;
+          paymentOptions.forEach(opt => opt.classList.remove('selected'));
+          this.classList.add('selected');
+          
+          // Update radio button
+          const radio = document.querySelector(`input[name="term"][value="${term}"]`);
+          if (radio) radio.checked = true;
+        });
+      });
+      
+      function updatePaymentOptionsSelection() {
+        const selectedTerm = document.querySelector('input[name="term"]:checked').value;
+        paymentOptions.forEach(option => {
+          if (option.dataset.term === selectedTerm) {
+            option.classList.add('selected');
+          } else {
+            option.classList.remove('selected');
+          }
+        });
+      }
+      
+      function calculatePayment(principal, rate, months) {
+        if (rate === 0) {
+          return principal / months;
+        }
+        const monthlyRate = rate / 12;
+        return principal * (monthlyRate * Math.pow(1 + monthlyRate, months)) / (Math.pow(1 + monthlyRate, months) - 1);
+      }
+      
+      function updateCalculator() {
+        const projectCost = parseInt(projectCostInput.value) || 0;
+        const downPayment = parseInt(downPaymentInput.value) || 0;
+        const financeAmount = projectCost - downPayment;
+        
+        // Update display
+        displayProjectCost.textContent = '$' + projectCost.toLocaleString();
+        displayDownPayment.textContent = '$' + downPayment.toLocaleString();
+        displayFinanceAmount.textContent = '$' + financeAmount.toLocaleString();
+        
+        // Calculate payments for each term
+        Object.keys(rates).forEach(months => {
+          months = parseInt(months);
+          const rate = rates[months];
+          const monthlyPayment = calculatePayment(financeAmount, rate, months);
+          const totalPayments = monthlyPayment * months;
+          const totalInterest = totalPayments - financeAmount;
+          
+          // Update display elements
+          const paymentEl = document.getElementById(`payment${months}`);
+          const interestEl = document.getElementById(`interest${months}`);
+          const totalEl = document.getElementById(`total${months}`);
+          
+          if (paymentEl) paymentEl.textContent = '$' + Math.round(monthlyPayment).toLocaleString();
+          if (interestEl) interestEl.textContent = '$' + Math.round(totalInterest).toLocaleString();
+          if (totalEl) totalEl.textContent = '$' + Math.round(totalPayments).toLocaleString();
+        });
+      }
+      
+      // Form submission
+      const financingForm = document.getElementById('financingApplication');
+      if (financingForm) {
+        financingForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+          
+          // Basic validation
+          const requiredFields = this.querySelectorAll('[required]');
+          let isValid = true;
+          
+          requiredFields.forEach(field => {
+            if (!field.value.trim()) {
+              field.style.borderColor = 'var(--color-danger)';
+              isValid = false;
+            } else {
+              field.style.borderColor = 'rgba(255, 255, 255, 0.1)';
+            }
+          });
+          
+          if (!isValid) {
+            alert('Please fill in all required fields.');
+            return;
+          }
+          
+          // Simulate form submission
+          const submitBtn = this.querySelector('.btn-submit');
+          const originalText = submitBtn.innerHTML;
+          
+          submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Processing Application...';
+          submitBtn.disabled = true;
+          
+          setTimeout(() => {
+            alert('Application submitted successfully! You will receive a decision within minutes.');
+            submitBtn.innerHTML = originalText;
+            submitBtn.disabled = false;
+            
+            // Simulate redirect to approval page
+            // window.location.href = '/financing-approval';
+          }, 3000);
+        });
+      }
+      
+      // Compare options button
+      const compareBtn = document.getElementById('compareOptions');
+      if (compareBtn) {
+        compareBtn.addEventListener('click', function() {
+          // Show all payment options (remove selection highlighting temporarily)
+          paymentOptions.forEach(option => {
+            option.style.opacity = '1';
+            option.style.transform = 'scale(1)';
+          });
+          
+          // Highlight all options briefly
+          setTimeout(() => {
+            paymentOptions.forEach((option, index) => {
+              setTimeout(() => {
+                option.style.transform = 'scale(1.02)';
+                setTimeout(() => {
+                  option.style.transform = 'scale(1)';
+                }, 200);
+              }, index * 100);
+            });
+          }, 100);
+        });
+      }
+      
+      // Initialize calculator
+      updateDownPaymentMax();
+      updateCalculator();
+      updatePaymentOptionsSelection();
+      
+      // Animate stats on scroll
+      const observerOptions = {
+        threshold: 0.5,
+        rootMargin: '0px 0px -100px 0px'
+      };
+      
+      const statsObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const statValues = entry.target.querySelectorAll('.stat-value');
+            statValues.forEach((stat, index) => {
+              const finalValue = stat.textContent;
+              
+              if (finalValue.includes('%')) {
+                const numValue = parseInt(finalValue);
+                animateValue(stat, 0, numValue, 1000, '', '%');
+              } else if (finalValue.includes('$')) {
+                stat.textContent = '$0';
+                animateValue(stat, 0, 0, 1000, '$');
+              } else {
+                const numValue = parseInt(finalValue);
+                animateValue(stat, 0, numValue, 1000);
+              }
+            });
+          }
+        });
+      }, observerOptions);
+      
+      const heroStats = document.querySelector('.hero-stats');
+      if (heroStats) {
+        statsObserver.observe(heroStats);
+      }
+      
+      function animateValue(element, start, end, duration, prefix = '', suffix = '') {
+        const startTime = performance.now();
+        const update = (currentTime) => {
+          const elapsed = currentTime - startTime;
+          const progress = Math.min(elapsed / duration, 1);
+          const current = Math.round(start + (end - start) * progress);
+          element.textContent = prefix + current.toLocaleString() + suffix;
+          
+          if (progress < 1) {
+            requestAnimationFrame(update);
+          }
+        };
+        requestAnimationFrame(update);
+      }
+    });
+  </script>
+</PageLayout>

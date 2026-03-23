@@ -1,0 +1,3097 @@
+---
+import Hero from '../components/sections/Hero.astro';
+import Stats from '../components/sections/Stats.astro';
+import PageLayout from '../layouts/PageLayout.astro';
+import FAQ from '../components/FAQ.astro';
+import ContactForm from '../components/ContactForm.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<PageLayout 
+  title="Free Basement Inspection Toronto | Professional Assessment | Dryspace" 
+  description="Book your free professional basement inspection in Toronto. Expert evaluation, detailed report, and no-obligation quote. Available 7 days a week with same-day emergency service."
+>
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-text">
+          <div class="hero-badge">
+            <i class="fa-solid fa-calendar-check"></i>
+            Free Professional Inspection • No Obligation
+          </div>
+          <h1 class="text-5xl font-bold text-slate-900 uppercase">FREE BASEMENT INSPECTION & ASSESSMENT TORONTO</h1>
+          <p class="hero-description">Get a comprehensive professional evaluation of your basement's condition. Our certified inspectors provide detailed assessments, identification of potential issues, and expert recommendations - all at no cost to you.</p>
+          <div class="hero-features">
+            <div class="hero-feature">
+              <span class="checkmark"></span>
+              <span>Certified Professional Inspector</span>
+            </div>
+            <div class="hero-feature">
+              <span class="checkmark"></span>
+              <span>Comprehensive 45-Point Check</span>
+            </div>
+            <div class="hero-feature">
+              <span class="checkmark"></span>
+              <span>Detailed Written Report</span>
+            </div>
+            <div class="hero-feature">
+              <span class="checkmark"></span>
+              <span>Same-Day Emergency Available</span>
+            </div>
+          </div>
+          <div class="hero-stats">
+            <div class="stat-item">
+              <div class="stat-value">45</div>
+              <div class="stat-label">Point Inspection</div>
+              <div class="stat-note">Comprehensive check</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-value">100%</div>
+              <div class="stat-label">Free</div>
+              <div class="stat-note">No hidden costs</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-value">24/7</div>
+              <div class="stat-label">Emergency</div>
+              <div class="stat-note">Service available</div>
+            </div>
+          </div>
+          <div class="hero-cta">
+            <a href="#book-inspection" class="btn-primary">
+              <i class="fa-solid fa-calendar-plus"></i>
+              Book Free Inspection
+            </a>
+            <a href="tel:437-545-0067" class="btn-secondary">
+              <i class="fa-solid fa-phone"></i>
+              Call: 437-545-0067
+            </a>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <img src="/assets/waterproofing/basement-water-leak-inspection.webp" alt="Professional basement inspection in progress" loading="lazy" class="inspection-image" / width="800" height="600" decoding="async">
+          <div class="inspection-preview">
+            <h3 class="text-2xl font-bold text-slate-900 uppercase">WHAT WE INSPECT</h3>
+            <div class="inspection-categories">
+              <div class="category-item">
+                <div class="category-icon">
+                  <i class="fa-solid fa-eye"></i>
+                </div>
+                <div class="category-details">
+                  <h4 class="text-xl font-bold text-slate-900 uppercase">VISUAL ASSESSMENT</h4>
+                  <p>Foundation walls, floors, ceiling inspection</p>
+                </div>
+              </div>
+              <div class="category-item">
+                <div class="category-icon">
+                  <i class="fa-solid fa-droplet"></i>
+                </div>
+                <div class="category-details">
+                  <h4 class="text-xl font-bold text-slate-900 uppercase">MOISTURE DETECTION</h4>
+                  <p>Humidity levels, water intrusion signs</p>
+                </div>
+              </div>
+              <div class="category-item">
+                <div class="category-icon">
+                  <i class="fa-solid fa-hammer"></i>
+                </div>
+                <div class="category-details">
+                  <h4 class="text-xl font-bold text-slate-900 uppercase">STRUCTURAL REVIEW</h4>
+                  <p>Foundation integrity, settlement issues</p>
+                </div>
+              </div>
+              <div class="category-item">
+                <div class="category-icon">
+                  <i class="fa-solid fa-water"></i>
+                </div>
+                <div class="category-details">
+                  <h4 class="text-xl font-bold text-slate-900 uppercase">DRAINAGE SYSTEMS</h4>
+                  <p>Sump pumps, weeping tiles, gutters</p>
+                </div>
+              </div>
+            </div>
+            <div class="preview-note">
+              <i class="fa-solid fa-clock"></i>
+              <span>Typically takes 45-60 minutes • Detailed report provided</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick Booking Widget -->
+  <section class="quick-booking">
+    <div class="container">
+      <div class="booking-widget">
+        <div class="widget-header">
+          <h2 class="text-4xl font-bold text-slate-900 uppercase">BOOK YOUR FREE INSPECTION</h2>
+          <p>Choose your preferred date and time - we'll confirm within 1 hour</p>
+        </div>
+        <div class="booking-options">
+          <div class="booking-option urgent">
+            <div class="option-icon">
+              <i class="fa-solid fa-bolt"></i>
+            </div>
+            <div class="option-content">
+              <h3 class="text-2xl font-bold text-slate-900 uppercase">EMERGENCY SERVICE</h3>
+              <p>Water intrusion, active leaks, structural concerns</p>
+              <div class="option-time">Available within 2 hours</div>
+              <a href="tel:437-545-0067" class="option-btn emergency">Call Now: 437-545-0067</a>
+            </div>
+          </div>
+          <div class="booking-option standard">
+            <div class="option-icon">
+              <i class="fa-solid fa-calendar-alt"></i>
+            </div>
+            <div class="option-content">
+              <h3 class="text-2xl font-bold text-slate-900 uppercase">STANDARD APPOINTMENT</h3>
+              <p>Routine inspection, preventive assessment</p>
+              <div class="option-time">Next available: Tomorrow</div>
+              <a href="#book-inspection" class="option-btn standard">Book Online</a>
+            </div>
+          </div>
+          <div class="booking-option consultation">
+            <div class="option-icon">
+              <i class="fa-solid fa-comments"></i>
+            </div>
+            <div class="option-content">
+              <h3 class="text-2xl font-bold text-slate-900 uppercase">PHONE CONSULTATION</h3>
+              <p>Discuss concerns, get initial advice</p>
+              <div class="option-time">Available now</div>
+              <a href="tel:437-545-0067" class="option-btn consultation">Speak with Expert</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What We Inspect -->
+  <section class="inspection-details">
+    <div class="container">
+      <h2 class="text-4xl font-bold text-slate-900 uppercase">COMPREHENSIVE 45-POINT INSPECTION CHECKLIST</h2>
+      <p class="section-intro">Our certified inspectors follow a detailed checklist to ensure nothing is missed</p>
+      
+      <div class="inspection-grid">
+        <div class="inspection-category">
+          <div class="category-header">
+            <div class="category-icon">
+              <i class="fa-solid fa-home"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-slate-900 uppercase">FOUNDATION & STRUCTURE</h3>
+            <span class="point-count">12 Points</span>
+          </div>
+          <div class="checklist">
+            <div class="checklist-item">
+              <i class="fa-solid fa-check"></i>
+              <span>Foundation wall condition and alignment</span>
+            </div>
+            <div class="checklist-item">
+              <i class="fa-solid fa-check"></i>
+              <span>Basement floor levelness and cracks</span>
+            </div>
+            <div class="checklist-item">
+              <i class="fa-solid fa-check"></i>
+              <span>Support beam and post integrity</span>
+            </div>
+            <div class="checklist-item">
+              <i class="fa-solid fa-check"></i>
+              <span>Floor joist condition and spacing</span>
+            </div>
+            <div class="checklist-item">
+              <i class="fa-solid fa-check"></i>
+              <span>Foundation settlement indicators</span>
+            </div>
+            <div class="checklist-item">
+              <i class="fa-solid fa-check"></i>
+              <span>Structural load distribution</span>
+            </div>
+            <div class="checklist-item">
+              <i class="fa-solid fa-check"></i>
+              <span>Wall bowing or leaning assessment</span>
+            </div>
+            <div class="checklist-item">
+              <i class="fa-solid fa-check"></i>
+              <span>Foundation anchoring and ties</span>
+            </div>
+            <div class="checklist-item">
+              <i class="fa-solid fa-check"></i>
+              <span>Ceiling and overhead structure</span>
+            </div>
+            <div class="checklist-item">
+              <i class="fa-solid fa-check"></i>
+              <span>Stairway safety and condition</span>
+            </div>
+            <div class="checklist-item">
+              <i class="fa-solid fa-check"></i>
+              <span>Window and door frame integrity</span>
+            </div>
+            <div class="checklist-item">
+              <i class="fa-solid fa-check"></i>
+              <span>Overall structural stability</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="inspection-category">
+          <div class="category-header">
+            <div class="category-icon">
+              <i class="fa-solid fa-tint"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-slate-900 uppercase">MOISTURE & WATER ISSUES</h3>
+            <span class="point-count">15 Points</span>
+          </div>
+          <div class="checklist">
+            <div class="checklist-item">
+              <i class="fa-solid fa-check"></i>
+              <span>Active water leaks and seepage</span>
+            </div>
+            <div class="checklist-item">
+              <i class="fa-solid fa-check"></i>
+              <span>Humidity levels measurement</span>
+            </div>
+            <div class="checklist-item">
+              <i class="fa-solid fa-check"></i>
+              <span>Condensation patterns and causes</span>
+            </div>
+            <div class="checklist-item">
+              <i class="fa-solid fa-check"></i>
+              <span>Water stains and discoloration</span>
+            </div>
+            <div class="checklist-item">
+              <i class="fa-solid fa-check"></i>
+              <span>Mold and mildew presence</span>
+            </div>
+            <div class="checklist-item">
+              <i class="fa-solid fa-check"></i>
+              <span>Musty odors and air quality</span>
+            </div>
+            <div class="checklist-item">
+              <i class="fa-solid fa-check"></i>
+              <span>Efflorescence on walls</span>
+            </div>
+            <div class="checklist-item">
+              <i class="fa-solid fa-check"></i>
+              <span>Wall and floor moisture content</span>
+            </div>
+            <div class="checklist-item">
+              <i class="fa-solid fa-check"></i>
+              <span>Ventilation adequacy</span>
+            </div>
+            <div class="checklist-item">
+              <i class="fa-solid fa-check"></i>
+              <span>Dehumidification systems</span>
+            </div>
+            <div class="checklist-item">
+              <i class="fa-solid fa-check"></i>
+              <span>Vapor barrier condition</span>
+            </div>
+            <div class="checklist-item">
+              <i class="fa-solid fa-check"></i>
+              <span>Insulation moisture damage</span>
+            </div>
+            <div class="checklist-item">
+              <i class="fa-solid fa-check"></i>
+              <span>Waterproofing system condition</span>
+            </div>
+            <div class="checklist-item">
+              <i class="fa-solid fa-check"></i>
+              <span>Previous water damage signs</span>
+            </div>
+            <div class="checklist-item">
+              <i class="fa-solid fa-check"></i>
+              <span>Moisture intrusion points</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="inspection-category">
+          <div class="category-header">
+            <div class="category-icon">
+              <i class="fa-solid fa-water"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-slate-900 uppercase">DRAINAGE SYSTEMS</h3>
+            <span class="point-count">10 Points</span>
+          </div>
+          <div class="checklist">
+            <div class="checklist-item">
+              <i class="fa-solid fa-check"></i>
+              <span>Sump pump operation and condition</span>
+            </div>
+            <div class="checklist-item">
+              <i class="fa-solid fa-check"></i>
+              <span>Sump pit and float switch</span>
+            </div>
+            <div class="checklist-item">
+              <i class="fa-solid fa-check"></i>
+              <span>Battery backup system</span>
+            </div>
+            <div class="checklist-item">
+              <i class="fa-solid fa-check"></i>
+              <span>Interior drainage tiles</span>
+            </div>
+            <div class="checklist-item">
+              <i class="fa-solid fa-check"></i>
+              <span>Floor drain functionality</span>
+            </div>
+            <div class="checklist-item">
+              <i class="fa-solid fa-check"></i>
+              <span>Backwater valve presence</span>
+            </div>
+            <div class="checklist-item">
+              <i class="fa-solid fa-check"></i>
+              <span>Exterior drainage around home</span>
+            </div>
+            <div class="checklist-item">
+              <i class="fa-solid fa-check"></i>
+              <span>Gutter and downspout condition</span>
+            </div>
+            <div class="checklist-item">
+              <i class="fa-solid fa-check"></i>
+              <span>Grading and water flow</span>
+            </div>
+            <div class="checklist-item">
+              <i class="fa-solid fa-check"></i>
+              <span>Window well drainage</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="inspection-category">
+          <div class="category-header">
+            <div class="category-icon">
+              <i class="fa-solid fa-shield-alt"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-slate-900 uppercase">SAFETY & CODE COMPLIANCE</h3>
+            <span class="point-count">8 Points</span>
+          </div>
+          <div class="checklist">
+            <div class="checklist-item">
+              <i class="fa-solid fa-check"></i>
+              <span>Electrical system safety</span>
+            </div>
+            <div class="checklist-item">
+              <i class="fa-solid fa-check"></i>
+              <span>HVAC system condition</span>
+            </div>
+            <div class="checklist-item">
+              <i class="fa-solid fa-check"></i>
+              <span>Fire safety and egress</span>
+            </div>
+            <div class="checklist-item">
+              <i class="fa-solid fa-check"></i>
+              <span>Carbon monoxide risks</span>
+            </div>
+            <div class="checklist-item">
+              <i class="fa-solid fa-check"></i>
+              <span>Building code compliance</span>
+            </div>
+            <div class="checklist-item">
+              <i class="fa-solid fa-check"></i>
+              <span>Proper ventilation systems</span>
+            </div>
+            <div class="checklist-item">
+              <i class="fa-solid fa-check"></i>
+              <span>Insulation and energy efficiency</span>
+            </div>
+            <div class="checklist-item">
+              <i class="fa-solid fa-check"></i>
+              <span>Overall habitability assessment</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Inspection Process -->
+  <section class="inspection-process">
+    <div class="container">
+      <h2 class="text-4xl font-bold text-slate-900 uppercase">WHAT TO EXPECT DURING YOUR INSPECTION</h2>
+      <p class="section-intro">Our systematic approach ensures thorough evaluation and clear communication</p>
+      
+      <div class="process-timeline">
+        <div class="process-step">
+          <div class="step-number">1</div>
+          <div class="step-content">
+            <h3 class="text-2xl font-bold text-slate-900 uppercase">PRE-INSPECTION CONSULTATION</h3>
+            <div class="step-details">
+              <p>Our inspector arrives on time and introduces themselves, explaining the inspection process and addressing any specific concerns you've mentioned.</p>
+              <ul>
+                <li>Review of your concerns and history</li>
+                <li>Explanation of inspection scope</li>
+                <li>Safety briefing and access requirements</li>
+                <li>Timeline and process overview</li>
+              </ul>
+              <div class="step-time">
+                <i class="fa-solid fa-clock"></i>
+                <span>5-10 minutes</span>
+              </div>
+            </div>
+          </div>
+          <div class="step-visual">
+            <div class="visual-card border-2 border-slate-200">
+              <div class="card-header border-2 border-slate-200">
+                <i class="fa-solid fa-handshake"></i>
+                <h4 class="text-xl font-bold text-slate-900 uppercase">PROFESSIONAL GREETING</h4>
+              </div>
+              <div class="card-content border-2 border-slate-200">
+                <div class="inspector-info">
+                  <div class="inspector-badge">
+                    <i class="fa-solid fa-certificate"></i>
+                    <span>Certified Inspector</span>
+                  </div>
+                  <div class="inspector-details">
+                    <span>Licensed & Insured</span>
+                    <span>25+ Years Experience</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="process-step">
+          <div class="step-number">2</div>
+          <div class="step-content">
+            <h3 class="text-2xl font-bold text-slate-900 uppercase">COMPREHENSIVE INSPECTION</h3>
+            <div class="step-details">
+              <p>Systematic 45-point evaluation using professional equipment and proven methodologies. We document everything with photos and measurements.</p>
+              <ul>
+                <li>Foundation and structural assessment</li>
+                <li>Moisture and humidity testing</li>
+                <li>Drainage system evaluation</li>
+                <li>Safety and code compliance check</li>
+              </ul>
+              <div class="step-time">
+                <i class="fa-solid fa-clock"></i>
+                <span>30-45 minutes</span>
+              </div>
+            </div>
+          </div>
+          <div class="step-visual">
+            <div class="visual-card border-2 border-slate-200">
+              <div class="card-header border-2 border-slate-200">
+                <i class="fa-solid fa-search"></i>
+                <h4 class="text-xl font-bold text-slate-900 uppercase">PROFESSIONAL EQUIPMENT</h4>
+              </div>
+              <div class="card-content border-2 border-slate-200">
+                <div class="equipment-list">
+                  <div class="equipment-item">
+                    <i class="fa-solid fa-thermometer-half"></i>
+                    <span>Moisture Meters</span>
+                  </div>
+                  <div class="equipment-item">
+                    <i class="fa-solid fa-camera"></i>
+                    <span>Documentation Camera</span>
+                  </div>
+                  <div class="equipment-item">
+                    <i class="fa-solid fa-ruler"></i>
+                    <span>Measuring Tools</span>
+                  </div>
+                  <div class="equipment-item">
+                    <i class="fa-solid fa-flashlight"></i>
+                    <span>Inspection Lighting</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="process-step">
+          <div class="step-number">3</div>
+          <div class="step-content">
+            <h3 class="text-2xl font-bold text-slate-900 uppercase">FINDINGS REVIEW & DISCUSSION</h3>
+            <div class="step-details">
+              <p>We review all findings with you on-site, explaining what we discovered and the implications for your home's safety and value.</p>
+              <ul>
+                <li>Walk-through of identified issues</li>
+                <li>Photo documentation review</li>
+                <li>Priority level assessment</li>
+                <li>Q&A session with inspector</li>
+              </ul>
+              <div class="step-time">
+                <i class="fa-solid fa-clock"></i>
+                <span>10-15 minutes</span>
+              </div>
+            </div>
+          </div>
+          <div class="step-visual">
+            <div class="visual-card border-2 border-slate-200">
+              <div class="card-header border-2 border-slate-200">
+                <i class="fa-solid fa-clipboard-list"></i>
+                <h4 class="text-xl font-bold text-slate-900 uppercase">DETAILED FINDINGS</h4>
+              </div>
+              <div class="card-content border-2 border-slate-200">
+                <div class="findings-preview">
+                  <div class="finding-item high">
+                    <span class="priority">High</span>
+                    <span>Active water infiltration</span>
+                  </div>
+                  <div class="finding-item medium">
+                    <span class="priority">Medium</span>
+                    <span>Drainage improvement needed</span>
+                  </div>
+                  <div class="finding-item low">
+                    <span class="priority">Low</span>
+                    <span>Minor foundation crack</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="process-step">
+          <div class="step-number">4</div>
+          <div class="step-content">
+            <h3 class="text-2xl font-bold text-slate-900 uppercase">DETAILED REPORT & RECOMMENDATIONS</h3>
+            <div class="step-details">
+              <p>Within 24 hours, you receive a comprehensive written report with prioritized recommendations and cost estimates for any needed work.</p>
+              <ul>
+                <li>Complete inspection findings</li>
+                <li>Photo documentation</li>
+                <li>Prioritized action plan</li>
+                <li>Cost estimates for solutions</li>
+              </ul>
+              <div class="step-time">
+                <i class="fa-solid fa-clock"></i>
+                <span>Within 24 hours</span>
+              </div>
+            </div>
+          </div>
+          <div class="step-visual">
+            <div class="visual-card border-2 border-slate-200">
+              <div class="card-header border-2 border-slate-200">
+                <i class="fa-solid fa-file-alt"></i>
+                <h4 class="text-xl font-bold text-slate-900 uppercase">PROFESSIONAL REPORT</h4>
+              </div>
+              <div class="card-content border-2 border-slate-200">
+                <div class="report-preview">
+                  <div class="report-section">
+                    <i class="fa-solid fa-exclamation-triangle"></i>
+                    <span>Issues Identified</span>
+                  </div>
+                  <div class="report-section">
+                    <i class="fa-solid fa-tools"></i>
+                    <span>Recommended Solutions</span>
+                  </div>
+                  <div class="report-section">
+                    <i class="fa-solid fa-dollar-sign"></i>
+                    <span>Cost Estimates</span>
+                  </div>
+                  <div class="report-section">
+                    <i class="fa-solid fa-calendar"></i>
+                    <span>Priority Timeline</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Preparation Checklist -->
+  <section class="preparation-checklist">
+    <div class="container">
+      <h2 class="text-4xl font-bold text-slate-900 uppercase">HOW TO PREPARE FOR YOUR INSPECTION</h2>
+      <p class="section-intro">A little preparation helps ensure the most thorough and efficient inspection possible</p>
+      
+      <div class="preparation-grid">
+        <div class="prep-category">
+          <div class="prep-header">
+            <i class="fa-solid fa-unlock"></i>
+            <h3 class="text-2xl font-bold text-slate-900 uppercase">ACCESS & SAFETY</h3>
+          </div>
+          <div class="prep-checklist">
+            <label class="prep-item">
+              <input type="checkbox" class="prep-checkbox">
+              <span class="checkmark"></span>
+              <div class="prep-content">
+                <strong>Clear basement access</strong>
+                <p>Ensure stairway is clear and well-lit</p>
+              </div>
+            </label>
+            <label class="prep-item">
+              <input type="checkbox" class="prep-checkbox">
+              <span class="checkmark"></span>
+              <div class="prep-content">
+                <strong>Move storage items</strong>
+                <p>Clear areas around walls, floors, and utilities</p>
+              </div>
+            </label>
+            <label class="prep-item">
+              <input type="checkbox" class="prep-checkbox">
+              <span class="checkmark"></span>
+              <div class="prep-content">
+                <strong>Turn on basement lights</strong>
+                <p>Replace any burnt-out bulbs for better visibility</p>
+              </div>
+            </label>
+            <label class="prep-item">
+              <input type="checkbox" class="prep-checkbox">
+              <span class="checkmark"></span>
+              <div class="prep-content">
+                <strong>Pet accommodation</strong>
+                <p>Secure pets in another area during inspection</p>
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <div class="prep-category">
+          <div class="prep-header">
+            <i class="fa-solid fa-clipboard-list"></i>
+            <h3 class="text-2xl font-bold text-slate-900 uppercase">DOCUMENTATION</h3>
+          </div>
+          <div class="prep-checklist">
+            <label class="prep-item">
+              <input type="checkbox" class="prep-checkbox">
+              <span class="checkmark"></span>
+              <div class="prep-content">
+                <strong>Previous reports</strong>
+                <p>Gather any prior inspection or repair documentation</p>
+              </div>
+            </label>
+            <label class="prep-item">
+              <input type="checkbox" class="prep-checkbox">
+              <span class="checkmark"></span>
+              <div class="prep-content">
+                <strong>Insurance claims</strong>
+                <p>Have records of any water damage claims ready</p>
+              </div>
+            </label>
+            <label class="prep-item">
+              <input type="checkbox" class="prep-checkbox">
+              <span class="checkmark"></span>
+              <div class="prep-content">
+                <strong>Home history notes</strong>
+                <p>List any known issues, repairs, or concerns</p>
+              </div>
+            </label>
+            <label class="prep-item">
+              <input type="checkbox" class="prep-checkbox">
+              <span class="checkmark"></span>
+              <div class="prep-content">
+                <strong>Photos of issues</strong>
+                <p>Take photos of any problems you've noticed</p>
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <div class="prep-category">
+          <div class="prep-header">
+            <i class="fa-solid fa-tools"></i>
+            <h3 class="text-2xl font-bold text-slate-900 uppercase">SYSTEMS & UTILITIES</h3>
+          </div>
+          <div class="prep-checklist">
+            <label class="prep-item">
+              <input type="checkbox" class="prep-checkbox">
+              <span class="checkmark"></span>
+              <div class="prep-content">
+                <strong>Test sump pump</strong>
+                <p>Pour water in pit to ensure it's working</p>
+              </div>
+            </label>
+            <label class="prep-item">
+              <input type="checkbox" class="prep-checkbox">
+              <span class="checkmark"></span>
+              <div class="prep-content">
+                <strong>Locate main shutoffs</strong>
+                <p>Know where water and electrical shutoffs are located</p>
+              </div>
+            </label>
+            <label class="prep-item">
+              <input type="checkbox" class="prep-checkbox">
+              <span class="checkmark"></span>
+              <div class="prep-content">
+                <strong>HVAC system access</strong>
+                <p>Ensure furnace and water heater areas are accessible</p>
+              </div>
+            </label>
+            <label class="prep-item">
+              <input type="checkbox" class="prep-checkbox">
+              <span class="checkmark"></span>
+              <div class="prep-content">
+                <strong>Check electrical panel</strong>
+                <p>Note any frequently tripping breakers</p>
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <div class="prep-category">
+          <div class="prep-header">
+            <i class="fa-solid fa-question-circle"></i>
+            <h3 class="text-2xl font-bold text-slate-900 uppercase">QUESTIONS TO ASK</h3>
+          </div>
+          <div class="prep-checklist">
+            <label class="prep-item">
+              <input type="checkbox" class="prep-checkbox">
+              <span class="checkmark"></span>
+              <div class="prep-content">
+                <strong>Prepare your concerns</strong>
+                <p>List specific issues or areas of concern</p>
+              </div>
+            </label>
+            <label class="prep-item">
+              <input type="checkbox" class="prep-checkbox">
+              <span class="checkmark"></span>
+              <div class="prep-content">
+                <strong>Maintenance questions</strong>
+                <p>Ask about preventive measures you can take</p>
+              </div>
+            </label>
+            <label class="prep-item">
+              <input type="checkbox" class="prep-checkbox">
+              <span class="checkmark"></span>
+              <div class="prep-content">
+                <strong>Timeline discussions</strong>
+                <p>Understand urgency levels for any issues found</p>
+              </div>
+            </label>
+            <label class="prep-item">
+              <input type="checkbox" class="prep-checkbox">
+              <span class="checkmark"></span>
+              <div class="prep-content">
+                <strong>Cost estimates</strong>
+                <p>Ask for ballpark costs for any recommended work</p>
+              </div>
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <div class="prep-summary">
+        <div class="summary-card border-2 border-slate-200">
+          <h3 class="text-2xl font-bold text-slate-900 uppercase">PREPARATION COMPLETE!</h3>
+          <p>You've completed <span id="checkedCount">0</span> of <span id="totalCount">16</span> preparation items.</p>
+          <div class="progress-bar">
+            <div class="progress-fill" id="prepProgress"></div>
+          </div>
+          <div class="summary-actions">
+            <button type="button" class="btn-print" onclick="window.print()">
+              <i class="fa-solid fa-print"></i>
+              Print Checklist
+            </button>
+            <a href="#book-inspection" class="btn-ready">
+              <i class="fa-solid fa-calendar-check"></i>
+              I'm Ready - Book Inspection
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Booking Form -->
+  <section class="booking-form-section" id="book-inspection">
+    <div class="container">
+      <h2 class="text-4xl font-bold text-slate-900 uppercase">BOOK YOUR FREE INSPECTION</h2>
+      <p class="section-intro">Schedule your comprehensive basement inspection - no cost, no obligation</p>
+      
+      <div class="booking-layout">
+        <div class="booking-form">
+          <form id="inspectionBookingForm">
+            <div class="form-section">
+              <h3 class="text-2xl font-bold text-slate-900 uppercase">CONTACT INFORMATION</h3>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="firstName">First Name *</label>
+                  <input type="text" id="firstName" name="firstName" required>
+                </div>
+                <div class="form-group">
+                  <label for="lastName">Last Name *</label>
+                  <input type="text" id="lastName" name="lastName" required>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="email">Email Address *</label>
+                  <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                  <label for="phone">Phone Number *</label>
+                  <input type="tel" id="phone" name="phone" required>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="address">Property Address *</label>
+                <input type="text" id="address" name="address" placeholder="123 Main Street, Toronto, ON M1A 1A1" required>
+              </div>
+            </div>
+
+            <div class="form-section">
+              <h3 class="text-2xl font-bold text-slate-900 uppercase">INSPECTION DETAILS</h3>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="propertyType">Property Type *</label>
+                  <select id="propertyType" name="propertyType" required>
+                    <option value="">Select property type</option>
+                    <option value="detached">Detached House</option>
+                    <option value="semi-detached">Semi-Detached House</option>
+                    <option value="townhouse">Townhouse</option>
+                    <option value="condo">Condominium</option>
+                    <option value="commercial">Commercial Property</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="propertyAge">Approximate Property Age</label>
+                  <select id="propertyAge" name="propertyAge">
+                    <option value="">Select age range</option>
+                    <option value="new">Less than 10 years</option>
+                    <option value="modern">10-25 years</option>
+                    <option value="established">25-50 years</option>
+                    <option value="mature">50-75 years</option>
+                    <option value="heritage">75+ years</option>
+                    <option value="unknown">Unknown</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="basementType">Basement Type</label>
+                  <select id="basementType" name="basementType">
+                    <option value="full">Full Basement</option>
+                    <option value="partial">Partial Basement</option>
+                    <option value="walkout">Walkout Basement</option>
+                    <option value="crawl-space">Crawl Space</option>
+                    <option value="slab">Slab on Grade</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="basementFinish">Basement Condition</label>
+                  <select id="basementFinish" name="basementFinish">
+                    <option value="unfinished">Unfinished</option>
+                    <option value="partially-finished">Partially Finished</option>
+                    <option value="finished">Fully Finished</option>
+                    <option value="renovation">Under Renovation</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-section">
+              <h3 class="text-2xl font-bold text-slate-900 uppercase">SCHEDULING PREFERENCE</h3>
+              <div class="form-group">
+                <label>Inspection Urgency *</label>
+                <div class="urgency-options">
+                  <label class="urgency-option">
+                    <input type="radio" name="urgency" value="emergency" required>
+                    <span class="urgency-card emergency border-2 border-slate-200">
+                      <i class="fa-solid fa-exclamation-triangle"></i>
+                      <span class="urgency-title">Emergency</span>
+                      <span class="urgency-desc">Active water issues</span>
+                      <span class="urgency-time">Within 2 hours</span>
+                    </span>
+                  </label>
+                  <label class="urgency-option">
+                    <input type="radio" name="urgency" value="urgent" required>
+                    <span class="urgency-card urgent border-2 border-slate-200">
+                      <i class="fa-solid fa-clock"></i>
+                      <span class="urgency-title">Urgent</span>
+                      <span class="urgency-desc">Significant concerns</span>
+                      <span class="urgency-time">Within 24 hours</span>
+                    </span>
+                  </label>
+                  <label class="urgency-option">
+                    <input type="radio" name="urgency" value="standard" checked required>
+                    <span class="urgency-card standard border-2 border-slate-200">
+                      <i class="fa-solid fa-calendar-alt"></i>
+                      <span class="urgency-title">Standard</span>
+                      <span class="urgency-desc">Routine inspection</span>
+                      <span class="urgency-time">1-3 business days</span>
+                    </span>
+                  </label>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="preferredDate">Preferred Date</label>
+                  <input type="date" id="preferredDate" name="preferredDate">
+                </div>
+                <div class="form-group">
+                  <label for="preferredTime">Preferred Time</label>
+                  <select id="preferredTime" name="preferredTime">
+                    <option value="">Select time preference</option>
+                    <option value="morning">Morning (9 AM - 12 PM)</option>
+                    <option value="afternoon">Afternoon (12 PM - 4 PM)</option>
+                    <option value="evening">Evening (4 PM - 6 PM)</option>
+                    <option value="flexible">Flexible</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-section">
+              <h3 class="text-2xl font-bold text-slate-900 uppercase">CURRENT ISSUES & CONCERNS</h3>
+              <div class="form-group">
+                <label>What concerns do you have? (Select all that apply)</label>
+                <div class="concerns-grid">
+                  <label class="concern-item">
+                    <input type="checkbox" name="concerns" value="water-leaks">
+                    <span class="checkmark"></span>
+                    <span>Water leaks or seepage</span>
+                  </label>
+                  <label class="concern-item">
+                    <input type="checkbox" name="concerns" value="musty-odors">
+                    <span class="checkmark"></span>
+                    <span>Musty odors</span>
+                  </label>
+                  <label class="concern-item">
+                    <input type="checkbox" name="concerns" value="foundation-cracks">
+                    <span class="checkmark"></span>
+                    <span>Foundation cracks</span>
+                  </label>
+                  <label class="concern-item">
+                    <input type="checkbox" name="concerns" value="mold-mildew">
+                    <span class="checkmark"></span>
+                    <span>Mold or mildew</span>
+                  </label>
+                  <label class="concern-item">
+                    <input type="checkbox" name="concerns" value="high-humidity">
+                    <span class="checkmark"></span>
+                    <span>High humidity</span>
+                  </label>
+                  <label class="concern-item">
+                    <input type="checkbox" name="concerns" value="structural-issues">
+                    <span class="checkmark"></span>
+                    <span>Structural concerns</span>
+                  </label>
+                  <label class="concern-item">
+                    <input type="checkbox" name="concerns" value="drainage-problems">
+                    <span class="checkmark"></span>
+                    <span>Drainage problems</span>
+                  </label>
+                  <label class="concern-item">
+                    <input type="checkbox" name="concerns" value="preventive-assessment">
+                    <span class="checkmark"></span>
+                    <span>Preventive assessment</span>
+                  </label>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="additionalDetails">Additional Details</label>
+                <textarea id="additionalDetails" name="additionalDetails" rows="4" placeholder="Please describe any specific areas of concern, recent changes you've noticed, or other relevant information..."></textarea>
+              </div>
+            </div>
+
+            <div class="form-section">
+              <h3 class="text-2xl font-bold text-slate-900 uppercase">ADDITIONAL SERVICES</h3>
+              <div class="services-grid">
+                <label class="service-item">
+                  <input type="checkbox" name="additionalServices" value="written-report">
+                  <span class="checkmark"></span>
+                  <div class="service-details">
+                    <strong>Detailed Written Report</strong>
+                    <small>Comprehensive documentation with photos</small>
+                    <span class="service-price">Included Free</span>
+                  </div>
+                </label>
+                <label class="service-item">
+                  <input type="checkbox" name="additionalServices" value="moisture-testing">
+                  <span class="checkmark"></span>
+                  <div class="service-details">
+                    <strong>Advanced Moisture Testing</strong>
+                    <small>Professional moisture meter readings</small>
+                    <span class="service-price">Included Free</span>
+                  </div>
+                </label>
+                <label class="service-item">
+                  <input type="checkbox" name="additionalServices" value="thermal-imaging">
+                  <span class="checkmark"></span>
+                  <div class="service-details">
+                    <strong>Thermal Imaging Scan</strong>
+                    <small>Advanced thermal camera assessment</small>
+                    <span class="service-price">+$150</span>
+                  </div>
+                </label>
+                <label class="service-item">
+                  <input type="checkbox" name="additionalServices" value="air-quality">
+                  <span class="checkmark"></span>
+                  <div class="service-details">
+                    <strong>Air Quality Testing</strong>
+                    <small>Mold spore and VOC testing</small>
+                    <span class="service-price">+$200</span>
+                  </div>
+                </label>
+              </div>
+            </div>
+
+            <div class="form-section">
+              <div class="consent-checkboxes">
+                <label class="consent-label">
+                  <input type="checkbox" name="consent" required>
+                  <span class="checkmark"></span>
+                  <span>I consent to being contacted about my inspection request and any recommended services</span>
+                </label>
+                <label class="consent-label">
+                  <input type="checkbox" name="marketing">
+                  <span class="checkmark"></span>
+                  <span>I'd like to receive helpful tips and information about basement maintenance (optional)</span>
+                </label>
+                <label class="consent-label">
+                  <input type="checkbox" name="terms" required>
+                  <span class="checkmark"></span>
+                  <span>I agree to the <a href="/terms" target="_blank">Terms of Service</a> and <a href="/privacy" target="_blank">Privacy Policy</a></span>
+                </label>
+              </div>
+            </div>
+
+            <button type="submit" class="btn-book">
+              <i class="fa-solid fa-calendar-plus"></i>
+              Book My Free Inspection
+            </button>
+          </form>
+        </div>
+
+        <div class="booking-sidebar">
+          <div class="inspection-summary">
+            <div class="summary-header">
+              <i class="fa-solid fa-clipboard-check"></i>
+              <h3 class="text-2xl font-bold text-slate-900 uppercase">YOUR FREE INSPECTION INCLUDES</h3>
+            </div>
+            <div class="summary-items">
+              <div class="summary-item">
+                <i class="fa-solid fa-user-tie"></i>
+                <span>Certified professional inspector</span>
+              </div>
+              <div class="summary-item">
+                <i class="fa-solid fa-list-check"></i>
+                <span>Comprehensive 45-point assessment</span>
+              </div>
+              <div class="summary-item">
+                <i class="fa-solid fa-camera"></i>
+                <span>Photo documentation of all findings</span>
+              </div>
+              <div class="summary-item">
+                <i class="fa-solid fa-file-alt"></i>
+                <span>Detailed written report within 24 hours</span>
+              </div>
+              <div class="summary-item">
+                <i class="fa-solid fa-dollar-sign"></i>
+                <span>Cost estimates for any recommended work</span>
+              </div>
+              <div class="summary-item">
+                <i class="fa-solid fa-phone"></i>
+                <span>Follow-up consultation included</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="inspector-credentials">
+            <h3 class="text-2xl font-bold text-slate-900 uppercase">OUR INSPECTORS ARE:</h3>
+            <div class="credentials-list">
+              <div class="credential-item">
+                <i class="fa-solid fa-certificate"></i>
+                <div>
+                  <strong>Certified & Licensed</strong>
+                  <p>Professional building inspectors with current certifications</p>
+                </div>
+              </div>
+              <div class="credential-item">
+                <i class="fa-solid fa-award"></i>
+                <div>
+                  <strong>Experienced</strong>
+                  <p>Average 20+ years in construction and waterproofing</p>
+                </div>
+              </div>
+              <div class="credential-item">
+                <i class="fa-solid fa-shield-check"></i>
+                <div>
+                  <strong>Insured</strong>
+                  <p>$5 million liability insurance for your protection</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="emergency-contact">
+            <h3 class="text-2xl font-bold text-slate-900 uppercase">NEED EMERGENCY SERVICE?</h3>
+            <p>For active water leaks, flooding, or structural concerns requiring immediate attention.</p>
+            <a href="tel:437-545-0067" class="emergency-btn">
+              <i class="fa-solid fa-phone"></i>
+              Call Emergency Line
+              <span>437-545-0067</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Common Issues & Services Section -->
+  <section class="py-12 bg-slate-50">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-3xl font-bold mb-8 text-center">Common Issues We Inspect & Resolve</h2>
+      <div class="grid md:grid-cols-3 gap-6 mb-8">
+        <!-- Water Issues -->
+        <div class="bg-white p-6  ">
+          <h3 class="text-xl font-bold mb-4 text-slate-900"> Water & Moisture Issues</h3>
+          <p class="text-sm text-slate-500 mb-4">Signs of water infiltration and moisture problems</p>
+          <ul class="space-y-3">
+            <li><a href="/services/interior-waterproofing" class="text-slate-600 hover:text-slate-900 transition-colors flex items-center"><span class="text-red-500 mr-2"></span>Basement flooding or seepage</a></li>
+            <li><a href="/services/foundation-crack-repair" class="text-slate-600 hover:text-slate-900 transition-colors flex items-center"><span class="text-red-500 mr-2"></span>Water through foundation cracks</a></li>
+            <li><a href="/services/leak-detection" class="text-slate-600 hover:text-slate-900 transition-colors flex items-center"><span class="text-red-500 mr-2"></span>Unexplained water stains</a></li>
+            <li><a href="/services/mold-remediation" class="text-slate-600 hover:text-slate-900 transition-colors flex items-center"><span class="text-red-500 mr-2"></span>Musty odors & high humidity</a></li>
+            <li><a href="/services/efflorescence-treatment" class="text-slate-600 hover:text-slate-900 transition-colors flex items-center"><span class="text-red-500 mr-2"></span>White powder on walls</a></li>
+          </ul>
+        </div>
+
+        <!-- Structural Issues -->
+        <div class="bg-white p-6  ">
+          <h3 class="text-xl font-bold mb-4 text-orange-600"> Foundation & Structural Issues</h3>
+          <p class="text-sm text-slate-500 mb-4">Signs of foundation movement or damage</p>
+          <ul class="space-y-3">
+            <li><a href="/services/bowing-basement-walls" class="text-slate-600 hover:text-orange-600 transition-colors flex items-center"><span class="text-red-500 mr-2"></span>Bowing or cracked walls</a></li>
+            <li><a href="/services/foundation-repair" class="text-slate-600 hover:text-orange-600 transition-colors flex items-center"><span class="text-red-500 mr-2"></span>Uneven floors or settling</a></li>
+            <li><a href="/services/foundation-repair" class="text-slate-600 hover:text-orange-600 transition-colors flex items-center"><span class="text-red-500 mr-2"></span>Crumbling concrete</a></li>
+            <li><a href="/services/hydrostatic-pressure-relief" class="text-slate-600 hover:text-orange-600 transition-colors flex items-center"><span class="text-red-500 mr-2"></span>Foundation pressure issues</a></li>
+            <li><a href="/services/basement-lowering" class="text-slate-600 hover:text-orange-600 transition-colors flex items-center"><span class="text-red-500 mr-2"></span>Foundation instability</a></li>
+          </ul>
+        </div>
+
+        <!-- Drainage & Prevention -->
+        <div class="bg-white p-6  ">
+          <h3 class="text-xl font-bold mb-4 text-cyan-400"> Drainage & Prevention</h3>
+          <p class="text-sm text-slate-500 mb-4">Preventive measures and drainage solutions</p>
+          <ul class="space-y-3">
+            <li><a href="/services/sump-pump-installation" class="text-slate-600 hover:text-cyan-400 transition-colors flex items-center"><span class="text-cyan-500 mr-2"></span>Sump pump failure or backup</a></li>
+            <li><a href="/services/interior-drainage-systems" class="text-slate-600 hover:text-cyan-400 transition-colors flex items-center"><span class="text-cyan-500 mr-2"></span>Poor drainage around foundation</a></li>
+            <li><a href="/services/backwater-valve-installation" class="text-slate-600 hover:text-cyan-400 transition-colors flex items-center"><span class="text-cyan-500 mr-2"></span>Sewer backup prevention</a></li>
+            <li><a href="/services/window-well-installation" class="text-slate-600 hover:text-cyan-400 transition-colors flex items-center"><span class="text-cyan-500 mr-2"></span>Window well issues</a></li>
+            <li><a href="/services/smart-water-monitoring" class="text-slate-600 hover:text-cyan-400 transition-colors flex items-center"><span class="text-cyan-500 mr-2"></span>Early warning systems</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="bg-amber-500 p-6 ">
+          <h3 class="text-lg font-bold mb-3"> What Our Inspection Covers</h3>
+          <ul class="space-y-2">
+            <li>• Foundation walls (interior & exterior)</li>
+            <li>• Basement floor & drainage systems</li>
+            <li>• Moisture levels & air quality</li>
+            <li>• Structural integrity assessment</li>
+            <li>• Waterproofing system evaluation</li>
+            <li>• Preventive recommendations</li>
+          </ul>
+        </div>
+
+        <div class="bg-cyan-50 p-6 ">
+          <h3 class="text-lg font-bold mb-3"> After Your Inspection</h3>
+          <ul class="space-y-2">
+            <li><a href="/pricing" class="text-cyan-400 hover:text-cyan-700 transition-colors">• Detailed cost estimates →</a></li>
+            <li><a href="/warranty" class="text-cyan-400 hover:text-cyan-700 transition-colors">• Lifetime warranty information →</a></li>
+            <li><a href="/financing" class="text-cyan-400 hover:text-cyan-700 transition-colors">• Flexible financing options →</a></li>
+            <li><a href="/government-rebates" class="text-cyan-400 hover:text-cyan-700 transition-colors">• Government rebate eligibility →</a></li>
+          </ul>
+          <div class="mt-4">
+            <a href="#booking-form" class="bg-cyan-600 text-slate-900 px-4 py-2 rounded hover:bg-cyan-700 transition-colors">Book Your Free Inspection →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <FAQ />
+  <ContactForm />
+  <Footer />
+
+  <style>
+    /* Hero Section */
+    .hero-section {
+      background: linear-gradient(135deg, #f9fafb 0%, #f3f4f6 100%);
+      padding: 4rem 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 1rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    @media (max-width: 1024px) {
+      .hero-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: #fbbf24;
+      color: #1f2937;
+      padding: 0.5rem 1rem;
+      font-weight: bold;
+      font-size: 0.875rem;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+
+    .hero-description {
+      font-size: 1.125rem;
+      color: #4b5563;
+      margin: 1.5rem 0;
+      line-height: 1.8;
+    }
+
+    .hero-features {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      margin: 2rem 0;
+    }
+
+    @media (max-width: 640px) {
+      .hero-features {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .hero-feature {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      color: #374151;
+    }
+
+    .checkmark {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      background: #10b981;
+      border-radius: 50%;
+      position: relative;
+      flex-shrink: 0;
+    }
+
+    .checkmark::after {
+      content: '✓';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 2rem;
+      margin: 2rem 0;
+      padding: 2rem;
+      background: white;
+      border: 3px solid #e5e7eb;
+    }
+
+    .stat-item {
+      text-align: center;
+      flex: 1;
+    }
+
+    .stat-value {
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: #fbbf24;
+      display: block;
+    }
+
+    .stat-label {
+      font-size: 0.875rem;
+      color: #1f2937;
+      font-weight: bold;
+      text-transform: uppercase;
+      margin-top: 0.5rem;
+    }
+
+    .stat-note {
+      font-size: 0.75rem;
+      color: #6b7280;
+      margin-top: 0.25rem;
+    }
+
+    .hero-cta {
+      display: flex;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    @media (max-width: 640px) {
+      .hero-cta {
+        flex-direction: column;
+      }
+    }
+
+    .btn-primary,
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 1rem 2rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: all 0.3s;
+      border: 3px solid;
+    }
+
+    .btn-primary {
+      background: #fbbf24;
+      color: #1f2937;
+      border-color: #fbbf24;
+    }
+
+    .btn-primary:hover {
+      background: transparent;
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: #1f2937;
+      border-color: #1f2937;
+    }
+
+    .btn-secondary:hover {
+      background: #1f2937;
+      color: white;
+    }
+
+    .inspection-image {
+      width: 100%;
+      height: auto;
+      border: 4px solid #e5e7eb;
+    }
+
+    .inspection-preview {
+      background: white;
+      border: 3px solid #fbbf24;
+      padding: 1.5rem;
+      margin-top: -50px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .inspection-categories {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      margin: 1rem 0;
+    }
+
+    .category-item {
+      display: flex;
+      gap: 1rem;
+      padding: 1rem;
+      background: #f9fafb;
+      border: 2px solid #e5e7eb;
+      transition: all 0.3s;
+    }
+
+    .category-item:hover {
+      border-color: #fbbf24;
+      transform: translateX(5px);
+    }
+
+    .category-icon {
+      width: 40px;
+      height: 40px;
+      background: #fbbf24;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .category-details h4 {
+      margin-bottom: 0.25rem;
+    }
+
+    .category-details p {
+      font-size: 0.875rem;
+      color: #6b7280;
+    }
+
+    .preview-note {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 2px solid #e5e7eb;
+      color: #6b7280;
+      font-size: 0.875rem;
+    }
+
+    /* Quick Booking Widget */
+    .quick-booking {
+      background: #1f2937;
+      padding: 3rem 0;
+    }
+
+    .booking-widget {
+      background: white;
+      border: 4px solid #fbbf24;
+      padding: 2rem;
+    }
+
+    .widget-header {
+      text-align: center;
+      margin-bottom: 2rem;
+      padding-bottom: 1rem;
+      border-bottom: 3px solid #e5e7eb;
+    }
+
+    .widget-header p {
+      color: #6b7280;
+      margin-top: 0.5rem;
+    }
+
+    .booking-options {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    @media (max-width: 768px) {
+      .booking-options {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .booking-option {
+      border: 3px solid #e5e7eb;
+      padding: 1.5rem;
+      text-align: center;
+      transition: all 0.3s;
+    }
+
+    .booking-option:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .booking-option.urgent {
+      border-color: #dc2626;
+      background: #fef2f2;
+    }
+
+    .booking-option.standard {
+      border-color: #059669;
+      background: #ecfdf5;
+    }
+
+    .booking-option.consultation {
+      border-color: #2563eb;
+      background: #eff6ff;
+    }
+
+    .option-icon {
+      width: 60px;
+      height: 60px;
+      background: #fbbf24;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1rem;
+      font-size: 24px;
+    }
+
+    .option-content h3 {
+      margin-bottom: 0.5rem;
+    }
+
+    .option-content p {
+      color: #6b7280;
+      font-size: 0.875rem;
+      margin-bottom: 1rem;
+    }
+
+    .option-time {
+      font-weight: bold;
+      color: #059669;
+      margin-bottom: 1rem;
+    }
+
+    .option-btn {
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      text-decoration: none;
+      border: 2px solid;
+      transition: all 0.3s;
+    }
+
+    .option-btn.emergency {
+      background: #dc2626;
+      color: white;
+      border-color: #dc2626;
+    }
+
+    .option-btn.standard {
+      background: #059669;
+      color: white;
+      border-color: #059669;
+    }
+
+    .option-btn.consultation {
+      background: #2563eb;
+      color: white;
+      border-color: #2563eb;
+    }
+
+    .option-btn:hover {
+      background: transparent;
+      color: currentColor;
+    }
+
+    /* Inspection Details */
+    .inspection-details {
+      padding: 4rem 0;
+      background: white;
+    }
+
+    .section-intro {
+      text-align: center;
+      color: #6b7280;
+      font-size: 1.125rem;
+      margin-bottom: 3rem;
+    }
+
+    .inspection-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+    }
+
+    @media (max-width: 1024px) {
+      .inspection-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .inspection-category {
+      border: 3px solid #e5e7eb;
+      background: white;
+      transition: all 0.3s;
+    }
+
+    .inspection-category:hover {
+      border-color: #fbbf24;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .category-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1.5rem;
+      background: #f9fafb;
+      border-bottom: 3px solid #e5e7eb;
+    }
+
+    .category-header .category-icon {
+      width: 50px;
+      height: 50px;
+      background: #fbbf24;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+    }
+
+    .category-header h3 {
+      flex: 1;
+    }
+
+    .point-count {
+      background: #1f2937;
+      color: white;
+      padding: 0.25rem 0.75rem;
+      font-size: 0.875rem;
+      font-weight: bold;
+    }
+
+    .checklist {
+      padding: 1.5rem;
+    }
+
+    .checklist-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      padding: 0.75rem 0;
+      border-bottom: 1px solid #f3f4f6;
+    }
+
+    .checklist-item:last-child {
+      border-bottom: none;
+    }
+
+    .checklist-item i {
+      color: #10b981;
+      margin-top: 0.25rem;
+      flex-shrink: 0;
+    }
+
+    /* Process Timeline */
+    .inspection-process {
+      padding: 4rem 0;
+      background: #f9fafb;
+    }
+
+    .process-timeline {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .process-step {
+      display: grid;
+      grid-template-columns: 80px 1fr 400px;
+      gap: 2rem;
+      margin-bottom: 3rem;
+      position: relative;
+    }
+
+    @media (max-width: 1024px) {
+      .process-step {
+        grid-template-columns: 80px 1fr;
+      }
+
+      .step-visual {
+        display: none;
+      }
+    }
+
+    .process-step:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      left: 40px;
+      top: 80px;
+      bottom: -3rem;
+      width: 2px;
+      background: #e5e7eb;
+    }
+
+    .step-number {
+      width: 80px;
+      height: 80px;
+      background: #fbbf24;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      font-weight: bold;
+      color: #1f2937;
+    }
+
+    .step-content h3 {
+      margin-bottom: 1rem;
+    }
+
+    .step-details {
+      background: white;
+      border: 2px solid #e5e7eb;
+      padding: 1.5rem;
+    }
+
+    .step-details p {
+      color: #4b5563;
+      margin-bottom: 1rem;
+    }
+
+    .step-details ul {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0;
+    }
+
+    .step-details li {
+      padding: 0.5rem 0;
+      padding-left: 1.5rem;
+      position: relative;
+      color: #374151;
+    }
+
+    .step-details li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: #fbbf24;
+      font-weight: bold;
+    }
+
+    .step-time {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 2px solid #f3f4f6;
+      color: #6b7280;
+      font-size: 0.875rem;
+    }
+
+    .visual-card {
+      background: white;
+      overflow: hidden;
+    }
+
+    .card-header {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 1rem;
+      background: #f9fafb;
+      border-bottom: 2px solid #e5e7eb;
+    }
+
+    .card-content {
+      padding: 1rem;
+    }
+
+    /* Preparation Checklist */
+    .preparation-checklist {
+      padding: 4rem 0;
+      background: white;
+    }
+
+    .preparation-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+
+    @media (max-width: 768px) {
+      .preparation-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .prep-category {
+      border: 3px solid #e5e7eb;
+      background: white;
+    }
+
+    .prep-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1.5rem;
+      background: #f9fafb;
+      border-bottom: 3px solid #e5e7eb;
+    }
+
+    .prep-header i {
+      font-size: 24px;
+      color: #fbbf24;
+    }
+
+    .prep-checklist {
+      padding: 1.5rem;
+    }
+
+    .prep-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      border: 2px solid #e5e7eb;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .prep-item:hover {
+      border-color: #fbbf24;
+      background: #fef3c7;
+    }
+
+    .prep-checkbox {
+      width: 20px;
+      height: 20px;
+      cursor: pointer;
+    }
+
+    .prep-content strong {
+      display: block;
+      margin-bottom: 0.25rem;
+      color: #1f2937;
+    }
+
+    .prep-content p {
+      font-size: 0.875rem;
+      color: #6b7280;
+    }
+
+    .prep-summary {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .summary-card {
+      background: white;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .progress-bar {
+      height: 30px;
+      background: #e5e7eb;
+      border-radius: 15px;
+      overflow: hidden;
+      margin: 1rem 0;
+    }
+
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #fbbf24 0%, #f59e0b 100%);
+      transition: width 0.5s ease;
+    }
+
+    .summary-actions {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      margin-top: 1.5rem;
+    }
+
+    .btn-print,
+    .btn-ready {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.5rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      border: 2px solid;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .btn-print {
+      background: transparent;
+      color: #6b7280;
+      border-color: #6b7280;
+    }
+
+    .btn-ready {
+      background: #fbbf24;
+      color: #1f2937;
+      border-color: #fbbf24;
+      text-decoration: none;
+    }
+
+    .btn-ready:hover {
+      background: transparent;
+    }
+
+    /* Booking Form */
+    .booking-form-section {
+      padding: 4rem 0;
+      background: #f9fafb;
+    }
+
+    .booking-layout {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 2rem;
+    }
+
+    @media (max-width: 1024px) {
+      .booking-layout {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .booking-form {
+      background: white;
+      border: 3px solid #e5e7eb;
+      padding: 2rem;
+    }
+
+    .form-section {
+      margin-bottom: 2rem;
+      padding-bottom: 2rem;
+      border-bottom: 2px solid #f3f4f6;
+    }
+
+    .form-section:last-child {
+      border-bottom: none;
+    }
+
+    .form-section h3 {
+      margin-bottom: 1.5rem;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    @media (max-width: 640px) {
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .form-group {
+      margin-bottom: 1rem;
+    }
+
+    .form-group label {
+      display: block;
+      font-weight: bold;
+      color: #1f2937;
+      margin-bottom: 0.5rem;
+      text-transform: uppercase;
+      font-size: 0.875rem;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 0.75rem;
+      border: 2px solid #e5e7eb;
+      background: white;
+      font-size: 1rem;
+      transition: all 0.3s;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: #fbbf24;
+      box-shadow: 0 0 0 3px rgba(251, 191, 36, 0.1);
+    }
+
+    .urgency-options {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+
+    @media (max-width: 768px) {
+      .urgency-options {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .urgency-option {
+      position: relative;
+    }
+
+    .urgency-option input[type="radio"] {
+      position: absolute;
+      opacity: 0;
+    }
+
+    .urgency-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 1.5rem;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .urgency-card.emergency {
+      background: #fef2f2;
+      border-color: #dc2626;
+    }
+
+    .urgency-card.urgent {
+      background: #fef3c7;
+      border-color: #f59e0b;
+    }
+
+    .urgency-card.standard {
+      background: #f0fdf4;
+      border-color: #10b981;
+    }
+
+    .urgency-option input[type="radio"]:checked + .urgency-card {
+      border-width: 4px;
+      transform: scale(1.05);
+    }
+
+    .urgency-title {
+      font-weight: bold;
+      margin: 0.5rem 0;
+    }
+
+    .urgency-desc {
+      font-size: 0.875rem;
+      color: #6b7280;
+    }
+
+    .urgency-time {
+      font-weight: bold;
+      margin-top: 0.5rem;
+      color: #059669;
+    }
+
+    .concerns-grid,
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+
+    @media (max-width: 640px) {
+      .concerns-grid,
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .concern-item,
+    .service-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      padding: 0.75rem;
+      border: 2px solid #e5e7eb;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .concern-item:hover,
+    .service-item:hover {
+      border-color: #fbbf24;
+      background: #fef3c7;
+    }
+
+    .service-details {
+      flex: 1;
+    }
+
+    .service-details strong {
+      display: block;
+      margin-bottom: 0.25rem;
+    }
+
+    .service-details small {
+      display: block;
+      color: #6b7280;
+      font-size: 0.75rem;
+    }
+
+    .service-price {
+      display: block;
+      margin-top: 0.5rem;
+      font-weight: bold;
+      color: #059669;
+    }
+
+    .consent-checkboxes {
+      margin: 1.5rem 0;
+    }
+
+    .consent-label {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+      cursor: pointer;
+    }
+
+    .consent-label a {
+      color: #2563eb;
+      text-decoration: underline;
+    }
+
+    .btn-book {
+      width: 100%;
+      padding: 1.25rem;
+      background: #fbbf24;
+      color: #1f2937;
+      font-size: 1.25rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      border: 3px solid #fbbf24;
+      cursor: pointer;
+      transition: all 0.3s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+    }
+
+    .btn-book:hover {
+      background: transparent;
+    }
+
+    .btn-book:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    /* Booking Sidebar */
+    .booking-sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .inspection-summary,
+    .inspector-credentials,
+    .emergency-contact {
+      background: white;
+      border: 3px solid #e5e7eb;
+      padding: 1.5rem;
+    }
+
+    .summary-header,
+    .inspector-credentials h3,
+    .emergency-contact h3 {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+      padding-bottom: 1rem;
+      border-bottom: 2px solid #f3f4f6;
+    }
+
+    .summary-items {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .summary-item {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      color: #374151;
+    }
+
+    .summary-item i {
+      color: #10b981;
+      flex-shrink: 0;
+    }
+
+    .credentials-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .credential-item {
+      display: flex;
+      gap: 1rem;
+      padding: 1rem;
+      background: #f9fafb;
+      border: 2px solid #e5e7eb;
+    }
+
+    .credential-item i {
+      color: #fbbf24;
+      font-size: 24px;
+      flex-shrink: 0;
+    }
+
+    .credential-item strong {
+      display: block;
+      margin-bottom: 0.25rem;
+    }
+
+    .credential-item p {
+      font-size: 0.875rem;
+      color: #6b7280;
+    }
+
+    .emergency-contact {
+      background: #fef2f2;
+      border-color: #dc2626;
+    }
+
+    .emergency-contact p {
+      color: #7f1d1d;
+      margin-bottom: 1rem;
+    }
+
+    .emergency-btn {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      width: 100%;
+      padding: 1rem;
+      background: #dc2626;
+      color: white;
+      font-weight: bold;
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+
+    .emergency-btn:hover {
+      background: #b91c1c;
+      transform: scale(1.05);
+    }
+
+    .emergency-btn span {
+      font-size: 1.25rem;
+    }
+
+    /* Equipment and Report Previews */
+    .equipment-list,
+    .report-preview,
+    .findings-preview {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.75rem;
+    }
+
+    .equipment-item,
+    .report-section {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem;
+      background: #f9fafb;
+      border: 1px solid #e5e7eb;
+      font-size: 0.875rem;
+    }
+
+    .finding-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem;
+      margin-bottom: 0.5rem;
+      border-left: 3px solid;
+    }
+
+    .finding-item.high {
+      background: #fef2f2;
+      border-color: #dc2626;
+    }
+
+    .finding-item.medium {
+      background: #fef3c7;
+      border-color: #f59e0b;
+    }
+
+    .finding-item.low {
+      background: #f0fdf4;
+      border-color: #10b981;
+    }
+
+    .priority {
+      font-weight: bold;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .hero-stats {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .inspection-categories {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Booking Form Styles */
+    .booking-form {
+      background: white;
+      border: 2px solid #e5e7eb;
+      padding: 2rem;
+    }
+
+    .form-section {
+      margin-bottom: 2rem;
+      padding-bottom: 2rem;
+      border-bottom: 2px solid #e5e7eb;
+    }
+
+    .form-section:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .form-section h3 {
+      margin-bottom: 1.5rem;
+      color: #1f2937;
+      border-bottom: 3px solid #fbbf24;
+      padding-bottom: 0.5rem;
+      display: inline-block;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .form-group {
+      margin-bottom: 1rem;
+    }
+
+    .form-group label {
+      display: block;
+      font-weight: 600;
+      color: #374151;
+      margin-bottom: 0.5rem;
+      text-transform: uppercase;
+      font-size: 0.875rem;
+      letter-spacing: 0.025em;
+    }
+
+    .form-group input[type="text"],
+    .form-group input[type="email"],
+    .form-group input[type="tel"],
+    .form-group input[type="date"],
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      border: 2px solid #d1d5db;
+      background: white;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: #fbbf24;
+      box-shadow: 0 0 0 3px rgba(251, 191, 36, 0.1);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    /* Urgency Options */
+    .urgency-options {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-top: 0.5rem;
+    }
+
+    .urgency-option {
+      position: relative;
+      cursor: pointer;
+    }
+
+    .urgency-option input[type="radio"] {
+      position: absolute;
+      opacity: 0;
+    }
+
+    .urgency-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 1.5rem 1rem;
+      text-align: center;
+      background: white;
+      transition: all 0.3s ease;
+    }
+
+    .urgency-card i {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .urgency-card.emergency i {
+      color: #dc2626;
+    }
+
+    .urgency-card.urgent i {
+      color: #f59e0b;
+    }
+
+    .urgency-card.standard i {
+      color: #10b981;
+    }
+
+    .urgency-title {
+      font-weight: bold;
+      font-size: 1rem;
+      margin-bottom: 0.25rem;
+      text-transform: uppercase;
+    }
+
+    .urgency-desc {
+      font-size: 0.875rem;
+      color: #6b7280;
+      margin-bottom: 0.5rem;
+    }
+
+    .urgency-time {
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: #1f2937;
+    }
+
+    .urgency-option input[type="radio"]:checked + .urgency-card {
+      border-color: #fbbf24;
+      background: #fef3c7;
+      box-shadow: 0 0 0 3px rgba(251, 191, 36, 0.2);
+    }
+
+    /* Concerns Grid */
+    .concerns-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      margin-top: 0.5rem;
+    }
+
+    .concern-item,
+    .service-item {
+      display: flex;
+      align-items: center;
+      padding: 1rem;
+      background: white;
+      border: 2px solid #e5e7eb;
+      cursor: pointer;
+      position: relative;
+      transition: all 0.3s ease;
+    }
+
+    .concern-item:hover,
+    .service-item:hover {
+      border-color: #fbbf24;
+      background: #fef3c7;
+    }
+
+    .concern-item input[type="checkbox"],
+    .service-item input[type="checkbox"] {
+      position: absolute;
+      opacity: 0;
+    }
+
+    .concern-item .checkmark,
+    .service-item .checkmark {
+      width: 20px;
+      height: 20px;
+      border: 2px solid #d1d5db;
+      background: white;
+      margin-right: 0.75rem;
+      position: relative;
+      flex-shrink: 0;
+    }
+
+    .concern-item input[type="checkbox"]:checked + .checkmark,
+    .service-item input[type="checkbox"]:checked + .checkmark {
+      background: #fbbf24;
+      border-color: #fbbf24;
+    }
+
+    .concern-item input[type="checkbox"]:checked + .checkmark::after,
+    .service-item input[type="checkbox"]:checked + .checkmark::after {
+      content: '✓';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      font-weight: bold;
+    }
+
+    /* Services Grid */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      margin-top: 0.5rem;
+    }
+
+    .service-details {
+      flex: 1;
+      margin-left: 2rem;
+    }
+
+    .service-details strong {
+      display: block;
+      margin-bottom: 0.25rem;
+      color: #1f2937;
+    }
+
+    .service-details small {
+      display: block;
+      color: #6b7280;
+      font-size: 0.875rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .service-price {
+      display: inline-block;
+      background: #10b981;
+      color: white;
+      padding: 0.25rem 0.5rem;
+      border-radius: 0.25rem;
+      font-size: 0.875rem;
+      font-weight: 600;
+    }
+
+    /* Consent Checkboxes */
+    .consent-checkboxes {
+      margin-top: 1rem;
+    }
+
+    .consent-label {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 1rem;
+      cursor: pointer;
+      position: relative;
+    }
+
+    .consent-label input[type="checkbox"] {
+      position: absolute;
+      opacity: 0;
+    }
+
+    .consent-label .checkmark {
+      width: 20px;
+      height: 20px;
+      border: 2px solid #d1d5db;
+      background: white;
+      margin-right: 0.75rem;
+      margin-top: 0.125rem;
+      flex-shrink: 0;
+    }
+
+    .consent-label input[type="checkbox"]:checked + .checkmark {
+      background: #fbbf24;
+      border-color: #fbbf24;
+    }
+
+    .consent-label input[type="checkbox"]:checked + .checkmark::after {
+      content: '✓';
+      position: absolute;
+      top: 0;
+      left: 2px;
+      color: white;
+      font-weight: bold;
+    }
+
+    .consent-label a {
+      color: #2563eb;
+      text-decoration: underline;
+    }
+
+    /* Book Button */
+    .btn-book {
+      width: 100%;
+      background: #fbbf24;
+      color: #1f2937;
+      padding: 1.25rem 2rem;
+      font-size: 1.25rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      border: 2px solid #fbbf24;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .btn-book:hover {
+      background: #1f2937;
+      color: #fbbf24;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Sidebar Styles */
+    .inspection-sidebar {
+      position: sticky;
+      top: 2rem;
+    }
+
+    .summary-card,
+    .credentials-card {
+      background: white;
+      border: 2px solid #e5e7eb;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .summary-card h3,
+    .credentials-card h3 {
+      font-size: 1.5rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 3px solid #fbbf24;
+    }
+
+    .summary-stats {
+      display: grid;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .stat-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.75rem;
+      background: #f9fafb;
+      border-left: 3px solid #fbbf24;
+    }
+
+    .stat-label {
+      font-weight: 600;
+      color: #6b7280;
+      text-transform: uppercase;
+      font-size: 0.875rem;
+    }
+
+    .stat-value {
+      font-weight: bold;
+      color: #1f2937;
+      font-size: 1.125rem;
+    }
+
+    .summary-benefits {
+      list-style: none;
+      padding: 0;
+      margin: 1.5rem 0;
+    }
+
+    .summary-benefits li {
+      padding: 0.75rem;
+      margin-bottom: 0.5rem;
+      background: #f0fdf4;
+      border-left: 3px solid #10b981;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .summary-benefits li i {
+      color: #10b981;
+    }
+
+    .btn-call {
+      width: 100%;
+      background: #dc2626;
+      color: white;
+      padding: 1rem;
+      font-size: 1.125rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+
+    .btn-call:hover {
+      background: #b91c1c;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px rgba(220, 38, 38, 0.3);
+    }
+
+    .credentials-list {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .credential-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem;
+      background: #f9fafb;
+      border: 1px solid #e5e7eb;
+    }
+
+    .credential-icon {
+      width: 50px;
+      height: 50px;
+      background: #fbbf24;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      color: #1f2937;
+    }
+
+    .credential-details strong {
+      display: block;
+      color: #1f2937;
+      margin-bottom: 0.25rem;
+    }
+
+    .credential-details small {
+      color: #6b7280;
+      font-size: 0.875rem;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 1024px) {
+      .booking-container {
+        grid-template-columns: 1fr;
+      }
+
+      .inspection-sidebar {
+        position: relative;
+        top: 0;
+        order: -1;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hero-stats {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .inspection-categories {
+        grid-template-columns: 1fr;
+      }
+
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+
+      .urgency-options {
+        grid-template-columns: 1fr;
+      }
+
+      .concerns-grid,
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .process-step {
+        grid-template-columns: auto 1fr;
+        gap: 1.5rem;
+      }
+
+      .step-visual {
+        display: none;
+      }
+    }
+
+    @media print {
+      .btn-print,
+      .btn-ready,
+      .emergency-banner,
+      .btn-book,
+      .btn-call {
+        display: none;
+      }
+
+      .prep-item {
+        page-break-inside: avoid;
+      }
+    }
+  </style>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Preparation checklist functionality
+      const prepCheckboxes = document.querySelectorAll('.prep-checkbox');
+      const checkedCountEl = document.getElementById('checkedCount');
+      const totalCountEl = document.getElementById('totalCount');
+      const prepProgressEl = document.getElementById('prepProgress');
+      
+      function updatePreparationProgress() {
+        const totalCount = prepCheckboxes.length;
+        const checkedCount = document.querySelectorAll('.prep-checkbox:checked').length;
+        
+        checkedCountEl.textContent = checkedCount;
+        totalCountEl.textContent = totalCount;
+        
+        const percentage = (checkedCount / totalCount) * 100;
+        prepProgressEl.style.width = percentage + '%';
+        
+        // Save progress to localStorage
+        const checkedItems = [];
+        prepCheckboxes.forEach((checkbox, index) => {
+          if (checkbox.checked) {
+            checkedItems.push(index);
+          }
+        });
+        localStorage.setItem('inspectionPrepChecklist', JSON.stringify(checkedItems));
+        
+        // Show completion message if all checked
+        if (checkedCount === totalCount) {
+          showCompletionMessage();
+        }
+      }
+      
+      function showCompletionMessage() {
+        const summaryCard = document.querySelector('.summary-card');
+        if (summaryCard && !document.querySelector('.completion-message')) {
+          const message = document.createElement('div');
+          message.className = 'completion-message';
+          message.style.cssText = `
+            background: #10b981;
+            color: white;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            margin-top: 1rem;
+            animation: slideIn 0.5s ease;
+          `;
+          message.innerHTML = `
+            <strong> Congratulations!</strong> You're fully prepared for your inspection!
+            <br>Our inspector will be impressed with your preparation.
+          `;
+          summaryCard.appendChild(message);
+        }
+      }
+      
+      // Load saved progress
+      function loadSavedProgress() {
+        const saved = localStorage.getItem('inspectionPrepChecklist');
+        if (saved) {
+          const checkedItems = JSON.parse(saved);
+          checkedItems.forEach(index => {
+            if (prepCheckboxes[index]) {
+              prepCheckboxes[index].checked = true;
+            }
+          });
+        }
+      }
+      
+      // Clear checklist button
+      function addClearButton() {
+        const buttonsContainer = document.querySelector('.prep-buttons');
+        if (buttonsContainer && !document.querySelector('.btn-clear')) {
+          const clearBtn = document.createElement('button');
+          clearBtn.className = 'btn-clear';
+          clearBtn.style.cssText = `
+            background: #ef4444;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 0.5rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+          `;
+          clearBtn.innerHTML = '<i class="fa-solid fa-trash"></i> Clear All';
+          clearBtn.onclick = () => {
+            if (confirm('Clear all checked items?')) {
+              prepCheckboxes.forEach(checkbox => checkbox.checked = false);
+              localStorage.removeItem('inspectionPrepChecklist');
+              updatePreparationProgress();
+              const completionMsg = document.querySelector('.completion-message');
+              if (completionMsg) completionMsg.remove();
+            }
+          };
+          buttonsContainer.appendChild(clearBtn);
+        }
+      }
+      
+      prepCheckboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', updatePreparationProgress);
+      });
+      
+      // Initialize
+      loadSavedProgress();
+      addClearButton();
+      
+      // Form validation and submission
+      const bookingForm = document.getElementById('inspectionBookingForm');
+      
+      if (bookingForm) {
+        // Set minimum date to today
+        const preferredDateInput = document.getElementById('preferredDate');
+        const today = new Date().toISOString().split('T')[0];
+        preferredDateInput.min = today;
+        
+        bookingForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+          
+          // Basic validation
+          const requiredFields = this.querySelectorAll('[required]');
+          let isValid = true;
+          
+          requiredFields.forEach(field => {
+            if (!field.value.trim()) {
+              field.style.borderColor = 'var(--color-danger)';
+              isValid = false;
+            } else {
+              field.style.borderColor = 'rgba(255, 255, 255, 0.1)';
+            }
+          });
+          
+          if (!isValid) {
+            alert('Please fill in all required fields.');
+            return;
+          }
+          
+          // Get form data
+          const formData = new FormData(this);
+          const urgency = formData.get('urgency');
+          const concerns = formData.getAll('concerns');
+          const additionalServices = formData.getAll('additionalServices');
+          
+          // Simulate form submission
+          const submitBtn = this.querySelector('.btn-book');
+          const originalText = submitBtn.innerHTML;
+          
+          submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Booking Inspection...';
+          submitBtn.disabled = true;
+          
+          setTimeout(() => {
+            let message = 'Inspection successfully booked! ';
+            
+            if (urgency === 'emergency') {
+              message += 'Our emergency team will contact you within 30 minutes.';
+            } else if (urgency === 'urgent') {
+              message += 'We will contact you within 2 hours to confirm your appointment.';
+            } else {
+              message += 'We will contact you within 24 hours to confirm your appointment.';
+            }
+            
+            alert(message);
+            
+            submitBtn.innerHTML = originalText;
+            submitBtn.disabled = false;
+            
+            // Reset form or redirect
+            // this.reset();
+          }, 2000);
+        });
+      }
+      
+      // Auto-update preferred date based on urgency
+      const urgencyRadios = document.querySelectorAll('input[name="urgency"]');
+      urgencyRadios.forEach(radio => {
+        radio.addEventListener('change', function() {
+          const preferredDate = document.getElementById('preferredDate');
+          const today = new Date();
+          
+          if (this.value === 'emergency') {
+            preferredDate.value = today.toISOString().split('T')[0];
+          } else if (this.value === 'urgent') {
+            const tomorrow = new Date(today);
+            tomorrow.setDate(tomorrow.getDate() + 1);
+            preferredDate.value = tomorrow.toISOString().split('T')[0];
+          } else {
+            const nextWeek = new Date(today);
+            nextWeek.setDate(nextWeek.getDate() + 7);
+            preferredDate.value = nextWeek.toISOString().split('T')[0];
+          }
+        });
+      });
+      
+      // Animate stats on scroll
+      const observerOptions = {
+        threshold: 0.5,
+        rootMargin: '0px 0px -100px 0px'
+      };
+      
+      const statsObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const statValues = entry.target.querySelectorAll('.stat-value');
+            statValues.forEach((stat, index) => {
+              const finalValue = stat.textContent;
+              
+              if (finalValue.includes('%')) {
+                const numValue = parseInt(finalValue);
+                stat.textContent = '0%';
+                animateValue(stat, 0, numValue, 1500, '', '%');
+              } else if (finalValue.includes('/')) {
+                // Handle "24/7" case
+                stat.textContent = '0/0';
+                setTimeout(() => {
+                  stat.textContent = finalValue;
+                }, index * 200);
+              } else {
+                const numValue = parseInt(finalValue);
+                stat.textContent = '0';
+                animateValue(stat, 0, numValue, 1500);
+              }
+            });
+          }
+        });
+      }, observerOptions);
+      
+      const heroStats = document.querySelector('.hero-stats');
+      if (heroStats) {
+        statsObserver.observe(heroStats);
+      }
+      
+      function animateValue(element, start, end, duration, prefix = '', suffix = '') {
+        const startTime = performance.now();
+        const update = (currentTime) => {
+          const elapsed = currentTime - startTime;
+          const progress = Math.min(elapsed / duration, 1);
+          const current = Math.round(start + (end - start) * progress);
+          element.textContent = prefix + current + suffix;
+          
+          if (progress < 1) {
+            requestAnimationFrame(update);
+          }
+        };
+        requestAnimationFrame(update);
+      }
+      
+      // Initialize preparation progress
+      updatePreparationProgress();
+    });
+  </script>
+</PageLayout>

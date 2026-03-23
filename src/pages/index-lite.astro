@@ -1,0 +1,131 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import Hero from '../components/sections/Hero.astro';
+import ContactForm from '../components/ContactForm.astro';
+import { StatsBar } from '../components/react/StatsBar.tsx';
+import { ServicesSection } from '../components/react/ServicesSection.tsx';
+import FAQAccordion from '../components/react/FAQAccordion.tsx';
+
+const pageTitle = "Basement Waterproofing Toronto | 24/7 Emergency | $3,400 Rebate | DrySpace";
+const pageDescription = "⚡ Emergency basement waterproofing Toronto. ✓ Same-day service ✓ 25-year warranty ✓ $3,400 government rebates ✓ 487+ 5-star reviews. Licensed & insured. Call 437-545-0067 now for FREE inspection.";
+---
+
+<PageLayout 
+  title={pageTitle}
+  description={pageDescription}
+  showAnnouncement={false}
+>
+  <!-- Critical Above-the-Fold Content -->
+  <Hero 
+    title="Toronto's Most Trusted Waterproofing Experts"
+    subtitle="Protecting GTA homes from water damage since 1999. <60 minute emergency response, lifetime transferable warranty, and government rebates available."
+    primaryCTA={{ text: "Get Free Inspection", href: "/free-inspection" }}
+    secondaryCTA={{ text: "Emergency: 437-545-0067", href: "tel:437-545-0067" }}
+    backgroundImage="/images/dryspace_hero_desktop.webp"
+    badge="$3,400 REBATE AVAILABLE"
+  />
+
+  <!-- Stats - Lightweight Component -->
+  <StatsBar client:visible />
+
+  <!-- Core Services - Critical for SEO -->
+  <ServicesSection client:visible />
+
+  <!-- Trust Signals Section -->
+  <section class="py-12 bg-slate-50">
+    <div class="container mx-auto px-4">
+      <div class="grid md:grid-cols-4 gap-6 text-center">
+        <div class="p-4">
+          <div class="text-3xl font-bold text-cyan-600">25+</div>
+          <div class="text-sm text-slate-500">Years Experience</div>
+        </div>
+        <div class="p-4">
+          <div class="text-3xl font-bold text-cyan-600">487+</div>
+          <div class="text-sm text-slate-500">5-Star Reviews</div>
+        </div>
+        <div class="p-4">
+          <div class="text-3xl font-bold text-cyan-600">$3,400</div>
+          <div class="text-sm text-slate-500">Max Rebate</div>
+        </div>
+        <div class="p-4">
+          <div class="text-3xl font-bold text-cyan-600">24/7</div>
+          <div class="text-sm text-slate-500">Emergency Service</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Simple CTA Section -->
+  <section class="py-16 bg-cyan-600 text-white">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-3xl font-bold mb-4">Emergency Water in Your Basement?</h2>
+      <p class="text-xl mb-8">We respond within 60 minutes • Available 24/7</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="tel:437-545-0067" class="inline-block bg-white text-cyan-600 px-8 py-4 rounded-lg font-bold text-lg hover:bg-slate-50">
+          📞 Call Now: 437-545-0067
+        </a>
+        <a href="/free-inspection" class="inline-block bg-cyan-700 text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-cyan-800">
+          Book Free Inspection
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Service Areas -->
+  <section class="py-12 bg-white">
+    <div class="container mx-auto px-4">
+      <h2 class="text-2xl font-bold text-center mb-8">Serving All of Greater Toronto</h2>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+        <a href="/basement-waterproofing-mississauga" class="p-4 border rounded-lg hover:bg-slate-50">Mississauga</a>
+        <a href="/basement-waterproofing-brampton" class="p-4 border rounded-lg hover:bg-slate-50">Brampton</a>
+        <a href="/locations/toronto" class="p-4 border rounded-lg hover:bg-slate-50">Toronto</a>
+        <a href="/locations/scarborough" class="p-4 border rounded-lg hover:bg-slate-50">Scarborough</a>
+        <a href="/locations/north-york" class="p-4 border rounded-lg hover:bg-slate-50">North York</a>
+        <a href="/locations/etobicoke" class="p-4 border rounded-lg hover:bg-slate-50">Etobicoke</a>
+        <a href="/locations/vaughan" class="p-4 border rounded-lg hover:bg-slate-50">Vaughan</a>
+        <a href="/locations/markham" class="p-4 border rounded-lg hover:bg-slate-50">Markham</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Simplified FAQ - Critical for SEO -->
+  <section class="py-12 bg-slate-50">
+    <div class="container mx-auto px-4">
+      <h2 class="text-2xl font-bold text-center mb-8">Common Questions</h2>
+      <FAQAccordion client:visible />
+    </div>
+  </section>
+
+  <!-- Contact Form -->
+  <ContactForm />
+
+  <!-- Schema Markup -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "DrySpace Waterproofing",
+      "description": "Professional basement waterproofing services in Toronto and GTA with 24/7 emergency response",
+      "url": "https://dryspacewaterproofing.ca",
+      "telephone": "437-545-0067",
+      "priceRange": "$$$",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Toronto",
+        "addressRegion": "ON",
+        "addressCountry": "CA"
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+        "opens": "00:00",
+        "closes": "23:59"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "487"
+      }
+    }
+  </script>
+</PageLayout>

@@ -1,0 +1,53 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import InsuranceClaimWriter from '../../components/react/InsuranceClaimWriter.tsx';
+import ContactForm from '../../components/ContactForm.astro';
+---
+
+<PageLayout
+  title="Insurance Claim Letter Writer | Free Tool | Dryspace"
+  description="Generate a professional insurance claim letter for water damage or basement flooding. Our free tool creates a formatted letter with all the details your insurer needs."
+>
+  <section class="bg-slate-50 text-slate-900 py-16">
+    <div class="max-w-6xl mx-auto px-4">
+      <h1 class="text-4xl md:text-5xl font-bold mb-6">
+        Insurance Claim Letter Writer
+      </h1>
+      <p class="text-xl mb-8 text-slate-600 max-w-3xl">
+        Fill in your details and we'll generate a professional insurance claim letter
+        for water damage. Copy, print, or download — no signup required.
+      </p>
+      <div class="flex flex-wrap gap-4">
+        <div class="bg-white border border-slate-200 px-4 py-2 rounded-lg">
+          <span class="text-sm font-medium">Professional Format</span>
+        </div>
+        <div class="bg-white border border-slate-200 px-4 py-2 rounded-lg">
+          <span class="text-sm font-medium">Copy & Print</span>
+        </div>
+        <div class="bg-white border border-slate-200 px-4 py-2 rounded-lg">
+          <span class="text-sm font-medium">No Signup</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12">
+    <div class="max-w-6xl mx-auto px-4">
+      <InsuranceClaimWriter client:load />
+
+      <div class="mt-12 bg-amber-50 border border-amber-200 rounded-xl p-6">
+        <h2 class="text-xl font-bold text-amber-800 mb-3">Important: Document Everything</h2>
+        <p class="text-slate-700 mb-4">
+          Before cleanup, take <strong>photos and video</strong> of all damage from multiple angles.
+          Keep receipts for emergency purchases (pumps, fans, dehumidifiers). Your insurer will
+          request this documentation.
+        </p>
+        <a href="/emergency" class="inline-block text-sm font-semibold text-amber-700 hover:text-amber-900 transition-colors">
+          24/7 Emergency Waterproofing &rarr;
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <ContactForm />
+</PageLayout>

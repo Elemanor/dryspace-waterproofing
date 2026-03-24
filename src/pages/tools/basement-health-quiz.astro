@@ -1,0 +1,53 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import BasementHealthQuiz from '../../components/react/BasementHealthQuiz.tsx';
+import ContactForm from '../../components/ContactForm.astro';
+---
+
+<PageLayout
+  title="Basement Health Quiz | Free Score Card | Dryspace"
+  description="Take our free 15-question basement health quiz to get a personalized score card. Identify moisture problems, structural issues, and ventilation concerns before they become costly."
+>
+  <section class="bg-slate-50 text-slate-900 py-16">
+    <div class="max-w-6xl mx-auto px-4">
+      <h1 class="text-4xl md:text-5xl font-bold mb-6">
+        Basement Health Quiz
+      </h1>
+      <p class="text-xl mb-8 text-slate-600 max-w-3xl">
+        Answer 15 questions about your basement to get a personalized health score and
+        actionable recommendations from waterproofing experts.
+      </p>
+      <div class="flex flex-wrap gap-4">
+        <div class="bg-white border border-slate-200 px-4 py-2 rounded-lg">
+          <span class="text-sm font-medium">15 Questions</span>
+        </div>
+        <div class="bg-white border border-slate-200 px-4 py-2 rounded-lg">
+          <span class="text-sm font-medium">Personalized Score</span>
+        </div>
+        <div class="bg-white border border-slate-200 px-4 py-2 rounded-lg">
+          <span class="text-sm font-medium">Free Report</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12">
+    <div class="max-w-6xl mx-auto px-4">
+      <BasementHealthQuiz client:load />
+
+      <div class="mt-12 bg-cyan-50 border border-cyan-200 rounded-xl p-6">
+        <h2 class="text-xl font-bold text-cyan-800 mb-3">Why Basement Health Matters</h2>
+        <p class="text-slate-700 mb-4">
+          A healthy basement protects your home's value and your family's health. Moisture problems
+          left untreated can lead to <strong>mold growth within 24-48 hours</strong> and structural damage
+          that costs 3-5x more to fix later.
+        </p>
+        <a href="/blog" class="inline-block text-sm font-semibold text-cyan-700 hover:text-cyan-900 transition-colors">
+          Read our waterproofing guides &rarr;
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <ContactForm />
+</PageLayout>

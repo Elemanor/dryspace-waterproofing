@@ -58,6 +58,10 @@ const locations = [
 const resources = [
   { title: "Smart Monitor — Coming Soon", href: "/smart-monitor" },
   { title: "Cost Calculator", href: "/tools/waterproofing-cost-calculator" },
+  { title: "Crack Analyzer", href: "/tools/crack-analyzer" },
+  { title: "Basement Health Quiz", href: "/tools/basement-health-quiz" },
+  { title: "Sump Pump Selector", href: "/tools/sump-pump-selector" },
+  { title: "Insurance Claim Writer", href: "/tools/insurance-claim-writer" },
   { title: "Second Unit Planner", href: "/second-unit" },
   { title: "Blog & Guides", href: "/blog" },
   { title: "Case Studies", href: "/case-studies" },

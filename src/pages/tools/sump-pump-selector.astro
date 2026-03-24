@@ -1,0 +1,58 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import SumpPumpSelector from '../../components/react/SumpPumpSelector.tsx';
+import ContactForm from '../../components/ContactForm.astro';
+---
+
+<PageLayout
+  title="Sump Pump Selector | Find the Right Pump | Dryspace"
+  description="Use our free sump pump selector tool to find the perfect pump for your home. Calculates required GPH, recommends HP, backup systems, and accessories based on your basement conditions."
+>
+  <section class="bg-slate-50 text-slate-900 py-16">
+    <div class="max-w-6xl mx-auto px-4">
+      <h1 class="text-4xl md:text-5xl font-bold mb-6">
+        Sump Pump Selector
+      </h1>
+      <p class="text-xl mb-8 text-slate-600 max-w-3xl">
+        Answer 4 questions about your home and we'll recommend the right sump pump system
+        with specs, backup options, and budget-appropriate accessories.
+      </p>
+      <div class="flex flex-wrap gap-4">
+        <div class="bg-white border border-slate-200 px-4 py-2 rounded-lg">
+          <span class="text-sm font-medium">4-Step Wizard</span>
+        </div>
+        <div class="bg-white border border-slate-200 px-4 py-2 rounded-lg">
+          <span class="text-sm font-medium">GPH Calculator</span>
+        </div>
+        <div class="bg-white border border-slate-200 px-4 py-2 rounded-lg">
+          <span class="text-sm font-medium">Expert Picks</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12">
+    <div class="max-w-6xl mx-auto px-4">
+      <SumpPumpSelector client:load />
+
+      <div class="mt-12 bg-cyan-50 border border-cyan-200 rounded-xl p-6">
+        <h2 class="text-xl font-bold text-cyan-800 mb-3">Professional Sump Pump Installation</h2>
+        <p class="text-slate-700 mb-4">
+          A properly installed sump pump system is your basement's last line of defence. Dryspace installs
+          all major brands with <strong>battery backup</strong> and <strong>water-powered backup</strong>
+          options. Eligible for up to <strong>$1,750</strong> in City of Toronto rebates.
+        </p>
+        <div class="flex flex-wrap gap-4 mt-4">
+          <a href="/services/sump-pump-installation" class="inline-block text-sm font-semibold text-cyan-700 hover:text-cyan-900 transition-colors">
+            Learn about our installations &rarr;
+          </a>
+          <a href="/government-rebates" class="inline-block text-sm font-semibold text-cyan-700 hover:text-cyan-900 transition-colors">
+            Check rebate eligibility &rarr;
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <ContactForm />
+</PageLayout>

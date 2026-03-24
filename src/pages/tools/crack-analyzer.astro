@@ -1,0 +1,52 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import CrackAnalyzer from '../../components/react/CrackAnalyzer.tsx';
+import ContactForm from '../../components/ContactForm.astro';
+---
+
+<PageLayout
+  title="Foundation Crack Analyzer | Free Assessment Tool | Dryspace"
+  description="Analyze foundation cracks in your home with our free AI-powered tool. Identify crack severity, get repair recommendations, and understand when professional help is needed."
+>
+  <section class="bg-slate-50 text-slate-900 py-16">
+    <div class="max-w-6xl mx-auto px-4">
+      <h1 class="text-4xl md:text-5xl font-bold mb-6">
+        Foundation Crack Analyzer
+      </h1>
+      <p class="text-xl mb-8 text-slate-600 max-w-3xl">
+        Answer 5 quick questions about your foundation crack and get an instant severity assessment with professional repair recommendations.
+      </p>
+      <div class="flex flex-wrap gap-4">
+        <div class="bg-white border border-slate-200 px-4 py-2 rounded-lg">
+          <span class="text-sm font-medium">5-Step Assessment</span>
+        </div>
+        <div class="bg-white border border-slate-200 px-4 py-2 rounded-lg">
+          <span class="text-sm font-medium">Instant Results</span>
+        </div>
+        <div class="bg-white border border-slate-200 px-4 py-2 rounded-lg">
+          <span class="text-sm font-medium">Expert Recommendations</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12">
+    <div class="max-w-6xl mx-auto px-4">
+      <CrackAnalyzer client:load />
+
+      <div class="mt-12 bg-cyan-50 border border-cyan-200 rounded-xl p-6">
+        <h2 class="text-xl font-bold text-cyan-800 mb-3">When to Call a Professional</h2>
+        <p class="text-slate-700 mb-4">
+          Horizontal cracks, stair-step patterns, or any crack wider than 3mm (1/8") should be
+          inspected by a structural engineer. Dryspace offers <strong>free foundation inspections</strong>
+          across the GTA.
+        </p>
+        <a href="/free-inspection" class="inline-block text-sm font-semibold text-cyan-700 hover:text-cyan-900 transition-colors">
+          Book a free inspection &rarr;
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <ContactForm />
+</PageLayout>

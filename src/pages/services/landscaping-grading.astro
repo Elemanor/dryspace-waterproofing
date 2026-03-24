@@ -1,0 +1,1201 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import ServiceHero from '../../components/sections/ServiceHero.astro';
+import TrustBar from '../../components/sections/TrustBar.astro';
+import ServiceProcess from '../../components/sections/ServiceProcess.astro';
+import ServicePricing from '../../components/sections/ServicePricing.astro';
+import CTABand from '../../components/sections/CTABand.astro';
+import SectionHeader from '../../components/sections/SectionHeader.astro';
+import ServiceSchema from '../../components/ServiceSchema.astro';
+import InternalLinks from '../../components/InternalLinks.astro';
+import BeforeAfterGallery from '../../components/BeforeAfterGallery.astro';
+import WhyChooseUs from '../../components/WhyChooseUs.astro';
+import Testimonials from '../../components/sections/Testimonials.astro';
+import TechnicalDrawings from '../../components/TechnicalDrawings.astro';
+import ContactForm from '../../components/ContactForm.astro';
+import ServiceImageGallery from '../../components/ServiceImageGallery.astro';
+
+// SEO-optimized metadata focused on service
+const pageTitle = "Landscaping & Grading Services Toronto | Post-Construction Restoration";
+const pageDescription = "Post-construction yard restoration, drainage grading, and landscape rebuilding after waterproofing or underpinning. We fix what we dig. Call 437-545-0067.";
+
+// Service areas list
+const serviceAreas = [
+  "Toronto",
+  "Scarborough",
+  "Etobicoke",
+  "North York",
+  "Mississauga",
+  "Brampton",
+  "Vaughan",
+  "Markham",
+  "Oakville",
+  "Burlington",
+  "Richmond Hill",
+  "Ajax",
+  "Pickering",
+  "Oshawa"
+];
+
+// Grading Specifications Table
+const gradingSpecs = [
+  {
+    zone: "Foundation zone (0-6 ft)",
+    slopeRequirement: "2% minimum (¼\" per foot)",
+    distance: "6 feet from wall",
+    material: "Clay cap + topsoil"
+  },
+  {
+    zone: "Transition zone (6-15 ft)",
+    slopeRequirement: "1% minimum",
+    distance: "To property drainage",
+    material: "Topsoil"
+  },
+  {
+    zone: "Window wells",
+    slopeRequirement: "Level with or above grade",
+    distance: "Around well",
+    material: "Gravel + topsoil"
+  },
+  {
+    zone: "Walkways/patios",
+    slopeRequirement: "1-2% away from house",
+    distance: "Full length",
+    material: "Per surface type"
+  },
+  {
+    zone: "Driveway",
+    slopeRequirement: "2% toward street",
+    distance: "Full length",
+    material: "Per surface type"
+  }
+];
+
+// Landscaping Services
+const landscapingServices = [
+  {
+    name: "POST-CONSTRUCTION RESTORATION",
+    description: "Restore yard after waterproofing, underpinning, or foundation work. Grading, topsoil, seed/sod, replanting.",
+    details: "Our most common landscaping service. After we excavate for waterproofing or underpinning, we put your yard back together with proper drainage grading.",
+    features: [
+      "Proper backfill compaction",
+      "Drainage grading to spec",
+      "Topsoil replacement (4-6\" depth)",
+      "Sod or hydroseeding",
+      "Shrub and garden replanting",
+      "Fence replacement if removed"
+    ],
+    price: "$1,500 - $8,000",
+    priceNote: "Depends on excavation extent"
+  },
+  {
+    name: "DRAINAGE GRADING",
+    description: "Re-grade soil to slope away from foundation. Minimum 2% slope for 6 feet, then 1% beyond.",
+    details: "Your first line of defence against basement water. If your yard slopes toward the house, water will reach your foundation.",
+    features: [
+      "2% minimum slope for 6 feet",
+      "Over-grading for settlement",
+      "Clay cap at foundation",
+      "Topsoil finish",
+      "Coordinate with neighbour drainage",
+      "OBC compliance"
+    ],
+    price: "$1,000 - $3,000",
+    priceNote: "Re-grade existing yard"
+  },
+  {
+    name: "DOWNSPOUT EXTENSIONS & UNDERGROUND DRAINAGE",
+    description: "Extend downspouts 6-10 feet from house via buried pipe. Discharge to storm sewer, dry well, or daylight outlet.",
+    details: "The #1 most effective water management upgrade. Downspouts that dump water next to your foundation cause 40% of basement flooding.",
+    features: [
+      "Underground PVC pipe",
+      "6-10 feet minimum extension",
+      "Storm sewer connection or daylight",
+      "Pop-up emitter or splash block",
+      "Freeze-protected installation",
+      "Clean-out access points"
+    ],
+    price: "$500 - $1,200",
+    priceNote: "Per downspout"
+  },
+  {
+    name: "FRENCH DRAIN / CURTAIN DRAIN",
+    description: "Perimeter trench drain in yard to intercept surface and subsurface water before it reaches the foundation.",
+    details: "Gravel-filled trench with perforated pipe. Great for properties with high water table or where neighbour's yard drains onto your property.",
+    features: [
+      "Perforated 4\" Big-O pipe",
+      "Clear stone backfill",
+      "Geotextile filter fabric",
+      "12-18\" depth trench",
+      "Connection to drainage system",
+      "Sod or seed restoration"
+    ],
+    price: "$40 - $80/linear foot",
+    priceNote: "Trench, pipe, gravel, fabric"
+  },
+  {
+    name: "DRY WELL INSTALLATION",
+    description: "Underground gravel-filled pit that collects and slowly disperses water into soil.",
+    details: "Great for downspout termination where storm sewer connection isn't available. Also used for sump pump discharge.",
+    features: [
+      "4-6 foot deep pit",
+      "3-4 foot diameter",
+      "Clear stone fill",
+      "Perforated sleeve or chamber",
+      "Pop-up emitter at surface",
+      "Proper soil percolation testing"
+    ],
+    price: "$1,500 - $3,000",
+    priceNote: "Excavation, gravel, connections"
+  },
+  {
+    name: "RETAINING WALLS",
+    description: "Concrete, interlock, or natural stone walls to manage grade changes.",
+    details: "Engineered for heights over 3 feet. Great for sloped properties where grading alone can't achieve proper drainage.",
+    features: [
+      "Engineered design (over 3 feet)",
+      "Proper footing/base",
+      "Drainage behind wall (weeping tile)",
+      "Clear stone backfill",
+      "Deadman anchors if needed",
+      "Concrete, interlock, or stone"
+    ],
+    price: "$100 - $400/linear foot",
+    priceNote: "Height and material dependent"
+  },
+  {
+    name: "SOD & SEED",
+    description: "Full lawn restoration with proper topsoil (4-6\" depth), grading, and premium sod or seed.",
+    details: "Hydroseeding available for large areas. Fall seeding establishes fastest. Sod gives instant green.",
+    features: [
+      "Topsoil prep (4-6\" depth)",
+      "Premium Kentucky bluegrass blend",
+      "Proper grading before install",
+      "Starter fertilizer",
+      "Watering schedule guidance",
+      "Hydroseeding option for large areas"
+    ],
+    price: "$2 - $4/sq ft",
+    priceNote: "Premium sod, topsoil, grading"
+  },
+  {
+    name: "INTERLOCK & PATIO STONES",
+    description: "Permeable and standard interlocking pavers for patios, walkways, and driveways.",
+    details: "Proper base prep is critical for longevity. We excavate, install compacted granular base, and lay pavers with drainage considerations.",
+    features: [
+      "Excavation to depth",
+      "Compacted granular base",
+      "Bedding sand layer",
+      "Interlocking pavers",
+      "Edge restraints",
+      "Polymeric sand joints"
+    ],
+    price: "$18 - $30/sq ft",
+    priceNote: "Includes base prep"
+  },
+  {
+    name: "GARDEN & PLANTING BEDS",
+    description: "Shrubs, perennials, and garden bed restoration.",
+    details: "We avoid planting too close to foundation (root damage risk). Replant what was removed during excavation, or upgrade your landscaping.",
+    features: [
+      "Shrub and perennial replanting",
+      "Safe distance from foundation",
+      "Garden bed edging",
+      "Mulch or decorative stone",
+      "Proper soil amendments",
+      "Plant selection guidance"
+    ],
+    price: "Varies by scope",
+    priceNote: "Materials + labour"
+  },
+  {
+    name: "FENCING",
+    description: "Replace fencing removed during excavation. Wood, vinyl, or chain link.",
+    details: "We often need to remove sections of fence to access the excavation site. We reinstall or replace with equivalent or upgraded fencing.",
+    features: [
+      "Fence removal and reinstall",
+      "Wood, vinyl, or chain link",
+      "Equivalent or upgrade",
+      "Property line verification",
+      "Post hole digging and setting",
+      "Gate replacement if needed"
+    ],
+    price: "$30 - $80/linear foot",
+    priceNote: "Wood or vinyl"
+  }
+];
+
+// Pricing breakdown
+const pricingBreakdown = [
+  {
+    service: "Post-construction restoration (one wall, 30 LF)",
+    cost: "$1,500 - $3,500",
+    includes: "Grading, topsoil, sod"
+  },
+  {
+    service: "Post-construction restoration (full perimeter)",
+    cost: "$4,000 - $8,000",
+    includes: "Grading, topsoil, sod, replanting"
+  },
+  {
+    service: "Drainage grading only",
+    cost: "$1,000 - $3,000",
+    includes: "Re-slope existing yard"
+  },
+  {
+    service: "Downspout extensions (per downspout, buried)",
+    cost: "$500 - $1,200",
+    includes: "Underground pipe to discharge point"
+  },
+  {
+    service: "French drain (per linear foot)",
+    cost: "$40 - $80/LF",
+    includes: "Trench, pipe, gravel, filter fabric"
+  },
+  {
+    service: "Dry well",
+    cost: "$1,500 - $3,000",
+    includes: "Excavation, gravel pit, connections"
+  },
+  {
+    service: "Sod installation",
+    cost: "$2 - $4/sq ft",
+    includes: "Premium sod, topsoil, grading"
+  },
+  {
+    service: "Interlock patio/walkway",
+    cost: "$18 - $30/sq ft",
+    includes: "Includes base prep"
+  },
+  {
+    service: "Retaining wall (per linear foot)",
+    cost: "$100 - $400/LF",
+    includes: "Height and material dependent"
+  },
+  {
+    service: "Fence replacement (per linear foot)",
+    cost: "$30 - $80/LF",
+    includes: "Wood or vinyl"
+  }
+];
+
+// Common Grading Mistakes
+const gradingMistakes = [
+  {
+    mistake: "Piling topsoil against foundation",
+    why: "Keeps moisture at wall, causes rot, attracts termites, leads to basement leaks",
+    correct: "Clay cap at foundation, topsoil starts 6\" away from wall"
+  },
+  {
+    mistake: "Not compacting backfill before grading",
+    why: "Backfill settles 10-20% over first year, reversing your slope",
+    correct: "Compact backfill in 12\" lifts, over-grade 3-4% initially"
+  },
+  {
+    mistake: "Grading toward fence/neighbour",
+    why: "Creates drainage disputes, can damage neighbour's foundation",
+    correct: "Grade to property drainage (swale, street, or your own catchment)"
+  },
+  {
+    mistake: "Flower beds trapping water against foundation",
+    why: "Garden bed edging acts as a dam, pooling water at foundation",
+    correct: "No edging within 6 feet of foundation, or slope beds away"
+  },
+  {
+    mistake: "Grading without addressing downspouts",
+    why: "Downspouts dump hundreds of gallons near foundation - grading alone can't handle it",
+    correct: "Extend downspouts 6-10 feet PLUS proper grading"
+  }
+];
+
+// Trust points
+const trustPoints = [
+  {
+    title: "One contractor, one responsibility",
+    description: "Most waterproofing companies dig and leave. You're stuck hiring a landscaper who doesn't understand drainage. We do both."
+  },
+  {
+    title: "Grading affects our warranty",
+    description: "Poor grading voids waterproofing warranties. We guarantee proper drainage because our reputation depends on it."
+  },
+  {
+    title: "Waterproofing experts who landscape",
+    description: "We understand how water moves, where it pools, and what proper drainage looks like. This isn't cosmetic - it's functional."
+  },
+  {
+    title: "2,000+ yards restored",
+    description: "Every waterproofing and underpinning project includes yard restoration. We've perfected the process."
+  },
+  {
+    title: "Volume pricing for full projects",
+    description: "Save 15-20% when bundling landscaping with waterproofing or underpinning work."
+  },
+  {
+    title: "Proper grading is your first line of defence",
+    description: "60% of basement water problems are caused by poor surface drainage. We fix it permanently."
+  }
+];
+
+// Service FAQs for schema
+const serviceFAQs = [
+  {
+    question: "Do you restore the yard after waterproofing?",
+    answer: "Yes. Our waterproofing quotes include basic restoration: backfill, compaction, and rough grading. This ensures the excavated trench is filled and graded properly. Full landscaping (sod, planting, decorative features) is quoted separately based on your preferences. Most customers opt for the full restoration package to bring their yard back to (or better than) pre-construction condition."
+  },
+  {
+    question: "How long before my lawn grows back after construction?",
+    answer: "Sod gives you instant green and is established (walkable) in 2-3 weeks. Seed takes longer: 2-3 weeks to germinate, then 6-8 weeks to fill in and establish a thick lawn. Fall seeding (September-October) establishes fastest due to cool temperatures and natural rainfall. Spring seeding works but requires daily watering through summer heat."
+  },
+  {
+    question: "My neighbour is complaining about water from my yard. Can you fix it?",
+    answer: "Yes, this is a common issue we resolve. We can re-grade your property to manage water ON your property without directing it to neighbours. Options include: grading to the street, installing a French drain to intercept water, creating a swale (shallow drainage channel), or installing a dry well to collect and disperse water underground. We'll assess your property and design a drainage solution that's neighbourly and effective."
+  },
+  {
+    question: "How much does it cost to fix grading around my foundation?",
+    answer: "Basic re-grading (existing soil, no major excavation) costs $1,000-$3,000 depending on the area and soil conditions. This is one of the cheapest and most effective waterproofing investments you can make. Proper grading prevents water from reaching your foundation in the first place - far better than dealing with a wet basement later. If your yard slopes toward the house, fixing the grading should be your first priority."
+  },
+  {
+    question: "Should I plant trees near my foundation?",
+    answer: "Keep trees at least as far from the house as their mature height. A tree that will grow 30 feet tall should be planted 30+ feet from the foundation. Tree roots seek water and will damage weeping tile, crack foundations, and clog drainage systems. Aggressive species like willow, poplar, and silver maple are particularly problematic. We'll advise on safe planting distances for any species you're considering."
+  },
+  {
+    question: "Do I need a permit for landscaping?",
+    answer: "Generally no for grading, planting, and fencing under 6.5 feet. Retaining walls over 3 feet high may require a permit and engineering (municipality-dependent). Interlock driveways replacing existing driveways usually don't need permits. New driveway curb cuts require an entrance permit from the municipality. We'll advise on permit requirements during your assessment."
+  }
+];
+
+// Service offers for schema
+const serviceOffers = [
+  {
+    name: "Post-Construction Restoration",
+    price: "$1,500-$8,000",
+    description: "Full yard restoration after waterproofing or underpinning. Grading, topsoil, sod, and replanting."
+  },
+  {
+    name: "Drainage Grading",
+    price: "$1,000-$3,000",
+    description: "Re-grade yard to proper slope away from foundation. Your first line of defence against basement water."
+  },
+  {
+    name: "Downspout Extensions",
+    price: "$500-$1,200",
+    description: "Buried underground drainage to move water 6-10 feet from foundation. Per downspout."
+  }
+];
+
+// Installation process steps
+const processSteps = [
+  {
+    title: "Post-Construction Assessment",
+    description: "After waterproofing/underpinning is complete, we assess the restoration needs. Measure areas affected by excavation. Check existing landscaping (what can be saved vs. replaced). Identify drainage requirements. Discuss your preferences: sod vs. seed, garden upgrades, hardscaping, fencing.",
+    duration: "30 minutes"
+  },
+  {
+    title: "Backfill & Compaction",
+    description: "This is done immediately after waterproofing work. Backfill excavated trench with clear stone (bottom 12-18 inches) and native soil (upper portion). Compact soil in 12-inch lifts to prevent settlement. Over-fill 10-15% to account for future settling.",
+    duration: "4-6 hours"
+  },
+  {
+    title: "Grading to Spec",
+    description: "Grade soil to 3-4% slope away from foundation (settles to required 2% minimum). Apply clay cap at foundation zone (prevents water infiltration). Topsoil application (4-6 inches depth). Final grade to smooth finish, ready for sod or seed.",
+    duration: "4-6 hours"
+  },
+  {
+    title: "Drainage Features",
+    description: "Install downspout extensions (if part of project). Connect to storm sewer, dry well, or daylight outlet. Install French drains or curtain drains if needed. Ensure all surface water is directed away from foundation.",
+    duration: "2-4 hours"
+  },
+  {
+    title: "Sod or Seed Installation",
+    description: "For sod: lay premium Kentucky bluegrass blend, stagger seams, roll for soil contact. For seed: broadcast seed, rake lightly, apply starter fertilizer, straw mulch for moisture retention. Provide watering schedule and care instructions.",
+    duration: "2-4 hours"
+  },
+  {
+    title: "Replanting & Features",
+    description: "Replant shrubs and perennials (salvaged or new). Install garden bed edging (proper distance from foundation). Mulch or decorative stone in beds. Rebuild walkways, patios, or interlocking if needed.",
+    duration: "4-8 hours"
+  },
+  {
+    title: "Fence Replacement & Cleanup",
+    description: "Reinstall or replace fencing removed during excavation. Final site cleanup (remove construction debris, excess soil). Haul away old materials. Provide maintenance instructions for new sod/seed.",
+    duration: "2-3 hours"
+  }
+];
+
+// Pricing tiers
+const pricingTiers = [
+  {
+    name: "Basic Restoration",
+    price: "$1,500-$3,500",
+    features: [
+      "Backfill & compaction",
+      "Drainage grading (2% slope)",
+      "Topsoil (4\" depth)",
+      "Seed or basic sod",
+      "One wall / 30 LF"
+    ],
+    description: "After single-wall waterproofing"
+  },
+  {
+    name: "Full Perimeter Restoration",
+    price: "$4,000-$8,000",
+    features: [
+      "Full perimeter grading",
+      "Premium topsoil (6\" depth)",
+      "Premium Kentucky bluegrass sod",
+      "Shrub and garden replanting",
+      "Fence replacement if needed"
+    ],
+    description: "Complete yard restoration",
+    recommended: true
+  },
+  {
+    name: "Premium Landscaping Package",
+    price: "$10,000-$20,000+",
+    features: [
+      "Everything in Full Restoration",
+      "Interlock walkway or patio",
+      "Retaining wall (if needed)",
+      "Underground downspout drainage",
+      "Garden bed upgrades",
+      "Custom landscaping features"
+    ],
+    description: "Better than before",
+    premium: true
+  }
+];
+
+// Seasonal Considerations
+const seasonalConsiderations = [
+  {
+    season: "Spring (April-May)",
+    icon: "eco",
+    best: "Best for sod installation",
+    details: "Ground is thawed, good rainfall for establishment. Perennials and shrubs establish well. Can start seeding as soon as soil is workable.",
+    ideal: ["Sod installation", "Shrub planting", "Seeding"]
+  },
+  {
+    season: "Summer (June-Aug)",
+    icon: "wb_sunny",
+    best: "Best for hardscaping",
+    details: "Sod requires daily watering in heat. Seed struggles in summer heat. Ideal for interlock, patios, retaining walls, and grading work.",
+    ideal: ["Interlocking", "Grading", "Drainage work"]
+  },
+  {
+    season: "Fall (Sept-Oct)",
+    icon: "nature",
+    best: "Best for seeding",
+    details: "Cool temperatures + natural rainfall = perfect germination. Last chance for sod (needs 4-6 weeks before frost). Best time for planting trees and shrubs.",
+    ideal: ["Seeding", "Planting", "Sod (early fall)"]
+  },
+  {
+    season: "Winter (Nov-Mar)",
+    icon: "ac_unit",
+    best: "Planning season",
+    details: "No landscaping work possible (frozen ground). Use this time to plan spring projects, get quotes, and book your spot for early spring start.",
+    ideal: ["Planning", "Quotes", "Design"]
+  }
+];
+---
+
+<PageLayout
+  title={pageTitle}
+  description={pageDescription}
+  showAnnouncement={true}
+>
+
+  <!-- ServiceSchema Component -->
+  <ServiceSchema
+    serviceName="Landscaping & Grading Services Toronto"
+    description={pageDescription}
+    priceRange="$1,500-$20,000"
+    areaServed={serviceAreas}
+    offers={serviceOffers}
+    faqs={serviceFAQs}
+  />
+
+  <!-- Hero Section -->
+  <ServiceHero
+    title="Landscaping & Grading Services Toronto & GTA"
+    description="Post-construction yard restoration, drainage grading, and landscape rebuilding. We fix what we dig — your yard comes back better than before."
+    priceRange="$1,500-$8,000"
+    duration="1-3 days"
+    rebate="One Contractor"
+    breadcrumbs={[
+      { label: "Home", href: "/" },
+      { label: "Services", href: "/services" },
+      { label: "Landscaping & Grading" }
+    ]}
+  />
+
+  <!-- Trust Bar -->
+  <TrustBar />
+
+  <!-- Why Landscaping Matters Section -->
+  <section class="section-padding bg-slate-50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <SectionHeader
+          label="More Than Aesthetics"
+          title="Why Landscaping Matters for Waterproofing"
+          description="Proper grading is your first line of defence against basement water"
+          centered={true}
+        />
+
+        <div class="grid md:grid-cols-2 gap-8 mb-12">
+          <div class="bg-white rounded-lg shadow-card p-8">
+            <h3 class="text-headline text-navy-900 mb-6">The Critical Role of Grading</h3>
+            <div class="space-y-4">
+              <div class="border-l-4 border-cyan-500 pl-4 py-2">
+                <p class="text-slate-700">
+                  <strong class="text-navy-900">Proper grading is your first line of defence</strong> against basement water problems.
+                </p>
+              </div>
+              <div class="border-l-4 border-cyan-500 pl-4 py-2">
+                <p class="text-slate-700">
+                  <strong class="text-navy-900">OBC requires minimum 2% slope</strong> away from foundation for the first 6 feet.
+                </p>
+              </div>
+              <div class="border-l-4 border-cyan-500 pl-4 py-2">
+                <p class="text-slate-700">
+                  <strong class="text-navy-900">Bad grading = water pooling at foundation</strong> = basement flooding.
+                </p>
+              </div>
+              <div class="border-l-4 border-cyan-500 pl-4 py-2">
+                <p class="text-slate-700">
+                  <strong class="text-navy-900">60% of basement water problems</strong> are caused by poor surface drainage.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-lg shadow-card p-8">
+            <h3 class="text-headline text-navy-900 mb-6">After ANY Excavation Work</h3>
+            <p class="text-slate-700 mb-4">
+              After waterproofing, underpinning, or egress window installation, the ground around your foundation has been disturbed.
+            </p>
+            <p class="text-slate-700 mb-4">
+              <strong class="text-navy-900">Backfill soil is loose and will settle 10-20% over 1-2 years.</strong>
+            </p>
+            <p class="text-slate-700 mb-4">
+              If grading isn't done correctly, that settlement will reverse the slope - sending water TOWARD your foundation instead of away.
+            </p>
+            <div class="bg-amber-50 border-2 border-amber-500 rounded-lg p-4 mt-6">
+              <p class="text-amber-900 font-bold text-display">
+                DrySpace doesn't just dig and leave — we restore your property with proper drainage grading
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Key Statistics -->
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="bg-gradient-to-br from-cyan-600 to-cyan-700 text-white p-8 rounded-lg shadow-card text-center">
+            <p class="text-5xl font-bold mb-2">2%</p>
+            <p class="text-headline">Minimum Slope Required</p>
+            <p class="text-sm text-cyan-100 mt-2">¼ inch per foot for 6 feet from foundation</p>
+          </div>
+          <div class="bg-gradient-to-br from-cyan-600 to-cyan-700 text-white p-8 rounded-lg shadow-card text-center">
+            <p class="text-5xl font-bold mb-2">60%</p>
+            <p class="text-headline">Of Basement Issues</p>
+            <p class="text-sm text-cyan-100 mt-2">Caused by poor surface drainage</p>
+          </div>
+          <div class="bg-gradient-to-br from-cyan-600 to-cyan-700 text-white p-8 rounded-lg shadow-card text-center">
+            <p class="text-5xl font-bold mb-2">$1K-$3K</p>
+            <p class="text-headline">Grading Fix Cost</p>
+            <p class="text-sm text-cyan-100 mt-2">Cheapest and most effective waterproofing</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Landscaping Services -->
+  <section class="section-padding bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <SectionHeader
+          label="Complete Service"
+          title="Our Landscaping & Grading Services"
+          description="From excavation to final sod - we do it all"
+          centered={true}
+        />
+
+        <div class="grid md:grid-cols-2 gap-6">
+          {landscapingServices.map(service => (
+            <div class="bg-slate-50 rounded-lg shadow-card hover:shadow-card-hover transition-all duration-300 p-8">
+              <h3 class="text-headline text-navy-900 mb-2">{service.name}</h3>
+              <p class="text-3xl font-bold text-cyan-600 mb-4">{service.price}</p>
+              {service.priceNote && (
+                <p class="text-sm text-slate-600 mb-4 italic">{service.priceNote}</p>
+              )}
+              <p class="text-slate-700 mb-4 font-semibold">{service.description}</p>
+              <p class="text-slate-600 mb-6 text-sm">{service.details}</p>
+
+              <ul class="space-y-2">
+                {service.features.map(feature => (
+                  <li class="flex items-start">
+                    <span class="material-symbols-outlined text-cyan-500 mr-2 text-xl" style="font-variation-settings: 'FILL' 1">check_circle</span>
+                    <span class="text-slate-700 text-sm">{feature}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Grading Process -->
+  <section class="section-padding bg-slate-50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <SectionHeader
+          label="Critical Details"
+          title="The Grading Process: Why It's Critical"
+          description="Understanding proper drainage grading specifications"
+          centered={true}
+        />
+
+        <!-- Why Grading Is Critical -->
+        <div class="bg-white rounded-lg shadow-card p-8 mb-8">
+          <h3 class="text-headline text-navy-900 mb-6">Why Grading Is Critical</h3>
+          <div class="grid md:grid-cols-2 gap-6">
+            <div>
+              <div class="mb-4">
+                <p class="text-slate-700">
+                  <strong class="text-navy-900">Water follows gravity</strong> — if the ground slopes toward your house, water goes to your foundation.
+                </p>
+              </div>
+              <div class="mb-4">
+                <p class="text-slate-700">
+                  <strong class="text-navy-900">After construction, backfill soil is loose</strong> and settles 10-20% over 1-2 years.
+                </p>
+              </div>
+            </div>
+            <div>
+              <div class="mb-4">
+                <p class="text-slate-700">
+                  <strong class="text-navy-900">Must be OVER-graded initially</strong> (higher than final target) to account for settlement.
+                </p>
+              </div>
+              <div class="mb-4">
+                <p class="text-slate-700">
+                  <strong class="text-navy-900">DrySpace grades to 3-4% initially</strong>, knowing it'll settle to the required 2%.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Grading Specifications Table -->
+        <SectionHeader
+          label="OBC Standards"
+          title="Grading Specifications"
+          description="How we grade your property for proper drainage"
+          centered={true}
+        />
+
+        <div class="overflow-x-auto rounded-lg shadow-card mb-8">
+          <table class="w-full">
+            <thead>
+              <tr class="bg-gradient-to-r from-navy-900 to-navy-800 text-white">
+                <th class="p-4 text-left text-display">Zone</th>
+                <th class="p-4 text-left text-display">Slope Requirement</th>
+                <th class="p-4 text-left text-display">Distance</th>
+                <th class="p-4 text-left text-display">Material</th>
+              </tr>
+            </thead>
+            <tbody class="bg-white">
+              {gradingSpecs.map((spec, index) => (
+                <tr class={index % 2 === 0 ? 'border-b border-slate-200' : 'border-b border-slate-200 bg-slate-50'}>
+                  <td class="p-4 font-bold text-display text-navy-900">{spec.zone}</td>
+                  <td class="p-4 text-cyan-600 font-semibold">{spec.slopeRequirement}</td>
+                  <td class="p-4 text-slate-700">{spec.distance}</td>
+                  <td class="p-4 text-slate-700">{spec.material}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Common Grading Mistakes -->
+        <div class="bg-gradient-to-br from-amber-50 to-amber-100 border-2 border-amber-500 rounded-lg p-8">
+          <h3 class="text-headline text-navy-900 mb-6 flex items-center">
+            <span class="material-symbols-outlined text-amber-600 text-4xl mr-3" style="font-variation-settings: 'FILL' 1">warning</span>
+            Common Grading Mistakes
+          </h3>
+          <div class="space-y-4">
+            {gradingMistakes.map(mistake => (
+              <div class="bg-white rounded-lg p-6 border-l-4 border-red-500">
+                <h4 class="font-bold text-display text-navy-900 mb-2">❌ {mistake.mistake}</h4>
+                <p class="text-red-700 mb-2"><strong>Why it's wrong:</strong> {mistake.why}</p>
+                <p class="text-green-700"><strong>✓ Correct approach:</strong> {mistake.correct}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Before & After - What to Expect -->
+  <section class="section-padding bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <SectionHeader
+          label="Setting Expectations"
+          title="Before & After: What to Expect"
+          description="What your yard will look like post-construction"
+          centered={true}
+        />
+
+        <div class="grid md:grid-cols-3 gap-6 mb-8">
+          <div class="bg-slate-50 rounded-lg shadow-card p-8">
+            <h3 class="text-headline text-navy-900 mb-4">After Exterior Waterproofing</h3>
+            <ul class="space-y-3">
+              <li class="flex items-start">
+                <span class="material-symbols-outlined text-cyan-500 mr-2">arrow_forward</span>
+                <span class="text-slate-700">Excavated trench (2-4 feet wide, full wall depth) is backfilled</span>
+              </li>
+              <li class="flex items-start">
+                <span class="material-symbols-outlined text-cyan-500 mr-2">arrow_forward</span>
+                <span class="text-slate-700">Backfill settles 10-20% over first year — we overfill to compensate</span>
+              </li>
+              <li class="flex items-start">
+                <span class="material-symbols-outlined text-cyan-500 mr-2">arrow_forward</span>
+                <span class="text-slate-700">Landscaping above excavation zone needs full restoration</span>
+              </li>
+              <li class="flex items-start">
+                <span class="material-symbols-outlined text-cyan-500 mr-2">arrow_forward</span>
+                <span class="text-slate-700">Expect: topsoil, grading, sod or seed, replanting</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="bg-slate-50 rounded-lg shadow-card p-8">
+            <h3 class="text-headline text-navy-900 mb-4">After Underpinning</h3>
+            <ul class="space-y-3">
+              <li class="flex items-start">
+                <span class="material-symbols-outlined text-cyan-500 mr-2">arrow_forward</span>
+                <span class="text-slate-700">Interior work — exterior usually not affected</span>
+              </li>
+              <li class="flex items-start">
+                <span class="material-symbols-outlined text-cyan-500 mr-2">arrow_forward</span>
+                <span class="text-slate-700">If combined with waterproofing: same as above</span>
+              </li>
+              <li class="flex items-start">
+                <span class="material-symbols-outlined text-cyan-500 mr-2">arrow_forward</span>
+                <span class="text-slate-700">Access points for concrete delivery may affect yard</span>
+              </li>
+              <li class="flex items-start">
+                <span class="material-symbols-outlined text-cyan-500 mr-2">arrow_forward</span>
+                <span class="text-slate-700">Minimal landscaping disruption</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="bg-slate-50 rounded-lg shadow-card p-8">
+            <h3 class="text-headline text-navy-900 mb-4">After Egress Window / Cutout</h3>
+            <ul class="space-y-3">
+              <li class="flex items-start">
+                <span class="material-symbols-outlined text-cyan-500 mr-2">arrow_forward</span>
+                <span class="text-slate-700">Window well area needs proper grading and drainage</span>
+              </li>
+              <li class="flex items-start">
+                <span class="material-symbols-outlined text-cyan-500 mr-2">arrow_forward</span>
+                <span class="text-slate-700">May need to relocate gardens, shrubs, or walkways</span>
+              </li>
+              <li class="flex items-start">
+                <span class="material-symbols-outlined text-cyan-500 mr-2">arrow_forward</span>
+                <span class="text-slate-700">Smaller restoration area than full waterproofing</span>
+              </li>
+              <li class="flex items-start">
+                <span class="material-symbols-outlined text-cyan-500 mr-2">arrow_forward</span>
+                <span class="text-slate-700">Typically 1-2 day landscaping work</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Settlement Timeline -->
+        <div class="bg-gradient-to-r from-cyan-600 to-cyan-700 text-white p-8 rounded-lg shadow-card">
+          <h3 class="text-headline mb-6 text-center">Backfill Settlement Timeline</h3>
+          <div class="grid md:grid-cols-4 gap-6">
+            <div class="text-center">
+              <p class="text-4xl font-bold mb-2">Week 1</p>
+              <p class="text-sm">Initial settlement (5-8%)</p>
+            </div>
+            <div class="text-center">
+              <p class="text-4xl font-bold mb-2">3 Months</p>
+              <p class="text-sm">Major settlement complete (10-12%)</p>
+            </div>
+            <div class="text-center">
+              <p class="text-4xl font-bold mb-2">1 Year</p>
+              <p class="text-sm">Final settlement (15-20% total)</p>
+            </div>
+            <div class="text-center">
+              <p class="text-4xl font-bold mb-2">2+ Years</p>
+              <p class="text-sm">Fully settled and stable</p>
+            </div>
+          </div>
+          <p class="text-center text-cyan-100 mt-6 text-sm">
+            This is why we over-grade initially — we account for this natural settlement process
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section class="section-padding bg-slate-50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <SectionHeader
+          label="Transparent Pricing"
+          title="Landscaping & Grading Costs in the GTA"
+          description="All-inclusive pricing with no hidden fees"
+          centered={true}
+        />
+
+        <div class="overflow-x-auto rounded-lg shadow-card mb-8">
+          <table class="w-full">
+            <thead>
+              <tr class="bg-gradient-to-r from-navy-900 to-navy-800 text-white">
+                <th class="p-4 text-left text-display">Service</th>
+                <th class="p-4 text-center text-display">Cost Range</th>
+                <th class="p-4 text-left text-display">Includes</th>
+              </tr>
+            </thead>
+            <tbody class="bg-white">
+              {pricingBreakdown.map((item, index) => (
+                <tr class={index % 2 === 0 ? 'border-b border-slate-200' : 'border-b border-slate-200 bg-slate-50'}>
+                  <td class="p-4 font-bold text-display text-navy-900">{item.service}</td>
+                  <td class="p-4 text-center font-bold text-cyan-600 text-lg">{item.cost}</td>
+                  <td class="p-4 text-slate-700">{item.includes}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Installation Process -->
+  <ServiceProcess
+    steps={processSteps}
+    title="Our Landscaping Restoration Process"
+    label="7-Step Process"
+  />
+
+  <!-- Why DrySpace Does Landscaping -->
+  <section class="section-padding bg-gradient-to-br from-navy-900 to-navy-800 text-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <SectionHeader
+          label="The DrySpace Difference"
+          title="Why DrySpace Does Landscaping"
+          description="One contractor for excavation AND restoration"
+          centered={true}
+          dark={true}
+        />
+
+        <div class="grid md:grid-cols-2 gap-8 mb-12">
+          <div class="bg-white/10 backdrop-blur rounded-lg shadow-card p-8">
+            <h3 class="text-headline mb-6">The Problem with Most Companies</h3>
+            <div class="space-y-4">
+              <div class="border-l-4 border-red-400 pl-4 py-2">
+                <p class="text-slate-200">
+                  <strong class="text-white">Most waterproofing companies dig your yard up and leave</strong> — you're stuck hiring a separate landscaper.
+                </p>
+              </div>
+              <div class="border-l-4 border-red-400 pl-4 py-2">
+                <p class="text-slate-200">
+                  <strong class="text-white">The landscaper doesn't understand drainage requirements</strong> — they're focused on aesthetics, not function.
+                </p>
+              </div>
+              <div class="border-l-4 border-red-400 pl-4 py-2">
+                <p class="text-slate-200">
+                  <strong class="text-white">If water problems return, who's responsible?</strong> The waterproofing company blames the landscaper. The landscaper blames the waterproofing.
+                </p>
+              </div>
+              <div class="border-l-4 border-red-400 pl-4 py-2">
+                <p class="text-slate-200">
+                  <strong class="text-white">You're left in the middle</strong> coordinating between two contractors who don't talk to each other.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white/10 backdrop-blur rounded-lg shadow-card p-8">
+            <h3 class="text-headline mb-6">The DrySpace Approach</h3>
+            <div class="space-y-4">
+              <div class="border-l-4 border-cyan-400 pl-4 py-2">
+                <p class="text-slate-200">
+                  <strong class="text-white">DrySpace does the excavation AND the restoration</strong> — one contractor, one responsibility.
+                </p>
+              </div>
+              <div class="border-l-4 border-cyan-400 pl-4 py-2">
+                <p class="text-slate-200">
+                  <strong class="text-white">We guarantee proper drainage grading</strong> because our waterproofing warranty depends on it.
+                </p>
+              </div>
+              <div class="border-l-4 border-cyan-400 pl-4 py-2">
+                <p class="text-slate-200">
+                  <strong class="text-white">If water problems return because of bad grading, it's on us</strong> — that's why we do it right the first time.
+                </p>
+              </div>
+              <div class="border-l-4 border-cyan-400 pl-4 py-2">
+                <p class="text-slate-200">
+                  <strong class="text-white">2,000+ yards restored</strong> — every waterproofing project includes restoration. We've perfected the process.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-gradient-to-r from-amber-500 to-amber-600 rounded-lg p-8 text-center">
+          <p class="text-3xl font-bold text-white mb-4 text-display">
+            SAVE 15-20% WITH BUNDLED SERVICES
+          </p>
+          <p class="text-xl text-white mb-6">
+            Combine waterproofing + landscaping for volume pricing
+          </p>
+          <a href="/free-inspection" class="btn-primary bg-white text-navy-900 hover:bg-slate-100">
+            GET FREE ASSESSMENT
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seasonal Considerations -->
+  <section class="section-padding bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <SectionHeader
+          label="Timing Matters"
+          title="Seasonal Considerations"
+          description="Best times of year for landscaping work"
+          centered={true}
+        />
+
+        <div class="grid md:grid-cols-2 gap-6">
+          {seasonalConsiderations.map(season => (
+            <div class="bg-slate-50 rounded-lg shadow-card hover:shadow-card-hover transition-all duration-300 p-8">
+              <div class="flex items-center mb-4">
+                <span class="material-symbols-outlined text-cyan-600 text-5xl mr-4" style="font-variation-settings: 'FILL' 1">{season.icon}</span>
+                <div>
+                  <h3 class="text-headline text-navy-900">{season.season}</h3>
+                  <p class="text-cyan-600 font-bold text-display">{season.best}</p>
+                </div>
+              </div>
+              <p class="text-slate-700 mb-6">{season.details}</p>
+              <div class="border-t-2 border-slate-200 pt-4">
+                <p class="section-label-pill bg-cyan-100 text-cyan-700 inline-block mb-2">Ideal For</p>
+                <ul class="space-y-2">
+                  {season.ideal.map(item => (
+                    <li class="flex items-center">
+                      <span class="material-symbols-outlined text-cyan-500 mr-2" style="font-variation-settings: 'FILL' 1">check_circle</span>
+                      <span class="text-slate-700">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Service Areas -->
+  <section class="section-padding bg-slate-50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <SectionHeader
+          label="GTA Coverage"
+          title="Landscaping & Grading Service Areas"
+          description="Professional post-construction restoration across the Greater Toronto Area"
+          centered={true}
+        />
+
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mb-8">
+          {serviceAreas.map(area => (
+            <div class="bg-white rounded-lg shadow-card hover:shadow-card-hover transition-all duration-300 p-4 text-center">
+              <p class="font-bold text-display text-navy-900">{area}</p>
+            </div>
+          ))}
+        </div>
+
+        <div class="bg-gradient-to-r from-cyan-600 to-cyan-700 rounded-lg shadow-card p-8 text-center">
+          <p class="text-headline text-white mb-2">
+            YARD DESTROYED BY CONSTRUCTION? WE'LL FIX IT.
+          </p>
+          <p class="text-white text-lg mb-4">
+            Full restoration services to bring your property back better than before
+          </p>
+          <a href="tel:437-545-0067" class="btn-primary bg-white text-navy-900 hover:bg-slate-100">
+            437-545-0067 - FREE ASSESSMENT
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us Section -->
+  <section class="section-padding bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <SectionHeader
+          label="The DrySpace Difference"
+          title="Why Choose DrySpace for Landscaping"
+          description="Experience, expertise, and peace of mind"
+          centered={true}
+        />
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {trustPoints.map(point => (
+            <div class="bg-slate-50 rounded-lg shadow-card hover:shadow-card-hover transition-all duration-300 p-8">
+              <div class="bg-cyan-100 rounded-full w-16 h-16 flex items-center justify-center mb-4">
+                <span class="material-symbols-outlined text-cyan-600 text-3xl" style="font-variation-settings: 'FILL' 1">verified</span>
+              </div>
+              <h3 class="text-headline text-navy-900 mb-3">{point.title}</h3>
+              <p class="text-slate-700">{point.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Section -->
+  <ServicePricing
+    title="Landscaping & Grading Pricing"
+    tiers={pricingTiers}
+  />
+
+  <!-- Before/After Gallery -->
+  <BeforeAfterGallery />
+
+  <!-- Why Choose Us -->
+  <WhyChooseUs />
+
+  <!-- Service Image Gallery -->
+  <ServiceImageGallery service="landscaping-grading" />
+
+  <!-- Testimonials -->
+  <Testimonials />
+
+  <!-- Technical Drawings -->
+  <TechnicalDrawings />
+
+  <!-- FAQ Section -->
+  <section class="section-padding bg-slate-50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <SectionHeader
+          label="Common Questions"
+          title="Frequently Asked Questions"
+          description="Everything you need to know about landscaping and grading services"
+          centered={true}
+        />
+
+        <div class="space-y-4">
+          {serviceFAQs.map((faq, index) => (
+            <details class="bg-white rounded-lg shadow-card hover:shadow-card-hover transition-all duration-300 overflow-hidden group">
+              <summary class="cursor-pointer p-6 font-bold text-display text-navy-900 flex items-center justify-between">
+                <span>{faq.question}</span>
+                <span class="material-symbols-outlined text-cyan-500 transform transition-transform group-open:rotate-180">expand_more</span>
+              </summary>
+              <div class="px-6 pb-6 text-slate-700 border-t border-slate-200 pt-4">
+                {faq.answer}
+              </div>
+            </details>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Internal Links Component -->
+  <InternalLinks category="landscaping" currentPage="landscaping-grading" limit={5} />
+
+  <!-- Contact Form -->
+  <ContactForm />
+
+  <!-- Related Services -->
+  <section class="section-padding bg-gradient-to-br from-navy-900 to-navy-800">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <SectionHeader
+          label="Related Services"
+          title="Complete Foundation & Waterproofing Services"
+          description="We handle everything from excavation to final sod"
+          centered={true}
+          dark={true}
+        />
+
+        <div class="grid md:grid-cols-3 gap-6 mb-12">
+          <a href="/services/exterior-waterproofing" class="bg-white/10 backdrop-blur rounded-lg shadow-card hover:shadow-card-hover transition-all duration-300 p-6 hover:bg-white/15 group">
+            <h3 class="text-headline text-white mb-3 group-hover:text-cyan-400 transition-colors">Exterior Waterproofing</h3>
+            <p class="text-slate-300 mb-4">Full excavation, membrane, weeping tile, and restoration</p>
+            <p class="text-cyan-400 font-bold text-xl">$200-$300/linear foot</p>
+            <span class="text-cyan-400 font-bold text-display mt-4 inline-block group-hover:translate-x-2 transition-transform">LEARN MORE →</span>
+          </a>
+
+          <a href="/services/underpinning" class="bg-white/10 backdrop-blur rounded-lg shadow-card hover:shadow-card-hover transition-all duration-300 p-6 hover:bg-white/15 group">
+            <h3 class="text-headline text-white mb-3 group-hover:text-cyan-400 transition-colors">Underpinning</h3>
+            <p class="text-slate-300 mb-4">Lower basement floor, increase ceiling height</p>
+            <p class="text-cyan-400 font-bold text-xl">$300-$400/linear foot</p>
+            <span class="text-cyan-400 font-bold text-display mt-4 inline-block group-hover:translate-x-2 transition-transform">LEARN MORE →</span>
+          </a>
+
+          <a href="/services/egress-windows" class="bg-white/10 backdrop-blur rounded-lg shadow-card hover:shadow-card-hover transition-all duration-300 p-6 hover:bg-white/15 group">
+            <h3 class="text-headline text-white mb-3 group-hover:text-cyan-400 transition-colors">Egress Windows</h3>
+            <p class="text-slate-300 mb-4">Code-compliant emergency exit windows</p>
+            <p class="text-cyan-400 font-bold text-xl">$3,000-$8,000</p>
+            <span class="text-cyan-400 font-bold text-display mt-4 inline-block group-hover:translate-x-2 transition-transform">LEARN MORE →</span>
+          </a>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6 mb-12">
+          <a href="/services/drainage-solutions" class="bg-white/10 backdrop-blur rounded-lg shadow-card hover:shadow-card-hover transition-all duration-300 p-6 hover:bg-white/15 group">
+            <h3 class="text-headline text-white mb-3 group-hover:text-cyan-400 transition-colors">Drainage Solutions</h3>
+            <p class="text-slate-300 mb-4">Downspout extensions, French drains, and surface drainage</p>
+            <span class="text-cyan-400 font-bold text-display mt-4 inline-block group-hover:translate-x-2 transition-transform">LEARN MORE →</span>
+          </a>
+
+          <a href="/services/excavation-services" class="bg-white/10 backdrop-blur rounded-lg shadow-card hover:shadow-card-hover transition-all duration-300 p-6 hover:bg-white/15 group">
+            <h3 class="text-headline text-white mb-3 group-hover:text-cyan-400 transition-colors">Excavation Services</h3>
+            <p class="text-slate-300 mb-4">Foundation excavation and site preparation</p>
+            <span class="text-cyan-400 font-bold text-display mt-4 inline-block group-hover:translate-x-2 transition-transform">LEARN MORE →</span>
+          </a>
+        </div>
+
+        <!-- CTA -->
+        <div class="bg-gradient-to-r from-amber-500 to-amber-600 rounded-lg shadow-card p-8 text-center">
+          <p class="text-3xl font-bold text-white mb-4 text-display">
+            COMPLETE FOUNDATION SERVICES UNDER ONE ROOF
+          </p>
+          <p class="text-xl text-white mb-6">
+            Excavation, waterproofing, underpinning, AND landscaping restoration
+          </p>
+          <a href="tel:437-545-0067" class="btn-primary bg-white text-navy-900 hover:bg-slate-100">
+            437-545-0067 - GET STARTED
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA Band -->
+  <CTABand
+    title="Get Your Free Landscaping Assessment"
+    subtitle="Post-construction restoration with proper drainage grading. One contractor, one warranty."
+    primaryCTA={{ text: "Book Free Assessment", href: "/free-inspection" }}
+    secondaryCTA={{ text: "Call: 437-545-0067", href: "tel:437-545-0067" }}
+  />
+</PageLayout>

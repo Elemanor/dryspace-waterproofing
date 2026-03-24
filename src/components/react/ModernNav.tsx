@@ -21,6 +21,7 @@ const serviceCategories = [
     items: [
       { title: "Foundation Repair", href: "/services/foundation-repair", icon: Wrench },
       { title: "Underpinning", href: "/services/underpinning", icon: Building2 },
+      { title: "Foundation Wall Construction", href: "/services/foundation-wall-construction", icon: Hammer },
       { title: "Footings & Foundations", href: "/services/footings-foundations", icon: Hammer },
       { title: "Sump Pump Installation", href: "/services/sump-pump-installation", icon: Shield },
     ],
@@ -28,6 +29,7 @@ const serviceCategories = [
   {
     label: "Construction",
     items: [
+      { title: "Concrete Slab Pouring", href: "/services/concrete-slab-pouring", icon: HardHat },
       { title: "Concrete Works", href: "/services/concrete-works", icon: HardHat },
       { title: "Legal Basement Conversion", href: "/services/legal-basement-conversion", icon: Building2 },
       { title: "Egress Windows", href: "/services/egress-windows", icon: Shield },
@@ -44,6 +46,7 @@ const serviceCategories = [
       { title: "Radon Mitigation", href: "/services/radon-mitigation", icon: Shield },
       { title: "General Contracting", href: "/services/general-contracting", icon: HardHat },
       { title: "Permits & Drawings", href: "/services/permits", icon: PenTool },
+      { title: "Landscaping & Grading", href: "/services/landscaping-grading", icon: Layers },
       { title: "Design-Build", href: "/services/design-build", icon: Building2 },
     ],
   },

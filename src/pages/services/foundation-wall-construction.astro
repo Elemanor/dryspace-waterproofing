@@ -1,0 +1,1002 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import ServiceHero from '../../components/sections/ServiceHero.astro';
+import TrustBar from '../../components/sections/TrustBar.astro';
+import ServiceProcess from '../../components/sections/ServiceProcess.astro';
+import ServicePricing from '../../components/sections/ServicePricing.astro';
+import CTABand from '../../components/sections/CTABand.astro';
+import SectionHeader from '../../components/sections/SectionHeader.astro';
+import ServiceSchema from '../../components/ServiceSchema.astro';
+import InternalLinks from '../../components/InternalLinks.astro';
+import BeforeAfterGallery from '../../components/BeforeAfterGallery.astro';
+import WhyChooseUs from '../../components/WhyChooseUs.astro';
+import Testimonials from '../../components/sections/Testimonials.astro';
+import TechnicalDrawings from '../../components/TechnicalDrawings.astro';
+import ContactForm from '../../components/ContactForm.astro';
+import ServiceImageGallery from '../../components/ServiceImageGallery.astro';
+
+// SEO-optimized metadata focused on service
+const pageTitle = "Foundation Wall Construction Toronto | Poured Concrete & Block Walls";
+const pageDescription = "New poured concrete and block foundation walls for rebuilds, additions, and new construction. Engineered designs, waterproofed from day one. 25-year warranty. Call 437-545-0067.";
+
+// Service areas list
+const serviceAreas = [
+  "Toronto",
+  "Scarborough",
+  "Etobicoke",
+  "North York",
+  "Mississauga",
+  "Brampton",
+  "Vaughan",
+  "Markham",
+  "Oakville",
+  "Burlington",
+  "Richmond Hill",
+  "Ajax",
+  "Pickering",
+  "Oshawa"
+];
+
+// When You Need New Foundation Walls
+const wallScenarios = [
+  {
+    name: "FULL WALL REPLACEMENT",
+    description: "Existing wall severely deteriorated, bowed beyond repair, or crumbling. Must be rebuilt from footing up.",
+    reasons: [
+      "Wall bowed more than 2 inches",
+      "Structural cracks throughout",
+      "Severe concrete spalling",
+      "Failed waterproofing beyond repair"
+    ],
+    typical: "Common in 100+ year old homes with rubble foundations"
+  },
+  {
+    name: "NEW CONSTRUCTION",
+    description: "Building a home addition, garage, or accessory structure that needs below-grade walls.",
+    reasons: [
+      "Home additions with basements",
+      "Detached or attached garages",
+      "Workshop or studio buildings",
+      "Pool houses with storage below"
+    ],
+    typical: "New structural foundations for expansions"
+  },
+  {
+    name: "UNDERPINNING EXTENSION",
+    description: "When underpinning lowers the floor, new wall sections are poured below the existing footing level.",
+    reasons: [
+      "Lower basement floor for ceiling height",
+      "New wall from old footing to new footing",
+      "Tied into existing structure",
+      "Often combined with full underpinning"
+    ],
+    typical: "Extends walls downward during basement lowering"
+  },
+  {
+    name: "GARAGE FOUNDATION",
+    description: "New detached or attached garage needs frost-protected foundation walls.",
+    reasons: [
+      "Single or double car garages",
+      "Frost footings required (4 feet deep)",
+      "Walls to support slab and framing",
+      "Waterproofing for below-grade portions"
+    ],
+    typical: "Most common new foundation project"
+  },
+  {
+    name: "RETAINING WALLS",
+    description: "Grade changes, walkout terracing, or slope retention requiring structural concrete walls.",
+    reasons: [
+      "Sloped lot terracing",
+      "Walkout basement construction",
+      "Driveway grade retention",
+      "Landscaping structural support"
+    ],
+    typical: "Engineered for lateral earth pressure"
+  },
+  {
+    name: "COLD CELLAR / ROOT CELLAR REBUILD",
+    description: "Old stone or rubble foundations replaced with modern poured or block walls.",
+    reasons: [
+      "Replace deteriorated stone walls",
+      "Improve insulation and waterproofing",
+      "Increase headroom for storage",
+      "Modernize for safety and code"
+    ],
+    typical: "Common in century homes with crawl spaces"
+  }
+];
+
+// Poured vs Block vs ICF Comparison
+const wallTypeComparison = [
+  {
+    name: "POURED CONCRETE WALLS",
+    description: "Concrete poured into plywood or aluminum forms",
+    thickness: "8\" residential standard, 10\" for deep basements",
+    strength: "STRONGEST - monolithic structure",
+    waterResistance: "BEST - fewest joints",
+    speed: "FASTEST - one pour operation",
+    cost: "$45-70/sq ft",
+    bestFor: "Most residential new construction and rebuilds",
+    pros: [
+      "Strongest against lateral soil pressure",
+      "Most water-resistant (monolithic)",
+      "Faster to pour than laying block",
+      "Fewest potential leak points",
+      "Rebar reinforced vertically and horizontally"
+    ],
+    cons: [
+      "Requires crane for forms",
+      "More expensive than block",
+      "Weather dependent for pouring",
+      "Specialized equipment needed"
+    ],
+    recommended: true
+  },
+  {
+    name: "CONCRETE BLOCK (CMU) WALLS",
+    description: "8\" or 10\" concrete masonry units laid with mortar",
+    thickness: "8\" standard, 10\" for deeper basements",
+    strength: "STRONG - when reinforced properly",
+    waterResistance: "GOOD - requires proper waterproofing",
+    speed: "SLOWER - laid by hand course by course",
+    cost: "$35-55/sq ft",
+    bestFor: "Additions, garages, shorter walls, tight budgets",
+    pros: [
+      "No crane or forms needed",
+      "Easier in tight access situations",
+      "Lower material cost than poured",
+      "Can work in stages",
+      "Good for DIY-savvy homeowners"
+    ],
+    cons: [
+      "More joints = more potential leak points",
+      "Slower to build than poured",
+      "Weaker in lateral pressure than poured",
+      "Requires skilled mason for quality"
+    ]
+  },
+  {
+    name: "ICF (INSULATED CONCRETE FORMS)",
+    description: "Foam forms that stay in place after concrete pour",
+    thickness: "6-8\" concrete core with 2-3\" foam each side",
+    strength: "STRONGEST - poured concrete with permanent bracing",
+    waterResistance: "EXCELLENT - monolithic pour with insulation",
+    speed: "FAST - forms stay, no stripping",
+    cost: "$55-85/sq ft",
+    bestFor: "New construction focused on energy efficiency",
+    pros: [
+      "Superior insulation (R-22 to R-32)",
+      "Built-in insulation - no separate step",
+      "Strong as poured concrete",
+      "Quiet basement - sound dampening",
+      "Energy code compliance built-in"
+    ],
+    cons: [
+      "Most expensive option",
+      "Specialized contractors needed",
+      "Harder to modify after installation",
+      "Foam must be protected above grade"
+    ],
+    premium: true
+  }
+];
+
+// Construction Process Steps
+const processSteps = [
+  {
+    title: "Engineering & Design",
+    description: "Structural engineer (P.Eng) designs wall thickness, rebar spacing, and footing size based on soil bearing capacity and lateral earth pressure calculations. Engineering drawings are prepared and submitted for building permit application. This ensures the wall meets OBC structural requirements and will safely support the loads above.",
+    duration: "3-5 days"
+  },
+  {
+    title: "Building Permit Application",
+    description: "Building permit is required for all foundation wall work in Ontario. DrySpace handles the complete permit application process, including submission of engineering drawings, site plans, and OBC compliance documentation. Typical processing time is 2-4 weeks depending on municipality workload.",
+    duration: "2-4 weeks"
+  },
+  {
+    title: "Excavation",
+    description: "Excavate to footing depth - must be below frost line (4 feet in Toronto). Shore adjacent structures if close to property line or existing foundation. Install dewatering system if high water table is present. Remove all unsuitable soil and prepare base for footings.",
+    duration: "1-2 days"
+  },
+  {
+    title: "Footing Pour",
+    description: "Strip footings are typically 20\" wide x 8\" deep for residential walls. Continuous rebar is placed in footing with vertical dowels that will tie into wall reinforcement. Footing must be level and square - accuracy here determines wall quality. Concrete cures 24-48 hours before wall construction begins.",
+    duration: "4-6 hours + cure time"
+  },
+  {
+    title: "Wall Construction",
+    description: "POURED: Set forms, place rebar cage, pour concrete, vibrate to consolidate and remove air pockets, strip forms after 24 hours. BLOCK: Lay block courses with Type S mortar, install rebar in cells vertically, place bond beams with horizontal rebar every 4th course, grout all cells. ICF: Stack interlocking foam forms, brace securely, pour concrete, vibrate.",
+    duration: "1-3 days depending on method"
+  },
+  {
+    title: "Waterproofing Application",
+    description: "This is where DrySpace's waterproofing expertise makes the difference. We apply rubberized membrane (NOT just tar damp-proofing) to all exterior below-grade surfaces. Drainage board (dimpled membrane) is installed over waterproofing to protect it and channel water down to weeping tile. This is a permanent waterproofing system, not a temporary moisture barrier.",
+    duration: "1 day"
+  },
+  {
+    title: "Drainage System Installation",
+    description: "Weeping tile (4\" perforated pipe) is installed at footing level around entire perimeter. Filter fabric sock prevents clogging from sediment. Pipe is connected to sump pit or storm drain with positive slope for gravity drainage. Clear gravel backfill (3/4\" stone) surrounds drain for water collection.",
+    duration: "4-6 hours"
+  },
+  {
+    title: "Backfill & Grading",
+    description: "Granular backfill (clear stone) is placed against wall for first 12 inches to facilitate drainage. Native soil backfill is compacted in 12-inch lifts to prevent settlement. Final grade is sloped away from wall at minimum 2% slope to direct surface water away from foundation.",
+    duration: "1 day"
+  },
+  {
+    title: "Above-Grade Finishing",
+    description: "PARGING: Two coats of parging cement applied to exposed above-grade foundation for protection and appearance. CAPPING: Flashing or concrete cap on top of wall prevents water entry. SILL PLATE: Pressure-treated lumber anchored with J-bolts embedded in concrete for framing connection above.",
+    duration: "1 day"
+  },
+  {
+    title: "Municipal Inspections",
+    description: "Three inspections required: 1) Footing inspection before pouring wall, 2) Pre-pour/pre-backfill inspection of wall reinforcement and waterproofing, 3) Final inspection after backfill and grading complete. DrySpace coordinates all inspection scheduling and ensures work meets inspector requirements.",
+    duration: "30 min per inspection"
+  }
+];
+
+// Parging Details
+const pargingInfo = {
+  definition: "Cement-based coating applied to exterior foundation walls above grade",
+  purpose: [
+    "Protects concrete/block from freeze-thaw cycles",
+    "Hides imperfections and creates uniform appearance",
+    "Acts as waterproofing barrier for above-grade exposure",
+    "Improves curb appeal"
+  ],
+  process: [
+    "Clean wall surface of dirt, oil, loose material",
+    "Apply bonding agent (concrete primer)",
+    "First coat (scratch coat) 3/8\" thick with horizontal scratches",
+    "Cure 24-48 hours keeping damp",
+    "Second coat (finish coat) 1/4\" thick, trowel smooth or texture",
+    "Cure minimum 7 days before painting"
+  ],
+  cost: "$8-15/sq ft",
+  lifespan: "15-25 years before requiring re-parging",
+  whenNeeded: [
+    "Existing parging cracking and falling off",
+    "New foundation walls above grade",
+    "After foundation repair or replacement",
+    "Before selling home (curb appeal)"
+  ]
+};
+
+// Pricing breakdown
+const pricingBreakdown = [
+  {
+    service: "Full wall replacement (one wall, 30 LF x 8'H)",
+    cost: "$15,000 - $30,000",
+    includes: "Demo, new footing if needed, wall pour, waterproofing, drainage"
+  },
+  {
+    service: "Full wall replacement (full perimeter)",
+    cost: "$50,000 - $100,000+",
+    includes: "Major project - often combined with underpinning"
+  },
+  {
+    service: "New garage foundation (single car)",
+    cost: "$8,000 - $15,000",
+    includes: "Walls + footing + slab"
+  },
+  {
+    service: "New garage foundation (double car)",
+    cost: "$12,000 - $22,000",
+    includes: "Walls + footing + slab"
+  },
+  {
+    service: "Addition foundation",
+    cost: "$15,000 - $35,000",
+    includes: "Size and depth dependent"
+  },
+  {
+    service: "Retaining wall (per linear foot)",
+    cost: "$200 - $500/LF",
+    includes: "Height and engineering dependent"
+  },
+  {
+    service: "Parging (above grade walls)",
+    cost: "$8 - $15/sq ft",
+    includes: "Two-coat application"
+  },
+  {
+    service: "ICF wall construction",
+    cost: "$55 - $85/sq ft",
+    includes: "Premium insulated option"
+  },
+  {
+    service: "Engineering drawings (P.Eng stamped)",
+    cost: "$2,000 - $4,000",
+    includes: "Structural calculations and permit drawings"
+  },
+  {
+    service: "Building permit",
+    cost: "$500 - $1,500",
+    includes: "Municipality and project size dependent"
+  }
+];
+
+// Problems We Fix
+const problemsFix = [
+  {
+    problem: "CRUMBLING STONE/RUBBLE WALLS",
+    before: "100-year-old foundation with loose stones and mortar falling out",
+    after: "Modern poured concrete wall engineered to current OBC standards",
+    solution: "Complete replacement with engineered foundation and waterproofing"
+  },
+  {
+    problem: "SEVERELY BOWED BLOCK WALLS",
+    before: "Concrete block wall bowed inward 3+ inches from soil pressure",
+    after: "Reinforced poured concrete wall with proper drainage system",
+    solution: "Rebuild with thicker poured concrete and exterior drainage"
+  },
+  {
+    problem: "DETERIORATED PARGING",
+    before: "Cracked, flaking parging exposing concrete to freeze-thaw damage",
+    after: "Fresh two-coat parging application with modern bonding agents",
+    solution: "Strip old parging, repair concrete if needed, apply new parging system"
+  },
+  {
+    problem: "FAILED DAMP-PROOFING",
+    before: "Old tar coating deteriorated, constant basement moisture",
+    after: "Rubberized membrane with drainage board and new weeping tile",
+    solution: "Excavate, apply proper waterproofing, install modern drainage"
+  },
+  {
+    problem: "FROST-DAMAGED WALLS",
+    before: "Concrete spalling and cracks from freeze-thaw cycles",
+    after: "Repaired or replaced sections with proper waterproofing",
+    solution: "Cut out damaged concrete, rebuild, apply waterproofing to prevent recurrence"
+  }
+];
+
+// Trust points
+const trustPoints = [
+  {
+    title: "Waterproofing integrated from day one",
+    description: "We're waterproofing specialists first - not an afterthought on our foundation work"
+  },
+  {
+    title: "P.Eng structural engineering",
+    description: "Every project designed by licensed structural engineers for safety and code compliance"
+  },
+  {
+    title: "Full permit handling",
+    description: "We manage the entire permit process and inspection coordination - zero hassle for you"
+  },
+  {
+    title: "One contractor for everything",
+    description: "We pour, waterproof, drain, and backfill - one contractor, one warranty, one point of contact"
+  },
+  {
+    title: "25-year warranty",
+    description: "Full warranty on walls and waterproofing system - peace of mind for decades"
+  },
+  {
+    title: "2,000+ foundation projects",
+    description: "Experience across every foundation type and soil condition in the GTA"
+  }
+];
+
+// Service FAQs for schema
+const serviceFAQs = [
+  {
+    question: "How long does it take to build a foundation wall?",
+    answer: "A single wall replacement typically takes 1-2 weeks from excavation to backfill. A full perimeter foundation can take 3-6 weeks depending on complexity and weather. Add 2-4 weeks for permit processing before work begins. The timeline breaks down as: permit (2-4 weeks), excavation (1-2 days), footing pour and cure (2-3 days), wall construction (1-3 days depending on method), waterproofing (1 day), drainage and backfill (1-2 days)."
+  },
+  {
+    question: "Poured concrete or block - which is better?",
+    answer: "Poured concrete is stronger and more water-resistant because it's monolithic (one piece) with fewer joints. Block is more affordable and works better in tight access situations where cranes can't reach. For basements and below-grade foundations, we strongly recommend poured concrete. For above-grade garages or additions where waterproofing is less critical, block can be a cost-effective choice. Poured concrete costs 20-30% more but provides superior performance long-term."
+  },
+  {
+    question: "Can you replace just one wall of my foundation?",
+    answer: "Yes. This is common for walls that are bowed or severely deteriorated while other walls remain sound. We install temporary shoring and bracing to support the structure above, carefully remove the failing wall section, and pour a new reinforced concrete wall tied into the existing footings and adjacent walls. The new section is engineered to match or exceed the strength of the original foundation. This selective replacement is often more cost-effective than full foundation replacement."
+  },
+  {
+    question: "What's the frost depth in Toronto?",
+    answer: "4 feet (1.2 meters) below grade. All footings must be below frost depth to prevent frost heaving, which can crack foundations and lift structures. This is why residential basement footings are typically 4-5 feet below finished grade. Shallow footings above the frost line will heave during winter freeze-thaw cycles, causing structural damage. The frost depth varies across Ontario - northern regions require deeper footings (up to 6 feet)."
+  },
+  {
+    question: "Do you do parging only?",
+    answer: "Yes, we offer standalone parging services for above-grade foundation walls. This is common when existing parging is cracking, falling off, or homeowners want to improve curb appeal before selling. We charge $8-15 per square foot for a two-coat parging application, which includes surface preparation, bonding agent, scratch coat, and finish coat. Parging should be done every 15-25 years as preventative maintenance to protect the concrete from freeze-thaw damage."
+  },
+  {
+    question: "How do I know if my foundation wall needs replacement vs repair?",
+    answer: "If cracking is minor (hairline cracks, few in number) and walls are plumb (not bowed), repair is usually sufficient and cost-effective. Replacement is necessary when: walls are bowed more than 2 inches, concrete is crumbling or severely spalling, multiple large structural cracks exist, the wall is leaning, or it's an old stone/rubble foundation. A bowed wall indicates soil pressure has exceeded the wall's strength - repair won't fix the underlying structural deficiency. We offer free assessments and provide honest recommendations on repair vs replacement."
+  }
+];
+
+// Service offers for schema
+const serviceOffers = [
+  {
+    name: "Single Wall Replacement",
+    price: "$15,000-$30,000",
+    description: "Replace one failing foundation wall with engineered poured concrete, including waterproofing and drainage."
+  },
+  {
+    name: "New Garage Foundation",
+    price: "$8,000-$22,000",
+    description: "Complete foundation system for single or double car garage with walls, footing, and slab."
+  },
+  {
+    name: "Addition Foundation",
+    price: "$15,000-$35,000",
+    description: "New foundation walls for home addition with full engineering, waterproofing, and permit handling."
+  }
+];
+
+// Pricing tiers
+const pricingTiers = [
+  {
+    name: "Single Wall Replacement",
+    price: "$15,000-$30,000",
+    features: [
+      "One wall (30 LF x 8'H typical)",
+      "Structural engineering",
+      "New footing if needed",
+      "Poured concrete wall",
+      "Full waterproofing system",
+      "25-year warranty"
+    ],
+    description: "Most common repair scenario",
+    recommended: true
+  },
+  {
+    name: "New Garage Foundation",
+    price: "$8,000-$22,000",
+    features: [
+      "Complete foundation walls",
+      "Frost-protected footings",
+      "Concrete slab included",
+      "Permit and engineering",
+      "Waterproofing below grade",
+      "10-year warranty"
+    ],
+    description: "Single or double car garage"
+  },
+  {
+    name: "Full Perimeter Replacement",
+    price: "$50,000-$100,000+",
+    features: [
+      "All four walls replaced",
+      "Often combined with underpinning",
+      "Complete waterproofing",
+      "New drainage system",
+      "Full engineering & permits",
+      "25-year warranty"
+    ],
+    description: "Major foundation rebuild",
+    premium: true
+  }
+];
+---
+
+<PageLayout
+  title={pageTitle}
+  description={pageDescription}
+  showAnnouncement={true}
+>
+
+  <!-- ServiceSchema Component -->
+  <ServiceSchema
+    serviceName="Foundation Wall Construction Toronto"
+    description={pageDescription}
+    priceRange="$8,000-$100,000+"
+    areaServed={serviceAreas}
+    offers={serviceOffers}
+    faqs={serviceFAQs}
+  />
+
+  <!-- Hero Section -->
+  <ServiceHero
+    title="Foundation Wall Construction Toronto & GTA"
+    description="New poured concrete and block foundation walls — from rebuilds to new construction. Engineered, waterproofed, and built to OBC standards."
+    priceRange="$8,000-$100,000+"
+    duration="1-6 weeks"
+    rebate="25-Year Warranty"
+    breadcrumbs={[
+      { label: "Home", href: "/" },
+      { label: "Services", href: "/services" },
+      { label: "Foundation Wall Construction" }
+    ]}
+  />
+
+  <!-- Trust Bar -->
+  <TrustBar />
+
+  <!-- When You Need New Foundation Walls -->
+  <section class="section-padding bg-slate-50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <SectionHeader
+          label="Project Types"
+          title="When You Need New Foundation Walls"
+          description="Six common scenarios for foundation wall construction"
+          centered={true}
+        />
+
+        <div class="grid md:grid-cols-2 gap-6">
+          {wallScenarios.map(scenario => (
+            <div class="bg-white rounded-lg shadow-card hover:shadow-card-hover transition-all duration-300 p-8">
+              <h3 class="text-headline text-navy-900 mb-4">{scenario.name}</h3>
+              <p class="text-slate-700 mb-6">{scenario.description}</p>
+
+              <ul class="space-y-3 mb-6">
+                {scenario.reasons.map(reason => (
+                  <li class="flex items-start">
+                    <span class="material-symbols-outlined text-cyan-500 mr-3 mt-1" style="font-variation-settings: 'FILL' 1">check_circle</span>
+                    <span class="text-slate-700">{reason}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <div class="border-t-2 border-slate-200 pt-4">
+                <p class="section-label-pill bg-slate-200 text-slate-700 inline-block mb-2">Typical Use</p>
+                <p class="text-navy-900 font-semibold">{scenario.typical}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Wall Type Comparison -->
+  <section class="section-padding bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <SectionHeader
+          label="Construction Methods"
+          title="Poured Concrete vs. Block vs. ICF"
+          description="Understanding your foundation wall options"
+          centered={true}
+        />
+
+        <div class="space-y-6">
+          {wallTypeComparison.map(wallType => (
+            <div class={`bg-white rounded-lg shadow-card hover:shadow-card-hover transition-all duration-300 relative overflow-hidden ${
+              wallType.premium ? 'ring-2 ring-amber-500' :
+              wallType.recommended ? 'ring-2 ring-cyan-500' : ''
+            }`}>
+              {wallType.premium && (
+                <div class="absolute top-0 left-0 right-0 bg-gradient-to-r from-amber-500 to-amber-600 text-white px-4 py-2 text-center">
+                  <span class="text-display font-bold">PREMIUM OPTION</span>
+                </div>
+              )}
+              {wallType.recommended && (
+                <div class="absolute top-0 left-0 right-0 bg-gradient-to-r from-cyan-500 to-cyan-600 text-white px-4 py-2 text-center">
+                  <span class="text-display font-bold">RECOMMENDED</span>
+                </div>
+              )}
+
+              <div class={`p-8 ${wallType.premium || wallType.recommended ? 'pt-16' : ''}`}>
+                <div class="grid md:grid-cols-3 gap-6 mb-6">
+                  <div>
+                    <h3 class="text-headline text-navy-900 mb-3">{wallType.name}</h3>
+                    <p class="text-slate-700 mb-4">{wallType.description}</p>
+                    <p class="text-4xl font-bold text-cyan-600">{wallType.cost}</p>
+                  </div>
+
+                  <div class="space-y-3">
+                    <div>
+                      <p class="section-label-pill bg-slate-200 text-slate-700 inline-block mb-1">Thickness</p>
+                      <p class="text-navy-900 font-semibold">{wallType.thickness}</p>
+                    </div>
+                    <div>
+                      <p class="section-label-pill bg-slate-200 text-slate-700 inline-block mb-1">Strength</p>
+                      <p class="text-navy-900 font-semibold">{wallType.strength}</p>
+                    </div>
+                    <div>
+                      <p class="section-label-pill bg-slate-200 text-slate-700 inline-block mb-1">Water Resistance</p>
+                      <p class="text-navy-900 font-semibold">{wallType.waterResistance}</p>
+                    </div>
+                    <div>
+                      <p class="section-label-pill bg-slate-200 text-slate-700 inline-block mb-1">Installation Speed</p>
+                      <p class="text-navy-900 font-semibold">{wallType.speed}</p>
+                    </div>
+                  </div>
+
+                  <div>
+                    <p class="section-label-pill bg-cyan-100 text-cyan-700 inline-block mb-3">Best For</p>
+                    <p class="text-navy-900 font-semibold mb-4">{wallType.bestFor}</p>
+                  </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6 border-t-2 border-slate-200 pt-6">
+                  <div>
+                    <h4 class="font-bold text-display text-navy-900 mb-3 flex items-center">
+                      <span class="material-symbols-outlined text-green-500 mr-2" style="font-variation-settings: 'FILL' 1">add_circle</span>
+                      Pros
+                    </h4>
+                    <ul class="space-y-2">
+                      {wallType.pros.map(pro => (
+                        <li class="flex items-start">
+                          <span class="material-symbols-outlined text-green-500 mr-2 text-sm mt-1">check</span>
+                          <span class="text-slate-700 text-sm">{pro}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div>
+                    <h4 class="font-bold text-display text-navy-900 mb-3 flex items-center">
+                      <span class="material-symbols-outlined text-red-500 mr-2" style="font-variation-settings: 'FILL' 1">remove_circle</span>
+                      Cons
+                    </h4>
+                    <ul class="space-y-2">
+                      {wallType.cons.map(con => (
+                        <li class="flex items-start">
+                          <span class="material-symbols-outlined text-red-500 mr-2 text-sm mt-1">close</span>
+                          <span class="text-slate-700 text-sm">{con}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Construction Process -->
+  <ServiceProcess
+    steps={processSteps}
+    title="Our Foundation Wall Construction Process"
+    label="10-Step Process"
+  />
+
+  <!-- Parging Section -->
+  <section class="section-padding bg-slate-50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <SectionHeader
+          label="Exterior Finishing"
+          title="Parging & Above-Grade Finishing"
+          description="Protecting and beautifying your foundation walls"
+          centered={true}
+        />
+
+        <div class="grid md:grid-cols-2 gap-8 mb-8">
+          <div class="bg-white rounded-lg shadow-card p-8">
+            <h3 class="text-headline text-navy-900 mb-6">What Is Parging?</h3>
+            <p class="text-slate-700 mb-4">
+              <strong class="text-navy-900">Definition:</strong> {pargingInfo.definition}
+            </p>
+
+            <h4 class="font-bold text-display text-navy-900 mb-3 mt-6">Why Parge?</h4>
+            <ul class="space-y-3">
+              {pargingInfo.purpose.map(purpose => (
+                <li class="flex items-start">
+                  <span class="material-symbols-outlined text-cyan-500 mr-3 mt-1" style="font-variation-settings: 'FILL' 1">check_circle</span>
+                  <span class="text-slate-700">{purpose}</span>
+                </li>
+              ))}
+            </ul>
+
+            <div class="bg-cyan-50 border-2 border-cyan-500 rounded-lg p-6 mt-6">
+              <p class="text-4xl font-bold text-cyan-600 mb-2">{pargingInfo.cost}</p>
+              <p class="text-navy-900 font-bold text-display">Above-grade parging</p>
+              <p class="text-slate-700 text-sm mt-2">Lifespan: {pargingInfo.lifespan}</p>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-lg shadow-card p-8">
+            <h3 class="text-headline text-navy-900 mb-6">Parging Process</h3>
+
+            <ol class="space-y-4">
+              {pargingInfo.process.map((step, index) => (
+                <li class="flex items-start">
+                  <span class="bg-cyan-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm mr-3 flex-shrink-0 mt-1">{index + 1}</span>
+                  <span class="text-slate-700">{step}</span>
+                </li>
+              ))}
+            </ol>
+          </div>
+        </div>
+
+        <div class="bg-gradient-to-r from-cyan-600 to-cyan-700 text-white p-8 rounded-lg shadow-card">
+          <h3 class="text-headline mb-6 text-center">When Do You Need Re-Parging?</h3>
+          <div class="grid md:grid-cols-2 gap-4">
+            {pargingInfo.whenNeeded.map(reason => (
+              <div class="flex items-start">
+                <span class="material-symbols-outlined text-cyan-200 mr-3 mt-1" style="font-variation-settings: 'FILL' 1">arrow_forward</span>
+                <p class="text-white">{reason}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Section -->
+  <section class="section-padding bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <SectionHeader
+          label="Transparent Pricing"
+          title="Foundation Wall Construction Costs"
+          description="All-inclusive pricing with engineering and permits"
+          centered={true}
+        />
+
+        <div class="overflow-x-auto rounded-lg shadow-card mb-8">
+          <table class="w-full">
+            <thead>
+              <tr class="bg-gradient-to-r from-navy-900 to-navy-800 text-white">
+                <th class="p-4 text-left text-display">Project</th>
+                <th class="p-4 text-center text-display">Cost Range</th>
+                <th class="p-4 text-left text-display">Notes</th>
+              </tr>
+            </thead>
+            <tbody class="bg-white">
+              {pricingBreakdown.map((item, index) => (
+                <tr class={index % 2 === 0 ? 'border-b border-slate-200' : 'border-b border-slate-200 bg-slate-50'}>
+                  <td class="p-4 font-bold text-display text-navy-900">{item.service}</td>
+                  <td class="p-4 text-center font-bold text-cyan-600 text-lg">{item.cost}</td>
+                  <td class="p-4 text-slate-700">{item.includes}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        <div class="bg-amber-50 border-2 border-amber-500 rounded-lg p-6">
+          <div class="flex items-start">
+            <span class="material-symbols-outlined text-amber-600 text-4xl mr-4" style="font-variation-settings: 'FILL' 1">info</span>
+            <div>
+              <h4 class="font-bold text-display text-navy-900 mb-2">Price Factors</h4>
+              <p class="text-slate-700 mb-3">Final cost depends on wall height, length, soil conditions, access, foundation type (poured vs block), and waterproofing complexity.</p>
+              <p class="text-slate-700">All quotes include engineering, permits, excavation, waterproofing, drainage, and backfill.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Problems We Fix -->
+  <section class="section-padding bg-gradient-to-br from-navy-900 to-navy-800 text-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <SectionHeader
+          label="Before & After"
+          title="Foundation Wall Problems We Fix"
+          description="Transforming failing foundations into engineered systems"
+          centered={true}
+          dark={true}
+        />
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {problemsFix.map(problem => (
+            <div class="bg-white/10 backdrop-blur rounded-lg shadow-card hover:shadow-card-hover transition-all duration-300 p-6">
+              <div class="bg-red-500 text-white px-4 py-2 rounded-lg mb-4 text-center">
+                <p class="font-bold text-display">BEFORE</p>
+              </div>
+              <h3 class="text-headline mb-3">{problem.problem}</h3>
+              <p class="text-slate-300 mb-4 text-sm">{problem.before}</p>
+
+              <div class="border-t border-white/20 my-4 pt-4">
+                <div class="bg-green-500 text-white px-4 py-2 rounded-lg mb-3 text-center">
+                  <p class="font-bold text-display">AFTER</p>
+                </div>
+                <p class="text-white mb-4 text-sm">{problem.after}</p>
+              </div>
+
+              <div class="bg-white/10 rounded-lg p-3">
+                <p class="section-label-pill bg-cyan-500 text-white inline-block mb-2 text-xs">Solution</p>
+                <p class="text-slate-200 text-sm">{problem.solution}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us Section -->
+  <section class="section-padding bg-slate-50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <SectionHeader
+          label="The DrySpace Difference"
+          title="Why Choose DrySpace for Foundation Walls"
+          description="Engineering expertise meets waterproofing mastery"
+          centered={true}
+        />
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {trustPoints.map(point => (
+            <div class="bg-white rounded-lg shadow-card hover:shadow-card-hover transition-all duration-300 p-8">
+              <div class="bg-cyan-100 rounded-full w-16 h-16 flex items-center justify-center mb-4">
+                <span class="material-symbols-outlined text-cyan-600 text-3xl" style="font-variation-settings: 'FILL' 1">verified</span>
+              </div>
+              <h3 class="text-headline text-navy-900 mb-3">{point.title}</h3>
+              <p class="text-slate-700">{point.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Tiers -->
+  <ServicePricing
+    title="Foundation Wall Pricing Packages"
+    tiers={pricingTiers}
+  />
+
+  <!-- Service Areas -->
+  <section class="section-padding bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <SectionHeader
+          label="GTA Coverage"
+          title="Foundation Wall Service Areas"
+          description="Professional foundation construction across the Greater Toronto Area"
+          centered={true}
+        />
+
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mb-8">
+          {serviceAreas.map(area => (
+            <div class="bg-slate-50 rounded-lg shadow-card hover:shadow-card-hover transition-all duration-300 p-4 text-center">
+              <p class="font-bold text-display text-navy-900">{area}</p>
+            </div>
+          ))}
+        </div>
+
+        <div class="bg-gradient-to-r from-cyan-600 to-cyan-700 rounded-lg shadow-card p-8 text-center">
+          <p class="text-headline text-white mb-2">
+            NEED A STRUCTURAL FOUNDATION ASSESSMENT?
+          </p>
+          <p class="text-white text-lg mb-4">
+            Free on-site evaluations for wall replacement and new construction
+          </p>
+          <a href="tel:437-545-0067" class="btn-primary bg-white text-navy-900 hover:bg-slate-100">
+            437-545-0067 - FREE ASSESSMENT
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Before/After Gallery -->
+  <BeforeAfterGallery />
+
+  <!-- Why Choose Us -->
+  <WhyChooseUs />
+
+  <!-- Service Image Gallery -->
+  <ServiceImageGallery service="foundation-walls" />
+
+  <!-- Testimonials -->
+  <Testimonials />
+
+  <!-- Technical Drawings -->
+  <TechnicalDrawings />
+
+  <!-- FAQ Section -->
+  <section class="section-padding bg-slate-50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <SectionHeader
+          label="Common Questions"
+          title="Frequently Asked Questions"
+          description="Everything you need to know about foundation wall construction"
+          centered={true}
+        />
+
+        <div class="space-y-4">
+          {serviceFAQs.map((faq, index) => (
+            <details class="bg-white rounded-lg shadow-card hover:shadow-card-hover transition-all duration-300 overflow-hidden group">
+              <summary class="cursor-pointer p-6 font-bold text-display text-navy-900 flex items-center justify-between">
+                <span>{faq.question}</span>
+                <span class="material-symbols-outlined text-cyan-500 transform transition-transform group-open:rotate-180">expand_more</span>
+              </summary>
+              <div class="px-6 pb-6 text-slate-700 border-t border-slate-200 pt-4">
+                {faq.answer}
+              </div>
+            </details>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Internal Links Component -->
+  <InternalLinks category="foundation" currentPage="foundation-wall-construction" limit={5} />
+
+  <!-- Contact Form -->
+  <ContactForm />
+
+  <!-- Related Services -->
+  <section class="section-padding bg-gradient-to-br from-navy-900 to-navy-800">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <SectionHeader
+          label="Related Services"
+          title="Complete Foundation Services"
+          description="Everything you need for foundation work"
+          centered={true}
+          dark={true}
+        />
+
+        <div class="grid md:grid-cols-3 gap-6 mb-12">
+          <a href="/services/underpinning" class="bg-white/10 backdrop-blur rounded-lg shadow-card hover:shadow-card-hover transition-all duration-300 p-6 hover:bg-white/15 group">
+            <h3 class="text-headline text-white mb-3 group-hover:text-cyan-400 transition-colors">Underpinning</h3>
+            <p class="text-slate-300 mb-4">Lower basement floor and strengthen existing foundations</p>
+            <p class="text-cyan-400 font-bold text-xl">$300-$400/linear foot</p>
+            <span class="text-cyan-400 font-bold text-display mt-4 inline-block group-hover:translate-x-2 transition-transform">LEARN MORE →</span>
+          </a>
+
+          <a href="/services/foundation-repair" class="bg-white/10 backdrop-blur rounded-lg shadow-card hover:shadow-card-hover transition-all duration-300 p-6 hover:bg-white/15 group">
+            <h3 class="text-headline text-white mb-3 group-hover:text-cyan-400 transition-colors">Foundation Repair</h3>
+            <p class="text-slate-300 mb-4">Fix cracks, bowing, and settling without full replacement</p>
+            <p class="text-cyan-400 font-bold text-xl">$3,000-$15,000</p>
+            <span class="text-cyan-400 font-bold text-display mt-4 inline-block group-hover:translate-x-2 transition-transform">LEARN MORE →</span>
+          </a>
+
+          <a href="/services/exterior-waterproofing" class="bg-white/10 backdrop-blur rounded-lg shadow-card hover:shadow-card-hover transition-all duration-300 p-6 hover:bg-white/15 group">
+            <h3 class="text-headline text-white mb-3 group-hover:text-cyan-400 transition-colors">Exterior Waterproofing</h3>
+            <p class="text-slate-300 mb-4">Protect new and existing foundation walls from water</p>
+            <p class="text-cyan-400 font-bold text-xl">$150-$250/linear foot</p>
+            <span class="text-cyan-400 font-bold text-display mt-4 inline-block group-hover:translate-x-2 transition-transform">LEARN MORE →</span>
+          </a>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6 mb-12">
+          <a href="/services/excavation-services" class="bg-white/10 backdrop-blur rounded-lg shadow-card hover:shadow-card-hover transition-all duration-300 p-6 hover:bg-white/15 group">
+            <h3 class="text-headline text-white mb-3 group-hover:text-cyan-400 transition-colors">Excavation Services</h3>
+            <p class="text-slate-300 mb-4">Foundation excavation, shoring, and site preparation</p>
+            <span class="text-cyan-400 font-bold text-display mt-4 inline-block group-hover:translate-x-2 transition-transform">LEARN MORE →</span>
+          </a>
+
+          <a href="/services/concrete-slab-pouring" class="bg-white/10 backdrop-blur rounded-lg shadow-card hover:shadow-card-hover transition-all duration-300 p-6 hover:bg-white/15 group">
+            <h3 class="text-headline text-white mb-3 group-hover:text-cyan-400 transition-colors">Concrete Slab Pouring</h3>
+            <p class="text-slate-300 mb-4">Basement floors, garage slabs, and concrete work</p>
+            <span class="text-cyan-400 font-bold text-display mt-4 inline-block group-hover:translate-x-2 transition-transform">LEARN MORE →</span>
+          </a>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6 mb-12">
+          <a href="/services/load-bearing-beam-installation" class="bg-white/10 backdrop-blur rounded-lg shadow-card hover:shadow-card-hover transition-all duration-300 p-6 hover:bg-white/15 group">
+            <h3 class="text-headline text-white mb-3 group-hover:text-cyan-400 transition-colors">Load-Bearing Beam Installation</h3>
+            <p class="text-slate-300 mb-4">Structural steel and engineered wood beam installation</p>
+            <span class="text-cyan-400 font-bold text-display mt-4 inline-block group-hover:translate-x-2 transition-transform">LEARN MORE →</span>
+          </a>
+
+          <a href="/services/bowing-basement-walls" class="bg-white/10 backdrop-blur rounded-lg shadow-card hover:shadow-card-hover transition-all duration-300 p-6 hover:bg-white/15 group">
+            <h3 class="text-headline text-white mb-3 group-hover:text-cyan-400 transition-colors">Bowing Wall Repair</h3>
+            <p class="text-slate-300 mb-4">Fix bowed walls before full replacement is needed</p>
+            <span class="text-cyan-400 font-bold text-display mt-4 inline-block group-hover:translate-x-2 transition-transform">LEARN MORE →</span>
+          </a>
+        </div>
+
+        <!-- Urgent CTA -->
+        <div class="bg-gradient-to-r from-amber-500 to-amber-600 rounded-lg shadow-card p-8 text-center">
+          <p class="text-3xl font-bold text-white mb-4 text-display">
+            BUILDING AN ADDITION OR GARAGE?
+          </p>
+          <p class="text-xl text-white mb-6">
+            Get engineered foundation walls with integrated waterproofing
+          </p>
+          <a href="tel:437-545-0067" class="btn-primary bg-white text-navy-900 hover:bg-slate-100">
+            437-545-0067 - FREE ESTIMATE
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA Band -->
+  <CTABand
+    title="Get Your Free Foundation Wall Assessment"
+    subtitle="Engineered designs with full waterproofing system. 25-year warranty."
+    primaryCTA={{ text: "Book Free Assessment", href: "/free-inspection" }}
+    secondaryCTA={{ text: "Call: 437-545-0067", href: "tel:437-545-0067" }}
+  />
+</PageLayout>

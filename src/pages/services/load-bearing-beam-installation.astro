@@ -1,0 +1,1027 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import ServiceHero from '../../components/sections/ServiceHero.astro';
+import TrustBar from '../../components/sections/TrustBar.astro';
+import ServiceProcess from '../../components/sections/ServiceProcess.astro';
+import ServicePricing from '../../components/sections/ServicePricing.astro';
+import CTABand from '../../components/sections/CTABand.astro';
+import SectionHeader from '../../components/sections/SectionHeader.astro';
+import ServiceSchema from '../../components/ServiceSchema.astro';
+import InternalLinks from '../../components/InternalLinks.astro';
+import BeforeAfterGallery from '../../components/BeforeAfterGallery.astro';
+import WhyChooseUs from '../../components/WhyChooseUs.astro';
+import Testimonials from '../../components/sections/Testimonials.astro';
+import TechnicalDrawings from '../../components/TechnicalDrawings.astro';
+import ContactForm from '../../components/ContactForm.astro';
+import ServiceImageGallery from '../../components/ServiceImageGallery.astro';
+
+// SEO-optimized metadata focused on service
+const pageTitle = "Load-Bearing Beam Installation Toronto | $5,000-$15,000 | Engineered Solutions";
+const pageDescription = "Remove basement walls safely with engineered steel beam installation. Full permit handling, structural engineering, 25-year warranty. Call 437-545-0067.";
+
+// Service areas list
+const serviceAreas = [
+  "Toronto",
+  "Scarborough",
+  "Etobicoke",
+  "North York",
+  "Mississauga",
+  "Brampton",
+  "Vaughan",
+  "Markham",
+  "Oakville",
+  "Burlington",
+  "Richmond Hill",
+  "Ajax",
+  "Pickering",
+  "Oshawa"
+];
+
+// Load-bearing vs non-load-bearing identification
+const identificationTable = [
+  {
+    sign: "Wall runs perpendicular to floor joists",
+    loadBearing: "Yes - Likely",
+    nonLoadBearing: "No"
+  },
+  {
+    sign: "Wall directly below upper floor wall",
+    loadBearing: "Yes - Very Likely",
+    nonLoadBearing: "No"
+  },
+  {
+    sign: "Wall sits on concrete footing/foundation",
+    loadBearing: "Yes - Likely",
+    nonLoadBearing: "Sometimes"
+  },
+  {
+    sign: "Wall in center of house",
+    loadBearing: "Yes - Very Likely",
+    nonLoadBearing: "No"
+  },
+  {
+    sign: "Wall runs parallel to joists",
+    loadBearing: "No",
+    nonLoadBearing: "Yes - Likely"
+  },
+  {
+    sign: "Wall built with 2x3 or single top plate",
+    loadBearing: "No",
+    nonLoadBearing: "Yes - Likely"
+  },
+  {
+    sign: "Wall doesn't align with anything above",
+    loadBearing: "No",
+    nonLoadBearing: "Yes - Likely"
+  },
+  {
+    sign: "Newer partition wall (post-1990)",
+    loadBearing: "Maybe",
+    nonLoadBearing: "Yes - Likely"
+  }
+];
+
+// Types of beams we install
+const beamTypes = [
+  {
+    name: "STEEL I-BEAM (W-SHAPE)",
+    description: "Most common for residential basements. Wide-flange steel beam handles longest spans and heaviest loads.",
+    bestFor: "Open concept, large spans (12-20+ feet)",
+    price: "$3,000 - $8,000",
+    features: [
+      "W8x, W10x, W12x sizes available",
+      "Strongest option for residential",
+      "Can be hidden in ceiling framing",
+      "Handles multi-story loads",
+      "Longest service life (100+ years)"
+    ],
+    recommended: true
+  },
+  {
+    name: "STEEL FLUSH BEAM",
+    description: "Beam sits within joist depth, maintaining full ceiling height. Critical for basements with low ceilings.",
+    bestFor: "Low ceiling basements, finished ceilings",
+    price: "$4,000 - $10,000",
+    features: [
+      "Maximizes headroom preservation",
+      "Requires joist notching/modification",
+      "More labour intensive installation",
+      "Best for 6'6\"-7' ceiling heights",
+      "Multiple smaller beams sometimes used"
+    ]
+  },
+  {
+    name: "LVL BEAM (ENGINEERED WOOD)",
+    description: "Laminated veneer lumber beam. Lighter than steel, easier to install in tight spaces.",
+    bestFor: "Moderate spans (8-14 feet), wood-frame additions",
+    price: "$2,000 - $5,000",
+    features: [
+      "Multiple plies of laminated veneer",
+      "Easier to cut and modify on-site",
+      "Good for medium span applications",
+      "Less expensive than steel",
+      "Limited span compared to steel"
+    ]
+  },
+  {
+    name: "STEEL POST / LALLY COLUMN",
+    description: "Adjustable or fixed steel columns supporting beams. Replace deteriorated posts or add mid-span support.",
+    bestFor: "Mid-span support, replacing old columns",
+    price: "$800 - $2,000 per column",
+    features: [
+      "Adjustable or fixed height options",
+      "Requires concrete pad footings",
+      "24\"x24\"x12\" minimum footing size",
+      "Galvanized or painted finish",
+      "Can be wrapped/finished for aesthetics"
+    ]
+  }
+];
+
+// Pricing breakdown
+const pricingBreakdown = [
+  {
+    service: "Single beam + 2 columns (up to 14' span)",
+    cost: "$5,000 - $10,000",
+    includes: "Engineering, permit, beam, columns, footings, install"
+  },
+  {
+    service: "Single beam + 2 columns (14-20' span)",
+    cost: "$8,000 - $15,000",
+    includes: "Larger beam, deeper footings, more shoring"
+  },
+  {
+    service: "Double beam / flush beam",
+    cost: "$10,000 - $18,000",
+    includes: "Two beams for wider spans or flush ceiling"
+  },
+  {
+    service: "Column replacement (per column)",
+    cost: "$1,500 - $3,000",
+    includes: "New column, footing, connections"
+  },
+  {
+    service: "Beam + underpinning combo",
+    cost: "$35,000 - $65,000",
+    includes: "Full basement lowering + open concept"
+  },
+  {
+    service: "Engineering drawings",
+    cost: "$1,500 - $3,000",
+    includes: "P.Eng stamped structural drawings"
+  },
+  {
+    service: "Building permit",
+    cost: "$400 - $1,000",
+    includes: "Municipality dependent"
+  }
+];
+
+// Price factors
+const priceFactors = [
+  "Span length - longer spans require heavier beams and more cost",
+  "Number of columns - more support points for very long spans add complexity",
+  "Flush vs drop beam - flush requires significantly more labour",
+  "Ceiling height - low ceilings add installation complexity",
+  "Foundation condition - may need footing upgrades or reinforcement",
+  "Utilities in wall - electrical/plumbing rerouting adds cost and time",
+  "Access - how do we get a 20' steel beam into your basement?",
+  "Floor structure above - older homes may need additional support"
+];
+
+// Trust points
+const trustPoints = [
+  {
+    title: "Licensed structural engineers",
+    description: "Every beam designed by P.Eng with full load calculations"
+  },
+  {
+    title: "Full permit handling",
+    description: "We manage the entire permit application and inspection process"
+  },
+  {
+    title: "Temporary shoring experts",
+    description: "Safe load transfer BEFORE any wall removal - never cut first"
+  },
+  {
+    title: "Foundation specialists",
+    description: "2,000+ basement projects - we know every house type in the GTA"
+  },
+  {
+    title: "25-year structural warranty",
+    description: "Full warranty on all beam installations and structural work"
+  },
+  {
+    title: "One contractor",
+    description: "Beam + underpinning + waterproofing = one team, one timeline"
+  }
+];
+
+// Service FAQs for schema
+const serviceFAQs = [
+  {
+    question: "Do I need a permit to remove a load-bearing wall?",
+    answer: "Yes, always. This is structural work requiring engineered drawings and a building permit. The engineer calculates the exact beam size, column placement, and footing dimensions needed to safely carry the load. Unpermitted structural work can void your insurance, create massive liability when selling, and most importantly - poses serious safety risks. Never attempt to remove a load-bearing wall without professional engineering and permits."
+  },
+  {
+    question: "How long does beam installation take?",
+    answer: "Typically 3-4 days for the physical work. Add 3-6 weeks for engineering and permits before work begins. Day 1 includes temporary shoring and footing installation. Days 2-3 cover beam and column installation, wall removal, and connections. Day 4 includes finishing and inspection. The exact timeline depends on span length, access, and whether utilities need rerouting."
+  },
+  {
+    question: "Can I remove a load-bearing wall myself?",
+    answer: "Absolutely not. This is one of the most dangerous DIY projects possible. Improper support during wall removal can cause catastrophic floor collapse, injuring or killing anyone above. The weight being carried is enormous - often 10,000-30,000+ pounds. This requires engineering, proper temporary shoring installed BEFORE any cutting, and professional execution. Even experienced contractors get this wrong without engineering. Never attempt this yourself."
+  },
+  {
+    question: "How much headroom will I lose with a beam?",
+    answer: "A standard drop beam takes 8-10 inches of headroom at the beam location only. The rest of the ceiling maintains its original height. A flush beam can maintain full ceiling height but costs 50-100% more due to additional labour. If your current ceiling is already low (under 7 feet), consider underpinning first to gain height, then add the beam. We can design around your specific constraints."
+  },
+  {
+    question: "What size steel beam do I need?",
+    answer: "It depends on span, load, joist configuration, and what's above (single story vs multi-story). A Professional Engineer calculates this based on Ontario Building Code requirements. As a rough guide: 12' span typically needs W8x beam, 16' span needs W10x, 20' span needs W12x or larger. But never size a beam without proper engineering - undersized beams can fail catastrophically. Our engineers design every beam specifically for your home."
+  },
+  {
+    question: "Can I hide the beam in the ceiling?",
+    answer: "Yes, several options exist. A flush beam design sits within the joist depth maintaining full ceiling height. A drop beam can be framed with drywall to look like a soffit or decorative ceiling feature. Steel beams can also be wrapped in wood for a rustic/timber look, or left exposed and painted for industrial style. We'll show you all options during the design phase."
+  }
+];
+
+// Service offers for schema
+const serviceOffers = [
+  {
+    name: "Standard Beam Installation",
+    price: "$5,000-$10,000",
+    description: "Single beam up to 14 feet with columns, footings, engineering, and permit handling."
+  },
+  {
+    name: "Long Span Beam Installation",
+    price: "$8,000-$15,000",
+    description: "Beam installation for 14-20 foot spans with heavier structural requirements."
+  },
+  {
+    name: "Beam + Underpinning Package",
+    price: "$35,000-$65,000",
+    description: "Complete basement transformation with open concept layout and full ceiling height."
+  }
+];
+
+// Installation process steps
+const processSteps = [
+  {
+    title: "Free Structural Assessment",
+    description: "Identify ALL load-bearing walls (not always obvious - we check from above). Measure spans, joist direction, and load paths. Check existing footings and foundation condition. Assess headroom and ceiling height constraints. Determine if underpinning is needed alongside beam work. Site access evaluation for beam delivery.",
+    duration: "1 hour"
+  },
+  {
+    title: "Structural Engineering",
+    description: "Licensed P.Eng designs the beam, columns, and footings. Calculations include dead load, live load, snow load, and point loads. Engineering drawings specify exact beam size (W8x, W10x, W12x), connection details, and footing dimensions. Drawings required for building permit. All calculations comply with Ontario Building Code.",
+    duration: "1-2 weeks"
+  },
+  {
+    title: "Building Permit Application",
+    description: "Submit engineered drawings to your municipality. DrySpace handles the full application process including all paperwork and follow-ups. Permit cost varies by municipality ($400-$1,000). No work begins until permit is approved and posted on-site. Typical approval time 2-4 weeks.",
+    duration: "2-4 weeks"
+  },
+  {
+    title: "Temporary Shoring Installation",
+    description: "Install temporary support walls/posts to carry the load BEFORE removing anything. This is the most critical safety step - we NEVER cut first and shore later. Adjustable steel shores or built-up wood cribbing installed on both sides. Load transferred safely to temporary supports. Shores remain until permanent beam is fully installed.",
+    duration: "3-4 hours"
+  },
+  {
+    title: "Footing Installation",
+    description: "Cut basement floor at column locations using concrete saw. Excavate to depth specified by engineer (typically 12-18 inches). Pour new concrete pad footings per engineering specs. Typical footing: 24\"x24\"x12\" or 30\"x30\"x12\" for heavier loads. Install anchor bolts for column base plates. Allow 24-48 hours for concrete to cure to full strength.",
+    duration: "4-6 hours + cure time"
+  },
+  {
+    title: "Beam & Column Installation",
+    description: "Set steel columns on base plates, plumb and brace carefully. Lift beam into position (may require temporary crane or lift equipment for long/heavy beams). Secure beam to columns with bolted or welded connections per engineering drawings. Connect beam to existing joists with joist hangers or bearing plates. Verify all connections and load transfer.",
+    duration: "6-8 hours"
+  },
+  {
+    title: "Load Transfer & Wall Removal",
+    description: "Carefully remove temporary shoring once permanent beam is verified and loaded. Remove the load-bearing wall framing, studs, and plates. Patch subfloor above if floor penetrations exist. Frame around beam and columns for drywall finishing (if desired). Reroute electrical/plumbing if utilities ran through removed wall.",
+    duration: "4-6 hours"
+  },
+  {
+    title: "Inspection & Finishing",
+    description: "Municipal building inspector verifies beam size, column placement, footing dimensions, and all connections. Inspector signs off on structural work (required for permit closure). Optional: Drywall framing around beam (can leave exposed for industrial look). Concrete floor patch at footing locations. 25-year structural warranty provided. Photo documentation for your records.",
+    duration: "2-3 hours"
+  }
+];
+
+// Pricing tiers
+const pricingTiers = [
+  {
+    name: "Standard Span Installation",
+    price: "$5,000-$10,000",
+    features: [
+      "Beam up to 14 feet",
+      "2 steel columns included",
+      "Concrete footings",
+      "Engineering & permits",
+      "25-year warranty"
+    ],
+    description: "Most common basement wall removal"
+  },
+  {
+    name: "Long Span Installation",
+    price: "$8,000-$15,000",
+    features: [
+      "Beam 14-20+ feet",
+      "Heavier structural beam",
+      "Larger footings required",
+      "Engineering & permits",
+      "25-year warranty"
+    ],
+    description: "For wider open concept spaces",
+    recommended: true
+  },
+  {
+    name: "Flush Beam / Complex",
+    price: "$10,000-$18,000",
+    features: [
+      "Flush beam (maintains ceiling height)",
+      "Or double beam configuration",
+      "More extensive engineering",
+      "Complex joist modifications",
+      "25-year warranty"
+    ],
+    description: "Maximum headroom preservation",
+    premium: true
+  }
+];
+
+// Common project combinations
+const commonCombinations = [
+  {
+    name: "Beam + Underpinning",
+    description: "Remove walls for open layout AND gain full ceiling height (7-8 feet).",
+    price: "$35,000 - $65,000",
+    linkUrl: "/services/underpinning",
+    linkText: "Learn About Underpinning",
+    mostPopular: true
+  },
+  {
+    name: "Beam + Second Unit Conversion",
+    description: "Create apartment layout by removing walls for larger living spaces.",
+    price: "$15,000 - $35,000",
+    linkUrl: "/services/legal-basement-conversion",
+    linkText: "Second Unit Services"
+  },
+  {
+    name: "Beam + Egress Windows",
+    description: "Open concept layout plus natural light and legal bedrooms.",
+    price: "$12,000 - $25,000",
+    linkUrl: "/services/egress-windows",
+    linkText: "Egress Window Options"
+  },
+  {
+    name: "Beam + Interior Waterproofing",
+    description: "While floor is opened for footings, add drainage system.",
+    price: "$15,000 - $30,000",
+    linkUrl: "/services/interior-waterproofing",
+    linkText: "Waterproofing Info"
+  }
+];
+---
+
+<PageLayout
+  title={pageTitle}
+  description={pageDescription}
+  showAnnouncement={true}
+>
+
+  <!-- ServiceSchema Component -->
+  <ServiceSchema
+    serviceName="Load-Bearing Beam Installation Toronto"
+    description={pageDescription}
+    priceRange="$5,000-$15,000"
+    areaServed={serviceAreas}
+    offers={serviceOffers}
+    faqs={serviceFAQs}
+  />
+
+  <!-- Hero Section -->
+  <ServiceHero
+    title="Load-Bearing Beam & Column Installation Toronto & GTA"
+    description="Remove basement walls safely and open up your space with engineered steel beams. Full permit handling, structural engineering, and 25-year warranty."
+    priceRange="$5,000-$15,000"
+    duration="3-4 days"
+    rebate="Permit Included"
+    breadcrumbs={[
+      { label: "Home", href: "/" },
+      { label: "Services", href: "/services" },
+      { label: "Load-Bearing Beam Installation" }
+    ]}
+  />
+
+  <!-- Trust Bar -->
+  <TrustBar />
+
+  <!-- Why Remove a Load-Bearing Wall Section -->
+  <section class="section-padding bg-slate-50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <SectionHeader
+          label="Open Concept Living"
+          title="Why Remove a Load-Bearing Wall?"
+          description="Transform your basement into the space you actually want"
+          centered={true}
+        />
+
+        <div class="grid md:grid-cols-2 gap-8 mb-12">
+          <div class="bg-white rounded-lg shadow-card p-8">
+            <h3 class="text-headline text-navy-900 mb-6">The Problem</h3>
+            <p class="text-slate-700 mb-4">
+              Most GTA homes built between 1960-1990 have small, compartmentalized basements with load-bearing walls splitting the space.
+            </p>
+            <p class="text-slate-700 mb-4">
+              That wall in the middle of your basement? It's holding up your house. But it's also preventing you from creating the space you need.
+            </p>
+
+            <div class="space-y-3 mt-6">
+              <div class="flex items-start">
+                <span class="material-symbols-outlined text-red-500 mr-3">close</span>
+                <span class="text-slate-700">Chopped-up layout feels cramped and dated</span>
+              </div>
+              <div class="flex items-start">
+                <span class="material-symbols-outlined text-red-500 mr-3">close</span>
+                <span class="text-slate-700">Can't create proper living/dining/kitchen flow</span>
+              </div>
+              <div class="flex items-start">
+                <span class="material-symbols-outlined text-red-500 mr-3">close</span>
+                <span class="text-slate-700">Walls block natural light from egress windows</span>
+              </div>
+              <div class="flex items-start">
+                <span class="material-symbols-outlined text-red-500 mr-3">close</span>
+                <span class="text-slate-700">Difficult to create legal basement apartment layout</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-lg shadow-card p-8">
+            <h3 class="text-headline text-navy-900 mb-6">The Solution</h3>
+            <p class="text-slate-700 mb-4">
+              <strong class="text-navy-900">Engineered beam installation</strong> allows you to safely remove that wall and open up your basement.
+            </p>
+            <p class="text-slate-700 mb-4">
+              The beam transfers the load to columns at each end, eliminating the need for a full-length wall.
+            </p>
+
+            <div class="space-y-3 mt-6">
+              <div class="flex items-start">
+                <span class="material-symbols-outlined text-cyan-500 mr-3" style="font-variation-settings: 'FILL' 1">check_circle</span>
+                <span class="text-slate-700"><strong>Open concept living</strong> - 40-60% more usable space</span>
+              </div>
+              <div class="flex items-start">
+                <span class="material-symbols-outlined text-cyan-500 mr-3" style="font-variation-settings: 'FILL' 1">check_circle</span>
+                <span class="text-slate-700"><strong>Natural light flows</strong> across entire basement</span>
+              </div>
+              <div class="flex items-start">
+                <span class="material-symbols-outlined text-cyan-500 mr-3" style="font-variation-settings: 'FILL' 1">check_circle</span>
+                <span class="text-slate-700"><strong>Better layouts</strong> for second units/apartments</span>
+              </div>
+              <div class="flex items-start">
+                <span class="material-symbols-outlined text-cyan-500 mr-3" style="font-variation-settings: 'FILL' 1">check_circle</span>
+                <span class="text-slate-700"><strong>Home value increase</strong> of 15-25%</span>
+              </div>
+              <div class="flex items-start">
+                <span class="material-symbols-oriented text-cyan-500 mr-3" style="font-variation-settings: 'FILL' 1">check_circle</span>
+                <span class="text-slate-700"><strong>Modern, updated feel</strong> vs dated compartments</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Use Cases -->
+        <div class="bg-gradient-to-br from-cyan-600 to-cyan-700 text-white p-8 rounded-lg shadow-card">
+          <h3 class="text-headline mb-6 text-center">Common Reasons for Beam Installation</h3>
+          <div class="grid md:grid-cols-3 gap-6">
+            <div class="bg-white/10 backdrop-blur rounded-lg p-6">
+              <span class="material-symbols-outlined text-5xl mb-3" style="font-variation-settings: 'FILL' 1">home</span>
+              <p class="font-bold text-display mb-2">Second Unit Conversion</p>
+              <p class="text-sm text-cyan-100">Create proper apartment layout without interior walls splitting rooms</p>
+            </div>
+            <div class="bg-white/10 backdrop-blur rounded-lg p-6">
+              <span class="material-symbols-outlined text-5xl mb-3" style="font-variation-settings: 'FILL' 1">light</span>
+              <p class="font-bold text-display mb-2">Natural Light Flow</p>
+              <p class="text-sm text-cyan-100">Allow light from egress windows to reach across entire space</p>
+            </div>
+            <div class="bg-white/10 backdrop-blur rounded-lg p-6">
+              <span class="material-symbols-outlined text-5xl mb-3" style="font-variation-settings: 'FILL' 1">trending_up</span>
+              <p class="font-bold text-display mb-2">Home Value Boost</p>
+              <p class="text-sm text-cyan-100">Open basements appraise 15-25% higher than compartmentalized ones</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What Is a Load-Bearing Beam Section -->
+  <section class="section-padding bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <SectionHeader
+          label="Structural Engineering"
+          title="What Is a Load-Bearing Beam?"
+          description="Understanding the engineering behind safe wall removal"
+          centered={true}
+        />
+
+        <div class="grid md:grid-cols-2 gap-8 mb-12">
+          <div class="bg-slate-50 rounded-lg shadow-card p-8">
+            <h3 class="text-headline text-navy-900 mb-6">The Engineering</h3>
+
+            <div class="space-y-6">
+              <div>
+                <h4 class="font-bold text-display text-navy-900 mb-2">What's a load-bearing wall?</h4>
+                <p class="text-slate-700">A wall that carries weight from the floor(s) above - and possibly the roof - down to the foundation. Remove it improperly and floors can sag or collapse.</p>
+              </div>
+
+              <div>
+                <h4 class="font-bold text-display text-navy-900 mb-2">How does a beam work?</h4>
+                <p class="text-slate-700">The steel beam replaces the wall's load-bearing function. It spans horizontally and transfers all weight to vertical columns at each end.</p>
+              </div>
+
+              <div>
+                <h4 class="font-bold text-display text-navy-900 mb-2">The load path:</h4>
+                <div class="bg-white border-2 border-cyan-500 rounded-lg p-4">
+                  <p class="text-navy-900 font-mono text-sm">
+                    Roof → Joists → <strong class="text-cyan-600">BEAM</strong> → Columns → Footings → Soil
+                  </p>
+                </div>
+              </div>
+
+              <div>
+                <h4 class="font-bold text-display text-navy-900 mb-2">Column support</h4>
+                <p class="text-slate-700">Columns (steel posts/lally columns) carry the beam load down to concrete pad footings in the basement floor.</p>
+              </div>
+
+              <div>
+                <h4 class="font-bold text-display text-navy-900 mb-2">Footing requirement</h4>
+                <p class="text-slate-700">Footings (typically 24"x24"x12" concrete pads) spread the concentrated load into the soil below.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-gradient-to-br from-navy-900 to-navy-800 text-white rounded-lg shadow-card p-8">
+            <h3 class="text-headline mb-6">Critical Safety Point</h3>
+
+            <div class="bg-red-500/20 border-2 border-red-500 rounded-lg p-6 mb-6">
+              <span class="material-symbols-outlined text-red-300 text-5xl mb-3" style="font-variation-settings: 'FILL' 1">warning</span>
+              <p class="text-xl font-bold mb-3">This is STRUCTURAL work</p>
+              <p class="text-slate-200">
+                It requires a licensed Professional Engineer (P.Eng) and a building permit. Always. No exceptions. No shortcuts.
+              </p>
+            </div>
+
+            <div class="space-y-4">
+              <div class="border-l-4 border-cyan-400 pl-4 py-2">
+                <h4 class="font-bold text-display">Why engineering matters</h4>
+                <p class="text-slate-300 text-sm">Wrong beam size = floor collapse. Engineers calculate exact sizes based on span and load.</p>
+              </div>
+
+              <div class="border-l-4 border-cyan-400 pl-4 py-2">
+                <h4 class="font-bold text-display">Why permits matter</h4>
+                <p class="text-slate-300 text-sm">Unpermitted structural work voids insurance and creates massive liability when selling.</p>
+              </div>
+
+              <div class="border-l-4 border-cyan-400 pl-4 py-2">
+                <h4 class="font-bold text-display">Why professionals matter</h4>
+                <p class="text-slate-300 text-sm">Temporary shoring must be installed BEFORE any cutting. DIY attempts often fail catastrophically.</p>
+              </div>
+
+              <div class="border-l-4 border-cyan-400 pl-4 py-2">
+                <h4 class="font-bold text-display">The stakes are extreme</h4>
+                <p class="text-slate-300 text-sm">A typical 16' span carries 15,000-25,000+ pounds. Get it wrong and people die.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Engineering Diagram Description -->
+        <div class="bg-amber-50 border-2 border-amber-500 rounded-lg p-8">
+          <h3 class="text-headline text-navy-900 mb-4">How It All Works Together</h3>
+          <div class="grid md:grid-cols-4 gap-6">
+            <div class="text-center">
+              <div class="bg-white rounded-lg shadow-card p-4 mb-3">
+                <span class="material-symbols-outlined text-cyan-600 text-5xl" style="font-variation-settings: 'FILL' 1">roofing</span>
+              </div>
+              <p class="font-bold text-display text-navy-900">1. Load Above</p>
+              <p class="text-sm text-slate-700">Floor + furniture + people = 10,000-30,000 lbs</p>
+            </div>
+            <div class="text-center">
+              <div class="bg-white rounded-lg shadow-card p-4 mb-3">
+                <span class="material-symbols-outlined text-cyan-600 text-5xl" style="font-variation-settings: 'FILL' 1">horizontal_rule</span>
+              </div>
+              <p class="font-bold text-display text-navy-900">2. Steel Beam</p>
+              <p class="text-sm text-slate-700">Spans 12-20+ feet, carries all load horizontally</p>
+            </div>
+            <div class="text-center">
+              <div class="bg-white rounded-lg shadow-card p-4 mb-3">
+                <span class="material-symbols-outlined text-cyan-600 text-5xl" style="font-variation-settings: 'FILL' 1">view_column</span>
+              </div>
+              <p class="font-bold text-display text-navy-900">3. Steel Columns</p>
+              <p class="text-sm text-slate-700">Transfer beam load down to footings</p>
+            </div>
+            <div class="text-center">
+              <div class="bg-white rounded-lg shadow-card p-4 mb-3">
+                <span class="material-symbols-outlined text-cyan-600 text-5xl" style="font-variation-settings: 'FILL' 1">foundation</span>
+              </div>
+              <p class="font-bold text-display text-navy-900">4. Concrete Footings</p>
+              <p class="text-sm text-slate-700">Spread load into soil below basement floor</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Types of Beams We Install -->
+  <section class="section-padding bg-slate-50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <SectionHeader
+          label="Beam Options"
+          title="Types of Beams We Install"
+          description="Choose the right beam for your span and budget"
+          centered={true}
+        />
+
+        <div class="grid md:grid-cols-2 gap-6">
+          {beamTypes.map(beam => (
+            <div class={`bg-white rounded-lg shadow-card hover:shadow-card-hover transition-all duration-300 relative overflow-hidden ${
+              beam.recommended ? 'ring-2 ring-cyan-500' : ''
+            }`}>
+              {beam.recommended && (
+                <div class="absolute top-0 left-0 right-0 bg-gradient-to-r from-cyan-500 to-cyan-600 text-white px-4 py-2 text-center">
+                  <span class="text-display font-bold">MOST COMMON</span>
+                </div>
+              )}
+
+              <div class={`p-8 ${beam.recommended ? 'pt-16' : ''}`}>
+                <h3 class="text-headline text-navy-900 mb-2">{beam.name}</h3>
+                <p class="text-4xl font-bold text-cyan-600 mb-4">{beam.price}</p>
+                <p class="text-slate-700 mb-6">{beam.description}</p>
+
+                <ul class="space-y-3 mb-6">
+                  {beam.features.map(feature => (
+                    <li class="flex items-start">
+                      <span class="material-symbols-outlined text-cyan-500 mr-3" style="font-variation-settings: 'FILL' 1">check_circle</span>
+                      <span class="text-slate-700">{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                <div class="border-t-2 border-slate-200 pt-4">
+                  <p class="section-label-pill bg-slate-200 text-slate-700 inline-block mb-2">Best For</p>
+                  <p class="text-navy-900 font-semibold">{beam.bestFor}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Installation Process -->
+  <ServiceProcess
+    steps={processSteps}
+    title="Our Beam Installation Process"
+    label="8-Step Process"
+  />
+
+  <!-- Load-Bearing vs Non-Load-Bearing -->
+  <section class="section-padding bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <SectionHeader
+          label="Identification Guide"
+          title="Load-Bearing vs Non-Load-Bearing - How to Tell"
+          description="Clues to help identify which walls are structural (but always get professional verification)"
+          centered={true}
+        />
+
+        <div class="overflow-x-auto rounded-lg shadow-card mb-8">
+          <table class="w-full">
+            <thead>
+              <tr class="bg-gradient-to-r from-navy-900 to-navy-800 text-white">
+                <th class="p-4 text-left text-display">Sign / Clue</th>
+                <th class="p-4 text-center text-display">Load-Bearing?</th>
+                <th class="p-4 text-center text-display">Non-Load-Bearing?</th>
+              </tr>
+            </thead>
+            <tbody class="bg-white">
+              {identificationTable.map((item, index) => (
+                <tr class={index % 2 === 0 ? 'border-b border-slate-200' : 'border-b border-slate-200 bg-slate-50'}>
+                  <td class="p-4 text-slate-700">{item.sign}</td>
+                  <td class="p-4 text-center font-bold text-navy-900">{item.loadBearing}</td>
+                  <td class="p-4 text-center font-bold text-slate-600">{item.nonLoadBearing}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Critical Warning -->
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="bg-red-50 border-2 border-red-500 rounded-lg p-6">
+            <span class="material-symbols-outlined text-red-600 text-4xl mb-3" style="font-variation-settings: 'FILL' 1">dangerous</span>
+            <h4 class="font-bold text-display text-navy-900 mb-2">NEVER Assume</h4>
+            <p class="text-slate-700">Even experienced contractors get this wrong without engineering. One mistake can cause catastrophic failure.</p>
+          </div>
+
+          <div class="bg-cyan-50 border-2 border-cyan-500 rounded-lg p-6">
+            <span class="material-symbols-outlined text-cyan-600 text-4xl mb-3" style="font-variation-settings: 'FILL' 1">verified_user</span>
+            <h4 class="font-bold text-display text-navy-900 mb-2">Get Engineering</h4>
+            <p class="text-slate-700">A licensed P.Eng provides certainty. They'll identify ALL load-bearing walls - not just the obvious ones.</p>
+          </div>
+
+          <div class="bg-amber-50 border-2 border-amber-500 rounded-lg p-6">
+            <span class="material-symbols-outlined text-amber-600 text-4xl mb-3" style="font-variation-settings: 'FILL' 1">support_agent</span>
+            <h4 class="font-bold text-display text-navy-900 mb-2">Free Assessment</h4>
+            <p class="text-slate-700">DrySpace offers free on-site assessments. We'll tell you definitively which walls can be removed.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Beam Installation Costs -->
+  <section class="section-padding bg-slate-50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <SectionHeader
+          label="Transparent Pricing"
+          title="Beam Installation Costs in the GTA"
+          description="All-inclusive pricing with engineering and permits"
+          centered={true}
+        />
+
+        <div class="overflow-x-auto rounded-lg shadow-card mb-8">
+          <table class="w-full">
+            <thead>
+              <tr class="bg-gradient-to-r from-navy-900 to-navy-800 text-white">
+                <th class="p-4 text-left text-display">Project</th>
+                <th class="p-4 text-center text-display">Cost Range</th>
+                <th class="p-4 text-left text-display">Includes</th>
+              </tr>
+            </thead>
+            <tbody class="bg-white">
+              {pricingBreakdown.map((item, index) => (
+                <tr class={index % 2 === 0 ? 'border-b border-slate-200' : 'border-b border-slate-200 bg-slate-50'}>
+                  <td class="p-4 font-bold text-display text-navy-900">{item.service}</td>
+                  <td class="p-4 text-center font-bold text-cyan-600 text-lg">{item.cost}</td>
+                  <td class="p-4 text-slate-700">{item.includes}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Price Factors -->
+        <div class="bg-white rounded-lg shadow-card p-8">
+          <h3 class="text-headline text-navy-900 mb-6">What Affects the Price?</h3>
+          <div class="grid md:grid-cols-2 gap-4">
+            {priceFactors.map(factor => (
+              <div class="flex items-start">
+                <span class="material-symbols-outlined text-cyan-500 mr-3 mt-1">arrow_forward</span>
+                <p class="text-slate-700">{factor}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Common Project Combinations -->
+  <section class="section-padding bg-gradient-to-br from-navy-900 to-navy-800 text-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <SectionHeader
+          label="Package Deals"
+          title="Common Combinations"
+          description="Many homeowners combine beam installation with other basement upgrades"
+          centered={true}
+          dark={true}
+        />
+
+        <div class="grid md:grid-cols-2 gap-6 mb-8">
+          {commonCombinations.map(combo => (
+            <div class={`bg-white/10 backdrop-blur rounded-lg shadow-card hover:shadow-card-hover transition-all duration-300 p-8 ${
+              combo.mostPopular ? 'ring-2 ring-amber-500' : ''
+            }`}>
+              {combo.mostPopular && (
+                <div class="bg-amber-500 text-white px-3 py-1 rounded-full text-sm font-bold inline-block mb-4">
+                  MOST POPULAR
+                </div>
+              )}
+              <h3 class="text-headline mb-3">{combo.name}</h3>
+              <p class="text-slate-200 mb-4">{combo.description}</p>
+              <p class="text-4xl font-bold text-cyan-400 mb-6">{combo.price}</p>
+              <a href={combo.linkUrl} class="text-cyan-400 font-bold text-display hover:text-cyan-300 transition-colors">
+                {combo.linkText} →
+              </a>
+            </div>
+          ))}
+        </div>
+
+        <div class="bg-gradient-to-r from-amber-500 to-amber-600 rounded-lg shadow-card p-8 text-center">
+          <p class="text-3xl font-bold text-white mb-2">Save 10-15% on Package Deals</p>
+          <p class="text-white text-lg">One contractor, one timeline, one warranty - and volume pricing</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us Section -->
+  <section class="section-padding bg-slate-50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <SectionHeader
+          label="The DrySpace Difference"
+          title="Why Choose DrySpace for Beam Installation"
+          description="Foundation specialists with 2,000+ basement projects"
+          centered={true}
+        />
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {trustPoints.map(point => (
+            <div class="bg-white rounded-lg shadow-card hover:shadow-card-hover transition-all duration-300 p-8">
+              <div class="bg-cyan-100 rounded-full w-16 h-16 flex items-center justify-center mb-4">
+                <span class="material-symbols-outlined text-cyan-600 text-3xl" style="font-variation-settings: 'FILL' 1">verified</span>
+              </div>
+              <h3 class="text-headline text-navy-900 mb-3">{point.title}</h3>
+              <p class="text-slate-700">{point.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Section -->
+  <ServicePricing
+    title="Beam Installation Pricing"
+    tiers={pricingTiers}
+  />
+
+  <!-- Service Areas -->
+  <section class="section-padding bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <SectionHeader
+          label="GTA Coverage"
+          title="Beam Installation Service Areas"
+          description="Professional structural beam installation across the Greater Toronto Area"
+          centered={true}
+        />
+
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mb-8">
+          {serviceAreas.map(area => (
+            <div class="bg-slate-50 rounded-lg shadow-card hover:shadow-card-hover transition-all duration-300 p-4 text-center">
+              <p class="font-bold text-display text-navy-900">{area}</p>
+            </div>
+          ))}
+        </div>
+
+        <div class="bg-gradient-to-r from-cyan-600 to-cyan-700 rounded-lg shadow-card p-8 text-center">
+          <p class="text-headline text-white mb-2">
+            NEED A BEAM FOR YOUR RENOVATION?
+          </p>
+          <p class="text-white text-lg mb-4">
+            Free structural assessment - we'll identify load-bearing walls and provide options
+          </p>
+          <a href="tel:437-545-0067" class="btn-primary bg-white text-navy-900 hover:bg-slate-100">
+            437-545-0067 - FREE ASSESSMENT
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Before/After Gallery -->
+  <BeforeAfterGallery />
+
+  <!-- Why Choose Us -->
+  <WhyChooseUs />
+
+  <!-- Service Image Gallery -->
+  <ServiceImageGallery service="structural-beams" />
+
+  <!-- Testimonials -->
+  <Testimonials />
+
+  <!-- Technical Drawings -->
+  <TechnicalDrawings />
+
+  <!-- FAQ Section -->
+  <section class="section-padding bg-slate-50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <SectionHeader
+          label="Common Questions"
+          title="Frequently Asked Questions"
+          description="Everything you need to know about load-bearing beam installation"
+          centered={true}
+        />
+
+        <div class="space-y-4">
+          {serviceFAQs.map((faq, index) => (
+            <details class="bg-white rounded-lg shadow-card hover:shadow-card-hover transition-all duration-300 overflow-hidden group">
+              <summary class="cursor-pointer p-6 font-bold text-display text-navy-900 flex items-center justify-between">
+                <span>{faq.question}</span>
+                <span class="material-symbols-outlined text-cyan-500 transform transition-transform group-open:rotate-180">expand_more</span>
+              </summary>
+              <div class="px-6 pb-6 text-slate-700 border-t border-slate-200 pt-4">
+                {faq.answer}
+              </div>
+            </details>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Internal Links Component -->
+  <InternalLinks category="basement" currentPage="load-bearing-beam-installation" limit={5} />
+
+  <!-- Contact Form -->
+  <ContactForm />
+
+  <!-- Related Services -->
+  <section class="section-padding bg-gradient-to-br from-navy-900 to-navy-800">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <SectionHeader
+          label="Related Services"
+          title="Complete Basement Transformation Services"
+          description="Everything you need for your basement renovation"
+          centered={true}
+          dark={true}
+        />
+
+        <div class="grid md:grid-cols-3 gap-6 mb-12">
+          <a href="/services/underpinning" class="bg-white/10 backdrop-blur rounded-lg shadow-card hover:shadow-card-hover transition-all duration-300 p-6 hover:bg-white/15 group">
+            <h3 class="text-headline text-white mb-3 group-hover:text-cyan-400 transition-colors">Underpinning</h3>
+            <p class="text-slate-300 mb-4">Lower basement floor for full 7-8 foot ceiling height</p>
+            <p class="text-cyan-400 font-bold text-xl">$300-$400/linear foot</p>
+            <span class="text-cyan-400 font-bold text-display mt-4 inline-block group-hover:translate-x-2 transition-transform">LEARN MORE →</span>
+          </a>
+
+          <a href="/services/egress-windows" class="bg-white/10 backdrop-blur rounded-lg shadow-card hover:shadow-card-hover transition-all duration-300 p-6 hover:bg-white/15 group">
+            <h3 class="text-headline text-white mb-3 group-hover:text-cyan-400 transition-colors">Egress Windows</h3>
+            <p class="text-slate-300 mb-4">Code-compliant emergency exit windows for bedrooms</p>
+            <p class="text-cyan-400 font-bold text-xl">$3,000-$8,000</p>
+            <span class="text-cyan-400 font-bold text-display mt-4 inline-block group-hover:translate-x-2 transition-transform">LEARN MORE →</span>
+          </a>
+
+          <a href="/services/interior-waterproofing" class="bg-white/10 backdrop-blur rounded-lg shadow-card hover:shadow-card-hover transition-all duration-300 p-6 hover:bg-white/15 group">
+            <h3 class="text-headline text-white mb-3 group-hover:text-cyan-400 transition-colors">Interior Waterproofing</h3>
+            <p class="text-slate-300 mb-4">Install drainage while floor is opened for footings</p>
+            <p class="text-cyan-400 font-bold text-xl">$100-$150/linear foot</p>
+            <span class="text-cyan-400 font-bold text-display mt-4 inline-block group-hover:translate-x-2 transition-transform">LEARN MORE →</span>
+          </a>
+        </div>
+
+        <!-- Additional Resources -->
+        <div class="grid md:grid-cols-2 gap-6 mb-12">
+          <a href="/services/foundation-repair" class="bg-white/10 backdrop-blur rounded-lg shadow-card hover:shadow-card-hover transition-all duration-300 p-6 hover:bg-white/15 group">
+            <h3 class="text-headline text-white mb-3 group-hover:text-cyan-400 transition-colors">Foundation Repair</h3>
+            <p class="text-slate-300 mb-4">Fix cracks and structural issues before beam installation</p>
+            <span class="text-cyan-400 font-bold text-display mt-4 inline-block group-hover:translate-x-2 transition-transform">LEARN MORE →</span>
+          </a>
+
+          <a href="/tools/permit-checker" class="bg-white/10 backdrop-blur rounded-lg shadow-card hover:shadow-card-hover transition-all duration-300 p-6 hover:bg-white/15 group">
+            <h3 class="text-headline text-white mb-3 group-hover:text-cyan-400 transition-colors">Permit Checker Tool</h3>
+            <p class="text-slate-300 mb-4">Check what permits you need for your project</p>
+            <span class="text-cyan-400 font-bold text-display mt-4 inline-block group-hover:translate-x-2 transition-transform">TRY TOOL →</span>
+          </a>
+        </div>
+
+        <!-- Emergency CTA -->
+        <div class="bg-gradient-to-r from-amber-500 to-amber-600 rounded-lg shadow-card p-8 text-center">
+          <p class="text-3xl font-bold text-white mb-4 text-display">
+            PLANNING A BASEMENT RENOVATION?
+          </p>
+          <p class="text-xl text-white mb-6">
+            Get a free structural assessment to see which walls can be removed
+          </p>
+          <a href="tel:437-545-0067" class="btn-primary bg-white text-navy-900 hover:bg-slate-100">
+            437-545-0067 - FREE ASSESSMENT
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA Band -->
+  <CTABand
+    title="Get Your Free Structural Assessment"
+    subtitle="Expert beam installation with full engineering, permits, and 25-year warranty."
+    primaryCTA={{ text: "Book Free Assessment", href: "/free-inspection" }}
+    secondaryCTA={{ text: "Call: 437-545-0067", href: "tel:437-545-0067" }}
+  />
+</PageLayout>

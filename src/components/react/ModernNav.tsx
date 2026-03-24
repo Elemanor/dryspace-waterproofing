@@ -31,6 +31,7 @@ const serviceCategories = [
       { title: "Concrete Works", href: "/services/concrete-works", icon: HardHat },
       { title: "Legal Basement Conversion", href: "/services/legal-basement-conversion", icon: Building2 },
       { title: "Egress Windows", href: "/services/egress-windows", icon: Shield },
+      { title: "Concrete Cutting & Openings", href: "/services/concrete-cutting-openings", icon: HardHat },
       { title: "Load-Bearing Beams", href: "/services/load-bearing-beam-installation", icon: Hammer },
       { title: "Basement Walkout & Door Cutting", href: "/services/basement-walkout-door-cutting", icon: Hammer },
       { title: "Excavation Services", href: "/services/excavation-services", icon: HardHat },

@@ -1,0 +1,905 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import ServiceHero from '../../components/sections/ServiceHero.astro';
+import TrustBar from '../../components/sections/TrustBar.astro';
+import ServiceProcess from '../../components/sections/ServiceProcess.astro';
+import ServicePricing from '../../components/sections/ServicePricing.astro';
+import CTABand from '../../components/sections/CTABand.astro';
+import SectionHeader from '../../components/sections/SectionHeader.astro';
+import ServiceSchema from '../../components/ServiceSchema.astro';
+import InternalLinks from '../../components/InternalLinks.astro';
+import BeforeAfterGallery from '../../components/BeforeAfterGallery.astro';
+import WhyChooseUs from '../../components/WhyChooseUs.astro';
+import Testimonials from '../../components/sections/Testimonials.astro';
+import TechnicalDrawings from '../../components/TechnicalDrawings.astro';
+import ContactForm from '../../components/ContactForm.astro';
+import ServiceImageGallery from '../../components/ServiceImageGallery.astro';
+
+// SEO-optimized metadata focused on service
+const pageTitle = "Egress Window Installation Toronto | $3,000-$8,000 | OBC Compliant";
+const pageDescription = "Code-compliant egress window installation for legal basement bedrooms & second units. Permit handling included. 25-year warranty. Call 437-545-0067.";
+
+// Service areas list
+const serviceAreas = [
+  "Toronto",
+  "Scarborough",
+  "Etobicoke",
+  "North York",
+  "Mississauga",
+  "Brampton",
+  "Vaughan",
+  "Markham",
+  "Oakville",
+  "Burlington",
+  "Richmond Hill",
+  "Ajax",
+  "Pickering",
+  "Oshawa"
+];
+
+// OBC Requirements Table
+const obcRequirements = [
+  {
+    requirement: "Minimum opening area",
+    obcMinimum: "3.8 sq ft (0.35 m²)",
+    dryspaceStandard: "5.0+ sq ft"
+  },
+  {
+    requirement: "Minimum width",
+    obcMinimum: "15\" (380mm)",
+    dryspaceStandard: "20\"+"
+  },
+  {
+    requirement: "Minimum height",
+    obcMinimum: "24\" (600mm)",
+    dryspaceStandard: "30\"+"
+  },
+  {
+    requirement: "Maximum sill height",
+    obcMinimum: "39\" (1000mm) from floor",
+    dryspaceStandard: "36\" or less"
+  },
+  {
+    requirement: "Window well required?",
+    obcMinimum: "If below grade, yes",
+    dryspaceStandard: "Always included"
+  },
+  {
+    requirement: "Window well cover",
+    obcMinimum: "Not required but recommended",
+    dryspaceStandard: "Included (polycarbonate)"
+  },
+  {
+    requirement: "Window well drain",
+    obcMinimum: "Required if below grade",
+    dryspaceStandard: "Connected to weeping tile"
+  },
+  {
+    requirement: "Ladder/steps in well",
+    obcMinimum: "Required if well >44\" deep",
+    dryspaceStandard: "Included when needed"
+  }
+];
+
+// Types of egress windows
+const windowTypes = [
+  {
+    name: "SLIDING EGRESS WINDOW",
+    description: "Most common and affordable. Slides horizontally, easy to operate.",
+    bestFor: "Standard basement bedrooms",
+    price: "$3,000 - $4,500",
+    features: [
+      "Horizontal sliding operation",
+      "Easy to clean and maintain",
+      "Affordable installation",
+      "Good ventilation options"
+    ]
+  },
+  {
+    name: "CASEMENT EGRESS WINDOW (CRANK-OUT)",
+    description: "Swings outward, maximum opening area. Easiest to escape through in emergency.",
+    bestFor: "Second units, Airbnb, rental units",
+    price: "$3,500 - $5,500",
+    features: [
+      "Full 90° opening",
+      "Maximum emergency exit space",
+      "Crank handle operation",
+      "Excellent ventilation"
+    ],
+    recommended: true
+  },
+  {
+    name: "HOPPER/AWNING EGRESS WINDOW",
+    description: "Opens inward (hopper) or outward (awning). Good for tight exterior spaces.",
+    bestFor: "Semi-detached or narrow lots",
+    price: "$3,200 - $5,000",
+    features: [
+      "Flexible operation direction",
+      "Compact exterior footprint",
+      "Weather protection when open",
+      "Space-efficient design"
+    ]
+  },
+  {
+    name: "IN-SWING EGRESS WINDOW (FULL-SIZE)",
+    description: "Opens inward like a door. Maximum emergency exit opening.",
+    bestFor: "Walkout conversions, high-end finishing",
+    price: "$5,000 - $8,000",
+    features: [
+      "Door-style opening",
+      "Maximum exit clearance",
+      "Premium appearance",
+      "Full-size escape route"
+    ],
+    premium: true
+  }
+];
+
+// Pricing breakdown
+const pricingBreakdown = [
+  {
+    service: "Window enlargement (existing opening)",
+    cost: "$3,000 - $5,000",
+    includes: "Cut existing opening larger, new window, well"
+  },
+  {
+    service: "New egress window (new opening)",
+    cost: "$4,500 - $7,000",
+    includes: "Wall cut, lintel, window, well, drainage, permits"
+  },
+  {
+    service: "Egress + window well + cover",
+    cost: "$5,000 - $8,000",
+    includes: "Complete package with polycarbonate cover"
+  },
+  {
+    service: "Second unit package (2-3 windows)",
+    cost: "$10,000 - $18,000",
+    includes: "Multiple egress windows for legal apartment"
+  },
+  {
+    service: "Engineering drawings",
+    cost: "$800 - $1,500",
+    includes: "Structural drawings for permit"
+  },
+  {
+    service: "Building permit",
+    cost: "$400 - $800",
+    includes: "Municipality dependent"
+  }
+];
+
+// Price factors
+const priceFactors = [
+  "Foundation type: poured concrete (easier/cheaper) vs block (more complex)",
+  "Window size: larger = more cutting, bigger lintel",
+  "Depth below grade: deeper = more excavation",
+  "Soil conditions: clay vs sand vs rock",
+  "Access: easy backyard vs tight side yard",
+  "Number of windows: volume discount for 2+"
+];
+
+// Trust points
+const trustPoints = [
+  {
+    title: "Permit handling included",
+    description: "We apply for and manage the full permit process"
+  },
+  {
+    title: "Structural engineering",
+    description: "Our engineers design every cut for safety"
+  },
+  {
+    title: "Waterproofing experts",
+    description: "Window wells are a top source of basement leaks; we do it right"
+  },
+  {
+    title: "One contractor",
+    description: "Egress + underpinning + waterproofing = one team, one timeline"
+  },
+  {
+    title: "25-year warranty",
+    description: "Full waterproofing warranty on every installation"
+  },
+  {
+    title: "2,000+ basements",
+    description: "Experience across every foundation type in the GTA"
+  }
+];
+
+// Service FAQs for schema
+const serviceFAQs = [
+  {
+    question: "Do I need a permit for an egress window?",
+    answer: "Yes, always. Cutting a foundation wall is structural work requiring a building permit and engineered drawings. The permit ensures the opening is properly sized, the lintel is adequate to carry the wall load, and the installation meets Ontario Building Code Section 9.9.10 requirements. DrySpace handles all permit applications and engineering drawings as part of our service."
+  },
+  {
+    question: "How long does egress window installation take?",
+    answer: "Typically 1-2 days for installation. The permit process adds 2-4 weeks before work begins. Day 1 includes excavation and wall cutting. Day 2 covers window installation, window well setup, drainage connection, and interior finishing. The exact timeline depends on foundation type, soil conditions, and weather."
+  },
+  {
+    question: "Can I install an egress window in a block foundation?",
+    answer: "Yes, but it requires different engineering. Block walls need more reinforcement around the opening compared to poured concrete. We install a larger steel lintel and may need to add vertical reinforcement bars. Cost is typically 15-20% more than poured concrete installations due to the additional structural work required."
+  },
+  {
+    question: "What's the difference between egress and a regular basement window?",
+    answer: "Size. Standard basement windows are typically 32\"x16\" (3.5 sq ft) - too small to climb through in an emergency. Egress windows must provide a minimum 3.8 sq ft clear opening, with minimum dimensions of 15\" wide and 24\" high. The window sill cannot be more than 39\" from the floor. These larger dimensions allow an adult to escape quickly during a fire or other emergency."
+  },
+  {
+    question: "Do I need an egress window if I'm not finishing the basement?",
+    answer: "Only if someone sleeps there. Ontario Building Code requires egress in any room used for sleeping, finished or not. If you have a bedroom, guest room, or living area where someone could sleep overnight, egress is mandatory. If the basement is only used for storage, laundry, or mechanical equipment, egress is not required."
+  },
+  {
+    question: "Can egress windows leak?",
+    answer: "Poorly installed ones absolutely do. The window well is the critical detail - it must drain to the weeping tile, not just sit and collect water. We excavate below the footer level, install drainage stone, and connect the well drain directly to your perimeter drainage system. The window itself is installed with proper flashing and sealed with commercial-grade sealants. This is why hiring a waterproofing company (not just a window installer) matters."
+  }
+];
+
+// Service offers for schema
+const serviceOffers = [
+  {
+    name: "Window Enlargement",
+    price: "$3,000-$5,000",
+    description: "Enlarge existing opening to meet egress code requirements. Includes new window, well, and cover."
+  },
+  {
+    name: "New Egress Window",
+    price: "$4,500-$7,000",
+    description: "Complete new opening with wall cutting, lintel, window, well, drainage, and permit handling."
+  },
+  {
+    name: "Second Unit Package",
+    price: "$10,000-$18,000",
+    description: "Multiple egress windows for legal basement apartment under O.Reg 384/22."
+  }
+];
+
+// Installation process steps
+const processSteps = [
+  {
+    title: "Free On-Site Assessment",
+    description: "Measure existing windows and basement layout. Check foundation wall type (poured concrete vs block). Locate utilities (electrical, plumbing, HVAC). Assess soil conditions and grading. Determine if underpinning is needed for low ceilings.",
+    duration: "1 hour"
+  },
+  {
+    title: "Engineering & Permits",
+    description: "Structural engineering drawings (required for cutting foundation walls). Building permit application to your municipality. DrySpace handles ALL permit paperwork. Permit cost: $400-800 (included in our quote).",
+    duration: "2-4 weeks"
+  },
+  {
+    title: "Excavation",
+    description: "Excavate exterior to below window opening depth. Install shoring to protect adjacent soil. Protect landscaping and hardscaping where possible.",
+    duration: "3-4 hours"
+  },
+  {
+    title: "Wall Cutting & Installation",
+    description: "Cut foundation wall to engineered specifications. Install steel lintel above opening (carries wall load). Set window frame with proper flashing and sealant. Install window unit (vinyl, double/triple pane).",
+    duration: "4-6 hours"
+  },
+  {
+    title: "Window Well & Drainage",
+    description: "Install galvanized steel or composite window well. Connect window well drain to weeping tile / sump system. Backfill with clear gravel for drainage. Install polycarbonate window well cover.",
+    duration: "2-3 hours"
+  },
+  {
+    title: "Interior Finishing",
+    description: "Frame window opening interior. Insulate with spray foam (R-value meets code). Drywall and trim (optional - can leave for your finishing contractor).",
+    duration: "3-4 hours"
+  },
+  {
+    title: "Final Inspection & Warranty",
+    description: "Municipal building inspector sign-off. 25-year warranty on waterproofing. 10-year warranty on window unit. Photo documentation for your records.",
+    duration: "1 hour"
+  }
+];
+
+// Pricing tiers
+const pricingTiers = [
+  {
+    name: "Window Enlargement",
+    price: "$3,000-$5,000",
+    features: [
+      "Existing opening enlarged",
+      "Code-compliant sizing",
+      "New window unit",
+      "Window well & cover",
+      "10-year warranty"
+    ],
+    description: "Best for homes with small existing windows"
+  },
+  {
+    name: "New Egress Window",
+    price: "$4,500-$7,000",
+    features: [
+      "Complete new opening",
+      "Steel lintel installation",
+      "Engineering & permits",
+      "Window well & drainage",
+      "25-year warranty"
+    ],
+    description: "Most common installation",
+    recommended: true
+  },
+  {
+    name: "Second Unit Package",
+    price: "$10,000-$18,000",
+    features: [
+      "2-3 egress windows",
+      "Full permit coordination",
+      "O.Reg 384/22 compliance",
+      "Volume discount pricing",
+      "25-year warranty"
+    ],
+    description: "For legal basement apartments",
+    premium: true
+  }
+];
+---
+
+<PageLayout
+  title={pageTitle}
+  description={pageDescription}
+  showAnnouncement={true}
+>
+
+  <!-- ServiceSchema Component -->
+  <ServiceSchema
+    serviceName="Egress Window Installation Toronto"
+    description={pageDescription}
+    priceRange="$3,000-$8,000"
+    areaServed={serviceAreas}
+    offers={serviceOffers}
+    faqs={serviceFAQs}
+  />
+
+  <!-- Hero Section -->
+  <ServiceHero
+    title="Egress Window Installation Toronto & GTA"
+    description="Code-compliant basement windows for legal bedrooms, second units, and safety. Installed in 1-2 days with full permit handling. OBC Section 9.9.10 compliant."
+    priceRange="$3,000-$8,000"
+    duration="1-2 days"
+    rebate="Permit Included"
+    breadcrumbs={[
+      { label: "Home", href: "/" },
+      { label: "Services", href: "/services" },
+      { label: "Egress Windows" }
+    ]}
+  />
+
+  <!-- Trust Bar -->
+  <TrustBar />
+
+  <!-- What Is an Egress Window Section -->
+  <section class="section-padding bg-slate-50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <SectionHeader
+          label="Code Requirements"
+          title="What Is an Egress Window?"
+          description="Emergency exit windows required by Ontario Building Code"
+          centered={true}
+        />
+
+        <div class="grid md:grid-cols-2 gap-8 mb-12">
+          <div class="bg-white rounded-lg shadow-card p-8">
+            <h3 class="text-headline text-navy-900 mb-6">Legal Definition</h3>
+            <p class="text-slate-700 mb-4">
+              An egress window is a code-required emergency exit window in any basement bedroom or sleeping area.
+            </p>
+            <p class="text-slate-700 mb-4">
+              Ontario Building Code (OBC) Section 9.9.10 requires it for occupant safety.
+            </p>
+            <p class="text-slate-700 mb-4">
+              <strong class="text-navy-900">"Egress" = a way out</strong> - if there's a fire, occupants must be able to escape through the window.
+            </p>
+            <div class="bg-amber-50 border-2 border-amber-500 rounded-lg p-4 mt-6">
+              <p class="text-amber-900 font-bold text-display">
+                Without proper egress, a basement bedroom is NOT legal
+              </p>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-lg shadow-card p-8">
+            <h3 class="text-headline text-navy-900 mb-6">Why It Matters</h3>
+
+            <div class="space-y-4">
+              <div class="border-l-4 border-red-500 pl-4 py-2">
+                <h4 class="font-bold text-display text-navy-900">Home Sales</h4>
+                <p class="text-slate-700">Can't be listed as a bedroom when selling without egress</p>
+              </div>
+
+              <div class="border-l-4 border-red-500 pl-4 py-2">
+                <h4 class="font-bold text-display text-navy-900">Insurance Claims</h4>
+                <p class="text-slate-700">Insurance may deny claims if bedroom is not code-compliant</p>
+              </div>
+
+              <div class="border-l-4 border-red-500 pl-4 py-2">
+                <h4 class="font-bold text-display text-navy-900">Safety Risk</h4>
+                <p class="text-slate-700">Occupants trapped during fire with no emergency exit</p>
+              </div>
+
+              <div class="border-l-4 border-red-500 pl-4 py-2">
+                <h4 class="font-bold text-display text-navy-900">Legal Liability</h4>
+                <p class="text-slate-700">Landlords face fines for non-compliant rental units</p>
+              </div>
+
+              <div class="border-l-4 border-red-500 pl-4 py-2">
+                <h4 class="font-bold text-display text-navy-900">Failed Inspections</h4>
+                <p class="text-slate-700">Home inspections flag missing or undersized egress windows</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Key Scenarios -->
+        <div class="bg-gradient-to-br from-cyan-600 to-cyan-700 text-white p-8 rounded-lg shadow-card">
+          <h3 class="text-headline mb-6 text-center">Who Needs Egress Windows?</h3>
+          <div class="grid md:grid-cols-3 gap-6 text-center">
+            <div>
+              <span class="material-symbols-outlined text-5xl mb-3" style="font-variation-settings: 'FILL' 1">home</span>
+              <p class="font-bold text-display mb-2">Converting Basement to Bedroom</p>
+              <p class="text-sm text-cyan-100">Adding legal sleeping space</p>
+            </div>
+            <div>
+              <span class="material-symbols-outlined text-5xl mb-3" style="font-variation-settings: 'FILL' 1">apartment</span>
+              <p class="font-bold text-display mb-2">Second Unit / Basement Apartment</p>
+              <p class="text-sm text-cyan-100">O.Reg 384/22 compliance</p>
+            </div>
+            <div>
+              <span class="material-symbols-outlined text-5xl mb-3" style="font-variation-settings: 'FILL' 1">fact_check</span>
+              <p class="font-bold text-display mb-2">Failed Home Inspection</p>
+              <p class="text-sm text-cyan-100">Existing bedroom not to code</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OBC Requirements Table -->
+  <section class="section-padding bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <SectionHeader
+          label="Building Code Standards"
+          title="Ontario Building Code Requirements"
+          description="OBC Section 9.9.10 - Minimum requirements vs. DrySpace standards"
+          centered={true}
+        />
+
+        <div class="overflow-x-auto rounded-lg shadow-card mb-8">
+          <table class="w-full">
+            <thead>
+              <tr class="bg-gradient-to-r from-navy-900 to-navy-800 text-white">
+                <th class="p-4 text-left text-display">Requirement</th>
+                <th class="p-4 text-center text-display">OBC Minimum</th>
+                <th class="p-4 text-center text-display bg-amber-600">DrySpace Standard</th>
+              </tr>
+            </thead>
+            <tbody class="bg-white">
+              {obcRequirements.map((req, index) => (
+                <tr class={index % 2 === 0 ? 'border-b border-slate-200' : 'border-b border-slate-200 bg-slate-50'}>
+                  <td class="p-4 font-bold text-display text-navy-900">{req.requirement}</td>
+                  <td class="p-4 text-center text-slate-700">{req.obcMinimum}</td>
+                  <td class="p-4 text-center font-bold text-amber-600">{req.dryspaceStandard}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Important Notes -->
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="bg-amber-50 border-2 border-amber-500 rounded-lg p-6">
+            <span class="material-symbols-outlined text-amber-600 text-4xl mb-3" style="font-variation-settings: 'FILL' 1">warning</span>
+            <h4 class="font-bold text-display text-navy-900 mb-2">These are MINIMUMS</h4>
+            <p class="text-slate-700">Many municipalities have stricter local requirements</p>
+          </div>
+
+          <div class="bg-cyan-50 border-2 border-cyan-500 rounded-lg p-6">
+            <span class="material-symbols-outlined text-cyan-600 text-4xl mb-3" style="font-variation-settings: 'FILL' 1">apartment</span>
+            <h4 class="font-bold text-display text-navy-900 mb-2">Second Units</h4>
+            <p class="text-slate-700">O.Reg 384/22 has additional requirements for basement apartments</p>
+          </div>
+
+          <div class="bg-slate-100 border-2 border-slate-400 rounded-lg p-6">
+            <span class="material-symbols-outlined text-slate-600 text-4xl mb-3" style="font-variation-settings: 'FILL' 1">account_balance</span>
+            <h4 class="font-bold text-display text-navy-900 mb-2">Heritage Districts</h4>
+            <p class="text-slate-700">May require design approval for exterior modifications</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Installation Process -->
+  <ServiceProcess
+    steps={processSteps}
+    title="Our Egress Window Installation Process"
+    label="7-Step Process"
+  />
+
+  <!-- Types of Egress Windows -->
+  <section class="section-padding bg-slate-50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <SectionHeader
+          label="Window Options"
+          title="Types of Egress Windows We Install"
+          description="Choose the right window style for your needs and budget"
+          centered={true}
+        />
+
+        <div class="grid md:grid-cols-2 gap-6">
+          {windowTypes.map(window => (
+            <div class={`bg-white rounded-lg shadow-card hover:shadow-card-hover transition-all duration-300 relative overflow-hidden ${
+              window.premium ? 'ring-2 ring-amber-500' :
+              window.recommended ? 'ring-2 ring-cyan-500' : ''
+            }`}>
+              {window.premium && (
+                <div class="absolute top-0 left-0 right-0 bg-gradient-to-r from-amber-500 to-amber-600 text-white px-4 py-2 text-center">
+                  <span class="text-display font-bold">PREMIUM</span>
+                </div>
+              )}
+              {window.recommended && (
+                <div class="absolute top-0 left-0 right-0 bg-gradient-to-r from-cyan-500 to-cyan-600 text-white px-4 py-2 text-center">
+                  <span class="text-display font-bold">RECOMMENDED</span>
+                </div>
+              )}
+
+              <div class={`p-8 ${window.premium || window.recommended ? 'pt-16' : ''}`}>
+                <h3 class="text-headline text-navy-900 mb-2">{window.name}</h3>
+                <p class="text-4xl font-bold text-cyan-600 mb-4">{window.price}</p>
+                <p class="text-slate-700 mb-6">{window.description}</p>
+
+                <ul class="space-y-3 mb-6">
+                  {window.features.map(feature => (
+                    <li class="flex items-start">
+                      <span class="material-symbols-outlined text-cyan-500 mr-3" style="font-variation-settings: 'FILL' 1">check_circle</span>
+                      <span class="text-slate-700">{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                <div class="border-t-2 border-slate-200 pt-4">
+                  <p class="section-label-pill bg-slate-200 text-slate-700 inline-block mb-2">Best For</p>
+                  <p class="text-navy-900 font-semibold">{window.bestFor}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Egress Window Costs -->
+  <section class="section-padding bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <SectionHeader
+          label="Transparent Pricing"
+          title="Egress Window Costs in the GTA"
+          description="All-inclusive pricing with no hidden fees"
+          centered={true}
+        />
+
+        <div class="overflow-x-auto rounded-lg shadow-card mb-8">
+          <table class="w-full">
+            <thead>
+              <tr class="bg-gradient-to-r from-navy-900 to-navy-800 text-white">
+                <th class="p-4 text-left text-display">Service</th>
+                <th class="p-4 text-center text-display">Cost Range</th>
+                <th class="p-4 text-left text-display">Includes</th>
+              </tr>
+            </thead>
+            <tbody class="bg-white">
+              {pricingBreakdown.map((item, index) => (
+                <tr class={index % 2 === 0 ? 'border-b border-slate-200' : 'border-b border-slate-200 bg-slate-50'}>
+                  <td class="p-4 font-bold text-display text-navy-900">{item.service}</td>
+                  <td class="p-4 text-center font-bold text-cyan-600 text-lg">{item.cost}</td>
+                  <td class="p-4 text-slate-700">{item.includes}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Price Factors -->
+        <div class="bg-slate-50 rounded-lg shadow-card p-8">
+          <h3 class="text-headline text-navy-900 mb-6">What Affects the Price?</h3>
+          <div class="grid md:grid-cols-2 gap-4">
+            {priceFactors.map(factor => (
+              <div class="flex items-start">
+                <span class="material-symbols-outlined text-cyan-500 mr-3 mt-1">arrow_forward</span>
+                <p class="text-slate-700">{factor}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Second Units Section -->
+  <section class="section-padding bg-gradient-to-br from-navy-900 to-navy-800 text-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <SectionHeader
+          label="Basement Apartments"
+          title="Egress Windows for Second Units"
+          description="O.Reg 384/22 compliance for legal basement apartments"
+          centered={true}
+          dark={true}
+        />
+
+        <div class="grid md:grid-cols-2 gap-8 mb-12">
+          <div class="bg-white/10 backdrop-blur rounded-lg shadow-card p-8">
+            <h3 class="text-headline mb-6">Second Unit Requirements</h3>
+            <p class="text-slate-200 mb-6">
+              Ontario's O.Reg 384/22 (as-of-right zoning) now allows basement apartments in most residential zones.
+            </p>
+
+            <div class="space-y-4">
+              <div class="border-l-4 border-cyan-400 pl-4 py-2">
+                <h4 class="font-bold text-display">Every bedroom must have egress</h4>
+                <p class="text-slate-300 text-sm">All sleeping areas require code-compliant exit windows</p>
+              </div>
+
+              <div class="border-l-4 border-cyan-400 pl-4 py-2">
+                <h4 class="font-bold text-display">Fire separation required</h4>
+                <p class="text-slate-300 text-sm">1-hour rated ceiling between units</p>
+              </div>
+
+              <div class="border-l-4 border-cyan-400 pl-4 py-2">
+                <h4 class="font-bold text-display">Separate entrance</h4>
+                <p class="text-slate-300 text-sm">Or access to common hallway</p>
+              </div>
+
+              <div class="border-l-4 border-cyan-400 pl-4 py-2">
+                <h4 class="font-bold text-display">Smoke & CO detectors</h4>
+                <p class="text-slate-300 text-sm">Interconnected throughout unit</p>
+              </div>
+
+              <div class="border-l-4 border-cyan-400 pl-4 py-2">
+                <h4 class="font-bold text-display">Minimum ceiling height: 6'5"</h4>
+                <p class="text-slate-300 text-sm">May require underpinning</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white/10 backdrop-blur rounded-lg shadow-card p-8">
+            <h3 class="text-headline mb-6">Why Choose DrySpace</h3>
+
+            <div class="space-y-6 mb-8">
+              <div>
+                <h4 class="font-bold text-display text-cyan-400 mb-2">One Contractor for Everything</h4>
+                <p class="text-slate-200">DrySpace does BOTH egress windows AND underpinning - one contractor, one permit process, one warranty</p>
+              </div>
+
+              <div>
+                <h4 class="font-bold text-display text-cyan-400 mb-2">Full Permit Coordination</h4>
+                <p class="text-slate-200">We handle building permits, engineering drawings, ESA electrical sign-off, and final inspections</p>
+              </div>
+
+              <div>
+                <h4 class="font-bold text-display text-cyan-400 mb-2">Volume Pricing</h4>
+                <p class="text-slate-200">Save 15-20% when installing multiple egress windows for your second unit</p>
+              </div>
+            </div>
+
+            <div class="bg-gradient-to-r from-amber-500 to-amber-600 rounded-lg p-6 text-center">
+              <p class="text-5xl font-bold text-white mb-2">$1,500-$2,500</p>
+              <p class="font-bold text-display text-navy-900 mb-2">PER MONTH RENTAL INCOME</p>
+              <p class="text-white text-sm">Legal basement apartment in Toronto</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Related Services Links -->
+        <div class="grid md:grid-cols-2 gap-6">
+          <a href="/services/underpinning" class="bg-white/10 backdrop-blur rounded-lg shadow-card hover:shadow-card-hover transition-all duration-300 p-6 hover:bg-white/15 group">
+            <h3 class="text-headline mb-3 group-hover:text-cyan-400 transition-colors">Underpinning Services</h3>
+            <p class="text-slate-300 mb-4">Increase ceiling height to 6'5"+ for legal second units</p>
+            <span class="text-cyan-400 font-bold text-display mt-4 inline-block group-hover:translate-x-2 transition-transform">LEARN MORE →</span>
+          </a>
+
+          <a href="/second-unit" class="bg-white/10 backdrop-blur rounded-lg shadow-card hover:shadow-card-hover transition-all duration-300 p-6 hover:bg-white/15 group">
+            <h3 class="text-headline mb-3 group-hover:text-cyan-400 transition-colors">Second Unit Conversions</h3>
+            <p class="text-slate-300 mb-4">Complete basement apartment legalization services</p>
+            <span class="text-cyan-400 font-bold text-display mt-4 inline-block group-hover:translate-x-2 transition-transform">LEARN MORE →</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us Section -->
+  <section class="section-padding bg-slate-50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <SectionHeader
+          label="The DrySpace Difference"
+          title="Why Choose DrySpace for Egress Windows"
+          description="Experience, expertise, and peace of mind"
+          centered={true}
+        />
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {trustPoints.map(point => (
+            <div class="bg-white rounded-lg shadow-card hover:shadow-card-hover transition-all duration-300 p-8">
+              <div class="bg-cyan-100 rounded-full w-16 h-16 flex items-center justify-center mb-4">
+                <span class="material-symbols-outlined text-cyan-600 text-3xl" style="font-variation-settings: 'FILL' 1">verified</span>
+              </div>
+              <h3 class="text-headline text-navy-900 mb-3">{point.title}</h3>
+              <p class="text-slate-700">{point.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Section -->
+  <ServicePricing
+    title="Egress Window Pricing"
+    tiers={pricingTiers}
+  />
+
+  <!-- Service Areas -->
+  <section class="section-padding bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <SectionHeader
+          label="GTA Coverage"
+          title="Egress Window Service Areas"
+          description="Professional egress window installation across the Greater Toronto Area"
+          centered={true}
+        />
+
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mb-8">
+          {serviceAreas.map(area => (
+            <div class="bg-slate-50 rounded-lg shadow-card hover:shadow-card-hover transition-all duration-300 p-4 text-center">
+              <p class="font-bold text-display text-navy-900">{area}</p>
+            </div>
+          ))}
+        </div>
+
+        <div class="bg-gradient-to-r from-cyan-600 to-cyan-700 rounded-lg shadow-card p-8 text-center">
+          <p class="text-headline text-white mb-2">
+            SELLING YOUR HOME? NEED EGRESS FOR CLOSING?
+          </p>
+          <p class="text-white text-lg mb-4">
+            Fast-track installations available to meet closing deadlines
+          </p>
+          <a href="tel:437-545-0067" class="btn-primary bg-white text-navy-900 hover:bg-slate-100">
+            437-545-0067 - URGENT INSTALL
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Before/After Gallery -->
+  <BeforeAfterGallery />
+
+  <!-- Why Choose Us -->
+  <WhyChooseUs />
+
+  <!-- Service Image Gallery -->
+  <ServiceImageGallery service="egress-windows" />
+
+  <!-- Testimonials -->
+  <Testimonials />
+
+  <!-- Technical Drawings -->
+  <TechnicalDrawings />
+
+  <!-- FAQ Section -->
+  <section class="section-padding bg-slate-50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <SectionHeader
+          label="Common Questions"
+          title="Frequently Asked Questions"
+          description="Everything you need to know about egress window installation"
+          centered={true}
+        />
+
+        <div class="space-y-4">
+          {serviceFAQs.map((faq, index) => (
+            <details class="bg-white rounded-lg shadow-card hover:shadow-card-hover transition-all duration-300 overflow-hidden group">
+              <summary class="cursor-pointer p-6 font-bold text-display text-navy-900 flex items-center justify-between">
+                <span>{faq.question}</span>
+                <span class="material-symbols-outlined text-cyan-500 transform transition-transform group-open:rotate-180">expand_more</span>
+              </summary>
+              <div class="px-6 pb-6 text-slate-700 border-t border-slate-200 pt-4">
+                {faq.answer}
+              </div>
+            </details>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Internal Links Component -->
+  <InternalLinks category="basement" currentPage="egress-windows" limit={5} />
+
+  <!-- Contact Form -->
+  <ContactForm />
+
+  <!-- Related Services -->
+  <section class="section-padding bg-gradient-to-br from-navy-900 to-navy-800">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <SectionHeader
+          label="Related Services"
+          title="Complete Basement Legalization Services"
+          description="Everything you need for code-compliant basement conversions"
+          centered={true}
+          dark={true}
+        />
+
+        <div class="grid md:grid-cols-3 gap-6 mb-12">
+          <a href="/services/underpinning" class="bg-white/10 backdrop-blur rounded-lg shadow-card hover:shadow-card-hover transition-all duration-300 p-6 hover:bg-white/15 group">
+            <h3 class="text-headline text-white mb-3 group-hover:text-cyan-400 transition-colors">Underpinning</h3>
+            <p class="text-slate-300 mb-4">Increase ceiling height to legal 6'5" minimum for bedrooms</p>
+            <p class="text-cyan-400 font-bold text-xl">$300-$400/linear foot</p>
+            <span class="text-cyan-400 font-bold text-display mt-4 inline-block group-hover:translate-x-2 transition-transform">LEARN MORE →</span>
+          </a>
+
+          <a href="/services/interior-waterproofing" class="bg-white/10 backdrop-blur rounded-lg shadow-card hover:shadow-card-hover transition-all duration-300 p-6 hover:bg-white/15 group">
+            <h3 class="text-headline text-white mb-3 group-hover:text-cyan-400 transition-colors">Interior Waterproofing</h3>
+            <p class="text-slate-300 mb-4">Keep your new basement bedroom dry and healthy</p>
+            <p class="text-cyan-400 font-bold text-xl">$100-$150/linear foot</p>
+            <span class="text-cyan-400 font-bold text-display mt-4 inline-block group-hover:translate-x-2 transition-transform">LEARN MORE →</span>
+          </a>
+
+          <a href="/services/sump-pump-installation" class="bg-white/10 backdrop-blur rounded-lg shadow-card hover:shadow-card-hover transition-all duration-300 p-6 hover:bg-white/15 group">
+            <h3 class="text-headline text-white mb-3 group-hover:text-cyan-400 transition-colors">Sump Pump Installation</h3>
+            <p class="text-slate-300 mb-4">Manage water infiltration and protect your investment</p>
+            <p class="text-cyan-400 font-bold text-xl">$2,200-$5,400 + $1,850 rebate</p>
+            <span class="text-cyan-400 font-bold text-display mt-4 inline-block group-hover:translate-x-2 transition-transform">LEARN MORE →</span>
+          </a>
+        </div>
+
+        <!-- Additional Resources -->
+        <div class="grid md:grid-cols-2 gap-6 mb-12">
+          <a href="/services/permits" class="bg-white/10 backdrop-blur rounded-lg shadow-card hover:shadow-card-hover transition-all duration-300 p-6 hover:bg-white/15 group">
+            <h3 class="text-headline text-white mb-3 group-hover:text-cyan-400 transition-colors">Permit Services</h3>
+            <p class="text-slate-300 mb-4">Full permit handling and building department coordination</p>
+            <span class="text-cyan-400 font-bold text-display mt-4 inline-block group-hover:translate-x-2 transition-transform">LEARN MORE →</span>
+          </a>
+
+          <a href="/tools/permit-checker" class="bg-white/10 backdrop-blur rounded-lg shadow-card hover:shadow-card-hover transition-all duration-300 p-6 hover:bg-white/15 group">
+            <h3 class="text-headline text-white mb-3 group-hover:text-cyan-400 transition-colors">Permit Checker Tool</h3>
+            <p class="text-slate-300 mb-4">Check what permits you need for your basement project</p>
+            <span class="text-cyan-400 font-bold text-display mt-4 inline-block group-hover:translate-x-2 transition-transform">TRY TOOL →</span>
+          </a>
+        </div>
+
+        <!-- Emergency CTA -->
+        <div class="bg-gradient-to-r from-amber-500 to-amber-600 rounded-lg shadow-card p-8 text-center">
+          <p class="text-3xl font-bold text-white mb-4 text-display">
+            HOME CLOSING DEADLINE? WE CAN HELP!
+          </p>
+          <p class="text-xl text-white mb-6">
+            Fast-track egress window installation to meet your closing date
+          </p>
+          <a href="tel:437-545-0067" class="btn-primary bg-white text-navy-900 hover:bg-slate-100">
+            437-545-0067 - URGENT REQUEST
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA Band -->
+  <CTABand
+    title="Get Your Free Egress Window Assessment"
+    subtitle="Code-compliant installation with full permit handling. 25-year warranty."
+    primaryCTA={{ text: "Book Free Assessment", href: "/free-inspection" }}
+    secondaryCTA={{ text: "Call: 437-545-0067", href: "tel:437-545-0067" }}
+  />
+</PageLayout>

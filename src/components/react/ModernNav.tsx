@@ -30,6 +30,7 @@ const serviceCategories = [
     items: [
       { title: "Concrete Works", href: "/services/concrete-works", icon: HardHat },
       { title: "Legal Basement Conversion", href: "/services/legal-basement-conversion", icon: Building2 },
+      { title: "Egress Windows", href: "/services/egress-windows", icon: Shield },
       { title: "Basement Walkout & Door Cutting", href: "/services/basement-walkout-door-cutting", icon: Hammer },
       { title: "Excavation Services", href: "/services/excavation-services", icon: HardHat },
     ],

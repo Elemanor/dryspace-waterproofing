@@ -1,0 +1,1223 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import BreadcrumbSchema from '../../components/BreadcrumbSchema.astro';
+
+const breadcrumbItems = [
+  { label: 'Home', href: '/' },
+  { label: 'Blog', href: '/blog' },
+  { label: 'Why New Houses Get Basement Cracks and Flooding', href: '/blog/why-new-houses-crack-and-flood' }
+];
+---
+
+<PageLayout
+  title="Why New Houses Get Basement Cracks & Flooding (What Builders Won't Tell You) | DrySpace"
+  description="Just bought a new home and found basement cracks or water? You're not alone. Learn the science behind why new construction is MORE vulnerable to foundation problems in the first 2-5 years. Toronto expert advice."
+>
+  <BreadcrumbSchema items={breadcrumbItems} />
+  <div class="container mx-auto px-4 mt-4">
+    <Breadcrumbs items={breadcrumbItems} />
+  </div>
+
+  <main class="min-h-screen bg-white">
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-br from-navy-900 to-slate-800 text-white py-12 md:py-16">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto text-center">
+          <div class="inline-block bg-amber-500 text-navy-900 px-4 py-2 rounded-full font-bold text-sm uppercase mb-6">
+            New Homeowner Alert
+          </div>
+          <h1 class="uppercase text-3xl md:text-5xl font-bold mb-6 leading-tight">
+            Why New Houses Get Basement Cracks and Flooding (And What Builders Won't Tell You)
+          </h1>
+          <p class="text-xl md:text-2xl mb-8 text-slate-200">
+            You just bought a brand-new home. Everything is pristine — until you find cracks in your basement walls or water on the floor. How is this possible?
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <a href="tel:4375450067" class="btn-primary bg-cyan-500 hover:bg-cyan-600 text-navy-900 font-bold px-8 py-4 rounded-lg text-lg flex items-center gap-2 shadow-lg">
+              <span class="text-2xl">📞</span>
+              New Home Issues: 437-545-0067
+            </a>
+            <a href="/free-inspection" class="bg-white text-navy-900 font-bold px-8 py-4 rounded-lg text-lg hover:bg-slate-100 transition-colors shadow-lg">
+              Free Assessment
+            </a>
+          </div>
+          <p class="text-slate-300 text-sm mt-4">
+            DrySpace has inspected over 500 brand-new homes in Toronto with basement issues. This is one of our most common calls.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Intro -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <p class="text-lg text-slate-700 mb-6">
+            This is one of the most frustrating calls DrySpace gets: a panicked homeowner who just spent $800,000+ on a brand-new house, only to discover cracks in the basement walls or water seeping through after the first heavy rain.
+          </p>
+          <p class="text-lg text-slate-700 mb-6">
+            <strong>"But it's brand new! How can this be happening?"</strong>
+          </p>
+          <p class="text-lg text-slate-700 mb-6">
+            Here's the uncomfortable truth: <strong>new homes are actually MORE vulnerable</strong> to certain types of basement problems during their first 2-5 years. And what builders install as "standard" is often the bare minimum required by the Ontario Building Code — which prioritizes cost over long-term performance.
+          </p>
+          <div class="bg-amber-50 rounded-xl p-6 border-l-4 border-amber-500">
+            <p class="text-amber-900 font-semibold">
+              The good news? Most of these issues are fixable, many are covered by Tarion warranty (if you act fast), and Toronto offers rebates up to $3,400 for permanent waterproofing solutions. But you need to understand what's actually happening to your foundation first.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 1: Uncomfortable Truth -->
+    <section class="py-16 bg-slate-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="uppercase text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+            The Uncomfortable Truth About New Construction
+          </h2>
+          <p class="text-lg text-slate-600 mb-12">
+            Builders are not waterproofing companies. They're in the business of building homes as quickly and cost-effectively as possible while meeting minimum code requirements.
+          </p>
+
+          <div class="space-y-6">
+            <!-- Damp-proofing vs Waterproofing -->
+            <div class="bg-white rounded-xl p-6 shadow-card border border-slate-200/60">
+              <h3 class="text-xl font-bold text-slate-900 mb-4 flex items-center gap-2">
+                <span class="text-2xl">🏗️</span>
+                Damp-Proofing vs. Waterproofing — There's a HUGE Difference
+              </h3>
+              <p class="text-slate-700 mb-4">
+                The Ontario Building Code requires "damp-proofing" — NOT "waterproofing." These sound similar but perform very differently:
+              </p>
+
+              <div class="overflow-x-auto">
+                <table class="w-full bg-white rounded-xl border border-slate-200">
+                  <thead class="bg-navy-900 text-white">
+                    <tr>
+                      <th class="px-4 py-3 text-left font-bold">Feature</th>
+                      <th class="px-4 py-3 text-left font-bold">Damp-Proofing (Builder Standard)</th>
+                      <th class="px-4 py-3 text-left font-bold">True Waterproofing</th>
+                    </tr>
+                  </thead>
+                  <tbody class="text-slate-700 text-sm">
+                    <tr class="border-b border-slate-200">
+                      <td class="px-4 py-3 font-semibold">Material</td>
+                      <td class="px-4 py-3">Sprayed-on asphalt (tar)</td>
+                      <td class="px-4 py-3">Rubberized membrane (Blueskin, Bakor)</td>
+                    </tr>
+                    <tr class="border-b border-slate-200">
+                      <td class="px-4 py-3 font-semibold">Cost</td>
+                      <td class="px-4 py-3">$1-2 per sq ft</td>
+                      <td class="px-4 py-3">$8-15 per sq ft</td>
+                    </tr>
+                    <tr class="border-b border-slate-200">
+                      <td class="px-4 py-3 font-semibold">Blocks vapor</td>
+                      <td class="px-4 py-3"><span class="text-green-600 font-bold">✓</span> Yes</td>
+                      <td class="px-4 py-3"><span class="text-green-600 font-bold">✓</span> Yes</td>
+                    </tr>
+                    <tr class="border-b border-slate-200">
+                      <td class="px-4 py-3 font-semibold">Stops water under pressure</td>
+                      <td class="px-4 py-3"><span class="text-red-600 font-bold">✗</span> NO</td>
+                      <td class="px-4 py-3"><span class="text-green-600 font-bold">✓</span> Yes</td>
+                    </tr>
+                    <tr class="border-b border-slate-200">
+                      <td class="px-4 py-3 font-semibold">Lifespan</td>
+                      <td class="px-4 py-3">5-10 years before degradation</td>
+                      <td class="px-4 py-3">25+ years</td>
+                    </tr>
+                    <tr class="border-b border-slate-200">
+                      <td class="px-4 py-3 font-semibold">Self-heals cracks</td>
+                      <td class="px-4 py-3"><span class="text-red-600 font-bold">✗</span> No</td>
+                      <td class="px-4 py-3"><span class="text-green-600 font-bold">✓</span> Often (elastomeric)</td>
+                    </tr>
+                    <tr>
+                      <td class="px-4 py-3 font-semibold">What it protects against</td>
+                      <td class="px-4 py-3">Soil moisture / humidity only</td>
+                      <td class="px-4 py-3">Liquid water under hydrostatic pressure</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <div class="mt-4 bg-red-50 p-4 rounded border-l-4 border-red-500">
+                <p class="text-sm text-red-900 font-semibold">
+                  <strong>Key takeaway:</strong> Damp-proofing is designed to resist vapor, NOT liquid water. Once hydrostatic pressure builds up (from rain, groundwater, or melting snow), damp-proofing fails. It's like wearing a windbreaker in a rainstorm.
+                </p>
+              </div>
+            </div>
+
+            <!-- Why Builders Use It -->
+            <div class="bg-white rounded-xl p-6 shadow-card border border-slate-200/60">
+              <h3 class="text-xl font-bold text-slate-900 mb-3 flex items-center gap-2">
+                <span class="text-2xl">💰</span>
+                Why Builders Use the Minimum
+              </h3>
+              <p class="text-slate-700 mb-3">
+                Building a subdivision of 200 homes? If true waterproofing costs $7,000 more per house than damp-proofing, that's $1.4 million saved. Builders work on tight margins, and they're legally compliant using damp-proofing.
+              </p>
+              <p class="text-slate-700">
+                <strong>Plus:</strong> By the time problems show up (2-5 years later), the Tarion warranty period is closing or expired. The builder has moved on to the next project. You're left dealing with the consequences.
+              </p>
+            </div>
+
+            <!-- The Stat -->
+            <div class="bg-cyan-50 rounded-xl p-6 border-l-4 border-cyan-500">
+              <p class="text-cyan-900 text-lg mb-2">
+                <strong>Industry estimate:</strong> 90% of new homes in Ontario receive damp-proofing, not true waterproofing.
+              </p>
+              <p class="text-cyan-800 text-sm">
+                Source: DrySpace inspections of 500+ new construction homes in the GTA. Only ~10% had rubberized membrane systems installed voluntarily by the builder.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: Why Cracks Happen -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="uppercase text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+            Why New Foundations Crack — The Science
+          </h2>
+          <p class="text-lg text-slate-600 mb-12">
+            Cracks in new basements aren't a sign of poor quality — they're a natural result of physics, chemistry, and geology. Here's what's actually happening:
+          </p>
+
+          <div class="space-y-6">
+            <!-- Shrinkage -->
+            <div class="bg-slate-50 rounded-xl p-6 border-l-4 border-cyan-500">
+              <div class="flex items-start gap-4">
+                <span class="text-3xl">🧱</span>
+                <div class="flex-1">
+                  <h3 class="text-xl font-bold text-slate-900 mb-2">a) Concrete Shrinkage Cracks (100% Normal)</h3>
+                  <p class="text-slate-700 mb-3">
+                    <strong>What happens:</strong> When concrete cures, it undergoes a chemical reaction (hydration) that generates heat and causes the material to shrink. Concrete loses about <strong>1/2 inch per 100 feet</strong> as it dries.
+                  </p>
+                  <p class="text-slate-700 mb-3">
+                    <strong>Timeline:</strong> Most shrinkage cracks appear within the first 1-3 years after pouring.
+                  </p>
+                  <p class="text-slate-700 mb-3">
+                    <strong>Appearance:</strong> Usually hairline (less than 1mm wide), vertical or diagonal, non-structural.
+                  </p>
+                  <div class="bg-amber-50 p-3 rounded border border-amber-300">
+                    <p class="text-sm text-amber-900">
+                      <strong>The problem:</strong> Builders will tell you "that's normal" — and they're right. But here's what they don't say: even a hairline crack lets water through when there's hydrostatic pressure against your foundation. Normal doesn't mean waterproof.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Settlement -->
+            <div class="bg-slate-50 rounded-xl p-6 border-l-4 border-amber-500">
+              <div class="flex items-start gap-4">
+                <span class="text-3xl">🏚️</span>
+                <div class="flex-1">
+                  <h3 class="text-xl font-bold text-slate-900 mb-2">b) Settlement Cracks (First 2-5 Years)</h3>
+                  <p class="text-slate-700 mb-3">
+                    <strong>What happens:</strong> Your new home sits on <strong>disturbed soil</strong> that was excavated for the foundation, then backfilled. No matter how well it's compacted, backfill soil is NEVER as dense as the surrounding undisturbed "virgin" soil.
+                  </p>
+                  <p class="text-slate-700 mb-3">
+                    Over 2-5 years, this backfill settles (compacts further under the weight of the house). As it settles unevenly, the foundation shifts slightly, causing cracks.
+                  </p>
+                  <p class="text-slate-700 mb-3">
+                    <strong>Appearance:</strong> Stair-step cracks in concrete block walls, diagonal cracks at corners in poured walls, cracks near beam pockets or windows.
+                  </p>
+                  <p class="text-slate-700 mb-3">
+                    <strong>Risk factors:</strong>
+                  </p>
+                  <ul class="space-y-1 text-slate-700 text-sm ml-6">
+                    <li>• Toronto's clay-heavy soil (clay expands when wet, shrinks when dry)</li>
+                    <li>• Poor compaction by the builder's excavation crew</li>
+                    <li>• Heavy rain seasons causing soil to settle faster</li>
+                    <li>• Proximity to trees (roots draw moisture, causing differential settlement)</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- Thermal -->
+            <div class="bg-slate-50 rounded-xl p-6 border-l-4 border-cyan-500">
+              <div class="flex items-start gap-4">
+                <span class="text-3xl">🌡️</span>
+                <div class="flex-1">
+                  <h3 class="text-xl font-bold text-slate-900 mb-2">c) Thermal Expansion/Contraction</h3>
+                  <p class="text-slate-700 mb-3">
+                    <strong>What happens:</strong> Ontario weather is brutal on concrete. Temperature swings from -25°C in winter to +35°C in summer = a 60°C range.
+                  </p>
+                  <p class="text-slate-700 mb-3">
+                    Concrete expands when hot, contracts when cold. Repeated freeze-thaw cycles create micro-cracks that widen over time.
+                  </p>
+                  <p class="text-slate-700 mb-3">
+                    <strong>Why new homes are worse:</strong> Concrete takes 5-10 years to fully cure and reach maximum strength. The first few winters are the most stressful on the material.
+                  </p>
+                  <p class="text-slate-700">
+                    <strong>Vulnerable spots:</strong> Window corners (stress concentration points), beam pockets, and the top of foundation walls where temperature changes are most extreme.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Hydrostatic -->
+            <div class="bg-slate-50 rounded-xl p-6 border-l-4 border-red-500">
+              <div class="flex items-start gap-4">
+                <span class="text-3xl">💧</span>
+                <div class="flex-1">
+                  <h3 class="text-xl font-bold text-slate-900 mb-2">d) Hydrostatic Pressure (The Real Culprit)</h3>
+                  <p class="text-slate-700 mb-3">
+                    <strong>What happens:</strong> When it rains, water seeps into the ground. In an established property with mature landscaping, water is distributed relatively evenly.
+                  </p>
+                  <p class="text-slate-700 mb-3">
+                    But in new construction, the <strong>backfill soil around your foundation is looser than the surrounding soil</strong>. This creates a "funnel effect" — water channels preferentially toward your foundation walls.
+                  </p>
+                  <p class="text-slate-700 mb-3">
+                    As water accumulates, it exerts <strong>hydrostatic pressure</strong> against the walls. Even tiny shrinkage cracks become pathways for water to enter.
+                  </p>
+                  <div class="bg-red-50 p-3 rounded border-l-4 border-red-500">
+                    <p class="text-sm text-red-900 font-semibold">
+                      This is why "normal" hairline cracks in new basements often leak during heavy rain. The crack itself is normal — but the water intrusion is preventable with proper waterproofing.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Backfill & Grading -->
+            <div class="bg-slate-50 rounded-xl p-6 border-l-4 border-amber-500">
+              <div class="flex items-start gap-4">
+                <span class="text-3xl">⛰️</span>
+                <div class="flex-1">
+                  <h3 class="text-xl font-bold text-slate-900 mb-2">e) Poor Backfill and Grading</h3>
+                  <p class="text-slate-700 mb-3">
+                    <strong>What happens:</strong> Builders grade the soil AWAY from your house at final inspection (required by code). But within 1-2 years, that soil settles. If not maintained, the grade can reverse — now water flows TOWARD your foundation instead of away.
+                  </p>
+                  <p class="text-slate-700 mb-3">
+                    <strong>Common mistakes:</strong>
+                  </p>
+                  <ul class="space-y-1 text-slate-700 text-sm ml-6">
+                    <li>• Downspouts discharge right at the foundation (should be 6+ feet away)</li>
+                    <li>• Homeowner adds landscaping features (gardens, patios) that trap water</li>
+                    <li>• Topsoil placed over clay during landscaping, creating a water-holding layer</li>
+                    <li>• No maintenance of grading after settlement (homeowner doesn't know they need to)</li>
+                  </ul>
+                  <p class="text-slate-700 mt-3">
+                    <strong>Result:</strong> Heavy rain sends water directly toward your foundation. Cracks + water pressure = basement flooding.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: What Builders Install -->
+    <section class="py-16 bg-navy-900 text-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="uppercase text-3xl md:text-4xl font-bold mb-4">
+            What Builders Actually Install vs. What You Need
+          </h2>
+          <p class="text-lg text-slate-300 mb-12">
+            Here's a side-by-side comparison of builder-standard features versus professional waterproofing standards:
+          </p>
+
+          <div class="overflow-x-auto">
+            <table class="w-full bg-slate-800 rounded-xl border border-slate-700">
+              <thead class="bg-slate-900 text-white">
+                <tr>
+                  <th class="px-4 py-3 text-left font-bold">Feature</th>
+                  <th class="px-4 py-3 text-left font-bold">Builder Standard</th>
+                  <th class="px-4 py-3 text-left font-bold">Proper Waterproofing</th>
+                </tr>
+              </thead>
+              <tbody class="text-slate-200 text-sm">
+                <tr class="border-b border-slate-700">
+                  <td class="px-4 py-3 font-semibold text-white">Wall coating</td>
+                  <td class="px-4 py-3">Damp-proofing (tar spray)</td>
+                  <td class="px-4 py-3 text-cyan-400">Rubberized membrane (Blueskin/Bakor)</td>
+                </tr>
+                <tr class="border-b border-slate-700">
+                  <td class="px-4 py-3 font-semibold text-white">Drainage board</td>
+                  <td class="px-4 py-3">Often none</td>
+                  <td class="px-4 py-3 text-cyan-400">Dimpled drainage board (Delta-MS)</td>
+                </tr>
+                <tr class="border-b border-slate-700">
+                  <td class="px-4 py-3 font-semibold text-white">Weeping tile</td>
+                  <td class="px-4 py-3">4" perforated pipe, sometimes no sock</td>
+                  <td class="px-4 py-3 text-cyan-400">4" pipe with filter fabric + clean gravel</td>
+                </tr>
+                <tr class="border-b border-slate-700">
+                  <td class="px-4 py-3 font-semibold text-white">Sump pump</td>
+                  <td class="px-4 py-3">Basic $80 pump, no backup</td>
+                  <td class="px-4 py-3 text-cyan-400">Quality pump + battery backup + alarm</td>
+                </tr>
+                <tr class="border-b border-slate-700">
+                  <td class="px-4 py-3 font-semibold text-white">Backwater valve</td>
+                  <td class="px-4 py-3">Not included (unless municipal requirement)</td>
+                  <td class="px-4 py-3 text-cyan-400">Always recommended</td>
+                </tr>
+                <tr class="border-b border-slate-700">
+                  <td class="px-4 py-3 font-semibold text-white">Window wells</td>
+                  <td class="px-4 py-3">Plastic insert, minimal drainage</td>
+                  <td class="px-4 py-3 text-cyan-400">Proper drain to weeping tile + cover</td>
+                </tr>
+                <tr class="border-b border-slate-700">
+                  <td class="px-4 py-3 font-semibold text-white">Grading</td>
+                  <td class="px-4 py-3">Done once at final grade</td>
+                  <td class="px-4 py-3 text-cyan-400">Must be maintained annually</td>
+                </tr>
+                <tr>
+                  <td class="px-4 py-3 font-semibold text-white">Warranty</td>
+                  <td class="px-4 py-3">2 years (Tarion) for water penetration</td>
+                  <td class="px-4 py-3 text-cyan-400">25 years (DrySpace)</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="mt-8 bg-cyan-900/30 rounded-xl p-6 border border-cyan-700">
+            <p class="text-cyan-300">
+              <strong>Reality check:</strong> Builders install what's code-compliant and economical. They're not trying to scam you — they're running a business. But "code minimum" is not the same as "best practice for long-term performance." That's why Tarion claims for basement water penetration are one of the most common warranty issues in Ontario.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 4: Tarion Warranty -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="uppercase text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+            The Tarion Warranty — What It Actually Covers
+          </h2>
+          <p class="text-lg text-slate-600 mb-12">
+            Tarion is Ontario's mandatory new home warranty program. Understanding coverage and deadlines is critical if you want the builder to pay for repairs.
+          </p>
+
+          <div class="space-y-6">
+            <!-- Coverage Timeline -->
+            <div class="bg-slate-50 rounded-xl p-6 border border-slate-200">
+              <h3 class="text-xl font-bold text-slate-900 mb-4">Tarion Coverage Timeline</h3>
+
+              <div class="space-y-4">
+                <div class="border-l-4 border-cyan-500 pl-4">
+                  <h4 class="font-bold text-slate-900 mb-1">Year 1</h4>
+                  <p class="text-slate-700 text-sm">Covers water penetration through basement walls/floor, all defects in workmanship and materials.</p>
+                  <p class="text-cyan-700 text-xs mt-1"><strong>Action required:</strong> Submit 30-day form and year-end form on time!</p>
+                </div>
+
+                <div class="border-l-4 border-amber-500 pl-4">
+                  <h4 class="font-bold text-slate-900 mb-1">Year 2</h4>
+                  <p class="text-slate-700 text-sm">Covers water penetration through basement, distribution systems (plumbing, HVAC, electrical).</p>
+                  <p class="text-amber-700 text-xs mt-1"><strong>Action required:</strong> Submit claim before 2nd anniversary!</p>
+                </div>
+
+                <div class="border-l-4 border-red-500 pl-4">
+                  <h4 class="font-bold text-slate-900 mb-1">Years 3-7</h4>
+                  <p class="text-slate-700 text-sm">Major structural defects ONLY. Water penetration is <strong>NOT covered</strong> after year 2.</p>
+                  <p class="text-red-700 text-xs mt-1"><strong>Miss year 2 deadline = you pay for waterproofing yourself.</strong></p>
+                </div>
+              </div>
+            </div>
+
+            <!-- The Catch -->
+            <div class="bg-red-50 rounded-xl p-6 border-l-4 border-red-500">
+              <h3 class="text-xl font-bold text-red-900 mb-3 flex items-center gap-2">
+                <span class="text-2xl">⚠️</span>
+                The Catch — What Tarion WON'T Cover
+              </h3>
+              <ul class="space-y-3 text-red-800 text-sm">
+                <li class="flex items-start gap-2">
+                  <span class="text-red-600 font-bold">•</span>
+                  <span><strong>Cracks the builder deems "cosmetic"</strong> — Shrinkage cracks under 5mm width can be dismissed as non-structural. Builder may refuse to repair even if water is coming through.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-red-600 font-bold">•</span>
+                  <span><strong>Water seepage blamed on "homeowner maintenance"</strong> — If builder claims you didn't maintain grading or downspouts properly, they can deny the claim.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-red-600 font-bold">•</span>
+                  <span><strong>Condensation</strong> — Not considered "water penetration." Builder will often claim dampness is condensation, not infiltration.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-red-600 font-bold">•</span>
+                  <span><strong>Issues discovered after deadlines</strong> — Find a crack in year 3? Too late. You're paying out of pocket.</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Reality -->
+            <div class="bg-amber-50 rounded-xl p-6 border-l-4 border-amber-500">
+              <h3 class="text-xl font-bold text-amber-900 mb-2">The Reality</h3>
+              <p class="text-amber-800 mb-3">
+                Many homeowners fight with their builder for months, miss Tarion deadlines during the dispute process, and end up paying out of pocket for waterproofing anyway.
+              </p>
+              <p class="text-amber-800 font-semibold">
+                <strong>Pro tip:</strong> Document everything with photos and timestamps FROM DAY ONE. Submit your Tarion forms immediately even if the builder says "we'll take care of it." Don't trust verbal promises — get everything in writing through Tarion's system.
+              </p>
+            </div>
+
+            <!-- Foil Test -->
+            <div class="bg-cyan-50 rounded-xl p-6 border-l-4 border-cyan-500">
+              <h3 class="text-xl font-bold text-cyan-900 mb-2">The Foil Test — Prove It's a Leak, Not Condensation</h3>
+              <p class="text-cyan-800 mb-3">
+                Builder claims it's just condensation? Do this simple test:
+              </p>
+              <ol class="space-y-2 text-cyan-900 text-sm ml-6">
+                <li>1. Dry the damp area completely with a towel</li>
+                <li>2. Tape a 12" x 12" piece of aluminum foil to the wall, sealing all edges with tape</li>
+                <li>3. Wait 24-48 hours</li>
+                <li>4. Remove the foil and check:</li>
+              </ol>
+              <ul class="space-y-1 text-cyan-900 text-sm ml-12 mt-2">
+                <li>• Moisture on the ROOM side of foil = condensation (humidity in your air)</li>
+                <li>• Moisture BEHIND the foil (wall side) = water infiltration through foundation</li>
+              </ul>
+              <p class="text-cyan-800 mt-3 text-sm">
+                Take photos and include this test in your Tarion claim.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 5: Common Problems -->
+    <section class="py-16 bg-slate-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="uppercase text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+            The 6 Most Common New-Home Basement Problems
+          </h2>
+          <p class="text-lg text-slate-600 mb-12">
+            Based on DrySpace's inspections of 500+ new homes in the GTA, these are the issues we see most often:
+          </p>
+
+          <div class="grid md:grid-cols-2 gap-6">
+            <!-- Problem 1 -->
+            <div class="bg-white rounded-xl p-6 shadow-card border border-slate-200/60">
+              <div class="flex items-start gap-3 mb-3">
+                <div class="bg-cyan-500 text-white rounded-full w-10 h-10 flex items-center justify-center font-bold flex-shrink-0">
+                  1
+                </div>
+                <h3 class="text-lg font-bold text-slate-900">Shrinkage Crack Leaking During Rain</h3>
+              </div>
+              <p class="text-slate-700 text-sm mb-2">
+                <strong>Most common.</strong> Hairline vertical crack appears in basement wall. Stays dry until heavy storm, then water seeps through.
+              </p>
+              <p class="text-slate-700 text-sm mb-2">
+                Builder says: "That's normal shrinkage."
+              </p>
+              <p class="text-slate-700 text-sm">
+                <strong>Fix:</strong> Polyurethane crack injection from interior ($400-800 per crack). Permanent waterproof seal.
+              </p>
+            </div>
+
+            <!-- Problem 2 -->
+            <div class="bg-white rounded-xl p-6 shadow-card border border-slate-200/60">
+              <div class="flex items-start gap-3 mb-3">
+                <div class="bg-cyan-500 text-white rounded-full w-10 h-10 flex items-center justify-center font-bold flex-shrink-0">
+                  2
+                </div>
+                <h3 class="text-lg font-bold text-slate-900">Floor-Wall Joint Seepage</h3>
+              </div>
+              <p class="text-slate-700 text-sm mb-2">
+                Water comes in where the floor meets the wall (cold joint / cove joint). This is a construction joint, not a crack.
+              </p>
+              <p class="text-slate-700 text-sm mb-2">
+                <strong>Very common in poured foundations.</strong> Happens when hydrostatic pressure pushes water through the joint.
+              </p>
+              <p class="text-slate-700 text-sm">
+                <strong>Fix:</strong> Interior drainage system with weeping tile and sump pump ($5,000-12,000). Toronto rebate: $400 weeping tile + $1,750 sump pump.
+              </p>
+            </div>
+
+            <!-- Problem 3 -->
+            <div class="bg-white rounded-xl p-6 shadow-card border border-slate-200/60">
+              <div class="flex items-start gap-3 mb-3">
+                <div class="bg-cyan-500 text-white rounded-full w-10 h-10 flex items-center justify-center font-bold flex-shrink-0">
+                  3
+                </div>
+                <h3 class="text-lg font-bold text-slate-900">Window Well Flooding</h3>
+              </div>
+              <p class="text-slate-700 text-sm mb-2">
+                Builder installed window wells with no drain connection. Heavy rain fills the well, water enters through window frame or wall.
+              </p>
+              <p class="text-slate-700 text-sm mb-2">
+                Often combined with missing window well covers.
+              </p>
+              <p class="text-slate-700 text-sm">
+                <strong>Fix:</strong> Install window well drain connected to weeping tile + polycarbonate cover ($500-1,500 per well).
+              </p>
+            </div>
+
+            <!-- Problem 4 -->
+            <div class="bg-white rounded-xl p-6 shadow-card border border-slate-200/60">
+              <div class="flex items-start gap-3 mb-3">
+                <div class="bg-cyan-500 text-white rounded-full w-10 h-10 flex items-center justify-center font-bold flex-shrink-0">
+                  4
+                </div>
+                <h3 class="text-lg font-bold text-slate-900">Sump Pump Failure During Storm</h3>
+              </div>
+              <p class="text-slate-700 text-sm mb-2">
+                Builder-grade pump fails, or no battery backup installed. Power goes out during the storm that causes the flooding = pump doesn't run.
+              </p>
+              <p class="text-slate-700 text-sm mb-2">
+                <strong>Statistic:</strong> 60% of sump pump failures happen during power outages.
+              </p>
+              <p class="text-slate-700 text-sm">
+                <strong>Fix:</strong> Quality sump pump + battery backup system + alarm ($1,500-3,000). Toronto rebate: $1,750.
+              </p>
+            </div>
+
+            <!-- Problem 5 -->
+            <div class="bg-white rounded-xl p-6 shadow-card border border-slate-200/60">
+              <div class="flex items-start gap-3 mb-3">
+                <div class="bg-cyan-500 text-white rounded-full w-10 h-10 flex items-center justify-center font-bold flex-shrink-0">
+                  5
+                </div>
+                <h3 class="text-lg font-bold text-slate-900">Sewer Backup</h3>
+              </div>
+              <p class="text-slate-700 text-sm mb-2">
+                New subdivisions often connect to aging municipal infrastructure. Heavy rain overwhelms the system, sewage backs up into your basement through floor drains.
+              </p>
+              <p class="text-slate-700 text-sm mb-2">
+                <strong>Builder rarely installs a backwater valve unless city mandates it.</strong>
+              </p>
+              <p class="text-slate-700 text-sm">
+                <strong>Fix:</strong> Backwater valve installation ($1,200-2,000). Toronto rebate: $1,250.
+              </p>
+            </div>
+
+            <!-- Problem 6 -->
+            <div class="bg-white rounded-xl p-6 shadow-card border border-slate-200/60">
+              <div class="flex items-start gap-3 mb-3">
+                <div class="bg-cyan-500 text-white rounded-full w-10 h-10 flex items-center justify-center font-bold flex-shrink-0">
+                  6
+                </div>
+                <h3 class="text-lg font-bold text-slate-900">Grading Reversal</h3>
+              </div>
+              <p class="text-slate-700 text-sm mb-2">
+                Soil settles after 1-2 years. Water now flows TOWARD the house instead of away. Downspouts discharge directly at foundation.
+              </p>
+              <p class="text-slate-700 text-sm mb-2">
+                <strong>Often not noticed until after the first year.</strong> Builder won't come back to re-grade for free.
+              </p>
+              <p class="text-slate-700 text-sm">
+                <strong>Fix:</strong> Re-grade soil (slope 6" over 10 feet away from house) + downspout extensions 6+ feet ($500-2,000).
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 6: What to Do -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="uppercase text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+            What to Do If Your New Home Has Basement Issues
+          </h2>
+          <p class="text-lg text-slate-600 mb-12">
+            Follow these steps to protect your warranty rights while getting the problem fixed:
+          </p>
+
+          <div class="space-y-6">
+            <!-- Step 1 -->
+            <div class="bg-slate-50 rounded-xl p-6 border-l-4 border-cyan-500">
+              <div class="flex items-start gap-4">
+                <div class="bg-cyan-500 text-white rounded-full w-12 h-12 flex items-center justify-center font-bold text-xl flex-shrink-0">
+                  1
+                </div>
+                <div>
+                  <h3 class="text-xl font-bold text-slate-900 mb-2">Document Immediately</h3>
+                  <p class="text-slate-700 mb-3">
+                    Before you do anything else, create a record:
+                  </p>
+                  <ul class="space-y-1 text-slate-700 text-sm">
+                    <li>• Take photos with timestamps (most phones do this automatically)</li>
+                    <li>• Measure crack widths with a ruler (include ruler in photo)</li>
+                    <li>• Note when water appears (during rain? all the time?)</li>
+                    <li>• Check if cracks are growing (mark the end with pencil, check weekly)</li>
+                    <li>• Do the foil test if builder claims it's condensation</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="bg-slate-50 rounded-xl p-6 border-l-4 border-amber-500">
+              <div class="flex items-start gap-4">
+                <div class="bg-amber-500 text-white rounded-full w-12 h-12 flex items-center justify-center font-bold text-xl flex-shrink-0">
+                  2
+                </div>
+                <div>
+                  <h3 class="text-xl font-bold text-slate-900 mb-2">File With Tarion Immediately</h3>
+                  <p class="text-slate-700 mb-3">
+                    Don't wait. Even if the builder says "we'll handle it," submit your Tarion claim form:
+                  </p>
+                  <ul class="space-y-1 text-slate-700 text-sm mb-3">
+                    <li>• Within 30 days of possession: 30-day form</li>
+                    <li>• Before 1st anniversary: Year-end form</li>
+                    <li>• Before 2nd anniversary: Final claim for water penetration issues</li>
+                  </ul>
+                  <p class="text-amber-800 text-sm font-semibold">
+                    <strong>Critical:</strong> Verbal promises from builders mean nothing. File through Tarion's official system to protect your rights.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="bg-slate-50 rounded-xl p-6 border-l-4 border-cyan-500">
+              <div class="flex items-start gap-4">
+                <div class="bg-cyan-500 text-white rounded-full w-12 h-12 flex items-center justify-center font-bold text-xl flex-shrink-0">
+                  3
+                </div>
+                <div>
+                  <h3 class="text-xl font-bold text-slate-900 mb-2">Get an Independent Assessment</h3>
+                  <p class="text-slate-700 mb-3">
+                    The builder's inspector works for the builder. Their incentive is to minimize the issue. Get your own expert opinion.
+                  </p>
+                  <p class="text-slate-700 mb-3">
+                    DrySpace offers free basement inspections for new homeowners. We'll:
+                  </p>
+                  <ul class="space-y-1 text-slate-700 text-sm">
+                    <li>• Identify the source of water or cause of cracks</li>
+                    <li>• Assess whether it's a structural concern</li>
+                    <li>• Provide a written report you can submit to Tarion</li>
+                    <li>• Give you upfront pricing for repair options</li>
+                  </ul>
+                  <a href="/free-inspection" class="inline-block mt-3 bg-cyan-500 text-white px-6 py-3 rounded-lg font-bold hover:bg-cyan-600 transition-colors">
+                    Book Free Inspection
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Step 4 -->
+            <div class="bg-slate-50 rounded-xl p-6 border-l-4 border-cyan-500">
+              <div class="flex items-start gap-4">
+                <div class="bg-cyan-500 text-white rounded-full w-12 h-12 flex items-center justify-center font-bold text-xl flex-shrink-0">
+                  4
+                </div>
+                <div>
+                  <h3 class="text-xl font-bold text-slate-900 mb-2">Understand Your Repair Options</h3>
+                  <p class="text-slate-700 mb-3">
+                    Not all waterproofing methods work for all problems. Use DrySpace's tools to understand your options:
+                  </p>
+                  <div class="space-y-2">
+                    <a href="/tools/crack-analyzer" class="block text-cyan-600 hover:text-cyan-700 font-semibold text-sm">
+                      → Crack Analyzer Tool — Is your crack structural?
+                    </a>
+                    <a href="/tools/method-comparison" class="block text-cyan-600 hover:text-cyan-700 font-semibold text-sm">
+                      → Method Comparison Tool — Interior vs exterior waterproofing
+                    </a>
+                    <a href="/tools/flood-risk-checker" class="block text-cyan-600 hover:text-cyan-700 font-semibold text-sm">
+                      → Flood Risk Checker — Assess your property's vulnerability
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Step 5 -->
+            <div class="bg-slate-50 rounded-xl p-6 border-l-4 border-cyan-500">
+              <div class="flex items-start gap-4">
+                <div class="bg-cyan-500 text-white rounded-full w-12 h-12 flex items-center justify-center font-bold text-xl flex-shrink-0">
+                  5
+                </div>
+                <div>
+                  <h3 class="text-xl font-bold text-slate-900 mb-2">Check Rebate Eligibility</h3>
+                  <p class="text-slate-700 mb-3">
+                    New homeowners qualify for Toronto's Basement Flooding Protection Subsidy:
+                  </p>
+                  <ul class="space-y-1 text-slate-700 text-sm">
+                    <li>• $1,750 for sump pump + battery backup</li>
+                    <li>• $1,250 for backwater valve</li>
+                    <li>• $400 for weeping tile (interior or exterior)</li>
+                    <li>• <strong>Total possible: $3,400</strong></li>
+                  </ul>
+                  <p class="text-slate-700 mt-3 text-sm">
+                    DrySpace handles the paperwork for our clients — we'll walk you through the application process.
+                  </p>
+                  <a href="/government-rebates" class="inline-block mt-3 text-cyan-600 hover:text-cyan-700 font-semibold text-sm">
+                    View All Toronto Rebate Programs →
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Step 6 -->
+            <div class="bg-red-50 rounded-xl p-6 border-l-4 border-red-500">
+              <div class="flex items-start gap-4">
+                <div class="bg-red-500 text-white rounded-full w-12 h-12 flex items-center justify-center font-bold text-xl flex-shrink-0">
+                  6
+                </div>
+                <div>
+                  <h3 class="text-xl font-bold text-slate-900 mb-2">Act Before Finishing Your Basement</h3>
+                  <p class="text-slate-700 mb-3 font-semibold">
+                    If you're planning to finish your basement, waterproof FIRST. This is critical.
+                  </p>
+                  <p class="text-slate-700 mb-3">
+                    Finishing over a basement that has (or will have) moisture issues is a disaster:
+                  </p>
+                  <ul class="space-y-1 text-slate-700 text-sm">
+                    <li>• Mold grows behind drywall where you can't see it</li>
+                    <li>• Health issues develop (respiratory, allergies)</li>
+                    <li>• When you finally address it, you're ripping out $20K-50K of finished space</li>
+                  </ul>
+                  <p class="text-red-800 text-sm font-semibold mt-3">
+                    <strong>Rule:</strong> Waterproof now ($5K-15K) vs. demolish + waterproof + rebuild later ($40K-80K).
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 7: Cost Table -->
+    <section class="py-16 bg-slate-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="uppercase text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+            How Much Does It Cost to Fix?
+          </h2>
+          <p class="text-lg text-slate-600 mb-8">
+            Here's what you can expect to pay for common new-home basement issues in the Toronto area:
+          </p>
+
+          <div class="overflow-x-auto">
+            <table class="w-full bg-white rounded-xl shadow-card border border-slate-200">
+              <thead class="bg-navy-900 text-white">
+                <tr>
+                  <th class="px-4 py-3 text-left font-bold">Problem</th>
+                  <th class="px-4 py-3 text-left font-bold">Solution</th>
+                  <th class="px-4 py-3 text-left font-bold">Cost Range</th>
+                  <th class="px-4 py-3 text-left font-bold">Toronto Rebate?</th>
+                </tr>
+              </thead>
+              <tbody class="text-slate-700 text-sm">
+                <tr class="border-b border-slate-200">
+                  <td class="px-4 py-3 font-semibold">Shrinkage crack</td>
+                  <td class="px-4 py-3">Injection repair</td>
+                  <td class="px-4 py-3">$400 - $800 per crack</td>
+                  <td class="px-4 py-3">No</td>
+                </tr>
+                <tr class="border-b border-slate-200">
+                  <td class="px-4 py-3 font-semibold">Floor-wall seepage</td>
+                  <td class="px-4 py-3">Interior drainage system</td>
+                  <td class="px-4 py-3">$5,000 - $12,000</td>
+                  <td class="px-4 py-3 text-green-700 font-semibold">$400 (weeping tile)</td>
+                </tr>
+                <tr class="border-b border-slate-200">
+                  <td class="px-4 py-3 font-semibold">Window well flooding</td>
+                  <td class="px-4 py-3">Drain + cover</td>
+                  <td class="px-4 py-3">$500 - $1,500 per well</td>
+                  <td class="px-4 py-3">No</td>
+                </tr>
+                <tr class="border-b border-slate-200">
+                  <td class="px-4 py-3 font-semibold">Sump pump failure</td>
+                  <td class="px-4 py-3">Pump + battery backup</td>
+                  <td class="px-4 py-3">$1,500 - $3,000</td>
+                  <td class="px-4 py-3 text-green-700 font-semibold">$1,750</td>
+                </tr>
+                <tr class="border-b border-slate-200">
+                  <td class="px-4 py-3 font-semibold">Sewer backup</td>
+                  <td class="px-4 py-3">Backwater valve</td>
+                  <td class="px-4 py-3">$1,200 - $2,000</td>
+                  <td class="px-4 py-3 text-green-700 font-semibold">$1,250</td>
+                </tr>
+                <tr class="border-b border-slate-200">
+                  <td class="px-4 py-3 font-semibold">Grading issues</td>
+                  <td class="px-4 py-3">Re-grade + extensions</td>
+                  <td class="px-4 py-3">$500 - $2,000</td>
+                  <td class="px-4 py-3">No</td>
+                </tr>
+                <tr class="border-b border-slate-200 bg-cyan-50">
+                  <td class="px-4 py-3 font-bold">Full waterproofing</td>
+                  <td class="px-4 py-3">Interior + sump + BWV</td>
+                  <td class="px-4 py-3 font-bold">$8,000 - $15,000</td>
+                  <td class="px-4 py-3 text-green-700 font-bold">$3,400</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="mt-6 bg-cyan-50 rounded-xl p-6 border-l-4 border-cyan-500">
+            <p class="text-cyan-900 font-semibold mb-2">
+              <strong>Net cost after rebates:</strong> Full waterproofing system can be as low as $4,600-11,600 after claiming all available Toronto subsidies.
+            </p>
+            <p class="text-cyan-800 text-sm">
+              Timeline: Most repairs can be completed in 1-3 days. Rebate applications submitted within 12 months of work completion.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="uppercase text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+            Frequently Asked Questions
+          </h2>
+          <p class="text-lg text-slate-600 mb-12">
+            Your questions about new home basement issues, answered.
+          </p>
+
+          <div class="space-y-6">
+            <!-- FAQ 1 -->
+            <div class="bg-slate-50 rounded-xl p-6 border border-slate-200">
+              <h3 class="text-lg font-bold text-slate-900 mb-2">
+                Are cracks in a new basement normal?
+              </h3>
+              <p class="text-slate-700">
+                Hairline shrinkage cracks (under 1mm, vertical) are 100% normal and expected in new concrete foundations. However, horizontal cracks, stair-step cracks in block walls, cracks wider than 3mm, or cracks that are actively leaking should be inspected by a professional immediately. "Normal" doesn't mean "harmless" — even hairline cracks can let water through under hydrostatic pressure.
+              </p>
+            </div>
+
+            <!-- FAQ 2 -->
+            <div class="bg-slate-50 rounded-xl p-6 border border-slate-200">
+              <h3 class="text-lg font-bold text-slate-900 mb-2">
+                Should I wait for the builder to fix it?
+              </h3>
+              <p class="text-slate-700">
+                File your Tarion claim immediately, but don't wait to act. Water damage compounds every day — mold starts growing in 24-48 hours, and structural damage worsens over time. Get an independent assessment from a waterproofing specialist (not just the builder's inspector) so you understand the severity. If the builder is dragging their feet and you're approaching warranty deadlines, consider paying for repairs yourself and documenting everything for potential reimbursement or legal action later.
+              </p>
+            </div>
+
+            <!-- FAQ 3 -->
+            <div class="bg-slate-50 rounded-xl p-6 border border-slate-200">
+              <h3 class="text-lg font-bold text-slate-900 mb-2">
+                Will waterproofing void my Tarion warranty?
+              </h3>
+              <p class="text-slate-700">
+                No. Tarion covers defects in the builder's workmanship and materials. Adding waterproofing protection to your basement doesn't void warranty claims for other issues (structural defects, HVAC problems, etc.). In fact, having a third-party waterproofing assessment strengthens your Tarion claim by providing independent documentation of the deficiency. Make sure to keep all invoices and reports — they may be required if you pursue a warranty claim or dispute resolution.
+              </p>
+            </div>
+
+            <!-- FAQ 4 -->
+            <div class="bg-slate-50 rounded-xl p-6 border border-slate-200">
+              <h3 class="text-lg font-bold text-slate-900 mb-2">
+                My builder says it's just condensation, not a leak. How do I know?
+              </h3>
+              <p class="text-slate-700">
+                Do the foil test: Dry the wall completely, tape a 12" x 12" piece of aluminum foil to the damp area (seal all edges with tape), and wait 24-48 hours. If moisture appears on the room-facing side of the foil, it's condensation (humidity in your air). If moisture appears behind the foil (between foil and wall), it's water infiltration through the foundation. Take photos of the test results and include them in your Tarion claim. Infiltration requires structural repair; condensation requires a dehumidifier.
+              </p>
+            </div>
+
+            <!-- FAQ 5 -->
+            <div class="bg-slate-50 rounded-xl p-6 border border-slate-200">
+              <h3 class="text-lg font-bold text-slate-900 mb-2">
+                How long until cracks stop appearing in my new basement?
+              </h3>
+              <p class="text-slate-700">
+                Most concrete shrinkage cracking happens within the first 1-3 years as the concrete fully cures. Settlement cracks from soil compaction can continue to appear for 5 years as backfill soil stabilizes. After 5 years, any new cracks should be investigated immediately — they may indicate ongoing settlement issues, foundation failure, or water damage. If you're seeing new cracks after year 5, call a structural engineer for an assessment before the issue becomes severe.
+              </p>
+            </div>
+
+            <!-- FAQ 6 -->
+            <div class="bg-slate-50 rounded-xl p-6 border border-slate-200">
+              <h3 class="text-lg font-bold text-slate-900 mb-2">
+                Is it worth waterproofing a brand-new house?
+              </h3>
+              <p class="text-slate-700">
+                If you're planning to finish your basement, <strong>absolutely yes</strong>. The cost of waterproofing now ($5K-15K) versus the cost of ripping out a finished basement later, waterproofing, and rebuilding ($25K-50K+) is a no-brainer. Even if you're not finishing immediately, addressing water issues early prevents mold, protects your home's structural integrity, maintains resale value, and gives you peace of mind. Plus, with Toronto's rebates (up to $3,400), your net cost is significantly reduced. Think of it as insurance for your largest investment.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-gradient-to-br from-cyan-600 to-cyan-700 text-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-3xl mx-auto text-center">
+          <span class="text-5xl mb-6 block">🏡</span>
+          <h2 class="uppercase text-3xl md:text-4xl font-bold mb-6">
+            New Home? Get a Free Basement Assessment
+          </h2>
+          <p class="text-xl text-cyan-50 mb-8">
+            DrySpace specializes in helping new homeowners protect their investment. We'll inspect your basement, identify any issues, provide a written report for Tarion claims, and give you clear options with upfront pricing.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-6">
+            <a href="tel:4375450067" class="btn-primary bg-amber-500 hover:bg-amber-600 text-navy-900 font-bold px-8 py-4 rounded-lg text-lg flex items-center gap-2 shadow-lg">
+              <span class="text-2xl">📞</span>
+              Call Now: 437-545-0067
+            </a>
+            <a href="/free-inspection" class="bg-white text-cyan-700 font-bold px-8 py-4 rounded-lg text-lg hover:bg-slate-100 transition-colors shadow-lg">
+              Book Free Inspection
+            </a>
+          </div>
+          <p class="text-cyan-100 text-sm mb-4">
+            No pressure. No obligation. Just honest advice from Toronto's basement waterproofing experts.
+          </p>
+          <div class="flex flex-wrap justify-center gap-4 text-sm text-cyan-100">
+            <span>✓ 25-Year Warranty</span>
+            <span>✓ Tarion Documentation</span>
+            <span>✓ Rebate Assistance</span>
+            <span>✓ Free Written Estimate</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tools Section -->
+    <section class="py-16 bg-navy-900 text-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="uppercase text-3xl md:text-4xl font-bold mb-4 text-center">
+            Free Tools to Help You Assess Your Basement
+          </h2>
+          <p class="text-lg text-slate-300 mb-12 text-center">
+            Use DrySpace's free online tools to understand your basement issues before calling for service:
+          </p>
+
+          <div class="grid md:grid-cols-2 gap-6">
+            <!-- Tool 1 -->
+            <a href="/tools/crack-analyzer" class="bg-slate-800 rounded-xl p-6 border border-slate-700 hover:border-cyan-500 transition-all group">
+              <h3 class="text-xl font-bold text-white mb-3 flex items-center gap-2 group-hover:text-cyan-400 transition-colors">
+                <span class="text-2xl">🔍</span>
+                Crack Analyzer
+              </h3>
+              <p class="text-slate-300 text-sm">
+                Upload a photo of your basement crack. Our tool analyzes width, direction, and location to tell you if it's structural or cosmetic, and what repair method is needed.
+              </p>
+            </a>
+
+            <!-- Tool 2 -->
+            <a href="/tools/method-comparison" class="bg-slate-800 rounded-xl p-6 border border-slate-700 hover:border-cyan-500 transition-all group">
+              <h3 class="text-xl font-bold text-white mb-3 flex items-center gap-2 group-hover:text-cyan-400 transition-colors">
+                <span class="text-2xl">⚖️</span>
+                Method Comparison
+              </h3>
+              <p class="text-slate-300 text-sm">
+                Not sure whether to do interior or exterior waterproofing? Compare costs, timelines, effectiveness, and warranty for your specific situation.
+              </p>
+            </a>
+
+            <!-- Tool 3 -->
+            <a href="/tools/flood-risk-checker" class="bg-slate-800 rounded-xl p-6 border border-slate-700 hover:border-cyan-500 transition-all group">
+              <h3 class="text-xl font-bold text-white mb-3 flex items-center gap-2 group-hover:text-cyan-400 transition-colors">
+                <span class="text-2xl">🌊</span>
+                Flood Risk Checker
+              </h3>
+              <p class="text-slate-300 text-sm">
+                Enter your address and get a detailed assessment of your property's flood risk based on soil type, water table, municipal infrastructure, and climate data.
+              </p>
+            </a>
+
+            <!-- Tool 4 -->
+            <a href="/tools/insurance-claim-writer" class="bg-slate-800 rounded-xl p-6 border border-slate-700 hover:border-cyan-500 transition-all group">
+              <h3 class="text-xl font-bold text-white mb-3 flex items-center gap-2 group-hover:text-cyan-400 transition-colors">
+                <span class="text-2xl">📝</span>
+                Insurance Claim Writer
+              </h3>
+              <p class="text-slate-300 text-sm">
+                Answer a few questions about your basement flooding incident and generate a professional insurance claim letter with all the details adjusters need.
+              </p>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Related Services -->
+    <section class="py-16 bg-slate-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="uppercase text-3xl md:text-4xl font-bold text-slate-900 mb-4 text-center">
+            Related Services
+          </h2>
+          <p class="text-lg text-slate-600 mb-12 text-center">
+            Learn more about the solutions we provide for new-home basement issues:
+          </p>
+
+          <div class="grid md:grid-cols-3 gap-6">
+            <!-- Service 1 -->
+            <a href="/services/foundation-repair" class="bg-white rounded-xl p-6 shadow-card border border-slate-200/60 hover:border-cyan-500 transition-all group">
+              <h3 class="text-lg font-bold text-slate-900 mb-2 group-hover:text-cyan-600 transition-colors">
+                Foundation Crack Repair
+              </h3>
+              <p class="text-slate-700 text-sm">
+                Polyurethane injection creates a permanent waterproof seal for shrinkage and settlement cracks.
+              </p>
+            </a>
+
+            <!-- Service 2 -->
+            <a href="/services/interior-waterproofing" class="bg-white rounded-xl p-6 shadow-card border border-slate-200/60 hover:border-cyan-500 transition-all group">
+              <h3 class="text-lg font-bold text-slate-900 mb-2 group-hover:text-cyan-600 transition-colors">
+                Interior Waterproofing
+              </h3>
+              <p class="text-slate-700 text-sm">
+                Weeping tile system + sump pump protects against floor-wall seepage and hydrostatic pressure.
+              </p>
+            </a>
+
+            <!-- Service 3 -->
+            <a href="/services/sump-pump-installation" class="bg-white rounded-xl p-6 shadow-card border border-slate-200/60 hover:border-cyan-500 transition-all group">
+              <h3 class="text-lg font-bold text-slate-900 mb-2 group-hover:text-cyan-600 transition-colors">
+                Sump Pump Installation
+              </h3>
+              <p class="text-slate-700 text-sm">
+                Upgrade builder-grade pumps with battery backup systems. Toronto rebate: $1,750.
+              </p>
+            </a>
+
+            <!-- Service 4 -->
+            <a href="/services/backwater-valve-installation" class="bg-white rounded-xl p-6 shadow-card border border-slate-200/60 hover:border-cyan-500 transition-all group">
+              <h3 class="text-lg font-bold text-slate-900 mb-2 group-hover:text-cyan-600 transition-colors">
+                Backwater Valve
+              </h3>
+              <p class="text-slate-700 text-sm">
+                Prevents sewer backup in new subdivisions. Toronto rebate: $1,250.
+              </p>
+            </a>
+
+            <!-- Service 5 -->
+            <a href="/services/exterior-waterproofing" class="bg-white rounded-xl p-6 shadow-card border border-slate-200/60 hover:border-cyan-500 transition-all group">
+              <h3 class="text-lg font-bold text-slate-900 mb-2 group-hover:text-cyan-600 transition-colors">
+                Exterior Waterproofing
+              </h3>
+              <p class="text-slate-700 text-sm">
+                Replace builder's damp-proofing with true rubberized membrane system for ultimate protection.
+              </p>
+            </a>
+
+            <!-- Service 6 -->
+            <a href="/government-rebates" class="bg-cyan-500 text-white rounded-xl p-6 shadow-card hover:bg-cyan-600 transition-all group">
+              <h3 class="text-lg font-bold mb-2">
+                Toronto Rebate Programs
+              </h3>
+              <p class="text-cyan-50 text-sm">
+                Get up to $3,400 back for flood protection upgrades. We handle the paperwork.
+              </p>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- JSON-LD Schemas -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Why New Houses Get Basement Cracks and Flooding (And What Builders Won't Tell You)",
+    "description": "Just bought a new home and found basement cracks or water? Learn the science behind why new construction is MORE vulnerable to foundation problems in the first 2-5 years. Toronto expert advice on Tarion warranty, costs, and permanent fixes.",
+    "image": "https://dryspace.ca/images/new-house-basement-cracks.jpg",
+    "author": {
+      "@type": "Organization",
+      "name": "DrySpace Waterproofing"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "DrySpace Waterproofing",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://dryspace.ca/logo.png"
+      }
+    },
+    "datePublished": "2026-03-24",
+    "dateModified": "2026-03-24"
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Are cracks in a new basement normal?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Hairline shrinkage cracks (under 1mm, vertical) are 100% normal and expected in new concrete foundations. However, horizontal cracks, stair-step cracks in block walls, cracks wider than 3mm, or cracks that are actively leaking should be inspected by a professional immediately. Normal doesn't mean harmless — even hairline cracks can let water through under hydrostatic pressure."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Should I wait for the builder to fix it?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "File your Tarion claim immediately, but don't wait to act. Water damage compounds every day — mold starts growing in 24-48 hours, and structural damage worsens over time. Get an independent assessment from a waterproofing specialist so you understand the severity. If the builder is dragging their feet and you're approaching warranty deadlines, consider paying for repairs yourself and documenting everything."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Will waterproofing void my Tarion warranty?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Tarion covers defects in the builder's workmanship and materials. Adding waterproofing protection to your basement doesn't void warranty claims for other issues. In fact, having a third-party waterproofing assessment strengthens your Tarion claim by providing independent documentation of the deficiency."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "My builder says it's just condensation, not a leak. How do I know?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Do the foil test: Dry the wall completely, tape a 12x12 inch piece of aluminum foil to the damp area (seal all edges), and wait 24-48 hours. If moisture appears on the room side of the foil, it's condensation. If moisture appears behind the foil, it's water infiltration through the foundation. Take photos of the test results and include them in your Tarion claim."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long until cracks stop appearing in my new basement?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Most concrete shrinkage cracking happens within the first 1-3 years as the concrete fully cures. Settlement cracks from soil compaction can continue to appear for 5 years as backfill soil stabilizes. After 5 years, any new cracks should be investigated immediately as they may indicate ongoing settlement issues or foundation failure."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is it worth waterproofing a brand-new house?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "If you're planning to finish your basement, absolutely yes. The cost of waterproofing now ($5K-15K) versus the cost of ripping out a finished basement later, waterproofing, and rebuilding ($25K-50K+) is a no-brainer. Even if you're not finishing immediately, addressing water issues early prevents mold, protects structural integrity, maintains resale value, and gives peace of mind. Plus, with Toronto's rebates (up to $3,400), your net cost is significantly reduced."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "New Home Basement Waterproofing and Foundation Repair",
+    "provider": {
+      "@type": "LocalBusiness",
+      "name": "DrySpace Waterproofing",
+      "telephone": "437-545-0067",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Toronto",
+        "addressRegion": "ON",
+        "addressCountry": "CA"
+      }
+    },
+    "areaServed": {
+      "@type": "City",
+      "name": "Toronto"
+    },
+    "offers": {
+      "@type": "Offer",
+      "description": "Free basement inspection and assessment for new homeowners with foundation cracks or water issues"
+    }
+  }
+  </script>
+</PageLayout>

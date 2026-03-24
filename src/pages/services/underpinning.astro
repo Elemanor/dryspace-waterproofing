@@ -10,8 +10,8 @@ import UnderpinningServiceEnhanced from '../../components/react/UnderpinningServ
 import ServiceSchema from '../../components/ServiceSchema.astro';
 import InternalLinks from '../../components/InternalLinks.astro';
 
-const pageTitle = "Basement Lowering Toronto | 24/7 Emergency | $3,700 Rebate | DrySpace";
-const pageDescription = "⚡ Emergency basement lowering in Toronto & GTA. ✓ Same-day service ✓ 25-year warranty ✓ $3,700 rebates ✓ 487+ reviews. Licensed & insured. Call 437-545-0067 for FREE inspection.";
+const pageTitle = "Basement Underpinning Toronto | $300-$500/LF | 25-Year Warranty | DrySpace";
+const pageDescription = "Toronto's trusted basement underpinning specialists. Traditional, bench footing & flush methods. NBC-compliant, P.Eng certified. 500+ projects. Free inspection: 437-545-0067.";
 
 // Service areas for local SEO
 const serviceAreas = ["Toronto", "Mississauga", "Brampton", "Vaughan", "Markham", "Richmond Hill", "Oakville", "Burlington"];
@@ -19,24 +19,52 @@ const serviceAreas = ["Toronto", "Mississauga", "Brampton", "Vaughan", "Markham"
 // Service FAQs for schema
 const serviceFAQs = [
   {
-    question: "How much does basement lowering cost in Toronto?",
-    answer: "Basement excavation costs $200-$450 per square foot, with most projects ranging from $86,500-$162,000. The investment adds $400-$550 per square foot in property value, providing excellent ROI of 150-200%."
+    question: "How much does basement underpinning cost per linear foot in Toronto?",
+    answer: "Basement underpinning costs $300-$500 per linear foot in Toronto, depending on the method. Bench footing runs $200-$350/LF, flush-with-wall $400-$500/LF, and 4-inch projection $350-$450/LF. Total project costs for a typical home range from $47,000-$78,000."
   },
   {
-    question: "How long does basement lowering take to complete?",
-    answer: "Basement excavation projects typically take 4-8 weeks depending on basement size and complexity. This includes excavation (1-2 weeks), structural work (2-3 weeks), and finishing (2-3 weeks). Weather can affect timelines."
+    question: "How long does basement underpinning take to complete?",
+    answer: "Basement underpinning projects typically take 4-8 weeks depending on basement size, method chosen, and complexity. This includes excavation (1-2 weeks), sequential concrete pours with curing (2-3 weeks), and waterproofing and finishing (1-2 weeks)."
   },
   {
-    question: "What are the benefits of basement lowering?",
-    answer: "Basement excavation adds 800-1200 sq ft of living space, increases property value by $162,000-$324,500, enables legal basement apartments earning $27,000-$38,000 annually, and provides better ceiling height for modern living."
+    question: "What is the difference between underpinning and bench footing?",
+    answer: "Traditional underpinning (flush-with-wall) excavates directly under existing foundations to extend them deeper, preserving 100% floor space. Bench footing digs beside the foundation at an angle, creating a 3-4 foot ledge that reduces floor space by 15-25% but costs 30-40% less."
   },
   {
-    question: "Do I need permits for basement lowering?",
-    answer: "Yes, basement excavation requires building permits, structural engineering drawings, soil reports, and inspections. We handle all permit applications, provide P.Eng certified designs, and coordinate inspections throughout the project."
+    question: "Do I need a permit for basement underpinning in Toronto?",
+    answer: "Yes, basement underpinning requires a building permit in Toronto costing $2,100-$3,000. You need P.Eng stamped structural drawings, a geotechnical report, and multiple inspections during construction. We handle all permit applications and coordinate inspections."
   },
   {
-    question: "Is basement lowering safe for my existing structure?",
-    answer: "When done by licensed professionals, basement excavation is completely safe. We use proven techniques, structural engineering oversight, proper shoring, and NBC-compliant methods to ensure your existing structure remains stable throughout the process."
+    question: "Is underpinning safe for my existing structure?",
+    answer: "When done by licensed professionals following the 3-6-3 protocol (3-foot sections, 6-foot clearance, 3-foot support), underpinning is completely safe. We use P.Eng structural oversight, proper shoring, and NBC-compliant sequential excavation to ensure stability."
+  },
+  {
+    question: "Can I live at home during underpinning?",
+    answer: "Yes, most families successfully live at home during underpinning. Work hours are typically 8 AM-2 PM weekdays. The loudest work (jackhammering) lasts 3-4 hours daily. We install dust barriers, HEPA filtration, and maintain safe access throughout."
+  },
+  {
+    question: "Does home insurance cover underpinning?",
+    answer: "Standard homeowner's insurance does not cover elective underpinning. However, if underpinning is needed due to structural damage from a covered event (flood, earthquake), partial coverage may apply. Most homeowners finance through HELOC, construction mortgage, or contractor financing at 0%."
+  },
+  {
+    question: "What is the step-by-step underpinning process?",
+    answer: "The underpinning process follows these steps: 1) P.Eng soil analysis and structural design, 2) Building permit application, 3) Sequential 3-foot section excavation, 4) Temporary shoring installation, 5) Concrete pin pours with 7-day curing, 6) Repeat for all sections, 7) Waterproofing and drainage, 8) Final inspection and warranty."
+  },
+  {
+    question: "How deep below grade must underpinning extend?",
+    answer: "In Toronto, underpinning must extend a minimum of 4 feet below finished grade to reach below the frost line (1.2m per Ontario Building Code). Most projects target 8-9 feet of finished ceiling height, which typically requires 3-4 feet of additional depth."
+  },
+  {
+    question: "How much does underpinning increase property value?",
+    answer: "Basement underpinning typically increases Toronto property value by 15-20%, or $150,000-$250,000 on a $1.2M home. Creating a legal basement apartment can generate $1,800-$2,500 monthly rental income, providing a 3-4 year payback period."
+  },
+  {
+    question: "What are the warning signs that I need underpinning?",
+    answer: "Key signs include: ceiling height below 6.5 feet, horizontal or stair-step foundation cracks wider than 3mm, uneven or sloping floors, doors and windows that stick or won't close, visible foundation settlement, recurring water intrusion, or plans to create a legal basement apartment."
+  },
+  {
+    question: "Can you underpin in winter in Toronto?",
+    answer: "Yes, winter underpinning is feasible and often 10-15% cheaper due to lower contractor demand. Heated enclosures maintain concrete curing temperatures above 10°C, and Type HE cement with accelerators ensures proper strength gain. The work area stays below the frost line where ground remains workable."
   }
 ];
 
@@ -252,6 +280,275 @@ const concreteSpecs = [
 
   <!-- Trust Bar -->
   <TrustBar />
+
+  <!-- What Is Basement Underpinning? -->
+  <section class="section-padding bg-white">
+    <div class="container mx-auto px-4 max-w-4xl">
+      <SectionHeader
+        label="Understanding Underpinning"
+        title="What Is Basement Underpinning?"
+        description="Underpinning is a structural engineering technique that extends your home's foundation deeper into the ground, creating additional ceiling height and usable living space in your basement."
+      />
+
+      <div class="prose prose-lg max-w-none mb-8">
+        <p class="text-slate-600 leading-relaxed">
+          Unlike simple basement lowering (which only removes the concrete floor slab), <strong>underpinning strengthens and deepens the entire foundation wall</strong>. This is done by excavating in controlled 3-foot sections beneath the existing footings and pouring new concrete extensions. The result is a structurally superior foundation that supports the full weight of your home while providing 8-9 feet of ceiling height.
+        </p>
+        <p class="text-slate-600 leading-relaxed mt-4">
+          In Toronto's competitive housing market, underpinning transforms unusable 5-6 foot basements into legal living spaces worth $150,000-$250,000 in added property value. Whether you're creating a rental suite, home office, or family recreation space, underpinning is the gold standard for basement depth conversion.
+        </p>
+      </div>
+
+      <!-- 5 Warning Signs Callout -->
+      <div class="bg-amber-50 border-2 border-amber-200 rounded-2xl p-6 shadow-card">
+        <h3 class="font-bold text-lg mb-4 text-amber-900 flex items-center gap-2">
+          <span class="material-symbols-outlined text-amber-600">warning</span>
+          5 Warning Signs You Need Underpinning
+        </h3>
+        <div class="grid md:grid-cols-2 gap-3 text-sm text-slate-700">
+          <div class="flex items-start gap-2">
+            <span class="text-amber-600 font-bold flex-shrink-0">1.</span>
+            <span>Ceiling height below 6.5 feet — too low for legal living space</span>
+          </div>
+          <div class="flex items-start gap-2">
+            <span class="text-amber-600 font-bold flex-shrink-0">2.</span>
+            <span>Horizontal or stair-step cracks wider than 3mm in foundation walls</span>
+          </div>
+          <div class="flex items-start gap-2">
+            <span class="text-amber-600 font-bold flex-shrink-0">3.</span>
+            <span>Uneven or sloping basement floors indicating settlement</span>
+          </div>
+          <div class="flex items-start gap-2">
+            <span class="text-amber-600 font-bold flex-shrink-0">4.</span>
+            <span>Doors and windows that stick or won't close properly</span>
+          </div>
+          <div class="flex items-start gap-2">
+            <span class="text-amber-600 font-bold flex-shrink-0">5.</span>
+            <span>Planning a legal basement apartment or adding a storey</span>
+          </div>
+        </div>
+        <p class="mt-4 text-sm text-amber-800">
+          <a href="/blog/signs-you-need-basement-underpinning" class="underline hover:text-amber-900 font-semibold">Read our complete guide: 8 Signs You Need Basement Underpinning →</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Underpinning vs Benching Comparison -->
+  <section class="section-padding bg-slate-50">
+    <div class="container mx-auto px-4 max-w-6xl">
+      <SectionHeader
+        label="Method Comparison"
+        title="Underpinning vs Benching: Which Method Is Right?"
+        description="Understanding the three main approaches helps you make an informed decision about your basement project."
+      />
+
+      <div class="overflow-x-auto mb-8">
+        <div class="bg-white rounded-2xl shadow-card overflow-hidden">
+          <table class="w-full">
+            <thead class="bg-gradient-to-r from-cyan-500 to-cyan-600 text-white">
+              <tr>
+                <th class="px-4 py-4 text-left font-semibold">Feature</th>
+                <th class="px-4 py-4 text-center font-semibold">Traditional (Flush)</th>
+                <th class="px-4 py-4 text-center font-semibold">Bench Footing</th>
+                <th class="px-4 py-4 text-center font-semibold">4" Projection</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="border-b border-slate-100">
+                <td class="px-4 py-3 font-semibold text-slate-900">Cost per Linear Foot</td>
+                <td class="px-4 py-3 text-center">$400-$500/LF</td>
+                <td class="px-4 py-3 text-center">$200-$350/LF</td>
+                <td class="px-4 py-3 text-center">$350-$450/LF</td>
+              </tr>
+              <tr class="border-b border-slate-100 bg-slate-50/50">
+                <td class="px-4 py-3 font-semibold text-slate-900">Floor Space Impact</td>
+                <td class="px-4 py-3 text-center text-cyan-600 font-semibold">No loss</td>
+                <td class="px-4 py-3 text-center text-red-600">Lose 15-25%</td>
+                <td class="px-4 py-3 text-center">Lose 4" perimeter</td>
+              </tr>
+              <tr class="border-b border-slate-100">
+                <td class="px-4 py-3 font-semibold text-slate-900">Timeline</td>
+                <td class="px-4 py-3 text-center">4-6 weeks</td>
+                <td class="px-4 py-3 text-center">3-4 weeks</td>
+                <td class="px-4 py-3 text-center">4-5 weeks</td>
+              </tr>
+              <tr class="border-b border-slate-100 bg-slate-50/50">
+                <td class="px-4 py-3 font-semibold text-slate-900">Ceiling Height</td>
+                <td class="px-4 py-3 text-center">Uniform 8-9 ft</td>
+                <td class="px-4 py-3 text-center">Two-level effect</td>
+                <td class="px-4 py-3 text-center">Uniform 8-9 ft</td>
+              </tr>
+              <tr class="border-b border-slate-100">
+                <td class="px-4 py-3 font-semibold text-slate-900">Best For</td>
+                <td class="px-4 py-3 text-center text-sm">Rental suites, narrow homes</td>
+                <td class="px-4 py-3 text-center text-sm">Large basements, budget</td>
+                <td class="px-4 py-3 text-center text-sm">High water table, poor soil</td>
+              </tr>
+              <tr class="bg-cyan-50">
+                <td class="px-4 py-3 font-semibold text-slate-900">Property Value Add</td>
+                <td class="px-4 py-3 text-center font-bold text-cyan-600">+15-20%</td>
+                <td class="px-4 py-3 text-center font-bold">+10-15%</td>
+                <td class="px-4 py-3 text-center font-bold">+15-18%</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <p class="text-sm text-slate-500 text-center">
+        <a href="/blog/underpinning-methods-bench-flush-projection" class="text-cyan-600 hover:underline font-semibold">Read our detailed method comparison guide →</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- Toronto Underpinning Permit Process -->
+  <section class="section-padding bg-white">
+    <div class="container mx-auto px-4 max-w-4xl">
+      <SectionHeader
+        label="Permits & Approvals"
+        title="Toronto Underpinning Permit Process"
+        description="Every underpinning project requires a building permit. Here's what's involved and what it costs."
+      />
+
+      <div class="grid md:grid-cols-2 gap-6 mb-8">
+        <div class="bg-slate-50 rounded-2xl p-6 border border-slate-200 shadow-card">
+          <h3 class="font-bold text-lg mb-4 text-slate-900">Required Documents</h3>
+          <ul class="space-y-3 text-sm text-slate-700">
+            <li class="flex items-start gap-2">
+              <span class="material-symbols-outlined text-cyan-500 text-sm flex-shrink-0 mt-0.5">check_circle</span>
+              <span>P.Eng stamped structural drawings</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="material-symbols-outlined text-cyan-500 text-sm flex-shrink-0 mt-0.5">check_circle</span>
+              <span>Geotechnical soil report</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="material-symbols-outlined text-cyan-500 text-sm flex-shrink-0 mt-0.5">check_circle</span>
+              <span>Site survey and property plan</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="material-symbols-outlined text-cyan-500 text-sm flex-shrink-0 mt-0.5">check_circle</span>
+              <span>Shoring and excavation sequence plan</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="material-symbols-outlined text-cyan-500 text-sm flex-shrink-0 mt-0.5">check_circle</span>
+              <span>BCIN-qualified designer sign-off</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="bg-slate-50 rounded-2xl p-6 border border-slate-200 shadow-card">
+          <h3 class="font-bold text-lg mb-4 text-slate-900">Permit Costs & Timeline</h3>
+          <ul class="space-y-3 text-sm text-slate-700">
+            <li class="flex justify-between">
+              <span>Building permit fee:</span>
+              <strong>$2,100-$3,000</strong>
+            </li>
+            <li class="flex justify-between">
+              <span>Engineering drawings:</span>
+              <strong>$3,000-$5,000</strong>
+            </li>
+            <li class="flex justify-between">
+              <span>Geotechnical report:</span>
+              <strong>$1,500-$2,500</strong>
+            </li>
+            <li class="flex justify-between">
+              <span>Approval timeline:</span>
+              <strong>4-8 weeks</strong>
+            </li>
+            <li class="flex justify-between">
+              <span>Required inspections:</span>
+              <strong>3-6 visits</strong>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="text-sm text-slate-500 text-center">
+        We handle the entire permit process for you. <a href="/blog/underpinning-permits-toronto-guide" class="text-cyan-600 hover:underline font-semibold">Read our complete Toronto permits guide →</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- Neighborhood-Specific Costs -->
+  <section class="section-padding bg-slate-50">
+    <div class="container mx-auto px-4 max-w-6xl">
+      <SectionHeader
+        label="Local Pricing"
+        title="Underpinning Costs by GTA Neighborhood"
+        description="Costs vary by location due to soil conditions, access, and local requirements. Here's what to expect across the Greater Toronto Area."
+      />
+
+      <div class="overflow-x-auto mb-8">
+        <div class="bg-white rounded-2xl shadow-card overflow-hidden">
+          <table class="w-full">
+            <thead class="bg-gradient-to-r from-cyan-500 to-cyan-600 text-white">
+              <tr>
+                <th class="px-4 py-4 text-left font-semibold">City/Area</th>
+                <th class="px-4 py-4 text-center font-semibold">Cost/Linear Ft</th>
+                <th class="px-4 py-4 text-center font-semibold">Typical Project</th>
+                <th class="px-4 py-4 text-left font-semibold">Soil Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="border-b border-slate-100">
+                <td class="px-4 py-3 font-semibold text-slate-900">Downtown Toronto</td>
+                <td class="px-4 py-3 text-center">$450-$550/LF</td>
+                <td class="px-4 py-3 text-center">$55K-$70K</td>
+                <td class="px-4 py-3 text-sm text-slate-600">Clay/fill, limited access, narrow lots</td>
+              </tr>
+              <tr class="border-b border-slate-100 bg-slate-50/50">
+                <td class="px-4 py-3 font-semibold text-slate-900">North York</td>
+                <td class="px-4 py-3 text-center">$375-$475/LF</td>
+                <td class="px-4 py-3 text-center">$47K-$60K</td>
+                <td class="px-4 py-3 text-sm text-slate-600">Mixed clay/sand, good access</td>
+              </tr>
+              <tr class="border-b border-slate-100">
+                <td class="px-4 py-3 font-semibold text-slate-900">Scarborough</td>
+                <td class="px-4 py-3 text-center">$350-$450/LF</td>
+                <td class="px-4 py-3 text-center">$44K-$57K</td>
+                <td class="px-4 py-3 text-sm text-slate-600">Bluffs clay, some ravine constraints</td>
+              </tr>
+              <tr class="border-b border-slate-100 bg-slate-50/50">
+                <td class="px-4 py-3 font-semibold text-slate-900">Mississauga</td>
+                <td class="px-4 py-3 text-center">$375-$450/LF</td>
+                <td class="px-4 py-3 text-center">$47K-$57K</td>
+                <td class="px-4 py-3 text-sm text-slate-600">Glacial till, generally good bearing</td>
+              </tr>
+              <tr class="border-b border-slate-100">
+                <td class="px-4 py-3 font-semibold text-slate-900">Brampton</td>
+                <td class="px-4 py-3 text-center">$350-$425/LF</td>
+                <td class="px-4 py-3 text-center">$44K-$54K</td>
+                <td class="px-4 py-3 text-sm text-slate-600">Clay dominant, high water table areas</td>
+              </tr>
+              <tr class="border-b border-slate-100 bg-slate-50/50">
+                <td class="px-4 py-3 font-semibold text-slate-900">Vaughan</td>
+                <td class="px-4 py-3 text-center">$375-$475/LF</td>
+                <td class="px-4 py-3 text-center">$47K-$60K</td>
+                <td class="px-4 py-3 text-sm text-slate-600">Mixed soils, newer developments</td>
+              </tr>
+              <tr class="border-b border-slate-100">
+                <td class="px-4 py-3 font-semibold text-slate-900">Markham</td>
+                <td class="px-4 py-3 text-center">$350-$450/LF</td>
+                <td class="px-4 py-3 text-center">$44K-$57K</td>
+                <td class="px-4 py-3 text-sm text-slate-600">Sandy clay, stable conditions</td>
+              </tr>
+              <tr class="bg-cyan-50">
+                <td class="px-4 py-3 font-semibold text-slate-900">Oakville/Burlington</td>
+                <td class="px-4 py-3 text-center">$400-$500/LF</td>
+                <td class="px-4 py-3 text-center">$50K-$63K</td>
+                <td class="px-4 py-3 text-sm text-slate-600">Shale/limestone, premium market</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <p class="text-sm text-slate-500 text-center">
+        Prices are for traditional (flush) underpinning. Bench footing is 30-40% less. <a href="/blog/basement-underpinning-cost-toronto-2025" class="text-cyan-600 hover:underline font-semibold">Use our interactive cost calculator →</a>
+      </p>
+    </div>
+  </section>
 
   <!-- NBC Soil Bearing Requirements -->
   <section class="section-padding bg-white">
@@ -687,6 +984,56 @@ const concreteSpecs = [
             </div>
           </details>
         ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Underpinning Resources & Guides Hub -->
+  <section class="section-padding bg-slate-50">
+    <div class="container mx-auto px-4 max-w-6xl">
+      <SectionHeader
+        label="Knowledge Hub"
+        title="Underpinning Resources & Guides"
+        description="Everything you need to know about basement underpinning — from costs and methods to permits and living through construction."
+      />
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <a href="/blog/basement-underpinning-cost-toronto-2025" class="group block bg-white border border-slate-200 rounded-xl p-5 hover:shadow-lg hover:border-cyan-200 transition-all shadow-card">
+          <h3 class="font-bold text-lg mb-2 group-hover:text-cyan-600 transition-colors">Cost Calculator 2026</h3>
+          <p class="text-sm text-slate-500">Interactive calculators for concrete volume, soil removal, and total project costs</p>
+        </a>
+        <a href="/blog/underpinning-methods-bench-flush-projection" class="group block bg-white border border-slate-200 rounded-xl p-5 hover:shadow-lg hover:border-cyan-200 transition-all shadow-card">
+          <h3 class="font-bold text-lg mb-2 group-hover:text-cyan-600 transition-colors">Methods Compared</h3>
+          <p class="text-sm text-slate-500">Bench footing vs flush vs 4" projection — detailed pros, cons, and ROI analysis</p>
+        </a>
+        <a href="/blog/underpinning-permits-toronto-guide" class="group block bg-white border border-slate-200 rounded-xl p-5 hover:shadow-lg hover:border-cyan-200 transition-all shadow-card">
+          <h3 class="font-bold text-lg mb-2 group-hover:text-cyan-600 transition-colors">Permits Guide 2026</h3>
+          <p class="text-sm text-slate-500">Complete Toronto permit application process, required documents, and costs</p>
+        </a>
+        <a href="/blog/signs-you-need-basement-underpinning" class="group block bg-white border border-slate-200 rounded-xl p-5 hover:shadow-lg hover:border-cyan-200 transition-all shadow-card">
+          <h3 class="font-bold text-lg mb-2 group-hover:text-cyan-600 transition-colors">8 Signs You Need Underpinning</h3>
+          <p class="text-sm text-slate-500">Warning signs, self-assessment checklist with scoring, and when to act</p>
+        </a>
+        <a href="/blog/underpinning-insurance-financing-toronto" class="group block bg-white border border-slate-200 rounded-xl p-5 hover:shadow-lg hover:border-cyan-200 transition-all shadow-card">
+          <h3 class="font-bold text-lg mb-2 group-hover:text-cyan-600 transition-colors">Insurance & Financing</h3>
+          <p class="text-sm text-slate-500">HELOC, construction mortgage, 0% contractor financing, and ROI scenarios</p>
+        </a>
+        <a href="/blog/underpinning-concrete-strength-requirements" class="group block bg-white border border-slate-200 rounded-xl p-5 hover:shadow-lg hover:border-cyan-200 transition-all shadow-card">
+          <h3 class="font-bold text-lg mb-2 group-hover:text-cyan-600 transition-colors">Concrete Strength Requirements</h3>
+          <p class="text-sm text-slate-500">MPa ratings, slump testing, mix design, and quality control specifications</p>
+        </a>
+        <a href="/blog/underpinning-structural-safety-protocols" class="group block bg-white border border-slate-200 rounded-xl p-5 hover:shadow-lg hover:border-cyan-200 transition-all shadow-card">
+          <h3 class="font-bold text-lg mb-2 group-hover:text-cyan-600 transition-colors">Safety Protocols</h3>
+          <p class="text-sm text-slate-500">The 3-6-3 rule, structural monitoring, and emergency response procedures</p>
+        </a>
+        <a href="/blog/living-at-home-during-underpinning" class="group block bg-white border border-slate-200 rounded-xl p-5 hover:shadow-lg hover:border-cyan-200 transition-all shadow-card">
+          <h3 class="font-bold text-lg mb-2 group-hover:text-cyan-600 transition-colors">Living at Home During Underpinning</h3>
+          <p class="text-sm text-slate-500">Noise levels, dust control, daily schedule, and tips from families</p>
+        </a>
+        <a href="/blog/winter-underpinning-requirements-toronto" class="group block bg-white border border-slate-200 rounded-xl p-5 hover:shadow-lg hover:border-cyan-200 transition-all shadow-card">
+          <h3 class="font-bold text-lg mb-2 group-hover:text-cyan-600 transition-colors">Winter Underpinning</h3>
+          <p class="text-sm text-slate-500">Cold weather concrete, heating requirements, and winter cost advantages</p>
+        </a>
       </div>
     </div>
   </section>

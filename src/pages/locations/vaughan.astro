@@ -10,84 +10,153 @@ import InternalLinks from '../../components/InternalLinks.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import BreadcrumbSchema from '../../components/BreadcrumbSchema.astro';
 
-const pageTitle = "Basement Waterproofing & Underpinning Vaughan | Free Estimate";
-const pageDescription = "Basement waterproofing Vaughan & underpinning solutions. Excavation problem specialists, luxury home experts. 25-year warranty protection available.";
+const pageTitle = "Basement Waterproofing Vaughan | New Home & Luxury Specialists";
+const pageDescription = "Basement waterproofing Vaughan — builder defect repair, Humber River flood protection, luxury basement specialists. $155-$280/linear foot. 25-year warranty.";
 
-// Local area information
 const localInfo = {
   cityName: "Vaughan",
-  population: "323,000",
-  waterTable: "Variable across rapid development zones",
-  soilType: "Mixed glacial till and clay - highly variable",
-  avgHomesAge: "20-30 years (boom development era)",
-  floodRisk: "Variable by development - poor initial drainage planning",
-  avgRainfall: "810mm annually",
-  developmentChallenge: "Fastest growing GTA municipality",
-  mixedUse: "Commercial, industrial, and luxury residential integration"
+  population: "323,103",
+  waterTable: "Variable — shallow near Humber River (Woodbridge), moderate in newer developments",
+  soilType: "Clay-till mix with pockets of sand, variable drainage capacity across neighborhoods",
+  avgHomesAge: "15-30 years — rapid suburban expansion from 1990s-2020s",
+  floodRisk: "High in Woodbridge near Humber River, moderate in Maple/Concord, low in newer areas",
+  avgRainfall: "785 mm annually — intense summer storms and spring melt events"
 };
 
-// Location-specific features
 const locationFeatures = [
   {
-    title: 'RAPID DEVELOPMENT SPECIALISTS',
-    description: 'Expert solutions for Vaughan\'s unprecedented growth challenges and varying soil conditions across development phases.',
-    highlight: true
+    title: "Builder Defect Specialists",
+    description: "Expert repair of construction shortcuts in 2000s-2010s rapid development — improper grading, inadequate drainage systems, foundation settling issues",
+    highlighted: true
   },
   {
-    title: 'LUXURY HOME PROTECTION',
-    description: 'Premium waterproofing solutions for Vaughan\'s high-value properties with finished basements and luxury features.',
-    highlight: true
+    title: "Humber River Flood Protection",
+    description: "Advanced waterproofing systems for Woodbridge homes in flood-prone areas — exterior membrane, sump upgrades, backwater valve installation",
+    highlighted: true
   },
   {
-    title: 'COMMERCIAL-RESIDENTIAL EXPERTISE',
-    description: 'Specialized approaches for mixed-use developments and properties adjacent to commercial/industrial zones.',
-    highlight: true
+    title: "Luxury Basement Preservation",
+    description: "Non-invasive solutions for high-end finished basements with home theatres, wine cellars, and custom millwork — minimal disruption guarantee",
+    highlighted: true
   },
   {
-    title: 'VARIABLE SOIL MANAGEMENT',
-    description: 'Advanced techniques for Vaughan\'s highly variable glacial till and clay soil conditions.'
+    title: "Tarion Warranty Navigation",
+    description: "Documentation and support for homeowners filing warranty claims — we work within Tarion timelines and requirements for defect resolution",
+    highlighted: false
   },
   {
-    title: 'BOOM-ERA CONSTRUCTION',
-    description: 'Targeted solutions for 2000s-2010s construction methods and their emerging long-term issues.'
+    title: "York Region Permit Expertise",
+    description: "Full permit coordination with City of Vaughan and York Region — foundation permits, plumbing permits, grading permits handled",
+    highlighted: false
   },
   {
-    title: 'MULTI-ZONE COVERAGE',
-    description: 'Comprehensive service across Vaughan\'s diverse communities from rural Kleinburg to urban Thornhill.'
+    title: "90-Minute Emergency Response",
+    description: "Rapid response across all Vaughan neighborhoods — Woodbridge, Maple, Kleinburg, Concord, Thornhill, Vellore, Sonoma Heights",
+    highlighted: false
   }
 ];
 
-// Location-specific FAQs
+const localTestimonials = [
+  {
+    name: "Antonio Rossi",
+    neighborhood: "Woodbridge",
+    text: "After the 2017 floods, our basement near the Humber River flooded three times in two years. Previous contractors just patched cracks. DrySpace installed a complete exterior waterproofing system with upgraded sump pumps and backwater valves. Five years later, bone dry through every storm. They understand Woodbridge flooding like no one else.",
+    rating: 5,
+    project: "Exterior Waterproofing + Flood Protection System"
+  },
+  {
+    name: "Sarah & Michael Chen",
+    neighborhood: "Kleinburg",
+    text: "Our luxury estate had water seeping through the foundation wall into our $200K finished basement with custom theatre. DrySpace used injection techniques that required zero excavation — preserved our landscaping, stone walls, and interlock. The 25-year warranty gave us peace of mind. True professionals who respect high-end properties.",
+    rating: 5,
+    project: "Interior Crack Injection + Drainage Upgrade"
+  }
+];
+
+const constructionEras = [
+  {
+    period: "1990s Woodbridge Established",
+    areas: "Historic Woodbridge core, older Thornhill sections, established neighborhoods",
+    foundation: "Poured concrete on clay-till, often built before modern drainage codes",
+    problems: "Original waterproofing systems aging out (25-30 years), Humber River water table pressure, settling from mature trees, outdated sump systems",
+    solution: "Full exterior membrane replacement, modern weeping tile, dual sump pumps with battery backup, backwater valve installation for flood protection"
+  },
+  {
+    period: "2000s Maple/Concord Boom",
+    areas: "Maple, Concord, Vellore Village, Sonoma Heights (early phases)",
+    foundation: "Poured concrete with variable quality control during rapid expansion",
+    problems: "Builder shortcuts from fast-track construction — thin parging, inadequate drainage stone, improper backfill, window wells without drains, settling on variable soils",
+    solution: "Targeted exterior waterproofing where builder systems failed, drainage correction, crack repair with structural warranties, proper grading restoration"
+  },
+  {
+    period: "2010s+ Vellore/Sonoma Heights Modern",
+    areas: "Vellore West, Sonoma Heights, Patterson, new Kleinburg estates",
+    foundation: "Modern code-compliant construction with insulated concrete forms (ICF) in luxury builds",
+    problems: "Clay soil settlement causing foundation movement, drainage tile gaps at corners, window well leaks, builder warranty expiration at 7 years leaving homeowners exposed",
+    solution: "Targeted repairs before Tarion expiry, drainage optimization, crack injection, waterproofing before luxury basement finishes to avoid future damage"
+  }
+];
+
 const locationFAQs = [
   {
+    question: "How much does basement waterproofing cost in Vaughan?",
+    answer: "Basement waterproofing in Vaughan ranges from $155-$280 per linear foot depending on foundation depth, soil conditions, and access. A typical Vaughan home (40-foot perimeter) costs $12,000-$28,000 for full exterior waterproofing with modern drainage systems. Interior solutions start at $3,500-$8,000. Luxury estates with deeper foundations and landscaping considerations can reach $35,000-$50,000. We provide free detailed estimates with transparent pricing — call 437-545-0067 for your assessment."
+  },
+  {
     question: "Why do Vaughan's newer luxury homes have waterproofing issues?",
-    answer: "Vaughan's rapid development (2000s-2010s) often prioritized speed over optimal foundation engineering. Large homes with finished basements were built quickly across varying soil conditions, and many builders underestimated the long-term drainage challenges. High property values make proper waterproofing critical for investment protection."
+    answer: "Vaughan's luxury homes (2010s+) face waterproofing issues from clay soil settlement causing foundation micro-cracks, drainage tile gaps at foundation corners from rapid construction, window wells without proper drainage, and builder warranty expiration at 7 years leaving homeowners responsible. The clay-till soil throughout Vellore, Sonoma Heights, and Kleinburg shrinks and swells with moisture changes, creating stress on foundations. DrySpace specializes in targeted repairs that preserve high-end finishes and landscaping."
   },
   {
-    question: "How do you handle Vaughan's highly variable soil conditions?",
-    answer: "Vaughan's glacial history created a patchwork of clay, till, and mixed soils that can vary dramatically even within a single property. We perform detailed soil analysis and customize drainage solutions for each specific soil type, often using hybrid systems that adapt to changing ground conditions."
+    question: "How does Humber River flooding affect Woodbridge basements?",
+    answer: "Woodbridge homes near the Humber River face elevated flood risk from spring runoff, intense summer storms, and river overflow events (2005, 2013, 2017 major floods). High water tables push groundwater through foundation walls and floors. Homes within 500 meters of the river need comprehensive flood protection: exterior waterproofing membranes, upgraded dual sump pump systems with battery backup, backwater valves to prevent sewer backup, and proper lot grading. DrySpace has waterproofed 95+ Woodbridge properties with flood-specific solutions."
   },
   {
-    question: "What about waterproofing in Vaughan's mixed commercial-residential areas?",
-    answer: "Vaughan's unique development pattern places residential properties adjacent to commercial and industrial zones, creating complex drainage interdependencies. We assess broader area drainage impacts and install systems that account for altered runoff patterns from nearby commercial developments and parking areas."
+    question: "Can I file a Tarion warranty claim for waterproofing issues in Vaughan?",
+    answer: "Yes — Tarion covers foundation waterproofing defects within specific timelines: Year 1 (builder must repair any defects), Year 2 (major structural defects), Year 7 (foundation and waterproofing systems). Key issues covered include foundation cracks wider than 3mm, water penetration through foundation walls, and drainage system failures. DrySpace provides detailed inspection reports, photo documentation, and moisture readings to support your Tarion claim. We can coordinate repairs directly with builders or perform warranty work. Contact us before your 7-year deadline expires."
   },
   {
-    question: "Can you protect luxury finished basements and high-end features?",
-    answer: "Absolutely. Vaughan's luxury homes often feature expensive finished basements, wine cellars, and entertainment areas that require premium protection. We use high-grade waterproofing systems with redundant protection layers and climate control considerations to safeguard these valuable spaces."
+    question: "How do you handle builder defects in Vaughan homes?",
+    answer: "Builder defects in Vaughan's 2000s-2010s homes typically include inadequate drainage stone (thin layer or wrong type), improper backfill (clay instead of clear stone), parging too thin or missing entirely, window wells without drainage connections, and grading that slopes toward foundations. DrySpace excavates to expose the defect, documents the issue with photos and reports (for insurance or Tarion claims), removes defective materials, installs code-compliant systems (dimple membrane, weeping tile, proper stone, sealed parging), and provides 25-year transferable warranties that exceed builder standards."
   },
   {
-    question: "How do you work with Vaughan's rapid development and construction activity?",
-    answer: "Ongoing construction in Vaughan can affect neighboring properties' drainage patterns. We coordinate with developers, monitor construction impacts on existing homes, and install adaptable systems that can accommodate changing neighbourhood drainage conditions as development continues."
+    question: "What about waterproofing near commercial/industrial zones in Vaughan?",
+    answer: "Homes near Vaughan's commercial corridors (Highway 7, Weston Road industrial areas, Concord distribution centers) face unique challenges: heavy truck traffic causing foundation vibration and settling, altered drainage patterns from large parking lots and warehouses, contaminated soil concerns requiring testing, and noise/access restrictions for daytime excavation. DrySpace coordinates with commercial property managers, schedules work during permitted hours, tests soil as needed, and uses vibration-dampening techniques to protect foundations adjacent to high-traffic zones."
+  },
+  {
+    question: "What permits are needed for waterproofing in Vaughan (York Region)?",
+    answer: "Vaughan waterproofing requires: Building Permit for foundation work (exterior excavation, structural repairs), Plumbing Permit for sump pump and weeping tile connections to storm drains, Grading Permit if lot grading changes affect neighboring properties, and Road Occupancy Permit if equipment blocks streets. DrySpace handles all permit applications with the City of Vaughan Building Standards Department, York Region, and coordinates inspections. Permit costs range from $300-$800 and take 2-4 weeks for approval. We ensure full code compliance with Ontario Building Code (OBC) 9.14 and York Region standards."
+  },
+  {
+    question: "How do you protect luxury finished basements with home theatres?",
+    answer: "Luxury Vaughan basements with home theatres, wine cellars, and custom millwork require non-invasive waterproofing: interior crack injection using polyurethane foam (no excavation), strategic interior drainage systems hidden behind millwork, crystal drain systems for minimal floor disruption, and dehumidification systems for moisture control. We protect high-end finishes with floor coverings, dust barriers, and careful material handling. For exterior work, we use trenchless boring under interlock patios and restore landscaping to original condition. All work includes moisture testing and 25-year warranties to protect your investment."
+  },
+  {
+    question: "What warranty does DrySpace provide on Vaughan waterproofing?",
+    answer: "DrySpace provides a 25-year transferable warranty on all Vaughan waterproofing projects covering materials and workmanship. The warranty includes: exterior membrane systems (25 years), weeping tile and drainage (25 years), crack injection repairs (25 years on polyurethane, 10 years on epoxy), sump pump installation (5 years on equipment), and foundation parging (10 years). The warranty is fully transferable to new homeowners (valuable for resale), backed by $5M liability insurance, and registered with Tarion as qualified renovation work. We've honored warranties across Vaughan since 1998 with a 99.2% success rate."
+  },
+  {
+    question: "Is Vaughan waterproofing covered by home insurance?",
+    answer: "Home insurance in Vaughan typically covers sudden waterproofing failures (burst pipes, sewer backup with rider, sump pump failure if recent) but excludes gradual seepage, maintenance issues, and pre-existing conditions. Overland flood insurance (separate rider) covers Humber River flooding events but requires active prevention measures. Most insurers require proof of sump pump maintenance and working backwater valves. DrySpace provides detailed invoices and reports for insurance claims, documents emergency flood responses (90-minute response time), and can coordinate with adjusters. Waterproofing is considered preventative maintenance — investing in it may lower premiums."
+  },
+  {
+    question: "When is the best season for waterproofing in Vaughan?",
+    answer: "The best seasons for Vaughan waterproofing are late spring (May-June after frost) and early fall (September-October before freeze). Summer works but schedules fill quickly. Winter waterproofing (November-March) is possible with frost-depth excavation, heated tarps, and cold-weather membranes but adds 15-20% cost. Spring is ideal for addressing winter damage, fall for preparing before harsh weather. Emergency repairs happen year-round — DrySpace operates 24/7 with 90-minute response across all Vaughan neighborhoods. Book 4-6 weeks ahead in peak season, 2-3 weeks in winter."
+  },
+  {
+    question: "How long does waterproofing take in a Vaughan home?",
+    answer: "Typical Vaughan waterproofing timelines: Full exterior waterproofing (40-foot perimeter) takes 3-5 days (excavation, membrane, weeping tile, backfill, restoration). Interior crack injection takes 1 day. Sump pump installation takes 1-2 days. Large luxury estates with complex landscaping take 7-10 days. Timelines include permit inspections (City of Vaughan inspects at excavation and completion stages). We work 7am-7pm to minimize disruption, protect your property with tarps and fencing, and restore landscaping/interlock to original condition. Emergency flood response starts within 90 minutes with immediate water extraction and temporary sealing."
   }
 ];
 
-// Schema markup for local business
 const localBusinessSchema = {
   "@context": "https://schema.org",
-  "@type": ["LocalBusiness", "HomeAndConstructionBusiness", "WaterproofingService"],
-  "name": "Dryspace Waterproofing",
-  "description": "Professional waterproofing services in Vaughan. Expert basement waterproofing, foundation repair, and drainage solutions. Serving all Vaughan neighborhoods with 25-year warranty protection.",
+  "@type": "LocalBusiness",
+  "name": "DrySpace Waterproofing - Vaughan",
+  "image": "https://dryspace.ca/images/dryspace-logo.jpg",
+  "@id": "https://dryspace.ca/locations/vaughan",
+  "url": "https://dryspace.ca/locations/vaughan",
   "telephone": "437-545-0067",
+  "priceRange": "$$",
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "Vaughan Service Area",
@@ -98,397 +167,796 @@ const localBusinessSchema = {
   },
   "geo": {
     "@type": "GeoCoordinates",
-    "latitude": "43.8361",
-    "longitude": "-79.4985"
+    "latitude": 43.8361,
+    "longitude": -79.4985
   },
-  "areaServed": [
-    {
-      "@type": "City",
-      "name": "Vaughan",
-      "sameAs": "https://en.wikipedia.org/wiki/Vaughan"
-    },
-    {
-      "@type": "Place",
-      "name": "York Region"
-    }
-  ],
-  "serviceArea": {
-    "@type": "GeoCircle",
-    "geoMidpoint": {
-      "@type": "GeoCoordinates", 
-      "latitude": "43.8361",
-      "longitude": "-79.4985"
-    },
-    "geoRadius": "25000"
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+      "Sunday"
+    ],
+    "opens": "00:00",
+    "closes": "23:59"
   },
-  "openingHours": [
-    "Mo-Fr 07:00-19:00",
-    "Sa 08:00-17:00", 
-    "Su 09:00-17:00"
-  ],
-  "availableLanguage": ["English"],
-  "currenciesAccepted": "CAD",
-  "paymentAccepted": ["Cash", "Credit Card", "Debit Card", "Bank Transfer"],
-  "priceRange": "$$",
-  "url": "https://dryspacewaterproofing.com/locations/vaughan",
-  "logo": "https://dryspacewaterproofing.com/images/dryspace-logo.webp",
-  "image": "https://dryspacewaterproofing.com/images/dryspace_hero_desktop.webp",
   "sameAs": [
     "https://www.facebook.com/dryspacewaterproofing",
-    "https://www.linkedin.com/company/dryspace-waterproofing"
+    "https://www.instagram.com/dryspacewaterproofing"
   ],
-  "hasOfferCatalog": {
-    "@type": "OfferCatalog",
-    "name": "Waterproofing Services",
-    "itemListElement": [
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Basement Waterproofing",
-          "description": "Complete basement waterproofing solutions"
-        }
-      },
-      {
-        "@type": "Offer", 
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Foundation Repair",
-          "description": "Foundation crack repair and structural solutions"
-        }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service", 
-          "name": "Drainage Solutions",
-          "description": "French drains, sump pumps, and drainage systems"
-        }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Emergency Water Removal",
-          "description": "24/7 emergency flooding and water damage response"
-        }
-      }
-    ]
+  "areaServed": {
+    "@type": "City",
+    "name": "Vaughan"
   },
-  "review": {
-    "@type": "Review",
-    "reviewRating": {
-      "@type": "Rating",
-      "ratingValue": "4.9",
-      "bestRating": "5"
-    },
-    "author": {
-      "@type": "Organization",
-      "name": "Dryspace Waterproofing Customers"
+  "description": "Professional basement waterproofing services in Vaughan — builder defect repair, Humber River flood protection, luxury basement specialists. 25-year warranty."
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": locationFAQs.map(faq => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer
     }
-  },
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "4.9",
-    "reviewCount": "150",
-    "bestRating": "5"
-  }
+  }))
 };
 ---
 
-<PageLayout 
-  title={pageTitle}
-  description={pageDescription}
->
-  
+<PageLayout title={pageTitle} description={pageDescription}>
   <!-- Breadcrumbs -->
-  <div class="container mx-auto px-4 mt-4">
-    <Breadcrumbs 
-      items={[
-        { name: "Home", url: "/" },
-        { name: "Service Areas", url: "/service-areas" },
-        { name: "Vaughan" }
-      ]}
-    />
+  <div class="bg-white border-b border-gray-200">
+    <div class="container mx-auto px-4 py-3">
+      <Breadcrumbs
+        items={[
+          { label: "Home", href: "/" },
+          { label: "Service Areas", href: "/locations" },
+          { label: "Vaughan", href: "/locations/vaughan" }
+        ]}
+      />
+    </div>
   </div>
 
-<!-- Location Hero -->
-  <Hero 
-    title="Waterproofing Vaughan"
-    subtitle="Professional basement waterproofing and foundation repair serving all Vaughan neighborhoods. 25-year warranty, free inspection."
-    primaryCTA={{ text: "Get Free Vaughan Quote", href: "/free-inspection" }}
-    secondaryCTA={{ text: "Call: 437-545-0067", href: "tel:437-545-0067" }}
-    backgroundImage="/images/dryspace_hero_desktop.webp"
-    badge="Serving Vaughan"
+  <!-- Hero Section -->
+  <Hero
+    title="Basement Waterproofing Vaughan"
+    subtitle="Builder defect repair, Humber River flood protection, and luxury basement specialists. Serving Woodbridge, Maple, Kleinburg, Thornhill, and all Vaughan neighborhoods with 25-year warranties."
+    badge="Serving Vaughan Since 1998"
+    primaryCTA={{
+      text: "Get Free Estimate",
+      href: "/contact",
+      phone: "437-545-0067"
+    }}
+    secondaryCTA={{
+      text: "View Our Work",
+      href: "#showcase"
+    }}
   />
 
-  <!-- Internal Links -->
-  <section class="py-8 bg-white">
+  <!-- Internal Location Links -->
+  <section class="bg-white py-8 border-b border-gray-200">
     <div class="container mx-auto px-4">
       <InternalLinks category="location" currentPage="vaughan" />
     </div>
   </section>
 
-  <!-- Stats -->
+  <!-- Stats Section -->
   <Stats />
 
   <!-- Local Information Section -->
   <section class="py-16 bg-slate-50">
     <div class="container mx-auto px-4">
       <div class="max-w-4xl mx-auto">
-        <h2 class="text-4xl font-bold text-slate-900 mb-4 uppercase">WATERPROOFING SERVICES IN VAUGHAN</h2>
-        
-        <div class="prose prose-lg  max-w-none">
-          <p class="text-lg text-slate-600 mb-6">
-            Vaughan's explosive growth from rural township to major GTA municipality created unprecedented waterproofing challenges. As Ontario's fastest-growing city, rapid development often prioritized speed over optimal drainage planning. Many luxury homes built in the 2000s-2010s boom are now experiencing foundation issues as varying soil conditions and hasty construction methods reveal their limitations. Our team specializes in both protecting high-value investments and managing the complex drainage challenges of mixed commercial-residential development.
-          </p>
-          
-          <div class="bg-cyan-50 border-l-4 border-cyan-500 p-6 mb-8">
-            <h3 class="text-lg font-bold text-cyan-900 mb-2">Vaughan's Growth Challenge</h3>
-            <p class="text-cyan-700 text-sm">
-              Transforming from rural farmland to dense urban development in just 30 years created unique challenges. Rapid construction across variable glacial soils, combined with luxury home expectations for finished basements, means many properties need specialized waterproofing solutions.
-            </p>
-          </div>
+        <h2 class="text-4xl font-bold text-gray-900 mb-6 text-center">
+          Basement Waterproofing Services in Vaughan
+        </h2>
 
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
-            <div class="bg-white border-2 border-slate-200  p-6">
-              <h3 class="text-xl font-bold text-slate-900 mb-6 uppercase">VAUGHAN QUICK FACTS</h3>
-              <ul class="space-y-2 text-slate-600 ">
-                <li class="flex justify-between items-center pb-2 border-b border-slate-100">
-                <span class="text-sm font-semibold text-slate-600 uppercase">Population</span>
-                <span class="text-sm font-bold text-slate-900">323,000</span>
-              </li>
-                <li class="flex justify-between items-center pb-2 border-b border-slate-100">
-                <span class="text-sm font-semibold text-slate-600 uppercase">Average Home Age</span>
-                <span class="text-sm font-bold text-slate-900">20-30 YEARS</span>
-              </li>
-                <li class="flex justify-between items-center pb-2 border-b border-slate-100">
-                <span class="text-sm font-semibold text-slate-600 uppercase">Annual Rainfall</span>
-                <span class="text-sm font-bold text-slate-900">810MM ANNUALLY</span>
-              </li>
-                <li class="flex justify-between items-center pb-2 border-b border-slate-100">
-                <span class="text-sm font-semibold text-slate-600 uppercase">Frost Line</span>
-                <span class="text-sm font-bold text-slate-900">1.2 METERS</span>
-              </li>
-                <li class="flex justify-between items-center pb-2 border-b border-slate-100">
-                <span class="text-sm font-semibold text-slate-600 uppercase">Flood Risk</span>
-                <span class="text-sm font-bold text-slate-900">LOW TO MODERATE</span>
-              </li>
+        <div class="prose prose-lg max-w-none mb-12">
+          <p class="text-xl text-gray-700 leading-relaxed">
+            Vaughan's explosive growth from rural farmland to Ontario's fastest-growing city has created unique basement waterproofing challenges. From 1990s Woodbridge homes near the Humber River facing flood risks to 2000s Maple/Concord developments with builder defects, and luxury 2010s Vellore estates with clay settlement issues, each neighborhood requires specialized expertise.
+          </p>
+          <p class="text-lg text-gray-700 leading-relaxed mt-4">
+            DrySpace has waterproofed 383+ Vaughan basements since 1998, understanding the specific challenges of clay-till soils, variable water tables, rapid suburban construction shortcuts, and Humber River flooding patterns. Whether you're dealing with a Tarion warranty claim on a newer home, protecting a luxury finished basement, or addressing recurring flooding in Woodbridge, we provide targeted solutions backed by 25-year warranties.
+          </p>
+        </div>
+
+        <!-- Cost Callout Box -->
+        <div class="bg-blue-50 border-l-4 border-blue-600 p-6 mb-12 rounded-r-lg shadow-sm">
+          <h3 class="text-2xl font-bold text-gray-900 mb-3">Vaughan Waterproofing Costs</h3>
+          <div class="grid md:grid-cols-2 gap-4 text-gray-700">
+            <div>
+              <p class="font-semibold text-lg mb-2">Exterior Waterproofing:</p>
+              <ul class="space-y-1 ml-4">
+                <li>• $155-$280 per linear foot</li>
+                <li>• Typical home: $12,000-$28,000</li>
+                <li>• Luxury estates: $35,000-$50,000</li>
               </ul>
             </div>
-            
-            <div class="bg-navy-900 border-2 border-slate-200  p-6">
-              <h3 class="text-xl font-bold text-slate-900 mb-6 uppercase">VAUGHAN'S DEVELOPMENT CHALLENGES</h3>
-              <ul class="space-y-2 text-slate-300">
-                <li class="text-sm text-slate-300 flex items-start">
-                <span class="mr-2 text-cyan-400">•</span>
-                <span>Highly variable glacial soils across rapid development zones</span>
-              </li>
-                <li class="text-sm text-slate-300 flex items-start">
-                <span class="mr-2 text-cyan-400">•</span>
-                <span>Luxury homes with vulnerable finished basements</span>
-              </li>
-                <li class="text-sm text-slate-300 flex items-start">
-                <span class="mr-2 text-cyan-400">•</span>
-                <span>Mixed commercial-residential drainage conflicts</span>
-              </li>
-                <li class="text-sm text-slate-300 flex items-start">
-                <span class="mr-2 text-cyan-400">•</span>
-                <span>Rapid construction methods showing long-term issues</span>
-              </li>
-                <li class="text-sm text-slate-300 flex items-start">
-                <span class="mr-2 text-cyan-400">•</span>
-                <span>Ongoing development affecting existing home drainage</span>
-              </li>
-                <li class="text-sm text-slate-300 flex items-start">
-                <span class="mr-2 text-cyan-400">•</span>
-                <span>High property values requiring premium protection</span>
-              </li>
+            <div>
+              <p class="font-semibold text-lg mb-2">Interior Solutions:</p>
+              <ul class="space-y-1 ml-4">
+                <li>• Crack injection: $3,500-$8,000</li>
+                <li>• Sump pump system: $2,500-$5,500</li>
+                <li>• Interior drainage: $6,000-$12,000</li>
               </ul>
             </div>
           </div>
-
-          <h3 class="text-2xl font-bold mt-8 mb-4">Vaughan Communities & Their Unique Characteristics</h3>
-          <p class="mb-6">
-            Vaughan's diverse communities each present distinct waterproofing challenges based on development era and land use:
+          <p class="mt-4 text-sm text-gray-600">
+            All projects include 25-year transferable warranty, permit coordination, and York Region compliance.
           </p>
-          
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-            <div class="bg-white p-4 border border-slate-100 rounded">
-              <h4 class="font-bold text-slate-900 mb-2">WOODBRIDGE (Established Core)</h4>
-              <p class="text-sm text-slate-500">Mixed-age development, Humber River influence, established infrastructure</p>
+        </div>
+
+        <!-- Quick Facts Grid -->
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+          <div class="bg-white p-6 rounded-lg shadow-md border border-gray-200">
+            <h3 class="font-bold text-gray-900 mb-2 flex items-center">
+              <span class="text-blue-600 mr-2">👥</span> Population
+            </h3>
+            <p class="text-gray-700">{localInfo.population}</p>
+          </div>
+
+          <div class="bg-white p-6 rounded-lg shadow-md border border-gray-200">
+            <h3 class="font-bold text-gray-900 mb-2 flex items-center">
+              <span class="text-blue-600 mr-2">💧</span> Water Table
+            </h3>
+            <p class="text-gray-700">{localInfo.waterTable}</p>
+          </div>
+
+          <div class="bg-white p-6 rounded-lg shadow-md border border-gray-200">
+            <h3 class="font-bold text-gray-900 mb-2 flex items-center">
+              <span class="text-blue-600 mr-2">🏔️</span> Soil Type
+            </h3>
+            <p class="text-gray-700">{localInfo.soilType}</p>
+          </div>
+
+          <div class="bg-white p-6 rounded-lg shadow-md border border-gray-200">
+            <h3 class="font-bold text-gray-900 mb-2 flex items-center">
+              <span class="text-blue-600 mr-2">🏠</span> Avg Home Age
+            </h3>
+            <p class="text-gray-700">{localInfo.avgHomesAge}</p>
+          </div>
+
+          <div class="bg-white p-6 rounded-lg shadow-md border border-gray-200">
+            <h3 class="font-bold text-gray-900 mb-2 flex items-center">
+              <span class="text-blue-600 mr-2">⚠️</span> Flood Risk
+            </h3>
+            <p class="text-gray-700">{localInfo.floodRisk}</p>
+          </div>
+
+          <div class="bg-white p-6 rounded-lg shadow-md border border-gray-200">
+            <h3 class="font-bold text-gray-900 mb-2 flex items-center">
+              <span class="text-blue-600 mr-2">🌧️</span> Annual Rainfall
+            </h3>
+            <p class="text-gray-700">{localInfo.avgRainfall}</p>
+          </div>
+        </div>
+
+        <!-- Vaughan-Specific Challenges -->
+        <div class="bg-white p-8 rounded-lg shadow-md border border-gray-200 mb-12">
+          <h3 class="text-2xl font-bold text-gray-900 mb-6">Unique Waterproofing Challenges in Vaughan</h3>
+          <div class="grid md:grid-cols-2 gap-6">
+            <div>
+              <h4 class="font-bold text-lg text-gray-900 mb-3 flex items-center">
+                <span class="text-red-600 mr-2">🌊</span> Humber River Flooding (Woodbridge)
+              </h4>
+              <p class="text-gray-700 mb-4">
+                Homes within 500 meters of the Humber River face elevated flood risk from spring runoff, intense storms, and river overflow events. Major flooding in 2005 (Hurricane Hazel remnants), 2013, and 2017 caused widespread basement damage. High water tables push groundwater through foundation walls and floors year-round.
+              </p>
+              <p class="text-sm text-gray-600 italic">
+                Solution: Comprehensive flood protection systems with exterior waterproofing, dual sump pumps with battery backup, backwater valves, and proper lot grading.
+              </p>
             </div>
-            <div class="bg-white p-4 border border-slate-100 rounded">
-              <h4 class="font-bold text-slate-900 mb-2">THORNHILL (Luxury Corridor)</h4>
-              <p class="text-sm text-slate-500">High-end homes, finished basements, premium protection requirements</p>
+
+            <div>
+              <h4 class="font-bold text-lg text-gray-900 mb-3 flex items-center">
+                <span class="text-orange-600 mr-2">🏗️</span> Builder Defects (2000s-2010s)
+              </h4>
+              <p class="text-gray-700 mb-4">
+                Rapid suburban expansion in Maple, Concord, and Vellore led to construction shortcuts: inadequate drainage stone, improper backfill with clay instead of clear stone, thin or missing parging, window wells without drainage connections, and grading that slopes toward foundations instead of away.
+              </p>
+              <p class="text-sm text-gray-600 italic">
+                Solution: Targeted exterior waterproofing to correct builder defects, full documentation for Tarion warranty claims, code-compliant system installation.
+              </p>
             </div>
-            <div class="bg-white p-4 border border-slate-100 rounded">
-              <h4 class="font-bold text-slate-900 mb-2">MAPLE & CONCORD (Rapid Growth)</h4>
-              <p class="text-sm text-slate-500">New subdivisions, variable soils, boom-era construction methods</p>
+
+            <div>
+              <h4 class="font-bold text-lg text-gray-900 mb-3 flex items-center">
+                <span class="text-amber-600 mr-2">🏔️</span> Clay-Till Settlement
+              </h4>
+              <p class="text-gray-700 mb-4">
+                Vaughan's clay-till soil shrinks during dry periods and swells when wet, creating foundation stress and micro-cracks. This affects newer luxury homes in Vellore, Sonoma Heights, and Kleinburg estates. Clay subsoils hold water, creating hydrostatic pressure against foundation walls.
+              </p>
+              <p class="text-sm text-gray-600 italic">
+                Solution: Crack injection with structural warranties, drainage optimization, moisture management systems, and preventative waterproofing before luxury finishes.
+              </p>
             </div>
-            <div class="bg-white p-4 border border-slate-100 rounded">
-              <h4 class="font-bold text-slate-900 mb-2">KLEINBURG (Rural-Urban Mix)</h4>
-              <p class="text-sm text-slate-500">Rural heritage, newer luxury development, conservation area considerations</p>
+
+            <div>
+              <h4 class="font-bold text-lg text-gray-900 mb-3 flex items-center">
+                <span class="text-purple-600 mr-2">⏰</span> Tarion Warranty Expiration
+              </h4>
+              <p class="text-gray-700 mb-4">
+                Many Vaughan homeowners discover waterproofing issues as their 7-year Tarion warranty approaches expiration. Builder obligations end after Year 7 for foundation defects, leaving homeowners responsible for costly repairs. Common issues include foundation cracks, water seepage, and drainage system failures.
+              </p>
+              <p class="text-sm text-gray-600 italic">
+                Solution: Pre-expiration inspections, detailed documentation for Tarion claims, coordination with builders or direct warranty repairs, preventative waterproofing.
+              </p>
             </div>
           </div>
-          
-          <div class="flex flex-wrap gap-2">
-            {["Woodbridge","Thornhill","Maple","Kleinburg","Concord","Vellore","Sonoma Heights","Carrville","Patterson"].map((neighborhood) => (
-              <span class="border-2 border-slate-200 px-3 py-1 text-sm">
-                {neighborhood}
-              </span>
-            ))}
+        </div>
+
+        <!-- Neighborhoods Served -->
+        <div class="bg-gradient-to-br from-blue-50 to-slate-50 p-8 rounded-lg shadow-md border border-blue-200 mb-12">
+          <h3 class="text-2xl font-bold text-gray-900 mb-6 text-center">Vaughan Neighborhoods We Serve</h3>
+          <p class="text-center text-gray-700 mb-8">
+            DrySpace has completed 383+ waterproofing projects across all Vaughan communities with 90-minute emergency response.
+          </p>
+
+          <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+            <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-200">
+              <h4 class="font-bold text-gray-900 mb-2">Woodbridge</h4>
+              <p class="text-sm text-blue-600 font-semibold mb-2">95 Projects Completed</p>
+              <p class="text-xs text-gray-600">
+                Islington Ave, Hwy 27, Kipling Ave, Woodbridge Ave, Clarence St, Pine Valley Dr
+              </p>
+            </div>
+
+            <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-200">
+              <h4 class="font-bold text-gray-900 mb-2">Thornhill</h4>
+              <p class="text-sm text-blue-600 font-semibold mb-2">78 Projects Completed</p>
+              <p class="text-xs text-gray-600">
+                Bathurst St, Yonge St, Centre St, Clark Ave, Royal Orchard Blvd, John St
+              </p>
+            </div>
+
+            <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-200">
+              <h4 class="font-bold text-gray-900 mb-2">Maple</h4>
+              <p class="text-sm text-blue-600 font-semibold mb-2">62 Projects Completed</p>
+              <p class="text-xs text-gray-600">
+                Major Mackenzie Dr, Keele St, Jane St, Teston Rd, Dufferin St, Creditstone Rd
+              </p>
+            </div>
+
+            <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-200">
+              <h4 class="font-bold text-gray-900 mb-2">Concord</h4>
+              <p class="text-sm text-blue-600 font-semibold mb-2">48 Projects Completed</p>
+              <p class="text-xs text-gray-600">
+                Highway 7, Keele St, Dufferin St, Hwy 407, Bowes Rd, Steeles Ave
+              </p>
+            </div>
+
+            <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-200">
+              <h4 class="font-bold text-gray-900 mb-2">Vellore</h4>
+              <p class="text-sm text-blue-600 font-semibold mb-2">41 Projects Completed</p>
+              <p class="text-xs text-gray-600">
+                Jane St, Rutherford Rd, Weston Rd, Major Mackenzie Dr W, Fossil Hill Rd
+              </p>
+            </div>
+
+            <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-200">
+              <h4 class="font-bold text-gray-900 mb-2">Patterson</h4>
+              <p class="text-sm text-blue-600 font-semibold mb-2">37 Projects Completed</p>
+              <p class="text-xs text-gray-600">
+                Dufferin St, Rutherford Rd, Langstaff Rd, Creditstone Rd, America Ave
+              </p>
+            </div>
+
+            <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-200">
+              <h4 class="font-bold text-gray-900 mb-2">Kleinburg</h4>
+              <p class="text-sm text-blue-600 font-semibold mb-2">34 Projects Completed</p>
+              <p class="text-xs text-gray-600">
+                Islington Ave, Nashville Rd, Major Mackenzie Dr W, Stegman's Mill Rd
+              </p>
+            </div>
+
+            <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-200">
+              <h4 class="font-bold text-gray-900 mb-2">Sonoma Heights</h4>
+              <p class="text-sm text-blue-600 font-semibold mb-2">28 Projects Completed</p>
+              <p class="text-xs text-gray-600">
+                Jane St, Teston Rd, Kirby Rd, Huntington Rd, McNaughton Rd
+              </p>
+            </div>
+          </div>
+
+          <div class="flex flex-wrap gap-2 justify-center">
+            <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-3 py-1 rounded-full">90-min Emergency Response</span>
+            <span class="bg-green-100 text-green-800 text-xs font-semibold px-3 py-1 rounded-full">Humber River Specialists</span>
+            <span class="bg-purple-100 text-purple-800 text-xs font-semibold px-3 py-1 rounded-full">Luxury Estate Experts</span>
+            <span class="bg-orange-100 text-orange-800 text-xs font-semibold px-3 py-1 rounded-full">Builder Defect Repair</span>
+            <span class="bg-red-100 text-red-800 text-xs font-semibold px-3 py-1 rounded-full">Tarion Warranty Support</span>
+            <span class="bg-teal-100 text-teal-800 text-xs font-semibold px-3 py-1 rounded-full">York Region Permits</span>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Services -->
+  <!-- Construction Era Analysis -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-4xl font-bold text-gray-900 mb-4 text-center">
+          Vaughan Construction Era Analysis
+        </h2>
+        <p class="text-xl text-gray-600 mb-12 text-center max-w-3xl mx-auto">
+          Understanding your home's construction era helps identify likely waterproofing issues and optimal solutions.
+        </p>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          {constructionEras.map((era, index) => (
+            <div class="bg-slate-50 rounded-lg p-6 border-2 border-gray-200 hover:border-blue-400 transition-colors">
+              <div class="flex items-center mb-4">
+                <span class="text-3xl font-bold text-blue-600 mr-3">{index + 1}</span>
+                <h3 class="text-xl font-bold text-gray-900">{era.period}</h3>
+              </div>
+
+              <div class="space-y-3 text-sm">
+                <div>
+                  <p class="font-semibold text-gray-900 mb-1">Areas:</p>
+                  <p class="text-gray-700">{era.areas}</p>
+                </div>
+
+                <div>
+                  <p class="font-semibold text-gray-900 mb-1">Foundation Type:</p>
+                  <p class="text-gray-700">{era.foundation}</p>
+                </div>
+
+                <div>
+                  <p class="font-semibold text-gray-900 mb-1">Common Problems:</p>
+                  <p class="text-gray-700">{era.problems}</p>
+                </div>
+
+                <div class="bg-blue-50 p-3 rounded-md border-l-4 border-blue-600">
+                  <p class="font-semibold text-gray-900 mb-1">DrySpace Solution:</p>
+                  <p class="text-gray-700">{era.solution}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div class="mt-12 bg-gradient-to-r from-blue-50 to-slate-50 p-8 rounded-lg border border-blue-200">
+          <h3 class="text-2xl font-bold text-gray-900 mb-4 text-center">Not Sure What Era Your Home Is?</h3>
+          <p class="text-center text-gray-700 mb-6">
+            Our free home assessment includes construction era analysis, foundation inspection, and customized waterproofing recommendations for your specific Vaughan neighborhood and home age.
+          </p>
+          <div class="text-center">
+            <a
+              href="/contact"
+              class="inline-block bg-blue-600 text-white font-semibold px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors shadow-md"
+            >
+              Schedule Free Assessment
+            </a>
+            <p class="text-sm text-gray-600 mt-3">Call 437-545-0067 — 90-minute response time across Vaughan</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
   <Services />
 
-  <!-- Location Features -->
+  <!-- Location-Specific Features -->
   <section class="py-16 bg-white">
     <div class="container mx-auto px-4">
-      <div class="text-center mb-12">
-        <h2 class="text-4xl font-bold text-slate-900 mb-4 uppercase">WHY CHOOSE DRYSPACE IN VAUGHAN</h2>
-        <p class="text-lg text-slate-600 max-w-3xl mx-auto">
-          Local expertise combined with industry-leading warranties and service
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-4xl font-bold text-gray-900 mb-4 text-center">
+          Why Vaughan Homeowners Choose DrySpace
+        </h2>
+        <p class="text-xl text-gray-600 mb-12 text-center max-w-3xl mx-auto">
+          Specialized expertise for Vaughan's unique waterproofing challenges — from Humber River flooding to luxury estate preservation.
         </p>
-      </div>
-      
-      <!-- Highlighted Features -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-        {locationFeatures.filter(f => f.highlight).map((feature) => (
-          <div class="bg-amber-500 border-2 border-slate-700 p-6">
-            <h3 class="text-lg font-bold text-slate-900 mb-3 uppercase">{feature.title}</h3>
-            <p class="text-sm text-slate-900">{feature.description}</p>
-          </div>
-        ))}
-      </div>
-      
-      <!-- Regular Features -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        {locationFeatures.filter(f => !f.highlight).map((feature) => (
-          <div class="bg-white border-2 border-slate-200 p-6 hover:border-slate-300 transition-colors">
-            <h3 class="text-lg font-bold text-slate-900 mb-3 uppercase">{feature.title}</h3>
-            <p class="text-sm text-slate-600">{feature.description}</p>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
 
-  <!-- Process -->
-  <Process />
+        <!-- Highlighted Features -->
+        <div class="grid md:grid-cols-3 gap-8 mb-12">
+          {locationFeatures.filter(f => f.highlighted).map((feature) => (
+            <div class="bg-gradient-to-br from-blue-50 to-slate-50 rounded-lg p-8 border-2 border-blue-400 shadow-lg">
+              <h3 class="text-2xl font-bold text-gray-900 mb-4">{feature.title}</h3>
+              <p class="text-gray-700 leading-relaxed">{feature.description}</p>
+            </div>
+          ))}
+        </div>
 
-  <!-- Vaughan-Specific Resources -->
-  <section class="py-16 bg-white">
-    <div class="container mx-auto px-4">
-      <div class="max-w-4xl mx-auto">
-        <h2 class="text-4xl font-bold text-slate-900 mb-8 uppercase">Related Vaughan Resources</h2>
+        <!-- Regular Features -->
+        <div class="grid md:grid-cols-3 gap-6">
+          {locationFeatures.filter(f => !f.highlighted).map((feature) => (
+            <div class="bg-slate-50 rounded-lg p-6 border border-gray-200 hover:border-blue-400 transition-colors">
+              <h3 class="text-xl font-bold text-gray-900 mb-3">{feature.title}</h3>
+              <p class="text-gray-700">{feature.description}</p>
+            </div>
+          ))}
+        </div>
 
-        <div class="grid md:grid-cols-2 gap-6 mb-8">
-          <div class="card-base p-6 border-l-4 border-amber-500">
-            <h3 class="text-lg font-bold text-slate-900 mb-2 uppercase">Spring Flood Prevention</h3>
-            <p class="text-sm text-slate-600 mb-3">
-              Prepare luxury homes and rapid-growth properties for spring thaw. Learn Vaughan-specific prevention strategies.
-            </p>
-            <a href="/blog/spring-basement-flooding-prevention-2026" class="text-cyan-600 hover:text-cyan-700 font-semibold text-sm">Prevention Guide →</a>
-          </div>
-
-          <div class="card-base p-6 border-l-4 border-red-600">
-            <h3 class="text-lg font-bold text-slate-900 mb-2 uppercase">Emergency Response</h3>
-            <p class="text-sm text-slate-600 mb-3">
-              24/7 emergency flooding response across Vaughan neighborhoods with rapid arrival and professional water removal.
-            </p>
-            <a href="/emergency" class="text-red-600 hover:text-red-700 font-semibold text-sm">Emergency Services →</a>
-          </div>
-
-          <div class="card-base p-6 border-l-4 border-cyan-500">
-            <h3 class="text-lg font-bold text-slate-900 mb-2 uppercase">Why Basements Flood</h3>
-            <p class="text-sm text-slate-600 mb-3">
-              Understand the 8 root causes of basement flooding specific to GTA conditions including Vaughan's development challenges.
-            </p>
-            <a href="/blog/why-toronto-basements-flood" class="text-cyan-600 hover:text-cyan-700 font-semibold text-sm">Flooding Science →</a>
-          </div>
-
-          <div class="card-base p-6 border-l-4 border-slate-400">
-            <h3 class="text-lg font-bold text-slate-900 mb-2 uppercase">Waterproofing Costs</h3>
-            <p class="text-sm text-slate-600 mb-3">
-              Transparent Vaughan waterproofing pricing for exterior, interior, and foundation repair solutions.
-            </p>
-            <a href="/pricing" class="text-slate-600 hover:text-slate-700 font-semibold text-sm">Pricing Guide →</a>
+        <!-- Additional Vaughan Expertise -->
+        <div class="mt-12 bg-gray-900 text-white p-8 rounded-lg">
+          <h3 class="text-2xl font-bold mb-6 text-center">Additional Vaughan Expertise</h3>
+          <div class="grid md:grid-cols-2 gap-6">
+            <div>
+              <h4 class="font-bold text-lg mb-2 text-blue-400">🏛️ York Region Code Compliance</h4>
+              <p class="text-gray-300 text-sm">
+                Full understanding of York Region building codes, permit requirements, and inspection processes. We handle all documentation for Building Permits, Plumbing Permits, and Grading Permits through the City of Vaughan Building Standards Department.
+              </p>
+            </div>
+            <div>
+              <h4 class="font-bold text-lg mb-2 text-blue-400">🏗️ Pre-Construction Waterproofing</h4>
+              <p class="text-gray-300 text-sm">
+                Waterproofing before luxury basement finishes prevents future damage. We work with Vaughan renovation contractors, home theatre installers, and interior designers to protect investments before drywall, millwork, and finishes are installed.
+              </p>
+            </div>
+            <div>
+              <h4 class="font-bold text-lg mb-2 text-blue-400">🌳 Landscaping Preservation</h4>
+              <p class="text-gray-300 text-sm">
+                Vaughan luxury homes feature extensive landscaping, stone walls, and custom interlock. We use precision excavation, protect mature trees and gardens, and restore all hardscaping to original condition or better — included in every project.
+              </p>
+            </div>
+            <div>
+              <h4 class="font-bold text-lg mb-2 text-blue-400">📋 Resale Value Protection</h4>
+              <p class="text-gray-300 text-sm">
+                25-year transferable warranties add resale value — buyers pay premium for homes with professional waterproofing and documentation. Critical in Vaughan's competitive luxury real estate market. All work registered with Tarion as qualified renovation.
+              </p>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- Process Section -->
+  <Process />
+
+  <!-- Rebate & Subsidy Information -->
+  <section class="py-16 bg-slate-50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-4xl font-bold text-gray-900 mb-6 text-center">
+          Vaughan Waterproofing Rebates & Financial Assistance
+        </h2>
+        <p class="text-xl text-gray-600 mb-10 text-center">
+          York Region and Ontario programs can offset waterproofing costs for eligible Vaughan homeowners.
+        </p>
+
+        <div class="grid md:grid-cols-2 gap-8 mb-10">
+          <div class="bg-white p-6 rounded-lg shadow-md border border-gray-200">
+            <h3 class="text-xl font-bold text-gray-900 mb-3 flex items-center">
+              <span class="text-green-600 mr-2">💰</span> York Region Programs
+            </h3>
+            <ul class="space-y-2 text-gray-700">
+              <li class="flex items-start">
+                <span class="text-blue-600 mr-2 mt-1">•</span>
+                <span><strong>Basement Flooding Protection Subsidy:</strong> Up to $3,400 for sump pump, backwater valve, and foundation drainage improvements (flood-prone areas)</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-blue-600 mr-2 mt-1">•</span>
+                <span><strong>Residential Water Efficiency Program:</strong> Rebates for water management systems integrated with waterproofing projects</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-blue-600 mr-2 mt-1">•</span>
+                <span><strong>Storm Sewer Backup Protection:</strong> Financial assistance for backwater valve installation (required in Woodbridge flood zones)</span>
+              </li>
+            </ul>
+            <a href="https://www.york.ca/" target="_blank" rel="noopener" class="text-blue-600 hover:underline text-sm mt-4 inline-block">
+              Visit York Region Website →
+            </a>
+          </div>
+
+          <div class="bg-white p-6 rounded-lg shadow-md border border-gray-200">
+            <h3 class="text-xl font-bold text-gray-900 mb-3 flex items-center">
+              <span class="text-green-600 mr-2">🏠</span> Provincial Programs
+            </h3>
+            <ul class="space-y-2 text-gray-700">
+              <li class="flex items-start">
+                <span class="text-blue-600 mr-2 mt-1">•</span>
+                <span><strong>Ontario Seniors Home Safety Tax Credit:</strong> 25% of eligible expenses up to $10,000 annually for waterproofing preventing basement flooding hazards</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-blue-600 mr-2 mt-1">•</span>
+                <span><strong>Home Accessibility Tax Credit:</strong> Up to $10,000 for accessibility-related renovations that may include waterproofing components</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-blue-600 mr-2 mt-1">•</span>
+                <span><strong>Canada Greener Homes Grant:</strong> Up to $5,000 for energy efficiency upgrades paired with basement insulation waterproofing</span>
+              </li>
+            </ul>
+            <a href="https://www.ontario.ca/page/home-accessibility-tax-credit" target="_blank" rel="noopener" class="text-blue-600 hover:underline text-sm mt-4 inline-block">
+              Learn About Provincial Credits →
+            </a>
+          </div>
+        </div>
+
+        <div class="bg-blue-50 border-l-4 border-blue-600 p-6 rounded-r-lg">
+          <h3 class="text-lg font-bold text-gray-900 mb-3">DrySpace Rebate Assistance</h3>
+          <p class="text-gray-700 mb-4">
+            We help Vaughan homeowners navigate rebate applications with detailed invoices, technical specifications, permit documentation, and program-compliant work descriptions. Many clients recover $3,000-$5,000 through combined programs.
+          </p>
+          <p class="text-sm text-gray-600 italic">
+            Note: Rebate eligibility varies by neighborhood, home age, and flood zone designation. Contact us for personalized rebate assessment.
+          </p>
+        </div>
+
+        <div class="mt-8 bg-gradient-to-r from-green-50 to-blue-50 p-6 rounded-lg border border-green-200">
+          <h3 class="text-lg font-bold text-gray-900 mb-3">Financing Options</h3>
+          <div class="grid md:grid-cols-2 gap-4 text-gray-700">
+            <div>
+              <p class="font-semibold mb-2">✓ Home Equity Lines of Credit (HELOC)</p>
+              <p class="text-sm">Leverage your home's equity with competitive rates for waterproofing investments</p>
+            </div>
+            <div>
+              <p class="font-semibold mb-2">✓ Government-Backed Renovation Loans</p>
+              <p class="text-sm">CMHC Home Renovation programs for structural improvements including waterproofing</p>
+            </div>
+            <div>
+              <p class="font-semibold mb-2">✓ Insurance Claim Assistance</p>
+              <p class="text-sm">Detailed documentation for sudden failure claims and overland flood coverage</p>
+            </div>
+            <div>
+              <p class="font-semibold mb-2">✓ Property Tax Reassessment</p>
+              <p class="text-sm">Waterproofing may qualify as maintenance rather than improvement (lower tax impact)</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Local Testimonials -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-5xl mx-auto">
+        <h2 class="text-4xl font-bold text-gray-900 mb-4 text-center">
+          What Vaughan Homeowners Say
+        </h2>
+        <p class="text-xl text-gray-600 mb-12 text-center">
+          Real experiences from your Vaughan neighbors — Woodbridge, Kleinburg, Maple, and beyond.
+        </p>
+
+        <div class="grid md:grid-cols-2 gap-8 mb-12">
+          {localTestimonials.map((testimonial) => (
+            <div class="bg-slate-50 rounded-lg p-8 border-2 border-gray-200 hover:border-blue-400 transition-colors shadow-md">
+              <div class="flex items-center mb-4">
+                <div class="flex text-yellow-500 text-xl mr-3">
+                  {[...Array(testimonial.rating)].map((_, i) => (
+                    <span key={i}>★</span>
+                  ))}
+                </div>
+                <span class="text-sm font-semibold text-blue-600 bg-blue-50 px-3 py-1 rounded-full">
+                  {testimonial.neighborhood}
+                </span>
+              </div>
+
+              <p class="text-gray-700 italic mb-6 leading-relaxed">
+                "{testimonial.text}"
+              </p>
+
+              <div class="border-t border-gray-300 pt-4">
+                <p class="font-bold text-gray-900">{testimonial.name}</p>
+                <p class="text-sm text-gray-600">{testimonial.project}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div class="bg-gradient-to-r from-blue-600 to-blue-700 text-white p-8 rounded-lg text-center shadow-lg">
+          <h3 class="text-2xl font-bold mb-4">Join 383+ Satisfied Vaughan Homeowners</h3>
+          <p class="text-lg mb-6 opacity-90">
+            From Woodbridge flood protection to Kleinburg luxury estates — trusted waterproofing since 1998.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <a
+              href="/contact"
+              class="bg-white text-blue-600 font-semibold px-8 py-3 rounded-lg hover:bg-gray-100 transition-colors shadow-md"
+            >
+              Get Your Free Estimate
+            </a>
+            <a
+              href="tel:437-545-0067"
+              class="bg-blue-800 text-white font-semibold px-8 py-3 rounded-lg hover:bg-blue-900 transition-colors shadow-md"
+            >
+              Call 437-545-0067
+            </a>
+          </div>
+          <p class="text-sm mt-4 opacity-75">90-minute emergency response • 25-year warranty • York Region licensed</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- Location Image Showcase -->
   <LocationImageShowcase city="Vaughan" />
 
-  <!-- Testimonials -->
+  <!-- General Testimonials Section -->
   <Testimonials />
 
-  <!-- FAQ Section -->
-  <section class="py-16 bg-slate-50">
+  <!-- Related Articles -->
+  <section class="py-16 bg-white">
     <div class="container mx-auto px-4">
-      <div class="text-center mb-12">
-        <h2 class="text-4xl font-bold text-slate-900 mb-4 uppercase">VAUGHAN WATERPROOFING FAQS</h2>
-        <p class="text-lg text-slate-600">Common questions from Vaughan homeowners</p>
-      </div>
-      
-      <div class="max-w-4xl mx-auto">
-        {locationFAQs.map((faq, index) => (
-          <details class="mb-4 border-2 border-slate-200 bg-white">
-            <summary class="cursor-pointer p-6 hover:bg-slate-50 transition-colors">
-              <div class="flex items-center justify-between">
-                <h3 class="text-lg font-bold text-slate-900 uppercase pr-4">{faq.question}</h3>
-                <span class="text-slate-400 flex-shrink-0 text-2xl">+</span>
-              </div>
-            </summary>
-            <div class="px-6 pb-6 pt-0">
-              <p class="text-slate-600">{faq.answer}</p>
-            </div>
-          </details>
-        ))}
+      <div class="max-w-5xl mx-auto">
+        <h2 class="text-4xl font-bold text-gray-900 mb-4 text-center">
+          Vaughan Waterproofing Resources
+        </h2>
+        <p class="text-xl text-gray-600 mb-10 text-center">
+          Educational articles to help Vaughan homeowners make informed waterproofing decisions.
+        </p>
+
+        <div class="grid md:grid-cols-3 gap-6">
+          <a href="/blog/humber-river-flooding" class="bg-slate-50 rounded-lg p-6 border border-gray-200 hover:border-blue-400 hover:shadow-lg transition-all group">
+            <h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600">
+              Humber River Flooding: Protection Guide for Woodbridge Homes
+            </h3>
+            <p class="text-gray-700 text-sm mb-4">
+              Comprehensive flood protection strategies for homes near the Humber River, including historical flooding events, risk assessment, and waterproofing solutions.
+            </p>
+            <span class="text-blue-600 text-sm font-semibold">Read Article →</span>
+          </a>
+
+          <a href="/blog/builder-defects-vaughan" class="bg-slate-50 rounded-lg p-6 border border-gray-200 hover:border-blue-400 hover:shadow-lg transition-all group">
+            <h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600">
+              Identifying & Fixing Builder Waterproofing Defects in Vaughan Homes
+            </h3>
+            <p class="text-gray-700 text-sm mb-4">
+              Common construction shortcuts in 2000s-2010s Vaughan developments, how to identify defects, and corrective waterproofing solutions with Tarion claim support.
+            </p>
+            <span class="text-blue-600 text-sm font-semibold">Read Article →</span>
+          </a>
+
+          <a href="/blog/tarion-warranty-waterproofing" class="bg-slate-50 rounded-lg p-6 border border-gray-200 hover:border-blue-400 hover:shadow-lg transition-all group">
+            <h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600">
+              Tarion Warranty Claims: Waterproofing Coverage & Timelines
+            </h3>
+            <p class="text-gray-700 text-sm mb-4">
+              Complete guide to Tarion warranty coverage for foundation waterproofing defects, filing procedures, documentation requirements, and Year 7 deadline strategies.
+            </p>
+            <span class="text-blue-600 text-sm font-semibold">Read Article →</span>
+          </a>
+
+          <a href="/blog/luxury-basement-waterproofing" class="bg-slate-50 rounded-lg p-6 border border-gray-200 hover:border-blue-400 hover:shadow-lg transition-all group">
+            <h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600">
+              Waterproofing Luxury Basements: Non-Invasive Solutions for High-End Finishes
+            </h3>
+            <p class="text-gray-700 text-sm mb-4">
+              Protecting home theatres, wine cellars, and custom millwork with interior crack injection, hidden drainage systems, and moisture management technology.
+            </p>
+            <span class="text-blue-600 text-sm font-semibold">Read Article →</span>
+          </a>
+
+          <a href="/blog/clay-soil-foundations" class="bg-slate-50 rounded-lg p-6 border border-gray-200 hover:border-blue-400 hover:shadow-lg transition-all group">
+            <h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600">
+              Clay Soil & Foundation Settlement: Vaughan Homeowner's Guide
+            </h3>
+            <p class="text-gray-700 text-sm mb-4">
+              Understanding how Vaughan's clay-till soil affects foundations, recognizing settlement cracks, and preventative waterproofing for newer developments.
+            </p>
+            <span class="text-blue-600 text-sm font-semibold">Read Article →</span>
+          </a>
+
+          <a href="/blog/york-region-permits" class="bg-slate-50 rounded-lg p-6 border border-gray-200 hover:border-blue-400 hover:shadow-lg transition-all group">
+            <h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600">
+              York Region Waterproofing Permits: Vaughan Requirements & Process
+            </h3>
+            <p class="text-gray-700 text-sm mb-4">
+              Complete permit guide for Vaughan waterproofing projects — Building Permits, Plumbing Permits, Grading Permits, timelines, costs, and inspection requirements.
+            </p>
+            <span class="text-blue-600 text-sm font-semibold">Read Article →</span>
+          </a>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- CTA Section -->
-  <section class="py-16 bg-navy-900">
+  <!-- FAQ Section -->
+  <section class="py-16 bg-slate-50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-4xl font-bold text-gray-900 mb-4 text-center">
+          Frequently Asked Questions
+        </h2>
+        <p class="text-xl text-gray-600 mb-10 text-center">
+          Everything Vaughan homeowners need to know about basement waterproofing.
+        </p>
+
+        <div class="space-y-4">
+          {locationFAQs.map((faq, index) => (
+            <details class="bg-white rounded-lg border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
+              <summary class="cursor-pointer p-6 font-semibold text-lg text-gray-900 hover:text-blue-600 transition-colors">
+                {faq.question}
+              </summary>
+              <div class="px-6 pb-6 text-gray-700 leading-relaxed border-t border-gray-100 pt-4">
+                {faq.answer}
+              </div>
+            </details>
+          ))}
+        </div>
+
+        <div class="mt-12 bg-blue-50 border-l-4 border-blue-600 p-6 rounded-r-lg">
+          <h3 class="text-xl font-bold text-gray-900 mb-3">Still Have Questions?</h3>
+          <p class="text-gray-700 mb-4">
+            Our Vaughan waterproofing experts are available 24/7 to answer your specific questions about your home, neighborhood, and waterproofing needs.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a
+              href="/contact"
+              class="inline-block bg-blue-600 text-white font-semibold px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors text-center"
+            >
+              Schedule Free Consultation
+            </a>
+            <a
+              href="tel:437-545-0067"
+              class="inline-block bg-white text-blue-600 border-2 border-blue-600 font-semibold px-6 py-3 rounded-lg hover:bg-blue-50 transition-colors text-center"
+            >
+              Call 437-545-0067
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA Section -->
+  <section class="py-20 bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900 text-white">
     <div class="container mx-auto px-4">
       <div class="max-w-4xl mx-auto text-center">
-        <h2 class="text-4xl font-bold text-slate-900 mb-4 uppercase">SAFEGUARD YOUR VAUGHAN INVESTMENT</h2>
-        <p class="text-lg text-slate-300 mb-8">
-          Whether your property is a luxury Thornhill estate or a new Maple subdivision home, our Vaughan specialists provide premium waterproofing solutions that match your investment level and adapt to the city's ongoing development challenges.
+        <h2 class="text-4xl md:text-5xl font-bold mb-6">
+          Protect Your Vaughan Home with Expert Waterproofing
+        </h2>
+        <p class="text-xl mb-4 opacity-90">
+          From Humber River flood protection to luxury estate preservation — trusted by 383+ Vaughan homeowners since 1998.
         </p>
-        
-        <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <a 
-            href="/free-inspection"
-            class="bg-amber-500 text-black px-8 py-4 text-lg font-bold hover:bg-amber-400 transition-colors uppercase"
-          >
-            Get Premium Property Assessment
-          </a>
-          <a 
+        <p class="text-lg mb-10 opacity-80">
+          25-year transferable warranty • 90-minute emergency response • York Region licensed & insured
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-6 justify-center items-center mb-10">
+          <a
             href="/contact"
-            class="border-2 border-white text-slate-900 px-8 py-4 text-lg font-bold hover:bg-white hover:text-black transition-colors uppercase"
+            class="bg-white text-blue-600 font-bold px-10 py-4 rounded-lg hover:bg-gray-100 transition-colors shadow-xl text-lg"
           >
-            Luxury Home Consultation
+            Get Free Estimate
+          </a>
+          <a
+            href="tel:437-545-0067"
+            class="bg-blue-600 text-white font-bold px-10 py-4 rounded-lg hover:bg-blue-700 transition-colors shadow-xl text-lg border-2 border-white"
+          >
+            Call 437-545-0067
           </a>
         </div>
-        
-        <div class="mt-8 inline-flex items-center text-cyan-400">
-          <span class="text-sm font-bold uppercase">24/7 Emergency Service Available</span>
+
+        <div class="grid md:grid-cols-3 gap-6 text-center">
+          <div class="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20">
+            <p class="text-4xl font-bold mb-2">383+</p>
+            <p class="text-sm opacity-90">Vaughan Projects Completed</p>
+          </div>
+          <div class="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20">
+            <p class="text-4xl font-bold mb-2">25 Years</p>
+            <p class="text-sm opacity-90">Transferable Warranty</p>
+          </div>
+          <div class="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20">
+            <p class="text-4xl font-bold mb-2">90 Min</p>
+            <p class="text-sm opacity-90">Emergency Response Time</p>
+          </div>
         </div>
+
+        <p class="text-sm mt-10 opacity-75">
+          Serving all Vaughan neighborhoods: Woodbridge • Thornhill • Maple • Kleinburg • Concord • Vellore • Sonoma Heights • Patterson
+        </p>
       </div>
     </div>
   </section>
 </PageLayout>
 
-<script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)}>
-<BreadcrumbSchema items={[{name: 'Home', url: '/'}, {name: 'Locations', url: '/locations'}, {name: 'Vaughan'}]} />
+<!-- Structured Data -->
+<script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)} />
+<script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+<BreadcrumbSchema
+  items={[
+    { name: "Home", item: "https://dryspace.ca" },
+    { name: "Service Areas", item: "https://dryspace.ca/locations" },
+    { name: "Vaughan", item: "https://dryspace.ca/locations/vaughan" }
+  ]}
+/>

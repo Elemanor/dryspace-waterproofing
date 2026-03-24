@@ -12,8 +12,8 @@ import BeforeAfterGallery from '../components/BeforeAfterGallery.astro';
 import CostCalculator from '../components/react/CostCalculator.tsx';
 import { StatsBar } from '../components/react/StatsBar.tsx';
 
-const pageTitle = "Basement Waterproofing Mississauga | 24/7 | $3,400 Rebate";
-const pageDescription = "⚡ Emergency moisture control services locally. ✓ <45min response to Meadowvale, Port Credit, Streetsville ✓ 25-year warranty ✓ $3,400 rebates ✓ 500+ area homes protected. Licensed experts since 2009.";
+const pageTitle = "Basement Waterproofing Mississauga | $3,400 Rebate | 25-Year Warranty";
+const pageDescription = "Professional basement waterproofing in Mississauga. Interior & exterior systems from $150/ft. 500+ homes protected, 24/7 emergency response, $3,400 city rebates. Free inspection.";
 
 // Local area data
 const mississaugaStats = {
@@ -36,16 +36,16 @@ const mississaugaNeighborhoods = [
 
 const faqs = [
   {
-    question: "How much does basement moisture protection cost locally?",
-    answer: "Foundation moisture control in the region typically costs $150-300 per linear foot, or $15,000-30,000 for an average home. Factors include the area's clay soil conditions, proximity to Credit River or Lake Ontario, and specific neighborhood requirements. Government rebates up to $3,400 are available for residents."
+    question: "How much does basement waterproofing cost in Mississauga?",
+    answer: "Basement waterproofing in Mississauga typically costs $150-300 per linear foot, or $15,000-30,000 for an average home. Factors include Mississauga's clay soil conditions, proximity to Credit River or Lake Ontario, and specific neighborhood requirements. Government rebates up to $3,400 are available for Mississauga residents."
   },
   {
-    question: "Do I need a permit for moisture protection locally?",
-    answer: "Yes, most exterior moisture protection projects in the area require a building permit due to excavation exceeding 4 feet. DrySpace handles all municipal permit applications, drawings, and inspections as part of our service, ensuring compliance with bylaws."
+    question: "Do I need a permit for basement waterproofing in Mississauga?",
+    answer: "Yes, most exterior basement waterproofing projects in Mississauga require a building permit due to excavation exceeding 4 feet. DrySpace handles all City of Mississauga permit applications, drawings, and inspections as part of our service, ensuring compliance with municipal bylaws."
   },
   {
-    question: "What causes basement flooding locally?",
-    answer: "The area's unique challenges include Credit Valley clay soil (30-70% clay content), rapid suburban development on former farmland, variable water table (1-4m depth), and proximity to Lake Ontario and Credit River. Spring thaw and summer storms frequently overwhelm older drainage systems."
+    question: "What causes basement flooding in Mississauga?",
+    answer: "Mississauga's unique challenges include Credit Valley clay soil (30-70% clay content), rapid suburban development on former farmland, variable water table (1-4m depth), and proximity to Lake Ontario and Credit River. Spring thaw and summer storms frequently overwhelm older drainage systems in Mississauga neighborhoods."
   },
   {
     question: "How quickly can you respond to local emergencies?",
@@ -108,8 +108,8 @@ const faqs = [
 
   <!-- Hero Section -->
   <Hero 
-    title="FOUNDATION WATER PROTECTION MISSISSAUGA"
-    subtitle="Protecting local properties from Credit Valley clay soil and lake moisture since 2009. 500+ projects completed. 24/7 emergency response under 45 minutes."
+    title="BASEMENT WATERPROOFING MISSISSAUGA"
+    subtitle="Mississauga's trusted basement waterproofing experts since 2009. 500+ homes protected from Credit Valley clay soil and lake moisture. 24/7 emergency response under 45 minutes."
     primaryCTA={{ text: "Get Free Inspection", href: "/free-inspection" }}
     secondaryCTA={{ text: "View Local Projects", href: "#gallery" }}
     backgroundImage="/images/mississauga-waterproofing-hero.webp"
@@ -155,17 +155,17 @@ const faqs = [
   <section class="py-16">
     <div class="container mx-auto px-4">
       <div class="max-w-4xl mx-auto">
-        <h2 class="text-3xl font-bold mb-6">The Area's Trusted Foundation Water Protection Experts</h2>
-        
+        <h2 class="text-3xl font-bold mb-6">Mississauga's Trusted Basement Waterproofing Experts</h2>
+
         <p class="text-lg mb-6">
-          As the region's premier moisture control contractor, DrySpace has protected over 500 homes across all 
-          neighborhoods from Port Credit to Malton. We understand the region's unique challenges: Credit Valley 
-          clay soil that expands up to 70%, variable water tables from Lake Ontario and Credit River influences, 
-          and the rapid suburban development that has created diverse structural challenges across different eras 
+          As Mississauga's premier basement waterproofing contractor, DrySpace has protected over 500 homes across all
+          neighborhoods from Port Credit to Malton. We understand Mississauga's unique challenges: Credit Valley
+          clay soil that expands up to 70%, variable water tables from Lake Ontario and Credit River influences,
+          and the rapid suburban development that has created diverse foundation challenges across different eras
           of construction.
         </p>
 
-        <h3 class="text-2xl font-bold mt-8 mb-4">Why Local Properties Need Specialized Water Management</h3>
+        <h3 class="text-2xl font-bold mt-8 mb-4">Why Mississauga Homes Need Basement Waterproofing</h3>
         
         <div class="bg-cyan-50 p-6 rounded-lg mb-6">
           <h4 class="font-bold mb-3">The Region's Unique Geological Challenges:</h4>
@@ -232,7 +232,11 @@ const faqs = [
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
           {mississaugaNeighborhoods.map(neighborhood => (
             <div class="bg-slate-50 p-4 rounded">
-              <h4 class="font-bold">{neighborhood.name}</h4>
+              {neighborhood.name === "Streetsville" ? (
+                <h4 class="font-bold"><a href="/neighborhoods/streetsville" class="text-cyan-600 hover:underline">{neighborhood.name}</a></h4>
+              ) : (
+                <h4 class="font-bold">{neighborhood.name}</h4>
+              )}
               <p class="text-sm text-slate-500">{neighborhood.projects} projects completed</p>
               <p class="text-xs mt-1">Common issues: {neighborhood.commonIssues}</p>
             </div>
@@ -492,7 +496,7 @@ const faqs = [
           <div>
             <h4 class="font-bold">West</h4>
             <ul class="text-sm space-y-1">
-              <li>Streetsville</li>
+              <li><a href="/neighborhoods/streetsville" class="text-cyan-600 hover:underline">Streetsville</a></li>
               <li>Meadowvale</li>
               <li>Lisgar</li>
               <li>Churchill Meadows</li>
@@ -508,6 +512,31 @@ const faqs = [
             </ul>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Related Articles -->
+  <section class="py-16">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-8">Basement Waterproofing Resources for Mississauga Homeowners</h2>
+      <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-6">
+        <a href="/blog/basement-waterproofing-cost-toronto-2025" class="block bg-white p-6 rounded-lg shadow hover:shadow-md transition border border-slate-100">
+          <h3 class="font-bold text-lg mb-2">Basement Waterproofing Cost Guide 2026</h3>
+          <p class="text-sm text-slate-500">Compare interior vs exterior waterproofing costs, get price ranges for Mississauga homes, and learn about financing options.</p>
+        </a>
+        <a href="/blog/french-drain-vs-weeping-tile" class="block bg-white p-6 rounded-lg shadow hover:shadow-md transition border border-slate-100">
+          <h3 class="font-bold text-lg mb-2">French Drain vs Weeping Tile</h3>
+          <p class="text-sm text-slate-500">Technical comparison of drainage systems — which works better in Mississauga's clay soil conditions?</p>
+        </a>
+        <a href="/blog/sump-pump-types-comparison-guide" class="block bg-white p-6 rounded-lg shadow hover:shadow-md transition border border-slate-100">
+          <h3 class="font-bold text-lg mb-2">Sump Pump Types Comparison 2026</h3>
+          <p class="text-sm text-slate-500">Find the right sump pump for your Mississauga basement. Submersible vs pedestal, costs, and maintenance.</p>
+        </a>
+        <a href="/blog/signs-your-foundation-needs-repair" class="block bg-white p-6 rounded-lg shadow hover:shadow-md transition border border-slate-100">
+          <h3 class="font-bold text-lg mb-2">7 Signs Your Foundation Needs Repair</h3>
+          <p class="text-sm text-slate-500">Identify foundation problems early. Learn the warning signs common in Mississauga homes built on Credit Valley clay.</p>
+        </a>
       </div>
     </div>
   </section>

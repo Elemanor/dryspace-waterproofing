@@ -1,0 +1,1200 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import BlogImageGallery from '../../components/BlogImageGallery.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+
+const publishDate = new Date('2026-03-20');
+const author = 'DrySpace Waterproofing Team';
+const readingTime = '17 min read';
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Burlington Basement Waterproofing: Escarpment Drainage & Lakefront Protection [2026]",
+  "description": "Complete guide to basement waterproofing in Burlington. Niagara Escarpment limestone water channels, Spencer Creek flooding, elevation-specific solutions, mature neighborhood foundations, Conservation Halton compliance, and 2026 costs ($150-$275/linear foot).",
+  "image": "https://dryspacewaterproofing.ca/images/blog/burlington-waterproofing.jpg",
+  "datePublished": "2026-03-20T09:00:00-05:00",
+  "dateModified": "2026-03-23T14:30:00-05:00",
+  "author": {
+    "@type": "Organization",
+    "name": "DrySpace Waterproofing",
+    "url": "https://dryspacewaterproofing.ca"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "DrySpace Waterproofing",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://dryspacewaterproofing.ca/logo.png"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://dryspacewaterproofing.ca/blog/basement-waterproofing-burlington-guide"
+  }
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How much does basement waterproofing cost in Burlington?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Basement waterproofing in Burlington costs between $150 and $275 per linear foot in 2026, depending on the system type and site conditions. Exterior waterproofing with excavation typically runs $200-$275/linear foot, while interior drainage systems cost $150-$200/linear foot. The average Burlington basement (40-60 linear feet) costs $12,000-$24,000 to waterproof. Escarpment properties with challenging access and mature neighborhoods with narrow lot lines often see costs at the higher end of this range."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does the Niagara Escarpment affect Burlington basements?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The Niagara Escarpment creates unique waterproofing challenges in Burlington through limestone bedrock water channels, elevation-based hydrostatic pressure, and rapid drainage pathways. Properties along the escarpment face between Brant Street and Guelph Line experience concentrated water flow through fractured limestone, creating high-pressure conditions at foundation walls. The 150-meter elevation difference between lakefront and escarpment properties means upper Burlington homes deal with groundwater moving downslope through bedrock fissures, while lower elevation properties face high water tables and lake-influenced saturation."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need Conservation Halton permits for basement waterproofing?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You need Conservation Halton permits if your property is within regulated areas, including Spencer Creek and Sixteen Mile Creek floodplains, areas within 15 meters of watercourses, and properties on or near the Niagara Escarpment. Waterproofing work that involves excavation deeper than 1 meter, discharge of drainage water to regulated areas, or alterations to grading within regulated zones requires Conservation Halton approval. Most Burlington waterproofing projects require only City of Burlington building permits, but properties in environmentally sensitive areas need additional Conservation Halton review, which adds 4-6 weeks to project timelines."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I get Halton Region rebates for basement waterproofing?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Halton Region offers basement flooding protection subsidies up to $3,400 per property for eligible waterproofing improvements. The program covers backwater valve installation (up to $1,250 subsidy), sump pump installation (up to $1,250 subsidy), and foundation drainage improvements (up to $900 subsidy). Burlington homeowners must have experienced basement flooding or be in designated flood-risk areas to qualify. The program requires pre-approval, licensed contractor installation, and post-installation inspection. Applications are processed through the City of Burlington with Region of Halton funding."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "When is the best season for waterproofing in Burlington?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Late spring (May-June) and early fall (September-October) are ideal for Burlington basement waterproofing. These periods offer drier soil conditions for excavation, moderate temperatures for concrete and sealant curing, and scheduling availability before winter freeze-thaw cycles. Avoid waterproofing during spring snowmelt (March-April) when water tables are highest and Spencer Creek flooding is most likely. Burlington's lake-effect weather creates unpredictable winter conditions, making November-March challenging for exterior work. Summer (July-August) works well but contractors are busiest and you'll face 2-4 week wait times versus 1-2 weeks in shoulder seasons."
+      }
+    }
+  ]
+};
+---
+
+<PageLayout
+  title="Burlington Basement Waterproofing: Escarpment Drainage & Lakefront Protection [2026]"
+  description="Complete guide to basement waterproofing in Burlington. Niagara Escarpment limestone water channels, Spencer Creek flooding, elevation-specific solutions, mature neighborhood foundations, Conservation Halton compliance, and 2026 costs ($150-$275/linear foot)."
+  canonical="https://dryspacewaterproofing.ca/locations/burlington"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <Breadcrumbs
+    items={[
+      { label: 'Home', href: '/' },
+      { label: 'Blog', href: '/blog' },
+      { label: 'Burlington Waterproofing Guide', href: '/blog/basement-waterproofing-burlington-guide' }
+    ]}
+  />
+
+  <main class="min-h-screen bg-slate-50">
+    <article class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+      <!-- Article Header -->
+      <header class="mb-8">
+        <div class="flex flex-wrap gap-2 mb-4">
+          <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-cyan-100 text-cyan-800">
+            Waterproofing Guide
+          </span>
+          <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-green-100 text-green-800">
+            Burlington
+          </span>
+          <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-purple-100 text-purple-800">
+            2026 Costs
+          </span>
+        </div>
+
+        <h1 class="text-4xl md:text-5xl font-bold text-slate-900 mb-4 leading-tight">
+          Burlington Basement Waterproofing: Escarpment Drainage & Lakefront Protection
+        </h1>
+
+        <div class="flex flex-wrap items-center gap-4 text-sm text-slate-600 mb-6">
+          <time datetime={publishDate.toISOString()}>
+            {publishDate.toLocaleDateString('en-CA', { year: 'numeric', month: 'long', day: 'numeric' })}
+          </time>
+          <span>•</span>
+          <span>{author}</span>
+          <span>•</span>
+          <span>{readingTime}</span>
+        </div>
+
+        <p class="text-xl text-slate-700 leading-relaxed">
+          Burlington's unique position between Lake Ontario and the Niagara Escarpment creates exceptional basement waterproofing challenges. From lakefront properties dealing with high water tables to escarpment homes facing limestone bedrock drainage, this complete guide covers Burlington-specific solutions, neighborhood challenges, Conservation Halton compliance, and 2026 pricing data.
+        </p>
+      </header>
+
+      <!-- Featured Image -->
+      <div class="mb-12 rounded-xl overflow-hidden shadow-lg">
+        <img
+          src="/images/blog/burlington-escarpment-waterproofing.jpg"
+          alt="Burlington basement waterproofing with Niagara Escarpment in background"
+          class="w-full h-auto"
+          loading="eager"
+        />
+        <p class="text-sm text-slate-600 text-center mt-2 italic">
+          Burlington's elevation range from lakefront to escarpment creates unique waterproofing requirements
+        </p>
+      </div>
+
+      <!-- Table of Contents -->
+      <nav class="bg-white rounded-xl shadow-md p-6 mb-12 border border-slate-200">
+        <h2 class="text-xl font-bold text-slate-900 mb-4">Table of Contents</h2>
+        <ol class="space-y-2 text-slate-700">
+          <li><a href="#burlington-geography" class="hover:text-cyan-600 transition-colors">1. Burlington's Unique Geography: Escarpment to Lakefront</a></li>
+          <li><a href="#niagara-escarpment" class="hover:text-cyan-600 transition-colors">2. Niagara Escarpment Limestone: Nature's Water Highway</a></li>
+          <li><a href="#creek-flooding" class="hover:text-cyan-600 transition-colors">3. Spencer Creek & Sixteen Mile Creek: Burlington's Flood Corridors</a></li>
+          <li><a href="#elevation-solutions" class="hover:text-cyan-600 transition-colors">4. Elevation-Specific Waterproofing Solutions</a></li>
+          <li><a href="#neighborhood-challenges" class="hover:text-cyan-600 transition-colors">5. Neighborhood-by-Neighborhood Challenges</a></li>
+          <li><a href="#costs-2026" class="hover:text-cyan-600 transition-colors">6. 2026 Waterproofing Costs in Burlington</a></li>
+          <li><a href="#permits-compliance" class="hover:text-cyan-600 transition-colors">7. Conservation Halton Compliance & Regional Programs</a></li>
+        </ol>
+      </nav>
+
+      <!-- Section 1: Burlington's Geography -->
+      <section id="burlington-geography" class="mb-16 scroll-mt-8">
+        <h2 class="text-3xl font-bold text-slate-900 mb-6 border-b-4 border-cyan-500 pb-2">
+          1. Burlington's Unique Geography: Escarpment to Lakefront
+        </h2>
+
+        <div class="prose prose-lg max-w-none text-slate-700 space-y-6">
+          <p>
+            Burlington occupies one of the most geologically diverse positions in Southern Ontario, spanning from Lake Ontario's shoreline at 75 meters elevation to the Niagara Escarpment's crest at 225+ meters. This 150-meter vertical rise over just 5-6 kilometers creates dramatic waterproofing challenges that vary dramatically by neighborhood elevation and proximity to the escarpment face.
+          </p>
+
+          <p>
+            The city's position at the western end of Lake Ontario, where the lake transitions to Hamilton Harbour, means lakefront properties from Beachway Park to Lasalle Park face unique water table conditions influenced by lake levels, seiche events, and groundwater recharge from escarpment drainage. Properties along Lakeshore Road between Burloak Drive and North Shore Boulevard experience water table fluctuations of 1-2 meters seasonally, with spring snowmelt pushing groundwater to within 0.5 meters of basement floors.
+          </p>
+
+          <div class="bg-cyan-50 border-l-4 border-cyan-500 p-6 my-8 rounded-r-lg">
+            <h3 class="font-bold text-lg text-slate-900 mb-2">Burlington Elevation Zones & Waterproofing Impact</h3>
+            <ul class="space-y-2 text-slate-700">
+              <li><strong>Lakefront Zone (75-85m):</strong> High water tables, lake-influenced saturation, seiche flooding risk</li>
+              <li><strong>Lower Plain (85-110m):</strong> Moderate drainage, clay soil water retention, stable conditions</li>
+              <li><strong>Mid-Slope (110-175m):</strong> Transitional geology, increasing bedrock influence, improved drainage</li>
+              <li><strong>Escarpment Base (175-200m):</strong> Limestone bedrock emergence, concentrated spring discharge</li>
+              <li><strong>Escarpment Crest (200-225m):</strong> Fractured limestone channels, downslope water movement</li>
+            </ul>
+          </div>
+
+          <p>
+            The Niagara Escarpment bisects Burlington from northeast to southwest, roughly following the alignment of Guelph Line and creating a dramatic physical barrier between "upper" and "lower" Burlington. This geological feature isn't just a scenic backdrop—it's an active hydrogeological system that channels millions of liters of groundwater daily through fractured limestone bedrock, creating high-pressure conditions at foundation walls throughout escarpment-adjacent neighborhoods.
+          </p>
+
+          <p>
+            Properties in Tyandaga, Mountainside, and Headon Forest neighborhoods sit directly on or adjacent to the escarpment face, where limestone bedrock lies just 0.5-2 meters below surface soil. These homes deal with groundwater emerging from bedrock fissures under significant hydrostatic pressure, particularly during spring snowmelt when water tables rise 2-4 meters above summer levels. Foundation excavation in these areas often encounters flowing water even in dry summer conditions.
+          </p>
+
+          <p>
+            Burlington's two major creek systems—Spencer Creek and Sixteen Mile Creek—drain the escarpment and flow through the city to Lake Ontario, creating floodplain corridors that impact hundreds of properties. Spencer Creek's watershed covers 150 square kilometers of escarpment and plateau land, concentrating runoff through narrow valleys in Freeman, Aldershot, and Palmer neighborhoods. Properties within 200 meters of these creeks face elevated groundwater from creek infiltration during high-flow events.
+          </p>
+
+          <p>
+            The city's mature urban development, with most neighborhoods built between 1950-1990, means thousands of homes have aging foundation drainage systems that predate modern waterproofing standards. Homes in Aldershot (58 years median age), Brant Hills (72 years), and Roseland (29 years) show distinct waterproofing challenges based on construction era, foundation materials, and original drainage design—or lack thereof in pre-1960 construction.
+          </p>
+        </div>
+      </section>
+
+      <!-- Section 2: Niagara Escarpment Limestone -->
+      <section id="niagara-escarpment" class="mb-16 scroll-mt-8">
+        <h2 class="text-3xl font-bold text-slate-900 mb-6 border-b-4 border-cyan-500 pb-2">
+          2. Niagara Escarpment Limestone: Nature's Water Highway
+        </h2>
+
+        <div class="prose prose-lg max-w-none text-slate-700 space-y-6">
+          <p>
+            The Niagara Escarpment through Burlington consists primarily of Lockport Dolostone and Queenston Shale formations dating from the Silurian period 430-440 million years ago. This isn't solid, impermeable rock—it's a fractured, layered system of limestone and dolomite with extensive jointing, bedding planes, and solution channels that act as underground highways for groundwater movement.
+          </p>
+
+          <p>
+            Limestone bedrock in Burlington contains three distinct water-bearing zones that impact foundation waterproofing: horizontal bedding planes spaced 10-50 centimeters apart, vertical fracture joints oriented primarily northeast-southwest following regional stress patterns, and solution-enlarged channels where slightly acidic groundwater has dissolved limestone over millennia, creating pathways up to 30 centimeters wide.
+          </p>
+
+          <div class="bg-white border border-slate-200 rounded-lg p-6 my-8 shadow-sm">
+            <h3 class="font-bold text-xl text-slate-900 mb-4">Escarpment Bedrock Water Flow Characteristics</h3>
+            <div class="overflow-x-auto">
+              <table class="w-full text-left border-collapse">
+                <thead>
+                  <tr class="border-b-2 border-slate-300">
+                    <th class="py-3 px-4 font-semibold text-slate-900">Feature Type</th>
+                    <th class="py-3 px-4 font-semibold text-slate-900">Dimensions</th>
+                    <th class="py-3 px-4 font-semibold text-slate-900">Flow Capacity</th>
+                    <th class="py-3 px-4 font-semibold text-slate-900">Foundation Impact</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-200">
+                  <tr>
+                    <td class="py-3 px-4">Bedding Planes</td>
+                    <td class="py-3 px-4">1-5mm thickness, 10-50cm spacing</td>
+                    <td class="py-3 px-4">5-20 L/min per meter</td>
+                    <td class="py-3 px-4">Seepage at wall-floor joints</td>
+                  </tr>
+                  <tr>
+                    <td class="py-3 px-4">Fracture Joints</td>
+                    <td class="py-3 px-4">2-15mm width, vertical orientation</td>
+                    <td class="py-3 px-4">15-50 L/min per joint</td>
+                    <td class="py-3 px-4">Concentrated wall penetration</td>
+                  </tr>
+                  <tr>
+                    <td class="py-3 px-4">Solution Channels</td>
+                    <td class="py-3 px-4">5-30cm diameter, irregular paths</td>
+                    <td class="py-3 px-4">100-500+ L/min per channel</td>
+                    <td class="py-3 px-4">High-pressure floor heaving, flowing water during excavation</td>
+                  </tr>
+                  <tr>
+                    <td class="py-3 px-4">Contact Zones</td>
+                    <td class="py-3 px-4">Limestone/shale boundaries</td>
+                    <td class="py-3 px-4">Variable, 10-200 L/min</td>
+                    <td class="py-3 px-4">Lateral flow along foundation base</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <p>
+            Properties along the escarpment face between Mountainside Road and Upper Middle Road frequently encounter artesian conditions during foundation excavation, where groundwater under pressure flows upward from bedrock fractures. This occurs because water infiltrating at higher elevations on the escarpment creates hydraulic head—essentially pressure—that forces water through confined aquifer layers until it finds an outlet at lower elevations where the confining layer is breached by excavation or natural exposure.
+          </p>
+
+          <p>
+            The Lockport Dolostone formation that caps the escarpment is underlain by weaker Queenston Shale, creating a hydrogeological contact zone that concentrates groundwater flow. This contact typically sits at 185-195 meters elevation in Burlington, meaning properties in the Tyandaga Golf Club area, along Prospect Street, and throughout Headon Forest sit directly on this transition zone where groundwater emerges under natural pressure.
+          </p>
+
+          <p>
+            Seasonal water table fluctuations in escarpment bedrock are dramatic. Spring snowmelt can raise water tables 3-5 meters above late summer levels, transforming dry bedrock fractures into flowing channels. Properties on Spruce Avenue, Maple Avenue, and throughout the Mountainside neighborhood report basement seepage that appears only in March-April, corresponding to peak groundwater recharge when snowmelt infiltrates the escarpment's upper reaches and travels through bedrock to emerge at lower elevations.
+          </p>
+
+          <p>
+            The escarpment's geological structure creates a unique challenge for waterproofing: you're not just dealing with surface water drainage or shallow groundwater, but with bedrock aquifer systems that can deliver water under pressure to depths of 3-4 meters below grade. Standard perimeter drainage that works in clay or sandy soil often proves inadequate when bedrock fractures deliver 50-100 liters per minute directly to foundation walls during spring peaks.
+          </p>
+
+          <div class="bg-amber-50 border-l-4 border-amber-500 p-6 my-8 rounded-r-lg">
+            <h3 class="font-bold text-lg text-slate-900 mb-2">Escarpment Property Warning Signs</h3>
+            <p class="text-slate-700 mb-3">
+              If your Burlington property is within 500 meters of the escarpment face (roughly between Guelph Line and Walkers Line, from Plains Road to Upper Middle Road), watch for these indicators of bedrock water infiltration:
+            </p>
+            <ul class="space-y-2 text-slate-700 list-disc list-inside">
+              <li>Basement seepage that appears seasonally (spring) regardless of rainfall</li>
+              <li>Cold spots on basement walls indicating groundwater flow behind foundation</li>
+              <li>Mineral deposits (white efflorescence) concentrated at wall-floor joints</li>
+              <li>Sump pump activity during dry weather, especially in early morning</li>
+              <li>Foundation cracks that show moisture even when soil around foundation is dry</li>
+              <li>Yard areas that remain wet or soft when surrounding properties are dry</li>
+            </ul>
+          </div>
+
+          <p>
+            Modern waterproofing solutions for escarpment properties require deep foundation drainage—typically 300-450mm below the footing—to intercept bedrock groundwater before it reaches the foundation wall. This contrasts with lakefront properties where shallow perimeter drains (150-200mm below footing) adequately handle surface and near-surface water. The cost difference is significant: escarpment waterproofing averages $235-$275 per linear foot versus $170-$215 for lakefront properties.
+          </p>
+        </div>
+      </section>
+
+      <!-- Section 3: Creek Flooding -->
+      <section id="creek-flooding" class="mb-16 scroll-mt-8">
+        <h2 class="text-3xl font-bold text-slate-900 mb-6 border-b-4 border-cyan-500 pb-2">
+          3. Spencer Creek & Sixteen Mile Creek: Burlington's Flood Corridors
+        </h2>
+
+        <div class="prose prose-lg max-w-none text-slate-700 space-y-6">
+          <p>
+            Spencer Creek and Sixteen Mile Creek are Burlington's two major watercourses, together draining over 200 square kilometers of escarpment, plateau, and urban land. These creeks aren't just surface features—they create zones of elevated groundwater extending 150-300 meters from their banks, affecting hundreds of properties that never experience direct creek flooding but deal with infiltration-related basement water issues.
+          </p>
+
+          <p>
+            Spencer Creek enters Burlington from Hamilton near Highway 403 and Waterdown Road, flowing northeast through Freeman Station, Aldershot, and Palmer neighborhoods before emptying into Lake Ontario at LaSalle Park. The creek's watershed captures runoff from 150 square kilometers of escarpment lands, concentrating flow through a relatively narrow valley that constricts at several points, notably at Dundas Street and at Lakeshore Road.
+          </p>
+
+          <p>
+            Properties within the Spencer Creek floodplain—roughly 200 meters on either side of the creek through Freeman and Aldershot—face dual challenges: elevated groundwater from creek infiltration during high-flow events, and potential direct flooding during extreme rainfall. The April 2014 rainfall event (85mm in 6 hours) pushed Spencer Creek to near-record levels, flooding 23 basements in the Aldershot area and raising groundwater tables throughout the watershed for 3-4 weeks afterward.
+          </p>
+
+          <div class="bg-white border border-slate-200 rounded-lg p-6 my-8 shadow-sm">
+            <h3 class="font-bold text-xl text-slate-900 mb-4">Burlington Creek Systems & Basement Impact Zones</h3>
+            <div class="overflow-x-auto">
+              <table class="w-full text-left border-collapse">
+                <thead>
+                  <tr class="border-b-2 border-slate-300">
+                    <th class="py-3 px-4 font-semibold text-slate-900">Creek System</th>
+                    <th class="py-3 px-4 font-semibold text-slate-900">Watershed Area</th>
+                    <th class="py-3 px-4 font-semibold text-slate-900">Affected Neighborhoods</th>
+                    <th class="py-3 px-4 font-semibold text-slate-900">Properties at Risk</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-200">
+                  <tr>
+                    <td class="py-3 px-4 font-semibold">Spencer Creek</td>
+                    <td class="py-3 px-4">150 km²</td>
+                    <td class="py-3 px-4">Freeman, Aldershot, Palmer, Roseland</td>
+                    <td class="py-3 px-4">~1,200 within 200m of creek</td>
+                  </tr>
+                  <tr>
+                    <td class="py-3 px-4 font-semibold">Sixteen Mile Creek</td>
+                    <td class="py-3 px-4">52 km²</td>
+                    <td class="py-3 px-4">Millcroft, Longmoor, Tyandaga</td>
+                    <td class="py-3 px-4">~800 within 200m of creek</td>
+                  </tr>
+                  <tr>
+                    <td class="py-3 px-4 font-semibold">Tuck Creek</td>
+                    <td class="py-3 px-4">12 km²</td>
+                    <td class="py-3 px-4">Brant Hills, Orchard</td>
+                    <td class="py-3 px-4">~350 within 150m of creek</td>
+                  </tr>
+                  <tr>
+                    <td class="py-3 px-4 font-semibold">Shoreacres Creek</td>
+                    <td class="py-3 px-4">8 km²</td>
+                    <td class="py-3 px-4">Shoreacres, Alton</td>
+                    <td class="py-3 px-4">~200 within 150m of creek</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <p>
+            Sixteen Mile Creek forms Burlington's eastern boundary with Oakville, flowing south from the escarpment through Millcroft and Longmoor neighborhoods. This creek's smaller watershed (52 square kilometers) produces less extreme peak flows than Spencer Creek, but properties along Heritage Road, Millcroft Way, and Tapstone Court face similar groundwater infiltration challenges during spring snowmelt and summer storm events.
+          </p>
+
+          <p>
+            The hydrogeological impact of these creeks extends well beyond their visible channels. Creek water infiltrates surrounding soils, raising water tables in a gradient that extends 150-300 meters laterally. During high creek flows, this zone of influence expands as creek water at higher elevation than surrounding land creates hydraulic pressure that drives water into adjacent soils and toward nearby basements.
+          </p>
+
+          <p>
+            Properties on Locust Street, Pine Avenue, and throughout the Palmer neighborhood sit 100-200 meters from Spencer Creek but report basement seepage that correlates directly with creek flow levels, not with local rainfall. This occurs because creek infiltration raises the regional water table, which then creates hydrostatic pressure against foundation walls even when surface conditions appear dry.
+          </p>
+
+          <p>
+            Conservation Halton regulates development and site alteration within creek floodplains and adjacent "regulation limits" that typically extend to the greater of: the 100-year floodline, the meander belt width, or 15 meters from the creek centerline. For Burlington homeowners, this means waterproofing work within these zones requires Conservation Halton approval in addition to City of Burlington building permits—a requirement that catches many homeowners by surprise and can add 4-6 weeks to project timelines.
+          </p>
+
+          <div class="bg-cyan-50 border-l-4 border-cyan-500 p-6 my-8 rounded-r-lg">
+            <h3 class="font-bold text-lg text-slate-900 mb-2">Creek-Adjacent Property Waterproofing Priorities</h3>
+            <p class="text-slate-700 mb-3">
+              If your property is within 300 meters of Spencer Creek, Sixteen Mile Creek, or other Burlington watercourses, prioritize these waterproofing elements:
+            </p>
+            <ul class="space-y-2 text-slate-700 list-decimal list-inside">
+              <li><strong>Backwater valve installation:</strong> Prevents creek flooding from backing up through sanitary sewer connections</li>
+              <li><strong>Oversized sump system:</strong> 24-inch diameter basin with high-capacity pump (0.5+ HP) to handle infiltration surges</li>
+              <li><strong>Battery backup:</strong> Creek flooding often causes power outages; backup ensures continued pumping</li>
+              <li><strong>Deep perimeter drainage:</strong> 300mm below footing to intercept groundwater before it reaches foundation</li>
+              <li><strong>Foundation membrane:</strong> Full-height rubberized asphalt or HDPE to block infiltration through wall</li>
+            </ul>
+          </div>
+
+          <p>
+            Climate change projections for the Greater Toronto Area indicate increasing frequency of high-intensity rainfall events—the kind that cause rapid creek rises and associated groundwater surges. The 2024 Ontario Climate Change Impact Assessment projects 15-25% increases in extreme rainfall frequency by 2050, meaning Burlington's creek systems will experience more frequent peaks and properties in creek-influenced zones will face escalating infiltration risk.
+          </p>
+
+          <p>
+            Modern waterproofing for creek-adjacent properties should account for these projected conditions, not just historical patterns. This means designing drainage systems with 20-30% additional capacity beyond current calculations, installing redundant pump systems, and using foundation membranes rated for continuous submersion rather than intermittent exposure.
+          </p>
+        </div>
+      </section>
+
+      <!-- Section 4: Elevation-Specific Solutions -->
+      <section id="elevation-solutions" class="mb-16 scroll-mt-8">
+        <h2 class="text-3xl font-bold text-slate-900 mb-6 border-b-4 border-cyan-500 pb-2">
+          4. Elevation-Specific Waterproofing Solutions
+        </h2>
+
+        <div class="prose prose-lg max-w-none text-slate-700 space-y-6">
+          <p>
+            Burlington's 150-meter elevation range from lakefront to escarpment crest creates five distinct waterproofing zones, each requiring specific approaches based on geology, water table depth, groundwater sources, and foundation conditions. A one-size-fits-all waterproofing approach fails in Burlington—successful basement protection requires elevation-specific solutions matched to local hydrogeology.
+          </p>
+
+          <h3 class="text-2xl font-bold text-slate-900 mt-8 mb-4">Lakefront Zone: 75-85 Meters Elevation</h3>
+
+          <p>
+            Properties from Lakeshore Road south to Lake Ontario face the highest water tables in Burlington—typically 0.5-2 meters below basement floors, rising to within 0.3 meters during spring peaks. This zone includes Beachway Park, LaSalle Marina, and the entire stretch from Burloak Drive to North Shore Boulevard. Foundation excavation here routinely encounters flowing water, and completed basements require continuous sump pump operation 9-10 months per year.
+          </p>
+
+          <p>
+            The lakefront zone sits on glacial lake deposits—fine silts and clays from ancestral Lake Iroquois that covered this area 12,000 years ago. These soils have low permeability but high water retention, creating chronically saturated conditions. The proximity to Lake Ontario means water tables fluctuate with lake levels, which vary 0.5-1.0 meters annually based on precipitation patterns across the entire Great Lakes basin.
+          </p>
+
+          <div class="bg-white border border-slate-200 rounded-lg p-6 my-8 shadow-sm">
+            <h3 class="font-bold text-xl text-slate-900 mb-4">Lakefront Zone Waterproofing System</h3>
+            <div class="grid md:grid-cols-2 gap-6">
+              <div>
+                <h4 class="font-semibold text-slate-900 mb-2">Required Components</h4>
+                <ul class="space-y-2 text-slate-700 list-disc list-inside">
+                  <li>Full-perimeter interior drainage with 100mm pipe</li>
+                  <li>24-inch sump basin, 0.5 HP pump minimum</li>
+                  <li>Battery backup system (8+ hour capacity)</li>
+                  <li>Foundation membrane if exterior work feasible</li>
+                  <li>Dehumidification system (50-70 pint capacity)</li>
+                </ul>
+              </div>
+              <div>
+                <h4 class="font-semibold text-slate-900 mb-2">System Performance</h4>
+                <ul class="space-y-2 text-slate-700 list-disc list-inside">
+                  <li>Sump cycles: 8-15 times per day (spring/fall)</li>
+                  <li>Water removal: 500-1,500 L/day peak periods</li>
+                  <li>Basement RH: Target 45-50% with dehumidifier</li>
+                  <li>System cost: $11,000-$16,000 (40-foot perimeter)</li>
+                  <li>Exterior add: +$8,000-$12,000 if accessible</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <h3 class="text-2xl font-bold text-slate-900 mt-8 mb-4">Lower Plain: 85-110 Meters Elevation</h3>
+
+          <p>
+            The lower plain encompasses most of Burlington's central neighborhoods: Aldershot, Brant Hills, Palmer, Roseland, and Orchard. This zone represents the most buildable land in Burlington—relatively flat, well-drained, with water tables typically 2.5-4 meters below basement floors. These properties benefit from moderate drainage toward Lake Ontario and lack the extreme conditions of either lakefront or escarpment locations.
+          </p>
+
+          <p>
+            Geology in this zone consists of glacial till overlying shale bedrock at depths of 4-8 meters. The till provides adequate drainage while the shale acts as an aquiclude (water barrier), preventing deep water tables from rising. Properties here rarely experience bedrock groundwater issues but can face surface water problems from poor lot grading, inadequate downspout discharge, or blocked foundation drains.
+          </p>
+
+          <p>
+            Waterproofing for lower plain properties typically involves exterior perimeter drainage with foundation membrane, or interior drainage for homes where exterior excavation is impractical due to landscaping, driveways, or adjacent structures. These systems are the most straightforward in Burlington, with predictable performance and costs at the lower end of the city's range: $150-$200 per linear foot for exterior work, $120-$150 for interior systems.
+          </p>
+
+          <h3 class="text-2xl font-bold text-slate-900 mt-8 mb-4">Mid-Slope: 110-175 Meters Elevation</h3>
+
+          <p>
+            The mid-slope zone represents Burlington's transitional geology, where glacial soils thin and bedrock influence increases. Neighborhoods in this zone include parts of Tyandaga, Longmoor, and upper Palmer. Water tables here are deeper (3-5 meters below basement floors) but bedrock fractures begin to play a role in groundwater movement, creating variable conditions even within single subdivisions.
+          </p>
+
+          <p>
+            Some mid-slope properties sit on thick glacial deposits and behave like lower plain locations; others have shallow bedrock (1-2 meters below basement floor) and experience escarpment-like conditions. Site-specific assessment is critical in this zone—you cannot assume your neighbor's waterproofing solution will work for your property even if houses are identical and built simultaneously.
+          </p>
+
+          <h3 class="text-2xl font-bold text-slate-900 mt-8 mb-4">Escarpment Base: 175-200 Meters Elevation</h3>
+
+          <p>
+            The escarpment base zone is where limestone bedrock emerges at or near surface, creating the most challenging waterproofing conditions in Burlington. This narrow band—typically 200-400 meters wide—runs from Mountainside through Headon Forest and includes properties on Prospect Street, Spruce Avenue, and the western portions of Tyandaga. Foundation excavation here almost always encounters bedrock, and groundwater emerges under natural pressure from fractures and bedding planes.
+          </p>
+
+          <p>
+            Waterproofing at the escarpment base requires deep drainage systems—300-450mm below footings—to intercept bedrock groundwater. Standard perimeter drains prove inadequate because water arrives through bedrock, not surface soils. Successful systems often include relief wells: 150-200mm diameter holes drilled through the basement floor into bedrock to provide controlled outlets for artesian pressure, connected to the sump system.
+          </p>
+
+          <div class="bg-amber-50 border-l-4 border-amber-500 p-6 my-8 rounded-r-lg">
+            <h3 class="font-bold text-lg text-slate-900 mb-2">Escarpment Base System Requirements</h3>
+            <ul class="space-y-2 text-slate-700 list-disc list-inside">
+              <li>Deep perimeter drainage (300-450mm below footing) to intercept bedrock water</li>
+              <li>Full-height rubberized membrane (not dampproofing) on exterior foundation walls</li>
+              <li>Drainage board or geocomposite from footing to grade to handle high flow volumes</li>
+              <li>Oversized drainage pipe (150mm minimum, 200mm preferred) for bedrock flow capacity</li>
+              <li>Heavy-duty sump pump (0.75-1.0 HP) capable of 100+ liters per minute</li>
+              <li>Relief wells if artesian conditions encountered during excavation</li>
+              <li>System cost: $18,000-$32,000 for typical 50-foot perimeter</li>
+            </ul>
+          </div>
+
+          <h3 class="text-2xl font-bold text-slate-900 mt-8 mb-4">Escarpment Crest: 200-225 Meters Elevation</h3>
+
+          <p>
+            Properties on the escarpment crest enjoy the best natural drainage in Burlington—water flows away from these properties downslope through bedrock and surface pathways. However, crest properties face a different challenge: they're recharge zones for the escarpment aquifer system, meaning water infiltrates downward and laterally through fractured bedrock beneath their foundations.
+          </p>
+
+          <p>
+            This creates a paradox: excellent surface drainage but potential for basement water infiltration through floor slabs and lower foundation walls where bedrock fractures intersect. The solution involves sub-slab drainage systems—perforated pipe in crushed stone beneath the basement floor, connected to a sump—combined with standard perimeter drainage and foundation membranes.
+          </p>
+
+          <p>
+            Escarpment crest waterproofing costs fall between mid-slope and escarpment base levels: $180-$230 per linear foot for comprehensive systems. The additional cost comes from sub-slab drainage requirements and the need for deeper excavation to reach bedrock and properly detail membrane-to-bedrock transitions.
+          </p>
+        </div>
+      </section>
+
+      <!-- Section 5: Neighborhood Challenges -->
+      <section id="neighborhood-challenges" class="mb-16 scroll-mt-8">
+        <h2 class="text-3xl font-bold text-slate-900 mb-6 border-b-4 border-cyan-500 pb-2">
+          5. Neighborhood-by-Neighborhood Challenges
+        </h2>
+
+        <div class="prose prose-lg max-w-none text-slate-700 space-y-6">
+          <p>
+            Burlington's 24 recognized neighborhoods each present distinct waterproofing challenges based on age, elevation, geology, lot configurations, and original construction practices. Understanding your neighborhood's specific patterns helps you anticipate issues, budget appropriately, and select contractors with relevant local experience.
+          </p>
+
+          <h3 class="text-2xl font-bold text-slate-900 mt-8 mb-4">Aldershot (Median Age: 58 Years)</h3>
+
+          <p>
+            Aldershot is Burlington's oldest established neighborhood, with most homes built 1950-1970 on the lower plain between Lakeshore Road and Plains Road West, from Highway 403 to Brant Street. The neighborhood sits at 85-95 meters elevation with good natural drainage toward Lake Ontario, but 58-year median housing age means most foundation drainage systems have failed or were never properly installed.
+          </p>
+
+          <p>
+            Original Aldershot homes used concrete block foundations with thin parge coats, weeping tile (clay pipe) drainage, and tar dampproofing—none of which meet modern standards. The clay weeping tile has collapsed in most properties after 50+ years, blocking drainage and trapping water against foundations. Properties on Windermere Road, Harcourt Drive, and throughout the area south of Burlington Avenue require full perimeter drainage replacement when waterproofing.
+          </p>
+
+          <p>
+            Aldershot's proximity to Spencer Creek affects properties east of Maple Avenue and south of Seneca Avenue, where elevated water tables during spring snowmelt create basement seepage even in homes with no history of problems. The April 2014 rainfall event flooded 23 Aldershot basements, most for the first time in their history, highlighting changing risk patterns as climate drives more intense rainfall.
+          </p>
+
+          <div class="bg-white border border-slate-200 rounded-lg p-6 my-8 shadow-sm">
+            <h3 class="font-bold text-xl text-slate-900 mb-4">Aldershot Waterproofing Profile</h3>
+            <div class="grid md:grid-cols-2 gap-6">
+              <div>
+                <h4 class="font-semibold text-slate-900 mb-2">Common Issues</h4>
+                <ul class="space-y-1 text-slate-700 text-sm list-disc list-inside">
+                  <li>Collapsed clay weeping tile (70%+ of properties)</li>
+                  <li>Deteriorated parge coat on block foundations</li>
+                  <li>Cracked floor slabs from settlement</li>
+                  <li>Missing or inadequate window well drainage</li>
+                  <li>Spencer Creek influence on east side</li>
+                </ul>
+              </div>
+              <div>
+                <h4 class="font-semibold text-slate-900 mb-2">Typical Solutions</h4>
+                <ul class="space-y-1 text-slate-700 text-sm list-disc list-inside">
+                  <li>Full exterior perimeter drainage replacement</li>
+                  <li>Rubberized membrane over repaired parge</li>
+                  <li>Interior drainage if exterior access limited</li>
+                  <li>Sump pump installation (40% lack sumps)</li>
+                  <li>Avg cost: $13,000-$21,000 (45-ft perimeter)</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <h3 class="text-2xl font-bold text-slate-900 mt-8 mb-4">Brant Hills (Median Age: 72 Years)</h3>
+
+          <p>
+            Brant Hills is Burlington's most historic neighborhood, with homes dating from the 1920s-1960s concentrated along Brant Street between Plains Road and New Street. At 90-105 meters elevation on the lower plain, the area has good natural drainage, but the 72-year median age means foundation systems are well past their service life. Many homes predate modern building codes and lack any original waterproofing.
+          </p>
+
+          <p>
+            Brant Hills' defining characteristic is narrow lot widths—many properties are 30-40 feet wide with minimal side yard setbacks, making exterior waterproofing access challenging or impossible without coordinating with neighbors. Interior drainage systems are common here, though homeowners should understand these address water that has already penetrated the foundation rather than preventing infiltration.
+          </p>
+
+          <p>
+            The neighborhood's mature tree canopy, while aesthetically valuable, creates foundation challenges as root systems invade and block drainage systems. Properties on Elizabeth Street, Victoria Avenue, and Pearl Street regularly deal with roots blocking weeping tile, requiring root removal and pipe replacement during waterproofing projects—adding $1,500-$3,000 to typical costs.
+          </p>
+
+          <h3 class="text-2xl font-bold text-slate-900 mt-8 mb-4">Tyandaga (Median Age: 45 Years)</h3>
+
+          <p>
+            Tyandaga occupies a unique position straddling the escarpment between 140-200 meters elevation, with properties experiencing dramatically different conditions based on elevation and proximity to the escarpment face. The neighborhood name derives from the Mississauga word for "meeting place," and it's where Burlington's urban development meets the escarpment's geological reality.
+          </p>
+
+          <p>
+            Lower Tyandaga (south of Tyandaga Parkway) sits at 140-160 meters on thick glacial deposits with predictable waterproofing requirements similar to lower plain properties. Upper Tyandaga (north of Tyandaga Parkway, west of Guelph Line) approaches the escarpment base with bedrock at or near surface, creating high-pressure groundwater conditions.
+          </p>
+
+          <p>
+            Properties along Prospect Street, Spruce Avenue, and Maple Avenue regularly encounter flowing water during excavation, even in late summer. These homes require deep drainage systems (300-400mm below footings) and heavy-duty sump pumps to handle bedrock aquifer discharge. Waterproofing costs in upper Tyandaga run $220-$270 per linear foot, Burlington's highest, due to bedrock challenges and the need for specialized systems.
+          </p>
+
+          <h3 class="text-2xl font-bold text-slate-900 mt-8 mb-4">Millcroft (Median Age: 52 Years)</h3>
+
+          <p>
+            Millcroft is a master-planned community from the 1970s-1980s occupying the Sixteen Mile Creek valley at 110-150 meters elevation. The neighborhood's defining feature is its relationship with the creek, which winds through the community creating aesthetic value but elevating groundwater throughout the valley. Properties within 300 meters of the creek—roughly 60% of Millcroft homes—experience creek-influenced water tables.
+          </p>
+
+          <p>
+            Millcroft homes were built with foundation drainage systems, but after 45-50 years many have failed due to sediment accumulation, root infiltration, or pipe collapse. The neighborhood's mature landscaping and extensive hardscaping (interlock driveways, multi-level patios) make exterior waterproofing access challenging, pushing many homeowners toward interior drainage solutions.
+          </p>
+
+          <p>
+            Conservation Halton regulates work within 15 meters of Sixteen Mile Creek, affecting properties on Heritage Road, Millcroft Way, and streets backing onto the creek. Homeowners here must obtain Conservation permits in addition to City building permits—a requirement that adds 4-6 weeks to project timelines and $800-$1,200 in additional permit and engineering fees.
+          </p>
+
+          <div class="bg-white border border-slate-200 rounded-lg p-6 my-8 shadow-sm">
+            <h3 class="font-bold text-xl text-slate-900 mb-4">High-Challenge Neighborhoods: System Requirements & Costs</h3>
+            <div class="overflow-x-auto">
+              <table class="w-full text-left border-collapse text-sm">
+                <thead>
+                  <tr class="border-b-2 border-slate-300">
+                    <th class="py-2 px-3 font-semibold text-slate-900">Neighborhood</th>
+                    <th class="py-2 px-3 font-semibold text-slate-900">Primary Challenge</th>
+                    <th class="py-2 px-3 font-semibold text-slate-900">Required System</th>
+                    <th class="py-2 px-3 font-semibold text-slate-900">Cost Range</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-200">
+                  <tr>
+                    <td class="py-2 px-3">Upper Tyandaga</td>
+                    <td class="py-2 px-3">Escarpment bedrock water</td>
+                    <td class="py-2 px-3">Deep drainage + relief wells + heavy-duty pump</td>
+                    <td class="py-2 px-3">$18,000-$32,000</td>
+                  </tr>
+                  <tr>
+                    <td class="py-2 px-3">Headon Forest</td>
+                    <td class="py-2 px-3">Limestone bedrock, artesian pressure</td>
+                    <td class="py-2 px-3">Sub-slab + perimeter + membrane + oversized pump</td>
+                    <td class="py-2 px-3">$17,000-$28,000</td>
+                  </tr>
+                  <tr>
+                    <td class="py-2 px-3">Lakefront (Beachway)</td>
+                    <td class="py-2 px-3">High water table, Lake Ontario influence</td>
+                    <td class="py-2 px-3">Interior drainage + battery backup + dehumidifier</td>
+                    <td class="py-2 px-3">$14,000-$22,000</td>
+                  </tr>
+                  <tr>
+                    <td class="py-2 px-3">Millcroft (creek-adjacent)</td>
+                    <td class="py-2 px-3">Sixteen Mile Creek infiltration</td>
+                    <td class="py-2 px-3">Perimeter drainage + backwater valve + backup pump</td>
+                    <td class="py-2 px-3">$15,000-$24,000</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <h3 class="text-2xl font-bold text-slate-900 mt-8 mb-4">Palmer (Median Age: 38 Years)</h3>
+
+          <p>
+            Palmer is a mid-1980s to 1990s subdivision on the lower plain at 88-95 meters elevation, bounded roughly by Lakeshore Road, Guelph Line, New Street, and Brant Street. With a 38-year median age, Palmer represents Burlington's first generation of homes built under modern building codes with foundation waterproofing requirements. Most homes have functional weeping tile systems, but 30+ years of service means many are approaching the end of their effective lifespan.
+          </p>
+
+          <p>
+            Palmer's challenge is Spencer Creek influence on its eastern edge. Properties east of Elizabeth Street and south of New Street sit within 200-400 meters of the creek, experiencing elevated water tables during spring snowmelt and summer storm events. These homes show basement seepage patterns that correlate with creek flows rather than local rainfall, indicating groundwater infiltration from creek recharge.
+          </p>
+
+          <h3 class="text-2xl font-bold text-slate-900 mt-8 mb-4">Orchard (Median Age: 41 Years)</h3>
+
+          <p>
+            Orchard sits at 95-110 meters elevation between Brant Street and Walkers Line, north of New Street. Built primarily in the 1980s, the neighborhood benefits from modern construction standards and good natural drainage on the lower plain. Waterproofing issues here typically result from poor maintenance (clogged gutters, blocked downspouts) rather than systemic foundation problems.
+          </p>
+
+          <p>
+            However, Orchard's mature landscaping and extensive use of finished basements mean waterproofing projects often involve additional costs for landscaping restoration and interior drywall/flooring removal to access foundation walls from the interior. Budget an additional 15-25% beyond base waterproofing costs for these ancillary expenses.
+          </p>
+
+          <h3 class="text-2xl font-bold text-slate-900 mt-8 mb-4">Headon Forest (Median Age: 33 Years)</h3>
+
+          <p>
+            Headon Forest is a 1990s development on the escarpment between 180-210 meters elevation, west of Walkers Line and north of Upper Middle Road. Despite being Burlington's newest area covered in this analysis, Headon Forest presents some of the city's most challenging waterproofing conditions due to its position on and near the escarpment face where limestone bedrock lies at or near surface.
+          </p>
+
+          <p>
+            Properties throughout Headon Forest encounter bedrock during excavation, with many sitting directly on limestone with just 0.5-1.5 meters of overburden soil. Groundwater flows through bedrock fractures and bedding planes, creating conditions where water appears at foundation walls under pressure even when surface soils are dry. Spring snowmelt regularly pushes water through these bedrock pathways, causing basement seepage in homes that show no issues from summer through fall.
+          </p>
+
+          <p>
+            Waterproofing in Headon Forest requires escarpment-specific approaches: deep drainage to intercept bedrock water, full-height rubberized membranes, and often sub-slab drainage systems to handle water moving upward through floor slabs. Costs here run $200-$265 per linear foot, and projects routinely encounter flowing water during excavation that requires temporary pumping to complete the work.
+          </p>
+
+          <h3 class="text-2xl font-bold text-slate-900 mt-8 mb-4">Roseland (Median Age: 29 Years)</h3>
+
+          <p>
+            Roseland is Burlington's youngest neighborhood in this analysis, developed primarily 1995-2005 on the lower plain at 85-92 meters elevation near Spencer Creek and LaSalle Park. Modern building code compliance means most homes have functional waterproofing systems, but the neighborhood's youth doesn't eliminate water issues—just changes their nature.
+          </p>
+
+          <p>
+            Roseland properties close to Spencer Creek face the same creek-influenced water table issues as older Palmer and Aldershot homes, but with one advantage: their drainage systems are 40-50 years newer and generally still functional. Waterproofing work in Roseland typically involves supplementing existing systems—adding sump pumps, installing backwater valves, improving grading—rather than complete system replacement required in older neighborhoods.
+          </p>
+
+          <p>
+            The neighborhood's proximity to Lake Ontario and low elevation means properties here see high water tables (1-2 meters below basement floors) and benefit from dehumidification systems to manage humidity even when waterproofing keeps liquid water out. A 50-70 pint dehumidifier ($300-$500) is a worthwhile investment for Roseland basements.
+          </p>
+        </div>
+      </section>
+
+      <!-- Section 6: 2026 Costs -->
+      <section id="costs-2026" class="mb-16 scroll-mt-8">
+        <h2 class="text-3xl font-bold text-slate-900 mb-6 border-b-4 border-cyan-500 pb-2">
+          6. 2026 Waterproofing Costs in Burlington
+        </h2>
+
+        <div class="prose prose-lg max-w-none text-slate-700 space-y-6">
+          <p>
+            Basement waterproofing costs in Burlington range from $150 to $275 per linear foot in 2026, with total project costs for typical homes (40-60 linear feet of foundation perimeter) falling between $12,000 and $24,000. This wide range reflects Burlington's diverse geology, elevation zones, and the dramatic difference between straightforward lower plain projects and complex escarpment-area work.
+          </p>
+
+          <p>
+            Understanding cost drivers helps you budget accurately and evaluate contractor quotes. Burlington waterproofing costs are influenced by seven primary factors: elevation and geology, system type (exterior vs. interior), excavation depth and conditions, foundation height and condition, site access and lot configuration, permit requirements, and current labor and material costs.
+          </p>
+
+          <div class="bg-white border border-slate-200 rounded-lg p-6 my-8 shadow-sm">
+            <h3 class="font-bold text-xl text-slate-900 mb-4">Burlington Waterproofing Cost Breakdown by System Type</h3>
+            <div class="overflow-x-auto">
+              <table class="w-full text-left border-collapse">
+                <thead>
+                  <tr class="border-b-2 border-slate-300">
+                    <th class="py-3 px-4 font-semibold text-slate-900">System Type</th>
+                    <th class="py-3 px-4 font-semibold text-slate-900">Cost Per Linear Foot</th>
+                    <th class="py-3 px-4 font-semibold text-slate-900">40-Foot Perimeter</th>
+                    <th class="py-3 px-4 font-semibold text-slate-900">60-Foot Perimeter</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-200">
+                  <tr>
+                    <td class="py-3 px-4">Interior Drainage (standard)</td>
+                    <td class="py-3 px-4">$120-$150</td>
+                    <td class="py-3 px-4">$4,800-$6,000</td>
+                    <td class="py-3 px-4">$7,200-$9,000</td>
+                  </tr>
+                  <tr>
+                    <td class="py-3 px-4">Interior Drainage (with floor pour)</td>
+                    <td class="py-3 px-4">$150-$185</td>
+                    <td class="py-3 px-4">$6,000-$7,400</td>
+                    <td class="py-3 px-4">$9,000-$11,100</td>
+                  </tr>
+                  <tr>
+                    <td class="py-3 px-4">Exterior (lower plain, standard access)</td>
+                    <td class="py-3 px-4">$170-$215</td>
+                    <td class="py-3 px-4">$6,800-$8,600</td>
+                    <td class="py-3 px-4">$10,200-$12,900</td>
+                  </tr>
+                  <tr>
+                    <td class="py-3 px-4">Exterior (difficult access, mature landscaping)</td>
+                    <td class="py-3 px-4">$200-$245</td>
+                    <td class="py-3 px-4">$8,000-$9,800</td>
+                    <td class="py-3 px-4">$12,000-$14,700</td>
+                  </tr>
+                  <tr>
+                    <td class="py-3 px-4">Exterior (escarpment, bedrock water)</td>
+                    <td class="py-3 px-4">$235-$275</td>
+                    <td class="py-3 px-4">$9,400-$11,000</td>
+                    <td class="py-3 px-4">$14,100-$16,500</td>
+                  </tr>
+                  <tr>
+                    <td class="py-3 px-4">Combined Interior + Exterior</td>
+                    <td class="py-3 px-4">$240-$310</td>
+                    <td class="py-3 px-4">$9,600-$12,400</td>
+                    <td class="py-3 px-4">$14,400-$18,600</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <h3 class="text-2xl font-bold text-slate-900 mt-8 mb-4">Additional System Components & Add-On Costs</h3>
+
+          <p>
+            Beyond basic perimeter drainage, most Burlington waterproofing projects include additional components that add to total costs. Sump pump systems are required for interior drainage and most exterior systems in lower plain and lakefront zones. A standard sump package (24-inch basin, 0.5 HP pump, check valve, discharge piping) adds $1,800-$2,400 to project costs. Battery backup systems add another $1,200-$1,800 but are essential for creek-adjacent properties where flooding causes power outages.
+          </p>
+
+          <p>
+            Foundation crack repair is often discovered during waterproofing excavation. Epoxy or polyurethane injection repairs cost $400-$800 per crack, while structural cracks requiring carbon fiber reinforcement or steel piers run $2,500-$6,000 per repair. Escarpment properties frequently show foundation movement from bedrock settlement, requiring structural repair before waterproofing membranes can be applied.
+          </p>
+
+          <p>
+            Window well replacement and waterproofing adds $450-$750 per window well, including excavation, new window well installation, proper drainage connection to weeping tile, and backfill. Burlington's mature neighborhoods often have corroded metal window wells that need replacement during foundation work.
+          </p>
+
+          <p>
+            Backwater valve installation costs $1,200-$1,800 for properties in creek-influenced areas or where municipal sewer systems risk backup during heavy rainfall. Conservation Halton and the City of Burlington recommend backwater valves for all properties within Spencer Creek and Sixteen Mile Creek floodplains—roughly 2,000 Burlington homes.
+          </p>
+
+          <div class="bg-cyan-50 border-l-4 border-cyan-500 p-6 my-8 rounded-r-lg">
+            <h3 class="font-bold text-lg text-slate-900 mb-2">Burlington Waterproofing: Typical Total Project Costs by Neighborhood Type</h3>
+            <ul class="space-y-3 text-slate-700">
+              <li><strong>Lower Plain Standard (Palmer, Orchard, Lower Tyandaga):</strong> $12,000-$18,000 for exterior perimeter waterproofing with sump pump, 40-50 foot perimeter, good access, no complicating factors.</li>
+              <li><strong>Mature Narrow Lots (Brant Hills, Old Aldershot):</strong> $8,000-$13,000 for interior drainage due to access limitations, includes sump system and floor restoration, 40-45 foot perimeter.</li>
+              <li><strong>Lakefront/Creek-Adjacent (Roseland, Millcroft near creek):</strong> $14,000-$22,000 for exterior or interior drainage with oversized sump, battery backup, backwater valve, dehumidifier, 45-55 foot perimeter.</li>
+              <li><strong>Escarpment Properties (Upper Tyandaga, Headon Forest):</strong> $18,000-$32,000 for deep drainage, full membrane system, heavy-duty pump, possible relief wells, 45-55 foot perimeter with bedrock challenges.</li>
+            </ul>
+          </div>
+
+          <h3 class="text-2xl font-bold text-slate-900 mt-8 mb-4">Cost Variations by Project Timing & Contractor Selection</h3>
+
+          <p>
+            Waterproofing costs in Burlington vary by season, with May-June and September-October representing peak demand periods when contractors are busiest and pricing is highest. Projects completed in July-August or November (before ground freeze) often see 8-12% lower costs due to reduced demand. However, avoid scheduling exterior work during spring snowmelt (March-April) when excavation conditions are poor and groundwater is at peak levels.
+          </p>
+
+          <p>
+            Contractor selection dramatically impacts both cost and quality. Burlington has 15-20 licensed waterproofing contractors, ranging from sole proprietors to larger firms with 5-10 crews. Larger contractors typically charge 10-15% more than smaller operators but offer better scheduling flexibility, more comprehensive warranties, and the financial stability to honor long-term guarantees.
+          </p>
+
+          <p>
+            Get at least three written quotes for Burlington waterproofing work, ensuring each quote specifies: linear footage of work, excavation depth, membrane type and coverage, drainage pipe size and material, sump pump specifications, warranty terms, and timeline. Quotes varying by more than 25-30% for identical scope suggest different interpretations of site conditions or quality levels—request clarification before making decisions based solely on price.
+          </p>
+
+          <h3 class="text-2xl font-bold text-slate-900 mt-8 mb-4">Financing Options & Return on Investment</h3>
+
+          <p>
+            Basement waterproofing is a significant expense, but financing options make it manageable for most Burlington homeowners. Options include: home equity lines of credit (HELOCs) at 7-8% interest (2026 rates), contractor financing programs (often 9-12% interest), personal lines of credit (10-14% interest), and government rebate programs that reduce net costs.
+          </p>
+
+          <p>
+            The return on investment for waterproofing is strong: real estate agents report that Burlington homes with documented waterproofing systems sell faster and command 2-4% higher prices than comparable homes without proof of foundation work. A $15,000 waterproofing investment on a $850,000 Burlington home (median price 2026) returns $17,000-$34,000 in increased sale value—a 113-226% ROI.
+          </p>
+
+          <p>
+            More importantly, waterproofing prevents damage costs that far exceed system installation. Basement flooding in Burlington typically causes $15,000-$40,000 in damage (flooring, drywall, furniture, HVAC systems, plus mold remediation), and most home insurance policies exclude groundwater infiltration—meaning you pay out-of-pocket. Investing $15,000-$20,000 in waterproofing prevents potentially $30,000-$50,000 in future flood losses.
+          </p>
+        </div>
+      </section>
+
+      <!-- Section 7: Permits & Compliance -->
+      <section id="permits-compliance" class="mb-16 scroll-mt-8">
+        <h2 class="text-3xl font-bold text-slate-900 mb-6 border-b-4 border-cyan-500 pb-2">
+          7. Conservation Halton Compliance & Halton Region Programs
+        </h2>
+
+        <div class="prose prose-lg max-w-none text-slate-700 space-y-6">
+          <p>
+            Basement waterproofing in Burlington requires navigating a multi-layered regulatory framework involving the City of Burlington, Conservation Halton, and Halton Region. Understanding which permits apply to your property and what financial assistance programs are available can save thousands of dollars and prevent project delays or enforcement issues.
+          </p>
+
+          <h3 class="text-2xl font-bold text-slate-900 mt-8 mb-4">City of Burlington Building Permits</h3>
+
+          <p>
+            Most Burlington waterproofing projects require building permits from the City's Building Department. Permit requirements apply when work involves: excavation below the frost line (1.2 meters in Burlington's climate zone), structural changes to foundation walls, installation or relocation of sump pumps with electrical connections, alterations to foundation drainage that discharge to municipal systems, and interior renovations exceeding $1,000 value that involve opening walls or floors.
+          </p>
+
+          <p>
+            Burlington building permit fees for waterproofing typically range from $280 to $650 based on project value. A $15,000 exterior waterproofing project pays approximately $425 in permit fees. The permit application process takes 3-4 weeks for routine residential waterproofing, though complex projects or properties in regulated areas may require 5-7 weeks.
+          </p>
+
+          <p>
+            Contractors typically handle permit applications as part of their service, but homeowners remain ultimately responsible for ensuring permits are obtained. Unpermitted waterproofing work creates problems during home sales when buyers' lawyers request building permit records, and can result in City enforcement orders requiring removal and re-inspection of work done without permits.
+          </p>
+
+          <div class="bg-white border border-slate-200 rounded-lg p-6 my-8 shadow-sm">
+            <h3 class="font-bold text-xl text-slate-900 mb-4">Burlington Waterproofing Permit Requirements Quick Reference</h3>
+            <div class="grid md:grid-cols-2 gap-6">
+              <div>
+                <h4 class="font-semibold text-slate-900 mb-2">Requires City Building Permit</h4>
+                <ul class="space-y-1 text-slate-700 text-sm list-disc list-inside">
+                  <li>Exterior excavation and drainage installation</li>
+                  <li>Foundation wall repairs or modifications</li>
+                  <li>Sump pump installation with electrical work</li>
+                  <li>Interior drainage with concrete floor work</li>
+                  <li>Structural foundation repairs</li>
+                </ul>
+              </div>
+              <div>
+                <h4 class="font-semibold text-slate-900 mb-2">No Permit Required</h4>
+                <ul class="space-y-1 text-slate-700 text-sm list-disc list-inside">
+                  <li>Interior crack injection (cosmetic only)</li>
+                  <li>Gutter and downspout improvements</li>
+                  <li>Lot grading adjustments under 150mm</li>
+                  <li>Dehumidifier installation</li>
+                  <li>Landscaping changes for drainage</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <h3 class="text-2xl font-bold text-slate-900 mt-8 mb-4">Conservation Halton Regulated Areas</h3>
+
+          <p>
+            Conservation Halton regulates development and site alteration within environmentally sensitive areas under Ontario Regulation 162/06. In Burlington, regulated areas include: Spencer Creek and Sixteen Mile Creek floodplains and meander belts, areas within 15 meters of any watercourse or wetland, the Niagara Escarpment Development Control Area, and hazardous lands including steep slopes and unstable soils.
+          </p>
+
+          <p>
+            Approximately 35-40% of Burlington properties fall within Conservation Halton regulated areas, though many homeowners don't realize it until they apply for building permits. The City of Burlington building permit application process includes Conservation Halton screening—if your property is in a regulated area, the City will refer your application to Conservation Halton for review, adding 4-6 weeks to approval timelines.
+          </p>
+
+          <p>
+            Conservation Halton permits for waterproofing typically cost $850-$1,400 depending on project scope and whether technical studies (geotechnical reports, hydrological assessments) are required. Properties within creek floodplains usually need flood-proofing designs prepared by licensed engineers, adding $1,500-$3,000 to project costs. However, most routine waterproofing work outside of creek floodplains receives administrative approval without requiring detailed studies.
+          </p>
+
+          <p>
+            Properties on or near the Niagara Escarpment may also fall under Niagara Escarpment Commission jurisdiction in addition to Conservation Halton. The escarpment Development Control Area in Burlington roughly follows the escarpment face from Mountainside through Headon Forest. Work in this zone requires Niagara Escarpment Development Permits, though routine waterproofing that doesn't alter natural features usually qualifies for exemptions.
+          </p>
+
+          <h3 class="text-2xl font-bold text-slate-900 mt-8 mb-4">Halton Region Basement Flooding Prevention Subsidy Program</h3>
+
+          <p>
+            Halton Region offers one of Ontario's most generous basement flooding prevention subsidy programs, providing up to $3,400 per property for eligible improvements. The program is administered through the City of Burlington but funded by Regional dollars, creating a seamless application process for Burlington homeowners.
+          </p>
+
+          <div class="bg-green-50 border-l-4 border-green-500 p-6 my-8 rounded-r-lg">
+            <h3 class="font-bold text-lg text-slate-900 mb-2">Halton Region Basement Flooding Prevention Subsidies (2026)</h3>
+            <ul class="space-y-3 text-slate-700">
+              <li><strong>Backwater Valve Installation:</strong> Up to $1,250 subsidy (typically covers 60-80% of installation cost). Prevents sewage backup from municipal systems during heavy rainfall events.</li>
+              <li><strong>Sump Pump Installation:</strong> Up to $1,250 subsidy for new sump pump systems, including basin, pump, discharge piping, and electrical connections. Properties without existing sumps prioritized.</li>
+              <li><strong>Foundation Drainage Improvements:</strong> Up to $900 subsidy for perimeter drainage repairs, downspout disconnection and redirection, and lot grading improvements that direct water away from foundations.</li>
+              <li><strong>Total Maximum Subsidy:</strong> $3,400 per property, covering multiple improvements in a single application or over multiple years (one application per flooding event).</li>
+            </ul>
+          </div>
+
+          <p>
+            Eligibility for Halton Region subsidies requires: property location in Burlington (or other Halton municipality), documented history of basement flooding or location in designated flood-risk area, work performed by licensed contractors with proper permits, and post-installation inspection to verify proper installation. Applications must be submitted before work begins—retroactive applications for completed work are not accepted.
+          </p>
+
+          <p>
+            The application process involves: completing the Region's application form with property details and flooding history, obtaining quotes from licensed contractors for proposed work, submitting the application and receiving conditional approval before starting work, completing the work with proper permits and inspections, and submitting final invoices and inspection reports for subsidy payment.
+          </p>
+
+          <p>
+            Processing times for subsidy applications average 4-6 weeks from submission to conditional approval. Payments are issued 3-4 weeks after final inspection approval. Burlington homeowners should factor these timelines into project planning—you'll need to pay contractors in full upon completion and wait for subsidy reimbursement.
+          </p>
+
+          <h3 class="text-2xl font-bold text-slate-900 mt-8 mb-4">Other Financial Assistance Programs</h3>
+
+          <p>
+            Beyond Halton Region subsidies, Burlington homeowners can access other financial assistance for waterproofing and flood prevention. The Canada Greener Homes Loan program provides up to $40,000 in interest-free loans for home improvements including flood resilience measures, though waterproofing specifically qualifies only when part of comprehensive energy efficiency retrofits.
+          </p>
+
+          <p>
+            Property tax deferral programs through the City of Burlington allow seniors and low-income homeowners to defer property tax payments, freeing up cash flow for essential home repairs including waterproofing. Home Accessibility Tax Credit (federal) provides up to $1,500 annual tax credits for aging-in-place modifications, which can include basement improvements that prevent flooding-related safety hazards.
+          </p>
+
+          <p>
+            Some home insurance providers offer premium discounts (5-10%) for properties with documented waterproofing systems and flood prevention measures. Ask your insurance broker about discounts available for backwater valve installation, sump pump systems with battery backup, and foundation waterproofing—annual savings of $80-$150 can offset system maintenance costs over time.
+          </p>
+        </div>
+      </section>
+
+      <!-- FAQ Section -->
+      <section id="faq" class="mb-16 scroll-mt-8">
+        <h2 class="text-3xl font-bold text-slate-900 mb-8 border-b-4 border-cyan-500 pb-2">
+          Frequently Asked Questions
+        </h2>
+
+        <div class="space-y-4">
+          <div class="bg-white rounded-lg shadow-md overflow-hidden border border-slate-200">
+            <button
+              class="w-full text-left px-6 py-4 font-semibold text-lg text-slate-900 hover:bg-slate-50 transition-colors flex justify-between items-center"
+              data-faq-toggle
+            >
+              <span>How much does basement waterproofing cost in Burlington?</span>
+              <svg class="w-6 h-6 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+            <div class="px-6 pb-4 hidden" data-faq-content>
+              <p class="text-slate-700 leading-relaxed">
+                Basement waterproofing in Burlington costs between $150 and $275 per linear foot in 2026, depending on the system type and site conditions. Exterior waterproofing with excavation typically runs $200-$275/linear foot, while interior drainage systems cost $150-$200/linear foot. The average Burlington basement (40-60 linear feet) costs $12,000-$24,000 to waterproof. Escarpment properties with challenging access and mature neighborhoods with narrow lot lines often see costs at the higher end of this range.
+              </p>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-lg shadow-md overflow-hidden border border-slate-200">
+            <button
+              class="w-full text-left px-6 py-4 font-semibold text-lg text-slate-900 hover:bg-slate-50 transition-colors flex justify-between items-center"
+              data-faq-toggle
+            >
+              <span>How does the Niagara Escarpment affect Burlington basements?</span>
+              <svg class="w-6 h-6 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+            <div class="px-6 pb-4 hidden" data-faq-content>
+              <p class="text-slate-700 leading-relaxed">
+                The Niagara Escarpment creates unique waterproofing challenges in Burlington through limestone bedrock water channels, elevation-based hydrostatic pressure, and rapid drainage pathways. Properties along the escarpment face between Brant Street and Guelph Line experience concentrated water flow through fractured limestone, creating high-pressure conditions at foundation walls. The 150-meter elevation difference between lakefront and escarpment properties means upper Burlington homes deal with groundwater moving downslope through bedrock fissures, while lower elevation properties face high water tables and lake-influenced saturation.
+              </p>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-lg shadow-md overflow-hidden border border-slate-200">
+            <button
+              class="w-full text-left px-6 py-4 font-semibold text-lg text-slate-900 hover:bg-slate-50 transition-colors flex justify-between items-center"
+              data-faq-toggle
+            >
+              <span>Do I need Conservation Halton permits for basement waterproofing?</span>
+              <svg class="w-6 h-6 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+            <div class="px-6 pb-4 hidden" data-faq-content>
+              <p class="text-slate-700 leading-relaxed">
+                You need Conservation Halton permits if your property is within regulated areas, including Spencer Creek and Sixteen Mile Creek floodplains, areas within 15 meters of watercourses, and properties on or near the Niagara Escarpment. Waterproofing work that involves excavation deeper than 1 meter, discharge of drainage water to regulated areas, or alterations to grading within regulated zones requires Conservation Halton approval. Most Burlington waterproofing projects require only City of Burlington building permits, but properties in environmentally sensitive areas need additional Conservation Halton review, which adds 4-6 weeks to project timelines.
+              </p>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-lg shadow-md overflow-hidden border border-slate-200">
+            <button
+              class="w-full text-left px-6 py-4 font-semibold text-lg text-slate-900 hover:bg-slate-50 transition-colors flex justify-between items-center"
+              data-faq-toggle
+            >
+              <span>Can I get Halton Region rebates for basement waterproofing?</span>
+              <svg class="w-6 h-6 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+            <div class="px-6 pb-4 hidden" data-faq-content>
+              <p class="text-slate-700 leading-relaxed">
+                Halton Region offers basement flooding protection subsidies up to $3,400 per property for eligible waterproofing improvements. The program covers backwater valve installation (up to $1,250 subsidy), sump pump installation (up to $1,250 subsidy), and foundation drainage improvements (up to $900 subsidy). Burlington homeowners must have experienced basement flooding or be in designated flood-risk areas to qualify. The program requires pre-approval, licensed contractor installation, and post-installation inspection. Applications are processed through the City of Burlington with Region of Halton funding.
+              </p>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-lg shadow-md overflow-hidden border border-slate-200">
+            <button
+              class="w-full text-left px-6 py-4 font-semibold text-lg text-slate-900 hover:bg-slate-50 transition-colors flex justify-between items-center"
+              data-faq-toggle
+            >
+              <span>When is the best season for waterproofing in Burlington?</span>
+              <svg class="w-6 h-6 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+            <div class="px-6 pb-4 hidden" data-faq-content>
+              <p class="text-slate-700 leading-relaxed">
+                Late spring (May-June) and early fall (September-October) are ideal for Burlington basement waterproofing. These periods offer drier soil conditions for excavation, moderate temperatures for concrete and sealant curing, and scheduling availability before winter freeze-thaw cycles. Avoid waterproofing during spring snowmelt (March-April) when water tables are highest and Spencer Creek flooding is most likely. Burlington's lake-effect weather creates unpredictable winter conditions, making November-March challenging for exterior work. Summer (July-August) works well but contractors are busiest and you'll face 2-4 week wait times versus 1-2 weeks in shoulder seasons.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </article>
+
+    <!-- CTA Section -->
+    <section class="bg-gradient-to-br from-cyan-600 to-cyan-800 py-16">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
+          Get Your Free Burlington Basement Assessment
+        </h2>
+        <p class="text-xl text-cyan-100 mb-8 max-w-2xl mx-auto">
+          DrySpace Waterproofing has completed over 200 Burlington basement waterproofing projects from lakefront to escarpment. We understand Burlington's unique geology and provide elevation-specific solutions that work.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-6">
+          <a
+            href="tel:437-545-0067"
+            class="inline-flex items-center px-8 py-4 bg-white text-cyan-700 font-bold rounded-lg hover:bg-cyan-50 transition-colors shadow-lg text-lg"
+          >
+            <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+            </svg>
+            Call 437-545-0067
+          </a>
+          <a
+            href="/contact"
+            class="inline-flex items-center px-8 py-4 bg-cyan-700 text-white font-bold rounded-lg hover:bg-cyan-600 transition-colors border-2 border-white text-lg"
+          >
+            Schedule Online Assessment
+          </a>
+        </div>
+        <p class="text-cyan-100 text-sm">
+          Serving all Burlington neighborhoods • 25-year warranty • Licensed & insured • Free quotes
+        </p>
+      </div>
+    </section>
+
+    <!-- Related Resources -->
+    <section class="bg-white py-12">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-2xl font-bold text-slate-900 mb-8">Related Services & Resources</h2>
+
+        <div class="grid md:grid-cols-3 gap-8 mb-12">
+          <a href="/locations/burlington" class="group">
+            <div class="bg-slate-50 rounded-lg p-6 border border-slate-200 hover:border-cyan-500 hover:shadow-md transition-all">
+              <h3 class="text-lg font-bold text-slate-900 mb-2 group-hover:text-cyan-600">
+                Burlington Service Area
+              </h3>
+              <p class="text-slate-600 text-sm">
+                Complete coverage from lakefront to escarpment. Learn about our Burlington service area, response times, and neighborhood expertise.
+              </p>
+            </div>
+          </a>
+
+          <a href="/services/exterior-waterproofing" class="group">
+            <div class="bg-slate-50 rounded-lg p-6 border border-slate-200 hover:border-cyan-500 hover:shadow-md transition-all">
+              <h3 class="text-lg font-bold text-slate-900 mb-2 group-hover:text-cyan-600">
+                Exterior Waterproofing
+              </h3>
+              <p class="text-slate-600 text-sm">
+                Full-perimeter excavation, membrane installation, and drainage systems. Our most comprehensive waterproofing solution for Burlington homes.
+              </p>
+            </div>
+          </a>
+
+          <a href="/services/interior-drainage" class="group">
+            <div class="bg-slate-50 rounded-lg p-6 border border-slate-200 hover:border-cyan-500 hover:shadow-md transition-all">
+              <h3 class="text-lg font-bold text-slate-900 mb-2 group-hover:text-cyan-600">
+                Interior Drainage Systems
+              </h3>
+              <p class="text-slate-600 text-sm">
+                Perimeter drainage installed from inside your basement. Ideal for properties with access limitations or mature landscaping.
+              </p>
+            </div>
+          </a>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8">
+          <div>
+            <h3 class="font-bold text-slate-900 mb-4">Burlington Waterproofing Resources</h3>
+            <ul class="space-y-2">
+              <li>
+                <a href="/blog/waterproofing-cost-guide" class="text-cyan-600 hover:text-cyan-800 hover:underline">
+                  Complete Waterproofing Cost Guide for Ontario
+                </a>
+              </li>
+              <li>
+                <a href="/blog/basement-flooding-prevention" class="text-cyan-600 hover:text-cyan-800 hover:underline">
+                  Basement Flooding Prevention: 12 Essential Steps
+                </a>
+              </li>
+              <li>
+                <a href="/blog/foundation-drainage-systems" class="text-cyan-600 hover:text-cyan-800 hover:underline">
+                  Understanding Foundation Drainage Systems
+                </a>
+              </li>
+              <li>
+                <a href="/faq" class="text-cyan-600 hover:text-cyan-800 hover:underline">
+                  Waterproofing FAQ
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="font-bold text-slate-900 mb-4">Other Service Areas</h3>
+            <ul class="space-y-2">
+              <li>
+                <a href="/locations/oakville" class="text-cyan-600 hover:text-cyan-800 hover:underline">
+                  Oakville Basement Waterproofing
+                </a>
+              </li>
+              <li>
+                <a href="/locations/milton" class="text-cyan-600 hover:text-cyan-800 hover:underline">
+                  Milton Basement Waterproofing
+                </a>
+              </li>
+              <li>
+                <a href="/locations/hamilton" class="text-cyan-600 hover:text-cyan-800 hover:underline">
+                  Hamilton Basement Waterproofing
+                </a>
+              </li>
+              <li>
+                <a href="/locations/mississauga" class="text-cyan-600 hover:text-cyan-800 hover:underline">
+                  Mississauga Basement Waterproofing
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</PageLayout>
+
+<script>
+  // FAQ Toggle functionality
+  document.addEventListener('DOMContentLoaded', () => {
+    const faqToggles = document.querySelectorAll('[data-faq-toggle]');
+
+    faqToggles.forEach(toggle => {
+      toggle.addEventListener('click', () => {
+        const content = toggle.nextElementSibling;
+        const icon = toggle.querySelector('svg');
+
+        // Toggle content visibility
+        content.classList.toggle('hidden');
+
+        // Rotate icon
+        icon.style.transform = content.classList.contains('hidden') ? 'rotate(0deg)' : 'rotate(180deg)';
+      });
+    });
+
+    // Smooth scroll for table of contents links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          targetElement.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+  });
+</script>

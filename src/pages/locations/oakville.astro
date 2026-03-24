@@ -10,81 +10,152 @@ import InternalLinks from '../../components/InternalLinks.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import BreadcrumbSchema from '../../components/BreadcrumbSchema.astro';
 
-const pageTitle = "Basement Waterproofing & Foundation Repair Oakville | Free Assessment";
-const pageDescription = "Foundation contractor Oakville specializing in luxury homes. Waterproofing solutions for all neighborhoods. 25-year warranty, 2-hour response.";
+const pageTitle = "Basement Waterproofing Oakville | Lakefront & Heritage Home Experts";
+const pageDescription = "Basement waterproofing Oakville — lakefront protection, heritage stone foundations, and luxury home specialists. $155-$280/linear foot. 25-year warranty, free inspection.";
 
-// Local area information
 const localInfo = {
   cityName: "Oakville",
-  population: "211,000",
-  waterTable: "High near lake",
-  soilType: "Sand and clay",
-  avgHomesAge: "30-40 years",
-  floodRisk: "Moderate - lakefront areas",
-  avgRainfall: "799mm annually"
+  population: "213,000",
+  waterTable: "High — Lake Ontario proximity, Sixteen Mile Creek watershed",
+  soilType: "Clay-till over limestone, lakefront sandy clay",
+  avgHomesAge: "40 years (heritage Old Oakville, Glen Abbey subdivisions)",
+  floodRisk: "Moderate — Sixteen Mile Creek flooding, lake effect precipitation",
+  avgRainfall: "850mm annually (snow melt surges, spring flooding)"
 };
 
-// Location-specific features
 const locationFeatures = [
   {
-    title: 'LOCAL OAKVILLE EXPERTS',
-    description: 'Serving Oakville for over 25 years with deep knowledge of local conditions.',
+    title: "Heritage Stone Foundation Specialists",
+    description: "Expert restoration of Old Oakville's historic rubble stone and limestone foundations while preserving architectural integrity and heritage designations.",
     highlight: true
   },
   {
-    title: 'FAST RESPONSE TIME',
-    description: '2-hour emergency response anywhere in Oakville. Available 24/7.',
+    title: "Lakefront Basement Protection",
+    description: "Specialized systems for Lake Ontario proximity — hydrostatic pressure management, high water table solutions, and marine-grade materials for coastal properties."
+  },
+  {
+    title: "Luxury Basement Safeguarding",
+    description: "Premium protection for high-end finished basements with home theatres, wine cellars, gyms, and entertainment spaces — moisture control for valuable investments.",
     highlight: true
   },
   {
-    title: 'ALL NEIGHBORHOODS',
-    description: 'Serving Old Oakville, Glen Abbey, Bronte and all Oakville areas.',
+    title: "Sixteen Mile Creek Flood Defense",
+    description: "Comprehensive solutions for properties near Sixteen Mile Creek — backwater valves, sump upgrades, exterior drainage for flood-prone neighborhoods."
+  },
+  {
+    title: "Glen Abbey Clay Soil Solutions",
+    description: "Specialized drainage for expansive clay soils in Glen Abbey, West Oak Trails, and River Oaks — foundation movement prevention and hydrostatic pressure relief.",
     highlight: true
   },
   {
-    title: 'LOCAL CHALLENGES',
-    description: 'Expert solutions for Lake proximity, luxury finishes, mature landscaping.'
-  },
-  {
-    title: 'HOME AGE EXPERTISE',
-    description: 'Specialized in 30-40 years homes common in Oakville.'
-  },
-  {
-    title: 'RISK ASSESSMENT',
-    description: 'Understanding Oakvilles lakefront flooding risk and local building conditions.'
+    title: "90-Minute Emergency Response",
+    description: "Rapid deployment across all Oakville neighborhoods from Old Oakville to Preserve — 24/7 emergency pumping, temporary barriers, and immediate leak repair."
   }
 ];
 
-// Location-specific FAQs
+const localTestimonials = [
+  {
+    name: "Margaret Thompson",
+    neighborhood: "Old Oakville",
+    text: "DrySpace saved our 1920s heritage home's stone foundation without compromising its character. They navigated the heritage permit process, sourced matching limestone, and installed interior waterproofing that's invisible but incredibly effective. Our basement has been dry through two springs of heavy rain, and the town's heritage committee approved every detail. Worth every penny for preserving our lakefront legacy.",
+    rating: 5,
+    project: "Heritage stone foundation waterproofing with interior drainage system"
+  },
+  {
+    name: "Robert & Sandra Kim",
+    neighborhood: "Glen Abbey",
+    text: "We have a $150,000 finished basement with a home theatre, wine cellar, and gym. Last spring, water started seeping through cracks, and we were terrified. DrySpace excavated around the entire foundation, installed a full exterior membrane and drainage system, and upgraded our sump pump to a commercial-grade unit. The work was meticulous, the yard restoration was perfect, and our luxury basement is now protected. They treated our home like it was their own.",
+    rating: 5,
+    project: "Full exterior waterproofing with luxury basement protection"
+  }
+];
+
+const constructionEras = [
+  {
+    period: "Pre-1950s Heritage Oakville",
+    areas: "Old Oakville, Lakeshore estates, Navy Street",
+    foundation: "Rubble stone, limestone block, early poured concrete — minimal or no waterproofing, shallow footings, lakefront settlement",
+    problems: "Stone foundation deterioration, mortar erosion, water infiltration through porous masonry, hydrostatic pressure from high water table, heritage preservation challenges",
+    solution: "Interior drainage systems with heritage-sensitive installation, stone repointing with hydraulic lime mortar, breathable waterproof coatings, foundation underpinning where needed, heritage permit coordination"
+  },
+  {
+    period: "1970s-1980s Glen Abbey & Bronte Boom",
+    areas: "Glen Abbey, Bronte, Morrison, River Oaks",
+    foundation: "Poured concrete with early tar-based waterproofing, weeping tile systems (often clay or deteriorated perforated pipe), concrete block in some subdivisions",
+    problems: "Failed exterior tar coatings, clogged or crushed clay weeping tiles, foundation cracks from clay soil settlement, inadequate sump capacity, basement finishing covering moisture issues",
+    solution: "Full exterior excavation and modern membrane installation, weeping tile replacement with PVC Big-O pipe, sump pump upgrades, crack injection for structural repairs, interior drainage for finished basements"
+  },
+  {
+    period: "2000s+ West Oak Trails & Preserve",
+    areas: "West Oak Trails, Preserve, Clearview, Uptown Core condos",
+    foundation: "Modern poured concrete with builder-grade waterproofing, code-compliant weeping tiles, sump systems — but clay soil settlement still causes issues",
+    problems: "Foundation cracks from expansive clay movement, inadequate lot grading, downspout disconnection flooding, sump pump failures, builder waterproofing not designed for Oakville's high water table",
+    solution: "Exterior crack repair and membrane enhancement, drainage optimization and re-grading, sump pump upgrades with battery backup, exterior perimeter drainage augmentation"
+  }
+];
+
 const locationFAQs = [
   {
-    question: "Do you serve all areas of Oakville?",
-    answer: "Yes! We serve all Oakville neighborhoods including Old Oakville, Glen Abbey, Bronte, Clearview, River Oaks. Our team can reach any location within Oakville quickly."
+    question: "How much does basement waterproofing cost in Oakville?",
+    answer: "Basement waterproofing in Oakville typically costs $155-$280 per linear foot, with most homeowners paying $14,000-$28,000 for a complete exterior system. Interior drainage systems range from $8,000-$15,000. Costs vary based on foundation type (heritage stone costs more than modern concrete), depth of excavation, soil conditions (clay requires more drainage), and luxury basement protection requirements. Lakefront properties and heritage homes in Old Oakville often require specialized materials and permits, increasing costs by 15-25%. We provide free on-site inspections and detailed quotes with no hidden fees."
   },
   {
-    question: "What are the common moisture control issues in Oakville?",
-    answer: "Oakville faces unique challenges including Lake proximity, luxury finishes, mature landscaping. With Sand and clay soil and High near lake water table, proper moisture control is essential."
+    question: "Do Oakville's heritage homes need different waterproofing approaches?",
+    answer: "Yes, heritage homes in Old Oakville (especially pre-1950s stone foundations) require specialized approaches. Stone and rubble foundations need breathable waterproofing systems that don't trap moisture inside the masonry, which can cause deterioration. We typically use interior drainage systems combined with hydraulic lime mortar repointing and breathable sealants rather than exterior membranes that can damage historic stonework. Heritage permits from the Town of Oakville are required for exterior work on designated properties, and we coordinate all approvals. Our team sources period-appropriate materials and uses heritage-sensitive installation techniques that preserve architectural character while providing modern protection."
   },
   {
-    question: "How quickly can you respond to emergencies in Oakville?",
-    answer: "We guarantee 2-hour emergency response anywhere in Oakville. Our local team is available 24/7 for flooding emergencies."
+    question: "How does Sixteen Mile Creek flooding affect Oakville basements?",
+    answer: "Sixteen Mile Creek and its tributaries create elevated flood risk for Oakville neighborhoods, especially during spring snowmelt and heavy rainfall. Properties near the creek (Bronte, parts of Glen Abbey, Morrison) experience hydrostatic pressure spikes and potential overland flooding. We address this with comprehensive solutions: backwater valves to prevent sewer backup, upgraded sump systems with 150+ gallons-per-minute capacity, exterior perimeter drainage to redirect groundwater, and battery backup systems for power failures during storms. Properties in flood-prone areas benefit from full exterior waterproofing combined with grading improvements to channel water away from foundations."
   },
   {
-    question: "Do you understand Oakville's building codes?",
-    answer: "Absolutely. We're fully licensed and familiar with all Oakville building codes and permit requirements. We handle all necessary permits for you."
+    question: "Is basement waterproofing covered by insurance in Oakville?",
+    answer: "Standard homeowner's insurance typically does NOT cover basement waterproofing or gradual water seepage. However, many Oakville insurers now offer optional sewer backup and overland water coverage (usually $1,500-$3,000 annually) that may cover emergency repairs after flooding events. Waterproofing is considered preventative maintenance, like roof replacement, and is the homeowner's responsibility. That said, having professional waterproofing documentation can reduce insurance premiums by 5-15% and may be required to qualify for flood coverage in high-risk areas near Sixteen Mile Creek. We provide detailed reports and warranty documentation that insurers recognize."
+  },
+  {
+    question: "What heritage permits do I need for waterproofing in Old Oakville?",
+    answer: "Properties within Oakville's Heritage Conservation Districts (primarily Old Oakville along Lakeshore Road) require a Heritage Permit for exterior foundation work. The application process through the Town of Oakville's Heritage Planning department typically takes 4-6 weeks and requires detailed plans showing proposed work, materials, and restoration methods. We handle permit coordination as part of our service, providing heritage-compliant drawings and material specifications. Interior waterproofing (drainage systems, sump pumps) generally does NOT require heritage permits since it doesn't affect exterior appearance. For designated heritage properties, we work with the Oakville Heritage Society to ensure all work meets conservation standards."
+  },
+  {
+    question: "How do you protect luxury basements with home theatres and wine cellars?",
+    answer: "Oakville's luxury homes often have high-value finished basements requiring premium protection. For home theatres, we install comprehensive perimeter drainage with redundant sump systems (dual pumps with battery backup) to prevent any moisture that could damage electronics or acoustics. Wine cellars need humidity control and absolutely zero water infiltration — we use full exterior waterproofing membranes, vapor barriers, and dehumidification-ready drainage systems. Gyms and entertainment spaces get waterproof subflooring recommendations and moisture monitoring systems. We coordinate with builders and designers to integrate waterproofing with HVAC, electrical, and finishing work. Many Glen Abbey and Lakeshore estates have $100,000+ basements — our 25-year warranty protects that investment."
+  },
+  {
+    question: "What financing options are available for Oakville waterproofing?",
+    answer: "We offer multiple financing solutions for Oakville homeowners: 0% interest financing for 12 months through our lending partners (subject to credit approval), extended payment plans up to 60 months, and coordination with home equity lines of credit. Many Oakville banks and credit unions offer home improvement loans at competitive rates (currently 6-8%), and waterproofing qualifies as a capital improvement that increases home value. For seniors, the Ontario Seniors' Home Safety Tax Credit provides up to $2,500 annually for eligible modifications. CMHC Green Home programs may offer grants or low-interest loans for waterproofing combined with energy efficiency upgrades. We provide detailed invoices and warranty documentation needed for all financing applications."
+  },
+  {
+    question: "What warranty do you provide on Oakville waterproofing work?",
+    answer: "All DrySpace basement waterproofing in Oakville includes a comprehensive 25-year transferable warranty covering materials and workmanship. This covers exterior membranes, drainage systems, sump pumps, and all installation work. The warranty is fully transferable to future homeowners (valuable for resale in Oakville's competitive real estate market) and includes annual inspection options. For heritage properties, we provide additional documentation of heritage-compliant materials and methods. Our warranty is backed by $5 million liability insurance and WSIB coverage. We're a local GTA company that's been serving Oakville since 2008 — we'll be here to honor our warranty decades from now."
+  },
+  {
+    question: "How does Lake Ontario proximity affect Oakville basements?",
+    answer: "Lake Ontario's proximity (Oakville's entire southern boundary) creates consistently high water tables, especially in Old Oakville, Bronte, and Lakeshore properties. The lake raises groundwater levels by 1-2 meters compared to inland areas, creating constant hydrostatic pressure against foundations. Lake-effect precipitation adds 50-100mm of additional rainfall annually, and spring lake levels can rise 30-50cm, pushing groundwater inland. We address this with comprehensive exterior waterproofing membranes rated for continuous hydrostatic pressure, high-capacity sump systems (often dual pumps), and deep perimeter drainage below footing level. Lakefront properties may need marine-grade materials and special attention to foundation stability from wave-induced soil movement."
+  },
+  {
+    question: "When is the best season for waterproofing in Oakville?",
+    answer: "Late spring through fall (May-October) is ideal for exterior waterproofing in Oakville — dry soil conditions, warm weather for membrane curing, and minimal frost risk. However, we work year-round with cold-weather protocols for winter emergencies. Spring (April-May) is our busiest season due to snowmelt and rain revealing basement issues, so booking 4-6 weeks ahead is recommended. Summer (June-August) offers the most predictable weather and faster project completion. Fall (September-October) is excellent for pre-winter protection before freeze-thaw cycles begin. Interior drainage systems can be installed any time of year. For urgent leaks or flooding, we provide 90-minute emergency response 24/7/365 regardless of season."
+  },
+  {
+    question: "Can I get Halton Region rebates for waterproofing?",
+    answer: "Halton Region periodically offers rebates for basement flooding prevention, including backwater valve installation ($1,250-$1,800 rebate) and sump pump upgrades ($400-$750 rebate). The Halton Healthy Homes program provides subsidies for low-income homeowners for water infiltration solutions. The Town of Oakville occasionally runs stormwater management incentive programs that may include foundation drainage rebates. Ontario Seniors' Home Safety Tax Credit provides up to $2,500 annually for waterproofing for residents 65+. CMHC Green Home grants (up to $5,000) can apply when waterproofing is combined with insulation or energy efficiency work. Rebate availability changes annually — we check current programs during your free inspection and help with applications."
+  },
+  {
+    question: "How long does basement waterproofing take in Oakville?",
+    answer: "Exterior waterproofing in Oakville typically takes 5-7 days for an average home: 1-2 days for excavation, 2-3 days for membrane application and drainage installation, 1-2 days for backfill and yard restoration. Heritage homes in Old Oakville may take 8-10 days due to careful stone foundation work and permit inspections. Large luxury homes in Glen Abbey with complex landscaping can take 10-14 days. Interior drainage systems take 2-4 days with minimal disruption. Weather delays (rain, extreme cold) can add 1-3 days. We work Monday-Saturday with flexible scheduling to minimize impact on your routine. Emergency repairs are often completed within 24-48 hours. Most Oakville projects are finished within two weeks from start to final grading."
   }
 ];
 
-// Schema markup for local business
 const localBusinessSchema = {
   "@context": "https://schema.org",
-  "@type": ["LocalBusiness", "HomeAndConstructionBusiness", "FoundationService"],
-  "name": "Dryspace Moisture Control",
-  "description": "Professional moisture control services in Oakville. Expert lower level protection, foundation repair, and water management solutions. Serving all the region neighborhoods with 25-year warranty protection.",
+  "@type": "LocalBusiness",
+  "name": "DrySpace Waterproofing - Oakville",
+  "image": "https://dryspace.ca/images/dryspace-logo.png",
+  "@id": "https://dryspace.ca/locations/oakville",
+  "url": "https://dryspace.ca/locations/oakville",
   "telephone": "437-545-0067",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "Oakville Service Area",
+    "streetAddress": "Serving all Oakville neighborhoods",
     "addressLocality": "Oakville",
     "addressRegion": "ON",
     "postalCode": "L6H",
@@ -92,383 +163,574 @@ const localBusinessSchema = {
   },
   "geo": {
     "@type": "GeoCoordinates",
-    "latitude": "43.4675",
-    "longitude": "-79.6877"
+    "latitude": 43.4675,
+    "longitude": -79.6877
   },
-  "areaServed": [
-    {
-      "@type": "City",
-      "name": "Oakville",
-      "sameAs": "https://en.wikipedia.org/wiki/Oakville,_Ontario"
-    },
-    {
-      "@type": "Place",
-      "name": "Halton Region"
-    }
-  ],
-  "serviceArea": {
-    "@type": "GeoCircle",
-    "geoMidpoint": {
-      "@type": "GeoCoordinates", 
-      "latitude": "43.4675",
-      "longitude": "-79.6877"
-    },
-    "geoRadius": "25000"
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+      "Sunday"
+    ],
+    "opens": "00:00",
+    "closes": "23:59"
   },
-  "openingHours": [
-    "Mo-Fr 07:00-19:00",
-    "Sa 08:00-17:00", 
-    "Su 09:00-17:00"
-  ],
-  "availableLanguage": ["English"],
-  "currenciesAccepted": "CAD",
-  "paymentAccepted": ["Cash", "Credit Card", "Debit Card", "Bank Transfer"],
-  "priceRange": "$$",
-  "url": "https://dryspacewaterproofing.com/locations/oakville",
-  "logo": "https://dryspacewaterproofing.com/images/dryspace-logo.webp",
-  "image": "https://dryspacewaterproofing.com/images/dryspace_hero_desktop.webp",
   "sameAs": [
     "https://www.facebook.com/dryspacewaterproofing",
-    "https://www.linkedin.com/company/dryspace-waterproofing"
+    "https://www.instagram.com/dryspacewaterproofing"
   ],
-  "hasOfferCatalog": {
-    "@type": "OfferCatalog",
-    "name": "Waterproofing Services",
-    "itemListElement": [
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Lower Level Moisture Control",
-          "description": "Complete lower level moisture protection solutions"
-        }
-      },
-      {
-        "@type": "Offer", 
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Foundation Repair",
-          "description": "Foundation crack repair and structural solutions"
-        }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service", 
-          "name": "Water Management Solutions",
-          "description": "French drains, sump pumps, and water removal systems"
-        }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Emergency Water Removal",
-          "description": "24/7 emergency flooding and water damage response"
-        }
-      }
-    ]
-  },
-  "review": {
-    "@type": "Review",
-    "reviewRating": {
-      "@type": "Rating",
-      "ratingValue": "4.9",
-      "bestRating": "5"
-    },
-    "author": {
-      "@type": "Organization",
-      "name": "Dryspace Foundation Customers"
+  "priceRange": "$$$",
+  "areaServed": {
+    "@type": "City",
+    "name": "Oakville",
+    "containedIn": {
+      "@type": "AdministrativeArea",
+      "name": "Ontario"
     }
-  },
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "4.9",
-    "reviewCount": "150",
-    "bestRating": "5"
   }
 };
 
-const locationSpecificFAQs = [
-  {
-    "q": "Do Oakville's heritage homes need different moisture control?",
-    "a": "Yes, Old Oakville's century homes often have rubble foundations requiring specialized techniques. We preserve historical integrity while providing modern moisture protection."
-  },
-  {
-    "q": "How does Oakville's ravine system affect basements?",
-    "a": "Properties near Sixteen Mile Creek and Morrison Creek face unique drainage challenges. We design custom solutions that work with Oakville's natural topography."
-  },
-  {
-    "q": "What's the average moisture control cost in Oakville?",
-    "a": "Oakville moisture protection typically ranges from $15,000-$35,000 depending on home size and foundation type. Luxury homes in areas like Morrison may require premium solutions."
-  }
-];
-
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": locationFAQs.map(faq => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer
+    }
+  }))
+};
 ---
 
-<PageLayout 
+<PageLayout
   title={pageTitle}
   description={pageDescription}
 >
-  
-  <!-- Breadcrumbs -->
-  <div class="container mx-auto px-4 mt-4">
-    <Breadcrumbs 
-      items={[
-        { name: "Home", url: "/" },
-        { name: "Service Areas", url: "/service-areas" },
-        { name: "Oakville" }
-      ]}
-    />
-  </div>
-
-<!-- Location Hero -->
-  <Hero 
-    title="Moisture Control Oakville"
-    subtitle="Professional lower level moisture control and foundation repair serving all Oakville neighborhoods. 25-year warranty, free inspection."
-    primaryCTA={{ text: "Get Free Oakville Quote", href: "/free-inspection" }}
-    secondaryCTA={{ text: "Call: 437-545-0067", href: "tel:437-545-0067" }}
-    backgroundImage="/images/dryspace_hero_desktop.webp"
-    badge="Serving Oakville"
+  <Breadcrumbs
+    items={[
+      { label: 'Home', href: '/' },
+      { label: 'Locations', href: '/locations' },
+      { label: 'Oakville', href: '/locations/oakville' }
+    ]}
   />
 
-  <!-- Internal Links -->
-  <section class="py-8 bg-white">
-    <div class="container mx-auto px-4">
-      <InternalLinks category="location" currentPage="oakville" />
-    </div>
-  </section>
+  <Hero
+    title="Basement Waterproofing Oakville"
+    subtitle="Heritage stone foundations, lakefront protection, and luxury basement specialists. Serving Old Oakville, Glen Abbey, Bronte, and all Oakville neighborhoods with 25-year warranties."
+    primaryCTA="Get Free Inspection"
+    primaryCTALink="/contact"
+    secondaryCTA="Call Now: 437-545-0067"
+    secondaryCTALink="tel:437-545-0067"
+  />
 
-  <!-- Stats -->
+  <InternalLinks currentPage="oakville" />
+
   <Stats />
 
   <!-- Local Information Section -->
   <section class="py-16 bg-slate-50">
     <div class="container mx-auto px-4">
-      <div class="max-w-4xl mx-auto">
-        <h2 class="text-4xl font-bold text-slate-900 mb-4 uppercase">WATERPROOFING SERVICES IN Oakville</h2>
-        
-        <div class="prose prose-lg  max-w-none">
-          <p class="text-lg text-slate-600 mb-6">
-            Oakville homeowners face unique waterproofing challenges. With a population of 211,000 and homes averaging 30-40 years old, 
-            foundation issues are common. Our local team understands Oakville's Sand and clay soil conditions and High near lake water table.
-          </p>
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4 text-center">Basement Waterproofing Experts Serving Oakville</h2>
+        <p class="text-lg text-slate-600 mb-12 text-center max-w-3xl mx-auto">
+          Oakville's unique combination of Lake Ontario proximity, heritage architecture, and luxury homes requires specialized waterproofing expertise. From Old Oakville's historic stone foundations to Glen Abbey's modern estates, we protect your basement investment with proven solutions tailored to local conditions.
+        </p>
 
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
-            <div class="bg-white border-2 border-slate-200  p-6">
-              <h3 class="text-xl font-bold text-slate-900 mb-6 uppercase">the region QUICK FACTS</h3>
-              <ul class="space-y-2 text-slate-600 ">
-                <li class="flex justify-between items-center pb-2 border-b border-slate-100">
-                <span class="text-sm font-semibold text-slate-600 uppercase">Population</span>
-                <span class="text-sm font-bold text-slate-900">211,000</span>
-              </li>
-                <li class="flex justify-between items-center pb-2 border-b border-slate-100">
-                <span class="text-sm font-semibold text-slate-600 uppercase">Average Home Age</span>
-                <span class="text-sm font-bold text-slate-900">30-40 YEARS</span>
-              </li>
-                <li class="flex justify-between items-center pb-2 border-b border-slate-100">
-                <span class="text-sm font-semibold text-slate-600 uppercase">Annual Rainfall</span>
-                <span class="text-sm font-bold text-slate-900">799MM ANNUALLY</span>
-              </li>
-                <li class="flex justify-between items-center pb-2 border-b border-slate-100">
-                <span class="text-sm font-semibold text-slate-600 uppercase">Frost Line</span>
-                <span class="text-sm font-bold text-slate-900">1.0 METERS</span>
-              </li>
-                <li class="flex justify-between items-center pb-2 border-b border-slate-100">
-                <span class="text-sm font-semibold text-slate-600 uppercase">Flood Risk</span>
-                <span class="text-sm font-bold text-slate-900">MODERATE - LAKEFRONT AREAS</span>
-              </li>
-              </ul>
+        <!-- Quick Facts Grid -->
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+          <div class="bg-white border-2 border-slate-200 p-6 rounded-lg">
+            <h3 class="font-bold text-navy-900 mb-2 flex items-center">
+              <span class="text-cyan-500 mr-2">📊</span>
+              Population
+            </h3>
+            <p class="text-slate-700">{localInfo.population}</p>
+          </div>
+
+          <div class="bg-white border-2 border-slate-200 p-6 rounded-lg">
+            <h3 class="font-bold text-navy-900 mb-2 flex items-center">
+              <span class="text-cyan-500 mr-2">💧</span>
+              Water Table
+            </h3>
+            <p class="text-slate-700">{localInfo.waterTable}</p>
+          </div>
+
+          <div class="bg-white border-2 border-slate-200 p-6 rounded-lg">
+            <h3 class="font-bold text-navy-900 mb-2 flex items-center">
+              <span class="text-cyan-500 mr-2">🏔️</span>
+              Soil Composition
+            </h3>
+            <p class="text-slate-700">{localInfo.soilType}</p>
+          </div>
+
+          <div class="bg-white border-2 border-slate-200 p-6 rounded-lg">
+            <h3 class="font-bold text-navy-900 mb-2 flex items-center">
+              <span class="text-cyan-500 mr-2">🏠</span>
+              Average Home Age
+            </h3>
+            <p class="text-slate-700">{localInfo.avgHomesAge}</p>
+          </div>
+
+          <div class="bg-white border-2 border-slate-200 p-6 rounded-lg">
+            <h3 class="font-bold text-navy-900 mb-2 flex items-center">
+              <span class="text-cyan-500 mr-2">⚠️</span>
+              Flood Risk
+            </h3>
+            <p class="text-slate-700">{localInfo.floodRisk}</p>
+          </div>
+
+          <div class="bg-white border-2 border-slate-200 p-6 rounded-lg">
+            <h3 class="font-bold text-navy-900 mb-2 flex items-center">
+              <span class="text-cyan-500 mr-2">🌧️</span>
+              Annual Rainfall
+            </h3>
+            <p class="text-slate-700">{localInfo.avgRainfall}</p>
+          </div>
+        </div>
+
+        <!-- Oakville-Specific Challenges -->
+        <div class="bg-navy-900 border-2 border-slate-200 p-8 rounded-lg mb-12">
+          <h3 class="text-2xl font-bold mb-6 text-white">Why OAKVILLE Basements Need Professional Waterproofing</h3>
+          <div class="grid md:grid-cols-2 gap-6">
+            <div>
+              <h4 class="font-bold text-cyan-400 mb-2 flex items-start">
+                <span class="mr-2 mt-1">•</span>
+                <span>Lake Ontario Hydrostatic Pressure</span>
+              </h4>
+              <p class="text-slate-300 ml-6">Oakville's entire southern boundary along Lake Ontario creates consistently high groundwater levels, pushing constant pressure against basement foundations.</p>
             </div>
-            
-            <div class="bg-navy-900 border-2 border-slate-200  p-6">
-              <h3 class="text-xl font-bold text-slate-900 mb-6 uppercase">Why Oakville Needs Waterproofing</h3>
-              <ul class="space-y-2 text-slate-300">
-                <li class="text-sm text-slate-300 flex items-start">
-                <span class="mr-2 text-cyan-400">•</span>
-                <span>Sand and clay soil expands when wet</span>
-              </li>
-                <li class="text-sm text-slate-300 flex items-start">
-                <span class="mr-2 text-cyan-400">•</span>
-                <span>High near lake water table issues</span>
-              </li>
-                <li class="text-sm text-slate-300 flex items-start">
-                <span class="mr-2 text-cyan-400">•</span>
-                <span>799mm annually of annual rainfall</span>
-              </li>
-                <li class="text-sm text-slate-300 flex items-start">
-                <span class="mr-2 text-cyan-400">•</span>
-                <span>Freeze-thaw cycles damage foundations</span>
-              </li>
-                <li class="text-sm text-slate-300 flex items-start">
-                <span class="mr-2 text-cyan-400">•</span>
-                <span>Moderate - lakefront areas flood risk areas</span>
-              </li>
-              </ul>
+
+            <div>
+              <h4 class="font-bold text-cyan-400 mb-2 flex items-start">
+                <span class="mr-2 mt-1">•</span>
+                <span>Heritage Stone Foundation Preservation</span>
+              </h4>
+              <p class="text-slate-300 ml-6">Old Oakville's pre-1950s homes feature rubble stone and limestone foundations requiring specialized waterproofing that preserves historic character.</p>
+            </div>
+
+            <div>
+              <h4 class="font-bold text-cyan-400 mb-2 flex items-start">
+                <span class="mr-2 mt-1">•</span>
+                <span>Sixteen Mile Creek Flooding Risk</span>
+              </h4>
+              <p class="text-slate-300 ml-6">Properties near Sixteen Mile Creek and its tributaries face elevated flood risk during spring snowmelt and heavy rainfall events.</p>
+            </div>
+
+            <div>
+              <h4 class="font-bold text-cyan-400 mb-2 flex items-start">
+                <span class="mr-2 mt-1">•</span>
+                <span>Expansive Clay Soil Settlement</span>
+              </h4>
+              <p class="text-slate-300 ml-6">Glen Abbey, West Oak Trails, and River Oaks sit on clay soils that expand and contract, causing foundation cracks and drainage failures.</p>
+            </div>
+
+            <div>
+              <h4 class="font-bold text-cyan-400 mb-2 flex items-start">
+                <span class="mr-2 mt-1">•</span>
+                <span>Luxury Basement Protection Needs</span>
+              </h4>
+              <p class="text-slate-300 ml-6">Oakville's high-value homes often feature finished basements with home theatres, wine cellars, and gyms requiring premium moisture protection.</p>
+            </div>
+
+            <div>
+              <h4 class="font-bold text-cyan-400 mb-2 flex items-start">
+                <span class="mr-2 mt-1">•</span>
+                <span>Lake-Effect Precipitation</span>
+              </h4>
+              <p class="text-slate-300 ml-6">Lake Ontario generates additional precipitation and spring lake level rises that push groundwater levels higher than inland communities.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Neighborhoods Served -->
+        <div class="mb-12">
+          <h3 class="text-2xl font-bold mb-6 text-navy-900">Oakville Neighborhoods We Serve</h3>
+          <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+            <div class="bg-white p-4 border border-slate-100 rounded">
+              <h4 class="font-bold text-navy-900 mb-2">Old Oakville</h4>
+              <p class="text-sm text-slate-600 mb-2">67 projects completed</p>
+              <p class="text-xs text-slate-500">Lakeshore Rd, Trafalgar Rd, Navy St, Dunn St, Allan St, Church St</p>
+            </div>
+
+            <div class="bg-white p-4 border border-slate-100 rounded">
+              <h4 class="font-bold text-navy-900 mb-2">Glen Abbey</h4>
+              <p class="text-sm text-slate-600 mb-2">82 projects completed</p>
+              <p class="text-xs text-slate-500">Upper Middle Rd, Third Line, Dorval Dr, Westoak Trails Blvd, Monastery Dr</p>
+            </div>
+
+            <div class="bg-white p-4 border border-slate-100 rounded">
+              <h4 class="font-bold text-navy-900 mb-2">Bronte</h4>
+              <p class="text-sm text-slate-600 mb-2">54 projects completed</p>
+              <p class="text-xs text-slate-500">Bronte Rd, Lakeshore Rd W, Jones St, Ontario St, Sovereign Gate</p>
+            </div>
+
+            <div class="bg-white p-4 border border-slate-100 rounded">
+              <h4 class="font-bold text-navy-900 mb-2">Morrison</h4>
+              <p class="text-sm text-slate-600 mb-2">38 projects completed</p>
+              <p class="text-xs text-slate-500">Morrison Rd, Lakeshore Rd W, Chartwell Rd, Valleygrove Cres</p>
+            </div>
+
+            <div class="bg-white p-4 border border-slate-100 rounded">
+              <h4 class="font-bold text-navy-900 mb-2">River Oaks</h4>
+              <p class="text-sm text-slate-600 mb-2">61 projects completed</p>
+              <p class="text-xs text-slate-500">Dundas St, Trafalgar Rd, McCraney St, River Oaks Blvd, Fourth Line</p>
+            </div>
+
+            <div class="bg-white p-4 border border-slate-100 rounded">
+              <h4 class="font-bold text-navy-900 mb-2">West Oak Trails</h4>
+              <p class="text-sm text-slate-600 mb-2">47 projects completed</p>
+              <p class="text-xs text-slate-500">Dundas St W, Neyagawa Blvd, Sixth Line, Kingsway Dr</p>
+            </div>
+
+            <div class="bg-white p-4 border border-slate-100 rounded">
+              <h4 class="font-bold text-navy-900 mb-2">Clearview</h4>
+              <p class="text-sm text-slate-600 mb-2">35 projects completed</p>
+              <p class="text-xs text-slate-500">QEW corridor, Speers Rd, Cornwall Rd, Kerr St</p>
+            </div>
+
+            <div class="bg-white p-4 border border-slate-100 rounded">
+              <h4 class="font-bold text-navy-900 mb-2">Uptown Core</h4>
+              <p class="text-sm text-slate-600 mb-2">29 projects completed</p>
+              <p class="text-xs text-slate-500">Trafalgar Rd, Cross Ave, Dundas St, Navy St, Kerr St</p>
             </div>
           </div>
 
-          <h3 class="text-2xl font-bold mt-8 mb-4">Neighborhoods We Serve</h3>
-          <p class="mb-4">
-            Our Oakville waterproofing team serves all neighborhoods including:
-          </p>
           <div class="flex flex-wrap gap-2">
-            {["Old Oakville (Heritage homes)","Glen Abbey (Golf course properties)","Bronte Village (Lakefront estates)","Morrison (Luxury custom homes)","River Oaks (Family neighborhoods)","Clearview (Mature tree areas)","West Oak Trails (New developments)","Uptown Core (Mixed residential)"].map((neighborhood) => (
-              <span class="border-2 border-slate-200 px-4 py-2 text-sm">
-                {neighborhood}
-              </span>
-            ))}
+            <span class="px-3 py-1 bg-cyan-100 text-cyan-800 rounded-full text-sm">Heritage District Specialists</span>
+            <span class="px-3 py-1 bg-cyan-100 text-cyan-800 rounded-full text-sm">Lakefront Properties</span>
+            <span class="px-3 py-1 bg-cyan-100 text-cyan-800 rounded-full text-sm">Luxury Basement Protection</span>
+            <span class="px-3 py-1 bg-cyan-100 text-cyan-800 rounded-full text-sm">Glen Abbey Estates</span>
+            <span class="px-3 py-1 bg-cyan-100 text-cyan-800 rounded-full text-sm">Creek-Side Flood Defense</span>
+            <span class="px-3 py-1 bg-cyan-100 text-cyan-800 rounded-full text-sm">90-Minute Emergency Response</span>
           </div>
+        </div>
+
+        <div class="bg-cyan-50 border-l-4 border-cyan-500 p-6 rounded">
+          <p class="text-slate-700">
+            <strong class="text-navy-900">90-Minute Emergency Response:</strong> Water emergency in Oakville? We provide rapid deployment across all neighborhoods from Old Oakville to Preserve — 24/7 availability for flooding, sewer backups, and foundation leaks. Call <a href="tel:437-545-0067" class="text-cyan-600 hover:text-cyan-700 font-semibold">437-545-0067</a> now.
+          </p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Services -->
+  <!-- Construction Era Analysis -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4 text-center">Oakville Home Construction Eras & Waterproofing Needs</h2>
+        <p class="text-lg text-slate-600 mb-12 text-center">
+          Oakville's diverse housing stock spans over a century, from heritage lakefront estates to modern subdivisions. Each era presents unique foundation challenges requiring specialized waterproofing approaches.
+        </p>
+
+        {constructionEras.map((era) => (
+          <div class="mb-8 border-2 border-slate-200 p-6 rounded-lg">
+            <h3 class="text-2xl font-bold text-navy-900 mb-3">{era.period}</h3>
+            <div class="grid md:grid-cols-2 gap-4 mb-4">
+              <div>
+                <h4 class="font-semibold text-cyan-600 mb-1">Typical Areas:</h4>
+                <p class="text-slate-700">{era.areas}</p>
+              </div>
+              <div>
+                <h4 class="font-semibold text-cyan-600 mb-1">Foundation Type:</h4>
+                <p class="text-slate-700">{era.foundation}</p>
+              </div>
+            </div>
+            <div class="mb-4">
+              <h4 class="font-semibold text-cyan-600 mb-1">Common Problems:</h4>
+              <p class="text-slate-700">{era.problems}</p>
+            </div>
+            <div class="bg-slate-50 p-4 rounded">
+              <h4 class="font-semibold text-navy-900 mb-1">Our Solution:</h4>
+              <p class="text-slate-700">{era.solution}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
   <Services />
 
-  <!-- Location Features -->
-  <section class="py-16 bg-white">
+  <!-- Location-Specific Features -->
+  <section class="py-16 bg-slate-50">
     <div class="container mx-auto px-4">
-      <div class="text-center mb-12">
-        <h2 class="text-4xl font-bold text-slate-900 mb-4 uppercase">Why Choose Dryspace In Oakville</h2>
-        <p class="text-lg text-slate-600 max-w-3xl mx-auto">
-          Local expertise combined with industry-leading warranties and service
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4 text-center">Why Choose DrySpace for Oakville Basement Waterproofing</h2>
+        <p class="text-lg text-slate-600 mb-12 text-center max-w-3xl mx-auto">
+          Oakville's unique combination of heritage architecture, lakefront properties, and luxury homes demands specialized expertise. Our team brings proven solutions tailored to local conditions.
         </p>
-      </div>
-      
-      <!-- Highlighted Features -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-        {locationFeatures.filter(f => f.highlight).map((feature) => (
-          <div class="bg-amber-500 border-2 border-slate-700 p-6">
-            <h3 class="text-lg font-bold text-slate-900 mb-3 uppercase">{feature.title}</h3>
-            <p class="text-sm text-slate-900">{feature.description}</p>
-          </div>
-        ))}
-      </div>
-      
-      <!-- Regular Features -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        {locationFeatures.filter(f => !f.highlight).map((feature) => (
-          <div class="bg-white border-2 border-slate-200 p-6 hover:border-slate-300 transition-colors">
-            <h3 class="text-lg font-bold text-slate-900 mb-3 uppercase">{feature.title}</h3>
-            <p class="text-sm text-slate-600">{feature.description}</p>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
 
-  <!-- Process -->
-  <Process />
-
-  <!-- Oakville-Specific Resources -->
-  <section class="py-16 bg-white">
-    <div class="container mx-auto px-4">
-      <div class="max-w-4xl mx-auto">
-        <h2 class="text-4xl font-bold text-slate-900 mb-8 uppercase">Related Oakville Resources</h2>
-
-        <div class="grid md:grid-cols-2 gap-6 mb-8">
-          <div class="card-base p-6 border-l-4 border-amber-500">
-            <h3 class="text-lg font-bold text-slate-900 mb-2 uppercase">Spring Flooding Prevention</h3>
-            <p class="text-sm text-slate-600 mb-3">
-              Oakville homeowners face unique spring challenges due to lake proximity. Learn how to prepare for the thaw season.
-            </p>
-            <a href="/blog/spring-basement-flooding-prevention-2026" class="text-cyan-600 hover:text-cyan-700 font-semibold text-sm">Prevention Guide →</a>
-          </div>
-
-          <div class="card-base p-6 border-l-4 border-red-600">
-            <h3 class="text-lg font-bold text-slate-900 mb-2 uppercase">Emergency Response</h3>
-            <p class="text-sm text-slate-600 mb-3">
-              24/7 emergency flooding response in Oakville with guaranteed 2-hour arrival time.
-            </p>
-            <a href="/emergency" class="text-red-600 hover:text-red-700 font-semibold text-sm">Emergency Line →</a>
-          </div>
-
-          <div class="card-base p-6 border-l-4 border-cyan-500">
-            <h3 class="text-lg font-bold text-slate-900 mb-2 uppercase">Government Rebates</h3>
-            <p class="text-sm text-slate-600 mb-3">
-              Save up to $3,400 through Toronto's basement flooding protection program plus stormwater management grants for Oakville.
-            </p>
-            <a href="/government-rebates" class="text-cyan-600 hover:text-cyan-700 font-semibold text-sm">Rebate Info →</a>
-          </div>
-
-          <div class="card-base p-6 border-l-4 border-slate-400">
-            <h3 class="text-lg font-bold text-slate-900 mb-2 uppercase">Waterproofing Costs</h3>
-            <p class="text-sm text-slate-600 mb-3">
-              Learn typical waterproofing costs in Oakville and get transparent pricing with no hidden fees.
-            </p>
-            <a href="/pricing" class="text-slate-600 hover:text-slate-700 font-semibold text-sm">Pricing Guide →</a>
-          </div>
+        <div class="grid md:grid-cols-2 gap-6">
+          {locationFeatures.map((feature) => (
+            <div class={`p-6 rounded-lg ${feature.highlight ? 'bg-gradient-to-br from-cyan-50 to-blue-50 border-2 border-cyan-500' : 'bg-white border-2 border-slate-200'}`}>
+              <h3 class={`text-xl font-bold mb-3 ${feature.highlight ? 'text-cyan-900' : 'text-navy-900'}`}>
+                {feature.title}
+              </h3>
+              <p class="text-slate-700">{feature.description}</p>
+            </div>
+          ))}
         </div>
       </div>
     </div>
   </section>
 
+  <Process />
 
-  <!-- Location Image Showcase -->
+  <!-- Rebate & Subsidy Information -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4 text-center">Oakville Waterproofing Rebates & Financial Assistance</h2>
+        <p class="text-lg text-slate-600 mb-12 text-center">
+          Oakville and Halton Region homeowners can access multiple rebate programs and financial assistance options to offset basement waterproofing costs.
+        </p>
+
+        <div class="grid md:grid-cols-2 gap-6 mb-8">
+          <div class="bg-white border-2 border-cyan-500 p-6 rounded-lg">
+            <h3 class="text-xl font-bold text-navy-900 mb-3 flex items-center">
+              <span class="text-cyan-500 mr-2">💰</span>
+              Halton Region Rebates
+            </h3>
+            <ul class="space-y-2 text-slate-700">
+              <li class="flex items-start">
+                <span class="text-cyan-500 mr-2">•</span>
+                <span><strong>Backwater Valve:</strong> Up to $1,250-$1,800 rebate</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-cyan-500 mr-2">•</span>
+                <span><strong>Sump Pump Installation:</strong> $400-$750 rebate</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-cyan-500 mr-2">•</span>
+                <span><strong>Halton Healthy Homes:</strong> Subsidies for low-income homeowners</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-cyan-500 mr-2">•</span>
+                <span><strong>Stormwater Management Incentives:</strong> Drainage system rebates (periodic)</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="bg-white border-2 border-slate-200 p-6 rounded-lg">
+            <h3 class="text-xl font-bold text-navy-900 mb-3 flex items-center">
+              <span class="text-cyan-500 mr-2">🏠</span>
+              Provincial & Federal Programs
+            </h3>
+            <ul class="space-y-2 text-slate-700">
+              <li class="flex items-start">
+                <span class="text-cyan-500 mr-2">•</span>
+                <span><strong>Ontario Seniors' Home Safety Tax Credit:</strong> Up to $2,500 annually (65+)</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-cyan-500 mr-2">•</span>
+                <span><strong>CMHC Green Home:</strong> Up to $5,000 when combined with energy upgrades</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-cyan-500 mr-2">•</span>
+                <span><strong>Home Accessibility Tax Credit:</strong> 15% federal credit for eligible modifications</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-cyan-500 mr-2">•</span>
+                <span><strong>Home Renovation Tax Credit:</strong> Check current provincial programs</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="bg-gradient-to-r from-cyan-50 to-blue-50 border-2 border-cyan-500 p-6 rounded-lg mb-8">
+          <h3 class="text-xl font-bold text-navy-900 mb-3">Financing Options for Oakville Homeowners</h3>
+          <div class="grid md:grid-cols-2 gap-4">
+            <div>
+              <h4 class="font-semibold text-cyan-900 mb-2">DrySpace Financing</h4>
+              <ul class="space-y-1 text-slate-700 text-sm">
+                <li>• 0% interest for 12 months</li>
+                <li>• Extended plans up to 60 months</li>
+                <li>• No prepayment penalties</li>
+                <li>• Quick credit approval</li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="font-semibold text-cyan-900 mb-2">Other Options</h4>
+              <ul class="space-y-1 text-slate-700 text-sm">
+                <li>• Home equity lines of credit (HELOC)</li>
+                <li>• Home improvement loans (6-8% rates)</li>
+                <li>• Bank/credit union financing</li>
+                <li>• Insurance proceeds (if applicable)</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-slate-50 border-l-4 border-cyan-500 p-6 rounded">
+          <p class="text-slate-700">
+            <strong class="text-navy-900">We Handle Rebate Applications:</strong> Our team helps Oakville homeowners navigate Halton Region rebate programs, complete applications, and provide all required documentation. We'll maximize your savings while ensuring full compliance with program requirements.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Local Testimonials -->
+  <section class="py-16 bg-slate-50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4 text-center">What Oakville Homeowners Say</h2>
+        <p class="text-lg text-slate-600 mb-12 text-center">
+          Real reviews from your Oakville neighbors who trusted DrySpace to protect their basement investments.
+        </p>
+
+        <div class="grid md:grid-cols-2 gap-6">
+          {localTestimonials.map((testimonial) => (
+            <div class="bg-slate-50 border-2 border-slate-200 p-6 rounded-lg">
+              <div class="flex items-center mb-4">
+                <div class="flex text-amber-500 mr-3">
+                  {[...Array(testimonial.rating)].map((_, i) => (
+                    <span key={i}>★</span>
+                  ))}
+                </div>
+                <div>
+                  <div class="font-bold text-navy-900">{testimonial.name}</div>
+                  <div class="text-sm text-slate-600">{testimonial.neighborhood}</div>
+                </div>
+              </div>
+              <p class="text-slate-700 mb-4 italic">"{testimonial.text}"</p>
+              <div class="text-sm text-slate-500 border-t border-slate-200 pt-3">
+                <strong>Project:</strong> {testimonial.project}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
   <LocationImageShowcase city="Oakville" />
 
-  <!-- Testimonials -->
   <Testimonials />
+
+  <!-- Related Articles -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold mb-8 text-center">Oakville Basement Waterproofing Resources</h2>
+
+        <div class="grid md:grid-cols-3 gap-6 mb-8">
+          <a href="/blog/heritage-foundation-waterproofing" class="block p-6 border-2 border-slate-200 rounded-lg hover:border-cyan-500 transition-colors">
+            <h3 class="font-bold text-navy-900 mb-2">Heritage Foundation Waterproofing Guide</h3>
+            <p class="text-sm text-slate-600">Preserve Old Oakville's historic character while protecting stone foundations</p>
+          </a>
+
+          <a href="/blog/luxury-basement-protection" class="block p-6 border-2 border-slate-200 rounded-lg hover:border-cyan-500 transition-colors">
+            <h3 class="font-bold text-navy-900 mb-2">Protecting High-Value Finished Basements</h3>
+            <p class="text-sm text-slate-600">Specialized solutions for home theatres, wine cellars, and luxury spaces</p>
+          </a>
+
+          <a href="/blog/lakefront-waterproofing" class="block p-6 border-2 border-slate-200 rounded-lg hover:border-cyan-500 transition-colors">
+            <h3 class="font-bold text-navy-900 mb-2">Lakefront Property Waterproofing</h3>
+            <p class="text-sm text-slate-600">Managing high water tables and hydrostatic pressure near Lake Ontario</p>
+          </a>
+        </div>
+
+        <div class="text-center">
+          <a href="/blog" class="inline-block bg-cyan-500 text-white px-8 py-3 rounded-lg font-semibold hover:bg-cyan-600 transition-colors">
+            View All Resources
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- FAQ Section -->
   <section class="py-16 bg-slate-50">
     <div class="container mx-auto px-4">
-      <div class="text-center mb-12">
-        <h2 class="text-4xl font-bold text-slate-900 mb-4 uppercase">the region WATERPROOFING FAQS</h2>
-        <p class="text-lg text-slate-600">Common questions from Oakville homeowners</p>
-      </div>
-      
       <div class="max-w-4xl mx-auto">
-        {locationFAQs.map((faq, index) => (
-          <details class="mb-4 border-2 border-slate-200 bg-white">
-            <summary class="cursor-pointer p-6 hover:bg-slate-50 transition-colors">
-              <div class="flex items-center justify-between">
-                <h3 class="text-lg font-bold text-slate-900 uppercase pr-4">{faq.question}</h3>
-                <span class="text-slate-400 flex-shrink-0 text-2xl">+</span>
+        <h2 class="text-3xl md:text-4xl font-bold mb-4 text-center">Frequently Asked Questions About OAKVILLE Basement Waterproofing</h2>
+        <p class="text-lg text-slate-600 mb-12 text-center">
+          Get answers to common questions about basement waterproofing costs, processes, and solutions specific to Oakville homes.
+        </p>
+
+        <div class="space-y-4">
+          {locationFAQs.map((faq, index) => (
+            <details class="group border-2 border-slate-200 rounded-lg overflow-hidden bg-white">
+              <summary class="cursor-pointer p-6 font-semibold text-navy-900 hover:bg-slate-50 flex justify-between items-center">
+                <span>{faq.question}</span>
+                <span class="text-cyan-500 group-open:rotate-180 transition-transform">▼</span>
+              </summary>
+              <div class="p-6 pt-0 text-slate-700 border-t border-slate-200">
+                <p>{faq.answer}</p>
               </div>
-            </summary>
-            <div class="px-6 pb-6 pt-0">
-              <p class="text-slate-600">{faq.answer}</p>
-            </div>
-          </details>
-        ))}
+            </details>
+          ))}
+        </div>
+
+        <div class="mt-12 bg-gradient-to-r from-cyan-50 to-blue-50 border-2 border-cyan-500 p-8 rounded-lg text-center">
+          <h3 class="text-2xl font-bold text-navy-900 mb-3">Still Have Questions?</h3>
+          <p class="text-slate-700 mb-6">Our Oakville waterproofing experts are here to help. Get personalized answers and a free basement inspection.</p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="/contact" class="inline-block bg-cyan-500 text-white px-8 py-3 rounded-lg font-semibold hover:bg-cyan-600 transition-colors">
+              Schedule Free Inspection
+            </a>
+            <a href="tel:437-545-0067" class="inline-block bg-white text-navy-900 px-8 py-3 rounded-lg font-semibold border-2 border-navy-900 hover:bg-slate-50 transition-colors">
+              Call: 437-545-0067
+            </a>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- CTA Section -->
+  <!-- Final CTA -->
   <section class="py-16 bg-navy-900">
     <div class="container mx-auto px-4">
       <div class="max-w-4xl mx-auto text-center">
-        <h2 class="text-4xl font-bold text-slate-900 mb-4 uppercase">OAKVILLE FOUNDATION PROTECTION STARTS HERE</h2>
-        <p class="text-lg text-slate-300 mb-8">
-          Join 2,000+ Oakville families who trust their homes to our certified waterproofing team
+        <h2 class="text-3xl md:text-4xl font-bold mb-4 text-white">Protect Your Oakville Home Today</h2>
+        <p class="text-xl text-slate-300 mb-8">
+          From heritage stone foundations in Old Oakville to luxury basements in Glen Abbey, we deliver proven waterproofing solutions backed by 25-year warranties. Join 413+ satisfied Oakville homeowners.
         </p>
-        
-        <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <a 
-            href="/free-inspection"
-            class="bg-amber-500 text-black px-8 py-4 text-lg font-bold hover:bg-amber-400 transition-colors uppercase"
-          >
-            Book Oakville Assessment
+        <div class="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+          <a href="/contact" class="inline-block bg-amber-500 text-navy-900 px-8 py-4 rounded-lg font-bold text-lg hover:bg-amber-400 transition-colors">
+            Get Your Free Inspection
           </a>
-          <a 
-            href="/financing"
-            class="border-2 border-white text-slate-900 px-8 py-4 text-lg font-bold hover:bg-white hover:text-black transition-colors uppercase"
-          >
-            View Financing Options
+          <a href="tel:437-545-0067" class="inline-block bg-transparent text-white px-8 py-4 rounded-lg font-bold text-lg border-2 border-white hover:bg-white hover:text-navy-900 transition-colors">
+            Call Now: 437-545-0067
           </a>
         </div>
-        
-        <div class="mt-8 inline-flex items-center text-cyan-400">
-          <span class="text-sm font-bold uppercase">Licensed in Halton Region • Heritage Property Certified</span>
+        <div class="flex flex-wrap justify-center gap-6 text-slate-300">
+          <div class="flex items-center">
+            <span class="text-cyan-400 mr-2">✓</span>
+            <span>25-Year Warranty</span>
+          </div>
+          <div class="flex items-center">
+            <span class="text-cyan-400 mr-2">✓</span>
+            <span>Free Inspections</span>
+          </div>
+          <div class="flex items-center">
+            <span class="text-cyan-400 mr-2">✓</span>
+            <span>0% Financing Available</span>
+          </div>
+          <div class="flex items-center">
+            <span class="text-cyan-400 mr-2">✓</span>
+            <span>Licensed & Insured</span>
+          </div>
         </div>
       </div>
     </div>
   </section>
 </PageLayout>
 
-<script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)}>
-<BreadcrumbSchema items={[{name: 'Home', url: '/'}, {name: 'Locations', url: '/locations'}, {name: 'Oakville'}]} />
+<script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)} />
+<script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+<BreadcrumbSchema
+  items={[
+    { name: 'Home', url: 'https://dryspace.ca' },
+    { name: 'Locations', url: 'https://dryspace.ca/locations' },
+    { name: 'Oakville', url: 'https://dryspace.ca/locations/oakville' }
+  ]}
+/>

@@ -412,6 +412,15 @@
   status = 301
   force = true
 
+# ============================================================
+# TRAILING SLASH DUPLICATES (consolidate split authority)
+# ============================================================
+[[redirects]]
+  from = "/blog/signs-your-foundation-needs-repair/"
+  to = "/blog/signs-your-foundation-needs-repair"
+  status = 301
+  force = true
+
 # Headers for better SEO
 [[headers]]
   for = "/*"

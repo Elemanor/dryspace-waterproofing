@@ -40,10 +40,7 @@ const serviceCategories = [
       { title: "Demolition Services", href: "/services/demolition-services", icon: Hammer },
       { title: "Radon Mitigation", href: "/services/radon-mitigation", icon: Shield },
       { title: "General Contracting", href: "/services/general-contracting", icon: HardHat },
-      { title: "Glass Fabrication", href: "/services/glass-fabrication-installation", icon: Layers },
-      { title: "Permits & Drawings", href: "/services/permit-drawings-services", icon: PenTool },
-      { title: "Design & Rendering", href: "/services/design-rendering-services", icon: PenTool },
-      { title: "Estimation & Takeoff", href: "/services/estimation-quantity-takeoff", icon: PenTool },
+      { title: "Permits & Drawings", href: "/services/permits", icon: PenTool },
       { title: "Design-Build", href: "/services/design-build", icon: Building2 },
     ],
   },
@@ -60,6 +57,7 @@ const locations = [
 
 const resources = [
   { title: "Cost Calculator", href: "/tools/waterproofing-cost-calculator" },
+  { title: "Second Unit Planner", href: "/second-unit" },
   { title: "Blog & Guides", href: "/blog" },
   { title: "Case Studies", href: "/case-studies" },
   { title: "Government Rebates", href: "/government-rebates" },

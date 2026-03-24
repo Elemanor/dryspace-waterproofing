@@ -1,0 +1,530 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import SecondUnitPlanner from '../../components/react/SecondUnitPlanner';
+import {
+  type CitySlug,
+  cities,
+  citySlugs,
+  cityList,
+  buildPackages,
+  addOns,
+  obcRequirements,
+  incentives,
+  getPackageCost,
+  getMaxIncentives,
+  getApplicableIncentives,
+  calculateIncentiveTotal,
+  formatPrice,
+  formatPriceRange,
+} from '../../lib/data/second-unit-planner';
+
+export function getStaticPaths() {
+  return citySlugs.map((slug) => ({
+    params: { city: slug },
+  }));
+}
+
+const { city: citySlug } = Astro.params;
+const city = cities[citySlug as CitySlug];
+
+if (!city) {
+  return Astro.redirect('/second-unit');
+}
+
+// Pre-compute data for server-rendered sections
+const stdPkg = buildPackages.find((p) => p.id === 'standard')!;
+const stdCost = getPackageCost(stdPkg, city.slug);
+const maxIncentives = getMaxIncentives(city.slug);
+const allAddOnIds = addOns.map((a) => a.id);
+const applicableIncentives = getApplicableIncentives(city.slug, allAddOnIds);
+const { cashIncentives, financingAvailable } = calculateIncentiveTotal(applicableIncentives);
+
+// Group incentives by level
+const incentivesByLevel = {
+  federal: applicableIncentives.filter((i) => i.level === 'federal'),
+  provincial: applicableIncentives.filter((i) => i.level === 'provincial'),
+  municipal: applicableIncentives.filter((i) => i.level === 'municipal'),
+  utility: applicableIncentives.filter((i) => i.level === 'utility'),
+};
+
+// Nearby cities data
+const nearbyCityData = city.nearbyCities
+  .map((slug) => cities[slug])
+  .filter(Boolean)
+  .map((nc) => ({
+    ...nc,
+    baseRange: formatPriceRange(getPackageCost(stdPkg, nc.slug).min, getPackageCost(stdPkg, nc.slug).max),
+    maxIncentives: formatPrice(getMaxIncentives(nc.slug)),
+  }));
+
+// Page metadata
+const pageTitle = `Basement Second Unit Planner ${city.name} | Costs, Incentives & ROI | DrySpace`;
+const pageDescription = `Plan your legal basement apartment in ${city.name}. Costs from ${formatPriceRange(stdCost.min, stdCost.max)}, up to ${formatPrice(cashIncentives)} in incentives, ${formatPriceRange(city.rentalIncome.min, city.rentalIncome.max)}/mo rental income. Free assessment.`;
+const canonicalUrl = `https://dryspacewaterproofing.ca/second-unit/${city.slug}`;
+
+// JSON-LD
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://dryspacewaterproofing.ca" },
+    { "@type": "ListItem", "position": 2, "name": "Second Unit Planner", "item": "https://dryspacewaterproofing.ca/second-unit" },
+    { "@type": "ListItem", "position": 3, "name": city.name, "item": canonicalUrl },
+  ]
+};
+
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": city.faqs.map((faq) => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer,
+    },
+  })),
+};
+
+const serviceJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": `Basement Second Unit Construction in ${city.name}`,
+  "description": `Legal basement apartment construction in ${city.name}. Full-service from permits to finishing.`,
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "DrySpace Waterproofing & Foundation",
+    "telephone": "437-545-0067",
+    "url": "https://dryspacewaterproofing.ca",
+  },
+  "areaServed": {
+    "@type": "City",
+    "name": city.name,
+  },
+  "offers": buildPackages.map((pkg) => {
+    const cost = getPackageCost(pkg, city.slug);
+    return {
+      "@type": "AggregateOffer",
+      "name": `${pkg.name} Basement Apartment`,
+      "lowPrice": cost.min,
+      "highPrice": cost.max,
+      "priceCurrency": "CAD",
+    };
+  }),
+};
+---
+
+<PageLayout
+  title={pageTitle}
+  description={pageDescription}
+  canonical={canonicalUrl}
+>
+  <!-- JSON-LD -->
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbJsonLd)} />
+  <script type="application/ld+json" set:html={JSON.stringify(faqJsonLd)} />
+  <script type="application/ld+json" set:html={JSON.stringify(serviceJsonLd)} />
+
+  <!-- Breadcrumb -->
+  <div class="bg-slate-50 border-b border-slate-200">
+    <div class="container mx-auto px-4 py-3">
+      <nav class="flex items-center gap-2 text-sm text-slate-500" aria-label="Breadcrumb">
+        <a href="/" class="hover:text-cyan-600 transition-colors">Home</a>
+        <span>/</span>
+        <a href="/second-unit" class="hover:text-cyan-600 transition-colors">Second Unit Planner</a>
+        <span>/</span>
+        <span class="text-slate-900 font-medium">{city.name}</span>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Hero -->
+  <section class="relative overflow-hidden bg-navy-900 py-16 md:py-24">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute inset-0 bg-gradient-to-br from-cyan-500/20 to-transparent" />
+    </div>
+    <div class="container mx-auto px-4 relative z-10">
+      <div class="max-w-4xl mx-auto">
+        <div class="inline-flex items-center gap-2 rounded-full bg-cyan-500/10 border border-cyan-500/20 px-4 py-1.5 mb-6">
+          <svg class="w-4 h-4 text-cyan-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+          <span class="text-sm font-semibold text-cyan-400">{city.region}</span>
+        </div>
+        <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white mb-6 tracking-tight">
+          Basement Second Unit Planner<br />
+          <span class="text-cyan-400">{city.name}</span>
+        </h1>
+        <p class="text-lg text-slate-300 mb-8 max-w-2xl">
+          Plan your legal basement apartment in {city.name} with real costs, stackable incentives, and rental ROI.
+        </p>
+
+        <!-- Quick Stats -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div class="rounded-xl bg-white/5 border border-white/10 p-4">
+            <p class="text-xs font-medium text-slate-400 uppercase tracking-wider mb-1">Standard Package</p>
+            <p class="text-lg font-bold text-white">{formatPriceRange(stdCost.min, stdCost.max)}</p>
+          </div>
+          <div class="rounded-xl bg-white/5 border border-white/10 p-4">
+            <p class="text-xs font-medium text-slate-400 uppercase tracking-wider mb-1">Max Cash Incentives</p>
+            <p class="text-lg font-bold text-emerald-400">Up to {formatPrice(cashIncentives)}</p>
+          </div>
+          <div class="rounded-xl bg-white/5 border border-white/10 p-4">
+            <p class="text-xs font-medium text-slate-400 uppercase tracking-wider mb-1">Rental Income</p>
+            <p class="text-lg font-bold text-white">{formatPriceRange(city.rentalIncome.min, city.rentalIncome.max)}/mo</p>
+          </div>
+          <div class="rounded-xl bg-white/5 border border-white/10 p-4">
+            <p class="text-xs font-medium text-slate-400 uppercase tracking-wider mb-1">Value Lift</p>
+            <p class="text-lg font-bold text-amber-400">{city.propertyValueLift}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Planner -->
+  <section class="py-16 md:py-24 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-5xl mx-auto">
+        <SecondUnitPlanner client:load citySlug={city.slug} />
+      </div>
+    </div>
+  </section>
+
+  <!-- Incentive Detail -->
+  <section class="py-16 md:py-24 bg-slate-50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+            Available Incentives in {city.name}
+          </h2>
+          <p class="text-lg text-slate-600">
+            Stack up to <strong class="text-emerald-600">{formatPrice(cashIncentives)}</strong> in cash incentives
+            {financingAvailable > 0 && (
+              <span> + <strong class="text-cyan-600">{formatPrice(financingAvailable)}</strong> in low-interest financing</span>
+            )}
+          </p>
+        </div>
+
+        <div class="space-y-8">
+          {/* Federal */}
+          {incentivesByLevel.federal.length > 0 && (
+            <div>
+              <h3 class="text-sm font-semibold uppercase tracking-wider text-slate-500 mb-4 flex items-center gap-2">
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z" /></svg>
+                Federal Programs
+              </h3>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {incentivesByLevel.federal.map((inc) => (
+                  <div class="rounded-xl border border-slate-200 bg-white p-6">
+                    <div class="flex items-start justify-between mb-3">
+                      <h4 class="font-bold text-slate-900 pr-4">{inc.name}</h4>
+                      <span class="shrink-0 rounded-full bg-emerald-50 px-3 py-1 text-sm font-bold text-emerald-700">
+                        {inc.amountType === 'financing' ? `${formatPrice(inc.amount)} financing` : `Up to ${formatPrice(inc.amount)}`}
+                      </span>
+                    </div>
+                    <p class="text-sm text-slate-600 mb-4">{inc.description}</p>
+                    <div class="mb-4">
+                      <p class="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">Eligibility</p>
+                      <ul class="space-y-1">
+                        {inc.eligibility.map((item) => (
+                          <li class="flex items-start gap-2 text-sm text-slate-600">
+                            <svg class="w-4 h-4 text-cyan-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+                            {item}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                    <a href={inc.applyUrl} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-sm font-medium text-cyan-600 hover:text-cyan-700 transition-colors">
+                      Learn more & apply
+                      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+                    </a>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Provincial */}
+          {incentivesByLevel.provincial.length > 0 && (
+            <div>
+              <h3 class="text-sm font-semibold uppercase tracking-wider text-slate-500 mb-4 flex items-center gap-2">
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M4 4a2 2 0 012-2h8a2 2 0 012 2v12a1 1 0 110 2H4a1 1 0 110-2V4zm3 1h2v2H7V5zm2 4H7v2h2V9zm2-4h2v2h-2V5zm2 4h-2v2h2V9z" clip-rule="evenodd" /></svg>
+                Provincial Programs
+              </h3>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {incentivesByLevel.provincial.map((inc) => (
+                  <div class="rounded-xl border border-slate-200 bg-white p-6">
+                    <div class="flex items-start justify-between mb-3">
+                      <h4 class="font-bold text-slate-900 pr-4">{inc.name}</h4>
+                      <span class="shrink-0 rounded-full bg-emerald-50 px-3 py-1 text-sm font-bold text-emerald-700">
+                        Up to {formatPrice(inc.amount)}
+                      </span>
+                    </div>
+                    <p class="text-sm text-slate-600 mb-4">{inc.description}</p>
+                    <div class="mb-4">
+                      <p class="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">Eligibility</p>
+                      <ul class="space-y-1">
+                        {inc.eligibility.map((item) => (
+                          <li class="flex items-start gap-2 text-sm text-slate-600">
+                            <svg class="w-4 h-4 text-cyan-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+                            {item}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                    <a href={inc.applyUrl} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-sm font-medium text-cyan-600 hover:text-cyan-700 transition-colors">
+                      Learn more & apply
+                      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+                    </a>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Municipal */}
+          {incentivesByLevel.municipal.length > 0 && (
+            <div>
+              <h3 class="text-sm font-semibold uppercase tracking-wider text-slate-500 mb-4 flex items-center gap-2">
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" /></svg>
+                Municipal Programs — {city.name}
+              </h3>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {incentivesByLevel.municipal.map((inc) => (
+                  <div class="rounded-xl border border-cyan-200 bg-cyan-50/50 p-6">
+                    <div class="flex items-start justify-between mb-3">
+                      <h4 class="font-bold text-slate-900 pr-4">{inc.name}</h4>
+                      <span class="shrink-0 rounded-full bg-cyan-100 px-3 py-1 text-sm font-bold text-cyan-700">
+                        {inc.amountType === 'financing' ? `${formatPrice(inc.amount)} @ low interest` : `Up to ${formatPrice(inc.amount)}`}
+                      </span>
+                    </div>
+                    <p class="text-sm text-slate-600 mb-4">{inc.description}</p>
+                    <div class="mb-4">
+                      <p class="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">Eligibility</p>
+                      <ul class="space-y-1">
+                        {inc.eligibility.map((item) => (
+                          <li class="flex items-start gap-2 text-sm text-slate-600">
+                            <svg class="w-4 h-4 text-cyan-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+                            {item}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                    <a href={inc.applyUrl} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-sm font-medium text-cyan-600 hover:text-cyan-700 transition-colors">
+                      Learn more & apply
+                      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+                    </a>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Utility */}
+          {incentivesByLevel.utility.length > 0 && (
+            <div>
+              <h3 class="text-sm font-semibold uppercase tracking-wider text-slate-500 mb-4 flex items-center gap-2">
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd" /></svg>
+                Utility Rebates
+              </h3>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {incentivesByLevel.utility.map((inc) => (
+                  <div class="rounded-xl border border-slate-200 bg-white p-6">
+                    <div class="flex items-start justify-between mb-3">
+                      <h4 class="font-bold text-slate-900 pr-4">{inc.name}</h4>
+                      <span class="shrink-0 rounded-full bg-emerald-50 px-3 py-1 text-sm font-bold text-emerald-700">
+                        Up to {formatPrice(inc.amount)}
+                      </span>
+                    </div>
+                    <p class="text-sm text-slate-600 mb-4">{inc.description}</p>
+                    <div class="mb-4">
+                      <p class="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">Eligibility</p>
+                      <ul class="space-y-1">
+                        {inc.eligibility.map((item) => (
+                          <li class="flex items-start gap-2 text-sm text-slate-600">
+                            <svg class="w-4 h-4 text-cyan-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+                            {item}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                    <a href={inc.applyUrl} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-sm font-medium text-cyan-600 hover:text-cyan-700 transition-colors">
+                      Learn more & apply
+                      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+                    </a>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Design Requirements -->
+  <section class="py-16 md:py-24 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+            {city.name} Design Requirements
+          </h2>
+          <p class="text-lg text-slate-600">City-specific building code and zoning requirements</p>
+        </div>
+
+        <div class="rounded-2xl border border-slate-200 overflow-hidden mb-8">
+          <table class="w-full">
+            <thead>
+              <tr class="bg-slate-50">
+                <th class="text-left px-6 py-4 text-sm font-semibold text-slate-700">Requirement</th>
+                <th class="text-left px-6 py-4 text-sm font-semibold text-slate-700">{city.name} Standard</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-100">
+              <tr>
+                <td class="px-6 py-4 text-sm font-medium text-slate-900">Ceiling Height</td>
+                <td class="px-6 py-4 text-sm text-slate-600">{city.ceilingHeightReq}</td>
+              </tr>
+              <tr>
+                <td class="px-6 py-4 text-sm font-medium text-slate-900">Egress Windows</td>
+                <td class="px-6 py-4 text-sm text-slate-600">{city.egressReq}</td>
+              </tr>
+              <tr>
+                <td class="px-6 py-4 text-sm font-medium text-slate-900">Fire Separation</td>
+                <td class="px-6 py-4 text-sm text-slate-600">{city.fireReq}</td>
+              </tr>
+              <tr>
+                <td class="px-6 py-4 text-sm font-medium text-slate-900">Parking</td>
+                <td class="px-6 py-4 text-sm text-slate-600">{city.parkingReq}</td>
+              </tr>
+              <tr>
+                <td class="px-6 py-4 text-sm font-medium text-slate-900">Electrical</td>
+                <td class="px-6 py-4 text-sm text-slate-600">{city.electricalReq}</td>
+              </tr>
+              <tr>
+                <td class="px-6 py-4 text-sm font-medium text-slate-900">Plumbing</td>
+                <td class="px-6 py-4 text-sm text-slate-600">{city.plumbingReq}</td>
+              </tr>
+              <tr>
+                <td class="px-6 py-4 text-sm font-medium text-slate-900">HVAC</td>
+                <td class="px-6 py-4 text-sm text-slate-600">{city.hvacReq}</td>
+              </tr>
+              <tr>
+                <td class="px-6 py-4 text-sm font-medium text-slate-900">Permit Timeline</td>
+                <td class="px-6 py-4 text-sm text-slate-600">{city.permitTimeline}</td>
+              </tr>
+              <tr>
+                <td class="px-6 py-4 text-sm font-medium text-slate-900">Permit Cost</td>
+                <td class="px-6 py-4 text-sm text-slate-600">{city.permitCost}</td>
+              </tr>
+              <tr>
+                <td class="px-6 py-4 text-sm font-medium text-slate-900">Zoning</td>
+                <td class="px-6 py-4 text-sm text-slate-600">{city.zoningNotes}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- OBC Universal -->
+        <div>
+          <h3 class="text-2xl font-bold text-slate-900 mb-6">Ontario Building Code (OBC) Universal Standards</h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {obcRequirements.map((req) => (
+              <div class="rounded-xl border border-slate-200 bg-slate-50 p-5">
+                <h4 class="font-bold text-slate-900 mb-1">{req.category}</h4>
+                <p class="text-sm text-slate-600">{req.requirement}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Nearby Cities -->
+  {nearbyCityData.length > 0 && (
+    <section class="py-16 md:py-24 bg-slate-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-5xl mx-auto">
+          <h2 class="text-2xl font-bold text-slate-900 mb-6">Compare Nearby Cities</h2>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            {nearbyCityData.map((nc) => (
+              <a href={`/second-unit/${nc.slug}`} class="group rounded-xl border border-slate-200 bg-white p-6 transition-all hover:shadow-md hover:border-cyan-200">
+                <h3 class="font-bold text-slate-900 group-hover:text-cyan-600 transition-colors mb-1">{nc.name}</h3>
+                <p class="text-xs text-slate-500 mb-4">{nc.region}</p>
+                <div class="space-y-2">
+                  <div class="flex justify-between text-sm">
+                    <span class="text-slate-500">Standard Package</span>
+                    <span class="font-medium text-slate-900">{nc.baseRange}</span>
+                  </div>
+                  <div class="flex justify-between text-sm">
+                    <span class="text-slate-500">Max Incentives</span>
+                    <span class="font-medium text-emerald-600">{nc.maxIncentives}</span>
+                  </div>
+                  <div class="flex justify-between text-sm">
+                    <span class="text-slate-500">Rental Income</span>
+                    <span class="font-medium text-slate-900">{formatPriceRange(nc.rentalIncome.min, nc.rentalIncome.max)}/mo</span>
+                  </div>
+                </div>
+              </a>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- FAQ -->
+  <section class="py-16 md:py-24 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-8 text-center">
+          Frequently Asked Questions — {city.name}
+        </h2>
+        <div class="space-y-4">
+          {city.faqs.map((faq, i) => (
+            <details class="group rounded-xl border border-slate-200 bg-white">
+              <summary class="flex items-center justify-between cursor-pointer px-6 py-5 text-left">
+                <h3 class="font-semibold text-slate-900 pr-4">{faq.question}</h3>
+                <svg class="w-5 h-5 text-slate-400 shrink-0 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" /></svg>
+              </summary>
+              <div class="px-6 pb-5">
+                <p class="text-slate-600 leading-relaxed">{faq.answer}</p>
+              </div>
+            </details>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-16 md:py-24 bg-navy-900">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
+        Ready to Build in {city.name}?
+      </h2>
+      <p class="text-lg text-slate-300 mb-8 max-w-2xl mx-auto">
+        DrySpace handles everything — permits, construction, inspections, and all incentive applications. Book your free basement assessment today.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/free-inspection" class="inline-flex items-center justify-center gap-2 rounded-lg bg-cyan-500 px-8 py-4 font-bold text-white transition-all hover:bg-cyan-400">
+          Book Free Assessment
+        </a>
+        <a href="tel:437-545-0067" class="inline-flex items-center justify-center gap-2 rounded-lg bg-amber-500 px-8 py-4 font-bold text-navy-900 transition-all hover:bg-amber-400">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" /></svg>
+          437-545-0067
+        </a>
+      </div>
+      <div class="flex flex-wrap gap-4 justify-center mt-8 text-sm">
+        <a href="/services/legal-basement-conversion" class="text-slate-400 hover:text-cyan-400 transition-colors">Requirements Guide</a>
+        <span class="text-slate-600">|</span>
+        <a href="/government-rebates" class="text-slate-400 hover:text-cyan-400 transition-colors">All Rebates</a>
+        <span class="text-slate-600">|</span>
+        <a href="/services/underpinning" class="text-slate-400 hover:text-cyan-400 transition-colors">Underpinning</a>
+        <span class="text-slate-600">|</span>
+        <a href="/second-unit" class="text-slate-400 hover:text-cyan-400 transition-colors">All Cities</a>
+      </div>
+    </div>
+  </section>
+</PageLayout>

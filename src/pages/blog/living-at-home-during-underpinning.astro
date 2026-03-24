@@ -67,6 +67,33 @@ const dailySchedule = [
 ---
 
 <Layout metadata={metadata}>
+  <!-- Article JSON-LD -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Can You Live at Home During Underpinning? Your Questions Answered",
+    "author": { "@type": "Organization", "name": "DrySpace Waterproofing", "url": "https://dryspacewaterproofing.ca" },
+    "publisher": { "@type": "Organization", "name": "DrySpace Waterproofing", "url": "https://dryspacewaterproofing.ca" },
+    "datePublished": "2026-01-28",
+    "dateModified": "2026-03-23",
+    "image": "https://dryspacewaterproofing.ca/images/dryspace_hero_desktop.webp",
+    "mainEntityOfPage": "https://dryspacewaterproofing.ca/blog/living-at-home-during-underpinning"
+  })} />
+
+  <!-- FAQPage JSON-LD -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": livingDuringUnderpinningFAQs.map(faq => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer
+      }
+    }))
+  })} />
+
   <Hero>
     <Fragment slot="title">
       Living at Home During <span class="text-accent">Underpinning:</span> What to Really Expect
@@ -319,7 +346,7 @@ const dailySchedule = [
           <li>Option to pause work during health episodes</li>
         </ul>
 
-        <div class="bg-amber-50 border border-yellow-200 rounded-lg p-6 my-8">
+        <div class="bg-amber-50 border border-amber-200 rounded-lg p-6 my-8">
           <h3 class="text-lg font-bold text-amber-800 mb-3">
             <Icon name="tabler:alert-triangle" class="w-5 h-5 inline mr-2" />
             When Temporary Relocation Might Be Better
@@ -515,6 +542,31 @@ const dailySchedule = [
     <div class="max-w-4xl mx-auto px-4">
       <h2 class="text-3xl font-bold text-center mb-8">Common Questions About Living at Home During Underpinning</h2>
       <FAQAccordion faqs={livingDuringUnderpinningFAQs} client:load />
+    </div>
+  </section>
+
+  <!-- Related Underpinning Guides -->
+  <section class="py-12 bg-white">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-slate-900 mb-6">Related Underpinning Guides</h2>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <a href="/blog/basement-underpinning-cost-toronto-2025" class="group block bg-white border border-slate-200 rounded-lg p-5 hover:shadow-lg hover:border-cyan-200 transition-all">
+          <h3 class="font-bold text-lg mb-2 group-hover:text-cyan-600 transition-colors">Cost Calculator 2026</h3>
+          <p class="text-sm text-slate-500">Interactive calculators for concrete, soil removal, and total project costs</p>
+        </a>
+        <a href="/blog/underpinning-structural-safety-protocols" class="group block bg-white border border-slate-200 rounded-lg p-5 hover:shadow-lg hover:border-cyan-200 transition-all">
+          <h3 class="font-bold text-lg mb-2 group-hover:text-cyan-600 transition-colors">Safety Protocols</h3>
+          <p class="text-sm text-slate-500">The 3-6-3 rule, structural monitoring, and emergency procedures</p>
+        </a>
+        <a href="/blog/winter-underpinning-requirements-toronto" class="group block bg-white border border-slate-200 rounded-lg p-5 hover:shadow-lg hover:border-cyan-200 transition-all">
+          <h3 class="font-bold text-lg mb-2 group-hover:text-cyan-600 transition-colors">Winter Underpinning</h3>
+          <p class="text-sm text-slate-500">Cold weather concrete requirements and winter project advantages</p>
+        </a>
+        <a href="/services/underpinning" class="group block bg-cyan-50 border border-cyan-200 rounded-lg p-5 hover:shadow-lg hover:border-cyan-400 transition-all">
+          <h3 class="font-bold text-lg mb-2 text-cyan-700 group-hover:text-cyan-800 transition-colors">Underpinning Services →</h3>
+          <p class="text-sm text-cyan-600">Our complete underpinning service — NBC compliant, P.Eng certified, 25-year warranty</p>
+        </a>
+      </div>
     </div>
   </section>
 

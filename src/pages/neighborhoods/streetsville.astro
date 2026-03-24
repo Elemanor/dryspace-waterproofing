@@ -1,0 +1,426 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import Hero from '../../components/sections/Hero.astro';
+import Services from '../../components/sections/Services.astro';
+import Process from '../../components/sections/Process.astro';
+import Testimonials from '../../components/sections/Testimonials.astro';
+import Stats from '../../components/sections/Stats.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import BreadcrumbSchema from '../../components/BreadcrumbSchema.astro';
+
+const pageTitle = "Basement Waterproofing Streetsville | Heritage Home Specialists";
+const pageDescription = "Expert basement waterproofing in Streetsville, Mississauga. Heritage home specialists, Credit River flood protection, $3,400 rebates. 24/7 emergency response under 45 minutes.";
+
+// Local area information
+const localInfo = {
+  neighborhoodName: "Streetsville",
+  cityName: "Mississauga",
+  avgHomeAge: "40-120 years",
+  foundationType: "Mixed — Stone, Block & Poured Concrete",
+  soilType: "Credit Valley Clay",
+  waterTable: "High (Credit River)",
+  floodRisk: "High",
+  avgProjectCost: "$12,000-$25,000",
+  responseTime: "30-45 minutes"
+};
+
+// Neighborhood-specific features
+const neighborhoodFeatures = [
+  {
+    title: 'HERITAGE HOME EXPERTS',
+    description: 'Specialized in Streetsville\'s historic village homes dating back to the 1850s.',
+    highlight: true
+  },
+  {
+    title: 'CREDIT RIVER PROTECTION',
+    description: 'Advanced waterproofing for homes in the Credit River flood plain.',
+    highlight: true
+  },
+  {
+    title: 'CLAY SOIL SPECIALISTS',
+    description: 'Expert solutions for Credit Valley clay that expands up to 70% when wet.',
+    highlight: true
+  },
+  {
+    title: 'RAPID RESPONSE',
+    description: 'Under 45 minutes emergency response to all Streetsville streets.',
+  },
+  {
+    title: '$3,400 REBATE ASSISTANCE',
+    description: 'We handle all paperwork for Mississauga\'s Basement Flooding Protection Subsidy.',
+  },
+  {
+    title: 'HERITAGE PERMIT EXPERTISE',
+    description: 'Navigate Streetsville Heritage Conservation District requirements.',
+  }
+];
+
+// Local challenges specific to Streetsville
+const localChallenges = [
+  {
+    problem: "CREDIT RIVER FLOODING",
+    description: "Proximity to the Credit River creates high water table conditions and flood risk, especially during spring thaw and heavy rainstorms",
+    solution: "Multi-layer exterior waterproofing with sump pump backup systems and backwater valve installation"
+  },
+  {
+    problem: "HERITAGE FOUNDATION AGING",
+    description: "Streetsville's historic village core has homes with 100+ year old stone and rubble foundations that crack and deteriorate",
+    solution: "Heritage-sensitive foundation repair, stone repointing, and waterproof membrane systems"
+  },
+  {
+    problem: "CREDIT VALLEY CLAY SOIL",
+    description: "Expansive clay soil (30-70% clay content) shifts seasonally, putting pressure on foundations and cracking basement walls",
+    solution: "Exterior waterproofing with proper drainage to manage hydrostatic pressure from clay expansion"
+  }
+];
+
+// Neighborhood-specific FAQs
+const neighborhoodFAQs = [
+  {
+    question: "How much does basement waterproofing cost in Streetsville?",
+    answer: "Basement waterproofing in Streetsville typically costs $12,000-$25,000 depending on the method and home size. Heritage homes in the village core may cost more due to specialized techniques. Mississauga residents can access up to $3,400 through the Basement Flooding Protection Subsidy."
+  },
+  {
+    question: "Is my Streetsville home at risk for Credit River flooding?",
+    answer: "Properties near the Credit River corridor, especially south of Queen Street, face elevated flood risk. Even homes several blocks from the river can experience high water table conditions during spring thaw. A professional assessment can determine your specific risk level and recommend appropriate protection."
+  },
+  {
+    question: "Do I need special permits for waterproofing a heritage home in Streetsville?",
+    answer: "Yes, homes in the Streetsville Heritage Conservation District may require heritage permits for exterior work. DrySpace handles all permit applications with the City of Mississauga, including heritage permits, building permits for excavation, and Region of Peel plumbing permits."
+  },
+  {
+    question: "How quickly can you respond to flooding emergencies in Streetsville?",
+    answer: "We guarantee response times under 45 minutes to all Streetsville addresses. Our teams are stationed across Mississauga with 24/7 availability. For Credit River flood events, we deploy specialized pumping equipment for rapid water removal."
+  }
+];
+
+// Schema markup for local business
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "DrySpace Waterproofing Streetsville",
+  "description": "Expert basement waterproofing in Streetsville, Mississauga. Heritage home specialists, Credit River flood protection, foundation repair.",
+  "telephone": "437-545-0067",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Streetsville",
+    "addressRegion": "Mississauga, Ontario",
+    "addressCountry": "CA"
+  },
+  "areaServed": {
+    "@type": "Place",
+    "name": "Streetsville, Mississauga"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 43.5818,
+    "longitude": -79.7143
+  }
+};
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Basement Waterproofing Streetsville | Heritage Home Specialists",
+  "description": pageDescription,
+  "url": "https://dryspacewaterproofing.ca/neighborhoods/streetsville",
+  "publisher": {
+    "@type": "Organization",
+    "name": "DrySpace Waterproofing"
+  }
+};
+---
+
+<PageLayout
+  title={pageTitle}
+  description={pageDescription}
+>
+
+  <!-- Breadcrumbs -->
+  <div class="container mx-auto px-4 mt-4">
+    <Breadcrumbs
+      items={[
+        { name: "Home", url: "/" },
+        { name: "Mississauga", url: "/basement-waterproofing-mississauga" },
+        { name: "Streetsville" }
+      ]}
+    />
+  </div>
+
+  <!-- Neighborhood Hero -->
+  <Hero
+    title="BASEMENT WATERPROOFING STREETSVILLE"
+    subtitle="Heritage home specialists protecting Streetsville from Credit River flooding and clay soil damage. 92+ projects completed. 24/7 emergency response."
+    primaryCTA={{ text: "Get Free Inspection", href: "/free-inspection" }}
+    secondaryCTA={{ text: "Call: 437-545-0067", href: "tel:437-545-0067" }}
+    backgroundImage="/images/dryspace_hero_desktop.webp"
+    badge="$3,400 REBATE AVAILABLE"
+  />
+
+  <!-- Stats -->
+  <Stats />
+
+  <!-- Local Information Section -->
+  <section class="py-16 bg-slate-50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-4xl font-bold text-slate-900 mb-4 uppercase">BASEMENT WATERPROOFING IN STREETSVILLE</h2>
+
+        <div class="prose prose-lg max-w-none">
+          <p class="text-lg text-slate-600 mb-6">
+            Streetsville is one of Mississauga's oldest neighborhoods, with homes dating back to the 1850s village era.
+            These heritage properties face unique basement waterproofing challenges — from aging stone foundations in the
+            historic core to Credit Valley clay soil that causes foundation movement across the entire neighborhood.
+            DrySpace has completed 92+ waterproofing projects in Streetsville, making us the area's most experienced
+            basement waterproofing contractor.
+          </p>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
+            <div class="bg-white border-2 border-slate-200 p-6">
+              <h3 class="text-xl font-bold text-slate-900 mb-6 uppercase">STREETSVILLE QUICK FACTS</h3>
+              <ul class="space-y-2 text-slate-600">
+                <li class="flex justify-between items-center pb-2 border-b border-slate-100">
+                  <span class="text-sm font-semibold text-slate-600 uppercase">Average Home Age</span>
+                  <span class="text-sm font-bold text-slate-900">{localInfo.avgHomeAge.toUpperCase()}</span>
+                </li>
+                <li class="flex justify-between items-center pb-2 border-b border-slate-100">
+                  <span class="text-sm font-semibold text-slate-600 uppercase">Foundation Type</span>
+                  <span class="text-sm font-bold text-slate-900">{localInfo.foundationType.toUpperCase()}</span>
+                </li>
+                <li class="flex justify-between items-center pb-2 border-b border-slate-100">
+                  <span class="text-sm font-semibold text-slate-600 uppercase">Soil Type</span>
+                  <span class="text-sm font-bold text-slate-900">{localInfo.soilType.toUpperCase()}</span>
+                </li>
+                <li class="flex justify-between items-center pb-2 border-b border-slate-100">
+                  <span class="text-sm font-semibold text-slate-600 uppercase">Flood Risk</span>
+                  <span class="text-sm font-bold text-red-600">{localInfo.floodRisk.toUpperCase()}</span>
+                </li>
+                <li class="flex justify-between items-center pb-2 border-b border-slate-100">
+                  <span class="text-sm font-semibold text-slate-600 uppercase">Response Time</span>
+                  <span class="text-sm font-bold text-slate-900">{localInfo.responseTime.toUpperCase()}</span>
+                </li>
+                <li class="flex justify-between items-center pb-2 border-b border-slate-100">
+                  <span class="text-sm font-semibold text-slate-600 uppercase">Average Cost</span>
+                  <span class="text-sm font-bold text-slate-900">{localInfo.avgProjectCost}</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="bg-navy-900 border-2 border-slate-200 p-6">
+              <h3 class="text-xl font-bold text-slate-900 mb-6 uppercase">STREETSVILLE CHALLENGES</h3>
+              <ul class="space-y-2 text-slate-300">
+                <li class="text-sm text-slate-300 flex items-start">
+                  <span class="mr-2 text-cyan-400">•</span>
+                  <span>Credit River flood plain proximity</span>
+                </li>
+                <li class="text-sm text-slate-300 flex items-start">
+                  <span class="mr-2 text-cyan-400">•</span>
+                  <span>Heritage conservation district restrictions</span>
+                </li>
+                <li class="text-sm text-slate-300 flex items-start">
+                  <span class="mr-2 text-cyan-400">•</span>
+                  <span>Credit Valley clay soil (30-70% clay content)</span>
+                </li>
+                <li class="text-sm text-slate-300 flex items-start">
+                  <span class="mr-2 text-cyan-400">•</span>
+                  <span>Aging stone foundations in village core</span>
+                </li>
+                <li class="text-sm text-slate-300 flex items-start">
+                  <span class="mr-2 text-cyan-400">•</span>
+                  <span>High water table from Credit River aquifer</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <h3 class="text-2xl font-bold mt-8 mb-4 uppercase">STREETS WE SERVE IN STREETSVILLE</h3>
+          <p class="mb-4">
+            Our team provides rapid response throughout the entire Streetsville community:
+          </p>
+          <div class="flex flex-wrap gap-2">
+            {["Queen Street South", "Main Street", "Church Street", "Thomas Street", "Tannery Street", "Falconer Drive", "Joymar Drive", "Creditview Road", "Barbertown Road", "Bristol Road"].map((street) => (
+              <span class="border-2 border-slate-200 px-4 py-2 text-sm uppercase">
+                {street}
+              </span>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <Services />
+
+  <!-- Neighborhood Features -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl font-bold text-slate-900 mb-4 uppercase">WHY CHOOSE DRYSPACE IN STREETSVILLE</h2>
+        <p class="text-lg text-slate-600 max-w-3xl mx-auto">
+          Heritage home expertise and Credit River flood protection specialists
+        </p>
+      </div>
+
+      <!-- Highlighted Features -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+        {neighborhoodFeatures.filter(f => f.highlight).map((feature) => (
+          <div class="bg-amber-500 border-2 border-slate-700 p-6">
+            <h3 class="text-lg font-bold text-slate-900 mb-3 uppercase">{feature.title}</h3>
+            <p class="text-sm text-slate-900">{feature.description}</p>
+          </div>
+        ))}
+      </div>
+
+      <!-- Regular Features -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {neighborhoodFeatures.filter(f => !f.highlight).map((feature) => (
+          <div class="bg-white border-2 border-slate-200 p-6 hover:border-slate-300 transition-colors">
+            <h3 class="text-lg font-bold text-slate-900 mb-3 uppercase">{feature.title}</h3>
+            <p class="text-sm text-slate-600">{feature.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Local Challenges Section -->
+  <section class="py-16 bg-slate-50">
+    <div class="container mx-auto px-4">
+      <h2 class="text-4xl font-bold text-slate-900 mb-12 text-center uppercase">STREETSVILLE WATERPROOFING CHALLENGES</h2>
+
+      <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        {localChallenges.map((challenge) => (
+          <div class="bg-white border-2 border-slate-200 p-6">
+            <h3 class="text-lg font-bold text-slate-900 mb-3 uppercase">{challenge.problem}</h3>
+            <p class="text-sm text-slate-600 mb-4">{challenge.description}</p>
+            <div class="pt-4 border-t border-slate-100">
+              <p class="text-sm font-semibold text-slate-900 uppercase mb-1">OUR SOLUTION:</p>
+              <p class="text-sm text-slate-600">{challenge.solution}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Process -->
+  <Process />
+
+  <!-- Testimonials -->
+  <section class="py-16 bg-slate-50">
+    <div class="container mx-auto px-4">
+      <h2 class="text-4xl font-bold text-slate-900 mb-8 text-center uppercase">WHAT STREETSVILLE HOMEOWNERS SAY</h2>
+      <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-6">
+        <div class="bg-white p-6 rounded-lg shadow border border-slate-100">
+          <div class="flex mb-2">
+            <span class="text-amber-400">★★★★★</span>
+          </div>
+          <p class="mb-2 text-slate-600">
+            "After the Credit River flooding last spring, DrySpace was here within an hour. They handled
+            everything from emergency pumping to permanent waterproofing. Our heritage home needed special
+            care and they delivered."
+          </p>
+          <p class="font-semibold text-slate-900">- Sarah M., Queen Street South</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow border border-slate-100">
+          <div class="flex mb-2">
+            <span class="text-amber-400">★★★★★</span>
+          </div>
+          <p class="mb-2 text-slate-600">
+            "Our 1920s home on Thomas Street had chronic basement moisture. DrySpace designed a system that
+            works with our old stone foundation. They even handled the heritage permit. Dry basement ever since!"
+          </p>
+          <p class="font-semibold text-slate-900">- David L., Thomas Street</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl font-bold text-slate-900 mb-4 uppercase">STREETSVILLE WATERPROOFING FAQS</h2>
+        <p class="text-lg text-slate-600">Common questions from Streetsville homeowners</p>
+      </div>
+
+      <div class="max-w-4xl mx-auto">
+        {neighborhoodFAQs.map((faq) => (
+          <details class="mb-4 border-2 border-slate-200 bg-white">
+            <summary class="cursor-pointer p-6 hover:bg-slate-50 transition-colors">
+              <div class="flex items-center justify-between">
+                <h3 class="text-lg font-bold text-slate-900 uppercase pr-4">{faq.question}</h3>
+                <span class="text-slate-400 flex-shrink-0 text-2xl">+</span>
+              </div>
+            </summary>
+            <div class="px-6 pb-6 pt-0">
+              <p class="text-slate-600">{faq.answer}</p>
+            </div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Related Resources -->
+  <section class="py-12 bg-slate-50">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="uppercase text-2xl font-bold mb-6 text-slate-900">Streetsville Waterproofing Resources</h2>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="p-6 bg-cyan-50">
+          <h3 class="font-bold mb-3 text-slate-900">Service Areas</h3>
+          <ul class="space-y-2">
+            <li><a href="/basement-waterproofing-mississauga" class="text-cyan-600 hover:underline">Basement Waterproofing Mississauga (Parent Page)</a></li>
+            <li><a href="/service-areas" class="text-cyan-600 hover:underline">All GTA Service Areas</a></li>
+            <li><a href="/free-inspection" class="text-cyan-600 hover:underline">Book Free Streetsville Inspection</a></li>
+          </ul>
+        </div>
+        <div class="p-6 bg-orange-50">
+          <h3 class="font-bold mb-3 text-slate-900">Helpful Guides</h3>
+          <ul class="space-y-2">
+            <li><a href="/blog/basement-waterproofing-cost-toronto-2025" class="text-orange-600 hover:underline">Waterproofing Cost Guide 2026</a></li>
+            <li><a href="/blog/signs-your-foundation-needs-repair" class="text-orange-600 hover:underline">7 Signs Your Foundation Needs Repair</a></li>
+            <li><a href="/blog/french-drain-vs-weeping-tile" class="text-orange-600 hover:underline">French Drain vs Weeping Tile Comparison</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-16 bg-navy-900">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-4xl font-bold text-slate-900 mb-4 uppercase">PROTECT YOUR STREETSVILLE HOME</h2>
+        <p class="text-lg text-slate-300 mb-8">
+          Expert basement waterproofing for heritage homes and Credit River properties. $3,400 rebate available.
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a
+            href="/free-inspection"
+            class="bg-amber-500 text-black px-8 py-4 text-lg font-bold hover:bg-amber-400 transition-colors uppercase"
+          >
+            Schedule Streetsville Inspection
+          </a>
+          <a
+            href="tel:437-545-0067"
+            class="border-2 border-white text-slate-900 px-8 py-4 text-lg font-bold hover:bg-white hover:text-black transition-colors uppercase"
+          >
+            Call: 437-545-0067
+          </a>
+        </div>
+
+        <div class="mt-8 inline-flex items-center text-cyan-400">
+          <span class="text-sm font-bold uppercase">24/7 Emergency Service — Under 45 Minutes to Streetsville</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <BreadcrumbSchema items={[{name: 'Home', url: '/'}, {name: 'Mississauga', url: '/basement-waterproofing-mississauga'}, {name: 'Streetsville'}]} />
+</PageLayout>
+
+<script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)}></script>
+<script type="application/ld+json" set:html={JSON.stringify(articleSchema)}></script>

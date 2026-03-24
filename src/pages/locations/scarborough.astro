@@ -10,8 +10,8 @@ import InternalLinks from '../../components/InternalLinks.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import BreadcrumbSchema from '../../components/BreadcrumbSchema.astro';
 
-const pageTitle = "Moisture Protection Scarborough | Eastern Toronto Specialists";
-const pageDescription = "Scarborough Bluffs erosion protection. Ravine system specialists, diverse housing stock, lakefront cliff solutions.";
+const pageTitle = "Basement Waterproofing Scarborough | Bluffs & Ravine Specialists";
+const pageDescription = "Basement waterproofing Scarborough — Bluffs erosion protection, ravine drainage, and foundation repair. $150-$275/linear foot. 25-year warranty, free inspection. Serving Agincourt, Malvern, Guildwood & all Scarborough neighborhoods.";
 
 // Local area information
 const localInfo = {
@@ -27,72 +27,139 @@ const localInfo = {
 // Location-specific features
 const locationFeatures = [
   {
-    title: 'LOCAL EXPERTS',
-    description: 'Serving the area for over 25 years with deep knowledge of local conditions.',
-    highlight: true
-  },
-  {
-    title: 'FAST RESPONSE TIME',
-    description: '2-hour emergency response anywhere in the area. Available 24/7.',
-    highlight: true
-  },
-  {
-    title: 'ALL NEIGHBORHOODS',
-    description: 'Serving Agincourt, Malvern, Guildwood and all local areas.',
-    highlight: true
-  },
-  {
     title: 'BLUFFS EROSION EXPERTS',
-    description: 'Specialized in local Bluffs cliff erosion, slope stability, and lakefront challenges.',
+    description: 'Specialized basement waterproofing for Scarborough Bluffs properties facing cliff erosion, slope instability, and Lake Ontario groundwater pressure.',
+    highlight: true
   },
   {
-    title: 'DIVERSE HOUSING SPECIALISTS',
-    description: 'Expert solutions for varied local housing from post-war bungalows to modern condos.',
+    title: '90-MINUTE EMERGENCY RESPONSE',
+    description: 'Our Scarborough crew responds to basement flooding emergencies within 90 minutes — covering Agincourt to Guildwood. Available 24/7, 365 days.',
+    highlight: true
+  },
+  {
+    title: 'ALL SCARBOROUGH NEIGHBORHOODS',
+    description: 'Serving Agincourt, Malvern, Guildwood, Rouge, Birch Cliff, West Hill, Cliffside, Highland Creek, and Morningside with 850+ completed projects.',
+    highlight: true
   },
   {
     title: 'RAVINE SYSTEM SOLUTIONS',
-    description: 'Advanced protection for extensive ravine network and seasonal creek flooding.'
+    description: 'Advanced basement waterproofing for Scarborough\'s extensive ravine network — Highland Creek, Rouge River overflow protection, and seasonal creek flood management.'
+  },
+  {
+    title: 'DIVERSE HOUSING SPECIALISTS',
+    description: 'Expert waterproofing for Scarborough\'s varied housing from 1950s-60s post-war bungalows to 1970s-80s split-levels and modern townhome complexes.'
+  },
+  {
+    title: 'TRCA-COMPLIANT INSTALLATIONS',
+    description: 'Fully licensed for Toronto and Region Conservation Authority regulated zones — permits handled, environmental compliance guaranteed.'
+  }
+];
+
+// Location-specific testimonials
+const localTestimonials = [
+  {
+    name: "David Chen",
+    neighborhood: "Agincourt",
+    text: "After 3 spring floods in a row, DrySpace installed an interior drainage system and backwater valve. We haven't had a drop of water in 2 years. Their Scarborough team knew exactly what our 1970s split-level needed.",
+    rating: 5,
+    project: "Interior waterproofing + sump pump"
+  },
+  {
+    name: "Patricia Morrison",
+    neighborhood: "Birch Cliff",
+    text: "Living near the Bluffs, we were told by two other companies our situation was too complex. DrySpace designed a custom drainage solution that accounts for the slope and clay movement. Outstanding work.",
+    rating: 5,
+    project: "Exterior waterproofing + slope stabilization"
+  }
+];
+
+// Construction era analysis
+const constructionEras = [
+  {
+    period: "1950s-1960s Post-War Bungalows",
+    areas: "Agincourt, West Hill, Cliffside",
+    foundation: "Poured concrete or cinder block, shallow footings",
+    problems: "Original weeping tiles collapsed or clogged with clay. Concrete block foundations develop horizontal cracks from decades of frost heave. Many lack any waterproofing membrane.",
+    solution: "Full interior drainage system with new weeping tile, sump pump installation, and crack injection. Exterior membrane recommended for block foundations."
+  },
+  {
+    period: "1970s-1980s Split-Levels & Raised Ranches",
+    areas: "Malvern, Rouge, Highland Creek",
+    foundation: "Poured concrete walls, deeper footings",
+    problems: "Parging failure exposes concrete to moisture. Window wells flood during storms. Slab-on-grade sections develop cove joint leaks where floor meets wall.",
+    solution: "Targeted interior drainage at cove joint, window well drainage systems, and exterior parging repair with waterproof membrane."
+  },
+  {
+    period: "1990s-2000s Subdivisions & Townhomes",
+    areas: "Rouge, Malvern North, Centennial",
+    foundation: "Poured concrete, builder-grade waterproofing",
+    problems: "Builder-applied damp proofing (not true waterproofing) failing after 20-25 years. Lot grading settles, directing water toward foundations. Shared drainage systems between townhomes create liability gaps.",
+    solution: "Exterior waterproofing membrane replacement, re-grading, and individual sump pump systems for townhome units."
   }
 ];
 
 // Location-specific FAQs
 const locationFAQs = [
   {
-    question: "How do local Bluffs erosion affect moisture protection?",
-    answer: "The local Bluffs face ongoing erosion from Lake Ontario wave action and groundwater seepage. Properties near the bluffs require specialized protection systems that account for slope instability, cliff erosion, and elevated groundwater from lake proximity."
+    question: "How much does basement waterproofing cost in Scarborough?",
+    answer: "Basement waterproofing in Scarborough typically costs $150-$275 per linear foot for interior systems, with average projects ranging from $12,000-$25,000 depending on basement size and severity. Exterior waterproofing runs $200-$350 per linear foot. Bluffs-area properties may cost 15-20% more due to soil complexity and slope stabilization requirements. We provide free on-site estimates with transparent pricing."
   },
   {
-    question: "What challenges do the area's ravine systems create?",
-    answer: "The area has one of Toronto's most extensive ravine networks, creating complex drainage patterns and seasonal flooding risks. Our ravine expertise includes specialized retention systems, creek overflow management, and slope stabilization for properties in these sensitive areas."
+    question: "How do Scarborough Bluffs erosion affect basement waterproofing?",
+    answer: "The Scarborough Bluffs face ongoing erosion from Lake Ontario wave action and groundwater seepage through glacial clay layers. Properties within 500 meters of the bluff edge experience elevated groundwater pressure, unstable soil conditions, and seasonal clay movement that cracks foundations. Our Bluffs-specific waterproofing includes reinforced drainage systems, slope monitoring, and membranes designed for shifting clay soils."
   },
   {
-    question: "How do you protect the area's diverse housing types?",
-    answer: "The area features everything from 1950s bungalows to modern high-rises and townhomes. Each housing type requires different approaches - from post-war foundation upgrades to contemporary condominium protection and multi-unit drainage coordination."
+    question: "Do I need a TRCA permit for waterproofing near Scarborough ravines?",
+    answer: "Yes — properties within the Toronto and Region Conservation Authority regulated area (typically within 30 meters of a ravine crest or floodplain) require TRCA approval for exterior excavation work. Interior waterproofing usually doesn't require a TRCA permit. DrySpace handles all permit applications and ensures full environmental compliance. Permit processing takes 4-8 weeks, so we recommend planning ahead."
   },
   {
-    question: "What makes lakefront properties in the area unique?",
-    answer: "Local lakefront properties face combined challenges of lake proximity, bluff erosion, and elevated groundwater. Our lakefront solutions include erosion protection, enhanced drainage systems, and specialized foundation stabilization for cliff-edge properties."
+    question: "What challenges do Scarborough's ravine systems create for basements?",
+    answer: "Scarborough has one of Toronto's most extensive ravine networks — Highland Creek, Rouge River, and dozens of tributaries create complex drainage patterns. Properties near ravines face seasonal flooding during spring thaw, elevated groundwater from creek systems, and soil erosion that undermines foundations. Our ravine-specific solutions include backwater valves, high-capacity sump systems, and French drains designed for high water table conditions."
   },
   {
-    question: "How do you handle flooding in local creek systems?",
-    answer: "Local numerous creeks including Highland Creek and Rouge River create seasonal flooding challenges. We provide specialized flood protection including creek overflow barriers, enhanced sump systems, and coordination with municipal flood management."
+    question: "How do you protect Scarborough's diverse housing types from water damage?",
+    answer: "Scarborough features everything from 1950s bungalows with cinder block foundations to modern townhome complexes. Each era requires different waterproofing approaches — post-war homes often need full drainage replacement, while 1970s-80s split-levels typically need cove joint sealing and window well drainage. We assess the specific foundation type and construction era before recommending solutions."
   },
   {
-    question: "Do you work with TRCA restrictions near ravines?",
-    answer: "Yes! Many local properties are subject to Toronto and Region Conservation Authority regulations due to ravine proximity. Our TRCA-compliant solutions work within environmental restrictions while providing effective basement protection."
+    question: "Is basement waterproofing in Scarborough covered by insurance?",
+    answer: "Standard home insurance typically covers sudden water damage (burst pipe, sewer backup with endorsement) but not gradual seepage or foundation leaks. However, waterproofing your Scarborough basement can lower your insurance premiums and prevent costly claims. Some insurers offer discounts for homes with backwater valves and sump pumps. We provide documentation for insurance claims when water damage leads to waterproofing work."
+  },
+  {
+    question: "How does Highland Creek flooding affect Scarborough basements?",
+    answer: "Highland Creek and its tributaries flood during heavy rainfall events and spring snowmelt, particularly affecting homes in Morningside, West Hill, and the Highland Creek valley. The 2013 Toronto flood caused significant basement damage along this corridor. Our flood protection includes high-capacity sump pumps with battery backup, backwater valves on floor drains, and exterior grading improvements to direct surface water away from foundations."
+  },
+  {
+    question: "What is the best season for basement waterproofing in Scarborough?",
+    answer: "Late spring through early fall (May-October) is ideal for exterior waterproofing in Scarborough because the ground is workable and concrete cures properly. Interior waterproofing can be done year-round. However, booking in late fall or winter often means shorter wait times and potential seasonal discounts of 5-10%. The worst time to discover you need waterproofing is during a spring flood — proactive assessment in fall saves emergency costs."
+  },
+  {
+    question: "Do you offer financing for basement waterproofing in Scarborough?",
+    answer: "Yes — we offer 0% interest financing for 12 months, extended payment plans up to 60 months, and same-day approval. For a typical Scarborough interior waterproofing project of $15,000, monthly payments start at around $250/month over 60 months. We also help homeowners access the City of Toronto Basement Flooding Protection Subsidy for eligible properties."
+  },
+  {
+    question: "What warranty do you provide on Scarborough waterproofing work?",
+    answer: "Every DrySpace basement waterproofing project in Scarborough comes with a transferable 25-year warranty covering materials and workmanship. This warranty transfers to new owners if you sell your home, adding resale value. Our warranty covers the complete drainage system, sump pump, waterproofing membranes, and crack repairs. We also include annual maintenance checks for the first 5 years."
+  },
+  {
+    question: "How long does basement waterproofing take in a Scarborough home?",
+    answer: "Interior waterproofing in a typical Scarborough home takes 2-4 days depending on basement size and scope. Exterior waterproofing requires 5-10 days including excavation, membrane application, and backfill. Bluffs-area projects with slope stabilization may take 7-14 days. We provide a detailed timeline during your free assessment and work to minimize disruption — you can stay in your home during interior work."
+  },
+  {
+    question: "Can I get the $3,400 Toronto Basement Flooding Protection Subsidy in Scarborough?",
+    answer: "Yes — Scarborough residents qualify for the City of Toronto Basement Flooding Protection Subsidy, which provides up to $3,400 for flood-prevention measures including backwater valve installation ($1,250), sump pump installation ($1,750), and pipe severance/capping ($400). DrySpace handles the application process and ensures your installation meets all program requirements for reimbursement."
   }
 ];
 
 // Schema markup for local business
 const localBusinessSchema = {
   "@context": "https://schema.org",
-  "@type": ["LocalBusiness", "HomeAndConstructionBusiness", "ProtectionService"],
-  "name": "Dryspace Protection",
-  "description": "Professional basement protection services in Scarborough. Expert foundation repair, and drainage solutions. Serving all local neighborhoods with 25-year warranty protection.",
+  "@type": ["LocalBusiness", "HomeAndConstructionBusiness", "WaterproofingService"],
+  "name": "DrySpace Waterproofing",
+  "description": "Professional basement waterproofing services in Scarborough. Expert foundation repair, drainage solutions, and Bluffs erosion protection. Serving all Scarborough neighborhoods with 25-year warranty.",
   "telephone": "437-545-0067",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "Service Area",
+    "streetAddress": "Scarborough Service Area",
     "addressLocality": "Scarborough",
     "addressRegion": "ON",
     "postalCode": "M1P",
@@ -117,7 +184,7 @@ const localBusinessSchema = {
   "serviceArea": {
     "@type": "GeoCircle",
     "geoMidpoint": {
-      "@type": "GeoCoordinates", 
+      "@type": "GeoCoordinates",
       "latitude": "43.7731",
       "longitude": "-79.2578"
     },
@@ -125,7 +192,7 @@ const localBusinessSchema = {
   },
   "openingHours": [
     "Mo-Fr 07:00-19:00",
-    "Sa 08:00-17:00", 
+    "Sa 08:00-17:00",
     "Su 09:00-17:00"
   ],
   "availableLanguage": ["English"],
@@ -141,18 +208,18 @@ const localBusinessSchema = {
   ],
   "hasOfferCatalog": {
     "@type": "OfferCatalog",
-    "name": "Protection Services",
+    "name": "Waterproofing Services",
     "itemListElement": [
       {
         "@type": "Offer",
         "itemOffered": {
           "@type": "Service",
           "name": "Basement Waterproofing",
-          "description": "Complete basement protection solutions"
+          "description": "Complete basement waterproofing solutions for Scarborough homes"
         }
       },
       {
-        "@type": "Offer", 
+        "@type": "Offer",
         "itemOffered": {
           "@type": "Service",
           "name": "Foundation Repair",
@@ -162,7 +229,7 @@ const localBusinessSchema = {
       {
         "@type": "Offer",
         "itemOffered": {
-          "@type": "Service", 
+          "@type": "Service",
           "name": "Drainage Solutions",
           "description": "French drains, sump pumps, and drainage systems"
         }
@@ -172,7 +239,7 @@ const localBusinessSchema = {
         "itemOffered": {
           "@type": "Service",
           "name": "Emergency Water Removal",
-          "description": "24/7 emergency flooding and moisture damage response"
+          "description": "24/7 emergency flooding and water damage response"
         }
       }
     ]
@@ -186,7 +253,7 @@ const localBusinessSchema = {
     },
     "author": {
       "@type": "Organization",
-      "name": "Dryspace Protection Customers"
+      "name": "DrySpace Waterproofing Customers"
     }
   },
   "aggregateRating": {
@@ -196,16 +263,29 @@ const localBusinessSchema = {
     "bestRating": "5"
   }
 };
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": locationFAQs.map(faq => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer
+    }
+  }))
+};
 ---
 
-<PageLayout 
+<PageLayout
   title={pageTitle}
   description={pageDescription}
 >
-  
+
   <!-- Breadcrumbs -->
   <div class="container mx-auto px-4 mt-4">
-    <Breadcrumbs 
+    <Breadcrumbs
       items={[
         { name: "Home", url: "/" },
         { name: "Service Areas", url: "/service-areas" },
@@ -215,13 +295,13 @@ const localBusinessSchema = {
   </div>
 
 <!-- Location Hero -->
-  <Hero 
-    title="Moisture Protection Scarborough"
-    subtitle="Professional basement protection and foundation repair serving all local neighborhoods. 25-year warranty, free inspection."
-    primaryCTA={{ text: "Get Free Quote", href: "/free-inspection" }}
+  <Hero
+    title="Basement Waterproofing Scarborough"
+    subtitle="Professional basement waterproofing and foundation repair for Scarborough's Bluffs, ravines, and diverse housing stock. 25-year warranty, free inspection."
+    primaryCTA={{ text: "Get Free Scarborough Quote", href: "/free-inspection" }}
     secondaryCTA={{ text: "Call: 437-545-0067", href: "tel:437-545-0067" }}
     backgroundImage="/images/dryspace_hero_desktop.webp"
-    badge="Serving the Area"
+    badge="Serving Scarborough"
   />
 
   <!-- Internal Links -->
@@ -238,24 +318,31 @@ const localBusinessSchema = {
   <section class="py-16 bg-slate-50">
     <div class="container mx-auto px-4">
       <div class="max-w-4xl mx-auto">
-        <h2 class="text-4xl font-bold text-slate-900 mb-4 uppercase">MOISTURE PROTECTION SERVICES IN SCARBOROUGH</h2>
-        
-        <div class="prose prose-lg  max-w-none">
+        <h2 class="text-4xl font-bold text-slate-900 mb-4 uppercase">BASEMENT WATERPROOFING SERVICES IN SCARBOROUGH</h2>
+
+        <div class="prose prose-lg max-w-none">
           <p class="text-lg text-slate-600 mb-6">
-            The area presents some of Toronto's most complex moisture challenges with the dramatic local Bluffs facing Lake Ontario erosion and an extensive ravine system creating diverse drainage patterns. This diverse community features varied housing types from different eras, each requiring specialized approaches for the unique geological and environmental conditions.
+            Basement waterproofing in Scarborough requires specialized expertise due to the dramatic Scarborough Bluffs, one of Toronto's most extensive ravine networks, and a diverse housing stock spanning seven decades. From glacial clay soils that shift with seasonal moisture to Highland Creek flooding and Lake Ontario groundwater influence, Scarborough presents some of the GTA's most complex waterproofing challenges. Our Scarborough team has completed over 850 basement waterproofing projects across every neighborhood — from post-war bungalows in Agincourt to modern townhomes in Rouge.
           </p>
 
+          <div class="bg-cyan-50 border-l-4 border-cyan-500 p-6 mb-8">
+            <h3 class="text-lg font-bold text-cyan-900 mb-2">Scarborough Waterproofing Costs at a Glance</h3>
+            <p class="text-cyan-700 text-sm">
+              Interior basement waterproofing in Scarborough: <strong>$150-$275 per linear foot</strong> ($12,000-$25,000 average project). Exterior waterproofing: <strong>$200-$350 per linear foot</strong>. Bluffs-area properties typically run 15-20% higher. Toronto residents may qualify for up to <strong>$3,400</strong> through the Basement Flooding Protection Subsidy.
+            </p>
+          </div>
+
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
-            <div class="bg-white border-2 border-slate-200  p-6">
-              <h3 class="text-xl font-bold text-slate-900 mb-6 uppercase">LOCAL QUICK FACTS</h3>
-              <ul class="space-y-2 text-slate-600 ">
+            <div class="bg-white border-2 border-slate-200 p-6">
+              <h3 class="text-xl font-bold text-slate-900 mb-6 uppercase">SCARBOROUGH QUICK FACTS</h3>
+              <ul class="space-y-2 text-slate-600">
                 <li class="flex justify-between items-center pb-2 border-b border-slate-100">
                 <span class="text-sm font-semibold text-slate-600 uppercase">Population</span>
                 <span class="text-sm font-bold text-slate-900">632,000</span>
               </li>
                 <li class="flex justify-between items-center pb-2 border-b border-slate-100">
                 <span class="text-sm font-semibold text-slate-600 uppercase">Average Home Age</span>
-                <span class="text-sm font-bold text-slate-900">35-60 YEARS DIVERSE</span>
+                <span class="text-sm font-bold text-slate-900">35-60 YEARS</span>
               </li>
                 <li class="flex justify-between items-center pb-2 border-b border-slate-100">
                 <span class="text-sm font-semibold text-slate-600 uppercase">Annual Rainfall</span>
@@ -266,51 +353,130 @@ const localBusinessSchema = {
                 <span class="text-sm font-bold text-slate-900">1.2 METERS</span>
               </li>
                 <li class="flex justify-between items-center pb-2 border-b border-slate-100">
+                <span class="text-sm font-semibold text-slate-600 uppercase">Avg Waterproofing Cost</span>
+                <span class="text-sm font-bold text-slate-900">$12,000-$25,000</span>
+              </li>
+                <li class="flex justify-between items-center pb-2 border-b border-slate-100">
                 <span class="text-sm font-semibold text-slate-600 uppercase">Flood Risk</span>
                 <span class="text-sm font-bold text-slate-900">RAVINE + BLUFF EROSION</span>
               </li>
               </ul>
             </div>
-            
-            <div class="bg-navy-900 border-2 border-slate-200  p-6">
-              <h3 class="text-xl font-bold text-slate-900 mb-6 uppercase">WHY THE AREA NEEDS MOISTURE PROTECTION</h3>
+
+            <div class="bg-navy-900 border-2 border-slate-200 p-6">
+              <h3 class="text-xl font-bold text-slate-900 mb-6 uppercase">WHY SCARBOROUGH NEEDS BASEMENT WATERPROOFING</h3>
               <ul class="space-y-2 text-slate-300">
                 <li class="text-sm text-slate-300 flex items-start">
                 <span class="mr-2 text-cyan-400">•</span>
-                <span>Glacial bluff clay creates unstable conditions</span>
+                <span>Glacial bluff clay creates unstable, moisture-retaining soil</span>
               </li>
                 <li class="text-sm text-slate-300 flex items-start">
                 <span class="mr-2 text-cyan-400">•</span>
-                <span>Bluffs and ravines create variable water tables</span>
+                <span>Bluffs and ravines create highly variable water tables</span>
               </li>
                 <li class="text-sm text-slate-300 flex items-start">
                 <span class="mr-2 text-cyan-400">•</span>
-                <span>Lake effect and ravine moisture retention</span>
+                <span>860mm+ annual rainfall plus lake-effect storms</span>
               </li>
                 <li class="text-sm text-slate-300 flex items-start">
                 <span class="mr-2 text-cyan-400">•</span>
-                <span>Freeze-thaw cycles damage foundations</span>
+                <span>Highland Creek and Rouge River seasonal flooding</span>
               </li>
                 <li class="text-sm text-slate-300 flex items-start">
                 <span class="mr-2 text-cyan-400">•</span>
-                <span>Extensive ravine network seasonal flooding</span>
+                <span>Freeze-thaw cycles crack aging foundations</span>
+              </li>
+                <li class="text-sm text-slate-300 flex items-start">
+                <span class="mr-2 text-cyan-400">•</span>
+                <span>1950s-80s homes reaching end-of-life on original drainage</span>
               </li>
               </ul>
             </div>
           </div>
 
-          <h3 class="text-2xl font-bold mt-8 mb-4">Neighborhoods We Serve</h3>
+          <h3 class="text-2xl font-bold mt-8 mb-4">Scarborough Neighborhoods We Serve</h3>
           <p class="mb-4">
-            Our local moisture protection team serves all neighborhoods including:
+            Our basement waterproofing team serves all Scarborough neighborhoods with specific expertise in each area's unique challenges:
           </p>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+            <div class="bg-white p-4 border border-slate-100 rounded">
+              <h4 class="font-bold text-slate-900 mb-1">AGINCOURT — 85 projects completed</h4>
+              <p class="text-sm text-slate-500">1960s-70s housing, clay soil, Finch Ave E, Sheppard Ave E, Birchmount Rd, McCowan Rd corridors</p>
+            </div>
+            <div class="bg-white p-4 border border-slate-100 rounded">
+              <h4 class="font-bold text-slate-900 mb-1">MALVERN — 62 projects completed</h4>
+              <p class="text-sm text-slate-500">1970s-80s subdivisions, Neilson Rd, Morningside Ave, Finch Ave E, Sheppard Ave E areas</p>
+            </div>
+            <div class="bg-white p-4 border border-slate-100 rounded">
+              <h4 class="font-bold text-slate-900 mb-1">GUILDWOOD — 48 projects completed</h4>
+              <p class="text-sm text-slate-500">Bluffs proximity, ravine erosion, Kingston Rd, Guildwood Pkwy, Living Arts Dr corridors</p>
+            </div>
+            <div class="bg-white p-4 border border-slate-100 rounded">
+              <h4 class="font-bold text-slate-900 mb-1">BIRCH CLIFF — 41 projects completed</h4>
+              <p class="text-sm text-slate-500">Bluffs-edge properties, steep grades, Kingston Rd, Birchmount Rd, Victoria Park Ave</p>
+            </div>
+            <div class="bg-white p-4 border border-slate-100 rounded">
+              <h4 class="font-bold text-slate-900 mb-1">ROUGE — 55 projects completed</h4>
+              <p class="text-sm text-slate-500">Rouge River flooding, newer subdivisions, Sheppard Ave E, Meadowvale Rd, Rouge Hills Dr</p>
+            </div>
+            <div class="bg-white p-4 border border-slate-100 rounded">
+              <h4 class="font-bold text-slate-900 mb-1">WEST HILL — 47 projects completed</h4>
+              <p class="text-sm text-slate-500">Highland Creek valley, older housing stock, Kingston Rd, Lawrence Ave E, Morningside Ave</p>
+            </div>
+            <div class="bg-white p-4 border border-slate-100 rounded">
+              <h4 class="font-bold text-slate-900 mb-1">CLIFFSIDE — 38 projects completed</h4>
+              <p class="text-sm text-slate-500">Lake-effect moisture, Bluffs terrain, Kingston Rd, Cliffside Dr, Midland Ave corridors</p>
+            </div>
+            <div class="bg-white p-4 border border-slate-100 rounded">
+              <h4 class="font-bold text-slate-900 mb-1">HIGHLAND CREEK — 52 projects completed</h4>
+              <p class="text-sm text-slate-500">Creek flooding risk, ravine proximity, Ellesmere Rd, Military Trail, Old Kingston Rd</p>
+            </div>
+          </div>
+
           <div class="flex flex-wrap gap-2">
-            {["Agincourt","Malvern","Guildwood","Rouge","Birch Cliff","West Hill","Cliffside"].map((neighborhood) => (
+            {["Agincourt","Malvern","Guildwood","Rouge","Birch Cliff","West Hill","Cliffside","Highland Creek","Morningside","Centennial","Dorset Park","Woburn"].map((neighborhood) => (
               <span class="border-2 border-slate-200 px-4 py-2 text-sm">
                 {neighborhood}
               </span>
             ))}
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Construction Era Analysis -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-4xl font-bold text-slate-900 mb-4 uppercase">SCARBOROUGH HOMES BY CONSTRUCTION ERA</h2>
+        <p class="text-lg text-slate-600 mb-8">
+          Understanding when your Scarborough home was built is critical for choosing the right basement waterproofing approach. Each construction era used different foundation types, drainage methods, and materials — and each has predictable failure patterns.
+        </p>
+
+        {constructionEras.map((era) => (
+          <div class="mb-8 border-2 border-slate-200 p-6">
+            <div class="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
+              <h3 class="text-xl font-bold text-slate-900 uppercase">{era.period}</h3>
+              <span class="text-sm font-semibold text-cyan-600 mt-1 md:mt-0">{era.areas}</span>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div>
+                <h4 class="text-sm font-bold text-slate-700 uppercase mb-2">Foundation Type</h4>
+                <p class="text-sm text-slate-600">{era.foundation}</p>
+              </div>
+              <div>
+                <h4 class="text-sm font-bold text-red-700 uppercase mb-2">Common Problems</h4>
+                <p class="text-sm text-slate-600">{era.problems}</p>
+              </div>
+              <div>
+                <h4 class="text-sm font-bold text-cyan-700 uppercase mb-2">Recommended Solution</h4>
+                <p class="text-sm text-slate-600">{era.solution}</p>
+              </div>
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   </section>
@@ -322,12 +488,12 @@ const localBusinessSchema = {
   <section class="py-16 bg-white">
     <div class="container mx-auto px-4">
       <div class="text-center mb-12">
-        <h2 class="text-4xl font-bold text-slate-900 mb-4 uppercase">WHY CHOOSE DRYSPACE LOCALLY</h2>
+        <h2 class="text-4xl font-bold text-slate-900 mb-4 uppercase">WHY CHOOSE DRYSPACE FOR BASEMENT WATERPROOFING IN SCARBOROUGH</h2>
         <p class="text-lg text-slate-600 max-w-3xl mx-auto">
-          Local expertise combined with industry-leading warranties and service
+          25+ years of Scarborough-specific expertise combined with industry-leading warranties
         </p>
       </div>
-      
+
       <!-- Highlighted Features -->
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
         {locationFeatures.filter(f => f.highlight).map((feature) => (
@@ -337,7 +503,7 @@ const localBusinessSchema = {
           </div>
         ))}
       </div>
-      
+
       <!-- Regular Features -->
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         {locationFeatures.filter(f => !f.highlight).map((feature) => (
@@ -353,6 +519,76 @@ const localBusinessSchema = {
   <!-- Process -->
   <Process />
 
+  <!-- Rebate & Subsidy Information -->
+  <section class="py-16 bg-slate-50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-4xl font-bold text-slate-900 mb-4 uppercase">SCARBOROUGH WATERPROOFING REBATES & SUBSIDIES</h2>
+        <p class="text-lg text-slate-600 mb-8">
+          Scarborough homeowners can save thousands on basement waterproofing through government programs. DrySpace handles the paperwork.
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="bg-white border-2 border-cyan-500 p-6">
+            <h3 class="text-lg font-bold text-cyan-700 mb-3 uppercase">City of Toronto Basement Flooding Protection Subsidy</h3>
+            <p class="text-sm text-slate-600 mb-4">Available to all Scarborough residential properties (Toronto residents).</p>
+            <ul class="space-y-2 text-sm text-slate-600">
+              <li class="flex justify-between"><span>Backwater valve installation</span><span class="font-bold">Up to $1,250</span></li>
+              <li class="flex justify-between"><span>Sump pump installation</span><span class="font-bold">Up to $1,750</span></li>
+              <li class="flex justify-between"><span>Pipe severance & capping</span><span class="font-bold">Up to $400</span></li>
+              <li class="flex justify-between border-t border-slate-200 pt-2 mt-2"><span class="font-bold">Maximum total subsidy</span><span class="font-bold text-cyan-700">$3,400</span></li>
+            </ul>
+          </div>
+
+          <div class="bg-white border-2 border-slate-200 p-6">
+            <h3 class="text-lg font-bold text-slate-900 mb-3 uppercase">Additional Programs</h3>
+            <ul class="space-y-3 text-sm text-slate-600">
+              <li>
+                <span class="font-bold">CMHC Green Home:</span> Financing at preferred rates for energy-efficient home improvements including basement insulation after waterproofing.
+              </li>
+              <li>
+                <span class="font-bold">Home Renovation Tax Credit (Ontario):</span> Seniors 65+ may claim up to $10,000 in renovation expenses.
+              </li>
+              <li>
+                <span class="font-bold">Insurance Premium Reduction:</span> Many insurers reduce premiums by 5-15% after backwater valve and sump pump installation.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Local Testimonials -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-4xl font-bold text-slate-900 mb-8 uppercase">WHAT SCARBOROUGH HOMEOWNERS SAY</h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {localTestimonials.map((testimonial) => (
+            <div class="bg-slate-50 border-2 border-slate-200 p-6">
+              <div class="flex items-center mb-4">
+                <div class="flex text-amber-500">
+                  {[...Array(testimonial.rating)].map(() => (
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                  ))}
+                </div>
+              </div>
+              <p class="text-slate-600 text-sm italic mb-4">"{testimonial.text}"</p>
+              <div class="flex justify-between items-center">
+                <div>
+                  <p class="font-bold text-slate-900 text-sm">{testimonial.name}</p>
+                  <p class="text-xs text-slate-500">{testimonial.neighborhood}, Scarborough</p>
+                </div>
+                <span class="text-xs text-cyan-600 font-semibold">{testimonial.project}</span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- Location Image Showcase -->
   <LocationImageShowcase city="Scarborough" />
@@ -360,14 +596,78 @@ const localBusinessSchema = {
   <!-- Testimonials -->
   <Testimonials />
 
+  <!-- Related Articles Section -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-4xl font-bold text-slate-900 mb-8 uppercase">SCARBOROUGH WATERPROOFING RESOURCES</h2>
+
+        <div class="grid md:grid-cols-2 gap-6 mb-8">
+          <div class="card-base p-6 border-l-4 border-cyan-500">
+            <h3 class="text-lg font-bold text-slate-900 mb-2 uppercase">Scarborough Waterproofing Guide</h3>
+            <p class="text-sm text-slate-600 mb-3">
+              In-depth guide covering Bluffs erosion, Highland Creek flooding, TRCA requirements, and neighborhood-specific waterproofing challenges.
+            </p>
+            <a href="/blog/basement-waterproofing-scarborough-guide" class="text-cyan-600 hover:text-cyan-700 font-semibold text-sm">Read the Full Guide →</a>
+          </div>
+
+          <div class="card-base p-6 border-l-4 border-amber-500">
+            <h3 class="text-lg font-bold text-slate-900 mb-2 uppercase">Spring Flood Prevention</h3>
+            <p class="text-sm text-slate-600 mb-3">
+              Prepare your Scarborough home for spring thaw — especially critical for ravine and creek-adjacent properties.
+            </p>
+            <a href="/blog/spring-basement-flooding-prevention-2026" class="text-cyan-600 hover:text-cyan-700 font-semibold text-sm">Prevention Guide →</a>
+          </div>
+
+          <div class="card-base p-6 border-l-4 border-red-600">
+            <h3 class="text-lg font-bold text-slate-900 mb-2 uppercase">Emergency Response</h3>
+            <p class="text-sm text-slate-600 mb-3">
+              90-minute emergency response across Scarborough with professional water extraction and flood mitigation.
+            </p>
+            <a href="/emergency" class="text-red-600 hover:text-red-700 font-semibold text-sm">Emergency Services →</a>
+          </div>
+
+          <div class="card-base p-6 border-l-4 border-slate-400">
+            <h3 class="text-lg font-bold text-slate-900 mb-2 uppercase">Waterproofing Costs</h3>
+            <p class="text-sm text-slate-600 mb-3">
+              Transparent pricing for Scarborough waterproofing: interior systems, exterior membrane, crack repair, and sump pump installation.
+            </p>
+            <a href="/blog/basement-waterproofing-cost-toronto-2025" class="text-slate-600 hover:text-slate-700 font-semibold text-sm">Pricing Guide →</a>
+          </div>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="p-6 bg-cyan-50">
+            <h3 class="font-bold mb-3 text-slate-900">Service Pages</h3>
+            <ul class="space-y-2">
+              <li><a href="/services/interior-waterproofing" class="text-cyan-600 hover:underline text-sm">Interior Waterproofing →</a></li>
+              <li><a href="/services/exterior-waterproofing" class="text-cyan-600 hover:underline text-sm">Exterior Waterproofing →</a></li>
+              <li><a href="/services/foundation-crack-repair" class="text-cyan-600 hover:underline text-sm">Foundation Crack Repair →</a></li>
+              <li><a href="/services/sump-pump-installation" class="text-cyan-600 hover:underline text-sm">Sump Pump Installation →</a></li>
+            </ul>
+          </div>
+          <div class="p-6 bg-orange-50">
+            <h3 class="font-bold mb-3 text-slate-900">Related Articles</h3>
+            <ul class="space-y-2">
+              <li><a href="/blog/interior-vs-exterior-waterproofing" class="text-orange-600 hover:underline text-sm">Interior vs Exterior Waterproofing →</a></li>
+              <li><a href="/blog/why-toronto-basements-flood" class="text-orange-600 hover:underline text-sm">Why Toronto Basements Flood →</a></li>
+              <li><a href="/blog/signs-your-foundation-needs-repair" class="text-orange-600 hover:underline text-sm">Signs Your Foundation Needs Repair →</a></li>
+              <li><a href="/blog/toronto-waterproofing-rebates-2026" class="text-orange-600 hover:underline text-sm">Toronto Waterproofing Rebates 2026 →</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- FAQ Section -->
   <section class="py-16 bg-slate-50">
     <div class="container mx-auto px-4">
       <div class="text-center mb-12">
-        <h2 class="text-4xl font-bold text-slate-900 mb-4 uppercase">LOCAL MOISTURE PROTECTION FAQS</h2>
-        <p class="text-lg text-slate-600">Common questions from local homeowners</p>
+        <h2 class="text-4xl font-bold text-slate-900 mb-4 uppercase">SCARBOROUGH BASEMENT WATERPROOFING FAQS</h2>
+        <p class="text-lg text-slate-600">Answers to the most common basement waterproofing questions from Scarborough homeowners</p>
       </div>
-      
+
       <div class="max-w-4xl mx-auto">
         {locationFAQs.map((faq, index) => (
           <details class="mb-4 border-2 border-slate-200 bg-white">
@@ -390,28 +690,28 @@ const localBusinessSchema = {
   <section class="py-16 bg-navy-900">
     <div class="container mx-auto px-4">
       <div class="max-w-4xl mx-auto text-center">
-        <h2 class="text-4xl font-bold text-slate-900 mb-4 uppercase">SECURE YOUR BLUFFS AND RAVINE PROPERTY</h2>
+        <h2 class="text-4xl font-bold text-slate-900 mb-4 uppercase">PROTECT YOUR SCARBOROUGH HOME FROM WATER DAMAGE</h2>
         <p class="text-lg text-slate-300 mb-8">
-          Specialized erosion protection and ravine system moisture control for the area's unique landscape
+          Whether your home sits near the Scarborough Bluffs, along Highland Creek, or in any Scarborough neighborhood — our basement waterproofing specialists have the local expertise to keep your basement dry. Free assessment, 25-year warranty, financing available.
         </p>
-        
+
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <a 
+          <a
             href="/free-inspection"
             class="bg-amber-500 text-black px-8 py-4 text-lg font-bold hover:bg-amber-400 transition-colors uppercase"
           >
-            Get Erosion Risk Assessment
+            Get Free Scarborough Assessment
           </a>
-          <a 
+          <a
             href="tel:437-545-0067"
             class="border-2 border-white text-slate-900 px-8 py-4 text-lg font-bold hover:bg-white hover:text-black transition-colors uppercase"
           >
             Call: 437-545-0067
           </a>
         </div>
-        
+
         <div class="mt-8 inline-flex items-center text-cyan-400">
-          <span class="text-sm font-bold uppercase">24/7 Emergency Service Available</span>
+          <span class="text-sm font-bold uppercase">24/7 Emergency Service • 90-Minute Scarborough Response</span>
         </div>
       </div>
     </div>
@@ -419,4 +719,5 @@ const localBusinessSchema = {
 </PageLayout>
 
 <script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)}>
+<script type="application/ld+json" set:html={JSON.stringify(faqSchema)}>
 <BreadcrumbSchema items={[{name: 'Home', url: '/'}, {name: 'Locations', url: '/locations'}, {name: 'Scarborough'}]} />

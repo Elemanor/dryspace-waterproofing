@@ -1,6 +1,6 @@
 ---
 export interface Props {
-  category?: 'drainage' | 'waterproofing' | 'foundation' | 'emergency' | 'location' | 'construction';
+  category?: 'drainage' | 'waterproofing' | 'foundation' | 'emergency' | 'location' | 'construction' | 'permits';
   currentPage?: string;
   limit?: number;
 }
@@ -31,7 +31,10 @@ const linkCategories = {
     { href: '/services/footings-foundations', text: 'Footings & Foundations', anchor: 'NBC compliant construction' },
     { href: '/services/bowing-basement-walls', text: 'Bowing Wall Repair', anchor: 'Structural wall reinforcement' },
     { href: '/blog/signs-your-foundation-needs-repair', text: 'Signs of Foundation Problems', anchor: 'Early warning signs' },
-    { href: '/services/excavation-services', text: 'Excavation Services', anchor: 'Foundation excavation' }
+    { href: '/services/excavation-services', text: 'Excavation Services', anchor: 'Foundation excavation' },
+    { href: '/blog/underpinning-permits-toronto-guide', text: 'Underpinning Permits Guide', anchor: 'Toronto permit process & costs' },
+    { href: '/blog/signs-you-need-basement-underpinning', text: '8 Signs You Need Underpinning', anchor: 'Warning signs & assessment checklist' },
+    { href: '/blog/underpinning-insurance-financing-toronto', text: 'Underpinning Insurance & Financing', anchor: 'HELOC, loans & rebates' }
   ],
   emergency: [
     { href: '/emergency', text: '24/7 Emergency Service', anchor: 'Immediate water removal' },
@@ -58,6 +61,14 @@ const linkCategories = {
     { href: '/services/basement-walkout-door-cutting', text: 'Walkout Door Installation', anchor: 'Basement access door cutting' },
     { href: '/services/estimation-quantity-takeoff', text: 'Cost Estimation', anchor: 'Accurate project cost analysis' },
     { href: '/contact', text: 'Get Construction Quote', anchor: 'Free estimates for all construction services' }
+  ],
+  permits: [
+    { href: '/services/permits', text: 'Permits Hub', anchor: 'All permit types and costs' },
+    { href: '/blog/underpinning-permits-toronto-guide', text: 'Underpinning Permits', anchor: 'Process, costs, inspections' },
+    { href: '/blog/walkout-permits-toronto-guide', text: 'Walkout Permits', anchor: 'Egress requirements & process' },
+    { href: '/blog/drain-sewer-permits-toronto-guide', text: 'Drain & Sewer Permits', anchor: 'Storm, sanitary, backwater valve' },
+    { href: '/blog/construction-demolition-permits-toronto-guide', text: 'Construction Permits', anchor: 'Demolition, structural mods, additions' },
+    { href: '/services/permit-drawings-services', text: 'Permit Drawings Service', anchor: 'Technical drawings & engineering' }
   ]
 };
 

@@ -12,7 +12,68 @@ const meta = {
 ---
 
 <PageLayout {...meta}>
-  
+
+  <!-- Article JSON-LD -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Winter Underpinning Requirements in Toronto 2026 | Cold Weather Concrete Guidelines",
+    "author": { "@type": "Organization", "name": "DrySpace Waterproofing", "url": "https://dryspacewaterproofing.ca" },
+    "publisher": { "@type": "Organization", "name": "DrySpace Waterproofing", "url": "https://dryspacewaterproofing.ca" },
+    "datePublished": "2026-01-18",
+    "dateModified": "2026-03-23",
+    "image": "https://dryspacewaterproofing.ca/images/winter-underpinning.webp",
+    "mainEntityOfPage": "https://dryspacewaterproofing.ca/blog/winter-underpinning-requirements-toronto"
+  })} />
+
+  <!-- FAQPage JSON-LD -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How cold is too cold for underpinning?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "With proper heating, underpinning can proceed even at -30°C outside temperatures. The key is maintaining the work area and concrete above +5°C. Most contractors stop at -20°C for practical reasons."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Will winter underpinning damage my home's heating system?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Professional contractors protect and work around existing HVAC systems. Temporary ductwork modifications may be needed but are restored after completion."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is winter concrete as strong as summer concrete?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, when properly mixed and cured. Winter concrete often uses Type 30 cement and achieves the same 28-day strength, though it may take 35 days in cold conditions."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does winter affect living conditions during underpinning?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Winter underpinning requires additional heating in work areas. Your home's existing heating system helps maintain warmth, though you may notice slightly higher heating bills. Work areas are sealed and heated separately from living spaces."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What happens if there's a heating failure?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Professional contractors have backup heating systems on standby. Critical concrete areas are protected with insulated blankets that maintain temperature for 12-24 hours without active heating."
+        }
+      }
+    ]
+  })} />
+
   <!-- Breadcrumbs -->
   <div class="container mx-auto px-4 mt-4">
     <Breadcrumbs 
@@ -210,7 +271,7 @@ const meta = {
               </div>
             </div>
 
-            <div class="bg-amber-50 border-l-4 border-yellow-600 p-4">
+            <div class="bg-amber-50 border-l-4 border-amber-600 p-4">
               <p class="text-sm font-semibold text-amber-700">
                 ⚠️ IMPORTANT: Temporary heating adds $2,000-$4,000 to project cost for a 3-week underpinning
               </p>
@@ -636,7 +697,7 @@ const meta = {
       </section>
 
       <!-- CTA Section -->
-      <section class="py-12 bg-gradient-to-r from-blue-600 to-blue-800 rounded-lg text-white">
+      <section class="py-12 bg-gradient-to-r from-cyan-600 to-cyan-800 rounded-lg text-white">
         <div class="text-center px-8">
           <h2 class="text-3xl font-bold mb-4">Start Your Winter Underpinning Project</h2>
           <p class="text-xl mb-8 opacity-95">
@@ -663,27 +724,25 @@ const meta = {
         </div>
       </section>
 
-      <!-- Related Articles -->
+      <!-- Related Underpinning Guides -->
       <section class="mt-16">
-        <h2 class="text-2xl font-bold mb-6">Related Articles</h2>
-        <div class="grid md:grid-cols-3 gap-6">
-          <a href="/blog/basement-underpinning-cost-toronto-2026" class="group">
-            <div class="bg-white border rounded-lg p-6 hover:shadow-lg transition-shadow">
-              <h3 class="font-bold text-lg mb-2 group-hover:text-cyan-600">2026 Underpinning Costs</h3>
-              <p class="text-slate-500 text-sm">Complete pricing guide with calculators</p>
-            </div>
+        <h2 class="text-2xl font-bold mb-6">Related Underpinning Guides</h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <a href="/blog/underpinning-concrete-strength-requirements" class="group block bg-white border border-slate-200 rounded-lg p-5 hover:shadow-lg hover:border-cyan-200 transition-all">
+            <h3 class="font-bold text-lg mb-2 group-hover:text-cyan-600 transition-colors">Concrete Strength Requirements</h3>
+            <p class="text-sm text-slate-500">MPa ratings, slump testing, and mix design specifications</p>
           </a>
-          <a href="/blog/underpinning-concrete-strength-requirements" class="group">
-            <div class="bg-white border rounded-lg p-6 hover:shadow-lg transition-shadow">
-              <h3 class="font-bold text-lg mb-2 group-hover:text-cyan-600">Concrete Strength Requirements</h3>
-              <p class="text-slate-500 text-sm">MPa ratings and mix specifications</p>
-            </div>
+          <a href="/blog/basement-underpinning-cost-toronto-2025" class="group block bg-white border border-slate-200 rounded-lg p-5 hover:shadow-lg hover:border-cyan-200 transition-all">
+            <h3 class="font-bold text-lg mb-2 group-hover:text-cyan-600 transition-colors">Cost Calculator 2026</h3>
+            <p class="text-sm text-slate-500">Interactive calculators for concrete, soil removal, and total project costs</p>
           </a>
-          <a href="/services/underpinning" class="group">
-            <div class="bg-white border rounded-lg p-6 hover:shadow-lg transition-shadow">
-              <h3 class="font-bold text-lg mb-2 group-hover:text-cyan-600">Underpinning Services</h3>
-              <p class="text-slate-500 text-sm">Our complete basement lowering solutions</p>
-            </div>
+          <a href="/blog/living-at-home-during-underpinning" class="group block bg-white border border-slate-200 rounded-lg p-5 hover:shadow-lg hover:border-cyan-200 transition-all">
+            <h3 class="font-bold text-lg mb-2 group-hover:text-cyan-600 transition-colors">Living at Home During Underpinning</h3>
+            <p class="text-sm text-slate-500">What to expect: noise, dust, daily schedule, and tips from families</p>
+          </a>
+          <a href="/services/underpinning" class="group block bg-cyan-50 border border-cyan-200 rounded-lg p-5 hover:shadow-lg hover:border-cyan-400 transition-all">
+            <h3 class="font-bold text-lg mb-2 text-cyan-700 group-hover:text-cyan-800 transition-colors">Underpinning Services →</h3>
+            <p class="text-sm text-cyan-600">Our complete underpinning service — NBC compliant, P.Eng certified, 25-year warranty</p>
           </a>
         </div>
       </section>

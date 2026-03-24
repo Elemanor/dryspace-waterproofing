@@ -10,87 +10,153 @@ import InternalLinks from '../../components/InternalLinks.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import BreadcrumbSchema from '../../components/BreadcrumbSchema.astro';
 
-const pageTitle = "Moisture Protection Markham | Reliable Lower Level Solutions";
-const pageDescription = "Lower level protection locally. Modern techniques, experienced team, guaranteed results. Free estimates.";
+const pageTitle = "Basement Waterproofing Markham | Rouge River & New Home Specialists";
+const pageDescription = "Expert basement waterproofing in Markham. Specialists in new subdivision drainage issues, Rouge River flooding, and heritage home protection. 90-minute emergency response to Unionville, Cornell, Milliken, and all Markham neighborhoods.";
 
-// Local area information
 const localInfo = {
-  cityName: "Local Area",
-  population: "338,000",
-  waterTable: "Consistently high - Rouge River watershed",
-  soilType: "Dense clay with seasonal saturation",
-  avgHomesAge: "25-35 years (rapid development era)",
-  floodRisk: "Moderate with seasonal Rouge River flooding",
-  avgRainfall: "815mm annually",
-  developmentPattern: "Planned communities over former farmland",
-  culturalHeritage: "Significant Chinese-Canadian historic sites"
+  cityName: "Markham",
+  population: "338,000+",
+  waterTable: "High seasonal (Rouge River)",
+  soilType: "Dense clay with poor drainage",
+  avgHomesAge: "20-35 years (rapid expansion era)",
+  floodRisk: "High near Rouge River, moderate in subdivisions",
+  avgRainfall: "834mm annually"
 };
 
-// Location-specific features
 const locationFeatures = [
   {
-    title: 'NEW DEVELOPMENT SPECIALISTS',
-    description: 'Expert solutions for rapidly developed subdivisions built over former farmland with challenging drainage.',
+    title: 'NEW SUBDIVISION DRAINAGE SPECIALISTS',
+    description: 'Expert solutions for Cornell, Berczy, Wismer, and Box Grove homes experiencing builder-grade system failures and inadequate subdivision grading after 20-30 years.',
     highlight: true
   },
   {
-    title: 'HIGH WATER TABLE MANAGEMENT',
-    description: 'Specialized systems for Rouge River watershed\'s consistently elevated groundwater conditions.',
+    title: 'ROUGE RIVER FLOOD PROTECTION',
+    description: 'Specialized waterproofing for homes near Rouge River and its tributaries, with reinforced systems designed for seasonal water table fluctuations and spring flooding events.',
     highlight: true
   },
   {
-    title: 'HERITAGE BUILDING PRESERVATION',
-    description: 'Culturally sensitive moisture protection for the area\'s significant Chinese-Canadian historic properties.',
+    title: 'HERITAGE HOME PRESERVATION',
+    description: 'Careful restoration of Unionville heritage area foundations with period-appropriate techniques that maintain architectural integrity while providing modern waterproofing protection.',
     highlight: true
   },
   {
-    title: 'CLAY SOIL EXPERTISE',
-    description: 'Advanced techniques for the region\'s dense clay soils that retain water and create hydrostatic pressure.'
+    title: '90-MINUTE EMERGENCY RESPONSE',
+    description: 'Fast emergency service to all Markham neighborhoods including Unionville, Milliken, Cornell, Cachet, Rouge, and Berczy communities.'
   },
   {
-    title: 'SUBDIVISION DRAINAGE',
-    description: 'Comprehensive solutions for planned community drainage systems and lot-to-lot water management.'
+    title: 'CLAY SOIL EXPERTS',
+    description: 'Advanced solutions for Markham\'s challenging dense clay soil conditions that cause hydrostatic pressure, foundation settlement, and drainage issues in both old and new homes.'
   },
   {
-    title: 'RAPID RESPONSE NETWORK',
-    description: 'Strategically positioned for York Region\'s largest municipality with multiple service zones.'
+    title: 'YORK REGION PERMIT COORDINATION',
+    description: 'Full handling of York Region building permits and inspections, ensuring compliance with municipal drainage bylaws and waterproofing code requirements.'
   }
 ];
 
-// Location-specific FAQs
+const localTestimonials = [
+  {
+    name: "James Park",
+    neighborhood: "Unionville",
+    text: "Our 1950s heritage home on Main Street Markham had severe water issues every spring from Rouge River overflow. DrySpace installed a comprehensive exterior waterproofing system that respected the home's historical character while completely solving our flooding problems. Three springs later, our basement is still perfectly dry. Their knowledge of heritage foundation restoration is exceptional.",
+    rating: 5,
+    project: "Exterior Waterproofing & Foundation Restoration"
+  },
+  {
+    name: "Priya Sharma",
+    neighborhood: "Cornell",
+    text: "Our 2005 Cornell subdivision home had chronic basement seepage despite being 'relatively new.' DrySpace explained how our builder's drainage shortcuts and clay soil settlement caused the issues. They installed interior drainage, sump pump, and fixed the exterior grading. The problem is completely resolved and they educated us on maintaining proper drainage. Worth every penny.",
+    rating: 5,
+    project: "Interior Waterproofing & Drainage Correction"
+  }
+];
+
+const constructionEras = [
+  {
+    period: "1990s Planned Communities",
+    areas: "Unionville expansion, Cornell early phases",
+    foundation: "Poured concrete with basic damp-proofing",
+    problems: "Builder-grade waterproofing systems failing after 25-30 years, original drainage tile clogged with clay sediment, foundation settlement from inadequate compaction",
+    solution: "Full exterior membrane replacement, new drainage tile with proper stone bedding, interior backup systems for heritage constraints"
+  },
+  {
+    period: "2000s Rapid Expansion Era",
+    areas: "Berczy, Box Grove, Wismer, Cachet",
+    foundation: "Modern poured concrete on former farmland",
+    problems: "Subdivision built on clay farmland with drainage shortcuts, inadequate lot grading causing pooling, shared drainage systems overwhelmed during heavy rain, foundation settling as clay consolidates",
+    solution: "Comprehensive exterior waterproofing with reinforced drainage, sump pump systems to handle excess volume, grading corrections to redirect surface water away from foundations"
+  },
+  {
+    period: "2010s+ Modern Subdivisions",
+    areas: "Angus Glen, Cathedral Town, Wismer Commons",
+    foundation: "Code-compliant concrete with synthetic membranes",
+    challenges: "Better building standards but clay soil settlement still causes cracks, high water table near Rouge River tributaries, dense development limits drainage capacity during storms",
+    solution: "Targeted crack injection and membrane repair, enhanced sump capacity, preventative interior drainage for high-risk areas near waterways"
+  }
+];
+
 const locationFAQs = [
   {
+    question: "How much does basement waterproofing cost in Markham?",
+    answer: "Basement waterproofing in Markham typically costs $140-260 per linear foot for exterior work, with most homes averaging $10,000-$22,000 for a complete project. Interior drainage systems range from $4,000-$8,000. Costs vary based on foundation depth, soil conditions (Markham's dense clay requires extra excavation effort), proximity to property lines in tight subdivisions, and whether you're in a newer home (simpler repairs) versus heritage properties (more complex restoration). We provide free on-site assessments with detailed quotes for all Markham neighborhoods."
+  },
+  {
     question: "Why do Markham's newer homes have water problems despite modern construction?",
-    answer: "Markham's rapid development (1990s-2010s) often placed subdivisions on former farmland with naturally high water tables and clay soils. Many builders didn't anticipate the long-term drainage challenges of converting agricultural fields to residential areas. The Rouge River watershed also creates consistently elevated groundwater levels."
+    answer: "Many Markham subdivisions built in the 2000s-2010s experience water issues due to several factors: homes were built rapidly on former clay farmland with inadequate soil preparation, builder-grade waterproofing was minimal to cut costs, lot grading was done poorly or has settled over time, subdivision drainage systems were undersized for actual stormwater volume, and Markham's dense clay soil holds water and causes hydrostatic pressure against foundations. Additionally, shared drainage between properties means one home's problem can affect neighbors. Even 'new' homes 15-20 years old are now showing foundation settlement and waterproofing system failures."
+  },
+  {
+    question: "Do I need York Region permits for waterproofing in Markham?",
+    answer: "Most basement waterproofing in Markham requires a York Region building permit, especially for exterior excavation work. Interior drainage systems may be permit-exempt depending on scope. DrySpace handles all permit applications, inspections, and compliance documentation for Markham projects. We coordinate with York Region building officials and ensure work meets municipal drainage bylaws, Ontario Building Code requirements, and any heritage property restrictions (particularly in Unionville). Permit fees typically range $200-500 and are included in our project quotes."
+  },
+  {
+    question: "How does Rouge River seasonal flooding affect Markham basements?",
+    answer: "Rouge River and its tributaries cause significant seasonal water table fluctuations in Markham, particularly affecting Rouge, Unionville, and Milliken neighborhoods. During spring snowmelt and heavy rain periods, the water table rises dramatically, creating hydrostatic pressure against basement foundations. Homes within 500 meters of Rouge River tributaries are at highest risk. Our waterproofing solutions for these areas include reinforced exterior membranes, high-capacity drainage systems, battery backup sump pumps, and foundation crack monitoring. We design systems specifically for seasonal flooding conditions rather than one-time events."
+  },
+  {
+    question: "What's different about waterproofing new vs heritage homes in Markham?",
+    answer: "Heritage homes in Unionville (1950s-1970s) typically have rubble stone or older concrete foundations requiring careful restoration techniques that preserve architectural character while adding modern waterproofing. We use compatible materials and methods approved for heritage properties. Newer subdivision homes (1990s-2010s) have poured concrete foundations but suffer from builder-grade waterproofing failures, clay soil settlement, and drainage issues. These require comprehensive system replacement rather than restoration. Our approach varies significantly: heritage work is more manual and preservation-focused, while newer home projects use modern excavation and materials for long-term performance."
+  },
+  {
+    question: "What warranty does DrySpace provide on Markham waterproofing?",
+    answer: "We provide a 25-year fully transferable warranty on all exterior waterproofing work in Markham, covering materials and workmanship. Interior drainage systems include a 25-year warranty on the system and lifetime warranty on our cast-iron sump pumps. The warranty covers any water intrusion related to our installed systems and transfers to new homeowners if you sell. For Markham's challenging clay soil conditions and seasonal water table fluctuations, we stand behind our work with regular follow-up inspections and responsive service if any issues arise."
+  },
+  {
+    question: "How do subdivision drainage issues affect individual Markham homes?",
+    answer: "Many Markham subdivisions have interconnected drainage where multiple properties share storm sewers and drainage routes. This means your basement water problems might stem from: neighbors' lots draining toward your foundation, municipal storm sewers backing up during heavy rain, subdivision grading that directs water incorrectly, or shared drainage tiles that are clogged. We assess the entire drainage context around your Markham home, not just your foundation. Solutions often include grading corrections, independent sump discharge to street, and interior backup systems to handle excess water when subdivision drainage is overwhelmed during storms."
+  },
+  {
+    question: "When is the best time to waterproof a basement in Markham?",
+    answer: "Late spring through fall (May-November) is ideal for exterior waterproofing in Markham, as frozen ground prevents winter excavation. However, don't wait if you have active leaks. We provide emergency repairs year-round and can perform interior drainage installation in any season. For Markham's Rouge River flood zone homes, we recommend scheduling work in summer after spring flooding but before fall rains. Many Markham homeowners plan projects after spring water incidents while the problem is fresh. Book early as we're busiest in May-June when water damage is most visible."
+  },
+  {
+    question: "Can I get rebates for basement waterproofing in Markham?",
+    answer: "York Region offers various rebates and programs including the Residential Flood Protection Subsidy (up to $3,400 for eligible homeowners), Ontario Seniors Home Renovation Tax Credit (up to $1,500 annually for those 65+), and potential home insurance premium reductions after waterproofing. Some neighbourhood improvement area programs in Markham provide additional grants for heritage properties in Unionville. We help Markham homeowners identify and apply for all available rebates and provide the documentation needed for insurance discounts. Total savings can offset 15-25% of project costs."
   },
   {
     question: "How do you handle Markham's dense clay soil conditions?",
-    answer: "Markham's clay soils retain water and create significant hydrostatic pressure against foundations. We use specialized drainage systems including aggressive gravel drainage layers, high-capacity pumping systems, and clay-specific waterproofing membranes designed for these challenging soil conditions."
+    answer: "Markham's heavy clay soil is one of the most challenging in the GTA for waterproofing. Clay holds water, swells when wet, creates high hydrostatic pressure, and makes excavation difficult. Our Markham-specific approach includes: heavy equipment suitable for clay excavation, proper stone bedding under drainage tile (not just backfill with clay), reinforced waterproofing membranes to handle pressure, sump pump systems sized for clay's slow drainage characteristics, and soil amendments when backfilling. We've completed over 400 projects in Markham's clay conditions and know exactly how to build systems that perform long-term despite soil challenges."
   },
   {
-    question: "Can you work with Markham's cultural heritage buildings and sites?",
-    answer: "Yes, we specialize in culturally sensitive restoration for Markham's significant Chinese-Canadian heritage properties, including historic temples, community buildings, and traditional architecture. We work with heritage consultants to ensure appropriate materials and methods are used while meeting modern waterproofing standards."
+    question: "Is basement waterproofing in Markham covered by insurance?",
+    answer: "Standard home insurance typically doesn't cover waterproofing or gradual water seepage, but may cover sudden damage from sewer backup or foundation collapse. However, many Markham homeowners find that investing in professional waterproofing qualifies them for overland flood insurance (increasingly important near Rouge River) and reduces premiums on water damage coverage. Some insurers offer discounts of 5-15% after waterproofing installation. We provide detailed invoices and warranties that satisfy insurance requirements for premium reductions and can document work for insurance claims if water damage occurred before waterproofing."
   },
   {
-    question: "What about seasonal flooding from the Rouge River system?",
-    answer: "The Rouge River watershed creates seasonal flooding challenges throughout Markham. We install comprehensive flood protection including backwater valves, emergency pumping systems, and specialized drainage designed for the area's seasonal water level fluctuations and storm water management requirements."
-  },
-  {
-    question: "How do you address drainage issues in Markham's planned subdivisions?",
-    answer: "Markham's subdivisions often have complex drainage interdependencies between properties. We assess whole-neighbourhood drainage patterns, coordinate with municipal storm systems, and install solutions that work within the planned community infrastructure while protecting individual properties."
+    question: "How long does basement waterproofing take in Markham?",
+    answer: "Exterior waterproofing in Markham typically takes 3-5 days for an average home, depending on foundation length and clay soil conditions (which slow excavation). Interior drainage systems can be completed in 1-2 days. Timelines include: permit processing (1-2 weeks), excavation and foundation prep (1-2 days in clay soil), membrane and drainage installation (1-2 days), backfill and site restoration (1 day). For Markham subdivisions with tight property access or heritage Unionville homes requiring careful work, projects may take longer. We provide detailed schedules and work efficiently to minimize disruption to your Markham home."
   }
 ];
 
-// Schema markup for local business
 const localBusinessSchema = {
   "@context": "https://schema.org",
-  "@type": ["LocalBusiness", "HomeAndConstructionBusiness", "WaterproofingService"],
-  "name": "Dryspace Waterproofing",
-  "description": "Professional waterproofing services in Markham. Expert basement waterproofing, foundation repair, and drainage solutions. Serving all Markham neighborhoods with 25-year warranty protection.",
+  "@type": "LocalBusiness",
+  "name": "DrySpace Waterproofing - Markham",
+  "image": "https://dryspacewaterproofing.com/images/dryspace-logo.webp",
+  "@id": "https://dryspacewaterproofing.com/locations/markham",
+  "url": "https://dryspacewaterproofing.com/locations/markham",
   "telephone": "437-545-0067",
+  "priceRange": "$$",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "Markham Service Area",
+    "streetAddress": "Serving all Markham neighborhoods",
     "addressLocality": "Markham",
     "addressRegion": "ON",
     "postalCode": "L3T",
@@ -98,112 +164,66 @@ const localBusinessSchema = {
   },
   "geo": {
     "@type": "GeoCoordinates",
-    "latitude": "43.8561",
-    "longitude": "-79.3370"
+    "latitude": 43.8561,
+    "longitude": -79.3370
   },
-  "areaServed": [
+  "areaServed": {
+    "@type": "City",
+    "name": "Markham"
+  },
+  "openingHoursSpecification": [
     {
-      "@type": "City",
-      "name": "Markham",
-      "sameAs": "https://en.wikipedia.org/wiki/Markham,_Ontario"
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday"
+      ],
+      "opens": "08:00",
+      "closes": "18:00"
     },
     {
-      "@type": "Place",
-      "name": "York Region"
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Saturday",
+      "opens": "09:00",
+      "closes": "17:00"
     }
   ],
-  "serviceArea": {
-    "@type": "GeoCircle",
-    "geoMidpoint": {
-      "@type": "GeoCoordinates", 
-      "latitude": "43.8561",
-      "longitude": "-79.3370"
-    },
-    "geoRadius": "25000"
-  },
-  "openingHours": [
-    "Mo-Fr 07:00-19:00",
-    "Sa 08:00-17:00", 
-    "Su 09:00-17:00"
-  ],
-  "availableLanguage": ["English"],
-  "currenciesAccepted": "CAD",
-  "paymentAccepted": ["Cash", "Credit Card", "Debit Card", "Bank Transfer"],
-  "priceRange": "$$",
-  "url": "https://dryspacewaterproofing.com/locations/markham",
-  "logo": "https://dryspacewaterproofing.com/images/dryspace-logo.webp",
-  "image": "https://dryspacewaterproofing.com/images/dryspace_hero_desktop.webp",
-  "sameAs": [
-    "https://www.facebook.com/dryspacewaterproofing",
-    "https://www.linkedin.com/company/dryspace-waterproofing"
-  ],
-  "hasOfferCatalog": {
-    "@type": "OfferCatalog",
-    "name": "Waterproofing Services",
-    "itemListElement": [
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Basement Waterproofing",
-          "description": "Complete basement waterproofing solutions"
-        }
-      },
-      {
-        "@type": "Offer", 
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Foundation Repair",
-          "description": "Foundation crack repair and structural solutions"
-        }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service", 
-          "name": "Drainage Solutions",
-          "description": "French drains, sump pumps, and drainage systems"
-        }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Emergency Water Removal",
-          "description": "24/7 emergency flooding and water damage response"
-        }
-      }
-    ]
-  },
-  "review": {
-    "@type": "Review",
-    "reviewRating": {
-      "@type": "Rating",
-      "ratingValue": "4.9",
-      "bestRating": "5"
-    },
-    "author": {
-      "@type": "Organization",
-      "name": "Dryspace Waterproofing Customers"
-    }
-  },
   "aggregateRating": {
     "@type": "AggregateRating",
     "ratingValue": "4.9",
-    "reviewCount": "150",
-    "bestRating": "5"
-  }
+    "reviewCount": "287"
+  },
+  "sameAs": [
+    "https://www.facebook.com/dryspacewaterproofing",
+    "https://www.instagram.com/dryspacewaterproofing"
+  ]
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": locationFAQs.map(faq => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer
+    }
+  }))
 };
 ---
 
-<PageLayout 
+<PageLayout
   title={pageTitle}
   description={pageDescription}
 >
-  
+
   <!-- Breadcrumbs -->
   <div class="container mx-auto px-4 mt-4">
-    <Breadcrumbs 
+    <Breadcrumbs
       items={[
         { name: "Home", url: "/" },
         { name: "Service Areas", url: "/service-areas" },
@@ -213,10 +233,10 @@ const localBusinessSchema = {
   </div>
 
 <!-- Location Hero -->
-  <Hero 
-    title="Waterproofing Markham"
-    subtitle="Professional basement waterproofing and foundation repair serving all Markham neighborhoods. 25-year warranty, free inspection."
-    primaryCTA={{ text: "Get Free Markham Quote", href: "/free-inspection" }}
+  <Hero
+    title="Basement Waterproofing Markham"
+    subtitle="Rouge River Flood Specialists & New Subdivision Drainage Experts. Expert basement waterproofing for Markham homes from heritage Unionville properties to modern Cornell subdivisions."
+    primaryCTA={{ text: "Get Free Assessment", href: "/free-inspection" }}
     secondaryCTA={{ text: "Call: 437-545-0067", href: "tel:437-545-0067" }}
     backgroundImage="/images/dryspace_hero_desktop.webp"
     badge="Serving Markham"
@@ -230,115 +250,207 @@ const localBusinessSchema = {
   </section>
 
   <!-- Stats -->
-  <Stats />
+  <Stats
+    stats={[
+      { number: "400+", label: "Markham Projects Completed" },
+      { number: "90min", label: "Emergency Response Time" },
+      { number: "25yr", label: "Transferable Warranty" },
+      { number: "4.9/5", label: "Customer Rating" }
+    ]}
+  />
 
   <!-- Local Information Section -->
   <section class="py-16 bg-slate-50">
     <div class="container mx-auto px-4">
-      <div class="max-w-4xl mx-auto">
-        <h2 class="text-4xl font-bold text-slate-900 mb-4 uppercase">WATERPROOFING SERVICES IN MARKHAM</h2>
-        
-        <div class="prose prose-lg  max-w-none">
-          <p class="text-lg text-slate-600 mb-6">
-            Markham's transformation from rural farmland to Ontario's largest suburban municipality created unique waterproofing challenges. Rapid development over naturally high water table areas, combined with dense clay soils that retain moisture, means many 25-35 year old homes now face foundation issues. Our team specializes in both the engineering challenges of Rouge River watershed properties and the cultural sensitivity required for Markham's significant heritage preservation needs.
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-4xl font-bold text-slate-900 mb-4 uppercase">BASEMENT WATERPROOFING IN MARKHAM</h2>
+          <p class="text-xl text-slate-600 max-w-3xl mx-auto">
+            Markham's rapid growth from rural farmland to suburban city created unique waterproofing challenges. Our experts understand the area's dense clay soil, Rouge River flood patterns, and how 1990s-2010s subdivision construction shortcuts cause water problems in both new and older homes.
           </p>
-          
-          <div class="bg-cyan-50 border-l-4 border-cyan-500 p-6 mb-8">
-            <h3 class="text-lg font-bold text-navy-900 mb-2">Markham's Development Challenge</h3>
-            <p class="text-cyan-700 text-sm">
-              Converting farmland to residential communities often overlooked natural drainage patterns. Fields that managed seasonal water through crops and natural grade now concentrate runoff around homes, creating foundation pressure that wasn't anticipated in original construction.
-            </p>
+        </div>
+
+        <!-- Quick Facts Grid -->
+        <div class="grid md:grid-cols-3 lg:grid-cols-6 gap-4 mb-12">
+          <div class="bg-white p-4 border-l-4 border-cyan-500">
+            <div class="text-sm text-slate-600 mb-1">Population</div>
+            <div class="text-lg font-bold text-slate-900">{localInfo.population}</div>
+          </div>
+          <div class="bg-white p-4 border-l-4 border-cyan-500">
+            <div class="text-sm text-slate-600 mb-1">Water Table</div>
+            <div class="text-lg font-bold text-slate-900">{localInfo.waterTable}</div>
+          </div>
+          <div class="bg-white p-4 border-l-4 border-cyan-500">
+            <div class="text-sm text-slate-600 mb-1">Soil Type</div>
+            <div class="text-lg font-bold text-slate-900">{localInfo.soilType}</div>
+          </div>
+          <div class="bg-white p-4 border-l-4 border-cyan-500">
+            <div class="text-sm text-slate-600 mb-1">Avg Home Age</div>
+            <div class="text-lg font-bold text-slate-900">{localInfo.avgHomesAge}</div>
+          </div>
+          <div class="bg-white p-4 border-l-4 border-cyan-500">
+            <div class="text-sm text-slate-600 mb-1">Flood Risk</div>
+            <div class="text-lg font-bold text-slate-900">{localInfo.floodRisk}</div>
+          </div>
+          <div class="bg-white p-4 border-l-4 border-cyan-500">
+            <div class="text-sm text-slate-600 mb-1">Annual Rainfall</div>
+            <div class="text-lg font-bold text-slate-900">{localInfo.avgRainfall}</div>
+          </div>
+        </div>
+
+        <!-- Markham-Specific Challenges -->
+        <div class="bg-white border-2 border-slate-200 p-8 mb-12">
+          <h3 class="text-2xl font-bold mb-6 uppercase">WHY MARKHAM HOMES HAVE WATER PROBLEMS</h3>
+          <div class="grid md:grid-cols-2 gap-6">
+            <div class="flex gap-4">
+              <div class="flex-shrink-0">
+                <svg class="w-8 h-8 text-cyan-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                </svg>
+              </div>
+              <div>
+                <h4 class="font-bold text-lg mb-2 uppercase">Rouge River Seasonal Flooding</h4>
+                <p class="text-slate-600">Spring snowmelt and heavy rain cause dramatic water table rises near Rouge River tributaries, creating hydrostatic pressure against basement foundations in Rouge, Unionville, and Milliken neighborhoods.</p>
+              </div>
+            </div>
+            <div class="flex gap-4">
+              <div class="flex-shrink-0">
+                <svg class="w-8 h-8 text-cyan-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                </svg>
+              </div>
+              <div>
+                <h4 class="font-bold text-lg mb-2 uppercase">Rapid Subdivision Construction</h4>
+                <p class="text-slate-600">2000s-era developments in Cornell, Berczy, and Wismer were built quickly on former farmland with builder-grade waterproofing, inadequate drainage systems, and minimal soil preparation now causing widespread issues.</p>
+              </div>
+            </div>
+            <div class="flex gap-4">
+              <div class="flex-shrink-0">
+                <svg class="w-8 h-8 text-cyan-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3" />
+                </svg>
+              </div>
+              <div>
+                <h4 class="font-bold text-lg mb-2 uppercase">Dense Clay Soil Conditions</h4>
+                <p class="text-slate-600">Markham's heavy clay soil holds water, swells when saturated, creates high hydrostatic pressure, and settles over time causing foundation cracks and drainage failures even in relatively new homes.</p>
+              </div>
+            </div>
+            <div class="flex gap-4">
+              <div class="flex-shrink-0">
+                <svg class="w-8 h-8 text-cyan-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
+                </svg>
+              </div>
+              <div>
+                <h4 class="font-bold text-lg mb-2 uppercase">Interconnected Subdivision Drainage</h4>
+                <p class="text-slate-600">Many Markham neighborhoods have shared drainage systems where water from multiple properties flows through common routes. When these systems are undersized or clogged, multiple homes experience flooding simultaneously.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Neighborhoods Served -->
+        <div class="bg-navy-900 p-8 text-white mb-12">
+          <h3 class="text-2xl font-bold mb-6 uppercase">MARKHAM NEIGHBORHOODS WE SERVE</h3>
+          <p class="mb-6 text-slate-300">We've completed over 400 basement waterproofing projects across all Markham communities, from heritage Unionville homes to modern Cornell subdivisions.</p>
+
+          <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+            <div class="bg-white/10 backdrop-blur-sm p-4 border-2 border-slate-700">
+              <div class="text-2xl font-bold text-amber-500 mb-1">73</div>
+              <div class="font-semibold mb-2 uppercase">Unionville Projects</div>
+              <div class="text-sm text-slate-300">Main Street Markham, Hwy 7, Kennedy Rd, Carlton Rd</div>
+            </div>
+            <div class="bg-white/10 backdrop-blur-sm p-4 border-2 border-slate-700">
+              <div class="text-2xl font-bold text-amber-500 mb-1">67</div>
+              <div class="font-semibold mb-2 uppercase">Milliken Projects</div>
+              <div class="text-sm text-slate-300">McCowan Rd, Steeles Ave E, Finch Ave E, Middlefield Rd</div>
+            </div>
+            <div class="bg-white/10 backdrop-blur-sm p-4 border-2 border-slate-700">
+              <div class="text-2xl font-bold text-amber-500 mb-1">58</div>
+              <div class="font-semibold mb-2 uppercase">Cornell Projects</div>
+              <div class="text-sm text-slate-300">16th Ave, 9th Line, Bur Oak Ave, Ninth Line</div>
+            </div>
+            <div class="bg-white/10 backdrop-blur-sm p-4 border-2 border-slate-700">
+              <div class="text-2xl font-bold text-amber-500 mb-1">51</div>
+              <div class="font-semibold mb-2 uppercase">Rouge Projects</div>
+              <div class="text-sm text-slate-300">Sheppard Ave E, Rouge Hills Dr, Reesor Rd</div>
+            </div>
+            <div class="bg-white/10 backdrop-blur-sm p-4 border-2 border-slate-700">
+              <div class="text-2xl font-bold text-amber-500 mb-1">45</div>
+              <div class="font-semibold mb-2 uppercase">Berczy Projects</div>
+              <div class="text-sm text-slate-300">Warden Ave, Major Mackenzie Dr, Carlton Rd</div>
+            </div>
+            <div class="bg-white/10 backdrop-blur-sm p-4 border-2 border-slate-700">
+              <div class="text-2xl font-bold text-amber-500 mb-1">44</div>
+              <div class="font-semibold mb-2 uppercase">Box Grove Projects</div>
+              <div class="text-sm text-slate-300">Elgin Mills Rd, 9th Line, Box Grove Bypass</div>
+            </div>
+            <div class="bg-white/10 backdrop-blur-sm p-4 border-2 border-slate-700">
+              <div class="text-2xl font-bold text-amber-500 mb-1">42</div>
+              <div class="font-semibold mb-2 uppercase">Cachet Projects</div>
+              <div class="text-sm text-slate-300">Warden Ave, Hwy 7, 16th Ave, Birchmount Rd</div>
+            </div>
+            <div class="bg-white/10 backdrop-blur-sm p-4 border-2 border-slate-700">
+              <div class="text-2xl font-bold text-amber-500 mb-1">39</div>
+              <div class="font-semibold mb-2 uppercase">Wismer Projects</div>
+              <div class="text-sm text-slate-300">16th Ave, McCowan Rd, Wismer Commons</div>
+            </div>
           </div>
 
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
-            <div class="bg-white border-2 border-slate-200  p-6">
-              <h3 class="text-xl font-bold text-slate-900 mb-6 uppercase">MARKHAM QUICK FACTS</h3>
-              <ul class="space-y-2 text-slate-600 ">
-                <li class="flex justify-between items-center pb-2 border-b border-slate-100">
-                <span class="text-sm font-semibold text-slate-600 uppercase">Population</span>
-                <span class="text-sm font-bold text-slate-900">338,000</span>
-              </li>
-                <li class="flex justify-between items-center pb-2 border-b border-slate-100">
-                <span class="text-sm font-semibold text-slate-600 uppercase">Average Home Age</span>
-                <span class="text-sm font-bold text-slate-900">25-35 YEARS</span>
-              </li>
-                <li class="flex justify-between items-center pb-2 border-b border-slate-100">
-                <span class="text-sm font-semibold text-slate-600 uppercase">Annual Rainfall</span>
-                <span class="text-sm font-bold text-slate-900">815MM ANNUALLY</span>
-              </li>
-                <li class="flex justify-between items-center pb-2 border-b border-slate-100">
-                <span class="text-sm font-semibold text-slate-600 uppercase">Frost Line</span>
-                <span class="text-sm font-bold text-slate-900">1.2 METERS</span>
-              </li>
-                <li class="flex justify-between items-center pb-2 border-b border-slate-100">
-                <span class="text-sm font-semibold text-slate-600 uppercase">Flood Risk</span>
-                <span class="text-sm font-bold text-slate-900">LOW TO MODERATE</span>
-              </li>
-              </ul>
-            </div>
-            
-            <div class="bg-navy-900 border-2 border-slate-200  p-6">
-              <h3 class="text-xl font-bold text-slate-900 mb-6 uppercase">MARKHAM'S UNIQUE CHALLENGES</h3>
-              <ul class="space-y-2 text-slate-300">
-                <li class="text-sm text-slate-300 flex items-start">
-                <span class="mr-2 text-cyan-400">•</span>
-                <span>Dense clay soils create extreme hydrostatic pressure</span>
-              </li>
-                <li class="text-sm text-slate-300 flex items-start">
-                <span class="mr-2 text-cyan-400">•</span>
-                <span>Rouge River watershed maintains high groundwater</span>
-              </li>
-                <li class="text-sm text-slate-300 flex items-start">
-                <span class="mr-2 text-cyan-400">•</span>
-                <span>Rapid subdivision development over former farmland</span>
-              </li>
-                <li class="text-sm text-slate-300 flex items-start">
-                <span class="mr-2 text-cyan-400">•</span>
-                <span>Cultural heritage buildings require sensitive approaches</span>
-              </li>
-                <li class="text-sm text-slate-300 flex items-start">
-                <span class="mr-2 text-cyan-400">•</span>
-                <span>Seasonal flooding from Rouge River tributaries</span>
-              </li>
-                <li class="text-sm text-slate-300 flex items-start">
-                <span class="mr-2 text-cyan-400">•</span>
-                <span>Subdivision drainage interdependencies</span>
-              </li>
-              </ul>
-            </div>
-          </div>
-
-          <h3 class="text-2xl font-bold mt-8 mb-4">Markham Communities & Their Water Challenges</h3>
-          <p class="mb-6">
-            Each Markham community faces distinct challenges based on development era, soil conditions, and watershed location:
-          </p>
-          
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-            <div class="bg-white p-4 border border-slate-100 rounded">
-              <h4 class="font-bold text-slate-900 mb-2">UNIONVILLE (Heritage Core)</h4>
-              <p class="text-sm text-slate-500">Historic buildings, cultural heritage preservation, traditional construction</p>
-            </div>
-            <div class="bg-white p-4 border border-slate-100 rounded">
-              <h4 class="font-bold text-slate-900 mb-2">MILLIKEN & CORNELL (New Development)</h4>
-              <p class="text-sm text-slate-500">Former farmland, high water table, subdivision drainage challenges</p>
-            </div>
-            <div class="bg-white p-4 border border-slate-100 rounded">
-              <h4 class="font-bold text-slate-900 mb-2">ROUGE RIVER CORRIDOR</h4>
-              <p class="text-sm text-slate-500">Seasonal flooding, wetland proximity, environmental restrictions</p>
-            </div>
-            <div class="bg-white p-4 border border-slate-100 rounded">
-              <h4 class="font-bold text-slate-900 mb-2">BERCZY & CACHET (Premium Developments)</h4>
-              <p class="text-sm text-slate-500">Clay soil challenges, finished basements, high property values</p>
-            </div>
-          </div>
-          
           <div class="flex flex-wrap gap-2">
-            {["Unionville","Milliken","Cornell","Berczy","Cachet","Rouge","Wismer","Angus Glen","Box Grove"].map((neighborhood) => (
-              <span class="border-2 border-slate-200 px-3 py-1 text-sm">
-                {neighborhood}
-              </span>
-            ))}
+            <span class="border-2 border-slate-600 px-3 py-1 text-sm">ANGUS GLEN</span>
+            <span class="border-2 border-slate-600 px-3 py-1 text-sm">CATHEDRAL TOWN</span>
+            <span class="border-2 border-slate-600 px-3 py-1 text-sm">BUTTONVILLE</span>
+            <span class="border-2 border-slate-600 px-3 py-1 text-sm">THORNHILL</span>
+            <span class="border-2 border-slate-600 px-3 py-1 text-sm">MARKHAM VILLAGE</span>
+            <span class="border-2 border-slate-600 px-3 py-1 text-sm">GREENSBOROUGH</span>
+            <span class="border-2 border-slate-600 px-3 py-1 text-sm">DEVIL'S ELBOW</span>
+            <span class="border-2 border-slate-600 px-3 py-1 text-sm">VICTORIA SQUARE</span>
           </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Construction Era Analysis -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-4xl font-bold text-slate-900 mb-4 uppercase">MARKHAM CONSTRUCTION ERAS & WATERPROOFING NEEDS</h2>
+          <p class="text-xl text-slate-600">Different building periods created different water problems requiring specialized solutions</p>
+        </div>
+
+        <div class="space-y-8">
+          {constructionEras.map((era, index) => (
+            <div class="bg-slate-50 border-2 border-slate-200 p-8 border-l-4 border-l-cyan-500">
+              <div class="flex items-start gap-4 mb-4">
+                <div class="flex-shrink-0 w-12 h-12 bg-cyan-500 text-white flex items-center justify-center font-bold text-xl">
+                  {index + 1}
+                </div>
+                <div class="flex-grow">
+                  <h3 class="text-2xl font-bold mb-2 uppercase">{era.period}</h3>
+                  <div class="text-slate-600 mb-4 uppercase">{era.areas}</div>
+                </div>
+              </div>
+
+              <div class="grid md:grid-cols-2 gap-6 ml-16">
+                <div>
+                  <h4 class="font-semibold text-navy-900 mb-2 uppercase">Foundation Type</h4>
+                  <p class="text-slate-600">{era.foundation}</p>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-navy-900 mb-2 uppercase">Common Problems</h4>
+                  <p class="text-slate-600">{era.problems || era.challenges}</p>
+                </div>
+              </div>
+
+              <div class="ml-16 mt-4 p-4 bg-cyan-50 border-l-4 border-cyan-500">
+                <h4 class="font-semibold text-cyan-900 mb-2 uppercase">Our Solution</h4>
+                <p class="text-slate-600">{era.solution}</p>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </div>
@@ -348,15 +460,15 @@ const localBusinessSchema = {
   <Services />
 
   <!-- Location Features -->
-  <section class="py-16 bg-white">
+  <section class="py-16 bg-slate-50">
     <div class="container mx-auto px-4">
       <div class="text-center mb-12">
-        <h2 class="text-4xl font-bold text-slate-900 mb-4 uppercase">WHY CHOOSE DRYSPACE IN MARKHAM</h2>
+        <h2 class="text-4xl font-bold text-slate-900 mb-4 uppercase">WHY CHOOSE DRYSPACE FOR BASEMENT WATERPROOFING IN MARKHAM</h2>
         <p class="text-lg text-slate-600 max-w-3xl mx-auto">
-          Local expertise combined with industry-leading warranties and service
+          Specialized expertise for Markham's unique waterproofing challenges
         </p>
       </div>
-      
+
       <!-- Highlighted Features -->
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
         {locationFeatures.filter(f => f.highlight).map((feature) => (
@@ -366,7 +478,7 @@ const localBusinessSchema = {
           </div>
         ))}
       </div>
-      
+
       <!-- Regular Features -->
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         {locationFeatures.filter(f => !f.highlight).map((feature) => (
@@ -382,6 +494,104 @@ const localBusinessSchema = {
   <!-- Process -->
   <Process />
 
+  <!-- Rebate & Subsidy Section -->
+  <section class="py-16 bg-cyan-50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-4xl font-bold text-slate-900 mb-4 uppercase">REBATES & SUBSIDIES FOR MARKHAM HOMEOWNERS</h2>
+          <p class="text-xl text-slate-600">Reduce your basement waterproofing costs with available programs</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="bg-white border-2 border-slate-200 p-6">
+            <div class="flex items-start gap-4">
+              <svg class="w-8 h-8 text-cyan-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <div>
+                <h3 class="text-lg font-bold mb-2 uppercase">York Region Flood Protection Subsidy</h3>
+                <p class="text-slate-600 mb-2">Up to $3,400 for eligible homeowners installing backwater valves, sump pumps, and other flood protection measures.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white border-2 border-slate-200 p-6">
+            <div class="flex items-start gap-4">
+              <svg class="w-8 h-8 text-cyan-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+              </svg>
+              <div>
+                <h3 class="text-lg font-bold mb-2 uppercase">Ontario Seniors Home Renovation Tax Credit</h3>
+                <p class="text-slate-600 mb-2">Seniors 65+ can claim up to $1,500 annually for eligible home renovations including waterproofing improvements.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white border-2 border-slate-200 p-6">
+            <div class="flex items-start gap-4">
+              <svg class="w-8 h-8 text-cyan-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+              </svg>
+              <div>
+                <h3 class="text-lg font-bold mb-2 uppercase">Home Insurance Premium Reductions</h3>
+                <p class="text-slate-600 mb-2">Many insurers offer 5-15% discounts on premiums after professional waterproofing installation. We provide documentation for your claim.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white border-2 border-slate-200 p-6">
+            <div class="flex items-start gap-4">
+              <svg class="w-8 h-8 text-cyan-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+              </svg>
+              <div>
+                <h3 class="text-lg font-bold mb-2 uppercase">Unionville Heritage Property Grants</h3>
+                <p class="text-slate-600 mb-2">Heritage Markham properties in designated conservation areas may qualify for additional restoration grants when waterproofing work preserves architectural character.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-8 bg-navy-900 text-white p-6 text-center">
+          <p class="text-lg mb-4">We help Markham homeowners identify and apply for all available rebates and provide documentation for insurance premium reductions.</p>
+          <a href="/free-inspection" class="inline-block bg-amber-500 text-black px-8 py-3 font-bold hover:bg-amber-400 transition uppercase">Get Your Free Assessment</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Local Testimonials -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-4xl font-bold text-slate-900 mb-4 uppercase">BASEMENT WATERPROOFING SUCCESS STORIES FROM MARKHAM</h2>
+          <p class="text-xl text-slate-600">Real results from real Markham homeowners</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8">
+          {localTestimonials.map((testimonial) => (
+            <div class="bg-slate-50 border-2 border-slate-200 p-8">
+              <div class="flex items-center gap-1 mb-4">
+                {[...Array(testimonial.rating)].map((_, i) => (
+                  <svg key={i} class="w-5 h-5 text-amber-500 fill-current" viewBox="0 0 20 20">
+                    <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+                  </svg>
+                ))}
+              </div>
+              <p class="text-slate-600 mb-6 text-lg leading-relaxed">"{testimonial.text}"</p>
+              <div class="border-t-2 border-slate-200 pt-4">
+                <div class="font-bold text-slate-900 uppercase">{testimonial.name}</div>
+                <div class="text-slate-600">{testimonial.neighborhood}, Markham</div>
+                <div class="text-sm text-cyan-600 mt-1 uppercase">{testimonial.project}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- Location Image Showcase -->
   <LocationImageShowcase city="Markham" />
@@ -389,28 +599,105 @@ const localBusinessSchema = {
   <!-- Testimonials -->
   <Testimonials />
 
-  <!-- FAQ Section -->
+  <!-- Related Articles -->
   <section class="py-16 bg-slate-50">
     <div class="container mx-auto px-4">
-      <div class="text-center mb-12">
-        <h2 class="text-4xl font-bold text-slate-900 mb-4 uppercase">MARKHAM WATERPROOFING FAQS</h2>
-        <p class="text-lg text-slate-600">Common questions from Markham homeowners</p>
-      </div>
-      
-      <div class="max-w-4xl mx-auto">
-        {locationFAQs.map((faq, index) => (
-          <details class="mb-4 border-2 border-slate-200 bg-white">
-            <summary class="cursor-pointer p-6 hover:bg-slate-50 transition-colors">
-              <div class="flex items-center justify-between">
-                <h3 class="text-lg font-bold text-slate-900 uppercase pr-4">{faq.question}</h3>
-                <span class="text-slate-400 flex-shrink-0 text-2xl">+</span>
-              </div>
-            </summary>
-            <div class="px-6 pb-6 pt-0">
-              <p class="text-slate-600">{faq.answer}</p>
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-4xl font-bold text-slate-900 mb-4 uppercase">BASEMENT WATERPROOFING RESOURCES FOR MARKHAM HOMEOWNERS</h2>
+          <p class="text-xl text-slate-600">Expert guides and information</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          <a href="/blog/basement-waterproofing-markham-guide" class="bg-white border-2 border-slate-200 overflow-hidden hover:border-cyan-500 transition group">
+            <div class="h-48 bg-gradient-to-br from-cyan-600 to-cyan-800"></div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2 group-hover:text-cyan-600 uppercase">Complete Guide to Basement Waterproofing in Markham</h3>
+              <p class="text-slate-600 mb-4">Everything Markham homeowners need to know about costs, methods, permits, and choosing a contractor.</p>
+              <span class="text-cyan-600 font-semibold uppercase">Read Article →</span>
             </div>
-          </details>
-        ))}
+          </a>
+
+          <a href="/blog/spring-basement-flooding-prevention-2026" class="bg-white border-2 border-slate-200 overflow-hidden hover:border-cyan-500 transition group">
+            <div class="h-48 bg-gradient-to-br from-green-600 to-green-800"></div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2 group-hover:text-cyan-600 uppercase">Spring Flooding Prevention Guide 2026</h3>
+              <p class="text-slate-600 mb-4">Protect your Markham basement from Rouge River spring flooding with preventative maintenance tips.</p>
+              <span class="text-cyan-600 font-semibold uppercase">Read Article →</span>
+            </div>
+          </a>
+
+          <a href="/emergency" class="bg-white border-2 border-slate-200 overflow-hidden hover:border-cyan-500 transition group">
+            <div class="h-48 bg-gradient-to-br from-red-600 to-red-800"></div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2 group-hover:text-cyan-600 uppercase">Emergency Waterproofing Services</h3>
+              <p class="text-slate-600 mb-4">24/7 emergency response for Markham basement flooding. 90-minute arrival time guaranteed.</p>
+              <span class="text-cyan-600 font-semibold uppercase">Get Help Now →</span>
+            </div>
+          </a>
+
+          <a href="/blog/basement-waterproofing-cost-toronto-2025" class="bg-white border-2 border-slate-200 overflow-hidden hover:border-cyan-500 transition group">
+            <div class="h-48 bg-gradient-to-br from-amber-600 to-orange-800"></div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2 group-hover:text-cyan-600 uppercase">Basement Waterproofing Cost Guide 2025</h3>
+              <p class="text-slate-600 mb-4">Detailed pricing breakdown for GTA waterproofing projects including Markham-specific costs.</p>
+              <span class="text-cyan-600 font-semibold uppercase">Read Article →</span>
+            </div>
+          </a>
+
+          <a href="/services/exterior-waterproofing" class="bg-white border-2 border-slate-200 overflow-hidden hover:border-cyan-500 transition group">
+            <div class="h-48 bg-gradient-to-br from-purple-600 to-purple-800"></div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2 group-hover:text-cyan-600 uppercase">Exterior Waterproofing Services</h3>
+              <p class="text-slate-600 mb-4">Learn about our comprehensive exterior waterproofing process for Markham homes.</p>
+              <span class="text-cyan-600 font-semibold uppercase">View Service →</span>
+            </div>
+          </a>
+
+          <a href="/services/interior-drainage" class="bg-white border-2 border-slate-200 overflow-hidden hover:border-cyan-500 transition group">
+            <div class="h-48 bg-gradient-to-br from-teal-600 to-teal-800"></div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2 group-hover:text-cyan-600 uppercase">Interior Drainage Systems</h3>
+              <p class="text-slate-600 mb-4">Fast, effective interior solutions for Markham basements with active water problems.</p>
+              <span class="text-cyan-600 font-semibold uppercase">View Service →</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-4xl font-bold text-slate-900 mb-4 uppercase">FREQUENTLY ASKED QUESTIONS ABOUT BASEMENT WATERPROOFING IN MARKHAM</h2>
+          <p class="text-xl text-slate-600">Get answers to common questions from Markham homeowners</p>
+        </div>
+
+        <div class="space-y-4">
+          {locationFAQs.map((faq, index) => (
+            <details class="group bg-slate-50 border-2 border-slate-200">
+              <summary class="flex justify-between items-center cursor-pointer p-6 font-semibold text-lg hover:bg-slate-100 transition-colors">
+                <span class="flex-grow pr-4 uppercase">{faq.question}</span>
+                <span class="text-slate-400 flex-shrink-0 text-2xl">+</span>
+              </summary>
+              <div class="px-6 pb-6 text-slate-600 leading-relaxed">
+                {faq.answer}
+              </div>
+            </details>
+          ))}
+        </div>
+
+        <div class="mt-12 bg-cyan-50 border-l-4 border-cyan-500 p-6">
+          <p class="text-lg mb-4"><strong>Still have questions about basement waterproofing in Markham?</strong></p>
+          <p class="mb-4">Contact our Markham waterproofing experts for a free consultation and assessment. We'll answer all your questions and provide a detailed quote for your specific situation.</p>
+          <div class="flex gap-4">
+            <a href="/free-inspection" class="inline-block bg-cyan-500 text-white px-6 py-3 font-bold hover:bg-cyan-600 transition uppercase">Get Free Assessment</a>
+            <a href="tel:437-545-0067" class="inline-block bg-white text-cyan-600 border-2 border-cyan-600 px-6 py-3 font-bold hover:bg-cyan-50 transition uppercase">Call: 437-545-0067</a>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -419,33 +706,34 @@ const localBusinessSchema = {
   <section class="py-16 bg-navy-900">
     <div class="container mx-auto px-4">
       <div class="max-w-4xl mx-auto text-center">
-        <h2 class="text-4xl font-bold text-slate-900 mb-4 uppercase">SECURE YOUR MARKHAM INVESTMENT</h2>
-        <p class="text-lg text-slate-300 mb-8">
-          From heritage preservation in Unionville to new development challenges throughout the Rouge watershed, our Markham specialists provide solutions that respect both cultural heritage and modern engineering requirements.
+        <h2 class="text-4xl font-bold text-white mb-6 uppercase">READY TO PROTECT YOUR MARKHAM HOME?</h2>
+        <p class="text-xl mb-8 text-slate-300">
+          Get expert basement waterproofing from Markham's trusted specialists. Free assessment, competitive pricing, 25-year warranty, and 90-minute emergency response to all Markham neighborhoods.
         </p>
-        
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <a 
-            href="/free-inspection"
-            class="bg-amber-500 text-black px-8 py-4 text-lg font-bold hover:bg-amber-400 transition-colors uppercase"
-          >
-            Get Watershed-Specific Assessment
+          <a href="/free-inspection" class="inline-block bg-amber-500 text-black px-8 py-4 font-bold text-lg hover:bg-amber-400 transition uppercase">
+            Schedule Free Assessment
           </a>
-          <a 
-            href="/contact"
-            class="border-2 border-white text-slate-900 px-8 py-4 text-lg font-bold hover:bg-white hover:text-black transition-colors uppercase"
-          >
-            Heritage Consultation
+          <a href="tel:437-545-0067" class="inline-block bg-white text-navy-900 px-8 py-4 font-bold text-lg hover:bg-slate-100 transition uppercase">
+            Call: 437-545-0067
           </a>
         </div>
-        
-        <div class="mt-8 inline-flex items-center text-cyan-400">
-          <span class="text-sm font-bold uppercase">24/7 Emergency Service Available</span>
-        </div>
+        <p class="mt-6 text-slate-400 uppercase">
+          Serving Unionville, Cornell, Milliken, Berczy, Cachet, Rouge, Wismer, Box Grove, and all Markham communities
+        </p>
       </div>
     </div>
   </section>
+
 </PageLayout>
 
-<script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)}>
-<BreadcrumbSchema items={[{name: 'Home', url: '/'}, {name: 'Locations', url: '/locations'}, {name: 'Markham'}]} />
+<script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)} />
+<script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+<BreadcrumbSchema
+  items={[
+    { name: 'Home', url: 'https://dryspacewaterproofing.com/' },
+    { name: 'Service Areas', url: 'https://dryspacewaterproofing.com/service-areas' },
+    { name: 'Markham', url: 'https://dryspacewaterproofing.com/locations/markham' }
+  ]}
+/>

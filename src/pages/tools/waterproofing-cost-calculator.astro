@@ -1,0 +1,66 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import CostCalculator from '../../components/react/CostCalculator.tsx';
+import ContactForm from '../../components/ContactForm.astro';
+---
+
+<PageLayout
+  title="Waterproofing Cost Calculator | Instant Estimate | Dryspace"
+  description="Get an instant waterproofing cost estimate for your home. Includes government rebates, site access conditions, and service-specific pricing for the GTA. Free, no obligation."
+>
+  <section class="bg-slate-50 text-slate-900 py-16">
+    <div class="max-w-6xl mx-auto px-4">
+      <h1 class="text-4xl md:text-5xl font-bold mb-6">
+        Waterproofing Cost Calculator
+      </h1>
+      <p class="text-xl mb-8 text-slate-600 max-w-3xl">
+        Get an instant estimate for your waterproofing project. Includes government rebates,
+        site access adjustments, and GTA-specific pricing.
+      </p>
+      <div class="flex flex-wrap gap-4">
+        <div class="bg-white border border-slate-200 px-4 py-2 rounded-lg">
+          <span class="text-sm font-medium">Free Estimate</span>
+        </div>
+        <div class="bg-white border border-slate-200 px-4 py-2 rounded-lg">
+          <span class="text-sm font-medium">Rebates Included</span>
+        </div>
+        <div class="bg-white border border-slate-200 px-4 py-2 rounded-lg">
+          <span class="text-sm font-medium">No Obligation</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12">
+    <div class="max-w-6xl mx-auto px-4">
+      <CostCalculator client:load />
+
+      <div class="mt-12 bg-cyan-50 border border-cyan-200 rounded-xl p-6">
+        <h2 class="text-xl font-bold text-cyan-800 mb-3">Government Rebates Available</h2>
+        <p class="text-slate-700 mb-4">
+          Toronto homeowners may qualify for up to <strong>$3,400</strong> in rebates through the
+          City of Toronto Basement Flooding Protection Subsidy Program.
+        </p>
+        <div class="grid md:grid-cols-3 gap-4">
+          <div>
+            <div class="text-2xl font-bold text-cyan-600">$1,750</div>
+            <p class="text-sm text-slate-600">Sump pump installation</p>
+          </div>
+          <div>
+            <div class="text-2xl font-bold text-cyan-600">$1,250</div>
+            <p class="text-sm text-slate-600">Backwater valve installation</p>
+          </div>
+          <div>
+            <div class="text-2xl font-bold text-cyan-600">$400</div>
+            <p class="text-sm text-slate-600">Weeping tile replacement</p>
+          </div>
+        </div>
+        <a href="/government-rebates" class="inline-block mt-4 text-sm font-semibold text-cyan-700 hover:text-cyan-900 transition-colors">
+          Learn more about rebates &rarr;
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <ContactForm />
+</PageLayout>

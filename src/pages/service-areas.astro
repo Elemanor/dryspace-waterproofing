@@ -226,7 +226,11 @@ const emergencyStats = {
                 <h4 class="font-bold text-slate-900 mb-2 uppercase">NEIGHBORHOODS WE SERVE:</h4>
                 <div class="flex flex-wrap gap-2">
                   {area.neighborhoods.map(n => (
-                    <span class="px-3 py-1 bg-slate-50 border border-slate-200 text-sm text-slate-600 uppercase">{n}</span>
+                    n === 'Streetsville' ? (
+                      <a href="/neighborhoods/streetsville" class="px-3 py-1 bg-cyan-50 border border-cyan-200 text-sm text-cyan-700 uppercase hover:bg-cyan-100 transition-colors">{n}</a>
+                    ) : (
+                      <span class="px-3 py-1 bg-slate-50 border border-slate-200 text-sm text-slate-600 uppercase">{n}</span>
+                    )
                   ))}
                 </div>
               </div>

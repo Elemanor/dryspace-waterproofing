@@ -41,5 +41,9 @@ pnpm-debug.log*
 check-meta.js
 fix-content-quality.js
 
+# SEO Command Center
+scripts/credentials/
+scripts/reports/
+
 # Windows reserved names
 nul

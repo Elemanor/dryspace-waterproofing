@@ -1,0 +1,232 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import { cities, cityList, buildPackages, formatPrice, formatPriceRange, getMaxIncentives, getPackageCost } from '../../lib/data/second-unit-planner';
+
+const pageTitle = "Basement Second Unit Planner | Cost + Incentive Calculator | DrySpace";
+const pageDescription = "Plan your legal basement apartment with city-specific costs, stackable government incentives up to $60,000+, and ROI calculator. 15 GTA cities covered. Free assessment.";
+
+// Pre-compute city card data
+const cityCards = cityList.map((city) => {
+  const stdPkg = buildPackages.find((p) => p.id === 'standard')!;
+  const cost = getPackageCost(stdPkg, city.slug);
+  const maxIncentives = getMaxIncentives(city.slug);
+  return {
+    ...city,
+    baseRange: formatPriceRange(cost.min, cost.max),
+    maxIncentives: formatPrice(maxIncentives),
+  };
+});
+
+const steps = [
+  { num: '1', title: 'Pick Your City', description: 'See costs adjusted to your local market, permits, and zoning rules.', icon: 'map-pin' },
+  { num: '2', title: 'Customize Your Build', description: 'Choose a package and add-ons like backwater valves, insulation, and HRV.', icon: 'sliders' },
+  { num: '3', title: 'See All Incentives', description: 'Stack federal, provincial, municipal, and utility rebates automatically.', icon: 'piggy-bank' },
+  { num: '4', title: 'Get Your Quote', description: 'Book a free assessment. DrySpace handles permits, construction, and rebate applications.', icon: 'file-check' },
+];
+
+// JSON-LD
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://dryspacewaterproofing.ca" },
+    { "@type": "ListItem", "position": 2, "name": "Second Unit Planner", "item": "https://dryspacewaterproofing.ca/second-unit" },
+  ]
+};
+
+const itemListJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Basement Second Unit Planner — GTA Cities",
+  "description": "City-specific cost and incentive calculators for legal basement apartments across the Greater Toronto Area.",
+  "numberOfItems": cityCards.length,
+  "itemListElement": cityCards.map((city, i) => ({
+    "@type": "ListItem",
+    "position": i + 1,
+    "name": `${city.name} Basement Second Unit Planner`,
+    "url": `https://dryspacewaterproofing.ca/second-unit/${city.slug}`,
+  })),
+};
+---
+
+<PageLayout
+  title={pageTitle}
+  description={pageDescription}
+  canonical="https://dryspacewaterproofing.ca/second-unit"
+>
+  <!-- JSON-LD -->
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbJsonLd)} />
+  <script type="application/ld+json" set:html={JSON.stringify(itemListJsonLd)} />
+
+  <!-- Hero -->
+  <section class="relative overflow-hidden bg-navy-900 py-20 md:py-28">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute inset-0 bg-gradient-to-br from-cyan-500/20 to-transparent" />
+    </div>
+    <div class="container mx-auto px-4 relative z-10">
+      <div class="max-w-3xl mx-auto text-center">
+        <div class="inline-flex items-center gap-2 rounded-full bg-cyan-500/10 border border-cyan-500/20 px-4 py-1.5 mb-6">
+          <svg class="w-4 h-4 text-cyan-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 2v20m-7-7l7 7 7-7" /></svg>
+          <span class="text-sm font-semibold text-cyan-400">Free Planning Tool</span>
+        </div>
+        <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white mb-6 tracking-tight">
+          Basement Second Unit<br class="hidden sm:block" />
+          <span class="text-cyan-400">Planner</span>
+        </h1>
+        <p class="text-lg md:text-xl text-slate-300 mb-8 max-w-2xl mx-auto">
+          Calculate your legal basement apartment costs, stack up to <strong class="text-white">$60,000+ in government incentives</strong>, and see your ROI — customized for your GTA city.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="#cities" class="inline-flex items-center justify-center gap-2 rounded-lg bg-cyan-500 px-8 py-4 font-bold text-white transition-all hover:bg-cyan-400 hover:shadow-lg hover:shadow-cyan-500/25">
+            Choose Your City
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3" /></svg>
+          </a>
+          <a href="tel:437-545-0067" class="inline-flex items-center justify-center gap-2 rounded-lg border-2 border-white/20 px-8 py-4 font-bold text-white transition-all hover:bg-white/10">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" /></svg>
+            437-545-0067
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section class="py-16 md:py-24 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">How It Works</h2>
+        <p class="text-lg text-slate-600 max-w-2xl mx-auto">Four simple steps from planning to move-in ready</p>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-5xl mx-auto">
+        {steps.map((step) => (
+          <div class="text-center">
+            <div class="mx-auto w-14 h-14 rounded-2xl bg-cyan-50 flex items-center justify-center mb-4">
+              <span class="text-2xl font-extrabold text-cyan-600">{step.num}</span>
+            </div>
+            <h3 class="text-lg font-bold text-slate-900 mb-2">{step.title}</h3>
+            <p class="text-sm text-slate-600">{step.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- City Grid -->
+  <section id="cities" class="py-16 md:py-24 bg-slate-50">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Choose Your City</h2>
+        <p class="text-lg text-slate-600 max-w-2xl mx-auto">Costs, incentives, and rental income customized for 15 GTA cities</p>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+        {cityCards.map((city) => (
+          <a href={`/second-unit/${city.slug}`} class="group rounded-xl border border-slate-200 bg-white p-6 transition-all hover:shadow-lg hover:shadow-cyan-500/10 hover:border-cyan-200">
+            <div class="flex items-center justify-between mb-4">
+              <div>
+                <h3 class="text-lg font-bold text-slate-900 group-hover:text-cyan-600 transition-colors">{city.name}</h3>
+                <p class="text-xs text-slate-500">{city.region}</p>
+              </div>
+              <svg class="w-5 h-5 text-slate-300 group-hover:text-cyan-500 transition-colors" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
+            </div>
+            <div class="space-y-3">
+              <div>
+                <p class="text-xs font-medium text-slate-500 uppercase tracking-wider">Standard Package</p>
+                <p class="text-sm font-semibold text-slate-900">{city.baseRange}</p>
+              </div>
+              <div>
+                <p class="text-xs font-medium text-slate-500 uppercase tracking-wider">Max Cash Incentives</p>
+                <p class="text-sm font-semibold text-emerald-600">Up to {city.maxIncentives}</p>
+              </div>
+              <div>
+                <p class="text-xs font-medium text-slate-500 uppercase tracking-wider">Rental Income</p>
+                <p class="text-sm font-semibold text-slate-900">{formatPriceRange(city.rentalIncome.min, city.rentalIncome.max)}/mo</p>
+              </div>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Benefits -->
+  <section class="py-16 md:py-24 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Why Build a Second Unit?</h2>
+        <p class="text-lg text-slate-600 max-w-2xl mx-auto">A legal basement apartment is one of the best investments a GTA homeowner can make</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+        <div class="text-center">
+          <div class="mx-auto w-14 h-14 rounded-2xl bg-amber-50 flex items-center justify-center mb-4">
+            <svg class="w-7 h-7 text-amber-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2">Rental Income</h3>
+          <p class="text-sm text-slate-600">$1,400–$2,500/mo across the GTA. Covers mortgage payments and builds wealth.</p>
+        </div>
+        <div class="text-center">
+          <div class="mx-auto w-14 h-14 rounded-2xl bg-cyan-50 flex items-center justify-center mb-4">
+            <svg class="w-7 h-7 text-cyan-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" /></svg>
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2">Property Value +15–25%</h3>
+          <p class="text-sm text-slate-600">A legal suite increases your home value by $100K–$250K+ in most GTA markets.</p>
+        </div>
+        <div class="text-center">
+          <div class="mx-auto w-14 h-14 rounded-2xl bg-emerald-50 flex items-center justify-center mb-4">
+            <svg class="w-7 h-7 text-emerald-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2">Multi-Gen Living</h3>
+          <p class="text-sm text-slate-600">Private suite for aging parents or adult children. Independent living under one roof.</p>
+        </div>
+        <div class="text-center">
+          <div class="mx-auto w-14 h-14 rounded-2xl bg-slate-100 flex items-center justify-center mb-4">
+            <svg class="w-7 h-7 text-slate-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2">Legal Protection</h3>
+          <p class="text-sm text-slate-600">Fully permitted and code-compliant. Insurance valid, rental income declarable on taxes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cross-Links -->
+  <section class="py-12 bg-slate-50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-2xl font-bold text-slate-900 mb-6 text-center">Related Resources</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <a href="/services/legal-basement-conversion" class="rounded-xl border border-slate-200 bg-white p-5 transition-all hover:shadow-md hover:border-cyan-200">
+            <h3 class="font-bold text-slate-900 mb-1">Legal Basement Conversion</h3>
+            <p class="text-sm text-slate-600">OBC requirements, permits, and our full construction process.</p>
+          </a>
+          <a href="/government-rebates" class="rounded-xl border border-slate-200 bg-white p-5 transition-all hover:shadow-md hover:border-cyan-200">
+            <h3 class="font-bold text-slate-900 mb-1">Government Rebates Guide</h3>
+            <p class="text-sm text-slate-600">Complete guide to waterproofing and flood protection rebates.</p>
+          </a>
+          <a href="/services/underpinning" class="rounded-xl border border-slate-200 bg-white p-5 transition-all hover:shadow-md hover:border-cyan-200">
+            <h3 class="font-bold text-slate-900 mb-1">Underpinning Services</h3>
+            <p class="text-sm text-slate-600">Basement lowering methods, costs, and engineering details.</p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-16 md:py-24 bg-navy-900">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Ready to Build Your Second Unit?</h2>
+      <p class="text-lg text-slate-300 mb-8 max-w-2xl mx-auto">
+        Choose your city above to see exact costs and incentives, or call us for a free basement assessment.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="#cities" class="inline-flex items-center justify-center gap-2 rounded-lg bg-cyan-500 px-8 py-4 font-bold text-white transition-all hover:bg-cyan-400">
+          Choose Your City
+        </a>
+        <a href="tel:437-545-0067" class="inline-flex items-center justify-center gap-2 rounded-lg bg-amber-500 px-8 py-4 font-bold text-navy-900 transition-all hover:bg-amber-400">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" /></svg>
+          437-545-0067
+        </a>
+      </div>
+    </div>
+  </section>
+</PageLayout>

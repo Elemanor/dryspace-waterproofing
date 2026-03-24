@@ -24,6 +24,7 @@ const whenExternalScripts = (items = []) =>
 export default defineConfig({
   site: 'https://dryspacewaterproofing.ca',
   output: 'static',
+  trailingSlash: 'never',
 
   integrations: [
     react(),

@@ -8,12 +8,72 @@ const author = 'Dryspace Waterproofing Team';
 const readingTime = '18 min read';
 ---
 
-<PageLayout 
+<PageLayout
   title="Underpinning Concrete Strength Requirements: MPa, Slump & Mix Design Guide"
   description="Complete technical guide to concrete specifications for basement underpinning. Learn about MPa strength requirements, slump testing, mix design, and concrete composition for structural underpinning projects in Toronto."
 >
-  
-  
+
+  <!-- Article JSON-LD -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Underpinning Concrete Strength Requirements: MPa, Slump & Mix Design Guide",
+    "author": { "@type": "Organization", "name": "DrySpace Waterproofing", "url": "https://dryspacewaterproofing.ca" },
+    "publisher": { "@type": "Organization", "name": "DrySpace Waterproofing", "url": "https://dryspacewaterproofing.ca" },
+    "datePublished": "2026-03-18",
+    "dateModified": "2026-03-23",
+    "image": "https://dryspacewaterproofing.ca/images/blog/concrete-testing.webp",
+    "mainEntityOfPage": "https://dryspacewaterproofing.ca/blog/underpinning-concrete-strength-requirements"
+  })} />
+
+  <!-- FAQPage JSON-LD -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Can I use 15 MPa for all underpinning?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "While 15 MPa meets minimum code requirements, most engineers specify 20 MPa or higher for durability and safety factors. 15 MPa should only be used with specific engineering approval and is not recommended for high water tables or aggressive soils."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What if my concrete fails the 28-day test?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Core samples can be drilled from the structure for testing. If cores also fail, the engineer must evaluate whether the in-place strength is adequate. Remediation may include additional reinforcement, thickening sections, or in extreme cases, removal and replacement."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I add water to increase slump on site?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Never add water on site as it dramatically reduces strength. Each gallon of water added reduces compressive strength by 150-200 PSI. Use water-reducing admixtures instead, which must be added by the ready-mix supplier."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long should I wait before loading underpinning?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Concrete reaches about 70% strength at 7 days and specified strength at 28 days. Light loads can typically be applied after 7 days, but full loading should wait until 28 days or when cylinder tests confirm adequate strength."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is higher strength always better?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Not necessarily. While higher strength provides better durability and lower permeability, it also costs more and can be harder to work with. 20-25 MPa provides the best balance for most residential underpinning projects."
+        }
+      }
+    ]
+  })} />
+
   <!-- Breadcrumbs -->
   <div class="container mx-auto px-4 mt-4">
     <Breadcrumbs 
@@ -686,7 +746,7 @@ const readingTime = '18 min read';
         </section>
 
         <!-- Cold Weather Considerations -->
-        <section class="mb-12 bg-gradient-to-r from-blue-500 to-cyan-600 rounded-xl p-8 text-white">
+        <section class="mb-12 bg-gradient-to-r from-cyan-500 to-cyan-600 rounded-xl p-8 text-white">
           <h2 class="text-3xl font-bold mb-6">Cold Weather Concrete Requirements</h2>
           
           <p class="mb-6 text-cyan-50">
@@ -977,8 +1037,31 @@ const readingTime = '18 min read';
           </div>
         </section>
 
+        <!-- Related Underpinning Guides -->
+        <section class="mb-12">
+          <h2 class="text-3xl font-bold text-slate-900 mb-6">Related Underpinning Guides</h2>
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <a href="/blog/underpinning-structural-safety-protocols" class="group block bg-white border border-slate-200 rounded-lg p-5 hover:shadow-lg hover:border-cyan-200 transition-all">
+              <h3 class="font-bold text-lg mb-2 group-hover:text-cyan-600 transition-colors">Safety Protocols</h3>
+              <p class="text-sm text-slate-500">The 3-6-3 rule, structural monitoring, and emergency procedures</p>
+            </a>
+            <a href="/blog/winter-underpinning-requirements-toronto" class="group block bg-white border border-slate-200 rounded-lg p-5 hover:shadow-lg hover:border-cyan-200 transition-all">
+              <h3 class="font-bold text-lg mb-2 group-hover:text-cyan-600 transition-colors">Winter Underpinning</h3>
+              <p class="text-sm text-slate-500">Cold weather concrete requirements and winter project advantages</p>
+            </a>
+            <a href="/blog/underpinning-methods-bench-flush-projection" class="group block bg-white border border-slate-200 rounded-lg p-5 hover:shadow-lg hover:border-cyan-200 transition-all">
+              <h3 class="font-bold text-lg mb-2 group-hover:text-cyan-600 transition-colors">Underpinning Methods Compared</h3>
+              <p class="text-sm text-slate-500">Bench footing vs flush vs 4" projection — costs and pros/cons</p>
+            </a>
+            <a href="/services/underpinning" class="group block bg-cyan-50 border border-cyan-200 rounded-lg p-5 hover:shadow-lg hover:border-cyan-400 transition-all">
+              <h3 class="font-bold text-lg mb-2 text-cyan-700 group-hover:text-cyan-800 transition-colors">Underpinning Services →</h3>
+              <p class="text-sm text-cyan-600">Our complete underpinning service — NBC compliant, P.Eng certified, 25-year warranty</p>
+            </a>
+          </div>
+        </section>
+
         <!-- Call to Action -->
-        <section class="bg-gradient-to-r from-blue-600 to-blue-800 rounded-xl p-8 text-white text-center">
+        <section class="bg-gradient-to-r from-cyan-600 to-cyan-800 rounded-xl p-8 text-white text-center">
           <h2 class="text-3xl font-bold mb-4">Need Expert Underpinning Services?</h2>
           <p class="text-xl mb-6">
             Our engineers specify the right concrete mix for your specific soil conditions and structural requirements

@@ -6,13 +6,23 @@ import Breadcrumbs from '../../components/Breadcrumbs.astro';
 
 ---
 
-<PageLayout 
-  title="7 Critical Signs Your Foundation Needs Repair | Visual Guide 2026"
-  description="Identify foundation problems early with our comprehensive visual guide. Learn the warning signs, severity levels, and when to call Toronto foundation repair experts."
+<PageLayout
+  title="7 Warning Signs Your Foundation Needs Repair Now [2026 Visual Guide]"
+  description="Cracked walls? Sticking doors? Don't ignore these 7 foundation warning signs. See photos of each severity level and learn when to call a Toronto structural expert before damage spreads."
 >
-  
-  
-  
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "7 Warning Signs Your Foundation Needs Repair Now",
+    "author": { "@type": "Organization", "name": "DrySpace Waterproofing", "url": "https://dryspacewaterproofing.ca" },
+    "publisher": { "@type": "Organization", "name": "DrySpace Waterproofing", "url": "https://dryspacewaterproofing.ca" },
+    "datePublished": "2026-03-14",
+    "dateModified": "2026-03-23",
+    "image": "https://dryspacewaterproofing.ca/images/dryspace_hero_desktop.webp",
+    "mainEntityOfPage": "https://dryspacewaterproofing.ca/blog/signs-your-foundation-needs-repair"
+  })} />
+
   <!-- Breadcrumbs -->
   <div class="container mx-auto px-4 mt-4">
     <Breadcrumbs 
@@ -920,8 +930,32 @@ import Breadcrumbs from '../../components/Breadcrumbs.astro';
       </div>
     </section>
   </main>
-  
-  
+
+  <!-- Related Services & Resources -->
+  <section class="py-12 bg-slate-50">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="uppercase text-2xl font-bold mb-6 text-slate-900">Related Resources</h2>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="p-6 bg-cyan-50">
+          <h3 class="font-bold mb-3 text-slate-900">Services</h3>
+          <ul class="space-y-2">
+            <li><a href="/services/foundation-repair" class="text-cyan-600 hover:underline">Foundation Repair Service</a></li>
+            <li><a href="/basement-waterproofing-mississauga" class="text-cyan-600 hover:underline">Basement Waterproofing Mississauga</a></li>
+            <li><a href="/free-inspection" class="text-cyan-600 hover:underline">Get Free Foundation Assessment</a></li>
+          </ul>
+        </div>
+        <div class="p-6 bg-orange-50">
+          <h3 class="font-bold mb-3 text-slate-900">Related Articles</h3>
+          <ul class="space-y-2">
+            <li><a href="/blog/basement-waterproofing-cost-toronto-2025" class="text-orange-600 hover:underline">Waterproofing Cost Guide 2026</a></li>
+            <li><a href="/blog/french-drain-vs-weeping-tile" class="text-orange-600 hover:underline">French Drain vs Weeping Tile</a></li>
+            <li><a href="/neighborhoods/streetsville" class="text-orange-600 hover:underline">Streetsville Waterproofing Services</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
 </PageLayout>
 
 <script>

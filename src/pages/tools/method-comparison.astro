@@ -1,0 +1,41 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import MethodComparison from '../../components/react/MethodComparison.tsx';
+import ContactForm from '../../components/ContactForm.astro';
+---
+
+<PageLayout
+  title="Waterproofing Method Comparison | Find the Right Solution | Dryspace"
+  description="Compare 8 waterproofing methods side-by-side: cost, effectiveness, timeline, and disruption. Filter by your situation and budget to find the best solution for your basement."
+>
+  <section class="bg-slate-50 text-slate-900 py-16">
+    <div class="max-w-6xl mx-auto px-4">
+      <h1 class="text-4xl md:text-5xl font-bold mb-6">
+        Waterproofing Method Comparison
+      </h1>
+      <p class="text-xl mb-8 text-slate-600 max-w-3xl">
+        Compare 8 waterproofing methods by cost, effectiveness, timeline, and disruption level.
+        Filter by your situation or compare side-by-side to find the right solution.
+      </p>
+      <div class="flex flex-wrap gap-4">
+        <div class="bg-white border border-slate-200 px-4 py-2 rounded-lg">
+          <span class="text-sm font-medium">8 Methods</span>
+        </div>
+        <div class="bg-white border border-slate-200 px-4 py-2 rounded-lg">
+          <span class="text-sm font-medium">Side-by-Side</span>
+        </div>
+        <div class="bg-white border border-slate-200 px-4 py-2 rounded-lg">
+          <span class="text-sm font-medium">Smart Filters</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12">
+    <div class="max-w-6xl mx-auto px-4">
+      <MethodComparison client:load />
+    </div>
+  </section>
+
+  <ContactForm />
+</PageLayout>

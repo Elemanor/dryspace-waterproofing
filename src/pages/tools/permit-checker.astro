@@ -1,0 +1,53 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import PermitChecker from '../../components/react/PermitChecker.tsx';
+import ContactForm from '../../components/ContactForm.astro';
+---
+
+<PageLayout
+  title="Building Permit Checker | Do You Need a Permit? | Dryspace"
+  description="Find out if your renovation project needs a building permit in the GTA. Answer 5 questions to get permit requirements, estimated costs, timelines, and municipality-specific guidance."
+>
+  <section class="bg-slate-50 text-slate-900 py-16">
+    <div class="max-w-6xl mx-auto px-4">
+      <h1 class="text-4xl md:text-5xl font-bold mb-6">
+        Building Permit Checker
+      </h1>
+      <p class="text-xl mb-8 text-slate-600 max-w-3xl">
+        Answer 5 quick questions about your project to find out which permits you need,
+        how much they cost, and how long the process takes in your municipality.
+      </p>
+      <div class="flex flex-wrap gap-4">
+        <div class="bg-white border border-slate-200 px-4 py-2 rounded-lg">
+          <span class="text-sm font-medium">5-Step Wizard</span>
+        </div>
+        <div class="bg-white border border-slate-200 px-4 py-2 rounded-lg">
+          <span class="text-sm font-medium">GTA Municipalities</span>
+        </div>
+        <div class="bg-white border border-slate-200 px-4 py-2 rounded-lg">
+          <span class="text-sm font-medium">Cost Estimates</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12">
+    <div class="max-w-6xl mx-auto px-4">
+      <PermitChecker client:load />
+
+      <div class="mt-12 bg-amber-50 border border-amber-200 rounded-xl p-6">
+        <h2 class="text-xl font-bold text-amber-800 mb-3">Working Without a Permit?</h2>
+        <p class="text-slate-700 mb-4">
+          Unpermitted work can result in <strong>fines up to $100,000</strong>, forced demolition,
+          insurance claim denials, and problems selling your home. When in doubt, always check
+          with your local building department.
+        </p>
+        <a href="/services/permits" class="inline-block text-sm font-semibold text-amber-700 hover:text-amber-900 transition-colors">
+          Learn about our permit services &rarr;
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <ContactForm />
+</PageLayout>

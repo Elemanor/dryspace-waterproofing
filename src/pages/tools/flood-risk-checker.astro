@@ -1,0 +1,54 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import FloodRiskChecker from '../../components/react/FloodRiskChecker.tsx';
+import ContactForm from '../../components/ContactForm.astro';
+---
+
+<PageLayout
+  title="Flood Risk Checker | Is Your Home at Risk? | Dryspace"
+  description="Enter your GTA postal code to check your home's flood risk score. See drainage type, water table level, historical flooding data, and personalized waterproofing recommendations."
+>
+  <section class="bg-slate-50 text-slate-900 py-16">
+    <div class="max-w-6xl mx-auto px-4">
+      <h1 class="text-4xl md:text-5xl font-bold mb-6">
+        Flood Risk Checker
+      </h1>
+      <p class="text-xl mb-8 text-slate-600 max-w-3xl">
+        Enter your postal code to see your neighbourhood's flood risk score, drainage infrastructure,
+        and personalized protection recommendations — free, instant, no signup.
+      </p>
+      <div class="flex flex-wrap gap-4">
+        <div class="bg-white border border-slate-200 px-4 py-2 rounded-lg">
+          <span class="text-sm font-medium">60+ GTA Zones</span>
+        </div>
+        <div class="bg-white border border-slate-200 px-4 py-2 rounded-lg">
+          <span class="text-sm font-medium">Instant Results</span>
+        </div>
+        <div class="bg-white border border-slate-200 px-4 py-2 rounded-lg">
+          <span class="text-sm font-medium">Rebate Eligibility</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12">
+    <div class="max-w-6xl mx-auto px-4">
+      <FloodRiskChecker client:load />
+
+      <div class="mt-12 bg-cyan-50 border border-cyan-200 rounded-xl p-6">
+        <h2 class="text-xl font-bold text-cyan-800 mb-3">How We Calculate Flood Risk</h2>
+        <p class="text-slate-700 mb-4">
+          Our risk scores factor in drainage infrastructure (combined vs. separated sewers),
+          water table levels, historical flooding incidents, soil composition, and proximity to
+          waterways. Homes in areas with <strong>combined sewer systems</strong> face the highest
+          risk during heavy rainfall events.
+        </p>
+        <a href="/blog" class="inline-block text-sm font-semibold text-cyan-700 hover:text-cyan-900 transition-colors">
+          Read our waterproofing guides &rarr;
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <ContactForm />
+</PageLayout>

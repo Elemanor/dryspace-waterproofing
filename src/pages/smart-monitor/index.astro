@@ -1,6 +1,6 @@
 ---
-import PageLayout from '../layouts/PageLayout.astro';
-import ContactForm from '../components/ContactForm.astro';
+import PageLayout from '../../layouts/PageLayout.astro';
+import ContactForm from '../../components/ContactForm.astro';
 ---
 
 <PageLayout
@@ -193,6 +193,91 @@ import ContactForm from '../components/ContactForm.astro';
             <p class="text-sm text-slate-600">Receive SMS and push alerts when thresholds are crossed. View history, trends, and pump run cycles on your web dashboard.</p>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════ EXPLORE THE PLATFORM ═══════════════════════ -->
+  <section class="section-padding bg-slate-50">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <p class="text-sm font-semibold uppercase tracking-[0.15em] text-cyan-500 mb-3">Explore the Platform</p>
+        <h2 class="text-3xl md:text-4xl font-bold text-slate-900">More Than a Sensor</h2>
+        <p class="text-lg text-slate-600 mt-4 max-w-2xl mx-auto">The Smart Monitor is a full platform — hardware, cloud dashboard, mobile app, AI analytics, and an open ecosystem.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+        <a href="/smart-monitor/sensors" class="group card-interactive p-6 bg-white rounded-xl border border-slate-200 hover:border-cyan-500/30 hover:shadow-lg transition-all">
+          <div class="w-12 h-12 rounded-xl bg-cyan-50 flex items-center justify-center mb-4 group-hover:bg-cyan-500 transition-colors">
+            <svg class="w-6 h-6 text-cyan-600 group-hover:text-white transition-colors" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.348 14.651a3.75 3.75 0 010-5.303m5.304 0a3.75 3.75 0 010 5.303m-7.425 2.122a6.75 6.75 0 010-9.546m9.546 0a6.75 6.75 0 010 9.546M5.106 18.894c-3.808-3.808-3.808-9.981 0-13.789m13.788 0c3.808 3.808 3.808 9.981 0 13.789M12 12h.008v.007H12V12zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" /></svg>
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2 group-hover:text-cyan-600 transition-colors">Sensors & Hardware</h3>
+          <p class="text-sm text-slate-600 mb-3">4 core sensors, 6 add-ons, full specs. Industrial-grade components in a compact IP65 enclosure.</p>
+          <span class="text-sm font-semibold text-cyan-600 inline-flex items-center gap-1">
+            View specs
+            <svg class="w-3 h-3 transition-transform group-hover:translate-x-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg>
+          </span>
+        </a>
+
+        <a href="/smart-monitor/dashboard" class="group card-interactive p-6 bg-white rounded-xl border border-slate-200 hover:border-cyan-500/30 hover:shadow-lg transition-all">
+          <div class="w-12 h-12 rounded-xl bg-cyan-50 flex items-center justify-center mb-4 group-hover:bg-cyan-500 transition-colors">
+            <svg class="w-6 h-6 text-cyan-600 group-hover:text-white transition-colors" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z" /></svg>
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2 group-hover:text-cyan-600 transition-colors">Cloud Dashboard</h3>
+          <p class="text-sm text-slate-600 mb-3">Live data, historical trends, pump analytics, smart alerts, and insurance reporting. Preview the UI.</p>
+          <span class="text-sm font-semibold text-cyan-600 inline-flex items-center gap-1">
+            See dashboard
+            <svg class="w-3 h-3 transition-transform group-hover:translate-x-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg>
+          </span>
+        </a>
+
+        <a href="/smart-monitor/app" class="group card-interactive p-6 bg-white rounded-xl border border-slate-200 hover:border-cyan-500/30 hover:shadow-lg transition-all">
+          <div class="w-12 h-12 rounded-xl bg-cyan-50 flex items-center justify-center mb-4 group-hover:bg-cyan-500 transition-colors">
+            <svg class="w-6 h-6 text-cyan-600 group-hover:text-white transition-colors" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3" /></svg>
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2 group-hover:text-cyan-600 transition-colors">Mobile App</h3>
+          <p class="text-sm text-slate-600 mb-3">iOS & Android. Push alerts, live gauges, emergency dispatch, widgets, and Apple Watch support.</p>
+          <span class="text-sm font-semibold text-cyan-600 inline-flex items-center gap-1">
+            Preview app
+            <svg class="w-3 h-3 transition-transform group-hover:translate-x-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg>
+          </span>
+        </a>
+
+        <a href="/smart-monitor/ai" class="group card-interactive p-6 bg-white rounded-xl border border-slate-200 hover:border-cyan-500/30 hover:shadow-lg transition-all">
+          <div class="w-12 h-12 rounded-xl bg-purple-50 flex items-center justify-center mb-4 group-hover:bg-purple-500 transition-colors">
+            <svg class="w-6 h-6 text-purple-600 group-hover:text-white transition-colors" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.455 2.456L21.75 6l-1.036.259a3.375 3.375 0 00-2.455 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z" /></svg>
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2 group-hover:text-purple-600 transition-colors">AI Analytics</h3>
+          <p class="text-sm text-slate-600 mb-3">Predictive flood risk, pump failure detection, mold risk engine, and radon pattern analysis.</p>
+          <span class="text-sm font-semibold text-purple-600 inline-flex items-center gap-1">
+            Learn more
+            <svg class="w-3 h-3 transition-transform group-hover:translate-x-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg>
+          </span>
+        </a>
+
+        <a href="/smart-monitor/business" class="group card-interactive p-6 bg-white rounded-xl border border-slate-200 hover:border-cyan-500/30 hover:shadow-lg transition-all">
+          <div class="w-12 h-12 rounded-xl bg-amber-50 flex items-center justify-center mb-4 group-hover:bg-amber-500 transition-colors">
+            <svg class="w-6 h-6 text-amber-600 group-hover:text-white transition-colors" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21m-3.75 0h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008z" /></svg>
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2 group-hover:text-amber-600 transition-colors">For Business</h3>
+          <p class="text-sm text-slate-600 mb-3">Property managers, insurers, and contractors. Multi-property dashboard, bulk pricing, and ROI calculator.</p>
+          <span class="text-sm font-semibold text-amber-600 inline-flex items-center gap-1">
+            See plans
+            <svg class="w-3 h-3 transition-transform group-hover:translate-x-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg>
+          </span>
+        </a>
+
+        <a href="/smart-monitor/integrations" class="group card-interactive p-6 bg-white rounded-xl border border-slate-200 hover:border-cyan-500/30 hover:shadow-lg transition-all">
+          <div class="w-12 h-12 rounded-xl bg-emerald-50 flex items-center justify-center mb-4 group-hover:bg-emerald-500 transition-colors">
+            <svg class="w-6 h-6 text-emerald-600 group-hover:text-white transition-colors" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.19 8.688a4.5 4.5 0 011.242 7.244l-4.5 4.5a4.5 4.5 0 01-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 00-6.364-6.364l-4.5 4.5a4.5 4.5 0 001.242 7.244" /></svg>
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2 group-hover:text-emerald-600 transition-colors">Integrations</h3>
+          <p class="text-sm text-slate-600 mb-3">Home Assistant, HomeKit, Alexa, smart water valves, open API, and MQTT for DIY builders.</p>
+          <span class="text-sm font-semibold text-emerald-600 inline-flex items-center gap-1">
+            Explore ecosystem
+            <svg class="w-3 h-3 transition-transform group-hover:translate-x-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg>
+          </span>
+        </a>
       </div>
     </div>
   </section>

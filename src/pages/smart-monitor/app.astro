@@ -1,0 +1,559 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+---
+
+<PageLayout
+  title="Smart Monitor Mobile App | DrySpace"
+  description="Monitor your basement from anywhere. Real-time alerts, live sensor data, pump analytics, and emergency dispatch — right from your phone. iOS and Android."
+>
+  <!-- Hero Section -->
+  <section class="bg-navy-900 text-white py-20 md:py-32">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 text-center">
+      <!-- Coming Soon Badge -->
+      <div class="inline-flex items-center gap-2 px-4 py-2 bg-cyan-500/10 border border-cyan-500/30 rounded-full mb-6">
+        <span class="relative flex h-2 w-2">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-2 w-2 bg-cyan-500"></span>
+        </span>
+        <span class="text-sm font-medium text-cyan-400">COMING FALL 2026</span>
+      </div>
+
+      <h1 class="text-5xl md:text-7xl font-bold mb-6">Mobile App</h1>
+
+      <p class="text-xl md:text-2xl text-slate-300 max-w-3xl mx-auto mb-10">
+        Your basement in your pocket. Real-time monitoring, instant alerts, and one-tap emergency dispatch from your phone.
+      </p>
+
+      <!-- Fake App Store Buttons -->
+      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
+        <!-- App Store -->
+        <div class="relative">
+          <div class="flex items-center gap-3 px-6 py-3 bg-white/10 border border-white/20 rounded-lg opacity-50 cursor-not-allowed">
+            <svg class="w-8 h-8" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/>
+            </svg>
+            <div class="text-left">
+              <div class="text-xs">Download on the</div>
+              <div class="text-lg font-semibold">App Store</div>
+            </div>
+          </div>
+          <div class="absolute inset-0 flex items-center justify-center bg-navy-900/80 rounded-lg">
+            <span class="text-xs font-medium text-slate-400">Coming Fall 2026</span>
+          </div>
+        </div>
+
+        <!-- Google Play -->
+        <div class="relative">
+          <div class="flex items-center gap-3 px-6 py-3 bg-white/10 border border-white/20 rounded-lg opacity-50 cursor-not-allowed">
+            <svg class="w-8 h-8" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M3 20.5v-17c0-.59.34-1.11.84-1.35L13.69 12l-9.85 9.85c-.5-.24-.84-.76-.84-1.35zm10.84-7.35L18.84 9l-3.99-2.31-5.98 5.98 4.97 2.87zm.83-.48l4.09-2.37c.57-.33.57-1.18 0-1.51L14.67 6.42l-4.45 4.45 4.45 4.45 4.09-2.37c.57-.33.57-1.18 0-1.51l-4.09-2.37z"/>
+            </svg>
+            <div class="text-left">
+              <div class="text-xs">Get it on</div>
+              <div class="text-lg font-semibold">Google Play</div>
+            </div>
+          </div>
+          <div class="absolute inset-0 flex items-center justify-center bg-navy-900/80 rounded-lg">
+            <span class="text-xs font-medium text-slate-400">Coming Fall 2026</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Back Link -->
+      <a href="/smart-monitor" class="inline-flex items-center gap-2 text-cyan-400 hover:text-cyan-300 transition-colors">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
+        </svg>
+        <span>Back to Smart Monitor</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- Phone Mockup Section -->
+  <section class="bg-white py-20 md:py-32">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="flex justify-center">
+        <!-- iPhone Mockup -->
+        <div class="relative w-72">
+          <!-- Phone Frame -->
+          <div class="relative bg-[#0f1419] rounded-[2.5rem] border-8 border-slate-800 shadow-2xl overflow-hidden">
+            <!-- Notch -->
+            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-40 h-7 bg-slate-900 rounded-b-3xl z-10"></div>
+
+            <!-- Screen Content -->
+            <div class="relative pt-8 pb-6 px-4" style="min-height: 640px;">
+              <!-- Status Bar -->
+              <div class="flex justify-between items-center text-white text-xs mb-6 px-2">
+                <span>9:41</span>
+                <div class="flex gap-1 items-center">
+                  <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M1 9l2 2c4.97-4.97 13.03-4.97 18 0l2-2C16.93 2.93 7.08 2.93 1 9zm8 8l3 3 3-3c-1.65-1.66-4.34-1.66-6 0zm-4-4l2 2c2.76-2.76 7.24-2.76 10 0l2-2C15.14 9.14 8.87 9.14 5 13z"/>
+                  </svg>
+                  <svg class="w-6 h-4" fill="currentColor" viewBox="0 0 24 24">
+                    <rect x="2" y="7" width="18" height="10" rx="2" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <rect x="20" y="9" width="2" height="6" rx="1"/>
+                  </svg>
+                </div>
+              </div>
+
+              <!-- App Header -->
+              <div class="flex items-center justify-between mb-8 px-2">
+                <div>
+                  <h2 class="text-white text-xl font-bold">DrySpace Monitor</h2>
+                  <div class="flex items-center gap-2 mt-1">
+                    <span class="w-2 h-2 bg-green-500 rounded-full"></span>
+                    <span class="text-green-400 text-xs">Online</span>
+                  </div>
+                </div>
+                <button class="text-cyan-400">
+                  <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                  </svg>
+                </button>
+              </div>
+
+              <!-- Circular Gauge -->
+              <div class="flex justify-center mb-6">
+                <div class="relative w-48 h-48">
+                  <!-- Gauge Ring -->
+                  <svg class="w-full h-full transform -rotate-90" viewBox="0 0 200 200">
+                    <!-- Background Circle -->
+                    <circle cx="100" cy="100" r="85" fill="none" stroke="#1e293b" stroke-width="12"/>
+                    <!-- Progress Circle -->
+                    <circle cx="100" cy="100" r="85" fill="none" stroke="#06b6d4" stroke-width="12" stroke-dasharray="534" stroke-dashoffset="400" stroke-linecap="round"/>
+                  </svg>
+                  <!-- Center Content -->
+                  <div class="absolute inset-0 flex flex-col items-center justify-center">
+                    <div class="text-5xl font-bold text-white">12.3</div>
+                    <div class="text-sm text-slate-400 mt-1">cm</div>
+                    <div class="text-xs text-green-400 mt-2">NORMAL</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Stats Pills -->
+              <div class="flex gap-3 justify-center mb-8">
+                <div class="px-4 py-2 bg-slate-800 rounded-full">
+                  <div class="text-cyan-400 text-sm font-medium">54% RH</div>
+                </div>
+                <div class="px-4 py-2 bg-slate-800 rounded-full">
+                  <div class="text-cyan-400 text-sm font-medium">18°C</div>
+                </div>
+                <div class="px-4 py-2 bg-slate-800 rounded-full">
+                  <div class="text-cyan-400 text-sm font-medium">7 cycles</div>
+                </div>
+              </div>
+
+              <!-- Tab Bar -->
+              <div class="absolute bottom-0 left-0 right-0 bg-slate-900/50 backdrop-blur-lg border-t border-slate-700">
+                <div class="flex justify-around py-3">
+                  <button class="flex flex-col items-center gap-1 text-cyan-400">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+                    </svg>
+                    <span class="text-xs">Home</span>
+                  </button>
+                  <button class="flex flex-col items-center gap-1 text-slate-500">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.89 2 2 2zm6-6v-5c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z"/>
+                    </svg>
+                    <span class="text-xs">Alerts</span>
+                  </button>
+                  <button class="flex flex-col items-center gap-1 text-slate-500">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M9 11H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2zm2-7h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11z"/>
+                    </svg>
+                    <span class="text-xs">History</span>
+                  </button>
+                  <button class="flex flex-col items-center gap-1 text-slate-500">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"/>
+                    </svg>
+                    <span class="text-xs">Settings</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- App Features -->
+  <section class="bg-slate-50 py-20 md:py-32">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl md:text-5xl font-bold text-navy-900 mb-4">Everything You Need</h2>
+        <p class="text-xl text-slate-600">Professional monitoring tools in your pocket</p>
+      </div>
+
+      <div class="space-y-24">
+        <!-- Feature 1: Instant Push Alerts -->
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+          <div>
+            <h3 class="text-3xl font-bold text-navy-900 mb-4">Instant Push Alerts</h3>
+            <ul class="space-y-3 text-lg text-slate-600">
+              <li class="flex items-start gap-3">
+                <svg class="w-6 h-6 text-cyan-500 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                </svg>
+                <span>Rich notifications with sensor data. Tap to see details.</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-6 h-6 text-cyan-500 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                </svg>
+                <span>Critical alerts bypass Do Not Disturb.</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-6 h-6 text-cyan-500 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                </svg>
+                <span>Customizable thresholds per sensor.</span>
+              </li>
+            </ul>
+          </div>
+          <div class="flex justify-center">
+            <!-- Notification Mockup -->
+            <div class="w-full max-w-sm">
+              <div class="bg-white rounded-2xl shadow-2xl p-4 border border-slate-200">
+                <div class="flex items-start gap-3">
+                  <div class="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <span class="text-2xl">⚠️</span>
+                  </div>
+                  <div class="flex-1 min-w-0">
+                    <div class="font-semibold text-navy-900 mb-1">DrySpace Monitor</div>
+                    <div class="text-sm text-slate-600">Humidity at 63% — above safe threshold</div>
+                    <div class="text-xs text-slate-400 mt-1">now</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Feature 2: Pump Analytics -->
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+          <div class="order-2 md:order-1 flex justify-center">
+            <!-- Chart Mockup -->
+            <div class="w-full max-w-sm bg-[#0f1419] rounded-2xl shadow-2xl p-6">
+              <h4 class="text-white font-semibold mb-4">Pump Cycles — Last 7 Days</h4>
+              <div class="flex items-end justify-between h-40 gap-2">
+                <div class="flex-1 bg-cyan-500/30 rounded-t" style="height: 45%;">
+                  <div class="w-full bg-cyan-500 rounded-t" style="height: 100%;"></div>
+                </div>
+                <div class="flex-1 bg-cyan-500/30 rounded-t" style="height: 68%;">
+                  <div class="w-full bg-cyan-500 rounded-t" style="height: 100%;"></div>
+                </div>
+                <div class="flex-1 bg-cyan-500/30 rounded-t" style="height: 82%;">
+                  <div class="w-full bg-cyan-500 rounded-t" style="height: 100%;"></div>
+                </div>
+                <div class="flex-1 bg-cyan-500/30 rounded-t" style="height: 55%;">
+                  <div class="w-full bg-cyan-500 rounded-t" style="height: 100%;"></div>
+                </div>
+                <div class="flex-1 bg-cyan-500/30 rounded-t" style="height: 91%;">
+                  <div class="w-full bg-cyan-500 rounded-t" style="height: 100%;"></div>
+                </div>
+                <div class="flex-1 bg-cyan-500/30 rounded-t" style="height: 73%;">
+                  <div class="w-full bg-cyan-500 rounded-t" style="height: 100%;"></div>
+                </div>
+                <div class="flex-1 bg-cyan-500/30 rounded-t" style="height: 88%;">
+                  <div class="w-full bg-cyan-500 rounded-t" style="height: 100%;"></div>
+                </div>
+              </div>
+              <div class="flex justify-between text-xs text-slate-400 mt-2">
+                <span>Mon</span>
+                <span>Tue</span>
+                <span>Wed</span>
+                <span>Thu</span>
+                <span>Fri</span>
+                <span>Sat</span>
+                <span>Sun</span>
+              </div>
+            </div>
+          </div>
+          <div class="order-1 md:order-2">
+            <h3 class="text-3xl font-bold text-navy-900 mb-4">Pump Analytics</h3>
+            <ul class="space-y-3 text-lg text-slate-600">
+              <li class="flex items-start gap-3">
+                <svg class="w-6 h-6 text-cyan-500 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                </svg>
+                <span>Track pump cycles, runtime, and patterns over time.</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-6 h-6 text-cyan-500 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                </svg>
+                <span>See daily/weekly/monthly trends.</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-6 h-6 text-cyan-500 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                </svg>
+                <span>Get warned when pump behavior changes.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Feature 3: Emergency Dispatch -->
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+          <div>
+            <h3 class="text-3xl font-bold text-navy-900 mb-4">Emergency Dispatch</h3>
+            <ul class="space-y-3 text-lg text-slate-600">
+              <li class="flex items-start gap-3">
+                <svg class="w-6 h-6 text-cyan-500 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                </svg>
+                <span>One tap to request DrySpace emergency service.</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-6 h-6 text-cyan-500 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                </svg>
+                <span>Auto-shares your sensor data with the crew.</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-6 h-6 text-cyan-500 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                </svg>
+                <span>Real-time ETA tracking.</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-6 h-6 text-cyan-500 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                </svg>
+                <span>Priority queue for Smart Monitor subscribers.</span>
+              </li>
+            </ul>
+          </div>
+          <div class="flex justify-center">
+            <!-- Emergency Button Mockup -->
+            <div class="w-full max-w-sm bg-[#0f1419] rounded-2xl shadow-2xl p-8">
+              <div class="text-center mb-6">
+                <h4 class="text-white font-semibold text-lg mb-2">Emergency Service</h4>
+                <p class="text-slate-400 text-sm">Available 24/7</p>
+              </div>
+              <button class="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-6 rounded-xl shadow-lg transition-colors mb-4">
+                <div class="text-2xl mb-2">🚨</div>
+                <div class="text-lg">Request Emergency</div>
+              </button>
+              <div class="text-center">
+                <div class="text-sm text-slate-400">Average response</div>
+                <div class="text-2xl font-bold text-cyan-400">47 min</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Widgets & Watch -->
+  <section class="bg-white py-20 md:py-32">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl md:text-5xl font-bold text-navy-900 mb-4">Widgets & Wearables</h2>
+        <p class="text-xl text-slate-600">See your basement status at a glance</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- iOS Widget -->
+        <div class="text-center">
+          <div class="bg-slate-100 rounded-3xl p-6 shadow-lg mb-4 inline-block">
+            <div class="bg-[#0f1419] rounded-2xl p-4 w-40">
+              <div class="text-white text-xs font-semibold mb-3">Basement</div>
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-3xl font-bold text-cyan-400">12.3</span>
+                <span class="text-xs text-slate-400">cm</span>
+              </div>
+              <div class="flex gap-2 text-xs">
+                <div class="bg-slate-800 px-2 py-1 rounded text-cyan-400">54%</div>
+                <div class="bg-slate-800 px-2 py-1 rounded text-cyan-400">18°</div>
+              </div>
+            </div>
+          </div>
+          <h3 class="text-lg font-semibold text-navy-900 mb-2">iOS Home Screen Widget</h3>
+          <p class="text-slate-600">Glance at your sump level and humidity</p>
+        </div>
+
+        <!-- Android Widget -->
+        <div class="text-center">
+          <div class="bg-slate-100 rounded-3xl p-6 shadow-lg mb-4 inline-block">
+            <div class="bg-white rounded-2xl p-4 w-40 border border-slate-200">
+              <div class="flex items-center gap-2 mb-3">
+                <div class="w-6 h-6 bg-cyan-500 rounded-full flex items-center justify-center text-white text-xs font-bold">D</div>
+                <span class="text-xs font-semibold text-navy-900">DrySpace</span>
+              </div>
+              <div class="text-2xl font-bold text-navy-900 mb-1">12.3 cm</div>
+              <div class="flex gap-2 text-xs text-slate-600">
+                <span>54% RH</span>
+                <span>•</span>
+                <span>18°C</span>
+              </div>
+            </div>
+          </div>
+          <h3 class="text-lg font-semibold text-navy-900 mb-2">Android Widget</h3>
+          <p class="text-slate-600">Material You design that adapts to your theme</p>
+        </div>
+
+        <!-- Apple Watch -->
+        <div class="text-center">
+          <div class="bg-slate-900 rounded-3xl p-6 shadow-lg mb-4 inline-block">
+            <div class="w-32 h-40 bg-black rounded-3xl flex items-center justify-center border-4 border-slate-800 relative overflow-hidden">
+              <div class="absolute top-4 w-12 h-1 bg-slate-800 rounded-full"></div>
+              <div class="text-center">
+                <div class="w-16 h-16 rounded-full border-4 border-green-500 flex items-center justify-center mb-2">
+                  <span class="text-2xl">💧</span>
+                </div>
+                <div class="text-green-400 text-xs font-semibold">NORMAL</div>
+              </div>
+            </div>
+          </div>
+          <h3 class="text-lg font-semibold text-navy-900 mb-2">Apple Watch</h3>
+          <p class="text-slate-600">Green/yellow/red status at a glance</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features List -->
+  <section class="bg-slate-50 py-20 md:py-32">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl md:text-5xl font-bold text-navy-900 mb-4">Full Feature Set</h2>
+        <p class="text-xl text-slate-600">Everything you need for peace of mind</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <!-- Left Column -->
+        <div class="space-y-4">
+          <div class="flex items-start gap-3">
+            <svg class="w-6 h-6 text-cyan-500 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+            </svg>
+            <span class="text-lg text-slate-700">Real-time sensor data</span>
+          </div>
+          <div class="flex items-start gap-3">
+            <svg class="w-6 h-6 text-cyan-500 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+            </svg>
+            <span class="text-lg text-slate-700">Push + SMS alerts</span>
+          </div>
+          <div class="flex items-start gap-3">
+            <svg class="w-6 h-6 text-cyan-500 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+            </svg>
+            <span class="text-lg text-slate-700">Historical charts</span>
+          </div>
+          <div class="flex items-start gap-3">
+            <svg class="w-6 h-6 text-cyan-500 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+            </svg>
+            <span class="text-lg text-slate-700">Pump cycle tracking</span>
+          </div>
+          <div class="flex items-start gap-3">
+            <svg class="w-6 h-6 text-cyan-500 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+            </svg>
+            <span class="text-lg text-slate-700">Multi-property support</span>
+          </div>
+          <div class="flex items-start gap-3">
+            <svg class="w-6 h-6 text-cyan-500 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+            </svg>
+            <span class="text-lg text-slate-700">Family sharing (up to 5 users)</span>
+          </div>
+        </div>
+
+        <!-- Right Column -->
+        <div class="space-y-4">
+          <div class="flex items-start gap-3">
+            <svg class="w-6 h-6 text-cyan-500 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+            </svg>
+            <span class="text-lg text-slate-700">Geofencing (different alerts home/away)</span>
+          </div>
+          <div class="flex items-start gap-3">
+            <svg class="w-6 h-6 text-cyan-500 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+            </svg>
+            <span class="text-lg text-slate-700">Dark mode</span>
+          </div>
+          <div class="flex items-start gap-3">
+            <svg class="w-6 h-6 text-cyan-500 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+            </svg>
+            <span class="text-lg text-slate-700">Biometric login</span>
+          </div>
+          <div class="flex items-start gap-3">
+            <svg class="w-6 h-6 text-cyan-500 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+            </svg>
+            <span class="text-lg text-slate-700">Offline mode (cached data)</span>
+          </div>
+          <div class="flex items-start gap-3">
+            <svg class="w-6 h-6 text-cyan-500 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+            </svg>
+            <span class="text-lg text-slate-700">Siri/Google shortcuts</span>
+          </div>
+          <div class="flex items-start gap-3">
+            <svg class="w-6 h-6 text-cyan-500 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+            </svg>
+            <span class="text-lg text-slate-700">Export data (CSV/PDF)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="bg-navy-900 text-white py-20 md:py-32">
+    <div class="max-w-3xl mx-auto px-6 lg:px-8 text-center">
+      <h2 class="text-4xl md:text-5xl font-bold mb-6">Be First to Download</h2>
+      <p class="text-xl text-slate-300 mb-4">Join the waitlist for early access this fall</p>
+      <p class="text-cyan-400 font-semibold mb-8">Free with any Cloud Monitoring subscription</p>
+
+      <form class="max-w-md mx-auto mb-12">
+        <div class="flex gap-3">
+          <input
+            type="email"
+            placeholder="Enter your email"
+            class="flex-1 px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-cyan-500"
+          />
+          <button
+            type="submit"
+            class="px-6 py-3 bg-cyan-500 hover:bg-cyan-600 text-white font-semibold rounded-lg transition-colors whitespace-nowrap"
+          >
+            Join Waitlist
+          </button>
+        </div>
+      </form>
+
+      <a href="/smart-monitor" class="inline-flex items-center gap-2 text-cyan-400 hover:text-cyan-300 transition-colors">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
+        </svg>
+        <span>Back to Smart Monitor</span>
+      </a>
+    </div>
+  </section>
+</PageLayout>
+
+<style>
+  @keyframes ping {
+    75%, 100% {
+      transform: scale(2);
+      opacity: 0;
+    }
+  }
+
+  .animate-ping {
+    animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+  }
+</style>

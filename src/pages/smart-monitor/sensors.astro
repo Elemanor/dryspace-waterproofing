@@ -1,0 +1,572 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+---
+
+<PageLayout
+  title="Smart Monitor Sensors & Hardware | DrySpace"
+  description="Industrial-grade sensors in a compact, waterproof package. Every component selected for basement conditions — humidity, dust, and temperature extremes."
+>
+  <!-- Hero -->
+  <section class="bg-navy-900 section-padding">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto text-center">
+        <!-- Coming Soon Badge -->
+        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cyan-500/10 border border-cyan-500/20 mb-6">
+          <span class="relative flex h-2 w-2">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2 w-2 bg-cyan-500"></span>
+          </span>
+          <span class="text-sm font-semibold text-cyan-400">COMING SUMMER 2026</span>
+        </div>
+
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
+          Sensors & Hardware
+        </h1>
+        <p class="text-xl text-slate-300 mb-8 leading-relaxed">
+          Industrial-grade sensors in a compact, waterproof package. Every component selected for basement conditions — humidity, dust, and temperature extremes.
+        </p>
+
+        <!-- Back Link -->
+        <a
+          href="/smart-monitor"
+          class="inline-flex items-center gap-2 text-cyan-400 hover:text-cyan-300 transition-colors font-medium"
+        >
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+          </svg>
+          Back to Smart Monitor
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Core Sensor Array -->
+  <section class="section-padding bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-16">
+          <p class="text-sm font-semibold uppercase tracking-[0.15em] text-cyan-500 mb-4">
+            Core Sensors
+          </p>
+          <h2 class="text-3xl md:text-4xl font-bold text-navy-900 mb-4">
+            Four Sensors, Complete Protection
+          </h2>
+          <p class="text-lg text-slate-600 max-w-2xl mx-auto">
+            Every Smart Monitor includes four precision sensors that work together to give you complete visibility into your basement environment.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8">
+          <!-- Sensor 1: Ultrasonic Water Level -->
+          <div class="bg-white rounded-2xl border border-slate-200 p-8 hover:shadow-lg transition-shadow">
+            <div class="w-12 h-12 rounded-xl bg-cyan-500/10 flex items-center justify-center mb-6">
+              <svg class="w-6 h-6 text-cyan-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-navy-900 mb-3">
+              Ultrasonic Water Level Sensor
+            </h3>
+            <p class="text-slate-600 mb-4">
+              HC-SR04 ultrasonic sensor measures distance to water surface in your sump pit with millimeter precision.
+            </p>
+            <ul class="space-y-2 text-sm text-slate-600">
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-cyan-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                <span><strong>Range:</strong> 2cm – 400cm, ±3mm accuracy</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-cyan-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                <span>Calculates fill rate (cm/min) to predict overflow</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-cyan-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                <span>Detects pump activation when level drops suddenly</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-cyan-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                <span>Readings every 30 seconds for real-time monitoring</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Sensor 2: Capacitive Flood Sensor -->
+          <div class="bg-white rounded-2xl border border-slate-200 p-8 hover:shadow-lg transition-shadow">
+            <div class="w-12 h-12 rounded-xl bg-cyan-500/10 flex items-center justify-center mb-6">
+              <svg class="w-6 h-6 text-cyan-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-navy-900 mb-3">
+              Capacitive Flood Sensor
+            </h3>
+            <p class="text-slate-600 mb-4">
+              Zero-corrosion design with no exposed metal contacts for reliable floor-level water detection.
+            </p>
+            <ul class="space-y-2 text-sm text-slate-600">
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-cyan-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                <span><strong>5-second detection latency</strong> — instant alerts</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-cyan-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                <span>Place anywhere on your basement floor</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-cyan-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                <span>Daisy-chain up to 4 pads per hub for full coverage</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-cyan-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                <span>Works in standing water up to 5cm deep</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Sensor 3: BME280 Environmental -->
+          <div class="bg-white rounded-2xl border border-slate-200 p-8 hover:shadow-lg transition-shadow">
+            <div class="w-12 h-12 rounded-xl bg-cyan-500/10 flex items-center justify-center mb-6">
+              <svg class="w-6 h-6 text-cyan-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-navy-900 mb-3">
+              BME280 Environmental Sensor
+            </h3>
+            <p class="text-slate-600 mb-4">
+              Precision humidity, temperature, and barometric pressure monitoring for mold risk detection and storm correlation.
+            </p>
+            <ul class="space-y-2 text-sm text-slate-600">
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-cyan-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                <span><strong>Humidity:</strong> 0-100% RH, ±1% accuracy</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-cyan-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                <span><strong>Temperature:</strong> -40°C to +85°C, ±0.5°C</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-cyan-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                <span><strong>Barometric pressure:</strong> 300-1100 hPa</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-cyan-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                <span>Pressure drops correlate with incoming storms</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-cyan-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                <span>Mold risk alerts trigger above 60% RH for 48+ hours</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Sensor 4: CT Clamp Pump Monitor -->
+          <div class="bg-white rounded-2xl border border-slate-200 p-8 hover:shadow-lg transition-shadow">
+            <div class="w-12 h-12 rounded-xl bg-cyan-500/10 flex items-center justify-center mb-6">
+              <svg class="w-6 h-6 text-cyan-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-navy-900 mb-3">
+              CT Clamp Pump Monitor
+            </h3>
+            <p class="text-slate-600 mb-4">
+              SCT-013 non-invasive current sensor clamps around your pump power cable to monitor performance without any wiring.
+            </p>
+            <ul class="space-y-2 text-sm text-slate-600">
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-cyan-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                <span><strong>Non-invasive installation</strong> — just clip around cable</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-cyan-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                <span>Detects pump on/off, runtime per cycle, power draw</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-cyan-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                <span>Calculates cycles/hour, duty cycle, energy usage</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-cyan-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                <span>Anomaly detection: pump running >5 min = blockage alert</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-cyan-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                <span>No electrical work needed — safe DIY installation</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Optional Add-Ons -->
+  <section class="section-padding bg-slate-50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-16">
+          <p class="text-sm font-semibold uppercase tracking-[0.15em] text-cyan-500 mb-4">
+            Expansion Modules
+          </p>
+          <h2 class="text-3xl md:text-4xl font-bold text-navy-900 mb-4">
+            Optional Add-Ons for Advanced Monitoring
+          </h2>
+          <p class="text-lg text-slate-600 max-w-2xl mx-auto">
+            Expand your Smart Monitor with specialized sensors for comprehensive basement protection. All modules planned for 2027 release.
+          </p>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Add-On 1: Radon Sensor -->
+          <div class="bg-white rounded-xl border border-slate-200 p-6">
+            <div class="flex items-start justify-between mb-4">
+              <div class="w-10 h-10 rounded-lg bg-cyan-500/10 flex items-center justify-center">
+                <svg class="w-5 h-5 text-cyan-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                </svg>
+              </div>
+              <span class="text-xs font-semibold px-2 py-1 rounded-full bg-slate-100 text-slate-600">
+                Coming 2027
+              </span>
+            </div>
+            <h3 class="text-lg font-bold text-navy-900 mb-2">
+              Radon Sensor
+            </h3>
+            <p class="text-sm text-slate-600 mb-3">
+              RadonEye RD200 BLE module for continuous Bq/m³ monitoring and long-term exposure tracking
+            </p>
+            <p class="text-2xl font-bold text-cyan-500">$199</p>
+          </div>
+
+          <!-- Add-On 2: Pipe Freeze Sensor -->
+          <div class="bg-white rounded-xl border border-slate-200 p-6">
+            <div class="flex items-start justify-between mb-4">
+              <div class="w-10 h-10 rounded-lg bg-cyan-500/10 flex items-center justify-center">
+                <svg class="w-5 h-5 text-cyan-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                </svg>
+              </div>
+              <span class="text-xs font-semibold px-2 py-1 rounded-full bg-slate-100 text-slate-600">
+                Coming 2027
+              </span>
+            </div>
+            <h3 class="text-lg font-bold text-navy-900 mb-2">
+              Pipe Freeze Sensor
+            </h3>
+            <p class="text-sm text-slate-600 mb-3">
+              Waterproof DS18B20 temperature probe with alerts when pipes drop below 2°C
+            </p>
+            <p class="text-2xl font-bold text-cyan-500">$29</p>
+          </div>
+
+          <!-- Add-On 3: Water Flow Meter -->
+          <div class="bg-white rounded-xl border border-slate-200 p-6">
+            <div class="flex items-start justify-between mb-4">
+              <div class="w-10 h-10 rounded-lg bg-cyan-500/10 flex items-center justify-center">
+                <svg class="w-5 h-5 text-cyan-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                </svg>
+              </div>
+              <span class="text-xs font-semibold px-2 py-1 rounded-full bg-slate-100 text-slate-600">
+                Coming 2027
+              </span>
+            </div>
+            <h3 class="text-lg font-bold text-navy-900 mb-2">
+              Water Flow Meter
+            </h3>
+            <p class="text-sm text-slate-600 mb-3">
+              Hall-effect flow sensor tracks total gallons pumped for maintenance planning
+            </p>
+            <p class="text-2xl font-bold text-cyan-500">$39</p>
+          </div>
+
+          <!-- Add-On 4: Sewer Gas Detector -->
+          <div class="bg-white rounded-xl border border-slate-200 p-6">
+            <div class="flex items-start justify-between mb-4">
+              <div class="w-10 h-10 rounded-lg bg-cyan-500/10 flex items-center justify-center">
+                <svg class="w-5 h-5 text-cyan-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
+                </svg>
+              </div>
+              <span class="text-xs font-semibold px-2 py-1 rounded-full bg-slate-100 text-slate-600">
+                Coming 2027
+              </span>
+            </div>
+            <h3 class="text-lg font-bold text-navy-900 mb-2">
+              Sewer Gas Detector
+            </h3>
+            <p class="text-sm text-slate-600 mb-3">
+              MQ-4 methane and H2S sensor for early warning of sewer line issues
+            </p>
+            <p class="text-2xl font-bold text-cyan-500">$35</p>
+          </div>
+
+          <!-- Add-On 5: Camera Module -->
+          <div class="bg-white rounded-xl border border-slate-200 p-6">
+            <div class="flex items-start justify-between mb-4">
+              <div class="w-10 h-10 rounded-lg bg-cyan-500/10 flex items-center justify-center">
+                <svg class="w-5 h-5 text-cyan-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" />
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+              </div>
+              <span class="text-xs font-semibold px-2 py-1 rounded-full bg-slate-100 text-slate-600">
+                Coming 2027
+              </span>
+            </div>
+            <h3 class="text-lg font-bold text-navy-900 mb-2">
+              Camera Module
+            </h3>
+            <p class="text-sm text-slate-600 mb-3">
+              ESP32-CAM for visual timelapse, motion detection, and remote inspection
+            </p>
+            <p class="text-2xl font-bold text-cyan-500">$49</p>
+          </div>
+
+          <!-- Add-On 6: Vibration Sensor -->
+          <div class="bg-white rounded-xl border border-slate-200 p-6">
+            <div class="flex items-start justify-between mb-4">
+              <div class="w-10 h-10 rounded-lg bg-cyan-500/10 flex items-center justify-center">
+                <svg class="w-5 h-5 text-cyan-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+              </div>
+              <span class="text-xs font-semibold px-2 py-1 rounded-full bg-slate-100 text-slate-600">
+                Coming 2027
+              </span>
+            </div>
+            <h3 class="text-lg font-bold text-navy-900 mb-2">
+              Vibration Sensor
+            </h3>
+            <p class="text-sm text-slate-600 mb-3">
+              ADXL345 accelerometer detects abnormal pump vibration for bearing wear alerts
+            </p>
+            <p class="text-2xl font-bold text-cyan-500">$29</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Hardware Specs & What's In The Box -->
+  <section class="section-padding bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-16">
+          <p class="text-sm font-semibold uppercase tracking-[0.15em] text-cyan-500 mb-4">
+            Technical Details
+          </p>
+          <h2 class="text-3xl md:text-4xl font-bold text-navy-900 mb-4">
+            Hardware Specifications
+          </h2>
+          <p class="text-lg text-slate-600 max-w-2xl mx-auto">
+            Built on ESP32-S3 with enterprise-grade components and IP65 waterproof enclosure designed for basement environments.
+          </p>
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-12">
+          <!-- Left: Specs Table -->
+          <div>
+            <h3 class="text-xl font-bold text-navy-900 mb-6">System Specifications</h3>
+            <div class="bg-slate-50 rounded-xl border border-slate-200 overflow-hidden">
+              <table class="w-full text-sm">
+                <tbody class="divide-y divide-slate-200">
+                  <tr>
+                    <td class="px-6 py-3 font-semibold text-navy-900">Controller</td>
+                    <td class="px-6 py-3 text-slate-600">ESP32-S3 dual-core 240MHz</td>
+                  </tr>
+                  <tr>
+                    <td class="px-6 py-3 font-semibold text-navy-900">RAM</td>
+                    <td class="px-6 py-3 text-slate-600">512KB SRAM + 8MB PSRAM</td>
+                  </tr>
+                  <tr>
+                    <td class="px-6 py-3 font-semibold text-navy-900">Flash Storage</td>
+                    <td class="px-6 py-3 text-slate-600">16MB</td>
+                  </tr>
+                  <tr>
+                    <td class="px-6 py-3 font-semibold text-navy-900">WiFi</td>
+                    <td class="px-6 py-3 text-slate-600">802.11 b/g/n 2.4GHz</td>
+                  </tr>
+                  <tr>
+                    <td class="px-6 py-3 font-semibold text-navy-900">Bluetooth</td>
+                    <td class="px-6 py-3 text-slate-600">BLE 5.0</td>
+                  </tr>
+                  <tr>
+                    <td class="px-6 py-3 font-semibold text-navy-900">GPIO Pins</td>
+                    <td class="px-6 py-3 text-slate-600">12 available (4 used by core sensors)</td>
+                  </tr>
+                  <tr>
+                    <td class="px-6 py-3 font-semibold text-navy-900">Power</td>
+                    <td class="px-6 py-3 text-slate-600">5V USB-C, 500mA typical</td>
+                  </tr>
+                  <tr>
+                    <td class="px-6 py-3 font-semibold text-navy-900">Battery Backup</td>
+                    <td class="px-6 py-3 text-slate-600">Optional 3.7V 2000mAh LiPo (16+ hrs)</td>
+                  </tr>
+                  <tr>
+                    <td class="px-6 py-3 font-semibold text-navy-900">Enclosure</td>
+                    <td class="px-6 py-3 text-slate-600">IP65 ABS, 120×80×40mm</td>
+                  </tr>
+                  <tr>
+                    <td class="px-6 py-3 font-semibold text-navy-900">Operating Temp</td>
+                    <td class="px-6 py-3 text-slate-600">-20°C to +60°C</td>
+                  </tr>
+                  <tr>
+                    <td class="px-6 py-3 font-semibold text-navy-900">Certifications</td>
+                    <td class="px-6 py-3 text-slate-600">FCC, IC, CSA (pending)</td>
+                  </tr>
+                  <tr>
+                    <td class="px-6 py-3 font-semibold text-navy-900">Warranty</td>
+                    <td class="px-6 py-3 text-slate-600">2-year hardware</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Right: What's In The Box -->
+          <div>
+            <h3 class="text-xl font-bold text-navy-900 mb-6">What's In The Box</h3>
+            <div class="bg-slate-50 rounded-xl border border-slate-200 p-8">
+              <ul class="space-y-4">
+                <li class="flex items-start gap-3">
+                  <svg class="w-6 h-6 text-cyan-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span class="text-slate-700"><strong>Smart Monitor Hub</strong> (ESP32-S3 controller)</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <svg class="w-6 h-6 text-cyan-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span class="text-slate-700"><strong>Ultrasonic sensor</strong> + 2m cable</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <svg class="w-6 h-6 text-cyan-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span class="text-slate-700"><strong>Capacitive flood pad</strong> + 3m cable</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <svg class="w-6 h-6 text-cyan-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span class="text-slate-700"><strong>CT clamp</strong> + 1.5m cable</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <svg class="w-6 h-6 text-cyan-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span class="text-slate-700"><strong>Mounting bracket</strong> + screws</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <svg class="w-6 h-6 text-cyan-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span class="text-slate-700"><strong>USB-C power adapter</strong> (5V/2A)</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <svg class="w-6 h-6 text-cyan-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span class="text-slate-700"><strong>Quick start guide</strong></span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <svg class="w-6 h-6 text-cyan-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span class="text-slate-700"><strong>1 month free</strong> cloud monitoring</span>
+                </li>
+              </ul>
+
+              <div class="mt-8 p-4 bg-cyan-50 border border-cyan-200 rounded-lg">
+                <p class="text-sm text-cyan-900 font-semibold mb-1">Installation Support</p>
+                <p class="text-sm text-cyan-800">
+                  Free phone/video support included. Most customers complete setup in under 30 minutes.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="section-padding bg-navy-900">
+    <div class="container mx-auto px-4">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">
+          Ready to Protect Your Basement?
+        </h2>
+        <p class="text-xl text-slate-300 mb-8">
+          Join the waitlist to get early access to Smart Monitor when we launch in Summer 2026.
+        </p>
+
+        <form class="max-w-md mx-auto mb-8">
+          <div class="flex gap-3">
+            <input
+              type="email"
+              placeholder="Enter your email"
+              class="flex-1 px-4 py-3 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-cyan-500"
+              required
+            />
+            <button
+              type="submit"
+              class="px-6 py-3 bg-cyan-500 text-white font-semibold rounded-lg hover:bg-cyan-600 transition-colors whitespace-nowrap"
+            >
+              Join Waitlist
+            </button>
+          </div>
+        </form>
+
+        <a
+          href="/smart-monitor"
+          class="inline-flex items-center gap-2 text-cyan-400 hover:text-cyan-300 transition-colors font-medium"
+        >
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+          </svg>
+          Back to Smart Monitor Overview
+        </a>
+      </div>
+    </div>
+  </section>
+</PageLayout>

@@ -1,0 +1,565 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+---
+
+<PageLayout
+  title="Smart Monitor Integrations & Ecosystem | DrySpace"
+  description="Connect your Smart Monitor to Home Assistant, Apple HomeKit, smart water shutoff valves, and more. Open API for custom integrations. Works with your existing smart home."
+>
+  <!-- Hero -->
+  <section class="bg-navy-900 text-white py-20 md:py-28">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="max-w-3xl">
+        <div class="inline-block bg-cyan-500/10 text-cyan-400 px-4 py-2 rounded-full text-sm font-semibold mb-6">
+          EXPANDING THROUGH 2027
+        </div>
+        <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-6">
+          Integrations & Ecosystem
+        </h1>
+        <p class="text-xl text-slate-300 mb-8">
+          Your Smart Monitor plays nice with everything. Connect to your smart home, automate responses, and build custom workflows with our open API.
+        </p>
+        <a href="/smart-monitor" class="inline-flex items-center text-cyan-400 hover:text-cyan-300 font-semibold group">
+          <svg class="w-5 h-5 mr-2 group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
+          </svg>
+          Back to Smart Monitor
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Smart Home Integrations -->
+  <section class="bg-white py-20 md:py-28">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-navy-900 mb-4">
+          Smart Home Integrations
+        </h2>
+        <p class="text-xl text-slate-600 max-w-3xl mx-auto">
+          Works with the platforms you already use. Native integrations, not hacky workarounds.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Home Assistant -->
+        <div class="bg-slate-50 rounded-2xl p-8 border border-slate-200">
+          <div class="flex items-start justify-between mb-4">
+            <div class="w-12 h-12 bg-cyan-500 rounded-lg flex items-center justify-center">
+              <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 3L2 9v12h20V9l-10-6zm0 2.18L19 9v10h-3v-6h-8v6H5V9l7-3.82zM10 19v-4h4v4h-4z"/>
+              </svg>
+            </div>
+            <span class="text-xs font-semibold text-cyan-600 bg-cyan-50 px-3 py-1 rounded-full">DAY 1</span>
+          </div>
+          <h3 class="text-xl font-bold text-navy-900 mb-3">Home Assistant</h3>
+          <p class="text-slate-600 mb-4">
+            Full MQTT integration. Auto-discovery. Custom dashboards and automations.
+          </p>
+          <div class="bg-navy-900 text-cyan-400 text-sm font-mono p-3 rounded-lg">
+            If sump_level &gt; 20cm, turn on backup_pump relay
+          </div>
+        </div>
+
+        <!-- Apple HomeKit -->
+        <div class="bg-slate-50 rounded-2xl p-8 border border-slate-200">
+          <div class="flex items-start justify-between mb-4">
+            <div class="w-12 h-12 bg-slate-800 rounded-lg flex items-center justify-center">
+              <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M18.71,19.5C17.88,20.74 17,21.95 15.66,21.97C14.32,22 13.89,21.18 12.37,21.18C10.84,21.18 10.37,21.95 9.1,22C7.79,22.05 6.8,20.68 5.96,19.47C4.25,17 2.94,12.45 4.7,9.39C5.57,7.87 7.13,6.91 8.82,6.88C10.1,6.86 11.32,7.75 12.11,7.75C12.89,7.75 14.37,6.68 15.92,6.84C16.57,6.87 18.39,7.1 19.56,8.82C19.47,8.88 17.39,10.1 17.41,12.63C17.44,15.65 20.06,16.66 20.09,16.67C20.06,16.74 19.67,18.11 18.71,19.5M13,3.5C13.73,2.67 14.94,2.04 15.94,2C16.07,3.17 15.6,4.35 14.9,5.19C14.21,6.04 13.07,6.7 11.95,6.61C11.8,5.46 12.36,4.26 13,3.5Z"/>
+              </svg>
+            </div>
+            <span class="text-xs font-semibold text-emerald-600 bg-emerald-50 px-3 py-1 rounded-full">COMING Q3</span>
+          </div>
+          <h3 class="text-xl font-bold text-navy-900 mb-3">Apple HomeKit</h3>
+          <p class="text-slate-600 mb-4">
+            View sensor data in Apple Home app. Siri: "Hey Siri, what's my basement humidity?" HomeKit alerts on iPhone, iPad, Mac, Apple Watch.
+          </p>
+        </div>
+
+        <!-- Google Home -->
+        <div class="bg-slate-50 rounded-2xl p-8 border border-slate-200">
+          <div class="flex items-start justify-between mb-4">
+            <div class="w-12 h-12 bg-blue-500 rounded-lg flex items-center justify-center">
+              <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4M12,6A6,6 0 0,1 18,12A6,6 0 0,1 12,18A6,6 0 0,1 6,12A6,6 0 0,1 12,6Z"/>
+              </svg>
+            </div>
+            <span class="text-xs font-semibold text-emerald-600 bg-emerald-50 px-3 py-1 rounded-full">COMING Q3</span>
+          </div>
+          <h3 class="text-xl font-bold text-navy-900 mb-3">Google Home</h3>
+          <p class="text-slate-600 mb-4">
+            "Hey Google, is my basement dry?" View readings on Nest Hub. Routine triggers based on sensor data.
+          </p>
+        </div>
+
+        <!-- Amazon Alexa -->
+        <div class="bg-slate-50 rounded-2xl p-8 border border-slate-200">
+          <div class="flex items-start justify-between mb-4">
+            <div class="w-12 h-12 bg-cyan-600 rounded-lg flex items-center justify-center">
+              <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,4A8,8 0 0,1 20,12C20,14.4 19,16.5 17.4,18C15.6,16.7 13.5,16 12,16C10.5,16 8.4,16.7 6.6,18C5,16.5 4,14.4 4,12A8,8 0 0,1 12,4M14,5.89C13.62,5.9 13.26,6.15 13.1,6.54L11.81,9.77L8.45,10.25C8.05,10.31 7.72,10.59 7.59,10.97C7.45,11.36 7.54,11.78 7.82,12.06L10.44,14.62L9.82,17.97C9.75,18.37 9.9,18.77 10.22,19.03C10.54,19.28 10.97,19.33 11.34,19.15L14.4,17.66L17.46,19.15C17.83,19.33 18.26,19.28 18.58,19.03C18.9,18.77 19.05,18.37 18.98,17.97L18.36,14.62L20.98,12.06C21.26,11.78 21.35,11.36 21.21,10.97C21.08,10.59 20.75,10.31 20.35,10.25L16.99,9.77L15.7,6.54C15.54,6.15 15.18,5.9 14.8,5.89C14.53,5.89 14.27,5.89 14,5.89Z"/>
+              </svg>
+            </div>
+            <span class="text-xs font-semibold text-emerald-600 bg-emerald-50 px-3 py-1 rounded-full">COMING Q4</span>
+          </div>
+          <h3 class="text-xl font-bold text-navy-900 mb-3">Amazon Alexa</h3>
+          <p class="text-slate-600 mb-4">
+            "Alexa, check my sump pump." Flash briefing skill for daily basement report. Alexa Guard integration for sound anomalies.
+          </p>
+        </div>
+
+        <!-- Samsung SmartThings -->
+        <div class="bg-slate-50 rounded-2xl p-8 border border-slate-200">
+          <div class="flex items-start justify-between mb-4">
+            <div class="w-12 h-12 bg-indigo-600 rounded-lg flex items-center justify-center">
+              <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4M12,6A6,6 0 0,1 18,12A6,6 0 0,1 12,18A6,6 0 0,1 6,12A6,6 0 0,1 12,6M12,8A4,4 0 0,0 8,12A4,4 0 0,0 12,16A4,4 0 0,0 16,12A4,4 0 0,0 12,8Z"/>
+              </svg>
+            </div>
+            <span class="text-xs font-semibold text-emerald-600 bg-emerald-50 px-3 py-1 rounded-full">COMING Q4</span>
+          </div>
+          <h3 class="text-xl font-bold text-navy-900 mb-3">Samsung SmartThings</h3>
+          <p class="text-slate-600 mb-4">
+            Native integration. Combine with SmartThings water leak sensors. Automate connected devices based on readings.
+          </p>
+        </div>
+
+        <!-- IFTTT -->
+        <div class="bg-slate-50 rounded-2xl p-8 border border-slate-200">
+          <div class="flex items-start justify-between mb-4">
+            <div class="w-12 h-12 bg-black rounded-lg flex items-center justify-center">
+              <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4M11,7H13V11H17V13H13V17H11V13H7V11H11V7Z"/>
+              </svg>
+            </div>
+            <span class="text-xs font-semibold text-cyan-600 bg-cyan-50 px-3 py-1 rounded-full">DAY 1</span>
+          </div>
+          <h3 class="text-xl font-bold text-navy-900 mb-3">IFTTT</h3>
+          <p class="text-slate-600 mb-4">
+            500+ applet possibilities. "If flood detected → call my phone + turn on smart light red + log to Google Sheet."
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Smart Water Valves -->
+  <section class="bg-slate-50 py-20 md:py-28">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-navy-900 mb-4">
+          Smart Water Valves
+        </h2>
+        <p class="text-xl text-slate-600 max-w-3xl mx-auto">
+          Automatic water shutoff when flood is detected. Pair with any of these compatible valves.
+        </p>
+      </div>
+
+      <!-- Flow Diagram -->
+      <div class="bg-white rounded-2xl p-8 md:p-12 mb-12 shadow-lg">
+        <div class="flex flex-col md:flex-row items-center justify-between gap-8">
+          <div class="flex-1 text-center">
+            <div class="w-16 h-16 bg-red-500 rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
+              </svg>
+            </div>
+            <h3 class="font-bold text-navy-900 mb-2">1. Flood Detected</h3>
+            <p class="text-sm text-slate-600">Smart Monitor detects water on sensor pad</p>
+          </div>
+
+          <svg class="w-8 h-8 text-cyan-500 rotate-90 md:rotate-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+          </svg>
+
+          <div class="flex-1 text-center">
+            <div class="w-16 h-16 bg-cyan-500 rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+              </svg>
+            </div>
+            <h3 class="font-bold text-navy-900 mb-2">2. Valve Shuts Off</h3>
+            <p class="text-sm text-slate-600">Water main closed in &lt;10 seconds</p>
+          </div>
+
+          <svg class="w-8 h-8 text-cyan-500 rotate-90 md:rotate-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+          </svg>
+
+          <div class="flex-1 text-center">
+            <div class="w-16 h-16 bg-emerald-500 rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/>
+              </svg>
+            </div>
+            <h3 class="font-bold text-navy-900 mb-2">3. You're Notified</h3>
+            <p class="text-sm text-slate-600">SMS alert + push notification sent</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Compatible Valves -->
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="bg-white rounded-xl p-6 border border-slate-200">
+          <h3 class="font-bold text-navy-900 mb-2">Flo by Moen Smart Water Shutoff</h3>
+          <p class="text-slate-600 text-sm mb-3">WiFi, auto-shutoff, leak detection</p>
+          <span class="text-xs font-semibold text-cyan-600 bg-cyan-50 px-3 py-1 rounded-full">COMPATIBLE</span>
+        </div>
+
+        <div class="bg-white rounded-xl p-6 border border-slate-200">
+          <h3 class="font-bold text-navy-900 mb-2">LeakSmart Valve</h3>
+          <p class="text-slate-600 text-sm mb-3">Zigbee, 3-second shutoff</p>
+          <span class="text-xs font-semibold text-cyan-600 bg-cyan-50 px-3 py-1 rounded-full">COMPATIBLE</span>
+        </div>
+
+        <div class="bg-white rounded-xl p-6 border border-slate-200">
+          <h3 class="font-bold text-navy-900 mb-2">Dome Water Shut-Off</h3>
+          <p class="text-slate-600 text-sm mb-3">Z-Wave, fits any ball valve</p>
+          <span class="text-xs font-semibold text-cyan-600 bg-cyan-50 px-3 py-1 rounded-full">COMPATIBLE</span>
+        </div>
+
+        <div class="bg-white rounded-xl p-6 border border-slate-200">
+          <h3 class="font-bold text-navy-900 mb-2">Grohe Sense Guard</h3>
+          <p class="text-slate-600 text-sm mb-3">WiFi, built-in flow monitoring</p>
+          <span class="text-xs font-semibold text-cyan-600 bg-cyan-50 px-3 py-1 rounded-full">COMPATIBLE</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- API & Developer Access -->
+  <section class="bg-white py-20 md:py-28">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-navy-900 mb-4">
+          API & Developer Access
+        </h2>
+        <p class="text-xl text-slate-600 max-w-3xl mx-auto">
+          Build whatever you want. Full REST API, MQTT broker access, and webhook support.
+        </p>
+      </div>
+
+      <div class="grid lg:grid-cols-2 gap-12 items-start">
+        <div>
+          <h3 class="text-2xl font-bold text-navy-900 mb-6">What You Get</h3>
+          <ul class="space-y-4">
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-cyan-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+              <div>
+                <h4 class="font-semibold text-navy-900">REST API</h4>
+                <p class="text-slate-600 text-sm">Full CRUD operations on all sensor data, alerts, and device settings</p>
+              </div>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-cyan-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+              <div>
+                <h4 class="font-semibold text-navy-900">MQTT Broker Access</h4>
+                <p class="text-slate-600 text-sm">Real-time data stream via MQTT. Subscribe to topics, publish commands</p>
+              </div>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-cyan-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+              <div>
+                <h4 class="font-semibold text-navy-900">Webhook Support</h4>
+                <p class="text-slate-600 text-sm">POST to any URL on alert. Integrate with your own backend or automation platform</p>
+              </div>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-cyan-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+              <div>
+                <h4 class="font-semibold text-navy-900">SDKs & Examples</h4>
+                <p class="text-slate-600 text-sm">Official SDKs for Python, Node.js, and Go. Sample projects on GitHub</p>
+              </div>
+            </li>
+          </ul>
+
+          <div class="mt-8 p-6 bg-slate-50 rounded-xl border border-slate-200">
+            <h4 class="font-bold text-navy-900 mb-2">Rate Limits</h4>
+            <div class="space-y-2 text-sm">
+              <div class="flex justify-between">
+                <span class="text-slate-600">Standard Plan:</span>
+                <span class="font-semibold text-navy-900">100 req/min</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-slate-600">Enterprise Plan:</span>
+                <span class="font-semibold text-navy-900">1,000 req/min</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="text-2xl font-bold text-navy-900 mb-6">Example API Call</h3>
+          <div class="bg-navy-900 rounded-xl p-6 overflow-x-auto">
+            <pre class="text-sm text-slate-300"><code set:html={`<span class="text-cyan-400">GET</span> /api/v1/devices/{device_id}/readings
+<span class="text-cyan-400">Authorization:</span> Bearer {api_key}
+
+<span class="text-emerald-400">Response:</span>
+{
+  <span class="text-cyan-400">"sump_level_cm"</span>: <span class="text-yellow-400">12.3</span>,
+  <span class="text-cyan-400">"humidity_pct"</span>: <span class="text-yellow-400">54.2</span>,
+  <span class="text-cyan-400">"temperature_c"</span>: <span class="text-yellow-400">18.1</span>,
+  <span class="text-cyan-400">"pump_running"</span>: <span class="text-yellow-400">false</span>,
+  <span class="text-cyan-400">"pump_cycles_today"</span>: <span class="text-yellow-400">7</span>,
+  <span class="text-cyan-400">"last_updated"</span>: <span class="text-green-400">"2026-08-15T14:32:00Z"</span>
+}`} /></pre>
+          </div>
+
+          <div class="mt-6 space-y-4">
+            <a href="#" class="block bg-cyan-500 text-white text-center py-3 px-6 rounded-lg font-semibold hover:bg-cyan-600 transition-colors">
+              View API Documentation
+            </a>
+            <a href="#" class="block bg-slate-800 text-white text-center py-3 px-6 rounded-lg font-semibold hover:bg-slate-700 transition-colors">
+              Browse GitHub Examples
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DrySpace Service Integration -->
+  <section class="bg-slate-50 py-20 md:py-28">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-navy-900 mb-4">
+          DrySpace Service Integration
+        </h2>
+        <p class="text-xl text-slate-600 max-w-3xl mx-auto">
+          Your sensor data works directly with our dispatch and service teams. Faster diagnosis, smarter repairs.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="bg-white rounded-xl p-8">
+          <div class="w-12 h-12 bg-cyan-500 rounded-lg flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+            </svg>
+          </div>
+          <h3 class="font-bold text-navy-900 mb-2">One-Tap Emergency Dispatch</h3>
+          <p class="text-slate-600 text-sm">
+            Tap "Call DrySpace" in any alert. Sensor data auto-shared with dispatch crew before they arrive.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-xl p-8">
+          <div class="w-12 h-12 bg-cyan-500 rounded-lg flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/>
+            </svg>
+          </div>
+          <h3 class="font-bold text-navy-900 mb-2">Service History Linked</h3>
+          <p class="text-slate-600 text-sm">
+            All repairs, inspections, and maintenance tied to your device. Complete property timeline.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-xl p-8">
+          <div class="w-12 h-12 bg-cyan-500 rounded-lg flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/>
+            </svg>
+          </div>
+          <h3 class="font-bold text-navy-900 mb-2">Predictive Reminders</h3>
+          <p class="text-slate-600 text-sm">
+            Pump replacement reminders based on actual usage cycles. Annual maintenance scheduled from sensor readings.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-xl p-8">
+          <div class="w-12 h-12 bg-cyan-500 rounded-lg flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+          </div>
+          <h3 class="font-bold text-navy-900 mb-2">Priority Scheduling</h3>
+          <p class="text-slate-600 text-sm">
+            Smart Monitor customers get priority scheduling and 15% off all service calls.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-xl p-8">
+          <div class="w-12 h-12 bg-cyan-500 rounded-lg flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+            </svg>
+          </div>
+          <h3 class="font-bold text-navy-900 mb-2">Usage Analytics</h3>
+          <p class="text-slate-600 text-sm">
+            We analyze your sump pump cycles, humidity patterns, and temperature trends to spot problems early.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-xl p-8">
+          <div class="w-12 h-12 bg-cyan-500 rounded-lg flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+            </svg>
+          </div>
+          <h3 class="font-bold text-navy-900 mb-2">Warranty Tracking</h3>
+          <p class="text-slate-600 text-sm">
+            Device tracks warranty periods for pumps and systems. Get alerts 30 days before coverage expires.
+          </p>
+        </div>
+      </div>
+
+      <div class="mt-12 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-2xl p-8 md:p-12 text-white text-center">
+        <h3 class="text-2xl font-bold mb-4">Smart Monitor + DrySpace Service = Complete Protection</h3>
+        <p class="text-cyan-50 text-lg mb-6 max-w-2xl mx-auto">
+          Get both the best monitoring hardware and the best service team in the GTA. From installation to emergency response to annual maintenance.
+        </p>
+        <a href="/contact" class="inline-block bg-white text-cyan-600 px-8 py-3 rounded-lg font-bold hover:bg-slate-50 transition-colors">
+          Get Started
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Build Your Own -->
+  <section class="bg-white py-20 md:py-28">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-navy-900 mb-4">
+          Build Your Own
+        </h2>
+        <p class="text-xl text-slate-600 max-w-3xl mx-auto">
+          We believe in open hardware. Extend our sensors, build your own nodes, or fork the firmware.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div>
+          <ul class="space-y-4">
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-cyan-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+              <div>
+                <h4 class="font-semibold text-navy-900">Open-Source Firmware</h4>
+                <p class="text-slate-600 text-sm">Full source code on GitHub. ESP32 Arduino/PlatformIO compatible.</p>
+              </div>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-cyan-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+              <div>
+                <h4 class="font-semibold text-navy-900">MQTT Protocol Docs</h4>
+                <p class="text-slate-600 text-sm">Complete protocol documentation. Build your own sensor nodes that work with our cloud.</p>
+              </div>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-cyan-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+              <div>
+                <h4 class="font-semibold text-navy-900">Community Forum</h4>
+                <p class="text-slate-600 text-sm">Join other DIY builders. Share schematics, ask questions, collaborate on features.</p>
+              </div>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-cyan-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+              <div>
+                <h4 class="font-semibold text-navy-900">Hardware Schematics</h4>
+                <p class="text-slate-600 text-sm">PCB layouts, BOM, 3D printable enclosures. Build it yourself or customize our design.</p>
+              </div>
+            </li>
+          </ul>
+
+          <div class="mt-8 flex flex-wrap gap-4">
+            <a href="#" class="inline-flex items-center gap-2 bg-slate-800 text-white px-6 py-3 rounded-lg font-semibold hover:bg-slate-700 transition-colors">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+              </svg>
+              View on GitHub
+            </a>
+            <a href="#" class="inline-flex items-center gap-2 bg-cyan-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-cyan-600 transition-colors">
+              Join Community Forum
+            </a>
+          </div>
+        </div>
+
+        <div class="bg-navy-900 rounded-2xl p-8">
+          <h3 class="text-white font-bold text-xl mb-4">Example: Custom Sensor Node</h3>
+          <div class="bg-slate-800 rounded-lg p-4 overflow-x-auto">
+            <pre class="text-sm text-slate-300"><code set:html={`<span class="text-purple-400">#include</span> <span class="text-green-400">&lt;WiFi.h&gt;</span>
+<span class="text-purple-400">#include</span> <span class="text-green-400">&lt;PubSubClient.h&gt;</span>
+
+<span class="text-cyan-400">WiFiClient</span> espClient;
+<span class="text-cyan-400">PubSubClient</span> client(espClient);
+
+<span class="text-purple-400">void</span> <span class="text-yellow-400">setup</span>() {
+  <span class="text-slate-500">// Connect to DrySpace MQTT</span>
+  client.<span class="text-yellow-400">setServer</span>(
+    <span class="text-green-400">"mqtt.dryspace.ca"</span>,
+    <span class="text-orange-400">1883</span>
+  );
+}
+
+<span class="text-purple-400">void</span> <span class="text-yellow-400">loop</span>() {
+  <span class="text-slate-500">// Publish sensor reading</span>
+  client.<span class="text-yellow-400">publish</span>(
+    <span class="text-green-400">"device/123/humidity"</span>,
+    String(dht.<span class="text-yellow-400">readHumidity</span>())
+  );
+}`} /></pre>
+          </div>
+          <p class="text-slate-300 text-sm mt-4">
+            Build your own DHT22 humidity node that sends data directly to your DrySpace dashboard. Full tutorial in docs.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-navy-900 text-white py-20 md:py-28">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-6">
+        Want Early API Access?
+      </h2>
+      <p class="text-xl text-slate-300 mb-8">
+        Join our developer waitlist. We'll notify you when API access opens and send documentation.
+      </p>
+
+      <form class="max-w-md mx-auto mb-8">
+        <div class="flex gap-3">
+          <input
+            type="email"
+            placeholder="your.email@example.com"
+            class="flex-1 px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-cyan-500"
+          />
+          <button
+            type="submit"
+            class="bg-cyan-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-cyan-600 transition-colors whitespace-nowrap"
+          >
+            Join Waitlist
+          </button>
+        </div>
+      </form>
+
+      <p class="text-slate-400 text-sm mb-8">
+        Integrations included with Cloud Monitoring subscription ($6.99/mo)
+      </p>
+
+      <a href="/smart-monitor" class="inline-flex items-center text-cyan-400 hover:text-cyan-300 font-semibold group">
+        <svg class="w-5 h-5 mr-2 group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
+        </svg>
+        Back to Smart Monitor
+      </a>
+    </div>
+  </section>
+</PageLayout>

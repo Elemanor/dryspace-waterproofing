@@ -1,0 +1,469 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import ContactForm from '../components/ContactForm.astro';
+---
+
+<PageLayout
+  title="DrySpace Smart Monitor | Basement Flood & Humidity Alerts | Coming Soon"
+  description="24/7 basement monitoring system by DrySpace. Real-time sump pump level, flood detection, humidity tracking, and radon monitoring. Get alerts before damage happens. Join the waitlist."
+>
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "DrySpace Smart Monitor",
+    "description": "24/7 basement monitoring system with sump pump level, flood detection, humidity tracking, and radon monitoring. WiFi-connected with instant mobile alerts.",
+    "brand": { "@type": "Brand", "name": "DrySpace Waterproofing" },
+    "offers": {
+      "@type": "Offer",
+      "availability": "https://schema.org/PreOrder",
+      "price": "149.00",
+      "priceCurrency": "CAD",
+      "priceValidUntil": "2026-12-31"
+    },
+    "image": "https://dryspacewaterproofing.ca/images/dryspace-og-image.webp"
+  })} />
+
+  <!-- ═══════════════════════ HERO ═══════════════════════ -->
+  <section class="relative bg-navy-900 overflow-hidden">
+    <!-- Animated grid background -->
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute inset-0" style="background-image: radial-gradient(circle at 1px 1px, rgba(34,211,238,0.4) 1px, transparent 0); background-size: 40px 40px;"></div>
+    </div>
+    <!-- Glow -->
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-cyan-500/10 rounded-full blur-3xl"></div>
+
+    <div class="relative container mx-auto px-4 py-24 md:py-32">
+      <div class="max-w-4xl mx-auto text-center">
+        <!-- Coming Soon Badge -->
+        <div class="inline-flex items-center gap-2 rounded-full border border-cyan-500/30 bg-cyan-500/10 px-4 py-1.5 mb-8">
+          <span class="relative flex h-2.5 w-2.5">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-cyan-500"></span>
+          </span>
+          <span class="text-sm font-semibold text-cyan-400 tracking-wide">COMING SOON — SUMMER 2026</span>
+        </div>
+
+        <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
+          DrySpace<br>
+          <span class="bg-gradient-to-r from-cyan-400 to-cyan-300 bg-clip-text text-transparent">Smart Monitor</span>
+        </h1>
+
+        <p class="text-xl md:text-2xl text-slate-300 mb-10 max-w-2xl mx-auto leading-relaxed">
+          Know before the water does. 24/7 basement monitoring with instant alerts
+          for flooding, humidity spikes, sump pump failure, and radon.
+        </p>
+
+        <!-- Waitlist Form -->
+        <div class="max-w-md mx-auto mb-8">
+          <form id="waitlistForm" class="flex gap-2">
+            <input
+              type="email"
+              name="email"
+              placeholder="Enter your email"
+              required
+              class="flex-1 rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-white placeholder:text-slate-500 focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20 focus:outline-none transition-all"
+            />
+            <button
+              type="submit"
+              class="rounded-lg bg-cyan-500 px-6 py-3 font-semibold text-navy-900 hover:bg-cyan-400 transition-colors whitespace-nowrap"
+            >
+              Join Waitlist
+            </button>
+          </form>
+          <p class="text-xs text-slate-500 mt-3">Be first to know when it launches. No spam, ever.</p>
+        </div>
+
+        <!-- Price Preview -->
+        <div class="inline-flex items-center gap-3 rounded-xl border border-white/10 bg-white/5 px-6 py-3">
+          <span class="text-slate-400 text-sm">Starting at</span>
+          <span class="text-2xl font-bold text-white">$149</span>
+          <span class="text-slate-400 text-sm">+ $9.99/mo monitoring</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════ WHAT IT MONITORS ═══════════════════════ -->
+  <section class="section-padding bg-white">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <p class="text-sm font-semibold uppercase tracking-[0.15em] text-cyan-500 mb-3">4 Sensors. 1 Device. Total Protection.</p>
+        <h2 class="text-3xl md:text-4xl font-bold text-slate-900">What It Monitors</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+        <!-- Sump Pump Level -->
+        <div class="group text-center">
+          <div class="w-20 h-20 rounded-2xl bg-cyan-50 flex items-center justify-center mx-auto mb-5 group-hover:bg-cyan-500 transition-colors">
+            <svg class="w-10 h-10 text-cyan-600 group-hover:text-white transition-colors" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3 7.5L7.5 3m0 0L12 7.5M7.5 3v13.5m13.5-13.5L16.5 7.5m0 0L12 3m4.5 4.5V21" />
+            </svg>
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2">Sump Pump Level</h3>
+          <p class="text-sm text-slate-600 leading-relaxed">
+            Ultrasonic sensor tracks water level in real time. Alerts if water rises too fast or pump fails to activate.
+          </p>
+          <div class="mt-4 inline-flex items-center gap-1.5 text-xs font-medium text-cyan-600 bg-cyan-50 rounded-full px-3 py-1">
+            <span class="w-1.5 h-1.5 rounded-full bg-cyan-500"></span>
+            Updates every 30 seconds
+          </div>
+        </div>
+
+        <!-- Flood Detection -->
+        <div class="group text-center">
+          <div class="w-20 h-20 rounded-2xl bg-red-50 flex items-center justify-center mx-auto mb-5 group-hover:bg-red-500 transition-colors">
+            <svg class="w-10 h-10 text-red-600 group-hover:text-white transition-colors" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" />
+            </svg>
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2">Flood Detection</h3>
+          <p class="text-sm text-slate-600 leading-relaxed">
+            Capacitive water sensor at floor level. The moment water touches the sensor pad, you get an instant alert.
+          </p>
+          <div class="mt-4 inline-flex items-center gap-1.5 text-xs font-medium text-red-600 bg-red-50 rounded-full px-3 py-1">
+            <span class="w-1.5 h-1.5 rounded-full bg-red-500"></span>
+            Instant alert — under 5 seconds
+          </div>
+        </div>
+
+        <!-- Humidity & Temperature -->
+        <div class="group text-center">
+          <div class="w-20 h-20 rounded-2xl bg-amber-50 flex items-center justify-center mx-auto mb-5 group-hover:bg-amber-500 transition-colors">
+            <svg class="w-10 h-10 text-amber-600 group-hover:text-white transition-colors" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15.362 5.214A8.252 8.252 0 0112 21 8.25 8.25 0 016.038 7.048 8.287 8.287 0 009 9.6a8.983 8.983 0 013.361-6.867 8.21 8.21 0 003 2.48z" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 18a3.75 3.75 0 00.495-7.467 5.99 5.99 0 00-1.925 3.546 5.974 5.974 0 01-2.133-1A3.75 3.75 0 0012 18z" />
+            </svg>
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2">Humidity & Temp</h3>
+          <p class="text-sm text-slate-600 leading-relaxed">
+            BME280 sensor tracks humidity, temperature, and barometric pressure. Alerts above 60% RH (mold risk) or below 5°C (freeze risk).
+          </p>
+          <div class="mt-4 inline-flex items-center gap-1.5 text-xs font-medium text-amber-600 bg-amber-50 rounded-full px-3 py-1">
+            <span class="w-1.5 h-1.5 rounded-full bg-amber-500"></span>
+            Mold prevention zone
+          </div>
+        </div>
+
+        <!-- Radon -->
+        <div class="group text-center">
+          <div class="w-20 h-20 rounded-2xl bg-purple-50 flex items-center justify-center mx-auto mb-5 group-hover:bg-purple-500 transition-colors">
+            <svg class="w-10 h-10 text-purple-600 group-hover:text-white transition-colors" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15a9.065 9.065 0 00-6.23.693L5 14.5m14.8.8l1.402 1.402c1.232 1.232.65 3.318-1.067 3.611l-.628.105a11.96 11.96 0 01-3.952 0l-.628-.105c-1.717-.293-2.3-2.379-1.067-3.61L15 15.3" />
+            </svg>
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2">Radon Levels</h3>
+          <p class="text-sm text-slate-600 leading-relaxed">
+            Optional radon add-on via BLE sensor integration. Tracks Bq/m³ and alerts above Health Canada's 200 Bq/m³ guideline.
+          </p>
+          <div class="mt-4 inline-flex items-center gap-1.5 text-xs font-medium text-purple-600 bg-purple-50 rounded-full px-3 py-1">
+            <span class="w-1.5 h-1.5 rounded-full bg-purple-500"></span>
+            Optional add-on
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════ HOW IT WORKS ═══════════════════════ -->
+  <section class="section-padding bg-slate-50">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <p class="text-sm font-semibold uppercase tracking-[0.15em] text-cyan-500 mb-3">Setup in 15 Minutes</p>
+        <h2 class="text-3xl md:text-4xl font-bold text-slate-900">How It Works</h2>
+      </div>
+
+      <div class="max-w-4xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="relative text-center">
+            <div class="w-12 h-12 rounded-full bg-cyan-500 text-white font-bold text-xl flex items-center justify-center mx-auto mb-4">1</div>
+            <h3 class="text-lg font-bold text-slate-900 mb-2">Install the Device</h3>
+            <p class="text-sm text-slate-600">Mount the sensor hub near your sump pit, plug in USB power, and place the water sensor pad on the floor. No tools needed.</p>
+          </div>
+
+          <div class="relative text-center">
+            <div class="w-12 h-12 rounded-full bg-cyan-500 text-white font-bold text-xl flex items-center justify-center mx-auto mb-4">2</div>
+            <h3 class="text-lg font-bold text-slate-900 mb-2">Connect to WiFi</h3>
+            <p class="text-sm text-slate-600">The device creates a hotspot for one-time setup. Enter your WiFi credentials and it starts reporting data to your dashboard.</p>
+          </div>
+
+          <div class="relative text-center">
+            <div class="w-12 h-12 rounded-full bg-cyan-500 text-white font-bold text-xl flex items-center justify-center mx-auto mb-4">3</div>
+            <h3 class="text-lg font-bold text-slate-900 mb-2">Get Alerts</h3>
+            <p class="text-sm text-slate-600">Receive SMS and push alerts when thresholds are crossed. View history, trends, and pump run cycles on your web dashboard.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════ SPECS ═══════════════════════ -->
+  <section class="section-padding bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-5xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-12 items-start">
+          <!-- Specs Table -->
+          <div>
+            <p class="text-sm font-semibold uppercase tracking-[0.15em] text-cyan-500 mb-3">Technical Specs</p>
+            <h2 class="text-3xl font-bold text-slate-900 mb-8">Built for Basements</h2>
+
+            <div class="space-y-4">
+              <div class="flex justify-between items-center py-3 border-b border-slate-100">
+                <span class="text-sm font-medium text-slate-600">Controller</span>
+                <span class="text-sm font-semibold text-slate-900">ESP32-S3 (WiFi + BLE)</span>
+              </div>
+              <div class="flex justify-between items-center py-3 border-b border-slate-100">
+                <span class="text-sm font-medium text-slate-600">Water Level Sensor</span>
+                <span class="text-sm font-semibold text-slate-900">Ultrasonic HC-SR04 (2cm-400cm)</span>
+              </div>
+              <div class="flex justify-between items-center py-3 border-b border-slate-100">
+                <span class="text-sm font-medium text-slate-600">Flood Sensor</span>
+                <span class="text-sm font-semibold text-slate-900">Capacitive (no corrosion)</span>
+              </div>
+              <div class="flex justify-between items-center py-3 border-b border-slate-100">
+                <span class="text-sm font-medium text-slate-600">Humidity/Temp</span>
+                <span class="text-sm font-semibold text-slate-900">BME280 (±1% RH, ±0.5°C)</span>
+              </div>
+              <div class="flex justify-between items-center py-3 border-b border-slate-100">
+                <span class="text-sm font-medium text-slate-600">Pump Detection</span>
+                <span class="text-sm font-semibold text-slate-900">CT Clamp SCT-013 (non-invasive)</span>
+              </div>
+              <div class="flex justify-between items-center py-3 border-b border-slate-100">
+                <span class="text-sm font-medium text-slate-600">Power</span>
+                <span class="text-sm font-semibold text-slate-900">5V USB (adapter included)</span>
+              </div>
+              <div class="flex justify-between items-center py-3 border-b border-slate-100">
+                <span class="text-sm font-medium text-slate-600">Connectivity</span>
+                <span class="text-sm font-semibold text-slate-900">WiFi 2.4 GHz + BLE 5.0</span>
+              </div>
+              <div class="flex justify-between items-center py-3 border-b border-slate-100">
+                <span class="text-sm font-medium text-slate-600">Enclosure</span>
+                <span class="text-sm font-semibold text-slate-900">IP65 waterproof housing</span>
+              </div>
+              <div class="flex justify-between items-center py-3 border-b border-slate-100">
+                <span class="text-sm font-medium text-slate-600">Radon Add-On</span>
+                <span class="text-sm font-semibold text-slate-900">RadonEye RD200 (BLE pairing)</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Benefits -->
+          <div class="bg-slate-50 rounded-2xl p-8">
+            <p class="text-sm font-semibold uppercase tracking-[0.15em] text-cyan-500 mb-3">Why You Need This</p>
+            <h3 class="text-2xl font-bold text-slate-900 mb-6">Prevention Pays</h3>
+
+            <div class="space-y-6">
+              <div class="flex gap-4">
+                <div class="flex-shrink-0 w-10 h-10 rounded-lg bg-red-100 flex items-center justify-center">
+                  <span class="text-red-600 font-bold text-lg">$</span>
+                </div>
+                <div>
+                  <p class="font-semibold text-slate-900">$43,000 average flood damage</p>
+                  <p class="text-sm text-slate-600">Insurance Institute of Canada data for finished basements. Most policies have $5,000+ deductibles.</p>
+                </div>
+              </div>
+
+              <div class="flex gap-4">
+                <div class="flex-shrink-0 w-10 h-10 rounded-lg bg-cyan-100 flex items-center justify-center">
+                  <span class="text-cyan-600 font-bold text-lg">!</span>
+                </div>
+                <div>
+                  <p class="font-semibold text-slate-900">60% of sump pumps fail silently</p>
+                  <p class="text-sm text-slate-600">Homeowners don't know their pump has failed until it's too late. Smart Monitor detects failure in real time.</p>
+                </div>
+              </div>
+
+              <div class="flex gap-4">
+                <div class="flex-shrink-0 w-10 h-10 rounded-lg bg-amber-100 flex items-center justify-center">
+                  <span class="text-amber-600 font-bold text-lg">%</span>
+                </div>
+                <div>
+                  <p class="font-semibold text-slate-900">Above 60% humidity = mold in 48 hours</p>
+                  <p class="text-sm text-slate-600">Continuous monitoring prevents the conditions that lead to mold growth before it starts.</p>
+                </div>
+              </div>
+
+              <div class="flex gap-4">
+                <div class="flex-shrink-0 w-10 h-10 rounded-lg bg-purple-100 flex items-center justify-center">
+                  <span class="text-purple-600 font-bold text-lg">R</span>
+                </div>
+                <div>
+                  <p class="font-semibold text-slate-900">Radon: #1 cause of lung cancer in non-smokers</p>
+                  <p class="text-sm text-slate-600">Health Canada recommends testing every home. Continuous monitoring catches seasonal spikes.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-8 p-4 bg-cyan-50 rounded-xl border border-cyan-100">
+              <p class="text-sm text-cyan-800 font-medium text-center">
+                Smart Monitor pays for itself the first time it catches a problem before it becomes a $10,000+ repair.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════ PRICING ═══════════════════════ -->
+  <section class="section-padding bg-navy-900">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <p class="text-sm font-semibold uppercase tracking-[0.15em] text-cyan-400 mb-3">Simple Pricing</p>
+        <h2 class="text-3xl md:text-4xl font-bold text-white">Choose Your Plan</h2>
+      </div>
+
+      <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
+        <!-- Base Kit -->
+        <div class="rounded-2xl border border-white/10 bg-white/5 p-8">
+          <h3 class="text-lg font-semibold text-white mb-2">Smart Monitor Kit</h3>
+          <p class="text-sm text-slate-400 mb-6">Everything you need for basement protection</p>
+          <div class="flex items-baseline gap-1 mb-6">
+            <span class="text-4xl font-bold text-white">$149</span>
+            <span class="text-slate-400">one-time</span>
+          </div>
+          <ul class="space-y-3 mb-8">
+            <li class="flex items-center gap-2 text-sm text-slate-300">
+              <svg class="w-5 h-5 text-cyan-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+              ESP32-S3 controller hub
+            </li>
+            <li class="flex items-center gap-2 text-sm text-slate-300">
+              <svg class="w-5 h-5 text-cyan-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+              Ultrasonic sump level sensor
+            </li>
+            <li class="flex items-center gap-2 text-sm text-slate-300">
+              <svg class="w-5 h-5 text-cyan-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+              Capacitive flood detection pad
+            </li>
+            <li class="flex items-center gap-2 text-sm text-slate-300">
+              <svg class="w-5 h-5 text-cyan-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+              BME280 humidity/temp/pressure
+            </li>
+            <li class="flex items-center gap-2 text-sm text-slate-300">
+              <svg class="w-5 h-5 text-cyan-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+              CT clamp pump monitor
+            </li>
+            <li class="flex items-center gap-2 text-sm text-slate-300">
+              <svg class="w-5 h-5 text-cyan-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+              IP65 waterproof enclosure
+            </li>
+            <li class="flex items-center gap-2 text-sm text-slate-300">
+              <svg class="w-5 h-5 text-cyan-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+              USB power supply
+            </li>
+          </ul>
+          <a href="#waitlist" class="block w-full text-center rounded-lg border-2 border-cyan-500 py-3 font-semibold text-cyan-400 hover:bg-cyan-500 hover:text-white transition-colors">
+            Join Waitlist
+          </a>
+        </div>
+
+        <!-- Monitoring Subscription -->
+        <div class="rounded-2xl border-2 border-cyan-500 bg-cyan-500/5 p-8 relative">
+          <div class="absolute -top-3 right-6 bg-cyan-500 text-navy-900 text-xs font-bold px-3 py-1 rounded-full">RECOMMENDED</div>
+          <h3 class="text-lg font-semibold text-white mb-2">Cloud Monitoring</h3>
+          <p class="text-sm text-slate-400 mb-6">Dashboard, alerts, and history</p>
+          <div class="flex items-baseline gap-1 mb-6">
+            <span class="text-4xl font-bold text-white">$9.99</span>
+            <span class="text-slate-400">/month</span>
+          </div>
+          <ul class="space-y-3 mb-8">
+            <li class="flex items-center gap-2 text-sm text-slate-300">
+              <svg class="w-5 h-5 text-cyan-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+              Web dashboard with live data
+            </li>
+            <li class="flex items-center gap-2 text-sm text-slate-300">
+              <svg class="w-5 h-5 text-cyan-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+              SMS + push alerts (unlimited)
+            </li>
+            <li class="flex items-center gap-2 text-sm text-slate-300">
+              <svg class="w-5 h-5 text-cyan-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+              12-month data history
+            </li>
+            <li class="flex items-center gap-2 text-sm text-slate-300">
+              <svg class="w-5 h-5 text-cyan-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+              Pump run analytics (cycles, runtime)
+            </li>
+            <li class="flex items-center gap-2 text-sm text-slate-300">
+              <svg class="w-5 h-5 text-cyan-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+              Power outage detection
+            </li>
+            <li class="flex items-center gap-2 text-sm text-slate-300">
+              <svg class="w-5 h-5 text-cyan-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+              Insurance documentation exports
+            </li>
+            <li class="flex items-center gap-2 text-sm text-slate-300">
+              <svg class="w-5 h-5 text-cyan-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+              Priority DrySpace emergency dispatch
+            </li>
+          </ul>
+          <a href="#waitlist" class="block w-full text-center rounded-lg bg-cyan-500 py-3 font-semibold text-navy-900 hover:bg-cyan-400 transition-colors">
+            Join Waitlist
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════ WAITLIST CTA ═══════════════════════ -->
+  <section id="waitlist" class="section-padding bg-slate-50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-2xl mx-auto text-center">
+        <div class="inline-flex items-center gap-2 rounded-full border border-cyan-500/30 bg-cyan-50 px-4 py-1.5 mb-6">
+          <span class="relative flex h-2.5 w-2.5">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-cyan-500"></span>
+          </span>
+          <span class="text-sm font-semibold text-cyan-700">Launching Summer 2026</span>
+        </div>
+
+        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Be the First to Know</h2>
+        <p class="text-lg text-slate-600 mb-8">
+          Join the waitlist and get early access pricing. Existing DrySpace customers get
+          <strong>$50 off</strong> the kit.
+        </p>
+
+        <form id="waitlistFormBottom" class="max-w-md mx-auto flex gap-2">
+          <input
+            type="email"
+            name="email"
+            placeholder="Enter your email"
+            required
+            class="flex-1 rounded-lg border-2 border-slate-200 px-4 py-3 text-slate-900 placeholder:text-slate-400 focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20 focus:outline-none transition-all"
+          />
+          <button
+            type="submit"
+            class="rounded-lg bg-cyan-500 px-6 py-3 font-semibold text-white hover:bg-cyan-600 transition-colors whitespace-nowrap"
+          >
+            Join Waitlist
+          </button>
+        </form>
+        <p class="text-xs text-slate-400 mt-3">No spam. Unsubscribe anytime.</p>
+      </div>
+    </div>
+  </section>
+
+  <ContactForm />
+
+  <script>
+    // Handle both waitlist forms
+    document.querySelectorAll('#waitlistForm, #waitlistFormBottom').forEach(form => {
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const email = form.querySelector('input[name="email"]').value;
+        const btn = form.querySelector('button[type="submit"]');
+        const originalText = btn.textContent;
+
+        btn.textContent = 'Added!';
+        btn.classList.add('bg-green-500');
+        btn.classList.remove('bg-cyan-500');
+        form.querySelector('input[name="email"]').value = '';
+
+        setTimeout(() => {
+          btn.textContent = originalText;
+          btn.classList.remove('bg-green-500');
+          btn.classList.add('bg-cyan-500');
+        }, 3000);
+      });
+    });
+  </script>
+</PageLayout>

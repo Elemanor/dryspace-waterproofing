@@ -56,6 +56,7 @@ const locations = [
 ]
 
 const resources = [
+  { title: "Smart Monitor — Coming Soon", href: "/smart-monitor" },
   { title: "Cost Calculator", href: "/tools/waterproofing-cost-calculator" },
   { title: "Second Unit Planner", href: "/second-unit" },
   { title: "Blog & Guides", href: "/blog" },

@@ -1,0 +1,135 @@
+---
+import type { CityHyperLocal } from '../../data/location-data';
+
+interface Props {
+  city: string;
+  data: CityHyperLocal['geological'];
+}
+
+const { city, data } = Astro.props;
+
+const drainageColors: Record<string, string> = {
+  'Excellent': 'text-green-700 bg-green-50 border-green-300',
+  'Good': 'text-green-600 bg-green-50 border-green-200',
+  'Moderate': 'text-amber-700 bg-amber-50 border-amber-300',
+  'Fair': 'text-amber-600 bg-amber-50 border-amber-200',
+  'Fair to good': 'text-amber-600 bg-amber-50 border-amber-200',
+  'Fair to poor': 'text-orange-600 bg-orange-50 border-orange-200',
+  'Poor': 'text-orange-700 bg-orange-50 border-orange-300',
+  'Poor to very poor': 'text-red-600 bg-red-50 border-red-200',
+  'Poor to fair': 'text-orange-600 bg-orange-50 border-orange-200',
+  'Very poor': 'text-red-700 bg-red-50 border-red-300',
+  'Variable': 'text-purple-700 bg-purple-50 border-purple-300',
+  'Variable — fractured rock channels water': 'text-purple-700 bg-purple-50 border-purple-300',
+  'Highly variable': 'text-purple-700 bg-purple-50 border-purple-300',
+  'Good (north), poor (south)': 'text-purple-700 bg-purple-50 border-purple-300',
+  'Poor to fair (variable)': 'text-orange-600 bg-orange-50 border-orange-200',
+};
+
+function getDrainageClass(drainage: string): string {
+  return drainageColors[drainage] || 'text-slate-700 bg-slate-50 border-slate-300';
+}
+
+const layerColors = [
+  'border-l-amber-700 bg-amber-50',    // Topsoil
+  'border-l-orange-600 bg-orange-50',   // Clay
+  'border-l-red-700 bg-red-50',         // Till
+  'border-l-slate-600 bg-slate-50',     // Deep
+];
+
+const primaryDrainage = data.soilLayers[1]?.drainage || 'Poor';
+---
+
+<section class="py-16 bg-white">
+  <div class="container mx-auto px-4">
+    <div class="max-w-6xl mx-auto">
+
+      <div class="text-center mb-12">
+        <h2 class="text-4xl font-bold text-slate-900 mb-4 uppercase">
+          What's Beneath Your {city} Home?
+        </h2>
+        <div class="max-w-3xl mx-auto bg-cyan-50 border-l-4 border-cyan-500 p-6 text-left speakable">
+          <p class="text-lg text-slate-700">
+            <strong>{city} sits on {data.soilLayers[1]?.material.toLowerCase() || 'clay deposits'} with {primaryDrainage.toLowerCase()} drainage.</strong> The water table rises to {data.waterTable.springHigh} during spring melt, creating hydrostatic pressure against basement foundations. Understanding your soil profile is essential for choosing the right waterproofing system.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid lg:grid-cols-2 gap-8 mb-12">
+
+        <!-- Soil Layer Cards -->
+        <div>
+          <h3 class="text-2xl font-bold text-slate-900 mb-6 uppercase">Soil Profile</h3>
+          <div class="space-y-3">
+            {data.soilLayers.map((layer, index) => (
+              <div class={`border-l-4 p-4 ${layerColors[index] || 'border-l-slate-500 bg-slate-50'}`}>
+                <div class="flex items-start justify-between gap-4">
+                  <div class="flex-grow">
+                    <div class="text-sm font-bold text-slate-500 uppercase mb-1">{layer.depth}</div>
+                    <div class="font-bold text-slate-900">{layer.material}</div>
+                  </div>
+                  <span class={`text-xs font-bold px-3 py-1 border ${getDrainageClass(layer.drainage)} whitespace-nowrap`}>
+                    {layer.drainage}
+                  </span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <!-- Water Table & Bedrock -->
+        <div>
+          <h3 class="text-2xl font-bold text-slate-900 mb-6 uppercase">Water Table & Bedrock</h3>
+
+          <!-- Water Table -->
+          <div class="bg-blue-50 border-2 border-blue-200 p-6 mb-4">
+            <h4 class="font-bold text-blue-900 mb-4 uppercase flex items-center gap-2">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
+              </svg>
+              Water Table Depth
+            </h4>
+            <div class="grid grid-cols-2 gap-4">
+              <div class="bg-white p-4 border border-blue-300">
+                <div class="text-sm text-blue-700 font-bold uppercase mb-1">Spring High</div>
+                <div class="text-lg font-bold text-red-700">{data.waterTable.springHigh}</div>
+                <div class="text-xs text-slate-500 mt-1">Peak flooding risk</div>
+              </div>
+              <div class="bg-white p-4 border border-blue-300">
+                <div class="text-sm text-blue-700 font-bold uppercase mb-1">Summer Low</div>
+                <div class="text-lg font-bold text-green-700">{data.waterTable.summerLow}</div>
+                <div class="text-xs text-slate-500 mt-1">Best for exterior work</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bedrock -->
+          <div class="bg-slate-100 border-2 border-slate-300 p-6">
+            <h4 class="font-bold text-slate-900 mb-3 uppercase flex items-center gap-2">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+              </svg>
+              Bedrock
+            </h4>
+            <div class="space-y-2">
+              <div class="flex justify-between border-b border-slate-200 pb-2">
+                <span class="text-sm font-medium text-slate-600">Type</span>
+                <span class="text-sm font-bold text-slate-900">{data.bedrock.type}</span>
+              </div>
+              <div class="flex justify-between border-b border-slate-200 pb-2">
+                <span class="text-sm font-medium text-slate-600">Depth</span>
+                <span class="text-sm font-bold text-slate-900">{data.bedrock.depth}</span>
+              </div>
+              <p class="text-sm text-slate-600 mt-3">{data.bedrock.relevance}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center text-sm text-slate-500">
+        <p>Data: Ontario Geological Survey, Conservation Authority reports, site investigation records</p>
+      </div>
+
+    </div>
+  </div>
+</section>

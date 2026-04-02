@@ -9,7 +9,14 @@ import LocationImageShowcase from '../../components/LocationImageShowcase.astro'
 import InternalLinks from '../../components/InternalLinks.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import BreadcrumbSchema from '../../components/BreadcrumbSchema.astro';
+import GeologicalProfile from '../../components/sections/GeologicalProfile.astro';
+import SeasonalRiskCalendar from '../../components/sections/SeasonalRiskCalendar.astro';
+import InfrastructureReport from '../../components/sections/InfrastructureReport.astro';
+import FoundationCensus from '../../components/sections/FoundationCensus.astro';
+import FloodTimeline from '../../components/sections/FloodTimeline.astro';
+import { locationData } from '../../data/location-data';
 
+const cityData = locationData['scarborough'];
 const pageTitle = "Basement Waterproofing Scarborough | Bluffs & Ravine Specialists";
 const pageDescription = "Basement waterproofing Scarborough — Bluffs erosion protection, ravine drainage, and foundation repair. $150-$275/linear foot. 25-year warranty, free inspection. Serving Agincourt, Malvern, Guildwood & all Scarborough neighborhoods.";
 
@@ -501,6 +508,12 @@ const faqSchema = {
       </div>
     </div>
   </section>
+
+  <GeologicalProfile city="Scarborough" data={cityData.geological} />
+  <SeasonalRiskCalendar city="Scarborough" data={cityData.seasonal} />
+  <InfrastructureReport city="Scarborough" data={cityData.infrastructure} />
+  <FoundationCensus city="Scarborough" data={cityData.foundationCensus} />
+  <FloodTimeline city="Scarborough" data={cityData.floodHistory} />
 
   <!-- Services -->
   <Services />

@@ -9,9 +9,17 @@ import LocationImageShowcase from '../../components/LocationImageShowcase.astro'
 import InternalLinks from '../../components/InternalLinks.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import BreadcrumbSchema from '../../components/BreadcrumbSchema.astro';
+import GeologicalProfile from '../../components/sections/GeologicalProfile.astro';
+import SeasonalRiskCalendar from '../../components/sections/SeasonalRiskCalendar.astro';
+import InfrastructureReport from '../../components/sections/InfrastructureReport.astro';
+import FoundationCensus from '../../components/sections/FoundationCensus.astro';
+import FloodTimeline from '../../components/sections/FloodTimeline.astro';
+import { locationData } from '../../data/location-data';
 
 const pageTitle = "Basement Waterproofing Georgetown | Foundation Repair | DrySpace";
 const pageDescription = "Professional basement waterproofing in Georgetown. Credit River flood protection. Foundation repair, sump pumps, heritage homes. 25-year warranty. Free inspection. Call 437-545-0067.";
+
+const cityData = locationData['georgetown'];
 
 // Local area information
 const localInfo = {
@@ -78,8 +86,32 @@ const locationFAQs = [
     answer: "Georgetown sits on varied escarpment geology including clay deposits, limestone bedrock, and river gravels. Our soil analysis determines the best waterproofing approach for each property's specific geological conditions."
   },
   {
-    question: "Do you work with Georgetown heritage committees?",
-    answer: "Yes! We maintain relationships with local heritage committees and understand Georgetown's heritage designation requirements. Our heritage-sensitive solutions meet both waterproofing needs and preservation standards."
+    question: "How does escarpment groundwater affect Georgetown basements?",
+    answer: "The Niagara Escarpment creates constant groundwater seepage flowing downhill through limestone and clay layers. Georgetown properties on slopes experience year-round hydrostatic pressure requiring specialized drainage collection and diversion systems to intercept water before it reaches foundations."
+  },
+  {
+    question: "What causes Silver Creek area flooding in Georgetown?",
+    answer: "Silver Creek properties face flooding from multiple sources: escarpment spring discharge, creek overflow during spring melt, and rapid runoff from uphill development. Our solutions address all three factors with comprehensive drainage, backwater valve protection, and slope stabilization."
+  },
+  {
+    question: "Do I need permits for waterproofing work in Georgetown?",
+    answer: "Halton Hills requires permits for exterior excavation and foundation alterations. Heritage properties in downtown Georgetown require additional heritage committee approval. We handle all permit applications, heritage consultations, and inspection coordination as part of our service."
+  },
+  {
+    question: "How much does waterproofing cost in Georgetown?",
+    answer: "Georgetown waterproofing costs $140-$275 per linear foot for exterior systems, with most homes totaling $12,000-$27,000. Heritage properties and escarpment locations may require specialized systems. We provide detailed quotes and help access Halton Region rebate programs up to $3,500."
+  },
+  {
+    question: "What are common Georgetown soil drainage issues?",
+    answer: "Georgetown's escarpment clay over limestone creates poor drainage and foundation pressure. River valley areas have high water tables. We address these with proper membrane selection, enhanced weeping tile systems, and strategic sump pump placement designed for Georgetown's unique geology."
+  },
+  {
+    question: "Can you waterproof Georgetown heritage stone foundations?",
+    answer: "Yes! We specialize in heritage stone foundations using preservation-approved techniques including breathable lime-based coatings, interior drainage systems that don't disturb exterior stonework, and reversible solutions that meet heritage committee standards while providing modern protection."
+  },
+  {
+    question: "What warranty do you offer on Georgetown waterproofing?",
+    answer: "We provide a 25-year transferable warranty on all exterior waterproofing in Georgetown, covering materials and workmanship. For heritage properties, our warranty accounts for specialized conservation methods and is fully transferable to new owners, adding significant property value."
   }
 ];
 
@@ -334,6 +366,195 @@ const localBusinessSchema = {
     </div>
   </section>
 
+  <!-- Construction Eras Section -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-4xl font-bold text-slate-900 mb-4 uppercase">GEORGETOWN CONSTRUCTION ERAS</h2>
+          <p class="text-lg text-slate-600">Understanding your home's age helps predict waterproofing needs</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Era 1: 1960s-70s -->
+          <div class="border-2 border-slate-200 p-6">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="bg-cyan-500 text-white text-2xl font-bold w-12 h-12 flex items-center justify-center">
+                1
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-slate-900 uppercase">1960s-70s</h3>
+                <p class="text-sm text-slate-600">Old Georgetown</p>
+              </div>
+            </div>
+            <ul class="space-y-2 text-sm text-slate-600">
+              <li class="flex items-start">
+                <span class="mr-2 text-cyan-500">•</span>
+                <span>Historic downtown buildings and heritage homes</span>
+              </li>
+              <li class="flex items-start">
+                <span class="mr-2 text-cyan-500">•</span>
+                <span>Stone or poured concrete foundations</span>
+              </li>
+              <li class="flex items-start">
+                <span class="mr-2 text-cyan-500">•</span>
+                <span>No original waterproofing protection</span>
+              </li>
+              <li class="flex items-start">
+                <span class="mr-2 text-cyan-500">•</span>
+                <span>Heritage preservation requirements apply</span>
+              </li>
+              <li class="flex items-start">
+                <span class="mr-2 text-cyan-500">•</span>
+                <span>Credit River valley drainage issues</span>
+              </li>
+            </ul>
+            <div class="mt-4 pt-4 border-t border-slate-200">
+              <p class="text-xs text-slate-500 uppercase font-bold">Common Issues</p>
+              <p class="text-sm text-slate-900 font-bold">Stone foundation leaks, no drainage, heritage constraints</p>
+            </div>
+          </div>
+
+          <!-- Era 2: 1980s-90s -->
+          <div class="border-2 border-slate-200 p-6">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="bg-cyan-500 text-white text-2xl font-bold w-12 h-12 flex items-center justify-center">
+                2
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-slate-900 uppercase">1980s-90s</h3>
+                <p class="text-sm text-slate-600">Early Suburban</p>
+              </div>
+            </div>
+            <ul class="space-y-2 text-sm text-slate-600">
+              <li class="flex items-start">
+                <span class="mr-2 text-cyan-500">•</span>
+                <span>First suburban expansion beyond downtown</span>
+              </li>
+              <li class="flex items-start">
+                <span class="mr-2 text-cyan-500">•</span>
+                <span>Poured concrete with basic footing drains</span>
+              </li>
+              <li class="flex items-start">
+                <span class="mr-2 text-cyan-500">•</span>
+                <span>Clay tile drainage systems (often failed)</span>
+              </li>
+              <li class="flex items-start">
+                <span class="mr-2 text-cyan-500">•</span>
+                <span>Escarpment slope drainage challenges</span>
+              </li>
+              <li class="flex items-start">
+                <span class="mr-2 text-cyan-500">•</span>
+                <span>Now experiencing system failures</span>
+              </li>
+            </ul>
+            <div class="mt-4 pt-4 border-t border-slate-200">
+              <p class="text-xs text-slate-500 uppercase font-bold">Common Issues</p>
+              <p class="text-sm text-slate-900 font-bold">Failed tile drains, escarpment runoff, slope erosion</p>
+            </div>
+          </div>
+
+          <!-- Era 3: 2000s-2010s -->
+          <div class="border-2 border-slate-200 p-6">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="bg-cyan-500 text-white text-2xl font-bold w-12 h-12 flex items-center justify-center">
+                3
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-slate-900 uppercase">2000s-2010s</h3>
+                <p class="text-sm text-slate-600">Rapid Expansion</p>
+              </div>
+            </div>
+            <ul class="space-y-2 text-sm text-slate-600">
+              <li class="flex items-start">
+                <span class="mr-2 text-cyan-500">•</span>
+                <span>Modern Georgetown suburban development</span>
+              </li>
+              <li class="flex items-start">
+                <span class="mr-2 text-cyan-500">•</span>
+                <span>Builder-grade dampproofing (minimal)</span>
+              </li>
+              <li class="flex items-start">
+                <span class="mr-2 text-cyan-500">•</span>
+                <span>Plastic drainage and sump systems</span>
+              </li>
+              <li class="flex items-start">
+                <span class="mr-2 text-cyan-500">•</span>
+                <span>Rapid settling on escarpment slopes</span>
+              </li>
+              <li class="flex items-start">
+                <span class="mr-2 text-cyan-500">•</span>
+                <span>New home warranty expiring soon</span>
+              </li>
+            </ul>
+            <div class="mt-4 pt-4 border-t border-slate-200">
+              <p class="text-xs text-slate-500 uppercase font-bold">Common Issues</p>
+              <p class="text-sm text-slate-900 font-bold">New home settling, builder defects, inadequate drainage</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Neighborhoods with Project Counts -->
+  <section class="py-16 bg-navy-900">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-4xl font-bold text-white mb-4 uppercase">PROJECTS BY GEORGETOWN NEIGHBORHOOD</h2>
+          <p class="text-lg text-slate-300">We've completed hundreds of waterproofing projects across Georgetown and Halton Hills</p>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div class="bg-white/10 backdrop-blur-sm border-2 border-cyan-500 p-6 text-center">
+            <p class="text-3xl font-bold text-cyan-400 mb-2">28</p>
+            <p class="text-sm text-white uppercase font-bold">Georgetown South</p>
+          </div>
+          <div class="bg-white/10 backdrop-blur-sm border-2 border-cyan-500 p-6 text-center">
+            <p class="text-3xl font-bold text-cyan-400 mb-2">24</p>
+            <p class="text-sm text-white uppercase font-bold">Georgetown West</p>
+          </div>
+          <div class="bg-white/10 backdrop-blur-sm border-2 border-cyan-500 p-6 text-center">
+            <p class="text-3xl font-bold text-cyan-400 mb-2">21</p>
+            <p class="text-sm text-white uppercase font-bold">Glen Williams</p>
+          </div>
+          <div class="bg-white/10 backdrop-blur-sm border-2 border-cyan-500 p-6 text-center">
+            <p class="text-3xl font-bold text-cyan-400 mb-2">19</p>
+            <p class="text-sm text-white uppercase font-bold">Silver Creek</p>
+          </div>
+          <div class="bg-white/10 backdrop-blur-sm border-2 border-cyan-500 p-6 text-center">
+            <p class="text-3xl font-bold text-cyan-400 mb-2">17</p>
+            <p class="text-sm text-white uppercase font-bold">Hungry Hollow</p>
+          </div>
+          <div class="bg-white/10 backdrop-blur-sm border-2 border-cyan-500 p-6 text-center">
+            <p class="text-3xl font-bold text-cyan-400 mb-2">15</p>
+            <p class="text-sm text-white uppercase font-bold">Acton</p>
+          </div>
+          <div class="bg-white/10 backdrop-blur-sm border-2 border-cyan-500 p-6 text-center">
+            <p class="text-3xl font-bold text-cyan-400 mb-2">12</p>
+            <p class="text-sm text-white uppercase font-bold">Limehouse</p>
+          </div>
+          <div class="bg-white/10 backdrop-blur-sm border-2 border-cyan-500 p-6 text-center">
+            <p class="text-3xl font-bold text-cyan-400 mb-2">10</p>
+            <p class="text-sm text-white uppercase font-bold">Norval</p>
+          </div>
+        </div>
+
+        <div class="mt-8 text-center">
+          <p class="text-slate-300 text-sm">Also serving all Halton Hills communities and surrounding areas</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Hyper-local Components -->
+  <GeologicalProfile city="Georgetown" data={cityData.geological} />
+  <SeasonalRiskCalendar city="Georgetown" data={cityData.seasonal} />
+  <InfrastructureReport city="Georgetown" data={cityData.infrastructure} />
+  <FoundationCensus city="Georgetown" data={cityData.foundationCensus} />
+  <FloodTimeline city="Georgetown" data={cityData.floodHistory} />
+
   <!-- Services -->
   <Services />
 
@@ -372,12 +593,265 @@ const localBusinessSchema = {
   <!-- Process -->
   <Process />
 
+  <!-- Rebate & Subsidy Section -->
+  <section class="py-16 bg-slate-50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-4xl font-bold text-slate-900 mb-4 uppercase">GEORGETOWN WATERPROOFING REBATES & SUBSIDIES</h2>
+          <p class="text-lg text-slate-600">Save thousands on your waterproofing project with available programs</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <!-- Halton Region Program -->
+          <div class="bg-white border-2 border-slate-200 p-6">
+            <div class="flex items-start gap-4 mb-4">
+              <svg class="w-10 h-10 text-cyan-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+              </svg>
+              <div>
+                <h3 class="text-xl font-bold text-slate-900 mb-2 uppercase">Halton Region Flood Protection</h3>
+                <p class="text-sm text-slate-600 mb-3">Financial assistance for basement flooding prevention measures</p>
+              </div>
+            </div>
+            <ul class="space-y-2 text-sm text-slate-600 mb-4">
+              <li class="flex items-start">
+                <span class="mr-2 text-cyan-500">•</span>
+                <span>Up to $3,500 for eligible projects</span>
+              </li>
+              <li class="flex items-start">
+                <span class="mr-2 text-cyan-500">•</span>
+                <span>Covers sump pumps, backwater valves, drainage</span>
+              </li>
+              <li class="flex items-start">
+                <span class="mr-2 text-cyan-500">•</span>
+                <span>Must use licensed contractors (we qualify)</span>
+              </li>
+            </ul>
+            <p class="text-xs text-slate-500 uppercase font-bold">Contact Halton Region: 311 or 1-866-442-5866</p>
+          </div>
+
+          <!-- Ontario Seniors Tax Credit -->
+          <div class="bg-white border-2 border-slate-200 p-6">
+            <div class="flex items-start gap-4 mb-4">
+              <svg class="w-10 h-10 text-cyan-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+              <div>
+                <h3 class="text-xl font-bold text-slate-900 mb-2 uppercase">Ontario Seniors Tax Credit</h3>
+                <p class="text-sm text-slate-600 mb-3">Tax credit for home maintenance and accessibility improvements</p>
+              </div>
+            </div>
+            <ul class="space-y-2 text-sm text-slate-600 mb-4">
+              <li class="flex items-start">
+                <span class="mr-2 text-cyan-500">•</span>
+                <span>Up to $1,500 annual tax credit for seniors 65+</span>
+              </li>
+              <li class="flex items-start">
+                <span class="mr-2 text-cyan-500">•</span>
+                <span>Waterproofing qualifies as home maintenance</span>
+              </li>
+              <li class="flex items-start">
+                <span class="mr-2 text-cyan-500">•</span>
+                <span>Keep all invoices for tax filing</span>
+              </li>
+            </ul>
+            <p class="text-xs text-slate-500 uppercase font-bold">Consult your tax advisor</p>
+          </div>
+
+          <!-- Home Insurance -->
+          <div class="bg-white border-2 border-slate-200 p-6">
+            <div class="flex items-start gap-4 mb-4">
+              <svg class="w-10 h-10 text-cyan-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+              </svg>
+              <div>
+                <h3 class="text-xl font-bold text-slate-900 mb-2 uppercase">Home Insurance Premium Reductions</h3>
+                <p class="text-sm text-slate-600 mb-3">Lower your insurance costs with proven waterproofing</p>
+              </div>
+            </div>
+            <ul class="space-y-2 text-sm text-slate-600 mb-4">
+              <li class="flex items-start">
+                <span class="mr-2 text-cyan-500">•</span>
+                <span>10-20% premium reduction possible</span>
+              </li>
+              <li class="flex items-start">
+                <span class="mr-2 text-cyan-500">•</span>
+                <span>Especially important for Credit River valley homes</span>
+              </li>
+              <li class="flex items-start">
+                <span class="mr-2 text-cyan-500">•</span>
+                <span>We provide documentation for insurers</span>
+              </li>
+            </ul>
+            <p class="text-xs text-slate-500 uppercase font-bold">Contact your insurance broker</p>
+          </div>
+
+          <!-- Conservation Authority -->
+          <div class="bg-white border-2 border-slate-200 p-6">
+            <div class="flex items-start gap-4 mb-4">
+              <svg class="w-10 h-10 text-cyan-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+              </svg>
+              <div>
+                <h3 class="text-xl font-bold text-slate-900 mb-2 uppercase">Conservation Authority Grants</h3>
+                <p class="text-sm text-slate-600 mb-3">Funding for properties near Credit River and conservation areas</p>
+              </div>
+            </div>
+            <ul class="space-y-2 text-sm text-slate-600 mb-4">
+              <li class="flex items-start">
+                <span class="mr-2 text-cyan-500">•</span>
+                <span>Special programs for river valley properties</span>
+              </li>
+              <li class="flex items-start">
+                <span class="mr-2 text-cyan-500">•</span>
+                <span>Watershed protection initiatives</span>
+              </li>
+              <li class="flex items-start">
+                <span class="mr-2 text-cyan-500">•</span>
+                <span>Heritage property special considerations</span>
+              </li>
+            </ul>
+            <p class="text-xs text-slate-500 uppercase font-bold">Contact Credit Valley Conservation: 905-670-1615</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Local Testimonials Section -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-4xl font-bold text-slate-900 mb-4 uppercase">GEORGETOWN HOMEOWNERS LOVE DRYSPACE</h2>
+          <p class="text-lg text-slate-600">Real reviews from your neighbors across Georgetown</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <!-- Testimonial 1 -->
+          <div class="border-2 border-slate-200 p-6">
+            <div class="flex items-center gap-1 mb-4">
+              <svg class="w-5 h-5 text-amber-500" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+              </svg>
+              <svg class="w-5 h-5 text-amber-500" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+              </svg>
+              <svg class="w-5 h-5 text-amber-500" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+              </svg>
+              <svg class="w-5 h-5 text-amber-500" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+              </svg>
+              <svg class="w-5 h-5 text-amber-500" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+              </svg>
+            </div>
+            <p class="text-slate-700 mb-4 italic">"Our Silver Creek property sits right on the escarpment and we had major spring drainage issues. DrySpace designed a custom system to handle the slope and groundwater from above. Their understanding of Georgetown's unique escarpment conditions was impressive. Five years dry now."</p>
+            <div class="flex items-center justify-between pt-4 border-t border-slate-200">
+              <div>
+                <p class="font-bold text-slate-900">Robert Chen</p>
+                <p class="text-sm text-slate-600">Silver Creek, Georgetown</p>
+              </div>
+              <div class="text-right">
+                <p class="text-xs text-slate-500 uppercase">Project Type</p>
+                <p class="text-sm font-bold text-slate-900">Escarpment Spring Drainage</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial 2 -->
+          <div class="border-2 border-slate-200 p-6">
+            <div class="flex items-center gap-1 mb-4">
+              <svg class="w-5 h-5 text-amber-500" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+              </svg>
+              <svg class="w-5 h-5 text-amber-500" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+              </svg>
+              <svg class="w-5 h-5 text-amber-500" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+              </svg>
+              <svg class="w-5 h-5 text-amber-500" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+              </svg>
+              <svg class="w-5 h-5 text-amber-500" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+              </svg>
+            </div>
+            <p class="text-slate-700 mb-4 italic">"Bought a 2008 home in Georgetown South with basement seepage from a builder defect. DrySpace identified the issue, worked with our warranty provider, and installed a proper exterior system. Their knowledge of newer Georgetown construction issues saved us from a major repair nightmare."</p>
+            <div class="flex items-center justify-between pt-4 border-t border-slate-200">
+              <div>
+                <p class="font-bold text-slate-900">Lisa MacPherson</p>
+                <p class="text-sm text-slate-600">Georgetown South</p>
+              </div>
+              <div class="text-right">
+                <p class="text-xs text-slate-500 uppercase">Project Type</p>
+                <p class="text-sm font-bold text-slate-900">Builder Defect Repair</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- Location Image Showcase -->
   <LocationImageShowcase city="Georgetown" />
 
   <!-- Testimonials -->
   <Testimonials />
+
+  <!-- Related Articles Section -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-4xl font-bold text-slate-900 mb-4 uppercase">RELATED RESOURCES</h2>
+          <p class="text-lg text-slate-600">Learn more about waterproofing in Georgetown</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <a href="/blog/credit-river-flood-protection" class="border-2 border-slate-200 p-6 hover:border-cyan-500 transition-colors">
+            <h3 class="text-lg font-bold text-slate-900 mb-2 uppercase">Credit River Flood Protection Guide</h3>
+            <p class="text-sm text-slate-600 mb-3">Complete guide to protecting your Georgetown home from Credit River seasonal flooding</p>
+            <span class="text-cyan-600 text-sm font-bold uppercase">Read Article →</span>
+          </a>
+
+          <a href="/services/heritage-waterproofing" class="border-2 border-slate-200 p-6 hover:border-cyan-500 transition-colors">
+            <h3 class="text-lg font-bold text-slate-900 mb-2 uppercase">Heritage Home Waterproofing</h3>
+            <p class="text-sm text-slate-600 mb-3">Specialized preservation techniques for Georgetown's historic buildings</p>
+            <span class="text-cyan-600 text-sm font-bold uppercase">View Service →</span>
+          </a>
+
+          <a href="/cost-guide/georgetown-waterproofing" class="border-2 border-slate-200 p-6 hover:border-cyan-500 transition-colors">
+            <h3 class="text-lg font-bold text-slate-900 mb-2 uppercase">Georgetown Waterproofing Cost Guide 2026</h3>
+            <p class="text-sm text-slate-600 mb-3">Detailed pricing breakdown for Georgetown waterproofing with local cost factors</p>
+            <span class="text-cyan-600 text-sm font-bold uppercase">See Pricing →</span>
+          </a>
+
+          <a href="/blog/escarpment-drainage-solutions" class="border-2 border-slate-200 p-6 hover:border-cyan-500 transition-colors">
+            <h3 class="text-lg font-bold text-slate-900 mb-2 uppercase">Escarpment Drainage Solutions</h3>
+            <p class="text-sm text-slate-600 mb-3">Managing groundwater and slope drainage on Niagara Escarpment properties</p>
+            <span class="text-cyan-600 text-sm font-bold uppercase">Read Guide →</span>
+          </a>
+
+          <a href="/services/foundation-repair" class="border-2 border-slate-200 p-6 hover:border-cyan-500 transition-colors">
+            <h3 class="text-lg font-bold text-slate-900 mb-2 uppercase">Foundation Crack Repair</h3>
+            <p class="text-sm text-slate-600 mb-3">Professional foundation repair for Georgetown homes with structural issues</p>
+            <span class="text-cyan-600 text-sm font-bold uppercase">Learn More →</span>
+          </a>
+
+          <a href="/blog/halton-hills-rebate-programs" class="border-2 border-slate-200 p-6 hover:border-cyan-500 transition-colors">
+            <h3 class="text-lg font-bold text-slate-900 mb-2 uppercase">Halton Hills Rebate Programs</h3>
+            <p class="text-sm text-slate-600 mb-3">How to access municipal rebates and subsidies for waterproofing projects</p>
+            <span class="text-cyan-600 text-sm font-bold uppercase">Read More →</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- FAQ Section -->
   <section class="py-16 bg-slate-50">

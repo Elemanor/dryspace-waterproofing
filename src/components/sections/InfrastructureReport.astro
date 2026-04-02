@@ -1,0 +1,114 @@
+---
+import type { CityHyperLocal } from '../../data/location-data';
+
+interface Props {
+  city: string;
+  data: CityHyperLocal['infrastructure'];
+}
+
+const { city, data } = Astro.props;
+
+const hasCombined = data.combinedAreas.length > 0 && data.combinedAreas[0] !== 'None — fully separated system';
+---
+
+<section class="py-16 bg-white">
+  <div class="container mx-auto px-4">
+    <div class="max-w-6xl mx-auto">
+
+      <div class="text-center mb-12">
+        <h2 class="text-4xl font-bold text-slate-900 mb-4 uppercase">
+          How {city}'s Sewer System Affects Your Basement
+        </h2>
+        <div class="max-w-3xl mx-auto bg-cyan-50 border-l-4 border-cyan-500 p-6 text-left speakable">
+          <p class="text-lg text-slate-700">
+            <strong>{city}'s sewer infrastructure is {data.sewerType.toLowerCase().split(';')[0]}.</strong>
+            {hasCombined
+              ? ` Homes in combined sewer areas face higher backup risk during heavy rain because stormwater and sewage share the same pipes. A backwater valve is essential protection.`
+              : ` While the separated system reduces sewer backup risk, storm sewers can still surcharge during heavy rainfall, pushing water back toward foundations.`
+            }
+          </p>
+        </div>
+      </div>
+
+      <!-- Three Info Cards -->
+      <div class="grid md:grid-cols-3 gap-6 mb-8">
+        <div class="bg-slate-50 border-2 border-slate-200 p-6">
+          <div class="flex items-center gap-3 mb-4">
+            <svg class="w-8 h-8 text-cyan-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+            </svg>
+            <h3 class="text-xl font-bold text-slate-900 uppercase">Sewer Type</h3>
+          </div>
+          <p class="text-slate-600">{data.sewerType}</p>
+        </div>
+
+        <div class="bg-slate-50 border-2 border-slate-200 p-6">
+          <div class="flex items-center gap-3 mb-4">
+            <svg class="w-8 h-8 text-cyan-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <h3 class="text-xl font-bold text-slate-900 uppercase">Average Age</h3>
+          </div>
+          <p class="text-slate-600">{data.avgSewerAge}</p>
+        </div>
+
+        <div class="bg-slate-50 border-2 border-slate-200 p-6">
+          <div class="flex items-center gap-3 mb-4">
+            <svg class="w-8 h-8 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+            </svg>
+            <h3 class="text-xl font-bold text-slate-900 uppercase">Known Issues</h3>
+          </div>
+          <p class="text-slate-600">{data.capacityIssues}</p>
+        </div>
+      </div>
+
+      {hasCombined && (
+        <div class="bg-red-50 border-2 border-red-200 p-6 mb-8">
+          <h3 class="text-xl font-bold text-red-900 mb-4 uppercase flex items-center gap-2">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+            </svg>
+            High-Risk Combined Sewer Areas in {city}
+          </h3>
+          <p class="text-red-800 mb-4">
+            These neighborhoods have combined sewers where stormwater and sanitary sewage share the same pipes. During heavy rain, these systems surcharge — pushing sewage back into basements. A <strong>backwater valve</strong> is the most critical protection for homes in these areas.
+          </p>
+          <div class="flex flex-wrap gap-2">
+            {data.combinedAreas.map((area) => (
+              <span class="bg-red-100 border border-red-300 px-3 py-1 text-sm font-semibold text-red-900">
+                {area}
+              </span>
+            ))}
+          </div>
+        </div>
+      )}
+
+      <!-- Why This Matters -->
+      <div class="bg-navy-900 text-white p-6">
+        <h3 class="text-xl font-bold mb-4 uppercase">Why Sewer Infrastructure Matters for Waterproofing</h3>
+        <div class="grid md:grid-cols-3 gap-6">
+          <div>
+            <h4 class="font-bold text-cyan-400 mb-2 uppercase">Sewer Backup Prevention</h4>
+            <p class="text-slate-300 text-sm">
+              Backwater valves prevent sewage from flowing back into your basement during surcharge events. Required in many municipalities and essential in combined sewer areas.
+            </p>
+          </div>
+          <div>
+            <h4 class="font-bold text-cyan-400 mb-2 uppercase">Drainage Independence</h4>
+            <p class="text-slate-300 text-sm">
+              Your foundation drainage should not depend on municipal sewers during peak storms. Independent sump pump systems discharge directly to grade, bypassing overwhelmed sewers.
+            </p>
+          </div>
+          <div>
+            <h4 class="font-bold text-cyan-400 mb-2 uppercase">Future-Proofing</h4>
+            <p class="text-slate-300 text-sm">
+              Aging infrastructure means more surcharge events over time. Professional waterproofing with proper drainage protects your home regardless of municipal sewer performance.
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

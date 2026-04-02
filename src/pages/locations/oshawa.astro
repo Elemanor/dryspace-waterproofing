@@ -9,8 +9,15 @@ import LocationImageShowcase from '../../components/LocationImageShowcase.astro'
 import InternalLinks from '../../components/InternalLinks.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import BreadcrumbSchema from '../../components/BreadcrumbSchema.astro';
+import GeologicalProfile from '../../components/sections/GeologicalProfile.astro';
+import SeasonalRiskCalendar from '../../components/sections/SeasonalRiskCalendar.astro';
+import InfrastructureReport from '../../components/sections/InfrastructureReport.astro';
+import FoundationCensus from '../../components/sections/FoundationCensus.astro';
+import FloodTimeline from '../../components/sections/FloodTimeline.astro';
+import { locationData } from '../../data/location-data';
 
 const pageTitle = "Basement Waterproofing Oshawa | Foundation Repair | DrySpace";
+const cityData = locationData['oshawa'];
 const pageDescription = "Professional basement waterproofing in Oshawa. Lakefront specialists. Foundation repair, sump pumps, crack repair. Industrial heritage home experts. 25-year warranty. Free inspection. Call 437-545-0067.";
 
 // Local area information
@@ -80,6 +87,30 @@ const locationFAQs = [
   {
     question: "Do you provide commercial waterproofing for industrial sites?",
     answer: "Yes! We provide commercial waterproofing for Oshawa's remaining industrial facilities, former automotive sites, and commercial buildings in the downtown core. Our solutions accommodate heavy machinery, chemical considerations, and continuous operation requirements."
+  },
+  {
+    question: "How does Oshawa Creek flooding affect my basement?",
+    answer: "Oshawa Creek runs through the city's heart and floods during heavy rainfall and spring thaw. Properties near the creek face elevated groundwater, overwhelmed storm sewers, and seasonal flooding. We design comprehensive drainage systems with high-capacity sumps, backwater valves, and independent drainage that protects even when municipal systems are overwhelmed during creek flooding events."
+  },
+  {
+    question: "What is Lake Iroquois clay and why does it matter?",
+    answer: "Oshawa sits on the former bed of glacial Lake Iroquois, leaving dense clay deposits throughout the area. This clay expands when wet (creating pressure against foundations) and has extremely poor drainage. Water pools against foundations rather than draining away. Our waterproofing specifically addresses Lake Iroquois clay with specialized membranes, enhanced drainage capacity, and pressure-relief systems."
+  },
+  {
+    question: "Do I need a permit for basement waterproofing in Durham Region?",
+    answer: "Exterior waterproofing projects in Oshawa typically require a building permit from the City of Oshawa Building Services. This includes foundation excavation, structural repairs, and drainage system installation. Interior waterproofing (weeping tile, sump pumps) may not require permits unless structural changes are made. We handle all permit applications, engineering requirements, and city inspections as part of our comprehensive service."
+  },
+  {
+    question: "How does Oshawa's industrial legacy affect my foundation?",
+    answer: "Decades of GM automotive manufacturing created unique challenges for nearby homes. Heavy machinery vibration caused settlement and cracks in foundations within 2km of plants. Industrial soil may contain contaminants affecting waterproofing materials. Many McLaughlin and downtown homes have steel-frame foundations requiring specialized assessment. We evaluate industrial legacy impacts and design solutions that address these unique automotive-era challenges."
+  },
+  {
+    question: "How much does basement waterproofing cost in Oshawa?",
+    answer: "Exterior waterproofing in Oshawa costs $135-$265 per linear foot, with typical projects ranging from $11,000-$25,000 depending on foundation depth, soil type, and Lake Ontario proximity. Heritage GM-era homes often need more comprehensive work ($16,000-$26,000) due to age and industrial impacts. Newer north Oshawa subdivisions typically cost less ($11,000-$20,000). Interior systems run $80-$200 per linear foot. We provide free detailed assessments and quotes."
+  },
+  {
+    question: "When is the best time for waterproofing work in Oshawa?",
+    answer: "Late spring through early fall (May-October) is ideal for exterior waterproofing in Oshawa. Lake effect weather makes early spring unpredictable, and winter ground freezing complicates excavation. However, we work year-round with specialized techniques for urgent situations. Interior drainage systems can be installed any season. Lake Ontario's influence extends the working season slightly compared to inland areas. Book early as spring flooding drives high demand."
   }
 ];
 
@@ -334,6 +365,180 @@ const localBusinessSchema = {
     </div>
   </section>
 
+  <!-- Construction Eras Section -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-4xl font-bold text-slate-900 mb-4 uppercase">OSHAWA'S CONSTRUCTION ERAS</h2>
+          <p class="text-lg text-slate-600 max-w-3xl mx-auto">
+            Understanding when your Oshawa home was built helps predict waterproofing needs
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Era 1: 1930s-60s -->
+          <div class="border-2 border-slate-200 p-6">
+            <div class="flex items-start gap-4 mb-4">
+              <div class="bg-cyan-500 text-white font-bold text-2xl w-12 h-12 flex items-center justify-center flex-shrink-0">
+                1
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-slate-900 uppercase">1930s-60s</h3>
+                <p class="text-sm text-slate-600 uppercase">Old Oshawa / GM Era</p>
+              </div>
+            </div>
+            <div class="space-y-3">
+              <p class="text-sm text-slate-700">
+                <span class="font-bold">Characteristics:</span> GM-era working-class homes, steel-frame construction, industrial area properties, downtown heritage buildings.
+              </p>
+              <p class="text-sm text-slate-700">
+                <span class="font-bold">Common Issues:</span> Industrial soil contamination impact, aging steel reinforcement, vibration damage from manufacturing, clay tile failures.
+              </p>
+              <p class="text-sm text-slate-700">
+                <span class="font-bold">Typical Solution:</span> Foundation assessment, environmental soil testing, specialized heritage waterproofing, steel corrosion treatment.
+              </p>
+              <p class="text-sm font-bold text-cyan-600">
+                Avg Cost: $16,000–$26,000
+              </p>
+            </div>
+          </div>
+
+          <!-- Era 2: 1970s-80s -->
+          <div class="border-2 border-slate-200 p-6">
+            <div class="flex items-start gap-4 mb-4">
+              <div class="bg-cyan-500 text-white font-bold text-2xl w-12 h-12 flex items-center justify-center flex-shrink-0">
+                2
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-slate-900 uppercase">1970s-80s</h3>
+                <p class="text-sm text-slate-600 uppercase">Post-War Suburbs</p>
+              </div>
+            </div>
+            <div class="space-y-3">
+              <p class="text-sm text-slate-700">
+                <span class="font-bold">Characteristics:</span> Post-war suburban expansion, Simcoe/Centennial areas, automotive worker neighborhoods, standard block foundations.
+              </p>
+              <p class="text-sm text-slate-700">
+                <span class="font-bold">Common Issues:</span> Original tar coating failure, clay tile deterioration, concrete block moisture, basic drainage systems overwhelmed.
+              </p>
+              <p class="text-sm text-slate-700">
+                <span class="font-bold">Typical Solution:</span> Full exterior excavation, modern membrane system, plastic weeping tile, sump pump upgrades.
+              </p>
+              <p class="text-sm font-bold text-cyan-600">
+                Avg Cost: $14,000–$24,000
+              </p>
+            </div>
+          </div>
+
+          <!-- Era 3: 1990s-2000s -->
+          <div class="border-2 border-slate-200 p-6">
+            <div class="flex items-start gap-4 mb-4">
+              <div class="bg-cyan-500 text-white font-bold text-2xl w-12 h-12 flex items-center justify-center flex-shrink-0">
+                3
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-slate-900 uppercase">1990s-2000s</h3>
+                <p class="text-sm text-slate-600 uppercase">North Oshawa Growth</p>
+              </div>
+            </div>
+            <div class="space-y-3">
+              <p class="text-sm text-slate-700">
+                <span class="font-bold">Characteristics:</span> North Oshawa subdivision expansion, Windfields/Northwood areas, builder-grade waterproofing, modern construction.
+              </p>
+              <p class="text-sm text-slate-700">
+                <span class="font-bold">Common Issues:</span> Builder membrane failures, inadequate drainage slope, sump capacity issues, Harmony Creek watershed flooding.
+              </p>
+              <p class="text-sm text-slate-700">
+                <span class="font-bold">Typical Solution:</span> Membrane replacement, enhanced drainage design, high-capacity sump systems, backwater valve installation.
+              </p>
+              <p class="text-sm font-bold text-cyan-600">
+                Avg Cost: $11,000–$22,000
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-8 bg-amber-50 border-l-4 border-amber-500 p-6">
+          <p class="text-sm text-slate-700">
+            <span class="font-bold">Oshawa Note:</span> As Canada's former "Motor City," Oshawa's history as a manufacturing hub created unique foundation challenges. Decades of industrial activity affected soil composition, while vibration from heavy machinery caused settlement issues in nearby residential areas. Older GM-era homes require specialized assessment for industrial legacy impacts.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Neighborhoods with Project Counts -->
+  <section class="py-16 bg-navy-900">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-4xl font-bold text-white mb-4 uppercase">OSHAWA NEIGHBORHOODS WE SERVE</h2>
+          <p class="text-lg text-slate-300 max-w-3xl mx-auto">
+            Over 207 completed waterproofing projects across Oshawa's diverse communities
+          </p>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div class="bg-white/10 backdrop-blur-sm border-2 border-slate-700 p-4">
+            <div class="text-3xl font-bold text-cyan-400 mb-1">35</div>
+            <div class="text-sm text-white font-bold uppercase">Downtown Oshawa</div>
+            <div class="text-xs text-slate-400">Projects Completed</div>
+          </div>
+
+          <div class="bg-white/10 backdrop-blur-sm border-2 border-slate-700 p-4">
+            <div class="text-3xl font-bold text-cyan-400 mb-1">30</div>
+            <div class="text-sm text-white font-bold uppercase">McLaughlin</div>
+            <div class="text-xs text-slate-400">Projects Completed</div>
+          </div>
+
+          <div class="bg-white/10 backdrop-blur-sm border-2 border-slate-700 p-4">
+            <div class="text-3xl font-bold text-cyan-400 mb-1">27</div>
+            <div class="text-sm text-white font-bold uppercase">Lakeview</div>
+            <div class="text-xs text-slate-400">Projects Completed</div>
+          </div>
+
+          <div class="bg-white/10 backdrop-blur-sm border-2 border-slate-700 p-4">
+            <div class="text-3xl font-bold text-cyan-400 mb-1">24</div>
+            <div class="text-sm text-white font-bold uppercase">Eastdale</div>
+            <div class="text-xs text-slate-400">Projects Completed</div>
+          </div>
+
+          <div class="bg-white/10 backdrop-blur-sm border-2 border-slate-700 p-4">
+            <div class="text-3xl font-bold text-cyan-400 mb-1">22</div>
+            <div class="text-sm text-white font-bold uppercase">Samac</div>
+            <div class="text-xs text-slate-400">Projects Completed</div>
+          </div>
+
+          <div class="bg-white/10 backdrop-blur-sm border-2 border-slate-700 p-4">
+            <div class="text-3xl font-bold text-cyan-400 mb-1">19</div>
+            <div class="text-sm text-white font-bold uppercase">Windfields</div>
+            <div class="text-xs text-slate-400">Projects Completed</div>
+          </div>
+
+          <div class="bg-white/10 backdrop-blur-sm border-2 border-slate-700 p-4">
+            <div class="text-3xl font-bold text-cyan-400 mb-1">16</div>
+            <div class="text-sm text-white font-bold uppercase">Northwood</div>
+            <div class="text-xs text-slate-400">Projects Completed</div>
+          </div>
+
+          <div class="bg-white/10 backdrop-blur-sm border-2 border-slate-700 p-4">
+            <div class="text-3xl font-bold text-cyan-400 mb-1">14</div>
+            <div class="text-sm text-white font-bold uppercase">Kedron</div>
+            <div class="text-xs text-slate-400">Projects Completed</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Hyper-Local Components -->
+  <GeologicalProfile city="Oshawa" data={cityData.geological} />
+  <SeasonalRiskCalendar city="Oshawa" data={cityData.seasonal} />
+  <InfrastructureReport city="Oshawa" data={cityData.infrastructure} />
+  <FoundationCensus city="Oshawa" data={cityData.foundationCensus} />
+  <FloodTimeline city="Oshawa" data={cityData.floodHistory} />
+
   <!-- Services -->
   <Services />
 
@@ -372,12 +577,204 @@ const localBusinessSchema = {
   <!-- Process -->
   <Process />
 
+  <!-- Rebates & Subsidies Section -->
+  <section class="py-16 bg-slate-50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-4xl font-bold text-slate-900 mb-4 uppercase">OSHAWA REBATES & SUBSIDIES</h2>
+          <p class="text-lg text-slate-600 max-w-3xl mx-auto">
+            Financial assistance programs available for Oshawa homeowners
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <!-- Rebate 1 -->
+          <div class="bg-white border-2 border-slate-200 p-6">
+            <div class="flex items-start gap-4 mb-4">
+              <svg class="w-12 h-12 text-cyan-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+              </svg>
+              <div>
+                <h3 class="text-xl font-bold text-slate-900 uppercase mb-2">Durham Region Basement Flooding Protection</h3>
+                <div class="text-sm text-slate-600 space-y-2">
+                  <p><span class="font-bold">Eligible:</span> Backwater valves, sump pumps, foundation drainage, downspout disconnection</p>
+                  <p><span class="font-bold">Amount:</span> Up to $3,200 per property</p>
+                  <p><span class="font-bold">Contact:</span> Durham Region Works Department</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Rebate 2 -->
+          <div class="bg-white border-2 border-slate-200 p-6">
+            <div class="flex items-start gap-4 mb-4">
+              <svg class="w-12 h-12 text-cyan-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+              </svg>
+              <div>
+                <h3 class="text-xl font-bold text-slate-900 uppercase mb-2">Ontario Seniors Tax Credit</h3>
+                <div class="text-sm text-slate-600 space-y-2">
+                  <p><span class="font-bold">Eligible:</span> Seniors 65+ can claim home maintenance including waterproofing</p>
+                  <p><span class="font-bold">Amount:</span> Up to $1,500 tax credit annually</p>
+                  <p><span class="font-bold">Contact:</span> Canada Revenue Agency</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Rebate 3 -->
+          <div class="bg-white border-2 border-slate-200 p-6">
+            <div class="flex items-start gap-4 mb-4">
+              <svg class="w-12 h-12 text-cyan-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+              </svg>
+              <div>
+                <h3 class="text-xl font-bold text-slate-900 uppercase mb-2">Insurance Reductions</h3>
+                <div class="text-sm text-slate-600 space-y-2">
+                  <p><span class="font-bold">Eligible:</span> Professional waterproofing reduces flood risk premiums</p>
+                  <p><span class="font-bold">Amount:</span> 5-15% annual premium reduction</p>
+                  <p><span class="font-bold">Contact:</span> Your insurance provider</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Rebate 4 -->
+          <div class="bg-white border-2 border-slate-200 p-6">
+            <div class="flex items-start gap-4 mb-4">
+              <svg class="w-12 h-12 text-cyan-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+              </svg>
+              <div>
+                <h3 class="text-xl font-bold text-slate-900 uppercase mb-2">CLOCA Conservation Programs</h3>
+                <div class="text-sm text-slate-600 space-y-2">
+                  <p><span class="font-bold">Eligible:</span> Properties in Central Lake Ontario Conservation Authority watershed</p>
+                  <p><span class="font-bold">Amount:</span> Varies by environmental impact</p>
+                  <p><span class="font-bold">Contact:</span> CLOCA Environmental Services</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-8 text-center">
+          <p class="text-sm text-slate-600">We help Oshawa homeowners navigate all available rebate programs and provide documentation for claims.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Local Testimonials Section -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-4xl font-bold text-slate-900 mb-4 uppercase">OSHAWA HOMEOWNER TESTIMONIALS</h2>
+          <p class="text-lg text-slate-600 max-w-3xl mx-auto">
+            Real experiences from your Oshawa neighbors
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <!-- Testimonial 1 -->
+          <div class="bg-slate-50 border-2 border-slate-200 p-6">
+            <div class="flex items-center gap-1 mb-4">
+              <svg class="w-5 h-5 text-amber-500 fill-current" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+              </svg>
+              <svg class="w-5 h-5 text-amber-500 fill-current" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+              </svg>
+              <svg class="w-5 h-5 text-amber-500 fill-current" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+              </svg>
+              <svg class="w-5 h-5 text-amber-500 fill-current" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+              </svg>
+              <svg class="w-5 h-5 text-amber-500 fill-current" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+              </svg>
+            </div>
+            <p class="text-slate-700 mb-4 italic">
+              "My grandfather worked at GM, my father worked at GM, and our 1956 McLaughlin home has been in the family since new. Foundation had cracks from decades of plant vibration when they stamped truck bodies. DrySpace understood the industrial history - they assessed the steel reinforcement, repaired structural damage, and waterproofed properly. This home will last another 70 years. True craftsmen."
+            </p>
+            <div class="flex items-center gap-3">
+              <div class="w-12 h-12 bg-cyan-500 text-white font-bold flex items-center justify-center">
+                FD
+              </div>
+              <div>
+                <div class="font-bold text-slate-900">Frank DiMaggio</div>
+                <div class="text-sm text-slate-600">McLaughlin • GM-Era Home Vibration Damage</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial 2 -->
+          <div class="bg-slate-50 border-2 border-slate-200 p-6">
+            <div class="flex items-center gap-1 mb-4">
+              <svg class="w-5 h-5 text-amber-500 fill-current" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+              </svg>
+              <svg class="w-5 h-5 text-amber-500 fill-current" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+              </svg>
+              <svg class="w-5 h-5 text-amber-500 fill-current" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+              </svg>
+              <svg class="w-5 h-5 text-amber-500 fill-current" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+              </svg>
+              <svg class="w-5 h-5 text-amber-500 fill-current" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+              </svg>
+            </div>
+            <p class="text-slate-700 mb-4 italic">
+              "We bought a 2015 home in Windfields that the builder swore was 'perfectly waterproofed.' First spring thaw, flooded basement. Builder wouldn't honor warranty, said it was our maintenance issue. DrySpace found the drainage was installed backwards and the sump had no backup. They fixed the builder's mistakes, worked with our lawyer on documentation, and we eventually got a settlement. Three years dry now."
+            </p>
+            <div class="flex items-center gap-3">
+              <div class="w-12 h-12 bg-cyan-500 text-white font-bold flex items-center justify-center">
+                SJ
+              </div>
+              <div>
+                <div class="font-bold text-slate-900">Sarah Johnson</div>
+                <div class="text-sm text-slate-600">Windfields • New Subdivision Drainage Fix</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- Location Image Showcase -->
   <LocationImageShowcase city="Oshawa" />
 
   <!-- Testimonials -->
   <Testimonials />
+
+  <!-- Related Articles Section -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-3xl font-bold text-slate-900 mb-8 uppercase text-center">RELATED WATERPROOFING ARTICLES</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <a href="/blog/industrial-heritage-homes" class="border-2 border-slate-200 p-6 hover:border-cyan-500 transition-colors">
+            <h3 class="font-bold text-slate-900 mb-2 uppercase">Waterproofing Industrial Heritage Homes</h3>
+            <p class="text-sm text-slate-600">Special considerations for GM-era and historic manufacturing district properties.</p>
+          </a>
+          <a href="/blog/lake-ontario-foundation-protection" class="border-2 border-slate-200 p-6 hover:border-cyan-500 transition-colors">
+            <h3 class="font-bold text-slate-900 mb-2 uppercase">Lake Ontario Foundation Protection</h3>
+            <p class="text-sm text-slate-600">Managing high water tables and storm surge risks in lakefront communities.</p>
+          </a>
+          <a href="/blog/oshawa-creek-flooding" class="border-2 border-slate-200 p-6 hover:border-cyan-500 transition-colors">
+            <h3 class="font-bold text-slate-900 mb-2 uppercase">Oshawa Creek Flooding Solutions</h3>
+            <p class="text-sm text-slate-600">Protecting your home from creek system flooding and watershed drainage issues.</p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- FAQ Section -->
   <section class="py-16 bg-slate-50">

@@ -9,7 +9,14 @@ import LocationImageShowcase from '../../components/LocationImageShowcase.astro'
 import InternalLinks from '../../components/InternalLinks.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import BreadcrumbSchema from '../../components/BreadcrumbSchema.astro';
+import GeologicalProfile from '../../components/sections/GeologicalProfile.astro';
+import SeasonalRiskCalendar from '../../components/sections/SeasonalRiskCalendar.astro';
+import InfrastructureReport from '../../components/sections/InfrastructureReport.astro';
+import FoundationCensus from '../../components/sections/FoundationCensus.astro';
+import FloodTimeline from '../../components/sections/FloodTimeline.astro';
+import { locationData } from '../../data/location-data';
 
+const cityData = locationData['oakville'];
 const pageTitle = "Basement Waterproofing Oakville | Lakefront & Heritage Home Experts";
 const pageDescription = "Basement waterproofing Oakville — lakefront protection, heritage stone foundations, and luxury home specialists. $155-$280/linear foot. 25-year warranty, free inspection.";
 
@@ -494,6 +501,12 @@ const faqSchema = {
       </div>
     </div>
   </section>
+
+  <GeologicalProfile city="Oakville" data={cityData.geological} />
+  <SeasonalRiskCalendar city="Oakville" data={cityData.seasonal} />
+  <InfrastructureReport city="Oakville" data={cityData.infrastructure} />
+  <FoundationCensus city="Oakville" data={cityData.foundationCensus} />
+  <FloodTimeline city="Oakville" data={cityData.floodHistory} />
 
   <Services />
 

@@ -9,7 +9,14 @@ import LocationImageShowcase from '../../components/LocationImageShowcase.astro'
 import InternalLinks from '../../components/InternalLinks.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import BreadcrumbSchema from '../../components/BreadcrumbSchema.astro';
+import GeologicalProfile from '../../components/sections/GeologicalProfile.astro';
+import SeasonalRiskCalendar from '../../components/sections/SeasonalRiskCalendar.astro';
+import InfrastructureReport from '../../components/sections/InfrastructureReport.astro';
+import FoundationCensus from '../../components/sections/FoundationCensus.astro';
+import FloodTimeline from '../../components/sections/FloodTimeline.astro';
+import { locationData } from '../../data/location-data';
 
+const cityData = locationData['hamilton'];
 const pageTitle = "Basement Waterproofing Hamilton | Foundation Repair | DrySpace";
 const pageDescription = "Professional basement waterproofing in Hamilton. Escarpment specialists, foundation repair, sump pumps, crack repair. 25-year warranty. Free inspection. Call 437-545-0067.";
 
@@ -78,6 +85,34 @@ const locationFAQs = [
   {
     question: "Do you work with Hamilton's steep escarpment slopes and access challenges?",
     answer: "Yes, we have specialized equipment for escarpment properties including tracked excavators for steep slopes, crane access systems, and slope stabilization techniques. Our team is experienced with the unique engineering challenges of building on or below Hamilton's escarpment face."
+  },
+  {
+    question: "How does escarpment drainage work in Hamilton?",
+    answer: "The Niagara Escarpment creates natural springs and water flow through limestone fissures. We install specialized drainage systems that capture spring water before it reaches your foundation, along with slope stabilization and erosion control for escarpment face properties."
+  },
+  {
+    question: "What causes Red Hill Creek flooding in Hamilton?",
+    answer: "Red Hill Creek runs through east Hamilton and can overflow during heavy rainfall or spring melt. We design flood protection systems with commercial-grade sump pumps, backwater valves, and flood barriers specifically for creek-adjacent properties with rapid water level changes."
+  },
+  {
+    question: "What foundation issues are common in Hamilton century homes?",
+    answer: "Pre-1940s homes often have limestone or sandstone foundations with deteriorating lime mortar, settlement cracks, and no waterproofing. We combine structural repair (repointing, crack injection, reinforcement) with modern waterproofing membranes and drainage while preserving heritage character."
+  },
+  {
+    question: "Why are industrial soils a problem in Hamilton?",
+    answer: "Over 150 years of steel production left contaminated soils in many lower city neighborhoods. Contaminated soil requires special excavation, containment, and disposal protocols. We're certified for industrial site work and coordinate with environmental consultants to ensure safe, compliant handling."
+  },
+  {
+    question: "Do I need permits for waterproofing work in Hamilton?",
+    answer: "Yes, most waterproofing work requires a building permit from the City of Hamilton. We handle all permit applications, inspections, and close-out as part of our service. Permits ensure code compliance and are required for Hamilton's subsidy program."
+  },
+  {
+    question: "What's the typical cost for waterproofing a Hamilton home?",
+    answer: "Average exterior waterproofing costs $12,000-$26,000 depending on foundation length, soil conditions (contaminated soil costs more), and access challenges (escarpment properties). Interior drainage systems typically run $7,000-$16,000. Costs are generally 10-15% lower than Toronto due to lower labour rates."
+  },
+  {
+    question: "How do you handle limestone bedrock excavation on the mountain?",
+    answer: "Mountain properties often have shallow bedrock requiring rock hammer or blasting. We use specialized excavation equipment and techniques to break through limestone while protecting your foundation. Rock excavation adds 20-30% to typical project costs but is essential for proper drainage installation."
   }
 ];
 
@@ -364,6 +399,156 @@ const localBusinessSchema = {
     </div>
   </section>
 
+  <!-- Construction Eras Section -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-4xl font-bold text-slate-900 mb-4 uppercase">Hamilton Construction History</h2>
+        <p class="text-lg text-slate-600 mb-12">
+          From Victorian-era stone foundations to modern suburban developments, Hamilton's construction history spans over 150 years.
+        </p>
+
+        <div class="space-y-8">
+          <!-- Era 1: Pre-1940s -->
+          <div class="bg-slate-50 border-2 border-slate-200 p-8 border-l-4 border-l-cyan-500">
+            <div class="flex items-start gap-6">
+              <div class="bg-cyan-500 text-white text-2xl font-bold w-16 h-16 rounded-full flex items-center justify-center flex-shrink-0">
+                1
+              </div>
+              <div class="flex-1">
+                <h3 class="text-2xl font-bold text-slate-900 mb-3 uppercase">Pre-1940s: Industrial Era Heritage</h3>
+                <p class="text-slate-600 mb-4">
+                  <strong>Areas:</strong> Downtown Hamilton, Crown Point, North End, lower city neighborhoods
+                </p>
+                <p class="text-slate-600 mb-4">
+                  Hamilton's industrial boom created worker housing with stone and early concrete foundations. Many century homes built during steel industry peak. Foundations often compromised by industrial soil contamination.
+                </p>
+                <ul class="space-y-2 text-slate-600">
+                  <li class="flex items-start">
+                    <span class="text-cyan-600 mr-2">•</span>
+                    <span><strong>Foundation Type:</strong> Limestone, sandstone, rubble stone, early poured concrete</span>
+                  </li>
+                  <li class="flex items-start">
+                    <span class="text-cyan-600 mr-2">•</span>
+                    <span><strong>Waterproofing:</strong> Lime mortar only - no waterproofing membrane</span>
+                  </li>
+                  <li class="flex items-start">
+                    <span class="text-cyan-600 mr-2">•</span>
+                    <span><strong>Common Issues:</strong> Stone settlement, mortar failure, industrial contamination, no drainage</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Era 2: 1950s-1970s -->
+          <div class="bg-slate-50 border-2 border-slate-200 p-8 border-l-4 border-l-cyan-500">
+            <div class="flex items-start gap-6">
+              <div class="bg-cyan-500 text-white text-2xl font-bold w-16 h-16 rounded-full flex items-center justify-center flex-shrink-0">
+                2
+              </div>
+              <div class="flex-1">
+                <h3 class="text-2xl font-bold text-slate-900 mb-3 uppercase">1950s-1970s: Mountain Development</h3>
+                <p class="text-slate-600 mb-4">
+                  <strong>Areas:</strong> Westdale, Mountain brow, Dundas expansion
+                </p>
+                <p class="text-slate-600 mb-4">
+                  Post-war prosperity brought mountain plateau development. Limestone bedrock created excavation challenges. Variable construction quality - some excellent, others rushed to meet housing demand.
+                </p>
+                <ul class="space-y-2 text-slate-600">
+                  <li class="flex items-start">
+                    <span class="text-cyan-600 mr-2">•</span>
+                    <span><strong>Foundation Type:</strong> Poured concrete, concrete block (mountain), rock-cut basements</span>
+                  </li>
+                  <li class="flex items-start">
+                    <span class="text-cyan-600 mr-2">•</span>
+                    <span><strong>Waterproofing:</strong> Tar or asphalt coating, clay tile (often inadequate)</span>
+                  </li>
+                  <li class="flex items-start">
+                    <span class="text-cyan-600 mr-2">•</span>
+                    <span><strong>Common Issues:</strong> Limestone fissure water, escarpment springs, undersized drainage</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Era 3: 1980s-2000s -->
+          <div class="bg-slate-50 border-2 border-slate-200 p-8 border-l-4 border-l-cyan-500">
+            <div class="flex items-start gap-6">
+              <div class="bg-cyan-500 text-white text-2xl font-bold w-16 h-16 rounded-full flex items-center justify-center flex-shrink-0">
+                3
+              </div>
+              <div class="flex-1">
+                <h3 class="text-2xl font-bold text-slate-900 mb-3 uppercase">1980s-2000s: Suburban Expansion</h3>
+                <p class="text-slate-600 mb-4">
+                  <strong>Areas:</strong> Ancaster, Stoney Creek, Waterdown, Flamborough
+                </p>
+                <p class="text-slate-600 mb-4">
+                  Amalgamation brought suburban sprawl to former townships. Modern construction methods but still pre-updated building code waterproofing requirements. Better drainage but systems can be overwhelmed.
+                </p>
+                <ul class="space-y-2 text-slate-600">
+                  <li class="flex items-start">
+                    <span class="text-cyan-600 mr-2">•</span>
+                    <span><strong>Foundation Type:</strong> Poured concrete, pre-cast systems</span>
+                  </li>
+                  <li class="flex items-start">
+                    <span class="text-cyan-600 mr-2">•</span>
+                    <span><strong>Waterproofing:</strong> Rubberized asphalt, weeping tile (may be undersized)</span>
+                  </li>
+                  <li class="flex items-start">
+                    <span class="text-cyan-600 mr-2">•</span>
+                    <span><strong>Common Issues:</strong> Sump pump failures, drainage capacity exceeded, membrane aging</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Neighborhoods with Project Counts -->
+  <section class="py-16 bg-navy-900">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-4xl font-bold text-white mb-4 uppercase">Projects Completed by Neighborhood</h2>
+        <p class="text-lg text-slate-300 mb-12">
+          Our Hamilton track record from mountain to lakefront.
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {[
+            { name: "Downtown Hamilton", count: 45 },
+            { name: "Westdale", count: 38 },
+            { name: "Dundas", count: 34 },
+            { name: "Crown Point", count: 30 },
+            { name: "Stoney Creek", count: 27 },
+            { name: "Ancaster", count: 24 },
+            { name: "Barton Village", count: 20 },
+            { name: "Mountain Top", count: 18 }
+          ].map((neighborhood) => (
+            <div class="bg-white/10 backdrop-blur-sm border-2 border-slate-700 p-6 hover:bg-white/15 transition-colors">
+              <div class="text-amber-500 text-4xl font-bold mb-2">{neighborhood.count}</div>
+              <div class="text-white font-bold uppercase text-sm">{neighborhood.name}</div>
+            </div>
+          ))}
+        </div>
+
+        <div class="mt-8 text-slate-400 text-sm">
+          <p>Also serving: Flamborough, Waterdown, Corktown, Locke Street, Delta, Stipley, and all Hamilton neighborhoods.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <GeologicalProfile city="Hamilton" data={cityData.geological} />
+  <SeasonalRiskCalendar city="Hamilton" data={cityData.seasonal} />
+  <InfrastructureReport city="Hamilton" data={cityData.infrastructure} />
+  <FoundationCensus city="Hamilton" data={cityData.foundationCensus} />
+  <FloodTimeline city="Hamilton" data={cityData.floodHistory} />
+
   <!-- Services -->
   <Services />
 
@@ -402,12 +587,185 @@ const localBusinessSchema = {
   <!-- Process -->
   <Process />
 
+  <!-- Rebates & Subsidies Section -->
+  <section class="py-16 bg-cyan-50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-4xl font-bold text-slate-900 mb-4 uppercase">Available Rebates & Subsidies</h2>
+        <p class="text-lg text-slate-600 mb-12">
+          Hamilton homeowners can access multiple programs to reduce waterproofing costs.
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <!-- Hamilton Subsidy -->
+          <div class="bg-white border-2 border-slate-200 p-6">
+            <div class="flex items-start gap-4 mb-4">
+              <svg class="w-12 h-12 text-cyan-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <div>
+                <h3 class="text-xl font-bold text-slate-900 mb-2 uppercase">Hamilton Flood Protection Subsidy</h3>
+                <p class="text-slate-600 mb-3">Financial assistance for sump pumps, backwater valves, and foundation drainage improvements.</p>
+                <p class="text-sm text-slate-500">Eligibility: Hamilton residents, professional installation, proper permits required</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Seniors Tax Credit -->
+          <div class="bg-white border-2 border-slate-200 p-6">
+            <div class="flex items-start gap-4 mb-4">
+              <svg class="w-12 h-12 text-cyan-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+              </svg>
+              <div>
+                <h3 class="text-xl font-bold text-slate-900 mb-2 uppercase">Ontario Seniors' Home Safety Tax Credit</h3>
+                <p class="text-slate-600 mb-3">Up to <strong class="text-cyan-600">$2,500</strong> tax credit (25% of eligible expenses)</p>
+                <p class="text-sm text-slate-500">Eligibility: Seniors 65+, permanent home improvements for safety and accessibility</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Insurance Savings -->
+          <div class="bg-white border-2 border-slate-200 p-6">
+            <div class="flex items-start gap-4 mb-4">
+              <svg class="w-12 h-12 text-cyan-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+              </svg>
+              <div>
+                <h3 class="text-xl font-bold text-slate-900 mb-2 uppercase">Insurance Premium Reductions</h3>
+                <p class="text-slate-600 mb-3">Save <strong class="text-cyan-600">10-25%</strong> on home insurance premiums after waterproofing</p>
+                <p class="text-sm text-slate-500">Many insurers reduce premiums for homes with professional waterproofing and flood protection</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Conservation Authority -->
+          <div class="bg-white border-2 border-slate-200 p-6">
+            <div class="flex items-start gap-4 mb-4">
+              <svg class="w-12 h-12 text-cyan-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
+              </svg>
+              <div>
+                <h3 class="text-xl font-bold text-slate-900 mb-2 uppercase">Hamilton Conservation Authority</h3>
+                <p class="text-slate-600 mb-3">Grant programs for flood mitigation in vulnerable watersheds</p>
+                <p class="text-sm text-slate-500">HCA offers programs for properties in Red Hill Creek and Spencer Creek flood zones</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-8 bg-white border-2 border-cyan-500 p-6">
+          <p class="text-slate-700">
+            <strong>Need help applying?</strong> Our team assists with rebate applications and provides all required documentation for Hamilton's subsidy program. We handle permits, inspections, and compliance paperwork.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Local Testimonials Section -->
+  <section class="py-16 bg-slate-50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-4xl font-bold text-slate-900 mb-4 uppercase">What Hamilton Homeowners Say</h2>
+        <p class="text-lg text-slate-600 mb-12">
+          Real experiences from your neighbors across Hamilton.
+        </p>
+
+        <div class="space-y-6">
+          <!-- Testimonial 1 -->
+          <div class="bg-slate-50 border-2 border-slate-200 p-8">
+            <div class="flex items-center gap-1 mb-4">
+              {[...Array(5)].map(() => (
+                <svg class="w-5 h-5 text-amber-500 fill-current" viewBox="0 0 20 20">
+                  <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                </svg>
+              ))}
+            </div>
+            <p class="text-slate-700 mb-4 italic">
+              "Our 1920s brick home in Crown Point had chronic water seepage through the old stone foundation. DrySpace did a complete heritage-appropriate restoration including new waterproofing membrane and drainage. They handled the contaminated soil properly and worked with environmental protocols. The crew understood old houses - they reinforced the foundation while preserving the original character. Five years later, our basement is perfectly dry. Best decision we made for our century home."
+            </p>
+            <div class="flex items-center gap-3">
+              <div class="w-12 h-12 bg-cyan-500 rounded-full flex items-center justify-center text-white font-bold">
+                MC
+              </div>
+              <div>
+                <p class="font-bold text-slate-900">Marie & Joseph Calabrese</p>
+                <p class="text-sm text-slate-600">Crown Point • Exterior Waterproofing • 1920s Heritage Home</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial 2 -->
+          <div class="bg-slate-50 border-2 border-slate-200 p-8">
+            <div class="flex items-center gap-1 mb-4">
+              {[...Array(5)].map(() => (
+                <svg class="w-5 h-5 text-amber-500 fill-current" viewBox="0 0 20 20">
+                  <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                </svg>
+              ))}
+            </div>
+            <p class="text-slate-700 mb-4 italic">
+              "We live on the Ancaster escarpment with natural springs coming through the rock. Every spring brought water into our basement. DrySpace installed a specialized drainage system that captures the spring water and directs it away from the foundation. They used slope stabilization techniques and worked around the challenging terrain. The engineering was impressive. Two years later, bone dry even during the wettest springs. Highly recommend for escarpment properties."
+            </p>
+            <div class="flex items-center gap-3">
+              <div class="w-12 h-12 bg-cyan-500 rounded-full flex items-center justify-center text-white font-bold">
+                SH
+              </div>
+              <div>
+                <p class="font-bold text-slate-900">Steve Hamilton</p>
+                <p class="text-sm text-slate-600">Ancaster Escarpment • Spring Water Management • Modern Home</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- Location Image Showcase -->
   <LocationImageShowcase city="Hamilton" />
 
   <!-- Testimonials -->
   <Testimonials />
+
+  <!-- Related Articles Section -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-4xl font-bold text-slate-900 mb-4 uppercase">Helpful Resources for Hamilton Homeowners</h2>
+        <p class="text-lg text-slate-600 mb-12">
+          Learn more about waterproofing, foundation repair, and protecting your Hamilton home.
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <a href="/blog/escarpment-drainage-solutions" class="bg-slate-50 border-2 border-slate-200 p-6 hover:border-cyan-500 transition-colors">
+            <h3 class="text-xl font-bold text-slate-900 mb-2 uppercase">Escarpment Drainage Solutions</h3>
+            <p class="text-slate-600 mb-3">Managing slope stability and spring water on Hamilton's Niagara Escarpment.</p>
+            <span class="text-cyan-600 font-bold">Read Article →</span>
+          </a>
+
+          <a href="/blog/heritage-home-waterproofing" class="bg-slate-50 border-2 border-slate-200 p-6 hover:border-cyan-500 transition-colors">
+            <h3 class="text-xl font-bold text-slate-900 mb-2 uppercase">Waterproofing Heritage Homes</h3>
+            <p class="text-slate-600 mb-3">Preservation-appropriate techniques for Hamilton's century homes and historic districts.</p>
+            <span class="text-cyan-600 font-bold">Read Article →</span>
+          </a>
+
+          <a href="/blog/red-hill-creek-flooding" class="bg-slate-50 border-2 border-slate-200 p-6 hover:border-cyan-500 transition-colors">
+            <h3 class="text-xl font-bold text-slate-900 mb-2 uppercase">Red Hill Creek Flood Protection</h3>
+            <p class="text-slate-600 mb-3">Understanding flood risks and protection strategies for creek-adjacent properties.</p>
+            <span class="text-cyan-600 font-bold">Read Article →</span>
+          </a>
+
+          <a href="/blog/industrial-soil-contamination" class="bg-slate-50 border-2 border-slate-200 p-6 hover:border-cyan-500 transition-colors">
+            <h3 class="text-xl font-bold text-slate-900 mb-2 uppercase">Industrial Legacy & Contaminated Soils</h3>
+            <p class="text-slate-600 mb-3">Proper handling of industrial-impacted sites in Hamilton's steel district.</p>
+            <span class="text-cyan-600 font-bold">Read Article →</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- FAQ Section -->
   <section class="py-16 bg-slate-50">

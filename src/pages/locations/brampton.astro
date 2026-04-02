@@ -1,14 +1,789 @@
 ---
-// 301 redirect to the main Brampton waterproofing page
+import PageLayout from '../../layouts/PageLayout.astro';
+import Hero from '../../components/sections/Hero.astro';
+import Services from '../../components/sections/Services.astro';
+import Process from '../../components/sections/Process.astro';
+import Testimonials from '../../components/sections/Testimonials.astro';
+import Stats from '../../components/sections/Stats.astro';
+import LocationImageShowcase from '../../components/LocationImageShowcase.astro';
+import InternalLinks from '../../components/InternalLinks.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import BreadcrumbSchema from '../../components/BreadcrumbSchema.astro';
+import GeologicalProfile from '../../components/sections/GeologicalProfile.astro';
+import SeasonalRiskCalendar from '../../components/sections/SeasonalRiskCalendar.astro';
+import InfrastructureReport from '../../components/sections/InfrastructureReport.astro';
+import FoundationCensus from '../../components/sections/FoundationCensus.astro';
+import FloodTimeline from '../../components/sections/FloodTimeline.astro';
+import { locationData } from '../../data/location-data';
+
+const cityData = locationData['brampton'];
+
+const pageTitle = "Basement Waterproofing Brampton | Etobicoke Creek & Heritage Specialists";
+const pageDescription = "Expert basement waterproofing in Brampton. Etobicoke Creek flood protection, Heritage District foundation restoration, new subdivision drainage specialists. $140-$260/linear foot. 25-year warranty. Free inspection. Call 437-545-0067.";
+
+const localInfo = {
+  cityName: "Brampton",
+  population: "656,000+",
+  waterTable: "Variable — shallow near Etobicoke Creek, moderate in newer areas",
+  soilType: "Halton Till — dense silty clay with poor drainage",
+  avgHomesAge: "15-35 years (rapid growth city)",
+  floodRisk: "High near Etobicoke Creek, moderate in newer subdivisions",
+  avgRainfall: "835mm annually"
+};
+
+const locationFeatures = [
+  {
+    title: 'ETOBICOKE CREEK FLOOD PROTECTION',
+    description: 'Specialized waterproofing for homes near Etobicoke Creek and its tributaries. Advanced systems designed for seasonal flooding, spring melt events, and intense summer storms that overwhelm creek capacity.',
+    highlight: true
+  },
+  {
+    title: 'HERITAGE DISTRICT RESTORATION',
+    description: 'Careful foundation restoration for Queen St heritage homes and Downtown Brampton historic properties. Period-appropriate techniques that preserve architectural character while providing modern waterproofing protection.',
+    highlight: true
+  },
+  {
+    title: 'NEW SUBDIVISION SPECIALISTS',
+    description: 'Expert repair of builder defects in Brampton\'s rapidly expanding subdivisions. Correcting construction shortcuts in drainage, grading, and waterproofing systems that fail within 10-15 years of construction.',
+    highlight: true
+  },
+  {
+    title: '90-MINUTE EMERGENCY RESPONSE',
+    description: 'Fast emergency service to all Brampton neighborhoods including Downtown, Bramalea, Heart Lake, Sandalwood, Gore Meadows, and Castlemore communities.'
+  },
+  {
+    title: 'HALTON TILL CLAY EXPERTS',
+    description: 'Advanced solutions for Brampton\'s challenging dense clay soil that holds water, creates hydrostatic pressure, clogs drainage systems, and causes foundation settlement in both old and new homes.'
+  },
+  {
+    title: 'PEEL REGION PERMIT COORDINATION',
+    description: 'Full handling of City of Brampton building permits and Peel Region inspections, ensuring compliance with municipal drainage bylaws and waterproofing code requirements.'
+  }
+];
+
+const localTestimonials = [
+  {
+    name: "Tony & Maria Fernandes",
+    neighborhood: "Heart Lake",
+    text: "Our 2004 home near Etobicoke Creek had recurring basement flooding every spring. Two other companies just patched cracks without understanding the real problem — Halton Till clay was crushing our original drainage tile. DrySpace excavated the full perimeter, installed proper drainage with filter fabric and clear stone, and added a high-capacity sump system. Three springs later, completely dry. They understand Brampton clay soil like no one else.",
+    rating: 5,
+    project: "Full Exterior Waterproofing & Drainage System"
+  },
+  {
+    name: "Harpreet & Gurpreet Gill",
+    neighborhood: "Castlemore",
+    text: "Our 2012 Castlemore home had water seeping through corner cracks in the basement. DrySpace explained it was classic Halton Till settlement — the clay compresses under the house over time. They injected the cracks with polyurethane, optimized our drainage, and the Tarion documentation they provided saved us thousands before our 7-year warranty expired. Professional, honest, and thorough.",
+    rating: 5,
+    project: "Crack Injection & Tarion Warranty Support"
+  }
+];
+
+const constructionEras = [
+  {
+    period: "1950s–1970s Heritage Brampton",
+    areas: "Downtown Brampton, Queen St Heritage District, Main St South, old Nelson/Church area",
+    foundation: "Concrete block and older poured concrete on strip footings, some brick foundations",
+    problems: "Block mortar completely deteriorated after 50-70 years, no original waterproofing ever installed, century-old clay tile drains collapsed and clogged, tree root intrusion from mature street trees",
+    solution: "Full exterior excavation with heritage-sensitive techniques, block stabilization and re-pointing, modern waterproofing membrane, complete new weeping tile with filter fabric, root barriers where needed"
+  },
+  {
+    period: "1980s–1990s First Suburban Expansion",
+    areas: "Bramalea, Heart Lake, Northgate, Peel Village, Chinguacousy",
+    foundation: "Poured concrete with tar-based damp-proofing on clay till",
+    problems: "Tar damp-proofing reaching end of life at 30-40 years, Halton Till clay clogging weeping tile, cove joint separation from clay pressure, foundation settlement as dense clay consolidates under building loads",
+    solution: "Exterior membrane replacement with modern polymeric system, weeping tile renewal with proper stone bedding and filter fabric, sump pump installation, grading correction"
+  },
+  {
+    period: "2000s–2010s Rapid Growth Era",
+    areas: "Sandalwood, Gore Meadows, Castlemore, Credit Valley, Mount Pleasant, Vales of Humber",
+    foundation: "Poured concrete with builder-grade membrane, built rapidly on former Halton Till farmland",
+    problems: "Construction shortcuts from Brampton's explosive growth — thin membranes, insufficient drainage stone, improper backfill with clay, window wells without drains, grading that directs water toward foundations, Tarion warranty expiration at 7 years",
+    solution: "Builder defect correction with code-compliant systems, proper drainage stone replacement, grading restoration, Tarion claim documentation, crack injection before warranty expiry"
+  }
+];
+
+const locationFAQs = [
+  {
+    question: "How much does basement waterproofing cost in Brampton?",
+    answer: "Basement waterproofing in Brampton typically costs $140-$260 per linear foot for exterior work, with most homes averaging $10,000-$24,000 for a complete project. Interior drainage systems range from $4,000-$8,000. Costs vary based on foundation depth, Halton Till clay conditions (which require extra excavation effort), property access in tight subdivisions, and whether you're in a newer home (simpler repairs) versus Heritage District properties (more complex restoration). We provide free on-site assessments with detailed quotes for all Brampton neighborhoods."
+  },
+  {
+    question: "Why do Brampton's newer homes have water problems despite modern construction?",
+    answer: "Brampton grew from 268,000 to 656,000 people in just 20 years, creating enormous pressure to build fast. Many 2000s-2010s subdivisions in Sandalwood, Gore Meadows, and Castlemore were built with construction shortcuts: builder-grade waterproofing was minimal, drainage stone was thin or wrong type, backfill used clay instead of clear stone, and lot grading was done poorly. The underlying Halton Till clay compresses under building loads, causing settlement cracks. As Tarion warranties expire at 7 years, homeowners discover these defects are now their responsibility."
+  },
+  {
+    question: "How does Etobicoke Creek flooding affect Brampton basements?",
+    answer: "Etobicoke Creek and its tributaries are Brampton's primary flood risk. The creek watershed has been heavily developed, reducing natural absorption capacity. During heavy storms and spring melt, the creek exceeds capacity and surrounding water tables rise dramatically. The 2005 and 2013 GTA storm events caused devastating flooding along the creek corridor. Homes within 500 meters of Etobicoke Creek or its tributaries need comprehensive flood protection including exterior waterproofing, backwater valves, high-capacity sump systems with battery backup, and proper lot grading."
+  },
+  {
+    question: "Do I need Peel Region permits for waterproofing in Brampton?",
+    answer: "Most exterior waterproofing in Brampton requires a City of Brampton building permit, especially for excavation work near foundations. Interior drainage may be permit-exempt depending on scope. DrySpace handles all permit applications, inspections, and compliance documentation. We coordinate with Brampton Building Standards and Peel Region to ensure work meets Ontario Building Code (OBC 9.14), municipal drainage bylaws, and conservation authority requirements near Etobicoke Creek. Permit fees typically range $200-500 and are included in our project quotes."
+  },
+  {
+    question: "What makes Brampton's Halton Till clay so challenging for waterproofing?",
+    answer: "Halton Till is a dense silty clay deposited by glaciers across the Brampton area. It's one of the most challenging soils in Ontario for waterproofing because it: holds water and creates constant hydrostatic pressure against foundations, swells when wet and shrinks when dry (causing foundation stress), has very poor drainage (water doesn't percolate naturally), clogs standard weeping tile with fine particles, and consolidates under building loads causing settlement cracks. Our Brampton-specific approach uses heavy equipment rated for clay excavation, proper clear stone bedding, filter fabric on all drainage, reinforced membranes, and sump systems sized for clay's slow drainage characteristics."
+  },
+  {
+    question: "What warranty does DrySpace provide on Brampton waterproofing?",
+    answer: "We provide a 25-year fully transferable warranty on all exterior waterproofing work in Brampton, covering materials and workmanship. Interior drainage systems include a 25-year warranty on the system and lifetime warranty on our cast-iron sump pumps. The warranty covers any water intrusion related to our installed systems and transfers to new homeowners if you sell — valuable in Brampton's active real estate market. For Brampton's challenging Halton Till clay conditions, we stand behind our work with regular follow-up inspections."
+  },
+  {
+    question: "Can I file a Tarion warranty claim for waterproofing issues in Brampton?",
+    answer: "Yes — if your Brampton home is under 7 years old, Tarion covers foundation waterproofing defects. Key coverage: Year 1 (all defects), Year 2 (major defects), Year 7 (foundation and waterproofing systems). DrySpace provides detailed inspection reports, photo documentation, and moisture readings to support your Tarion claim. We can coordinate repairs directly with builders or perform warranty work. Contact us before your 7-year deadline — many Brampton homeowners in Sandalwood, Gore Meadows, and Castlemore are approaching this critical window."
+  },
+  {
+    question: "How do Heritage District homes in Brampton differ for waterproofing?",
+    answer: "Heritage homes in Downtown Brampton and the Queen St corridor (1890s-1950s) typically have concrete block, brick, or rubble stone foundations with no original waterproofing. These require specialized restoration: heritage-sensitive excavation, careful block or stone re-pointing with compatible mortars, modern membrane application that doesn't damage historical materials, and new drainage systems where century-old clay tile has collapsed. We work within Brampton Heritage Board guidelines and ensure waterproofing improvements don't compromise architectural character."
+  },
+  {
+    question: "When is the best time to waterproof a basement in Brampton?",
+    answer: "Late spring through fall (May-November) is ideal for exterior waterproofing in Brampton, as frozen Halton Till clay is extremely difficult to excavate in winter. However, don't wait if you have active leaks — we provide emergency repairs year-round. For homes near Etobicoke Creek, schedule work in summer after spring flood risk passes but before fall rains. Many Brampton homeowners plan projects after spring water incidents. Book 4-6 weeks ahead in peak season (May-June)."
+  },
+  {
+    question: "Can I get rebates for basement waterproofing in Brampton?",
+    answer: "Peel Region and Ontario offer several programs: Peel Region Flood Protection Subsidy for eligible homeowners installing backwater valves and sump pumps, Ontario Seniors Home Renovation Tax Credit (up to $1,500 annually for those 65+), home insurance premium reductions (5-15% after professional waterproofing), and potential CMHC Green Home credits when waterproofing is combined with energy efficiency upgrades. We help Brampton homeowners identify and apply for all available rebates. Total savings can offset 15-25% of project costs."
+  },
+  {
+    question: "How long does basement waterproofing take in Brampton?",
+    answer: "Exterior waterproofing in Brampton typically takes 3-5 days for an average home. Halton Till clay conditions can slow excavation compared to sandy soils. Interior drainage systems can be completed in 1-2 days. Timelines include: permit processing (1-2 weeks), excavation and foundation prep (1-2 days in clay), membrane and drainage installation (1-2 days), backfill and restoration (1 day). For Heritage District homes requiring careful work or tight subdivision lots with limited access, projects may take slightly longer."
+  },
+  {
+    question: "Is basement waterproofing in Brampton covered by insurance?",
+    answer: "Standard home insurance typically doesn't cover gradual seepage or maintenance issues, but may cover sudden damage from sewer backup or foundation collapse. However, investing in professional waterproofing can qualify Brampton homeowners for overland flood insurance (increasingly important near Etobicoke Creek) and reduce premiums on water damage coverage. Some insurers offer 5-15% discounts after waterproofing. We provide detailed invoices and warranties that satisfy insurance requirements for premium reductions."
+  }
+];
+
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "DrySpace Waterproofing - Brampton",
+  "image": "https://dryspacewaterproofing.ca/images/dryspace-logo.webp",
+  "@id": "https://dryspacewaterproofing.ca/locations/brampton",
+  "url": "https://dryspacewaterproofing.ca/locations/brampton",
+  "telephone": "437-545-0067",
+  "priceRange": "$$",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Serving all Brampton neighborhoods",
+    "addressLocality": "Brampton",
+    "addressRegion": "ON",
+    "postalCode": "L6P",
+    "addressCountry": "CA"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 43.7315,
+    "longitude": -79.7624
+  },
+  "areaServed": {
+    "@type": "City",
+    "name": "Brampton"
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+      "opens": "08:00",
+      "closes": "18:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Saturday",
+      "opens": "09:00",
+      "closes": "17:00"
+    }
+  ],
+  "sameAs": [
+    "https://www.facebook.com/dryspacewaterproofing",
+    "https://www.instagram.com/dryspacewaterproofing"
+  ]
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": locationFAQs.map(faq => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer
+    }
+  }))
+};
 ---
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="refresh" content="0;url=/basement-waterproofing-brampton" />
-    <link rel="canonical" href="https://dryspacewaterproofing.ca/basement-waterproofing-brampton" />
-    <title>Redirecting to Basement Waterproofing Brampton</title>
-  </head>
-  <body>
-    <p>Redirecting to <a href="/basement-waterproofing-brampton">Basement Waterproofing Brampton</a>...</p>
-  </body>
-</html>
+
+<PageLayout
+  title={pageTitle}
+  description={pageDescription}
+>
+
+  <!-- Breadcrumbs -->
+  <div class="container mx-auto px-4 mt-4">
+    <Breadcrumbs
+      items={[
+        { name: "Home", url: "/" },
+        { name: "Service Areas", url: "/service-areas" },
+        { name: "Brampton" }
+      ]}
+    />
+  </div>
+
+  <!-- Location Hero -->
+  <Hero
+    title="Basement Waterproofing Brampton"
+    subtitle="Etobicoke Creek Flood Specialists & Heritage District Foundation Experts. Expert basement waterproofing for Brampton homes from Queen St heritage properties to modern Castlemore subdivisions."
+    primaryCTA={{ text: "Get Free Assessment", href: "/free-inspection" }}
+    secondaryCTA={{ text: "Call: 437-545-0067", href: "tel:437-545-0067" }}
+    backgroundImage="/images/dryspace_hero_desktop.webp"
+    badge="Serving Brampton"
+  />
+
+  <!-- Internal Links -->
+  <section class="py-8 bg-white">
+    <div class="container mx-auto px-4">
+      <InternalLinks category="location" currentPage="brampton" />
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <Stats
+    stats={[
+      { number: "350+", label: "Brampton Projects Completed" },
+      { number: "90min", label: "Emergency Response Time" },
+      { number: "25yr", label: "Transferable Warranty" },
+      { number: "A+", label: "BBB Rating" }
+    ]}
+  />
+
+  <!-- Quick Facts Box -->
+  <section class="py-8 border-b border-slate-200">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto bg-white border-2 border-cyan-100 rounded-xl p-6">
+        <h2 class="text-lg font-bold text-slate-900 mb-4">Basement Waterproofing in Brampton — Quick Facts</h2>
+        <dl class="grid md:grid-cols-2 gap-x-8 gap-y-3 text-sm speakable">
+          <div class="flex justify-between border-b border-slate-100 pb-2">
+            <dt class="font-medium text-slate-600">Exterior waterproofing</dt>
+            <dd class="font-bold text-slate-900">$140–$260 / linear ft</dd>
+          </div>
+          <div class="flex justify-between border-b border-slate-100 pb-2">
+            <dt class="font-medium text-slate-600">Interior drainage</dt>
+            <dd class="font-bold text-slate-900">$80–$200 / linear ft</dd>
+          </div>
+          <div class="flex justify-between border-b border-slate-100 pb-2">
+            <dt class="font-medium text-slate-600">Average project cost</dt>
+            <dd class="font-bold text-slate-900">$10,000–$24,000</dd>
+          </div>
+          <div class="flex justify-between border-b border-slate-100 pb-2">
+            <dt class="font-medium text-slate-600">Peel Region rebate</dt>
+            <dd class="font-bold text-slate-900">Available programs</dd>
+          </div>
+          <div class="flex justify-between border-b border-slate-100 pb-2">
+            <dt class="font-medium text-slate-600">Typical timeline</dt>
+            <dd class="font-bold text-slate-900">3–5 days (exterior)</dd>
+          </div>
+          <div class="flex justify-between border-b border-slate-100 pb-2">
+            <dt class="font-medium text-slate-600">Emergency response</dt>
+            <dd class="font-bold text-slate-900">Under 90 minutes</dd>
+          </div>
+          <div class="flex justify-between border-b border-slate-100 pb-2">
+            <dt class="font-medium text-slate-600">Warranty</dt>
+            <dd class="font-bold text-slate-900">25-year transferable</dd>
+          </div>
+          <div class="flex justify-between border-b border-slate-100 pb-2">
+            <dt class="font-medium text-slate-600">Building permit</dt>
+            <dd class="font-bold text-slate-900">Required (Peel Region)</dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <!-- Local Information Section -->
+  <section class="py-16 bg-slate-50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-4xl font-bold text-slate-900 mb-4 uppercase">How Much Does Basement Waterproofing Cost in Brampton?</h2>
+          <p class="text-xl text-slate-600 max-w-3xl mx-auto speakable">
+            <strong>Basement waterproofing in Brampton costs $140–$260 per linear foot for exterior work, with most homes averaging $10,000–$24,000. Peel Region homeowners can access flood protection subsidy programs for eligible improvements.</strong>
+          </p>
+          <p class="text-lg text-slate-600 max-w-3xl mx-auto mt-4">
+            Brampton's explosive growth from a small town to Ontario's 5th-largest city created unique waterproofing challenges. Our experts understand the area's dense Halton Till clay, Etobicoke Creek flood patterns, and how rapid 2000s-2010s construction shortcuts cause water problems in homes that should be "too new" for issues.
+          </p>
+        </div>
+
+        <!-- Quick Facts Grid -->
+        <div class="grid md:grid-cols-3 lg:grid-cols-6 gap-4 mb-12">
+          <div class="bg-white p-4 border-l-4 border-cyan-500">
+            <div class="text-sm text-slate-600 mb-1">Population</div>
+            <div class="text-lg font-bold text-slate-900">{localInfo.population}</div>
+          </div>
+          <div class="bg-white p-4 border-l-4 border-cyan-500">
+            <div class="text-sm text-slate-600 mb-1">Water Table</div>
+            <div class="text-lg font-bold text-slate-900">{localInfo.waterTable}</div>
+          </div>
+          <div class="bg-white p-4 border-l-4 border-cyan-500">
+            <div class="text-sm text-slate-600 mb-1">Soil Type</div>
+            <div class="text-lg font-bold text-slate-900">{localInfo.soilType}</div>
+          </div>
+          <div class="bg-white p-4 border-l-4 border-cyan-500">
+            <div class="text-sm text-slate-600 mb-1">Avg Home Age</div>
+            <div class="text-lg font-bold text-slate-900">{localInfo.avgHomesAge}</div>
+          </div>
+          <div class="bg-white p-4 border-l-4 border-cyan-500">
+            <div class="text-sm text-slate-600 mb-1">Flood Risk</div>
+            <div class="text-lg font-bold text-slate-900">{localInfo.floodRisk}</div>
+          </div>
+          <div class="bg-white p-4 border-l-4 border-cyan-500">
+            <div class="text-sm text-slate-600 mb-1">Annual Rainfall</div>
+            <div class="text-lg font-bold text-slate-900">{localInfo.avgRainfall}</div>
+          </div>
+        </div>
+
+        <!-- Brampton-Specific Challenges -->
+        <div class="bg-white border-2 border-slate-200 p-8 mb-12">
+          <h3 class="text-2xl font-bold mb-6 uppercase">WHY BRAMPTON HOMES HAVE WATER PROBLEMS</h3>
+          <div class="grid md:grid-cols-2 gap-6">
+            <div class="flex gap-4">
+              <div class="flex-shrink-0">
+                <svg class="w-8 h-8 text-cyan-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                </svg>
+              </div>
+              <div>
+                <h4 class="font-bold text-lg mb-2 uppercase">Etobicoke Creek Flooding</h4>
+                <p class="text-slate-600">The heavily developed Etobicoke Creek watershed regularly exceeds capacity during storms and spring melt, causing dramatic water table rises and basement flooding in Heart Lake, Bramalea, and Springdale neighborhoods.</p>
+              </div>
+            </div>
+            <div class="flex gap-4">
+              <div class="flex-shrink-0">
+                <svg class="w-8 h-8 text-cyan-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                </svg>
+              </div>
+              <div>
+                <h4 class="font-bold text-lg mb-2 uppercase">Explosive Growth Construction Shortcuts</h4>
+                <p class="text-slate-600">Brampton's population tripled in 20 years. Mass-production homes in Sandalwood, Gore Meadows, and Castlemore were built with minimal waterproofing, thin drainage stone, and inadequate lot grading on former clay farmland.</p>
+              </div>
+            </div>
+            <div class="flex gap-4">
+              <div class="flex-shrink-0">
+                <svg class="w-8 h-8 text-cyan-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3" />
+                </svg>
+              </div>
+              <div>
+                <h4 class="font-bold text-lg mb-2 uppercase">Dense Halton Till Clay</h4>
+                <p class="text-slate-600">Brampton sits on some of Ontario's densest clay till. Halton Till holds water, swells when saturated, creates extreme hydrostatic pressure, clogs drainage with fine particles, and settles under building loads — causing cracks even in newer homes.</p>
+              </div>
+            </div>
+            <div class="flex gap-4">
+              <div class="flex-shrink-0">
+                <svg class="w-8 h-8 text-cyan-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
+                </svg>
+              </div>
+              <div>
+                <h4 class="font-bold text-lg mb-2 uppercase">Heritage & Combined Sewer Risks</h4>
+                <p class="text-slate-600">Downtown Brampton and the Heritage District still have combined sewers where stormwater and sanitary sewage share pipes. During heavy rain, these systems back up into basements — a backwater valve is essential protection.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Neighborhoods Served -->
+        <div class="bg-navy-900 p-8 text-white mb-12">
+          <h3 class="text-2xl font-bold mb-6 uppercase">BRAMPTON NEIGHBORHOODS WE SERVE</h3>
+          <p class="mb-6 text-slate-300">We've completed over 350 basement waterproofing projects across all Brampton communities, from Heritage District restorations to modern Castlemore subdivision repairs.</p>
+
+          <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+            <div class="bg-white/10 backdrop-blur-sm p-4 border-2 border-slate-700">
+              <div class="text-2xl font-bold text-amber-500 mb-1">62</div>
+              <div class="font-semibold mb-2 uppercase">Heart Lake Projects</div>
+              <div class="text-sm text-slate-300">Heart Lake Rd, Sandalwood Pkwy, Bovaird Dr</div>
+            </div>
+            <div class="bg-white/10 backdrop-blur-sm p-4 border-2 border-slate-700">
+              <div class="text-2xl font-bold text-amber-500 mb-1">55</div>
+              <div class="font-semibold mb-2 uppercase">Bramalea Projects</div>
+              <div class="text-sm text-slate-300">Bramalea Rd, Steeles Ave, Dixie Rd, Clark Blvd</div>
+            </div>
+            <div class="bg-white/10 backdrop-blur-sm p-4 border-2 border-slate-700">
+              <div class="text-2xl font-bold text-amber-500 mb-1">48</div>
+              <div class="font-semibold mb-2 uppercase">Castlemore Projects</div>
+              <div class="text-sm text-slate-300">Castlemore Rd, The Gore Rd, Hwy 50, Countryside Dr</div>
+            </div>
+            <div class="bg-white/10 backdrop-blur-sm p-4 border-2 border-slate-700">
+              <div class="text-2xl font-bold text-amber-500 mb-1">42</div>
+              <div class="font-semibold mb-2 uppercase">Sandalwood Projects</div>
+              <div class="text-sm text-slate-300">Sandalwood Pkwy, Chinguacousy Rd, Hurontario St</div>
+            </div>
+            <div class="bg-white/10 backdrop-blur-sm p-4 border-2 border-slate-700">
+              <div class="text-2xl font-bold text-amber-500 mb-1">38</div>
+              <div class="font-semibold mb-2 uppercase">Gore Meadows Projects</div>
+              <div class="text-sm text-slate-300">Gore Rd, Countryside Dr, Castlemore Rd, Clarkway Dr</div>
+            </div>
+            <div class="bg-white/10 backdrop-blur-sm p-4 border-2 border-slate-700">
+              <div class="text-2xl font-bold text-amber-500 mb-1">35</div>
+              <div class="font-semibold mb-2 uppercase">Springdale Projects</div>
+              <div class="text-sm text-slate-300">Queen St E, Bovaird Dr, Main St, Vodden St</div>
+            </div>
+            <div class="bg-white/10 backdrop-blur-sm p-4 border-2 border-slate-700">
+              <div class="text-2xl font-bold text-amber-500 mb-1">38</div>
+              <div class="font-semibold mb-2 uppercase">Downtown Projects</div>
+              <div class="text-sm text-slate-300">Queen St, Main St, Nelson St, Church St, Railroad</div>
+            </div>
+            <div class="bg-white/10 backdrop-blur-sm p-4 border-2 border-slate-700">
+              <div class="text-2xl font-bold text-amber-500 mb-1">32</div>
+              <div class="font-semibold mb-2 uppercase">Credit Valley Projects</div>
+              <div class="text-sm text-slate-300">Creditview Rd, Sandalwood Pkwy, Financial Dr</div>
+            </div>
+          </div>
+
+          <div class="flex flex-wrap gap-2">
+            <span class="border-2 border-slate-600 px-3 py-1 text-sm">MOUNT PLEASANT</span>
+            <span class="border-2 border-slate-600 px-3 py-1 text-sm">VALES OF HUMBER</span>
+            <span class="border-2 border-slate-600 px-3 py-1 text-sm">PEEL VILLAGE</span>
+            <span class="border-2 border-slate-600 px-3 py-1 text-sm">CHINGUACOUSY</span>
+            <span class="border-2 border-slate-600 px-3 py-1 text-sm">NORTHGATE</span>
+            <span class="border-2 border-slate-600 px-3 py-1 text-sm">SNELGROVE</span>
+            <span class="border-2 border-slate-600 px-3 py-1 text-sm">FLETCHER'S MEADOW</span>
+            <span class="border-2 border-slate-600 px-3 py-1 text-sm">BRAM EAST</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Construction Era Analysis -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-4xl font-bold text-slate-900 mb-4 uppercase">BRAMPTON CONSTRUCTION ERAS & WATERPROOFING NEEDS</h2>
+          <p class="text-xl text-slate-600">Different building periods created different water problems requiring specialized solutions</p>
+        </div>
+
+        <div class="space-y-8">
+          {constructionEras.map((era, index) => (
+            <div class="bg-slate-50 border-2 border-slate-200 p-8 border-l-4 border-l-cyan-500">
+              <div class="flex items-start gap-4 mb-4">
+                <div class="flex-shrink-0 w-12 h-12 bg-cyan-500 text-white flex items-center justify-center font-bold text-xl">
+                  {index + 1}
+                </div>
+                <div class="flex-grow">
+                  <h3 class="text-2xl font-bold mb-2 uppercase">{era.period}</h3>
+                  <div class="text-slate-600 mb-4 uppercase">{era.areas}</div>
+                </div>
+              </div>
+
+              <div class="grid md:grid-cols-2 gap-6 ml-16">
+                <div>
+                  <h4 class="font-semibold text-navy-900 mb-2 uppercase">Foundation Type</h4>
+                  <p class="text-slate-600">{era.foundation}</p>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-navy-900 mb-2 uppercase">Common Problems</h4>
+                  <p class="text-slate-600">{era.problems}</p>
+                </div>
+              </div>
+
+              <div class="ml-16 mt-4 p-4 bg-cyan-50 border-l-4 border-cyan-500">
+                <h4 class="font-semibold text-cyan-900 mb-2 uppercase">Our Solution</h4>
+                <p class="text-slate-600">{era.solution}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5 Hyper-Local Sections -->
+  <GeologicalProfile city="Brampton" data={cityData.geological} />
+  <SeasonalRiskCalendar city="Brampton" data={cityData.seasonal} />
+  <InfrastructureReport city="Brampton" data={cityData.infrastructure} />
+  <FoundationCensus city="Brampton" data={cityData.foundationCensus} />
+  <FloodTimeline city="Brampton" data={cityData.floodHistory} />
+
+  <!-- Services -->
+  <Services />
+
+  <!-- Location Features -->
+  <section class="py-16 bg-slate-50">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl font-bold text-slate-900 mb-4 uppercase">WHY CHOOSE DRYSPACE FOR BASEMENT WATERPROOFING IN BRAMPTON</h2>
+        <p class="text-lg text-slate-600 max-w-3xl mx-auto">
+          Specialized expertise for Brampton's unique waterproofing challenges
+        </p>
+      </div>
+
+      <!-- Highlighted Features -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+        {locationFeatures.filter(f => f.highlight).map((feature) => (
+          <div class="bg-amber-500 border-2 border-slate-700 p-6">
+            <h3 class="text-lg font-bold text-slate-900 mb-3 uppercase">{feature.title}</h3>
+            <p class="text-sm text-slate-900">{feature.description}</p>
+          </div>
+        ))}
+      </div>
+
+      <!-- Regular Features -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {locationFeatures.filter(f => !f.highlight).map((feature) => (
+          <div class="bg-white border-2 border-slate-200 p-6 hover:border-slate-300 transition-colors">
+            <h3 class="text-lg font-bold text-slate-900 mb-3 uppercase">{feature.title}</h3>
+            <p class="text-sm text-slate-600">{feature.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Process -->
+  <Process />
+
+  <!-- Rebate & Subsidy Section -->
+  <section class="py-16 bg-cyan-50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-4xl font-bold text-slate-900 mb-4 uppercase">REBATES & SUBSIDIES FOR BRAMPTON HOMEOWNERS</h2>
+          <p class="text-xl text-slate-600">Reduce your basement waterproofing costs with available programs</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="bg-white border-2 border-slate-200 p-6">
+            <div class="flex items-start gap-4">
+              <svg class="w-8 h-8 text-cyan-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <div>
+                <h3 class="text-lg font-bold mb-2 uppercase">Peel Region Flood Protection Subsidy</h3>
+                <p class="text-slate-600 mb-2">Financial assistance for eligible Brampton homeowners installing backwater valves, sump pumps, and flood protection measures in high-risk areas near Etobicoke Creek.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white border-2 border-slate-200 p-6">
+            <div class="flex items-start gap-4">
+              <svg class="w-8 h-8 text-cyan-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+              </svg>
+              <div>
+                <h3 class="text-lg font-bold mb-2 uppercase">Ontario Seniors Home Renovation Tax Credit</h3>
+                <p class="text-slate-600 mb-2">Seniors 65+ can claim up to $1,500 annually for eligible home renovations including waterproofing improvements and flood protection measures.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white border-2 border-slate-200 p-6">
+            <div class="flex items-start gap-4">
+              <svg class="w-8 h-8 text-cyan-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+              </svg>
+              <div>
+                <h3 class="text-lg font-bold mb-2 uppercase">Home Insurance Premium Reductions</h3>
+                <p class="text-slate-600 mb-2">Many insurers offer 5-15% discounts on premiums after professional waterproofing installation. We provide documentation for your insurance claim.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white border-2 border-slate-200 p-6">
+            <div class="flex items-start gap-4">
+              <svg class="w-8 h-8 text-cyan-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+              </svg>
+              <div>
+                <h3 class="text-lg font-bold mb-2 uppercase">Brampton Heritage Property Programs</h3>
+                <p class="text-slate-600 mb-2">Heritage Brampton properties in the Queen St Heritage Conservation District may qualify for additional grants when waterproofing work preserves architectural character.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-8 bg-navy-900 text-white p-6 text-center">
+          <p class="text-lg mb-4">We help Brampton homeowners identify and apply for all available rebates and provide documentation for insurance premium reductions.</p>
+          <a href="/free-inspection" class="inline-block bg-amber-500 text-black px-8 py-3 font-bold hover:bg-amber-400 transition uppercase">Get Your Free Assessment</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Local Testimonials -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-4xl font-bold text-slate-900 mb-4 uppercase">BASEMENT WATERPROOFING SUCCESS STORIES FROM BRAMPTON</h2>
+          <p class="text-xl text-slate-600">Real results from real Brampton homeowners</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8">
+          {localTestimonials.map((testimonial) => (
+            <div class="bg-slate-50 border-2 border-slate-200 p-8">
+              <div class="flex items-center gap-1 mb-4">
+                {[...Array(testimonial.rating)].map((_, i) => (
+                  <svg class="w-5 h-5 text-amber-500 fill-current" viewBox="0 0 20 20">
+                    <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+                  </svg>
+                ))}
+              </div>
+              <p class="text-slate-600 mb-6 text-lg leading-relaxed">"{testimonial.text}"</p>
+              <div class="border-t-2 border-slate-200 pt-4">
+                <div class="font-bold text-slate-900 uppercase">{testimonial.name}</div>
+                <div class="text-slate-600">{testimonial.neighborhood}, Brampton</div>
+                <div class="text-sm text-cyan-600 mt-1 uppercase">{testimonial.project}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Location Image Showcase -->
+  <LocationImageShowcase city="Brampton" />
+
+  <!-- Testimonials -->
+  <Testimonials />
+
+  <!-- Related Articles -->
+  <section class="py-16 bg-slate-50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-4xl font-bold text-slate-900 mb-4 uppercase">BASEMENT WATERPROOFING RESOURCES FOR BRAMPTON HOMEOWNERS</h2>
+          <p class="text-xl text-slate-600">Expert guides and information</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          <a href="/blog/basement-waterproofing-cost-toronto-2025" class="bg-white border-2 border-slate-200 overflow-hidden hover:border-cyan-500 transition group">
+            <div class="h-48 bg-gradient-to-br from-cyan-600 to-cyan-800"></div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2 group-hover:text-cyan-600 uppercase">Complete Guide to Waterproofing Costs in the GTA</h3>
+              <p class="text-slate-600 mb-4">Detailed pricing breakdown including Brampton-specific costs, Halton Till clay factors, and Peel Region considerations.</p>
+              <span class="text-cyan-600 font-semibold uppercase">Read Article →</span>
+            </div>
+          </a>
+
+          <a href="/blog/spring-basement-flooding-prevention-2026" class="bg-white border-2 border-slate-200 overflow-hidden hover:border-cyan-500 transition group">
+            <div class="h-48 bg-gradient-to-br from-green-600 to-green-800"></div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2 group-hover:text-cyan-600 uppercase">Spring Flooding Prevention Guide 2026</h3>
+              <p class="text-slate-600 mb-4">Protect your Brampton basement from Etobicoke Creek spring flooding with preventative maintenance tips.</p>
+              <span class="text-cyan-600 font-semibold uppercase">Read Article →</span>
+            </div>
+          </a>
+
+          <a href="/emergency" class="bg-white border-2 border-slate-200 overflow-hidden hover:border-cyan-500 transition group">
+            <div class="h-48 bg-gradient-to-br from-red-600 to-red-800"></div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2 group-hover:text-cyan-600 uppercase">Emergency Waterproofing Services</h3>
+              <p class="text-slate-600 mb-4">24/7 emergency response for Brampton basement flooding. 90-minute arrival time guaranteed.</p>
+              <span class="text-cyan-600 font-semibold uppercase">Get Help Now →</span>
+            </div>
+          </a>
+
+          <a href="/services/exterior-waterproofing" class="bg-white border-2 border-slate-200 overflow-hidden hover:border-cyan-500 transition group">
+            <div class="h-48 bg-gradient-to-br from-amber-600 to-orange-800"></div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2 group-hover:text-cyan-600 uppercase">Exterior Waterproofing Services</h3>
+              <p class="text-slate-600 mb-4">Learn about our comprehensive exterior waterproofing process for Brampton homes.</p>
+              <span class="text-cyan-600 font-semibold uppercase">View Service →</span>
+            </div>
+          </a>
+
+          <a href="/services/interior-drainage" class="bg-white border-2 border-slate-200 overflow-hidden hover:border-cyan-500 transition group">
+            <div class="h-48 bg-gradient-to-br from-purple-600 to-purple-800"></div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2 group-hover:text-cyan-600 uppercase">Interior Drainage Systems</h3>
+              <p class="text-slate-600 mb-4">Fast, effective interior solutions for Brampton basements with active water problems.</p>
+              <span class="text-cyan-600 font-semibold uppercase">View Service →</span>
+            </div>
+          </a>
+
+          <a href="/services/crack-repair" class="bg-white border-2 border-slate-200 overflow-hidden hover:border-cyan-500 transition group">
+            <div class="h-48 bg-gradient-to-br from-teal-600 to-teal-800"></div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2 group-hover:text-cyan-600 uppercase">Foundation Crack Repair</h3>
+              <p class="text-slate-600 mb-4">Polyurethane and epoxy injection for Brampton foundation cracks caused by Halton Till clay settlement.</p>
+              <span class="text-cyan-600 font-semibold uppercase">View Service →</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-4xl font-bold text-slate-900 mb-4 uppercase">FREQUENTLY ASKED QUESTIONS ABOUT BASEMENT WATERPROOFING IN BRAMPTON</h2>
+          <p class="text-xl text-slate-600">Get answers to common questions from Brampton homeowners</p>
+        </div>
+
+        <div class="space-y-4">
+          {locationFAQs.map((faq, index) => (
+            <details class="group bg-slate-50 border-2 border-slate-200">
+              <summary class="flex justify-between items-center cursor-pointer p-6 font-semibold text-lg hover:bg-slate-100 transition-colors">
+                <span class="flex-grow pr-4 uppercase">{faq.question}</span>
+                <span class="text-slate-400 flex-shrink-0 text-2xl">+</span>
+              </summary>
+              <div class="px-6 pb-6 text-slate-600 leading-relaxed">
+                {faq.answer}
+              </div>
+            </details>
+          ))}
+        </div>
+
+        <div class="mt-12 bg-cyan-50 border-l-4 border-cyan-500 p-6">
+          <p class="text-lg mb-4"><strong>Still have questions about basement waterproofing in Brampton?</strong></p>
+          <p class="mb-4">Contact our Brampton waterproofing experts for a free consultation and assessment. We'll answer all your questions and provide a detailed quote for your specific situation.</p>
+          <div class="flex gap-4">
+            <a href="/free-inspection" class="inline-block bg-cyan-500 text-white px-6 py-3 font-bold hover:bg-cyan-600 transition uppercase">Get Free Assessment</a>
+            <a href="tel:437-545-0067" class="inline-block bg-white text-cyan-600 border-2 border-cyan-600 px-6 py-3 font-bold hover:bg-cyan-50 transition uppercase">Call: 437-545-0067</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-16 bg-navy-900">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-4xl font-bold text-white mb-6 uppercase">READY TO PROTECT YOUR BRAMPTON HOME?</h2>
+        <p class="text-xl mb-8 text-slate-300">
+          Get expert basement waterproofing from Brampton's trusted specialists. Free assessment, competitive pricing, 25-year warranty, and 90-minute emergency response to all Brampton neighborhoods.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="/free-inspection" class="inline-block bg-amber-500 text-black px-8 py-4 font-bold text-lg hover:bg-amber-400 transition uppercase">
+            Schedule Free Assessment
+          </a>
+          <a href="tel:437-545-0067" class="inline-block bg-white text-navy-900 px-8 py-4 font-bold text-lg hover:bg-slate-100 transition uppercase">
+            Call: 437-545-0067
+          </a>
+        </div>
+        <p class="mt-6 text-slate-400 uppercase">
+          Serving Heart Lake, Bramalea, Castlemore, Sandalwood, Gore Meadows, Downtown, Springdale, and all Brampton communities
+        </p>
+      </div>
+    </div>
+  </section>
+
+</PageLayout>
+
+<script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)} />
+<script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+<BreadcrumbSchema
+  items={[
+    { name: 'Home', url: 'https://dryspacewaterproofing.ca/' },
+    { name: 'Service Areas', url: 'https://dryspacewaterproofing.ca/service-areas' },
+    { name: 'Brampton', url: 'https://dryspacewaterproofing.ca/locations/brampton' }
+  ]}
+/>

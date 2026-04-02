@@ -9,9 +9,17 @@ import LocationImageShowcase from '../../components/LocationImageShowcase.astro'
 import InternalLinks from '../../components/InternalLinks.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import BreadcrumbSchema from '../../components/BreadcrumbSchema.astro';
+import GeologicalProfile from '../../components/sections/GeologicalProfile.astro';
+import SeasonalRiskCalendar from '../../components/sections/SeasonalRiskCalendar.astro';
+import InfrastructureReport from '../../components/sections/InfrastructureReport.astro';
+import FoundationCensus from '../../components/sections/FoundationCensus.astro';
+import FloodTimeline from '../../components/sections/FloodTimeline.astro';
+import { locationData } from '../../data/location-data';
 
 const pageTitle = "Basement Waterproofing Kitchener | Foundation Repair | DrySpace";
 const pageDescription = "Professional basement waterproofing in Kitchener. Grand River flood protection. Foundation repair, sump pumps, heritage homes. 25-year warranty. Free inspection. Call 437-545-0067.";
+
+const cityData = locationData['kitchener'];
 
 // Local area information
 const localInfo = {
@@ -74,12 +82,36 @@ const locationFAQs = [
     answer: "Areas experiencing rapid tech sector growth face unique challenges including new construction settling, inadequate initial drainage, and high-density development impacts. We specialize in post-construction waterproofing for emerging neighborhoods and commercial districts."
   },
   {
-    question: "How do you handle seasonal Grand River flooding?",
-    answer: "Our Kitchener team monitors Grand River levels and provides specialized flood response during spring melt and severe weather. We maintain equipment specifically for river flooding scenarios and coordinate with municipal flood management protocols."
+    question: "How does Grand River flooding affect Kitchener basements?",
+    answer: "The Grand River creates seasonal flooding risks during spring melt and heavy rain events, significantly raising the water table in nearby neighborhoods. Properties within 2km of the river face elevated groundwater pressure requiring enhanced sump pump systems, backwater valve protection, and high-capacity drainage designed for watershed fluctuations."
   },
   {
-    question: "Do you work with tech companies for commercial waterproofing?",
-    answer: "Yes! We provide commercial waterproofing services for Kitchener's growing tech sector including data centers, research facilities, and innovation hubs. Our solutions accommodate sensitive equipment protection and continuous operation requirements."
+    question: "What is the Waterloo Moraine and how does it affect Kitchener groundwater?",
+    answer: "The Waterloo Moraine is a glacial deposit providing significant groundwater flow throughout Kitchener. This creates year-round hydrostatic pressure, especially in lower elevations and river valley areas. Our moraine-aware drainage designs account for constant groundwater presence and seasonal variations in flow rates."
+  },
+  {
+    question: "Do I need permits for waterproofing in Kitchener?",
+    answer: "Region of Waterloo requires building permits for exterior excavation and foundation work. Heritage properties in downtown Kitchener require additional heritage committee approval. Interior drainage typically doesn't need permits. We handle all permit applications, heritage consultations, and inspection coordination as part of our service."
+  },
+  {
+    question: "How much does waterproofing cost in Kitchener?",
+    answer: "Kitchener waterproofing costs $130-$260 per linear foot for exterior systems, with most homes totaling $11,000-$25,000. Heritage properties and Grand River valley locations may require specialized systems. We provide detailed quotes and help access Waterloo Region rebate programs up to $3,400."
+  },
+  {
+    question: "Does insurance cover waterproofing in Kitchener?",
+    answer: "Standard home insurance typically doesn't cover preventative waterproofing, but many Kitchener insurers require proof of waterproofing for Grand River valley properties. Installing proper waterproofing can reduce premiums by 10-20% and is often mandatory for flood-prone zones."
+  },
+  {
+    question: "What are common Waterloo Moraine soil issues?",
+    answer: "Waterloo Moraine areas have river valley clay over sand and gravel, creating inconsistent drainage and foundation pressure zones. Properties on moraine slopes experience constant groundwater seepage. We address these with specialized membrane systems, strategic drainage collection, and moraine-specific sump pump configurations."
+  },
+  {
+    question: "Can you waterproof Kitchener heritage stone foundations?",
+    answer: "Yes! We specialize in heritage stone foundations using preservation-approved techniques including breathable lime-based materials, interior drainage systems that preserve exterior stonework, and reversible solutions that meet heritage committee standards while providing modern protection for Kitchener's German settlement buildings."
+  },
+  {
+    question: "What warranty do you offer on Kitchener waterproofing?",
+    answer: "We provide a 25-year transferable warranty on all exterior waterproofing in Kitchener, covering materials and workmanship. Our warranty is backed by industry associations and transfers to new owners if you sell, adding significant resale value to your Kitchener property."
   }
 ];
 
@@ -334,6 +366,195 @@ const localBusinessSchema = {
     </div>
   </section>
 
+  <!-- Construction Eras Section -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-4xl font-bold text-slate-900 mb-4 uppercase">KITCHENER CONSTRUCTION ERAS</h2>
+          <p class="text-lg text-slate-600">Understanding your home's age helps predict waterproofing needs</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Era 1: Pre-1940s -->
+          <div class="border-2 border-slate-200 p-6">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="bg-cyan-500 text-white text-2xl font-bold w-12 h-12 flex items-center justify-center">
+                1
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-slate-900 uppercase">Pre-1940s</h3>
+                <p class="text-sm text-slate-600">Historic Downtown</p>
+              </div>
+            </div>
+            <ul class="space-y-2 text-sm text-slate-600">
+              <li class="flex items-start">
+                <span class="mr-2 text-cyan-500">•</span>
+                <span>German heritage buildings and Victorian homes</span>
+              </li>
+              <li class="flex items-start">
+                <span class="mr-2 text-cyan-500">•</span>
+                <span>Stone, brick, or rubble foundations</span>
+              </li>
+              <li class="flex items-start">
+                <span class="mr-2 text-cyan-500">•</span>
+                <span>No original waterproofing systems</span>
+              </li>
+              <li class="flex items-start">
+                <span class="mr-2 text-cyan-500">•</span>
+                <span>Heritage preservation requirements</span>
+              </li>
+              <li class="flex items-start">
+                <span class="mr-2 text-cyan-500">•</span>
+                <span>Connected structures in downtown core</span>
+              </li>
+            </ul>
+            <div class="mt-4 pt-4 border-t border-slate-200">
+              <p class="text-xs text-slate-500 uppercase font-bold">Common Issues</p>
+              <p class="text-sm text-slate-900 font-bold">Stone foundation leaks, shared walls, heritage constraints</p>
+            </div>
+          </div>
+
+          <!-- Era 2: 1950s-70s -->
+          <div class="border-2 border-slate-200 p-6">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="bg-cyan-500 text-white text-2xl font-bold w-12 h-12 flex items-center justify-center">
+                2
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-slate-900 uppercase">1950s-70s</h3>
+                <p class="text-sm text-slate-600">Post-War Expansion</p>
+              </div>
+            </div>
+            <ul class="space-y-2 text-sm text-slate-600">
+              <li class="flex items-start">
+                <span class="mr-2 text-cyan-500">•</span>
+                <span>Post-war suburban expansion era</span>
+              </li>
+              <li class="flex items-start">
+                <span class="mr-2 text-cyan-500">•</span>
+                <span>Poured concrete or block foundations</span>
+              </li>
+              <li class="flex items-start">
+                <span class="mr-2 text-cyan-500">•</span>
+                <span>Basic clay tile drainage (often failed)</span>
+              </li>
+              <li class="flex items-start">
+                <span class="mr-2 text-cyan-500">•</span>
+                <span>Grand River valley water table issues</span>
+              </li>
+              <li class="flex items-start">
+                <span class="mr-2 text-cyan-500">•</span>
+                <span>50+ years of settling and cracking</span>
+              </li>
+            </ul>
+            <div class="mt-4 pt-4 border-t border-slate-200">
+              <p class="text-xs text-slate-500 uppercase font-bold">Common Issues</p>
+              <p class="text-sm text-slate-900 font-bold">Failed tile drains, foundation cracks, no membranes</p>
+            </div>
+          </div>
+
+          <!-- Era 3: 1980s-2000s -->
+          <div class="border-2 border-slate-200 p-6">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="bg-cyan-500 text-white text-2xl font-bold w-12 h-12 flex items-center justify-center">
+                3
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-slate-900 uppercase">1980s-2000s</h3>
+                <p class="text-sm text-slate-600">Suburban Growth</p>
+              </div>
+            </div>
+            <ul class="space-y-2 text-sm text-slate-600">
+              <li class="flex items-start">
+                <span class="mr-2 text-cyan-500">•</span>
+                <span>Modern suburban and tech district development</span>
+              </li>
+              <li class="flex items-start">
+                <span class="mr-2 text-cyan-500">•</span>
+                <span>Builder-grade dampproofing (minimal)</span>
+              </li>
+              <li class="flex items-start">
+                <span class="mr-2 text-cyan-500">•</span>
+                <span>Plastic drainage and sump pumps</span>
+              </li>
+              <li class="flex items-start">
+                <span class="mr-2 text-cyan-500">•</span>
+                <span>River valley clay soil settling</span>
+              </li>
+              <li class="flex items-start">
+                <span class="mr-2 text-cyan-500">•</span>
+                <span>Tech corridor redevelopment impacts</span>
+              </li>
+            </ul>
+            <div class="mt-4 pt-4 border-t border-slate-200">
+              <p class="text-xs text-slate-500 uppercase font-bold">Common Issues</p>
+              <p class="text-sm text-slate-900 font-bold">Settling, builder defects, sump overwhelm, runoff</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Neighborhoods with Project Counts -->
+  <section class="py-16 bg-navy-900">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-4xl font-bold text-white mb-4 uppercase">PROJECTS BY KITCHENER NEIGHBORHOOD</h2>
+          <p class="text-lg text-slate-300">We've completed hundreds of waterproofing projects across Kitchener</p>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div class="bg-white/10 backdrop-blur-sm border-2 border-cyan-500 p-6 text-center">
+            <p class="text-3xl font-bold text-cyan-400 mb-2">35</p>
+            <p class="text-sm text-white uppercase font-bold">Downtown Kitchener</p>
+          </div>
+          <div class="bg-white/10 backdrop-blur-sm border-2 border-cyan-500 p-6 text-center">
+            <p class="text-3xl font-bold text-cyan-400 mb-2">30</p>
+            <p class="text-sm text-white uppercase font-bold">Rockway</p>
+          </div>
+          <div class="bg-white/10 backdrop-blur-sm border-2 border-cyan-500 p-6 text-center">
+            <p class="text-3xl font-bold text-cyan-400 mb-2">27</p>
+            <p class="text-sm text-white uppercase font-bold">Forest Heights</p>
+          </div>
+          <div class="bg-white/10 backdrop-blur-sm border-2 border-cyan-500 p-6 text-center">
+            <p class="text-3xl font-bold text-cyan-400 mb-2">24</p>
+            <p class="text-sm text-white uppercase font-bold">Stanley Park</p>
+          </div>
+          <div class="bg-white/10 backdrop-blur-sm border-2 border-cyan-500 p-6 text-center">
+            <p class="text-3xl font-bold text-cyan-400 mb-2">22</p>
+            <p class="text-sm text-white uppercase font-bold">Doon</p>
+          </div>
+          <div class="bg-white/10 backdrop-blur-sm border-2 border-cyan-500 p-6 text-center">
+            <p class="text-3xl font-bold text-cyan-400 mb-2">19</p>
+            <p class="text-sm text-white uppercase font-bold">Centreville</p>
+          </div>
+          <div class="bg-white/10 backdrop-blur-sm border-2 border-cyan-500 p-6 text-center">
+            <p class="text-3xl font-bold text-cyan-400 mb-2">16</p>
+            <p class="text-sm text-white uppercase font-bold">Pioneer Tower</p>
+          </div>
+          <div class="bg-white/10 backdrop-blur-sm border-2 border-cyan-500 p-6 text-center">
+            <p class="text-3xl font-bold text-cyan-400 mb-2">14</p>
+            <p class="text-sm text-white uppercase font-bold">Bridgeport</p>
+          </div>
+        </div>
+
+        <div class="mt-8 text-center">
+          <p class="text-slate-300 text-sm">Also serving all Waterloo Region communities and surrounding areas</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Hyper-local Components -->
+  <GeologicalProfile city="Kitchener" data={cityData.geological} />
+  <SeasonalRiskCalendar city="Kitchener" data={cityData.seasonal} />
+  <InfrastructureReport city="Kitchener" data={cityData.infrastructure} />
+  <FoundationCensus city="Kitchener" data={cityData.foundationCensus} />
+  <FloodTimeline city="Kitchener" data={cityData.floodHistory} />
+
   <!-- Services -->
   <Services />
 
@@ -372,12 +593,265 @@ const localBusinessSchema = {
   <!-- Process -->
   <Process />
 
+  <!-- Rebate & Subsidy Section -->
+  <section class="py-16 bg-slate-50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-4xl font-bold text-slate-900 mb-4 uppercase">KITCHENER WATERPROOFING REBATES & SUBSIDIES</h2>
+          <p class="text-lg text-slate-600">Save thousands on your waterproofing project with available programs</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <!-- Waterloo Region Program -->
+          <div class="bg-white border-2 border-slate-200 p-6">
+            <div class="flex items-start gap-4 mb-4">
+              <svg class="w-10 h-10 text-cyan-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+              </svg>
+              <div>
+                <h3 class="text-xl font-bold text-slate-900 mb-2 uppercase">Waterloo Region Flood Programs</h3>
+                <p class="text-sm text-slate-600 mb-3">Stormwater Utility Credit and basement flooding prevention rebates</p>
+              </div>
+            </div>
+            <ul class="space-y-2 text-sm text-slate-600 mb-4">
+              <li class="flex items-start">
+                <span class="mr-2 text-cyan-500">•</span>
+                <span>Up to $3,400 for eligible flood protection measures</span>
+              </li>
+              <li class="flex items-start">
+                <span class="mr-2 text-cyan-500">•</span>
+                <span>Covers sump pumps, backwater valves, drainage improvements</span>
+              </li>
+              <li class="flex items-start">
+                <span class="mr-2 text-cyan-500">•</span>
+                <span>Must use licensed contractors (we qualify)</span>
+              </li>
+            </ul>
+            <p class="text-xs text-slate-500 uppercase font-bold">Contact Region of Waterloo: 519-575-4400</p>
+          </div>
+
+          <!-- Ontario Seniors Tax Credit -->
+          <div class="bg-white border-2 border-slate-200 p-6">
+            <div class="flex items-start gap-4 mb-4">
+              <svg class="w-10 h-10 text-cyan-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+              <div>
+                <h3 class="text-xl font-bold text-slate-900 mb-2 uppercase">Ontario Seniors Tax Credit</h3>
+                <p class="text-sm text-slate-600 mb-3">Tax credit for home maintenance and accessibility improvements</p>
+              </div>
+            </div>
+            <ul class="space-y-2 text-sm text-slate-600 mb-4">
+              <li class="flex items-start">
+                <span class="mr-2 text-cyan-500">•</span>
+                <span>Up to $1,500 annual tax credit for seniors 65+</span>
+              </li>
+              <li class="flex items-start">
+                <span class="mr-2 text-cyan-500">•</span>
+                <span>Waterproofing qualifies as home maintenance</span>
+              </li>
+              <li class="flex items-start">
+                <span class="mr-2 text-cyan-500">•</span>
+                <span>Keep all invoices for tax filing</span>
+              </li>
+            </ul>
+            <p class="text-xs text-slate-500 uppercase font-bold">Consult your tax advisor</p>
+          </div>
+
+          <!-- Home Insurance -->
+          <div class="bg-white border-2 border-slate-200 p-6">
+            <div class="flex items-start gap-4 mb-4">
+              <svg class="w-10 h-10 text-cyan-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+              </svg>
+              <div>
+                <h3 class="text-xl font-bold text-slate-900 mb-2 uppercase">Home Insurance Premium Reductions</h3>
+                <p class="text-sm text-slate-600 mb-3">Lower your insurance costs with proven waterproofing</p>
+              </div>
+            </div>
+            <ul class="space-y-2 text-sm text-slate-600 mb-4">
+              <li class="flex items-start">
+                <span class="mr-2 text-cyan-500">•</span>
+                <span>10-20% premium reduction possible</span>
+              </li>
+              <li class="flex items-start">
+                <span class="mr-2 text-cyan-500">•</span>
+                <span>Especially important for Grand River valley homes</span>
+              </li>
+              <li class="flex items-start">
+                <span class="mr-2 text-cyan-500">•</span>
+                <span>We provide documentation for insurers</span>
+              </li>
+            </ul>
+            <p class="text-xs text-slate-500 uppercase font-bold">Contact your insurance broker</p>
+          </div>
+
+          <!-- GRCA Programs -->
+          <div class="bg-white border-2 border-slate-200 p-6">
+            <div class="flex items-start gap-4 mb-4">
+              <svg class="w-10 h-10 text-cyan-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+              </svg>
+              <div>
+                <h3 class="text-xl font-bold text-slate-900 mb-2 uppercase">GRCA Conservation Programs</h3>
+                <p class="text-sm text-slate-600 mb-3">Grand River Conservation Authority watershed protection funding</p>
+              </div>
+            </div>
+            <ul class="space-y-2 text-sm text-slate-600 mb-4">
+              <li class="flex items-start">
+                <span class="mr-2 text-cyan-500">•</span>
+                <span>Special programs for Grand River watershed properties</span>
+              </li>
+              <li class="flex items-start">
+                <span class="mr-2 text-cyan-500">•</span>
+                <span>Flood mitigation and conservation initiatives</span>
+              </li>
+              <li class="flex items-start">
+                <span class="mr-2 text-cyan-500">•</span>
+                <span>Heritage property considerations</span>
+              </li>
+            </ul>
+            <p class="text-xs text-slate-500 uppercase font-bold">Contact GRCA: 519-621-2761</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Local Testimonials Section -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-4xl font-bold text-slate-900 mb-4 uppercase">KITCHENER HOMEOWNERS LOVE DRYSPACE</h2>
+          <p class="text-lg text-slate-600">Real reviews from your neighbors across Kitchener</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <!-- Testimonial 1 -->
+          <div class="border-2 border-slate-200 p-6">
+            <div class="flex items-center gap-1 mb-4">
+              <svg class="w-5 h-5 text-amber-500" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+              </svg>
+              <svg class="w-5 h-5 text-amber-500" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+              </svg>
+              <svg class="w-5 h-5 text-amber-500" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+              </svg>
+              <svg class="w-5 h-5 text-amber-500" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+              </svg>
+              <svg class="w-5 h-5 text-amber-500" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+              </svg>
+            </div>
+            <p class="text-slate-700 mb-4 italic">"Our 1920s heritage home in Rockway had chronic stone foundation leaks. DrySpace used preservation-approved techniques that protected the historical stonework while installing modern interior drainage. Their knowledge of Kitchener's German heritage buildings was exceptional. Completely dry for four years now."</p>
+            <div class="flex items-center justify-between pt-4 border-t border-slate-200">
+              <div>
+                <p class="font-bold text-slate-900">Thomas Weber</p>
+                <p class="text-sm text-slate-600">Rockway, Kitchener</p>
+              </div>
+              <div class="text-right">
+                <p class="text-xs text-slate-500 uppercase">Project Type</p>
+                <p class="text-sm font-bold text-slate-900">Heritage Stone Foundation</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial 2 -->
+          <div class="border-2 border-slate-200 p-6">
+            <div class="flex items-center gap-1 mb-4">
+              <svg class="w-5 h-5 text-amber-500" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+              </svg>
+              <svg class="w-5 h-5 text-amber-500" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+              </svg>
+              <svg class="w-5 h-5 text-amber-500" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+              </svg>
+              <svg class="w-5 h-5 text-amber-500" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+              </svg>
+              <svg class="w-5 h-5 text-amber-500" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+              </svg>
+            </div>
+            <p class="text-slate-700 mb-4 italic">"Live in Forest Heights near the Grand River. Spring flooding kept overwhelming our old sump pump. DrySpace installed a high-capacity system with battery backup and upgraded our drainage. Their understanding of river valley water tables in Kitchener was impressive. No more spring basement floods!"</p>
+            <div class="flex items-center justify-between pt-4 border-t border-slate-200">
+              <div>
+                <p class="font-bold text-slate-900">Aisha Hassan</p>
+                <p class="text-sm text-slate-600">Forest Heights, Kitchener</p>
+              </div>
+              <div class="text-right">
+                <p class="text-xs text-slate-500 uppercase">Project Type</p>
+                <p class="text-sm font-bold text-slate-900">Grand River Area Sump Upgrade</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- Location Image Showcase -->
   <LocationImageShowcase city="Kitchener" />
 
   <!-- Testimonials -->
   <Testimonials />
+
+  <!-- Related Articles Section -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-4xl font-bold text-slate-900 mb-4 uppercase">RELATED RESOURCES</h2>
+          <p class="text-lg text-slate-600">Learn more about waterproofing in Kitchener</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <a href="/blog/grand-river-flooding-kitchener" class="border-2 border-slate-200 p-6 hover:border-cyan-500 transition-colors">
+            <h3 class="text-lg font-bold text-slate-900 mb-2 uppercase">Grand River Flooding in Kitchener</h3>
+            <p class="text-sm text-slate-600 mb-3">Complete guide to managing Grand River seasonal flooding and watershed impacts</p>
+            <span class="text-cyan-600 text-sm font-bold uppercase">Read Article →</span>
+          </a>
+
+          <a href="/services/heritage-waterproofing" class="border-2 border-slate-200 p-6 hover:border-cyan-500 transition-colors">
+            <h3 class="text-lg font-bold text-slate-900 mb-2 uppercase">Heritage Home Waterproofing</h3>
+            <p class="text-sm text-slate-600 mb-3">Specialized preservation techniques for Kitchener's German heritage buildings</p>
+            <span class="text-cyan-600 text-sm font-bold uppercase">View Service →</span>
+          </a>
+
+          <a href="/cost-guide/kitchener-waterproofing" class="border-2 border-slate-200 p-6 hover:border-cyan-500 transition-colors">
+            <h3 class="text-lg font-bold text-slate-900 mb-2 uppercase">Kitchener Waterproofing Cost Guide 2026</h3>
+            <p class="text-sm text-slate-600 mb-3">Detailed pricing breakdown for Kitchener waterproofing with local cost factors</p>
+            <span class="text-cyan-600 text-sm font-bold uppercase">See Pricing →</span>
+          </a>
+
+          <a href="/blog/waterloo-moraine-groundwater" class="border-2 border-slate-200 p-6 hover:border-cyan-500 transition-colors">
+            <h3 class="text-lg font-bold text-slate-900 mb-2 uppercase">Waterloo Moraine Groundwater Management</h3>
+            <p class="text-sm text-slate-600 mb-3">Understanding how the Waterloo Moraine affects foundation drainage in Kitchener</p>
+            <span class="text-cyan-600 text-sm font-bold uppercase">Read Guide →</span>
+          </a>
+
+          <a href="/services/foundation-repair" class="border-2 border-slate-200 p-6 hover:border-cyan-500 transition-colors">
+            <h3 class="text-lg font-bold text-slate-900 mb-2 uppercase">Foundation Crack Repair</h3>
+            <p class="text-sm text-slate-600 mb-3">Professional foundation repair for Kitchener homes with structural issues</p>
+            <span class="text-cyan-600 text-sm font-bold uppercase">Learn More →</span>
+          </a>
+
+          <a href="/blog/waterloo-region-rebates" class="border-2 border-slate-200 p-6 hover:border-cyan-500 transition-colors">
+            <h3 class="text-lg font-bold text-slate-900 mb-2 uppercase">Waterloo Region Rebate Programs</h3>
+            <p class="text-sm text-slate-600 mb-3">How to access Waterloo Region rebates and subsidies for waterproofing</p>
+            <span class="text-cyan-600 text-sm font-bold uppercase">Read More →</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- FAQ Section -->
   <section class="py-16 bg-slate-50">

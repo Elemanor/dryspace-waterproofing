@@ -9,7 +9,14 @@ import LocationImageShowcase from '../../components/LocationImageShowcase.astro'
 import InternalLinks from '../../components/InternalLinks.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import BreadcrumbSchema from '../../components/BreadcrumbSchema.astro';
+import GeologicalProfile from '../../components/sections/GeologicalProfile.astro';
+import SeasonalRiskCalendar from '../../components/sections/SeasonalRiskCalendar.astro';
+import InfrastructureReport from '../../components/sections/InfrastructureReport.astro';
+import FoundationCensus from '../../components/sections/FoundationCensus.astro';
+import FloodTimeline from '../../components/sections/FloodTimeline.astro';
+import { locationData } from '../../data/location-data';
 
+const cityData = locationData['burlington'];
 const pageTitle = "Basement Waterproofing Burlington | Escarpment & Lakefront Specialists";
 const pageDescription = "Basement waterproofing Burlington — Niagara Escarpment drainage, lakefront protection, and mature home foundation repair. $150-$275/linear foot. 25-year warranty.";
 
@@ -607,6 +614,12 @@ const localBusinessSchema = {
       </div>
     </div>
   </section>
+
+  <GeologicalProfile city="Burlington" data={cityData.geological} />
+  <SeasonalRiskCalendar city="Burlington" data={cityData.seasonal} />
+  <InfrastructureReport city="Burlington" data={cityData.infrastructure} />
+  <FoundationCensus city="Burlington" data={cityData.foundationCensus} />
+  <FloodTimeline city="Burlington" data={cityData.floodHistory} />
 
   <!-- Services -->
   <Services />

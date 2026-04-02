@@ -9,6 +9,14 @@ import LocationImageShowcase from '../../components/LocationImageShowcase.astro'
 import InternalLinks from '../../components/InternalLinks.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import BreadcrumbSchema from '../../components/BreadcrumbSchema.astro';
+import GeologicalProfile from '../../components/sections/GeologicalProfile.astro';
+import SeasonalRiskCalendar from '../../components/sections/SeasonalRiskCalendar.astro';
+import InfrastructureReport from '../../components/sections/InfrastructureReport.astro';
+import FoundationCensus from '../../components/sections/FoundationCensus.astro';
+import FloodTimeline from '../../components/sections/FloodTimeline.astro';
+import { locationData } from '../../data/location-data';
+
+const cityData = locationData['markham'];
 
 const pageTitle = "Basement Waterproofing Markham | Rouge River & New Home Specialists";
 const pageDescription = "Expert basement waterproofing in Markham. Specialists in new subdivision drainage issues, Rouge River flooding, and heritage home protection. 90-minute emergency response to Unionville, Cornell, Milliken, and all Markham neighborhoods.";
@@ -496,6 +504,13 @@ const faqSchema = {
       </div>
     </div>
   </section>
+
+  <!-- Hyper-Local Sections -->
+  <GeologicalProfile city="Markham" data={cityData.geological} />
+  <SeasonalRiskCalendar city="Markham" data={cityData.seasonal} />
+  <InfrastructureReport city="Markham" data={cityData.infrastructure} />
+  <FoundationCensus city="Markham" data={cityData.foundationCensus} />
+  <FloodTimeline city="Markham" data={cityData.floodHistory} />
 
   <!-- Services -->
   <Services />

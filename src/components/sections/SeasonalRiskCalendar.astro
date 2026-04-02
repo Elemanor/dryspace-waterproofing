@@ -1,0 +1,106 @@
+---
+import type { CityHyperLocal } from '../../data/location-data';
+
+interface Props {
+  city: string;
+  data: CityHyperLocal['seasonal'];
+}
+
+const { city, data } = Astro.props;
+
+const riskColors: Record<string, string> = {
+  'Low': 'bg-green-100 border-green-400 text-green-800',
+  'Moderate': 'bg-amber-100 border-amber-400 text-amber-800',
+  'High': 'bg-orange-100 border-orange-500 text-orange-800',
+  'Critical': 'bg-red-100 border-red-500 text-red-800',
+};
+
+const riskDots: Record<string, string> = {
+  'Low': 'bg-green-500',
+  'Moderate': 'bg-amber-500',
+  'High': 'bg-orange-500',
+  'Critical': 'bg-red-500',
+};
+
+const criticalMonths = data.filter(m => m.risk === 'Critical').map(m => m.month);
+const highMonths = data.filter(m => m.risk === 'High').map(m => m.month);
+
+const peakRiskText = criticalMonths.length > 0
+  ? `${criticalMonths.join(' and ')} (${criticalMonths.length > 1 ? 'snowmelt and spring flooding' : 'snowmelt and spring flooding'})`
+  : highMonths.length > 0
+    ? highMonths.slice(0, 2).join(' and ')
+    : 'spring melt season';
+
+const bestMonths = data.filter(m => m.risk === 'Low');
+const bestWorkWindow = bestMonths.length >= 2
+  ? `${bestMonths[bestMonths.length - 2]?.month || 'September'}–${bestMonths[bestMonths.length - 1]?.month || 'October'} and ${bestMonths[0]?.month || 'January'}–${bestMonths[1]?.month || 'February'}`
+  : 'late summer through early fall';
+---
+
+<section class="py-16 bg-slate-50">
+  <div class="container mx-auto px-4">
+    <div class="max-w-6xl mx-auto">
+
+      <div class="text-center mb-12">
+        <h2 class="text-4xl font-bold text-slate-900 mb-4 uppercase">
+          When Does {city} Flood? Seasonal Risk Calendar
+        </h2>
+        <div class="max-w-3xl mx-auto bg-cyan-50 border-l-4 border-cyan-500 p-6 text-left speakable">
+          <p class="text-lg text-slate-700">
+            <strong>{city}'s highest flood risk is during {peakRiskText}.</strong> Heavy snowmelt on frozen clay creates surface water that pools against foundations. Summer thunderstorms bring a second risk period. Understanding seasonal patterns helps you schedule waterproofing work and prepare for high-risk months.
+          </p>
+        </div>
+      </div>
+
+      <!-- Monthly Calendar Grid -->
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-8">
+        {data.map((month) => (
+          <div class={`border-2 p-4 ${riskColors[month.risk]}`}>
+            <div class="flex items-center justify-between mb-2">
+              <span class="font-bold text-lg uppercase">{month.month}</span>
+              <span class={`w-3 h-3 rounded-full ${riskDots[month.risk]}`}></span>
+            </div>
+            <div class="text-xs font-bold uppercase mb-2">{month.risk} Risk</div>
+            <p class="text-sm leading-snug">{month.event}</p>
+          </div>
+        ))}
+      </div>
+
+      <!-- Legend -->
+      <div class="flex flex-wrap gap-6 justify-center mb-8">
+        <div class="flex items-center gap-2">
+          <span class="w-4 h-4 bg-green-500 rounded-full"></span>
+          <span class="text-sm font-semibold text-slate-700">Low Risk</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="w-4 h-4 bg-amber-500 rounded-full"></span>
+          <span class="text-sm font-semibold text-slate-700">Moderate Risk</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="w-4 h-4 bg-orange-500 rounded-full"></span>
+          <span class="text-sm font-semibold text-slate-700">High Risk</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="w-4 h-4 bg-red-500 rounded-full"></span>
+          <span class="text-sm font-semibold text-slate-700">Critical Risk</span>
+        </div>
+      </div>
+
+      <!-- Best Time to Schedule -->
+      <div class="bg-navy-900 text-white p-6">
+        <div class="flex items-start gap-4">
+          <svg class="w-8 h-8 text-amber-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+          </svg>
+          <div>
+            <h3 class="text-xl font-bold mb-2 uppercase">Best Time to Schedule Waterproofing in {city}</h3>
+            <p class="text-slate-300">
+              Schedule exterior waterproofing from <strong class="text-amber-400">May through November</strong> when ground is unfrozen. The ideal window is <strong class="text-amber-400">late spring through early fall</strong> — after water table drops but before winter freeze. Don't wait if you have active leaks — we provide emergency service year-round.
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

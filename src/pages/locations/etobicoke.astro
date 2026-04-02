@@ -9,7 +9,14 @@ import LocationImageShowcase from '../../components/LocationImageShowcase.astro'
 import InternalLinks from '../../components/InternalLinks.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import BreadcrumbSchema from '../../components/BreadcrumbSchema.astro';
+import GeologicalProfile from '../../components/sections/GeologicalProfile.astro';
+import SeasonalRiskCalendar from '../../components/sections/SeasonalRiskCalendar.astro';
+import InfrastructureReport from '../../components/sections/InfrastructureReport.astro';
+import FoundationCensus from '../../components/sections/FoundationCensus.astro';
+import FloodTimeline from '../../components/sections/FloodTimeline.astro';
+import { locationData } from '../../data/location-data';
 
+const cityData = locationData['etobicoke'];
 const pageTitle = "Basement Waterproofing Etobicoke | Foundation Repair & Drainage";
 const pageDescription = "Professional basement waterproofing in Etobicoke. Foundation repair, sump pumps, crack repair. Humber Valley flood protection. 25-year warranty. Free inspection. Call 437-545-0067.";
 
@@ -80,6 +87,30 @@ const locationFAQs = [
   {
     question: "Can you work around mature landscaping in Etobicoke?",
     answer: "Yes! We specialize in preserving mature trees and established gardens while installing effective waterproofing. Our techniques include minimal excavation methods, root-safe barriers, and strategic drainage placement to protect both your home and landscaping investments."
+  },
+  {
+    question: "How does Mimico Creek affect basement flooding?",
+    answer: "Mimico Creek creates localized flooding risks during heavy rainfall, particularly in older neighborhoods near the creek. We install enhanced drainage systems, backwater valves, and sump pumps specifically designed for creek-adjacent properties with rapid water level changes."
+  },
+  {
+    question: "What issues do combined sewers create in Etobicoke?",
+    answer: "Many older Etobicoke neighborhoods have combined storm and sanitary sewers that can backup during heavy rain. We install backwater valves and independent drainage systems to protect your basement even when municipal systems are overwhelmed."
+  },
+  {
+    question: "How do you handle foundation issues in older Etobicoke homes?",
+    answer: "Homes built in the 1920s-1950s often have stone or early concrete foundations that have settled or cracked. We combine structural repair (crack injection, underpinning if needed) with comprehensive waterproofing to address both foundation integrity and water intrusion."
+  },
+  {
+    question: "Do I need permits for waterproofing work in Toronto/Etobicoke?",
+    answer: "Most waterproofing work requires a building permit from the City of Toronto. We handle all permit applications and inspections as part of our service. Permits ensure work meets code and are required for the Toronto rebate program."
+  },
+  {
+    question: "What's the typical cost for waterproofing an Etobicoke home?",
+    answer: "Average exterior waterproofing in Etobicoke costs $15,000-$30,000 depending on foundation length, soil conditions, and access. Interior drainage systems are typically $8,000-$18,000. Many homeowners receive $2,800-$3,400 back through Toronto's subsidy program."
+  },
+  {
+    question: "How does proximity to the Humber River impact waterproofing needs?",
+    answer: "Properties within the Humber River floodplain require enhanced protection including commercial-grade sump pumps, battery backup systems, and flood barriers. We design systems specifically for river valley hydrology and seasonal flood risk patterns unique to the Humber watershed."
   }
 ];
 
@@ -343,6 +374,156 @@ const localBusinessSchema = {
     </div>
   </section>
 
+  <!-- Construction Eras Section -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-4xl font-bold text-slate-900 mb-4 uppercase">Etobicoke Construction History</h2>
+        <p class="text-lg text-slate-600 mb-12">
+          Each building era in Etobicoke presents unique waterproofing challenges based on construction methods and materials of the time.
+        </p>
+
+        <div class="space-y-8">
+          <!-- Era 1: 1920s-1950s -->
+          <div class="bg-slate-50 border-2 border-slate-200 p-8 border-l-4 border-l-cyan-500">
+            <div class="flex items-start gap-6">
+              <div class="bg-cyan-500 text-white text-2xl font-bold w-16 h-16 rounded-full flex items-center justify-center flex-shrink-0">
+                1
+              </div>
+              <div class="flex-1">
+                <h3 class="text-2xl font-bold text-slate-900 mb-3 uppercase">1920s-1950s: Old Etobicoke Core</h3>
+                <p class="text-slate-600 mb-4">
+                  <strong>Areas:</strong> Mimico, Long Branch, New Toronto
+                </p>
+                <p class="text-slate-600 mb-4">
+                  Original Etobicoke settlements feature brick and stone foundations built before modern waterproofing. Many homes near the lakeshore have foundation movement from clay soils.
+                </p>
+                <ul class="space-y-2 text-slate-600">
+                  <li class="flex items-start">
+                    <span class="text-cyan-600 mr-2">•</span>
+                    <span><strong>Foundation Type:</strong> Stone, rubble stone, early concrete block</span>
+                  </li>
+                  <li class="flex items-start">
+                    <span class="text-cyan-600 mr-2">•</span>
+                    <span><strong>Waterproofing:</strong> Tar coating or none - requires full exterior membrane</span>
+                  </li>
+                  <li class="flex items-start">
+                    <span class="text-cyan-600 mr-2">•</span>
+                    <span><strong>Common Issues:</strong> Mortar deterioration, stone settlement, no drainage tile</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Era 2: 1960s-1970s -->
+          <div class="bg-slate-50 border-2 border-slate-200 p-8 border-l-4 border-l-cyan-500">
+            <div class="flex items-start gap-6">
+              <div class="bg-cyan-500 text-white text-2xl font-bold w-16 h-16 rounded-full flex items-center justify-center flex-shrink-0">
+                2
+              </div>
+              <div class="flex-1">
+                <h3 class="text-2xl font-bold text-slate-900 mb-3 uppercase">1960s-1970s: Post-War Expansion</h3>
+                <p class="text-slate-600 mb-4">
+                  <strong>Areas:</strong> The Kingsway, Islington, Humber Valley neighborhoods
+                </p>
+                <p class="text-slate-600 mb-4">
+                  Post-war boom brought rapid development with poured concrete foundations. Quality varied widely - some homes have minimal waterproofing and undersized drainage.
+                </p>
+                <ul class="space-y-2 text-slate-600">
+                  <li class="flex items-start">
+                    <span class="text-cyan-600 mr-2">•</span>
+                    <span><strong>Foundation Type:</strong> Poured concrete, concrete block with brick veneer</span>
+                  </li>
+                  <li class="flex items-start">
+                    <span class="text-cyan-600 mr-2">•</span>
+                    <span><strong>Waterproofing:</strong> Tar or asphalt damp-proofing (degraded by now)</span>
+                  </li>
+                  <li class="flex items-start">
+                    <span class="text-cyan-600 mr-2">•</span>
+                    <span><strong>Common Issues:</strong> Cracked concrete, tree root damage, inadequate drainage</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Era 3: 1980s-1990s -->
+          <div class="bg-slate-50 border-2 border-slate-200 p-8 border-l-4 border-l-cyan-500">
+            <div class="flex items-start gap-6">
+              <div class="bg-cyan-500 text-white text-2xl font-bold w-16 h-16 rounded-full flex items-center justify-center flex-shrink-0">
+                3
+              </div>
+              <div class="flex-1">
+                <h3 class="text-2xl font-bold text-slate-900 mb-3 uppercase">1980s-1990s: Suburban Infill</h3>
+                <p class="text-slate-600 mb-4">
+                  <strong>Areas:</strong> Rexdale, Richview, Humber Valley subdivisions
+                </p>
+                <p class="text-slate-600 mb-4">
+                  Modern subdivisions with improved drainage but still pre-building code waterproofing requirements. Many developments in former Humber floodplains.
+                </p>
+                <ul class="space-y-2 text-slate-600">
+                  <li class="flex items-start">
+                    <span class="text-cyan-600 mr-2">•</span>
+                    <span><strong>Foundation Type:</strong> Poured concrete, some ICF systems</span>
+                  </li>
+                  <li class="flex items-start">
+                    <span class="text-cyan-600 mr-2">•</span>
+                    <span><strong>Waterproofing:</strong> Rubberized asphalt, drainage tile (may be undersized)</span>
+                  </li>
+                  <li class="flex items-start">
+                    <span class="text-cyan-600 mr-2">•</span>
+                    <span><strong>Common Issues:</strong> Drainage overwhelmed, sump pump failures, backwater valve missing</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Neighborhoods with Project Counts -->
+  <section class="py-16 bg-navy-900">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-4xl font-bold text-white mb-4 uppercase">Projects Completed by Neighborhood</h2>
+        <p class="text-lg text-slate-300 mb-12">
+          Our Etobicoke track record across the city's diverse communities.
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {[
+            { name: "Mimico", count: 42 },
+            { name: "Kingsway", count: 38 },
+            { name: "Long Branch", count: 35 },
+            { name: "Islington-City Centre", count: 30 },
+            { name: "Alderwood", count: 26 },
+            { name: "Rexdale", count: 23 },
+            { name: "Richview", count: 20 },
+            { name: "New Toronto", count: 18 }
+          ].map((neighborhood) => (
+            <div class="bg-white/10 backdrop-blur-sm border-2 border-slate-700 p-6 hover:bg-white/15 transition-colors">
+              <div class="text-amber-500 text-4xl font-bold mb-2">{neighborhood.count}</div>
+              <div class="text-white font-bold uppercase text-sm">{neighborhood.name}</div>
+            </div>
+          ))}
+        </div>
+
+        <div class="mt-8 text-slate-400 text-sm">
+          <p>Also serving: Sunnylea, Humber Bay, Princess Gardens, Thistletown, and all Etobicoke neighborhoods.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <GeologicalProfile city="Etobicoke" data={cityData.geological} />
+  <SeasonalRiskCalendar city="Etobicoke" data={cityData.seasonal} />
+  <InfrastructureReport city="Etobicoke" data={cityData.infrastructure} />
+  <FoundationCensus city="Etobicoke" data={cityData.foundationCensus} />
+  <FloodTimeline city="Etobicoke" data={cityData.floodHistory} />
+
   <!-- Services -->
   <Services />
 
@@ -381,12 +562,185 @@ const localBusinessSchema = {
   <!-- Process -->
   <Process />
 
+  <!-- Rebates & Subsidies Section -->
+  <section class="py-16 bg-cyan-50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-4xl font-bold text-slate-900 mb-4 uppercase">Available Rebates & Subsidies</h2>
+        <p class="text-lg text-slate-600 mb-12">
+          Etobicoke homeowners have access to multiple rebate programs to offset waterproofing costs.
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <!-- Toronto Subsidy -->
+          <div class="bg-white border-2 border-slate-200 p-6">
+            <div class="flex items-start gap-4 mb-4">
+              <svg class="w-12 h-12 text-cyan-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <div>
+                <h3 class="text-xl font-bold text-slate-900 mb-2 uppercase">Toronto Basement Flooding Protection</h3>
+                <p class="text-slate-600 mb-3">Up to <strong class="text-cyan-600">$3,400</strong> for sump pumps, backwater valves, and foundation drainage work.</p>
+                <p class="text-sm text-slate-500">Eligibility: City of Toronto residents, professional installation required</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Seniors Tax Credit -->
+          <div class="bg-white border-2 border-slate-200 p-6">
+            <div class="flex items-start gap-4 mb-4">
+              <svg class="w-12 h-12 text-cyan-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+              </svg>
+              <div>
+                <h3 class="text-xl font-bold text-slate-900 mb-2 uppercase">Ontario Seniors' Home Safety Tax Credit</h3>
+                <p class="text-slate-600 mb-3">Up to <strong class="text-cyan-600">$2,500</strong> tax credit (25% of eligible expenses)</p>
+                <p class="text-sm text-slate-500">Eligibility: Seniors 65+, permanent home improvements for safety and accessibility</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Insurance Savings -->
+          <div class="bg-white border-2 border-slate-200 p-6">
+            <div class="flex items-start gap-4 mb-4">
+              <svg class="w-12 h-12 text-cyan-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+              </svg>
+              <div>
+                <h3 class="text-xl font-bold text-slate-900 mb-2 uppercase">Insurance Premium Reductions</h3>
+                <p class="text-slate-600 mb-3">Save <strong class="text-cyan-600">10-25%</strong> on home insurance premiums after waterproofing</p>
+                <p class="text-sm text-slate-500">Many insurers reduce premiums for homes with professional waterproofing and sump pump systems</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- TRCA Programs -->
+          <div class="bg-white border-2 border-slate-200 p-6">
+            <div class="flex items-start gap-4 mb-4">
+              <svg class="w-12 h-12 text-cyan-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
+              </svg>
+              <div>
+                <h3 class="text-xl font-bold text-slate-900 mb-2 uppercase">TRCA Conservation Programs</h3>
+                <p class="text-slate-600 mb-3">Grant programs for flood mitigation in Humber River watershed</p>
+                <p class="text-sm text-slate-500">Toronto Region Conservation Authority offers grants for properties in flood-vulnerable areas</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-8 bg-white border-2 border-cyan-500 p-6">
+          <p class="text-slate-700">
+            <strong>Need help applying?</strong> Our team assists with rebate applications and provides all required documentation for Toronto's subsidy program. Average clients receive $2,800-$3,400 in rebates.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Local Testimonials Section -->
+  <section class="py-16 bg-slate-50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-4xl font-bold text-slate-900 mb-4 uppercase">What Etobicoke Homeowners Say</h2>
+        <p class="text-lg text-slate-600 mb-12">
+          Real experiences from your neighbors across Etobicoke.
+        </p>
+
+        <div class="space-y-6">
+          <!-- Testimonial 1 -->
+          <div class="bg-slate-50 border-2 border-slate-200 p-8">
+            <div class="flex items-center gap-1 mb-4">
+              {[...Array(5)].map(() => (
+                <svg class="w-5 h-5 text-amber-500 fill-current" viewBox="0 0 20 20">
+                  <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                </svg>
+              ))}
+            </div>
+            <p class="text-slate-700 mb-4 italic">
+              "Our 1930s Mimico bungalow had water coming in every spring. DrySpace did a complete exterior waterproofing with new drainage tile and a sump pump. They worked around our mature maple trees and preserved our garden. Three years later, bone dry basement even during the worst storms. Giovanni and his crew were professional and respectful of our heritage home."
+            </p>
+            <div class="flex items-center gap-3">
+              <div class="w-12 h-12 bg-cyan-500 rounded-full flex items-center justify-center text-white font-bold">
+                GR
+              </div>
+              <div>
+                <p class="font-bold text-slate-900">Giovanni Rossi</p>
+                <p class="text-sm text-slate-600">Mimico • Exterior Waterproofing • 1930s Bungalow</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial 2 -->
+          <div class="bg-slate-50 border-2 border-slate-200 p-8">
+            <div class="flex items-center gap-1 mb-4">
+              {[...Array(5)].map(() => (
+                <svg class="w-5 h-5 text-amber-500 fill-current" viewBox="0 0 20 20">
+                  <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                </svg>
+              ))}
+            </div>
+            <p class="text-slate-700 mb-4 italic">
+              "We bought a luxury home in The Kingsway and discovered water seepage during the first heavy rain. DrySpace did an interior French drain system without disturbing our finished basement or landscaping. The non-invasive approach was perfect for our property. The Toronto rebate covered $3,400 of the cost. Highly recommend for Kingsway estates."
+            </p>
+            <div class="flex items-center gap-3">
+              <div class="w-12 h-12 bg-cyan-500 rounded-full flex items-center justify-center text-white font-bold">
+                AP
+              </div>
+              <div>
+                <p class="font-bold text-slate-900">Amanda & Chris Park</p>
+                <p class="text-sm text-slate-600">The Kingsway • Interior Drainage • Modern Home</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- Location Image Showcase -->
   <LocationImageShowcase city="Etobicoke" />
 
   <!-- Testimonials -->
   <Testimonials />
+
+  <!-- Related Articles Section -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-4xl font-bold text-slate-900 mb-4 uppercase">Helpful Resources for Etobicoke Homeowners</h2>
+        <p class="text-lg text-slate-600 mb-12">
+          Learn more about waterproofing, foundation repair, and protecting your Etobicoke home.
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <a href="/blog/humber-river-flooding" class="bg-slate-50 border-2 border-slate-200 p-6 hover:border-cyan-500 transition-colors">
+            <h3 class="text-xl font-bold text-slate-900 mb-2 uppercase">Humber River Flooding Guide</h3>
+            <p class="text-slate-600 mb-3">Understanding flood risks and protection strategies for Humber Valley properties.</p>
+            <span class="text-cyan-600 font-bold">Read Article →</span>
+          </a>
+
+          <a href="/blog/heritage-home-waterproofing" class="bg-slate-50 border-2 border-slate-200 p-6 hover:border-cyan-500 transition-colors">
+            <h3 class="text-xl font-bold text-slate-900 mb-2 uppercase">Waterproofing Heritage Homes</h3>
+            <p class="text-slate-600 mb-3">Preservation-appropriate techniques for Mimico and Long Branch century homes.</p>
+            <span class="text-cyan-600 font-bold">Read Article →</span>
+          </a>
+
+          <a href="/blog/toronto-basement-subsidy" class="bg-slate-50 border-2 border-slate-200 p-6 hover:border-cyan-500 transition-colors">
+            <h3 class="text-xl font-bold text-slate-900 mb-2 uppercase">Toronto Rebate Program Guide</h3>
+            <p class="text-slate-600 mb-3">How to claim up to $3,400 through the City of Toronto's subsidy program.</p>
+            <span class="text-cyan-600 font-bold">Read Article →</span>
+          </a>
+
+          <a href="/blog/tree-root-foundation-damage" class="bg-slate-50 border-2 border-slate-200 p-6 hover:border-cyan-500 transition-colors">
+            <h3 class="text-xl font-bold text-slate-900 mb-2 uppercase">Tree Roots & Foundation Damage</h3>
+            <p class="text-slate-600 mb-3">Managing mature trees while protecting foundations in established neighborhoods.</p>
+            <span class="text-cyan-600 font-bold">Read Article →</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- FAQ Section -->
   <section class="py-16 bg-slate-50">

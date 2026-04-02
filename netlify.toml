@@ -32,7 +32,7 @@
 
 [[redirects]]
   from = "/brampton-waterproofing.html"
-  to = "/basement-waterproofing-brampton"
+  to = "/locations/brampton"
   status = 301
   force = true
 
@@ -62,7 +62,7 @@
 
 [[redirects]]
   from = "/brampton.html"
-  to = "/basement-waterproofing-brampton"
+  to = "/locations/brampton"
   status = 301
   force = true
 
@@ -377,8 +377,8 @@
   force = true
 
 [[redirects]]
-  from = "/locations/brampton"
-  to = "/basement-waterproofing-brampton"
+  from = "/basement-waterproofing-brampton"
+  to = "/locations/brampton"
   status = 301
   force = true
 
@@ -408,7 +408,7 @@
 
 [[redirects]]
   from = "/brampton-waterproofing"
-  to = "/basement-waterproofing-brampton"
+  to = "/locations/brampton"
   status = 301
   force = true
 

@@ -9,8 +9,15 @@ import LocationImageShowcase from '../../components/LocationImageShowcase.astro'
 import InternalLinks from '../../components/InternalLinks.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import BreadcrumbSchema from '../../components/BreadcrumbSchema.astro';
+import GeologicalProfile from '../../components/sections/GeologicalProfile.astro';
+import SeasonalRiskCalendar from '../../components/sections/SeasonalRiskCalendar.astro';
+import InfrastructureReport from '../../components/sections/InfrastructureReport.astro';
+import FoundationCensus from '../../components/sections/FoundationCensus.astro';
+import FloodTimeline from '../../components/sections/FloodTimeline.astro';
+import { locationData } from '../../data/location-data';
 
 const pageTitle = "Basement Waterproofing Pickering | Foundation Repair | DrySpace";
+const cityData = locationData['pickering'];
 const pageDescription = "Professional basement waterproofing in Pickering. Rouge River flood protection. Foundation repair, sump pumps, crack repair. 25-year warranty. Free inspection. Call 437-545-0067.";
 
 // Local area information
@@ -80,6 +87,30 @@ const locationFAQs = [
   {
     question: "How do conservation area restrictions affect basement protection options?",
     answer: "TRCA conservation areas have specific restrictions on excavation and drainage modifications. We work within these guidelines, often using specialized techniques that minimize environmental impact while maximizing protection."
+  },
+  {
+    question: "How does Rouge River flooding affect Pickering basements?",
+    answer: "The Rouge River watershed drains much of north Pickering, with seasonal flooding during spring melt and heavy rainfall. Properties in Rougemount and areas near the river face elevated groundwater, overwhelmed storm systems, and watershed runoff. We design drainage solutions that account for Rouge River's seasonal patterns, including high-capacity sumps, backwater valves, and TRCA-compliant exterior drainage that protects your home while respecting the conservation ecosystem."
+  },
+  {
+    question: "What about Duffins Creek waterproofing challenges?",
+    answer: "Duffins Creek runs through eastern Pickering and floods regularly. Properties in Duffin Heights, Liverpool, and areas near the creek face seasonal water table surges, creek overflow, and watershed drainage challenges. Our solutions include enhanced drainage capacity designed for creek proximity, flood-resistant waterproofing systems, and monitoring systems that alert you to rising groundwater before it becomes a problem."
+  },
+  {
+    question: "How does Lake Ontario proximity affect my foundation?",
+    answer: "Pickering's lakefront areas (Bay Ridges, parts of Rougemount) face Lake Ontario's elevated groundwater, storm surge during severe weather, and year-round high water tables. Lake-influenced properties need specialized waterproofing rated for constant groundwater pressure, surge-resistant systems, and high-capacity pumping to handle seasonal lake level changes. We've waterproofed hundreds of lakefront properties with solutions designed specifically for Lake Ontario conditions."
+  },
+  {
+    question: "Do I need a permit for waterproofing in Durham Region?",
+    answer: "Yes, most exterior waterproofing projects in Pickering require a building permit from the City of Pickering. Foundation excavation, structural repairs, and drainage system installation typically need permits. Interior systems may not require permits unless structural changes are involved. Additionally, properties in TRCA conservation areas may need separate TRCA approval. We handle all permit applications, engineering requirements, and inspection coordination for both City and TRCA."
+  },
+  {
+    question: "How much does basement waterproofing cost in Pickering?",
+    answer: "Exterior waterproofing in Pickering costs $140-$275 per linear foot, with typical projects ranging from $12,000-$27,000 depending on foundation depth, proximity to lake/rivers, and conservation area requirements. Bay Ridges lakefront homes often need more robust systems ($17,000-$28,000) due to constant groundwater pressure. Newer subdivision homes in Duffin Heights typically cost less ($12,000-$20,000). Conservation area properties may have slightly higher costs due to TRCA compliance requirements. Interior drainage systems run $80-$200 per linear foot."
+  },
+  {
+    question: "Will waterproofing void my Tarion builder warranty?",
+    answer: "No, professional waterproofing won't void your Tarion warranty if done correctly. Many Pickering homeowners in newer subdivisions (Duffin Heights, Brock North) discover builder waterproofing defects within the Tarion coverage period. We work within Tarion guidelines, document all builder defects thoroughly, and provide engineering reports that support your warranty claims. Our work often strengthens Tarion claims by providing professional evidence of builder deficiencies while protecting your home immediately."
   }
 ];
 
@@ -334,6 +365,180 @@ const localBusinessSchema = {
     </div>
   </section>
 
+  <!-- Construction Eras Section -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-4xl font-bold text-slate-900 mb-4 uppercase">PICKERING'S CONSTRUCTION ERAS</h2>
+          <p class="text-lg text-slate-600 max-w-3xl mx-auto">
+            Understanding when your Pickering home was built helps predict waterproofing needs
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Era 1: 1950s-70s -->
+          <div class="border-2 border-slate-200 p-6">
+            <div class="flex items-start gap-4 mb-4">
+              <div class="bg-cyan-500 text-white font-bold text-2xl w-12 h-12 flex items-center justify-center flex-shrink-0">
+                1
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-slate-900 uppercase">1950s-70s</h3>
+                <p class="text-sm text-slate-600 uppercase">Old Pickering Village / Bay Ridges</p>
+              </div>
+            </div>
+            <div class="space-y-3">
+              <p class="text-sm text-slate-700">
+                <span class="font-bold">Characteristics:</span> Original village homes, lakefront Bay Ridges estates, mature lots, established trees, deep foundations.
+              </p>
+              <p class="text-sm text-slate-700">
+                <span class="font-bold">Common Issues:</span> Aging tar coating, tree root intrusion, lake-influenced high water table, original clay tile failure.
+              </p>
+              <p class="text-sm text-slate-700">
+                <span class="font-bold">Typical Solution:</span> Full exterior excavation, tree root management, lake-resistant membranes, enhanced sump capacity for groundwater.
+              </p>
+              <p class="text-sm font-bold text-cyan-600">
+                Avg Cost: $17,000–$28,000
+              </p>
+            </div>
+          </div>
+
+          <!-- Era 2: 1980s-90s -->
+          <div class="border-2 border-slate-200 p-6">
+            <div class="flex items-start gap-4 mb-4">
+              <div class="bg-cyan-500 text-white font-bold text-2xl w-12 h-12 flex items-center justify-center flex-shrink-0">
+                2
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-slate-900 uppercase">1980s-90s</h3>
+                <p class="text-sm text-slate-600 uppercase">Liverpool / Brock Corridors</p>
+              </div>
+            </div>
+            <div class="space-y-3">
+              <p class="text-sm text-slate-700">
+                <span class="font-bold">Characteristics:</span> First major suburban expansion, Liverpool/Brock development, mix of housing types, standard builder waterproofing.
+              </p>
+              <p class="text-sm text-slate-700">
+                <span class="font-bold">Common Issues:</span> Builder-grade membrane deterioration, Rouge River watershed influence, inadequate drainage for conservation area runoff.
+              </p>
+              <p class="text-sm text-slate-700">
+                <span class="font-bold">Typical Solution:</span> Membrane replacement, watershed-aware drainage design, enhanced capacity for conservation area proximity.
+              </p>
+              <p class="text-sm font-bold text-cyan-600">
+                Avg Cost: $14,000–$24,000
+              </p>
+            </div>
+          </div>
+
+          <!-- Era 3: 2000s-2010s -->
+          <div class="border-2 border-slate-200 p-6">
+            <div class="flex items-start gap-4 mb-4">
+              <div class="bg-cyan-500 text-white font-bold text-2xl w-12 h-12 flex items-center justify-center flex-shrink-0">
+                3
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-slate-900 uppercase">2000s-2010s</h3>
+                <p class="text-sm text-slate-600 uppercase">Duffin Heights / Brock North</p>
+              </div>
+            </div>
+            <div class="space-y-3">
+              <p class="text-sm text-slate-700">
+                <span class="font-bold">Characteristics:</span> Northern expansion, Duffin Heights development, modern construction methods, TRCA conservation requirements.
+              </p>
+              <p class="text-sm text-slate-700">
+                <span class="font-bold">Common Issues:</span> Builder defects, construction settling, Duffins Creek watershed flooding, TRCA restriction challenges.
+              </p>
+              <p class="text-sm text-slate-700">
+                <span class="font-bold">Typical Solution:</span> Post-construction upgrades, conservation-compliant drainage, enhanced systems for watershed proximity.
+              </p>
+              <p class="text-sm font-bold text-cyan-600">
+                Avg Cost: $12,000–$22,000
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-8 bg-amber-50 border-l-4 border-amber-500 p-6">
+          <p class="text-sm text-slate-700">
+            <span class="font-bold">Pickering Note:</span> Pickering uniquely combines urban subdivisions with rural conservation areas and lakefront properties. Rouge Park and TRCA conservation regulations affect many properties, requiring specialized environmental compliance. Properties near Duffins Creek or Rouge River need watershed-aware drainage solutions that protect both your home and sensitive ecosystems.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Neighborhoods with Project Counts -->
+  <section class="py-16 bg-navy-900">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-4xl font-bold text-white mb-4 uppercase">PICKERING NEIGHBORHOODS WE SERVE</h2>
+          <p class="text-lg text-slate-300 max-w-3xl mx-auto">
+            Over 178 completed waterproofing projects across Pickering's diverse communities
+          </p>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div class="bg-white/10 backdrop-blur-sm border-2 border-slate-700 p-4">
+            <div class="text-3xl font-bold text-cyan-400 mb-1">34</div>
+            <div class="text-sm text-white font-bold uppercase">Bay Ridges</div>
+            <div class="text-xs text-slate-400">Projects Completed</div>
+          </div>
+
+          <div class="bg-white/10 backdrop-blur-sm border-2 border-slate-700 p-4">
+            <div class="text-3xl font-bold text-cyan-400 mb-1">29</div>
+            <div class="text-sm text-white font-bold uppercase">Dunbarton</div>
+            <div class="text-xs text-slate-400">Projects Completed</div>
+          </div>
+
+          <div class="bg-white/10 backdrop-blur-sm border-2 border-slate-700 p-4">
+            <div class="text-3xl font-bold text-cyan-400 mb-1">25</div>
+            <div class="text-sm text-white font-bold uppercase">Village East</div>
+            <div class="text-xs text-slate-400">Projects Completed</div>
+          </div>
+
+          <div class="bg-white/10 backdrop-blur-sm border-2 border-slate-700 p-4">
+            <div class="text-3xl font-bold text-cyan-400 mb-1">22</div>
+            <div class="text-sm text-white font-bold uppercase">Rougemount</div>
+            <div class="text-xs text-slate-400">Projects Completed</div>
+          </div>
+
+          <div class="bg-white/10 backdrop-blur-sm border-2 border-slate-700 p-4">
+            <div class="text-3xl font-bold text-cyan-400 mb-1">20</div>
+            <div class="text-sm text-white font-bold uppercase">Amberlea</div>
+            <div class="text-xs text-slate-400">Projects Completed</div>
+          </div>
+
+          <div class="bg-white/10 backdrop-blur-sm border-2 border-slate-700 p-4">
+            <div class="text-3xl font-bold text-cyan-400 mb-1">18</div>
+            <div class="text-sm text-white font-bold uppercase">Brock Ridge</div>
+            <div class="text-xs text-slate-400">Projects Completed</div>
+          </div>
+
+          <div class="bg-white/10 backdrop-blur-sm border-2 border-slate-700 p-4">
+            <div class="text-3xl font-bold text-cyan-400 mb-1">16</div>
+            <div class="text-sm text-white font-bold uppercase">Duffin Heights</div>
+            <div class="text-xs text-slate-400">Projects Completed</div>
+          </div>
+
+          <div class="bg-white/10 backdrop-blur-sm border-2 border-slate-700 p-4">
+            <div class="text-3xl font-bold text-cyan-400 mb-1">14</div>
+            <div class="text-sm text-white font-bold uppercase">Liverpool</div>
+            <div class="text-xs text-slate-400">Projects Completed</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Hyper-Local Components -->
+  <GeologicalProfile city="Pickering" data={cityData.geological} />
+  <SeasonalRiskCalendar city="Pickering" data={cityData.seasonal} />
+  <InfrastructureReport city="Pickering" data={cityData.infrastructure} />
+  <FoundationCensus city="Pickering" data={cityData.foundationCensus} />
+  <FloodTimeline city="Pickering" data={cityData.floodHistory} />
+
   <!-- Services -->
   <Services />
 
@@ -372,12 +577,204 @@ const localBusinessSchema = {
   <!-- Process -->
   <Process />
 
+  <!-- Rebates & Subsidies Section -->
+  <section class="py-16 bg-slate-50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-4xl font-bold text-slate-900 mb-4 uppercase">PICKERING REBATES & SUBSIDIES</h2>
+          <p class="text-lg text-slate-600 max-w-3xl mx-auto">
+            Financial assistance programs available for Pickering homeowners
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <!-- Rebate 1 -->
+          <div class="bg-white border-2 border-slate-200 p-6">
+            <div class="flex items-start gap-4 mb-4">
+              <svg class="w-12 h-12 text-cyan-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+              </svg>
+              <div>
+                <h3 class="text-xl font-bold text-slate-900 uppercase mb-2">Durham Region Basement Flooding Protection</h3>
+                <div class="text-sm text-slate-600 space-y-2">
+                  <p><span class="font-bold">Eligible:</span> Backwater valves, sump pumps, foundation drainage, downspout disconnection</p>
+                  <p><span class="font-bold">Amount:</span> Up to $3,200 per property</p>
+                  <p><span class="font-bold">Contact:</span> Durham Region Works Department</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Rebate 2 -->
+          <div class="bg-white border-2 border-slate-200 p-6">
+            <div class="flex items-start gap-4 mb-4">
+              <svg class="w-12 h-12 text-cyan-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+              </svg>
+              <div>
+                <h3 class="text-xl font-bold text-slate-900 uppercase mb-2">Ontario Seniors Tax Credit</h3>
+                <div class="text-sm text-slate-600 space-y-2">
+                  <p><span class="font-bold">Eligible:</span> Seniors 65+ can claim home maintenance including waterproofing</p>
+                  <p><span class="font-bold">Amount:</span> Up to $1,500 tax credit annually</p>
+                  <p><span class="font-bold">Contact:</span> Canada Revenue Agency</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Rebate 3 -->
+          <div class="bg-white border-2 border-slate-200 p-6">
+            <div class="flex items-start gap-4 mb-4">
+              <svg class="w-12 h-12 text-cyan-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+              </svg>
+              <div>
+                <h3 class="text-xl font-bold text-slate-900 uppercase mb-2">Insurance Reductions</h3>
+                <div class="text-sm text-slate-600 space-y-2">
+                  <p><span class="font-bold">Eligible:</span> Professional waterproofing reduces flood risk premiums</p>
+                  <p><span class="font-bold">Amount:</span> 5-15% annual premium reduction</p>
+                  <p><span class="font-bold">Contact:</span> Your insurance provider</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Rebate 4 -->
+          <div class="bg-white border-2 border-slate-200 p-6">
+            <div class="flex items-start gap-4 mb-4">
+              <svg class="w-12 h-12 text-cyan-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+              </svg>
+              <div>
+                <h3 class="text-xl font-bold text-slate-900 uppercase mb-2">TRCA Conservation Programs</h3>
+                <div class="text-sm text-slate-600 space-y-2">
+                  <p><span class="font-bold">Eligible:</span> Properties in Toronto & Region Conservation Authority watershed</p>
+                  <p><span class="font-bold">Amount:</span> Varies by environmental impact and Rouge River proximity</p>
+                  <p><span class="font-bold">Contact:</span> TRCA Environmental Services</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-8 text-center">
+          <p class="text-sm text-slate-600">We help Pickering homeowners navigate all available rebate programs and provide documentation for claims.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Local Testimonials Section -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-4xl font-bold text-slate-900 mb-4 uppercase">PICKERING HOMEOWNER TESTIMONIALS</h2>
+          <p class="text-lg text-slate-600 max-w-3xl mx-auto">
+            Real experiences from your Pickering neighbors
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <!-- Testimonial 1 -->
+          <div class="bg-slate-50 border-2 border-slate-200 p-6">
+            <div class="flex items-center gap-1 mb-4">
+              <svg class="w-5 h-5 text-amber-500 fill-current" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+              </svg>
+              <svg class="w-5 h-5 text-amber-500 fill-current" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+              </svg>
+              <svg class="w-5 h-5 text-amber-500 fill-current" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+              </svg>
+              <svg class="w-5 h-5 text-amber-500 fill-current" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+              </svg>
+              <svg class="w-5 h-5 text-amber-500 fill-current" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+              </svg>
+            </div>
+            <p class="text-slate-700 mb-4 italic">
+              "Our Bay Ridges home backs onto Lake Ontario - beautiful views but brutal water pressure during storms. Storm surge in 2019 flooded our basement with lake water mixed with sewage. DrySpace installed a complete lakefront protection system: exterior waterproofing rated for surge conditions, high-capacity backup sump, and backwater valve. Two major storms since - completely dry. Worth every penny."
+            </p>
+            <div class="flex items-center gap-3">
+              <div class="w-12 h-12 bg-cyan-500 text-white font-bold flex items-center justify-center">
+                MO
+              </div>
+              <div>
+                <div class="font-bold text-slate-900">Michael O'Brien</div>
+                <div class="text-sm text-slate-600">Bay Ridges • Lakefront Storm Surge Protection</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial 2 -->
+          <div class="bg-slate-50 border-2 border-slate-200 p-6">
+            <div class="flex items-center gap-1 mb-4">
+              <svg class="w-5 h-5 text-amber-500 fill-current" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+              </svg>
+              <svg class="w-5 h-5 text-amber-500 fill-current" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+              </svg>
+              <svg class="w-5 h-5 text-amber-500 fill-current" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+              </svg>
+              <svg class="w-5 h-5 text-amber-500 fill-current" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+              </svg>
+              <svg class="w-5 h-5 text-amber-500 fill-current" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+              </svg>
+            </div>
+            <p class="text-slate-700 mb-4 italic">
+              "Bought a 2017 Duffin Heights home thinking 'new construction, no problems.' Wrong. Foundation cracks appeared within a year, basement leaked during the first major rain. Builder blamed our lot grading. DrySpace found the builder installed the weeping tile 6 inches too high and used cheap membrane. They documented everything for our Tarion claim, fixed the defects properly, and we got a partial settlement. Should have been done right from the start."
+            </p>
+            <div class="flex items-center gap-3">
+              <div class="w-12 h-12 bg-cyan-500 text-white font-bold flex items-center justify-center">
+                PP
+              </div>
+              <div>
+                <div class="font-bold text-slate-900">Priya Patel</div>
+                <div class="text-sm text-slate-600">Duffin Heights • Builder Defect Correction</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- Location Image Showcase -->
   <LocationImageShowcase city="Pickering" />
 
   <!-- Testimonials -->
   <Testimonials />
+
+  <!-- Related Articles Section -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-3xl font-bold text-slate-900 mb-8 uppercase text-center">RELATED WATERPROOFING ARTICLES</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <a href="/blog/rouge-river-watershed-protection" class="border-2 border-slate-200 p-6 hover:border-cyan-500 transition-colors">
+            <h3 class="font-bold text-slate-900 mb-2 uppercase">Rouge River Watershed Protection</h3>
+            <p class="text-sm text-slate-600">Waterproofing solutions that work within TRCA conservation guidelines.</p>
+          </a>
+          <a href="/blog/duffins-creek-flooding" class="border-2 border-slate-200 p-6 hover:border-cyan-500 transition-colors">
+            <h3 class="font-bold text-slate-900 mb-2 uppercase">Duffins Creek Flooding Solutions</h3>
+            <p class="text-sm text-slate-600">Protecting homes near Duffins Creek from seasonal watershed flooding.</p>
+          </a>
+          <a href="/blog/lake-ontario-proximity" class="border-2 border-slate-200 p-6 hover:border-cyan-500 transition-colors">
+            <h3 class="font-bold text-slate-900 mb-2 uppercase">Lake Ontario High Water Tables</h3>
+            <p class="text-sm text-slate-600">Managing elevated groundwater and storm surge in lakefront properties.</p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- FAQ Section -->
   <section class="py-16 bg-slate-50">

@@ -9,8 +9,15 @@ import LocationImageShowcase from '../../components/LocationImageShowcase.astro'
 import InternalLinks from '../../components/InternalLinks.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import BreadcrumbSchema from '../../components/BreadcrumbSchema.astro';
+import GeologicalProfile from '../../components/sections/GeologicalProfile.astro';
+import SeasonalRiskCalendar from '../../components/sections/SeasonalRiskCalendar.astro';
+import InfrastructureReport from '../../components/sections/InfrastructureReport.astro';
+import FoundationCensus from '../../components/sections/FoundationCensus.astro';
+import FloodTimeline from '../../components/sections/FloodTimeline.astro';
+import { locationData } from '../../data/location-data';
 
 const pageTitle = "Basement Waterproofing Milton | Foundation Repair | DrySpace";
+const cityData = locationData['milton'];
 const pageDescription = "Professional basement waterproofing in Milton. New subdivision specialists. Foundation repair, sump pumps, escarpment drainage. 25-year warranty. Free inspection. Call 437-545-0067.";
 
 // Local area information
@@ -80,6 +87,30 @@ const locationFAQs = [
   {
     question: "Do you work with new home warranties in Milton?",
     answer: "Yes! We work within warranty requirements to provide enhanced waterproofing that doesn't void builder warranties. Many Milton homeowners upgrade their waterproofing while maintaining their new home coverage."
+  },
+  {
+    question: "How does Milton's escarpment clay soil affect basement waterproofing?",
+    answer: "Escarpment clay is highly expansive when wet and contracts when dry, creating hydrostatic pressure against foundations. This clay also has poor drainage characteristics, causing water to pool around foundations rather than drain away. We use specialized membrane systems and drainage designs specifically engineered for expansive escarpment clay conditions."
+  },
+  {
+    question: "What causes escarpment groundwater issues in Milton?",
+    answer: "The Niagara Escarpment's limestone bedrock creates underground water channels that emerge at various elevations. Properties on or near the escarpment often experience seasonal groundwater surges as water moves through limestone fissures. Our solutions include deep foundation drainage, sump systems designed for high water tables, and specialized waterproofing for below-grade groundwater pressure."
+  },
+  {
+    question: "Do I need a permit for basement waterproofing in Halton Region?",
+    answer: "Most exterior waterproofing projects in Milton require a building permit from the Town of Milton. This includes foundation excavation, weeping tile installation, and structural work. Interior waterproofing (interior drainage systems, sump pumps) typically doesn't require permits unless electrical work is involved. We handle all permit applications and inspections as part of our service."
+  },
+  {
+    question: "How much does basement waterproofing cost in Milton?",
+    answer: "Exterior waterproofing in Milton costs $145-$280 per linear foot, with typical projects ranging from $13,000-$27,000 depending on foundation depth, soil conditions, and escarpment challenges. Interior drainage systems cost $80-$200 per linear foot. New subdivision homes often need less extensive work ($13,000-$18,000), while heritage Old Milton homes may require more comprehensive solutions ($22,000-$28,000). We provide free detailed quotes."
+  },
+  {
+    question: "Will waterproofing void my Tarion new home warranty?",
+    answer: "Professional waterproofing won't void your Tarion warranty if done correctly. We work within Tarion guidelines, ensuring our upgrades complement (not replace) builder-installed systems during the warranty period. Many Milton homeowners enhance their waterproofing while keeping full warranty protection. We provide documentation that satisfies Tarion requirements and can even strengthen warranty claims if you're experiencing water issues."
+  },
+  {
+    question: "When is the best time of year for waterproofing in Milton?",
+    answer: "Late spring through fall (May-October) is ideal for exterior waterproofing in Milton. Ground conditions are workable, excavation is easier, and materials cure properly. However, we work year-round with specialized cold-weather techniques when needed. Interior drainage systems can be installed any season. For emergency situations, we provide 24/7 service regardless of weather. Book early for spring/summer as these are our busiest seasons in rapidly-growing Milton."
   }
 ];
 
@@ -334,6 +365,180 @@ const localBusinessSchema = {
     </div>
   </section>
 
+  <!-- Construction Eras Section -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-4xl font-bold text-slate-900 mb-4 uppercase">MILTON'S CONSTRUCTION ERAS</h2>
+          <p class="text-lg text-slate-600 max-w-3xl mx-auto">
+            Understanding when your Milton home was built helps predict waterproofing needs
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Era 1: Pre-1980s -->
+          <div class="border-2 border-slate-200 p-6">
+            <div class="flex items-start gap-4 mb-4">
+              <div class="bg-cyan-500 text-white font-bold text-2xl w-12 h-12 flex items-center justify-center flex-shrink-0">
+                1
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-slate-900 uppercase">PRE-1980s</h3>
+                <p class="text-sm text-slate-600 uppercase">Old Milton</p>
+              </div>
+            </div>
+            <div class="space-y-3">
+              <p class="text-sm text-slate-700">
+                <span class="font-bold">Characteristics:</span> Original Milton village homes, heritage properties, mature lots, established drainage.
+              </p>
+              <p class="text-sm text-slate-700">
+                <span class="font-bold">Common Issues:</span> Aging foundations, deteriorated exterior waterproofing, clay tile drainage failures, settlement cracks.
+              </p>
+              <p class="text-sm text-slate-700">
+                <span class="font-bold">Typical Solution:</span> Full exterior excavation, foundation repair, modern weeping tile, sump pump installation.
+              </p>
+              <p class="text-sm font-bold text-cyan-600">
+                Avg Cost: $18,000–$28,000
+              </p>
+            </div>
+          </div>
+
+          <!-- Era 2: 1990s-2000s -->
+          <div class="border-2 border-slate-200 p-6">
+            <div class="flex items-start gap-4 mb-4">
+              <div class="bg-cyan-500 text-white font-bold text-2xl w-12 h-12 flex items-center justify-center flex-shrink-0">
+                2
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-slate-900 uppercase">1990s-2000s</h3>
+                <p class="text-sm text-slate-600 uppercase">First Boom</p>
+              </div>
+            </div>
+            <div class="space-y-3">
+              <p class="text-sm text-slate-700">
+                <span class="font-bold">Characteristics:</span> First major suburban expansion, Dempsey/Willmott areas, builder-grade waterproofing, mixed quality.
+              </p>
+              <p class="text-sm text-slate-700">
+                <span class="font-bold">Common Issues:</span> Builder-grade membrane failures, inadequate drainage design, grading settlement, sump overwhelm.
+              </p>
+              <p class="text-sm text-slate-700">
+                <span class="font-bold">Typical Solution:</span> Exterior membrane replacement, enhanced drainage, sump capacity upgrade, backwater valve.
+              </p>
+              <p class="text-sm font-bold text-cyan-600">
+                Avg Cost: $15,000–$25,000
+              </p>
+            </div>
+          </div>
+
+          <!-- Era 3: 2000s-2010s -->
+          <div class="border-2 border-slate-200 p-6">
+            <div class="flex items-start gap-4 mb-4">
+              <div class="bg-cyan-500 text-white font-bold text-2xl w-12 h-12 flex items-center justify-center flex-shrink-0">
+                3
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-slate-900 uppercase">2000s-2010s</h3>
+                <p class="text-sm text-slate-600 uppercase">Hyper Growth</p>
+              </div>
+            </div>
+            <div class="space-y-3">
+              <p class="text-sm text-slate-700">
+                <span class="font-bold">Characteristics:</span> Massive subdivision expansion, rapid construction, escarpment development, infrastructure strain.
+              </p>
+              <p class="text-sm text-slate-700">
+                <span class="font-bold">Common Issues:</span> Rushed construction settling, overwhelmed storm systems, slope drainage failures, Tarion warranty claims.
+              </p>
+              <p class="text-sm text-slate-700">
+                <span class="font-bold">Typical Solution:</span> Post-construction upgrades, independent drainage, enhanced sump systems, slope stabilization.
+              </p>
+              <p class="text-sm font-bold text-cyan-600">
+                Avg Cost: $13,000–$22,000
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-8 bg-amber-50 border-l-4 border-amber-500 p-6">
+          <p class="text-sm text-slate-700">
+            <span class="font-bold">Milton Note:</span> Canada's fastest-growing city from 2006-2016 created unique challenges. Rapid subdivision development often prioritized speed over drainage quality. Many "new" homes need waterproofing upgrades within 5-10 years due to construction settling and overwhelmed municipal infrastructure.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Neighborhoods with Project Counts -->
+  <section class="py-16 bg-navy-900">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-4xl font-bold text-white mb-4 uppercase">MILTON NEIGHBORHOODS WE SERVE</h2>
+          <p class="text-lg text-slate-300 max-w-3xl mx-auto">
+            Over 172 completed waterproofing projects across Milton's growing communities
+          </p>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div class="bg-white/10 backdrop-blur-sm border-2 border-slate-700 p-4">
+            <div class="text-3xl font-bold text-cyan-400 mb-1">32</div>
+            <div class="text-sm text-white font-bold uppercase">Bristol Survey</div>
+            <div class="text-xs text-slate-400">Projects Completed</div>
+          </div>
+
+          <div class="bg-white/10 backdrop-blur-sm border-2 border-slate-700 p-4">
+            <div class="text-3xl font-bold text-cyan-400 mb-1">28</div>
+            <div class="text-sm text-white font-bold uppercase">Willmott</div>
+            <div class="text-xs text-slate-400">Projects Completed</div>
+          </div>
+
+          <div class="bg-white/10 backdrop-blur-sm border-2 border-slate-700 p-4">
+            <div class="text-3xl font-bold text-cyan-400 mb-1">25</div>
+            <div class="text-sm text-white font-bold uppercase">Timberlea</div>
+            <div class="text-xs text-slate-400">Projects Completed</div>
+          </div>
+
+          <div class="bg-white/10 backdrop-blur-sm border-2 border-slate-700 p-4">
+            <div class="text-3xl font-bold text-cyan-400 mb-1">22</div>
+            <div class="text-sm text-white font-bold uppercase">Scott</div>
+            <div class="text-xs text-slate-400">Projects Completed</div>
+          </div>
+
+          <div class="bg-white/10 backdrop-blur-sm border-2 border-slate-700 p-4">
+            <div class="text-3xl font-bold text-cyan-400 mb-1">20</div>
+            <div class="text-sm text-white font-bold uppercase">Beaty</div>
+            <div class="text-xs text-slate-400">Projects Completed</div>
+          </div>
+
+          <div class="bg-white/10 backdrop-blur-sm border-2 border-slate-700 p-4">
+            <div class="text-3xl font-bold text-cyan-400 mb-1">18</div>
+            <div class="text-sm text-white font-bold uppercase">Coates</div>
+            <div class="text-xs text-slate-400">Projects Completed</div>
+          </div>
+
+          <div class="bg-white/10 backdrop-blur-sm border-2 border-slate-700 p-4">
+            <div class="text-3xl font-bold text-cyan-400 mb-1">15</div>
+            <div class="text-sm text-white font-bold uppercase">Bronte Meadows</div>
+            <div class="text-xs text-slate-400">Projects Completed</div>
+          </div>
+
+          <div class="bg-white/10 backdrop-blur-sm border-2 border-slate-700 p-4">
+            <div class="text-3xl font-bold text-cyan-400 mb-1">12</div>
+            <div class="text-sm text-white font-bold uppercase">Old Milton</div>
+            <div class="text-xs text-slate-400">Projects Completed</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Hyper-Local Components -->
+  <GeologicalProfile city="Milton" data={cityData.geological} />
+  <SeasonalRiskCalendar city="Milton" data={cityData.seasonal} />
+  <InfrastructureReport city="Milton" data={cityData.infrastructure} />
+  <FoundationCensus city="Milton" data={cityData.foundationCensus} />
+  <FloodTimeline city="Milton" data={cityData.floodHistory} />
+
   <!-- Services -->
   <Services />
 
@@ -372,12 +577,204 @@ const localBusinessSchema = {
   <!-- Process -->
   <Process />
 
+  <!-- Rebates & Subsidies Section -->
+  <section class="py-16 bg-slate-50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-4xl font-bold text-slate-900 mb-4 uppercase">MILTON REBATES & SUBSIDIES</h2>
+          <p class="text-lg text-slate-600 max-w-3xl mx-auto">
+            Financial assistance programs available for Milton homeowners
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <!-- Rebate 1 -->
+          <div class="bg-white border-2 border-slate-200 p-6">
+            <div class="flex items-start gap-4 mb-4">
+              <svg class="w-12 h-12 text-cyan-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+              </svg>
+              <div>
+                <h3 class="text-xl font-bold text-slate-900 uppercase mb-2">Halton Region Flood Protection</h3>
+                <div class="text-sm text-slate-600 space-y-2">
+                  <p><span class="font-bold">Eligible:</span> Backwater valves, sump pump installation, foundation drainage improvements</p>
+                  <p><span class="font-bold">Amount:</span> Up to $3,500 per property</p>
+                  <p><span class="font-bold">Contact:</span> Halton Region Public Works</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Rebate 2 -->
+          <div class="bg-white border-2 border-slate-200 p-6">
+            <div class="flex items-start gap-4 mb-4">
+              <svg class="w-12 h-12 text-cyan-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+              </svg>
+              <div>
+                <h3 class="text-xl font-bold text-slate-900 uppercase mb-2">Ontario Seniors Tax Credit</h3>
+                <div class="text-sm text-slate-600 space-y-2">
+                  <p><span class="font-bold">Eligible:</span> Seniors 65+ can claim home maintenance including waterproofing</p>
+                  <p><span class="font-bold">Amount:</span> Up to $1,500 tax credit annually</p>
+                  <p><span class="font-bold">Contact:</span> Canada Revenue Agency</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Rebate 3 -->
+          <div class="bg-white border-2 border-slate-200 p-6">
+            <div class="flex items-start gap-4 mb-4">
+              <svg class="w-12 h-12 text-cyan-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+              </svg>
+              <div>
+                <h3 class="text-xl font-bold text-slate-900 uppercase mb-2">Home Insurance Reductions</h3>
+                <div class="text-sm text-slate-600 space-y-2">
+                  <p><span class="font-bold">Eligible:</span> Professional waterproofing reduces flood risk premiums</p>
+                  <p><span class="font-bold">Amount:</span> 5-15% annual premium reduction</p>
+                  <p><span class="font-bold">Contact:</span> Your insurance provider</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Rebate 4 -->
+          <div class="bg-white border-2 border-slate-200 p-6">
+            <div class="flex items-start gap-4 mb-4">
+              <svg class="w-12 h-12 text-cyan-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+              </svg>
+              <div>
+                <h3 class="text-xl font-bold text-slate-900 uppercase mb-2">Escarpment Conservation Grants</h3>
+                <div class="text-sm text-slate-600 space-y-2">
+                  <p><span class="font-bold">Eligible:</span> Properties on/near Niagara Escarpment slope stabilization</p>
+                  <p><span class="font-bold">Amount:</span> Varies by project scope</p>
+                  <p><span class="font-bold">Contact:</span> Niagara Escarpment Commission</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-8 text-center">
+          <p class="text-sm text-slate-600">We help Milton homeowners navigate all available rebate programs and provide documentation for claims.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Local Testimonials Section -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-4xl font-bold text-slate-900 mb-4 uppercase">MILTON HOMEOWNER TESTIMONIALS</h2>
+          <p class="text-lg text-slate-600 max-w-3xl mx-auto">
+            Real experiences from your Milton neighbors
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <!-- Testimonial 1 -->
+          <div class="bg-slate-50 border-2 border-slate-200 p-6">
+            <div class="flex items-center gap-1 mb-4">
+              <svg class="w-5 h-5 text-amber-500 fill-current" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+              </svg>
+              <svg class="w-5 h-5 text-amber-500 fill-current" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+              </svg>
+              <svg class="w-5 h-5 text-amber-500 fill-current" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+              </svg>
+              <svg class="w-5 h-5 text-amber-500 fill-current" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+              </svg>
+              <svg class="w-5 h-5 text-amber-500 fill-current" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+              </svg>
+            </div>
+            <p class="text-slate-700 mb-4 italic">
+              "Our 2018 Timberlea home flooded twice in the first three years. The builder's drainage was clearly inadequate for the escarpment runoff. DrySpace completely redesigned our drainage system and added a high-capacity sump. Zero issues through two heavy storm seasons since. They understood the challenges of rapid subdivision development."
+            </p>
+            <div class="flex items-center gap-3">
+              <div class="w-12 h-12 bg-cyan-500 text-white font-bold flex items-center justify-center">
+                JP
+              </div>
+              <div>
+                <div class="font-bold text-slate-900">Jason & Emily Park</div>
+                <div class="text-sm text-slate-600">Timberlea • New Home Drainage Failure</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial 2 -->
+          <div class="bg-slate-50 border-2 border-slate-200 p-6">
+            <div class="flex items-center gap-1 mb-4">
+              <svg class="w-5 h-5 text-amber-500 fill-current" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+              </svg>
+              <svg class="w-5 h-5 text-amber-500 fill-current" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+              </svg>
+              <svg class="w-5 h-5 text-amber-500 fill-current" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+              </svg>
+              <svg class="w-5 h-5 text-amber-500 fill-current" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+              </svg>
+              <svg class="w-5 h-5 text-amber-500 fill-current" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+              </svg>
+            </div>
+            <p class="text-slate-700 mb-4 italic">
+              "My 1965 heritage home in Old Milton had water seeping through the stone foundation every spring. DrySpace excavated by hand to preserve the original stone, installed modern weeping tile, and waterproofed with materials compatible with heritage construction. Their respect for the home's history while providing modern protection was impressive. Four years dry."
+            </p>
+            <div class="flex items-center gap-3">
+              <div class="w-12 h-12 bg-cyan-500 text-white font-bold flex items-center justify-center">
+                MW
+              </div>
+              <div>
+                <div class="font-bold text-slate-900">Margaret Wilson</div>
+                <div class="text-sm text-slate-600">Old Milton • Heritage Home Restoration</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- Location Image Showcase -->
   <LocationImageShowcase city="Milton" />
 
   <!-- Testimonials -->
   <Testimonials />
+
+  <!-- Related Articles Section -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-3xl font-bold text-slate-900 mb-8 uppercase text-center">RELATED WATERPROOFING ARTICLES</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <a href="/blog/new-home-waterproofing" class="border-2 border-slate-200 p-6 hover:border-cyan-500 transition-colors">
+            <h3 class="font-bold text-slate-900 mb-2 uppercase">Why New Homes Need Waterproofing</h3>
+            <p class="text-sm text-slate-600">Builder-grade protection isn't always enough in rapidly expanding communities.</p>
+          </a>
+          <a href="/blog/escarpment-drainage" class="border-2 border-slate-200 p-6 hover:border-cyan-500 transition-colors">
+            <h3 class="font-bold text-slate-900 mb-2 uppercase">Escarpment Drainage Solutions</h3>
+            <p class="text-sm text-slate-600">Managing elevation changes and rapid runoff on Niagara Escarpment properties.</p>
+          </a>
+          <a href="/blog/tarion-warranty-waterproofing" class="border-2 border-slate-200 p-6 hover:border-cyan-500 transition-colors">
+            <h3 class="font-bold text-slate-900 mb-2 uppercase">Tarion Warranty & Waterproofing</h3>
+            <p class="text-sm text-slate-600">Understanding your new home warranty coverage for foundation and drainage issues.</p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- FAQ Section -->
   <section class="py-16 bg-slate-50">

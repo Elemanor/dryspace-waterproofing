@@ -9,8 +9,15 @@ import LocationImageShowcase from '../../components/LocationImageShowcase.astro'
 import InternalLinks from '../../components/InternalLinks.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import BreadcrumbSchema from '../../components/BreadcrumbSchema.astro';
+import GeologicalProfile from '../../components/sections/GeologicalProfile.astro';
+import SeasonalRiskCalendar from '../../components/sections/SeasonalRiskCalendar.astro';
+import InfrastructureReport from '../../components/sections/InfrastructureReport.astro';
+import FoundationCensus from '../../components/sections/FoundationCensus.astro';
+import FloodTimeline from '../../components/sections/FloodTimeline.astro';
+import { locationData } from '../../data/location-data';
 
 const pageTitle = "Basement Waterproofing Waterloo | Foundation Repair | DrySpace";
+const cityData = locationData['waterloo'];
 const pageDescription = "Professional basement waterproofing in Waterloo. Grand River floodplain experts. Foundation repair, sump pumps, crack repair. 25-year warranty. Free inspection. Call 437-545-0067.";
 
 // Local area information
@@ -80,6 +87,30 @@ const locationFAQs = [
   {
     question: "How do you handle seasonal flooding patterns?",
     answer: "Grand River seasonal flooding affects many local properties during spring melt and severe storms. Our flood management includes monitoring systems, emergency response protocols, and specialized flood barriers designed for river proximity challenges."
+  },
+  {
+    question: "How does the Waterloo Moraine aquifer affect basements?",
+    answer: "The Waterloo Moraine acts as a major groundwater aquifer, creating high water tables and continuous hydrostatic pressure on foundations. Our moraine-specific solutions include enhanced drainage capacity, groundwater management systems, and specialized waterproofing designed for aquifer conditions."
+  },
+  {
+    question: "What flooding risks does Laurel Creek create?",
+    answer: "Laurel Creek runs through central Waterloo and can overflow during spring melt and severe storms, affecting properties in the floodplain. We provide flood protection including backwater valves, enhanced sump systems, and emergency overflow management for creek-adjacent properties."
+  },
+  {
+    question: "How do you waterproof heritage homes in downtown Waterloo?",
+    answer: "Waterloo's heritage buildings require specialized techniques that preserve stone foundations, maintain architectural integrity, and meet heritage designation requirements. We use period-appropriate materials, reversible installations, and heritage-sensitive approaches approved by conservation authorities."
+  },
+  {
+    question: "What permits are required in Waterloo Region?",
+    answer: "Most interior waterproofing requires no permit in Waterloo Region. Exterior excavation typically requires a building permit through the City of Waterloo. Properties near Laurel Creek may also need GRCA approval. We handle all permit applications and ensure compliance with regional requirements."
+  },
+  {
+    question: "How much does basement waterproofing cost in Waterloo?",
+    answer: "Exterior waterproofing costs $130-$260 per linear foot in Waterloo, with most homes totaling $11,000-$25,000. Interior drainage systems cost $80-$200 per linear foot. Costs reflect the complexity of moraine aquifer conditions, floodplain requirements, and Waterloo Region building standards."
+  },
+  {
+    question: "What are unique moraine soil conditions in Waterloo?",
+    answer: "The Waterloo Moraine features complex glacial deposits with mixed sand, gravel, and clay layers creating variable drainage and high groundwater. Our solutions account for the moraine's aquifer recharge role, unpredictable soil profiles, and environmental protection requirements for this sensitive geological formation."
   }
 ];
 
@@ -334,6 +365,191 @@ const localBusinessSchema = {
     </div>
   </section>
 
+  <!-- Construction Eras -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-4xl font-bold text-slate-900 mb-4 uppercase">Waterloo Construction Eras</h2>
+        <p class="text-lg text-slate-600 mb-8">
+          Understanding your home's construction era helps identify common waterproofing challenges
+        </p>
+
+        <div class="space-y-6">
+          <!-- Era 1 -->
+          <div class="bg-slate-50 border-2 border-slate-200 p-8 border-l-4 border-l-cyan-500">
+            <div class="flex items-start gap-4">
+              <div class="flex-shrink-0 w-12 h-12 bg-cyan-500 text-white font-bold text-xl flex items-center justify-center">
+                1
+              </div>
+              <div class="flex-1">
+                <h3 class="text-2xl font-bold text-slate-900 mb-2 uppercase">Pre-1950s: Historic Waterloo</h3>
+                <p class="text-slate-600 mb-4">
+                  Heritage downtown buildings and century homes with stone foundations and original construction methods.
+                </p>
+                <div class="grid md:grid-cols-2 gap-4">
+                  <div>
+                    <h4 class="font-bold text-slate-900 mb-2">Common Issues:</h4>
+                    <ul class="text-sm text-slate-600 space-y-1">
+                      <li class="flex items-start"><span class="mr-2 text-cyan-500">•</span>Deteriorating stone foundations</li>
+                      <li class="flex items-start"><span class="mr-2 text-cyan-500">•</span>No original drainage systems</li>
+                      <li class="flex items-start"><span class="mr-2 text-cyan-500">•</span>Heritage preservation requirements</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-slate-900 mb-2">Typical Solution:</h4>
+                    <p class="text-sm text-slate-600">Heritage-sensitive interior drainage with stone foundation stabilization and period-appropriate materials.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Era 2 -->
+          <div class="bg-slate-50 border-2 border-slate-200 p-8 border-l-4 border-l-cyan-500">
+            <div class="flex items-start gap-4">
+              <div class="flex-shrink-0 w-12 h-12 bg-cyan-500 text-white font-bold text-xl flex items-center justify-center">
+                2
+              </div>
+              <div class="flex-1">
+                <h3 class="text-2xl font-bold text-slate-900 mb-2 uppercase">1950s-70s: University Area Growth</h3>
+                <p class="text-slate-600 mb-4">
+                  Post-war expansion around University of Waterloo with basic concrete block and poured foundations.
+                </p>
+                <div class="grid md:grid-cols-2 gap-4">
+                  <div>
+                    <h4 class="font-bold text-slate-900 mb-2">Common Issues:</h4>
+                    <ul class="text-sm text-slate-600 space-y-1">
+                      <li class="flex items-start"><span class="mr-2 text-cyan-500">•</span>Aging block foundations cracking</li>
+                      <li class="flex items-start"><span class="mr-2 text-cyan-500">•</span>Minimal original waterproofing</li>
+                      <li class="flex items-start"><span class="mr-2 text-cyan-500">•</span>Student rental property wear</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-slate-900 mb-2">Typical Solution:</h4>
+                    <p class="text-sm text-slate-600">Cost-effective interior drainage for rentals or full exterior membrane for owner-occupied properties.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Era 3 -->
+          <div class="bg-slate-50 border-2 border-slate-200 p-8 border-l-4 border-l-cyan-500">
+            <div class="flex items-start gap-4">
+              <div class="flex-shrink-0 w-12 h-12 bg-cyan-500 text-white font-bold text-xl flex items-center justify-center">
+                3
+              </div>
+              <div class="flex-1">
+                <h3 class="text-2xl font-bold text-slate-900 mb-2 uppercase">1980s-2000s: Suburban Expansion</h3>
+                <p class="text-slate-600 mb-4">
+                  Modern subdivision development with improved building standards but facing moraine groundwater challenges.
+                </p>
+                <div class="grid md:grid-cols-2 gap-4">
+                  <div>
+                    <h4 class="font-bold text-slate-900 mb-2">Common Issues:</h4>
+                    <ul class="text-sm text-slate-600 space-y-1">
+                      <li class="flex items-start"><span class="mr-2 text-cyan-500">•</span>Builder systems overwhelmed</li>
+                      <li class="flex items-start"><span class="mr-2 text-cyan-500">•</span>Moraine aquifer water pressure</li>
+                      <li class="flex items-start"><span class="mr-2 text-cyan-500">•</span>Settlement cracks appearing</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-slate-900 mb-2">Typical Solution:</h4>
+                    <p class="text-sm text-slate-600">Enhanced drainage capacity upgrades with moraine-specific groundwater management systems.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Neighborhoods with Project Counts -->
+  <section class="py-16 bg-navy-900">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-4xl font-bold text-white mb-4 uppercase">Waterloo Neighborhoods We Serve</h2>
+        <p class="text-lg text-slate-300 mb-8">
+          Over 159 waterproofing projects completed across Waterloo communities
+        </p>
+
+        <div class="grid md:grid-cols-2 gap-4">
+          <div class="bg-white/10 backdrop-blur-sm border-2 border-slate-700 p-6">
+            <div class="flex justify-between items-start mb-2">
+              <h3 class="text-xl font-bold text-white uppercase">University District</h3>
+              <span class="text-2xl font-bold text-amber-500">30</span>
+            </div>
+            <p class="text-sm text-slate-300">High-density student housing and century homes requiring diverse solutions</p>
+          </div>
+
+          <div class="bg-white/10 backdrop-blur-sm border-2 border-slate-700 p-6">
+            <div class="flex justify-between items-start mb-2">
+              <h3 class="text-xl font-bold text-white uppercase">Beechwood</h3>
+              <span class="text-2xl font-bold text-amber-500">26</span>
+            </div>
+            <p class="text-sm text-slate-300">Established residential area with mature trees and aging drainage systems</p>
+          </div>
+
+          <div class="bg-white/10 backdrop-blur-sm border-2 border-slate-700 p-6">
+            <div class="flex justify-between items-start mb-2">
+              <h3 class="text-xl font-bold text-white uppercase">Westmount</h3>
+              <span class="text-2xl font-bold text-amber-500">23</span>
+            </div>
+            <p class="text-sm text-slate-300">Mid-century development facing foundation settling and crack issues</p>
+          </div>
+
+          <div class="bg-white/10 backdrop-blur-sm border-2 border-slate-700 p-6">
+            <div class="flex justify-between items-start mb-2">
+              <h3 class="text-xl font-bold text-white uppercase">Lakeshore</h3>
+              <span class="text-2xl font-bold text-amber-500">20</span>
+            </div>
+            <p class="text-sm text-slate-300">Varied housing stock with Laurel Creek flooding considerations</p>
+          </div>
+
+          <div class="bg-white/10 backdrop-blur-sm border-2 border-slate-700 p-6">
+            <div class="flex justify-between items-start mb-2">
+              <h3 class="text-xl font-bold text-white uppercase">Columbia Forest</h3>
+              <span class="text-2xl font-bold text-amber-500">18</span>
+            </div>
+            <p class="text-sm text-slate-300">Newer development on moraine with groundwater management needs</p>
+          </div>
+
+          <div class="bg-white/10 backdrop-blur-sm border-2 border-slate-700 p-6">
+            <div class="flex justify-between items-start mb-2">
+              <h3 class="text-xl font-bold text-white uppercase">Laurelwood</h3>
+              <span class="text-2xl font-bold text-amber-500">16</span>
+            </div>
+            <p class="text-sm text-slate-300">Suburban subdivision requiring drainage capacity upgrades</p>
+          </div>
+
+          <div class="bg-white/10 backdrop-blur-sm border-2 border-slate-700 p-6">
+            <div class="flex justify-between items-start mb-2">
+              <h3 class="text-xl font-bold text-white uppercase">Vista Hills</h3>
+              <span class="text-2xl font-bold text-amber-500">14</span>
+            </div>
+            <p class="text-sm text-slate-300">Modern homes with builder warranty expiry waterproofing needs</p>
+          </div>
+
+          <div class="bg-white/10 backdrop-blur-sm border-2 border-slate-700 p-6">
+            <div class="flex justify-between items-start mb-2">
+              <h3 class="text-xl font-bold text-white uppercase">Clair Hills</h3>
+              <span class="text-2xl font-bold text-amber-500">12</span>
+            </div>
+            <p class="text-sm text-slate-300">Growing neighborhood with contemporary foundation protection requirements</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <GeologicalProfile city="Waterloo" data={cityData.geological} />
+  <SeasonalRiskCalendar city="Waterloo" data={cityData.seasonal} />
+  <InfrastructureReport city="Waterloo" data={cityData.infrastructure} />
+  <FoundationCensus city="Waterloo" data={cityData.foundationCensus} />
+  <FloodTimeline city="Waterloo" data={cityData.floodHistory} />
+
   <!-- Services -->
   <Services />
 
@@ -372,12 +588,195 @@ const localBusinessSchema = {
   <!-- Process -->
   <Process />
 
+  <!-- Rebate & Subsidy Section -->
+  <section class="py-16 bg-cyan-50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-4xl font-bold text-slate-900 mb-4 uppercase">Waterloo Region Waterproofing Rebates & Subsidies</h2>
+        <p class="text-lg text-slate-600 mb-8">
+          Waterloo homeowners can access financial assistance programs to offset waterproofing costs
+        </p>
+
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="bg-white border-2 border-slate-200 p-6">
+            <div class="flex items-start gap-4 mb-4">
+              <svg class="w-12 h-12 text-cyan-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <div>
+                <h3 class="text-xl font-bold text-slate-900 mb-2 uppercase">Waterloo Region Flood Programs</h3>
+                <p class="text-slate-600 mb-3">Financial assistance for basement flooding prevention and stormwater management</p>
+                <ul class="text-sm text-slate-600 space-y-1">
+                  <li class="flex items-start"><span class="mr-2 text-cyan-500">•</span>Sump pump installation grants</li>
+                  <li class="flex items-start"><span class="mr-2 text-cyan-500">•</span>Backwater valve subsidies</li>
+                  <li class="flex items-start"><span class="mr-2 text-cyan-500">•</span>Foundation drainage improvements</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white border-2 border-slate-200 p-6">
+            <div class="flex items-start gap-4 mb-4">
+              <svg class="w-12 h-12 text-cyan-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+              </svg>
+              <div>
+                <h3 class="text-xl font-bold text-slate-900 mb-2 uppercase">Ontario Seniors Tax Credit</h3>
+                <p class="text-slate-600 mb-3">Seniors 65+ can claim eligible home modifications including waterproofing</p>
+                <ul class="text-sm text-slate-600 space-y-1">
+                  <li class="flex items-start"><span class="mr-2 text-cyan-500">•</span>Up to $2,500 annual claim</li>
+                  <li class="flex items-start"><span class="mr-2 text-cyan-500">•</span>Includes foundation repairs</li>
+                  <li class="flex items-start"><span class="mr-2 text-cyan-500">•</span>Provincial tax credit</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white border-2 border-slate-200 p-6">
+            <div class="flex items-start gap-4 mb-4">
+              <svg class="w-12 h-12 text-cyan-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
+              </svg>
+              <div>
+                <h3 class="text-xl font-bold text-slate-900 mb-2 uppercase">Insurance Premium Reductions</h3>
+                <p class="text-slate-600 mb-3">Professional waterproofing can reduce home insurance premiums</p>
+                <ul class="text-sm text-slate-600 space-y-1">
+                  <li class="flex items-start"><span class="mr-2 text-cyan-500">•</span>10-20% flood coverage discounts</li>
+                  <li class="flex items-start"><span class="mr-2 text-cyan-500">•</span>Lower deductibles available</li>
+                  <li class="flex items-start"><span class="mr-2 text-cyan-500">•</span>Transferable warranty adds value</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white border-2 border-slate-200 p-6">
+            <div class="flex items-start gap-4 mb-4">
+              <svg class="w-12 h-12 text-cyan-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <div>
+                <h3 class="text-xl font-bold text-slate-900 mb-2 uppercase">GRCA Conservation Programs</h3>
+                <p class="text-slate-600 mb-3">Grand River Conservation Authority watershed protection incentives</p>
+                <ul class="text-sm text-slate-600 space-y-1">
+                  <li class="flex items-start"><span class="mr-2 text-cyan-500">•</span>Floodplain property grants</li>
+                  <li class="flex items-start"><span class="mr-2 text-cyan-500">•</span>Watershed protection funding</li>
+                  <li class="flex items-start"><span class="mr-2 text-cyan-500">•</span>Environmental compliance support</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-8 bg-white border-2 border-cyan-500 p-6">
+          <h3 class="text-lg font-bold text-slate-900 mb-2 uppercase">How We Help With Rebate Applications</h3>
+          <p class="text-slate-600 mb-4">
+            Our team assists Waterloo homeowners through the rebate application process, providing required documentation, compliance verification, and application support to maximize your available funding.
+          </p>
+          <a href="/free-inspection" class="inline-block bg-cyan-500 text-white px-6 py-3 font-bold hover:bg-cyan-600 transition-colors uppercase">
+            Get Rebate Consultation
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Local Testimonials -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-4xl font-bold text-slate-900 mb-4 uppercase">Waterloo Homeowner Success Stories</h2>
+        <p class="text-lg text-slate-600 mb-8">
+          Real experiences from your neighbors across Waterloo communities
+        </p>
+
+        <div class="space-y-6">
+          <div class="bg-slate-50 border-2 border-slate-200 p-8">
+            <div class="flex gap-1 mb-4">
+              {[1,2,3,4,5].map(() => (
+                <svg class="w-5 h-5 text-amber-500 fill-current" viewBox="0 0 20 20">
+                  <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                </svg>
+              ))}
+            </div>
+            <blockquote class="text-slate-600 mb-4 italic">
+              "Our 1920s heritage home in the University District required specialized waterproofing that respected the stone foundation while providing modern protection. DrySpace's heritage-sensitive approach and understanding of century home construction gave us a solution that preserved our home's character while keeping the basement perfectly dry."
+            </blockquote>
+            <div class="flex justify-between items-center">
+              <div>
+                <div class="font-bold text-slate-900">Dr. James Patterson</div>
+                <div class="text-sm text-slate-600">University District, Waterloo</div>
+              </div>
+              <div class="text-sm text-slate-500">April 2023</div>
+            </div>
+          </div>
+
+          <div class="bg-slate-50 border-2 border-slate-200 p-8">
+            <div class="flex gap-1 mb-4">
+              {[1,2,3,4,5].map(() => (
+                <svg class="w-5 h-5 text-amber-500 fill-current" viewBox="0 0 20 20">
+                  <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                </svg>
+              ))}
+            </div>
+            <blockquote class="text-slate-600 mb-4 italic">
+              "Living in Columbia Forest, we faced persistent groundwater issues from the Waterloo Moraine aquifer. DrySpace's expertise in moraine geology and drainage systems gave us a comprehensive solution that manages the high water table. Three years later, our basement remains completely dry even during heavy spring runoff."
+            </blockquote>
+            <div class="flex justify-between items-center">
+              <div>
+                <div class="font-bold text-slate-900">Mei Lin Chen</div>
+                <div class="text-sm text-slate-600">Columbia Forest, Waterloo</div>
+              </div>
+              <div class="text-sm text-slate-500">June 2023</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- Location Image Showcase -->
   <LocationImageShowcase city="Waterloo" />
 
   <!-- Testimonials -->
   <Testimonials />
+
+  <!-- Related Articles -->
+  <section class="py-16 bg-slate-50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-4xl font-bold text-slate-900 mb-4 uppercase">Waterloo Waterproofing Resources</h2>
+        <p class="text-lg text-slate-600 mb-8">
+          Expert guides for Waterloo homeowners
+        </p>
+
+        <div class="grid md:grid-cols-2 gap-6">
+          <a href="/resources/waterloo-moraine-aquifer-waterproofing" class="bg-white border-2 border-slate-200 p-6 hover:border-cyan-500 transition-colors group">
+            <h3 class="text-xl font-bold text-slate-900 mb-2 uppercase group-hover:text-cyan-600">Waterloo Moraine Aquifer Guide</h3>
+            <p class="text-slate-600 mb-3">Understanding the Waterloo Moraine aquifer system and its impact on foundation waterproofing.</p>
+            <div class="text-cyan-600 font-bold">Read Article →</div>
+          </a>
+
+          <a href="/resources/laurel-creek-flooding-protection" class="bg-white border-2 border-slate-200 p-6 hover:border-cyan-500 transition-colors group">
+            <h3 class="text-xl font-bold text-slate-900 mb-2 uppercase group-hover:text-cyan-600">Laurel Creek Flooding Protection</h3>
+            <p class="text-slate-600 mb-3">Managing seasonal flooding risks for properties near Laurel Creek and Grand River tributaries.</p>
+            <div class="text-cyan-600 font-bold">Read Article →</div>
+          </a>
+
+          <a href="/resources/heritage-home-waterproofing" class="bg-white border-2 border-slate-200 p-6 hover:border-cyan-500 transition-colors group">
+            <h3 class="text-xl font-bold text-slate-900 mb-2 uppercase group-hover:text-cyan-600">Heritage Home Waterproofing</h3>
+            <p class="text-slate-600 mb-3">Protecting Waterloo's century homes with heritage-sensitive waterproofing techniques.</p>
+            <div class="text-cyan-600 font-bold">Read Article →</div>
+          </a>
+
+          <a href="/resources/waterloo-region-permits-guide" class="bg-white border-2 border-slate-200 p-6 hover:border-cyan-500 transition-colors group">
+            <h3 class="text-xl font-bold text-slate-900 mb-2 uppercase group-hover:text-cyan-600">Waterloo Region Permits Guide</h3>
+            <p class="text-slate-600 mb-3">Navigating building permits and GRCA requirements for waterproofing projects in Waterloo.</p>
+            <div class="text-cyan-600 font-bold">Read Article →</div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- FAQ Section -->
   <section class="py-16 bg-slate-50">

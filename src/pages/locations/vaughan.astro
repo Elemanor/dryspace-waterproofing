@@ -9,7 +9,14 @@ import LocationImageShowcase from '../../components/LocationImageShowcase.astro'
 import InternalLinks from '../../components/InternalLinks.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import BreadcrumbSchema from '../../components/BreadcrumbSchema.astro';
+import GeologicalProfile from '../../components/sections/GeologicalProfile.astro';
+import SeasonalRiskCalendar from '../../components/sections/SeasonalRiskCalendar.astro';
+import InfrastructureReport from '../../components/sections/InfrastructureReport.astro';
+import FoundationCensus from '../../components/sections/FoundationCensus.astro';
+import FloodTimeline from '../../components/sections/FloodTimeline.astro';
+import { locationData } from '../../data/location-data';
 
+const cityData = locationData['vaughan'];
 const pageTitle = "Basement Waterproofing Vaughan | New Home & Luxury Specialists";
 const pageDescription = "Basement waterproofing Vaughan — builder defect repair, Humber River flood protection, luxury basement specialists. $155-$280/linear foot. 25-year warranty.";
 
@@ -585,6 +592,12 @@ const faqSchema = {
       </div>
     </div>
   </section>
+
+  <GeologicalProfile city="Vaughan" data={cityData.geological} />
+  <SeasonalRiskCalendar city="Vaughan" data={cityData.seasonal} />
+  <InfrastructureReport city="Vaughan" data={cityData.infrastructure} />
+  <FoundationCensus city="Vaughan" data={cityData.foundationCensus} />
+  <FloodTimeline city="Vaughan" data={cityData.floodHistory} />
 
   <!-- Services Section -->
   <Services />

@@ -9,8 +9,15 @@ import LocationImageShowcase from '../../components/LocationImageShowcase.astro'
 import InternalLinks from '../../components/InternalLinks.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import BreadcrumbSchema from '../../components/BreadcrumbSchema.astro';
+import GeologicalProfile from '../../components/sections/GeologicalProfile.astro';
+import SeasonalRiskCalendar from '../../components/sections/SeasonalRiskCalendar.astro';
+import InfrastructureReport from '../../components/sections/InfrastructureReport.astro';
+import FoundationCensus from '../../components/sections/FoundationCensus.astro';
+import FloodTimeline from '../../components/sections/FloodTimeline.astro';
+import { locationData } from '../../data/location-data';
 
 const pageTitle = "Basement Waterproofing Whitby | Foundation Repair | DrySpace";
+const cityData = locationData['whitby'];
 const pageDescription = "Professional basement waterproofing in Whitby. Lake effect weather specialists. Foundation repair, sump pumps, crack repair. 25-year warranty. Free inspection. Call 437-545-0067.";
 
 // Local area information
@@ -80,6 +87,30 @@ const locationFAQs = [
   {
     question: "Do you work with Whitby heritage designation requirements?",
     answer: "Yes! We maintain expertise in heritage building conservation and understand Whitby's heritage designation processes. Our heritage-compliant solutions meet both waterproofing needs and preservation standards for designated historic properties."
+  },
+  {
+    question: "What are the flooding risks from Lynde Creek?",
+    answer: "Lynde Creek runs through central Whitby and can overflow during spring melt and severe storms, affecting valley properties. We provide creek flooding protection including enhanced drainage, backwater valves, flood barriers, and specialized systems for properties in the Lynde Creek watershed."
+  },
+  {
+    question: "Why does Brooklin have clay soil foundation issues?",
+    answer: "Brooklin sits on expansive glacial clay that swells when wet and shrinks when dry, creating foundation movement and cracking in newer homes. Our solutions include flexible waterproofing designed for clay movement, enhanced drainage to manage moisture, and crack repair systems specifically for clay soil conditions."
+  },
+  {
+    question: "How does Lake Ontario affect Whitby water tables?",
+    answer: "Lake Ontario's proximity elevates groundwater levels throughout Whitby, particularly in Port Whitby and lakefront areas. Our lake-influenced waterproofing includes enhanced hydrostatic pressure management, marine-grade materials, and specialized drainage designed for high water table conditions."
+  },
+  {
+    question: "What permits are required in Durham Region?",
+    answer: "Most interior waterproofing requires no permit in Durham Region. Exterior excavation typically requires a building permit through the Town of Whitby. Properties near Lynde Creek may also need CLOCA approval. We handle all permit applications and ensure compliance with Durham Region building codes."
+  },
+  {
+    question: "How much does basement waterproofing cost in Whitby?",
+    answer: "Exterior waterproofing costs $140-$270 per linear foot in Whitby, with most homes totaling $12,000-$26,000. Interior drainage systems cost $80-$200 per linear foot. Costs reflect the complexity of lake effect weather, clay soil conditions, and Durham Region permit requirements."
+  },
+  {
+    question: "Does Tarion warranty cover waterproofing in new Whitby homes?",
+    answer: "Ontario's Tarion warranty covers major structural defects for 7 years and foundation waterproofing for 2 years on new construction in Brooklin and other areas. However, many issues appear after warranty expiry as homes settle in clay soil. We work with both warranty-period claims and post-warranty upgrades for Whitby properties."
   }
 ];
 
@@ -334,6 +365,191 @@ const localBusinessSchema = {
     </div>
   </section>
 
+  <!-- Construction Eras -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-4xl font-bold text-slate-900 mb-4 uppercase">Whitby Construction Eras</h2>
+        <p class="text-lg text-slate-600 mb-8">
+          Understanding your home's construction era helps identify common waterproofing challenges
+        </p>
+
+        <div class="space-y-6">
+          <!-- Era 1 -->
+          <div class="bg-slate-50 border-2 border-slate-200 p-8 border-l-4 border-l-cyan-500">
+            <div class="flex items-start gap-4">
+              <div class="flex-shrink-0 w-12 h-12 bg-cyan-500 text-white font-bold text-xl flex items-center justify-center">
+                1
+              </div>
+              <div class="flex-1">
+                <h3 class="text-2xl font-bold text-slate-900 mb-2 uppercase">1950s-70s: Old Whitby</h3>
+                <p class="text-slate-600 mb-4">
+                  Historic downtown core and early lakefront development with stone and block foundations.
+                </p>
+                <div class="grid md:grid-cols-2 gap-4">
+                  <div>
+                    <h4 class="font-bold text-slate-900 mb-2">Common Issues:</h4>
+                    <ul class="text-sm text-slate-600 space-y-1">
+                      <li class="flex items-start"><span class="mr-2 text-cyan-500">•</span>Heritage foundation deterioration</li>
+                      <li class="flex items-start"><span class="mr-2 text-cyan-500">•</span>Lake effect weather damage</li>
+                      <li class="flex items-start"><span class="mr-2 text-cyan-500">•</span>Outdated or missing drainage</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-slate-900 mb-2">Typical Solution:</h4>
+                    <p class="text-sm text-slate-600">Heritage-sensitive restoration with modern interior drainage or full exterior upgrade.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Era 2 -->
+          <div class="bg-slate-50 border-2 border-slate-200 p-8 border-l-4 border-l-cyan-500">
+            <div class="flex items-start gap-4">
+              <div class="flex-shrink-0 w-12 h-12 bg-cyan-500 text-white font-bold text-xl flex items-center justify-center">
+                2
+              </div>
+              <div class="flex-1">
+                <h3 class="text-2xl font-bold text-slate-900 mb-2 uppercase">1980s-90s: South Whitby Growth</h3>
+                <p class="text-slate-600 mb-4">
+                  Major suburban expansion south of Taunton with improved building codes and poured concrete foundations.
+                </p>
+                <div class="grid md:grid-cols-2 gap-4">
+                  <div>
+                    <h4 class="font-bold text-slate-900 mb-2">Common Issues:</h4>
+                    <ul class="text-sm text-slate-600 space-y-1">
+                      <li class="flex items-start"><span class="mr-2 text-cyan-500">•</span>Settlement cracks appearing</li>
+                      <li class="flex items-start"><span class="mr-2 text-cyan-500">•</span>Clay soil expansion issues</li>
+                      <li class="flex items-start"><span class="mr-2 text-cyan-500">•</span>Aging weeping tile systems</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-slate-900 mb-2">Typical Solution:</h4>
+                    <p class="text-sm text-slate-600">Crack injection with drainage upgrades and enhanced sump pump systems.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Era 3 -->
+          <div class="bg-slate-50 border-2 border-slate-200 p-8 border-l-4 border-l-cyan-500">
+            <div class="flex items-start gap-4">
+              <div class="flex-shrink-0 w-12 h-12 bg-cyan-500 text-white font-bold text-xl flex items-center justify-center">
+                3
+              </div>
+              <div class="flex-1">
+                <h3 class="text-2xl font-bold text-slate-900 mb-2 uppercase">2000s-2010s: North Whitby/Brooklin Expansion</h3>
+                <p class="text-slate-600 mb-4">
+                  Rapid northern development in Brooklin area with modern subdivisions and larger homes.
+                </p>
+                <div class="grid md:grid-cols-2 gap-4">
+                  <div>
+                    <h4 class="font-bold text-slate-900 mb-2">Common Issues:</h4>
+                    <ul class="text-sm text-slate-600 space-y-1">
+                      <li class="flex items-start"><span class="mr-2 text-cyan-500">•</span>Builder warranty expiry</li>
+                      <li class="flex items-start"><span class="mr-2 text-cyan-500">•</span>Inadequate builder drainage</li>
+                      <li class="flex items-start"><span class="mr-2 text-cyan-500">•</span>New construction settling</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-slate-900 mb-2">Typical Solution:</h4>
+                    <p class="text-sm text-slate-600">Enhanced membrane upgrades exceeding builder specs with improved drainage capacity.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Neighborhoods with Project Counts -->
+  <section class="py-16 bg-navy-900">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-4xl font-bold text-white mb-4 uppercase">Whitby Neighborhoods We Serve</h2>
+        <p class="text-lg text-slate-300 mb-8">
+          Over 178 waterproofing projects completed across Whitby communities
+        </p>
+
+        <div class="grid md:grid-cols-2 gap-4">
+          <div class="bg-white/10 backdrop-blur-sm border-2 border-slate-700 p-6">
+            <div class="flex justify-between items-start mb-2">
+              <h3 class="text-xl font-bold text-white uppercase">Brooklin</h3>
+              <span class="text-2xl font-bold text-amber-500">34</span>
+            </div>
+            <p class="text-sm text-slate-300">Newest subdivision area with builder warranty expiry needs</p>
+          </div>
+
+          <div class="bg-white/10 backdrop-blur-sm border-2 border-slate-700 p-6">
+            <div class="flex justify-between items-start mb-2">
+              <h3 class="text-xl font-bold text-white uppercase">Downtown Whitby</h3>
+              <span class="text-2xl font-bold text-amber-500">29</span>
+            </div>
+            <p class="text-sm text-slate-300">Historic core with heritage homes requiring preservation techniques</p>
+          </div>
+
+          <div class="bg-white/10 backdrop-blur-sm border-2 border-slate-700 p-6">
+            <div class="flex justify-between items-start mb-2">
+              <h3 class="text-xl font-bold text-white uppercase">Port Whitby</h3>
+              <span class="text-2xl font-bold text-amber-500">25</span>
+            </div>
+            <p class="text-sm text-slate-300">Lakefront community with high water table and marina proximity</p>
+          </div>
+
+          <div class="bg-white/10 backdrop-blur-sm border-2 border-slate-700 p-6">
+            <div class="flex justify-between items-start mb-2">
+              <h3 class="text-xl font-bold text-white uppercase">Williamsburg</h3>
+              <span class="text-2xl font-bold text-amber-500">22</span>
+            </div>
+            <p class="text-sm text-slate-300">Established neighborhood with mature drainage systems needing upgrades</p>
+          </div>
+
+          <div class="bg-white/10 backdrop-blur-sm border-2 border-slate-700 p-6">
+            <div class="flex justify-between items-start mb-2">
+              <h3 class="text-xl font-bold text-white uppercase">Pringle Creek</h3>
+              <span class="text-2xl font-bold text-amber-500">20</span>
+            </div>
+            <p class="text-sm text-slate-300">Creek-adjacent properties with seasonal flooding considerations</p>
+          </div>
+
+          <div class="bg-white/10 backdrop-blur-sm border-2 border-slate-700 p-6">
+            <div class="flex justify-between items-start mb-2">
+              <h3 class="text-xl font-bold text-white uppercase">Blue Grass Meadows</h3>
+              <span class="text-2xl font-bold text-amber-500">18</span>
+            </div>
+            <p class="text-sm text-slate-300">Mid-era development with settling and clay soil challenges</p>
+          </div>
+
+          <div class="bg-white/10 backdrop-blur-sm border-2 border-slate-700 p-6">
+            <div class="flex justify-between items-start mb-2">
+              <h3 class="text-xl font-bold text-white uppercase">Lynde Creek</h3>
+              <span class="text-2xl font-bold text-amber-500">16</span>
+            </div>
+            <p class="text-sm text-slate-300">Valley properties requiring creek flooding protection systems</p>
+          </div>
+
+          <div class="bg-white/10 backdrop-blur-sm border-2 border-slate-700 p-6">
+            <div class="flex justify-between items-start mb-2">
+              <h3 class="text-xl font-bold text-white uppercase">Rolling Acres</h3>
+              <span class="text-2xl font-bold text-amber-500">14</span>
+            </div>
+            <p class="text-sm text-slate-300">South Whitby area with varied foundation ages and conditions</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <GeologicalProfile city="Whitby" data={cityData.geological} />
+  <SeasonalRiskCalendar city="Whitby" data={cityData.seasonal} />
+  <InfrastructureReport city="Whitby" data={cityData.infrastructure} />
+  <FoundationCensus city="Whitby" data={cityData.foundationCensus} />
+  <FloodTimeline city="Whitby" data={cityData.floodHistory} />
+
   <!-- Services -->
   <Services />
 
@@ -372,12 +588,195 @@ const localBusinessSchema = {
   <!-- Process -->
   <Process />
 
+  <!-- Rebate & Subsidy Section -->
+  <section class="py-16 bg-cyan-50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-4xl font-bold text-slate-900 mb-4 uppercase">Durham Region Waterproofing Rebates & Subsidies</h2>
+        <p class="text-lg text-slate-600 mb-8">
+          Whitby homeowners can access financial assistance programs to offset waterproofing costs
+        </p>
+
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="bg-white border-2 border-slate-200 p-6">
+            <div class="flex items-start gap-4 mb-4">
+              <svg class="w-12 h-12 text-cyan-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <div>
+                <h3 class="text-xl font-bold text-slate-900 mb-2 uppercase">Durham Region Basement Flooding Protection</h3>
+                <p class="text-slate-600 mb-3">Financial assistance for eligible basement flooding prevention measures</p>
+                <ul class="text-sm text-slate-600 space-y-1">
+                  <li class="flex items-start"><span class="mr-2 text-cyan-500">•</span>Sump pump installation grants</li>
+                  <li class="flex items-start"><span class="mr-2 text-cyan-500">•</span>Backwater valve subsidies</li>
+                  <li class="flex items-start"><span class="mr-2 text-cyan-500">•</span>Foundation drainage improvements</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white border-2 border-slate-200 p-6">
+            <div class="flex items-start gap-4 mb-4">
+              <svg class="w-12 h-12 text-cyan-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+              </svg>
+              <div>
+                <h3 class="text-xl font-bold text-slate-900 mb-2 uppercase">Ontario Seniors Tax Credit</h3>
+                <p class="text-slate-600 mb-3">Seniors 65+ can claim eligible home modifications including waterproofing</p>
+                <ul class="text-sm text-slate-600 space-y-1">
+                  <li class="flex items-start"><span class="mr-2 text-cyan-500">•</span>Up to $2,500 annual claim</li>
+                  <li class="flex items-start"><span class="mr-2 text-cyan-500">•</span>Includes foundation repairs</li>
+                  <li class="flex items-start"><span class="mr-2 text-cyan-500">•</span>Provincial tax credit</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white border-2 border-slate-200 p-6">
+            <div class="flex items-start gap-4 mb-4">
+              <svg class="w-12 h-12 text-cyan-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
+              </svg>
+              <div>
+                <h3 class="text-xl font-bold text-slate-900 mb-2 uppercase">Insurance Premium Reductions</h3>
+                <p class="text-slate-600 mb-3">Professional waterproofing can reduce home insurance premiums</p>
+                <ul class="text-sm text-slate-600 space-y-1">
+                  <li class="flex items-start"><span class="mr-2 text-cyan-500">•</span>10-20% flood coverage discounts</li>
+                  <li class="flex items-start"><span class="mr-2 text-cyan-500">•</span>Lower deductibles available</li>
+                  <li class="flex items-start"><span class="mr-2 text-cyan-500">•</span>Transferable warranty adds value</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white border-2 border-slate-200 p-6">
+            <div class="flex items-start gap-4 mb-4">
+              <svg class="w-12 h-12 text-cyan-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <div>
+                <h3 class="text-xl font-bold text-slate-900 mb-2 uppercase">CLOCA Conservation Programs</h3>
+                <p class="text-slate-600 mb-3">Central Lake Ontario Conservation Authority watershed protection incentives</p>
+                <ul class="text-sm text-slate-600 space-y-1">
+                  <li class="flex items-start"><span class="mr-2 text-cyan-500">•</span>Lynde Creek watershed grants</li>
+                  <li class="flex items-start"><span class="mr-2 text-cyan-500">•</span>Floodplain property support</li>
+                  <li class="flex items-start"><span class="mr-2 text-cyan-500">•</span>Lake Ontario protection funding</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-8 bg-white border-2 border-cyan-500 p-6">
+          <h3 class="text-lg font-bold text-slate-900 mb-2 uppercase">How We Help With Rebate Applications</h3>
+          <p class="text-slate-600 mb-4">
+            Our team assists Whitby homeowners through the rebate application process, providing required documentation, compliance verification, and application support to maximize your available funding.
+          </p>
+          <a href="/free-inspection" class="inline-block bg-cyan-500 text-white px-6 py-3 font-bold hover:bg-cyan-600 transition-colors uppercase">
+            Get Rebate Consultation
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Local Testimonials -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-4xl font-bold text-slate-900 mb-4 uppercase">Whitby Homeowner Success Stories</h2>
+        <p class="text-lg text-slate-600 mb-8">
+          Real experiences from your neighbors across Whitby communities
+        </p>
+
+        <div class="space-y-6">
+          <div class="bg-slate-50 border-2 border-slate-200 p-8">
+            <div class="flex gap-1 mb-4">
+              {[1,2,3,4,5].map(() => (
+                <svg class="w-5 h-5 text-amber-500 fill-current" viewBox="0 0 20 20">
+                  <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                </svg>
+              ))}
+            </div>
+            <blockquote class="text-slate-600 mb-4 italic">
+              "Our new Brooklin subdivision home developed foundation cracks just after the builder warranty expired. DrySpace's team not only fixed the immediate issues but upgraded the entire system beyond builder specs. The enhanced drainage handles Whitby's clay soil perfectly. Two years later, still completely dry."
+            </blockquote>
+            <div class="flex justify-between items-center">
+              <div>
+                <div class="font-bold text-slate-900">Mark & Sandra Thompson</div>
+                <div class="text-sm text-slate-600">Brooklin, Whitby</div>
+              </div>
+              <div class="text-sm text-slate-500">March 2024</div>
+            </div>
+          </div>
+
+          <div class="bg-slate-50 border-2 border-slate-200 p-8">
+            <div class="flex gap-1 mb-4">
+              {[1,2,3,4,5].map(() => (
+                <svg class="w-5 h-5 text-amber-500 fill-current" viewBox="0 0 20 20">
+                  <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                </svg>
+              ))}
+            </div>
+            <blockquote class="text-slate-600 mb-4 italic">
+              "Living in Port Whitby near the marina, we faced constant groundwater pressure from Lake Ontario's water table. DrySpace's lakefront waterproofing expertise gave us a comprehensive solution designed for our unique location. Their understanding of lake effect weather patterns and marine-grade materials made all the difference."
+            </blockquote>
+            <div class="flex justify-between items-center">
+              <div>
+                <div class="font-bold text-slate-900">Helen Kowalski</div>
+                <div class="text-sm text-slate-600">Port Whitby, Whitby</div>
+              </div>
+              <div class="text-sm text-slate-500">July 2023</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- Location Image Showcase -->
   <LocationImageShowcase city="Whitby" />
 
   <!-- Testimonials -->
   <Testimonials />
+
+  <!-- Related Articles -->
+  <section class="py-16 bg-slate-50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-4xl font-bold text-slate-900 mb-4 uppercase">Whitby Waterproofing Resources</h2>
+        <p class="text-lg text-slate-600 mb-8">
+          Expert guides for Whitby homeowners
+        </p>
+
+        <div class="grid md:grid-cols-2 gap-6">
+          <a href="/resources/lynde-creek-flooding-guide" class="bg-white border-2 border-slate-200 p-6 hover:border-cyan-500 transition-colors group">
+            <h3 class="text-xl font-bold text-slate-900 mb-2 uppercase group-hover:text-cyan-600">Lynde Creek Flooding Protection</h3>
+            <p class="text-slate-600 mb-3">Managing seasonal flooding risks for Whitby properties near Lynde Creek and its tributaries.</p>
+            <div class="text-cyan-600 font-bold">Read Article →</div>
+          </a>
+
+          <a href="/resources/brooklin-clay-soil-waterproofing" class="bg-white border-2 border-slate-200 p-6 hover:border-cyan-500 transition-colors group">
+            <h3 class="text-xl font-bold text-slate-900 mb-2 uppercase group-hover:text-cyan-600">Brooklin Clay Soil Challenges</h3>
+            <p class="text-slate-600 mb-3">Understanding expansive clay soil issues in Brooklin subdivisions and effective waterproofing solutions.</p>
+            <div class="text-cyan-600 font-bold">Read Article →</div>
+          </a>
+
+          <a href="/resources/lake-ontario-water-table" class="bg-white border-2 border-slate-200 p-6 hover:border-cyan-500 transition-colors group">
+            <h3 class="text-xl font-bold text-slate-900 mb-2 uppercase group-hover:text-cyan-600">Lake Ontario Water Table Guide</h3>
+            <p class="text-slate-600 mb-3">How proximity to Lake Ontario affects groundwater and foundation waterproofing in Whitby.</p>
+            <div class="text-cyan-600 font-bold">Read Article →</div>
+          </a>
+
+          <a href="/resources/durham-region-permits" class="bg-white border-2 border-slate-200 p-6 hover:border-cyan-500 transition-colors group">
+            <h3 class="text-xl font-bold text-slate-900 mb-2 uppercase group-hover:text-cyan-600">Durham Region Permits Guide</h3>
+            <p class="text-slate-600 mb-3">Navigating building permits and CLOCA requirements for waterproofing projects in Whitby.</p>
+            <div class="text-cyan-600 font-bold">Read Article →</div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- FAQ Section -->
   <section class="py-16 bg-slate-50">

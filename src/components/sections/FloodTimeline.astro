@@ -1,0 +1,87 @@
+---
+import type { CityHyperLocal } from '../../data/location-data';
+
+interface Props {
+  city: string;
+  data: CityHyperLocal['floodHistory'];
+}
+
+const { city, data } = Astro.props;
+---
+
+<section class="py-16 bg-white">
+  <div class="container mx-auto px-4">
+    <div class="max-w-4xl mx-auto">
+
+      <div class="text-center mb-12">
+        <h2 class="text-4xl font-bold text-slate-900 mb-4 uppercase">
+          Major Flood Events in {city}: Lessons Learned
+        </h2>
+        <div class="max-w-3xl mx-auto bg-cyan-50 border-l-4 border-cyan-500 p-6 text-left speakable">
+          <p class="text-lg text-slate-700">
+            <strong>{city} has experienced {data.length} significant flooding events in the past 20 years.</strong> Each event revealed vulnerabilities in homes and infrastructure. Learning from these events helps homeowners make informed waterproofing decisions and protect against future flooding.
+          </p>
+        </div>
+      </div>
+
+      <!-- Vertical Timeline -->
+      <div class="relative">
+        <!-- Timeline line -->
+        <div class="absolute left-6 md:left-8 top-0 bottom-0 w-0.5 bg-slate-300"></div>
+
+        <div class="space-y-8">
+          {data.map((event, index) => (
+            <div class="relative pl-16 md:pl-20">
+              <!-- Timeline dot -->
+              <div class="absolute left-4 md:left-6 w-5 h-5 bg-cyan-500 border-4 border-white rounded-full shadow-md"></div>
+
+              <div class="bg-slate-50 border-2 border-slate-200 overflow-hidden">
+                <!-- Date Badge -->
+                <div class="bg-navy-900 text-white px-6 py-3 flex items-center gap-3">
+                  <svg class="w-5 h-5 text-amber-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                  </svg>
+                  <span class="font-bold text-lg uppercase">{event.date}</span>
+                </div>
+
+                <div class="p-6 space-y-4">
+                  <!-- Cause -->
+                  <div>
+                    <h4 class="font-bold text-sm text-red-600 mb-1 uppercase">Cause</h4>
+                    <p class="text-slate-700">{event.cause}</p>
+                  </div>
+
+                  <!-- Impact -->
+                  <div>
+                    <h4 class="font-bold text-sm text-orange-600 mb-1 uppercase">Impact</h4>
+                    <p class="text-slate-700">{event.impact}</p>
+                  </div>
+
+                  <!-- Prevention -->
+                  <div class="bg-cyan-50 border-l-4 border-cyan-500 p-4">
+                    <h4 class="font-bold text-sm text-cyan-800 mb-1 uppercase">How We Prevent This</h4>
+                    <p class="text-slate-700">{event.prevention}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+
+          <!-- Final CTA Card -->
+          <div class="relative pl-16 md:pl-20">
+            <div class="absolute left-4 md:left-6 w-5 h-5 bg-amber-500 border-4 border-white rounded-full shadow-md"></div>
+
+            <div class="bg-amber-500 border-2 border-slate-700 p-6 text-center">
+              <h3 class="text-xl font-bold text-slate-900 mb-2 uppercase">Protect Your {city} Home</h3>
+              <p class="text-slate-900 mb-4">Don't wait for the next flood event. Book a free assessment to identify your home's vulnerabilities and get a protection plan.</p>
+              <a href="/free-inspection" class="inline-block bg-navy-900 text-white px-8 py-3 font-bold hover:bg-slate-800 transition uppercase">
+                Book Free Assessment
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

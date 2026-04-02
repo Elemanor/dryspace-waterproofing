@@ -280,6 +280,9 @@ const faqs = [
               <span class="w-2 h-8 bg-cyan-500 rounded-full"></span>
               {category.category}
             </h2>
+            {category.id === 'general' && (
+              <p class="speakable mb-8 text-lg leading-relaxed"><strong>The most common basement waterproofing questions in Toronto: exterior systems cost $150–$300/ft, interior drainage costs $80–$200/ft, most projects take 3–5 days, and up to $3,400 in city rebates are available.</strong></p>
+            )}
             <div class="space-y-4">
               {category.questions.map((faq) => (
                 <details class="group border border-slate-200 rounded-lg overflow-hidden transition-all hover:border-cyan-500 hover:shadow-md">

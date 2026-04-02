@@ -11,7 +11,7 @@ import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import BreadcrumbSchema from '../../components/BreadcrumbSchema.astro';
 
 const pageTitle = "Waterproofing Ajax | Durham Region Foundation Experts";
-const pageDescription = "Ajax lakefront moisture protection specialists. Storm surge protection, newer development experts, Lake Ontario proximity solutions.";
+const pageDescription = "Professional basement waterproofing in Ajax. Lakefront storm surge protection. Foundation repair, sump pumps, crack repair. 25-year warranty. Free inspection. Call 437-545-0067.";
 
 // Local area information
 const localInfo = {
@@ -62,15 +62,15 @@ const locationFAQs = [
     answer: "Lake Ontario creates unique challenges including elevated groundwater, storm surge impacts, and seasonal level fluctuations. Our lakefront protection systems account for these specific conditions with enhanced drainage and surge protection."
   },
   {
-    question: "What moisture protection issues affect Ajax's newer developments?",
-    answer: "Newer Ajax developments face rapid settling, inadequate initial drainage, and modern construction vulnerabilities. We specialize in post-construction moisture protection upgrades and warranty-compliant solutions for homes built in the last 25-35 years."
+    question: "What waterproofing issues affect Ajax's newer developments?",
+    answer: "Newer Ajax developments face rapid settling, inadequate initial drainage, and modern construction vulnerabilities. We specialize in post-construction waterproofing upgrades and warranty-compliant solutions for homes built in the last 25-35 years."
   },
   {
     question: "How do you handle storm surge flooding in Ajax?",
     answer: "Our storm surge protection includes advanced sump pump systems, lake-level monitoring integration, and emergency backup power. We've developed specific protocols for Ajax's lakefront areas during severe weather events."
   },
   {
-    question: "What makes Ajax soil conditions unique for moisture protection?",
+    question: "What makes Ajax soil conditions unique for waterproofing?",
     answer: "Ajax's lake sediment clay expands significantly when wet and creates pressure against foundations. Combined with the high groundwater table near the lake, this requires specialized membrane systems and enhanced drainage solutions."
   },
   {
@@ -176,24 +176,6 @@ const localBusinessSchema = {
         }
       }
     ]
-  },
-  "review": {
-    "@type": "Review",
-    "reviewRating": {
-      "@type": "Rating",
-      "ratingValue": "4.9",
-      "bestRating": "5"
-    },
-    "author": {
-      "@type": "Organization",
-      "name": "Dryspace Waterproofing Customers"
-    }
-  },
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "4.9",
-    "reviewCount": "150",
-    "bestRating": "5"
   }
 };
 ---
@@ -392,7 +374,7 @@ const localBusinessSchema = {
       <div class="max-w-4xl mx-auto text-center">
         <h2 class="text-4xl font-bold text-slate-900 mb-4 uppercase">PROTECT YOUR LAKEFRONT PROPERTY</h2>
         <p class="text-lg text-slate-300 mb-8">
-          Specialized storm surge protection and moisture control for local lakefront homes
+          Specialized storm surge protection and waterproofing for local lakefront homes
         </p>
         
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
@@ -418,5 +400,17 @@ const localBusinessSchema = {
   </section>
 </PageLayout>
 
-<script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)}>
+<script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)}></script>
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": locationFAQs.map(faq => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer
+    }
+  }))
+})} />
 <BreadcrumbSchema items={[{name: 'Home', url: '/'}, {name: 'Locations', url: '/locations'}, {name: 'Ajax'}]} />

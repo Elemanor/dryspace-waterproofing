@@ -1080,7 +1080,7 @@ export default function UnderpinningServiceEnhanced() {
                       </div>
                       <div>
                         <h3 className="font-bold text-lg">Read More Reviews</h3>
-                        <p className="text-sm text-muted-foreground">See what our 500+ customers say</p>
+                        <p className="text-sm text-muted-foreground">See what our customers say</p>
                       </div>
                     </div>
                     <Button size="lg" className="shadow-lg">
@@ -1292,8 +1292,8 @@ export default function UnderpinningServiceEnhanced() {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16 max-w-4xl mx-auto">
               <Card className="bg-white/10 backdrop-blur border-white/20 text-white">
                 <CardContent className="pt-6 pb-4">
-                  <p className="text-4xl font-bold mb-1">500+</p>
-                  <p className="text-sm text-white/80">Projects Completed</p>
+                  <p className="text-4xl font-bold mb-1">25+</p>
+                  <p className="text-sm text-white/80">Years Experience</p>
                 </CardContent>
               </Card>
               <Card className="bg-white/10 backdrop-blur border-white/20 text-white">
@@ -1304,8 +1304,8 @@ export default function UnderpinningServiceEnhanced() {
               </Card>
               <Card className="bg-white/10 backdrop-blur border-white/20 text-white">
                 <CardContent className="pt-6 pb-4">
-                  <p className="text-4xl font-bold mb-1">4.9★</p>
-                  <p className="text-sm text-white/80">Google Rating</p>
+                  <p className="text-4xl font-bold mb-1">A+</p>
+                  <p className="text-sm text-white/80">BBB Rating</p>
                 </CardContent>
               </Card>
               <Card className="bg-white/10 backdrop-blur border-white/20 text-white">

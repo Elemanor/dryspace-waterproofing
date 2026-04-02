@@ -71,7 +71,7 @@ const services: Service[] = [
     price: "$500 - $1,500/crack",
     duration: "2-4 hours",
     features: ["Polyurethane injection", "Interior & exterior", "Structural assessment", "Lifetime warranty"],
-    href: "/services/foundation-crack-repair"
+    href: "/services/foundation-repair"
   },
   {
     title: "Backwater Valve",

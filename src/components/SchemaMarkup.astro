@@ -18,8 +18,10 @@ const organization = {
   "email": "info@dryspacewaterproofing.ca",
   "address": {
     "@type": "PostalAddress",
+    "streetAddress": "260 Wellesley Street East",
     "addressLocality": "Toronto",
     "addressRegion": "ON",
+    "postalCode": "M4X 1G6",
     "addressCountry": "CA"
   },
   "sameAs": [
@@ -58,14 +60,9 @@ switch(type) {
           }
         })) || []
       },
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.9",
-        "reviewCount": "487"
-      }
     };
     break;
-    
+
   case 'article':
     schema = {
       "@context": "https://schema.org",
@@ -109,8 +106,10 @@ switch(type) {
       "priceRange": "$$$",
       "address": {
         "@type": "PostalAddress",
+        "streetAddress": "260 Wellesley Street East",
         "addressLocality": data.location || "Toronto",
         "addressRegion": "ON",
+        "postalCode": "M4X 1G6",
         "addressCountry": "CA"
       },
       "geo": data.geo || {
@@ -124,14 +123,9 @@ switch(type) {
         "opens": "00:00",
         "closes": "23:59"
       },
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.9",
-        "reviewCount": "487"
-      }
     };
     break;
-    
+
   case 'product':
     schema = {
       "@context": "https://schema.org",
@@ -151,14 +145,9 @@ switch(type) {
         "availability": "https://schema.org/InStock",
         "seller": organization
       },
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.9",
-        "reviewCount": "487"
-      }
     };
     break;
-    
+
   case 'howto':
     schema = {
       "@context": "https://schema.org",

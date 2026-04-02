@@ -97,7 +97,7 @@ const CustomerReviews: React.FC = () => {
         {/* Stats row */}
         <div className="flex flex-wrap justify-center items-center gap-8 mb-12">
           {[
-            { value: '4.9/5', label: 'Google Rating', sub: '487 reviews' },
+            { value: 'A+', label: 'Google Verified', sub: 'Business' },
             { value: 'A+', label: 'BBB Rating', sub: 'Accredited' },
             { value: '2024', label: 'HomeStars', sub: 'Best of Winner' },
             { value: '25+', label: 'Years', sub: 'Since 1999' },

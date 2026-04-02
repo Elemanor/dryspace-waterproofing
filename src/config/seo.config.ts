@@ -140,9 +140,9 @@ export const seoConfig = {
   // Trust Signals
   trustSignals: {
     reviews: {
-      google: { rating: 4.9, count: 487 },
-      homeStars: { rating: 9.8, count: 312 },
-      bbb: { rating: 'A+', count: 156 }
+      google: { verified: true },
+      homeStars: { verified: true },
+      bbb: { rating: 'A+', accredited: true }
     },
     warranty: '25-Year Transferable Warranty',
     guarantee: '100% Satisfaction Guarantee',

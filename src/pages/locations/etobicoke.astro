@@ -11,7 +11,7 @@ import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import BreadcrumbSchema from '../../components/BreadcrumbSchema.astro';
 
 const pageTitle = "Basement Waterproofing Etobicoke | Foundation Repair & Drainage";
-const pageDescription = "Basement waterproofing Etobicoke with excavation problem solutions. Foundation repair specialist for mature trees & Humber Valley homes.";
+const pageDescription = "Professional basement waterproofing in Etobicoke. Foundation repair, sump pumps, crack repair. Humber Valley flood protection. 25-year warranty. Free inspection. Call 437-545-0067.";
 
 // Local area information
 const localInfo = {
@@ -176,24 +176,6 @@ const localBusinessSchema = {
         }
       }
     ]
-  },
-  "review": {
-    "@type": "Review",
-    "reviewRating": {
-      "@type": "Rating",
-      "ratingValue": "4.9",
-      "bestRating": "5"
-    },
-    "author": {
-      "@type": "Organization",
-      "name": "Dryspace Waterproofing Customers"
-    }
-  },
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "4.9",
-    "reviewCount": "150",
-    "bestRating": "5"
   }
 };
 ---
@@ -418,5 +400,17 @@ const localBusinessSchema = {
   </section>
 </PageLayout>
 
-<script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)}>
+<script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)}></script>
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": locationFAQs.map(faq => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer
+    }
+  }))
+})} />
 <BreadcrumbSchema items={[{name: 'Home', url: '/'}, {name: 'Locations', url: '/locations'}, {name: 'Etobicoke'}]} />

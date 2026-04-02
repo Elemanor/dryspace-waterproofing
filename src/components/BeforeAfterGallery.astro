@@ -21,7 +21,7 @@ const projects = [
     cost: "$8,200",
     duration: "3 DAYS",
     before: "/images/crack.webp",
-    after: "/images/structural foundation crack.webp"
+    after: "/images/crack_repair.webp"
   },
   {
     id: 3,
@@ -59,13 +59,13 @@ const projects = [
           <!-- Before/After Images with Slider -->
           <div class="before-after-container relative h-64 overflow-hidden">
             <div class="absolute inset-0">
-              <img src={project.before} alt={`Before - ${project.title}`} class="w-full h-full object-cover" width="600" height="400" decoding="async" loading="lazy" />
+              <img src={project.before} alt={`Before waterproofing: ${project.problem} - ${project.title}`} class="w-full h-full object-cover" width="600" height="400" decoding="async" loading="lazy" />
               <div class="absolute top-2 left-2 bg-red-600 text-slate-900 px-3 py-1 text-xs font-bold uppercase">
                 BEFORE
               </div>
             </div>
             <div class="after-image absolute inset-0" style="clip-path: inset(0 0 0 50%);">
-              <img src={project.after} alt={`After - ${project.title}`} class="w-full h-full object-cover" width="600" height="400" decoding="async" loading="lazy" />
+              <img src={project.after} alt={`After waterproofing: ${project.solution} completed - ${project.title}`} class="w-full h-full object-cover" width="600" height="400" decoding="async" loading="lazy" />
               <div class="absolute top-2 right-2 bg-cyan-600 text-slate-900 px-3 py-1 text-xs font-bold uppercase">
                 AFTER
               </div>

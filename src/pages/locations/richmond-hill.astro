@@ -11,7 +11,7 @@ import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import BreadcrumbSchema from '../../components/BreadcrumbSchema.astro';
 
 const pageTitle = "Basement Waterproofing Richmond Hill | Interior & Exterior Solutions";
-const pageDescription = "Basement waterproofing Richmond Hill on Oak Ridges Moraine. Kettle lake drainage specialists, luxury estate solutions. Free assessment available.";
+const pageDescription = "Professional basement waterproofing in Richmond Hill. Oak Ridges Moraine specialists. Foundation repair, sump pumps, crack repair. 25-year warranty. Free inspection. Call 437-545-0067.";
 
 // Local area information
 const localInfo = {
@@ -47,7 +47,7 @@ const locationFeatures = [
   },
   {
     title: 'LUXURY ESTATE SPECIALISTS',
-    description: 'Premium moisture protection solutions for local affluent properties and custom homes.',
+    description: 'Premium waterproofing solutions for local affluent properties and custom homes.',
   },
   {
     title: 'KETTLE LAKE SOLUTIONS',
@@ -58,7 +58,7 @@ const locationFeatures = [
 // Location-specific FAQs
 const locationFAQs = [
   {
-    question: "How does the Oak Ridges Moraine affect local moisture protection?",
+    question: "How does the Oak Ridges Moraine affect local waterproofing?",
     answer: "The Oak Ridges Moraine creates unique geological conditions with complex glacial deposits, kettle lakes, and variable drainage patterns. Our moraine expertise includes specialized solutions for the challenging soil conditions and natural water retention areas characteristic of this sensitive geological formation."
   },
   {
@@ -67,7 +67,7 @@ const locationFAQs = [
   },
   {
     question: "How do you protect luxury estates in the area?",
-    answer: "Local affluent properties require premium moisture protection solutions including sophisticated drainage systems, high-end finishes, and minimal disruption to extensive landscaping. We provide white-glove service that meets the expectations of luxury homeowners while delivering superior protection."
+    answer: "Local affluent properties require premium waterproofing solutions including sophisticated drainage systems, high-end finishes, and minimal disruption to extensive landscaping. We provide white-glove service that meets the expectations of luxury homeowners while delivering superior protection."
   },
   {
     question: "What makes Oak Ridges area soil conditions unique?",
@@ -176,24 +176,6 @@ const localBusinessSchema = {
         }
       }
     ]
-  },
-  "review": {
-    "@type": "Review",
-    "reviewRating": {
-      "@type": "Rating",
-      "ratingValue": "4.9",
-      "bestRating": "5"
-    },
-    "author": {
-      "@type": "Organization",
-      "name": "Dryspace Protection Customers"
-    }
-  },
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "4.9",
-    "reviewCount": "150",
-    "bestRating": "5"
   }
 };
 ---
@@ -215,8 +197,8 @@ const localBusinessSchema = {
   </div>
 
 <!-- Location Hero -->
-  <Hero 
-    title="Moisture Protection Richmond Hill"
+  <Hero
+    title="Basement Waterproofing Richmond Hill"
     subtitle="Professional basement protection and foundation repair serving all local neighborhoods. 25-year warranty, free inspection."
     primaryCTA={{ text: "Get Free Quote", href: "/free-inspection" }}
     secondaryCTA={{ text: "Call: 437-545-0067", href: "tel:437-545-0067" }}
@@ -238,8 +220,8 @@ const localBusinessSchema = {
   <section class="py-16 bg-slate-50">
     <div class="container mx-auto px-4">
       <div class="max-w-4xl mx-auto">
-        <h2 class="text-4xl font-bold text-slate-900 mb-4 uppercase">MOISTURE PROTECTION SERVICES IN RICHMOND HILL</h2>
-        
+        <h2 class="text-4xl font-bold text-slate-900 mb-4 uppercase">BASEMENT WATERPROOFING SERVICES IN RICHMOND HILL</h2>
+
         <div class="prose prose-lg  max-w-none">
           <p class="text-lg text-slate-600 mb-6">
             The area presents unique moisture challenges rooted in its location on the environmentally sensitive Oak Ridges Moraine. This glacial formation creates complex geological conditions, kettle lake drainage patterns, and strict environmental protections, while the community's affluent character demands premium solutions for luxury properties.
@@ -273,7 +255,7 @@ const localBusinessSchema = {
             </div>
             
             <div class="bg-navy-900 border-2 border-slate-200  p-6">
-              <h3 class="text-xl font-bold text-slate-900 mb-6 uppercase">WHY THE AREA NEEDS MOISTURE PROTECTION</h3>
+              <h3 class="text-xl font-bold text-slate-900 mb-6 uppercase">WHY RICHMOND HILL NEEDS WATERPROOFING</h3>
               <ul class="space-y-2 text-slate-300">
                 <li class="text-sm text-slate-300 flex items-start">
                 <span class="mr-2 text-cyan-400">•</span>
@@ -301,7 +283,7 @@ const localBusinessSchema = {
 
           <h3 class="text-2xl font-bold mt-8 mb-4">Neighborhoods We Serve</h3>
           <p class="mb-4">
-            Our local moisture protection team serves all neighborhoods including:
+            Our local waterproofing team serves all neighborhoods including:
           </p>
           <div class="flex flex-wrap gap-2">
             {["Oak Ridges","Langstaff","Jefferson","Bayview Hill","Rouge Woods","Mill Pond"].map((neighborhood) => (
@@ -364,7 +346,7 @@ const localBusinessSchema = {
   <section class="py-16 bg-slate-50">
     <div class="container mx-auto px-4">
       <div class="text-center mb-12">
-        <h2 class="text-4xl font-bold text-slate-900 mb-4 uppercase">LOCAL MOISTURE PROTECTION FAQS</h2>
+        <h2 class="text-4xl font-bold text-slate-900 mb-4 uppercase">RICHMOND HILL WATERPROOFING FAQS</h2>
         <p class="text-lg text-slate-600">Common questions from local homeowners</p>
       </div>
       
@@ -392,7 +374,7 @@ const localBusinessSchema = {
       <div class="max-w-4xl mx-auto text-center">
         <h2 class="text-4xl font-bold text-slate-900 mb-4 uppercase">PRESERVE YOUR MORAINE ESTATE</h2>
         <p class="text-lg text-slate-300 mb-8">
-          Premium moisture protection solutions for Oak Ridges Moraine luxury properties and environmental compliance
+          Premium waterproofing solutions for Oak Ridges Moraine luxury properties and environmental compliance
         </p>
         
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
@@ -418,5 +400,17 @@ const localBusinessSchema = {
   </section>
 </PageLayout>
 
-<script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)}>
+<script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)}></script>
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": locationFAQs.map(faq => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer
+    }
+  }))
+})} />
 <BreadcrumbSchema items={[{name: 'Home', url: '/'}, {name: 'Locations', url: '/locations'}, {name: 'Richmond Hill'}]} />

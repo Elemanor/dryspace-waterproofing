@@ -10,8 +10,8 @@ import InternalLinks from '../../components/InternalLinks.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import BreadcrumbSchema from '../../components/BreadcrumbSchema.astro';
 
-const pageTitle = "Moisture Control Georgetown | Halton Hills Specialists";
-const pageDescription = "Georgetown Credit River valley moisture protection. Heritage building preservation, escarpment water management, downtown core solutions.";
+const pageTitle = "Basement Waterproofing Georgetown | Foundation Repair | DrySpace";
+const pageDescription = "Professional basement waterproofing in Georgetown. Credit River flood protection. Foundation repair, sump pumps, heritage homes. 25-year warranty. Free inspection. Call 437-545-0067.";
 
 // Local area information
 const localInfo = {
@@ -58,28 +58,28 @@ const locationFeatures = [
 // Location-specific FAQs
 const locationFAQs = [
   {
-    question: "How do you preserve Georgetown's heritage buildings during moisture control work?",
-    answer: "Georgetown's historic downtown requires specialized heritage conservation techniques. We use period-appropriate materials, reversible methods, and work closely with heritage committees to preserve architectural integrity while providing modern moisture protection."
+    question: "How do you preserve Georgetown's heritage buildings during waterproofing work?",
+    answer: "Georgetown's historic downtown requires specialized heritage conservation techniques. We use period-appropriate materials, reversible methods, and work closely with heritage committees to preserve architectural integrity while providing modern waterproofing."
   },
   {
-    question: "What challenges does the Credit River valley create for moisture control?",
+    question: "What challenges does the Credit River valley create for waterproofing?",
     answer: "The Credit River valley creates variable water table conditions, seasonal flooding risks, and unique soil compositions. Our river valley expertise includes specialized drainage systems and flood mitigation designed for Georgetown's topographic challenges."
   },
   {
-    question: "How do escarpment properties in Georgetown require different moisture control?",
+    question: "How do escarpment properties in Georgetown require different waterproofing?",
     answer: "Georgetown's escarpment location creates unique drainage challenges with rapid water runoff, soil erosion, and slope stability concerns. We design specialized retention systems and grade management to handle the significant elevation changes."
   },
   {
-    question: "What makes Georgetown's downtown core moisture control unique?",
-    answer: "Downtown Georgetown features a mix of heritage buildings, modern infill, and connected structures requiring coordinated moisture protection approaches. We navigate shared foundations, heritage restrictions, and municipal requirements for downtown properties."
+    question: "What makes Georgetown's downtown core waterproofing unique?",
+    answer: "Downtown Georgetown features a mix of heritage buildings, modern infill, and connected structures requiring coordinated waterproofing approaches. We navigate shared foundations, heritage restrictions, and municipal requirements for downtown properties."
   },
   {
     question: "How do you handle Georgetown's mixed soil conditions?",
-    answer: "Georgetown sits on varied escarpment geology including clay deposits, limestone bedrock, and river gravels. Our soil analysis determines the best moisture control approach for each property's specific geological conditions."
+    answer: "Georgetown sits on varied escarpment geology including clay deposits, limestone bedrock, and river gravels. Our soil analysis determines the best waterproofing approach for each property's specific geological conditions."
   },
   {
     question: "Do you work with Georgetown heritage committees?",
-    answer: "Yes! We maintain relationships with local heritage committees and understand Georgetown's heritage designation requirements. Our heritage-sensitive solutions meet both moisture control needs and preservation standards."
+    answer: "Yes! We maintain relationships with local heritage committees and understand Georgetown's heritage designation requirements. Our heritage-sensitive solutions meet both waterproofing needs and preservation standards."
   }
 ];
 
@@ -87,8 +87,8 @@ const locationFAQs = [
 const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": ["LocalBusiness", "HomeAndConstructionBusiness", "FoundationService"],
-  "name": "Dryspace Moisture Control",
-  "description": "Professional moisture control services in Georgetown. Expert lower level protection, foundation repair, and water management solutions. Serving all Georgetown neighborhoods with 25-year warranty protection.",
+  "name": "DrySpace Waterproofing",
+  "description": "Professional basement waterproofing services in Georgetown. Expert foundation repair, crack repair, and drainage solutions. Serving all Georgetown neighborhoods with 25-year warranty protection.",
   "telephone": "437-545-0067",
   "address": {
     "@type": "PostalAddress",
@@ -176,24 +176,6 @@ const localBusinessSchema = {
         }
       }
     ]
-  },
-  "review": {
-    "@type": "Review",
-    "reviewRating": {
-      "@type": "Rating",
-      "ratingValue": "4.9",
-      "bestRating": "5"
-    },
-    "author": {
-      "@type": "Organization",
-      "name": "Dryspace Waterproofing Customers"
-    }
-  },
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "4.9",
-    "reviewCount": "150",
-    "bestRating": "5"
   }
 };
 ---
@@ -215,8 +197,8 @@ const localBusinessSchema = {
   </div>
 
 <!-- Location Hero -->
-  <Hero 
-    title="Moisture Control Georgetown"
+  <Hero
+    title="Basement Waterproofing Georgetown"
     subtitle="Professional basement waterproofing and foundation repair serving all Georgetown neighborhoods. 25-year warranty, free inspection."
     primaryCTA={{ text: "Get Free Georgetown Quote", href: "/free-inspection" }}
     secondaryCTA={{ text: "Call: 437-545-0067", href: "tel:437-545-0067" }}
@@ -418,5 +400,17 @@ const localBusinessSchema = {
   </section>
 </PageLayout>
 
-<script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)}>
+<script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)}></script>
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": locationFAQs.map(faq => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer
+    }
+  }))
+})} />
 <BreadcrumbSchema items={[{name: 'Home', url: '/'}, {name: 'Locations', url: '/locations'}, {name: 'Georgetown'}]} />

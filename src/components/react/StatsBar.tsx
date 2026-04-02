@@ -8,7 +8,7 @@ const stats = [
   { icon: Home, value: "15,000+", label: "Projects", sublabel: "Completed" },
   { icon: Shield, value: "100%", label: "Licensed", sublabel: "& Insured" },
   { icon: Clock, value: "24/7", label: "Emergency", sublabel: "Response" },
-  { icon: Star, value: "4.9/5", label: "Rating", sublabel: "487+ Reviews" },
+  { icon: Star, value: "A+", label: "BBB", sublabel: "Accredited" },
   { icon: Award, value: "A+", label: "BBB", sublabel: "Accredited" },
 ]
 

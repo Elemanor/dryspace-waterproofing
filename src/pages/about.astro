@@ -4,34 +4,24 @@ import SectionHeader from '../components/sections/SectionHeader.astro';
 import CTABand from '../components/sections/CTABand.astro';
 import TrustBar from '../components/sections/TrustBar.astro';
 
-const teamMembers = [
+const whatSetsUsApart = [
   {
-    name: 'Michael Spader',
-    role: 'Founder & CEO',
-    image: '/assets/waterproofing/dryspace_excellence.webp',
-    bio: 'With over 30 years in construction and waterproofing, Michael founded Dryspace with a vision to provide honest, reliable basement protection for Toronto families.',
-    certifications: ['Master Waterproofer', 'Structural Engineer P.Eng']
+    title: 'Hands-On Expertise',
+    description: 'Our crews are on-site every day solving real waterproofing problems — no subcontractors, no shortcuts.',
+    image: '/images/exterior-waterproofing-toronto in process (1).webp',
+    alt: 'Exterior waterproofing excavation in progress'
   },
   {
-    name: 'David Chen',
-    role: 'Operations Director',
-    image: '/images/dryspace_excellence.webp',
-    bio: '15+ years managing waterproofing projects across the GTA. David ensures every project meets our strict quality standards and timeline commitments.',
-    certifications: ['Project Management Professional', 'WSIB Certified']
+    title: 'Premium Materials',
+    description: 'We use only proven, manufacturer-warranted membranes and drainage systems built to outlast your home.',
+    image: '/images/exterior-waterproofing-membrane.webp',
+    alt: 'Professional waterproofing membrane installation'
   },
   {
-    name: 'Sarah Mitchell',
-    role: 'Customer Success Manager',
-    image: '/images/dryspace_excellence.webp',
-    bio: 'Sarah leads our customer care team, ensuring every homeowner receives personalized attention from inspection through warranty support.',
-    certifications: ['Customer Service Excellence', 'Insurance Claims Specialist']
-  },
-  {
-    name: 'Robert Thompson',
-    role: 'Lead Technical Specialist',
-    image: '/images/dryspace_excellence.webp',
-    bio: '20 years of hands-on waterproofing experience. Robert trains our technicians and oversees complex foundation repair projects.',
-    certifications: ['Foundation Repair Specialist', 'Concrete Restoration Expert']
+    title: 'Guaranteed Results',
+    description: 'Every project is backed by our 25-year transferable warranty — your investment is protected.',
+    image: '/images/dryspace_exterior_waterproofing_warranty.webp',
+    alt: 'Completed waterproofing project with warranty'
   }
 ];
 
@@ -139,6 +129,19 @@ const certifications = [
             Today, we're proud to be a second-generation family business, with Michael's children now helping
             to lead the company into its next chapter of growth and innovation.
           </p>
+
+          <div class="flex items-start gap-3 mb-8 bg-slate-50 border border-slate-200 rounded-lg p-4">
+            <svg class="w-5 h-5 text-cyan-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+            </svg>
+            <div>
+              <p class="font-semibold text-slate-900">Our Office</p>
+              <p class="text-slate-600 text-sm">260 Wellesley Street East, Toronto, ON M4X 1G6</p>
+              <p class="text-slate-500 text-xs mt-1">Serving homeowners across the Greater Toronto Area</p>
+            </div>
+          </div>
+
           <a href="/contact" class="btn-primary">Get Your Free Inspection</a>
         </div>
         <div class="relative">
@@ -233,22 +236,22 @@ const certifications = [
     </div>
   </section>
 
-  <!-- Team Section -->
+  <!-- What Sets Us Apart -->
   <section class="section-padding bg-slate-50 reveal">
     <div class="container mx-auto px-4">
       <SectionHeader
-        label="Meet Our Team"
-        title="Leadership You Can Trust"
-        description="Experienced professionals dedicated to protecting your home"
+        label="What Sets Us Apart"
+        title="Built on Real Work, Not Marketing"
+        description="25 years of hands-on waterproofing experience across the Greater Toronto Area"
       />
 
-      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-        {teamMembers.map((member) => (
+      <div class="grid md:grid-cols-3 gap-8 mb-12">
+        {whatSetsUsApart.map((card) => (
           <div class="card-interactive bg-white overflow-hidden">
             <div class="h-64 bg-slate-200 overflow-hidden">
               <img
-                src={member.image}
-                alt={member.name}
+                src={card.image}
+                alt={card.alt}
                 width="800"
                 height="600"
                 loading="lazy"
@@ -257,24 +260,16 @@ const certifications = [
               />
             </div>
             <div class="p-6">
-              <h3 class="text-xl font-bold text-slate-900 mb-1">{member.name}</h3>
-              <p class="text-cyan-500 font-semibold uppercase text-sm tracking-wide mb-3">{member.role}</p>
-              <p class="text-slate-600 text-sm leading-relaxed mb-4">{member.bio}</p>
-              <div class="flex flex-wrap gap-2">
-                {member.certifications.map((cert) => (
-                  <span class="text-xs bg-slate-100 text-slate-700 px-3 py-1 rounded-full border border-slate-200">
-                    {cert}
-                  </span>
-                ))}
-              </div>
+              <h3 class="text-xl font-bold text-slate-900 uppercase mb-3">{card.title}</h3>
+              <p class="text-slate-600 leading-relaxed">{card.description}</p>
             </div>
           </div>
         ))}
       </div>
 
       <div class="text-center">
-        <p class="text-slate-600 mb-6">Our team of 50+ certified technicians is ready to help protect your home</p>
-        <a href="/contact" class="btn-secondary">Meet the Full Team</a>
+        <p class="text-slate-600 mb-6">Our certified technicians are ready to help protect your home</p>
+        <a href="/contact" class="btn-secondary">Get Your Free Inspection</a>
       </div>
     </div>
   </section>
@@ -348,7 +343,7 @@ const certifications = [
 
   <CTABand
     title="Ready to Experience the Dryspace Difference?"
-    subtitle="Join thousands of Toronto homeowners who trust us to protect their homes"
+    subtitle="Join the Toronto homeowners who trust us to protect their homes"
     primaryCTA={{ text: "Schedule Free Inspection", href: "/contact" }}
     secondaryCTA={{ text: "Explore Our Services", href: "/services" }}
   />

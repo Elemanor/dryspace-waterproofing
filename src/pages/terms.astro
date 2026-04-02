@@ -1,46 +1,105 @@
 ---
-import Layout from '../layouts/PageLayout.astro';
-
-const metadata = {
-  title: 'Terms of Service',
-  description: 'Terms of service for Dryspace Waterproofing',
-};
+import PageLayout from '../layouts/PageLayout.astro';
 ---
 
-<Layout metadata={metadata}>
-  <section class="px-6 sm:px-6 py-12 sm:py-16 lg:py-20 mx-auto max-w-4xl">
-    <header>
-      <h1 class="text-4xl md:text-5xl font-bold leading-tighter tracking-tighter mb-8 font-heading">
-        Terms of Service
-      </h1>
-      <p class="text-slate-500 mb-8">Last updated: January 2025</p>
-    </header>
+<PageLayout
+  title="Terms of Service | DrySpace Waterproofing"
+  description="DrySpace Waterproofing terms of service. Service agreements, warranty terms, and conditions for waterproofing services in Toronto and GTA."
+>
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4 max-w-4xl">
+      <h1 class="text-4xl font-bold text-slate-900 mb-4">Terms of Service</h1>
+      <p class="text-slate-500 mb-12">Last updated: April 2026</p>
 
-    <div class="prose prose-lg max-w-none">
-      <h2>1. Agreement to Terms</h2>
-      <p>By accessing our website and services, you agree to be bound by these Terms of Service and all applicable laws and regulations.</p>
+      <div class="prose prose-slate max-w-none space-y-8">
 
-      <h2>2. Services</h2>
-      <p>Dryspace Waterproofing provides professional waterproofing, foundation repair, and related services in the Greater Toronto Area. All services are subject to availability and scheduling.</p>
+        <div>
+          <h2 class="text-2xl font-bold text-slate-900 mb-4">1. Agreement to Terms</h2>
+          <p class="text-slate-600 leading-relaxed">By accessing or using the DrySpace Waterproofing website (dryspacewaterproofing.ca) or engaging our services, you agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use our website or services.</p>
+        </div>
 
-      <h2>3. Warranty</h2>
-      <p>We offer a 25-year transferable warranty on qualifying services. Specific warranty terms and conditions are provided separately with each service contract.</p>
+        <div>
+          <h2 class="text-2xl font-bold text-slate-900 mb-4">2. Services</h2>
+          <p class="text-slate-600 leading-relaxed mb-4">DrySpace Waterproofing provides basement waterproofing, foundation repair, sump pump installation, underpinning, and related construction services in the Toronto and Greater Toronto Area. Our services include:</p>
+          <ul class="list-disc pl-6 space-y-2 text-slate-600">
+            <li>Free inspections and assessments</li>
+            <li>Written quotes and service proposals</li>
+            <li>Waterproofing and foundation repair work</li>
+            <li>Post-service warranty coverage</li>
+          </ul>
+          <p class="text-slate-600 leading-relaxed mt-4">All work is performed in accordance with the Ontario Building Code (OBC) and applicable municipal regulations.</p>
+        </div>
 
-      <h2>4. Payment Terms</h2>
-      <p>Payment terms are specified in individual service agreements. We offer various financing options subject to credit approval.</p>
+        <div>
+          <h2 class="text-2xl font-bold text-slate-900 mb-4">3. Quotes and Estimates</h2>
+          <p class="text-slate-600 leading-relaxed">Quotes provided through our website tools (cost calculators, estimators) are approximate and for informational purposes only. Actual pricing is determined after an on-site inspection. Written quotes are valid for 30 days from the date of issue unless otherwise stated.</p>
+        </div>
 
-      <h2>5. Liability</h2>
-      <p>Our liability is limited to the scope of work specified in the service agreement. We are fully licensed and insured for all services provided.</p>
+        <div>
+          <h2 class="text-2xl font-bold text-slate-900 mb-4">4. Warranty Terms</h2>
+          <p class="text-slate-600 leading-relaxed mb-4">DrySpace Waterproofing provides a 25-year transferable warranty on qualifying waterproofing work. Warranty coverage is subject to the following conditions:</p>
+          <ul class="list-disc pl-6 space-y-2 text-slate-600">
+            <li>The warranty covers materials and workmanship for the specific services performed</li>
+            <li>The warranty is transferable to subsequent property owners</li>
+            <li>Warranty claims must be reported within a reasonable timeframe</li>
+            <li>The warranty does not cover damage caused by third-party modifications, natural disasters, or failure to maintain recommended drainage and grading</li>
+          </ul>
+          <p class="text-slate-600 leading-relaxed mt-4">For complete warranty details, see our <a href="/warranty" class="text-cyan-600 hover:text-cyan-700">Warranty page</a>.</p>
+        </div>
 
-      <h2>6. Emergency Services</h2>
-      <p>24/7 emergency services are available. Emergency service rates may differ from standard rates.</p>
+        <div>
+          <h2 class="text-2xl font-bold text-slate-900 mb-4">5. Payment Terms</h2>
+          <p class="text-slate-600 leading-relaxed">Payment terms are outlined in your service agreement. We accept cash, credit card, debit, and bank transfer. A deposit may be required before work commences. Final payment is due upon completion of work unless a payment schedule has been agreed upon in writing. All prices are in Canadian dollars and subject to applicable taxes (HST).</p>
+        </div>
 
-      <h2>7. Contact Information</h2>
-      <p>For questions about these terms, please contact us at:</p>
-      <ul>
-        <li>Phone: 437-545-0067</li>
-        <li>Email: p.vysotckii@gmail.com</li>
-      </ul>
+        <div>
+          <h2 class="text-2xl font-bold text-slate-900 mb-4">6. Permits and Compliance</h2>
+          <p class="text-slate-600 leading-relaxed">DrySpace Waterproofing obtains all necessary building permits and arranges required inspections as part of our service. We comply with the Ontario Building Code, Occupational Health and Safety Act (OHSA), and applicable municipal bylaws.</p>
+        </div>
+
+        <div>
+          <h2 class="text-2xl font-bold text-slate-900 mb-4">7. Limitation of Liability</h2>
+          <p class="text-slate-600 leading-relaxed">To the maximum extent permitted by Ontario law, DrySpace Waterproofing's liability for any claim arising from our services is limited to the amount paid for the specific service giving rise to the claim. We are not liable for indirect, incidental, or consequential damages. This limitation does not apply to claims arising from gross negligence or willful misconduct.</p>
+        </div>
+
+        <div>
+          <h2 class="text-2xl font-bold text-slate-900 mb-4">8. Website Use</h2>
+          <p class="text-slate-600 leading-relaxed mb-4">The content on our website is provided for informational purposes. While we strive for accuracy:</p>
+          <ul class="list-disc pl-6 space-y-2 text-slate-600">
+            <li>Cost estimates from online tools are approximate and not binding</li>
+            <li>Blog articles and guides are educational and do not constitute professional advice</li>
+            <li>Images may represent typical work and may not reflect your specific project</li>
+            <li>Service availability may vary by location</li>
+          </ul>
+        </div>
+
+        <div>
+          <h2 class="text-2xl font-bold text-slate-900 mb-4">9. Intellectual Property</h2>
+          <p class="text-slate-600 leading-relaxed">All content on this website, including text, images, logos, and design, is the property of DrySpace Waterproofing and is protected by Canadian copyright law. You may not reproduce, distribute, or use our content without written permission.</p>
+        </div>
+
+        <div>
+          <h2 class="text-2xl font-bold text-slate-900 mb-4">10. Dispute Resolution</h2>
+          <p class="text-slate-600 leading-relaxed">Any disputes arising from these terms or our services shall be governed by the laws of the Province of Ontario and the federal laws of Canada applicable therein. Parties agree to attempt good-faith negotiation before pursuing formal legal action. Any legal proceedings shall be brought in the courts of Ontario.</p>
+        </div>
+
+        <div>
+          <h2 class="text-2xl font-bold text-slate-900 mb-4">11. Changes to Terms</h2>
+          <p class="text-slate-600 leading-relaxed">We reserve the right to modify these Terms of Service at any time. Changes will be posted on this page with an updated revision date.</p>
+        </div>
+
+        <div>
+          <h2 class="text-2xl font-bold text-slate-900 mb-4">12. Contact Us</h2>
+          <p class="text-slate-600 leading-relaxed">If you have questions about these Terms of Service, contact us:</p>
+          <div class="bg-slate-50 rounded-xl p-6 mt-4">
+            <p class="text-slate-700 font-semibold">DrySpace Waterproofing</p>
+            <p class="text-slate-600">Phone: <a href="tel:437-545-0067" class="text-cyan-600 hover:text-cyan-700">437-545-0067</a></p>
+            <p class="text-slate-600">Email: <a href="mailto:info@dryspacewaterproofing.ca" class="text-cyan-600 hover:text-cyan-700">info@dryspacewaterproofing.ca</a></p>
+            <p class="text-slate-600">Toronto & Greater Toronto Area, Ontario, Canada</p>
+          </div>
+        </div>
+
+      </div>
     </div>
   </section>
-</Layout>
+</PageLayout>

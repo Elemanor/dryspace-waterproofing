@@ -39,11 +39,7 @@ function generateServiceSchema(service: any) {
         }
       }))
     },
-    "aggregateRating": service.rating ? {
-      "@type": "AggregateRating",
-      "ratingValue": service.rating.value,
-      "reviewCount": service.rating.count
-    } : undefined
+    "serviceType": service.name
   };
 }
 

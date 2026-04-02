@@ -1,71 +1,113 @@
 ---
-import Layout from '../layouts/PageLayout.astro';
-
-const metadata = {
-  title: 'Privacy Policy',
-  description: 'Privacy policy for Dryspace Waterproofing',
-};
+import PageLayout from '../layouts/PageLayout.astro';
 ---
 
-<Layout metadata={metadata}>
-  <section class="px-6 sm:px-6 py-12 sm:py-16 lg:py-20 mx-auto max-w-4xl">
-    <header>
-      <h1 class="text-4xl md:text-5xl font-bold leading-tighter tracking-tighter mb-8 font-heading">
-        Privacy Policy
-      </h1>
-      <p class="text-slate-500 mb-8">Last updated: January 2025</p>
-    </header>
+<PageLayout
+  title="Privacy Policy | DrySpace Waterproofing"
+  description="DrySpace Waterproofing privacy policy. How we collect, use, and protect your personal information under PIPEDA."
+>
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4 max-w-4xl">
+      <h1 class="text-4xl font-bold text-slate-900 mb-4">Privacy Policy</h1>
+      <p class="text-slate-500 mb-12">Last updated: April 2026</p>
 
-    <div class="prose prose-lg max-w-none">
-      <h2>1. Information We Collect</h2>
-      <p>We collect information you provide directly to us, including:</p>
-      <ul>
-        <li>Name and contact information</li>
-        <li>Property address</li>
-        <li>Service requests and preferences</li>
-        <li>Payment information (processed securely)</li>
-      </ul>
+      <div class="prose prose-slate max-w-none space-y-8">
 
-      <h2>2. How We Use Your Information</h2>
-      <p>We use the information we collect to:</p>
-      <ul>
-        <li>Provide waterproofing and foundation repair services</li>
-        <li>Process payments and financing applications</li>
-        <li>Send service reminders and warranty information</li>
-        <li>Respond to your requests and inquiries</li>
-        <li>Improve our services</li>
-      </ul>
+        <div>
+          <h2 class="text-2xl font-bold text-slate-900 mb-4">1. Introduction</h2>
+          <p class="text-slate-600 leading-relaxed">
+            DrySpace Waterproofing ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your personal information when you visit our website (dryspacewaterproofing.ca), contact us, or use our services. We comply with the Personal Information Protection and Electronic Documents Act (PIPEDA) and applicable Ontario privacy laws.
+          </p>
+        </div>
 
-      <h2>3. Information Sharing</h2>
-      <p>We do not sell, trade, or rent your personal information to third parties. We may share information with:</p>
-      <ul>
-        <li>Service providers who assist in our operations</li>
-        <li>Government agencies as required by law</li>
-        <li>Insurance companies for warranty claims</li>
-      </ul>
+        <div>
+          <h2 class="text-2xl font-bold text-slate-900 mb-4">2. Information We Collect</h2>
+          <p class="text-slate-600 leading-relaxed mb-4">We may collect the following types of personal information:</p>
+          <ul class="list-disc pl-6 space-y-2 text-slate-600">
+            <li><strong>Contact Information:</strong> Name, email address, phone number, and mailing address when you submit a contact form, request a quote, or book an inspection.</li>
+            <li><strong>Property Information:</strong> Address, property type, and details about your waterproofing or foundation concerns.</li>
+            <li><strong>Technical Data:</strong> IP address, browser type, operating system, and browsing behavior collected automatically through cookies and analytics.</li>
+            <li><strong>Communication Records:</strong> Records of phone calls, emails, and messages exchanged with our team.</li>
+          </ul>
+        </div>
 
-      <h2>4. Data Security</h2>
-      <p>We implement appropriate technical and organizational measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction.</p>
+        <div>
+          <h2 class="text-2xl font-bold text-slate-900 mb-4">3. How We Use Your Information</h2>
+          <p class="text-slate-600 leading-relaxed mb-4">We use your personal information to:</p>
+          <ul class="list-disc pl-6 space-y-2 text-slate-600">
+            <li>Respond to service inquiries and provide quotes</li>
+            <li>Schedule inspections and waterproofing services</li>
+            <li>Communicate about your project, warranty, or account</li>
+            <li>Process payments and manage service agreements</li>
+            <li>Improve our website and services</li>
+            <li>Comply with legal obligations and building codes</li>
+          </ul>
+        </div>
 
-      <h2>5. Your Rights</h2>
-      <p>You have the right to:</p>
-      <ul>
-        <li>Access your personal information</li>
-        <li>Correct inaccurate information</li>
-        <li>Request deletion of your information</li>
-        <li>Opt-out of marketing communications</li>
-      </ul>
+        <div>
+          <h2 class="text-2xl font-bold text-slate-900 mb-4">4. Cookies and Analytics</h2>
+          <p class="text-slate-600 leading-relaxed mb-4">Our website uses cookies and similar technologies to enhance your browsing experience:</p>
+          <ul class="list-disc pl-6 space-y-2 text-slate-600">
+            <li><strong>Essential Cookies:</strong> Required for website functionality.</li>
+            <li><strong>Analytics Cookies:</strong> Google Analytics to understand how visitors use our site. This data is aggregated and anonymous.</li>
+            <li><strong>Google Maps:</strong> Used on our contact and service area pages to display our location and service areas.</li>
+          </ul>
+          <p class="text-slate-600 leading-relaxed mt-4">You can control cookies through your browser settings. Disabling cookies may affect website functionality.</p>
+        </div>
 
-      <h2>6. Cookies</h2>
-      <p>Our website uses cookies to improve your browsing experience and analyze site traffic. You can control cookie settings through your browser.</p>
+        <div>
+          <h2 class="text-2xl font-bold text-slate-900 mb-4">5. How We Share Your Information</h2>
+          <p class="text-slate-600 leading-relaxed mb-4">We do not sell your personal information. We may share it with:</p>
+          <ul class="list-disc pl-6 space-y-2 text-slate-600">
+            <li><strong>Service Providers:</strong> Trusted partners who assist with website hosting, payment processing, or communication tools.</li>
+            <li><strong>Municipal Authorities:</strong> When required for building permits or inspections related to your project.</li>
+            <li><strong>Legal Requirements:</strong> When required by law, court order, or regulatory authority.</li>
+          </ul>
+        </div>
 
-      <h2>7. Contact Us</h2>
-      <p>For questions about this privacy policy or your personal information, please contact us at:</p>
-      <ul>
-        <li>Phone: 437-545-0067</li>
-        <li>Email: p.vysotckii@gmail.com</li>
-        <li>Address: Toronto, ON</li>
-      </ul>
+        <div>
+          <h2 class="text-2xl font-bold text-slate-900 mb-4">6. Data Security</h2>
+          <p class="text-slate-600 leading-relaxed">We implement appropriate technical and organizational measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction. Our website uses SSL encryption for all data transmission.</p>
+        </div>
+
+        <div>
+          <h2 class="text-2xl font-bold text-slate-900 mb-4">7. Data Retention</h2>
+          <p class="text-slate-600 leading-relaxed">We retain your personal information only as long as necessary to fulfill the purposes for which it was collected, comply with legal obligations, and support our warranty commitments (up to 25 years for warranty records). You may request deletion of your data at any time, subject to legal retention requirements.</p>
+        </div>
+
+        <div>
+          <h2 class="text-2xl font-bold text-slate-900 mb-4">8. Your Rights Under PIPEDA</h2>
+          <p class="text-slate-600 leading-relaxed mb-4">Under Canadian privacy law, you have the right to:</p>
+          <ul class="list-disc pl-6 space-y-2 text-slate-600">
+            <li>Access your personal information held by us</li>
+            <li>Request correction of inaccurate information</li>
+            <li>Withdraw consent for certain uses of your information</li>
+            <li>File a complaint with the Office of the Privacy Commissioner of Canada</li>
+          </ul>
+        </div>
+
+        <div>
+          <h2 class="text-2xl font-bold text-slate-900 mb-4">9. Children's Privacy</h2>
+          <p class="text-slate-600 leading-relaxed">Our services are not directed to individuals under 18 years of age. We do not knowingly collect personal information from children.</p>
+        </div>
+
+        <div>
+          <h2 class="text-2xl font-bold text-slate-900 mb-4">10. Changes to This Policy</h2>
+          <p class="text-slate-600 leading-relaxed">We may update this Privacy Policy from time to time. Changes will be posted on this page with an updated revision date.</p>
+        </div>
+
+        <div>
+          <h2 class="text-2xl font-bold text-slate-900 mb-4">11. Contact Us</h2>
+          <p class="text-slate-600 leading-relaxed">If you have questions about this Privacy Policy or wish to exercise your privacy rights, contact us:</p>
+          <div class="bg-slate-50 rounded-xl p-6 mt-4">
+            <p class="text-slate-700 font-semibold">DrySpace Waterproofing</p>
+            <p class="text-slate-600">Phone: <a href="tel:437-545-0067" class="text-cyan-600 hover:text-cyan-700">437-545-0067</a></p>
+            <p class="text-slate-600">Email: <a href="mailto:info@dryspacewaterproofing.ca" class="text-cyan-600 hover:text-cyan-700">info@dryspacewaterproofing.ca</a></p>
+            <p class="text-slate-600">Toronto & Greater Toronto Area, Ontario, Canada</p>
+          </div>
+        </div>
+
+      </div>
     </div>
   </section>
-</Layout>
+</PageLayout>

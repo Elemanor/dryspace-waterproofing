@@ -4,11 +4,9 @@ import Hero from '../components/sections/Hero.astro';
 import Stats from '../components/sections/Stats.astro';
 import Process from '../components/sections/Process.astro';
 import ContactForm from '../components/ContactForm.astro';
-import FAQ from '../components/FAQ.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import StructuredData from '../components/StructuredData.astro';
 import SchemaMarkup from '../components/SchemaMarkup.astro';
-import BeforeAfterGallery from '../components/BeforeAfterGallery.astro';
 import CostCalculator from '../components/react/CostCalculator.tsx';
 import { StatsBar } from '../components/react/StatsBar.tsx';
 
@@ -34,48 +32,67 @@ const mississaugaNeighborhoods = [
   { name: "Malton", projects: "45", commonIssues: "Airport area drainage" }
 ];
 
-const faqs = [
+// FAQ categories for Mississauga page
+const faqCategories = [
   {
-    question: "How much does basement waterproofing cost in Mississauga?",
-    answer: "Basement waterproofing in Mississauga typically costs $150-300 per linear foot, or $15,000-30,000 for an average home. Factors include Mississauga's clay soil conditions, proximity to Credit River or Lake Ontario, and specific neighborhood requirements. Government rebates up to $3,400 are available for Mississauga residents."
+    name: "Costs & Pricing",
+    faqs: [
+      { question: "How much does basement waterproofing cost in Mississauga?", answer: "Exterior waterproofing runs $150–$300 per linear foot, and interior drainage systems run $80–$200 per linear foot. A typical Mississauga home costs $15,000–$30,000 for full exterior waterproofing. The final price depends on your home's perimeter length, depth of excavation, soil conditions, and access. We provide free on-site quotes." },
+      { question: "Is exterior or interior waterproofing more expensive?", answer: "Exterior is more expensive because it requires excavation around the foundation. Expect $8,000–$25,000+ for exterior versus $4,000–$10,000 for interior drainage. However, exterior waterproofing stops water before it reaches the wall, which makes it the more permanent solution for Mississauga's clay soil." },
+      { question: "Are there rebates for basement waterproofing in Mississauga?", answer: "Yes. Mississauga homeowners can apply for up to $3,400 through the Basement Flooding Protection Subsidy Program. Additional Region of Peel programs cover backwater valves and sump pumps. We handle all rebate paperwork as part of our service." },
+      { question: "Do you offer financing for waterproofing projects?", answer: "Yes, we offer 0% financing for 12 months (OAC) and longer-term plans. Most homeowners qualify, and we can run an application during the estimate visit." },
+      { question: "Does homeowner insurance cover basement waterproofing?", answer: "Preventive waterproofing is generally not covered. However, if you've had water damage, your insurer may cover emergency cleanup and some repairs. We provide detailed documentation for insurance claims and work directly with adjusters when needed." },
+      { question: "Why do waterproofing quotes vary so much between companies?", answer: "Scope of work is the main reason. A lower quote may exclude permit costs, proper membrane material, new weeping tile, or a real warranty. Ask every company exactly what's included — materials, permits, warranty terms, and whether they're licensed and insured." }
+    ]
   },
   {
-    question: "Do I need a permit for basement waterproofing in Mississauga?",
-    answer: "Yes, most exterior basement waterproofing projects in Mississauga require a building permit from the City of Mississauga Building Department due to excavation exceeding 4 feet. DrySpace handles all City of Mississauga permit applications, drawings, and inspections as part of our service, ensuring compliance with municipal bylaws."
+    name: "Methods & Solutions",
+    faqs: [
+      { question: "What is the best waterproofing method for Mississauga homes?", answer: "For homes built before 2000 on clay soil — which includes most of Mississauga — exterior waterproofing with a rubberized membrane and new weeping tile is the most effective long-term solution. Interior drainage systems work well for finished basements or when exterior access is blocked by driveways or additions." },
+      { question: "What is the difference between exterior and interior waterproofing?", answer: "Exterior waterproofing stops water outside the foundation wall by applying a membrane and installing drainage at the footing. Interior waterproofing manages water that has already entered by channeling it through a perimeter drain to a sump pump. Exterior addresses the root cause; interior manages the symptom." },
+      { question: "What is a weeping tile system?", answer: "Weeping tile is a perforated pipe installed around the base of your foundation that collects groundwater and directs it to a sump pump or storm drain. Older Mississauga homes used clay pipe segments that crack and clog over time. Modern systems use 4-inch PVC pipe wrapped in filter fabric." },
+      { question: "Do I need a sump pump?", answer: "If your home has an interior drainage system, or if the water table in your area is high — common in Port Credit, Lakeview, and near the Credit River — a sump pump is essential. We recommend a primary pump with a battery backup so it runs during power outages." },
+      { question: "What is a backwater valve and do I need one?", answer: "A backwater valve prevents sewage from backing up into your basement during heavy storms. The Region of Peel recommends them for all homes and offers rebates toward installation. If your home has ever had sewer backup, this is one of the most cost-effective protections you can install." },
+      { question: "Can you waterproof a finished basement without tearing everything out?", answer: "In many cases, yes. Interior drainage systems can be installed along the perimeter by removing a strip of flooring near the walls. We try to preserve as much of your finished space as possible and coordinate with renovation contractors when rebuilding is needed." },
+      { question: "What is foundation crack injection?", answer: "Crack injection fills foundation wall cracks from the inside using polyurethane or epoxy resin. It's a targeted repair for individual cracks — typically done in a few hours and costing $500–$1,200 per crack. It works best for non-structural shrinkage cracks in poured concrete walls." }
+    ]
   },
   {
-    question: "What causes basement flooding in Mississauga?",
-    answer: "Mississauga's unique challenges include Credit Valley clay soil (30-70% clay content), rapid suburban development on former farmland, variable water table (1-4m depth), and proximity to Lake Ontario and Credit River. Spring thaw and summer storms frequently overwhelm older drainage systems in Mississauga neighborhoods."
+    name: "Process & Logistics",
+    faqs: [
+      { question: "How long does basement waterproofing take?", answer: "Exterior waterproofing typically takes 3–5 working days depending on the perimeter length and access. Interior drainage systems take 1–3 days. Crack injection is usually done in a few hours. We provide a timeline during the estimate." },
+      { question: "Do I need a permit for waterproofing in Mississauga?", answer: "Most exterior projects require a building permit from the City of Mississauga because excavation exceeds 4 feet. Sump pumps and drainage changes require plumbing permits. We handle all permit applications, fees, and city inspections as part of the project." },
+      { question: "Can I stay in my home during the work?", answer: "Yes. For exterior work, the disruption is mainly outside — excavation noise during the day and temporary landscaping removal. For interior work, we section off the basement and control dust. Most clients stay home throughout the project." },
+      { question: "What happens during the free inspection?", answer: "One of our inspectors visits your home, checks the interior basement walls and floor for signs of water entry, examines the exterior grading and drainage, and identifies the likely cause. You'll get a written report and quote, typically within 24 hours. No obligation." },
+      { question: "Do you restore landscaping after exterior waterproofing?", answer: "We backfill and re-grade the soil after membrane installation, and we'll restore the area to a clean, graded condition. If you had shrubs, gardens, or interlocking brick along the excavation zone, we discuss restoration options upfront so there are no surprises." },
+      { question: "What time of year can you do waterproofing?", answer: "We work year-round. Spring and summer are busiest because that's when most homeowners notice water problems. Interior work can be done any time. Exterior excavation is possible in winter with adjusted methods, though spring and fall are ideal." }
+    ]
   },
   {
-    question: "How quickly can you respond to Mississauga emergencies?",
-    answer: "We guarantee response times under 45 minutes to all Mississauga neighborhoods including Port Credit, Streetsville, Meadowvale, and Cooksville. Our emergency teams are stationed strategically across Mississauga with 24/7 availability, 365 days a year."
+    name: "Mississauga-Specific",
+    faqs: [
+      { question: "Why do so many Mississauga homes have wet basements?", answer: "Most of Mississauga is built on clay soil that holds water and expands when wet. Homes from the 1960s–1990s received only a tar-based damp-proofing coating that degrades over time. Combine aging foundations with old clay weeping tile and you get water entry — it's the most common call we get in Meadowvale, Cooksville, and Erin Mills." },
+      { question: "Which Mississauga neighborhoods have the worst flooding?", answer: "Port Credit and Lakeview have high water tables from Lake Ontario proximity. Streetsville has Credit River flood risk. Meadowvale and Erin Mills sit on heavy clay with aging 1970s–80s drainage. Malton has flat terrain and older infrastructure. Each area has different risk factors, but clay soil is the common thread." },
+      { question: "Do you service all of Mississauga?", answer: "Yes — Port Credit, Streetsville, Meadowvale, Cooksville, Erin Mills, Clarkson, Lakeview, Malton, City Centre, Churchill Meadows, Lisgar, Lorne Park, Sheridan, and all surrounding areas. Same-day estimates are available." },
+      { question: "Is waterproofing different for homes near the Credit River?", answer: "Homes near the Credit River face higher groundwater and seasonal flooding risk. We typically recommend more robust systems — full exterior membrane with heavy-gauge drainage board, oversized sump pit with battery backup, and sometimes a combination of exterior and interior protection for redundancy." },
+      { question: "My Mississauga home was built in the 1970s — does it need waterproofing?", answer: "Homes from that era almost certainly had clay weeping tile and a thin damp-proofing coating, both of which have a 30–40 year service life. If your home is experiencing musty smells, white mineral deposits on basement walls, or visible moisture — those are signs the original protection has failed." },
+      { question: "Do heritage homes in Streetsville or Port Credit need special treatment?", answer: "Heritage district properties may need a heritage permit for exterior work. Older stone or block foundations also require different techniques than poured concrete — for example, parging and drainage board instead of peel-and-stick membrane. We've worked on heritage properties in both areas." }
+    ]
   },
   {
-    question: "Are there rebates for Mississauga homeowners?",
-    answer: "Yes! Mississauga residents can access up to $3,400 through the Basement Flooding Protection Subsidy Program. Additional rebates may be available through Region of Peel programs. We handle all paperwork and applications for you."
-  },
-  {
-    question: "What waterproofing method works best for Mississauga homes?",
-    answer: "Due to Mississauga's clay soil and variable water table, we typically recommend exterior waterproofing with proper drainage for homes built before 2000. Newer developments may benefit from interior systems. Each home requires a custom assessment based on location and soil conditions."
-  },
-  {
-    question: "How long does waterproofing take in Mississauga?",
-    answer: "Most Mississauga homes require 3-5 days for complete exterior waterproofing, weather permitting. Interior systems can be installed in 1-2 days. We work year-round and adjust our methods for Mississauga's climate conditions."
-  },
-  {
-    question: "Do you service all areas of Mississauga?",
-    answer: "Yes, we service all Mississauga neighborhoods from Port Credit to Malton, including Streetsville, Meadowvale, Cooksville, Clarkson, Erin Mills, Lakeview, Churchill Meadows, Lisgar, and Central Erin Mills. Same-day service available."
-  },
-  {
-    question: "What warranty do you offer in Mississauga?",
-    answer: "We provide a 25-year transferable warranty on all waterproofing work in Mississauga. This warranty is registered with your property and transfers to new owners, protecting your home's value in Mississauga's competitive real estate market."
-  },
-  {
-    question: "Can you protect finished basements in Mississauga?",
-    answer: "Yes, we specialize in protecting finished basements with minimal disruption. Our interior drainage systems can often be installed without removing all finishes. We work with many Mississauga renovation contractors to coordinate repairs."
+    name: "Warranty & Emergency",
+    faqs: [
+      { question: "What does your 25-year warranty cover?", answer: "Our warranty covers all materials and workmanship for waterproofing installations. If a treated area leaks during the warranty period, we repair it at no charge. The warranty is transferable to new homeowners, which adds value if you sell your home." },
+      { question: "How fast can you respond to a flooding emergency?", answer: "Our goal is to have a crew on-site within 45 minutes for Mississauga emergencies. We have trucks and equipment staged across the city and operate 24/7, including holidays. Call 437-545-0067 for immediate help." },
+      { question: "My basement is flooding right now — what should I do?", answer: "Turn off electricity to the basement if you can do so safely. Don't walk into standing water. Move valuables to higher ground. Take photos for insurance documentation. Then call us at 437-545-0067 — we'll dispatch a crew right away." },
+      { question: "Are you licensed and insured?", answer: "Yes. We carry $5 million in liability insurance, are WSIB-compliant, and hold all required municipal licenses. We're also BBB accredited. We can provide proof of insurance and licensing on request." },
+      { question: "What if the problem comes back after repair?", answer: "That's what the warranty is for. If an area we've waterproofed develops a leak, we come back and fix it at no cost to you. We also offer annual check-ups to catch potential issues before they become problems." }
+    ]
   }
 ];
+
+// Flat FAQ list for schema
+const allFaqs = faqCategories.flatMap(cat => cat.faqs);
 ---
 
 <PageLayout 
@@ -108,9 +125,9 @@ const faqs = [
   <!-- Hero Section -->
   <Hero 
     title="BASEMENT WATERPROOFING MISSISSAUGA"
-    subtitle="Mississauga's trusted basement waterproofing experts since 2009. Protecting homes from Credit Valley clay soil and lake moisture. 24/7 emergency response under 45 minutes."
+    subtitle="Mississauga's trusted basement waterproofing experts. Serving the GTA since 1999 with 15+ years dedicated to Mississauga homes. 24/7 emergency response."
     primaryCTA={{ text: "Get Free Inspection", href: "/free-inspection" }}
-    secondaryCTA={{ text: "View Local Projects", href: "#gallery" }}
+    secondaryCTA={{ text: "View Local Projects", href: "#projects" }}
     backgroundImage="/images/mississauga-waterproofing-hero.webp"
     heroImage="/images/mississauga-waterproofing-hero.webp"
     badge="$3,400 REBATE AVAILABLE"
@@ -132,8 +149,8 @@ const faqs = [
     <div class="container mx-auto px-4">
       <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
         <div>
-          <div class="text-3xl font-bold text-cyan-600">15yr+</div>
-          <div class="text-sm text-slate-500">Serving Mississauga</div>
+          <div class="text-3xl font-bold text-cyan-600">Since 1999</div>
+          <div class="text-sm text-slate-500">Serving the GTA</div>
         </div>
         <div>
           <div class="text-3xl font-bold text-cyan-600">45 min</div>
@@ -209,11 +226,11 @@ const faqs = [
       <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
         <div class="bg-white rounded-xl p-6 shadow-sm">
           <h3 class="font-bold text-lg mb-2">Clay Soil</h3>
-          <p class="text-sm text-slate-600">Most of Mississauga sits on dense clay soil, particularly in Meadowvale, Erin Mills, and Churchill Meadows. Clay absorbs water and expands by 30–70%, pressing against foundation walls with thousands of pounds of hydrostatic pressure. When the clay dries, it shrinks and pulls away, creating gaps that channel water directly to the wall.</p>
+          <p class="text-sm text-slate-600">Most of Mississauga sits on dense clay soil, particularly in Meadowvale, Erin Mills, and Churchill Meadows. Clay absorbs water and expands significantly, pressing against foundation walls with considerable hydrostatic pressure. When the clay dries, it shrinks and pulls away, creating gaps that channel water directly to the wall.</p>
         </div>
         <div class="bg-white rounded-xl p-6 shadow-sm">
           <h3 class="font-bold text-lg mb-2">Freeze-Thaw Cycles</h3>
-          <p class="text-sm text-slate-600">Mississauga gets roughly 100+ freeze-thaw cycles per winter. Each cycle expands water trapped in hairline concrete cracks by about 9%, gradually widening them. Over 20–30 years, invisible stress fractures become visible cracks that leak during spring thaw when ground saturation peaks.</p>
+          <p class="text-sm text-slate-600">Southern Ontario sees frequent freeze-thaw cycles through the winter months. Each cycle expands trapped water in hairline concrete cracks, gradually widening them. Over decades, invisible stress fractures become visible cracks that leak during spring thaw when ground saturation peaks.</p>
         </div>
         <div class="bg-white rounded-xl p-6 shadow-sm">
           <h3 class="font-bold text-lg mb-2">Old Weeping Tile</h3>
@@ -221,7 +238,7 @@ const faqs = [
         </div>
         <div class="bg-white rounded-xl p-6 shadow-sm">
           <h3 class="font-bold text-lg mb-2">Hydrostatic Pressure</h3>
-          <p class="text-sm text-slate-600">When soil around the foundation becomes saturated — especially during spring thaw or prolonged rain — water presses against basement walls and up through the floor-wall joint. In Mississauga's clay soil, hydrostatic pressure can exceed 500 pounds per square foot, enough to force water through solid poured concrete.</p>
+          <p class="text-sm text-slate-600">When soil around the foundation becomes saturated — especially during spring thaw or prolonged rain — water presses against basement walls and up through the floor-wall joint. In Mississauga's clay soil, hydrostatic pressure builds enough force to push water through solid poured concrete.</p>
         </div>
         <div class="bg-white rounded-xl p-6 shadow-sm">
           <h3 class="font-bold text-lg mb-2">Poor Lot Grading</h3>
@@ -308,26 +325,8 @@ const faqs = [
         <h2 class="text-3xl font-bold mb-6">Who Is the Best Basement Waterproofing Company in Mississauga?</h2>
 
         <p class="text-lg mb-6 speakable">
-          <strong>DrySpace Waterproofing is Mississauga's most experienced basement waterproofing contractor, with 25+ years protecting over 500 homes across all neighborhoods from Port Credit to Malton.</strong> We specialize in Mississauga's unique challenges: Credit Valley clay soil that expands up to 70%, variable water tables from Lake Ontario and Credit River influences, and the rapid suburban development that has created diverse foundation challenges across different eras of construction.
+          <strong>DrySpace Waterproofing has been serving Mississauga homeowners for over 15 years.</strong> We know what causes basement water problems here — heavy clay soil that holds moisture, older weeping tile systems that have reached end of life, and foundations from the 1960s through 1990s that were damp-proofed but never properly waterproofed. We've worked in every part of the city, from lakefront homes in Port Credit to subdivisions in Meadowvale and Malton.
         </p>
-
-        <h3 class="text-2xl font-bold mt-8 mb-4">Why Do Mississauga Homes Get Basement Water Problems?</h3>
-
-        <p class="mb-4 speakable">
-          <strong>Mississauga basements flood due to Credit Valley clay soil (30–70% clay content) that expands up to 70% when saturated, combined with a variable water table 1–4 metres below grade influenced by Lake Ontario and the Credit River.</strong>
-        </p>
-
-        <div class="bg-cyan-50 p-6 rounded-lg mb-6">
-          <h4 class="font-bold mb-3">The Region's Unique Geological Challenges:</h4>
-          <ul class="space-y-2">
-            <li>• <strong>Credit Valley Clay:</strong> 30-70% clay content causes extreme expansion/contraction</li>
-            <li>• <strong>Variable Water Table:</strong> 1-4m depth fluctuates seasonally, highest near water bodies</li>
-            <li>• <strong>Engineered Fill:</strong> Many subdivisions built on former farmland with imported soil</li>
-            <li>• <strong>Lake Effect:</strong> Increased moisture and freeze-thaw cycles near Lake Ontario</li>
-            <li>• <strong>Urban Heat Island:</strong> Rapid snow melt creates sudden water infiltration</li>
-            <li>• <strong>Stormwater Management:</strong> Older neighborhoods lack modern drainage infrastructure</li>
-          </ul>
-        </div>
 
         <h3 class="text-2xl font-bold mt-8 mb-4">What Waterproofing Methods Work Best for Mississauga Homes?</h3>
 
@@ -388,16 +387,16 @@ const faqs = [
         <h3 class="text-2xl font-bold mt-8 mb-4">Which Mississauga Neighborhoods Have the Worst Basement Flooding?</h3>
 
         <p class="mb-4 speakable">
-          <strong>Meadowvale, Port Credit, and Streetsville experience the most basement flooding in Mississauga due to clay soil expansion, Credit River proximity, and aging 1970s-era drainage infrastructure.</strong>
+          <strong>Basement flooding is most common in neighborhoods near the Credit River and Lake Ontario, and in older subdivisions where original drainage has reached end of life.</strong> Here is what we typically see in each area:
         </p>
 
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
           <div class="bg-slate-50 p-5 rounded-lg">
-            <h4 class="font-bold text-lg mb-2"><a href="/neighborhoods/port-credit" class="text-cyan-600 hover:underline">Port Credit</a></h4>
+            <h4 class="font-bold text-lg mb-2">Port Credit</h4>
             <p class="text-sm text-slate-600">Port Credit sits at the mouth of the Credit River where it meets Lake Ontario, making it one of the highest water table areas in Mississauga. Many homes date from the 1940s–1960s with older stone or block foundations never properly waterproofed. The proximity to the lakeshore means groundwater levels fluctuate seasonally, and homes within 500 metres of the river face persistent moisture year-round. Exterior waterproofing with full membrane and new weeping tile is the most common solution for Port Credit homes.</p>
           </div>
           <div class="bg-slate-50 p-5 rounded-lg">
-            <h4 class="font-bold text-lg mb-2"><a href="/neighborhoods/streetsville" class="text-cyan-600 hover:underline">Streetsville</a></h4>
+            <h4 class="font-bold text-lg mb-2">Streetsville</h4>
             <p class="text-sm text-slate-600">Streetsville's historic village core contains homes dating back to the 1850s, with many more built in the 1960s–70s expansion. The Credit River runs directly through the neighborhood, and the low-lying areas along Queen Street and Main Street experience the highest basement water risk. Clay soil dominates the area, and many older homes still rely on the original clay weeping tile that has since collapsed. Foundation crack repair is frequent in the older stone-and-mortar homes along the main corridor.</p>
           </div>
           <div class="bg-slate-50 p-5 rounded-lg">
@@ -530,10 +529,10 @@ const faqs = [
           <div>
             <h4 class="font-bold mb-2">Mississauga Expertise</h4>
             <ul class="space-y-2 text-sm">
-              <li>✓ 15+ years serving Mississauga</li>
-              <li>✓ 500+ Mississauga projects completed</li>
-              <li>✓ Deep understanding of Credit Valley geology</li>
-              <li>✓ Familiar with all neighborhood challenges</li>
+              <li>✓ Serving the GTA since 1999</li>
+              <li>✓ 15+ years dedicated to Mississauga</li>
+              <li>✓ Familiar with Credit Valley soil conditions</li>
+              <li>✓ Experience across all Mississauga neighborhoods</li>
             </ul>
           </div>
           <div>
@@ -559,8 +558,8 @@ const faqs = [
             <ul class="space-y-2 text-sm">
               <li>✓ 25-year transferable warranty</li>
               <li>✓ Licensed and insured</li>
-              <li>✓ A+ BBB rating</li>
-              <li>✓ Trusted since 1999</li>
+              <li>✓ BBB accredited</li>
+              <li>✓ Established 1999</li>
             </ul>
           </div>
         </div>
@@ -586,35 +585,8 @@ const faqs = [
     </div>
   </section>
 
-  <!-- Before/After Gallery -->
-  <section id="gallery" class="py-16">
-    <div class="container mx-auto px-4">
-      <h2 class="text-3xl font-bold text-center mb-8">
-        Recent Mississauga Projects
-      </h2>
-      <BeforeAfterGallery />
-      <div class="grid md:grid-cols-3 gap-6 mt-8 max-w-4xl mx-auto">
-        <div class="text-center">
-          <img src="/images/port-credit-project.webp" alt="Port Credit foundation protection" class="rounded-lg mb-2" width="400" height="300" loading="lazy" decoding="async" />
-          <p class="font-semibold">Port Credit Heritage Home</p>
-          <p class="text-sm text-slate-500">Complete exterior protection system</p>
-        </div>
-        <div class="text-center">
-          <img src="/images/meadowvale-project.webp" alt="Meadowvale foundation repair" class="rounded-lg mb-2" width="400" height="300" loading="lazy" decoding="async" />
-          <p class="font-semibold">Meadowvale Clay Soil Solution</p>
-          <p class="text-sm text-slate-500">Foundation stabilization & drainage</p>
-        </div>
-        <div class="text-center">
-          <img src="/images/streetsville-project.webp" alt="Streetsville basement" class="rounded-lg mb-2" width="400" height="300" loading="lazy" decoding="async" />
-          <p class="font-semibold">Streetsville Flood Recovery</p>
-          <p class="text-sm text-slate-500">Emergency response & permanent fix</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- Project Examples -->
-  <section class="py-16 bg-slate-50">
+  <section id="projects" class="py-16 bg-slate-50">
     <div class="container mx-auto px-4">
       <h2 class="text-3xl font-bold text-center mb-4">Recent Waterproofing Projects in Mississauga</h2>
       <p class="text-center text-slate-600 max-w-2xl mx-auto mb-10">Real examples of waterproofing work completed in Mississauga neighborhoods. Each project shows the problem, cause, solution, and result.</p>
@@ -705,16 +677,16 @@ const faqs = [
     <div class="container mx-auto px-4 text-center max-w-2xl">
       <h2 class="text-3xl font-bold mb-4">Trusted by Mississauga Homeowners</h2>
       <p class="text-lg text-slate-600 mb-6">
-        We've completed over 500 basement waterproofing projects across Mississauga — from Port Credit heritage homes to Meadowvale clay soil solutions.
+        We've been waterproofing Mississauga homes for over 15 years — from Port Credit heritage homes to Meadowvale subdivisions on heavy clay.
       </p>
       <div class="flex flex-wrap justify-center gap-4">
         <div class="bg-white px-6 py-3 rounded-lg shadow-sm border">
-          <span class="text-2xl font-bold text-cyan-600">25+</span>
-          <span class="text-sm text-slate-500 ml-2">Years in Business</span>
+          <span class="text-2xl font-bold text-cyan-600">Since 1999</span>
+          <span class="text-sm text-slate-500 ml-2">Serving the GTA</span>
         </div>
         <div class="bg-white px-6 py-3 rounded-lg shadow-sm border">
-          <span class="text-2xl font-bold text-cyan-600">500+</span>
-          <span class="text-sm text-slate-500 ml-2">Mississauga Projects</span>
+          <span class="text-2xl font-bold text-cyan-600">15+ yrs</span>
+          <span class="text-sm text-slate-500 ml-2">In Mississauga</span>
         </div>
         <div class="bg-white px-6 py-3 rounded-lg shadow-sm border">
           <span class="text-2xl font-bold text-cyan-600">$3,400</span>
@@ -727,14 +699,37 @@ const faqs = [
     </div>
   </section>
 
-  <!-- FAQ Section -->
+  <!-- FAQ Section — inline for SEO crawlability -->
   <section class="py-16">
     <div class="container mx-auto px-4">
-      <h2 class="text-3xl font-bold text-center mb-8">
-        Mississauga Basement Waterproofing FAQs
-      </h2>
       <div class="max-w-4xl mx-auto">
-        <FAQ faqs={faqs} />
+        <h2 class="text-3xl font-bold text-center mb-3">Mississauga Basement Waterproofing FAQs</h2>
+        <p class="text-center text-slate-600 mb-10">Common questions from Mississauga homeowners about waterproofing, costs, and the process</p>
+
+        {faqCategories.map((category) => (
+          <div class="mb-10">
+            <h3 class="text-lg font-bold text-slate-800 uppercase tracking-wide border-b-2 border-cyan-500 pb-2 mb-4">{category.name}</h3>
+            <div class="space-y-3">
+              {category.faqs.map((faq) => (
+                <details class="group bg-white border border-slate-200 rounded-lg overflow-hidden">
+                  <summary class="flex justify-between items-center cursor-pointer px-5 py-4 font-semibold text-slate-900 hover:bg-slate-50 transition list-none [&::-webkit-details-marker]:hidden">
+                    <span class="pr-4">{faq.question}</span>
+                    <span class="text-cyan-600 text-xl flex-shrink-0 transition-transform group-open:rotate-45">+</span>
+                  </summary>
+                  <div class="px-5 pb-4 text-sm text-slate-600 border-t border-slate-100 pt-3">
+                    {faq.answer}
+                  </div>
+                </details>
+              ))}
+            </div>
+          </div>
+        ))}
+
+        <div class="mt-8 bg-cyan-50 border border-cyan-200 rounded-lg p-6 text-center">
+          <p class="font-bold text-slate-900 mb-2">Have a question not answered here?</p>
+          <p class="text-sm text-slate-600 mb-4">Call us directly or schedule a free inspection — we're happy to walk you through your options.</p>
+          <a href="tel:437-545-0067" class="inline-block bg-cyan-600 text-white px-6 py-2.5 rounded-lg font-bold hover:bg-cyan-700 transition">Call 437-545-0067</a>
+        </div>
       </div>
     </div>
   </section>
@@ -771,7 +766,7 @@ const faqs = [
           <div>
             <h4 class="font-bold">West</h4>
             <ul class="text-sm space-y-1">
-              <li><a href="/neighborhoods/streetsville" class="text-cyan-600 hover:underline">Streetsville</a></li>
+              <li>Streetsville</li>
               <li>Meadowvale</li>
               <li>Lisgar</li>
               <li>Churchill Meadows</li>
@@ -865,7 +860,7 @@ const faqs = [
   <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "mainEntity": faqs.map(faq => ({
+    "mainEntity": allFaqs.map(faq => ({
       "@type": "Question",
       "name": faq.question,
       "acceptedAnswer": {
